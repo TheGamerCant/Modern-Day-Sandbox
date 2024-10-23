@@ -210,12 +210,12 @@ namespace PDX {
     public:
         uint16_t id;
         bool impassable;
-        int manpower;
+        int32_t manpower;
         PDX::country* owner;
         PDX::state_category* state_category;
         std::vector<PDX::province*> provinces;
         std::vector<uint16_t> resources;
-        std::vector<std::string> dateInfo;
+        std::vector<std::string> dates;
         std::vector<PDX::country*> cores;
         std::vector<PDX::country*> claims;
         std::vector<PDX::flag> flags;
@@ -224,10 +224,7 @@ namespace PDX {
         std::string name;
 
         state() :
-            id(0), impassable(0), manpower(0), owner(nullptr), state_category(nullptr), provinces(), resources(), dateInfo(), cores(), claims(), flags(), variables(), buildings(), name("") {}
-
-        state(int id) :
-            id(id) {}
+            id(0), impassable(0), manpower(0), owner(nullptr), state_category(nullptr), provinces(), resources(), dates(), cores(), claims(), flags(), variables(), buildings(), name("") {}
     };
 
 

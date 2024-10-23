@@ -5,7 +5,11 @@
 #include <filesystem>
 #include <regex>
 #include <fstream>
+#include <sstream>
 #include <thread>
+
+#include <mutex>
+#include <future>
 
 static void loadTerrain(const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath, PDX::vectorStringIndexMap<PDX::terrain>& terrainArray) {
 	std::vector<std::filesystem::path> filesVector = findFilesToLoad("common/terrain", vanillaGamePath, modPath);
@@ -339,6 +343,216 @@ static void loadProvinces(const std::filesystem::path& vanillaGamePath, const st
 	} 
 }
 
+static uint16_t returnStateID(std::string& fileContent) {
+	uint16_t id = 0;
+
+	std::regex idRegex("id\\s*=\\s*(\\d+)");
+	std::smatch match;
+	if (regex_search(fileContent, match, idRegex)) {
+		id = stoi(match[1]);
+	}
+	fileContent = regex_replace(fileContent, idRegex, "");
+
+	return id;
+}
+
+static std::vector <std::string> returnStateDates(std::string& historyContent) {
+	std::vector<std::string> dates;
+
+	std::regex dateInfoRegex("(\\d{4})\\.(\\d{1,2})\\.(\\d{1,2})");
+	while (regex_search(historyContent, dateInfoRegex)) {
+		std::smatch match;
+		regex_search(historyContent, match, dateInfoRegex);
+		std::string date = match[0].str();
+		std::string dateInfoString = returnStringBetweenBrackets(historyContent, date);
+
+		dates.emplace_back(date + " = {" + dateInfoString + "}");
+
+		historyContent = removeStringBetweenBrackets(historyContent, date);
+	}
+
+	return dates;
+}
+
+static PDX::country* returnStateOwner(std::string& historyContent, PDX::vectorStringIndexMap<PDX::country>& countriesArray) {
+	std::string owner = "ZZZ";
+
+	std::regex ownerRegex("owner\\s*=\\s*(\\w+)");
+	std::smatch match;
+	if (regex_search(historyContent, match, ownerRegex)) owner = match[1];
+	historyContent = regex_replace(historyContent, ownerRegex, "");
+	std::transform(owner.begin(), owner.end(), owner.begin(), [](unsigned char c) { return std::toupper(c); });
+
+	PDX::country* countryPointer = nullptr;
+
+	auto vecIndex = countriesArray.hashMap.find(owner);
+	if (vecIndex != countriesArray.hashMap.end()) countryPointer = &countriesArray.vector[vecIndex->second];
+
+	return countryPointer;
+}
+
+static PDX::state_category* returnStateCategory(std::string& fileContent, PDX::vectorStringIndexMap<PDX::state_category>& stateCategoriesArray) {
+	std::string state_category = "NULL";
+
+	std::regex stateCategoryRegex("state_category\\s*=\\s*(\\w+)");
+	std::smatch match;
+	if (regex_search(fileContent, match, stateCategoryRegex)) state_category = match[1];
+	fileContent = regex_replace(fileContent, stateCategoryRegex, "");
+
+
+	PDX::state_category* stateCategoryPointer = nullptr;
+
+	auto vecIndex = stateCategoriesArray.hashMap.find(state_category);
+	if (vecIndex != stateCategoriesArray.hashMap.end()) stateCategoryPointer = &stateCategoriesArray.vector[vecIndex->second];
+
+	return stateCategoryPointer;
+}
+
+static int32_t returnStateManpower(std::string& fileContent) {
+	int32_t manpower = 0;
+
+	std::regex manpowerRegex("manpower\\s*=\\s*(\\d+)");
+	std::smatch match;
+	if (regex_search(fileContent, match, manpowerRegex)) manpower = stoi(match[1]);
+	fileContent = regex_replace(fileContent, manpowerRegex, "");
+
+	return manpower;
+}
+
+static bool returnStateImpassable(std::string& fileContent) {
+	bool impassable = false;
+
+	std::regex impassableRegex("impassable\\s*=\\s*yes");
+	impassable = regex_search(fileContent, impassableRegex);
+	fileContent = regex_replace(fileContent, impassableRegex, "");
+
+	return impassable;
+}
+
+static std::vector <PDX::province*> returnStateProvinces(std::string& provinceContent, std::vector<PDX::province>& provincesArray) {
+	std::vector<uint16_t> provinces;
+	std::vector<PDX::province*> provincesPtr;
+
+	std::stringstream iss(provinceContent);
+	int provinceInt;
+	while (iss >> provinceInt) {
+		provinces.push_back(provinceInt);
+	}
+
+	provincesPtr.reserve(provinces.size());
+
+	for (auto& province : provinces) {
+		provincesPtr.emplace_back(&provincesArray[province]);
+	}
+
+	return provincesPtr;
+}
+
+static std::vector <uint16_t> returnStateResources(std::string& fileContent, PDX::vectorStringIndexMap<PDX::resource>& resourcesArray) {
+	std::vector<uint16_t> resources(resourcesArray.vector.size(), 0);
+
+	std::regex nameEqualsValueRegex("(\\w+)\\s*=\\s*(\\d+)");
+
+	std::string resourcesString = returnStringBetweenBrackets(fileContent, "resources");
+	auto BEGIN = std::sregex_iterator(resourcesString.begin(), resourcesString.end(), nameEqualsValueRegex);
+	auto END = std::sregex_iterator();
+	for (std::sregex_iterator i = BEGIN; i != END; ++i) {
+		std::smatch resoursesMatch = *i;
+		std::string resourceName = resoursesMatch[1].str();
+
+		auto vecIndex = resourcesArray.hashMap.find(resourceName);
+		if (vecIndex != resourcesArray.hashMap.end()) resources[vecIndex->second] = stoi(resoursesMatch[2]);
+	}
+	fileContent = removeStringBetweenBrackets(fileContent, "resources");
+	return resources;
+}
+
+static std::vector <PDX::country*> returnStateCores(std::string& historyContent, PDX::vectorStringIndexMap<PDX::country>& countriesArray) {
+	std::vector<PDX::country*> cores;
+
+	std::regex coreRegex("add_core_of\\s*=\\s*(\\w{3})");
+
+	auto BEGIN = std::sregex_iterator(historyContent.begin(), historyContent.end(), coreRegex);
+	auto END = std::sregex_iterator();
+	for (std::sregex_iterator i = BEGIN; i != END; ++i) {
+		std::smatch match = *i;
+		std::string countryTagStr = match[1].str();
+
+		auto vecIndex = countriesArray.hashMap.find(countryTagStr);
+		if (vecIndex != countriesArray.hashMap.end()) cores.push_back(&countriesArray.vector[vecIndex->second]);
+	}
+	historyContent = regex_replace(historyContent, coreRegex, "");
+	return cores;
+}
+
+static std::vector <PDX::country*> returnStateClaims(std::string& historyContent, PDX::vectorStringIndexMap<PDX::country>& countriesArray) {
+	std::vector<PDX::country*> claims;
+
+	std::regex claimRegex("add_claim_by\\s*=\\s*(\\w{3})");
+
+	auto BEGIN = std::sregex_iterator(historyContent.begin(), historyContent.end(), claimRegex);
+	auto END = std::sregex_iterator();
+	for (std::sregex_iterator i = BEGIN; i != END; ++i) {
+		std::smatch match = *i;
+		std::string countryTagStr = match[1].str();
+
+		auto vecIndex = countriesArray.hashMap.find(countryTagStr);
+		if (vecIndex != countriesArray.hashMap.end()) claims.push_back(&countriesArray.vector[vecIndex->second]);
+	}
+	historyContent = regex_replace(historyContent, claimRegex, "");
+	return claims;
+}
+
+static void loadState(
+	const std::filesystem::path& stateFile,
+
+	PDX::vectorStringIndexMap<PDX::terrain>& terrainArray,
+	PDX::vectorStringIndexMap<PDX::building>& buildingArray,
+	PDX::vectorStringIndexMap<PDX::resource>& resourcesArray,
+	PDX::vectorStringIndexMap<PDX::state_category>& stateCategoryArray,
+	PDX::vectorStringIndexMap<PDX::country>& countriesArray,
+	std::vector<PDX::province>& provincesArray,
+	std::vector<PDX::state>& statesArray,
+
+	std::mutex& mtx
+) {
+	std::string fileContent = returnTXTFileAsStringNoHashes(stateFile);
+
+	std::string historyContent = returnStringBetweenBrackets(fileContent, "history");
+	fileContent = removeStringBetweenBrackets(fileContent, "history");
+	std::string buildingContent = returnStringBetweenBrackets(historyContent, "buildings");
+	historyContent = removeStringBetweenBrackets(historyContent, "buildings");
+	std::string provinceContent = returnStringBetweenBrackets(fileContent, "provinces");
+	fileContent = removeStringBetweenBrackets(fileContent, "provinces");
+
+	uint16_t id = returnStateID(fileContent);
+	std::vector <std::string> dates = returnStateDates(historyContent);
+	PDX::country* owner = returnStateOwner(historyContent, countriesArray);
+	PDX::state_category* state_category = returnStateCategory(fileContent, stateCategoryArray);
+	int32_t manpower = returnStateManpower(fileContent);
+	bool impassable = returnStateImpassable(fileContent);
+	std::vector <PDX::province*> provinces = returnStateProvinces(provinceContent, provincesArray);
+	std::vector <uint16_t> resources = returnStateResources(fileContent, resourcesArray);
+	std::vector <PDX::country*> cores = returnStateCores(historyContent, countriesArray);
+	std::vector <PDX::country*> claims = returnStateClaims(historyContent, countriesArray);
+
+	PDX::state T_state;
+	T_state.id = id;
+	T_state.dates = dates;
+	T_state.owner = owner;
+	T_state.state_category = state_category;
+	T_state.manpower = manpower;
+	T_state.impassable = impassable;
+	T_state.provinces = provinces;
+	T_state.resources = resources;
+	T_state.cores = cores;
+	T_state.claims = claims;
+	
+
+	std::lock_guard<std::mutex> lock(mtx);
+	statesArray.push_back(T_state);
+}
+
 
 #include <chrono>
 void loadMap(
@@ -377,5 +591,32 @@ void loadMap(
 	ms middleMS = std::chrono::duration_cast<ms>(fs);
 	std::cout << middleMS.count() << "ms\n";
 
-	
+	std::vector<std::filesystem::path> stateFiles = findFilesToLoad("history/states", vanillaGamePath, modPath);
+	statesArray.reserve(stateFiles.size() + 1);
+	statesArray.emplace_back();
+	std::mutex mtx;
+	std::vector<std::future<void>> futures;
+
+	for (const auto& state : stateFiles) {
+		futures.push_back(std::async(std::launch::async, loadState, state, std::ref(terrainArray), std::ref(buildingArray), std::ref(resourcesArray),
+			std::ref(stateCategoryArray), std::ref(countriesArray), std::ref(provincesArray), std::ref(statesArray), std::ref(mtx)));
+	}
+
+	for (auto& fut : futures) fut.get();
+
+	std::sort(provincesArray.begin(), provincesArray.end(), [](const PDX::province& a, const PDX::province& b) { return a.id < b.id; });
+	std::sort(statesArray.begin(), statesArray.end(), [](const PDX::state& a, const PDX::state& b) { return a.id < b.id; });
+
+	for (auto& state : statesArray) {
+		if (state.id != 0) {
+			state.owner->states.emplace_back(&state);
+
+			for (auto& province : state.provinces) province->state = &state;
+		}
+	}
+
+	auto timeEnd = Time::now();
+	fsec fs2 = timeEnd - timeMiddle;
+	ms endMS = std::chrono::duration_cast<ms>(fs2);
+	std::cout << endMS.count() << "ms\n";
 }
