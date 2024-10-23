@@ -9,5 +9,7 @@ void loadMap(
 	PDX::vectorStringIndexMap<PDX::building>& buildingArray,
 	PDX::vectorStringIndexMap<PDX::resource>& resourcesArray,
 	PDX::vectorStringIndexMap<PDX::state_category>& stateCategoryArray,
-	PDX::vectorStringIndexMap<PDX::country>& countriesArray
+	PDX::vectorStringIndexMap<PDX::country>& countriesArray,
+	std::vector<PDX::province>& provincesArray,
+	std::vector<PDX::state>& statesArray
 );

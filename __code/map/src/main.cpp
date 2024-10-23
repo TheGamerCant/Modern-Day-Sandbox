@@ -17,9 +17,10 @@ int main() {
 	PDX::vectorStringIndexMap<PDX::state_category> stateCategoryArray;
 	PDX::vectorStringIndexMap<PDX::country> countriesArray;
 
+	std::vector<PDX::province> provincesArray;
 	std::vector<PDX::state> statesArray;
 
-	loadMap(vanillaDirectory, modDirectory, terrainArray, buildingArray, resourcesArray, stateCategoryArray, countriesArray);
+	loadMap(vanillaDirectory, modDirectory, terrainArray, buildingArray, resourcesArray, stateCategoryArray, countriesArray, provincesArray, statesArray);
 
 	return 0;
 }

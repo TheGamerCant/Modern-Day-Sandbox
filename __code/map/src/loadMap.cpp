@@ -290,6 +290,57 @@ static void loadCountries(const std::filesystem::path& vanillaGamePath, const st
 	else loadCountryColours(vanillaGamePath, modPath, vanillaColours, countriesArray);
 }
 
+static void loadProvinces(const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath, std::vector<PDX::province>& provincesArray, PDX::vectorStringIndexMap<PDX::terrain>& terrainArray) {
+	std::filesystem::path definitionsCSV = modPath;
+	definitionsCSV += "\\map\\definition.csv";
+
+	if (!std::filesystem::exists(definitionsCSV)) { definitionsCSV = vanillaGamePath; definitionsCSV += "\\map\\definition.csv"; }
+
+	std::ifstream file1(definitionsCSV);
+	std::string line1;
+	int number_of_lines = 0;
+	while (std::getline(file1, line1)) ++number_of_lines;
+
+	provincesArray.reserve(number_of_lines);
+
+	std::string line2;
+	std::ifstream file2(definitionsCSV);
+	while (getline(file2, line2)) {
+
+		size_t hashPos = line2.find('#');
+		if (hashPos != std::string::npos) line2 = line2.substr(0, hashPos);
+
+		std::istringstream ss(line2);
+		std::string token;
+		std::vector<std::string> tokens(8, "");
+
+		int i = 0;
+		while (getline(ss, token, ';')) {
+			if ( i < 8) tokens[i] = token;
+			++i;
+		}
+		uint16_t id = stoi(tokens[0]);
+		uint8_t red = stoi(tokens[1]);
+		uint8_t green = stoi(tokens[2]);
+		uint8_t blue = stoi(tokens[3]);
+		std::string typeStr = tokens[4];
+		uint8_t type = PDX::provinceTypeLand;
+		if (typeStr == "lake") type = PDX::provinceTypeLake;
+		else if (typeStr == "sea") type = PDX::provinceTypeSea;
+		bool coastal = (tokens[5] == "true");
+		std::string terrainStr = tokens[6];
+		int continent = stoi(tokens[7]);
+
+		PDX::terrain* terrainPointer = nullptr;
+		auto terrainIndex = terrainArray.hashMap.find(terrainStr);
+		if (terrainIndex != terrainArray.hashMap.end()) terrainPointer = &terrainArray.vector[terrainIndex->second];
+
+		provincesArray.emplace_back(id, red, green, blue, type, coastal, continent, terrainPointer);
+	} 
+}
+
+
+#include <chrono>
 void loadMap(
 	const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath,
 
@@ -297,8 +348,15 @@ void loadMap(
 	PDX::vectorStringIndexMap<PDX::building>& buildingArray,
 	PDX::vectorStringIndexMap<PDX::resource>& resourcesArray,
 	PDX::vectorStringIndexMap<PDX::state_category>& stateCategoryArray,
-	PDX::vectorStringIndexMap<PDX::country>& countriesArray
+	PDX::vectorStringIndexMap<PDX::country>& countriesArray,
+	std::vector<PDX::province>& provincesArray,
+	std::vector<PDX::state>& statesArray
 ) {
+	typedef std::chrono::high_resolution_clock Time;
+	typedef std::chrono::milliseconds ms;
+	typedef std::chrono::duration<float> fsec;
+	auto timeStart = Time::now();
+
 	std::thread t1(loadTerrain, std::cref(vanillaGamePath), std::cref(modPath), std::ref(terrainArray));
 	std::thread t2(loadBuildings, std::cref(vanillaGamePath), std::cref(modPath), std::ref(buildingArray));
 	std::thread t3(loadResources, std::cref(vanillaGamePath), std::cref(modPath), std::ref(resourcesArray));
@@ -306,8 +364,18 @@ void loadMap(
 	std::thread t5(loadCountries, std::cref(vanillaGamePath), std::cref(modPath), std::ref(countriesArray));
 
 	t1.join();
+	std::thread t6(loadProvinces, std::cref(vanillaGamePath), std::cref(modPath), std::ref(provincesArray), std::ref(terrainArray));
+
 	t2.join();
 	t3.join();
 	t4.join();
 	t5.join();
+	t6.join();
+
+	auto timeMiddle = Time::now();
+	fsec fs = timeMiddle - timeStart;
+	ms middleMS = std::chrono::duration_cast<ms>(fs);
+	std::cout << middleMS.count() << "ms\n";
+
+	
 }

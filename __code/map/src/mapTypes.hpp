@@ -19,6 +19,39 @@ namespace PDX {
     class state;
     class strategic_region;
 
+    enum flagTypeEnum {
+        flagTypeGlobal = 0,
+        flagTypeCountry = 1,
+        flagTypeState = 2,
+        flagTypeCharacter = 3,
+        flagTypeMIO = 4
+    };
+
+    class flag {
+        std::string name;
+        int value;
+        int days;
+        uint8_t type;
+
+        flag() :
+            name(""), value(0), days(0), type(flagTypeGlobal) {}
+
+        flag(std::string& name, int value, int days, uint8_t type) :
+            name(name), value(value), days(days), type(type) {}
+    };
+
+    class variable {
+        std::string name;
+        std::string value;	
+        std::string tooltip;
+
+        variable() :
+        name (""), value(""), tooltip("") {}
+
+        variable(std::string& name, std::string& value, std::string& tooltip) :
+        name (name), value(value), tooltip(tooltip) {}
+    };
+
     class terrain {
     public:
         bool naval;
@@ -139,12 +172,59 @@ namespace PDX {
             building_slots(building_slots), red(red), green(green), blue(blue), name(name) {}
     };
 
+    enum provinceTypeEnum {
+        provinceTypeLand=0,
+        provinceTypeLake=1,
+        provinceTypeSea=2
+    };
+
+    class province {
+    public:
+        uint16_t id;
+        uint8_t red;
+        uint8_t green;
+        uint8_t blue;
+        uint8_t type;
+        bool coastal;
+        uint8_t continent;
+        state* state;
+        uint16_t victory_points;
+        strategic_region* strategic_region;
+        terrain* terrain;
+        std::vector<uint8_t> buildings;
+        std::string name;
+
+        province() :
+            id(0), red(0), green(0), blue(0), type(0), coastal(0), continent(0), state(nullptr), victory_points(0), strategic_region(nullptr), terrain(nullptr), buildings(), name("") {}
+
+        province(uint16_t id, uint8_t red, uint8_t green, uint8_t blue, uint8_t type, bool coastal, uint8_t continent, PDX::terrain* terrain) :
+            id(id), red(red), green(green), blue(blue), type(type), coastal(coastal), continent(continent), state(nullptr), victory_points(0), strategic_region(nullptr), terrain(terrain), buildings(), name("") {}
+
+        province(uint16_t id, uint8_t red, uint8_t green, uint8_t blue, uint8_t type, bool coastal, uint8_t continent, PDX::state* state, uint16_t victory_points, PDX::strategic_region* strategic_region,
+            PDX::terrain* terrain, std::vector<uint8_t>& buildings, std::string& name) :
+            id(id), red(red), green(green), blue(blue), type(type), coastal(coastal), continent(continent), state(state), victory_points(victory_points), strategic_region(strategic_region), terrain(terrain),
+            buildings(buildings), name(name) {}
+    };
+
     class state {
     public:
         uint16_t id;
+        bool impassable;
+        int manpower;
+        PDX::country* owner;
+        PDX::state_category* state_category;
+        std::vector<PDX::province*> provinces;
+        std::vector<uint16_t> resources;
+        std::vector<std::string> dateInfo;
+        std::vector<PDX::country*> cores;
+        std::vector<PDX::country*> claims;
+        std::vector<PDX::flag> flags;
+        std::vector<PDX::variable> variables;
+        std::vector<uint8_t> buildings;
+        std::string name;
 
         state() :
-            id(0) {}
+            id(0), impassable(0), manpower(0), owner(nullptr), state_category(nullptr), provinces(), resources(), dateInfo(), cores(), claims(), flags(), variables(), buildings(), name("") {}
 
         state(int id) :
             id(id) {}
