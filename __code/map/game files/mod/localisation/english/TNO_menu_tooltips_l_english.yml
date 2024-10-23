@@ -1,0 +1,16 @@
+﻿l_english:
+
+# Icon tooltip
+TNO_ugly_american_icon_tt: "§RSO FAR FROM GOD§!"
+TNO_ugly_american_icon_tt_delayed: ""Poor §nMexico§!, so far from God, so close to the §MUnited States§!!\"\n\nHow much, and how little, has changed for Mexicans since President §YPorfirio Díaz§! uttered those words. A mere three years later, his thirty-five-year-long regime would be swept away by the §ORevolution§!. The §ORevolution's§! promises of democratization, sovereignty, and, for many, equality and social justice, were battered by waves of civil war, assassinations, and repression. Heroes and villains rose and fell as millions of Mexicans died.\n\nTo knit the chaotic and fractured nation together once more, President Calles united its revolutionary generals-turned-warlords into a single party. To stabilize the country and evade Calles' control, §Ohis leftist successor§!, Cárdenas, added a corporatist system of workers, peasants, and the incipient middle classes to this inheritance. And from this §Omonstrous union§! was birthed the Leviathan of the §nInstitutional§! §WRevolutionary§! §xParty§!.\n\nThis party, the §nP§!§WR§!§xI§!, has governed the United Mexican States ever since, its tentacles burrowing ever deeper into national life. Each limb extends a bargain - development after years of hunger, security after decades of violence, the return of welfare and land stripped away in the Porfiriato. All that is asked in return are votes. Votes and acquiescence.\n\nAcquiescence as §MAmerican§! and §xJapanese§! capital reclaims their influence. As the revolutionary promises of the Constitution of 1917 are ignored. As an elite caste seize the fruits of development for itself. As the elections by which the Leviathan sustains itself are rigged. As those who protest are beaten or disappeared.\n\nLocked in the §nP§!§WR§!§xI§!'s Faustian pact, §nMexico§! is truly so far from God."
+####=== The tooltips that are shown when hovering over the menu pictures ===####
+###- TNO v1.5.0 - The Ruin, September 29th 2023
+
+## Tanks blowing up desert - SINGLE PLAYER
+TNO_menupic_tooltip_1: "§FWe have been §ntolerant§! to a fault, even of criticised §Oexcesses§!; but everything has its §Rlimits.§!§!"
+
+## PRI Rally - MULTIPLAYER
+TNO_menupic_tooltip_2: "§FIt has the characteristics of §Rdictatorship§!: the §Wpermanence§!, not of a man, but of a §nparty.§! And of a party that is §munbreakable§!.§!"
+
+## Propaganda poster 1940s - QUIT
+TNO_menupic_tooltip_3: "§FWe have the experience of §wsacrifice§!; not that of §Rdisgrace§!. We have known of §Omisfortune§!; not §eabdication§!.§!"
