@@ -1,0 +1,15 @@
+characters = {
+	CHAR_ARA_Xavier_Espot_Zamora = {
+		name = CHAR_ARA_Xavier_Espot_Zamora
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_ARA_Xavier_Espot_Zamora
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_neoconservative
+			traits = {  }
+			id = -1
+		}
+	}
+}

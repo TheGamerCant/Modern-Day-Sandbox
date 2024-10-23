@@ -1,0 +1,12 @@
+﻿capital = 330
+
+set_popularities = {
+	IDEOLOGY_liberal = 100
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_liberal
+	last_election = "2017.6.10"
+	election_frequency = 48
+	elections_allowed = yes
+}

@@ -1,0 +1,15 @@
+﻿capital = 780
+
+set_popularities = {
+	IDEOLOGY_social_democrat = 100
+}
+
+recruit_character = CHAR_GNA_Alpha_Conde
+promote_character = CHAR_GNA_Alpha_Conde
+
+set_politics = {
+	ruling_party = IDEOLOGY_social_democrat
+	last_election = "2020.10.18"
+	election_frequency = 48
+	elections_allowed = yes
+}

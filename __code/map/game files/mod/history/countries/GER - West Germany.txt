@@ -1,0 +1,17 @@
+﻿capital = 994
+
+set_popularities = {
+	IDEOLOGY_social_democrat = 38
+	IDEOLOGY_conservative = 41
+	IDEOLOGY_liberal = 12
+	IDEOLOGY_moderate_communist = 2
+	IDEOLOGY_hardline_communist = 2
+	IDEOLOGY_fascist = 5
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_social_democrat
+	last_election = "1976.10.3"
+	election_frequency = 48
+	elections_allowed = yes
+}

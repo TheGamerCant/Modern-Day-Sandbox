@@ -1,0 +1,19 @@
+state={
+	id=553
+	name="STATE_553"
+	history={
+		owner = LEB
+		add_core_of = LEB
+		victory_points = { 13722 20 }
+		victory_points = { 1108 8 }
+		victory_points = { 13721 5 }
+		victory_points = { 11919 4 }
+	}
+	provinces={
+		792 1108 11919 13721 13722 13723
+	}
+	manpower = 4972000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_thirtysix
+}

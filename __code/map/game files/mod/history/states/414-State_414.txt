@@ -1,0 +1,15 @@
+state={
+	id=414
+	name="STATE_414"
+	history={
+		owner = IRN
+		add_core_of = IRN
+	}
+	provinces={
+		1986 7990 10759 10890 10913 11249 12739 12809 12852 12895 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_eight
+}

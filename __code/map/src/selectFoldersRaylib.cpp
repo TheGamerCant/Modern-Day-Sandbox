@@ -82,7 +82,7 @@ void returnDirectoriesFromGUI(std::filesystem::path& modDirectory, std::filesyst
     std::filesystem::path currentDirectory = std::filesystem::current_path();
     std::ofstream file("file_directories.txt", std::ios::out | std::ios::binary);
 
-    if (file.is_open()) {      
+    if (file.is_open()) {
         file << "mod_directory=\"" << modDirectory << "\"\nvanilla_directory=\"" << vanillaDirectory << "\"";
         file.close();
     }

@@ -1,0 +1,163 @@
+USA_protesters_system_tab = {
+	USA_end_blm_protests = {
+        available = {
+            
+			custom_trigger_tooltip = {
+				tooltip = USA_end_blm_protests_trigger	
+				check_variable = { USA_blm_support_val > 79 }	
+				has_country_flag = USA_completed_appeal_to_silent_majority
+			}
+			
+        }
+		visible = {
+			hidden_trigger = {
+				has_country_flag = USA_completed_appeal_to_silent_majority
+			}
+		}
+        icon = generic_nationalism
+        fire_only_once = yes
+		cost = 75
+        days_remove = 15
+        remove_effect = {
+			custom_effect_tooltip =  USA_end_blm_protests_tt
+			set_country_flag = USA_dealt_with_blm
+			add_stability = 0.08
+        }
+    }
+
+	USA_blm_promise_change = {
+        icon = generic_nationalism
+        fire_only_once = no
+		cost = 35
+        days_remove = 5
+		days_re_enable = 60
+        remove_effect = {
+			USA_increase_blm_support = yes
+			add_days_mission_timeout = {
+				mission = blm_organizing_protest_mission
+				days = 10
+			}
+        }
+    }
+
+	USA_progressives_promise_change = {
+        icon = generic_nationalism
+        fire_only_once = no
+		cost = 35
+        days_remove = 5
+		days_re_enable = 60
+        remove_effect = {
+			USA_increase_progressives_support = yes
+			add_days_mission_timeout = {
+				mission = progressives_organizing_protest_mission
+				days = 10
+			}
+        }
+    }
+
+	USA_patriots_promise_change = {
+        icon = generic_nationalism
+        fire_only_once = no
+		cost = 35
+        days_remove = 5
+		days_re_enable = 60
+        remove_effect = {
+			USA_increase_patriots_support = yes
+			add_days_mission_timeout = {
+				mission = patriots_organizing_protest_mission
+				days = 10
+			}
+        }
+    }
+	blm_organizing_protest_mission = {
+		activation = {
+			hidden_trigger = {
+				NOT = { has_country_flag = USA_dealt_with_blm }
+			}
+		}
+		available = {
+			hidden_trigger = {
+				has_country_flag = USA_dealt_with_blm 
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				has_country_flag = USA_dealt_with_blm
+			}
+		}
+		icon = revolt 
+		is_good = no
+		days_mission_timeout = 90
+		selectable_mission = no
+		timeout_effect = {
+			USA_decrease_blm_support = yes
+			hidden_effect = {
+				activate_mission = blm_organizing_protest_mission
+			}
+		}
+	}
+
+	progressives_organizing_protest_mission = {
+		activation = {
+			hidden_trigger = {
+				NOT = { has_country_flag = USA_dealt_with_progressives }
+			}
+		}
+		available = {
+			hidden_trigger = {
+				has_country_flag = USA_dealt_with_progressives 
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				has_country_flag = USA_dealt_with_progressives
+			}
+		}
+		icon = revolt 
+		is_good = no
+		days_mission_timeout = 80
+		selectable_mission = no
+		timeout_effect = {
+			USA_decrease_progressives_support = yes
+			add_popularity = {
+				ideology = IDEOLOGY_social_democrat
+				popularity = 0.02
+			}
+			hidden_effect = {
+				activate_mission = progressives_organizing_protest_mission
+			}
+		}
+	}
+
+	patriots_organizing_protest_mission = {
+		activation = {
+			hidden_trigger = {
+				NOT = { has_country_flag = USA_dealt_with_patriots }
+			}
+		}
+		available = {
+			hidden_trigger = {
+				has_country_flag = USA_dealt_with_patriots 
+			}
+		}
+		cancel_trigger = {
+			hidden_trigger = {
+				has_country_flag = USA_dealt_with_patriots
+			}
+		}
+		icon = revolt 
+		is_good = no
+		days_mission_timeout = 80
+		selectable_mission = no
+		timeout_effect = {
+			USA_decrease_patriots_support = yes
+			add_popularity = {
+				ideology = IDEOLOGY_populist
+				popularity = 0.02
+			}
+			hidden_effect = {
+				activate_mission = patriots_organizing_protest_mission
+			}
+		}
+	}
+}

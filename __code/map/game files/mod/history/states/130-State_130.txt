@@ -1,0 +1,23 @@
+state={
+	id=130
+	name="STATE_130"
+	history={
+		owner = GBR
+		add_core_of = GBR
+		add_core_of = ENG
+		
+		victory_points = { 9315 15 }
+		victory_points = { 9379 25 }
+		victory_points = { 13427 3 }
+		victory_points = { 11297 10 }
+		victory_points = { 13426 8 }
+		victory_points = { 9332 6 }
+	}
+	provinces={
+		6268 9269 9315 9332 9379 9397 11297 11317 13423 13424 13425 13426 13427 13428 
+	}
+	manpower = 5491746
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_thirtySix
+}

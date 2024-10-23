@@ -1,0 +1,15 @@
+state = {
+	id = 1050
+	name = "STATE_1050"
+	history = {
+		owner = INE
+		add_core_of = INE
+	}
+	provinces = {
+		7658 10509 12488 1648 8360
+	}
+	manpower = 5512000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_thirtyone
+}

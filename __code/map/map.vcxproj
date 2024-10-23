@@ -18,10 +18,23 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\func.cpp" />
+    <ClCompile Include="src\loadMap.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\selectFolders.cpp" />
+    <ClCompile Include="src\selectFoldersRaylib.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\func.hpp" />
+    <ClInclude Include="src\loadMap.hpp" />
+    <ClInclude Include="src\mapTypes.hpp" />
+    <ClInclude Include="src\selectFolders.hpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{76fe54d0-aa86-4cd8-b54a-4ace229c48fd}</ProjectGuid>
+    <ProjectGuid>{b8581be3-f62c-4b0e-9045-6e5cb25fb1d5}</ProjectGuid>
     <RootNamespace>map</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -133,19 +146,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="src\func.cpp" />
-    <ClCompile Include="src\loadMap.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\selectFolders.cpp" />
-    <ClCompile Include="src\selectFoldersRaylib.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\func.hpp" />
-    <ClInclude Include="src\loadMap.hpp" />
-    <ClInclude Include="src\mapTypes.hpp" />
-    <ClInclude Include="src\selectFolders.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

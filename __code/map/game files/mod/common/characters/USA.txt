@@ -1,0 +1,45 @@
+characters = {
+	#COUNTRY LEADERS
+	CHAR_USA_Hillary_Clinton = {
+		name = CHAR_USA_Hillary_Clinton
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_USA_Hillary_Clinton
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_neoliberal
+			traits = {  }
+			id = -1
+		}
+		gender = female
+	}
+
+	CHAR_USA_Mitt_Romney = {
+		name = CHAR_USA_Mitt_Romney
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_USA_Mitt_Romney
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_neoconservative
+			traits = {  }
+			id = -1
+		}
+	}
+
+	CHAR_USA_Donald_Trump = {
+		name = CHAR_USA_Donald_Trump
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_USA_Donald_Trump
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_populist
+			traits = {  }
+			id = -1
+		}
+	}
+}

@@ -1,0 +1,20 @@
+
+state={
+	id=1027
+	name="STATE_1027"
+
+	history={
+		owner = GER
+		add_core_of = GER
+		
+		victory_points = { 13506 10 }
+	}
+
+	provinces={
+		13506 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_eight
+	local_supplies=0.500
+}

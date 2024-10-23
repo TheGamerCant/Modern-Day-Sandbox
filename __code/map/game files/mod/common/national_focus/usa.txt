@@ -1,0 +1,392 @@
+focus_tree = {
+	id = USA_tree_protests
+	
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			original_tag = USA
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1600 }
+	default = no
+
+
+	focus = {
+		id = USA_calm_down_protesters
+		icon = GFX_unknown
+		x = 10
+		y = 0
+		cost = 35
+		search_filters = {
+			
+		}
+		cancelable = no
+		available={
+		}
+		completion_reward={
+			country_event = { id = usa_events.2  } 
+			add_stability = 0.05
+
+			add_days_mission_timeout = {
+				mission = blm_organizing_protest_mission
+				days = 20
+			}
+			USA_increase_blm_support = yes
+			USA_increase_progressives_support = yes
+			USA_increase_patriots_support = yes
+		}
+	}
+
+	focus = {
+		id = USA_meet_with_sanders
+		icon = GFX_unknown
+		x = -2
+		y = 1
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_calm_down_protesters }
+		mutually_exclusive = { focus = USA_meet_with_trump }
+		available={
+		}
+		completion_reward={
+			USA_decrease_patriots_support = yes
+			USA_increase_progressives_support = yes
+			country_event = { id = usa_events.3 } 
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = -0.1
+				tooltip_side = USA_bernie_bop_side
+			}
+		}
+	}
+
+
+	focus = {
+		id = USA_address_economic_inequality
+		icon = GFX_unknown
+		x = -3
+		y = 2
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_meet_with_sanders }
+		available={
+		}
+		completion_reward={
+			USA_increase_progressives_support_10 = yes
+		}
+	}
+
+	focus = {
+		id = USA_support_for_new_green_deal
+		icon = GFX_unknown
+		x = -2
+		y = 3
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_address_economic_inequality }
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+
+	focus = {
+		id = USA_empower_labor_unions
+		icon = GFX_unknown
+		x = -4
+		y = 3
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_address_economic_inequality }
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+
+	focus = {
+		id = USA_strengthen_worker_protections
+		icon = GFX_unknown
+		x = -3
+		y = 4
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_empower_labor_unions }
+		prerequisite = { focus = USA_support_for_new_green_deal }
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+	
+
+	focus = {
+		id = USA_meet_with_trump
+		icon = GFX_unknown
+		x = 2
+		y = 1
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_calm_down_protesters }
+		mutually_exclusive = { focus = USA_meet_with_sanders }
+		available={
+		}
+		completion_reward={
+			USA_increase_patriots_support = yes
+			USA_decrease_progressives_support = yes
+			country_event = { id = usa_events.4 } 
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = 0.1
+				tooltip_side = USA_trump_bop_side
+			}
+		}
+	}
+
+	
+	focus = {
+		id = USA_condemn_radical_protesters
+		icon = GFX_unknown
+		x = 3
+		y = 2
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_meet_with_trump }
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+
+	focus = {
+		id = USA_support_for_small_businesses
+		icon = GFX_unknown
+		x = 2
+		y = 3
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_condemn_radical_protesters }
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+
+	focus = {
+		id = USA_law_and_order
+		icon = GFX_unknown
+		x = 4
+		y = 3
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_condemn_radical_protesters }
+		
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+
+	focus = {
+		id = USA_america_first
+		icon = GFX_unknown
+		x = 3
+		y = 4
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_support_for_small_businesses }
+		prerequisite = { focus = USA_law_and_order }
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+
+
+
+	
+	focus = {
+		id = USA_reform_police_practices
+		icon = GFX_unknown
+		x = -1
+		y = 2
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_meet_with_trump focus = USA_meet_with_sanders }
+		mutually_exclusive = { focus = USA_deploy_national_guard }
+		available={
+		}
+		completion_reward={
+			USA_increase_blm_support = yes
+			add_timed_idea = {
+				idea = USA_police_reforms
+				days = 180
+			}
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = -0.05
+				tooltip_side = USA_bernie_bop_side
+			}
+		}
+	}
+	focus = {
+		id = USA_deploy_national_guard
+		icon = GFX_unknown
+		x = 1
+		y = 2
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		mutually_exclusive = { focus = USA_reform_police_practices }
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_meet_with_trump focus = USA_meet_with_sanders }
+		available={
+		}
+		completion_reward={
+			USA_decrease_blm_support = yes
+			add_manpower = -50000
+			army_experience = 15
+			add_power_balance_value = {
+				id = USA_power_balance
+				value = 0.05
+				tooltip_side = USA_trump_bop_side	
+			}
+			add_days_mission_timeout = {
+				mission = blm_organizing_protest_mission
+				days = 25
+			}
+			add_days_mission_timeout = {
+				mission = progressives_organizing_protest_mission
+				days = 25
+			}
+			add_days_mission_timeout = {
+				mission = patriots_organizing_protest_mission
+				days = 25
+			}
+		}
+	}
+
+	focus = {
+		id = USA_appeal_to_silent_majority
+		icon = GFX_unknown
+		x = 0
+		y = 3
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_deploy_national_guard focus = USA_reform_police_practices }
+		available={
+		}
+		completion_reward={
+			set_country_flag = USA_completed_appeal_to_silent_majority
+			unlock_decision_tooltip = USA_end_blm_protests
+		}
+	}
+
+	focus = {
+		id = USA_blame_opposition
+		icon = GFX_unknown
+		x = -1
+		y = 4
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		prerequisite = { focus = USA_appeal_to_silent_majority  }
+		mutually_exclusive = { focus = USA_cooperate_with_opposition }
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+
+	focus = {
+		id = USA_cooperate_with_opposition
+		icon = GFX_unknown
+		x = 1
+		y = 4
+		cost = 35
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		mutually_exclusive = { focus = USA_blame_opposition }
+		prerequisite = { focus = USA_appeal_to_silent_majority  }
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+
+	focus = {
+		id = USA_knock_at_white_house
+		icon = GFX_unknown
+		x = 0
+		y = 5
+		cost = 60
+		relative_position_id = USA_calm_down_protesters
+		search_filters = {
+			
+		}
+		available = {
+			NOT = { has_active_mission = blm_organizing_protest_mission }
+			NOT = { has_active_mission = progressives_organizing_protest_mission }
+			NOT = { has_active_mission = patriots_organizing_protest_mission }
+		}
+		prerequisite = { focus = USA_strengthen_worker_protections focus = USA_america_first  }
+		prerequisite = { focus = USA_cooperate_with_opposition focus = USA_blame_opposition  }
+		available={
+		}
+		completion_reward={
+			
+		}
+	}
+}

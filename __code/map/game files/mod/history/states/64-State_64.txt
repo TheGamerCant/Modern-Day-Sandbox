@@ -1,0 +1,23 @@
+		
+state={
+	id=64
+	name="STATE_64"
+
+	history={
+		owner = GER
+		add_core_of = DDR
+		add_core_of = GER
+
+		victory_points = { 13526 5 }
+		victory_points = { 9456 5 }
+		victory_points = { 375 3 }
+	}
+
+	provinces={
+		375 3367 3499 9456 11219 13526 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_eight
+	local_supplies=0.500
+}

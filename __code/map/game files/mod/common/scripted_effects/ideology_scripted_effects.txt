@@ -1,0 +1,51 @@
+get_country_macro_ideology_drift={
+	set_variable = { country_far_right_drift = modifier@far_right_drift }
+	divide_variable = { country_far_right_drift = 6 }
+	
+	set_variable = { western_drift = modifier@far_right_drift }
+	divide_variable = { country_western_drift = 4 }
+	
+	set_variable = { country_far_left_drift = modifier@far_left_drift }
+	divide_variable = { country_far_left_drift = 5 }
+}
+
+get_country_macro_ideology_acceptance={
+	set_variable = { country_far_right_acceptance = modifier@far_right_acceptance }
+#	divide_variable = { country_far_right_acceptance = 6 }
+	
+	set_variable = { western_acceptance = modifier@far_right_acceptance }
+#	divide_variable = { country_western_acceptance = 4 }
+	
+	set_variable = { country_far_left_acceptance = modifier@far_left_acceptance }
+#	divide_variable = { country_far_left_acceptance = 5 }
+}
+
+#get_country_ruling_party_drift_modifier_acceptance={
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_fascist_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_ultranationalist_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_right_despotist_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_fundamentalist_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_monarchist_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_populist_drift_from_ruling_party_drift_dynamic_modifier }
+#	
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_libertarian_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_conservative_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_liberal_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_social_democrat_drift_from_ruling_party_drift_dynamic_modifier }
+#	
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_socialist_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_moderate_communist_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_hardline_communist_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_left_despotist_drift_from_ruling_party_drift_dynamic_modifier }
+#	remove_dynamic_modifier = { modifier = IDEOLOGY_anarchist_drift_from_ruling_party_drift_dynamic_modifier }
+#	meta_effect={
+#		text={
+#			add_dynamic_modifier = {
+#				modifier = [CURRENT_IDEOLOGY]_drift_from_ruling_party_drift_dynamic_modifier
+#			}
+#			
+#		}
+#		CURRENT_IDEOLOGY = "[?THIS.current_party_ideology_group.GetTokenKey]"
+#		debug = yes
+#	}
+#}

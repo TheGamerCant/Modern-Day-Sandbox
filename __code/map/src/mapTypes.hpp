@@ -28,11 +28,11 @@ namespace PDX {
         uint8_t blue;
         std::string name;
 
-        terrain():
+        terrain() :
             naval(0), is_water(0), red(0), green(0), blue(0), name("") {}
 
-        terrain(bool naval, bool is_water, uint8_t red, uint8_t green, uint8_t blue, std::string& name):
-            naval(naval), is_water(is_water), red (red), green(green), blue(blue), name(name){}
+        terrain(bool naval, bool is_water, uint8_t red, uint8_t green, uint8_t blue, std::string& name) :
+            naval(naval), is_water(is_water), red(red), green(green), blue(blue), name(name) {}
     };
 
     class building {
@@ -44,9 +44,9 @@ namespace PDX {
         bool only_coastal;
         bool is_port;
 
-        building():
+        building() :
             name(""), provincial(0), show_on_map(0), max_level(0), only_coastal(0), is_port(0) {}
-        building(std::string& name, bool provincial, uint8_t show_on_map, uint8_t max_level, bool only_coastal, bool is_port):
+        building(std::string& name, bool provincial, uint8_t show_on_map, uint8_t max_level, bool only_coastal, bool is_port) :
             name(name), provincial(provincial), show_on_map(0), max_level(show_on_map), only_coastal(only_coastal), is_port(is_port) {}
     };
 
@@ -68,16 +68,16 @@ namespace PDX {
         uint8_t green;
         uint8_t blue;
         bool dynamic;
-        std::vector<state *> states;
+        std::vector<state*> states;
 
         country() :
-        tag("ZZZ"), red(0), green(0), blue(0), dynamic(0) {}
+            tag("ZZZ"), red(0), green(0), blue(0), dynamic(0) {}
 
         country(std::string& tag, uint8_t red, uint8_t green, uint8_t blue, bool dynamic) :
-        tag(tag), red(red), green(green), blue(blue), dynamic(dynamic) {}
+            tag(tag), red(red), green(green), blue(blue), dynamic(dynamic) {}
 
         country(std::string& tag, uint8_t red, uint8_t green, uint8_t blue, bool dynamic, std::vector<state*> states) :
-        tag(tag), red(red), green(green), blue(blue), dynamic(dynamic), states(states) {}
+            tag(tag), red(red), green(green), blue(blue), dynamic(dynamic), states(states) {}
 
         void HSVToRGB(double H, double S, double V) {
             double C = V * S;
@@ -133,7 +133,7 @@ namespace PDX {
         std::string name;
 
         state_category() :
-            building_slots(0), red(0), green(0), blue(0), name(""){}
+            building_slots(0), red(0), green(0), blue(0), name("") {}
 
         state_category(uint8_t building_slots, uint8_t red, uint8_t green, uint8_t blue, std::string& name) :
             building_slots(building_slots), red(red), green(green), blue(blue), name(name) {}
@@ -144,10 +144,10 @@ namespace PDX {
         uint16_t id;
 
         state() :
-        id(0) {}
+            id(0) {}
 
         state(int id) :
-        id(id) {}
+            id(id) {}
     };
 
 
@@ -189,3 +189,4 @@ namespace PDX {
         }
     };
 }
+

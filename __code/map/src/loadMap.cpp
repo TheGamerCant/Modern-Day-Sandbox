@@ -182,7 +182,7 @@ static void loadCountryColours(const std::filesystem::path& vanillaGamePath, con
 
 			if (colourType == "hsv" || colourType == "HSV") {
 				if (isFloat(v1) && isFloat(v2) && isFloat(v3)) country.HSVToRGB(std::stod(v1), std::stod(v2), std::stod(v3));
-				
+
 			}
 			else {
 				if (isInt(v1)) country.red = std::stoi(v1);
@@ -248,6 +248,8 @@ static void loadCountries(const std::filesystem::path& vanillaGamePath, const st
 
 	std::regex whiteSpaceRegex("\\s+");
 	std::regex forwardSlashRegex("/");
+	std::regex countryRegex(R"(\s*(\w{3})\s*=\s*\"(.+)\")");
+	std::regex dynamicRegex(R"(dynamic_tags\s*=\s*yes\")");
 
 	for (const auto& file : filesVector) {
 		std::string line;
@@ -255,19 +257,27 @@ static void loadCountries(const std::filesystem::path& vanillaGamePath, const st
 		bool dynamic = false;
 
 		while (getline(fileThis, line)) {
+			std::smatch match;
+			std::smatch match2;
 			std::string lineNoSpaces = regex_replace(line, whiteSpaceRegex, "");
-			size_t hashPos = lineNoSpaces.find('#');
-			if (hashPos != std::string::npos) {
-				lineNoSpaces = lineNoSpaces.substr(0, hashPos);
-			}
-			if (lineNoSpaces.substr(0, 16) == "dynamic_tags=yes") dynamic = true;
-			PDX::country T_country;
-			T_country.tag = lineNoSpaces.substr(0,3);
-			T_country.file = lineNoSpaces.substr(5, lineNoSpaces.length()-6);
-			T_country.file = regex_replace(T_country.file, forwardSlashRegex, "\\");
-			T_country.dynamic = dynamic;
 
-			countriesArray.vector.push_back(T_country);
+			size_t hashPos = lineNoSpaces.find('#');
+			if (hashPos != std::string::npos) lineNoSpaces = lineNoSpaces.substr(0, hashPos);
+
+			if (regex_search(lineNoSpaces, match, dynamicRegex)) dynamic = true;
+
+			if (regex_search(lineNoSpaces, match2, countryRegex)) {
+				PDX::country T_country;
+
+
+
+				T_country.tag = match2[1];
+				T_country.file = match2[2];
+				T_country.file = regex_replace(T_country.file, forwardSlashRegex, "\\");
+				T_country.dynamic = dynamic;
+
+				countriesArray.vector.push_back(T_country);
+			}
 		}
 	}
 

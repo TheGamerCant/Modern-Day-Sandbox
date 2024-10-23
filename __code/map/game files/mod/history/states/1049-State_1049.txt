@@ -1,0 +1,17 @@
+state={
+	id=1049
+	name="STATE_1049"
+	history={
+		owner = ISR
+		add_core_of = ISR
+		add_core_of = PAL
+		add_core_of = SYR
+	}
+	provinces={
+		13720
+	}
+	manpower = 53000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_five
+}

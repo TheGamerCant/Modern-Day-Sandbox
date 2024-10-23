@@ -1,0 +1,23 @@
+
+state={
+	id=1010
+	name="STATE_1010"
+
+	history={
+		owner = GBR
+		add_core_of = GBR
+		add_core_of = ENG
+		
+		victory_points = { 6221 5 }
+		victory_points = { 9268 5 }
+		victory_points = { 9239 6 }
+	}
+
+	provinces={
+		6221 6270 9239 9268 13419 13459 
+	}
+	manpower = 2955984
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_twentyNine
+	local_supplies=0.500
+}

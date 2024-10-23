@@ -1,0 +1,19 @@
+state={
+	id=377
+	name="STATE_377"
+	history={
+		owner = USA
+		add_core_of = USA
+		
+		victory_points = { 12765 5 }
+		victory_points = { 850 1 }
+		victory_points = { 6897 1 }
+	}
+	provinces={
+		850 1793 4796 6897 7747 7821 10573 11814 12765 
+	}
+	manpower = 2545370
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_twentyEight
+}

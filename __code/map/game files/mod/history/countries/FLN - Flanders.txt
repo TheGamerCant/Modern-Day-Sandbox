@@ -1,0 +1,12 @@
+﻿capital = 6
+
+set_popularities = {
+	IDEOLOGY_conservative = 100
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_conservative
+	last_election = "1978.12.17"
+	election_frequency = 36
+	elections_allowed = yes
+}

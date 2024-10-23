@@ -1,0 +1,4 @@
+focus = {
+	current = "USA_calm_down_protesters"
+	progress = 14
+}

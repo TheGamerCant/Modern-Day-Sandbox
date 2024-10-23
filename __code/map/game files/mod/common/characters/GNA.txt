@@ -1,0 +1,15 @@
+characters = {
+	CHAR_GNA_Alpha_Conde = {
+		name = CHAR_GNA_Alpha_Conde
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GNA_Alpha_Conde
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_social_democrat
+			traits = {  }
+			id = -1
+		}
+	}
+}

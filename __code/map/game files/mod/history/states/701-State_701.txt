@@ -1,0 +1,17 @@
+state={
+	id=701
+	name="STATE_701"
+	history={
+		owner = GAM
+		add_core_of = GAM
+		
+		victory_points = { 4989 6 }
+	}
+	provinces={
+		4989 13213 13540 13541 
+	}
+	manpower = 2545865
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_twentyEight
+}

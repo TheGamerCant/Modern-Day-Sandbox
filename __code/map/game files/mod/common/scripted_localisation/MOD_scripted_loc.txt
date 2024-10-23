@@ -1,0 +1,7 @@
+defined_text = {
+    name = GetCountryEventBanner
+	
+	text={
+        localization_key = "EventBannerLoc"
+    }
+}

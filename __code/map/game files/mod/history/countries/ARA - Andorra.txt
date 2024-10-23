@@ -1,0 +1,15 @@
+﻿capital = 1017
+
+recruit_character = CHAR_ARA_Xavier_Espot_Zamora
+promote_character = CHAR_ARA_Xavier_Espot_Zamora
+
+set_popularities = {
+	IDEOLOGY_conservative = 100
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_conservative
+	last_election = "2023.4.2"
+	election_frequency = 48
+	elections_allowed = yes
+}

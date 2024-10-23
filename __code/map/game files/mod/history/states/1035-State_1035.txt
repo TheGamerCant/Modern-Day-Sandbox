@@ -1,0 +1,19 @@
+
+state={
+	id=1035
+	name="STATE_1035"
+
+	history={
+		owner = GHA
+		
+		victory_points = { 13646 5 }
+	}
+
+	provinces={
+		12785 13646 13647 13648 
+	}
+	manpower=2406288
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_twentySeven
+	local_supplies=0.500
+}

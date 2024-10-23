@@ -1,0 +1,18 @@
+﻿capital = 266
+
+set_popularities = {
+	IDEOLOGY_right_despotist = 60		#Khomeini hadn't fully consolidated power yet
+	IDEOLOGY_conservative = 12
+	IDEOLOGY_liberal = 6
+	IDEOLOGY_socialist = 9
+	IDEOLOGY_social_democrat = 6
+	IDEOLOGY_hardline_communist = 4
+	IDEOLOGY_ultranationalist = 3 
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_right_despotist
+	last_election = "1976.3.14"			#Technically the last elections were on the 20th June 1975 but those were under the shah
+	election_frequency = 48
+	elections_allowed = yes
+}

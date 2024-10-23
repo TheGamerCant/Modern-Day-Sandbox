@@ -1,0 +1,22 @@
+state={
+	id=776
+	name="STATE_776"
+	history={
+		owner = BNN
+		add_core_of = BNN
+		
+		victory_points = { 13630 15 }
+		victory_points = { 13631 10 }
+		victory_points = { 13635 4 }
+		victory_points = { 13637 5 }
+		victory_points = { 12874 2 }
+		victory_points = { 13633 1 }
+	}
+	provinces={
+		10919 12874 12762 13630 13631 13632 13633 13634 13635 13636 13637 13638 
+	}
+	manpower = 13754688
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_fifty
+}

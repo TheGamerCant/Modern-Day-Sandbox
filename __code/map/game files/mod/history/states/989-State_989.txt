@@ -1,0 +1,23 @@
+
+state={
+	id=989
+	name="STATE_989"
+
+	history={
+		owner = USA
+		add_core_of = USA
+		
+		victory_points = { 7315 20 }
+		victory_points = { 7386 8 }
+		victory_points = { 10271 5 }
+		victory_points = { 10242 1 }
+	}
+
+	provinces={
+		4296 4398 7315 7386 10157 10242 10271 
+	}
+	manpower = 6347975
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_thirtyEight
+	local_supplies=0.500
+}

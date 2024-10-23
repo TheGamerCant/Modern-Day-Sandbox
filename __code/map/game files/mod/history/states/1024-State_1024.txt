@@ -1,0 +1,21 @@
+
+state={
+	id=1024
+	name="STATE_1024"
+
+	history={
+		owner = POL
+		add_core_of = POL
+		
+		victory_points = { 11515 2 }
+		victory_points = { 9439 3 }
+	}
+
+	provinces={
+		9439 11515 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_eight
+	local_supplies=0.500
+}

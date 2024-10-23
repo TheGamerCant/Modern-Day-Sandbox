@@ -1,0 +1,29 @@
+characters = {
+	CHAR_PRC_Xi_Jinping = {
+		name = CHAR_PRC_Xi_Jinping
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PRC_Xi_Jinping
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_hardline_communist
+			traits = {  }
+			id = -1
+		}
+	}
+
+	CHAR_PRC_Mao_Yuanxin = {
+		name = CHAR_PRC_Mao_Yuanxin
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_PRC_Mao_Yuanxin
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_hardline_communist
+			traits = {  }
+			id = -1
+		}
+	}
+}

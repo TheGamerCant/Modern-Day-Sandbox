@@ -1,0 +1,9 @@
+on_actions = {
+	on_startup = {
+		effect={
+			USA = {
+				country_event = { id = usa_events.1 days = 20 } #Hillary's inauguration
+			}
+		}
+	} 
+}

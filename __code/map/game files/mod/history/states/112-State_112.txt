@@ -1,0 +1,20 @@
+state={
+	id=112
+	name="STATE_112"
+	history={
+		owner = POR
+		add_core_of = POR
+		victory_points = { 11805 25 }
+		victory_points = { 13705 5 }
+		victory_points = { 13706 8 }
+		victory_points = { 13707 5 }
+		victory_points = { 3861 6 }
+	}
+	provinces={
+		11805 3861 13704 13705 13706 13707
+	}
+	manpower = 3456000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_thirtyfour
+}

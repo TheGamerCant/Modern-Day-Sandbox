@@ -1,0 +1,23 @@
+
+state={
+	id=1034
+	name="STATE_1034"
+
+	history={
+		owner = NGA
+		add_core_of = NGA
+		
+		victory_points = { 13565 20 }
+		victory_points = { 12817 2 }
+		victory_points = { 13585 7 }
+		victory_points = { 13596 2 }
+	}
+
+	provinces={
+		12731 12817 12900 13565 13566 13567 13583 13584 13585 13586 13587 13588 13589 13590 13591 13592 13594 13596 
+	}
+	manpower=22743300
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_sixty
+	local_supplies=0.500
+}

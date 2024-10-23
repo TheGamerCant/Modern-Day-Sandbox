@@ -1,0 +1,15 @@
+state = {
+	id = 1062
+	name = "STATE_1062"
+	history = {
+		owner = VIN
+		add_core_of = VIN
+	}
+	provinces = {
+		10129 10103 4529 12075 10075 12319
+	}
+	manpower = 4911000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_eleven
+}

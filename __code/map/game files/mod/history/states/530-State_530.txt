@@ -1,0 +1,15 @@
+state={
+	id=530
+	name="STATE_530"
+	history={
+		owner = JAP
+		add_core_of = JAP
+	}
+	provinces={
+		4094 4179 7046 7197 9965 11997 12028 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_eight
+}

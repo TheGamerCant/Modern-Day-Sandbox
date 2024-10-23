@@ -1,2 +1,342 @@
 ﻿l_english:
- # blank
+ ZZZ:0 "Hello World"
+ ZZZ_DEF:0 "Hello Worldistan"
+ ZZZ_ADJ:0 "Hello Worldman"
+ 
+ USA:0 "United States of America"
+ USA_DEF:0 "the United States of America"
+ USA_ADJ:0 "America"
+ 
+ GBR:0 "United Kingdom"
+ GBR_DEF:0 "the United Kingdom of Great Britain and Northern Ireland"
+ GBR_ADJ:0 "British"
+ 
+ ENG:0 "England"
+ ENG_DEF:0 "the Kingdom of England"
+ ENG_ADJ:0 "English"
+ 
+ SCT:0 "Scotland"
+ SCT_DEF:0 "the Kingdom of Scotland"
+ SCT_ADJ:0 "Scottish"
+ 
+ WLS:0 "Wales"
+ WLS_DEF:0 "the Kingdom of Wales"
+ WLS_ADJ:0 "English"
+ 
+ ULS:0 "Northern Ireland"
+ ULS_DEF:0 "the Irish Union of Protestants and Catholics"
+ ULS_ADJ:0 "Northern Irish"
+ 
+ IRE:0 "Ireland"
+ IRE_DEF:0 "the Republic of Ireland"
+ IRE_ADJ:0 "Irish"
+ 
+ FRA:0 "France"
+ FRA_DEF:0 "the fifth French Republic"
+ FRA_ADJ:0 "French"
+ 
+ BRI:0 "Brittany"
+ BRI_DEF:0 "the Republic of Brittany"
+ BRI_ADJ:0 "Breton"
+ 
+ PLU:0 "Palau"
+ PLU_DEF:0 "the Republic of Palau"
+ PLU_ADJ:0 "Palauan"
+ 
+ MSH:0 "Marshall Islands"
+ MSH_DEF:0 "the Republic of the Marshall Islands"
+ MSH_ADJ:0 "Marshallese"
+ 
+ MCO:0 "Monaco"
+ MCO_DEF:0 "the Principality of Monaco"
+ MCO_ADJ:0 "Monégasque"
+ 
+ CRC:0 "Corsica"
+ CRC_DEF:0 "the Republic of Corsica"
+ CRC_ADJ:0 "Corsican"
+ 
+ BLG:0 "Belgium"
+ BLG_DEF:0 "the Kingdom of Belgium"
+ BLG_ADJ:0 "Belgium"
+ 
+ FLN:0 "Flanders"
+ FLN_DEF:0 "the Republic of Flanders"
+ FLN_ADJ:0 "Flemish"
+ 
+ WAL:0 "Wallonia"
+ WAL_DEF:0 "the Republic of Wallonia"
+ WAL_ADJ:0 "Walloon"
+ 
+ LUX:0 "Luxembourg"
+ LUX_DEF:0 "the Grand Duchy of Luxembourg"
+ LUX_ADJ:0 "Luxembourgish"
+ 
+ ARA:0 "Andorra"
+ ARA_DEF:0 "the Principality of Andorra"
+ ARA_ADJ:0 "Andorran"
+ 
+ POL:0 "Poland"
+ POL_DEF:0 "the Republic of Poland"
+ POL_ADJ:0 "Polish"
+ POL_IDEOLOGY_moderate_communist_DEF:0 "the Polish People's Republic"
+ POL_IDEOLOGY_hardline_communist_DEF:0 "the Polish People's Republic"
+ 
+ PRC:0 "China"
+ PRC_DEF:0 "the People's Republic of China"
+ PRC_ADJ:0 "Chinese"
+ 
+ SOV:0 "Union of Soviet Socialist Republics"
+ SOV_DEF:0 "the Union of Soviet Socialist Republics"
+ SOV_ADJ:0 "Soviet"
+ 
+ IRN:0 "Iran"
+ IRN_DEF:0 "the Islamic Republic of Iran"
+ IRN_ADJ:0 "Iranian"
+ 
+ IRQ:0 "Iraq"
+ IRQ_DEF:0 "the Iraqi Republic"     #Changed to "The Republic of Iraq" in 1992
+ IRQ_ADJ:0 "Iraqi"
+ 
+ JAP:0 "Japan"
+ JAP_DEF:0 "Japan"
+ JAP_ADJ:0 "Japanese"
+ 
+ GER:0 "Germany"
+ GER_DEF:0 "the Federal Republic of Germany"
+ GER_ADJ:0 "German"
+ 
+ DDR:0 "East Germany"
+ DDR_DEF:0 "the German Democratic Republic"
+ DDR_ADJ:0 "German"
+ 
+ EGY:0 "Egypt"
+ EGY_DEF:0 "the Arab Republic of Egypt"
+ EGY_ADJ:0 "Egyptian"
+ 
+ PUE:0 "Puerto Rico"
+ PUE_DEF:0 "the Commonwealth of Puerto Rico"
+ PUE_ADJ:0 "Puerto Rican"
+ 
+ SPA:0 "Spain"
+ SPA_DEF:0 "the Kingdom of Spain"
+ SPA_ADJ:0 "Spanish"
+
+ POR:0 "Portugal"
+ POR_DEF:0 "the Portuguese Republic"
+ POR_ADJ:0 "Portuguese"
+ 
+ GHA:0 "Ghana"
+ GHA_DEF:0 "the Republic of Ghana"
+ GHA_ADJ:0 "Ghanaian"
+ 
+ BKF:0 "Burkina Faso"
+ BKF_DEF:0 "the People's Republic of Burkina Faso"
+ BKF_ADJ:0 "Burkinese"
+ 
+ MLI:0 "Mali"
+ MLI_DEF:0 "the Republic of Mali"
+ MLI_ADJ:0 "Malian"
+ 
+ ALG:0 "Algeria"
+ ALG_DEF:0 "the People's Democratic Republic of Algeria"
+ ALG_ADJ:0 "Algerian"
+ 
+ NGR:0 "Niger"
+ NGR_DEF:0 "the Republic of Niger"
+ NGR_ADJ:0 "Nigerien"
+ 
+ NGA:0 "Nigeria"
+ NGA_DEF:0 "the Federal Republic of Nigeria"
+ NGA_ADJ:0 "Nigerian"
+ 
+ TGO:0 "Togo"
+ TGO_DEF:0 "the Togolese Republic"
+ TGO_ADJ:0 "Togolese"
+ 
+ BNN:0 "Benin"
+ BNN_DEF:0 "the Republic of Benin"
+ BNN_ADJ:0 "Beninese"
+ 
+ LIB:0 "Liberia"
+ LIB_DEF:0 "the Republic of Liberia"
+ LIB_ADJ:0 "Liberian"
+ 
+ GNA:0 "Guinea"
+ GNA_DEF:0 "the Republic of Guinea"
+ GNA_ADJ:0 "Guinean"
+ 
+ IVC:0 "Ivory Coast"
+ IVC_DEF:0 "the Republic of Côte d'Ivoire"
+ IVC_ADJ:0 "Ivorian"
+ 
+ SEL:0 "Sierra Leone"
+ SEL_DEF:0 "the Republic of Sierra Leone"
+ SEL_ADJ:0 "Sierra Leonean"
+ 
+ MRC:0 "Morocco"
+ MRC_DEF:0 "the Kingdom of Morocco"
+ MRC_ADJ:0 "Moroccan"
+ 
+ WSA:0 "Western Sahara"
+ WSA_DEF:0 "the Sahrawi Arab Democratic Republic"
+ WSA_ADJ:0 "Sahrawi"
+ 
+ MAU:0 "Mauritania"
+ MAU_DEF:0 "the Islamic Republic of Mauritania"
+ MAU_ADJ:0 "Mauritanian"
+ 
+ SGL:0 "Senegal"
+ SGL_DEF:0 "the Republic of Senegal"
+ SGL_ADJ:0 "Senegalese"
+ 
+ GAM:0 "The Gambia"
+ GAM_DEF:0 "the Republic of The Gambia"
+ GAM_ADJ:0 "Gambian"
+ 
+ GBU:0 "Guinea-Bissau"
+ GBU_DEF:0 "the Republic of Guinea-Bissau"
+ GBU_ADJ:0 "Bissau-Guinean"
+
+ LIT:0 "Lithuania"
+ LIT_DEF:0 "the Republic of Lithuania"
+ LIT_ADJ:0 "Lithuanian"
+
+ LAT:0 "Latvia"
+ LAT_DEF:0 "the Republic of Latvia"
+ LAT_ADJ:0 "Latvian"
+
+ EST:0 "Estonia"
+ EST_DEF:0 "the Republic of Estonia"
+ EST_ADJ:0 "Estonian"
+
+ BLR:0 "Belarus"
+ BLR_DEF:0 "the Republic of Belarus"
+ BLR_ADJ:0 "Belarusian"
+
+ UKR:0 "Ukraine"
+ UKR_DEF:0 "the Republic of Ukraine"
+ UKR_ADJ:0 "Ukrainian"
+
+ HON:0 "City of Hong Kong"
+ HON_DEF:0 "the City of Hong Kong"
+ HON_ADJ:0 "Hongkonger"
+
+ GIB:0 "Gibraltar"
+ GIB_DEF:0 "the City of Gibraltar"
+ GIB_ADJ:0 "Gibraltarian"
+
+ ROC:0 "Taiwan"
+ ROC_DEF:0 "the Republic of Taiwan"
+ ROC_ADJ:0 "Taiwanese"
+
+ HOL:0 "The Netherlands"
+ HOL_DEF:0 "the Kingdom of the Netherlands"
+ HOL_ADJ:0 "Dutch"
+
+ MON:0 "Mongolia"
+ MON_DEF:0 "the State of Mongolia"
+ MON_ADJ:0 "Mongolian"
+
+ DPK:0 "North Korea"
+ DPK_DEF:0 "the Democratic People's Republic of Korea"
+ DPK_ADJ:0 "Korean"
+
+ ROK:0 "South Korea"
+ ROK_DEF:0 "the Republic of Korea"
+ ROK_ADJ:0 "Korean"
+
+ AFG:0 "Afganistan"
+ AFG_DEF:0 "the Islamic Republic of Afghanistan"
+ AFG_ADJ:0 "Afgan"
+
+ PAK:0 "Pakistan"
+ PAK_DEF:0 "the Islamic Republic of Pakistan"
+ PAK_ADJ:0 "Pakistani"
+
+ SYR:0 "Syria"
+ SYR_DEF:0 "the Syrian Arab Republic"
+ SYR_ADJ:0 "Syrian"
+
+ IND:0 "India"
+ IND_DEF:0 "the Republic of India"
+ IND_ADJ:0 "Indian"
+
+ NEP:0 "Nepal"
+ NEP_DEF:0 "the Federal Democratic Republic of Nepal"
+ NEP_ADJ:0 "Nepalese"
+
+ BHU:0 "Bhutan"
+ BHU_DEF:0 "the Kingdom of Bhutan"
+ BHU_ADJ:0 "Bhutanese"
+
+ MYA:0 "Myanmar"
+ MYA_DEF:0 "the Republic of the Union of Myanmar"
+ MYA_ADJ:0 "Burmese"
+
+ BAN:0 "Bangladesh"                                  
+ BAN_DEF:0 "the People's Republic of Bangladesh"                                  
+ BAN_ADJ:0 "Bengali"
+
+ SRI:0 "Sri Lanka"                                  
+ SRI_DEF:0 "the Democratic Socialist Republic of Sri Lanka"                                  
+ SRI_ADJ:0 "Sri Lankan"
+
+ PHI:0 "Philippines"                                  
+ PHI_DEF:0 "the Republic of the Philippines"                                  
+ PHI_ADJ:0 "Filipino"
+
+ VIN:0 "Vietnam"                                  
+ VIN_DEF:0 "the Socialist Republic of Vietnam"                                  
+ VIN_ADJ:0 "Vietnamese"
+
+ CAM:0 "Cambodia"                                  
+ CAM_DEF:0 "the Kingdom of Cambodia"                                  
+ CAM_ADJ:0 "Cambodian"
+
+ LAO:0 "Laos"                                  
+ LAO_DEF:0 "the Lao People's Democratic Republic"                                  
+ LAO_ADJ:0 "Lao"
+
+ THA:0 "Thailand"                                  
+ THA_DEF:0 "the Kingdom of Thailand"                                  
+ THA_ADJ:0 "Thai"
+
+ MAL:0 "Malaysia"                                  
+ MAL_DEF:0 "the Federation of Malaya"                                  
+ MAL_ADJ:0 "Malaysian"
+
+ INE:0 "Indonesia"                                  
+ INE_DEF:0 "the Republic of Indonesia"                                  
+ INE_ADJ:0 "Malaysian"
+
+ ETI:0 "East Timor"                                  
+ ETI_DEF:0 "the Democratic Republic of Timor-Leste"                                  
+ ETI_ADJ:0 "Timorese "
+
+ PAP:0 "Papua New Guinea"                                  
+ PAP_DEF:0 "the Independent State of Papua New Guinea"                                  
+ PAP_ADJ:0 "Papuan"
+
+ AUS:0 "Australia"                                  
+ AUS_DEF:0 "the Commonwealth of Australia"                                  
+ AUS_ADJ:0 "Australian"
+
+ NZL:0 "New Zealand"                                  
+ NZL_DEF:0 "the Commonwealth of New Zealand"                                  
+ NZL_ADJ:0 "New Zealander"
+
+ MLD:0 "Maldives"                                  
+ MLD_DEF:0 "the Republic of Maldives"                                  
+ MLD_ADJ:0 "Maldivian"
+
+ LEB:0 "Lebanon"                                  
+ LEB_DEF:0 "the Lebanese Republic"                                  
+ LEB_ADJ:0 "Lebanese"
+
+ ISR:0 "Israel"                                  
+ ISR_DEF:0 "the State of Israel"                                  
+ ISR_ADJ:0 "Israeli"
+
+ SAU:0 "Saudi Arabia"                                  
+ SAU_DEF:0 "the Kingdom of Saudi Arabia"                                  
+ SAU_ADJ:0 "Saudi"

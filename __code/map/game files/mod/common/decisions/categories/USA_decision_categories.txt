@@ -1,0 +1,12 @@
+USA_protesters_system_tab = {
+	icon = GFX_decision_category_power_struggle
+	priority = 100
+	allowed = {
+
+	}
+	visible_when_empty = yes
+	visible = {
+		original_tag = USA
+	}
+	scripted_gui = USA_protesters_system_scripted_gui
+}

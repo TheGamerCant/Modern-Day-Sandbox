@@ -1,0 +1,15 @@
+state={
+	id=792
+	name="STATE_792"
+	history={
+		owner = SPA
+		add_core_of = SPA
+	}
+	provinces={
+		740 3735 6756 13233 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_eight
+}

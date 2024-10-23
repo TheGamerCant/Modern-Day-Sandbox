@@ -137,7 +137,7 @@ std::vector<std::filesystem::path> findFilesToLoad(std::string folder, std::file
     vanillaGamePath = vanillaGamePath / folder;
     modPath = modPath / folder;
 
-//    std::cout << vanillaGamePath << "\n" << modPath << "\n";
+    //    std::cout << vanillaGamePath << "\n" << modPath << "\n";
 
 
     if (replacePathBool && std::filesystem::exists(modPath) && std::filesystem::is_directory(modPath)) {

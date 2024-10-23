@@ -1,0 +1,32 @@
+bookmarks = {
+	bookmark = {
+		name = "TWENTYTWENTYONE_NAME"
+		desc = "TWENTYTWENTYONE_NAME"
+		date = 2021.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "USA"
+		default = yes
+		
+		"USA"={
+			history = ""
+			ideology = IDEOLOGY_conservative
+		}
+		"SOV"={
+			history = ""
+			ideology = IDEOLOGY_moderate_communist
+		}
+		"PRC"={
+			history = ""
+			ideology = IDEOLOGY_hardline_communist
+		}
+		
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+		}
+	}
+}

@@ -1,0 +1,19 @@
+state={
+	id=32
+	name="STATE_32"
+	history={
+		owner = FRA
+		add_core_of = FRA
+		
+		victory_points = { 6784 5 }
+		victory_points = { 3768 7 }
+		victory_points = { 762 4 }
+	}
+	provinces={
+		762 780 3589 3768 6784 11713 
+	}
+	manpower = 1797744
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_twentyFour
+}

@@ -1,0 +1,18 @@
+state={
+	id=872
+	name="STATE_872"
+	history={
+		owner = AUS
+		add_core_of = AUS
+		victory_points = { 4520 6 }
+		victory_points = { 5206 1 }
+
+	}
+	provinces={
+		1501 1514 1644 2166 2187 4505 4520 4648 7506 7525 7538 8230 10338 10350 10365 10378 12354 12367 12957 5206 10955 10936 10336
+	}
+	manpower = 1528000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_seventeen
+}

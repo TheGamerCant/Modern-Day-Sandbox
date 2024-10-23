@@ -1,0 +1,20 @@
+
+state={
+	id=1006
+	name="STATE_1006"
+
+	history={
+		owner = IRE
+		add_core_of = IRE
+		
+		victory_points = { 11293 20 }
+	}
+
+	provinces={
+		11293 
+	}
+	manpower = 1431420
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_twentyTwo
+	local_supplies=0.500
+}

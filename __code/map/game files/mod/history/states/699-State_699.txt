@@ -1,0 +1,16 @@
+state={
+	id=699
+	name="STATE_699"
+	history={
+		owner = MRC
+		add_core_of = MRC
+		add_core_of = WSA
+	}
+	provinces={
+		4920 5012 8038 8111 10875 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_eight
+}

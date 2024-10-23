@@ -1,0 +1,15 @@
+﻿capital = 700
+
+set_popularities = {
+	IDEOLOGY_liberal = 100
+}
+
+recruit_character = CHAR_SEL_Julius_Maada_Bio
+promote_character = CHAR_SEL_Julius_Maada_Bio
+
+set_politics = {
+	ruling_party = IDEOLOGY_liberal
+	last_election = "2023.6.24"
+	election_frequency = 60
+	elections_allowed = yes
+}

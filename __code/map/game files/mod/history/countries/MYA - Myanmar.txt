@@ -1,0 +1,12 @@
+﻿capital = 288
+
+set_popularities = {
+	IDEOLOGY_right_despotist = 100
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_right_despotist
+	last_election = "2017.12.7"
+	election_frequency = 72
+	elections_allowed = yes
+}

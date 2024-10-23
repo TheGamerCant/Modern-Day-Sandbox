@@ -1,0 +1,60 @@
+on_actions = {
+	on_startup = {
+		effect={						#Banners declared in ZZZ - ZZZ.txt
+			every_possible_country={
+				set_variable = { language = 0 }		#English
+			}
+			
+			SOV = { set_variable = { language = 1 } } 	#Russian
+			BLR = { set_variable = { language = 1 } }
+			
+			GER = { set_variable = { language = 2 } } 	#German
+			DDR = { set_variable = { language = 2 } } 
+			LUX = { set_variable = { language = 2 } } 
+
+			FRA = { set_variable = { language = 3 } } 	#French
+			BLG = { set_variable = { language = 3 } }
+			WAL = { set_variable = { language = 3 } }
+			CRC = { set_variable = { language = 3 } }
+			BRI = { set_variable = { language = 3 } }
+			MCO = { set_variable = { language = 3 } }
+			BKF = { set_variable = { language = 3 } }
+			MLI = { set_variable = { language = 3 } }
+			NGR = { set_variable = { language = 3 } }
+			TGO = { set_variable = { language = 3 } }
+			BNN = { set_variable = { language = 3 } }
+			GNA = { set_variable = { language = 3 } }
+			IVC = { set_variable = { language = 3 } }
+			SGL = { set_variable = { language = 3 } }
+
+			SPA = { set_variable = { language = 4 } }	#Spanish
+			ARA = { set_variable = { language = 4 } }
+			POL = { set_variable = { language = 5 } }	#Polish
+
+			PRC = { set_variable = { language = 6 } }	#Chinese
+			ROC = { set_variable = { language = 6 } }
+			
+			JAP = { set_variable = { language = 7 } }	#Japanese
+			
+			IRQ = { set_variable = { language = 8 } }	#Arabic
+			EGY = { set_variable = { language = 8 } }
+			ALG = { set_variable = { language = 8 } }
+			MRC = { set_variable = { language = 8 } }
+			WSA = { set_variable = { language = 8 } }
+			MAU = { set_variable = { language = 8 } }
+			
+			IRN = { set_variable = { language = 9 } }	#Persian
+			
+			POR = { set_variable = { language = 10 } }	#Portugese
+			GBU = { set_variable = { language = 10 } }
+			
+			UKR = { set_variable = { language = 11 } }  #Ukrainian
+			
+			LIT = { set_variable = { language = 12 } }  #Lithuanian
+			
+			LAT = { set_variable = { language = 13 } }  #Latvian
+			
+			EST = { set_variable = { language = 14 } }  #Estonian
+		}
+	}
+}

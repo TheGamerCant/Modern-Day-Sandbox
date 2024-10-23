@@ -1,0 +1,38 @@
+﻿l_english:
+
+ #USA
+ CHAR_USA_Mitt_Romney: "Mitt Romney"
+ CHAR_USA_Hillary_Clinton: "Hillary Clinton"
+ CHAR_USA_Donald_Trump: "Donald Trump"
+ 
+ #Soviet Union
+ CHAR_SOV_Sergey_Kiriyenko: "Sergey Kiriyenko"
+ 
+ #China
+ CHAR_PRC_Xi_Jinping: "Xi Jinping"
+ CHAR_PRC_Mao_Yuanxin: "Mao Yuanxin"
+ 
+ #UK
+ CHAR_GBR_Theresa_May: "Theresa May"
+ 
+ #Andorra
+ CHAR_ARA_Xavier_Espot_Zamora: "Xavier Espot Zamora"
+ 
+ #Monaco
+ CHAR_MCO_Albert_II: "Albert II"
+ 
+ #Liberia
+ CHAR_LIB_George_Weah: "George Weah"
+ CHAR_LIB_Joseph_Boakai: "Joseph Boakai"
+ 
+ #Sierra Leone
+ CHAR_SEL_Julius_Maada_Bio: "Julius Maada Bio"
+ 
+ #Guinea
+ CHAR_GNA_Alpha_Conde: "Alpha Condé"
+
+ #Ireland
+ CHAR_IRE_Michael_Higgins: "Michael D. Higgins"
+
+ #Hong Kong
+ CHAR_HON_Anson_Chan: "Anson Chan"

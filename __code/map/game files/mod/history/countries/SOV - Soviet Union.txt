@@ -1,0 +1,15 @@
+﻿capital = 219
+
+recruit_character = CHAR_SOV_Sergey_Kiriyenko
+promote_character = CHAR_SOV_Sergey_Kiriyenko
+
+set_popularities = {
+	IDEOLOGY_moderate_communist = 100
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_moderate_communist
+	last_election = "1917.11.25"
+	election_frequency = 36
+	elections_allowed = no
+}

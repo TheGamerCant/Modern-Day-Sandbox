@@ -1,0 +1,16 @@
+state={
+	id=1042
+	name="STATE_1042"
+	history={
+		owner = POR
+		add_core_of = POR
+		victory_points = { 13708 6 }
+		victory_points = { 980 8 }
+	}
+	provinces={
+		970 980 13708
+	}
+	manpower = 293496
+	local_supplies = 0
+	state_category = STATE_CATEGEGORY_seven
+}

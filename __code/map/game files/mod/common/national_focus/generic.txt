@@ -1,0 +1,10 @@
+﻿#removed because it will cause useless lag + many mods have empty generic focus trees
+
+focus_tree = {
+	id = generic_focus
+	
+	country = {
+		factor = 1
+	}
+	default = yes
+}

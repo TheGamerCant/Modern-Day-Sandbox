@@ -1,0 +1,258 @@
+state_categories = {
+        STATE_CATEGEGORY_one = {
+                local_building_slots = 1
+                color = { 3 3 3 }
+        }
+        STATE_CATEGEGORY_two = {
+                local_building_slots = 2
+                color = { 7 7 7 }
+        }
+        STATE_CATEGEGORY_three = {
+                local_building_slots = 3
+                color = { 11 11 11 }
+        }
+        STATE_CATEGEGORY_four = {
+                local_building_slots = 4
+                color = { 15 15 15 }
+        }
+        STATE_CATEGEGORY_five = {
+                local_building_slots = 5
+                color = { 19 19 19 }
+        }
+        STATE_CATEGEGORY_six = {
+                local_building_slots = 6
+                color = { 23 23 23 }
+        }
+        STATE_CATEGEGORY_seven = {
+                local_building_slots = 7
+                color = { 27 27 27 }
+        }
+        STATE_CATEGEGORY_eight = {
+                local_building_slots = 8
+                color = { 31 31 31 }
+        }
+        STATE_CATEGEGORY_nine = {
+                local_building_slots = 9
+                color = { 35 35 35 }
+        }
+        STATE_CATEGEGORY_ten = {
+                local_building_slots = 10
+                color = { 39 39 39 }
+        }
+        STATE_CATEGEGORY_eleven = {
+                local_building_slots = 11
+                color = { 43 43 43 }
+        }
+        STATE_CATEGEGORY_twelve = {
+                local_building_slots = 12
+                color = { 47 47 47 }
+        }
+        STATE_CATEGEGORY_thirteen = {
+                local_building_slots = 13
+                color = { 51 51 51 }
+        }
+        STATE_CATEGEGORY_fourteen = {
+                local_building_slots = 14
+                color = { 55 55 55 }
+        }
+        STATE_CATEGEGORY_fifteen = {
+                local_building_slots = 15
+                color = { 59 59 59 }
+        }
+        STATE_CATEGEGORY_sixteen = {
+                local_building_slots = 16
+                color = { 63 63 63 }
+        }
+        STATE_CATEGEGORY_seventeen = {
+                local_building_slots = 17
+                color = { 67 67 67 }
+        }
+        STATE_CATEGEGORY_eighteen = {
+                local_building_slots = 18
+                color = { 71 71 71 }
+        }
+        STATE_CATEGEGORY_nineteen = {
+                local_building_slots = 19
+                color = { 75 75 75 }
+        }
+        STATE_CATEGEGORY_twenty = {
+                local_building_slots = 20
+                color = { 79 79 79 }
+        }
+        STATE_CATEGEGORY_twentyOne = {
+                local_building_slots = 21
+                color = { 83 83 83 }
+        }
+        STATE_CATEGEGORY_twentyTwo = {
+                local_building_slots = 22
+                color = { 87 87 87 }
+        }
+        STATE_CATEGEGORY_twentyThree = {
+                local_building_slots = 23
+                color = { 91 91 91 }
+        }
+        STATE_CATEGEGORY_twentyFour = {
+                local_building_slots = 24
+                color = { 95 95 95 }
+        }
+        STATE_CATEGEGORY_twentyFive = {
+                local_building_slots = 25
+                color = { 99 99 99 }
+        }
+        STATE_CATEGEGORY_twentySix = {
+                local_building_slots = 26
+                color = { 103 103 103 }
+        }
+        STATE_CATEGEGORY_twentySeven = {
+                local_building_slots = 27
+                color = { 107 107 107 }
+        }
+        STATE_CATEGEGORY_twentyEight = {
+                local_building_slots = 28
+                color = { 111 111 111 }
+        }
+        STATE_CATEGEGORY_twentyNine = {
+                local_building_slots = 29
+                color = { 115 115 115 }
+        }
+        STATE_CATEGEGORY_thirty = {
+                local_building_slots = 30
+                color = { 119 119 119 }
+        }
+        STATE_CATEGEGORY_thirtyOne = {
+                local_building_slots = 31
+                color = { 123 123 123 }
+        }
+        STATE_CATEGEGORY_thirtyTwo = {
+                local_building_slots = 32
+                color = { 127 127 127 }
+        }
+        STATE_CATEGEGORY_thirtyThree = {
+                local_building_slots = 33
+                color = { 131 131 131 }
+        }
+        STATE_CATEGEGORY_thirtyFour = {
+                local_building_slots = 34
+                color = { 135 135 135 }
+        }
+        STATE_CATEGEGORY_thirtyFive = {
+                local_building_slots = 35
+                color = { 139 139 139 }
+        }
+        STATE_CATEGEGORY_thirtySix = {
+                local_building_slots = 36
+                color = { 143 143 143 }
+        }
+        STATE_CATEGEGORY_thirtySeven = {
+                local_building_slots = 37
+                color = { 147 147 147 }
+        }
+        STATE_CATEGEGORY_thirtyEight = {
+                local_building_slots = 38
+                color = { 151 151 151 }
+        }
+        STATE_CATEGEGORY_thirtyNine = {
+                local_building_slots = 39
+                color = { 155 155 155 }
+        }
+        STATE_CATEGEGORY_forty = {
+                local_building_slots = 40
+                color = { 159 159 159 }
+        }
+        STATE_CATEGEGORY_fortyOne = {
+                local_building_slots = 41
+                color = { 163 163 163 }
+        }
+        STATE_CATEGEGORY_fortyTwo = {
+                local_building_slots = 42
+                color = { 167 167 167 }
+        }
+        STATE_CATEGEGORY_fortyThree = {
+                local_building_slots = 43
+                color = { 171 171 171 }
+        }
+        STATE_CATEGEGORY_fortyFour = {
+                local_building_slots = 44
+                color = { 175 175 175 }
+        }
+        STATE_CATEGEGORY_fortyFive = {
+                local_building_slots = 45
+                color = { 179 179 179 }
+        }
+        STATE_CATEGEGORY_fortySix = {
+                local_building_slots = 46
+                color = { 183 183 183 }
+        }
+        STATE_CATEGEGORY_fortySeven = {
+                local_building_slots = 47
+                color = { 187 187 187 }
+        }
+        STATE_CATEGEGORY_fortyEight = {
+                local_building_slots = 48
+                color = { 191 191 191 }
+        }
+        STATE_CATEGEGORY_fortyNine = {
+                local_building_slots = 49
+                color = { 195 195 195 }
+        }
+        STATE_CATEGEGORY_fifty = {
+                local_building_slots = 50
+                color = { 199 199 199 }
+        }
+        STATE_CATEGEGORY_fiftyOne = {
+                local_building_slots = 51
+                color = { 203 203 203 }
+        }
+        STATE_CATEGEGORY_fiftyTwo = {
+                local_building_slots = 52
+                color = { 207 207 207 }
+        }
+        STATE_CATEGEGORY_fiftyThree = {
+                local_building_slots = 53
+                color = { 211 211 211 }
+        }
+        STATE_CATEGEGORY_fiftyFour = {
+                local_building_slots = 54
+                color = { 215 215 215 }
+        }
+        STATE_CATEGEGORY_fiftyFive = {
+                local_building_slots = 55
+                color = { 219 219 219 }
+        }
+        STATE_CATEGEGORY_fiftySix = {
+                local_building_slots = 56
+                color = { 223 223 223 }
+        }
+        STATE_CATEGEGORY_fiftySeven = {
+                local_building_slots = 57
+                color = { 227 227 227 }
+        }
+        STATE_CATEGEGORY_fiftyEight = {
+                local_building_slots = 58
+                color = { 231 231 231 }
+        }
+        STATE_CATEGEGORY_fiftyNine = {
+                local_building_slots = 59
+                color = { 235 235 235 }
+        }
+        STATE_CATEGEGORY_sixty = {
+                local_building_slots = 60
+                color = { 239 239 239 }
+        }
+        STATE_CATEGEGORY_sixtyOne = {
+                local_building_slots = 61
+                color = { 243 243 243 }
+        }
+        STATE_CATEGEGORY_sixtyTwo = {
+                local_building_slots = 62
+                color = { 247 247 247 }
+        }
+        STATE_CATEGEGORY_sixtyThree = {
+                local_building_slots = 63
+                color = { 251 251 251 }
+        }
+        STATE_CATEGEGORY_sixtyFour = {
+                local_building_slots = 64
+                color = { 255 255 255 }
+        }
+}

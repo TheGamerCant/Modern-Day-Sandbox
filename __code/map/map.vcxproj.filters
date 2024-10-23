@@ -18,30 +18,30 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\selectFoldersRaylib.cpp">
+    <ClCompile Include="src\func.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\selectFolders.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\loadMap.cpp">
+    <ClCompile Include="src\selectFoldersRaylib.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\func.cpp">
+    <ClCompile Include="src\loadMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\mapTypes.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\selectFolders.hpp">
+    <ClInclude Include="src\func.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\loadMap.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\func.hpp">
+    <ClInclude Include="src\mapTypes.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\selectFolders.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

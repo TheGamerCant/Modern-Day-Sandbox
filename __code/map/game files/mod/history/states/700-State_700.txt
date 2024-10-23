@@ -1,0 +1,19 @@
+state={
+	id=700
+	name="STATE_700"
+	history={
+		owner = SEL
+		add_core_of = SEL
+		
+		victory_points = { 13530 10 }
+		victory_points = { 2094 4 }
+		victory_points = { 13533 1 }
+	}
+	provinces={
+		2038 2094 13530 13531 13532 13533 13534 
+	}
+	manpower = 8003710
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_fortyOne
+}

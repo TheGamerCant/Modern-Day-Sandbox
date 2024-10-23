@@ -1,0 +1,15 @@
+state={
+	id=605
+	name="STATE_605"
+	history={
+		owner = PRC
+		add_core_of = PRC
+	}
+	provinces={
+		1367 1395 1893 2030 2091 4925 5048 6999 7240 7256 8026 10132 10144 11865 12274 12705 12767 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_eight
+}

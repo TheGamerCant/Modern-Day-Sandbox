@@ -1,0 +1,113 @@
+USA_clamp_values_protesters = {
+	clamp_variable = {
+		var = USA_blm_support_val
+		min = 0
+		max = 100
+	}
+
+	clamp_variable = {
+		var = USA_progressives_support_val
+		min = 0
+		max = 100
+	}
+
+	clamp_variable = {
+		var = USA_patriots_support_val
+		min = 0
+		max = 100
+	}
+}
+
+USA_update_protesters_modifiers = {
+	#BLM adds stab, Progressives consumer goods, patriots manpower
+
+	#STAB
+	set_variable = { USA_blm_stab_factor = 0.15 }
+	set_temp_variable = { temp_divide = USA_blm_support_val }
+	divide_temp_variable = { temp_divide = 100 }
+	multiply_variable = { USA_blm_stab_factor = temp_divide }
+
+	##PP
+
+	set_variable = { USA_blm_pp_factor = 0.1 }
+	set_temp_variable = { temp_divide = USA_blm_support_val }
+	divide_temp_variable = { temp_divide = 100 }
+	multiply_variable = { USA_blm_pp_factor = temp_divide }
+
+	##CONSUMER GOODS
+
+	set_variable = { USA_progressives_consumer_goods_factor = -0.1 }
+	set_temp_variable = { temp_divide = USA_progressives_support_val }
+	divide_temp_variable = { temp_divide = 100 }
+	multiply_variable = { USA_progressives_consumer_goods_factor = temp_divide }
+
+	##RESEARCH SPEED
+
+	set_variable = { USA_progressives_research_speed = 0.15 }
+	set_temp_variable = { temp_divide = USA_progressives_support_val }
+	divide_temp_variable = { temp_divide = 100 }
+	multiply_variable = { USA_progressives_research_speed = temp_divide }
+
+	##RECRUITABLE POP
+
+	set_variable = { USA_patriots_recruitable_pop = 0.2 }
+	set_temp_variable = { temp_divide = USA_patriots_support_val }
+	divide_temp_variable = { temp_divide = 100 }
+	multiply_variable = { USA_patriots_recruitable_pop = temp_divide }
+
+	##WAR SUPPORT
+
+	set_variable = { USA_patriots_war_support = 0.1 }
+	set_temp_variable = { temp_divide = USA_patriots_support_val }
+	divide_temp_variable = { temp_divide = 100 }
+	multiply_variable = { USA_patriots_war_support = temp_divide }
+}
+
+USA_increase_blm_support = {
+	custom_effect_tooltip = USA_increase_blm_support_tt
+	add_to_variable = { USA_blm_support_val = 5 }
+	USA_clamp_values_protesters = yes
+	USA_update_protesters_modifiers = yes
+}
+
+USA_decrease_blm_support = {
+	custom_effect_tooltip = USA_decrease_blm_support_tt
+	add_to_variable = { USA_blm_support_val = -5 }
+	USA_clamp_values_protesters = yes
+	USA_update_protesters_modifiers = yes
+}
+
+USA_increase_progressives_support = {
+	custom_effect_tooltip = USA_increase_progressives_support_tt
+	add_to_variable = { USA_progressives_support_val = 5 }
+	USA_clamp_values_protesters = yes
+	USA_update_protesters_modifiers = yes
+}
+
+USA_decrease_progressives_support = {
+	custom_effect_tooltip = USA_decrease_progressives_support_tt
+	add_to_variable = { USA_progressives_support_val = -5 }
+	USA_clamp_values_protesters = yes
+	USA_update_protesters_modifiers = yes
+}
+
+USA_increase_progressives_support_10 = {
+	custom_effect_tooltip = USA_increase_progressives_support_10_tt
+	add_to_variable = { USA_progressives_support_val = 10 }
+	USA_clamp_values_protesters = yes
+	USA_update_protesters_modifiers = yes
+}
+
+USA_increase_patriots_support = {
+	custom_effect_tooltip = USA_increase_patriots_support_tt
+	add_to_variable = { USA_patriots_support_val = 5 }
+	USA_clamp_values_protesters = yes
+	USA_update_protesters_modifiers = yes
+}
+
+USA_decrease_patriots_support = {
+	custom_effect_tooltip = USA_decrease_patriots_support_tt
+	add_to_variable = { USA_patriots_support_val = -5 }
+	USA_clamp_values_protesters = yes
+	USA_update_protesters_modifiers = yes
+}

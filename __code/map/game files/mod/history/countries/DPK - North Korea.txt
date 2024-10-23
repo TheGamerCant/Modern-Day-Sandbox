@@ -1,0 +1,12 @@
+﻿capital = 527
+
+set_popularities = {
+	IDEOLOGY_hardline_communist = 100
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_hardline_communist
+	last_election = "1976.3.14"
+	election_frequency = 48
+	elections_allowed = no
+}

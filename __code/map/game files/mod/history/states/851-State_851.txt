@@ -1,0 +1,24 @@
+
+state={
+	id=851
+	name="STATE_851"
+
+	history={
+		owner = FRA
+		add_core_of = FRA
+		
+		victory_points = { 13467 10 }
+		victory_points = { 13468 20 }
+		victory_points = { 13474 10 }
+		victory_points = { 9736 2 }
+		victory_points = { 3959 1 }
+	}
+
+	provinces={
+		911 956 3764 3928 3959 3961 6975 9736 9909 13467 13468 13474 
+	}
+	manpower = 2407514
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_twentySeven
+	local_supplies=0.500
+}

@@ -1,0 +1,16 @@
+state={
+	id=91
+	name="STATE_91"
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+	}
+	provinces={
+		438 491 536 3483 3562 9454 9468 9558 11427 11479 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_eight
+}

@@ -1,0 +1,139 @@
+far_right_drift_dynamic_modifier = { 
+	enable = { always = yes }
+
+	IDEOLOGY_fascist_drift = country_far_right_drift
+	IDEOLOGY_ultranationalist_drift = country_far_right_drift
+	IDEOLOGY_right_despotist_drift = country_far_right_drift
+	IDEOLOGY_fundamentalist_drift = country_far_right_drift
+	IDEOLOGY_monarchist_drift = country_far_right_drift
+	IDEOLOGY_populist_drift = country_far_right_drift
+}
+
+western_drift_dynamic_modifier = { 
+	enable = { always = yes }
+
+	IDEOLOGY_libertarian_drift = country_western_drift
+	IDEOLOGY_conservative_drift = country_western_drift
+	IDEOLOGY_liberal_drift = country_western_drift
+	IDEOLOGY_social_democrat_drift = country_western_drift
+}
+
+far_left_drift_dynamic_modifier = { 
+	enable = { always = yes }
+
+	IDEOLOGY_socialist_drift = country_far_left_drift
+	IDEOLOGY_moderate_communist_drift = country_far_left_drift
+	IDEOLOGY_hardline_communist_drift = country_far_left_drift
+	IDEOLOGY_left_despotist_drift = country_far_left_drift
+	IDEOLOGY_anarchist_drift = country_far_left_drift
+}
+
+far_right_acceptance_dynamic_modifier = { 
+	enable = { always = yes }
+
+	IDEOLOGY_fascist_acceptance = country_far_right_acceptance
+	IDEOLOGY_ultranationalist_acceptance = country_far_right_acceptance
+	IDEOLOGY_right_despotist_acceptance = country_far_right_acceptance
+	IDEOLOGY_fundamentalist_acceptance = country_far_right_acceptance
+	IDEOLOGY_monarchist_acceptance = country_far_right_acceptance
+	IDEOLOGY_populist_acceptance = country_far_right_acceptance
+}
+
+western_acceptance_dynamic_modifier = { 
+	enable = { always = yes }
+
+	IDEOLOGY_libertarian_acceptance = country_western_acceptance
+	IDEOLOGY_conservative_acceptance = country_western_acceptance
+	IDEOLOGY_liberal_acceptance = country_western_acceptance
+	IDEOLOGY_social_democrat_acceptance = country_western_acceptance
+}
+
+far_left_acceptance_dynamic_modifier = { 
+	enable = { always = yes }
+
+	IDEOLOGY_socialist_acceptance = country_far_left_acceptance
+	IDEOLOGY_moderate_communist_acceptance = country_far_left_acceptance
+	IDEOLOGY_hardline_communist_acceptance = country_far_left_acceptance
+	IDEOLOGY_left_despotist_acceptance = country_far_left_acceptance
+	IDEOLOGY_anarchist_acceptance = country_far_left_acceptance
+}
+
+IDEOLOGY_fascist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_fascist_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_ultranationalist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_ultranationalist_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_right_despotist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_right_despotist_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_fundamentalist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_fundamentalist_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_monarchist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_monarchist_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_populist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_populist_drift = modifier@ruling_party_drift
+}
+
+
+IDEOLOGY_libertarian_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_libertarian_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_conservative_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_conservative_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_liberal_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_liberal_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_social_democrat_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_social_democrat_drift = modifier@ruling_party_drift
+}
+
+
+IDEOLOGY_socialist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_socialist_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_moderate_communist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_moderate_communist_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_hardline_communist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_hardline_communist_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_left_despotist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_left_despotist_drift = modifier@ruling_party_drift
+}
+IDEOLOGY_anarchist_drift_from_ruling_party_drift_dynamic_modifier={
+	enable = { always = yes }
+	
+	IDEOLOGY_anarchist_drift = modifier@ruling_party_drift
+}

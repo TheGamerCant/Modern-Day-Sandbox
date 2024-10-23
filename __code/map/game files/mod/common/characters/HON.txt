@@ -1,0 +1,16 @@
+characters = {
+	CHAR_HON_Anson_Chan = {
+		name = CHAR_HON_Anson_Chan
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_HON_Anson_Chan
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_liberal
+			traits = {  }
+			id = -1
+		}
+		gender = female
+	}
+}

@@ -1,0 +1,23 @@
+
+state={
+	id=558
+	name="STATE_558"
+
+	history={
+		owner = NGA
+		add_core_of = NGA
+		
+		victory_points = { 13561 50 }
+		victory_points = { 13582 10 }
+		victory_points = { 13579 17 }
+		victory_points = { 13595 3 }
+	}
+
+	provinces={
+		2050 4952 13559 13560 13561 13562 13563 13576 13577 13578 13579 13580 13581 13582 13593 13595 
+	}
+	manpower=35601000
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_sixtyFour
+	local_supplies=0.500
+}

@@ -1,0 +1,21 @@
+
+state={
+	id=1003
+	name="STATE_1003"
+
+	history={
+		owner = USA
+		add_core_of = USA
+		
+		victory_points = { 12720 1 }
+		victory_points = { 10867 1 }
+	}
+
+	provinces={
+		2102 10867 12720 
+	}
+	manpower = 211695
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_eleven
+	local_supplies=0.500
+}

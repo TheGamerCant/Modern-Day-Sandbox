@@ -1,0 +1,58 @@
+on_actions = {
+	on_startup = {
+		effect={
+			every_possible_country={
+				#Add dynamic modifiers
+				add_dynamic_modifier = { modifier = far_right_drift_dynamic_modifier }
+				add_dynamic_modifier = { modifier = western_drift_dynamic_modifier }
+				add_dynamic_modifier = { modifier = far_left_drift_dynamic_modifier }
+				
+				add_dynamic_modifier = { modifier = far_right_acceptance_dynamic_modifier }
+				add_dynamic_modifier = { modifier = western_acceptance_dynamic_modifier }
+				add_dynamic_modifier = { modifier = far_left_acceptance_dynamic_modifier }
+				
+				meta_effect={
+					text={
+						add_dynamic_modifier = {
+							modifier = [CURRENT_IDEOLOGY]_drift_from_ruling_party_drift_dynamic_modifier
+						}
+						
+					}
+					CURRENT_IDEOLOGY = "[?THIS.current_party_ideology_group.GetTokenKey]"
+				}
+				
+				#Get variables
+				get_country_macro_ideology_drift = yes
+				get_country_macro_ideology_acceptance = yes
+			}
+		}
+	}
+	
+	on_weekly={
+		effect={
+			#Refresh variables
+			get_country_macro_ideology_drift = yes
+			get_country_macro_ideology_acceptance = yes
+		}
+	}
+	
+	on_ruling_party_change={
+		effect={
+			#Change dynamic modifiers
+			meta_effect={
+				text={
+					remove_dynamic_modifier = {
+						modifier = [OLD_IDEOLOGY]_drift_from_ruling_party_drift_dynamic_modifier
+					}
+					add_dynamic_modifier = {
+						modifier = [CURRENT_IDEOLOGY]_drift_from_ruling_party_drift_dynamic_modifier
+					}
+					
+				}
+				OLD_IDEOLOGY = "[?old_ideology_token.GetTokenKey]"
+				CURRENT_IDEOLOGY = "[?THIS.current_party_ideology_group.GetTokenKey]"
+				debug = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+﻿capital = 126
+
+recruit_character = CHAR_GBR_Theresa_May
+promote_character = CHAR_GBR_Theresa_May
+
+puppet = HON
+
+set_popularities = {
+	IDEOLOGY_conservative = 36
+	IDEOLOGY_social_democrat = 23
+	IDEOLOGY_socialist = 13
+	IDEOLOGY_liberal = 14
+	IDEOLOGY_fascist = 1
+	IDEOLOGY_moderate_communist = 1
+	IDEOLOGY_populist = 12
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_conservative
+	last_election = "2020.5.7"
+	election_frequency = 60
+	elections_allowed = yes
+}

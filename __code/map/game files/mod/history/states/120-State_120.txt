@@ -1,0 +1,21 @@
+state={
+	id=120
+	name="STATE_120"
+	history={
+		owner = GBR
+		add_core_of = GBR
+		add_core_of = SCT
+		
+		victory_points = { 6046 5 }
+		victory_points = { 13269 1 }
+		victory_points = { 13270 1 }
+		victory_points = { 3159 1 }
+	}
+	provinces={
+		131 3159 3178 6046 6062 6104 6205 9075 9090 11161 11266 13269 13270 
+	}
+	manpower = 261290
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_twelve
+}

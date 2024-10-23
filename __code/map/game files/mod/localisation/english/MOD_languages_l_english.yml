@@ -1,0 +1,52 @@
+﻿l_english:
+ EventBannerLoc:0 "[?global.language_banners_array^THIS:language.GetTokenLocalizedKey]\n\n\n\n\n\n"
+ MAPMODE_COUNTRY_LANGUAGE_MAP_MODE:0 "§YLangauge§! map mode"
+ MAPMODE_COUNTRY_LANGUAGE_MAP_MODE_NAME:0 "Langauge"
+ MAPMODE_COUNTRY_LANGUAGE_MAP_MODE_DESCRIPTION:0 ""
+ country_language_map_mode_tooltip:0 "[?global.languages_array^FROM.OWNER:language.GetTokenLocalizedKey]"
+ country_language_map_mode_tooltip_delayed:0 ""
+
+ Language_English: "English"
+ Banner_English: "£GFX_event_banner_english"
+
+ Language_Russian: "Russian"
+ Banner_Russian: "£GFX_event_banner_russian"
+
+ Language_German: "German"
+ Banner_German: "£GFX_event_banner_german"
+
+ Language_French: "French"
+ Banner_French: "£GFX_event_banner_french"
+
+ Language_Spanish: "Spanish"
+ Banner_Spanish: "£GFX_event_banner_spanish"
+
+ Language_Polish: "Polish"
+ Banner_Polish: "£GFX_event_banner_polish"
+
+ Language_Chinese: "Chinese"
+ Banner_Chinese: "£GFX_event_banner_chinese"
+
+ Language_Japanese: "Japanese"
+ Banner_Japanese: "£GFX_event_banner_japanese"
+
+ Language_Arabic: "Arabic"
+ Banner_Arabic: "£GFX_event_banner_arabic"
+
+ Language_Persian: "Persian"
+ Banner_Persian: "£GFX_event_banner_persian"
+
+ Language_Portugese: "Portugese"
+ Banner_Portugese: "£GFX_event_banner_portugese"
+
+ Language_Ukrainian: "Ukrainian"
+ Banner_Ukrainian: "£GFX_event_banner_ukrainian"
+
+ Language_Lithuanian: "Lithuanian"
+ Banner_Lithuanian: "£GFX_event_banner_lithuanian"
+
+ Language_Latvian: "Latvian"
+ Banner_Latvian: "£GFX_event_banner_latvian"
+
+ Language_Estonian: "Estonian"
+ Banner_Estonian: "£GFX_event_banner_estonian"

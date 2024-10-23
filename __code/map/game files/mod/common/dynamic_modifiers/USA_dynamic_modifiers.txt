@@ -1,0 +1,10 @@
+USA_protesters_dynamic_modifier = { 
+	enable = { always = yes }
+
+	stability_factor = USA_blm_stab_factor
+	political_power_factor = USA_blm_pp_factor
+	consumer_goods_factor = USA_progressives_consumer_goods_factor
+	research_speed_factor = USA_progressives_research_speed
+	recruitable_population_factor = USA_patriots_recruitable_pop
+	war_support_factor = USA_patriots_war_support
+}

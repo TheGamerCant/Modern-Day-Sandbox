@@ -1,0 +1,15 @@
+state={
+	id=724
+	name="STATE_724"
+	history={
+		owner = THA
+		add_core_of = THA
+	}
+	provinces={
+		1279 1281 1308 1337 1366 1394 4297 4312 4371 4388 4392 7236 10156 10158 12122 12131 12201 12220 12230 12286 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_eight
+}

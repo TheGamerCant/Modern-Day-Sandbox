@@ -1,0 +1,15 @@
+state={
+	id=632
+	name="STATE_632"
+	history={
+		owner = USA
+		add_core_of = USA
+	}
+	provinces={
+		13047 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category = STATE_CATEGEGORY_eight
+}

@@ -17,7 +17,6 @@ int main() {
 	PDX::vectorStringIndexMap<PDX::state_category> stateCategoryArray;
 	PDX::vectorStringIndexMap<PDX::country> countriesArray;
 
-
 	std::vector<PDX::state> statesArray;
 
 	loadMap(vanillaDirectory, modDirectory, terrainArray, buildingArray, resourcesArray, stateCategoryArray, countriesArray);
