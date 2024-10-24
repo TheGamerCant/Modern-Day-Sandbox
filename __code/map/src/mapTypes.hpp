@@ -28,6 +28,7 @@ namespace PDX {
     };
 
     class flag {
+    public:
         std::string name;
         int value;
         int days;
@@ -41,6 +42,7 @@ namespace PDX {
     };
 
     class variable {
+    public:
         std::string name;
         std::string value;	
         std::string tooltip;

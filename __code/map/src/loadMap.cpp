@@ -503,6 +503,117 @@ static std::vector <PDX::country*> returnStateClaims(std::string& historyContent
 	return claims;
 }
 
+static std::vector <PDX::flag> returnStateFlags(std::string& historyContent) {
+	std::vector<PDX::flag> flagsArray;
+
+	std::regex basicFlagRegex("set_(\\w+)_flag\\s*=\\s*(\\w+)");
+	auto BEGIN = std::sregex_iterator(historyContent.begin(), historyContent.end(), basicFlagRegex);
+	auto END = std::sregex_iterator();
+	for (std::sregex_iterator i = BEGIN; i != END; ++i) {
+		std::smatch match = *i;
+
+		std::string name = match[2].str();
+		int days = -1;
+		int value = 1;
+		uint8_t type = PDX::flagTypeGlobal;
+
+		std::string flagType = match[1].str();
+		if (flagType == "country") type = PDX::flagTypeCountry;
+		else if (flagType == "state") type = PDX::flagTypeState;
+		else if (flagType == "character") type = PDX::flagTypeCharacter;
+		else if (flagType == "mio") type = PDX::flagTypeMIO;
+
+		flagsArray.emplace_back(name, value, days, type);
+	}
+	historyContent = regex_replace(historyContent, basicFlagRegex, "");
+
+
+
+	std::regex flagBracketRegex(R"(set_(\w+)_flag\s*=\s*\{)");
+	std::smatch match2;
+
+	while (regex_search(historyContent, match2, flagBracketRegex)) {
+		std::string flagType = match2[1].str();
+		std::string flagStr = "set_" + flagType + "_flag";
+
+		std::string name = "";
+		int days = -1;
+		int value = 1;
+		uint8_t type = PDX::flagTypeGlobal;
+
+		if (flagType == "country") type = PDX::flagTypeCountry;
+		else if (flagType == "state") type = PDX::flagTypeState;
+		else if (flagType == "character") type = PDX::flagTypeCharacter;
+		else if (flagType == "mio") type = PDX::flagTypeMIO;
+
+		std::string flagData = returnStringBetweenBrackets(historyContent, flagStr);
+
+		std::regex flagRegex("flag\\s*=\\s*(\\w+)");
+		std::regex daysRegex("days\\s*=\\s*(\\d+)");
+		std::regex valueRegex("value\\s*=\\s*(\\d+)");
+
+		std::smatch matchFlag;
+		std::smatch matchDays;
+		std::smatch matchValue;
+
+
+		if (regex_search(flagData, matchFlag, flagRegex)) name = matchFlag[1].str();
+		if (regex_search(flagData, matchDays, daysRegex)) days = stoi(matchDays[1].str());
+		if (regex_search(flagData, matchValue, valueRegex)) value = stoi(matchValue[1].str());
+
+		flagsArray.emplace_back(name, value, days, type);
+		historyContent = removeStringBetweenBrackets(historyContent, flagStr);
+	}
+
+	return flagsArray;
+}
+
+static std::vector <PDX::variable> returnStateVariables(std::string& historyContent) {
+	std::vector<PDX::variable> variablesArray;
+
+	std::regex basicVariableRegex(R"(set_variable\s*=\s*\{\s*(.+)\s*=\s*(.+))");
+	auto BEGIN = std::sregex_iterator(historyContent.begin(), historyContent.end(), basicVariableRegex);
+	auto END = std::sregex_iterator();
+	for (std::sregex_iterator i = BEGIN; i != END; ++i) {
+		std::smatch match = *i;
+
+		std::string name = match[1].str();
+		std::string value = match[2].str();
+		
+		variablesArray.emplace_back(name, value, "");
+	}
+	historyContent = regex_replace(historyContent, basicVariableRegex, "");
+
+
+
+	std::regex variableRegex(R"(set_variable\s*=\s*\{)");
+	std::smatch match2;
+
+	while (regex_search(historyContent, match2, variableRegex)) {
+		std::string variableData = returnStringBetweenBrackets(historyContent, "set_variable");
+
+		std::string name, value, tooltip = "";
+
+		std::regex nameRegex("var\\s*=\\s*(\\w+)");
+		std::regex valueRegex("value\\s*=\\s*(\\w+)");
+		std::regex tooltipRegex("tooltip\\s*=\\s*(\\w+)");
+
+		std::smatch matchName;
+		std::smatch matchValue;
+		std::smatch matchTooltip;
+
+
+		if (regex_search(variableData, matchName, nameRegex)) value = matchName[1].str();
+		if (regex_search(variableData, matchValue, valueRegex)) value = matchValue[1].str();
+		if (regex_search(variableData, matchTooltip, tooltipRegex)) tooltip = matchTooltip[1].str();
+
+		variablesArray.emplace_back(name, value, tooltip);
+		historyContent = removeStringBetweenBrackets(historyContent, "set_variable");
+	}
+
+	return variablesArray;
+}
+
 static void loadState(
 	const std::filesystem::path& stateFile,
 
@@ -535,6 +646,8 @@ static void loadState(
 	std::vector <uint16_t> resources = returnStateResources(fileContent, resourcesArray);
 	std::vector <PDX::country*> cores = returnStateCores(historyContent, countriesArray);
 	std::vector <PDX::country*> claims = returnStateClaims(historyContent, countriesArray);
+	std::vector <PDX::flag> flags = returnStateFlags(historyContent);
+	std::vector <PDX::variable> variables = returnStateVariables(historyContent);
 
 	PDX::state T_state;
 	T_state.id = id;
@@ -547,6 +660,8 @@ static void loadState(
 	T_state.resources = resources;
 	T_state.cores = cores;
 	T_state.claims = claims;
+	T_state.flags = flags;
+	T_state.variables = variables;
 	
 
 	std::lock_guard<std::mutex> lock(mtx);
