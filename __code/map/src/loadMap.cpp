@@ -55,7 +55,7 @@ static void loadTerrain(const std::filesystem::path& vanillaGamePath, const std:
 	terrainArray.mapFromVector();
 }
 
-static void loadBuildings(const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath, PDX::vectorStringIndexMap<PDX::building>& buildingArray) {
+static void loadBuildings(const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath, PDX::vectorStringIndexMap<PDX::building>& stateBuildingsArray, PDX::vectorStringIndexMap<PDX::building>& provinceBuildingsArray) {
 
 	std::vector<std::filesystem::path> filesVector = findFilesToLoad("common/buildings", vanillaGamePath, modPath);
 
@@ -85,13 +85,16 @@ static void loadBuildings(const std::filesystem::path& vanillaGamePath, const st
 					T_building.max_level = stoi(match2[1]);
 				}
 
-				buildingArray.vector.push_back(T_building);
+				if (T_building.provincial) provinceBuildingsArray.vector.push_back(T_building);
+				else stateBuildingsArray.vector.push_back(T_building);
+
 				str = removeStringBetweenBrackets(str, name);
 			}
 		}
 	}
 
-	buildingArray.mapFromVector();
+	stateBuildingsArray.mapFromVector();
+	provinceBuildingsArray.mapFromVector();
 }
 
 static void loadStateCategories(const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath, PDX::vectorStringIndexMap<PDX::state_category>& stateCategoryArray) {
@@ -571,7 +574,7 @@ static std::vector <PDX::flag> returnStateFlags(std::string& historyContent) {
 static std::vector <PDX::variable> returnStateVariables(std::string& historyContent) {
 	std::vector<PDX::variable> variablesArray;
 
-	std::regex basicVariableRegex(R"(set_variable\s*=\s*\{\s*(.+)\s*=\s*(.+))");
+	std::regex basicVariableRegex(R"(set_variable\s*=\s*\{\s*(.+)\s*=\s*(.+)\s*\})");
 	auto BEGIN = std::sregex_iterator(historyContent.begin(), historyContent.end(), basicVariableRegex);
 	auto END = std::sregex_iterator();
 	for (std::sregex_iterator i = BEGIN; i != END; ++i) {
@@ -580,7 +583,7 @@ static std::vector <PDX::variable> returnStateVariables(std::string& historyCont
 		std::string name = match[1].str();
 		std::string value = match[2].str();
 		
-		variablesArray.emplace_back(name, value, "");
+		variablesArray.emplace_back(name, value);
 	}
 	historyContent = regex_replace(historyContent, basicVariableRegex, "");
 
@@ -614,11 +617,30 @@ static std::vector <PDX::variable> returnStateVariables(std::string& historyCont
 	return variablesArray;
 }
 
+static void loadStateBuildings(std::string& buildingsContent, PDX::vectorStringIndexMap<PDX::building>& stateBuildingsArray, PDX::vectorStringIndexMap<PDX::building>& provinceBuildingsArray,
+	std::vector<uint8_t>& localStateBuildingsArray, std::vector <std::vector <uint16_t> >& localProvinceBuildingsArray) {
+	std::regex provinceBuildingRegex(R"((\d+)\s*=\s*\{)");
+	std::regex buildingValueRegex(R"((\w+)\s*=\s*\(\d+))");
+
+	auto BEGIN = std::sregex_iterator(buildingsContent.begin(), buildingsContent.end(), provinceBuildingRegex);
+	auto END = std::sregex_iterator();
+	for (std::sregex_iterator i = BEGIN; i != END; ++i) {
+		std::smatch match = *i;
+
+		std::string name = match[1].str();
+		std::string value = match[2].str();
+
+//		variablesArray.emplace_back(name, value);
+	}
+//	buildingsContent = regex_replace(buildingsContent, basicVariableRegex, "");
+}
+
 static void loadState(
 	const std::filesystem::path& stateFile,
 
 	PDX::vectorStringIndexMap<PDX::terrain>& terrainArray,
-	PDX::vectorStringIndexMap<PDX::building>& buildingArray,
+	PDX::vectorStringIndexMap<PDX::building>& stateBuildingsArray,
+	PDX::vectorStringIndexMap<PDX::building>& provinceBuildingsArray,
 	PDX::vectorStringIndexMap<PDX::resource>& resourcesArray,
 	PDX::vectorStringIndexMap<PDX::state_category>& stateCategoryArray,
 	PDX::vectorStringIndexMap<PDX::country>& countriesArray,
@@ -648,6 +670,17 @@ static void loadState(
 	std::vector <PDX::country*> claims = returnStateClaims(historyContent, countriesArray);
 	std::vector <PDX::flag> flags = returnStateFlags(historyContent);
 	std::vector <PDX::variable> variables = returnStateVariables(historyContent);
+	std::vector <uint8_t> localStateBuildingsArray (stateBuildingsArray.vector.size(), 0);
+	std::vector <std::vector <uint16_t> > localProvinceBuildingsArray(provinces.size(),std::vector<uint16_t>(provinceBuildingsArray.vector.size() + 1, 0));
+
+	int i = 0;
+	for (const auto& province : provinces){
+		localProvinceBuildingsArray[i][0] = province->id;
+		++i;
+	}
+
+	loadStateBuildings(buildingContent, stateBuildingsArray, provinceBuildingsArray, localStateBuildingsArray, localProvinceBuildingsArray);
+
 
 	PDX::state T_state;
 	T_state.id = id;
@@ -674,7 +707,8 @@ void loadMap(
 	const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath,
 
 	PDX::vectorStringIndexMap<PDX::terrain>& terrainArray,
-	PDX::vectorStringIndexMap<PDX::building>& buildingArray,
+	PDX::vectorStringIndexMap<PDX::building>& stateBuildingsArray,
+	PDX::vectorStringIndexMap<PDX::building>& provinceBuildingsArray,
 	PDX::vectorStringIndexMap<PDX::resource>& resourcesArray,
 	PDX::vectorStringIndexMap<PDX::state_category>& stateCategoryArray,
 	PDX::vectorStringIndexMap<PDX::country>& countriesArray,
@@ -687,7 +721,7 @@ void loadMap(
 	auto timeStart = Time::now();
 
 	std::thread t1(loadTerrain, std::cref(vanillaGamePath), std::cref(modPath), std::ref(terrainArray));
-	std::thread t2(loadBuildings, std::cref(vanillaGamePath), std::cref(modPath), std::ref(buildingArray));
+	std::thread t2(loadBuildings, std::cref(vanillaGamePath), std::cref(modPath), std::ref(stateBuildingsArray), std::ref(provinceBuildingsArray));
 	std::thread t3(loadResources, std::cref(vanillaGamePath), std::cref(modPath), std::ref(resourcesArray));
 	std::thread t4(loadStateCategories, std::cref(vanillaGamePath), std::cref(modPath), std::ref(stateCategoryArray));
 	std::thread t5(loadCountries, std::cref(vanillaGamePath), std::cref(modPath), std::ref(countriesArray));
@@ -713,7 +747,7 @@ void loadMap(
 	std::vector<std::future<void>> futures;
 
 	for (const auto& state : stateFiles) {
-		futures.push_back(std::async(std::launch::async, loadState, state, std::ref(terrainArray), std::ref(buildingArray), std::ref(resourcesArray),
+		futures.push_back(std::async(std::launch::async, loadState, state, std::ref(terrainArray), std::ref(stateBuildingsArray), std::ref(provinceBuildingsArray), std::ref(resourcesArray),
 			std::ref(stateCategoryArray), std::ref(countriesArray), std::ref(provincesArray), std::ref(statesArray), std::ref(mtx)));
 	}
 

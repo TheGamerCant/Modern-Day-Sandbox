@@ -11,6 +11,7 @@ static void removeTrailingNullChar(std::string& str) {
 }
 
 void returnDirectoriesFromGUI(std::filesystem::path& modDirectory, std::filesystem::path& vanillaDirectory) {
+#ifdef RAYLIBACTIVE
     const int screenWidth = 910;
     const int screenHeight = 170;
 
@@ -86,4 +87,10 @@ void returnDirectoriesFromGUI(std::filesystem::path& modDirectory, std::filesyst
         file << "mod_directory=\"" << modDirectory << "\"\nvanilla_directory=\"" << vanillaDirectory << "\"";
         file.close();
     }
+#endif
+
+#ifndef RAYLIBACTIVE
+    std::cout << "Invalid file directories, please open file_directories.txt\n";
+    std::cin.get();
+#endif
 }

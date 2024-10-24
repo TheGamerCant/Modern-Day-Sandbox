@@ -1,8 +1,2 @@
-﻿  loadMap.cpp
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(259,42): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(266,43): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-  main.cpp
-  Generating Code...
-  map.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\x64\Debug\map.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
+﻿  selectFoldersRaylib.cpp
+  map.vcxproj -> C:\Users\charl_7zd3w87\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\x64\Debug\map.exe

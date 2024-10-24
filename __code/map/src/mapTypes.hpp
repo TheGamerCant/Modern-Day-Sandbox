@@ -50,6 +50,9 @@ namespace PDX {
         variable() :
         name (""), value(""), tooltip("") {}
 
+        variable(std::string& name, std::string& value) :
+        name (name), value(value), tooltip("") {}
+
         variable(std::string& name, std::string& value, std::string& tooltip) :
         name (name), value(value), tooltip(tooltip) {}
     };
