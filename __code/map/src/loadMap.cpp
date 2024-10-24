@@ -297,7 +297,8 @@ static void loadCountries(const std::filesystem::path& vanillaGamePath, const st
 	else loadCountryColours(vanillaGamePath, modPath, vanillaColours, countriesArray);
 }
 
-static void loadProvinces(const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath, std::vector<PDX::province>& provincesArray, PDX::vectorStringIndexMap<PDX::terrain>& terrainArray) {
+static void loadProvinces(const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath, std::vector<PDX::province>& provincesArray,
+	PDX::vectorStringIndexMap<PDX::terrain>& terrainArray, PDX::vectorStringIndexMap<PDX::building>& provinceBuildingsArray) {
 	std::filesystem::path definitionsCSV = modPath;
 	definitionsCSV += "\\map\\definition.csv";
 
@@ -338,11 +339,13 @@ static void loadProvinces(const std::filesystem::path& vanillaGamePath, const st
 		std::string terrainStr = tokens[6];
 		int continent = stoi(tokens[7]);
 
+		std::vector<uint8_t> buildings(provinceBuildingsArray.vector.size(), 0);
+
 		PDX::terrain* terrainPointer = nullptr;
 		auto terrainIndex = terrainArray.hashMap.find(terrainStr);
 		if (terrainIndex != terrainArray.hashMap.end()) terrainPointer = &terrainArray.vector[terrainIndex->second];
 
-		provincesArray.emplace_back(id, red, green, blue, type, coastal, continent, terrainPointer);
+		provincesArray.emplace_back(id, red, green, blue, type, coastal, continent, terrainPointer, buildings);
 	} 
 }
 
@@ -617,22 +620,57 @@ static std::vector <PDX::variable> returnStateVariables(std::string& historyCont
 	return variablesArray;
 }
 
-static void loadStateBuildings(std::string& buildingsContent, PDX::vectorStringIndexMap<PDX::building>& stateBuildingsArray, PDX::vectorStringIndexMap<PDX::building>& provinceBuildingsArray,
-	std::vector<uint8_t>& localStateBuildingsArray, std::vector <std::vector <uint16_t> >& localProvinceBuildingsArray) {
-	std::regex provinceBuildingRegex(R"((\d+)\s*=\s*\{)");
-	std::regex buildingValueRegex(R"((\w+)\s*=\s*\(\d+))");
+static std::vector <uint8_t> loadStateBuildings(std::string& buildingsContent, std::vector <std::vector <uint16_t> >& provinceBuildings,
+	PDX::vectorStringIndexMap<PDX::building>& stateBuildingsArray, PDX::vectorStringIndexMap<PDX::building>& provinceBuildingsArray) {
 
-	auto BEGIN = std::sregex_iterator(buildingsContent.begin(), buildingsContent.end(), provinceBuildingRegex);
+	std::regex provinceBuildingRegex(R"((\d+)\s*=\s*\{)");
+	std::regex buildingValueRegex(R"((\w+)\s*=\s*(\d+))");
+
+	std::smatch match;
+	while (regex_search(buildingsContent, match, provinceBuildingRegex)) {
+		std::string provID = match[1].str();
+
+		std::string provinceBuildingData = returnStringBetweenBrackets(buildingsContent, provID);
+
+		std::vector<uint16_t> v(provinceBuildingsArray.vector.size() + 1, 0);
+		v[0] = stoi(provID);
+
+		auto BEGIN = std::sregex_iterator(provinceBuildingData.begin(), provinceBuildingData.end(), buildingValueRegex);
+		auto END = std::sregex_iterator();
+		for (std::sregex_iterator i = BEGIN; i != END; ++i) {
+			std::smatch match2 = *i;
+
+			std::string buildingName = match2[1].str();
+			uint8_t buildingAmount = stoi(match2[2].str());
+
+			auto vecIndex = provinceBuildingsArray.hashMap.find(buildingName);
+			if (vecIndex != provinceBuildingsArray.hashMap.end()) {			
+				unsigned int index = (vecIndex->second) + 1;
+				v[index] = buildingAmount;
+			}
+		}
+		provinceBuildings.push_back(v);
+		buildingsContent = removeStringBetweenBrackets(buildingsContent, provID);
+	}
+	
+//	std::cout << buildingsContent << "\n";
+
+	std::vector <uint8_t> buildingsVector(stateBuildingsArray.vector.size(), 0);
+
+	auto BEGIN = std::sregex_iterator(buildingsContent.begin(), buildingsContent.end(), buildingValueRegex);
 	auto END = std::sregex_iterator();
 	for (std::sregex_iterator i = BEGIN; i != END; ++i) {
-		std::smatch match = *i;
+		std::smatch match2 = *i;
 
-		std::string name = match[1].str();
-		std::string value = match[2].str();
+		std::string buildingName = match2[1].str();
+		uint8_t buildingAmount = stoi(match2[2].str());
 
-//		variablesArray.emplace_back(name, value);
+		auto vecIndex = stateBuildingsArray.hashMap.find(buildingName);
+		if (vecIndex != stateBuildingsArray.hashMap.end()) buildingsVector[vecIndex->second] = buildingAmount;
+		
 	}
-//	buildingsContent = regex_replace(buildingsContent, basicVariableRegex, "");
+
+	return buildingsVector;
 }
 
 static void loadState(
@@ -670,35 +708,15 @@ static void loadState(
 	std::vector <PDX::country*> claims = returnStateClaims(historyContent, countriesArray);
 	std::vector <PDX::flag> flags = returnStateFlags(historyContent);
 	std::vector <PDX::variable> variables = returnStateVariables(historyContent);
-	std::vector <uint8_t> localStateBuildingsArray (stateBuildingsArray.vector.size(), 0);
-	std::vector <std::vector <uint16_t> > localProvinceBuildingsArray(provinces.size(),std::vector<uint16_t>(provinceBuildingsArray.vector.size() + 1, 0));
-
-	int i = 0;
-	for (const auto& province : provinces){
-		localProvinceBuildingsArray[i][0] = province->id;
-		++i;
-	}
-
-	loadStateBuildings(buildingContent, stateBuildingsArray, provinceBuildingsArray, localStateBuildingsArray, localProvinceBuildingsArray);
-
-
-	PDX::state T_state;
-	T_state.id = id;
-	T_state.dates = dates;
-	T_state.owner = owner;
-	T_state.state_category = state_category;
-	T_state.manpower = manpower;
-	T_state.impassable = impassable;
-	T_state.provinces = provinces;
-	T_state.resources = resources;
-	T_state.cores = cores;
-	T_state.claims = claims;
-	T_state.flags = flags;
-	T_state.variables = variables;
-	
+	std::vector <std::vector <uint16_t> > provinceBuildings; provinceBuildings.reserve(provinces.size() / 2);
+	std::vector <uint8_t> buildings = loadStateBuildings(buildingContent, provinceBuildings, stateBuildingsArray, provinceBuildingsArray);
 
 	std::lock_guard<std::mutex> lock(mtx);
-	statesArray.push_back(T_state);
+	statesArray.emplace_back(id, impassable, manpower, owner, state_category, provinces, resources, dates, cores, claims, flags, variables, buildings);
+	for (const auto& buildingsAndIdVec : provinceBuildings) {
+		uint16_t id = buildingsAndIdVec[0];
+		for (size_t i = 0; i < provincesArray[id].buildings.size(); ++i) provincesArray[id].buildings[i] += buildingsAndIdVec[i + 1];
+	}
 }
 
 
@@ -713,7 +731,8 @@ void loadMap(
 	PDX::vectorStringIndexMap<PDX::state_category>& stateCategoryArray,
 	PDX::vectorStringIndexMap<PDX::country>& countriesArray,
 	std::vector<PDX::province>& provincesArray,
-	std::vector<PDX::state>& statesArray
+	std::vector<PDX::state>& statesArray,
+	std::vector<PDX::strategic_region>& strategicRegionsArray
 ) {
 	typedef std::chrono::high_resolution_clock Time;
 	typedef std::chrono::milliseconds ms;
@@ -727,9 +746,9 @@ void loadMap(
 	std::thread t5(loadCountries, std::cref(vanillaGamePath), std::cref(modPath), std::ref(countriesArray));
 
 	t1.join();
-	std::thread t6(loadProvinces, std::cref(vanillaGamePath), std::cref(modPath), std::ref(provincesArray), std::ref(terrainArray));
-
 	t2.join();
+	std::thread t6(loadProvinces, std::cref(vanillaGamePath), std::cref(modPath), std::ref(provincesArray), std::ref(terrainArray), std::ref(provinceBuildingsArray));
+	
 	t3.join();
 	t4.join();
 	t5.join();
@@ -762,6 +781,7 @@ void loadMap(
 
 			for (auto& province : state.provinces) province->state = &state;
 		}
+		std::sort(state.provinces.begin(), state.provinces.end(), [](const PDX::province* a, const PDX::province* b) { return a->id < b->id; });
 	}
 
 	auto timeEnd = Time::now();

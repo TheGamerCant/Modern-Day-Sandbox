@@ -18,6 +18,7 @@ namespace PDX {
     class province;
     class state;
     class strategic_region;
+    class weather_period;
 
     enum flagTypeEnum {
         flagTypeGlobal = 0,
@@ -202,8 +203,8 @@ namespace PDX {
         province() :
             id(0), red(0), green(0), blue(0), type(0), coastal(0), continent(0), state(nullptr), victory_points(0), strategic_region(nullptr), terrain(nullptr), buildings(), name("") {}
 
-        province(uint16_t id, uint8_t red, uint8_t green, uint8_t blue, uint8_t type, bool coastal, uint8_t continent, PDX::terrain* terrain) :
-            id(id), red(red), green(green), blue(blue), type(type), coastal(coastal), continent(continent), state(nullptr), victory_points(0), strategic_region(nullptr), terrain(terrain), buildings(), name("") {}
+        province(uint16_t id, uint8_t red, uint8_t green, uint8_t blue, uint8_t type, bool coastal, uint8_t continent, PDX::terrain* terrain, std::vector<uint8_t>& buildings) :
+            id(id), red(red), green(green), blue(blue), type(type), coastal(coastal), continent(continent), state(nullptr), victory_points(0), strategic_region(nullptr), terrain(terrain), buildings(buildings), name("") {}
 
         province(uint16_t id, uint8_t red, uint8_t green, uint8_t blue, uint8_t type, bool coastal, uint8_t continent, PDX::state* state, uint16_t victory_points, PDX::strategic_region* strategic_region,
             PDX::terrain* terrain, std::vector<uint8_t>& buildings, std::string& name) :
@@ -230,6 +231,31 @@ namespace PDX {
 
         state() :
             id(0), impassable(0), manpower(0), owner(nullptr), state_category(nullptr), provinces(), resources(), dates(), cores(), claims(), flags(), variables(), buildings(), name("") {}
+
+        state(uint16_t id, bool impassable, int32_t manpower, country* owner, PDX::state_category* state_category, std::vector<PDX::province*>& provinces, std::vector<uint16_t>& resources,
+            std::vector<std::string>& dates, std::vector<PDX::country*>& cores, std::vector<PDX::country*>& claims, std::vector<PDX::flag>& flags, std::vector<PDX::variable>& variables,
+            std::vector<uint8_t>& buildings) :
+            id(id), impassable(impassable), manpower(manpower), owner(owner), state_category(state_category), provinces(provinces), resources(resources), dates(dates), cores(cores),
+            claims(claims), flags(flags), variables(variables), buildings(buildings), name("") {}
+
+        state(uint16_t id, bool impassable, int32_t manpower, country* owner, PDX::state_category* state_category, std::vector<PDX::province*>& provinces, std::vector<uint16_t>& resources,
+            std::vector<std::string>& dates, std::vector<PDX::country*>& cores, std::vector<PDX::country*>& claims, std::vector<PDX::flag>& flags, std::vector<PDX::variable>& variables,
+            std::vector<uint8_t>& buildings, std::string& name) :
+            id(id), impassable(impassable), manpower(manpower), owner(owner), state_category(state_category), provinces(provinces), resources(resources), dates(dates), cores(cores),
+            claims(claims), flags(flags), variables(variables), buildings(buildings), name(name) {}
+    };
+
+    class strategic_region {
+    public:
+        uint16_t id;
+        std::string name;
+        std::vector<PDX::province*> provinces;
+        std::vector<PDX::weather_period> weather;
+    };
+
+    class weather_period {
+    public:
+        std::string data;
     };
 
 

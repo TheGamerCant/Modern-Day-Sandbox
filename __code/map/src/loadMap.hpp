@@ -12,5 +12,6 @@ void loadMap(
 	PDX::vectorStringIndexMap<PDX::state_category>& stateCategoryArray,
 	PDX::vectorStringIndexMap<PDX::country>& countriesArray,
 	std::vector<PDX::province>& provincesArray,
-	std::vector<PDX::state>& statesArray
+	std::vector<PDX::state>& statesArray,
+	std::vector<PDX::strategic_region>& strategicRegionsArray
 );
