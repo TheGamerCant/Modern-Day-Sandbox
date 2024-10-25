@@ -719,6 +719,75 @@ static void loadState(
 	}
 }
 
+static void loadStrategicRegion(
+	const std::filesystem::path& strategicRegionFile,
+
+	std::vector<PDX::province>& provincesArray,
+	std::vector<PDX::strategic_region>& strategicRegionsArray,
+
+	std::mutex& mtx2
+) {
+	std::string fileContent = returnTXTFileAsStringNoHashes(strategicRegionFile);
+
+	std::string provinceContent = returnStringBetweenBrackets(fileContent, "provinces");
+	fileContent = removeStringBetweenBrackets(fileContent, "provinces");
+	std::string weatherContent = returnStringBetweenBrackets(fileContent, "weather");
+	fileContent = removeStringBetweenBrackets(fileContent, "weather");
+
+	uint16_t id = returnStateID(fileContent);
+	std::vector <PDX::province*> provinces = returnStateProvinces(provinceContent, provincesArray);
+
+	std::vector<PDX::weather_period> weather;
+	weather.reserve(12);
+
+	std::regex weatherPeriodRegex(R"(period\s*=\s*\{)");
+
+	std::smatch match;
+	while (regex_search(weatherContent, match, weatherPeriodRegex)){
+		std::string periodStr = returnStringBetweenBrackets(weatherContent, "period");
+
+		std::regex betweenRegex(R"(between\s*=\s*\{\s*([0-9_+-\.]+) ([0-9_+-\.]+)\s*\})");
+		std::regex temperatureRegex(R"(temperature\s*=\s*\{\s*([0-9_+-\.]+) ([0-9_+-\.]+)\s*\})");
+		std::regex noPhenomenonRegex(R"(no_phenomenon\s*=\s*([0-9_+-\.]+))");
+		std::regex rainLightRegex(R"(rain_light\s*=\s*([0-9_+-\.]+))");
+		std::regex rainHeavyRegex(R"(rain_heavy\s*=\s*([0-9_+-\.]+))");
+		std::regex snowRegex(R"(snow\s*=\s*([0-9_+-\.]+))");
+		std::regex blizzardRegex(R"(blizzard\s*=\s*([0-9_+-\.]+))");
+		std::regex arcticWaterRegex(R"(arctic_Water\s*=\s*([0-9_+-\.]+))");
+		std::regex mudRegex(R"(mud\s*=\s*([0-9_+-\.]+))");
+		std::regex sandstormRegex(R"(sandstorm\s*=\s*([0-9_+-\.]+))");
+		std::regex minSnowLevelRegex(R"(min_snow_level\s*=\s*([0-9_+-\.]+))");
+
+		std::smatch matchBetween, matchTemperature, matchNoPhenomenon, matchRainLight, matchRainHeavy, matchSnow, matchBlizzard, matchArcticWater, matchMud, matchSandstorm, matchMinSnowLevel;
+
+		double betweenL{}, betweenR{}, temperatureL{}, temperatureR{}, no_phenomenon{}, rain_light{}, rain_heavy{}, snow{},
+			blizzard{}, arctic_water{}, mud{}, sandstorm{}, min_snow_level{};
+
+		if (regex_search(weatherContent, matchBetween, betweenRegex)) {
+			betweenL = stod(matchBetween[1].str());
+			betweenR = stod(matchBetween[2].str());
+		}
+		if (regex_search(weatherContent, matchTemperature, temperatureRegex)) {
+			temperatureL = stod(matchTemperature[1].str());
+			temperatureR = stod(matchTemperature[2].str());
+		}
+		if (regex_search(weatherContent, matchNoPhenomenon, noPhenomenonRegex)) no_phenomenon = stod(matchNoPhenomenon[1].str());
+		if (regex_search(weatherContent, matchRainLight, rainLightRegex)) rain_light = stod(matchRainLight[1].str());
+		if (regex_search(weatherContent, matchRainHeavy, rainHeavyRegex)) rain_heavy = stod(matchRainHeavy[1].str());
+		if (regex_search(weatherContent, matchSnow, snowRegex)) snow = stod(matchSnow[1].str());
+		if (regex_search(weatherContent, matchBlizzard, blizzardRegex)) blizzard = stod(matchBlizzard[1].str());
+		if (regex_search(weatherContent, matchArcticWater, arcticWaterRegex)) arctic_water = stod(matchArcticWater[1].str());
+		if (regex_search(weatherContent, matchMud, mudRegex)) mud = stod(matchMud[1].str());
+		if (regex_search(weatherContent, matchSandstorm, sandstormRegex)) sandstorm = stod(matchSandstorm[1].str());
+		if (regex_search(weatherContent, matchMinSnowLevel, minSnowLevelRegex)) min_snow_level = stod(matchMinSnowLevel[1].str());
+
+		weather.emplace_back(betweenL, betweenR, temperatureL, temperatureR, no_phenomenon, rain_light, rain_heavy, snow, blizzard, arctic_water, mud, sandstorm, min_snow_level);
+		weatherContent = removeStringBetweenBrackets(weatherContent, "period");
+	}
+
+	std::lock_guard<std::mutex> lock(mtx2);
+	strategicRegionsArray.emplace_back(id, provinces, weather);
+}
 
 #include <chrono>
 void loadMap(
@@ -753,6 +822,7 @@ void loadMap(
 	t4.join();
 	t5.join();
 	t6.join();
+	std::sort(provincesArray.begin(), provincesArray.end(), [](const PDX::province& a, const PDX::province& b) { return a.id < b.id; });
 
 	auto timeMiddle = Time::now();
 	fsec fs = timeMiddle - timeStart;
@@ -763,17 +833,34 @@ void loadMap(
 	statesArray.reserve(stateFiles.size() + 1);
 	statesArray.emplace_back();
 	std::mutex mtx;
-	std::vector<std::future<void>> futures;
+	std::vector<std::future<void>> futuresStates;
 
 	for (const auto& state : stateFiles) {
-		futures.push_back(std::async(std::launch::async, loadState, state, std::ref(terrainArray), std::ref(stateBuildingsArray), std::ref(provinceBuildingsArray), std::ref(resourcesArray),
+		futuresStates.push_back(std::async(std::launch::async, loadState, state, std::ref(terrainArray), std::ref(stateBuildingsArray), std::ref(provinceBuildingsArray), std::ref(resourcesArray),
 			std::ref(stateCategoryArray), std::ref(countriesArray), std::ref(provincesArray), std::ref(statesArray), std::ref(mtx)));
 	}
 
-	for (auto& fut : futures) fut.get();
+	for (auto& fut : futuresStates) fut.get();
 
-	std::sort(provincesArray.begin(), provincesArray.end(), [](const PDX::province& a, const PDX::province& b) { return a.id < b.id; });
+	auto timeEnd = Time::now();
+	fsec fs2 = timeEnd - timeMiddle;
+	ms endMS = std::chrono::duration_cast<ms>(fs2);
+	std::cout << endMS.count() << "ms\n";
+
+	std::vector<std::filesystem::path> strategicregionFiles = findFilesToLoad("map/strategicregions", vanillaGamePath, modPath);
+	strategicRegionsArray.reserve(strategicregionFiles.size() + 1);
+	strategicRegionsArray.emplace_back();
+	std::mutex mtx2;
+	std::vector<std::future<void>> futuresStrategicRegions;
+
+	for (const auto& strategicRegion : strategicregionFiles) {
+		futuresStrategicRegions.push_back(std::async(std::launch::async, loadStrategicRegion, strategicRegion, std::ref(provincesArray), std::ref(strategicRegionsArray), std::ref(mtx2)));
+	}
+
+	for (auto& fut : futuresStrategicRegions) fut.get();
+
 	std::sort(statesArray.begin(), statesArray.end(), [](const PDX::state& a, const PDX::state& b) { return a.id < b.id; });
+	std::sort(strategicRegionsArray.begin(), strategicRegionsArray.end(), [](const PDX::strategic_region& a, const PDX::strategic_region& b) { return a.id < b.id; });
 
 	for (auto& state : statesArray) {
 		if (state.id != 0) {
@@ -783,9 +870,4 @@ void loadMap(
 		}
 		std::sort(state.provinces.begin(), state.provinces.end(), [](const PDX::province* a, const PDX::province* b) { return a->id < b->id; });
 	}
-
-	auto timeEnd = Time::now();
-	fsec fs2 = timeEnd - timeMiddle;
-	ms endMS = std::chrono::duration_cast<ms>(fs2);
-	std::cout << endMS.count() << "ms\n";
 }

@@ -251,11 +251,39 @@ namespace PDX {
         std::string name;
         std::vector<PDX::province*> provinces;
         std::vector<PDX::weather_period> weather;
+
+        strategic_region() :
+            id(0), name(""), provinces(), weather() {}
+
+        strategic_region(uint16_t id, std::vector<PDX::province*>& provinces, std::vector<PDX::weather_period>& weather) :
+            id(id), name(""), provinces(provinces), weather(weather) {}
+
+        strategic_region(uint16_t id, std::string& name, std::vector<PDX::province*>& provinces, std::vector<PDX::weather_period>& weather) :
+            id(id), name(name), provinces(provinces), weather(weather) {}
     };
 
     class weather_period {
     public:
-        std::string data;
+        double betweenL, betweenR;
+        double temperatureL, temperatureR;
+        double no_phenomenon;
+        double rain_light;
+        double rain_heavy;
+        double snow;
+        double blizzard;
+        double artic_water;
+        double mud;
+        double sandstorm;
+        double min_snow_level;
+
+        weather_period () :
+            betweenL(0.f), betweenR(0.f), temperatureL(0.f), temperatureR(0.f), no_phenomenon(0.f), rain_light(0.f), rain_heavy(0.f), snow(0.f), blizzard(0.f),
+            artic_water(0.f), mud(0.f), sandstorm(0.f), min_snow_level(0.f) {}
+
+        weather_period (double betweenL, double betweenR, double temperatureL, double temperatureR, double no_phenomenon, double rain_light, double rain_heavy,
+            double snow, double blizzard, double artic_water, double mud, double sandstorm, double min_snow_level) :
+            betweenL(betweenL), betweenR(betweenR), temperatureL(temperatureL), temperatureR(temperatureR), no_phenomenon(no_phenomenon), rain_light(rain_light),
+            rain_heavy(rain_heavy), snow(snow), blizzard(blizzard), artic_water(artic_water), mud(mud), sandstorm(sandstorm), min_snow_level(min_snow_level) {}
     };
 
 

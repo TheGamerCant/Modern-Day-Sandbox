@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|solutionrelative:src\\loadMap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\loadMap.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|solutionrelative:src\\loadMap.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\mapTypes.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|solutionrelative:src\\mapTypes.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\loadMap.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|solutionrelative:src\\loadMap.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B8581BE3-F62C-4B0E-9045-6E5CB25FB1D5}|map.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\func.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -40,14 +40,14 @@
               "RelativeDocumentMoniker": "src\\loadMap.cpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\loadMap.cpp",
               "RelativeToolTip": "src\\loadMap.cpp",
-              "ViewState": "AQIAAPMCAAAAAAAAAAAkwA0DAAARAAAA",
+              "ViewState": "AQIAAPICAAAAAAAAAAAuwA8DAACqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-23T14:44:38.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "loadMap.hpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\loadMap.hpp",
               "RelativeDocumentMoniker": "src\\loadMap.hpp",
@@ -66,32 +66,33 @@
               "RelativeDocumentMoniker": "src\\func.cpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\func.cpp",
               "RelativeToolTip": "src\\func.cpp",
-              "ViewState": "AQIAAMAAAAAAAAAAAAAAALoAAAAAAAAA",
+              "ViewState": "AQIAAL0AAAAAAAAAAAAAANAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-23T17:19:19.254Z"
+              "WhenOpened": "2024-10-23T17:19:19.254Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "mapTypes.hpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\mapTypes.hpp",
               "RelativeDocumentMoniker": "src\\mapTypes.hpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\mapTypes.hpp",
               "RelativeToolTip": "src\\mapTypes.hpp",
-              "ViewState": "AQIAAN4AAAAAAAAAAAAAAAEBAAAYAAAA",
+              "ViewState": "AQIAAAMBAAAAAAAAAAAUwPwAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-23T14:51:09.209Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAADKAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-23T14:43:51.065Z",
               "EditorCaption": ""
