@@ -7,6 +7,8 @@
 #include <type_traits>
 #include <cmath>
 #include <fstream>
+#include <algorithm>
+
 namespace PDX {
     class terrain;
     class building;
@@ -377,7 +379,7 @@ namespace BMP {
         uint32_t noOfImportantColours;
 
         std::vector<BGRAstruct> importantColours;
-        std::vector<char> rawData;
+        std::vector<uint8_t> rawData;
 
     public:
 
@@ -416,7 +418,9 @@ namespace BMP {
                 colourTableEntries = readFourBytes(data, parse);
                 noOfImportantColours = readFourBytes(data, parse);
                 importantColours.resize(colourTableEntries);
+                std::vector<char>t;
                 rawData.resize(imgSize);
+                t.resize(imgSize);
 
                 if (colourTableEntries != 0) {
                     for (int i = 0; i < colourTableEntries; ++i) {
@@ -425,25 +429,59 @@ namespace BMP {
                 }
 
                 file.seekg(parse, std::ios::beg);
-                file.read(rawData.data(), imgSize);
-
+               
+                file.read(t.data(), imgSize);
+                std::transform(t.begin(), t.end(), rawData.begin(),
+                    [](char c) { return static_cast<unsigned char>(c); });
                 file.close();
 
+                t.clear();
                 delete[] data;
             }
         }
 
-//        void flipImageData() {
-//            const unsigned int charsPerRow = imgWidth * (colourBitDepth / 8);
-//            const int iterations = (imgHeight / 2);
+        int GetWidth() const {
+            return (int)imgWidth;
+        }
 
-//            for (int i = 0; i < iterations; ++i) {
-//                int start = i * charsPerRow;
-//                int endStart = (imgHeight - i) * charsPerRow;
+        int GetHeight() const {
+            return (int)imgHeight;
+        }
 
-//                std::vector<char> rowTop (rawData.begin() + start, rawData.begin() + start + charsPerRow);
-//                std::vector<char> rowBottom(rawData.begin() + endStart, rawData.begin() + endStart + charsPerRow);
-//            }
-//        }
+        void* returnData() {
+            return static_cast<void*>(rawData.data());
+        }
+
+        void flipImageData() {
+            const unsigned int charsPerRow = imgWidth * (colourBitDepth / 8);
+            const int iterations = (imgHeight / 2);
+
+            for (int i = 0; i < iterations; ++i) {
+                int start = i * charsPerRow;
+                int endStart = (imgHeight - 1 - i) * charsPerRow;  // Corrected index for the bottom row
+
+                // Swap the two rows in place
+                for (unsigned int j = 0; j < charsPerRow; ++j) {
+                    std::swap(rawData[start + j], rawData[endStart + j]);
+                }
+            }
+        }
+
+        void swapRBData() {
+            if (colourBitDepth == 24) {
+                for (unsigned long i = 0; i < imgSize; i += 3) {
+                    uint8_t r = rawData[i + 2];
+                    rawData[i + 2] = rawData[i];
+                    rawData[i] = r;
+                }
+            }
+            else if (colourBitDepth == 32) {
+                for (unsigned long i = 0; i < imgSize; i += 4) {
+                    uint8_t r = rawData[i + 2];
+                    rawData[i + 2] = rawData[i];
+                    rawData[i] = r;
+                }
+            }
+        }
     };
 }
