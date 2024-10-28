@@ -763,23 +763,52 @@ static void loadStrategicRegion(
 		double betweenL{}, betweenR{}, temperatureL{}, temperatureR{}, no_phenomenon{}, rain_light{}, rain_heavy{}, snow{},
 			blizzard{}, arctic_water{}, mud{}, sandstorm{}, min_snow_level{};
 
-		if (regex_search(weatherContent, matchBetween, betweenRegex)) {
+		if (regex_search(periodStr, matchBetween, betweenRegex)) {
 			betweenL = stod(matchBetween[1].str());
 			betweenR = stod(matchBetween[2].str());
+//			regex_replace(periodStr, betweenRegex, "");
 		}
-		if (regex_search(weatherContent, matchTemperature, temperatureRegex)) {
+		if (regex_search(periodStr, matchTemperature, temperatureRegex)) {
 			temperatureL = stod(matchTemperature[1].str());
 			temperatureR = stod(matchTemperature[2].str());
+//			regex_replace(periodStr, temperatureRegex, "");
 		}
-		if (regex_search(weatherContent, matchNoPhenomenon, noPhenomenonRegex)) no_phenomenon = stod(matchNoPhenomenon[1].str());
-		if (regex_search(weatherContent, matchRainLight, rainLightRegex)) rain_light = stod(matchRainLight[1].str());
-		if (regex_search(weatherContent, matchRainHeavy, rainHeavyRegex)) rain_heavy = stod(matchRainHeavy[1].str());
-		if (regex_search(weatherContent, matchSnow, snowRegex)) snow = stod(matchSnow[1].str());
-		if (regex_search(weatherContent, matchBlizzard, blizzardRegex)) blizzard = stod(matchBlizzard[1].str());
-		if (regex_search(weatherContent, matchArcticWater, arcticWaterRegex)) arctic_water = stod(matchArcticWater[1].str());
-		if (regex_search(weatherContent, matchMud, mudRegex)) mud = stod(matchMud[1].str());
-		if (regex_search(weatherContent, matchSandstorm, sandstormRegex)) sandstorm = stod(matchSandstorm[1].str());
-		if (regex_search(weatherContent, matchMinSnowLevel, minSnowLevelRegex)) min_snow_level = stod(matchMinSnowLevel[1].str());
+		if (regex_search(periodStr, matchNoPhenomenon, noPhenomenonRegex)) {
+			no_phenomenon = stod(matchNoPhenomenon[1].str());
+//			regex_replace(periodStr, noPhenomenonRegex, "");
+		}
+		if (regex_search(periodStr, matchRainLight, rainLightRegex)) {
+			rain_light = stod(matchRainLight[1].str());
+//			regex_replace(periodStr, rainLightRegex, "");
+		}
+		if (regex_search(periodStr, matchRainHeavy, rainHeavyRegex)) {
+			rain_heavy = stod(matchRainHeavy[1].str());
+//			regex_replace(periodStr, rainHeavyRegex, "");
+		}
+		if (regex_search(periodStr, matchSnow, snowRegex)) {
+			snow = stod(matchSnow[1].str());
+//			regex_replace(periodStr, snowRegex, "");
+		}
+		if (regex_search(periodStr, matchBlizzard, blizzardRegex)) {
+			blizzard = stod(matchBlizzard[1].str());
+//			regex_replace(periodStr, blizzardRegex, "");
+		}
+		if (regex_search(periodStr, matchArcticWater, arcticWaterRegex)) {
+			arctic_water = stod(matchArcticWater[1].str());
+//			regex_replace(periodStr, arcticWaterRegex, "");
+		}
+		if (regex_search(periodStr, matchMud, mudRegex)) {
+			mud = stod(matchMud[1].str());
+//			regex_replace(periodStr, mudRegex, "");
+		}
+		if (regex_search(periodStr, matchSandstorm, sandstormRegex)) {
+			sandstorm = stod(matchSandstorm[1].str());
+//			regex_replace(periodStr, sandstormRegex, "");
+		}
+		if (regex_search(periodStr, matchMinSnowLevel, minSnowLevelRegex)) { 
+			min_snow_level = stod(matchMinSnowLevel[1].str()); 
+//			regex_replace(periodStr, minSnowLevelRegex, "");
+		}
 
 		weather.emplace_back(betweenL, betweenR, temperatureL, temperatureR, no_phenomenon, rain_light, rain_heavy, snow, blizzard, arctic_water, mud, sandstorm, min_snow_level);
 		weatherContent = removeStringBetweenBrackets(weatherContent, "period");
@@ -787,6 +816,112 @@ static void loadStrategicRegion(
 
 	std::lock_guard<std::mutex> lock(mtx2);
 	strategicRegionsArray.emplace_back(id, provinces, weather);
+}
+
+static void returnLocalisationFiles(std::string folder, std::filesystem::path vanillaGamePath, std::filesystem::path modPath, std::vector<std::filesystem::path>& locFiles, std::vector<std::filesystem::path>& replaceFiles) {
+	locFiles.reserve(256);
+	bool replacePathBool = modFileReplacesFolder(modPath, folder);
+
+	std::regex forwardSlashRegex("/");
+	folder = regex_replace(folder, forwardSlashRegex, "\\");
+
+	vanillaGamePath = vanillaGamePath / folder;
+	modPath = modPath / folder;
+
+	//    std::cout << vanillaGamePath << "\n" << modPath << "\n";
+
+
+	if (replacePathBool && std::filesystem::exists(modPath) && std::filesystem::is_directory(modPath)) {
+		for (const auto& file : std::filesystem::recursive_directory_iterator(modPath)) {
+			std::filesystem::path relativePath = std::filesystem::relative(file.path(), modPath);
+			std::string checkReplace = relativePath.string().substr(0, 8);
+			if (file.is_regular_file() && file.path().extension() == ".yml" && checkReplace != "replace\\") {
+				locFiles.emplace_back(file.path());
+			}
+			else if(checkReplace == "replace\\") replaceFiles.emplace_back(file.path());
+		}
+	}
+	else if (!replacePathBool && std::filesystem::exists(modPath) && std::filesystem::is_directory(modPath)) {
+		for (const auto& file : std::filesystem::recursive_directory_iterator(vanillaGamePath)) {
+			if (file.is_regular_file() && file.path().extension() == ".yml") {
+
+				std::string pathStr = file.path().string();
+				std::istringstream ss(pathStr);
+				std::string token;
+				std::vector<std::string> tokens;
+
+				while (getline(ss, token, '\\')) { tokens.push_back(token); }
+
+				int tokenSize = tokens.size();
+				tokenSize--;
+				std::filesystem::path fileToCheckFor = modPath / tokens[tokenSize];
+				if (!std::filesystem::exists(fileToCheckFor)) {
+					locFiles.emplace_back(file.path());
+				}
+			}
+		}
+
+		for (const auto& file : std::filesystem::recursive_directory_iterator(modPath)) {
+			std::filesystem::path relativePath = std::filesystem::relative(file.path(), modPath);
+			std::string checkReplace = relativePath.string().substr(0, 8);
+			if (file.is_regular_file() && file.path().extension() == ".yml" && checkReplace != "replace\\") {
+				locFiles.emplace_back(file.path());
+			}
+			else if (checkReplace == "replace\\") replaceFiles.emplace_back(file.path());
+		}
+	}
+	else {
+		for (const auto& file : std::filesystem::recursive_directory_iterator(vanillaGamePath)) {
+			if (file.is_regular_file() && file.path().extension() == ".yml") {
+				locFiles.emplace_back(file.path());
+			}
+		}
+	}
+}
+
+static void loadLocalisation(const std::filesystem::path& file, std::vector<PDX::province>& provincesArray, std::vector<PDX::state>& statesArray, std::vector<PDX::strategic_region>& strategicRegionsArray) {
+	std::regex whiteSpaceRegex("(\\s+)");
+	std::regex provinceNameRegex("VICTORY_POINTS_(\\d+)");
+	std::regex stateNameRegex("STATE_(\\d+)");
+	std::regex StrategicRegionNameRegex("STRATEGIC_REGION_(\\d+)");
+
+	std::smatch provinceMatch;
+	std::smatch stateMatch;
+	std::smatch strategicRegionMatch;
+
+	std::ifstream fileFStream(file);
+	std::string line;
+	int number_of_lines = 0;
+	while (std::getline(fileFStream, line)) {
+		size_t colonPos = line.find(':');
+		if (colonPos != std::string::npos) {
+			std::string locKey = line.substr(0, colonPos);
+			std::string locValue = line.substr(colonPos + 1);
+
+			if (!locValue.empty()) {
+				size_t firstPos = locValue.find('\"');
+				size_t lastPos = locValue.rfind('\"');
+				if (firstPos != lastPos && firstPos != std::string::npos && lastPos != std::string::npos) {
+					locValue = locValue.substr(firstPos + 1, lastPos - 1);
+					locKey = regex_replace(locKey, whiteSpaceRegex, "");
+					uint16_t id = -1;
+
+					if (regex_search(locKey, provinceMatch, provinceNameRegex)) {
+						id = stoi(provinceMatch[1].str());
+						provincesArray[id].name = locValue;
+					}
+					else if (regex_search(locKey, stateMatch, stateNameRegex)) {
+						id = stoi(stateMatch[1].str());
+						statesArray[id].name = locValue;
+					}
+					else if (regex_search(locKey, strategicRegionMatch, StrategicRegionNameRegex)) {
+						id = stoi(strategicRegionMatch[1].str());
+						strategicRegionsArray[id].name = locValue;
+					}
+				}
+			}
+		}
+	}
 }
 
 #include <chrono>
@@ -808,26 +943,32 @@ void loadMap(
 	typedef std::chrono::duration<float> fsec;
 	auto timeStart = Time::now();
 
-	std::thread t1(loadTerrain, std::cref(vanillaGamePath), std::cref(modPath), std::ref(terrainArray));
-	std::thread t2(loadBuildings, std::cref(vanillaGamePath), std::cref(modPath), std::ref(stateBuildingsArray), std::ref(provinceBuildingsArray));
-	std::thread t3(loadResources, std::cref(vanillaGamePath), std::cref(modPath), std::ref(resourcesArray));
-	std::thread t4(loadStateCategories, std::cref(vanillaGamePath), std::cref(modPath), std::ref(stateCategoryArray));
-	std::thread t5(loadCountries, std::cref(vanillaGamePath), std::cref(modPath), std::ref(countriesArray));
+	std::vector<std::filesystem::path> replaceFiles;
+	std::vector<std::filesystem::path> locFiles;
 
-	t1.join();
+	std::thread t1(returnLocalisationFiles, "localisation/english", std::cref(vanillaGamePath), std::cref(modPath), std::ref(locFiles), std::ref(replaceFiles));
+
+	std::thread t2(loadTerrain, std::cref(vanillaGamePath), std::cref(modPath), std::ref(terrainArray));
+	std::thread t3(loadBuildings, std::cref(vanillaGamePath), std::cref(modPath), std::ref(stateBuildingsArray), std::ref(provinceBuildingsArray));
+	std::thread t4(loadResources, std::cref(vanillaGamePath), std::cref(modPath), std::ref(resourcesArray));
+	std::thread t5(loadStateCategories, std::cref(vanillaGamePath), std::cref(modPath), std::ref(stateCategoryArray));
+	std::thread t6(loadCountries, std::cref(vanillaGamePath), std::cref(modPath), std::ref(countriesArray));
+
 	t2.join();
-	std::thread t6(loadProvinces, std::cref(vanillaGamePath), std::cref(modPath), std::ref(provincesArray), std::ref(terrainArray), std::ref(provinceBuildingsArray));
-	
 	t3.join();
+	std::thread t7(loadProvinces, std::cref(vanillaGamePath), std::cref(modPath), std::ref(provincesArray), std::ref(terrainArray), std::ref(provinceBuildingsArray));
+	
+	t1.join();
 	t4.join();
 	t5.join();
 	t6.join();
+	t7.join();
 	std::sort(provincesArray.begin(), provincesArray.end(), [](const PDX::province& a, const PDX::province& b) { return a.id < b.id; });
 
-	auto timeMiddle = Time::now();
-	fsec fs = timeMiddle - timeStart;
-	ms middleMS = std::chrono::duration_cast<ms>(fs);
-	std::cout << middleMS.count() << "ms\n";
+	auto timeMiddle1 = Time::now();
+	fsec fs = timeMiddle1 - timeStart;
+	ms startMS = std::chrono::duration_cast<ms>(fs);
+	std::cout << startMS.count() << "ms\n";
 
 	std::vector<std::filesystem::path> stateFiles = findFilesToLoad("history/states", vanillaGamePath, modPath);
 	statesArray.reserve(stateFiles.size() + 1);
@@ -841,11 +982,6 @@ void loadMap(
 	}
 
 	for (auto& fut : futuresStates) fut.get();
-
-	auto timeEnd = Time::now();
-	fsec fs2 = timeEnd - timeMiddle;
-	ms endMS = std::chrono::duration_cast<ms>(fs2);
-	std::cout << endMS.count() << "ms\n";
 
 	std::vector<std::filesystem::path> strategicregionFiles = findFilesToLoad("map/strategicregions", vanillaGamePath, modPath);
 	strategicRegionsArray.reserve(strategicregionFiles.size() + 1);
@@ -870,4 +1006,25 @@ void loadMap(
 		}
 		std::sort(state.provinces.begin(), state.provinces.end(), [](const PDX::province* a, const PDX::province* b) { return a->id < b->id; });
 	}
+
+	for (auto& strategicRegion : strategicRegionsArray) {
+		if (strategicRegion.id != 0) {
+
+			for (auto& province : strategicRegion.provinces) province->strategic_region = &strategicRegion;
+		}
+		std::sort(strategicRegion.provinces.begin(), strategicRegion.provinces.end(), [](const PDX::province* a, const PDX::province* b) { return a->id < b->id; });
+	}
+
+	auto timeMiddle2 = Time::now();
+	fsec fs2 = timeMiddle2 - timeStart;
+	ms middleMS = std::chrono::duration_cast<ms>(fs2);
+	std::cout << middleMS.count() << "ms\n";
+
+	for (const auto& file : locFiles) loadLocalisation(file, provincesArray, statesArray, strategicRegionsArray);
+	for (const auto& file : replaceFiles) loadLocalisation(file, provincesArray, statesArray, strategicRegionsArray);
+
+	auto timeEnd = Time::now();
+	fsec fs3 = timeEnd - timeStart;
+	ms endMS = std::chrono::duration_cast<ms>(fs3);
+	std::cout << endMS.count() << "ms\n";
 }

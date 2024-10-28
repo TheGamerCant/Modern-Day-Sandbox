@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include <type_traits>
 #include <cmath>
-
+#include <fstream>
 namespace PDX {
     class terrain;
     class building;
@@ -326,3 +326,124 @@ namespace PDX {
     };
 }
 
+namespace BMP {
+    typedef struct {
+        uint8_t b;
+        uint8_t g;
+        uint8_t r;
+        uint8_t a;
+    }BGRAstruct;
+
+    static uint32_t readFourBytes(char*& data, int& parse) {
+        uint32_t t = (uint8_t)data[parse + 3] << 24 | (uint8_t)data[parse + 2] << 16 | (uint8_t)data[parse + 1] << 8 | (uint8_t)data[parse + 0];
+        parse += 4;
+        return t;
+    }
+
+    static uint16_t readTwoBytes(char*& data, int& parse) {
+        uint16_t t = (uint8_t)data[parse + 1] << 8 | (uint8_t)data[parse + 0];
+        parse += 2;
+        return t;
+    }
+
+    static uint8_t readOneByte(char*& data, int& parse) {
+        uint8_t t = (uint8_t)data[parse + 0];
+        ++parse;
+        return t;
+    }
+
+    static BGRAstruct readBGRA(char*& data, int& parse) {
+        BGRAstruct bgra((uint8_t)data[parse + 0], (uint8_t)data[parse + 1], (uint8_t)data[parse + 2], (uint8_t)data[parse + 3]);
+        parse += 4;
+        return bgra;
+    }
+
+
+    class bitmapImage {
+    private:
+        uint32_t sizeOfBitmapFile;
+        uint32_t reservedBytes;
+        uint32_t pixelDataOffset;
+        uint32_t headerSize;
+        uint32_t imgWidth;
+        uint32_t imgHeight;
+        uint16_t numberOfColourPlanes;
+        uint16_t colourBitDepth;
+        uint32_t compression;
+        uint32_t imgSize;
+        uint32_t pixelsPerMeterWidth;
+        uint32_t pixelsPerMeterHeight;
+        uint32_t colourTableEntries;
+        uint32_t noOfImportantColours;
+
+        std::vector<BGRAstruct> importantColours;
+        std::vector<char> rawData;
+
+    public:
+
+        bitmapImage() :
+            sizeOfBitmapFile(0), reservedBytes(0), pixelDataOffset(0), headerSize(0), imgWidth(0), imgHeight(0), numberOfColourPlanes(0), colourBitDepth(0), compression(0), imgSize(0), pixelsPerMeterWidth(0),
+            pixelsPerMeterHeight(0), colourTableEntries(0), noOfImportantColours(0), importantColours(), rawData() {}
+
+        bitmapImage(const std::string& fileIn) :
+            sizeOfBitmapFile(0), reservedBytes(0), pixelDataOffset(0), headerSize(0), imgWidth(0), imgHeight(0), numberOfColourPlanes(0), colourBitDepth(0), compression(0), imgSize(0), pixelsPerMeterWidth(0),
+            pixelsPerMeterHeight(0), colourTableEntries(0), noOfImportantColours(0), importantColours(), rawData() {
+            std::ifstream file(fileIn, std::ios::binary | std::ios::ate);
+            if (file) {
+                size_t fileSize = file.tellg();
+                file.seekg(0, std::ios::beg);
+
+                char* data = new char[fileSize];
+                file.read(data, fileSize);
+
+                int parse = 2;
+
+                sizeOfBitmapFile = readFourBytes(data, parse);
+                reservedBytes = readFourBytes(data, parse);
+                pixelDataOffset = readFourBytes(data, parse);
+                headerSize = readFourBytes(data, parse);
+                imgWidth = readFourBytes(data, parse);
+                imgHeight = readFourBytes(data, parse);
+
+                numberOfColourPlanes = readTwoBytes(data, parse);
+                colourBitDepth = readTwoBytes(data, parse);
+
+                compression = readFourBytes(data, parse);
+                imgSize = readFourBytes(data, parse);
+                pixelsPerMeterWidth = readFourBytes(data, parse);
+                pixelsPerMeterHeight = readFourBytes(data, parse);
+
+                colourTableEntries = readFourBytes(data, parse);
+                noOfImportantColours = readFourBytes(data, parse);
+                importantColours.resize(colourTableEntries);
+                rawData.resize(imgSize);
+
+                if (colourTableEntries != 0) {
+                    for (int i = 0; i < colourTableEntries; ++i) {
+                        importantColours[i] = readBGRA(data, parse);
+                    }
+                }
+
+                file.seekg(parse, std::ios::beg);
+                file.read(rawData.data(), imgSize);
+
+                file.close();
+
+                delete[] data;
+            }
+        }
+
+//        void flipImageData() {
+//            const unsigned int charsPerRow = imgWidth * (colourBitDepth / 8);
+//            const int iterations = (imgHeight / 2);
+
+//            for (int i = 0; i < iterations; ++i) {
+//                int start = i * charsPerRow;
+//                int endStart = (imgHeight - i) * charsPerRow;
+
+//                std::vector<char> rowTop (rawData.begin() + start, rawData.begin() + start + charsPerRow);
+//                std::vector<char> rowBottom(rawData.begin() + endStart, rawData.begin() + endStart + charsPerRow);
+//            }
+//        }
+    };
+}

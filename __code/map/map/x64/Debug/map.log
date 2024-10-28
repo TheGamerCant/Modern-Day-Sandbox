@@ -1,6 +1,11 @@
 ﻿  loadMap.cpp
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(316,42): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(323,43): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(421,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\loadMap.cpp(855,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(317,42): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(324,43): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+  main.cpp
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(421,39): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   map.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\x64\Debug\map.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

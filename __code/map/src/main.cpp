@@ -25,6 +25,10 @@ int main() {
 	std::vector<PDX::state> statesArray;
 	std::vector<PDX::strategic_region> strategicRegionsArray;
 
+	BMP::bitmapImage river ("C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\game files\\tno\\map\\rivers.bmp");
+	BMP::bitmapImage heightmap ("C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\game files\\tno\\map\\heightmap.bmp");
+	BMP::bitmapImage provinces ("C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\game files\\tno\\map\\provinces.bmp");
+
 	loadMap(vanillaDirectory, modDirectory, terrainArray, stateBuildingsArray, provinceBuildingsArray, resourcesArray, stateCategoryArray, countriesArray, provincesArray, statesArray, strategicRegionsArray);
 
 	return 0;

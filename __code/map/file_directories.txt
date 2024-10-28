@@ -1,2 +1,2 @@
-mod_directory="C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\game files\tno"
+mod_directory="C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\game files\mod"
 vanilla_directory="C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\game files\vanilla"

@@ -129,6 +129,7 @@ bool modFileReplacesFolder(const std::filesystem::path& modPath, std::string fol
 
 std::vector<std::filesystem::path> findFilesToLoad(std::string folder, std::filesystem::path vanillaGamePath, std::filesystem::path modPath) {
     std::vector<std::filesystem::path> tArray;
+    tArray.reserve(256);
     bool replacePathBool = modFileReplacesFolder(modPath, folder);
 
     std::regex forwardSlashRegex("/");
@@ -175,12 +176,15 @@ std::vector<std::filesystem::path> findFilesToLoad(std::string folder, std::file
     }
     else {
         for (const auto& file : std::filesystem::directory_iterator(vanillaGamePath)) {
-            tArray.emplace_back(file.path());
+            if (file.is_regular_file() && file.path().extension() == ".txt") {
+                tArray.emplace_back(file.path());
+            }
         }
     }
 
     return tArray;
 }
+
 
 std::string returnTXTFileAsStringNoHashes(const std::filesystem::path& path) {
     std::ifstream currentFile(path);

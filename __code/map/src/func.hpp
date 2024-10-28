@@ -17,6 +17,7 @@ int returnWindowYPixels();
 
 bool modFileReplacesFolder(const std::filesystem::path& modPath, std::string folder);
 std::vector<std::filesystem::path> findFilesToLoad(std::string folder, std::filesystem::path vanillaGamePath, std::filesystem::path modPath);
+std::vector<std::filesystem::path> findFilesToLoadIncludeSubDirectories(std::string folder, std::filesystem::path vanillaGamePath, std::filesystem::path modPath);
 std::string returnTXTFileAsStringNoHashes(const std::filesystem::path& path);
 
 bool isInt(const std::string& str);
