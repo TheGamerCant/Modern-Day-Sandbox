@@ -13,5 +13,14 @@ void loadMap(
 	PDX::vectorStringIndexMap<PDX::country>& countriesArray,
 	std::vector<PDX::province>& provincesArray,
 	std::vector<PDX::state>& statesArray,
-	std::vector<PDX::strategic_region>& strategicRegionsArray
+	std::vector<PDX::strategic_region>& strategicRegionsArray,
+
+	BMP::bitmapImage& provincesBMP,
+	BMP::bitmapImage& riversBMP,
+	BMP::bitmapImage& heightmapBMP,
+	BMP::bitmapImage& statesBMP,
+	BMP::bitmapImage& stateBordersBMP,
+
+	std::unordered_map<std::tuple<uint8_t, uint8_t, uint8_t>, uint16_t, RGBHash>& provinceColourToProvinceIDMap,
+	std::unordered_map<std::tuple<uint8_t, uint8_t, uint8_t>, uint16_t, RGBHash>& stateColourToStateIDMap
 );

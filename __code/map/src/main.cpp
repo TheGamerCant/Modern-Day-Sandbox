@@ -33,14 +33,20 @@ int main() {
 	std::vector<PDX::state> statesArray;
 	std::vector<PDX::strategic_region> strategicRegionsArray;
 
-	BMP::bitmapImage river ("C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\game files\\tno\\map\\rivers.bmp");
-	BMP::bitmapImage heightmap ("C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\game files\\tno\\map\\heightmap.bmp");
-	BMP::bitmapImage provinces ("C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\map\\game files\\tno\\map\\provinces.bmp");
+	BMP::bitmapImage provincesBMP, riversBMP, heightmapBMP, statesBMP, stateBordersBMP;
 
-	provinces.flipImageData();
-	provinces.swapRBData();
+	std::unordered_map<std::tuple<uint8_t, uint8_t, uint8_t>, uint16_t, RGBHash> provinceColourToProvinceIDMap, stateColourToStateIDMap;
 
-//	loadMap(vanillaDirectory, modDirectory, terrainArray, stateBuildingsArray, provinceBuildingsArray, resourcesArray, stateCategoryArray, countriesArray, provincesArray, statesArray, strategicRegionsArray);
+	loadMap(vanillaDirectory, modDirectory, terrainArray, stateBuildingsArray, provinceBuildingsArray, resourcesArray, stateCategoryArray, countriesArray,
+		provincesArray, statesArray, strategicRegionsArray, provincesBMP, riversBMP, heightmapBMP, statesBMP, stateBordersBMP, provinceColourToProvinceIDMap, stateColourToStateIDMap);
+
+	statesBMP.flipImageData();
+	statesBMP.swapRBData();
+	statesBMP.save("states.bmp");
+
+	stateBordersBMP.flipImageData();
+	stateBordersBMP.swapRBData();
+	stateBordersBMP.save("stateborders.bmp");
 
 	const int screenWidth = returnWindowXPixels();
 	const int screenHeight = returnWindowYPixels();
@@ -49,9 +55,9 @@ int main() {
 	const int sidebarWidth = 360;
 
 	Image provincesImage = {
-		.data = provinces.returnData(),
-		.width = provinces.GetWidth(),
-		.height = provinces.GetHeight(),
+		.data = statesBMP.returnRawDataVoidPtr(),
+		.width = statesBMP.GetWidth(),
+		.height = statesBMP.GetHeight(),
 		.mipmaps = 1,
 		.format = PIXELFORMAT_UNCOMPRESSED_R8G8B8
 	};

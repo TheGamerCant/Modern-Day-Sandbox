@@ -1,0 +1,356 @@
+CES_not_peace_reunification = {
+	if = {
+		limit = {
+			original_tag = KAZ
+		}
+		create_wargoal = {
+			target = UZB
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = KYR
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = TRK
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = TAJ
+			type = annex_everything
+		}
+	}
+	if = {
+		limit = {
+			original_tag = UZB
+		}
+		create_wargoal = {
+			target = KAZ
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = KYR
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = TRK
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = TAJ
+			type = annex_everything
+		}
+	}
+	if = {
+		limit = {
+			original_tag = KYR
+		}
+		create_wargoal = {
+			target = UZB
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = KAZ
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = TRK
+			type = annex_everything
+		}
+		create_wargoal = {
+			target = TAJ
+			type = annex_everything
+		}
+	}
+}
+
+CES_peace_reunification = {
+	if = {
+		limit = {
+			original_tag = KAZ
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = KAZ }
+		set_temp_variable = { influence_target = UZB }
+		change_influence_percentage = yes
+		UZB = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = KAZ }
+		set_temp_variable = { influence_target = TRK }
+		change_influence_percentage = yes
+		TRK = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = KAZ }
+		set_temp_variable = { influence_target = TAJ }
+		change_influence_percentage = yes
+		TAJ = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = KAZ }
+		set_temp_variable = { influence_target = KYR }
+		change_influence_percentage = yes
+		KAZ = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		
+	}
+	if = {
+		limit = {
+			original_tag = UZB
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = UZB }
+		set_temp_variable = { influence_target = KAZ }
+		change_influence_percentage = yes
+		KAZ = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = UZB }
+		set_temp_variable = { influence_target = TRK }
+		change_influence_percentage = yes
+		TRK = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = UZB }
+		set_temp_variable = { influence_target = TAJ }
+		change_influence_percentage = yes
+		TAJ = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = UZB }
+		set_temp_variable = { influence_target = KYR }
+		change_influence_percentage = yes
+		KYR = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		
+	}
+	if = {
+		limit = {
+			original_tag = KYR
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = KYR }
+		set_temp_variable = { influence_target = KAZ }
+		change_influence_percentage = yes
+		KAZ = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = KYR }
+		set_temp_variable = { influence_target = TRK }
+		change_influence_percentage = yes
+		TRK = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = KYR }
+		set_temp_variable = { influence_target = TAJ }
+		change_influence_percentage = yes
+		TAJ = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		set_temp_variable = { percent_change = 3 }
+		set_temp_variable = { tag_index = KYR }
+		set_temp_variable = { influence_target = UZB }
+		change_influence_percentage = yes
+		UZB = {
+			set_party_index_to_ruling_party = yes
+			set_temp_variable = { party_popularity_increase = 0.12 }
+			set_temp_variable = { temp_outlook_increase = 0.12 }
+			add_relative_party_popularity = yes
+		}
+		
+	}
+}
+###########RANDOM CENTRAL ASIA AI - STUPID###########
+fuck_ai_central_asia_passive = {
+	random_list = {
+		20 = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.25
+			}
+		}
+		20 = {
+			if = {
+				limit = { NOT = { is_in_array = { ruling_party = 10 } } }
+				hidden_effect = {
+					clear_array = ruling_party
+					clear_array = gov_coalition_array
+					add_to_array = { ruling_party = 10 }
+					update_government_coalition_strength = yes
+					update_party_name = yes
+					set_coalition_drift = yes
+					meta_effect = {
+					text = {
+						set_country_flag = [META_SET_RULING_PARTY]
+					}
+					META_SET_RULING_PARTY = "[meta_set_ruling_leader]"
+				}
+				set_leader = yes
+				}
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.75
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.35
+				}
+				add_to_variable = { party_pop_array^10 = 0.75 }
+				recalculate_party = yes
+			}
+		}
+		20 = {
+			if = {
+				limit = { NOT = { is_in_array = { ruling_party = 2 } } }
+				hidden_effect = {
+					clear_array = ruling_party
+					clear_array = gov_coalition_array
+					add_to_array = { ruling_party = 2 }
+					update_government_coalition_strength = yes
+					update_party_name = yes
+					set_coalition_drift = yes
+					meta_effect = {
+					text = {
+						set_country_flag = [META_SET_RULING_PARTY]
+					}
+					META_SET_RULING_PARTY = "[meta_set_ruling_leader]"
+				}
+				set_leader = yes
+				}
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.75
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.35
+				}
+				add_to_variable = { party_pop_array^2 = 0.75 }
+				recalculate_party = yes
+			}
+		}
+		20 = {
+			if = {
+				limit = { NOT = { is_in_array = { ruling_party = 4 } } }
+				hidden_effect = {
+					clear_array = ruling_party
+					clear_array = gov_coalition_array
+					add_to_array = { ruling_party = 4 }
+					update_government_coalition_strength = yes
+					update_party_name = yes
+					set_coalition_drift = yes
+					meta_effect = {
+					text = {
+						set_country_flag = [META_SET_RULING_PARTY]
+					}
+					META_SET_RULING_PARTY = "[meta_set_ruling_leader]"
+				}
+				set_leader = yes
+				}
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.75
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.35
+				}
+				add_to_variable = { party_pop_array^4 = 0.75 }
+				recalculate_party = yes
+			}
+		}
+		20 = {
+			if = {
+				limit = { NOT = { is_in_array = { ruling_party = 21 } } }
+				hidden_effect = {
+					clear_array = ruling_party
+					clear_array = gov_coalition_array
+					add_to_array = { ruling_party = 21 }
+					update_government_coalition_strength = yes
+					update_party_name = yes
+					set_coalition_drift = yes
+					meta_effect = {
+					text = {
+						set_country_flag = [META_SET_RULING_PARTY]
+					}
+					META_SET_RULING_PARTY = "[meta_set_ruling_leader]"
+				}
+				set_leader = yes
+				}
+				set_politics = {
+					ruling_party = nationalist
+					elections_allowed = yes
+				}
+				add_popularity = {
+					ideology = nationalist
+					popularity = 0.75
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.35
+				}
+				add_to_variable = { party_pop_array^21 = 0.75 }
+				recalculate_party = yes
+			}
+		}
+	}
+}
+
+
+

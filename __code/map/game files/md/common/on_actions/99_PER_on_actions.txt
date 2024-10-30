@@ -1,0 +1,94 @@
+on_actions = {
+	on_weekly_PER = {
+		effect = {
+			if = {
+				limit = {
+					country_exists = PER
+					has_country_flag = PER_artesh_coup
+					NOT = {
+						has_country_flag = PER_irgc_destroyed
+					}
+				}
+				PER_random_events_insurgents = yes
+			}
+			if = {	#Capping maximum IRGC strength at 100
+				limit = { check_variable = { PER_insurgent_strength > 100 } }
+				set_variable = { PER_insurgent_strength = 100 }
+			}
+			if = {	#Capping maximum IRGC strength at 0
+				limit = { check_variable = { PER_insurgent_strength < 0 } }
+				set_variable = { PER_insurgent_strength = 0 }
+			}
+			if = { #IRGC insurgency
+				limit = {
+					check_variable = { PER_insurgent_strength > 99 }
+				}
+				PER = {
+					country_event = {
+						id = iran_md.9
+					}
+				}
+			}
+		}
+	}
+	on_monthly_PER = {
+		effect = {
+			# For Election
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = in_civil_war_iran
+					}
+					check_variable = {
+						PER_election_var > 0
+					}
+				}
+				add_to_variable = { var = PER_election_var value = -1 }
+				clamp_variable = { var = PER_election_var min = 0 max = 48 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = in_civil_war_iran
+					}
+					check_variable = {
+						PER_election_var = 0
+					}
+				}
+				add_to_variable = { var = PER_election_var value = 48 }
+				clamp_variable = { var = PER_election_var min = 0 max = 48 }
+				country_event = {
+					id = PER_majlis.1
+					days = 18
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = in_civil_war_iran
+					}
+					check_variable = {
+						PER_election_var > 0
+					}
+				}
+				add_to_variable = { var = PER_session_var value = -1 }
+				clamp_variable = { var = PER_session_var min = 0 max = 48 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = in_civil_war_iran
+					}
+					check_variable = {
+						PER_session_var = 0
+					}
+				}
+				add_to_variable = { var = PER_session_var value = 18 }
+				clamp_variable = { var = PER_session_var min = 0 max = 48 }
+				country_event = {
+					id = PER_majlis.2
+				}
+			}
+		}
+	}
+}

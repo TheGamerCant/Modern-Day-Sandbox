@@ -1,0 +1,2220 @@
+# Author(s): LordBogdanoff
+on_actions = {
+	on_weekly = {
+		effect = {
+			#ADDED SUBJECT IDEA
+			if = {
+				limit = {
+					OR = {
+						has_autonomy_state = autonomy_state_rf
+						has_autonomy_state = autonomy_republic_rf
+						has_autonomy_state = autonomy_kray_rf
+						has_autonomy_state = autonomy_oblast_rf
+						has_autonomy_state = autonomy_okrug_rf
+					}
+					NOT = { has_idea = CHE_republic_rf }
+				}
+				add_ideas = CHE_republic_rf
+			}
+			#ADDED COUNTRY FLAG FOR PARTIES
+			if = {
+				limit = {
+					OR = {
+						has_autonomy_state = autonomy_state_rf
+						has_autonomy_state = autonomy_republic_rf
+						has_autonomy_state = autonomy_kray_rf
+						has_autonomy_state = autonomy_oblast_rf
+						has_autonomy_state = autonomy_okrug_rf
+					}
+					SOV = { has_country_flag = SOV_united_russia }
+					NOT = { has_country_flag = SUB_united_russia }
+				}
+				set_country_flag = SUB_united_russia
+			}
+			#ADDED FEDERALIZATION IDEA
+			if = {
+				limit = {
+					SUB_subjects_availables = yes
+					NOT = { SOV = { has_idea = SUB_confederation } }
+				}
+				SOV = {	add_ideas = SUB_confederation }
+			}
+			#REMOVED FEDERALIZATION IDEA
+			if = {
+				limit = {
+					SUB_subjects_disable = yes
+					SOV = { has_idea = SUB_confederation }
+				}
+				SOV = {	remove_ideas = SUB_confederation }
+			}
+			#SUBJECTS AUTORITY
+			if = {
+				limit = {
+					OR = {
+						has_autonomy_state = autonomy_state_rf
+						has_autonomy_state = autonomy_republic_rf
+						has_autonomy_state = autonomy_kray_rf
+						has_autonomy_state = autonomy_oblast_rf
+						has_autonomy_state = autonomy_okrug_rf
+					}
+				}
+				set_temp_variable = { modify_subjectavtoritet = 2 }
+				modify_subjectavtoritet_support = yes
+			}
+			###########CHECHNYA###########
+			#DELETED ICHKERIA TEMPLATES AND GENERALS FROM CHE
+			if = {
+				limit = {
+					original_tag = CHE
+					NOT = { CHE = { has_country_flag = delete_ichkeria } }
+					CHE = {
+						OR = {
+							has_autonomy_state = autonomy_state_rf
+							has_autonomy_state = autonomy_republic_rf
+							has_autonomy_state = autonomy_kray_rf
+							has_autonomy_state = autonomy_oblast_rf
+							has_autonomy_state = autonomy_okrug_rf
+						}
+					}
+				}
+				set_country_flag = delete_ichkeria
+				delete_unit_template_and_units = {
+					division_template = "Brigada Natsionalnoi Gvardiy"
+					disband = yes
+				}
+				delete_unit_template_and_units = {
+					division_template = "Checheneskie Modzhakhedi"
+					disband = yes
+				}
+				retire_character = CHE_aslan_maskhadov
+				retire_character = CHE_abdul_halim_sadulayev
+				retire_character = CHE_ruslan_gelayev
+				retire_character = CHE_dokka_umarov
+				retire_character = CHE_shamil_basayev
+				retire_character = CHE_ibn_al_khattab
+				retire_character = CHE_akhmed_zakayev
+				retire_character = CHE_air_chief
+			}
+		}
+	}
+	#TAX CHECHNYA
+	on_monthly_CHE = {
+		effect = {
+					#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX KABARDINO
+	on_monthly_KBK = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX KARACHAEVO
+	on_monthly_KCC = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX ADYGEA
+	on_monthly_ADY = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX INGUSHETIA
+	on_monthly_ING = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX DAGESTAN
+	on_monthly_DAG = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX TUVA
+	on_monthly_TUV = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX yakutia
+	on_monthly_YAK = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX BURYATIA
+	on_monthly_BRY = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX KOMI
+	on_monthly_KOM = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX ALTAI
+	on_monthly_ALT = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX KHAKASSIA
+	on_monthly_KHS = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX YUGRA
+	on_monthly_KHM = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX YAMAL
+	on_monthly_YAM = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX NENETS
+	on_monthly_NEE = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX CHUKOTKA
+	on_monthly_CKK = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX URAL
+	on_monthly_URA = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX KURAN
+	on_monthly_KUB = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX TATARSTAN
+	on_monthly_TAT = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX BASHKORTOSTAN
+	on_monthly_BSH = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX CHUVASHIA
+	on_monthly_CHU = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX MARI EL
+	on_monthly_MEL = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX MORDOVIA
+	on_monthly_MOV = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX UDMURTIA
+	on_monthly_UDM = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX KARELIA
+	on_monthly_KAE = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	#TAX KALMIKYA
+	on_monthly_KLM = {
+		effect = {
+		#SMALLISH TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_smallish_taxes
+			}
+			set_temp_variable = { treasury_change = -0.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 0.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#SMALL TAXES PAY 
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_small_taxes
+			}
+			set_temp_variable = { treasury_change = -1.5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 1.5 }
+				modify_treasury_effect = yes
+			}
+		}
+		#MEDIUM TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_medium_taxes
+			}
+			set_temp_variable = { treasury_change = -3 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 3 }
+				modify_treasury_effect = yes
+			}
+		}
+		#HARD TAXES PAY
+		if = {
+			limit = {
+				OR = {
+					has_autonomy_state = autonomy_state_rf
+					has_autonomy_state = autonomy_republic_rf
+					has_autonomy_state = autonomy_kray_rf
+					has_autonomy_state = autonomy_oblast_rf
+					has_autonomy_state = autonomy_okrug_rf
+				}
+				has_idea = SUB_hard_taxes
+			}
+			set_temp_variable = { treasury_change = -5 }
+			modify_treasury_effect = yes
+			SOV = {
+				set_temp_variable = { treasury_change = 5 }
+				modify_treasury_effect = yes
+			}
+		}
+		}
+	}
+	on_monthly = {
+		effect = {
+		#SEPARATIST UPDATE
+		if = {
+			limit = {
+				NOT = {
+					SOV = { is_ai = yes }
+				}
+			}
+			SUB_update_separatism_stability = yes
+			SUB_update_separatism_rebellion = yes
+		}
+		}
+	}
+}

@@ -1,0 +1,1021 @@
+#AUTHORS: Warner, DROID, Dread
+PER_scripted_effect_update_principalists_popularity_variable = {
+	hidden_effect = {
+		set_temp_variable = { principalists_pop = party_pop_array^9 }
+		set_temp_variable = { reformists_pop = party_pop_array^8 }
+		set_temp_variable = { sum_parties = principalists_pop }
+		add_to_temp_variable = { sum_parties = reformists_pop }
+		set_temp_variable = { temp_var_hundred = 100 }
+		divide_temp_variable = { temp_var_hundred = sum_parties }
+		multiply_temp_variable = { principalists_pop = temp_var_hundred }
+		set_variable = {
+			principalists_popularity_percent = principalists_pop
+		}
+		set_temp_variable = { reformists_popularity_temp_variable = principalists_popularity_percent }
+		set_temp_variable = { number100 = 100 }
+		subtract_from_temp_variable = {
+			var = number100
+			value = reformists_popularity_temp_variable
+		}
+		set_variable = {
+			reformists_popularity_percent = number100
+		}
+
+		#Round variables to display
+		set_variable = {
+			principalists_popularity_percent_round = principalists_popularity_percent
+		}
+		round_variable = principalists_popularity_percent_round
+		set_variable = {
+			reformists_popularity_percent_round = reformists_popularity_percent
+		}
+		round_variable = reformists_popularity_percent_round
+	}
+}
+PER_scripted_effect_finish_election = {
+	hidden_effect = {
+		clr_country_flag = PER_election_enabled
+		clr_country_flag = principalist_portrait_ahmadinejad
+		clr_country_flag = principalist_portrait_raisi
+		clr_country_flag = principalist_portrait_tavakoli
+		clr_country_flag = principalist_portrait_ghalibaf
+		clr_country_flag = principalist_portrait_rezaee
+		clr_country_flag = reformist_portrait_hemmati
+		clr_country_flag = reformist_portrait_khatami
+		clr_country_flag = reformist_portrait_mousavi
+		clr_country_flag = reformist_portrait_rafsanjani
+		clr_country_flag = reformist_portrait_rouhani
+		remove_ideas = {
+			PER_ahmadinejad_idea
+			PER_ghalibaf_idea
+			PER_hemmati_idea
+			PER_khatami_idea
+			PER_mousavi_idea
+			PER_rafsanjani_idea
+			PER_raisi_idea
+			PER_rezaee_idea
+			PER_rouhani_idea
+			PER_tavakoli_idea
+		}
+		if = {
+			limit = {
+				date > 2001.1.1
+				date < 2002.1.1
+			}
+			set_politics = {
+				ruling_party = communism # Reset ruling ideology to Emerging
+				elections_allowed = yes
+				last_election = "2001.6.8"
+				election_frequency = 48
+			}
+		}
+		else_if = {
+			limit = {
+				date > 2005.1.1
+				date < 2006.1.1
+			}
+			set_politics = {
+				ruling_party = communism # Reset ruling ideology to Emerging
+				elections_allowed = yes
+				last_election = "2005.6.17"
+				election_frequency = 48
+			}
+		}
+		else_if = {
+			limit = {
+				date > 2009.1.1
+				date < 2010.1.1
+			}
+			set_politics = {
+				ruling_party = communism # Reset ruling ideology to Emerging
+				elections_allowed = yes
+				last_election = "2009.6.12"
+				election_frequency = 48
+			}
+		}
+		else_if = {
+			limit = {
+				date > 2013.1.1
+				date < 2014.1.1
+			}
+			set_politics = {
+				ruling_party = communism # Reset ruling ideology to Emerging
+				elections_allowed = yes
+				last_election = "2013.6.14"
+				election_frequency = 47
+			}
+		}
+		else_if = {
+			limit = {
+				date > 2017.1.1
+				date < 2018.1.1
+			}
+			set_politics = {
+				ruling_party = communism # Reset ruling ideology to Emerging
+				elections_allowed = yes
+				last_election = "2017.5.19"
+				election_frequency = 48
+			}
+		}
+		else_if = {
+			limit = {
+				date > 2021.1.1
+				date < 2022.1.1
+			}
+			set_politics = {
+				ruling_party = communism # Reset ruling ideology to Emerging
+				elections_allowed = yes
+				last_election = "2021.6.18"
+				election_frequency = 48
+			}
+		}
+		create_country_leader = { # Reset country leader
+			name = "Sayyid Ali Hosseini Khamenei"
+			picture = "sayyid_ali_hosseini_khamenei.dds"
+			ideology = Vilayat_e_Faqih
+			traits = {
+				emerging_Vilayat_e_Faqih
+				cleric
+				geopolitical_thinker
+				political_dancer
+				stubborn
+				anti_zionist
+			}
+		}
+		remove_mission = PER_auto_update_gui_weekly
+	}
+}
+#PER_set_state_protest_level = { # Sets activity percentage level to zero
+#	hidden_effect = {
+#		# Percentage 1-100
+#		set_variable = { azerbaijan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { fars_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { gilan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { greater_khorasan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { greater_luristan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { hormuzgan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { isfahan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { kavir_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { khoy_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { khuzestan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { kordestan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { mazandaran_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { qom_markazi_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { sistan_and_baluchistan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { tehran_semnan_activity_percent = 0 min = 0 max = 100}
+#		set_variable = { west_azerbaijan_activity_percent = 0 min = 0 max = 100 }
+#	}
+#}
+PER_IRGC_activity_reformists = {
+	hidden_effect = {
+		if = {
+			limit = { emerging_moderate_shiite_are_in_power = yes }
+			add_political_power = -25
+		}
+	}
+	if = {
+		limit = { emerging_moderate_shiite_are_in_power = yes }
+		custom_effect_tooltip = PER_IRGC_activity_reformists_tt
+	}
+}
+#Random events related to IRGC Insurgency mechanic (For alt-history)
+PER_random_events_insurgents = {
+	random_list = {
+		50 = {
+			add_to_variable = { PER_event_counter_1_insurgent = 1 }
+		}
+		50 = {
+		}
+	}
+	if = {
+		limit = { check_variable = { PER_event_counter_1_insurgent > 7 } }
+		set_variable = { PER_event_counter_1_insurgent = 0 }
+		random_list = {
+			25 = {
+				country_event = iran_md.3
+			}
+			25 = {
+				country_event = iran_md.4
+			}
+			25 = {
+				country_event = iran_md.5
+			}
+			25 = {
+				country_event = iran_md.7
+			}
+		}
+	}
+}
+# Party Specific Cosmetic Tags
+PER_government_change = {
+	if = {
+		limit = { original_tag = PER }
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = in_civil_war_iran
+				}
+				OR = {
+					nationalist_monarchists_are_in_power = yes
+					western_autocrats_are_in_power = yes
+				}
+			}
+			set_country_flag = is_IRAN
+			set_cosmetic_tag = PER_AUTH_PAN
+		}
+		if = {
+			limit = {
+				nationalist_military_junta_are_in_power = yes
+			}
+			set_country_flag = is_IRAN
+			set_cosmetic_tag = PER_ARTESH_CONTROL
+		}
+		if = {
+			limit = {
+				OR = {
+					neutrality_neutral_muslim_brotherhood_are_in_power = yes
+					neutrality_neutral_social_are_in_power = yes
+					neutrality_neutral_conservatism_are_in_power = yes
+					neutrality_neutral_green_are_in_power = yes
+				}
+			}
+			set_country_flag = is_IRAN
+			set_cosmetic_tag = PER_republic_tag
+		}
+		if = {
+			limit = {
+				emerging_anarchist_communism_are_in_power = yes
+			}
+			set_country_flag = is_IRAN
+			set_cosmetic_tag = PER_mek_flag
+		}
+		#
+		if = {
+			limit = {
+				has_cosmetic_tag = PER_AUTH_PAN
+				NOT = {
+					OR = {
+						nationalist_monarchists_are_in_power = yes
+						western_autocrats_are_in_power = yes
+					}
+				}
+			}
+			clr_country_flag = is_IRAN
+			drop_cosmetic_tag = yes
+		}
+		if = {
+			limit = {
+				has_cosmetic_tag = PER_mek_flag
+				NOT = {
+					emerging_anarchist_communism_are_in_power = yes
+				}
+			}
+			clr_country_flag = is_IRAN
+			drop_cosmetic_tag = yes
+		}
+		if = {
+			limit = {
+				has_cosmetic_tag = PER_ARTESH_CONTROL
+				NOT = { nationalist_military_junta_are_in_power = yes }
+			}
+			clr_country_flag = is_IRAN
+			drop_cosmetic_tag = yes
+		}
+		if = {
+			limit = {
+				has_cosmetic_tag = PER_republic_tag
+				NOT = {
+					OR = {
+						neutrality_neutral_muslim_brotherhood_are_in_power = yes
+						neutrality_neutral_social_are_in_power = yes
+						neutrality_neutral_conservatism_are_in_power = yes
+						neutrality_neutral_green_are_in_power = yes
+					}
+				}
+			}
+			clr_country_flag = is_IRAN
+			drop_cosmetic_tag = yes
+		}
+		if = {
+			limit = {
+				nationalist_monarchists_are_in_power = yes
+			}
+			country_event = {
+				id = PER_political.99915
+				days = 5
+			}
+		}
+	}
+}
+PER_minister_clear = {
+	clr_country_flag = PER_seyed_hassan_minister
+	clr_country_flag = PER_hashem_sabbaghian_minister
+	clr_country_flag = PER_hedayatollah_matin_minister
+	clr_country_flag = PER_mohammad_tavasoli_minister
+	clr_country_flag = PER_mostafa_moein_minister
+	clr_country_flag = PER_mostafa_tajzade_minister
+	clr_country_flag = PER_ali_khavari_minister
+	clr_country_flag = PER_hashem_aghajari_minister
+	clr_country_flag = PER_mohsen_makhmalbaf_minister
+	clr_country_flag = PER_abdolali_bazargan_minister
+	clr_country_flag = PER_amir_etemadi_minister
+	clr_country_flag = PER_hassan_shariatmadari_minister
+	clr_country_flag = PER_roozbeh_farahinpour_minister
+	clr_country_flag = PER_abulqasem_porhashmi_minister
+	clr_country_flag = PER_alireza_kiani_minister
+	clr_country_flag = PER_foad_pashei_minister
+	clr_country_flag = PER_reza_pirzadeh_minister
+	clr_country_flag = PER_ezatollah_sahabi_minister
+}
+
+# New Majlis Shit (Dread gave me permission to use code from AoN)
+
+PER_majlis_seats_TOTAL = {
+	set_temp_variable = { PER_majlis_seats_TEMP = PER_majlis_total_seats }
+}
+
+PER_majlis_duopoly = {
+	# this finds the most popular party
+	find_highest_in_array = {
+		array = party_pop_array
+		value = popular_1_temp
+		index = popular_index_1_temp
+	}
+	log = "[?popular_1_temp|3]"
+	log = "[?popular_index_1_temp|0]"
+	set_variable = { popular_index_1 = popular_index_1_temp }
+	set_variable = { party_pop_array^popular_index_1 = -2 }
+	# this finds the second most popular party
+	find_highest_in_array = {
+		array = party_pop_array
+		value = popular_2_temp
+		index = popular_index_2_temp
+	}
+	log = "[?popular_2_temp|3]"
+	log = "[?popular_index_2_temp|0]"
+	set_variable = { popular_index_2 = popular_index_2_temp }
+	set_variable = { party_pop_array^popular_index_1 = popular_1_temp }
+}
+
+PER_majlis_elections = {
+	custom_effect_tooltip = PER_majlis_TT
+	set_variable = { PER_majlis_total_seats = 0 }
+	set_variable = { PER_majlis_seats_INDEPENDENT = 0 }
+	PER_testing = yes
+	if = {
+		limit = { NOT = { has_country_flag = PER_reformed_majlis } }
+		PER_majlis_duopoly = yes
+
+		for_each_loop = {
+			array = party_pop_array
+			value = v
+			index = i
+			set_variable = { PER_majlis_seats^i = 0 }
+		}
+
+		for_each_loop = {
+			array = party_pop_array
+			value = v
+			index = i
+
+			set_variable = { PER_majlis_seats^i = 0 }
+
+			if = {
+				limit = { check_variable = { party_pop_array^i = party_pop_array^popular_index_1 } }
+				set_temp_variable = { PER_majlis_popularity^i = party_pop_array^popular_index_1 }
+				set_variable = { PER_majlis_seats^i = PER_majlis_popularity^popular_index_1 }
+				multiply_variable = { PER_majlis_seats^i = 1 } # gives an 50% boost to seats
+				multiply_variable = { PER_majlis_seats^i = 290 }
+				round_variable = PER_majlis_seats^i
+			}
+			else_if = {
+				limit = { check_variable = { party_pop_array^i = party_pop_array^popular_index_2 } }
+				set_temp_variable = { PER_majlis_popularity^i = party_pop_array^popular_index_2 }
+				set_variable = { PER_majlis_seats^i = PER_majlis_popularity^popular_index_2 }
+				multiply_variable = { PER_majlis_seats^i = 1.1 } # gives a 25% disadvantage to seats
+				multiply_variable = { PER_majlis_seats^i = 290 }
+				round_variable = PER_majlis_seats^i
+			}
+
+			else_if = {
+				limit = { check_variable = { party_pop_array^i > 0.05 } }
+				set_temp_variable = { PER_majlis_popularity^i = party_pop_array^i }
+				set_variable = { PER_majlis_seats^i = PER_majlis_popularity^i }
+				multiply_variable = { PER_majlis_seats^i = 0.2 }
+				multiply_variable = { PER_majlis_seats^i = 290 }
+				round_variable = PER_majlis_seats^i
+			}
+			set_temp_variable = {
+				PER_majlis_seats = x
+			}
+			add_to_variable = { PER_majlis_total_seats = PER_majlis_seats^i }
+		}
+		PER_majlis_correct_seats = yes
+	}
+	else_if = {
+		limit = { has_country_flag = PER_reformed_majlis }
+
+		for_each_loop = {
+			array = party_pop_array
+			value = v
+			index = i
+
+			set_variable = { PER_majlis_seats^i = 0 }
+
+			if = {
+				limit = { check_variable = { party_pop_array^i > 0.005 } }
+				set_temp_variable = { PER_majlis_popularity^i = party_pop_array^i }
+				set_variable = { PER_majlis_seats^i = PER_majlis_popularity^i }
+				multiply_variable = { PER_majlis_seats^i = 290 }
+				round_variable = PER_majlis_seats^i
+			}
+			add_to_variable = { PER_majlis_total_seats = PER_majlis_seats^i }
+		}
+
+		PER_majlis_correct_seats = yes
+	}
+	set_variable = { PER_majlis_seats_INDEPENDENT = 290 }
+	subtract_from_variable = { PER_majlis_seats_INDEPENDENT = PER_majlis_total_seats }
+	add_to_variable = { PER_majlis_total_seats = PER_majlis_seats_INDEPENDENT }
+	PER_testing2 = yes
+}
+
+PER_majlis_correct_seats = {
+	for_each_loop = {
+		array = party_pop_array
+		value = PER_majlis_total_seats_temp_allocation
+		index = i
+		# break = PER_majlis_no_more_seats
+
+		if = {
+			limit = {
+				check_variable = { PER_majlis_total_seats < 291 }
+				check_variable = { PER_majlis_seats^i > 1 }
+			}
+			set_temp_variable = { PER_majlis_total_seats_temp = PER_majlis_total_seats }
+			log = "[?PER_majlis_total_seats_temp]"
+			subtract_from_temp_variable = { PER_majlis_total_seats_temp = 291 }
+			log = "[?PER_majlis_total_seats_temp]"
+			multiply_temp_variable = { PER_majlis_total_seats_temp = -1 }
+			log = "[?PER_majlis_total_seats_temp]"
+			set_temp_variable_to_random = {
+				var = PER_majlis_total_seats_temp_allocation
+				max = PER_majlis_total_seats_temp
+				integer = yes
+			}
+			log = "[?PER_majlis_total_seats_temp_allocation]"
+			add_to_variable = { PER_majlis_seats^i = PER_majlis_total_seats_temp_allocation }
+			log = "[?PER_majlis_total_seats_temp_allocation]"
+			add_to_variable = { PER_majlis_total_seats = PER_majlis_total_seats_temp_allocation }
+			log = "[?PER_majlis_total_seats_temp_allocation]"
+		}
+		else_if = {
+			limit = {
+				check_variable = { PER_majlis_total_seats > 289 }
+				check_variable = { PER_majlis_seats^i > 1 }
+			}
+			set_temp_variable = { PER_majlis_total_seats_temp = PER_majlis_total_seats }
+			log = "[?PER_majlis_total_seats_temp]"
+			subtract_from_temp_variable = { PER_majlis_total_seats_temp = 289 }
+			log = "[?PER_majlis_total_seats_temp]"
+			set_temp_variable_to_random = {
+				var = PER_majlis_total_seats_temp_allocation
+				max = PER_majlis_total_seats_temp
+				integer = yes
+			}
+			log = "[?PER_majlis_total_seats_temp_allocation]"
+			add_to_variable = { PER_majlis_seats^i = PER_majlis_total_seats_temp_allocation }
+			log = "[?PER_majlis_total_seats_temp_allocation]"
+			add_to_variable = { PER_majlis_total_seats = PER_majlis_total_seats_temp_allocation }
+			log = "[?PER_majlis_total_seats_temp_allocation]"
+		}
+
+		else = { set_temp_variable = { PER_majlis_no_more_seats = 1 } }
+	}
+}
+PER_AB_T = {
+	set_variable = { PER_majlis_total_seats = 0 }
+	set_variable = { PER_majlis_seats^0 = 0 }
+	set_variable = { PER_majlis_seats^1 = 0 }
+	set_variable = { PER_majlis_seats^2 = 0 }
+	set_variable = { PER_majlis_seats^3 = 0 }
+	set_variable = { PER_majlis_seats^4 = 0 }
+	set_variable = { PER_majlis_seats^5 = 0 }
+	set_variable = { PER_majlis_seats^6 = 0 }
+	set_variable = { PER_majlis_seats^7 = 0 }
+	set_variable = { PER_majlis_seats^8 = 0 }
+	set_variable = { PER_majlis_seats^9 = 0 }
+	set_variable = { PER_majlis_seats^10 = 0 }
+	set_variable = { PER_majlis_seats^11 = 0 }
+	set_variable = { PER_majlis_seats^12 = 0 }
+	set_variable = { PER_majlis_seats^13 = 0 }
+	set_variable = { PER_majlis_seats^14 = 0 }
+	set_variable = { PER_majlis_seats^15 = 0 }
+	set_variable = { PER_majlis_seats^16 = 0 }
+	set_variable = { PER_majlis_seats^17 = 0 }
+	set_variable = { PER_majlis_seats^18 = 0 }
+	set_variable = { PER_majlis_seats^19 = 0 }
+	set_variable = { PER_majlis_seats^20 = 0 }
+	set_variable = { PER_majlis_seats^21 = 0 }
+	set_variable = { PER_majlis_seats^22 = 0 }
+	set_variable = { PER_majlis_seats^23 = 0 }
+	set_variable = { PER_majlis_seats^24 = 0 }
+}
+PER_testing = {
+	if = {
+		limit = {
+			has_country_flag = party1_banned
+		}
+		set_variable = { PER_real_quick = party_pop_array^0 }
+		set_variable = { party_pop_array^0 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party2_banned
+		}
+		set_variable = { PER_real_quick1 = party_pop_array^1 }
+		set_variable = { party_pop_array^1 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party3_banned
+		}
+		set_variable = { PER_real_quick2 = party_pop_array^2 }
+		set_variable = { party_pop_array^2 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party4_banned
+		}
+		set_variable = { PER_real_quick3 = party_pop_array^3 }
+		set_variable = { party_pop_array^3 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party5_banned
+		}
+		set_variable = { PER_real_quick4 = party_pop_array^4 }
+		set_variable = { party_pop_array^4 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party6_banned
+		}
+		set_variable = { PER_real_quick5 = party_pop_array^5 }
+		set_variable = { party_pop_array^5 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party7_banned
+		}
+		set_variable = { PER_real_quick6 = party_pop_array^6 }
+		set_variable = { party_pop_array^6 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party8_banned
+		}
+		set_variable = { PER_real_quick7 = party_pop_array^7 }
+		set_variable = { party_pop_array^7 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party9_banned
+		}
+		set_variable = { PER_real_quick8 = party_pop_array^8 }
+		set_variable = { party_pop_array^8 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party10_banned
+		}
+		set_variable = { PER_real_quick9 = party_pop_array^9 }
+		set_variable = { party_pop_array^9 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party11_banned
+		}
+		set_variable = { PER_real_quick10 = party_pop_array^10 }
+		set_variable = { party_pop_array^10 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party12_banned
+		}
+		set_variable = { PER_real_quick11 = party_pop_array^11 }
+		set_variable = { party_pop_array^11 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party13_banned
+		}
+		set_variable = { PER_real_quick12 = party_pop_array^12 }
+		set_variable = { party_pop_array^12 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party14_banned
+		}
+		set_variable = { PER_real_quick13 = party_pop_array^13 }
+		set_variable = { party_pop_array^13 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party15_banned
+		}
+		set_variable = { PER_real_quick14 = party_pop_array^14 }
+		set_variable = { party_pop_array^14 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party16_banned
+		}
+		set_variable = { PER_real_quick15 = party_pop_array^15 }
+		set_variable = { party_pop_array^15 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party17_banned
+		}
+		set_variable = { PER_real_quick16 = party_pop_array^16 }
+		set_variable = { party_pop_array^16 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party18_banned
+		}
+		set_variable = { PER_real_quick17 = party_pop_array^17 }
+		set_variable = { party_pop_array^17 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party19_banned
+		}
+		set_variable = { PER_real_quick18 = party_pop_array^18 }
+		set_variable = { party_pop_array^18 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party20_banned
+		}
+		set_variable = { PER_real_quick19 = party_pop_array^19 }
+		set_variable = { party_pop_array^19 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party21_banned
+		}
+		set_variable = { PER_real_quick20 = party_pop_array^20 }
+		set_variable = { party_pop_array^20 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party22_banned
+		}
+		set_variable = { PER_real_quick21 = party_pop_array^21 }
+		set_variable = { party_pop_array^21 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party23_banned
+		}
+		set_variable = { PER_real_quick22 = party_pop_array^22 }
+		set_variable = { party_pop_array^22 = 0 }
+	}
+	if = {
+		limit = {
+			has_country_flag = party24_banned
+		}
+		set_variable = { PER_real_quick23 = party_pop_array^23 }
+		set_variable = { party_pop_array^23 = 0 }
+	}
+}
+PER_testing2 = {
+	if = {
+		limit = {
+			has_country_flag = party1_banned
+		}
+		set_variable = { party_pop_array^0 = PER_real_quick }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party2_banned
+		}
+		set_variable = { party_pop_array^1 = PER_real_quick1 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party3_banned
+		}
+		set_variable = { party_pop_array^2 = PER_real_quick2 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party4_banned
+		}
+		set_variable = { party_pop_array^3 = PER_real_quick3 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party5_banned
+		}
+		set_variable = { party_pop_array^4 = PER_real_quick4 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party6_banned
+		}
+		set_variable = { party_pop_array^5 = PER_real_quick5 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party7_banned
+		}
+		set_variable = { party_pop_array^6 = PER_real_quick6 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party8_banned
+		}
+		set_variable = { party_pop_array^7 = PER_real_quick7 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party9_banned
+		}
+		set_variable = { party_pop_array^8 = PER_real_quick8 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party10_banned
+		}
+		set_variable = { party_pop_array^9 = PER_real_quick9 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party11_banned
+		}
+		set_variable = { party_pop_array^10 = PER_real_quick10 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party12_banned
+		}
+		set_variable = { party_pop_array^11 = PER_real_quick11 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party13_banned
+		}
+		set_variable = { party_pop_array^12 = PER_real_quick12 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party14_banned
+		}
+		set_variable = { party_pop_array^13 = PER_real_quick13 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party15_banned
+		}
+		set_variable = { party_pop_array^14 = PER_real_quick14 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party16_banned
+		}
+		set_variable = { party_pop_array^15 = PER_real_quick15 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party17_banned
+		}
+		set_variable = { party_pop_array^16 = PER_real_quick16 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party18_banned
+		}
+		set_variable = { party_pop_array^17 = PER_real_quick17 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party19_banned
+		}
+		set_variable = { party_pop_array^18 = PER_real_quick18 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party20_banned
+		}
+		set_variable = { party_pop_array^19 = PER_real_quick19 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party21_banned
+		}
+		set_variable = { party_pop_array^20 = PER_real_quick20 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party22_banned
+		}
+		set_variable = { party_pop_array^21 = PER_real_quick21 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party23_banned
+		}
+		set_variable = { party_pop_array^22 = PER_real_quick22 }
+		clear_variable = PER_real_quick
+	}
+	if = {
+		limit = {
+			has_country_flag = party24_banned
+		}
+		set_variable = { party_pop_array^23 = PER_real_quick23 }
+		clear_variable = PER_real_quick
+	}
+}
+
+PER_reform_majlis = {
+	set_country_flag = PER_reformed_majlis
+}
+
+PER_clear_majles_flags = {
+	clr_country_flag = PER_removed_bureau_01
+	clr_country_flag = PER_removed_bureau_02
+	clr_country_flag = PER_removed_bureau_03
+	clr_country_flag = PER_removed_bureau_04
+	clr_country_flag = PER_removed_bureau_05
+	clr_country_flag = PER_removed_police_01
+	clr_country_flag = PER_removed_police_02
+	clr_country_flag = PER_removed_police_03
+	clr_country_flag = PER_removed_police_04
+	clr_country_flag = PER_removed_police_05
+	clr_country_flag = PER_removed_edu_01
+	clr_country_flag = PER_removed_edu_02
+	clr_country_flag = PER_removed_edu_03
+	clr_country_flag = PER_removed_edu_04
+	clr_country_flag = PER_removed_edu_05
+	clr_country_flag = PER_removed_health_01
+	clr_country_flag = PER_removed_health_02
+	clr_country_flag = PER_removed_health_03
+	clr_country_flag = PER_removed_health_04
+	clr_country_flag = PER_removed_health_05
+	clr_country_flag = PER_removed_health_06
+}
+
+PER_centralized_change = {
+	hidden_effect = {
+		if = {
+			limit = {
+				original_tag = PER
+				NOT = {
+					has_country_flag = PER_buru_cool_down
+				}
+			}
+			PER = {
+				random_list = {
+					40 = {
+						country_event = {
+							id = PER_majlis.31
+							days = 5
+						}
+					}
+					60 = {
+						PER_clear_majles_flags = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+PER_police_change = {
+	hidden_effect = {
+		if = {
+			limit = {
+				original_tag = PER
+				NOT = {
+					has_country_flag = PER_police_cool_down
+				}
+			}
+			PER = {
+				random_list = {
+					40 = {
+						country_event = {
+							id = PER_majlis.32
+							days = 5
+						}
+					}
+					60 = {
+						PER_clear_majles_flags = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+PER_education_change = {
+	hidden_effect = {
+		if = {
+			limit = {
+				original_tag = PER
+				NOT = {
+					has_country_flag = PER_edu_cool_down
+				}
+			}
+			PER = {
+				random_list = {
+					40 = {
+						country_event = {
+							id = PER_majlis.33
+							days = 5
+						}
+					}
+					60 = {
+						PER_clear_majles_flags = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+PER_health_change = {
+	hidden_effect = {
+		if = {
+			limit = {
+				original_tag = PER
+				NOT = {
+					has_country_flag = PER_health_cool_down
+				}
+			}
+			PER = {
+				random_list = {
+					40 = {
+						country_event = {
+							id = PER_majlis.34
+							days = 5
+						}
+					}
+					60 = {
+						PER_clear_majles_flags = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+PER_social_change = {
+	hidden_effect = {
+		if = {
+			limit = {
+				original_tag = PER
+				NOT = {
+					has_country_flag = PER_social_cool_down
+				}
+			}
+			PER = {
+				random_list = {
+					40 = {
+						country_event = {
+							id = PER_majlis.35
+							days = 5
+						}
+					}
+					60 = {
+						PER_clear_majles_flags = yes
+					}
+				}
+			}
+		}
+	}
+}

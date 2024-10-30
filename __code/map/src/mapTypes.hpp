@@ -7,7 +7,15 @@
 #include <type_traits>
 #include <cmath>
 #include <fstream>
+#include <tuple>
 #include <algorithm>
+
+struct RGBHash {
+    std::size_t operator()(const std::tuple<uint8_t, uint8_t, uint8_t>& color) const {
+        auto [r, g, b] = color;
+        return (static_cast<std::size_t>(r) << 16) | (static_cast<std::size_t>(g) << 8) | static_cast<std::size_t>(b);
+    }
+};
 
 namespace PDX {
     class terrain;
@@ -64,9 +72,7 @@ namespace PDX {
     public:
         bool naval;
         bool is_water;
-        uint8_t red;
-        uint8_t green;
-        uint8_t blue;
+        uint8_t red, green, blue;
         std::string name;
 
         terrain() :
@@ -103,11 +109,8 @@ namespace PDX {
 
     class country {
     public:
-        std::string tag;
-        std::string file;
-        uint8_t red;
-        uint8_t green;
-        uint8_t blue;
+        std::string tag, file;
+        uint8_t red, green, blue;
         bool dynamic;
         std::vector<state*> states;
 
@@ -168,9 +171,7 @@ namespace PDX {
     class state_category {
     public:
         uint8_t building_slots;
-        uint8_t red;
-        uint8_t green;
-        uint8_t blue;
+        uint8_t red, green, blue;
         std::string name;
 
         state_category() :
@@ -189,10 +190,7 @@ namespace PDX {
     class province {
     public:
         uint16_t id;
-        uint8_t red;
-        uint8_t green;
-        uint8_t blue;
-        uint8_t type;
+        uint8_t red, green, blue, type;
         bool coastal;
         uint8_t continent;
         state* state;
@@ -217,6 +215,7 @@ namespace PDX {
     class state {
     public:
         uint16_t id;
+        uint8_t red, green, blue;
         bool impassable;
         int32_t manpower;
         PDX::country* owner;
@@ -232,18 +231,18 @@ namespace PDX {
         std::string name;
 
         state() :
-            id(0), impassable(0), manpower(0), owner(nullptr), state_category(nullptr), provinces(), resources(), dates(), cores(), claims(), flags(), variables(), buildings(), name("") {}
+            id(0), red(0), green(0), blue(0), impassable(0), manpower(0), owner(nullptr), state_category(nullptr), provinces(), resources(), dates(), cores(), claims(), flags(), variables(), buildings(), name("") {}
 
         state(uint16_t id, bool impassable, int32_t manpower, country* owner, PDX::state_category* state_category, std::vector<PDX::province*>& provinces, std::vector<uint16_t>& resources,
             std::vector<std::string>& dates, std::vector<PDX::country*>& cores, std::vector<PDX::country*>& claims, std::vector<PDX::flag>& flags, std::vector<PDX::variable>& variables,
             std::vector<uint8_t>& buildings) :
-            id(id), impassable(impassable), manpower(manpower), owner(owner), state_category(state_category), provinces(provinces), resources(resources), dates(dates), cores(cores),
+            id(id), red(0), green(0), blue(0), impassable(impassable), manpower(manpower), owner(owner), state_category(state_category), provinces(provinces), resources(resources), dates(dates), cores(cores),
             claims(claims), flags(flags), variables(variables), buildings(buildings), name("") {}
 
-        state(uint16_t id, bool impassable, int32_t manpower, country* owner, PDX::state_category* state_category, std::vector<PDX::province*>& provinces, std::vector<uint16_t>& resources,
+        state(uint16_t id, uint8_t red, uint8_t green, uint8_t blue, bool impassable, int32_t manpower, country* owner, PDX::state_category* state_category, std::vector<PDX::province*>& provinces, std::vector<uint16_t>& resources,
             std::vector<std::string>& dates, std::vector<PDX::country*>& cores, std::vector<PDX::country*>& claims, std::vector<PDX::flag>& flags, std::vector<PDX::variable>& variables,
             std::vector<uint8_t>& buildings, std::string& name) :
-            id(id), impassable(impassable), manpower(manpower), owner(owner), state_category(state_category), provinces(provinces), resources(resources), dates(dates), cores(cores),
+            id(id), red(red), green(green), blue(blue), impassable(impassable), manpower(manpower), owner(owner), state_category(state_category), provinces(provinces), resources(resources), dates(dates), cores(cores),
             claims(claims), flags(flags), variables(variables), buildings(buildings), name(name) {}
     };
 
@@ -380,16 +379,17 @@ namespace BMP {
 
         std::vector<BGRAstruct> importantColours;
         std::vector<uint8_t> rawData;
+        std::vector<uint8_t> rgbData;
 
     public:
 
         bitmapImage() :
             sizeOfBitmapFile(0), reservedBytes(0), pixelDataOffset(0), headerSize(0), imgWidth(0), imgHeight(0), numberOfColourPlanes(0), colourBitDepth(0), compression(0), imgSize(0), pixelsPerMeterWidth(0),
-            pixelsPerMeterHeight(0), colourTableEntries(0), noOfImportantColours(0), importantColours(), rawData() {}
+            pixelsPerMeterHeight(0), colourTableEntries(0), noOfImportantColours(0), importantColours(), rawData(), rgbData() {}
 
         bitmapImage(const std::string& fileIn) :
             sizeOfBitmapFile(0), reservedBytes(0), pixelDataOffset(0), headerSize(0), imgWidth(0), imgHeight(0), numberOfColourPlanes(0), colourBitDepth(0), compression(0), imgSize(0), pixelsPerMeterWidth(0),
-            pixelsPerMeterHeight(0), colourTableEntries(0), noOfImportantColours(0), importantColours(), rawData() {
+            pixelsPerMeterHeight(0), colourTableEntries(0), noOfImportantColours(0), importantColours(), rawData(), rgbData() {
             std::ifstream file(fileIn, std::ios::binary | std::ios::ate);
             if (file) {
                 size_t fileSize = file.tellg();
@@ -417,15 +417,22 @@ namespace BMP {
 
                 colourTableEntries = readFourBytes(data, parse);
                 noOfImportantColours = readFourBytes(data, parse);
-                importantColours.resize(colourTableEntries);
+
+                imgSize = imgWidth * imgHeight * (colourBitDepth / 8);
+                colourTableEntries = (pixelDataOffset - 54) / 4;
+                noOfImportantColours = colourTableEntries;
+
                 std::vector<char>t;
                 rawData.resize(imgSize);
                 t.resize(imgSize);
 
                 if (colourTableEntries != 0) {
+                    importantColours.resize(colourTableEntries);
                     for (int i = 0; i < colourTableEntries; ++i) {
                         importantColours[i] = readBGRA(data, parse);
                     }
+
+                    fillRGBData();
                 }
 
                 file.seekg(parse, std::ios::beg);
@@ -440,6 +447,12 @@ namespace BMP {
             }
         }
 
+        bitmapImage(const bitmapImage& bmpIN) :
+            sizeOfBitmapFile(bmpIN.sizeOfBitmapFile), reservedBytes(bmpIN.reservedBytes), pixelDataOffset(bmpIN.pixelDataOffset), headerSize(bmpIN.headerSize), imgWidth(bmpIN.imgWidth),
+            imgHeight(bmpIN.imgHeight), numberOfColourPlanes(bmpIN.numberOfColourPlanes), colourBitDepth(bmpIN.colourBitDepth), compression(bmpIN.compression), imgSize(bmpIN.imgSize),
+            pixelsPerMeterWidth(bmpIN.pixelsPerMeterWidth),pixelsPerMeterHeight(bmpIN.pixelsPerMeterHeight), colourTableEntries(bmpIN.colourTableEntries),
+            noOfImportantColours(bmpIN.noOfImportantColours), importantColours(bmpIN.importantColours), rawData(bmpIN.rawData), rgbData(bmpIN.rgbData) {}
+
         int GetWidth() const {
             return (int)imgWidth;
         }
@@ -448,8 +461,40 @@ namespace BMP {
             return (int)imgHeight;
         }
 
-        void* returnData() {
-            return static_cast<void*>(rawData.data());
+        std::vector<uint8_t> returnRawData() {
+            return rawData;
+        }
+
+        void* returnRawDataVoidPtr() {
+
+            if (colourTableEntries == 0) {
+                return static_cast<void*>(rawData.data());
+            }
+            else {
+                return static_cast<void*>(rgbData.data());
+            }
+
+        }
+
+        void updateRawData(std::vector<uint8_t>& vecIn) {
+            rawData.clear();
+            rawData = vecIn;
+        }
+
+        void fillRGBData() {
+            rgbData.clear();
+
+            if (colourTableEntries != 0) {
+                long pixelCount = imgWidth * imgHeight;
+
+                rgbData.resize(pixelCount * 3);
+                for (long i = 0; i < pixelCount; ++i) {
+                    long idx = i * 3;
+                    rgbData[idx + 0] = importantColours[rawData[i]].b;
+                    rgbData[idx + 1] = importantColours[rawData[i]].g;
+                    rgbData[idx + 2] = importantColours[rawData[i]].r;
+                }
+            }
         }
 
         void flipImageData() {
@@ -458,29 +503,70 @@ namespace BMP {
 
             for (int i = 0; i < iterations; ++i) {
                 int start = i * charsPerRow;
-                int endStart = (imgHeight - 1 - i) * charsPerRow;  // Corrected index for the bottom row
+                int endStart = (imgHeight - 1 - i) * charsPerRow;
 
                 // Swap the two rows in place
                 for (unsigned int j = 0; j < charsPerRow; ++j) {
                     std::swap(rawData[start + j], rawData[endStart + j]);
                 }
             }
+
+            fillRGBData();
         }
 
         void swapRBData() {
-            if (colourBitDepth == 24) {
-                for (unsigned long i = 0; i < imgSize; i += 3) {
+            if (colourTableEntries == 0) {
+                int iterations = colourBitDepth / 8;
+
+                for (unsigned long i = 0; i < imgSize; i += iterations) {
                     uint8_t r = rawData[i + 2];
                     rawData[i + 2] = rawData[i];
                     rawData[i] = r;
                 }
             }
-            else if (colourBitDepth == 32) {
-                for (unsigned long i = 0; i < imgSize; i += 4) {
-                    uint8_t r = rawData[i + 2];
-                    rawData[i + 2] = rawData[i];
-                    rawData[i] = r;
+            else {
+                for (auto& entry : importantColours) {
+                    int r = entry.r;
+                    entry.r = entry.b;
+                    entry.b = r;
                 }
+                fillRGBData();
+            }
+        }
+
+        void save(const std::string& outLocation) {
+            std::ofstream file(outLocation, std::ios::binary);
+
+
+            file.write("BM", 2);
+
+            file.write((char*)&sizeOfBitmapFile, sizeof(uint32_t));
+            file.write((char*)&reservedBytes, sizeof(uint32_t));
+            file.write((char*)&pixelDataOffset, sizeof(uint32_t));
+            file.write((char*)&headerSize, sizeof(uint32_t));
+            file.write((char*)&imgWidth, sizeof(uint32_t));
+            file.write((char*)&imgHeight, sizeof(uint32_t));
+
+            file.write((char*)&numberOfColourPlanes, sizeof(uint16_t));
+            file.write((char*)&colourBitDepth, sizeof(uint16_t));
+            file.write((char*)&compression, sizeof(uint32_t));
+            file.write((char*)&imgSize, sizeof(uint32_t));
+            file.write((char*)&pixelsPerMeterWidth, sizeof(uint32_t));
+            file.write((char*)&pixelsPerMeterHeight, sizeof(uint32_t));
+            file.write((char*)&colourTableEntries, sizeof(uint32_t));
+            file.write((char*)&importantColours, sizeof(uint32_t));
+
+            if (colourTableEntries != 0) {
+                for (const auto& bgraVal : importantColours) {
+                    file.write((char*)&bgraVal.b, sizeof(char));
+                    file.write((char*)&bgraVal.g, sizeof(char));
+                    file.write((char*)&bgraVal.r, sizeof(char));
+                    file.write((char*)&bgraVal.a, sizeof(char));
+                }
+            }
+
+            for (const auto& entry : rawData) {
+                file.write((char*)&entry, sizeof(char));
             }
         }
     };
