@@ -27,6 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\func.hpp" />
+    <ClInclude Include="src\gui.h" />
     <ClInclude Include="src\loadMap.hpp" />
     <ClInclude Include="src\mapTypes.hpp" />
     <ClInclude Include="src\selectFolders.hpp" />

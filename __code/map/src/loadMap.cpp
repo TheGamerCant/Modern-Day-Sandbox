@@ -998,6 +998,14 @@ static void loadStatesMap(std::vector<PDX::state>& statesArray, std::unordered_m
 	for (const auto& state : statesArray) stateColourToStateIDMap[std::make_tuple(state.red, state.green, state.blue)] = state.id;
 }
 
+static void sortStates(std::vector<PDX::state>& statesArray) {
+	std::sort(statesArray.begin(), statesArray.end(), [](const PDX::state& a, const PDX::state& b) { return a.id < b.id; });
+}
+
+static void sortStrategicRegions(std::vector<PDX::strategic_region>& strategicRegionsArray) {
+	std::sort(strategicRegionsArray.begin(), strategicRegionsArray.end(), [](const PDX::strategic_region& a, const PDX::strategic_region& b) { return a.id < b.id; });
+}
+
 void loadMap(
 	const std::filesystem::path& vanillaGamePath, const std::filesystem::path& modPath,
 
@@ -1067,10 +1075,11 @@ void loadMap(
 
 	for (auto& fut : futuresStrategicRegions) fut.get();
 
-	std::sort(statesArray.begin(), statesArray.end(), [](const PDX::state& a, const PDX::state& b) { return a.id < b.id; });
-	std::sort(strategicRegionsArray.begin(), strategicRegionsArray.end(), [](const PDX::strategic_region& a, const PDX::strategic_region& b) { return a.id < b.id; });
+	std::thread t8 (sortStates, std::ref(statesArray));
+	std::thread t9 (sortStrategicRegions, std::ref(strategicRegionsArray));
 
-	
+	t8.join();
+	t9.join();
 
 	for (auto& state : statesArray) {
 		if (state.id != 0) {
@@ -1086,7 +1095,7 @@ void loadMap(
 			state.blue = rgbInt & 0xFF;
 
 			for (auto& province : state.provinces) province->state = &state;
-			std::sort(state.provinces.begin(), state.provinces.end(), [](const PDX::province* a, const PDX::province* b) { return a->id < b->id; });
+//			std::sort(state.provinces.begin(), state.provinces.end(), [](const PDX::province* a, const PDX::province* b) { return a->id < b->id; });
 		}
 	}
 
@@ -1094,20 +1103,20 @@ void loadMap(
 		if (strategicRegion.id != 0) {
 			for (auto& province : strategicRegion.provinces) province->strategic_region = &strategicRegion;
 
-			std::sort(strategicRegion.provinces.begin(), strategicRegion.provinces.end(), [](const PDX::province* a, const PDX::province* b) { return a->id < b->id; });
+//			std::sort(strategicRegion.provinces.begin(), strategicRegion.provinces.end(), [](const PDX::province* a, const PDX::province* b) { return a->id < b->id; });
 		}
 	}
 
-	std::thread t8(loadLocalisationMain, std::ref(locFiles), std::ref(replaceFiles), std::ref(provincesArray), std::ref(statesArray), std::ref(strategicRegionsArray));
-	std::thread t9(loadBMPfiles, std::cref(vanillaGamePath), std::cref(modPath), std::ref(provincesBMP), std::ref(riversBMP), std::ref(heightmapBMP));
+	std::thread t10(loadLocalisationMain, std::ref(locFiles), std::ref(replaceFiles), std::ref(provincesArray), std::ref(statesArray), std::ref(strategicRegionsArray));
+	std::thread t11(loadBMPfiles, std::cref(vanillaGamePath), std::cref(modPath), std::ref(provincesBMP), std::ref(riversBMP), std::ref(heightmapBMP));
 
-	t8.join();
-	std::thread t10(loadProvincesMap, std::ref(provincesArray), std::ref(provinceColourToProvinceIDMap));
-	std::thread t11(loadStatesMap, std::ref(statesArray), std::ref(stateColourToStateIDMap));
-
-	t9.join();
 	t10.join();
+	std::thread t12(loadProvincesMap, std::ref(provincesArray), std::ref(provinceColourToProvinceIDMap));
+	std::thread t13(loadStatesMap, std::ref(statesArray), std::ref(stateColourToStateIDMap));
+
 	t11.join();
+	t12.join();
+	t13.join();
 
 //	int width = provincesBMP.GetWidth();
 //	int height = provincesBMP.GetHeight();
@@ -1215,6 +1224,6 @@ void loadMap(
 //			}
 //		}
 //	}
-
+//
 //	stateBordersBMP.updateRawData(stateBordersVec);
 }
