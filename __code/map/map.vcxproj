@@ -26,7 +26,6 @@
     <ClCompile Include="src\selectFoldersRaylib.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GUI.hpp" />
     <ClInclude Include="src\func.hpp" />
     <ClInclude Include="src\loadMap.hpp" />
     <ClInclude Include="src\mapTypes.hpp" />

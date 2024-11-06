@@ -1109,67 +1109,112 @@ void loadMap(
 	t10.join();
 	t11.join();
 
-	int width = provincesBMP.GetWidth();
-	int height = provincesBMP.GetHeight();
-	unsigned long pixelCount = width * height;
-	statesBMP = provincesBMP;
-	stateBordersBMP = provincesBMP;
-	std::vector<uint8_t> statesVec = provincesBMP.returnRawData();
-	std::vector<uint8_t> stateBordersVec(pixelCount * 3, 255);
+//	int width = provincesBMP.GetWidth();
+//	int height = provincesBMP.GetHeight();
+//	unsigned long pixelCount = width * height;
+//	statesBMP = provincesBMP;
+//	stateBordersBMP = provincesBMP;
+//	std::vector<uint8_t> statesVec = provincesBMP.returnRawData();
+//	std::vector<uint8_t> stateBordersVec(pixelCount * 3, 255);
+//
+//	
+//	for (unsigned long i = 0; i < pixelCount; ++i) {
+//		unsigned long idx = i * 3;
+//
+//		std::tuple<uint8_t, uint8_t, uint8_t> colour = std::make_tuple(statesVec[idx + 0], statesVec[idx + 1], statesVec[idx + 2]);
+//		auto it = provinceColourToProvinceIDMap.find(colour);
+//		if (it != provinceColourToProvinceIDMap.end()) {
+//			int id = it->second;
+//			if (provincesArray[id].state != nullptr){
 
-	
-	for (unsigned long i = 0; i < pixelCount; ++i) {
-		unsigned long idx = i * 3;
+//				if (provincesArray[id].type == 1) {
+//					statesVec[idx + 0] = 0;
+//					statesVec[idx + 1] = 255;
+//					statesVec[idx + 2] = 0;
+//				}
+//				else {
+//					statesVec[idx + 0] = 150;
+//					statesVec[idx + 1] = 68;
+//					statesVec[idx + 2] = 192;
+//				}
 
-		std::tuple<uint8_t, uint8_t, uint8_t> colour = std::make_tuple(statesVec[idx + 0], statesVec[idx + 1], statesVec[idx + 2]);
-		auto it = provinceColourToProvinceIDMap.find(colour);
-		if (it != provinceColourToProvinceIDMap.end()) {
-			int id = it->second;
-			if (provincesArray[id].state != nullptr){
-				statesVec[idx + 0] = provincesArray[id].state->red;
-				statesVec[idx + 1] = provincesArray[id].state->green;
-				statesVec[idx + 2] = provincesArray[id].state->blue;
-			}
-			else {
-				statesVec[idx + 0] = 0;
-				statesVec[idx + 1] = 0;
-				statesVec[idx + 2] = 0;
-			}
-		}
-	}
+//				statesVec[idx + 0] = provincesArray[id].state->red;
+//				statesVec[idx + 1] = provincesArray[id].state->green;
+//				statesVec[idx + 2] = provincesArray[id].state->blue;
+//			}
+//			else {
+//				statesVec[idx + 0] = 0;
+//				statesVec[idx + 1] = 0;
+//				statesVec[idx + 2] = 0;
+//			}
+//		}
+//	}
+//
+//	statesBMP.updateRawData(statesVec);
+//	
+//	const int widthMinusOne = width - 1;
+//	const int heightMinusOne = height - 1;
+//	const int threeWidth = width * 3;
+//	for (unsigned long y = 0; y < height; ++y) {
+//		for (unsigned long x = 0; x < width; ++x) {
+//
+//			unsigned long idx = ((y * width) + x) * 3;
+//
+//			if (x < widthMinusOne) {
+//				if (statesVec[idx + 0] != statesVec[idx + 3] || statesVec[idx + 1] != statesVec[idx + 4] || statesVec[idx + 2] != statesVec[idx + 5]) {
+//					if (!((statesVec[idx + 0] == 0 && statesVec[idx + 1] == 0 && statesVec[idx + 2] == 0) || (statesVec[idx + 3] == 0 && statesVec[idx + 4] == 0 && statesVec[idx + 5] == 0))) {
+//						stateBordersVec[idx + 0] = 0;
+//						stateBordersVec[idx + 1] = 0;
+//						stateBordersVec[idx + 2] = 0;
 
-	statesBMP.updateRawData(statesVec);
+						//					stateBordersVec[idx + 3] = 0;
+						//					stateBordersVec[idx + 4] = 0;
+						//					stateBordersVec[idx + 5] = 0;
 
-	for (unsigned long y = 0; y < height; ++y) {
-		for (unsigned long x = 0; x < width - 1; ++x) {
-			unsigned long idx = ((y * width) + x) * 3;
+//					}
+//					else {
+//						stateBordersVec[idx + 0] = 0;
+//						stateBordersVec[idx + 1] = 255;
+//						stateBordersVec[idx + 2] = 0;
+//					}
+//				}
+//			}
+//			if (y < heightMinusOne) {
+//				if (statesVec[idx + 0] != statesVec[idx + threeWidth + 0] || statesVec[idx + 1] != statesVec[idx + threeWidth + 1] || statesVec[idx + 2] != statesVec[idx + threeWidth + 2]) {
+//					if (!((statesVec[idx + 0] == 0 && statesVec[idx + 1] == 0 && statesVec[idx + 2] == 0) || (statesVec[idx + threeWidth + 0] == 0 && statesVec[idx + threeWidth + 0] == 0 && statesVec[idx + threeWidth + 0] == 0))) {
+//						stateBordersVec[idx + 0] = 0;
+//						stateBordersVec[idx + 1] = 0;
+//						stateBordersVec[idx + 2] = 0;
 
-			if (statesVec[idx + 0] != statesVec[idx + 3] || statesVec[idx + 1] != statesVec[idx + 4] || statesVec[idx + 2] != statesVec[idx + 5]) {
-				stateBordersVec[idx + 0] = 0;
-				stateBordersVec[idx + 1] = 0;
-				stateBordersVec[idx + 2] = 0;
-				stateBordersVec[idx + 3] = 0;
-				stateBordersVec[idx + 4] = 0;
-				stateBordersVec[idx + 5] = 0;
-			}
-		}
-	}
+						//					stateBordersVec[idx + threeWidth + 0] = 0;
+						//					stateBordersVec[idx + threeWidth + 1] = 0;
+						//					stateBordersVec[idx + threeWidth + 2] = 0;
+//
+//					}
+//					else {
+//						stateBordersVec[idx + 0] = 0;
+//						stateBordersVec[idx + 1] = 255;
+//						stateBordersVec[idx + 2] = 0;
+//					}
+//				}
+//			}
+//
+//			if (x < widthMinusOne && y < heightMinusOne) {
+//				if (statesVec[idx + 0] != statesVec[idx + threeWidth + 3] || statesVec[idx + 1] != statesVec[idx + threeWidth + 4] || statesVec[idx + 2] != statesVec[idx + threeWidth + 5]) {
+//					if (!((statesVec[idx + 0] == 0 && statesVec[idx + 1] == 0 && statesVec[idx + 2] == 0) || (statesVec[idx + threeWidth + 3] == 0 && statesVec[idx + threeWidth + 4] == 0 && statesVec[idx + threeWidth + 5] == 0))) {
+//						stateBordersVec[idx + 0] = 0;
+//						stateBordersVec[idx + 1] = 0;
+//						stateBordersVec[idx + 2] = 0;
+//					}
+///					else {
+//						stateBordersVec[idx + 0] = 0;
+//						stateBordersVec[idx + 1] = 255;
+//						stateBordersVec[idx + 2] = 0;
+//					}
+//				}
+//			}
+//		}
+//	}
 
-	const int threeWidth = width * 3;
-	for (unsigned long y = 0; y < height - 1; ++y) {
-		for (unsigned long x = 0; x < width; ++x) {
-			unsigned long idx = ((y * width) + x) * 3;
-
-			if (statesVec[idx + 0] != statesVec[idx + threeWidth + 0] || statesVec[idx + 1] != statesVec[idx + threeWidth + 1] || statesVec[idx + 2] != statesVec[idx + threeWidth + 2]) {
-				stateBordersVec[idx + 0] = 0;
-				stateBordersVec[idx + 1] = 0;
-				stateBordersVec[idx + 2] = 0;
-				stateBordersVec[idx + threeWidth + 0] = 0;
-				stateBordersVec[idx + threeWidth + 1] = 0;
-				stateBordersVec[idx + threeWidth + 2] = 0;
-			}
-		}
-	}
-
-	stateBordersBMP.updateRawData(stateBordersVec);
+//	stateBordersBMP.updateRawData(stateBordersVec);
 }

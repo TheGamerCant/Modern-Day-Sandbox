@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <filesystem>
+#include <chrono>
 
 #include "selectFolders.hpp"
 #include "mapTypes.hpp"
@@ -19,6 +20,11 @@
 
 
 int main() {
+	typedef std::chrono::high_resolution_clock Time;
+	typedef std::chrono::milliseconds ms;
+	typedef std::chrono::duration<float> fsec;
+	auto t0 = Time::now();
+
 	std::filesystem::path modDirectory, vanillaDirectory;
 	returnModAndVanillaDirectories(modDirectory, vanillaDirectory);
 
@@ -42,12 +48,13 @@ int main() {
 
 	statesBMP.flipImageData();
 	statesBMP.swapRBData();
-	statesBMP.save("states.bmp");
 
-	stateBordersBMP.flipImageData();
-	stateBordersBMP.swapRBData();
-	stateBordersBMP.save("stateborders.bmp");
+	auto t1 = Time::now();
+	fsec fs = t1 - t0;
+	ms d = std::chrono::duration_cast<ms>(fs);
+	std::cout << d.count() << "s\n";
 
+#ifdef RAYLIBACTIVE
 	const int screenWidth = returnWindowXPixels();
 	const int screenHeight = returnWindowYPixels();
 	InitWindow(screenWidth, screenHeight, "TGC's Map Editor");
@@ -78,6 +85,6 @@ int main() {
 
 		EndDrawing();
 	}
-
+#endif
 	return 0;
 }

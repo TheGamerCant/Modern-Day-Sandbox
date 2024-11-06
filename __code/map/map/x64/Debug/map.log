@@ -6,10 +6,6 @@ C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\loadM
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\loadMap.cpp(1079,18): warning C4244:         [
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\loadMap.cpp(1079,18): warning C4244:             _Rep=std::chrono::system_clock::rep
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\loadMap.cpp(1079,18): warning C4244:         ]
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\loadMap.cpp(1143,30): warning C4018: '<': signed/unsigned mismatch
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\loadMap.cpp(1144,31): warning C4018: '<': signed/unsigned mismatch
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\loadMap.cpp(1159,30): warning C4018: '<': signed/unsigned mismatch
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\loadMap.cpp(1160,31): warning C4018: '<': signed/unsigned mismatch
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(317,42): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(324,43): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
   map.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\x64\Debug\map.exe
