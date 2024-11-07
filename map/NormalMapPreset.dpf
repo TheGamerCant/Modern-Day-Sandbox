@@ -1,1 +1,1 @@
---format bgr8 --quality normal --mips --mip-filter box --zcmp 5 --to-normal-os --normal-filter dudv --normal-invert-y --normal-scale 31.388 --height screen --normal-alpha set-to-1 --forward -z --up +y --right +x
+--format bgr8 --quality normal --no-mips --zcmp 5 --to-normal-os --normal-filter dudv --normal-invert-y --normal-scale 36.197 --height blue --normal-alpha set-to-1 --forward +x --up +y --right +x

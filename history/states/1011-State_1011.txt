@@ -4,9 +4,9 @@ state={
 	name="STATE_1011"
 
 	history={
-		owner = GBR
-		add_core_of = GBR
-		add_core_of = WLS
+		owner = ZZZ
+		
+		
 		
 		victory_points = { 377 4 }
 		victory_points = { 13415 20 }
@@ -17,8 +17,8 @@ state={
 	provinces={
 		377 13414 13415 13416 
 	}
-	manpower=1729989
+	manpower = 100000
 	buildings_max_level_factor=1.000
-	state_category=pastoral
+	state_category = STATE_CATEGEGORY_twentyFive
 	local_supplies=0.500
 }

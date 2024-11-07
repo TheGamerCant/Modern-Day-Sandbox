@@ -3,12 +3,13 @@ state={
 	name="STATE_560"
 	history={
 		owner = ZZZ
+		
 	}
 	provinces={
 		1724 1772 1807 1842 3664 4290 4844 7748 7871 9659 10571 10577 10590 12559 12569 12638 
 	}
-	manpower= 100000
+	manpower = 100000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=rural
+	state_category = STATE_CATEGEGORY_eight
 }

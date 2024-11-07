@@ -4,8 +4,8 @@ state={
 	name="STATE_386"
 
 	history={
-		owner = USA
-		add_core_of = USA
+		owner = ZZZ
+		
 		
 		victory_points = { 1690 5 }
 		victory_points = { 12673 2 }
@@ -16,8 +16,8 @@ state={
 	provinces={
 		1320 1690 4747 7255 7414 7442 10155 10198 10327 10687 10690 10693 12155 12214 12673 
 	}
-	manpower=743788
+	manpower = 100000
 	buildings_max_level_factor=1.000
-	state_category=large_town
+	state_category = STATE_CATEGEGORY_twentyTwo
 	local_supplies=0.500
 }

@@ -4,8 +4,8 @@ state={
 	name="STATE_1007"
 
 	history={
-		owner = IRE
-		add_core_of = IRE
+		owner = ZZZ
+		
 		
 		victory_points = { 11303 1 }
 	}
@@ -13,8 +13,8 @@ state={
 	provinces={
 		11303 
 	}
-	manpower=103500
+	manpower = 100000
 	buildings_max_level_factor=1.000
-	state_category=pastoral
+	state_category = STATE_CATEGEGORY_nine
 	local_supplies=0.500
 }

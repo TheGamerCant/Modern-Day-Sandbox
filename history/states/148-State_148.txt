@@ -7,8 +7,8 @@ state={
 	provinces={
 		30 103 124 162 167 203 2992 3055 3069 3097 3107 3158 3193 6061 6076 6087 6128 6137 6142 9112 9189 9223 11030 11115 11125 11130 11164 11167 11204 
 	}
-	manpower= 100000
+	manpower = 100000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=rural
+	state_category = STATE_CATEGEGORY_eight
 }

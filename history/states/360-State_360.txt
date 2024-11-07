@@ -4,8 +4,8 @@ state={
 	name="STATE_360"
 
 	history={
-		owner = USA
-		add_core_of = USA
+		owner = ZZZ
+		
 		
 		victory_points = { 11800 15 }
 		victory_points = { 3687 1 }
@@ -15,8 +15,8 @@ state={
 	provinces={
 		702 862 880 3687 3697 3802 3850 3880 6705 6872 6899 9662 9789 9836 11648 11769 11789 11800 11817 12405 
 	}
-	manpower=4745558
+	manpower = 100000
 	buildings_max_level_factor=1.000
-	state_category=megalopolis
+	state_category = STATE_CATEGEGORY_thirtyEight
 	local_supplies=0.500
 }

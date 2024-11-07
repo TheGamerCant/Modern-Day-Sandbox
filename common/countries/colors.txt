@@ -2,42 +2,6 @@ ZZZ = {
 	color = rgb { 0  0  0 }
 	color_ui = rgb { 0  0  0 }
 }
-USA = {
-	color = rgb { 20 133 237 }
-	color_ui = rgb { 20 133 237 }
-}
-ENG = {
-	color = rgb { 205 50 60 }
-	color_ui = rgb { 205 50 60 }
-}
-SCT = {
-	color = rgb { 0 48 107 }
-	color_ui = rgb { 0 48 107 }
-}
-IRE = {
-	color = rgb { 10 150 26 }
-	color_ui = rgb { 10 150 26 }
-}
-GBR = {
-	color = rgb { 205 50 60 }
-	color_ui = rgb { 205 50 60 }
-}
-WLS = {
-	color = rgb { 255 174 120 }
-	color_ui = rgb { 255 174 120 }
-}
-ULS = {
-	color = rgb { 240 28 51 }
-	color_ui = rgb { 240 28 51 }
-}
-PLU = {
-	color = rgb { 122 73 245 }
-	color_ui = rgb { 122 73 245 }
-}
-MSH = {
-	color = rgb { 61 163 184 }
-	color_ui = rgb { 61 163 184 }
-}
 
 
 D01 = {

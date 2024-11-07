@@ -2,8 +2,8 @@ state={
 	id=976
 	name="STATE_976"
 	history={
-		owner = USA
-		add_core_of = USA
+		owner = ZZZ
+		
 		
 		victory_points = { 4274 3 }
 		victory_points = { 4826 2 }
@@ -12,8 +12,8 @@ state={
 	provinces={
 		1414 3471 4274 4347 4826 7398 7721 7865 10151 10305 10625 12183 12553 
 	}
-	manpower= 473959
+	manpower = 100000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=pastoral
+	state_category = STATE_CATEGEGORY_eighteen
 }

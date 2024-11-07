@@ -1,14 +1,21 @@
+
 state={
 	id=56
 	name="STATE_56"
+
 	history={
 		owner = ZZZ
+		
+		
+		victory_points = { 467 10 }
+		victory_points = { 12562 6 }
 	}
+
 	provinces={
-		241 247 309 336 3234 9281 11233 11264 11360 11388 
+		402 467 524 548 3458 6511 9400 11492 12562 13502 
 	}
-	manpower= 100000
+	manpower = 100000
 	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=city
+	state_category = STATE_CATEGEGORY_eight
+	local_supplies=0.500
 }

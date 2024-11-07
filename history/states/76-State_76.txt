@@ -7,8 +7,8 @@ state={
 	provinces={
 		711 713 727 746 3689 3696 3709 6711 6714 6731 9668 9670 9672 9685 9687 9704 11676 
 	}
-	manpower= 100000
+	manpower = 100000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=town
+	state_category = STATE_CATEGEGORY_eight
 }

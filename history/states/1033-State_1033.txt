@@ -1,0 +1,24 @@
+
+state={
+	id=1033
+	name="STATE_1033"
+
+	history={
+		owner = ZZZ
+		
+
+		victory_points = { 13564 12 }
+		victory_points = { 2025 7 }
+		victory_points = { 13609 3 }
+		victory_points = { 13613 2 }
+		victory_points = { 13629 5 }
+	}
+
+	provinces={
+		1932 2025 8021 13564 13609 13610 13611 13612 13613 13629 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_sixtyTwo
+	local_supplies=0.500
+}

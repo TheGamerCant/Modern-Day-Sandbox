@@ -1,0 +1,20 @@
+
+state={
+	id=1014
+	name="STATE_1014"
+
+	history={
+		owner = ZZZ
+		
+		
+		victory_points = { 13466 5 }
+	}
+
+	provinces={
+		13466 
+	}
+	manpower = 100000
+	buildings_max_level_factor=1.000
+	state_category = STATE_CATEGEGORY_five
+	local_supplies=0.500
+}

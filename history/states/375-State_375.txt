@@ -4,14 +4,14 @@ state={
 	name="STATE_375"
 
 	history={
-		owner = USA
-		add_core_of = USA
+		owner = ZZZ
+		
 		
 		victory_points = { 4955 2 }
 		victory_points = { 6798 1 }
 		victory_points = { 3960 20 }
 		victory_points = { 9920 10 }
-		victory_points = { 5022 8 }
+		victory_points = { 5022 12 }
 		victory_points = { 9908 2 }
 		victory_points = { 8064 4 }
 		victory_points = { 12301 2 }
@@ -20,8 +20,8 @@ state={
 	provinces={
 		1915 1998 2055 2082 3875 3960 3972 4955 5022 5085 6798 7836 7981 8064 9773 9829 9908 9920 10861 12301 12728 12848 12875 12893 13400 13401 13402 13403 13404 
 	}
-	manpower=5378593
+	manpower = 100000
 	buildings_max_level_factor=1.000
-	state_category=metropolis
+	state_category = STATE_CATEGEGORY_fiftyOne
 	local_supplies=0.500
 }

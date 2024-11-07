@@ -5,14 +5,16 @@ state={
 
 	history={
 		owner = ZZZ
-
+		
+		victory_points = { 13372 40 }
+		victory_points = { 13490 4 }
 	}
 
 	provinces={
-		402 467 524 548 3230 3458 3544 6259 6321 6511 6567 9290 9316 11385 11492 12562 13372 13373 
+		3544 13372 13373 13490 13491 13492 
 	}
-	manpower=100000
+	manpower = 100000
 	buildings_max_level_factor=1.000
-	state_category=large_city
+	state_category = STATE_CATEGEGORY_eight
 	local_supplies=0.500
 }

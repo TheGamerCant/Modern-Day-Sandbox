@@ -2,8 +2,8 @@ state={
 	id=365
 	name="STATE_365"
 	history={
-		owner = USA
-		add_core_of = USA
+		owner = ZZZ
+		
 		
 		victory_points = { 12384 10 }
 		victory_points = { 11975 5 }
@@ -13,8 +13,8 @@ state={
 	provinces={
 		638 968 1433 1480 5090 7118 7583 7612 9949 9996 10394 10437 10465 10492 11975 12325 12384 12470 12498 
 	}
-	manpower= 5463105
+	manpower = 100000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=city
+	state_category = STATE_CATEGEGORY_fortySix
 }

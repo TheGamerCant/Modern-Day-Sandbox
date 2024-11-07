@@ -4,8 +4,8 @@ state={
 	name="STATE_981"
 
 	history={
-		owner = USA
-		add_core_of = USA
+		owner = ZZZ
+		
 		
 		victory_points = { 10337 25 }
 		victory_points = { 12782 15 }
@@ -18,8 +18,8 @@ state={
 	provinces={
 		805 1500 1927 2019 2042 4577 4884 5001 5061 6785 6968 6987 7628 10337 10504 10778 12341 12369 12410 12486 12782 13397 13398 13399 
 	}
-	manpower=8775598
+	manpower = 100000
 	buildings_max_level_factor=1.000
-	state_category=pastoral
+	state_category = STATE_CATEGEGORY_fiftyOne
 	local_supplies=0.500
 }
