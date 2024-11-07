@@ -1,0 +1,26 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_Portrait_ANG_Jose_Eduardo_dos_Santos"
+		texturefile = "gfx/leaders/ANG/Portrait_ANG_Jose_Eduardo_dos_Santos.dds"
+	}
+	SpriteType = {
+		name = "GFX_Portrait_ARG_Jorge_Rafael_Videla"
+		texturefile = "gfx/leaders/ARG/Portrait_ARG_Jorge_Rafael_Videla.dds"
+	}
+	SpriteType = {
+		name = "GFX_Portrait_GBR_Margaret_Thatcher"
+		texturefile = "gfx/leaders/GBR/Portrait_GBR_Margaret_Thatcher.dds"
+	}
+	SpriteType = {
+		name = "GFX_Portrait_IRE_Charles_Haughey"
+		texturefile = "gfx/leaders/IRE/Portrait_IRE_Charles_Haughey.dds"
+	}
+	SpriteType = {
+		name = "GFX_Portrait_MSH_Amata_Kuaba"
+		texturefile = "gfx/leaders/MSH/Portrait_MSH_Amata_Kuaba.dds"
+	}
+	SpriteType = {
+		name = "GFX_Portrait_USA_Jimmy_Carter"
+		texturefile = "gfx/leaders/USA/Portrait_USA_Jimmy_Carter.dds"
+	}
+}

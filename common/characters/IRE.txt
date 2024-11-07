@@ -1,0 +1,15 @@
+characters = {
+	CHAR_IRE_Charles_Haughey = {
+		name = CHAR_IRE_Charles_Haughey
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_IRE_Charles_Haughey
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_conservative
+			traits = {  }
+			id = -1
+		}
+	}
+}

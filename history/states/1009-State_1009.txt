@@ -1,0 +1,28 @@
+
+state={
+	id=1009
+	name="STATE_1009"
+
+	history={
+		owner = GBR
+		add_core_of = GBR
+		add_core_of = ENG
+		
+		victory_points = { 3422 4 }
+		victory_points = { 13411 2 }
+		victory_points = { 6489 12 }
+		victory_points = { 9458 8 }
+		victory_points = { 13413 15 }
+		victory_points = { 13412 5 }
+		victory_points = { 6351 3 }
+		victory_points = { 507 2 }
+	}
+
+	provinces={
+		507 3422 3463 6351 6489 9458 11471 13411 13412 13413 
+	}
+	manpower=3274917
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.500
+}

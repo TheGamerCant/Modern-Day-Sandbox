@@ -1,8 +1,0 @@
-﻿  main.cpp
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\mapTypes.hpp(431,39): warning C4018: '<': signed/unsigned mismatch
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\main.cpp(114,29): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\main.cpp(127,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\src\main.cpp(127,48): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  map.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\map\x64\Debug\map.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.

@@ -1,0 +1,18 @@
+
+state={
+	id=10
+	name="STATE_10"
+
+	history={
+		owner = ZZZ
+
+	}
+
+	provinces={
+		402 467 524 548 3230 3458 3544 6259 6321 6511 6567 9290 9316 11385 11492 12562 13372 13373 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.500
+}

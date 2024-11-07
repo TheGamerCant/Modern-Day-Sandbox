@@ -1,0 +1,22 @@
+
+state={
+	id=1013
+	name="STATE_1013"
+
+	history={
+		owner = GBR
+		add_core_of = GBR
+		add_core_of = SCT
+		
+		victory_points = { 9350 1 }
+		victory_points = { 11218 3 }
+	}
+
+	provinces={
+		6350 9350 11218 
+	}
+	manpower=137893
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.500
+}

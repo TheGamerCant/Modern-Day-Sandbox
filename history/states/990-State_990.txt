@@ -1,0 +1,25 @@
+
+state={
+	id=990
+	name="STATE_990"
+
+	history={
+		owner = USA
+		add_core_of = USA
+		
+		victory_points = { 9814 30 }
+		victory_points = { 1562 20 }
+		victory_points = { 7517 8 }
+		victory_points = { 13375 5 }
+		victory_points = { 13377 15 }
+		victory_points = { 13380 8 }
+	}
+
+	provinces={
+		1562 7517 9814 11757 13375 13376 13377 13380 13381 
+	}
+	manpower=8993803
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.500
+}

@@ -1,0 +1,16 @@
+characters = {
+	CHAR_GBR_Margaret_Thatcher = {
+		gender = female
+		name = CHAR_GBR_Margaret_Thatcher
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_GBR_Margaret_Thatcher
+			}
+		}
+		country_leader = {
+			ideology = SUBIDEOLOGY_GENERIC_neoconservative
+			traits = {  }
+			id = -1
+		}
+	}
+}

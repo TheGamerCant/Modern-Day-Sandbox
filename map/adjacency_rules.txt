@@ -47,14 +47,14 @@ adjacency_rule =
 	
 	required_provinces = { 12049 1155 4073 9947 }
 
-	is_disabled = {
-		OR = {
-			has_global_flag = SUEZ_CANAL_BLOCKED
-			has_country_flag = SUEZ_CANAL_BLOCKED_FOR_COUNTRY
-			has_country_flag = SUEZ_SANCTIONS_FLAG
-		}
-		tooltip = suez_blocked_tt
-	}
+#	is_disabled = {
+#		OR = {
+#			has_global_flag = SUEZ_CANAL_BLOCKED
+#			has_country_flag = SUEZ_CANAL_BLOCKED_FOR_COUNTRY
+#			has_country_flag = SUEZ_SANCTIONS_FLAG
+#		}
+#		tooltip = suez_blocked_tt
+#	}
 	
 	icon = 12049
 	offset = { 1 0 -6 }
@@ -176,13 +176,13 @@ adjacency_rule =
 	
 	required_provinces = { 4624 7617 }
 
-	is_disabled = {
-		OR = {
-			has_global_flag = PANAMA_CANAL_BLOCKED
-			has_country_flag = PANAMA_CANAL_BLOCKED_FOR_COUNTRY
-		}
-		tooltip = disable_canal_tt
-	}
+#	is_disabled = {
+#		OR = {
+#			has_global_flag = PANAMA_CANAL_BLOCKED
+#			has_country_flag = PANAMA_CANAL_BLOCKED_FOR_COUNTRY
+#		}
+#		tooltip = disable_canal_tt
+#	}
 		
 	icon = 7617
 	offset = { -3 0 -2 }
@@ -193,9 +193,9 @@ adjacency_rule =
 {
 	name = "BOSPHORUS_STRAIT"
 
-	is_friend = {
-		TUR_is_friend_for_bosphorus = yes
-	}
+#	is_friend = {
+#		TUR_is_friend_for_bosphorus = yes
+#	}
 	contested =
 	{
 		army = no
@@ -227,10 +227,10 @@ adjacency_rule =
 	
 	required_provinces = { 9833 11829 }
 
-	is_disabled = {
-		has_country_flag = BOSPHORUS_STRAIT_BLOCKED_FOR_COUNTRY
-		tooltip = bosporus_strait_blocked_tt
-	}
+#	is_disabled = {
+#		has_country_flag = BOSPHORUS_STRAIT_BLOCKED_FOR_COUNTRY
+#		tooltip = bosporus_strait_blocked_tt
+#	}
 	
 	icon = 9833
 	offset = { -2 0 -9 }
@@ -241,9 +241,9 @@ adjacency_rule =
 {
 	name = "DARDANELLES_STRAIT"
 
-	is_friend = {
-		TUR_is_friend_for_dardanelles = yes
-	}
+#	is_friend = {
+#		TUR_is_friend_for_dardanelles = yes
+#	}
 
 	contested =
 	{
@@ -276,10 +276,10 @@ adjacency_rule =
 	
 	required_provinces = { 849 6864 }
 
-	is_disabled = {
-		has_country_flag = DARDANELLES_STRAIT_BLOCKED_FOR_COUNTRY
-		tooltip = dardanelles_strait_blocked_tt
-	}
+#	is_disabled = {
+#		has_country_flag = DARDANELLES_STRAIT_BLOCKED_FOR_COUNTRY
+#		tooltip = dardanelles_strait_blocked_tt
+#	}
 	
 	icon = 849
 	offset = { 3 0 -5 } 
@@ -402,4 +402,160 @@ adjacency_rule =
 		
 	icon = 6979
 	offset = { 9 0 6 }
+}
+
+adjacency_rule =
+{
+	name = "GREAT_LAKES_A"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 12149 7291 9601 4345 4270 6625 3605 7433 10320 4417 7345 3602 598 6778 }
+	
+	icon = 4345
+	offset = { 4 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "GREAT_LAKES_B"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 749 11654 13388 13389 }
+	
+	icon = 11654
+	offset = { -4 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "GREAT_LAKES_C"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 9724 6710 9711 9667 13156 }
+	
+	icon = 6710
+	offset = { 8 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "GREAT_LAKES_D"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 5205 12582 }
+	
+	icon = 5205
+	offset = { 2 0 10 }
 }

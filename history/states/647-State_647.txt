@@ -1,0 +1,17 @@
+state={
+	id=647
+	name="STATE_647"
+	history={
+		owner = USA
+		add_core_of = PLU
+		
+		victory_points = { 12103 1 }
+	}
+	provinces={
+		4357 12103 
+	}
+	manpower= 12252
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=small_island
+}

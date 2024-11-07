@@ -1,0 +1,16 @@
+﻿capital = 980
+
+recruit_character = CHAR_USA_Jimmy_Carter
+promote_character = CHAR_USA_Jimmy_Carter
+
+set_popularities = {
+	IDEOLOGY_liberal = 48
+	IDEOLOGY_conservative = 52
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_liberal
+	last_election = "1976.11.8"
+	election_frequency = 48
+	elections_allowed = yes
+}

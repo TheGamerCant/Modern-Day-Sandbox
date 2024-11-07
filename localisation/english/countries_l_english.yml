@@ -1,0 +1,40 @@
+﻿l_english:
+ ZZZ:0 "Hello World"
+ ZZZ_DEF:0 "Hello Worldistan"
+ ZZZ_ADJ:0 "Hello Worldman"
+ 
+ USA:0 "United States of America"
+ USA_DEF:0 "the United States of America"
+ USA_ADJ:0 "America"
+ 
+ GBR:0 "United Kingdom"
+ GBR_DEF:0 "the United Kingdom of Great Britain and Northern Ireland"
+ GBR_ADJ:0 "British"
+ 
+ ENG:0 "England"
+ ENG_DEF:0 "the Kingdom of England"
+ ENG_ADJ:0 "English"
+ 
+ SCT:0 "Scotland"
+ SCT_DEF:0 "the Kingdom of Scotland"
+ SCT_ADJ:0 "Scottish"
+ 
+ WLS:0 "Wales"
+ WLS_DEF:0 "the Kingdom of Wales"
+ WLS_ADJ:0 "English"
+ 
+ ULS:0 "Northern Ireland"
+ ULS_DEF:0 "the Irish Union of Protestants and Catholics"
+ ULS_ADJ:0 "Northern Irish"
+ 
+ IRE:0 "Ireland"
+ IRE_DEF:0 "the Republic of Ireland"
+ IRE_ADJ:0 "Irish"
+ 
+ PLU:0 "Palau"
+ PLU_DEF:0 "the Republic of Palau"
+ PLU_ADJ:0 "Palauan"
+ 
+ MSH:0 "Marshall Islands"
+ MSH_DEF:0 "the Republic of the Marshall Islands"
+ MSH_ADJ:0 "Marshallese"

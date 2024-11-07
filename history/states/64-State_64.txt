@@ -1,0 +1,14 @@
+state={
+	id=64
+	name="STATE_64"
+	history={
+		owner = ZZZ
+	}
+	provinces={
+		375 478 3367 3499 3522 6487 9428 9456 9496 9560 11219 11359 11415 11444 11505 
+	}
+	manpower= 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=megalopolis
+}

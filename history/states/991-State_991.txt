@@ -1,0 +1,22 @@
+
+state={
+	id=991
+	name="STATE_991"
+
+	history={
+		owner = USA
+		add_core_of = USA
+		
+		victory_points = { 12642 10 }
+		victory_points = { 1089 5 }
+		victory_points = { 11772 1 }
+	}
+
+	provinces={
+		1738 1809 7780 11772 12570 12642 
+	}
+	manpower=2022975
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.500
+}

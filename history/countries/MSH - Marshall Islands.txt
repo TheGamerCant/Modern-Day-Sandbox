@@ -1,0 +1,15 @@
+﻿capital = 633
+
+recruit_character = CHAR_MSH_Amata_Kuaba
+promote_character = CHAR_MSH_Amata_Kuaba
+
+set_popularities = {
+	IDEOLOGY_conservative = 100
+}
+
+set_politics = {
+	ruling_party = IDEOLOGY_conservative
+	last_election = "1979.5.8"
+	election_frequency = 48
+	elections_allowed = yes
+}

@@ -1,0 +1,18 @@
+
+state={
+	id=88
+	name="STATE_88"
+
+	history={
+		owner = ZZZ
+
+	}
+
+	provinces={
+		417 442 3410 9412 9427 11398 11413 13205 
+	}
+	manpower=100000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.500
+}

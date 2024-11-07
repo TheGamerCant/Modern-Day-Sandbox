@@ -1,6 +1,0 @@
-CZE_skoda_superb_productivity_modifier = { # KEEP POSITIVE VALUE
-	color_type = good
-	value_type = number
-	precision = 2
-	category = country
-}
