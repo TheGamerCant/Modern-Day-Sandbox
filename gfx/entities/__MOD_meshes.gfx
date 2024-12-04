@@ -1,0 +1,41 @@
+objectTypes = {
+	pdxmesh = {
+		name = "cigarette_mesh"
+		file = "gfx/models/units/cigarette.mesh"
+	}
+	
+	pdxmesh = {
+		name = "cigarette_package_mesh"
+		file = "gfx/models/units/cigarette_package.mesh"
+	}
+
+	pdxmesh = {
+		name = "sandbag_mesh"
+		file = "gfx/models/units/sandbag.mesh"
+	}
+
+	pdxmesh = {
+		name = "lighter_mesh"
+		file = "gfx/models/units/lighter.mesh"
+	}
+
+	pdxmesh = {
+		name = "generic_motorbike_mesh"
+		file = "gfx/models/units/vehicles/GER_motorbike.mesh"
+
+		animation = { id = "attack"			type = "GER_motorbike_attack_animation" }
+		animation = { id = "idle"			type = "GER_motorbike_idle_animation" }
+		animation = { id = "idle2"			type = "GER_motorbike_idle2_animation" }
+		animation = { id = "move"			type = "GER_motorbike_moving_animation" }
+		animation = { id = "training"			type = "GER_motorbike_training_animation" }
+
+		meshsettings = {
+			name = "GER_motorbikeShape"
+			index = 0
+			texture_diffuse = "GER_motorbike_diffuse.dds"
+			texture_normal = "GER_motorbike_normal.dds"
+			texture_specular = "GER_motorbike_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+}
