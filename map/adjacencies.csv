@@ -210,28 +210,13 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 13058;10636;impassable;-1;-1;-1;-1;-1;;Greenland Glacier
 13058;13066;impassable;-1;-1;-1;-1;-1;;Greenland Glacier
 12960;13292;sea;2580;-1;-1;-1;-1;;Falklands
+7683;13293;sea;8642;-1;-1;-1;-1;;Cote Nord
 8198;13295;sea;5473;-1;-1;-1;-1;;Aysen
 13307;13296;sea;9009;-1;-1;-1;-1;;Chubut
 12954;13297;sea;5424;-1;-1;-1;-1;;Araucania
 13312;7982;sea;2919;-1;-1;-1;-1;;South Iran
-13157;8642;sea;12149;-1;-1;-1;-1;GREAT_LAKES_A;
-13154;13157;sea;749;-1;-1;-1;-1;GREAT_LAKES_B;
-13200;13154;sea;6710;-1;-1;-1;-1;GREAT_LAKES_C;
-13159;13199;sea;5205;-1;-1;-1;-1;GREAT_LAKES_D;
-12147;3691;sea;8930;-1;-1;-1;-1;;Northern Canada
-13069;7855;impassable;-1;-1;-1;-1;-1;;Northern Canada
-13069;1830;impassable;-1;-1;-1;-1;-1;;Northern Canada
-13069;10679;impassable;-1;-1;-1;-1;-1;;Northern Canada
-13069;13091;impassable;-1;-1;-1;-1;-1;;Northern Canada
-13069;4848;impassable;-1;-1;-1;-1;-1;;Northern Canada
-4647;7245;sea;7910;-1;-1;-1;-1;;Carribean Islands
-4647;10254;sea;7910;-1;-1;-1;-1;;Carribean Islands
-10254;7245;sea;7910;-1;-1;-1;-1;;Carribean Islands
-1513;7245;sea;7910;-1;-1;-1;-1;;Carribean Islands
-1513;10440;sea;7230;-1;-1;-1;-1;;Carribean Islands
-13314;4450;sea;2887;-1;-1;-1;-1;;Carribean Islands
-373;12680;sea;2361;1928;1676;1933;1678;;Newfoundland-St Pierre and Miquelon
-13411;6489;sea;2895;-1;-1;-1;-1;;Isle of White
-13411;9458;sea;2895;2778;1544;2780;1547;;Isle of White
-13417;6363;sea;8340;2728;1596;2730;1595;;Isle of Anglesey
+761;13315;sea;9092;-1;-1;-1;-1;;Ontario
+13196;13314;sea;9092;-1;-1;-1;-1;;Northern Quebec
+1421;10184;sea;2899;-1;-1;-1;-1;;Sulu-Mindanao
+5864;5838;;-1;-1;-1;-1;-1;OTRANTO_STRAIT;Otranto Strait
 -1;-1;;-1;-1;-1;-1;-1;-1 
