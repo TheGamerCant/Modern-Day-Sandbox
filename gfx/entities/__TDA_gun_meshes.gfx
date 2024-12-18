@@ -1,0 +1,11 @@
+objectTypes={
+	pdxmesh = {
+		name = "GER_infantry_weapon_rifle_mesh"
+		file = "gfx/models/units/GER_infantry_weapon_k98_rifle.mesh"
+	}
+	
+	pdxmesh = {
+		name = "GER_infantry_weapon_mg_mesh"
+		file = "gfx/models/units/GER_infantry_weapon_mp40_mg.mesh"
+	}
+}
