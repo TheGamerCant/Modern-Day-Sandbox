@@ -1,0 +1,23 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "cigarette_mesh"
+		file = "gfx/models/units/cigarette.mesh"
+	}
+	
+	pdxmesh = {
+		name = "cigarette_package_mesh"
+		file = "gfx/models/units/cigarette_package.mesh"
+	}
+	
+	pdxmesh = {
+		name = "lighter_mesh"
+		file = "gfx/models/units/lighter.mesh"
+	}
+	
+	pdxmesh = {
+		name = "sandbag_mesh"
+		file = "gfx/models/units/sandbag.mesh"
+	}
+
+}

@@ -1,0 +1,34 @@
+entity = {
+	name = "lighter_entity"
+	pdxmesh = "lighter_mesh"
+
+	default_state = "idle"
+	state = { name = "smoke"				animation = "long_idle03"
+		event = { time = 8 particle = "lighter_fire_particle" light = "cigarette_light" }
+	}
+	state = { name = "idle"	}
+	state = { name = "attack"	}
+	state = { name = "move"	}
+	state = { name = "retreat"	}
+	state = { name = "training"	}
+	state = { name = "defend"	}
+	state = { name = "support_attack"	}
+
+
+}
+
+entity = {
+	name = "cigarette_entity"
+	pdxmesh = "cigarette_mesh"
+}
+
+entity = {
+	name = "cigarette_package_entity"
+	pdxmesh = "cigarette_package_mesh"
+}
+
+entity = {
+	name = "sandbag_entity"
+	pdxmesh = "sandbag_mesh"
+	scale = 1
+}
