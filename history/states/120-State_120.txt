@@ -1,0 +1,14 @@
+state={
+	id=120
+	name="STATE_120"
+	history={
+		owner = ZZZ
+	}
+	provinces={
+		131 284 3159 3178 3373 6046 6062 6104 6205 9075 9090 11064 11161 11266 13269 13270 
+	}
+	manpower= 100000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=rural
+}

@@ -5,10 +5,7 @@ import re
 import numpy as np
 from multiprocessing import Pool
 
-ideologyArray = np.array(
-        ["IDEOLOGY_fascist", "IDEOLOGY_ultranationalist", "IDEOLOGY_right_despotist", "IDEOLOGY_fundamentalist", "IDEOLOGY_monarchist", "IDEOLOGY_populist",
-        "IDEOLOGY_libertarian", "IDEOLOGY_conservative", "IDEOLOGY_liberal", "IDEOLOGY_social_democrat",
-        "IDEOLOGY_socialist", "IDEOLOGY_moderate_communist", "IDEOLOGY_hardline_communist", "IDEOLOGY_left_despotist", "IDEOLOGY_anarchist"])
+ideologyArray = np.array(["fascism", "neutrality", "democratic", "communism"])
 
 
 def makeFlags(info: str) -> str:
