@@ -1031,10 +1031,6 @@ technologies = {
 				has_war = yes
 				factor = 3
 			}
-			modifier = {
-				tag = JAP #Japan wants torpedoes EXTRA HARD
-				factor = 2
-			}
 		}
 
 		categories = {

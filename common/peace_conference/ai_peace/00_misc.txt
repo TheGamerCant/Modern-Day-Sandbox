@@ -285,42 +285,6 @@ peace_ai_desires = {
         ai_desire = 20
     }
 
-
-    try_and_take_neighbors_when_forcing_gov = { #Leaving here; this has unintended consequences, but we need it for SOV
-        peace_action_type = { force_government puppet }
-        enable = {
-            ROOT = { has_government = democratic }
-            ROOT.FROM.FROM = { original_tag = SOV }
-            ROOT.FROM.FROM.FROM = {
-                any_neighbor_state = {
-                    OR = {
-                        pc_is_state_claimed_by = ROOT.FROM
-                        pc_is_state_claimed_by = ROOT
-                    }
-                }
-            }
-        }
-
-        ai_desire = 50
-    }
-
-    dont_take_land_if_sov_government_is_forced = {
-        peace_action_type = { take_states puppet }
-        enable = {
-            ROOT = { has_government = democratic }
-            ROOT.FROM.FROM = {
-                original_tag = SOV
-                pc_is_forced_government = yes
-            }
-            ROOT.FROM.FROM.FROM = {
-                NOT = { is_claimed_by = ROOT.FROM }
-            }
-        }
-
-        ai_desire = -50
-    }
-
-
     liberate_if_already_exists = {
         peace_action_type = liberate
         enable = {

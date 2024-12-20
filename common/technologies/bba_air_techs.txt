@@ -435,10 +435,6 @@ technologies = {
 				is_major = yes
 				factor = 2
 			}
-			modifier = {
-				tag = GER
-				factor = 2
-			}
 		}
 	}
 
@@ -759,10 +755,6 @@ technologies = {
 				factor = 0.1
 			}
 			
-			modifier = {
-				factor = 5
-				tag = ENG
-			}
 		}
 	}
 	
@@ -795,16 +787,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			modifier = {
-				factor = 5
-				tag = ENG
-			}
-			
-			modifier = {
-				factor = 10
-				tag = USA
-			}
 		}
 	}
 	

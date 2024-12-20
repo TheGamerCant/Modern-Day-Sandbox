@@ -356,12 +356,7 @@ technologies = {
 		
 		ai_will_do = {
 			base = 1
-			
-			
-			modifier = {
-				tag = GER
-				factor = 2.5
-			}
+
 
 			modifier = {
 				factor = 2
@@ -1423,11 +1418,7 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			modifier = {
-				factor = 2
-				tag = SOV
-			}
+	
 		}
 		
 		categories = {

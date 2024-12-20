@@ -674,68 +674,6 @@ highered_armored_production = {
 	}
 }
 
-slightly_naval_focused_nation = {
-	enable = {
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = unit_ratio
-		id = capital_ship
-		value = 1
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = submarine
-		value = 1
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = screen_ship
-		value = 1
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = convoy
-		value = 1
-	}
-}
-
-more_naval_focused_nation = {
-	enable = {
-		date > "1941.1.1"  # Delaying it by a couple of years
-	}
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = unit_ratio
-		id = capital_ship
-		value = 2		 #1 to 2
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = submarine
-		value = 1
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = screen_ship
-		value = 1
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = convoy
-		value = 1
-	}
-}
-
-
 
 default_railway_gun_management = {
 	enable = {

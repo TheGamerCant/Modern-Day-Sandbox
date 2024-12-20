@@ -370,14 +370,7 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			modifier = {
-				factor = 10
-				AND = {
-					is_historical_focus_on = yes
-					tag = JAP
-				}
-			}
+
 			modifier = {
 				factor = 1.5
 				date > "1941.6.1"
@@ -482,11 +475,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			modifier = {
-				factor = 2
-				tag = USA
-			}
 	
 			modifier = {
 				factor = 1.5
@@ -653,11 +641,7 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			modifier = {
-				factor = 2
-				tag = GER
-			}
+
 		}
 	}
 	
@@ -732,11 +716,7 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			modifier = {
-				factor = 2
-				tag = GER
-			}
+
 			modifier = {
 				has_deployed_air_force_size = {
 					size > 400
@@ -748,11 +728,7 @@ technologies = {
 			modifier = {
 				factor = 2
 			}
-			
-			modifier = {
-				factor = 3
-				tag = SOV
-			}
+
 		}
 	}
 	

@@ -1361,10 +1361,6 @@ technologies = {
 				date > "1942.1.1"
 			}
 
-			modifier = {
-				factor = 2
-				tag = GER
-			}
 		}
 	}
 	

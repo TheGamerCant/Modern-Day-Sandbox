@@ -1185,11 +1185,7 @@ technologies = {
 				factor = 0.5
 				oil > 30
 			}	
-			modifier = {
-				original_tag = GER			
-				has_war = yes
-				factor = 3
-			}		
+		
 		}
 		
 		ai_research_weights = {
@@ -1332,11 +1328,7 @@ technologies = {
 				factor = 0.5
 				rubber > 30
 			}			
-			modifier = {
-				factor = 25
-				original_tag = GER	
-				date > "1938.1.1"	
-			}
+	
 		}
 		
 		ai_research_weights = {

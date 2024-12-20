@@ -189,22 +189,7 @@ technologies = {
 		ai_will_do = {
 			base = 0.5
 			
-			modifier = {
-				factor = 100
-				OR = {
-					tag = GER
-					tag = SOV
-				}
-				has_war = yes
-				any_enemy_country = {
-					ROOT = {
-						estimated_intel_max_armor = {
-							tag = PREV
-							value > 25
-						}
-					}
-				}
-			}
+			
 			modifier = {
 				has_template_containing_unit = light_tank_destroyer_brigade
 				factor = 2
@@ -345,15 +330,7 @@ technologies = {
 		
 		ai_will_do = {
 			base = 1
-			
-			modifier = {
-				factor = 2
-				is_major = yes
-				not = {
-					tag = JAP
-					num_of_military_factories < 50
-				}
-			}
+
 		
 			modifier = {
 				factor = 1.1
@@ -640,22 +617,6 @@ technologies = {
 		ai_will_do = {
 			base = 0
 			
-			modifier = {
-				add = 130
-				OR = {
-					#tag = GER
-					tag = SOV
-				}
-				has_war = yes
-				any_enemy_country = {
-					ROOT = {
-						estimated_intel_max_armor = {
-							tag = PREV
-							value > 27
-						}
-					}
-				}
-			}
 		}
 		
 		categories = {
@@ -953,15 +914,7 @@ technologies = {
 				date < "1941.1.1"
 				factor = 0.3
 			}
-			modifier = {
-				factor = 2
-				tag = GER
-			}
 			
-			modifier = {
-				factor = 2
-				tag = SOV
-			}
 			
 			modifier = {
 				factor = 1.1
@@ -1724,11 +1677,7 @@ technologies = {
 		
 		ai_will_do = {
 			base = 0.8
-			modifier = {
-				tag = JAP
-				num_of_military_factories < 100
-				factor = 0
-			}
+
 			modifier = {
 				factor = 1.2
 				date > "1942.1.1"
