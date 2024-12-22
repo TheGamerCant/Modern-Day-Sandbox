@@ -1560,7 +1560,7 @@
 1559;7;108;10;land;false;plains;2
 1560;7;108;160;land;false;hills;2
 1561;7;108;215;land;false;mountain;6
-1562;7;111;75;land;true;hills;2
+1562;7;111;75;land;false;urban;2
 1563;7;111;180;land;false;hills;6
 1564;7;114;40;land;false;plains;2
 1565;7;114;95;land;true;forest;4
@@ -9669,7 +9669,7 @@
 9668;129;105;149;land;false;mountain;1
 9669;129;108;64;land;false;plains;2
 9670;129;108;214;land;false;mountain;1
-9671;129;111;29;land;true;urban;2
+9671;129;111;29;land;true;dense_urban;2
 9672;129;111;179;land;false;hills;1
 9673;129;114;199;land;false;forest;2
 9674;129;117;59;land;false;mountain;1
@@ -9812,7 +9812,7 @@
 9811;130;63;89;land;false;hills;7
 9812;130;66;54;land;false;mountain;1
 9813;130;66;204;land;false;plains;1
-9814;130;69;19;land;true;urban;2
+9814;130;69;19;land;true;dense_urban;2
 9815;130;69;224;land;true;plains;1
 9816;130;72;84;land;false;hills;7
 9817;130;72;134;land;true;urban;1
@@ -13365,3 +13365,23 @@
 13364;201;199;211;land;false;forest;5 
 13365;156;95;224;lake;false;lakes;5
 13366;78;188;129;lake;false;lakes;6
+
+#San Fransisco and Sacramento
+13367;9;28;239;land;true;hills;2
+13368;69;250;230;land;true;dense_urban;2
+13369;175;62;222;land;true;dense_urban;2
+13370;51;180;91;land;false;urban;2
+13371;174;126;8;land;false;sub_urban;2
+13372;240;77;139;land;true;urban;2
+13373;156;126;190;land;false;hills;2
+13374;61;182;19;land;false;dense_urban;2
+
+#Los Angles and San Diego
+13375;74;143;176;land;true;sub_urban;2
+13376;2;196;80;land;true;dense_urban;2
+13377;23;98;155;land;true;sub_urban;2
+13378;97;201;132;land;true;dense_urban;2
+13379;146;165;232;land;false;urban;2
+13380;201;9;71;land;false;urban;2
+13381;56;31;166;land;false;dense_urban;2
+13382;155;132;20;land;true;sub_urban;2

@@ -1,0 +1,15 @@
+state={
+	id=953
+	name="STATE_953"
+	history={
+		owner = USA
+		add_core_of = USA
+	}
+	provinces={
+		823 1562 4657 4727 7517 7986 9814 9855 10387 10483 11757 11795 11859 12303 12374 13375 13376 13377 13378 13379 13380 13381 13382 
+	}
+	manpower=21979834
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.500
+}
