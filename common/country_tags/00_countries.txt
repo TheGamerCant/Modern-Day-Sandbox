@@ -1,1 +1,2 @@
 ZZZ	= "countries/ZZZ.txt"
+USA = "countries/USA_United_States_of_America.txt"

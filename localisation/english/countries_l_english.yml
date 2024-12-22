@@ -2,3 +2,7 @@
  ZZZ:0 "Hello World"
  ZZZ_DEF:0 "Germany"
  ZZZ_ADJ:0 "German"
+
+ USA:0 "United States of America"                                  
+ USA_DEF:0 "the United States of America"                                  
+ USA_ADJ:0 "American"

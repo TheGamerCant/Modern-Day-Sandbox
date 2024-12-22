@@ -107,3 +107,7 @@ D25 = {
 	color = rgb { 124 140 162 }
 	color_ui = rgb { 161 182 211 }
 }
+USA = {
+	color = rgb { 20 133 239 }
+	color_ui = rgb { 20 133 239 }
+}
