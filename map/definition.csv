@@ -13404,3 +13404,17 @@
 13393;172;7;242;land;false;urban;2
 13394;123;251;183;land;false;urban;2
 13395;83;136;51;land;false;mountain;2
+
+#Portland
+13396;3;180;132;land;false;dense_urban;2
+13397;190;95;133;land;false;sub_urban;2
+13398;30;229;167;land;false;urban;2
+13399;49;113;220;land;false;urban;2
+
+#Seattle
+13400;111;148;71;land;true;dense_urban;2
+13401;6;65;56;land;true;urban;2
+13402;10;159;129;land;true;dense_urban;2
+13403;214;99;241;land;false;urban;2
+13404;219;175;118;land;true;sub_urban;2
+13405;79;34;156;land;true;forest;2
