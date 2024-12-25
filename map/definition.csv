@@ -13385,3 +13385,22 @@
 13380;201;9;71;land;false;urban;2
 13381;56;31;166;land;false;dense_urban;2
 13382;155;132;20;land;true;sub_urban;2
+
+#Las Vegas
+13383;14;100;112;land;false;urban;2
+13384;237;165;113;land;false;sub_urban;2
+13385;136;89;229;land;false;mountain;2
+
+#Salt Lake City
+13386;129;193;19;land;false;dense_urban;2
+13387;153;160;150;land;false;urban;2
+13388;232;28;30;land;false;sub_urban;2
+13389;96;89;228;land;false;sub_urban;2
+
+#Phoenix
+13390;117;80;124;land;false;dense_urban;2
+13391;69;142;190;land;false;urban;2
+13392;244;220;171;land;false;sub_urban;2
+13393;172;7;242;land;false;urban;2
+13394;123;251;183;land;false;urban;2
+13395;83;136;51;land;false;mountain;2
