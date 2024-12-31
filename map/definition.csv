@@ -13418,3 +13418,15 @@
 13403;214;99;241;land;false;urban;2
 13404;219;175;118;land;true;sub_urban;2
 13405;79;34;156;land;true;forest;2
+
+#Albuquerque
+13406;83;82;142;land;false;urban;2
+13407;36;185;186;land;false;urban;2
+
+#Denver
+13408;29;175;43;land;false;dense_urban;2
+13409;233;197;96;land;false;dense_urban;2
+13410;242;211;39;land;false;urban;2
+13411;79;215;62;land;false;sub_urban;2
+13412;53;194;76;land;false;sub_urban;2
+13413;226;53;12;land;false;urban;2
