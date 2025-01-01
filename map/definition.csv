@@ -1570,7 +1570,7 @@
 1569;7;117;210;land;false;plains;6
 1570;7;120;25;land;false;plains;4
 1571;7;120;70;land;false;mountain;6
-1572;7;120;175;land;true;forest;2
+1572;7;120;175;land;false;forest;2
 1573;7;123;35;land;false;desert;6
 1574;7;123;90;land;true;jungle;6
 1575;7;123;140;land;false;hills;6
@@ -13430,3 +13430,21 @@
 13411;79;215;62;land;false;sub_urban;2
 13412;53;194;76;land;false;sub_urban;2
 13413;226;53;12;land;false;urban;2
+
+#Miami, Jacksonville, Orlando and Tampa
+13414;56;53;239;lake;false;lakes;2
+13415;67;158;155;land;true;dense_urban;2
+13416;140;104;201;land;true;sub_urban;2
+13417;105;56;248;land;true;urban;2
+13418;110;3;97;land;true;urban;2
+13419;212;1;146;land;true;dense_urban;2
+13420;154;218;103;land;false;dense_urban;2
+13421;3;192;237;land;true;dense_urban;2
+13422;85;7;78;land;true;sub_urban;2
+13423;122;136;157;land;false;dense_urban;2
+13424;69;114;68;land;false;urban;2
+13425;1;227;20;land;false;sub_urban;2
+13426;159;131;218;land;false;sub_urban;2
+13427;207;92;13;land;false;sub_urban;2
+13428;181;36;23;land;true;dense_urban;2
+13429;15;208;218;land;true;sub_urban;2
