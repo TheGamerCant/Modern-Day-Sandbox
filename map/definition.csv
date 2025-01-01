@@ -13421,7 +13421,7 @@
 
 #Albuquerque
 13406;83;82;142;land;false;urban;2
-13407;36;185;186;land;false;urban;2
+13407;36;185;186;land;false;dense_urban;2
 
 #Denver
 13408;29;175;43;land;false;dense_urban;2
@@ -13457,8 +13457,47 @@
 13432;59;180;122;land;false;sub_urban;2
 13433;33;119;200;land;false;sub_urban;2
 13434;96;139;43;land;false;plains;2
-
 13435;85;95;231;land;false;sub_urban;2
 13436;99;152;178;land;false;urban;2
 13437;205;116;206;land;false;sub_urban;2
 13438;84;193;133;land;false;urban;2
+
+#Oklahoma City
+13439;212;151;135;land;false;dense_urban;2
+13440;75;124;26;land;false;urban;2
+13441;212;146;179;land;false;urban;2
+13442;198;186;165;land;false;sub_urban;2
+13443;67;123;190;land;false;sub_urban;2
+
+#Houston
+13444;154;28;199;land;true;sub_urban;2
+13445;19;211;209;land;false;sub_urban;2
+13446;237;107;50;land;false;dense_urban;2
+13447;52;133;79;land;false;dense_urban;2
+13448;121;101;124;land;false;urban;2
+13449;66;225;61;land;false;urban;2
+13450;130;63;42;land;false;urban;2
+13451;247;57;223;land;false;sub_urban;2
+13452;10;114;190;land;false;sub_urban;2
+
+#Dallas and Fort Worth
+13453;183;86;224;land;false;urban;2
+13454;227;58;188;land;false;dense_urban;2
+13455;25;254;40;land;false;dense_urban;2
+13456;99;188;118;land;false;sub_urban;2
+13457;117;65;64;land;false;sub_urban;2
+13458;55;72;212;land;false;sub_urban;2
+13459;149;92;54;land;false;urban;2
+13460;184;54;246;land;false;urban;2
+13461;130;7;223;land;false;sub_urban;2
+13462;14;105;165;land;false;plains;2
+13463;212;78;106;land;false;plains;2
+
+#San Antonio and Austin
+13464;66;44;190;land;false;dense_urban;2
+13465;212;142;14;land;false;dense_urban;2
+13466;173;86;241;land;false;sub_urban;2
+13467;54;161;121;land;false;dense_urban;2
+13468;145;67;214;land;false;urban;2
+13469;199;15;56;land;false;urban;2
+13470;171;87;168;land;false;sub_urban;2

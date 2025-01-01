@@ -1,0 +1,14 @@
+state={
+	id=954
+	name="STATE_954"
+	history={
+		owner = ZZZ
+	}
+	provinces={
+		9675 4445 7629 13158 
+	}
+	manpower=10000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.500
+}
