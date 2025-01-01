@@ -1,0 +1,137 @@
+music_station = "00_radio_3_nato"		#NATO
+
+music = {
+	song = "Let 3 - Mama ŠČ"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+
+#LIT
+
+music = {
+	song = "Brothers of friendship"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+
+music = {
+	song = "Polish Cow Lietuva"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+
+music = {
+	song = "Awary"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+
+
+music = {
+	song = "When Janeczek Returns From War!"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+
+#Meme/others
+music = {
+	song = "Sektorjazza - Red crystal castles"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Mareux - The perfect girl"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Green Day - 21 guns"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Green Day - Little girl"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "MGMT - Little dark age"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Mr Twin Sister - Meet the frownies"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "New Order - Blue monday"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "My Chemical Romance - The world is ugly"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "The Animals - House of the Rising Sun"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}

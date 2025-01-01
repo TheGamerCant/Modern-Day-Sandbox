@@ -13501,3 +13501,8 @@
 13468;145;67;214;land;false;urban;2
 13469;199;15;56;land;false;urban;2
 13470;171;87;168;land;false;sub_urban;2
+
+#New Orleans and Baton Rouge
+13471;42;210;234;land;true;dense_urban;2
+13472;95;67;116;land;true;sub_urban;2
+13473;192;52;43;land;false;urban;2
