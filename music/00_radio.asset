@@ -334,3 +334,13 @@ music = {
 	name = "The Animals - House of the Rising Sun"
 	file = "Generic/house_of_the_rising_sun.ogg"
 }
+
+music = {
+	name = "The Rolling Stones - Paint it Black"
+	file = "Generic/paint_it_black.ogg"
+}
+
+music = {
+	name = "The Rolling Stones - Sympathy for the Devil"
+	file = "Generic/sympathy_for_the_devil.ogg"
+}

@@ -48,7 +48,7 @@ music = {
 	
 	chance = {
 		modifier = {
-			factor = 5
+			factor = 5				#Poland, at war
 		}		
 	}	
 }
@@ -128,6 +128,24 @@ music = {
 }
 music = {
 	song = "The Animals - House of the Rising Sun"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "The Rolling Stones - Paint it Black"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "The Rolling Stones - Sympathy for the Devil"
 	
 	chance = {
 		modifier = {
