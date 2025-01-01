@@ -4567,7 +4567,7 @@
 4566;49;114;53;land;false;hills;6
 4567;49;114;203;land;false;hills;2
 4568;49;117;18;land;false;mountain;6
-4569;49;117;168;land;false;urban;2
+4569;49;117;168;land;false;dense_urban;2
 4570;49;117;223;land;false;forest;3
 4571;49;120;83;land;false;plains;6
 4572;49;120;133;land;false;forest;6
@@ -10715,7 +10715,7 @@
 10714;134;201;179;land;false;forest;6
 10715;134;204;94;land;true;forest;2
 10716;134;204;144;land;false;forest;6
-10717;134;204;199;land;false;plains;2
+10717;134;204;199;land;false;dense_urban;2
 10718;134;207;59;land;true;forest;2
 10719;134;207;164;land;false;plains;2
 10720;134;207;209;land;false;forest;6
@@ -12528,7 +12528,7 @@
 12527;176;27;87;land;false;forest;6
 12528;176;27;192;land;false;forest;6
 12529;176;30;7;land;false;desert;6
-12530;176;30;52;land;true;plains;6
+12530;176;30;52;land;false;sub_urban;2
 12531;176;30;157;land;false;forest;6
 12532;176;33;17;land;false;mountain;4
 12533;176;33;72;land;false;forest;6
@@ -13291,7 +13291,7 @@
 13290;215;223;17;land;false;jungle;3
 13291;96;182;231;land;false;jungle;3
 13292;74;155;156;land;true;plains;3
-13293;5;196;208;land;true;hills;2
+13293;5;196;208;land;false;dense_urban;2
 13294;243;0;195;land;true;plains;4
 13295;113;188;160;land;true;mountain;3
 13296;45;164;11;land;true;desert;3
@@ -13312,8 +13312,8 @@
 13311;113;228;228;land;false;forest;3
 13312;54;43;62;land;true;mountain;7
 13313;192;5;76;land;true;desert;7
-13314;157;241;49;land;true;plains;2
-13315;149;37;69;land;true;forest;2
+13314;157;241;49;land;false;sub_urban;2
+13315;149;37;69;land;false;urban;2
 13316;200;31;191;land;false;jungle;3
 13317;114;140;37;land;false;jungle;3
 13318;236;241;99;land;false;jungle;3
@@ -13448,3 +13448,17 @@
 13427;207;92;13;land;false;sub_urban;2
 13428;181;36;23;land;true;dense_urban;2
 13429;15;208;218;land;true;sub_urban;2
+
+#Des Moines
+13430;96;172;120;land;false;urban;2
+13431;230;208;13;land;false;urban;2
+
+#St. Louis and Kansas City
+13432;59;180;122;land;false;sub_urban;2
+13433;33;119;200;land;false;sub_urban;2
+13434;96;139;43;land;false;plains;2
+
+13435;85;95;231;land;false;sub_urban;2
+13436;99;152;178;land;false;urban;2
+13437;205;116;206;land;false;sub_urban;2
+13438;84;193;133;land;false;urban;2
