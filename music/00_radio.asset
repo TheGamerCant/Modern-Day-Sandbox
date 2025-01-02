@@ -190,10 +190,6 @@ music = {
 }
 
 music = {
-	name = "You and your shadow"
-	file = "Ukraine/you_and_your_shadow.ogg"
-}
-music = {
 	name = "Sadsvit - Naoslip"
 	file = "Ukraine/Naoslip.ogg"
 }

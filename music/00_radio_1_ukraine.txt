@@ -1,16 +1,6 @@
 music_station = "00_radio_1_ukraine"		#Ukraine
 
 music = {
-	song = "You and your shadow"
-	
-	chance = {
-		modifier = {
-			factor = 0		#Too many guns and shiet!!!
-		}		
-	}	
-}
-
-music = {
 	song = "Durnoy Vkus - Plastiki"
 	
 	chance = {
