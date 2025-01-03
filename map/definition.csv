@@ -6708,7 +6708,7 @@
 6707;87;99;161;land;true;hills;2
 6708;87;99;206;land;false;hills;1
 6709;87;102;21;land;false;mountain;1
-6710;87;102;226;land;true;urban;2
+6710;87;102;226;land;false;dense_urban;2
 6711;87;105;86;land;false;mountain;1
 6712;87;105;136;land;false;hills;1
 6713;87;105;191;land;true;plains;2
@@ -13558,3 +13558,34 @@
 13507;35;142;11;land;false;sub_urban;2
 13508;36;12;149;land;false;sub_urban;2
 13509;115;224;238;land;false;sub_urban;2
+
+#Charleston and Columbia
+13510;33;242;165;land;true;urban;2
+13511;196;146;199;land;true;sub_urban;2
+13512;207;244;142;land;false;sub_urban;2
+13513;31;248;247;land;false;urban;2
+
+#Charlotte and Raleigh
+13514;153;79;187;land;false;dense_urban;2
+13515;135;155;191;land;false;urban;2
+13516;42;136;204;land;false;sub_urban;2
+13517;75;191;238;land;false;sub_urban;2
+13518;186;157;243;land;false;dense_urban;2
+13519;200;62;12;land;false;sub_urban;2
+
+#Milwaukee
+13520;148;185;5;land;true;dense_urban;2
+13521;244;50;177;land;true;sub_urban;2
+13522;210;207;197;land;true;urban;2
+13523;12;192;98;land;false;sub_urban;2
+
+#Detroit and Grand Rapids
+13524;174;248;218;land;false;sub_urban;2
+13525;190;184;245;land;false;sub_urban;2
+13526;193;154;127;land;true;sub_urban;2
+13527;196;28;154;land;true;urban;2
+13528;234;35;177;land;false;dense_urban;2
+13529;33;142;179;land;false;sub_urban;2
+
+#Alaska
+13530;83;168;0;land;false;forest;2
