@@ -13527,3 +13527,34 @@
 13484;27;164;172;land;true;dense_urban;2
 13485;58;94;177;land;true;urban;2
 13486;143;243;80;land;true;sub_urban;2
+
+#Jackson
+13487;230;125;164;land;false;urban;2
+
+#Birmingham
+13488;230;120;80;land;false;dense_urban;2
+13489;199;129;232;land;false;urban;2
+13490;85;80;193;land;false;sub_urban;2
+13491;187;129;177;land;false;plains;2
+
+#Nashville and Memphis
+13492;218;190;57;land;false;dense_urban;2
+13493;27;30;186;land;false;urban;2
+13494;133;122;239;land;false;sub_urban;2
+13495;226;37;250;land;false;sub_urban;2
+13496;93;35;72;land;false;dense_urban;2
+13497;8;72;71;land;false;urban;2
+13498;60;238;158;land;false;sub_urban;2
+
+#Atlanta and Augusta
+13499;209;139;162;land;false;urban;2
+13500;114;148;206;land;false;sub_urban;2
+13501;171;1;29;land;false;dense_urban;2
+13502;66;146;146;land;false;dense_urban;2
+13503;31;9;219;land;false;urban;2
+13504;166;20;47;land;false;sub_urban;2
+13505;220;83;70;land;false;sub_urban;2
+13506;196;29;40;land;false;sub_urban;2
+13507;35;142;11;land;false;sub_urban;2
+13508;36;12;149;land;false;sub_urban;2
+13509;115;224;238;land;false;sub_urban;2

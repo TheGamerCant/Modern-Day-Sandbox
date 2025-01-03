@@ -283,7 +283,7 @@ music = {
 
 music = {
 	name = "Molchat Doma - Sudno"
-	file = "Generic/molchat_doma.ogg"
+	file = "Belarus/Sudno.ogg"
 }
 
 music = {
@@ -339,4 +339,19 @@ music = {
 music = {
 	name = "The Rolling Stones - Sympathy for the Devil"
 	file = "Generic/sympathy_for_the_devil.ogg"
+}
+
+music = {
+	name = "IFA Wartburg - Freie Deutsche Jugend"
+	file = "Germany/fdj.ogg"
+}
+
+music = {
+	name = "Me, my buddy, and two shovels"
+	file = "Ukraine/me_my_buddy_and_two_shovels.ogg"
+}
+
+music = {
+	name = "Nena - 99 Luftballons"
+	file = "Germany/99_luftballons.ogg"
 }

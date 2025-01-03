@@ -153,3 +153,21 @@ music = {
 		}		
 	}
 }
+music = {
+	song = "IFA Wartburg - Freie Deutsche Jugend"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Nena - 99 Luftballons"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}

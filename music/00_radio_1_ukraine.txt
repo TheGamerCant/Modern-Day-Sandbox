@@ -168,3 +168,12 @@ music = {
 		}		
 	}
 }
+
+music = {
+	song = "Me, my buddy, and two shovels"
+	chance = {
+		modifier = {
+			factor = 5				#War
+		}		
+	}
+}

@@ -2,12 +2,27 @@ state={
 	id=365
 	name="STATE_365"
 	history={
-		owner = ZZZ
+		owner = USA
+		add_core_of = USA
+		
+		victory_points = { 13501 40 }
+		victory_points = { 13504 5 }
+		victory_points = { 13507 2 }
+		victory_points = { 13499 7 }
+		victory_points = { 638 4 }
+		victory_points = { 11975 5 }
+		victory_points = { 12498 5 }
+		victory_points = { 10492 3 }
+		
+		buildings = {
+			infrastructure = 3
+			air_base = 4
+		}
 	}
 	provinces={
-		638 968 1433 1480 5090 7118 7583 7612 9949 9996 10394 10437 10465 10492 11975 12325 12384 12470 12498 
+		638 968 1433 1480 5090 7118 7583 7612 9949 9996 10394 10437 10465 10492 11975 12325 12384 12470 12498 13499 13500 13501 13502 13503 13504 13505 13506 13507 13508 13509 
 	}
-	manpower= 100000
+	manpower= 9687653
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=city
