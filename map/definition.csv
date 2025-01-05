@@ -1593,7 +1593,7 @@
 1592;7;141;185;land;false;forest;6
 1593;7;144;45;land;false;desert;6
 1594;7;144;150;land;true;plains;3
-1595;7;147;10;land;false;plains;2
+1595;7;147;10;land;false;urban;2
 1596;7;147;65;land;false;plains;3
 1597;7;147;215;land;false;plains;6
 1598;7;150;30;land;false;hills;3
@@ -9448,7 +9448,7 @@
 9447;128;45;79;land;false;hills;6
 9448;128;45;129;land;false;plains;1
 9449;128;48;44;land;false;plains;1
-9450;128;48;99;land;true;urban;2
+9450;128;48;99;land;true;dense_urban;2
 9451;128;48;149;land;false;plains;1
 9452;128;51;9;land;false;plains;1
 9453;128;51;64;land;false;desert;6
@@ -13589,3 +13589,29 @@
 
 #Alaska
 13530;83;168;0;land;false;forest;2
+13531;13;189;251;land;true;forest;2
+13532;196;247;218;land;true;forest;2
+13533;218;93;152;land;false;forest;2
+13534;35;28;144;land;true;forest;2
+13535;82;9;73;land;true;plains;2
+13536;118;126;40;land;true;mountain;2
+13537;24;101;176;land;true;urban;2
+13538;81;83;74;land;true;sub_urban;2
+13539;209;64;56;land;true;mountain;2
+
+#Chicago and East St. Louis
+13540;243;6;16;land;true;urban;2
+13541;203;152;6;land;true;sub_urban;2
+13542;44;8;150;land;false;urban;2
+13543;208;195;45;land;true;urban;2
+13544;224;242;77;land;false;sub_urban;2
+13545;255;232;104;land;false;sub_urban;2
+13546;72;98;143;land;false;sub_urban;2
+13547;157;204;42;land;false;sub_urban;2
+13548;38;156;15;land;false;sub_urban;2
+
+#Indianapolis
+13549;101;31;214;land;false;dense_urban;2
+13550;116;244;14;land;false;urban;2
+13551;87;25;136;land;false;sub_urban;2
+13552;80;86;243;land;false;sub_urban;2

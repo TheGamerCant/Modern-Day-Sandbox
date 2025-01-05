@@ -5,10 +5,16 @@ state={
 		owner = USA
 		add_core_of = USA
 		
-		victory_points = { 13091 5 }
+		victory_points = { 13537 5 }
+		victory_points = { 13538 2 }
+		
+		buildings = {
+			infrastructure = 2
+			air_base = 7
+		}
 	}
 	provinces={
-		1135 1830 4833 4848 7855 7884 10679 10694 10707 12661 13090 13091 13202 13203 
+		1135 1830 4833 4848 7855 7884 10679 10694 10707 12661 13090 13091 13202 13203 13531 13532 13533 13534 13535 13536 13537 13538 13539 
 	}
 	manpower= 680231
 	buildings_max_level_factor=1.000
