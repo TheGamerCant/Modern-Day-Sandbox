@@ -1,0 +1,70 @@
+spriteTypes = {
+	SpriteType = {
+		name = "GFX_decision_category_generic_economy"
+		texturefile = "gfx/interface/decisions/decision_category_generic_economy.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_category_generic_political_actions"
+		texturefile = "gfx/interface/decisions/decision_category_generic_political_actions.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_category_generic_propaganda"
+		texturefile = "gfx/interface/decisions/decision_category_generic_propaganda.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_eng_propaganda_campaigns"
+		texturefile = "gfx/interface/decisions/decision_eng_propaganda_campaigns.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_eng_trade_unions_demand"
+		texturefile = "gfx/interface/decisions/decision_eng_trade_unions_demand.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_eng_trade_unions_support"
+		texturefile = "gfx/interface/decisions/decision_eng_trade_unions_support.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_arrest"
+		texturefile = "gfx/interface/decisions/decision_generic_arrest.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_assassination"
+		texturefile = "gfx/interface/decisions/decision_generic_assassination.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_construction"
+		texturefile = "gfx/interface/decisions/decision_generic_construction.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_decision"
+		texturefile = "gfx/interface/decisions/decision_generic_decision.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_factory"
+		texturefile = "gfx/interface/decisions/decision_generic_factory.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_ignite_civil_war"
+		texturefile = "gfx/interface/decisions/decision_generic_ignite_civil_war.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_nationalism"
+		texturefile = "gfx/interface/decisions/decision_generic_nationalism.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_political_rally"
+		texturefile = "gfx/interface/decisions/decision_generic_political_rally.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_generic_prepare_civil_war"
+		texturefile = "gfx/interface/decisions/decision_generic_prepare_civil_war.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_ger_military_buildup"
+		texturefile = "gfx/interface/decisions/decision_ger_military_buildup.dds"
+	}
+	SpriteType = {
+		name = "GFX_decision_hol_draw_up_staff_plans"
+		texturefile = "gfx/interface/decisions/decision_hol_draw_up_staff_plans.dds"
+	}
+}
