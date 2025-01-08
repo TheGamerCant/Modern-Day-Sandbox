@@ -5,7 +5,7 @@ state={
 		owner = USA
 		add_core_of = USA
 		
-		victory_points = { 13383 15 }
+		victory_points = { 13383 25 }
 		victory_points = { 13384 5 }
 		victory_points = { 4607 2 }
 		victory_points = { 10422 5 }

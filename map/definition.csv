@@ -857,7 +857,7 @@
 856;4;54;215;land;false;hills;7
 857;4;57;75;land;false;hills;1
 858;4;57;180;land;false;hills;1
-859;4;60;40;land;true;plains;2
+859;4;60;40;land;true;urban;2
 860;4;60;95;land;false;plains;2
 861;4;60;145;land;false;mountain;6
 862;4;63;5;land;false;hills;2
@@ -3876,7 +3876,7 @@
 3875;46;78;148;land;false;plains;2
 3876;46;81;63;land;false;mountain;7
 3877;46;81;213;land;false;plains;6
-3878;46;84;73;land;true;urban;2
+3878;46;84;73;land;true;dense_urban;2
 3879;46;84;178;land;true;plains;1
 3880;46;87;38;land;false;forest;2
 3881;46;87;93;land;false;hills;6
@@ -3955,7 +3955,7 @@
 3954;46;171;128;land;false;hills;1
 3955;46;174;43;land;false;forest;6
 3956;46;174;88;land;false;hills;1
-3957;46;174;193;land;true;urban;2
+3957;46;174;193;land;false;urban;2
 3958;46;177;8;land;false;mountain;1
 3959;46;177;53;land;false;mountain;1
 3960;46;177;158;land;false;plains;2
@@ -6843,7 +6843,7 @@
 6842;88;30;156;land;false;hills;1
 6843;88;30;211;land;true;plains;1
 6844;88;30;236;sea;false;ocean;0
-6845;88;33;71;land;true;urban;2
+6845;88;33;71;land;true;dense_urban;2
 6846;88;33;176;land;true;forest;2
 6847;88;33;232;sea;false;ocean;0
 6848;88;34;240;sea;false;ocean;0
@@ -6880,7 +6880,7 @@
 6879;88;63;181;land;false;hills;1
 6880;88;66;96;land;true;plains;1
 6881;88;66;146;land;true;plains;2
-6882;88;69;6;land;true;urban;2
+6882;88;69;6;land;true;dense_urban;2
 6883;88;69;211;land;false;desert;7
 6884;88;72;26;land;false;hills;1
 6885;88;72;71;land;false;forest;2
@@ -6888,7 +6888,7 @@
 6887;88;75;36;land;false;mountain;2
 6888;88;75;91;land;false;plains;7
 6889;88;75;141;land;true;hills;1
-6890;88;78;1;land;true;urban;2
+6890;88;78;1;land;true;dense_urban;2
 6891;88;78;56;land;true;hills;1
 6892;88;81;21;land;true;plains;2
 6893;88;84;86;land;false;forest;6
@@ -6982,7 +6982,7 @@
 6981;88;192;46;land;true;hills;6
 6982;88;192;91;land;false;plains;1
 6983;88;195;56;land;false;hills;1
-6984;88;195;161;land;true;plains;2
+6984;88;195;161;land;false;plains;2
 6985;88;198;21;land;false;mountain;1
 6986;88;198;76;land;false;forest;1
 6987;88;198;226;land;false;plains;2
@@ -11652,7 +11652,7 @@
 11651;171;105;207;land;false;forest;1
 11652;171;108;22;land;false;plains;1
 11653;171;108;172;land;false;plains;1
-11654;171;108;227;land;true;urban;2
+11654;171;108;227;land;true;hills;2
 11655;171;111;87;land;false;forest;1
 11656;171;111;192;land;true;plains;2
 11657;171;114;52;land;false;hills;1
@@ -11780,7 +11780,7 @@
 11779;172;51;137;land;false;mountain;1
 11780;172;54;52;land;false;hills;1
 11781;172;57;17;land;false;hills;6
-11782;172;57;167;land;true;plains;2
+11782;172;57;167;land;false;plains;2
 11783;172;57;222;land;false;plains;2
 11784;172;60;82;land;false;hills;7
 11785;172;60;132;land;false;hills;2
@@ -11798,7 +11798,7 @@
 11797;172;75;212;land;false;plains;7
 11798;172;78;27;land;false;hills;1
 11799;172;78;72;land;false;hills;2
-11800;172;81;37;land;false;urban;2
+11800;172;81;37;land;false;plains;2
 11801;172;81;92;land;false;forest;6
 11802;172;84;2;land;false;plains;2
 11803;172;84;57;land;false;mountain;1
@@ -13615,3 +13615,70 @@
 13550;116;244;14;land;false;urban;2
 13551;87;25;136;land;false;sub_urban;2
 13552;80;86;243;land;false;sub_urban;2
+
+#Louisville and Lexington
+13553;56;243;73;land;false;dense_urban;2
+13554;156;193;84;land;false;sub_urban;2
+13555;24;107;176;land;false;urban;2
+13556;102;184;139;land;false;sub_urban;2
+13557;241;19;80;land;false;sub_urban;2
+13558;84;35;68;land;false;sub_urban;2
+
+#Cincinnati, Columbus and Cleveland
+13559;248;22;96;land;false;sub_urban;2
+13560;220;49;135;land;false;dense_urban;2
+13561;254;129;195;land;false;urban;2
+13562;34;199;228;land;false;sub_urban;2
+13563;156;195;34;land;false;urban;2
+13564;201;92;76;land;true;sub_urban;2
+13565;244;194;47;land;true;sub_urban;2
+13566;216;255;145;land;false;dense_urban;2
+13567;202;205;20;land;false;urban;2
+13568;118;196;243;land;false;sub_urban;2
+13569;134;246;25;land;false;sub_urban;2
+
+#Alexandria, Richmond and Norfolk
+13570;245;140;181;land;true;dense_urban;2
+13571;127;51;97;land;false;sub_urban;2
+13572;80;153;205;land;false;dense_urban;2
+13573;131;55;202;land;false;urban;2
+13574;234;86;121;land;false;sub_urban;2
+13575;53;200;209;land;true;dense_urban;2
+13576;225;80;183;land;true;dense_urban;2
+13577;122;48;83;land;true;sub_urban;2
+13578;236;45;194;land;true;sub_urban;2
+
+#Baltimore and outer Washington
+13579;31;236;76;land;true;dense_urban;2
+13580;118;37;43;land;false;urban;2
+13581;124;55;124;land;true;sub_urban;2
+13582;28;61;166;land;true;sub_urban;2
+13583;115;51;96;land;false;sub_urban;2
+13584;89;116;81;land;true;urban;2
+13585;92;51;155;land;true;plains;2
+
+#Newark
+13586;1;198;13;land;true;dense_urban;2
+13587;42;72;90;land;false;urban;2
+13588;77;181;92;land;true;sub_urban;2
+13589;164;114;34;land;true;sub_urban;2
+
+#Philadelphia and Pittsburg
+13590;153;70;29;land;true;urban;2
+13591;126;224;50;land;false;urban;2
+13592;120;177;48;land;false;sub_urban;2
+13593;165;79;226;land;false;dense_urban;2
+13594;197;42;200;land;false;urban;2
+13595;158;15;254;land;false;sub_urban;2
+13596;74;254;6;land;false;sub_urban;2
+
+#New York City
+13597;171;85;234;land;true;sub_urban;2
+13598;107;216;108;land;true;dense_urban;2
+13599;209;30;243;land;false;sub_urban;2
+13600;218;162;177;land;false;sub_urban;2
+13601;213;45;82;land;true;dense_urban;2
+
+#Buffalo and Rochester
+13602;18;249;66;land;true;urban;2
+13603;222;19;111;land;true;urban;2
