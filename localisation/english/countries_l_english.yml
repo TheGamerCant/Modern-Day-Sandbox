@@ -6,3 +6,7 @@
  USA:0 "United States of America"                                  
  USA_DEF:0 "the United States of America"                                  
  USA_ADJ:0 "American"
+
+ CAN:0 "Canada"                                  
+ CAN_DEF:0 "Canada"                                  
+ CAN_ADJ:0 "Canadian"
