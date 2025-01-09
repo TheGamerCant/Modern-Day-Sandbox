@@ -81,13 +81,7 @@ no_garrison = {
 	ai_will_do = {
 		base = 0
 
-		modifier = {
-			FROM = {
-				has_government = democratic
-			}
-			has_active_resistance = no
-			add = 200
-		}
+	
 		# if losing, get manpower & equipment back
 		modifier = {
 			FROM = {
@@ -114,7 +108,7 @@ autonomous_occupation = {
 	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
 
 	visible = {
-		has_government = democratic #? on design
+		THIS_has_western_government = yes
 	}
 
 	state_modifier = {
@@ -221,7 +215,7 @@ liberate_workers_occupation = {
 	sound_effect = "Martial_Law_Interface_Liberate_Workers_Occupation_Unique_COM"
 
 	visible = {
-		has_government = communism
+		THIS_has_far_left_government = yes
 	}
 
 	state_modifier = {
@@ -452,7 +446,7 @@ brutally_oppressive_occupation = {
 	sound_effect = "Martial_Law_Interface_Brutally_Oppressive_Occupation_Unique_FAS"
 
 	visible = {
-		has_government = fascism
+		THIS_has_far_right_government = yes
 	}
 
 	state_modifier = {

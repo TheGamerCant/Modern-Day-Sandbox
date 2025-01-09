@@ -167,9 +167,6 @@ ideas = {
 			available = {
 				has_war_support > 0.5
 				OR = {
-					has_government = fascism
-					has_government = communism
-					custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
 					AND = {
 						has_war = yes
 						any_enemy_country = {
@@ -377,13 +374,7 @@ ideas = {
 					is_major = no
 					has_war = no
 				}
-				modifier = {
-					factor = 200
-					NOT = { has_government = fascism }
-					NOT = { has_idea = closed_economy }
-					has_war = yes
-					is_major = yes
-				}
+
 				modifier = {
 					add = 1500
 
@@ -399,10 +390,7 @@ ideas = {
 
 			available = {
 				has_war = yes
-				OR = {
-					has_government = fascism
-					has_government = communism
-				}
+				
 				OR = {
 					has_idea = war_economy
 					has_idea = tot_economic_mobilisation

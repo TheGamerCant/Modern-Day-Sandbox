@@ -43,7 +43,8 @@ ideas = {
 		best_of_the_best_spirit = {
 			ledger = army
 			visible = { 
-				has_government = democratic
+				always = no
+#				has_government = democratic
 			}
 			modifier = {
 				army_leader_start_level = 2
@@ -58,17 +59,18 @@ ideas = {
 					NOT = { has_dlc = "No Step Back" }
 				}
 
-				modifier = {
-					factor = 2
-					has_government = democratic
-				}
+#				modifier = {
+#					factor = 2
+#					has_government = democratic
+#				}
 			}
 
 		}
 		academy_scholarships_spirit = {
 			ledger = army
 			visible = { 
-				has_government = communism
+				always = no
+#				has_government = communism
 			}
 			modifier = {
 				army_leader_start_level = 1
@@ -84,19 +86,20 @@ ideas = {
 					NOT = { has_dlc = "No Step Back" }
 				}
 
-				modifier = {
-					factor = 2
-					has_government = communism
-				}
+#				modifier = {
+#					factor = 2
+#					has_government = communism
+#				}
 			}
 		}
 		political_loyalty_spirit = {
 			ledger = army
 			visible = { 
-				OR = {
-					has_government = fascism
-					has_government = neutrality
-				}
+				always = no
+#				OR = {
+#					has_government = fascism
+#					has_government = neutrality
+#				}
 			}
 			modifier = {
 				military_leader_cost_factor = -0.5
@@ -111,13 +114,13 @@ ideas = {
 					NOT = { has_dlc = "No Step Back" }
 				}
 
-				modifier = {
-					factor = 2
-					OR = {
-						has_government = fascism
-						has_government = neutrality
-					}
-				}
+#				modifier = {
+#					factor = 2
+#					OR = {
+#						has_government = fascism
+#						has_government = neutrality
+#					}
+#				}
 			}
 		}
 		inventive_leadership_spirit = {
@@ -289,7 +292,10 @@ ideas = {
 
 		relief_of_command_spirit = {
 			ledger = army
-			visible = { has_government = democratic }
+			visible = { 
+				always = no
+#				has_government = democratic 
+			}
 			modifier = {
 				experience_gain_army_factor = 0.25
 				army_advisor_cost_factor = -0.5
@@ -302,16 +308,19 @@ ideas = {
 					NOT = { has_dlc = "No Step Back" }
 				}
 
-				modifier = {
-					factor = 2
-					has_government = democratic
-				}
+#				modifier = {
+#					factor = 2
+#					has_government = democratic
+#				}
 			}
 		}
 
 		ideological_loyalty_spirit = {
 			ledger = army
-			visible = { has_government = communism }
+			visible = { 
+#				has_government = communism 
+				always = no
+			}
 			modifier = {
 				pocket_penalty = -0.2
 				weekly_manpower = 500
@@ -324,16 +333,19 @@ ideas = {
 					NOT = { has_dlc = "No Step Back" }
 				}
 
-				modifier = {
-					factor = 2
-					has_government = communism
-				}
+#				modifier = {
+#					factor = 2
+#					has_government = communism
+#				}
 			}
 		}
 
 		state_serves_the_military_spirit = {
 			ledger = army
-			visible = { has_government = fascism }
+			visible = { 
+				always = no
+#				has_government = fascism 
+			}
 			modifier = {
 				offensive_war_stability_factor = 0.1
 				mobilization_laws_cost_factor = -0.25
@@ -346,10 +358,10 @@ ideas = {
 					NOT = { has_dlc = "No Step Back" }
 				}
 
-				modifier = {
-					factor = 2
-					has_government = fascism
-				}
+#				modifier = {
+#					factor = 2
+#					has_government = fascism
+#				}
 			}
 		}
 

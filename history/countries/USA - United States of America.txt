@@ -1,12 +1,12 @@
 capital = 961
 
 set_popularities = {
-	democratic = 100
+	IDEOLOGY_liberal = 100
 }
 
 set_politics = {                                  
-	ruling_party = democratic
-	last_election = "2021.1.1"
+	ruling_party = IDEOLOGY_liberal
+	last_election = "2008.11.5"
 	election_frequency = 48                                  
 	elections_allowed = no
 }

@@ -113,10 +113,10 @@ sp_air_political_interference_generic_reward = {
 	
 	weight = {
 		base = 0.5
-		modifier = {
-			factor = 2
-			FROM = { has_government = fascism }
-		}
+#		modifier = {
+#			factor = 2
+#			FROM = { has_government = fascism }
+#		}
 	}
 	
 	option = {

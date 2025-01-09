@@ -1,8 +1,4 @@
 ﻿l_english:
- THIS_has_far_right_government_tt:0 "Has a §FFar-Right§! government"
- THIS_has_western_government_tt:0 "Has a §lWestern§! government"
- THIS_has_far_left_government_tt:0 "Has a §mFar-Left§! government"
-
  IDEOLOGY_fascist:0 "Fascist"
  IDEOLOGY_fascist_noun:0 "Fascism"
  IDEOLOGY_fascist_desc:0 "Authoritarian Regime"
@@ -39,21 +35,23 @@
  SUBIDEOLOGY_GENERIC_populist:0 "Populist"
  SUBIDEOLOGY_GENERIC_populist_desc:0 "Often coming to power through democratic means, most populists don't extend such privileges to those who wish to come next. Stirring up division, hatred and fear-mongering to stay in power, populist governments blend democracy with authoritarian tendencies to stay in power and pass through drastic legislation."
  
+ IDEOLOGY_libertarian:0 "Libertarian"
+ IDEOLOGY_libertarian_noun:0 "Libertarianism"
+ IDEOLOGY_libertarian_desc:0 "Democratic Government"
+ SUBIDEOLOGY_GENERIC_libertarian:0 "Libertarian"
+ SUBIDEOLOGY_GENERIC_libertarian_desc:0 "Libertarianism as an ideology promotes individual liberty above all, emphasising the rollback of state powers as a necessary step to ensure this personal freedom. They also generally take a non-interventionist foreign policy and extreme laissez-faire economics."
+
  IDEOLOGY_conservative:0 "Conservative"
  IDEOLOGY_conservative_noun:0 "Conservatism"
  IDEOLOGY_conservative_desc:0 "Democratic Government"
  SUBIDEOLOGY_GENERIC_conservative:0 "Conservative"
  SUBIDEOLOGY_GENERIC_conservative_desc:0 "Believing in traditional values and a strong and assertive foreign policy, conservatives believe that preservation of the status quo is best for society in most aspects. Conservatives also view their democratic society as a point of national pride, believing that the power of their democratic institutions makes their country great compared to other authoritarian regimes.\n\nConservative governments also favour the wealthy economically, by maintaining the economic and social structures that allows for their wealth."
- SUBIDEOLOGY_GENERIC_neoconservative:0 "Neoconservative"
- SUBIDEOLOGY_GENERIC_neoconservative_desc:0 "Believing in traditional values and a strong and assertive foreign policy, neoconservatives believe that preservation of the status quo is best for society in most aspects. Neoconservatives also view their democratic society as a point of national pride, believing that the power of their democratic institutions makes their country great compared to other authoritarian regimes.\n\nNeoconservatives also economically favour market and government agency deregulation, believing them to be the best economic system for growth and societal development."
  
  IDEOLOGY_liberal:0 "Liberal"
  IDEOLOGY_liberal_noun:0 "Liberalism"
  IDEOLOGY_liberal_desc:0 "Democratic Government"
  SUBIDEOLOGY_GENERIC_liberal:0 "Liberal"
  SUBIDEOLOGY_GENERIC_liberal_desc:0 "Liberalism as an ideology believes in strong labour unions and large power in democratic institutions as the best means to change society. Liberalism also promotes the reform of societal structures to allow for more representation in government and more social mobility for the lower classes."
- SUBIDEOLOGY_GENERIC_neoliberal:0 "Neoliberal"
- SUBIDEOLOGY_GENERIC_neoliberal_desc:0 "Believing in personal autonomy and free markets, neoliberals work to maintain the western world order and societal structures. Neoliberals also often favour social reforms, such as LGBT rights and liberal access to abortion."
  
  IDEOLOGY_social_democrat:0 "Social Democrat"
  IDEOLOGY_social_democrat_noun:0 "Social Democracy"
@@ -71,19 +69,19 @@
  IDEOLOGY_moderate_communist_noun:0 "Moderate Communism"
  IDEOLOGY_moderate_communist_desc:0 "Authoritarian Regime"
  SUBIDEOLOGY_GENERIC_moderate_communist:0 "Moderate Communist"
- SUBIDEOLOGY_GENERIC_moderate_communist_desc:0 "Adhering to the principles of Marxism, the more moderate members of the communist movement believe that a slow transformation to a communist society, as well as being open to limited free market and individualistic policies, are the best way to ensure the transition to a communist society envisioned by Marx."
+ SUBIDEOLOGY_GENERIC_moderate_communist_desc:0 "Adhering to the principles of Marxism, the more moderate members of the Communist movement believe that a slow transformation to a Communist society, as well as being open to limited free market and individualistic policies, are the best way to ensure the transition to a communist society envisioned by Marx."
  
  IDEOLOGY_hardline_communist:0 "Hardline Communist"
  IDEOLOGY_hardline_communist_noun:0 "Hardline Communism"
  IDEOLOGY_hardline_communist_desc:0 "Authoritarian Regime"
  SUBIDEOLOGY_GENERIC_hardline_communist:0 "Hardline Communist"
- SUBIDEOLOGY_GENERIC_hardline_communist_desc:0 "Adhering to the principles of Marxism-Leninism, communist hardliners believe that the state should be tooled to ensure vanguard party rule and spread the revolution. No price can be too great in the pursuit of communism in the eyes of a hardliner."
+ SUBIDEOLOGY_GENERIC_hardline_communist_desc:0 "Adhering to the principles of Marxism-Leninism, Communist hardliners believe that the state should be tooled to ensure vanguard party rule and spread the revolution. No price can be too great in the pursuit of Communism in the eyes of a hardliner."
  
  IDEOLOGY_left_despotist:0 "Left Despotic"
  IDEOLOGY_left_despotist_noun:0 "Left Despotism"
  IDEOLOGY_left_despotist_desc:0 "Authoritarian Regime"
  SUBIDEOLOGY_GENERIC_left_despotist:0 "Left Despotic"
- SUBIDEOLOGY_GENERIC_left_despotist_desc:0 "A loosely-defined ideology, leftist despots use class struggle and nationalism as a means to justify their regime's legitimacy, as well as ensuring the nation's security forces are well-equipped to deal with any internal and external threats.\n\nTo further ensure regime legitimacy and security, leftist despots align themselves with more powerful communist regimes, under the guise of anti-imperialism"
+ SUBIDEOLOGY_GENERIC_left_despotist_desc:0 "A loosely-defined ideology, leftist despots use class struggle and nationalism as a means to justify their regime's legitimacy, as well as ensuring the nation's security forces are well-equipped to deal with any internal and external threats.\n\nTo further ensure regime legitimacy and security, leftist despots align themselves with more powerful Communist regimes, under the guise of anti-imperialism"
  
  IDEOLOGY_anarchist:0 "Anarchist"
  IDEOLOGY_anarchist_noun:0 "Anarchism"

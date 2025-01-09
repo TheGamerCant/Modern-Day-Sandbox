@@ -55,7 +55,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			has_government = democratic
+			THIS_has_western_government = yes
 		}		
 	}	
 }
@@ -68,7 +68,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			has_government = democratic
+			THIS_has_western_government = yes
 		}		
 	}	
 }
@@ -81,7 +81,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			has_government = fascism
+			THIS_has_far_right_government = yes
 		}		
 	}	
 }
@@ -94,7 +94,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			has_government = fascism
+			THIS_has_far_right_government = yes
 		}		
 	}	
 }
@@ -133,7 +133,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			has_government = fascism
+			THIS_has_far_right_government = yes
 		}		
 	}	
 }
@@ -146,7 +146,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			has_government = fascism
+			THIS_has_far_right_government = yes
 		}		
 	}	
 }
@@ -159,7 +159,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			has_government = fascism
+			THIS_has_far_right_government = yes
 		}		
 	}	
 }
@@ -172,7 +172,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			has_government = fascism
+			THIS_has_far_right_government = yes
 		}		
 	}	
 }
@@ -185,7 +185,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			has_government = democratic
+			THIS_has_western_government = yes
 		}		
 	}	
 }
@@ -198,7 +198,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			has_government = democratic
+			THIS_has_western_government = yes
 		}		
 	}	
 }
@@ -211,7 +211,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			has_government = communism
+			THIS_has_far_left_government = yes
 		}		
 	}	
 }
@@ -224,7 +224,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			has_government = communism
+			THIS_has_far_left_government = yes
 		}		
 	}	
 }
@@ -237,7 +237,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			has_government = communism
+			THIS_has_far_left_government = yes
 		}		
 	}	
 }
@@ -251,7 +251,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			has_government = communism
+			THIS_has_far_left_government = yes
 		}		
 	}	
 }
@@ -264,7 +264,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			has_government = communism
+			THIS_has_far_left_government = yes
 		}		
 	}	
 }
@@ -277,7 +277,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			has_government = communism
+			THIS_has_far_left_government = yes
 		}		
 	}	
 }
