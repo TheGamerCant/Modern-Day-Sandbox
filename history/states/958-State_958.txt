@@ -1,0 +1,21 @@
+state={
+	id=958
+	name="STATE_958"
+	history={
+		owner = CAN
+		add_core_of = CAN
+
+		victory_points = { 3778 25 }
+
+		buildings = {
+			infrastructure = 5
+		}
+	}
+	provinces={
+		3778 13608 13609 13610 13611 
+	}
+	manpower=1488307
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.500
+}

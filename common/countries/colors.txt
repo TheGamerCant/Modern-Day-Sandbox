@@ -105,8 +105,8 @@ D25 = {
 	color_ui = rgb { 161 182 211 }
 }
 USA = {
-	color = rgb { 51 182 255 }
-	color_ui = rgb { 51 182 255 }
+	color = rgb { 51 160 255 }
+	color_ui = rgb { 51 160 255 }
 }
 CAN = {
 	color = rgb { 202 60 31 }

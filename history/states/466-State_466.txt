@@ -2,13 +2,15 @@ state={
 	id=466
 	name="STATE_466"
 	history={
-		owner = ZZZ
+		owner = CAN
+		add_core_of = CAN
 	}
 	provinces={
 		490 3208 6740 7364 10176 12147 13162 13166 13181 13184 13186 13196 1657 4666 13164 7683 7807 7810 10534 10715 12600 
 	}
-	manpower= 100000
+	manpower= 41000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral
+	impassable = yes
 }

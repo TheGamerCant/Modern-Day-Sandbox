@@ -1424,7 +1424,7 @@
 1423;6;204;150;land;true;plains;6
 1424;6;204;205;land;true;forest;2
 1425;6;207;65;land;true;mountain;6
-1426;6;207;170;land;true;plains;2
+1426;6;207;170;land;false;forest;2
 1427;6;207;215;land;true;plains;6
 1428;6;210;30;land;true;plains;6
 1429;6;210;135;land;false;desert;6
@@ -1783,7 +1783,7 @@
 1782;8;105;205;land;false;forest;2
 1783;8;108;20;land;false;mountain;6
 1784;8;108;65;land;false;forest;6
-1785;8;108;170;land;false;plains;2
+1785;8;108;170;land;false;forest;2
 1786;8;111;30;land;false;mountain;4
 1787;8;111;85;land;false;desert;6
 1788;8;111;135;land;false;plains;2
@@ -3773,10 +3773,10 @@
 3772;45;198;213;land;true;forest;1
 3773;45;201;178;land;false;mountain;1
 3774;45;201;223;land;false;plains;6
-3775;45;204;38;land;true;urban;2
+3775;45;204;38;land;true;dense_urban;2
 3776;45;204;143;land;false;plains;1
 3777;45;204;188;land;false;plains;1
-3778;45;207;3;land;false;urban;2
+3778;45;207;3;land;false;dense_urban;2
 3779;45;207;153;land;false;plains;1
 3780;45;207;208;land;false;urban;1
 3781;45;210;68;land;false;mountain;2
@@ -4343,7 +4343,7 @@
 4342;48;114;98;land;true;forest;2
 4343;48;114;148;land;false;mountain;2
 4344;48;117;8;land;false;mountain;6
-4345;48;117;63;land;false;urban;2
+4345;48;117;63;land;false;plains;2
 4346;48;117;213;land;true;mountain;4
 4347;48;120;28;land;false;mountain;2
 4348;48;120;73;land;false;hills;6
@@ -13682,3 +13682,30 @@
 #Buffalo and Rochester
 13602;18;249;66;land;true;urban;2
 13603;222;19;111;land;true;urban;2
+
+#Toronto and Ottawa
+13604;169;96;219;land;true;dense_urban;2
+13605;238;144;201;land;false;urban;2
+13606;119;208;1;land;true;sub_urban;2
+13607;54;158;203;land;true;sub_urban;2
+13608;124;20;174;land;false;urban;2
+13609;13;170;42;land;false;sub_urban;2
+13610;218;250;17;land;false;sub_urban;2
+13611;39;72;243;land;false;sub_urban;2
+13612;231;240;7;land;true;sub_urban;2
+13613;232;227;120;land;true;urban;2
+13614;193;126;132;land;false;urban;2
+
+#Montreal and Quebec City
+13615;50;9;196;land;false;dense_urban;2
+13616;214;56;108;land;false;urban;2
+13617;202;203;9;land;false;sub_urban;2
+13618;156;249;146;land;false;sub_urban;2
+13619;14;203;209;land;true;dense_urban;2
+13620;225;62;129;land;true;sub_urban;2
+
+#Winnipeg
+13621;91;120;129;land;false;dense_urban;2
+13622;7;12;219;land;false;urban;2
+13623;136;60;245;land;false;sub_urban;2
+13624;150;69;169;land;false;sub_urban;2
