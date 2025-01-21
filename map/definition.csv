@@ -1406,7 +1406,7 @@
 1405;6;183;140;land;false;mountain;6
 1406;6;183;195;land;false;plains;6
 1407;6;186;55;land;false;jungle;6
-1408;6;186;160;land;true;mountain;2
+1408;6;186;160;land;false;mountain;2
 1409;6;189;20;land;false;plains;6
 1410;6;189;225;land;true;forest;4
 1411;6;192;40;land;false;mountain;2
@@ -13709,3 +13709,33 @@
 13622;7;12;219;land;false;urban;2
 13623;136;60;245;land;false;sub_urban;2
 13624;150;69;169;land;false;sub_urban;2
+
+#Calgary and Edmonton
+13625;67;207;48;land;false;dense_urban;2
+13626;52;141;67;land;false;urban;2
+13627;81;100;216;land;false;sub_urban;2
+13628;77;89;199;land;false;sub_urban;2
+13629;111;193;64;land;false;plains;2
+13630;251;155;88;land;false;dense_urban;2
+13631;130;52;164;land;false;urban;2
+13632;84;231;131;land;false;sub_urban;2
+13633;1;215;27;land;false;sub_urban;2
+
+#Southern Alberta
+13634;76;16;233;land;false;plains;2
+13635;184;29;146;land;false;plains;2
+13636;191;236;119;land;false;plains;2
+13637;73;110;222;land;false;plains;2
+13638;90;184;72;land;false;plains;2
+
+#Nanaimo and Victoria
+13639;255;170;120;land;true;urban;2
+13640;251;81;254;land;true;dense_urban;2
+13641;211;174;219;land;true;sub_urban;2
+
+#Vancouver
+13642;157;81;135;land;true;dense_urban;2
+13643;192;90;97;land;true;urban;2
+13644;203;48;36;land;false;urban;2
+13645;98;200;100;land;false;sub_urban;2
+13646;81;234;38;land;true;sub_urban;2

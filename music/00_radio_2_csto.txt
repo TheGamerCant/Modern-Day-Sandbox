@@ -41,7 +41,7 @@ music = {
 }
 
 music = {
-	song = "Kino - Gruppa krovi"
+	song = "Kino - Gruppa Krovi"
 	
 	chance = {
 		modifier = {
@@ -51,7 +51,7 @@ music = {
 }
 
 music = {
-	song = "Kino - Khochu peremen"
+	song = "Kino - Khochu Peremen"
 	
 	chance = {
 		modifier = {
@@ -71,7 +71,7 @@ music = {
 }
 
 music = {
-	song = "Kino - Spokoynaya noch"
+	song = "Kino - Spokoynaya Noch"
 	
 	chance = {
 		modifier = {
@@ -132,7 +132,7 @@ music = {
 }
 
 music = {
-	song = "Just don't tell mom I'm in Chechnya"
+	song = "Just Don't Tell Mom I'm In Chechnya"
 	
 	chance = {
 		modifier = {
@@ -192,7 +192,7 @@ music = {
 }
 
 music = {
-	song = "Lyube - The red army is the strongest"
+	song = "Lyube - The Red Army Is The Strongest"
 	
 	chance = {
 		modifier = {
@@ -262,7 +262,7 @@ music = {
 }
 
 music = {
-	song = "Igor Talkov - Ya vernus"		#I will return
+	song = "Igor Talkov - Ya Vernus"		#I will return
 	
 	chance = {
 		modifier = {
@@ -272,7 +272,7 @@ music = {
 }
 
 music = {
-	song = "Vadim Kazacheno - Proshchay naveki"		#Goodbye forever
+	song = "Vadim Kazacheno - Proshchay Naveki"		#Goodbye forever
 	
 	chance = {
 		modifier = {
@@ -282,7 +282,7 @@ music = {
 }
 
 music = {
-	song = "Ooes - Poslednee leto"
+	song = "Ooes - Poslednee Leto"
 	
 	chance = {
 		modifier = {
@@ -300,38 +300,6 @@ music = {
 			factor = 5				#Offensive War
 		}		
 	}
-}
-
-#Belarus war ones are of Belarussian regiments that serve in the ZSU
-
-music = {
-	song = "The flag of Victory"
-	
-	chance = {
-		modifier = {
-			factor = 5				#Belarus war
-		}		
-	}	
-}
-
-music = {
-	song = "Belarusian Bella ciao"
-	
-	chance = {
-		modifier = {
-			factor = 5				#Belarus war
-		}		
-	}	
-}
-
-music = {
-	song = "Kastuś Kalinoŭski Regiment"
-	
-	chance = {
-		modifier = {
-			factor = 5				#Belarus war
-		}		
-	}	
 }
 
 music = {

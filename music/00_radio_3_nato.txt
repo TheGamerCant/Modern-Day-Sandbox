@@ -64,7 +64,7 @@ music = {
 	}	
 }
 music = {
-	song = "Mareux - The perfect girl"
+	song = "Mareux - The Perfect Girl"
 	
 	chance = {
 		modifier = {
@@ -73,7 +73,7 @@ music = {
 	}	
 }
 music = {
-	song = "Green Day - 21 guns"
+	song = "Green Day - Twenty-One Guns"
 	
 	chance = {
 		modifier = {
@@ -82,7 +82,7 @@ music = {
 	}	
 }
 music = {
-	song = "Green Day - Little girl"
+	song = "Green Day - Little Girl"
 	
 	chance = {
 		modifier = {
@@ -91,7 +91,7 @@ music = {
 	}	
 }
 music = {
-	song = "MGMT - Little dark age"
+	song = "MGMT - Little Dark Age"
 	
 	chance = {
 		modifier = {
@@ -109,7 +109,7 @@ music = {
 	}	
 }
 music = {
-	song = "New Order - Blue monday"
+	song = "New Order - Blue Monday"
 	
 	chance = {
 		modifier = {
@@ -118,7 +118,16 @@ music = {
 	}
 }
 music = {
-	song = "My Chemical Romance - The world is ugly"
+	song = "My Chemical Romance - The World Is Ugly"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "My Chemical Romance - Mama"
 	
 	chance = {
 		modifier = {
@@ -164,6 +173,15 @@ music = {
 }
 music = {
 	song = "Nena - 99 Luftballons"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Mitski - Washing Machine Heart"
 	
 	chance = {
 		modifier = {

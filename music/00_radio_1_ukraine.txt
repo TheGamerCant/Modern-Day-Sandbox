@@ -132,7 +132,7 @@ music = {
 }
 
 music = {
-	song = "March of the new army"
+	song = "March of the New Army"
 	
 	chance = {
 		modifier = {
@@ -161,7 +161,7 @@ music = {
 }
 
 music = {
-	song = "Romax - Batko nash Bandera"
+	song = "Romax - Batko Nash Bandera"
 	chance = {
 		modifier = {
 			factor = 5				#War with Russia
@@ -170,10 +170,42 @@ music = {
 }
 
 music = {
-	song = "Me, my buddy, and two shovels"
+	song = "Me, My Buddy, And Two Shovels"
 	chance = {
 		modifier = {
 			factor = 5				#War
 		}		
 	}
+}
+
+#Belarus war ones are of Belarussian regiments that serve in the ZSU
+
+music = {
+	song = "The flag of Victory"
+	
+	chance = {
+		modifier = {
+			factor = 5				#Belarus war
+		}		
+	}	
+}
+
+music = {
+	song = "Belarusian Bella ciao"
+	
+	chance = {
+		modifier = {
+			factor = 5				#Belarus war
+		}		
+	}	
+}
+
+music = {
+	song = "Kastuś Kalinoŭski Regiment"
+	
+	chance = {
+		modifier = {
+			factor = 5				#Belarus war
+		}		
+	}	
 }

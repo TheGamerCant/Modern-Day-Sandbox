@@ -2,12 +2,25 @@ state={
 	id=470
 	name="STATE_470"
 	history={
-		owner = ZZZ
+		owner = CAN
+		add_core_of = CAN
+		
+		victory_points = { 13630 15 }
+		victory_points = { 13625 15 }
+		victory_points = { 13627 2 }
+		victory_points = { 1262 3 }
+		victory_points = { 7887 2 }
+		victory_points = { 13635 1 }
+		
+		buildings = {
+			infrastructure = 3
+			air_base = 5
+		}
 	}
 	provinces={
-		515 1262 1347 1426 1763 1785 1804 3010 3706 4765 6726 6754 7348 7718 7766 7787 10684 12166 12534 13167 13192 
+		515 1262 1347 1426 1763 1785 1804 3010 3706 4765 6726 6754 7348 7718 7766 7787 10684 12166 12534 13167 13192 13625 13626 13627 13628 13629 13630 13631 13632 13633 13634 13635 13636 13637 13638 
 	}
-	manpower= 100000
+	manpower= 3645257
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=rural

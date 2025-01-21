@@ -27,12 +27,12 @@ music = {
 }
 
 music = {
-	name = "Kino - Gruppa krovi"
+	name = "Kino - Gruppa Krovi"
 	file = "Russia/Kino_Gruppa_Krovi.ogg"
 }
 
 music = {
-	name = "Kino - Khochu peremen"
+	name = "Kino - Khochu Peremen"
 	file = "Russia/khochu_peremen.ogg"
 }
 
@@ -67,7 +67,7 @@ music = {
 }
 
 music = {
-	name = "Kino - Spokoynaya noch"
+	name = "Kino - Spokoynaya Noch"
 	file = "Russia/good_night.ogg"
 }
 
@@ -87,7 +87,7 @@ music = {
 }
 
 music = {
-	name = "Lyube - The red army is the strongest"
+	name = "Lyube - The Red Army Is The Strongest"
 	file = "Russia/the_red_army_is_the_strongest.ogg"
 }
 
@@ -98,7 +98,7 @@ music = {
 }
 
 music = {
-	name = "Just don't tell mom I'm in Chechnya"
+	name = "Just Don't Tell Mom I'm In Chechnya"
 	file = "Russia/Just_dont_tell_mom_Im_in_Chechnya_.ogg"
 }
 
@@ -118,7 +118,7 @@ music = {
 }
 
 music = {
-	name = "Ooes - Poslednee leto"
+	name = "Ooes - Poslednee Leto"
 	file = "Russia/poslednee_leto.ogg"
 }
 
@@ -144,13 +144,13 @@ music = {
 }
 
 music = {
-	name = "Igor Talkov - Ya vernus"
+	name = "Igor Talkov - Ya Vernus"
 	file = "Russia/i_will_return.ogg"
 }
 
 
 music = {
-	name = "Vadim Kazacheno - Proshchay naveki"
+	name = "Vadim Kazacheno - Proshchay Naveki"
 	file = "Russia/goodbye_forever.ogg"
 }
 
@@ -214,7 +214,7 @@ music = {
 }
 
 music = {
-	name = "Romax - Batko nash Bandera"
+	name = "Romax - Batko Nash Bandera"
 	file = "Ukraine/batko_nash_bandera.ogg"
 }
 
@@ -229,7 +229,7 @@ music = {
 }
 
 music = {
-	name = "March of the new army"
+	name = "March of the New Army"
 	file = "Ukraine/march_of_the_new_army.ogg"
 }
 
@@ -277,7 +277,7 @@ music = {
 
 
 music = {
-	name = "Mareux - The perfect girl"
+	name = "Mareux - The Perfect Girl"
 	file = "Generic/the_perfect_girl.ogg"
 }
 
@@ -287,7 +287,7 @@ music = {
 }
 
 music = {
-	name = "MGMT - Little dark age"
+	name = "MGMT - Little Dark Age"
 	file = "Generic/little_dark_age.ogg"
 }
 
@@ -302,12 +302,12 @@ music = {
 }
 
 music = {
-	name = "Green Day - 21 guns"
+	name = "Green Day - Twenty-One Guns"
 	file = "Generic/21_guns.ogg"
 }
 
 music = {
-	name = "Green Day - Little girl"
+	name = "Green Day - Little Girl"
 	file = "Generic/little_girl.ogg"
 }
 
@@ -317,13 +317,18 @@ music = {
 }
 
 music = {
-	name = "New Order - Blue monday"
+	name = "New Order - Blue Monday"
 	file = "Generic/blue_monday.ogg"
 }
 
 music = {
-	name = "My Chemical Romance - The world is ugly"
+	name = "My Chemical Romance - The World Is Ugly"
 	file = "Generic/the_world_is_ugly.ogg"
+}
+
+music = {
+	name = "My Chemical Romance - Mama"
+	file = "Generic/mama.ogg"
 }
 
 music = {
@@ -347,11 +352,16 @@ music = {
 }
 
 music = {
-	name = "Me, my buddy, and two shovels"
+	name = "Me, My Buddy, And Two Shovels"
 	file = "Ukraine/me_my_buddy_and_two_shovels.ogg"
 }
 
 music = {
 	name = "Nena - 99 Luftballons"
 	file = "Germany/99_luftballons.ogg"
+}
+
+music = {
+	name = "Mitski - Washing Machine Heart"
+	file = "Generic/washing_machine_heart.ogg"
 }
