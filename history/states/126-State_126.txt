@@ -2,12 +2,22 @@ state={
 	id=126
 	name="STATE_126"
 	history={
-		owner = ZZZ
+		owner = GBR
+		add_core_of = GBR
+		add_core_of = ENG
+		
+		victory_points = { 6103 100 }
+		victory_points = { 13662 3 }
+		
+		buildings = {
+			infrastructure = 5
+			air_base = 10
+		}
 	}
 	provinces={
-		6103 9239 11333 11374 
+		6103 11333 13662 13663 13664 13665 13666 
 	}
-	manpower= 100000
+	manpower= 8197488
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=megalopolis

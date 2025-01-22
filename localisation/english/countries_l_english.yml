@@ -10,3 +10,27 @@
  CAN:0 "Canada"                                  
  CAN_DEF:0 "Canada"                                  
  CAN_ADJ:0 "Canadian"
+
+ ULS:0 "Northern Ireland"                                  
+ ULS_DEF:0 "the Commonwealth of Ulster"                                  
+ ULS_ADJ:0 "Northern Irish"
+
+ SCT:0 "Scotland"                                  
+ SCT_DEF:0 "the Republic of Scotland"                                  
+ SCT_ADJ:0 "Scottish"
+
+ IRE:0 "Ireland"                                  
+ IRE_DEF:0 "the Republic of Ireland"                                  
+ IRE_ADJ:0 "Irish"
+
+ ENG:0 "England"                                  
+ ENG_DEF:0 "the Kingdom of England"                                  
+ ENG_ADJ:0 "English"
+
+ GBR:0 "United Kingdom"                                  
+ GBR_DEF:0 "the United Kingdom of Great Britain and Northern Ireland"                                  
+ GBR_ADJ:0 "English"
+
+ WLS:0 "Wales"                                  
+ WLS_DEF:0 "the Commonwealth of Wales"                                  
+ WLS_ADJ:0 "Welsh"

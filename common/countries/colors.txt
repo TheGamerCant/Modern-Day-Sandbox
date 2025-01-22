@@ -112,3 +112,27 @@ CAN = {
 	color = rgb { 202 60 31 }
 	color_ui = rgb { 202 60 31 }
 }
+ULS = {
+	color = rgb { 165 28 51 }
+	color_ui = rgb { 165 28 51 }
+}
+SCT = {
+	color = rgb { 0 36 148 }
+	color_ui = rgb { 0 36 148 }
+}
+IRE = {
+	color = rgb { 10 137 15 }
+	color_ui = rgb { 10 137 15 }
+}
+ENG = {
+	color = rgb { 176 46 54 }
+	color_ui = rgb { 176 46 54 }
+}
+GBR = {
+	color = rgb { 176 46 54 }
+	color_ui = rgb { 176 46 54 }
+}
+WLS = {
+	color = rgb { 226 160 146 }
+	color_ui = rgb { 226 160 146 }
+}
