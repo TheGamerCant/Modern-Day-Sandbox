@@ -7,7 +7,7 @@ state={
 		add_core_of = ENG
 		
 		victory_points = { 13658 5 }
-		victory_points = { 13656 5 }
+		victory_points = { 13656 10 }
 		victory_points = { 13654 2 }
 		victory_points = { 13659 5 }
 		victory_points = { 13655 3 }

@@ -349,7 +349,7 @@
 348;1;138;225;land;true;plains;1
 349;1;141;40;land;true;forest;1
 350;1;141;190;land;false;forest;1
-351;1;144;155;land;true;urban;1
+351;1;144;155;land;false;hills;1
 352;1;147;70;land;false;plains;1
 353;1;147;175;land;false;hills;6
 354;1;147;220;land;false;forest;1
@@ -6397,7 +6397,7 @@
 6396;85;189;6;land;false;hills;1
 6397;85;189;156;land;false;plains;1
 6398;85;189;211;land;false;plains;1
-6399;85;192;71;land;true;plains;1
+6399;85;192;71;land;true;hills;1
 6400;85;195;36;land;false;forest;1
 6401;85;195;91;land;false;forest;1
 6402;85;195;141;land;true;plains;1
@@ -13817,8 +13817,31 @@
 13700;243;175;88;land;false;dense_urban;1
 13701;245;221;139;land;false;sub_urban;1
 13702;106;79;62;land;false;urban;1
-
 13703;88;204;95;land;false;urban;1
 13704;132;115;13;land;false;urban;1
 13705;24;115;13;land;false;sub_urban;1
 13706;244;112;14;land;true;plains;1
+
+#Cumbria
+13707;55;250;112;land;false;mountain;1
+
+#North-East England
+13708;235;65;98;land;true;urban;1
+13709;22;5;152;land;true;sub_urban;1
+13710;80;200;35;land;true;dense_urban;1
+13711;85;176;125;land;true;urban;1
+13712;96;119;36;land;true;sub_urban;1
+
+#Scottish Highlands
+13713;215;22;112;land;true;dense_urban;1
+13714;71;107;179;land;true;sub_urban;1
+13715;38;25;197;lakes;false;lakes;1
+
+#Scottish Lowlands
+13716;243;30;15;land;true;dense_urban;1
+13717;209;62;8;land;true;sub_urban;1
+13718;132;4;59;land;false;sub_urban;1
+13719;209;112;226;land;false;dense_urban;1
+13720;56;8;49;land;false;urban;1
+13721;190;72;102;land;false;sub_urban;1
+13722;199;47;134;land;false;sub_urban;1

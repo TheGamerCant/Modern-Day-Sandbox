@@ -6,7 +6,7 @@ state={
 		add_core_of = IRE
 		
 		victory_points = { 3359 2 }
-		victory_points = { 303 2 }
+		victory_points = { 303 1 }
 	}
 	provinces={
 		285 303 369 3342 3359 7377 
