@@ -34,3 +34,11 @@
  WLS:0 "Wales"                                  
  WLS_DEF:0 "the Commonwealth of Wales"                                  
  WLS_ADJ:0 "Welsh"
+
+ UKR:0 "Ukraine"                                  
+ UKR_DEF:0 "Ukraine"                                  
+ UKR_ADJ:0 "Ukrainian"
+
+ CRM:0 "Crimea"                                  
+ CRM_DEF:0 "the Autonomous Republic of Crimea"                                  
+ CRM_ADJ:0 "Crimean"

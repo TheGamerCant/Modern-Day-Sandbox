@@ -3684,7 +3684,7 @@
 3683;45;90;48;land;false;forest;1
 3684;45;93;13;land;false;mountain;1
 3685;45;93;68;land;true;plains;2
-3686;45;93;218;land;true;urban;1
+3686;45;93;218;land;true;plains;1
 3687;45;96;33;land;true;plains;2
 3688;45;96;78;land;false;forest;1
 3689;45;96;183;land;false;mountain;1
@@ -6044,7 +6044,7 @@
 6043;84;24;240;sea;false;ocean;0
 6044;84;26;236;sea;false;ocean;0
 6045;84;27;11;land;false;forest;1
-6046;84;27;66;land;true;mountain;1
+6046;84;27;66;land;false;mountain;1
 6047;84;27;216;land;false;forest;1
 6048;84;28;244;sea;false;ocean;0
 6049;84;29;232;sea;false;ocean;0
@@ -6102,7 +6102,7 @@
 6101;84;75;166;land;false;forest;1
 6102;84;75;211;land;false;plains;1
 6103;84;78;26;land;false;dense_urban;1
-6104;84;78;131;land;true;mountain;1
+6104;84;78;131;land;false;mountain;1
 6105;84;78;176;land;false;plains;1
 6106;84;81;91;land;false;forest;1
 6107;84;81;141;land;false;hills;1
@@ -6702,7 +6702,7 @@
 6701;87;90;61;land;false;plains;1
 6702;87;93;26;land;false;plains;1
 6703;87;93;176;land;false;plains;1
-6704;87;96;91;land;true;forest;1
+6704;87;96;91;land;false;forest;1
 6705;87;96;196;land;false;plains;2
 6706;87;99;56;land;false;urban;1
 6707;87;99;161;land;true;hills;2
@@ -9073,7 +9073,7 @@
 9072;126;29;240;sea;true;ocean;0
 9073;126;30;89;land;false;forest;1
 9074;126;30;139;land;false;forest;1
-9075;126;30;194;land;true;mountain;1
+9075;126;30;194;land;false;mountain;1
 9076;126;30;248;sea;false;ocean;0
 9077;126;32;236;sea;true;ocean;0
 9078;126;33;54;land;false;forest;1
@@ -9710,7 +9710,7 @@
 9709;129;159;24;land;false;plains;1
 9710;129;159;79;land;true;forest;1
 9711;129;159;129;land;true;plains;2
-9712;129;162;89;land;true;plains;1
+9712;129;162;89;land;false;plains;1
 9713;129;162;194;land;true;plains;2
 9714;129;165;54;land;false;forest;1
 9715;129;165;159;land;false;mountain;7
@@ -13835,7 +13835,7 @@
 #Scottish Highlands
 13713;215;22;112;land;true;dense_urban;1
 13714;71;107;179;land;true;sub_urban;1
-13715;38;25;197;lakes;false;lakes;1
+13715;38;25;197;lake;false;lakes;1
 
 #Scottish Lowlands
 13716;243;30;15;land;true;dense_urban;1
@@ -13845,3 +13845,17 @@
 13720;56;8;49;land;false;urban;1
 13721;190;72;102;land;false;sub_urban;1
 13722;199;47;134;land;false;sub_urban;1
+
+#Dnipro river and syvash
+13723;35;174;163;lake;false;lakes;1
+13724;118;157;75;lake;false;lakes;1
+13725;87;205;72;lake;false;lakes;1
+13726;113;248;200;lake;false;lakes;1
+
+#Crimea
+13727;209;130;126;land;true;dense_urban;1
+13728;71;171;143;land;true;urban;1
+13729;241;149;174;land;true;sub_urban;1
+13730;202;120;97;land;true;mountain;1
+13731;252;27;90;land;false;urban;1
+13732;162;142;147;land;false;sub_urban;1

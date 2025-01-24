@@ -136,3 +136,11 @@ WLS = {
 	color = rgb { 226 160 146 }
 	color_ui = rgb { 226 160 146 }
 }
+UKR = {
+	color = rgb { 15 46 182 }
+	color_ui = rgb { 15 46 182 }
+}
+CRM = {
+	color = rgb { 44 182 147 }
+	color_ui = rgb { 44 182 147 }
+}
