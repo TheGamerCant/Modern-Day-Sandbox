@@ -6,7 +6,7 @@ state={
 		add_core_of = UKR
 		add_core_of = CRM
 		
-		victory_points = { 13727 2 }
+		victory_points = { 13727 12 }
 		victory_points = { 9680 3 }
 		victory_points = { 13731 5 }
 	}

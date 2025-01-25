@@ -11477,7 +11477,7 @@
 11476;170;99;222;land;false;plains;1
 11477;170;102;82;land;false;plains;1
 11478;170;105;47;land;false;forest;1
-11479;170;105;152;land;false;urban;1
+11479;170;105;152;land;false;dense_urban;1
 11480;170;108;67;land;false;desert;6
 11481;170;108;217;land;false;plains;1
 11482;170;111;32;land;false;desert;6
@@ -13859,3 +13859,8 @@
 13730;202;120;97;land;true;mountain;1
 13731;252;27;90;land;false;urban;1
 13732;162;142;147;land;false;sub_urban;1
+
+#Lviv
+13733;13;208;231;land;false;urban;1
+13734;164;114;132;land;false;sub_urban;1
+13735;137;72;23;land;false;sub_urban;1
