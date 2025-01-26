@@ -136,6 +136,15 @@ music = {
 	}
 }
 music = {
+	song = "My Chemical Romance - Demolition Lovers"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
 	song = "The Animals - House of the Rising Sun"
 	
 	chance = {

@@ -13,7 +13,7 @@ state={
 	provinces={
 		422 474 513 535 572 3412 3496 6435 6520 6546 9520 11441 11503 11543 13736 
 	}
-	manpower= 2195883
+	manpower= 2188879
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=town

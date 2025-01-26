@@ -332,6 +332,11 @@ music = {
 }
 
 music = {
+	name = "My Chemical Romance - Demolition Lovers"
+	file = "Generic/demolition_lovers.ogg"
+}
+
+music = {
 	name = "The Animals - House of the Rising Sun"
 	file = "Generic/house_of_the_rising_sun.ogg"
 }
