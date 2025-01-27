@@ -2,6 +2,7 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 13654;13656;sea;2977;-1;-1;-1;-1;;Isle of Wight
 13654;13658;sea;2977;-1;-1;-1;-1;;Isle of Wight
 13671;6363;sea;2824;-1;-1;-1;-1;;Isle of Anglesey
+6771;9718;impassable;-1;-1;-1;-1;-1;;Crimean Spit
 12251;10321;sea;8313;-1;-1;-1;-1;;Andaman
 7413;1419;sea;5294;-1;-1;-1;-1;;Moluccas
 10141;1419;sea;5267;-1;-1;-1;-1;;Moluccas
