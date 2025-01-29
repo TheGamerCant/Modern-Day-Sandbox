@@ -42,3 +42,7 @@
  CRM:0 "Crimea"                                  
  CRM_DEF:0 "the Autonomous Republic of Crimea"                                  
  CRM_ADJ:0 "Crimean"
+
+ TRZ:0 "Transnistria"                                  
+ TRZ_DEF:0 "the Pridnestrovian Moldavian Republic"                                  
+ TRZ_ADJ:0 "Transnistrian"

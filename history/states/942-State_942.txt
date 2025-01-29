@@ -5,7 +5,7 @@ state={
 		owner = UKR
 		add_core_of = UKR
 		
-		victory_points = { 13747 5 }
+		victory_points = { 13747 7 }
 		victory_points = { 6505 3 }
 		victory_points = { 9446 2 }
 	}
