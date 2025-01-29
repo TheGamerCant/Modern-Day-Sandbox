@@ -6,10 +6,11 @@ state={
 		add_core_of = UKR
 		
 		victory_points = { 11479 12 }
-		victory_points = { 11427 5 }
+		victory_points = { 3483 5 }
 		victory_points = { 11411 3 }
 		victory_points = { 536 2 }
 		victory_points = { 6483 2 }
+		victory_points = { 9454 1 }
 	}
 	provinces={
 		3743 6431 6460 6483 6557 9425 11411 11550 438 491 536 3483 3562 9454 9468 9558 11427 11479 13733 13734 13735 
