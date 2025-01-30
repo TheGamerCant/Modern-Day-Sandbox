@@ -148,3 +148,15 @@ TRZ = {
 	color = rgb { 203 8 12 }
 	color_ui = rgb { 203 8 12 }
 }
+LIT = {
+	color = rgb { 227 218 6 }
+	color_ui = rgb { 227 218 6 }
+}
+LAT = {
+	color = rgb { 167 4 53 }
+	color_ui = rgb { 167 4 53 }
+}
+EST = {
+	color = rgb { 6 189 229 }
+	color_ui = rgb { 6 189 229 }
+}

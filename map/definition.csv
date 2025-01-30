@@ -3150,7 +3150,7 @@
 3149;42;159;33;land;false;forest;1
 3150;42;159;88;land;true;hills;1
 3151;42;159;138;land;true;urban;1
-3152;42;162;53;land;true;urban;1
+3152;42;162;53;land;true;plains;1
 3153;42;162;98;land;false;forest;1
 3154;42;162;203;land;false;forest;1
 3155;42;165;18;land;false;forest;6
@@ -3318,7 +3318,7 @@
 3317;43;117;128;land;false;forest;6
 3318;43;120;43;land;false;plains;1
 3319;43;120;88;land;true;plains;1
-3320;43;120;193;land;false;urban;1
+3320;43;120;193;land;false;forest;1
 3321;43;123;53;land;false;marsh;1
 3322;43;123;158;land;false;forest;1
 3323;43;126;18;land;false;forest;1
@@ -6294,7 +6294,7 @@
 6293;85;60;141;land;false;forest;1
 6294;85;63;56;land;false;forest;6
 6295;85;63;206;land;false;forest;1
-6296;85;66;21;land;false;urban;1
+6296;85;66;21;land;false;plains;1
 6297;85;66;171;land;false;forest;6
 6298;85;66;226;land;false;forest;1
 6299;85;69;86;land;false;forest;1
@@ -9338,7 +9338,7 @@
 9337;127;123;79;land;false;plains;6
 9338;127;123;129;land;false;hills;6
 9339;127;126;44;land;false;plains;1
-9340;127;126;89;land;true;urban;1
+9340;127;126;89;land;true;plains;1
 9341;127;126;194;land;false;forest;1
 9342;127;129;9;land;false;forest;1
 9343;127;129;54;land;false;forest;1
@@ -13975,3 +13975,27 @@
 
 #Cherkasy
 13818;188;34;157;land;false;sub_urban;1
+
+#Lithuania
+13819;49;84;148;land;false;plains;1
+13820;10;249;2;land;false;dense_urban;1
+13821;225;202;33;land;false;urban;1
+13822;223;127;217;land;false;sub_urban;1
+13823;192;250;40;land;false;dense_urban;1
+13824;229;113;235;land;false;urban;1
+13825;143;30;170;land;false;sub_urban;1
+13826;146;4;24;land;false;plains;1
+
+#Latvia
+13827;89;91;174;land;false;dense_urban;1
+13828;246;135;117;land;true;urban;1
+13829;173;213;136;land;false;sub_urban;1
+13830;6;65;111;land;true;urban;1
+13831;196;224;223;land;false;sub_urban;1
+
+#Estonia
+13832;19;9;156;lake;false;lakes;1
+13833;142;106;19;land;true;dense_urban;1
+13834;104;35;196;land;true;urban;1
+13835;219;158;237;land;true;sub_urban;1
+13836;84;124;9;land;true;urban;1

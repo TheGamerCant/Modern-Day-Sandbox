@@ -46,3 +46,15 @@
  TRZ:0 "Transnistria"                                  
  TRZ_DEF:0 "the Pridnestrovian Moldavian Republic"                                  
  TRZ_ADJ:0 "Transnistrian"
+
+ LIT:0 "Lithuania"                                  
+ LIT_DEF:0 "the Republic of Lithuania"                                  
+ LIT_ADJ:0 "Lithuanian"
+
+ LAT:0 "Latvia"                                  
+ LAT_DEF:0 "the Republic of Latvia"                                  
+ LAT_ADJ:0 "Latvian"
+
+ EST:0 "Estonia"                                  
+ EST_DEF:0 "the Republic of Estonia"                                  
+ EST_ADJ:0 "Estonian"
