@@ -149,14 +149,46 @@ TRZ = {
 	color_ui = rgb { 203 8 12 }
 }
 LIT = {
-	color = rgb { 227 218 6 }
-	color_ui = rgb { 227 218 6 }
+	color = rgb { 177 168 6 }
+	color_ui = rgb { 177 168 6 }
 }
 LAT = {
-	color = rgb { 167 4 53 }
-	color_ui = rgb { 167 4 53 }
+	color = rgb { 126 4 58 }
+	color_ui = rgb { 126 4 58 }
 }
 EST = {
-	color = rgb { 6 189 229 }
-	color_ui = rgb { 6 189 229 }
+	color = rgb { 6 139 179 }
+	color_ui = rgb { 6 139 179 }
+}
+ALB = {
+	color = rgb { 138 26 26 }
+	color_ui = rgb { 138 26 26 }
+}
+MNT = {
+	color = rgb { 39 154 147 }
+	color_ui = rgb { 39 154 147 }
+}
+NMA = {
+	color = rgb { 193 92 92 }
+	color_ui = rgb { 193 92 92 }
+}
+KOS = {
+	color = rgb { 36 71 158 }
+	color_ui = rgb { 36 71 158 }
+}
+SRB = {
+	color = rgb { 54 57 88 }
+	color_ui = rgb { 54 57 88 }
+}
+CRO = {
+	color = rgb { 173 54 162 }
+	color_ui = rgb { 173 54 162 }
+}
+SLV = {
+	color = rgb { 56 92 122 }
+	color_ui = rgb { 56 92 122 }
+}
+BSH = {
+	color = rgb { 180 121 26 }
+	color_ui = rgb { 180 121 26 }
 }

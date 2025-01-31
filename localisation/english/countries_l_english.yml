@@ -58,3 +58,35 @@
  EST:0 "Estonia"                                  
  EST_DEF:0 "the Republic of Estonia"                                  
  EST_ADJ:0 "Estonian"
+
+ ALB:0 "Albania"                                  
+ ALB_DEF:0 "the Republic of Albania"                                  
+ ALB_ADJ:0 "Albanian"
+
+ MNT:0 "Montenegro"                                  
+ MNT_DEF:0 "Montenegro"                                  
+ MNT_ADJ:0 "Montenegrin"
+
+ NMA:0 "Macedonia"                                  
+ NMA_DEF:0 "the Former Yugoslav Republic of Macedonia"                                  
+ NMA_ADJ:0 "Macedonian"
+
+ KOS:0 "Kosovo"                                  
+ KOS_DEF:0 "the Republic of Kosovo"                                  
+ KOS_ADJ:0 "Kosovar"
+
+ SRB:0 "Serbia"                                  
+ SRB_DEF:0 "the Republic of Serbia"                                  
+ SRB_ADJ:0 "Serb"
+
+ CRO:0 "Croatia"                                  
+ CRO_DEF:0 "the Republic of Croatia"                                  
+ CRO_ADJ:0 "Croat"
+
+ SLV:0 "Slovenia"                                  
+ SLV_DEF:0 "the Republic of Slovenia"                                  
+ SLV_ADJ:0 "Slovene"
+
+ BSH:0 "Bosnia and Herzegovina"                                  
+ BSH_DEF:0 "Bosnia and Herzegovina"                                  
+ BSH_ADJ:0 "Bosniak"

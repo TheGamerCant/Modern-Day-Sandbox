@@ -1,0 +1,12 @@
+capital = 107
+
+set_popularities = {
+	IDEOLOGY_conservative = 100
+}
+
+set_politics = {                                  
+	ruling_party = IDEOLOGY_conservative
+	last_election = "2021.1.1"
+	election_frequency = 48                                  
+	elections_allowed = no
+}

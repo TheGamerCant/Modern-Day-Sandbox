@@ -13999,3 +13999,11 @@
 13834;104;35;196;land;true;urban;1
 13835;219;158;237;land;true;sub_urban;1
 13836;84;124;9;land;true;urban;1
+
+#N. Macedonia
+13837;84;136;241;land;false;dense_urban;1
+13838;149;216;248;land;false;urban;1
+13839;163;26;30;land;false;sub_urban;1
+
+#Kosovo
+13840;247;48;66;land;false;urban;1

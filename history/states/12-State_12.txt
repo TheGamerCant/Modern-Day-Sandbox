@@ -5,7 +5,7 @@ state={
 		owner = LAT
 		add_core_of = LAT
 		
-		victory_points = { 13827 15 }
+		victory_points = { 13827 12 }
 		victory_points = { 9501 1 }
 		victory_points = { 3298 1 }
 		victory_points = { 9240 1 }
