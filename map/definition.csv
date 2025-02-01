@@ -982,7 +982,7 @@
 981;4;204;140;land;false;hills;7
 982;4;204;185;land;false;mountain;1
 983;4;207;0;land;false;forest;2
-984;4;207;150;land;false;hills;1
+984;4;207;150;land;true;hills;1
 985;4;207;205;land;false;hills;1
 986;4;210;65;land;true;hills;2
 987;4;210;170;land;false;plains;6
@@ -3922,7 +3922,7 @@
 3921;46;135;193;land;false;plains;7
 3922;46;138;53;land;false;hills;1
 3923;46;138;158;land;false;mountain;1
-3924;46;141;18;land;true;plains;1
+3924;46;141;18;land;false;plains;1
 3925;46;141;73;land;false;forest;2
 3926;46;141;223;land;false;forest;1
 3927;46;144;38;land;false;hills;7
@@ -6898,7 +6898,7 @@
 6897;88;90;166;land;false;mountain;2
 6898;88;90;221;land;false;hills;6
 6899;88;93;131;land;false;plains;2
-6900;88;93;186;land;false;mountain;1
+6900;88;93;186;land;true;urban;1
 6901;88;96;46;land;false;plains;1
 6902;88;96;151;land;false;plains;1
 6903;88;99;11;land;false;hills;1
@@ -9892,7 +9892,7 @@
 9891;130;162;204;land;false;plains;1
 9892;130;165;64;land;false;plains;2
 9893;130;165;169;land;false;hills;7
-9894;130;165;214;land;false;mountain;1
+9894;130;165;214;land;true;mountain;1
 9895;130;168;29;land;true;hills;6
 9896;130;168;134;land;true;hills;1
 9897;130;171;94;land;false;hills;6
@@ -13250,7 +13250,7 @@
 13249;78;140;152;land;false;mountain;5
 13250;191;175;169;land;false;hills;5
 13251;185;11;250;land;false;mountain;5
-13252;51;14;146;land;true;hills;1
+13252;51;14;146;land;false;plains;1
 13253;59;23;200;land;false;desert;5
 13254;242;234;234;land;true;forest;6
 13255;243;229;190;land;true;plains;1
@@ -14007,3 +14007,18 @@
 
 #Kosovo
 13840;247;48;66;land;false;urban;1
+
+#Albania
+13841;63;34;94;land;false;dense_urban;1
+13842;173;226;82;land;false;urban;1
+13843;61;243;71;land;false;sub_urban;1
+
+#Croatia
+13844;153;27;133;land;true;urban;1
+13845;248;152;140;land;true;sub_urban;1
+
+13846;220;131;95;land;false;dense_urban;1
+13847;67;1;195;land;false;urban;1
+13848;154;171;3;land;false;sub_urban;1
+13849;70;192;46;land;false;sub_urban;1
+13850;51;25;205;land;false;forest;1
