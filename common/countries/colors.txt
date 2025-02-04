@@ -192,3 +192,7 @@ BSH = {
 	color = rgb { 180 121 26 }
 	color_ui = rgb { 180 121 26 }
 }
+SRP = {
+	color = rgb { 57 62 96 }
+	color_ui = rgb { 57 62 96 }
+}

@@ -6,6 +6,17 @@ state={
 		add_core_of = CRO
 		
 		victory_points = { 13846 20 }
+		victory_points = { 13848 2 }
+		victory_points = { 11564 3 }
+		victory_points = { 6611 1 }
+		victory_points = { 9611 2 }
+		victory_points = { 13252 2 }
+		victory_points = { 3601 2 }
+		
+		buildings = {
+			infrastructure = 3
+			air_base = 5
+		}
 	}
 	provinces={
 		591 624 984 3592 3596 3601 6611 9611 11564 11581 11594 13252 13846 13847 13848 13849 13850 

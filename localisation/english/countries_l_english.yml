@@ -77,16 +77,20 @@
 
  SRB:0 "Serbia"                                  
  SRB_DEF:0 "the Republic of Serbia"                                  
- SRB_ADJ:0 "Serb"
+ SRB_ADJ:0 "Serbian"
 
  CRO:0 "Croatia"                                  
  CRO_DEF:0 "the Republic of Croatia"                                  
- CRO_ADJ:0 "Croat"
+ CRO_ADJ:0 "Croatian"
 
  SLV:0 "Slovenia"                                  
  SLV_DEF:0 "the Republic of Slovenia"                                  
- SLV_ADJ:0 "Slovene"
+ SLV_ADJ:0 "Slovenian"
 
  BSH:0 "Bosnia and Herzegovina"                                  
  BSH_DEF:0 "Bosnia and Herzegovina"                                  
  BSH_ADJ:0 "Bosniak"
+
+ SRP:0 "Republika Srpska"                                  
+ SRP_DEF:0 "Republika Srpska"                                  
+ SRP_ADJ:0 "Serbian"
