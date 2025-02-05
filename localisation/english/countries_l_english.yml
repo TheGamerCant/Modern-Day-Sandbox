@@ -94,3 +94,7 @@
  SRP:0 "Republika Srpska"                                  
  SRP_DEF:0 "Republika Srpska"                                  
  SRP_ADJ:0 "Serbian"
+
+ GER:0 "Germany"                                  
+ GER_DEF:0 "the Federal Republic of Germany"                                  
+ GER_ADJ:0 "German"
