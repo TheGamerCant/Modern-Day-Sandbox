@@ -100,7 +100,7 @@ static const float3 FAKE_CUBEMAP_COLOR 			= float3(0.0f, 0.0f, 0.0f);
 // SEVERE_WINTER_VALUE = ###,					defines.lua   (reload defines)
 
 
-static const float 	BORDER_TILE					= 0.4f;
+static const float 	BORDER_TILE					= 0.2;		//Defines tile border transparency / focus - lower is sharper and more visible. Base is 0.4f
 // BORDER_WIDTH		= ###						defines.lua   (reload defines)
 
 
@@ -149,10 +149,13 @@ static const float  WATER_HEIGHT_RECP_SQUARED = WATER_HEIGHT_RECP * WATER_HEIGHT
 // ------------------    FOG            -------------------------
 // --------------------------------------------------------------
 
-static const float3 FOG_COLOR 					= float3( 0.12, 0.28, 0.6 );
+//Fog is the effect applied to your screen during post-processing
+//Is basically a vignette applied to the map
+
+static const float3 FOG_COLOR 					= float3( 0.0, 0.0, 0.0 );
 static const float 	FOG_BEGIN					= 1.0f;
 static const float 	FOG_END 					= 150.0f;
-static const float 	FOG_MAX 					= 0.35f; 
+static const float 	FOG_MAX 					= 0.2f; 		//How strong is the fog 0-1
 
 //static const float 	FOG_MAX 					= 1000.7f;
 
@@ -192,20 +195,30 @@ static const float  SHADOW_WEIGHT_TREE   		= 0.7f;
 // ------------------    GRADIENT BORDERS   ---------------------
 // --------------------------------------------------------------
 
-static const float GB_CAM_MIN = 100.0f;
-static const float GB_CAM_MAX = 350.0f;
-static const float GB_CAM_MAX_FILLING_CLAMP = 0.8f; // 0 to 1 value for clamping the fill when camera is at max distance
+//Basically GB_CAM_MAX_FILLING_CLAMP is how much the map overlays the normal when zoomed out, 0 is you can see the normal completely 1 is you can barely see it
+//GB_CAM_MAX is when it transitions to normal / lighter, thus we want it as low as possible so it never happens
+static const float GB_CAM_MIN = 0.0f;
+static const float GB_CAM_MAX = 0.1f;
+static const float GB_CAM_MAX_FILLING_CLAMP = 1.0f; // 0 to 1 value for clamping the fill when camera is at max distance
+
+//Not too sure what interpolation time does, keep it the same as base game
 static const float GB_THRESHOLD = 0.05f; // interpolation time
 static const float GB_THRESHOLD2 = 0.25f; // interpolation time
+
+
 //static const float3 GB_OUTLINE_COLOR = float3( 0.0f, 0.0f, 0.0f );
 static const float GB_OUTLINE_CUTOFF_SEA = 0.990f; // Magic number to balance cutoff on edges without neighbor (over Sea)
-static const float GB_OPACITY_NEAR = 1.0f; // Transparency when camera is near
-static const float GB_OPACITY_FAR = 0.85f;  // Transparency when camera is far
+
+//Basically how visible the countries' colours are compared to the terrain map and colour maps, low = terrain dominates, high = colours cominate
+static const float GB_OPACITY_NEAR = 1.10f; // Transparency when camera is near
+static const float GB_OPACITY_FAR = 1.10f;  // Transparency when camera is far
+
+
 static const float BORDER_NIGHT_DESATURATION_MAX = 0.2f; // how much border colors can get desaturated at night. 1.0f is full grey
-static const float BORDER_FOW_REMOVAL_FACTOR = .8f; // How much of the FOW that is removed from the borders. 1.0f is no FOW
+static const float BORDER_FOW_REMOVAL_FACTOR = 1.0f; // How much of the FOW that is removed from the borders. 1.0f is no FOW
 static const float BORDER_LIGHT_REMOVAL_FACTOR = 0.8f; // How much of the light calculations that are removed from the borders. 1.0f is no light
-static const float GB_STRENGTH_CH1 = 1.0; // Opacity of bottom layer
-static const float GB_STRENGTH_CH2 = 1.0; // Opacity of top layer
+static const float GB_STRENGTH_CH1 = 0.8; // Opacity of bottom layer
+static const float GB_STRENGTH_CH2 = 0.8; // Opacity of top layer
 static const float GB_FIRST_LAYER_PRIORITY = 0.4; // Priority for first/second layer when both are active at the same pixel
 static const float BORDER_MAP_TILE = 18000.0f;
 
