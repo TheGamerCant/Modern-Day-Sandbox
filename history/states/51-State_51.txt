@@ -2,12 +2,24 @@ state={
 	id=51
 	name="STATE_51"
 	history={
-		owner = ZZZ
+		owner = GER
+		add_core_of = GER
+		
+		victory_points = { 13922 10 }
+		victory_points = { 13923 25 }
+		victory_points = { 13927 15 }
+		victory_points = { 13929 2 }
+		victory_points = { 13930 8 }
+		victory_points = { 13932 8 }
+		victory_points = { 13933 10 }
+		victory_points = { 9522 5 }
+		victory_points = { 6535 8 }
+		victory_points = { 9509 10 }
 	}
 	provinces={
-		587 3444 3512 3547 6469 6570 9482 9522 
+		587 3444 3512 3547 6469 6570 9482 9522 405 495 3355 3398 6535 6622 9443 9509 9547 11233 11346 11431 13922 13923 13924 13925 13926 13927 13928 13929 13930 13931 13932 13933 13934
 	}
-	manpower= 100000
+	manpower= 17538251
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=megalopolis
