@@ -1,0 +1,635 @@
+sub_units = {
+	#Copied from signal company
+	SUPPORT_UNIT_electronic_warfare = {
+		abbreviation = "SIG"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		
+		# Important Ability
+		initiative = 0.1
+		
+		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
+		
+		essential = {
+			support_equipment
+			motorized_equipment
+		}
+
+		need = {
+			support_equipment = 20
+			motorized_equipment = 10
+		}
+
+		same_support_type = signal_company
+	}
+
+	#Copied from cavalry recon
+	SUPPORT_UNIT_light_recon = { #mounted cav
+		abbreviation = "CREC"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_recon
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		recon = 1
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		defense = -0.5
+		breakthrough = -0.5
+		soft_attack = -0.9
+		hard_attack = -0.9
+
+		maximum_speed = 0.6 # move at horsie speeds
+		
+		essential = {
+			infantry_equipment
+			support_equipment
+		}
+
+		need = {
+			infantry_equipment = 40
+			support_equipment = 10
+		}
+		
+		battalion_mult = {
+			category = category_artillery
+			soft_attack = 0.10
+		}
+		
+		forest = {
+			movement = 0.05
+		}
+		hills = {
+			movement = 0.10
+		}
+		mountain = {
+			movement = 0.10
+		}
+		jungle = {
+			movement = 0.10
+		}
+		marsh = {
+			movement = 0.10
+		}
+		plains = {
+			movement = 0.05
+		}
+		desert = {
+			movement = 0.05
+		}
+		river = {
+			movement = 0.1
+		}
+		
+		same_support_type = recon # blocks adding other recon types to template
+	}
+
+	#Copied from motorised recon
+	SUPPORT_UNIT_heavy_recon = { #trucks, motorcyles, ill-placed cars
+		abbreviation = "MREC"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+			category_recon
+		}
+		
+		battalion_mult = {
+			category = category_artillery
+			soft_attack = 0.10
+		}
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength 		= 2
+		max_organisation 	= 20
+		default_morale 		= 0.3
+		manpower 			= 500
+		training_time 		= 120
+
+		#Misc Abilities
+		weight 				= 0.1
+		supply_consumption 	= 0.02
+		recon 				= 1.5
+		can_be_parachuted 	= yes
+
+		# Support nerfs to combat abilities
+		defense = -0.09
+		breakthrough = -0.5
+		soft_attack = -0.9
+		hard_attack = -0.9
+		
+		essential = {
+			infantry_equipment
+			support_equipment
+			motorized_equipment
+		}
+
+		transport = motorized_equipment
+		need = {
+			infantry_equipment = 40
+			support_equipment = 10
+			motorized_equipment = 20
+		}
+
+		forest = {
+			movement = 0.05
+		}
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.05
+		}
+		marsh = {
+			movement = 0.1
+		}
+		plains = {
+			movement = 0.15
+		}
+		desert = {
+			movement = 0.20
+		}
+		river = {
+			movement = 0.1
+		}
+		
+		same_support_type = recon # blocks adding other recon types to template
+	}
+
+	SUPPORT_UNIT_helicopter_recon = {
+		abbreviation = "HELR"
+		sprite = helicopter_brigade
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_recon
+			category_helicopter_support_companies
+		}
+		
+		battalion_mult = {
+			category = category_artillery
+			soft_attack = 0.1 #Same as reg recon (0.1)
+		}
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength 		= 2
+		max_organisation 	= 20
+		default_morale 		= 0.3
+		manpower 			= 500
+		training_time 		= 120
+
+		#Misc Abilities
+		weight 				= 0.1
+		supply_consumption 	= 0.070
+		recon 				= 2 #More than reg recon (1)
+		can_be_parachuted 	= no
+
+		essential = {
+			infantry_equipment
+			support_equipment
+			helicopter_equipment
+		}
+
+		transport = motorized_equipment 
+		need = {
+			infantry_equipment = 20
+			support_equipment = 10
+			helicopter_equipment = 20
+		}
+
+		forest = {
+			movement = 0.15
+		}
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.15
+		}
+		marsh = {
+			movement = 0.15
+		}
+		plains = {
+			movement = 0.15
+		}
+		desert = {
+			movement = 0.15
+		}
+		river = {
+			movement = 0.15
+		}
+		
+		same_support_type = recon # blocks adding other recon types to template
+		same_support_type = helicopter_recon
+	}
+
+	SUPPORT_UNIT_military_police = {
+		abbreviation = "MP"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+		
+		battalion_mult = {
+			category = category_all_infantry
+			default_morale = 0.20
+		}
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 0	
+		default_morale = 0.3
+		manpower = 500
+		training_time = 180
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		
+		# Important Ability
+		suppression_factor = 0.20
+
+		essential = {
+			infantry_equipment
+			support_equipment
+		}
+		
+		need = {
+			support_equipment = 10
+			infantry_equipment = 40
+		}
+
+		same_support_type = military_police # blocks adding other MP types to template
+	}
+
+	SUPPORT_UNIT_maintainance = {
+		abbreviation = "MAIN"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+		
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 20	
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.03
+		can_be_parachuted = yes
+		
+		# Important Ability
+		reliability_factor = 0.05
+		equipment_capture_factor = 0.05
+		
+		essential = {
+			support_equipment
+		}
+		
+		need = {
+			support_equipment = 25
+		}
+		same_support_type = maintenance_company
+	}
+
+	SUPPORT_UNIT_logistics = {
+		abbreviation = "LOG"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 10	
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		can_be_parachuted = yes
+
+		# Important Ability
+		supply_consumption_factor = -0.1
+		fuel_consumption_factor = -0.05
+
+		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
+		
+		essential = {
+			support_equipment
+			motorized_equipment
+		}
+
+		need = {
+			support_equipment = 20
+			motorized_equipment = 10
+		}
+		same_support_type = logistics_company
+	}
+
+	SUPPORT_UNIT_medical = {
+		abbreviation = "HOS"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.05
+		can_be_parachuted = yes
+
+		# Important Ability
+		casualty_trickleback = 0.20
+		experience_loss_factor = -0.15
+
+		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
+		
+		battalion_mult = {
+			category = category_all_infantry
+			max_strength = 0.10
+		}
+		
+		essential = {
+			support_equipment
+			motorized_equipment
+		}
+		
+		need = {
+			support_equipment = 30
+			motorized_equipment = 20
+		}
+
+		same_support_type = field_hospital
+	}
+
+	SUPPORT_UNIT_engineers = {
+		abbreviation = "ENG"
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+			flame
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 20
+		default_morale = 0.3
+		manpower = 300
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		
+		entrenchment = 2
+		
+		battalion_mult = {
+			category = category_light_infantry
+			entrenchment = 0.20
+			add = yes
+		}
+
+				
+		defense = 0.1
+		breakthrough = 0.5
+
+		# Support nerfs to combat abilities
+		soft_attack = -0.5
+
+		essential = {
+			support_equipment
+		}
+
+		need = {
+			infantry_equipment = 10
+			support_equipment = 30
+		}
+
+		can_be_parachuted = yes
+		forest = {
+			defence = 0.25
+			movement = 0.05
+		}
+
+		hills = {
+			defence = 0.1
+		}
+
+		jungle = {
+			defence = 0.25
+		}
+
+		marsh = {
+			defence = 0.25
+			movement = 0.2
+		}
+
+		fort = {
+			attack = 0.1
+			defence = 0.25
+		}
+
+		river = {
+			defence = 0.25
+			movement = 0.25
+		}
+
+		amphibious = {
+			attack = 0.15
+		}
+
+		same_support_type = engineer
+	}
+}
