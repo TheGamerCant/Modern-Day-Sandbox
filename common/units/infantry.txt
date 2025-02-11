@@ -46,7 +46,6 @@ sub_units = {
 		}
 
 		hard_attack = -0.2
-		attack = -0.1
 	}
 
 	COMBAT_UNIT_basic_infantry = {
