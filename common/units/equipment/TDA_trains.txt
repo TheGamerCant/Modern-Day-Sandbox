@@ -22,7 +22,7 @@ equipments = {
 			steel = 1
 		}
 	}
-	# regular trains
+
 	train_equipment_1 = {
 		year = 1910
 
@@ -34,35 +34,6 @@ equipments = {
 		build_cost_ic = 70
 		resources = {
 			steel = 1
-		}
-	}
-	# cheap trains
-	train_equipment_2 = {
-		year = 1940
-
-		archetype = train_equipment
-		parent = train_equipment_1
-		priority = 20
-
-		build_cost_ic = 50
-		resources = {
-			steel = 1
-		}
-	}
-	# armored trains
-	train_equipment_3 = {
-		year = 1936
-
-		archetype = train_equipment
-		parent = train_equipment_1
-		priority = 30
-
-		armor_value = 250 # HP = BASE_TRAIN_HP + armor_value
-		air_attack = 18
-
-		build_cost_ic = 105
-		resources = {
-			steel = 2
 		}
 	}
 }
