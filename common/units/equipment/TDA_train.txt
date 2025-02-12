@@ -1,11 +1,11 @@
 equipments = {
-	infantry_equipment = {
+	train_equipment = {
 		is_archetype = yes
-		picture = archetype_infantry_equipment
+		picture = archetype_train_equipment
 		is_buildable = no
 		
 		type = {
-			infantry
+			train
 		}
 		
 		group_by = archetype
@@ -21,8 +21,8 @@ equipments = {
 		}
 	}
 
-	infantry_equipment_1 = {
-		archetype = infantry_equipment
+	train_equipment_1 = {
+		archetype = train_equipment
 		
 		active = yes
 	}

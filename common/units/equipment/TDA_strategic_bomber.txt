@@ -1,16 +1,16 @@
 equipments = {
-	infantry_equipment = {
+	strategic_bomber_equipment = {
 		is_archetype = yes
-		picture = archetype_infantry_equipment
+		picture = archetype_strategic_bomber_equipment
 		is_buildable = no
 		
 		type = {
-			infantry
+			strat_bomber
 		}
 		
 		group_by = archetype
 
-		interface_category = interface_category_land
+		interface_category = interface_category_air
 
 		maximum_speed = 4
 		reliability = 0.8
@@ -21,8 +21,8 @@ equipments = {
 		}
 	}
 
-	infantry_equipment_1 = {
-		archetype = infantry_equipment
+	strategic_bomber_equipment_1 = {
+		archetype = strategic_bomber_equipment
 		
 		active = yes
 	}

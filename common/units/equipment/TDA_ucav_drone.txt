@@ -1,16 +1,17 @@
 equipments = {
-	infantry_equipment = {
+	ucav_drone_equipment = {
 		is_archetype = yes
-		picture = archetype_infantry_equipment
+		picture = archetype_ucav_drone_equipment
 		is_buildable = no
 		
 		type = {
-			infantry
+			scout_plane
+			strat_bomber
 		}
 		
 		group_by = archetype
 
-		interface_category = interface_category_land
+		interface_category = interface_category_air
 
 		maximum_speed = 4
 		reliability = 0.8
@@ -21,8 +22,8 @@ equipments = {
 		}
 	}
 
-	infantry_equipment_1 = {
-		archetype = infantry_equipment
+	ucav_drone_equipment_1 = {
+		archetype = ucav_drone_equipment
 		
 		active = yes
 	}

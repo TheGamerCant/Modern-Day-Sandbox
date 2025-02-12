@@ -1,11 +1,12 @@
 equipments = {
-	transport_plane_equipment = {
+	attack_helicopter_equipment = {
 		is_archetype = yes
-		picture = archetype_transport_plane_equipment
+		picture = archetype_attack_helicopter_equipment
 		is_buildable = no
 		
 		type = {
-			air_transport
+			fighter
+			cas
 		}
 		
 		group_by = archetype
@@ -21,8 +22,8 @@ equipments = {
 		}
 	}
 
-	transport_plane_equipment_1 = {
-		archetype = transport_plane_equipment
+	attack_helicopter_equipment_1 = {
+		archetype = attack_helicopter_equipment
 		
 		active = yes
 	}

@@ -1,11 +1,12 @@
 equipments = {
-	infantry_equipment = {
+	fpv_drone_equipment = {
 		is_archetype = yes
-		picture = archetype_infantry_equipment
+		picture = archetype_fpv_drone_equipment
 		is_buildable = no
 		
 		type = {
 			infantry
+			support
 		}
 		
 		group_by = archetype
@@ -21,8 +22,8 @@ equipments = {
 		}
 	}
 
-	infantry_equipment_1 = {
-		archetype = infantry_equipment
+	fpv_drone_equipment_1 = {
+		archetype = fpv_drone_equipment
 		
 		active = yes
 	}

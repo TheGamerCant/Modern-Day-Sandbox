@@ -5,12 +5,13 @@ equipments = {
 		is_buildable = no
 		
 		type = {
+			armor
 			mechanized
 		}
 		
 		group_by = archetype
 
-		interface_category = interface_category_land
+		interface_category = interface_category_armor
 
 		maximum_speed = 4
 		reliability = 0.8
@@ -19,12 +20,11 @@ equipments = {
 		resources = {
 			steel = 1
 		}
-
-		fuel_consumption = 2.4
-		supply_truck = no
 	}
 
 	armoured_personnel_carrier_equipment_1 = {
 		archetype = armoured_personnel_carrier_equipment
+		
+		active = yes
 	}
 }

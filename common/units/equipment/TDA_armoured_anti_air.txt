@@ -1,12 +1,12 @@
 equipments = {
-	multiple_rocket_launcher_equipment = {
+	armoured_anti_air_equipment = {
 		is_archetype = yes
-		picture = archetype_multiple_rocket_launcher_equipment
+		picture = archetype_armoured_anti_air_equipment
 		is_buildable = no
 		
 		type = {
 			armor
-			rocket
+			anti_air
 		}
 		
 		group_by = archetype
@@ -22,8 +22,8 @@ equipments = {
 		}
 	}
 
-	multiple_rocket_launcher_equipment_1 = {
-		archetype = multiple_rocket_launcher_equipment
+	armoured_anti_air_equipment_1 = {
+		archetype = armoured_anti_air_equipment
 		
 		active = yes
 	}

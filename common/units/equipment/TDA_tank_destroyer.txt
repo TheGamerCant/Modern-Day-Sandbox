@@ -1,16 +1,17 @@
 equipments = {
-	infantry_equipment = {
+	tank_destroyer_equipment = {
 		is_archetype = yes
-		picture = archetype_infantry_equipment
+		picture = archetype_tank_destroyer_equipment
 		is_buildable = no
 		
 		type = {
-			infantry
+			armor
+			anti_tank
 		}
 		
 		group_by = archetype
 
-		interface_category = interface_category_land
+		interface_category = interface_category_armor
 
 		maximum_speed = 4
 		reliability = 0.8
@@ -21,8 +22,8 @@ equipments = {
 		}
 	}
 
-	infantry_equipment_1 = {
-		archetype = infantry_equipment
+	tank_destroyer_equipment_1 = {
+		archetype = tank_destroyer_equipment
 		
 		active = yes
 	}

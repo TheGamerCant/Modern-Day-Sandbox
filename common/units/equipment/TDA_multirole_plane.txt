@@ -1,16 +1,17 @@
 equipments = {
-	infantry_equipment = {
+	multirole_plane_equipment = {
 		is_archetype = yes
-		picture = archetype_infantry_equipment
+		picture = archetype_multirole_plane_equipment
 		is_buildable = no
 		
 		type = {
-			infantry
+			fighter
+			cas
 		}
 		
 		group_by = archetype
 
-		interface_category = interface_category_land
+		interface_category = interface_category_air
 
 		maximum_speed = 4
 		reliability = 0.8
@@ -21,8 +22,8 @@ equipments = {
 		}
 	}
 
-	infantry_equipment_1 = {
-		archetype = infantry_equipment
+	multirole_plane_equipment_1 = {
+		archetype = multirole_plane_equipment
 		
 		active = yes
 	}
