@@ -22,6 +22,8 @@ equipments = {
 		is_archetype = yes
 		is_buildable = no
 		type = screen_ship
+		active = yes
+
 		interface_category = interface_category_screen_ships
 		alias = light_cruiser
 		priority = 1900
@@ -875,6 +877,8 @@ equipments = {
 			ship_reliability_upgrade
 		}
 		
+		active = yes
+
 		interface_category = interface_category_screen_ships
 		module_slots = {
 			fixed_ship_battery_slot = {
@@ -984,6 +988,8 @@ equipments = {
 		priority = 1850
 		
 		
+		active = yes
+
 		interface_category = interface_category_screen_ships
 		module_slots = {
 			fixed_ship_battery_slot = inherit

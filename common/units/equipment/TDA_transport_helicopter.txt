@@ -11,6 +11,8 @@ equipments = {
 		
 		group_by = archetype
 
+		active = yes
+
 		interface_category = interface_category_air
 
 		maximum_speed = 4

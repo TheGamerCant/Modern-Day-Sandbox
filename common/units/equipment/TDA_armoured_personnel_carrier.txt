@@ -11,15 +11,36 @@ equipments = {
 		
 		group_by = archetype
 
+		active = yes
+
 		interface_category = interface_category_armor
 
-		maximum_speed = 4
+		#Misc Abilities
+		maximum_speed = 10
 		reliability = 0.8
 
-		build_cost_ic = 1
+		#Defensive Abilities
+		defense = 32
+		breakthrough = 10
+		hardness = 0.60
+		armor_value = 12
+
+		#Offensive Abilities
+		ap_attack = 11
+		air_attack = 0
+
+		#Space taken in convoy
+		lend_lease_cost = 5
+
+		build_cost_ic = 4.6
 		resources = {
-			steel = 1
+			steel = 2
+			#oil = 1
+			rubber = 1
 		}
+
+		fuel_consumption = 2.4
+		supply_truck = no
 	}
 
 	armoured_personnel_carrier_equipment_1 = {

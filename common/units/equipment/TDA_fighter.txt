@@ -10,6 +10,8 @@ equipments = {
 		
 		group_by = archetype
 
+		active = yes
+
 		interface_category = interface_category_fighter
 
 		maximum_speed = 4

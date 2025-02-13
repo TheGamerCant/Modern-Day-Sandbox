@@ -9,6 +9,8 @@ equipments = {
 		group_by = archetype
 		sprite = convoy
 		
+		active = yes
+
 		interface_category = interface_category_other_ships
 
 		# Unused by convoys
