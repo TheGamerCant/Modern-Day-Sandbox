@@ -5,7 +5,7 @@ equipments = {
 		is_buildable = no
 		
 		type = {
-			strat_bomber
+			strategic_bomber
 		}
 		
 		group_by = archetype

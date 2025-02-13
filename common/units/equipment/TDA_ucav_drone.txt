@@ -6,7 +6,7 @@ equipments = {
 		
 		type = {
 			scout_plane
-			strat_bomber
+			strategic_bomber
 		}
 		
 		group_by = archetype

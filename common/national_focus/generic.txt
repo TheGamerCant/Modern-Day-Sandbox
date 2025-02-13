@@ -25,9 +25,6 @@ focus_tree = {
 	default = yes
 	reset_on_civilwar = no
 
-	initial_show_position = {
-		focus = industrial_effort
-	}
 
 	#shared_focus = HABSBURG_part_of_something_bigger
 
