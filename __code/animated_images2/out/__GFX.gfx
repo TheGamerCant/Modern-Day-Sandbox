@@ -1,7 +1,7 @@
 spriteTypes = {
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_000"
-		textureFile = "gfx/my_anim_000.png"
+		textureFile = "gfx/interface/animation/my_anim_000.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -10,7 +10,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_001"
-		textureFile = "gfx/my_anim_001.png"
+		textureFile = "gfx/interface/animation/my_anim_001.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -19,7 +19,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_002"
-		textureFile = "gfx/my_anim_002.png"
+		textureFile = "gfx/interface/animation/my_anim_002.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -28,7 +28,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_003"
-		textureFile = "gfx/my_anim_003.png"
+		textureFile = "gfx/interface/animation/my_anim_003.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -37,7 +37,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_004"
-		textureFile = "gfx/my_anim_004.png"
+		textureFile = "gfx/interface/animation/my_anim_004.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -46,7 +46,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_005"
-		textureFile = "gfx/my_anim_005.png"
+		textureFile = "gfx/interface/animation/my_anim_005.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -55,7 +55,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_006"
-		textureFile = "gfx/my_anim_006.png"
+		textureFile = "gfx/interface/animation/my_anim_006.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -64,7 +64,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_007"
-		textureFile = "gfx/my_anim_007.png"
+		textureFile = "gfx/interface/animation/my_anim_007.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -73,7 +73,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_008"
-		textureFile = "gfx/my_anim_008.png"
+		textureFile = "gfx/interface/animation/my_anim_008.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -82,7 +82,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_009"
-		textureFile = "gfx/my_anim_009.png"
+		textureFile = "gfx/interface/animation/my_anim_009.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -91,7 +91,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_010"
-		textureFile = "gfx/my_anim_010.png"
+		textureFile = "gfx/interface/animation/my_anim_010.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -100,7 +100,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_011"
-		textureFile = "gfx/my_anim_011.png"
+		textureFile = "gfx/interface/animation/my_anim_011.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -109,7 +109,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_012"
-		textureFile = "gfx/my_anim_012.png"
+		textureFile = "gfx/interface/animation/my_anim_012.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -118,7 +118,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_013"
-		textureFile = "gfx/my_anim_013.png"
+		textureFile = "gfx/interface/animation/my_anim_013.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -127,7 +127,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_014"
-		textureFile = "gfx/my_anim_014.png"
+		textureFile = "gfx/interface/animation/my_anim_014.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -136,7 +136,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_015"
-		textureFile = "gfx/my_anim_015.png"
+		textureFile = "gfx/interface/animation/my_anim_015.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -145,7 +145,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_016"
-		textureFile = "gfx/my_anim_016.png"
+		textureFile = "gfx/interface/animation/my_anim_016.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -154,7 +154,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_017"
-		textureFile = "gfx/my_anim_017.png"
+		textureFile = "gfx/interface/animation/my_anim_017.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -163,7 +163,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_018"
-		textureFile = "gfx/my_anim_018.png"
+		textureFile = "gfx/interface/animation/my_anim_018.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -172,7 +172,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_019"
-		textureFile = "gfx/my_anim_019.png"
+		textureFile = "gfx/interface/animation/my_anim_019.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -181,7 +181,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_020"
-		textureFile = "gfx/my_anim_020.png"
+		textureFile = "gfx/interface/animation/my_anim_020.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -190,7 +190,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_021"
-		textureFile = "gfx/my_anim_021.png"
+		textureFile = "gfx/interface/animation/my_anim_021.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -199,7 +199,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_022"
-		textureFile = "gfx/my_anim_022.png"
+		textureFile = "gfx/interface/animation/my_anim_022.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -208,7 +208,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_023"
-		textureFile = "gfx/my_anim_023.png"
+		textureFile = "gfx/interface/animation/my_anim_023.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -217,7 +217,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_024"
-		textureFile = "gfx/my_anim_024.png"
+		textureFile = "gfx/interface/animation/my_anim_024.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -226,7 +226,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_025"
-		textureFile = "gfx/my_anim_025.png"
+		textureFile = "gfx/interface/animation/my_anim_025.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -235,7 +235,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_026"
-		textureFile = "gfx/my_anim_026.png"
+		textureFile = "gfx/interface/animation/my_anim_026.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -244,7 +244,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_027"
-		textureFile = "gfx/my_anim_027.png"
+		textureFile = "gfx/interface/animation/my_anim_027.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -253,7 +253,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_028"
-		textureFile = "gfx/my_anim_028.png"
+		textureFile = "gfx/interface/animation/my_anim_028.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -262,7 +262,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_029"
-		textureFile = "gfx/my_anim_029.png"
+		textureFile = "gfx/interface/animation/my_anim_029.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -271,7 +271,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_030"
-		textureFile = "gfx/my_anim_030.png"
+		textureFile = "gfx/interface/animation/my_anim_030.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -280,7 +280,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_031"
-		textureFile = "gfx/my_anim_031.png"
+		textureFile = "gfx/interface/animation/my_anim_031.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -289,7 +289,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_032"
-		textureFile = "gfx/my_anim_032.png"
+		textureFile = "gfx/interface/animation/my_anim_032.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -298,7 +298,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_033"
-		textureFile = "gfx/my_anim_033.png"
+		textureFile = "gfx/interface/animation/my_anim_033.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -307,7 +307,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_034"
-		textureFile = "gfx/my_anim_034.png"
+		textureFile = "gfx/interface/animation/my_anim_034.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -316,7 +316,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_035"
-		textureFile = "gfx/my_anim_035.png"
+		textureFile = "gfx/interface/animation/my_anim_035.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -325,7 +325,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_036"
-		textureFile = "gfx/my_anim_036.png"
+		textureFile = "gfx/interface/animation/my_anim_036.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -334,7 +334,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_037"
-		textureFile = "gfx/my_anim_037.png"
+		textureFile = "gfx/interface/animation/my_anim_037.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -343,7 +343,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_038"
-		textureFile = "gfx/my_anim_038.png"
+		textureFile = "gfx/interface/animation/my_anim_038.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -352,7 +352,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_039"
-		textureFile = "gfx/my_anim_039.png"
+		textureFile = "gfx/interface/animation/my_anim_039.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -361,7 +361,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_040"
-		textureFile = "gfx/my_anim_040.png"
+		textureFile = "gfx/interface/animation/my_anim_040.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -370,7 +370,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_041"
-		textureFile = "gfx/my_anim_041.png"
+		textureFile = "gfx/interface/animation/my_anim_041.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -379,7 +379,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_042"
-		textureFile = "gfx/my_anim_042.png"
+		textureFile = "gfx/interface/animation/my_anim_042.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -388,7 +388,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_043"
-		textureFile = "gfx/my_anim_043.png"
+		textureFile = "gfx/interface/animation/my_anim_043.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -397,7 +397,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_044"
-		textureFile = "gfx/my_anim_044.png"
+		textureFile = "gfx/interface/animation/my_anim_044.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -406,7 +406,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_045"
-		textureFile = "gfx/my_anim_045.png"
+		textureFile = "gfx/interface/animation/my_anim_045.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -415,7 +415,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_046"
-		textureFile = "gfx/my_anim_046.png"
+		textureFile = "gfx/interface/animation/my_anim_046.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -424,7 +424,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_047"
-		textureFile = "gfx/my_anim_047.png"
+		textureFile = "gfx/interface/animation/my_anim_047.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -433,7 +433,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_048"
-		textureFile = "gfx/my_anim_048.png"
+		textureFile = "gfx/interface/animation/my_anim_048.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -442,7 +442,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_049"
-		textureFile = "gfx/my_anim_049.png"
+		textureFile = "gfx/interface/animation/my_anim_049.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -451,7 +451,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_050"
-		textureFile = "gfx/my_anim_050.png"
+		textureFile = "gfx/interface/animation/my_anim_050.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -460,7 +460,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_051"
-		textureFile = "gfx/my_anim_051.png"
+		textureFile = "gfx/interface/animation/my_anim_051.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -469,7 +469,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_052"
-		textureFile = "gfx/my_anim_052.png"
+		textureFile = "gfx/interface/animation/my_anim_052.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -478,7 +478,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_053"
-		textureFile = "gfx/my_anim_053.png"
+		textureFile = "gfx/interface/animation/my_anim_053.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -487,7 +487,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_054"
-		textureFile = "gfx/my_anim_054.png"
+		textureFile = "gfx/interface/animation/my_anim_054.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -496,7 +496,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_055"
-		textureFile = "gfx/my_anim_055.png"
+		textureFile = "gfx/interface/animation/my_anim_055.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -505,7 +505,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_056"
-		textureFile = "gfx/my_anim_056.png"
+		textureFile = "gfx/interface/animation/my_anim_056.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -514,7 +514,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_057"
-		textureFile = "gfx/my_anim_057.png"
+		textureFile = "gfx/interface/animation/my_anim_057.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -523,7 +523,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_058"
-		textureFile = "gfx/my_anim_058.png"
+		textureFile = "gfx/interface/animation/my_anim_058.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -532,7 +532,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_059"
-		textureFile = "gfx/my_anim_059.png"
+		textureFile = "gfx/interface/animation/my_anim_059.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -541,7 +541,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_060"
-		textureFile = "gfx/my_anim_060.png"
+		textureFile = "gfx/interface/animation/my_anim_060.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -550,7 +550,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_061"
-		textureFile = "gfx/my_anim_061.png"
+		textureFile = "gfx/interface/animation/my_anim_061.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -559,7 +559,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_062"
-		textureFile = "gfx/my_anim_062.png"
+		textureFile = "gfx/interface/animation/my_anim_062.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -568,7 +568,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_063"
-		textureFile = "gfx/my_anim_063.png"
+		textureFile = "gfx/interface/animation/my_anim_063.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -577,7 +577,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_064"
-		textureFile = "gfx/my_anim_064.png"
+		textureFile = "gfx/interface/animation/my_anim_064.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -586,7 +586,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_065"
-		textureFile = "gfx/my_anim_065.png"
+		textureFile = "gfx/interface/animation/my_anim_065.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -595,7 +595,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_066"
-		textureFile = "gfx/my_anim_066.png"
+		textureFile = "gfx/interface/animation/my_anim_066.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -604,7 +604,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_067"
-		textureFile = "gfx/my_anim_067.png"
+		textureFile = "gfx/interface/animation/my_anim_067.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -613,7 +613,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_068"
-		textureFile = "gfx/my_anim_068.png"
+		textureFile = "gfx/interface/animation/my_anim_068.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -622,7 +622,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_069"
-		textureFile = "gfx/my_anim_069.png"
+		textureFile = "gfx/interface/animation/my_anim_069.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -631,7 +631,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_070"
-		textureFile = "gfx/my_anim_070.png"
+		textureFile = "gfx/interface/animation/my_anim_070.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -640,7 +640,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_071"
-		textureFile = "gfx/my_anim_071.png"
+		textureFile = "gfx/interface/animation/my_anim_071.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -649,7 +649,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_072"
-		textureFile = "gfx/my_anim_072.png"
+		textureFile = "gfx/interface/animation/my_anim_072.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -658,7 +658,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_073"
-		textureFile = "gfx/my_anim_073.png"
+		textureFile = "gfx/interface/animation/my_anim_073.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -667,7 +667,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_074"
-		textureFile = "gfx/my_anim_074.png"
+		textureFile = "gfx/interface/animation/my_anim_074.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -676,7 +676,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_075"
-		textureFile = "gfx/my_anim_075.png"
+		textureFile = "gfx/interface/animation/my_anim_075.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -685,7 +685,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_076"
-		textureFile = "gfx/my_anim_076.png"
+		textureFile = "gfx/interface/animation/my_anim_076.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -694,7 +694,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_077"
-		textureFile = "gfx/my_anim_077.png"
+		textureFile = "gfx/interface/animation/my_anim_077.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -703,7 +703,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_078"
-		textureFile = "gfx/my_anim_078.png"
+		textureFile = "gfx/interface/animation/my_anim_078.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -712,7 +712,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_079"
-		textureFile = "gfx/my_anim_079.png"
+		textureFile = "gfx/interface/animation/my_anim_079.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -721,7 +721,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_080"
-		textureFile = "gfx/my_anim_080.png"
+		textureFile = "gfx/interface/animation/my_anim_080.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -730,7 +730,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_081"
-		textureFile = "gfx/my_anim_081.png"
+		textureFile = "gfx/interface/animation/my_anim_081.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -739,7 +739,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_082"
-		textureFile = "gfx/my_anim_082.png"
+		textureFile = "gfx/interface/animation/my_anim_082.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -748,7 +748,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_083"
-		textureFile = "gfx/my_anim_083.png"
+		textureFile = "gfx/interface/animation/my_anim_083.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -757,7 +757,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_084"
-		textureFile = "gfx/my_anim_084.png"
+		textureFile = "gfx/interface/animation/my_anim_084.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -766,7 +766,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_085"
-		textureFile = "gfx/my_anim_085.png"
+		textureFile = "gfx/interface/animation/my_anim_085.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -775,7 +775,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_086"
-		textureFile = "gfx/my_anim_086.png"
+		textureFile = "gfx/interface/animation/my_anim_086.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -784,7 +784,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_087"
-		textureFile = "gfx/my_anim_087.png"
+		textureFile = "gfx/interface/animation/my_anim_087.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -793,7 +793,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_088"
-		textureFile = "gfx/my_anim_088.png"
+		textureFile = "gfx/interface/animation/my_anim_088.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -802,7 +802,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_089"
-		textureFile = "gfx/my_anim_089.png"
+		textureFile = "gfx/interface/animation/my_anim_089.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -811,7 +811,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_090"
-		textureFile = "gfx/my_anim_090.png"
+		textureFile = "gfx/interface/animation/my_anim_090.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -820,7 +820,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_091"
-		textureFile = "gfx/my_anim_091.png"
+		textureFile = "gfx/interface/animation/my_anim_091.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -829,7 +829,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_092"
-		textureFile = "gfx/my_anim_092.png"
+		textureFile = "gfx/interface/animation/my_anim_092.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -838,7 +838,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_093"
-		textureFile = "gfx/my_anim_093.png"
+		textureFile = "gfx/interface/animation/my_anim_093.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -847,7 +847,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_094"
-		textureFile = "gfx/my_anim_094.png"
+		textureFile = "gfx/interface/animation/my_anim_094.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -856,7 +856,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_095"
-		textureFile = "gfx/my_anim_095.png"
+		textureFile = "gfx/interface/animation/my_anim_095.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -865,7 +865,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_096"
-		textureFile = "gfx/my_anim_096.png"
+		textureFile = "gfx/interface/animation/my_anim_096.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -874,7 +874,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_097"
-		textureFile = "gfx/my_anim_097.png"
+		textureFile = "gfx/interface/animation/my_anim_097.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -883,7 +883,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_098"
-		textureFile = "gfx/my_anim_098.png"
+		textureFile = "gfx/interface/animation/my_anim_098.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -892,7 +892,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_099"
-		textureFile = "gfx/my_anim_099.png"
+		textureFile = "gfx/interface/animation/my_anim_099.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -901,7 +901,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_100"
-		textureFile = "gfx/my_anim_100.png"
+		textureFile = "gfx/interface/animation/my_anim_100.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -910,7 +910,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_101"
-		textureFile = "gfx/my_anim_101.png"
+		textureFile = "gfx/interface/animation/my_anim_101.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -919,7 +919,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_102"
-		textureFile = "gfx/my_anim_102.png"
+		textureFile = "gfx/interface/animation/my_anim_102.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -928,7 +928,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_103"
-		textureFile = "gfx/my_anim_103.png"
+		textureFile = "gfx/interface/animation/my_anim_103.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -937,7 +937,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_104"
-		textureFile = "gfx/my_anim_104.png"
+		textureFile = "gfx/interface/animation/my_anim_104.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -946,7 +946,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_105"
-		textureFile = "gfx/my_anim_105.png"
+		textureFile = "gfx/interface/animation/my_anim_105.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -955,7 +955,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_106"
-		textureFile = "gfx/my_anim_106.png"
+		textureFile = "gfx/interface/animation/my_anim_106.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -964,7 +964,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_107"
-		textureFile = "gfx/my_anim_107.png"
+		textureFile = "gfx/interface/animation/my_anim_107.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -973,7 +973,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_108"
-		textureFile = "gfx/my_anim_108.png"
+		textureFile = "gfx/interface/animation/my_anim_108.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -982,7 +982,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_109"
-		textureFile = "gfx/my_anim_109.png"
+		textureFile = "gfx/interface/animation/my_anim_109.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -991,7 +991,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_110"
-		textureFile = "gfx/my_anim_110.png"
+		textureFile = "gfx/interface/animation/my_anim_110.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1000,7 +1000,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_111"
-		textureFile = "gfx/my_anim_111.png"
+		textureFile = "gfx/interface/animation/my_anim_111.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1009,7 +1009,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_112"
-		textureFile = "gfx/my_anim_112.png"
+		textureFile = "gfx/interface/animation/my_anim_112.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1018,7 +1018,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_113"
-		textureFile = "gfx/my_anim_113.png"
+		textureFile = "gfx/interface/animation/my_anim_113.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1027,7 +1027,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_114"
-		textureFile = "gfx/my_anim_114.png"
+		textureFile = "gfx/interface/animation/my_anim_114.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1036,7 +1036,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_115"
-		textureFile = "gfx/my_anim_115.png"
+		textureFile = "gfx/interface/animation/my_anim_115.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1045,7 +1045,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_116"
-		textureFile = "gfx/my_anim_116.png"
+		textureFile = "gfx/interface/animation/my_anim_116.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1054,7 +1054,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_117"
-		textureFile = "gfx/my_anim_117.png"
+		textureFile = "gfx/interface/animation/my_anim_117.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1063,7 +1063,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_118"
-		textureFile = "gfx/my_anim_118.png"
+		textureFile = "gfx/interface/animation/my_anim_118.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1072,7 +1072,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_119"
-		textureFile = "gfx/my_anim_119.png"
+		textureFile = "gfx/interface/animation/my_anim_119.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1081,7 +1081,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_120"
-		textureFile = "gfx/my_anim_120.png"
+		textureFile = "gfx/interface/animation/my_anim_120.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1090,7 +1090,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_121"
-		textureFile = "gfx/my_anim_121.png"
+		textureFile = "gfx/interface/animation/my_anim_121.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1099,7 +1099,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_122"
-		textureFile = "gfx/my_anim_122.png"
+		textureFile = "gfx/interface/animation/my_anim_122.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1108,7 +1108,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_123"
-		textureFile = "gfx/my_anim_123.png"
+		textureFile = "gfx/interface/animation/my_anim_123.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1117,7 +1117,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_124"
-		textureFile = "gfx/my_anim_124.png"
+		textureFile = "gfx/interface/animation/my_anim_124.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1126,7 +1126,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_125"
-		textureFile = "gfx/my_anim_125.png"
+		textureFile = "gfx/interface/animation/my_anim_125.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1135,7 +1135,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_126"
-		textureFile = "gfx/my_anim_126.png"
+		textureFile = "gfx/interface/animation/my_anim_126.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1144,7 +1144,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_127"
-		textureFile = "gfx/my_anim_127.png"
+		textureFile = "gfx/interface/animation/my_anim_127.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1153,7 +1153,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_128"
-		textureFile = "gfx/my_anim_128.png"
+		textureFile = "gfx/interface/animation/my_anim_128.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1162,7 +1162,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_129"
-		textureFile = "gfx/my_anim_129.png"
+		textureFile = "gfx/interface/animation/my_anim_129.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1171,7 +1171,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_130"
-		textureFile = "gfx/my_anim_130.png"
+		textureFile = "gfx/interface/animation/my_anim_130.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1180,7 +1180,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_131"
-		textureFile = "gfx/my_anim_131.png"
+		textureFile = "gfx/interface/animation/my_anim_131.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1189,7 +1189,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_132"
-		textureFile = "gfx/my_anim_132.png"
+		textureFile = "gfx/interface/animation/my_anim_132.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1198,7 +1198,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_133"
-		textureFile = "gfx/my_anim_133.png"
+		textureFile = "gfx/interface/animation/my_anim_133.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes
@@ -1207,7 +1207,7 @@ spriteTypes = {
 	}
 	FrameAnimatedSpriteType = {
 		name = "GFX_my_anim_134"
-		textureFile = "gfx/my_anim_134.png"
+		textureFile = "gfx/interface/animation/my_anim_134.png"
 		noOfFrames = 1171
 		alwaysTransparent = yes"
 		looping = yes

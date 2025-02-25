@@ -220,9 +220,13 @@ void pasteImage(unsigned char* dest, const int destWidth, const int destHeight, 
     }
 }
 
-void fillImages(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int width, const int height, const int channels, const int noOfOutImages, const int frameCount) {
-	
+void processImage(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int i, const int height, const int frameCount) {
 	uint32_t xPosOfInputImages = 0;
+	if (i > 0) {
+		for (int j = 0; j < i; ++j) {
+			xPosOfInputImages += sliceSizeArray[j];
+		}
+	}
 	
 	int fileWidthLarge = sliceSizeArray[0] * frameCount;
 	int imageSizeLarge = fileWidthLarge * height * 4;
@@ -232,47 +236,51 @@ void fillImages(const std::vector<int>& sliceSizeArray, const std::vector<std::s
 	
 	const int noOfInFiles = inputFilesArray.size();
 	
+	unsigned char* currentOutImage;
+	int outWidth, outHeight = height;
+	if (sliceSizeArray[i] == sliceSizeArray[0]) {
+		outWidth = fileWidthLarge;
+		currentOutImage = new unsigned char[imageSizeLarge];
+		memset(currentOutImage, 255, imageSizeLarge);
+	}
+	else {
+		outWidth = fileWidthSmall;
+		currentOutImage = new unsigned char[imageSizeSmall];
+		memset(currentOutImage, 255, imageSizeSmall);
+	}
+
+	//Load each input file, crop part of it, paste it onto the output file
+	for (int j = 0; j < noOfInFiles; ++j) {
+		int inWidth, inHeight, inChannels;
+		unsigned char* currentInputImage = stbi_load(inputFilesArray[j].c_str(), &inWidth, &inHeight, &inChannels, 0);
+		
+		//Get crop of current input image
+		unsigned char* croppedImage = cropImage(currentInputImage, inWidth, inHeight, 4, xPosOfInputImages, 0, sliceSizeArray[i], height);
+		stbi_image_free(currentInputImage);
+		
+		//More efficient to turn the cropped version to RGBA than the entire image
+		if (inChannels == 3) { croppedImage = RGBtoRGBA(croppedImage, sliceSizeArray[i], height, inChannels); }
+		
+		//Paste onto currentOutImage
+		pasteImage(currentOutImage, outWidth, outHeight, 4, croppedImage, sliceSizeArray[i], height, j * sliceSizeArray[i], 0);
+	
+		delete[] croppedImage;
+	}
+	
+	//Output the out image
+	stbi_write_png(outDirectoryNameArray[i].c_str(), outWidth, outHeight, 4, currentOutImage, outWidth * 4);
+	delete[] currentOutImage;
+}
+
+void processImagesMainLoop(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int height, const int noOfOutImages, const int frameCount) {
+	std::vector<std::future<void>> futures;
+	
 	for (int i = 0; i < noOfOutImages; ++i) {
 		
-		//Get an array the size of our out image, set all values to '255'
-		unsigned char* currentOutImage;
-		int outWidth, outHeight = height;
-		if (sliceSizeArray[i] == sliceSizeArray[0]) {
-			outWidth = fileWidthLarge;
-			currentOutImage = new unsigned char[imageSizeLarge];
-			memset(currentOutImage, 255, imageSizeLarge);
-		}
-		else {
-			fileWidthSmall = fileWidthLarge;
-			currentOutImage = new unsigned char[imageSizeSmall];
-			memset(currentOutImage, 255, imageSizeSmall);
-		}
-
-		//Load each input file, crop part of it, paste it onto the output file
-		for (int j = 0; j < noOfInFiles; ++j) {
-			int inWidth, inHeight, inChannels;
-			unsigned char* currentInputImage = stbi_load(inputFilesArray[j].c_str(), &inWidth, &inHeight, &inChannels, 0);
-			
-			//Get crop of current input image
-			unsigned char* croppedImage = cropImage(currentInputImage, inWidth, inHeight, 4, xPosOfInputImages, 0, sliceSizeArray[i], height);
-			stbi_image_free(currentInputImage);
-			
-			//More efficient to turn the cropped version to RGBA than the entire image
-			if (inChannels == 3) { croppedImage = RGBtoRGBA(croppedImage, sliceSizeArray[i], height, inChannels); }
-			
-			//Paste onto currentOutImage
-			pasteImage(currentOutImage, outWidth, outHeight, 4, croppedImage, sliceSizeArray[i], height, j * sliceSizeArray[i], 0);
-		
-			delete[] croppedImage;
-		}
-		
-		//Output the out image
-		stbi_write_png(outDirectoryNameArray[i].c_str(), outWidth, outHeight, 4, currentOutImage, outWidth * channels);
-		delete[] currentOutImage;
-		
-		//Update our starting x pos
-		xPosOfInputImages += sliceSizeArray[i];
+		futures.push_back(std::async(std::launch::async, processImage, std::cref(sliceSizeArray), std::cref(outDirectoryNameArray), std::cref(inputFilesArray), i, height, frameCount));
 	}
+	
+	for (auto& f : futures) { f.get(); }
 }
 
 int main() {	
@@ -307,7 +315,7 @@ int main() {
 	
 	
 	//Main workhorse is threadThree, but might as well do the .gui and .gfx files too
-	std::thread threadThree(fillImages, std::cref(sliceSizeArray), std::cref(outDirectoryNameArray), std::cref(inputFilesArray), width, height, channels, noOfOutImages, frameCount);
+	std::thread threadThree(processImagesMainLoop, std::cref(sliceSizeArray), std::cref(outDirectoryNameArray), std::cref(inputFilesArray), height, noOfOutImages, frameCount);
 	std::thread threadFour(createGFXFile, std::cref(outFileNameArray), std::cref(outFileDirectory), frameCount, looping, transparencyCheck);
 	std::thread threadFive(createGUIFile, std::cref(outFileNameArray), std::cref(sliceSizeArray), transparencyCheck, xPos, yPos);
 	
