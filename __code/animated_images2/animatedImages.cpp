@@ -76,7 +76,7 @@ void getVideoData(int& width, int& height, int& frameCount, int& channels, int& 
 	std::getline(std::cin, userInput);
 	outFilePrefix = userInput;
 	
-	std::cout << "Please enter the name of your output directory (e.g 'gfx/interface/animated'): ";
+	std::cout << "Please enter the name of your output directory (e.g gfx/interface/animated): ";
 	std::getline(std::cin, userInput);
 	outFileDirectory = userInput;
 	
@@ -122,24 +122,6 @@ void getoutDirectoryNameArray(std::vector<std::string>& outDirectoryNameArray, s
 	}
 }
 
-void createLargeImage(const std::vector<int>& sliceSizeArray, const int height, const int frameCount){
-	int fileWidthLarge = sliceSizeArray[0] * frameCount;
-	int imageSizeLarge = fileWidthLarge * height * 4;
-	unsigned char* imageLarge = new unsigned char[imageSizeLarge];
-	memset(imageLarge, 255, imageSizeLarge);
-	stbi_write_png("out/large.png", fileWidthLarge, height, 4, imageLarge, fileWidthLarge * 4);
-	delete[] imageLarge;
-}
-
-void createSmallImage(const std::vector<int>& sliceSizeArray, const int height, const int frameCount){
-	int fileWidthSmall = sliceSizeArray[sliceSizeArray.size() - 1] * frameCount;
-	int imageSizeSmall = fileWidthSmall * height * 4;
-	unsigned char* imageSmall = new unsigned char[imageSizeSmall];
-	memset(imageSmall, 255, imageSizeSmall);
-	stbi_write_png("out/small.png", fileWidthSmall, height, 4, imageSmall, fileWidthSmall * 4);
-	delete[] imageSmall;
-}
-
 void copyFile(const std::string& fileName, const int thisSize, const int maxSize) {
 	if (thisSize == maxSize) {
 		std::filesystem::copy_file("out/large.png", fileName, std::filesystem::copy_options::overwrite_existing);
@@ -147,29 +129,6 @@ void copyFile(const std::string& fileName, const int thisSize, const int maxSize
 	else {
 		std::filesystem::copy_file("out/small.png", fileName, std::filesystem::copy_options::overwrite_existing);
 	}
-}
-
-void createBlankImages(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const int height, const int frameCount) {
-	std::filesystem::remove_all("out");
-	std::filesystem::create_directory("out");
-	
-	//Create default large and small files
-	std::thread threadOne(createLargeImage, std::cref(sliceSizeArray), height, frameCount);
-	std::thread threadTwo(createSmallImage, std::cref(sliceSizeArray), height, frameCount);
-	
-	threadOne.join();
-	threadTwo.join();
-	
-	std::vector<std::future<void>> futures;
-	
-	for (size_t t = 0; t < sliceSizeArray.size(); ++t) {
-		futures.push_back(std::async(std::launch::async, copyFile, std::cref(outDirectoryNameArray[t]), sliceSizeArray[t], sliceSizeArray[0]));
-    }
-	
-	for (auto& fut : futures) { fut.get(); }
-	
-	std::filesystem::remove("out/large.png");
-	std::filesystem::remove("out/small.png");
 }
 
 void createGFXFile(const std::vector<std::string>& outFileNameArray, const std::string& outFileDirectory, const int frameCount, const bool looping, const bool transparencyCheck) {
@@ -250,57 +209,75 @@ unsigned char* cropImage(unsigned char* src, const int srcWidth, const int srcHe
 void pasteImage(unsigned char* dest, const int destWidth, const int destHeight, const int channels, unsigned char* cropped, const int cropWidth, const int cropHeight, const int pasteX, const int pasteY) {
 	uint32_t rowSize = cropWidth * channels;
 	
-    for (int y = 0; y < cropHeight; ++y) {
+    for (int y = 0; y < destHeight; ++y) {
         uint64_t destPos = (((pasteY + y) * destWidth) + pasteX) * channels;
         uint64_t cropPos = y * rowSize;
 		
-		printf("%d, %d\n", destPos, cropPos);
+		//printf("%d, %d, %d\n", destPos, cropPos, rowSize);
 		
 		//Copy onto dest data from cropped of length rowSize
         std::memcpy(&dest[destPos], &cropped[cropPos], rowSize);
     }
 }
 
-void fillImages(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int width, const int height, const int channels, const int noOfOutImages) {
+void fillImages(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int width, const int height, const int channels, const int noOfOutImages, const int frameCount) {
 	
 	uint32_t xPosOfInputImages = 0;
 	
+	int fileWidthLarge = sliceSizeArray[0] * frameCount;
+	int imageSizeLarge = fileWidthLarge * height * 4;
+	
+	int fileWidthSmall = sliceSizeArray[sliceSizeArray.size() - 1] * frameCount;
+	int imageSizeSmall = fileWidthSmall * height * 4;
+	
+	const int noOfInFiles = inputFilesArray.size();
+	
 	for (int i = 0; i < noOfOutImages; ++i) {
 		
-		//Load an out image
-		int localWidth, localHeight, localChannels;
-		unsigned char* currentOutImage = stbi_load(outDirectoryNameArray[i].c_str(), &localWidth, &localHeight, &localChannels, 0);
-			
-		if (localChannels == 3) { currentOutImage = RGBtoRGBA(currentOutImage, localWidth, localHeight, localChannels); }
-		
+		//Get an array the size of our out image, set all values to '255'
+		unsigned char* currentOutImage;
+		int outWidth, outHeight = height;
+		if (sliceSizeArray[i] == sliceSizeArray[0]) {
+			outWidth = fileWidthLarge;
+			currentOutImage = new unsigned char[imageSizeLarge];
+			memset(currentOutImage, 255, imageSizeLarge);
+		}
+		else {
+			fileWidthSmall = fileWidthLarge;
+			currentOutImage = new unsigned char[imageSizeSmall];
+			memset(currentOutImage, 255, imageSizeSmall);
+		}
+
 		//Load each input file, crop part of it, paste it onto the output file
-		for (int j = 0; j < inputFilesArray.size(); ++j) {
-			int localWidth2, localHeight2, localChannels2;
-			unsigned char* currentInputImage = stbi_load(inputFilesArray[j].c_str(), &localWidth2, &localHeight2, &localChannels2, 0);
+		for (int j = 0; j < noOfInFiles; ++j) {
+			int inWidth, inHeight, inChannels;
+			unsigned char* currentInputImage = stbi_load(inputFilesArray[j].c_str(), &inWidth, &inHeight, &inChannels, 0);
 			
 			//Get crop of current input image
-			unsigned char* croppedImage = cropImage(currentInputImage, localWidth2, localHeight2, localChannels2, xPosOfInputImages, 0, sliceSizeArray[i], height);
+			unsigned char* croppedImage = cropImage(currentInputImage, inWidth, inHeight, 4, xPosOfInputImages, 0, sliceSizeArray[i], height);
 			stbi_image_free(currentInputImage);
 			
-			if (localChannels2 == 3) { croppedImage = RGBtoRGBA(croppedImage, sliceSizeArray[i], height, localChannels2); }
+			//More efficient to turn the cropped version to RGBA than the entire image
+			if (inChannels == 3) { croppedImage = RGBtoRGBA(croppedImage, sliceSizeArray[i], height, inChannels); }
 			
 			//Paste onto currentOutImage
-			pasteImage(currentOutImage, localWidth, localHeight, localChannels, croppedImage, sliceSizeArray[i], height, j * sliceSizeArray[i], 0);
+			pasteImage(currentOutImage, outWidth, outHeight, 4, croppedImage, sliceSizeArray[i], height, j * sliceSizeArray[i], 0);
 		
 			delete[] croppedImage;
 		}
 		
 		//Output the out image
-		stbi_write_png(outDirectoryNameArray[i].c_str(), localWidth, localHeight, channels, currentOutImage, width * channels);
-		stbi_image_free(currentOutImage);
+		stbi_write_png(outDirectoryNameArray[i].c_str(), outWidth, outHeight, 4, currentOutImage, outWidth * channels);
+		delete[] currentOutImage;
 		
 		//Update our starting x pos
 		xPosOfInputImages += sliceSizeArray[i];
-		std::cout << i << "\n";
 	}
 }
 
 int main() {	
+	std::filesystem::remove_all("out");
+	std::filesystem::create_directory("out");
 	std::vector<std::string> inputFilesArray = returnFiles();
 	
 	//Load video and output data
@@ -328,14 +305,12 @@ int main() {
 	threadOne.join();
 	threadTwo.join();
 	
-	//Create blank images to write to
-	createBlankImages(sliceSizeArray, outDirectoryNameArray, height, frameCount);
-	
 	
 	//Main workhorse is threadThree, but might as well do the .gui and .gfx files too
-	std::thread threadThree(fillImages, std::cref(sliceSizeArray), std::cref(outDirectoryNameArray), std::cref(inputFilesArray), width, height, channels, noOfOutImages);
+	std::thread threadThree(fillImages, std::cref(sliceSizeArray), std::cref(outDirectoryNameArray), std::cref(inputFilesArray), width, height, channels, noOfOutImages, frameCount);
 	std::thread threadFour(createGFXFile, std::cref(outFileNameArray), std::cref(outFileDirectory), frameCount, looping, transparencyCheck);
 	std::thread threadFive(createGUIFile, std::cref(outFileNameArray), std::cref(sliceSizeArray), transparencyCheck, xPos, yPos);
+	
 	
 	threadThree.join();
 	threadFour.join();
