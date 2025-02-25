@@ -65,7 +65,7 @@ void getVideoData(int& width, int& height, int& frameCount, int& channels, int& 
 	uint64_t u64NoOfOutImages = width * height * frameCount;
 	
 	//Larger number = larger file size and less files overall
-	noOfOutImages = ceil((float)u64NoOfOutImages / 10000000.0f);
+	noOfOutImages = ceil((float)u64NoOfOutImages / 8000000.0f);
 	
 	std::cout << "Please enter the Frames Per Second: ";
 	std::string userInput;
@@ -217,28 +217,7 @@ void createGUIFile(const std::vector<std::string>& outFileNameArray, const std::
 	}
 }
 
-unsigned char* cropImage(unsigned char* src, const int srcWidth, const int srcHeight, const int channels, const int cropX, const int cropY, const int cropWidth, const int cropHeight) {
-    int rowSize = cropWidth * channels;
-    unsigned char* cropped = new unsigned char[cropWidth * cropHeight * channels];
-
-    for (int y = 0; y < cropHeight; y++) {
-        int srcPos = ((cropY + y) * srcWidth + cropX) * channels;
-        int dstPos = y * cropWidth * channels;
-        std::memcpy(&cropped[dstPos], &src[srcPos], rowSize);
-    }
-
-    return cropped;
-}
-
-void pasteImage(unsigned char* dest, const int destWidth, const int destHeight, const int channels, unsigned char* cropped, const int cropWidth, const int cropHeight, const int pasteX, const int pasteY) {
-    for (int y = 0; y < cropHeight; y++) {
-        int destPos = ((pasteY + y) * destWidth + pasteX) * channels;
-        int cropPos = y * cropWidth * channels;
-        std::memcpy(&dest[destPos], &cropped[cropPos], cropWidth * channels);
-    }
-}
-
-unsigned char* RGBtoRGBA(unsigned char* rgbData, const int width, const int height) {
+unsigned char* RGBtoRGBA(unsigned char* rgbData, const int width, const int height, int& localChannels) {
 	unsigned char* rgbaData = new unsigned char[width * height * 4];
 	
 	for (int i = 0, j = 0; i < width * height * 3; i += 3, j += 4) {
@@ -248,34 +227,65 @@ unsigned char* RGBtoRGBA(unsigned char* rgbData, const int width, const int heig
         rgbaData[j + 3] = 255;
     }
 	
+	localChannels = 4;
+	
 	return rgbaData;
+}
+
+unsigned char* cropImage(unsigned char* src, const int srcWidth, const int srcHeight, const int channels, const int cropX, const int cropY, const int cropWidth, const int cropHeight) {
+    uint32_t rowSize = cropWidth * channels;
+    unsigned char* cropped = new unsigned char[rowSize * cropHeight];
+
+    for (int y = 0; y < cropHeight; ++y) {
+        uint64_t srcPos = ((cropY + y) * srcWidth + cropX) * channels;
+        uint64_t dstPos = y * rowSize;
+		
+		//Copy onto cropped data from src of length rowSize
+        std::memcpy(&cropped[dstPos], &src[srcPos], rowSize);
+    }
+
+    return cropped;
+}
+
+void pasteImage(unsigned char* dest, const int destWidth, const int destHeight, const int channels, unsigned char* cropped, const int cropWidth, const int cropHeight, const int pasteX, const int pasteY) {
+	uint32_t rowSize = cropWidth * channels;
+	
+    for (int y = 0; y < cropHeight; ++y) {
+        uint64_t destPos = (((pasteY + y) * destWidth) + pasteX) * channels;
+        uint64_t cropPos = y * rowSize;
+		
+		printf("%d, %d\n", destPos, cropPos);
+		
+		//Copy onto dest data from cropped of length rowSize
+        std::memcpy(&dest[destPos], &cropped[cropPos], rowSize);
+    }
 }
 
 void fillImages(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int width, const int height, const int channels, const int noOfOutImages) {
 	
-	int xPosOfInputImages = 0;
+	uint32_t xPosOfInputImages = 0;
 	
 	for (int i = 0; i < noOfOutImages; ++i) {
 		
 		//Load an out image
 		int localWidth, localHeight, localChannels;
 		unsigned char* currentOutImage = stbi_load(outDirectoryNameArray[i].c_str(), &localWidth, &localHeight, &localChannels, 0);
-		
-		if (localChannels == 3) { currentOutImage = RGBtoRGBA(currentOutImage, localWidth, localHeight); }
+			
+		if (localChannels == 3) { currentOutImage = RGBtoRGBA(currentOutImage, localWidth, localHeight, localChannels); }
 		
 		//Load each input file, crop part of it, paste it onto the output file
 		for (int j = 0; j < inputFilesArray.size(); ++j) {
 			int localWidth2, localHeight2, localChannels2;
 			unsigned char* currentInputImage = stbi_load(inputFilesArray[j].c_str(), &localWidth2, &localHeight2, &localChannels2, 0);
 			
-			if (localChannels2 == 3) { currentInputImage = RGBtoRGBA(currentInputImage, localWidth2, localHeight2); }
-			
 			//Get crop of current input image
-			unsigned char* croppedImage = cropImage(currentInputImage, localWidth2, localHeight2, 4, xPosOfInputImages, 0, sliceSizeArray[i], height);
+			unsigned char* croppedImage = cropImage(currentInputImage, localWidth2, localHeight2, localChannels2, xPosOfInputImages, 0, sliceSizeArray[i], height);
 			stbi_image_free(currentInputImage);
 			
+			if (localChannels2 == 3) { croppedImage = RGBtoRGBA(croppedImage, sliceSizeArray[i], height, localChannels2); }
+			
 			//Paste onto currentOutImage
-			pasteImage(currentOutImage, localWidth, localHeight, 4, croppedImage, sliceSizeArray[i], height, j * sliceSizeArray[i], 0);
+			pasteImage(currentOutImage, localWidth, localHeight, localChannels, croppedImage, sliceSizeArray[i], height, j * sliceSizeArray[i], 0);
 		
 			delete[] croppedImage;
 		}
