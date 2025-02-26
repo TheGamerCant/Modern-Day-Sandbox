@@ -12,6 +12,7 @@
 #include <fstream>
 #include <cstring>
 #include <cstdint>
+#include <stdexcept>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -41,6 +42,7 @@ bool is_numeric(const std::string& str){
 
 std::vector<std::string> returnFiles(){
 	std::vector<std::string> tArray;
+	tArray.reserve(1500);
 	
 	for (const auto& file : std::filesystem::directory_iterator("in")) {
 		if (file.is_regular_file() && file.path().extension() == ".png") {
@@ -95,6 +97,13 @@ void getVideoData(int& width, int& height, int& frameCount, int& channels, int& 
 	std::cout << "Please enter the starting Y position for the animation: ";
 	std::getline(std::cin, userInput);
 	if (is_numeric(userInput)) yPos = std::stoi(userInput);
+	
+	double estTime = (u64NoOfOutImages / std::thread::hardware_concurrency()) * 0.00569313976658f;
+	int estTimeSeconds = ceil(estTime / 1000);
+	int estTimeMinutes = floor(estTimeSeconds / 60);
+	estTimeSeconds = estTimeSeconds % 60;
+	
+	std::cout << "\nThis should take around " << std::to_string(estTimeMinutes) << "m, " << std::to_string(estTimeSeconds) << "s.\n";
 }
 
 void getSliceSizeArray(std::vector<int>& sliceSizeArray, const int width, const int noOfOutImages){
@@ -220,7 +229,7 @@ void pasteImage(unsigned char* dest, const int destWidth, const int destHeight, 
     }
 }
 
-void processImage(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int i, const int height, const int frameCount) {
+void processImage(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int i, const int width, const int height, const int frameCount) {
 	uint32_t xPosOfInputImages = 0;
 	if (i > 0) {
 		for (int j = 0; j < i; ++j) {
@@ -254,6 +263,13 @@ void processImage(const std::vector<int>& sliceSizeArray, const std::vector<std:
 		int inWidth, inHeight, inChannels;
 		unsigned char* currentInputImage = stbi_load(inputFilesArray[j].c_str(), &inWidth, &inHeight, &inChannels, 0);
 		
+		if (!currentInputImage) {
+			throw std::runtime_error("Error: Failed to load " + inputFilesArray[j] + ".");
+		}
+		else if (inWidth != width || inHeight != height) {
+			throw std::runtime_error("Error: " + inputFilesArray[j] + " does not have valid dimensions.");
+		}
+		
 		//Get crop of current input image
 		unsigned char* croppedImage = cropImage(currentInputImage, inWidth, inHeight, 4, xPosOfInputImages, 0, sliceSizeArray[i], height);
 		stbi_image_free(currentInputImage);
@@ -272,64 +288,81 @@ void processImage(const std::vector<int>& sliceSizeArray, const std::vector<std:
 	delete[] currentOutImage;
 }
 
-void processImagesMainLoop(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int height, const int noOfOutImages, const int frameCount) {
+void processImagesMainLoop(const std::vector<int>& sliceSizeArray, const std::vector<std::string>& outDirectoryNameArray, const std::vector<std::string>& inputFilesArray, const int width, const int height, const int noOfOutImages, const int frameCount) {
 	std::vector<std::future<void>> futures;
 	
 	for (int i = 0; i < noOfOutImages; ++i) {
 		
-		futures.push_back(std::async(std::launch::async, processImage, std::cref(sliceSizeArray), std::cref(outDirectoryNameArray), std::cref(inputFilesArray), i, height, frameCount));
+		futures.push_back(std::async(std::launch::async, processImage, std::cref(sliceSizeArray), std::cref(outDirectoryNameArray), std::cref(inputFilesArray), i, width, height, frameCount));
 	}
 	
 	for (auto& f : futures) { f.get(); }
 }
 
-int main() {	
-	std::filesystem::remove_all("out");
-	std::filesystem::create_directory("out");
-	std::vector<std::string> inputFilesArray = returnFiles();
-	
-	//Load video and output data
-	int width, height, frameCount, channels, noOfOutImages, xPos, yPos;
-	std::string fps, outFilePrefix, outFileDirectory;
-	bool looping = false, transparencyCheck = false;
-	getVideoData(width, height, frameCount, channels, noOfOutImages, xPos, yPos, fps, outFilePrefix, outFileDirectory, looping, transparencyCheck, inputFilesArray);
-	
-	//Get execution time
-	typedef std::chrono::high_resolution_clock Time;
-	typedef std::chrono::milliseconds ms;
-	typedef std::chrono::duration<float> fsec;
-	auto timeStart = Time::now();
-	
-	//printf("%d\n%d\n%d\n%d\n%s\n%s\n%s\n%d", width, height, frameCount, channels, fps.c_str(), outFilePrefix.c_str(), outFileDirectory.c_str(), looping);
-	
-	std::vector<int> sliceSizeArray(noOfOutImages, floor(width / noOfOutImages));
-	std::vector<std::string> outDirectoryNameArray(noOfOutImages, "");
-	std::vector<std::string> outFileNameArray(noOfOutImages, "");
-	
-	//Get arrays for size and directories
-	std::thread threadOne(getSliceSizeArray, std::ref(sliceSizeArray), width, noOfOutImages);
-	std::thread threadTwo(getoutDirectoryNameArray, std::ref(outDirectoryNameArray), std::ref(outFileNameArray), noOfOutImages, std::cref(outFilePrefix));
-	
-	threadOne.join();
-	threadTwo.join();
-	
-	
-	//Main workhorse is threadThree, but might as well do the .gui and .gfx files too
-	std::thread threadThree(processImagesMainLoop, std::cref(sliceSizeArray), std::cref(outDirectoryNameArray), std::cref(inputFilesArray), height, noOfOutImages, frameCount);
-	std::thread threadFour(createGFXFile, std::cref(outFileNameArray), std::cref(outFileDirectory), frameCount, looping, transparencyCheck);
-	std::thread threadFive(createGUIFile, std::cref(outFileNameArray), std::cref(sliceSizeArray), transparencyCheck, xPos, yPos);
-	
-	
-	threadThree.join();
-	threadFour.join();
-	threadFive.join();
+int main() {
+	try {
+		if (std::filesystem::exists("out") && std::filesystem::is_directory("out")) {
+			std::filesystem::remove_all("out");
+		}
+		std::filesystem::create_directory("out");
+		std::vector<std::string> inputFilesArray;
+		if (std::filesystem::exists("out") && std::filesystem::is_directory("out")) {
+			inputFilesArray = returnFiles();
+		}
+		else {
+			throw std::runtime_error("Error: 'in' folder does not exist.");
+		}
+		
+		if (inputFilesArray.size() < 1) {
+			throw std::runtime_error("Error: No .png files in 'in' folder.");
+		}
+		
+		//Load video and output data
+		int width, height, frameCount, channels, noOfOutImages, xPos, yPos;
+		std::string fps, outFilePrefix, outFileDirectory;
+		bool looping = false, transparencyCheck = false;
+		getVideoData(width, height, frameCount, channels, noOfOutImages, xPos, yPos, fps, outFilePrefix, outFileDirectory, looping, transparencyCheck, inputFilesArray);
+		
+		//Get execution time
+		typedef std::chrono::high_resolution_clock Time;
+		typedef std::chrono::milliseconds ms;
+		typedef std::chrono::duration<float> fsec;
+		auto timeStart = Time::now();
+		
+		//printf("%d\n%d\n%d\n%d\n%s\n%s\n%s\n%d", width, height, frameCount, channels, fps.c_str(), outFilePrefix.c_str(), outFileDirectory.c_str(), looping);
+		
+		std::vector<int> sliceSizeArray(noOfOutImages, floor(width / noOfOutImages));
+		std::vector<std::string> outDirectoryNameArray(noOfOutImages, "");
+		std::vector<std::string> outFileNameArray(noOfOutImages, "");
+		
+		//Get arrays for size and directories
+		std::thread threadOne(getSliceSizeArray, std::ref(sliceSizeArray), width, noOfOutImages);
+		std::thread threadTwo(getoutDirectoryNameArray, std::ref(outDirectoryNameArray), std::ref(outFileNameArray), noOfOutImages, std::cref(outFilePrefix));
+		
+		threadOne.join();
+		threadTwo.join();
+		
+		
+		//Main workhorse is threadThree, but might as well do the .gui and .gfx files too
+		std::thread threadThree(processImagesMainLoop, std::cref(sliceSizeArray), std::cref(outDirectoryNameArray), std::cref(inputFilesArray), width, height, noOfOutImages, frameCount);
+		std::thread threadFour(createGFXFile, std::cref(outFileNameArray), std::cref(outFileDirectory), frameCount, looping, transparencyCheck);
+		std::thread threadFive(createGUIFile, std::cref(outFileNameArray), std::cref(sliceSizeArray), transparencyCheck, xPos, yPos);
+		
+		
+		threadThree.join();
+		threadFour.join();
+		threadFive.join();
 
 
-	//Print execution time
-	auto timeEnd = Time::now();
-	fsec fs = timeEnd - timeStart;
-	ms d = std::chrono::duration_cast<ms>(fs);
-	std::cout << "\n\nProgram executed in " << d.count() << " ms\n";
-
+		//Print execution time
+		auto timeEnd = Time::now();
+		fsec fs = timeEnd - timeStart;
+		ms d = std::chrono::duration_cast<ms>(fs);
+		std::cout << "\n\nProgram executed in " << d.count() << " ms\n";
+	}
+	catch (const std::exception& e) {
+        std::cerr << "Exception caught: " << e.what() << "\n";
+        std::terminate();
+    }
 	return 0;
 }
