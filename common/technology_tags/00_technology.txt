@@ -145,31 +145,23 @@ technology_folders = {
 	}
 	armour_folder = {
 		ledger = army
-		available = {
-			NOT = {
-				has_dlc = "No Step Back"
-			}
-		}
 	}
-	nsb_armour_folder = {
+	military_vehicles_folder = {
 		ledger = army
-		available = {
-			has_dlc = "No Step Back"
-		}
 	}
 	artillery_folder = {
 		ledger = army
 	}
-	air_techs_folder = {
-		available = { NOT = { has_dlc = "By Blood Alone" } }
+	aircraft_folder = {
 		ledger = air
 	}
-	bba_air_techs_folder = {
-		available = {
-			has_dlc = "By Blood Alone"
-		}
+	helicopters_folder = {
 		ledger = air
 	}
+	drones_folder = {
+		ledger = air
+	}
+	
 	naval_folder = {
 		available = {
 			not = { has_dlc = "Man the Guns" }
