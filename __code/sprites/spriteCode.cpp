@@ -54,6 +54,44 @@ void stdSpriteFunction(const std::filesystem::path &modDirectory, const std::str
     }
 }
 
+void technologiesFunction(const std::filesystem::path &modDirectory, const std::string inDir, const std::string outFile){
+	std::filesystem::path searchDirectory = modDirectory / inDir;
+	std::filesystem::path outDirectory = modDirectory / outFile;
+	
+	std::vector<std::string> spritesVector;				//File directory
+	std::vector<std::string> spritesNamesVector;		//File name
+    for (const auto& entry : std::filesystem::recursive_directory_iterator(searchDirectory)) {		//Go through folders and subfolders
+        if (entry.is_regular_file()) {
+            std::string extension = entry.path().extension().string();
+			
+			if (extension == ".png" || extension == ".dds"){		//.png or .dds only
+				std::filesystem::path relativePath = std::filesystem::relative(entry.path(), modDirectory);
+				spritesVector.push_back(relativePath.string());					//"gfx\\interface\\decision\\foobar.dds"
+				spritesNamesVector.push_back(entry.path().stem().string());		//"foobar.dds"
+			}
+        }
+    }
+	
+	for (auto& directory : spritesVector){		//Clausewitz doesn't allow double backslashes (even tho there are some in the game files???)
+		directory = escapeBackslashes(directory);
+	}
+	
+	std::ofstream spriteFile(outDirectory, std::ios::out | std::ios::binary);
+	
+	int noOfSprites = spritesVector.size();
+	if (spriteFile.is_open()) {
+		spriteFile << "spriteTypes = {\n";
+		
+		for (int i = 0; i < noOfSprites; ++i) {				//Standard output
+			spriteFile << "\tSpriteType = {\n\t\tname = \"GFX_" << spritesNamesVector[i] << "_medium\"\n\t\ttexturefile = \""
+			<< spritesVector[i] << "\"\n\t}\n";
+		}
+		
+		spriteFile << "}";
+        spriteFile.close();
+    }
+}
+
 void ideasFunction(const std::filesystem::path &modDirectory, const std::string inDir, const std::string outFile){		//Allow for gfx to start with 'idea_'
 	std::filesystem::path searchDirectory = modDirectory / inDir;
 	std::filesystem::path outDirectory = modDirectory / outFile;
@@ -156,11 +194,13 @@ int main() {
 	std::thread t3(stdSpriteFunction, modDirectory, "gfx\\leaders", "interface\\MOD_leaders.gfx");
 	std::thread t4(ideasFunction, modDirectory, "gfx\\interface\\ideas", "interface\\MOD_ideas.gfx");
 	std::thread t5(stdSpriteFunction, modDirectory, "gfx\\event_pictures", "interface\\MOD_eventpictures.gfx");
+	std::thread t6(technologiesFunction, modDirectory, "gfx\\interface\\technologies", "interface\\MOD_technologies.gfx");
 	
 	t1.join();
 	t2.join();
 	t3.join();
 	t4.join();
 	t5.join();
+	t6.join();
 	return 0;
 }

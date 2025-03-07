@@ -1,0 +1,118 @@
+technologies = {
+	TECHNOLOGY_infantry_equipment_1 = {
+
+		enable_equipments = {
+			infantry_equipment_1
+		}
+
+		enable_subunits = {
+			COMBAT_UNIT_militia
+			COMBAT_UNIT_basic_infantry
+			COMBAT_UNIT_advanced_infantry
+		}
+
+		research_cost = 1.0
+		start_year = 1960
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_air_equipment_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_weapon_sights_1
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_weapon_sights_1 = {
+
+		category_light_infantry = {
+			soft_attack = 0.05
+		}
+		
+		research_cost = 1.0
+		start_year = 1965
+		folder = {
+			name = infantry_folder
+			position = { x = -2 y = 2 }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_anti_tank_equipment_1 = {
+
+		enable_equipments = {
+			infantry_anti_tank_equipment_1
+		}
+
+		enable_subunits = {
+		}
+
+		research_cost = 1.0
+		start_year = 1980
+		folder = {
+			name = infantry_folder
+			position = { x = 3 y = 4 }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_tank_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_anti_air_equipment_1 = {
+
+		enable_equipments = {
+			infantry_anti_air_equipment_1
+		}
+
+		enable_subunits = {
+		}
+
+		research_cost = 1.0
+		start_year = 1980
+		folder = {
+			name = infantry_folder
+			position = { x = 6 y = 4 }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

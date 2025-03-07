@@ -198,3 +198,12 @@ music = {
 		}		
 	}
 }
+music = {
+	song = "Dead or Alive - You Spin Me Round"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}

@@ -219,127 +219,6 @@ spriteTypes = {
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
-
-	spriteType = {
-		name = "GFX_technology_available_item_bg"
-		textureFile = "gfx//interface//techtree//technology_available_item_bg.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_technology_branch_item_bg"
-		textureFile = "gfx//interface//techtree//technology_branch_item_bg.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_technology_unavailable_item_bg"
-		textureFile = "gfx//interface//techtree//technology_unavailable_item_bg.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_technology_researched_item_bg"
-		textureFile = "gfx//interface//techtree//technology_researched_item_bg.dds"
-	}
-
-	frameAnimatedSpriteType = {
-		name = "GFX_subtech_carrier_plane_currently_researching_item_bg"
-		texturefile = "gfx/interface/subtech_air_techs_currently_researching_item_bg.dds"
-		noOfFrames = 2
-		animation_rate_fps = 2
-		looping = yes
-		play_on_show = yes
-		pause_on_loop = 0.0
-#		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate_blendframes.lua"
-	}		
-	
-	spriteType = {
-		name = "GFX_subtechnology_air_techs_available_item_bg"
-		textureFile = "gfx/interface/subtech_carrier_plane_available_item_bg.dds"
-	}	
-	
-	spriteType = {
-		name = "GFX_subtechnology_air_techs_researched_item_bg"
-		textureFile = "gfx/interface/subtech_carrier_plane_researched_item_bg.dds"
-	}	
-	
-	spriteType = {
-		name = "GFX_subtechnology_air_techs_unavailable_item_bg"
-		textureFile = "gfx/interface/subtech_carrier_plane_unavailable_item_bg.dds"
-	}
-
-	spriteType = {
-		name = "GFX_subtechnology_bba_air_techs_available_item_bg"
-		textureFile = "gfx/interface/subtech_carrier_plane_available_item_bg.dds"
-	}	
-	
-	spriteType = {
-		name = "GFX_subtechnology_bba_air_techs_researched_item_bg"
-		textureFile = "gfx/interface/subtech_carrier_plane_researched_item_bg.dds"
-	}	
-	
-	spriteType = {
-		name = "GFX_subtechnology_bba_air_techs_unavailable_item_bg"
-		textureFile = "gfx/interface/subtech_carrier_plane_unavailable_item_bg.dds"
-	}	
-	
-	spriteType = {
-		name = "GFX_subtech_carrier_plane_bg"
-		textureFile = "gfx/interface/subtech_carrier_plane_bg.dds"
-	}	
-	
-	spriteType = {
-		name = "GFX_subtechnology_available_item_bg"
-		textureFile = "gfx/interface/subtechnology_available_item_bg.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_subtechnology_unavailable_item_bg"
-		textureFile = "gfx/interface/subtechnology_unavailable_item_bg.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_subtechnology_researched_item_bg"
-		textureFile = "gfx/interface/subtechnology_researched_item_bg.dds"
-	}
-
-	frameAnimatedSpriteType = {
-		name = "GFX_subtechnology_currently_researching_item_bg"
-		texturefile = "gfx/interface/subtechnology_currently_researching_item_bg.dds"
-		noOfFrames = 2
-		animation_rate_fps = 2
-		looping = yes
-		play_on_show = yes
-		pause_on_loop = 0.0
-#		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate_blendframes.lua"
-	}
-	
-	spriteType = {
-		name = "GFX_subtechnology_foreign_available_item_bg"
-		textureFile = "gfx/interface/subtechnology_available_item_bg.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_subtechnology_foreign_unavailable_item_bg"
-		textureFile = "gfx/interface/subtechnology_unavailable_item_bg.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_subtechnology_foreign_researched_item_bg"
-		textureFile = "gfx/interface/subtechnology_researched_item_bg.dds"
-	}
-
-	frameAnimatedSpriteType = {
-		name = "GFX_subtechnology_foreign_currently_researching_item_bg"
-		texturefile = "gfx/interface/subtechnology_currently_researching_item_bg.dds"
-		noOfFrames = 2
-		animation_rate_fps = 2
-		looping = yes
-		play_on_show = yes
-		pause_on_loop = 0.0
-		alwaystransparent = yes
-		effectFile = "gfx/FX/buttonstate_blendframes.lua"
-	}
 	
 	spriteType = {
 		name = "GFX_infobox_progressbar_frame"
@@ -376,24 +255,12 @@ spriteTypes = {
 	}
 	
 	frameAnimatedSpriteType = {
-		name = "GFX_technology_currently_researching_item_bg"
-		texturefile = "gfx//interface//techtree//researching_anim_strip.dds"
-		noOfFrames = 9
-		loadType = "INGAME"
-		transparencecheck = yes
-		animation_rate_fps = 15
-		looping = yes
-		play_on_show = yes
-		pause_on_loop = 0.0
-	}
-    
-	frameAnimatedSpriteType = {
 		name = "GFX_techtree_line_down_currently_researching"
 		texturefile = "gfx//interface//techtree//techtree_line_down_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -402,10 +269,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techtree_line_left_currently_researching"
 		texturefile = "gfx//interface//techtree//techtree_line_left_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -414,10 +281,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techtree_line_right_currently_researching"
 		texturefile = "gfx//interface//techtree//techtree_line_right_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -426,10 +293,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techtree_line_up_currently_researching"
 		texturefile = "gfx//interface//techtree//techtree_line_up_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -540,7 +407,7 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techline_center_down_currently_researching"
 		texturefile = "gfx//interface//techtree//techline_center_down_anim_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
 		animation_rate_fps = 12
@@ -558,10 +425,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techline_center_right_currently_researching"
 		texturefile = "gfx//interface//techtree//techline_center_right_anim_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -576,10 +443,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techline_center_left_currently_researching"
 		texturefile = "gfx//interface//techtree//techline_center_left_anim_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -594,10 +461,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techline_center_top_left_currently_researching"
 		texturefile = "gfx//interface//techtree//techline_center_top_left_anim_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -612,10 +479,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techline_center_all_currently_researching"
 		texturefile = "gfx//interface//techtree//techline_center_all_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -630,10 +497,10 @@ spriteTypes = {
 		frameAnimatedSpriteType = {
 		name = "GFX_techline_center_top_right_currently_researching"
 		texturefile = "gfx//interface//techtree//techline_center_top_right_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -648,10 +515,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techline_center_bottom_left_currently_researching"
 		texturefile = "gfx//interface//techtree//techline_center_bottom_left_anim_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -666,10 +533,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techline_center_bottom_right_currently_researching"
 		texturefile = "gfx//interface//techtree//techline_center_bottom_right_anim_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 10
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -684,7 +551,7 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techline_center_up_currently_researching"
 		texturefile = "gfx//interface//techtree//techline_center_up_anim_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 4
 		loadType = "INGAME"
 		transparencecheck = yes
 		animation_rate_fps = 12
@@ -704,10 +571,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techtree_line_up_dot_currently_researching"
 		texturefile = "gfx//interface//techtree/techtree_dotline_vertical_up_anim_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 3
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 8
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -722,10 +589,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techtree_line_down_dot_currently_researching"
 		texturefile = "gfx//interface//techtree/techtree_dotline_vertical_down_anim_strip.dds"
-		noOfFrames = 12
+		noOfFrames = 3
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 8
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -740,10 +607,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techtree_line_left_dot_currently_researching"
 		texturefile = "gfx//interface//techtree/techtree_dotline_horisontal_left_anim_strip.dds"
-		noOfFrames = 27
+		noOfFrames = 3
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 8
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0
@@ -758,10 +625,10 @@ spriteTypes = {
 	frameAnimatedSpriteType = {
 		name = "GFX_techtree_line_right_dot_currently_researching"
 		texturefile = "gfx//interface//techtree/techtree_dotline_horisontal_right_anim_strip.dds"
-		noOfFrames = 27
+		noOfFrames = 3
 		loadType = "INGAME"
 		transparencecheck = yes
-		animation_rate_fps = 12
+		animation_rate_fps = 8
 		looping = yes
 		play_on_show = yes
 		pause_on_loop = 0.0

@@ -1,0 +1,64 @@
+spriteTypes = {
+	corneredTileSpriteType = {
+		name = "GFX_TDA_tiled_window_2b_border"
+		size= { x=190 y=190 }
+		textureFile = "gfx//interface//tiles//TDA_tiled_window_2b_border.dds"
+		borderSize = { x=64 y=64 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}	
+	corneredTileSpriteType = {
+		name = "GFX_TDA_tiled_window_thick_border"
+		size= { x=190 y=190 }
+		textureFile = "gfx//interface//tiles//TDA_tiled_window_thick_border.dds"
+		borderSize = { x=22 y=22 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}	
+	corneredTileSpriteType = {
+		name = "GFX_TDA_tiled_window_thin_border"
+		size= { x=172 y=172 }
+		textureFile = "gfx//interface//tiles//TDA_tiled_window_thin_border.dds"
+		borderSize = { x=13 y=13 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}	
+	
+	
+	spriteType = {
+		name = "GFX_scroll_up_blue"
+		texturefile = "gfx/interface/scrollbars/scroll_up_blue.dds"
+	}
+	spriteType = {
+		name = "GFX_scroll_down_blue"
+		texturefile = "gfx/interface/scrollbars/scroll_down_blue.dds"
+	}
+	spriteType = {
+		name = "GFX_scroll_right_blue"
+		texturefile = "gfx/interface/scrollbars/scroll_right_blue.dds"
+	}
+	spriteType = {
+		name = "GFX_scroll_left_blue"
+		texturefile = "gfx/interface/scrollbars/scroll_left_blue.dds"
+	}
+	spriteType = {
+		name = "GFX_scroll_slider_updown_blue"
+		texturefile = "gfx/interface/scrollbars/scroll_slider_updown_blue.dds"
+	}
+	spriteType = {
+		name = "GFX_scroll_slider_leftright_blue"
+		texturefile = "gfx/interface/scrollbars/scroll_slider_leftright_blue.dds"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_scroll_track_grey"
+		size= {x =12 y = 12 }
+		texturefile = "gfx/interface/scrollbars/scroll_track_grey.dds"
+		borderSize = { x=4 y=4 }
+	}
+	corneredTileSpriteType = {
+		name = "GFX_scroll_track_transparent"
+		size= {x =12 y = 12 }
+		texturefile = "gfx/interface/scrollbars/scroll_track_transparent.dds"
+		borderSize = { x=4 y=4 }
+	}
+}

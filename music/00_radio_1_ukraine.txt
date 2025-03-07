@@ -170,6 +170,15 @@ music = {
 }
 
 music = {
+	song = "Medov Polin - Separatist"
+	chance = {
+		modifier = {
+			factor = 5				#War with Russia
+		}		
+	}
+}
+
+music = {
 	song = "Me, My Buddy, And Two Shovels"
 	chance = {
 		modifier = {

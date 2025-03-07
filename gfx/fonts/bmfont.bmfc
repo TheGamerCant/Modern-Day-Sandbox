@@ -2,10 +2,10 @@
 fileVersion=1
 
 # font settings
-fontName=Blender Pro Heavy
-fontFile=blender_font/BlenderPro-Heavy.ttf
+fontName=OCR A Becker RUS-LAT
+fontFile=ocr_font/OCR A Becker RUS-LAT.ttf
 charSet=0
-fontSize=-24
+fontSize=-9
 aa=1
 scaleH=100
 useSmoothing=1
@@ -29,13 +29,13 @@ paddingRight=0
 paddingLeft=0
 spacingHoriz=1
 spacingVert=1
-useFixedHeight=0
+useFixedHeight=1
 forceZero=0
 widthPaddingFactor=0.00
 
 # output file
-outWidth=512
-outHeight=512
+outWidth=256
+outHeight=128
 outBitDepth=32
 fontDescFormat=0
 fourChnlPacked=0
@@ -51,10 +51,11 @@ invG=0
 invB=0
 
 # outline
-outlineThickness=3
+outlineThickness=0
 
 # selected chars
-chars=13,32-126,160-172,174-383,536-537,710-711,728-733,1025-1036,1038-1103,1105-1116,1118-1119,1168-1169
-chars=8211-8212,8216-8218,8220-8222,8224-8226,8230,8240,8249-8250,8260,8364,8800,8804-8805
+chars=0-0,13,32-126,160-255,258-263,268-269,273,280-281,286-287,304-305,321-324,336-339,346-347,350-355
+chars=368-369,376-382,710-711,713,728-733,1024-1025,1027-1032,1036-1038,1040-1105,1107-1112,1116-1118
+chars=8211-8212,8216-8218,8220-8222,8224-8226,8230,8240,8249-8250,8364,8800,8804-8805
 
 # imported icon images

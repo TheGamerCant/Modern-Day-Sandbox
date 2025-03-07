@@ -239,6 +239,11 @@ music = {
 }
 
 music = {
+	name = "Medov Polin - Separatist"
+	file = "Ukraine/separatist.ogg"
+}
+
+music = {
 	name = "The flag of Victory"
 	file = "Belarus/The_Flag_of_Victory.ogg"
 }
@@ -369,4 +374,9 @@ music = {
 music = {
 	name = "Mitski - Washing Machine Heart"
 	file = "Generic/washing_machine_heart.ogg"
+}
+
+music = {
+	name = "Dead or Alive - You Spin Me Round"
+	file = "Generic/you_spin_me_round.ogg"
 }

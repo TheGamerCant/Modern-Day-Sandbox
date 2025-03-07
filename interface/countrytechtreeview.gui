@@ -42,15 +42,47 @@ guiTypes = {
 			name = "infantry_folder"
 			position = { x=0 y=47 }
 			size = { width = 100%% height = 100%% }
-			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			margin = { top = 20 left = 20 bottom = 20 right = 20 }
 			drag_scroll = { left middle }
-			verticalScrollbar = "right_vertical_slider"
-			horizontalScrollbar = "bottom_horizontal_slider"
+			verticalScrollbar = "TDA_research_right_vertical_slider"
+			horizontalScrollbar = "TDA_research_bottom_horizontal_slider"
 			scroll_wheel_factor = 40
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_window_2b_border"
+				quadTextureSprite ="GFX_TDA_tiled_window_thick_border"
+			}
+			
+			
+			instantTextBoxType = {
+				name = "infantry_year_1960"
+				position = { x = 30 y = 0 }
+				textureFile = ""
+				font = "Blender_Heavy_White_32"
+				borderSize = { x = 0 y = 0}
+				text = "TECHNOLOGY_YEAR_1960"
+				maxWidth = 600
+				maxHeight = 62
+				format = left
+				Orientation = "UPPER_LEFT"
+			}
+			
+			
+			iconType = {
+				name = "highlight_infantry_1"
+				spriteType = "GFX_tutorial_research_small_item_icon_glow"
+				#position = { x=135 y=170}
+				position = { x=9999 y=9999}
+				hide = yes
+				alwaystransparent = yes
+			}
+			
+			gridboxtype = {
+				name = "TECHNOLOGY_infantry_equipment_1_tree"
+				position = { x = 140 y = 325 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
+
 			}
 			
 		}
@@ -285,14 +317,14 @@ guiTypes = {
 			buttonType = {
 				name = "armour_folder_tab"
 				position = { x = 289 y = 0 }
-				quadTextureSprite = "GFX_armour_folder_tab"
+				quadTextureSprite = "GFX_techtree_armour_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
 			}
 			buttonType = {
 				name = "military_vehicles_folder_tab"
 				position = { x = 378 y = 0 }
-				quadTextureSprite = "GFX_armour_folder_tab"
+				quadTextureSprite = "GFX_techtree_military_vehicles_tab"
 				frame = 1
 				clicksound = ui_research_tab_armor
 			}
@@ -730,7 +762,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -738,6 +770,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -841,7 +875,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -849,6 +883,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -952,7 +988,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -960,6 +996,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -1063,7 +1101,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -1071,6 +1109,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -1174,7 +1214,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -1182,6 +1222,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -1285,7 +1327,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -1293,6 +1335,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -1396,7 +1440,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -1404,6 +1448,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -1507,7 +1553,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -1515,6 +1561,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -1618,7 +1666,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -1626,6 +1674,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -1729,7 +1779,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -1737,6 +1787,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -1840,7 +1892,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -1848,6 +1900,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -1951,7 +2005,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -1959,6 +2013,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
@@ -2061,7 +2117,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=91 y=50 }
+			position = { x=91 y=42 }
 			spriteType = "GFX_technology_medium"
 			centerposition = yes
 			alwaystransparent = yes
@@ -2069,6 +2125,8 @@ guiTypes = {
 
 
 		instantTextBoxType = {
+			hide = yes
+
 			name = "Name"
 			position = { x = 3 y = -3 }
 			textureFile = ""
