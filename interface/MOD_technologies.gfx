@@ -1,5 +1,49 @@
 spriteTypes = {
 	SpriteType = {
+		name = "GFX_TECHNOLOGY_cartridge_upgrades_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_cartridge_upgrades_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_cartridge_upgrades_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_cartridge_upgrades_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_cartridge_upgrades_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_cartridge_upgrades_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_cartridge_upgrades_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_cartridge_upgrades_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_cartridge_upgrades_5_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_cartridge_upgrades_5.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_cartridge_upgrades_6_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_cartridge_upgrades_6.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_anti_tank_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_tank_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_anti_tank_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_tank_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_anti_tank_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_tank_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_anti_tank_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_tank_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_anti_tank_equipment_5_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_tank_equipment_5.dds"
+	}
+	SpriteType = {
 		name = "GFX_TECHNOLOGY_infantry_equipment_1_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_equipment_1.dds"
 	}

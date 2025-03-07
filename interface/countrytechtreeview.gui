@@ -56,17 +56,143 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "infantry_year_1960"
-				position = { x = 30 y = 0 }
-				textureFile = ""
+				position = { x = 85 y = 20 }
 				font = "Blender_Heavy_White_32"
-				borderSize = { x = 0 y = 0}
 				text = "TECHNOLOGY_YEAR_1960"
-				maxWidth = 600
-				maxHeight = 62
-				format = left
+				maxWidth = 175
+				format = center
 				Orientation = "UPPER_LEFT"
 			}
 			
+			instantTextBoxType = {
+				name = "infantry_year_1965"
+				position = { x = 295 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1965"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_1970"
+				position = { x = 505 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1970"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_1975"
+				position = { x = 715 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1975"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_1980"
+				position = { x = 925 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1980"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_1985"
+				position = { x = 1135 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1985"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_1990"
+				position = { x = 1345 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1990"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_1995"
+				position = { x = 1555 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1995"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_2000"
+				position = { x = 1765 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2000"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_2005"
+				position = { x = 1975 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2005"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_2010"
+				position = { x = 2185 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2010"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_2015"
+				position = { x = 2395 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2015"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_2020"
+				position = { x = 2605 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2020"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_year_2025"
+				position = { x = 2815 y = 20 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2025"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
 			
 			iconType = {
 				name = "highlight_infantry_1"
@@ -714,7 +840,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -827,7 +953,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -940,7 +1066,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1053,7 +1179,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1166,7 +1292,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1279,7 +1405,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1392,7 +1518,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1505,7 +1631,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1618,7 +1744,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1731,7 +1857,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1844,7 +1970,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -1957,7 +2083,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}
@@ -2069,7 +2195,7 @@ guiTypes = {
 
 		iconType = {
 			name = "Icon"
-			position = { x=3 y=3 }
+			position = { x = 4 y = 4 }
 			spriteType = "GFX_technology_medium"
 			alwaystransparent = yes
 		}

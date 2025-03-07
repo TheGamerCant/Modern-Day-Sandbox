@@ -5,7 +5,7 @@ state={
 		owner = GER
 		add_core_of = GER
 		
-		victory_points = { 13884 75 }
+		victory_points = { 13884 85 }
 		victory_points = { 13889 2 }
 		victory_points = { 13887 4 }
 		victory_points = { 9496 2 }

@@ -1,3 +1,27 @@
+@tech_1960_y_pos = 0
+@tech_1965_y_pos = 3
+@tech_1970_y_pos = 6
+@tech_1972_y_pos = 7
+@tech_1975_y_pos = 9
+@tech_1980_y_pos = 12
+@tech_1985_y_pos = 15
+@tech_1990_y_pos = 18
+@tech_1995_y_pos = 21
+@tech_2000_y_pos = 24
+@tech_2005_y_pos = 27
+@tech_2010_y_pos = 30
+@tech_2015_y_pos = 33
+@tech_2018_y_pos = 35
+@tech_2020_y_pos = 36
+@tech_2022_y_pos = 37
+@tech_2025_y_pos = 39
+
+
+@tech_infantry_equipment_x_pos = 0
+@tech_infantry_anti_tank_equipment_x_pos = 3
+@tech_infantry_anti_air_equipment_x_pos = 6
+
+
 technologies = {
 	TECHNOLOGY_infantry_equipment_1 = {
 
@@ -15,7 +39,7 @@ technologies = {
 		start_year = 1960
 		folder = {
 			name = infantry_folder
-			position = { x = 0 y = 0 }
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_1960_y_pos }
 		}
 		
 		path = {
@@ -29,6 +53,335 @@ technologies = {
 		path = {
 			leads_to_tech = TECHNOLOGY_weapon_sights_1
 			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_equipment_2
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_equipment_2 = {
+
+		enable_equipments = {
+			infantry_equipment_2
+		}
+
+		research_cost = 1.0
+		start_year = 1972
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_1972_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_cartridge_upgrades_1
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_cartridge_upgrades_1 = {
+
+		category_light_infantry = { soft_attack = 0.03 }
+		category_vehicle_infantry = { soft_attack = 0.03 }
+
+		research_cost = 1.0
+		start_year = 1975
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_1975_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_cartridge_upgrades_2
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_cartridge_upgrades_2 = {
+
+		category_light_infantry = { soft_attack = 0.03 }
+		category_vehicle_infantry = { soft_attack = 0.03 }
+
+		research_cost = 1.0
+		start_year = 1980
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_1980_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_equipment_3
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_equipment_3 = {
+
+		enable_equipments = {
+			infantry_equipment_3
+		}
+
+		research_cost = 1.0
+		start_year = 1985
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_1985_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_cartridge_upgrades_3
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_cartridge_upgrades_3 = {
+
+		category_light_infantry = { soft_attack = 0.04 }
+		category_vehicle_infantry = { soft_attack = 0.04 }
+
+		research_cost = 1.0
+		start_year = 1990
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_1990_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_equipment_4
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_equipment_4 = {
+
+		enable_equipments = {
+			infantry_equipment_4
+		}
+
+		research_cost = 1.0
+		start_year = 1995
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_1995_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_cartridge_upgrades_4
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_cartridge_upgrades_4 = {
+
+		category_light_infantry = { soft_attack = 0.07 }
+		category_vehicle_infantry = { soft_attack = 0.07 }
+
+		research_cost = 1.0
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_2000_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_equipment_5
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_equipment_5 = {
+
+		enable_equipments = {
+			infantry_equipment_5
+		}
+
+		research_cost = 1.0
+		start_year = 2005
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_2005_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_cartridge_upgrades_5
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_cartridge_upgrades_5 = {
+
+		category_light_infantry = { soft_attack = 0.10 }
+		category_vehicle_infantry = { soft_attack = 0.10 }
+
+		research_cost = 1.0
+		start_year = 2010
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_2010_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_equipment_6
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_equipment_6 = {
+
+		enable_equipments = {
+			infantry_equipment_6
+		}
+
+		research_cost = 1.0
+		start_year = 2015
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_2015_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_cartridge_upgrades_6
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_cartridge_upgrades_6 = {
+
+		category_light_infantry = { soft_attack = 0.14 }
+		category_vehicle_infantry = { soft_attack = 0.14 }
+
+		research_cost = 1.0
+		start_year = 2018
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_2018_y_pos }
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_equipment_7
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_equipment_7 = {
+
+		enable_equipments = {
+			infantry_equipment_7
+		}
+
+		research_cost = 1.0
+		start_year = 2022
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_equipment_x_pos y = @tech_2022_y_pos }
 		}
 
 		categories = {
@@ -51,7 +404,7 @@ technologies = {
 		start_year = 1965
 		folder = {
 			name = infantry_folder
-			position = { x = -2 y = 2 }
+			position = { x = -2 y = @tech_1965_y_pos }
 		}
 
 		categories = {
@@ -69,15 +422,17 @@ technologies = {
 		enable_equipments = {
 			infantry_anti_tank_equipment_1
 		}
-
-		enable_subunits = {
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_2
+			research_cost_coeff = 1
 		}
-
+		
 		research_cost = 1.0
-		start_year = 1980
+		start_year = 1965
 		folder = {
 			name = infantry_folder
-			position = { x = 3 y = 4 }
+			position = { x = @tech_infantry_anti_tank_equipment_x_pos y = @tech_1965_y_pos }
 		}
 
 		categories = {
@@ -90,20 +445,125 @@ technologies = {
 		}
 	}
 	
+	TECHNOLOGY_infantry_anti_tank_equipment_2 = {
+
+		enable_equipments = {
+			infantry_anti_tank_equipment_2
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 1975
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_tank_equipment_x_pos y = @tech_1975_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_tank_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_anti_tank_equipment_3 = {
+
+		enable_equipments = {
+			infantry_anti_tank_equipment_3
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 1995
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_tank_equipment_x_pos y = @tech_1995_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_tank_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_anti_tank_equipment_4 = {
+
+		enable_equipments = {
+			infantry_anti_tank_equipment_4
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_5
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 2010
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_tank_equipment_x_pos y = @tech_2010_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_tank_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_infantry_anti_tank_equipment_5 = {
+
+		enable_equipments = {
+			infantry_anti_tank_equipment_5
+		}
+
+		research_cost = 1.0
+		start_year = 2025
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_tank_equipment_x_pos y = @tech_2025_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_tank_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	TECHNOLOGY_infantry_anti_air_equipment_1 = {
 
 		enable_equipments = {
 			infantry_anti_air_equipment_1
 		}
 
-		enable_subunits = {
-		}
 
 		research_cost = 1.0
-		start_year = 1980
+		start_year = 1965
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = 4 }
+			position = { x = @tech_infantry_anti_air_equipment_x_pos y = @tech_1965_y_pos }
 		}
 
 		categories = {
