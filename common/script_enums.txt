@@ -283,10 +283,23 @@ script_enum_equipment_bonus_type = {
 	#TDA
 	infantry_equipment
 	infantry_equipment_1
+	infantry_equipment_2
+	infantry_equipment_3
+	infantry_equipment_4
+	infantry_equipment_5
+	infantry_equipment_6
+	infantry_equipment_7
 	infantry_anti_air_equipment
 	infantry_anti_air_equipment_1
+	infantry_anti_air_equipment_2
+	infantry_anti_air_equipment_3
+	infantry_anti_air_equipment_4
 	infantry_anti_tank_equipment
 	infantry_anti_tank_equipment_1
+	infantry_anti_tank_equipment_2
+	infantry_anti_tank_equipment_3
+	infantry_anti_tank_equipment_4
+	infantry_anti_tank_equipment_5
 	
 	support_equipment
 	support_equipment_1

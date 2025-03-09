@@ -6,20 +6,25 @@
 @tech_1980_y_pos = 12
 @tech_1985_y_pos = 15
 @tech_1990_y_pos = 18
+@tech_1992_y_pos = 19
 @tech_1995_y_pos = 21
 @tech_2000_y_pos = 24
 @tech_2005_y_pos = 27
 @tech_2010_y_pos = 30
+@tech_2012_y_pos = 31
+@tech_2014_y_pos = 32
 @tech_2015_y_pos = 33
 @tech_2018_y_pos = 35
 @tech_2020_y_pos = 36
 @tech_2022_y_pos = 37
+@tech_2024_y_pos = 38
 @tech_2025_y_pos = 39
 
 
 @tech_infantry_equipment_x_pos = 0
 @tech_infantry_anti_tank_equipment_x_pos = 3
-@tech_infantry_anti_air_equipment_x_pos = 6
+@tech_infantry_heat_seeking_missiles_x_pos = 5
+@tech_infantry_anti_air_equipment_x_pos = 7
 
 
 technologies = {
@@ -99,8 +104,7 @@ technologies = {
 	
 	TECHNOLOGY_cartridge_upgrades_1 = {
 
-		category_light_infantry = { soft_attack = 0.03 }
-		category_vehicle_infantry = { soft_attack = 0.03 }
+		category_all_infantry = { soft_attack = 0.03 }
 
 		research_cost = 1.0
 		start_year = 1975
@@ -126,8 +130,6 @@ technologies = {
 	
 	TECHNOLOGY_cartridge_upgrades_2 = {
 
-		category_light_infantry = { soft_attack = 0.03 }
-		category_vehicle_infantry = { soft_attack = 0.03 }
 
 		research_cost = 1.0
 		start_year = 1980
@@ -181,8 +183,7 @@ technologies = {
 	
 	TECHNOLOGY_cartridge_upgrades_3 = {
 
-		category_light_infantry = { soft_attack = 0.04 }
-		category_vehicle_infantry = { soft_attack = 0.04 }
+		category_all_infantry = { soft_attack = 0.04 }
 
 		research_cost = 1.0
 		start_year = 1990
@@ -236,8 +237,7 @@ technologies = {
 	
 	TECHNOLOGY_cartridge_upgrades_4 = {
 
-		category_light_infantry = { soft_attack = 0.07 }
-		category_vehicle_infantry = { soft_attack = 0.07 }
+		category_all_infantry = { soft_attack = 0.07 }
 
 		research_cost = 1.0
 		start_year = 2000
@@ -291,8 +291,7 @@ technologies = {
 	
 	TECHNOLOGY_cartridge_upgrades_5 = {
 
-		category_light_infantry = { soft_attack = 0.10 }
-		category_vehicle_infantry = { soft_attack = 0.10 }
+		category_all_infantry = { soft_attack = 0.10 }
 
 		research_cost = 1.0
 		start_year = 2010
@@ -346,8 +345,7 @@ technologies = {
 	
 	TECHNOLOGY_cartridge_upgrades_6 = {
 
-		category_light_infantry = { soft_attack = 0.14 }
-		category_vehicle_infantry = { soft_attack = 0.14 }
+		category_all_infantry = { soft_attack = 0.14 }
 
 		research_cost = 1.0
 		start_year = 2018
@@ -396,7 +394,7 @@ technologies = {
 	
 	TECHNOLOGY_weapon_sights_1 = {
 
-		category_light_infantry = {
+		category_all_infantry = {
 			soft_attack = 0.05
 		}
 		
@@ -452,7 +450,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_3
+			leads_to_tech = TECHNOLOGY_improved_anti_tank_missiles_1
 			research_cost_coeff = 1
 		}
 		
@@ -473,6 +471,37 @@ technologies = {
 		}
 	}
 	
+	TECHNOLOGY_improved_anti_tank_missiles_1 = {
+
+		category_all_infantry = { hard_attack = 0.05 ap_attack = 0.15 }
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_3
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 1980
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_tank_equipment_x_pos y = @tech_1980_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_tank_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	TECHNOLOGY_infantry_anti_tank_equipment_3 = {
 
 		enable_equipments = {
@@ -480,7 +509,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_4
+			leads_to_tech = TECHNOLOGY_improved_anti_tank_missiles_2
 			research_cost_coeff = 1
 		}
 		
@@ -501,6 +530,37 @@ technologies = {
 		}
 	}
 	
+	TECHNOLOGY_improved_anti_tank_missiles_2 = {
+
+		category_all_infantry = { hard_attack = 0.10 ap_attack = 0.30 }
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_4
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_tank_equipment_x_pos y = @tech_2000_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_tank_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	TECHNOLOGY_infantry_anti_tank_equipment_4 = {
 
 		enable_equipments = {
@@ -508,7 +568,12 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_5
+			leads_to_tech = TECHNOLOGY_improved_anti_tank_missiles_3
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_3
 			research_cost_coeff = 1
 		}
 		
@@ -517,6 +582,37 @@ technologies = {
 		folder = {
 			name = infantry_folder
 			position = { x = @tech_infantry_anti_tank_equipment_x_pos y = @tech_2010_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_tank_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_improved_anti_tank_missiles_3 = {
+
+		category_all_infantry = { hard_attack = 0.15 ap_attack = 0.50 }
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_5
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 2018
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_tank_equipment_x_pos y = @tech_2018_y_pos }
 		}
 
 		categories = {
@@ -558,6 +654,10 @@ technologies = {
 			infantry_anti_air_equipment_1
 		}
 
+		path = {
+			leads_to_tech = TECHNOLOGY_improved_anti_air_missiles_1
+			research_cost_coeff = 1
+		}
 
 		research_cost = 1.0
 		start_year = 1965
@@ -569,6 +669,305 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TECHNOLOGY_improved_anti_air_missiles_1 = {
+
+		category_all_infantry = { air_attack = 0.12 }
+
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_air_equipment_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.0
+		start_year = 1970
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_air_equipment_x_pos y = @tech_1970_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TECHNOLOGY_infantry_anti_air_equipment_2 = {
+
+		enable_equipments = {
+			infantry_anti_air_equipment_2
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_improved_anti_air_missiles_2
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_1
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.0
+		start_year = 1980
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_air_equipment_x_pos y = @tech_1980_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_improved_anti_air_missiles_2 = {
+
+		category_all_infantry = { air_attack = 0.20 }
+
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_air_equipment_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.0
+		start_year = 1990
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_air_equipment_x_pos y = @tech_1990_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+
+	TECHNOLOGY_infantry_anti_air_equipment_3 = {
+
+		enable_equipments = {
+			infantry_anti_air_equipment_3
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_improved_anti_air_missiles_3
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.0
+		start_year = 2000
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_air_equipment_x_pos y = @tech_2000_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_improved_anti_air_missiles_3 = {
+
+		category_all_infantry = { air_attack = 0.35 }
+
+		path = {
+			leads_to_tech = TECHNOLOGY_infantry_anti_air_equipment_4
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.0
+		start_year = 2012
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_air_equipment_x_pos y = @tech_2012_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TECHNOLOGY_infantry_anti_air_equipment_4 = {
+
+		enable_equipments = {
+			infantry_anti_air_equipment_4
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.0
+		start_year = 2020
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_anti_air_equipment_x_pos y = @tech_2020_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TECHNOLOGY_heat_seeking_missiles_1 = {
+
+		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.10 ap_attack = 0.10 breakthrough = 0.03 }
+		COMBAT_UNIT_advanced_infantry = { air_attack = 0.10 ap_attack = 0.10 breakthrough = 0.03 }
+		category_special_forces = { air_attack = 0.12 ap_attack = 0.12 breakthrough = 0.04 }
+
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_2
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 1.0
+		start_year = 1992
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_heat_seeking_missiles_x_pos y = @tech_1992_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+			cat_infantry_anti_tank_equipment
+			cat_infantry_heat_seeking_missiles
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TECHNOLOGY_heat_seeking_missiles_2 = {
+
+		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.18 ap_attack = 0.18 breakthrough = 0.05 }
+		COMBAT_UNIT_advanced_infantry= { air_attack = 0.18 ap_attack = 0.18 breakthrough = 0.05 }
+		category_special_forces = { air_attack = 0.20 ap_attack = 0.20 breakthrough = 0.06 }
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_3
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 1.0
+		start_year = 2005
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_heat_seeking_missiles_x_pos y = @tech_2005_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+			cat_infantry_anti_tank_equipment
+			cat_infantry_heat_seeking_missiles
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TECHNOLOGY_heat_seeking_missiles_3 = {
+		
+		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.28 ap_attack = 0.28 breakthrough = 0.08 }
+		COMBAT_UNIT_advanced_infantry= { air_attack = 0.28 ap_attack = 0.28 breakthrough = 0.08 }
+		category_special_forces = { air_attack = 0.32 ap_attack = 0.32 breakthrough = 0.10 }
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_4
+			research_cost_coeff = 1
+		}
+
+
+		research_cost = 1.0
+		start_year = 2015
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_heat_seeking_missiles_x_pos y = @tech_2015_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+			cat_infantry_anti_tank_equipment
+			cat_infantry_heat_seeking_missiles
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	TECHNOLOGY_heat_seeking_missiles_4 = {
+		
+		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.40 ap_attack = 0.40 breakthrough = 0.12 }0.08 }
+		COMBAT_UNIT_advanced_infantry = { air_attack = 0.40 ap_attack = 0.40 breakthrough = 0.12 }
+		category_special_forces = { air_attack = 0.45 ap_attack = 0.45 breakthrough = 0.15 }
+
+		research_cost = 1.0
+		start_year = 2024
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_infantry_heat_seeking_missiles_x_pos y = @tech_2024_y_pos }
+		}
+
+		categories = {
+			cat_infantry
+			cat_infantry_anti_air_equipment
+			cat_infantry_anti_tank_equipment
+			cat_infantry_heat_seeking_missiles
 		}
 
 		ai_will_do = {

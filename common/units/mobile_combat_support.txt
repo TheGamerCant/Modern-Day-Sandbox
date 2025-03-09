@@ -1,3 +1,5 @@
+#Note to self: Removed the "transport = truck_equipment" for now, this sets the unit speed to the equipment
+
 sub_units = {
 	COMBAT_UNIT_mobile_artillery = {
 		abbreviation = "MRT"
@@ -26,13 +28,8 @@ sub_units = {
 		transport = truck_equipment
 		manpower = 500
 
-		essential = {
-			truck_equipment
-		}
-
 		need = {
-			artillery_equipment = 36
-			truck_equipment = 36
+			self_propelled_artillery_equipment = 50
 		}
 		
 		max_strength = 0.6
@@ -115,13 +112,8 @@ sub_units = {
 		supply_consumption = 0.15
 		transport = truck_equipment
 
-		essential = {
-			truck_equipment
-		}
-
 		need = {
-			anti_air_equipment = 30
-			truck_equipment = 50
+			armoured_anti_air_equipment = 50
 		}
 
 		forest = {
@@ -172,14 +164,9 @@ sub_units = {
 		}		
 		
 		combat_width = 1
-		transport = truck_equipment
 
-		essential = {
-			truck_equipment
-		}
 		need = {
-			anti_tank_equipment = 36
-			truck_equipment = 50
+			tank_destroyer_equipment = 50
 		}
 		manpower = 500
 		max_organisation = 0

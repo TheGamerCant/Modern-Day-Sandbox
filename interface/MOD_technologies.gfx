@@ -24,6 +24,62 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_cartridge_upgrades_6.dds"
 	}
 	SpriteType = {
+		name = "GFX_TECHNOLOGY_heat_seeking_missiles_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_heat_seeking_missiles_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_heat_seeking_missiles_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_heat_seeking_missiles_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_heat_seeking_missiles_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_heat_seeking_missiles_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_heat_seeking_missiles_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_heat_seeking_missiles_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_improved_anti_air_missiles_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_improved_anti_air_missiles_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_improved_anti_air_missiles_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_improved_anti_air_missiles_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_improved_anti_air_missiles_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_improved_anti_air_missiles_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_improved_anti_tank_missiles_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_improved_anti_tank_missiles_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_improved_anti_tank_missiles_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_improved_anti_tank_missiles_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_improved_anti_tank_missiles_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_improved_anti_tank_missiles_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_anti_air_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_air_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_anti_air_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_air_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_anti_air_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_air_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_anti_air_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_air_equipment_4.dds"
+	}
+	SpriteType = {
 		name = "GFX_TECHNOLOGY_infantry_anti_tank_equipment_1_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_anti_tank_equipment_1.dds"
 	}

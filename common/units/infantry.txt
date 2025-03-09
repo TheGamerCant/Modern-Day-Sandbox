@@ -137,6 +137,9 @@ sub_units = {
 	
 		need = {
 			infantry_equipment = 110 #reg infantry 100
+			infantry_anti_tank_equipment = 8
+			infantry_anti_air_equipment = 8
+			support_equipment = 10
 		}
 	}
 
@@ -185,6 +188,9 @@ sub_units = {
 	
 		need = {
 			infantry_equipment = 130
+			infantry_anti_tank_equipment = 12
+			infantry_anti_air_equipment = 12
+			support_equipment = 12
 		}
 
 		marsh = {
@@ -243,6 +249,9 @@ sub_units = {
 	
 		need = {
 			infantry_equipment = 130
+			infantry_anti_tank_equipment = 12
+			infantry_anti_air_equipment = 12
+			support_equipment = 12
 		}
 
 		hills = {
@@ -301,6 +310,9 @@ sub_units = {
 	
 		need = {
 			infantry_equipment = 130
+			infantry_anti_tank_equipment = 12
+			infantry_anti_air_equipment = 12
+			support_equipment = 12
 		}
 	}
 }

@@ -38,10 +38,14 @@ sub_units = {
 	
 		# this is what moves us and sets speed
 		transport = armoured_personnel_carrier_equipment
+		
+		essential = {
+			armoured_personnel_carrier_equipment
+		}
 	
 		need = {
 			infantry_equipment = 100
-			armoured_personnel_carrier_equipment = 35
+			armoured_personnel_carrier_equipment = 40
 		}
 
 		forest = {
@@ -115,7 +119,6 @@ sub_units = {
 		
 		# needed since we give so much bonus to infantry even with no mech equipment
 		essential = {
-			infantry_equipment
 			infantry_fighting_vehicle_equipment
 		}
 
@@ -125,6 +128,9 @@ sub_units = {
 		need = {
 			infantry_fighting_vehicle_equipment = 40
 			infantry_equipment = 100
+			infantry_anti_tank_equipment = 8
+			infantry_anti_air_equipment = 8
+			support_equipment = 10
 		}
 
 		forest = {
