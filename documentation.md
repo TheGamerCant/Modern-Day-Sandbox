@@ -11,8 +11,8 @@ Units:
 		- COMBAT_UNIT_artillery
 
 	mobile_infantry:
-		-  COMBAT_UNIT_mobile_basic_infantry
-		-  COMBAT_UNIT_mobile_advanced_infantry
+		- COMBAT_UNIT_mobile_basic_infantry
+		- COMBAT_UNIT_mobile_advanced_infantry
 
 	mobile_combat_support
 		- COMBAT_UNIT_mobile_artillery
