@@ -1,5 +1,10 @@
 spriteTypes = {
 	spriteType = {
+		name = "GFX_technology_menu_break"
+		textureFile = "gfx//interface//technology_menu_break.dds"	
+	}
+	
+	spriteType = {
 		name = "GFX_research_slot_unselected"
 		textureFile = "gfx//interface//research_slot_unselected.dds"	
 	}

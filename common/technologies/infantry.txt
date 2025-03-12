@@ -944,7 +944,7 @@ technologies = {
 
 	TECHNOLOGY_heat_seeking_missiles_4 = {
 		
-		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.40 ap_attack = 0.40 breakthrough = 0.12 }0.08 }
+		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.40 ap_attack = 0.40 breakthrough = 0.12 }
 		COMBAT_UNIT_advanced_infantry = { air_attack = 0.40 ap_attack = 0.40 breakthrough = 0.12 }
 		category_special_forces = { air_attack = 0.45 ap_attack = 0.45 breakthrough = 0.15 }
 

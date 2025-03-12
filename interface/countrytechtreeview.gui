@@ -203,6 +203,47 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 			
+			
+			instantTextBoxType = {
+				name = "infantry_kit_title"
+				position = { x = 360 y = 108 }
+				font = "Blender_Heavy_White_24_50pc_opacity"
+				text = "TECHNOLOGY_INFANTRY_KIT_TITLE"
+				maxWidth = 200
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_tech_title"
+				position = { x = 86 y = 360 }
+				font = "Blender_Heavy_White_24_50pc_opacity"
+				text = "TECHNOLOGY_INFANTRY_TECH_TITLE"
+				maxWidth = 180
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_anti_tank_title"
+				position = { x = 296 y = 500 }
+				font = "Blender_Heavy_White_24_50pc_opacity"
+				text = "TECHNOLOGY_INFANTRY_ANTI_TANK_TITLE"
+				maxWidth = 180
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "infantry_anti_air_title"
+				position = { x = 296 y = 780 }
+				font = "Blender_Heavy_White_24_50pc_opacity"
+				text = "TECHNOLOGY_INFANTRY_ANTI_AIR_TITLE"
+				maxWidth = 180
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
 			gridboxtype = {
 				name = "TECHNOLOGY_infantry_equipment_1_tree"
 				position = { x = 140 y = 325 }

@@ -1,5 +1,12 @@
 bitmapfonts = {
 	bitmapfont = {
+		name = "error_font_funni"
+		path = "gfx/fonts/error_font_funni"
+		color = 0xffffffff
+	}
+
+
+	bitmapfont = {
 		name = "Blender_Bold_White_10"
 		path = "gfx/fonts/Blender_Bold_White_10"
 		color = 0xffffffff
@@ -33,6 +40,11 @@ bitmapfonts = {
 		name = "Blender_Bold_White_18"
 		path = "gfx/fonts/Blender_Bold_White_18"
 		color = 0xffffffff
+	}
+	bitmapfont = {
+		name = "Blender_Bold_White_19"
+		path = "gfx/fonts/Blender_Bold_White_19"
+		color = 0xffffffff
 	}	
 	bitmapfont = {
 		name = "Blender_Bold_White_20"
@@ -50,6 +62,16 @@ bitmapfonts = {
 		color = 0xffffffff
 	}
 	bitmapfont = {
+		name = "Blender_Heavy_White_24"
+		path = "gfx/fonts/Blender_Heavy_White_24"
+		color = 0xffffffff
+	}
+	bitmapfont = {
+		name = "Blender_Heavy_White_24_50pc_opacity"
+		path = "gfx/fonts/Blender_Heavy_White_24_50pc_opacity"
+		color = 0xffffffff
+	}
+	bitmapfont = {
 		name = "Blender_Heavy_White_24_Outline"
 		path = "gfx/fonts/Blender_Heavy_White_24_Outline"
 		color = 0xffffffff
@@ -59,6 +81,18 @@ bitmapfonts = {
 		path = "gfx/fonts/Blender_Bold_White_28"
 		color = 0xffffffff
 	}
+	bitmapfont = {
+		name = "Blender_Heavy_White_28"
+		path = "gfx/fonts/Blender_Heavy_White_28"
+		color = 0xffffffff
+	}
+
+	bitmapfont = {
+		name = "Blender_Heavy_White_30"
+		path = "gfx/fonts/Blender_Heavy_White_30"
+		color = 0xffffffff
+	}
+
 	bitmapfont = {
 		name = "Blender_Heavy_White_32"
 		path = "gfx/fonts/Blender_Heavy_White_32"

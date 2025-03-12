@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_TDA_button_258x35"
+		texturefile = "gfx/interface/buttons/TDA_button_258x35.dds"
+		noOfFrames = 2
+	}
+}

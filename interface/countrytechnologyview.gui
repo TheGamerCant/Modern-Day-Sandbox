@@ -76,24 +76,45 @@ guiTypes = {
 
 			buttonType = {
 				name = "research_slots_tab"
-				position = { x = -250 y = -15 }
-				quadTextureSprite = "GFX_tab_large"
-				text = "RESEARCH_TAB_SLOTS"
-				buttonFont = "hoi_20b"
+				position = { x = 18 y = 9 }
+				quadTextureSprite = "GFX_TDA_button_258x35"
 				frame = 1
 				clicksound = click_default
-				Orientation = "CENTER"
 			}
+			
+			instantTextboxType = {
+				name = "research_slots_text_box"
+				position = { x = 18 y = 20}
+				font = "Blender_Bold_White_18"
+				borderSize = {x = 0 y = 0}
+				text = "RESEARCH_TAB_SLOTS"
+				maxWidth = 258
+				maxHeight = 20
+				format = center
+				fixedsize = yes	
+				alwaystransparent = yes
+			}
+			
 
 			buttonType = {
 				name = "facilities_tab"
-				position = { x = 0 y = -15 }
-				quadTextureSprite = "GFX_tab_large"
-				buttonFont = "hoi_20b"
+				position = { x = 277 y = 9 }
+				quadTextureSprite = "GFX_TDA_button_258x35"
 				frame = 2
-				text = "RESEARCH_TAB_FACILITIES"
 				clicksound = click_default
-				Orientation = "CENTER"
+			}
+			
+			instantTextboxType = {
+				name = "experimental_facilities_text_box"
+				position = { x = 277 y = 20}
+				font = "Blender_Bold_White_18"
+				borderSize = {x = 0 y = 0}
+				text = "RESEARCH_TAB_FACILITIES"
+				maxWidth = 258
+				maxHeight = 20
+				format = center
+				fixedsize = yes
+				alwaystransparent = yes
 			}
 		}
 		
@@ -144,19 +165,25 @@ guiTypes = {
 #				}
 
 				iconType = {
+					name = "technology_menu_break"
+					position = { x = 6 y = 125 }
+					spriteType = "GFX_technology_menu_break"
+				}
+
+				iconType = {
 					name = "focus_bonuses"
-					position = { x = 180 y = 108 }
+					position = { x = 180 y = 104 }
 					spriteType = "GFX_focus_bonuses_icon"
 				}
 
 				instantTextboxType = {
 					name = "limited_research_bonus_text"
-					position = { x = 50 y = 110 }
+					position = { x = 37 y = 105 }
 					textureFile = ""
-					font = "hoi_18mbs"
+					font = "Blender_Bold_White_19"
 					borderSize = {x = 0 y = 0}
 					text = "LIMITED_RESEARCH_BONUS"
-					maxWidth = 130
+					maxWidth = 150
 					maxHeight = 20
 					format = left
 					fixedsize = yes
@@ -164,9 +191,9 @@ guiTypes = {
 
 				instantTextboxType = {
 					name = "limited_research_bonus_value"
-					position = { x = 215 y = 110 }
+					position = { x = 215 y = 105 }
 					textureFile = ""
-					font = "hoi_18mbs"
+					font = "Blender_Bold_White_19"
 					borderSize = {x = 0 y = 0}
 					text = "999"
 					maxWidth = 50
@@ -176,18 +203,18 @@ guiTypes = {
 
 				iconType = {
 					name = "research_speed_icon"
-					position = { x = 422 y = 108 }
+					position = { x = 422 y = 104 }
 					spriteType = "GFX_research_speed_icon"
 				}
 
 				instantTextboxType = {
 					name = "research_speed_text"
-					position = { x = 295 y = 110 }
+					position = { x = 282 y = 105 }
 					textureFile = ""
-					font = "hoi_18mbs"
+					font = "Blender_Bold_White_19"
 					borderSize = {x = 0 y = 0}
 					text = "RESEARCH_SPEED"
-					maxWidth = 125
+					maxWidth = 150
 					maxHeight = 20
 					format = left
 					fixedsize = yes
@@ -195,9 +222,9 @@ guiTypes = {
 
 				instantTextboxType = {
 					name = "research_speed_value"
-					position = { x = 455 y = 110 }
+					position = { x = 455 y = 105 }
 					textureFile = ""
-					font = "hoi_18mbs"
+					font = "Blender_Bold_White_19"
 					borderSize = {x = 0 y = 0}
 					text = "999"
 					maxWidth = 50
