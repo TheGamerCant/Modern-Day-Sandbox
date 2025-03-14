@@ -4,4 +4,13 @@ spriteTypes = {
 		texturefile = "gfx/interface/buttons/TDA_button_258x35.dds"
 		noOfFrames = 2
 	}
+	spriteType = {
+		name = "GFX_Button_top_right_34x34_bg"
+		texturefile = "gfx/interface/buttons/Button_top_right_34x34_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_Colour_Divide_Button_30x30"
+		texturefile = "gfx/interface/buttons/Colour_Divide_Button_30x30.dds"
+		effectFile = "gfx/FX/TDA_button_colour_divide.shader"
+	}
 }
