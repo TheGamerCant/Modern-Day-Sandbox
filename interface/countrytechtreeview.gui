@@ -197,8 +197,7 @@ guiTypes = {
 			iconType = {
 				name = "highlight_infantry_1"
 				spriteType = "GFX_tutorial_research_small_item_icon_glow"
-				#position = { x=135 y=170}
-				position = { x=9999 y=9999}
+				position = { x=135 y=170}
 				hide = yes
 				alwaystransparent = yes
 			}
@@ -244,14 +243,240 @@ guiTypes = {
 				Orientation = "UPPER_LEFT"
 			}
 			
+			instantTextBoxType = {
+				name = "special_forces_title"
+				position = { x = 86 y = 1060 }
+				font = "Blender_Heavy_White_24_50pc_opacity"
+				text = "TECHNOLOGY_SPECIAL_FORCES_TITLE"
+				maxWidth = 180
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
 			gridboxtype = {
 				name = "TECHNOLOGY_infantry_equipment_1_tree"
 				position = { x = 140 y = 325 }
 				slotsize = { width = 70 height = 70 }
 				format = "LEFT"
-
+			}
+			gridboxtype = {
+				name = "TECHNOLOGY_special_forces_base_tree"
+				position = { x = 140 y = 325 }
+				slotsize = { width = 70 height = 70 }
+				format = "LEFT"
 			}
 			
+			iconType = {
+				name = "xor_up_1"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=215 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_right_1"
+				spriteType = "GFX_techtree_xor_right"
+				position = { x=215 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_1"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=215 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			
+			iconType = {
+				name = "xor_up_2"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=565 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_2"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=565 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			
+			iconType = {
+				name = "xor_up_3"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=705 y = 1205 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_3"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=705 y = 1205 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_up_4"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=705 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_4"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=705 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_right_4"
+				spriteType = "GFX_techtree_xor_right"
+				position = { x=705 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_up_5"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=705 y = 1345 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_5"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=705 y = 1345 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			
+			iconType = {
+				name = "xor_up_6"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=1405 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_6"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=1405 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			
+			iconType = {
+				name = "xor_up_7"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=1545 y = 1205 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_7"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=1545 y = 1205 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_up_8"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=1545 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_8"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=1545 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_right_8"
+				spriteType = "GFX_techtree_xor_right"
+				position = { x=1545 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_up_9"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=1545 y = 1345 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_9"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=1545 y = 1345 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			
+			iconType = {
+				name = "xor_up_10"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=1965 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_10"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=1965 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			
+			iconType = {
+				name = "xor_right_11"
+				spriteType = "GFX_techtree_xor_right"
+				position = { x=2385 y = 1205 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_11"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=2385 y = 1205 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_up_12"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=2385 y = 1345 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_right_12"
+				spriteType = "GFX_techtree_xor_right"
+				position = { x=2385 y = 1345 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			
+			iconType = {
+				name = "xor_up_13"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=2525 y = 1205 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_13"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=2525 y = 1205 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_up_14"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=2525 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_14"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=2525 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_right_14"
+				spriteType = "GFX_techtree_xor_right"
+				position = { x=2525 y = 1275 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_up_15"
+				spriteType = "GFX_techtree_xor_up"
+				position = { x=2525 y = 1345 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
+			iconType = {
+				name = "xor_down_15"
+				spriteType = "GFX_techtree_xor_down"
+				position = { x=2525 y = 1345 }
+				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
+			}
 		}
 		containerWindowType = {
 			name = "support_folder"
@@ -2382,6 +2607,24 @@ guiTypes = {
 			centerposition = yes
 			alwaystransparent = yes
 		}
+	}
+	
+	containerWindowType = {
+		name = "techtree_xor_item"
+		position = { x=5 y=5 }
+		size = { width=60 height= 60 }
+
+#		iconType = {
+#			name = "First"
+#			position = { x=0 y=0 }
+#			spriteType = "GFX_techtree_xor_left"
+#		}
+#
+#		iconType = {
+#			name = "Second"
+#			position = { x=0 y=0 }
+#			spriteType = "GFX_techtree_xor_right"
+#		}
 	}
 
 	containerWindowType = {

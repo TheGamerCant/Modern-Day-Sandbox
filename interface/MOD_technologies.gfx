@@ -1,5 +1,25 @@
 spriteTypes = {
 	SpriteType = {
+		name = "GFX_TECHNOLOGY_amphibious_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_amphibious_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_amphibious_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_amphibious_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_amphibious_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_amphibious_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_amphibious_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_amphibious_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_amphibious_5_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_amphibious_5.dds"
+	}
+	SpriteType = {
 		name = "GFX_TECHNOLOGY_body_armour_1_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_body_armour_1.dds"
 	}
@@ -46,6 +66,30 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_cartridge_upgrades_6_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_cartridge_upgrades_6.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_expanded_special_forces_program_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_expanded_special_forces_program_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_expanded_special_forces_program_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_expanded_special_forces_program_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_expanded_special_forces_program_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_expanded_special_forces_program_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_extensive_special_forces_training_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_extensive_special_forces_training_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_extensive_special_forces_training_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_extensive_special_forces_training_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_extensive_special_forces_training_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_extensive_special_forces_training_3.dds"
 	}
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_heat_seeking_missiles_1_medium"
@@ -152,6 +196,26 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_equipment_7.dds"
 	}
 	SpriteType = {
+		name = "GFX_TECHNOLOGY_mountaineers_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_mountaineers_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_mountaineers_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_mountaineers_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_mountaineers_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_mountaineers_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_mountaineers_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_mountaineers_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_mountaineers_5_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_mountaineers_5.dds"
+	}
+	SpriteType = {
 		name = "GFX_TECHNOLOGY_night_vision_1_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_night_vision_1.dds"
 	}
@@ -166,6 +230,42 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_night_vision_4_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_night_vision_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_paratroopers_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_paratroopers_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_paratroopers_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_paratroopers_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_paratroopers_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_paratroopers_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_paratroopers_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_paratroopers_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_paratroopers_5_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_paratroopers_5.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_special_forces_base_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_special_forces_base.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_special_forces_environment_training_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_special_forces_environment_training.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_special_forces_global_operations_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_special_forces_global_operations.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_special_forces_tip_of_the_spear_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_special_forces_tip_of_the_spear.dds"
 	}
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_weapon_sights_1_medium"

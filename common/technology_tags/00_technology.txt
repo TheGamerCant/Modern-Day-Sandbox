@@ -12,6 +12,10 @@ technology_categories = {
 	cat_infantry_anti_tank_equipment
 	cat_infantry_heat_seeking_missiles
 	cat_infantry_heat_seeking_missiles
+	cat_special_forces
+	cat_mountaineers
+	cat_paratroopers
+	cat_amphibious
 	
 	cat_support_equipment
 	

@@ -1,5 +1,6 @@
 @tech_1960_y_pos = 0
 @tech_1962_y_pos = 1
+@tech_1964_y_pos = 2
 @tech_1965_y_pos = 3
 @tech_1970_y_pos = 6
 @tech_1972_y_pos = 7
@@ -12,6 +13,8 @@
 @tech_1990_y_pos = 18
 @tech_1992_y_pos = 19
 @tech_1995_y_pos = 21
+@tech_1996_y_pos = 22
+@tech_1998_y_pos = 23
 @tech_2000_y_pos = 24
 @tech_2005_y_pos = 27
 @tech_2008_y_pos = 29
@@ -35,6 +38,12 @@
 @tech_infantry_anti_tank_equipment_x_pos = 4
 @tech_infantry_heat_seeking_missiles_x_pos = 6
 @tech_infantry_anti_air_equipment_x_pos = 8
+
+@tech_special_forces_paratroopers_x_pos = 12
+@tech_special_forces_middle_left_x_pos = 13
+@tech_special_forces_amphibious_x_pos = 14
+@tech_special_forces_middle_right_x_pos = 15
+@tech_special_forces_mountaineers_x_pos = 16
 
 
 technologies = {
@@ -1223,7 +1232,7 @@ technologies = {
 	
 	TECHNOLOGY_body_armour_4 = {
 
-		category_all_infantry = { defense = 0.06 }
+		category_all_infantry = { defense = 0.06 max_strength = 0.30 }
 		SUPPORT_UNIT_medical = { casualty_trickleback = 0.08 experience_loss_factor = -0.08 }
 		
 		path = {
@@ -1255,7 +1264,7 @@ technologies = {
 	
 	TECHNOLOGY_body_armour_5 = {
 
-		category_all_infantry = { defense = 0.08 }
+		category_all_infantry = { defense = 0.08 max_strength = 0.50 }
 		SUPPORT_UNIT_medical = { casualty_trickleback = 0.10 experience_loss_factor = -0.10 }
 		
 		path = {
@@ -1282,7 +1291,7 @@ technologies = {
 	
 	TECHNOLOGY_body_armour_6 = {
 
-		category_all_infantry = { defense = 0.10 }
+		category_all_infantry = { defense = 0.10 max_strength = 0.75 }
 		SUPPORT_UNIT_medical = { casualty_trickleback = 0.12 experience_loss_factor = -0.12 }
 
 		path = {
@@ -1403,6 +1412,957 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_special_forces_base = {
+
+		enable_subunits = {
+			COMBAT_UNIT_paratroopers
+			COMBAT_UNIT_amphibious
+            COMBAT_UNIT_mountaineers
+		}
+		
+		research_cost = 1.0
+		start_year = 1960
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_amphibious_x_pos y = @tech_1960_y_pos }
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_paratroopers_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_amphibious_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_mountaineers_1
+			research_cost_coeff = 1
+		}
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_paratroopers_1 = {
+
+		COMBAT_UNIT_paratroopers = {
+			max_strength = 0.1
+			max_organisation = 3
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_expanded_special_forces_program_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_extensive_special_forces_training_1
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_amphibious_1 TECHNOLOGY_mountaineers_1 }
+		
+		research_cost = 1.0
+		start_year = 1964
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_paratroopers_x_pos y = @tech_1964_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_paratroopers
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_amphibious_1 = {
+
+		COMBAT_UNIT_amphibious = {
+			max_strength = 0.1
+			max_organisation = 3
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_expanded_special_forces_program_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_extensive_special_forces_training_1
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_paratroopers_1 TECHNOLOGY_mountaineers_1 }
+		
+		research_cost = 1.0
+		start_year = 1964
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_amphibious_x_pos y = @tech_1964_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_amphibious
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_mountaineers_1 = {
+
+		COMBAT_UNIT_mountaineers = {
+			max_strength = 0.1
+			max_organisation = 3
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_expanded_special_forces_program_1
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_extensive_special_forces_training_1
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_paratroopers_1 TECHNOLOGY_amphibious_1 }
+		
+		research_cost = 1.0
+		start_year = 1964
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_mountaineers_x_pos y = @tech_1964_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_mountaineers
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_expanded_special_forces_program_1 = {
+
+		XOR = { TECHNOLOGY_extensive_special_forces_training_1 }
+		
+		special_forces_cap = 0.10
+		special_forces_training_time_factor = -0.05
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_paratroopers_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_amphibious_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_mountaineers_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 1972
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_middle_left_x_pos y = @tech_1972_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_extensive_special_forces_training_1 = {
+
+		XOR = { TECHNOLOGY_expanded_special_forces_program_1 }
+		
+		special_forces_attack_factor = 0.03
+		special_forces_defence_factor = 0.03
+		special_forces_training_time_factor = 0.05
+#		special_forces_no_supply_grace = 96
+		special_forces_out_of_supply_factor = -0.10
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_paratroopers_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_amphibious_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_mountaineers_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 1972
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_middle_right_x_pos y = @tech_1972_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_paratroopers_2 = {
+
+		COMBAT_UNIT_paratroopers = {
+			max_strength = 0.15
+			max_organisation = 5
+			breakthrough = 0.05
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_special_forces_environment_training
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_amphibious_2 TECHNOLOGY_mountaineers_2 }
+		
+		research_cost = 1.0
+		start_year = 1975
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_paratroopers_x_pos y = @tech_1975_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_paratroopers
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_amphibious_2 = {
+
+		COMBAT_UNIT_amphibious = {
+			max_strength = 0.15
+			max_organisation = 5
+			breakthrough = 0.05
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_special_forces_environment_training
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_paratroopers_2 TECHNOLOGY_mountaineers_2 }
+		
+		research_cost = 1.0
+		start_year = 1975
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_amphibious_x_pos y = @tech_1975_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_amphibious
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_mountaineers_2 = {
+
+		COMBAT_UNIT_mountaineers = {
+			max_strength = 0.15
+			max_organisation = 5
+			breakthrough = 0.05
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_special_forces_environment_training
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_paratroopers_2 TECHNOLOGY_amphibious_2 }
+		
+		research_cost = 1.0
+		start_year = 1975
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_mountaineers_x_pos y = @tech_1975_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_mountaineers
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_special_forces_environment_training = {
+	
+		category_special_forces = {
+			acclimatization_hot_climate_gain_factor = 0.10
+			acclimatization_cold_climate_gain_factor = 0.10
+		}
+
+		path = {
+			leads_to_tech = TECHNOLOGY_expanded_special_forces_program_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_extensive_special_forces_training_2
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 1.0
+		start_year = 1985
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_amphibious_x_pos y = @tech_1985_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_expanded_special_forces_program_2 = {
+
+		XOR = { TECHNOLOGY_extensive_special_forces_training_2 }
+		
+		special_forces_cap = 0.14
+		special_forces_training_time_factor = -0.08
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_paratroopers_3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_amphibious_3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_mountaineers_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 1992
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_middle_left_x_pos y = @tech_1992_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_extensive_special_forces_training_2 = {
+
+		XOR = { TECHNOLOGY_expanded_special_forces_program_2 }
+		
+		special_forces_attack_factor = 0.05
+		special_forces_defence_factor = 0.05
+		special_forces_training_time_factor = 0.10
+		special_forces_no_supply_grace = 24
+		special_forces_out_of_supply_factor = -0.10
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_paratroopers_3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_amphibious_3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_mountaineers_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 1992
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_middle_right_x_pos y = @tech_1992_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_paratroopers_3 = {
+
+		COMBAT_UNIT_paratroopers = {
+			max_strength = 0.25
+			max_organisation = 5
+			breakthrough = 0.10
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_special_forces_tip_of_the_spear
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_special_forces_global_operations
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_amphibious_3 TECHNOLOGY_mountaineers_3 }
+		
+		research_cost = 1.0
+		start_year = 1995
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_paratroopers_x_pos y = @tech_1995_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_paratroopers
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_amphibious_3 = {
+
+		COMBAT_UNIT_amphibious = {
+			max_strength = 0.25
+			max_organisation = 5
+			breakthrough = 0.10
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_special_forces_tip_of_the_spear
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_special_forces_global_operations
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_paratroopers_3 TECHNOLOGY_mountaineers_3 }
+		
+		research_cost = 1.0
+		start_year = 1995
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_amphibious_x_pos y = @tech_1995_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_amphibious
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_mountaineers_3 = {
+
+		COMBAT_UNIT_mountaineers = {
+			max_strength = 0.25
+			max_organisation = 5
+			breakthrough = 0.10
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_special_forces_tip_of_the_spear
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_special_forces_global_operations
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_paratroopers_3 TECHNOLOGY_amphibious_3 }
+		
+		research_cost = 1.0
+		start_year = 1995
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_mountaineers_x_pos y = @tech_1995_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_mountaineers
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_special_forces_tip_of_the_spear = {
+		
+		COMBAT_UNIT_mountaineers = {
+			sub_urban = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.15
+			}
+			urban = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.15
+			}
+			dense_urban = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.15
+			}
+		}
+	
+		COMBAT_UNIT_paratroopers = {
+			sub_urban = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.15
+			}
+			urban = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.15
+			}
+			dense_urban = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.15
+			}
+		}
+	
+		COMBAT_UNIT_amphibious = {
+			sub_urban = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.15
+			}
+			urban = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.15
+			}
+			dense_urban = {
+				attack = 0.10
+				defence = 0.05
+				movement = 0.15
+			}
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_expanded_special_forces_program_3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_extensive_special_forces_training_3
+			research_cost_coeff = 1
+		}
+		
+		XOR = { TECHNOLOGY_special_forces_global_operations }
+
+		research_cost = 1.0
+		start_year = 2005
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_middle_left_x_pos y = @tech_2005_y_pos }
+		}
+		
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_special_forces_global_operations = {
+	
+		category_special_forces = {
+			supply_consumption = -0.02
+			acclimatization_hot_climate_gain_factor = 0.40
+			acclimatization_cold_climate_gain_factor = 0.40
+		}
+		
+		special_forces_no_supply_grace = 48
+		special_forces_out_of_supply_factor = -0.20
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_expanded_special_forces_program_3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_extensive_special_forces_training_3
+			research_cost_coeff = 1
+		}
+		
+		XOR = { TECHNOLOGY_special_forces_tip_of_the_spear }
+
+		research_cost = 1.0
+		start_year = 2005
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_middle_right_x_pos y = @tech_2005_y_pos }
+		}
+		
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_expanded_special_forces_program_3 = {
+
+		XOR = { TECHNOLOGY_extensive_special_forces_training_3 }
+		
+		special_forces_cap = 0.20
+		special_forces_training_time_factor = -0.20
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_paratroopers_4
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_amphibious_4
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_mountaineers_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 2015
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_middle_left_x_pos y = @tech_2015_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_extensive_special_forces_training_3 = {
+
+		XOR = { TECHNOLOGY_expanded_special_forces_program_3 }
+		
+		special_forces_attack_factor = 0.10
+		special_forces_defence_factor = 0.10
+		special_forces_training_time_factor = 0.10
+		special_forces_no_supply_grace = 72
+		special_forces_out_of_supply_factor = -0.20
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_paratroopers_4
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_amphibious_4
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = TECHNOLOGY_mountaineers_4
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.0
+		start_year = 2015
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_middle_right_x_pos y = @tech_2015_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_paratroopers_4 = {
+
+		COMBAT_UNIT_paratroopers = {
+			max_strength = 0.40
+			max_organisation = 5
+			breakthrough = 0.10
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_paratroopers_5
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_amphibious_4 TECHNOLOGY_mountaineers_4 }
+		
+		research_cost = 1.0
+		start_year = 2018
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_paratroopers_x_pos y = @tech_2018_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_paratroopers
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_paratroopers_5 = {
+
+		COMBAT_UNIT_paratroopers = {
+			max_strength = 0.40
+			max_organisation = 8
+			breakthrough = 0.15
+			soft_attack = 0.10
+			defense = 0.15
+		}
+		
+		research_cost = 1.0
+		start_year = 2025
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_paratroopers_x_pos y = @tech_2025_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_paratroopers
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_amphibious_4 = {
+
+		COMBAT_UNIT_amphibious = {
+			max_strength = 0.40
+			max_organisation = 5
+			breakthrough = 0.10
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_amphibious_5
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_paratroopers_4 TECHNOLOGY_mountaineers_4 }
+		
+		research_cost = 1.0
+		start_year = 2018
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_amphibious_x_pos y = @tech_2018_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_amphibious
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_amphibious_5 = {
+
+		COMBAT_UNIT_amphibious = {
+			max_strength = 0.40
+			max_organisation = 8
+			breakthrough = 0.15
+			soft_attack = 0.10
+			defense = 0.15
+		}
+		
+		research_cost = 1.0
+		start_year = 2025
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_amphibious_x_pos y = @tech_2025_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_amphibious
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_mountaineers_4 = {
+
+		COMBAT_UNIT_mountaineers = {
+			max_strength = 0.40
+			max_organisation = 5
+			breakthrough = 0.10
+			soft_attack = 0.05
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_mountaineers_5
+			research_cost_coeff = 1
+		}
+
+		XOR = { TECHNOLOGY_paratroopers_4 TECHNOLOGY_amphibious_4 }
+		
+		research_cost = 1.0
+		start_year = 2018
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_mountaineers_x_pos y = @tech_2018_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_mountaineers
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_mountaineers_5 = {
+
+		COMBAT_UNIT_mountaineers = {
+			max_strength = 0.40
+			max_organisation = 8
+			breakthrough = 0.15
+			soft_attack = 0.10
+			defense = 0.15
+		}
+		
+		research_cost = 1.0
+		start_year = 2025
+		folder = {
+			name = infantry_folder
+			position = { x = @tech_special_forces_mountaineers_x_pos y = @tech_2025_y_pos }
+		}
+		
+
+		categories = {
+			cat_infantry
+			cat_special_forces
+			cat_mountaineers
 		}
 
 		ai_will_do = {
