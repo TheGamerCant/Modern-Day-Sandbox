@@ -93,7 +93,6 @@ sub_units = {
 		
 		categories = {
 			category_army
-			category_line_artillery
 			category_mobile_and_mobile_combat_sup
 			category_anti_air
 			category_front_line

@@ -1,5 +1,9 @@
 spriteTypes = {
 	SpriteType = {
+		name = "GFX_GER_TECHNOLOGY_self_propelled_artillery_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/GER/GER_TECHNOLOGY_self_propelled_artillery_equipment_4.dds"
+	}
+	SpriteType = {
 		name = "GFX_TECHNOLOGY_amphibious_1_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_amphibious_1.dds"
 	}
@@ -18,6 +22,22 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_amphibious_5_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_amphibious_5.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_artillery_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_artillery_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_artillery_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_artillery_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_artillery_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_artillery_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_artillery_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_artillery_equipment_4.dds"
 	}
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_body_armour_1_medium"
@@ -252,6 +272,22 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_paratroopers_5.dds"
 	}
 	SpriteType = {
+		name = "GFX_TECHNOLOGY_self_propelled_artillery_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_self_propelled_artillery_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_self_propelled_artillery_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_self_propelled_artillery_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_self_propelled_artillery_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_self_propelled_artillery_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_self_propelled_artillery_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_self_propelled_artillery_equipment_4.dds"
+	}
+	SpriteType = {
 		name = "GFX_TECHNOLOGY_special_forces_base_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_special_forces_base.dds"
 	}
@@ -290,5 +326,125 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_weapon_sights_6_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_weapon_sights_6.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_artillery_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_artillery_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_artillery_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_artillery_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_artillery_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_artillery_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_artillery_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_artillery_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_artillery_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_artillery_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_artillery_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_artillery_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_artillery_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_artillery_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_artillery_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_artillery_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_infantry_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_infantry_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_infantry_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_infantry_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_infantry_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_infantry_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_infantry_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_infantry_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_infantry_equipment_5_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_5.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_infantry_equipment_5_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_5.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_infantry_equipment_6_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_6.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_infantry_equipment_6_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_6.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_infantry_equipment_7_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_7.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_infantry_equipment_7_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_7.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_self_propelled_artillery_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_self_propelled_artillery_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_self_propelled_artillery_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_self_propelled_artillery_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_self_propelled_artillery_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_self_propelled_artillery_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_self_propelled_artillery_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_self_propelled_artillery_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_4.dds"
 	}
 }

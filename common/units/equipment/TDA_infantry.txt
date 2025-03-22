@@ -19,7 +19,7 @@ equipments = {
 		maximum_speed = 4
 
 		#Defensive Abilities
-		defense = 20
+		defense = 16
 		breakthrough = 2
 		hardness = 0
 		armor_value = 0
@@ -27,13 +27,13 @@ equipments = {
 		#Offensive Abilities
 		soft_attack = 3
 		hard_attack = 0.5
-		ap_attack = 1
+		ap_attack = 0.5
 		air_attack = 0
 
 		#Space taken in convoy
 		lend_lease_cost = 1
 		
-		build_cost_ic = 0.30
+		build_cost_ic = 0.33
 		resources = {
 			steel = 2
 		}
@@ -54,15 +54,14 @@ equipments = {
 		visual_level = 1
 
 
-		defense = 22
-		breakthrough = 3
+		defense = 20.3
+		breakthrough = 2.8
 
-		soft_attack = 6
+		soft_attack = 5
 		hard_attack = 1	
-		ap_attack = 2
-		air_attack = 0
+		ap_attack = 1.2
 
-		build_cost_ic = 0.38
+		build_cost_ic = 0.40
 	}
 
 	infantry_equipment_3 = {
@@ -74,15 +73,14 @@ equipments = {
 		visual_level = 1
 
 
-		defense = 25
-		breakthrough = 3.8
+		defense = 30.4
+		breakthrough = 4
 
 		soft_attack = 8
-		hard_attack = 1.8	
-		ap_attack = 3.1
-		air_attack = 0
-
-		build_cost_ic = 0.45
+		hard_attack = 1.6	
+		ap_attack = 2.2
+		
+		build_cost_ic = 0.50
 	}
 
 	infantry_equipment_4 = {
@@ -94,15 +92,14 @@ equipments = {
 		visual_level = 1
 
 
-		defense = 29
-		breakthrough = 4.7
+		defense = 40
+		breakthrough = 4.9
 
 		soft_attack = 10
 		hard_attack = 2.5
-		ap_attack = 4.4
-		air_attack = 0
+		ap_attack = 3.5
 
-		build_cost_ic = 0.53
+		build_cost_ic = 0.58
 	}
 
 	infantry_equipment_5 = {
@@ -114,15 +111,14 @@ equipments = {
 		visual_level = 1
 
 
-		defense = 32.5
-		breakthrough = 5.6
+		defense = 49.6
+		breakthrough = 6
 
 		soft_attack = 12
 		hard_attack = 3.5
-		ap_attack = 5.4
-		air_attack = 0
+		ap_attack = 4.7
 
-		build_cost_ic = 0.61
+		build_cost_ic = 0.67
 	}
 
 	infantry_equipment_6 = {
@@ -134,15 +130,14 @@ equipments = {
 		visual_level = 1
 
 
-		defense = 35
-		breakthrough = 6.6
+		defense = 62.4
+		breakthrough = 7.5
 
-		soft_attack = 12
-		hard_attack = 3.5
-		ap_attack = 6.5
-		air_attack = 0
+		soft_attack = 14.7
+		hard_attack = 4.3
+		ap_attack = 6.0
 
-		build_cost_ic = 0.70
+		build_cost_ic = 0.77
 	}
 
 	infantry_equipment_7 = {
@@ -154,14 +149,13 @@ equipments = {
 		visual_level = 1
 
 
-		defense = 39.2
-		breakthrough = 7.8
+		defense = 78.4
+		breakthrough = 9.1
 
-		soft_attack = 15
-		hard_attack = 4
-		ap_attack = 8
-		air_attack = 0
+		soft_attack = 18.2
+		hard_attack = 5.5
+		ap_attack = 7.8
 
-		build_cost_ic = 0.80
+		build_cost_ic = 0.88
 	}
 }

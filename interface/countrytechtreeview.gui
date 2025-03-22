@@ -245,7 +245,7 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "special_forces_title"
-				position = { x = 86 y = 1060 }
+				position = { x = 86 y = 1000 }
 				font = "Blender_Heavy_White_24_50pc_opacity"
 				text = "TECHNOLOGY_SPECIAL_FORCES_TITLE"
 				maxWidth = 180
@@ -266,215 +266,219 @@ guiTypes = {
 				format = "LEFT"
 			}
 			
+			@infantry_equipment_special_forces_xor_y_left = 1135
+			@infantry_equipment_special_forces_xor_y_center = 1205
+			@infantry_equipment_special_forces_xor_y_right = 1275
+
 			iconType = {
 				name = "xor_up_1"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=215 y = 1275 }
+				position = { x=215 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_right_1"
 				spriteType = "GFX_techtree_xor_right"
-				position = { x=215 y = 1275 }
+				position = { x=215 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_1"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=215 y = 1275 }
+				position = { x=215 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			
 			iconType = {
 				name = "xor_up_2"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=565 y = 1275 }
+				position = { x=565 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_2"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=565 y = 1275 }
+				position = { x=565 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			
 			iconType = {
 				name = "xor_up_3"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=705 y = 1205 }
+				position = { x=705 y = @infantry_equipment_special_forces_xor_y_left }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_3"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=705 y = 1205 }
+				position = { x=705 y = @infantry_equipment_special_forces_xor_y_left }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_up_4"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=705 y = 1275 }
+				position = { x=705 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_4"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=705 y = 1275 }
+				position = { x=705 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_right_4"
 				spriteType = "GFX_techtree_xor_right"
-				position = { x=705 y = 1275 }
+				position = { x=705 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_up_5"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=705 y = 1345 }
+				position = { x=705 y = @infantry_equipment_special_forces_xor_y_right }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_5"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=705 y = 1345 }
+				position = { x=705 y = @infantry_equipment_special_forces_xor_y_right }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			
 			iconType = {
 				name = "xor_up_6"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=1405 y = 1275 }
+				position = { x=1405 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_6"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=1405 y = 1275 }
+				position = { x=1405 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			
 			iconType = {
 				name = "xor_up_7"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=1545 y = 1205 }
+				position = { x=1545 y = @infantry_equipment_special_forces_xor_y_left }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_7"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=1545 y = 1205 }
+				position = { x=1545 y = @infantry_equipment_special_forces_xor_y_left }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_up_8"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=1545 y = 1275 }
+				position = { x=1545 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_8"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=1545 y = 1275 }
+				position = { x=1545 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_right_8"
 				spriteType = "GFX_techtree_xor_right"
-				position = { x=1545 y = 1275 }
+				position = { x=1545 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_up_9"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=1545 y = 1345 }
+				position = { x=1545 y = @infantry_equipment_special_forces_xor_y_right }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_9"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=1545 y = 1345 }
+				position = { x=1545 y = @infantry_equipment_special_forces_xor_y_right }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			
 			iconType = {
 				name = "xor_up_10"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=1965 y = 1275 }
+				position = { x=1965 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_10"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=1965 y = 1275 }
+				position = { x=1965 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			
 			iconType = {
 				name = "xor_right_11"
 				spriteType = "GFX_techtree_xor_right"
-				position = { x=2385 y = 1205 }
+				position = { x=2385 y = @infantry_equipment_special_forces_xor_y_left }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_11"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=2385 y = 1205 }
+				position = { x=2385 y = @infantry_equipment_special_forces_xor_y_left }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_up_12"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=2385 y = 1345 }
+				position = { x=2385 y = @infantry_equipment_special_forces_xor_y_right }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_right_12"
 				spriteType = "GFX_techtree_xor_right"
-				position = { x=2385 y = 1345 }
+				position = { x=2385 y = @infantry_equipment_special_forces_xor_y_right }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			
 			iconType = {
 				name = "xor_up_13"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=2525 y = 1205 }
+				position = { x=2525 y = @infantry_equipment_special_forces_xor_y_left }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_13"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=2525 y = 1205 }
+				position = { x=2525 y = @infantry_equipment_special_forces_xor_y_left }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_up_14"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=2525 y = 1275 }
+				position = { x=2525 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_14"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=2525 y = 1275 }
+				position = { x=2525 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_right_14"
 				spriteType = "GFX_techtree_xor_right"
-				position = { x=2525 y = 1275 }
+				position = { x=2525 y = @infantry_equipment_special_forces_xor_y_center }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_up_15"
 				spriteType = "GFX_techtree_xor_up"
-				position = { x=2525 y = 1345 }
+				position = { x=2525 y = @infantry_equipment_special_forces_xor_y_right }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 			iconType = {
 				name = "xor_down_15"
 				spriteType = "GFX_techtree_xor_down"
-				position = { x=2525 y = 1345 }
+				position = { x=2525 y = @infantry_equipment_special_forces_xor_y_right }
 				pdx_tooltip = "MUTUALLY_EXCLUSIVE_TREE"
 			}
 		}
@@ -498,17 +502,23 @@ guiTypes = {
 			name = "artillery_folder"
 			position = { x=0 y=47 }
 			size = { width = 100%% height = 100%% }
-			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			margin = { top = 20 left = 20 bottom = 20 right = 20 }
 			drag_scroll = { left middle }
-			verticalScrollbar = "right_vertical_slider"
-			horizontalScrollbar = "bottom_horizontal_slider"
+			verticalScrollbar = "TDA_research_right_vertical_slider"
+			horizontalScrollbar = "TDA_research_bottom_horizontal_slider"
 			scroll_wheel_factor = 40
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_tiled_window_2b_border"
+				quadTextureSprite ="GFX_TDA_tiled_window_thick_border"
 			}
-
+			
+			gridboxtype = {
+				name = "TECHNOLOGY_artillery_equipment_1_tree"
+				position = { x = 250 y = 140 }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
 		}
 		
 		containerWindowType = {

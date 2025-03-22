@@ -5,6 +5,8 @@
 #include <fstream>
 #include <algorithm>
 #include <thread>
+#include <sstream>
+#include <unordered_map>
 
 std::string escapeBackslashes(std::string& path) {		//Replace all instances of '\\' in a string with '/', necessary for Clausewitz engine to read directory
     std::string str = path;
@@ -16,7 +18,7 @@ std::string escapeBackslashes(std::string& path) {		//Replace all instances of '
     return str;
 }
 
-void stdSpriteFunction(const std::filesystem::path &modDirectory, const std::string inDir, const std::string outFile){
+void stdSpriteFunction(const std::filesystem::path &modDirectory, const std::string& inDir, const std::string& outFile){
 	std::filesystem::path searchDirectory = modDirectory / inDir;
 	std::filesystem::path outDirectory = modDirectory / outFile;
 	
@@ -54,7 +56,47 @@ void stdSpriteFunction(const std::filesystem::path &modDirectory, const std::str
     }
 }
 
-void technologiesFunction(const std::filesystem::path &modDirectory, const std::string inDir, const std::string outFile){
+std::unordered_map<std::string, std::vector<std::string>> getTagsForTechnologies(const std::string& technologiesFile) {
+	std::unordered_map<std::string, std::vector<std::string>> tagMap;
+    std::ifstream file(technologiesFile);
+    
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file " << technologiesFile << std::endl;
+        return tagMap;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        std::istringstream ss(line);
+        std::string key, temp;
+        
+        // Extract key (first quoted string before ':')
+        if (std::getline(ss, temp, ':')) {
+            key = temp.substr(1, temp.size() - 3); // Remove quotes and spaces
+        }
+
+        std::vector<std::string> values;
+        while (std::getline(ss, temp, ',')) {
+            // Trim spaces and remove quotes
+            size_t start = temp.find('"') + 1;
+            size_t end = temp.rfind('"');
+            if (start != std::string::npos && end != std::string::npos && end > start) {
+                values.push_back(temp.substr(start, end - start));
+            }
+        }
+
+        if (!key.empty()) {
+            tagMap[key] = values;
+        }
+    }
+
+    file.close();
+    return tagMap;
+}
+
+void technologiesFunction(const std::filesystem::path &modDirectory, const std::string& inDir, const std::string& outFile, const std::string& technologiesFile){
+	std::unordered_map<std::string, std::vector<std::string>> techTagMap = getTagsForTechnologies(technologiesFile);
+
 	std::filesystem::path searchDirectory = modDirectory / inDir;
 	std::filesystem::path outDirectory = modDirectory / outFile;
 	
@@ -82,9 +124,33 @@ void technologiesFunction(const std::filesystem::path &modDirectory, const std::
 	if (spriteFile.is_open()) {
 		spriteFile << "spriteTypes = {\n";
 		
-		for (int i = 0; i < noOfSprites; ++i) {				//Standard output
-			spriteFile << "\tSpriteType = {\n\t\tname = \"GFX_" << spritesNamesVector[i] << "_medium\"\n\t\ttexturefile = \""
-			<< spritesVector[i] << "\"\n\t}\n";
+		
+		for (int i = 0; i < noOfSprites; ++i) {
+			
+			//Get the first part of our file name, i.e the part before the first underscore
+			int underscoreLocation = spritesNamesVector[i].find("_");
+			
+			bool isValidPrefix = false;
+			
+			if (underscoreLocation != std::string::npos) {
+				std::string technologyPrefix = spritesNamesVector[i].substr(0, underscoreLocation);
+			
+				// Check if the first part of our technology name is in our tag map
+				if (techTagMap.find(technologyPrefix) != techTagMap.end()) {
+					for (const auto& tagToWrite : techTagMap.at(technologyPrefix)) {
+																		// Write all but the prefix
+						spriteFile << "\tSpriteType = {\n\t\tname = \"GFX_" << tagToWrite << spritesNamesVector[i].substr(underscoreLocation) << "_medium\"\n\t\ttexturefile = \""
+						<< spritesVector[i] << "\"\n\t}\n";
+					}
+					
+					isValidPrefix = true;
+				}
+			}
+			
+			if (!isValidPrefix) {
+				spriteFile << "\tSpriteType = {\n\t\tname = \"GFX_" << spritesNamesVector[i] << "_medium\"\n\t\ttexturefile = \""
+				<< spritesVector[i] << "\"\n\t}\n";
+			}
 		}
 		
 		spriteFile << "}";
@@ -92,7 +158,7 @@ void technologiesFunction(const std::filesystem::path &modDirectory, const std::
     }
 }
 
-void ideasFunction(const std::filesystem::path &modDirectory, const std::string inDir, const std::string outFile){		//Allow for gfx to start with 'idea_'
+void ideasFunction(const std::filesystem::path &modDirectory, const std::string& inDir, const std::string& outFile){		//Allow for gfx to start with 'idea_'
 	std::filesystem::path searchDirectory = modDirectory / inDir;
 	std::filesystem::path outDirectory = modDirectory / outFile;
 	
@@ -137,7 +203,7 @@ void ideasFunction(const std::filesystem::path &modDirectory, const std::string 
     }
 }
 
-void goalsFunction(const std::filesystem::path &modDirectory, const std::string inDir, const std::string outFile){						//Same as previous, just different output
+void goalsFunction(const std::filesystem::path &modDirectory, const std::string& inDir, const std::string& outFile){						//Same as previous, just different output
 	std::filesystem::path searchDirectory = modDirectory / inDir;
 	std::filesystem::path outDirectory = modDirectory / outFile;
 	
@@ -194,7 +260,7 @@ int main() {
 	std::thread t3(stdSpriteFunction, modDirectory, "gfx\\leaders", "interface\\MOD_leaders.gfx");
 	std::thread t4(ideasFunction, modDirectory, "gfx\\interface\\ideas", "interface\\MOD_ideas.gfx");
 	std::thread t5(stdSpriteFunction, modDirectory, "gfx\\event_pictures", "interface\\MOD_eventpictures.gfx");
-	std::thread t6(technologiesFunction, modDirectory, "gfx\\interface\\technologies", "interface\\MOD_technologies.gfx");
+	std::thread t6(technologiesFunction, modDirectory, "gfx\\interface\\technologies", "interface\\MOD_technologies.gfx", "Technologies.txt");
 	
 	t1.join();
 	t2.join();

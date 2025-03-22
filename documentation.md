@@ -44,6 +44,10 @@ Equipment:
 	- support_equipment
 	
 	- artillery_equipment
+	- self_propelled_artillery_equipment
+	- armoured_anti_air_equipment
+	- tank_destroyer_equipment
+	- multiple_rocket_launcher_equipment
 	
 	- truck_equipment
 	- armoured_personnel_carrier_equipment
@@ -51,10 +55,6 @@ Equipment:
 	- train_equipment
 	
 	- main_battle_tank_equipment
-	- self_propelled_artillery_equipment
-	- armoured_anti_air_equipment
-	- tank_destroyer_equipment
-	- multiple_rocket_launcher_equipment
 	
 	- fighter_equipment
 	- close_air_support_equipment

@@ -39,11 +39,11 @@
 @tech_infantry_heat_seeking_missiles_x_pos = 6
 @tech_infantry_anti_air_equipment_x_pos = 8
 
-@tech_special_forces_paratroopers_x_pos = 12
-@tech_special_forces_middle_left_x_pos = 13
-@tech_special_forces_amphibious_x_pos = 14
-@tech_special_forces_middle_right_x_pos = 15
-@tech_special_forces_mountaineers_x_pos = 16
+@tech_special_forces_paratroopers_x_pos = 11
+@tech_special_forces_middle_left_x_pos = 12
+@tech_special_forces_amphibious_x_pos = 13
+@tech_special_forces_middle_right_x_pos = 14
+@tech_special_forces_mountaineers_x_pos = 15
 
 
 technologies = {
@@ -157,6 +157,7 @@ technologies = {
 	
 	TECHNOLOGY_cartridge_upgrades_2 = {
 
+		category_all_infantry = { soft_attack = 0.03 }
 
 		research_cost = 1.0
 		start_year = 1980
@@ -440,6 +441,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_tank_equipment
+			cat_anti_tank
 		}
 
 		ai_will_do = {
@@ -468,6 +470,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_tank_equipment
+			cat_anti_tank
 		}
 
 		ai_will_do = {
@@ -499,6 +502,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_tank_equipment
+			cat_anti_tank
 		}
 
 		ai_will_do = {
@@ -527,6 +531,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_tank_equipment
+			cat_anti_tank
 		}
 
 		ai_will_do = {
@@ -558,6 +563,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_tank_equipment
+			cat_anti_tank
 		}
 
 		ai_will_do = {
@@ -591,6 +597,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_tank_equipment
+			cat_anti_tank
 		}
 
 		ai_will_do = {
@@ -622,6 +629,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_tank_equipment
+			cat_anti_tank
 		}
 
 		ai_will_do = {
@@ -645,6 +653,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_tank_equipment
+			cat_anti_tank
 		}
 
 		ai_will_do = {
@@ -673,6 +682,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_air_equipment
+			cat_anti_air
 		}
 
 		ai_will_do = {
@@ -699,6 +709,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_air_equipment
+			cat_anti_air
 		}
 
 		ai_will_do = {
@@ -732,6 +743,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_air_equipment
+			cat_anti_air
 		}
 
 		ai_will_do = {
@@ -758,6 +770,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_air_equipment
+			cat_anti_air
 		}
 
 		ai_will_do = {
@@ -792,6 +805,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_air_equipment
+			cat_anti_air
 		}
 
 		ai_will_do = {
@@ -823,6 +837,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_air_equipment
+			cat_anti_air
 		}
 
 		ai_will_do = {
@@ -851,6 +866,7 @@ technologies = {
 		categories = {
 			cat_infantry
 			cat_infantry_anti_air_equipment
+			cat_anti_air
 		}
 
 		ai_will_do = {

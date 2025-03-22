@@ -306,6 +306,20 @@ script_enum_equipment_bonus_type = {
 	
 	artillery_equipment
 	artillery_equipment_1
+	artillery_equipment_2
+	artillery_equipment_3
+	artillery_equipment_4
+	self_propelled_artillery_equipment
+	self_propelled_artillery_equipment_1
+	self_propelled_artillery_equipment_2
+	self_propelled_artillery_equipment_3
+	self_propelled_artillery_equipment_4
+	armoured_anti_air_equipment
+	armoured_anti_air_equipment_1
+	tank_destroyer_equipment
+	tank_destroyer_equipment_1
+	multiple_rocket_launcher_equipment
+	multiple_rocket_launcher_equipment_1
 	
 	truck_equipment
 	truck_equipment_1
@@ -318,14 +332,6 @@ script_enum_equipment_bonus_type = {
 	
 	main_battle_tank_equipment
 	main_battle_tank_equipment_1
-	self_propelled_artillery_equipment
-	self_propelled_artillery_equipment_1
-	armoured_anti_air_equipment
-	armoured_anti_air_equipment_1
-	tank_destroyer_equipment
-	tank_destroyer_equipment_1
-	multiple_rocket_launcher_equipment
-	multiple_rocket_launcher_equipment_1
 	
 	fighter_equipment
 	fighter_equipment_1

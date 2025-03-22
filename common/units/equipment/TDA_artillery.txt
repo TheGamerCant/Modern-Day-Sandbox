@@ -11,7 +11,7 @@ equipments = {
 		
 		group_by = archetype
 
-		active = yes
+		year = 1960
 
 		interface_category = interface_category_land
 
@@ -20,7 +20,7 @@ equipments = {
 
 		#Defensive Abilities
 		defense = 10
-		breakthrough = 6
+		breakthrough = 6.5
 		hardness = 0
 		armor_value = 0
 
@@ -43,6 +43,76 @@ equipments = {
 	artillery_equipment_1 = {
 		archetype = artillery_equipment
 		
-		active = yes
+		year = 1960
 	}
+	
+	artillery_equipment_2 = {
+		year = 1975
+
+		archetype = artillery_equipment
+		parent = artillery_equipment_1
+		priority = 50
+		visual_level = 1
+
+		defense = 14
+		breakthrough = 8.8
+		soft_attack = 34
+		hard_attack = 2.8
+		ap_attack = 6.5
+		
+		build_cost_ic = 4.3
+	}
+	
+	artillery_equipment_3 = {
+		year = 1990
+
+		archetype = artillery_equipment
+		parent = artillery_equipment_2
+		priority = 50
+		visual_level = 1
+
+		defense = 19
+		breakthrough = 11
+		soft_attack = 43.2
+		hard_attack = 3.7
+		ap_attack = 8
+		
+		build_cost_ic = 5.0
+	}
+	
+	artillery_equipment_4 = {
+		year = 2005
+		archetype = artillery_equipment
+		parent = artillery_equipment_3
+		priority = 50
+		visual_level = 1
+
+		defense = 26.5
+		breakthrough = 13.6
+		soft_attack = 53
+		hard_attack = 4.8
+		ap_attack = 10.2
+		
+		build_cost_ic = 5.8
+	}
+	
+# https://dsm.forecastinternational.com/2024/09/10/the-search-for-range-how-the-u-s-army-is-rethinking-howitzers/
+
+# No plans for new howitzers, moving mostly to SPART
+	
+#	artillery_equipment_5 = {
+#		year = 2025
+#		archetype = artillery_equipment
+#		parent = artillery_equipment_4
+#		priority = 50
+#		visual_level = 1
+#
+#		defense = 25
+#		breakthrough = 15
+#		soft_attack = 48
+#		hard_attack = 3.8
+#		ap_attack = 8.2
+#		
+#		build_cost_ic = 6.5
+#	}
 }
