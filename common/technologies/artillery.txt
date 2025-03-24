@@ -177,10 +177,6 @@ technologies = {
 			self_propelled_artillery_equipment_2
 		}
 
-		enable_subunits = {
-			COMBAT_UNIT_mobile_artillery
-		}
-
 		path = {
 			leads_to_tech = TECHNOLOGY_self_propelled_artillery_equipment_3
 			research_cost_coeff = 1
@@ -208,10 +204,6 @@ technologies = {
 
 		enable_equipments = {
 			self_propelled_artillery_equipment_3
-		}
-
-		enable_subunits = {
-			COMBAT_UNIT_mobile_artillery
 		}
 
 		path = {
@@ -243,10 +235,6 @@ technologies = {
 			self_propelled_artillery_equipment_4
 		}
 
-		enable_subunits = {
-			COMBAT_UNIT_mobile_artillery
-		}
-
 		path = {
 			leads_to_tech = TECHNOLOGY_self_propelled_artillery_equipment_5
 			research_cost_coeff = 1
@@ -275,11 +263,7 @@ technologies = {
 		enable_equipments = {
 			self_propelled_artillery_equipment_5
 		}
-
-		enable_subunits = {
-			COMBAT_UNIT_mobile_artillery
-		}
-
+		
 		research_cost = 1.0
 		start_year = 2025
 		folder = {
