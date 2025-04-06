@@ -5,7 +5,7 @@ fileVersion=1
 fontName=Blender Pro Heavy
 fontFile=blender_font/BlenderPro-Heavy.ttf
 charSet=0
-fontSize=-24
+fontSize=-64
 aa=1
 scaleH=100
 useSmoothing=1
@@ -34,8 +34,8 @@ forceZero=0
 widthPaddingFactor=0.00
 
 # output file
-outWidth=512
-outHeight=512
+outWidth=2048
+outHeight=1024
 outBitDepth=32
 fontDescFormat=0
 fourChnlPacked=0
@@ -51,10 +51,10 @@ invG=0
 invB=0
 
 # outline
-outlineThickness=0
+outlineThickness=3
 
 # selected chars
-chars=13,32-126,160-172,174-383,536-537,710-711,728-733,1025-1036,1038-1103,1105-1116,1118-1119,1168-1169
-chars=8211-8212,8216-8218,8220-8222,8224-8226,8230,8240,8249-8250,8260,8364,8800,8804-8805
+chars=13,32-126,160-172,174-383,402,536-537,1025-1036,1038-1103,1105-1116,1118-1119,1168-1169,8211-8212
+chars=8216-8218,8220-8222,8224-8226,8230,8240,8249-8250,8260
 
 # imported icon images

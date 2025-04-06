@@ -3432,7 +3432,7 @@
 3431;44;24;203;land;false;forest;1
 3432;44;25;248;sea;false;ocean;0
 3433;44;26;236;sea;true;ocean;0
-3434;44;27;18;land;false;mountain;1
+3434;44;27;18;land;false;hills;1
 3435;44;27;223;land;false;desert;6
 3436;44;27;244;sea;false;ocean;0
 3437;44;28;232;sea;false;ocean;0
@@ -6483,7 +6483,7 @@
 6482;86;45;226;land;false;mountain;2
 6483;86;48;86;land;false;forest;1
 6484;86;48;136;land;false;plains;1
-6485;86;51;51;land;false;mountain;1
+6485;86;51;51;land;false;hills;1
 6486;86;51;156;land;false;plains;6
 6487;86;51;201;land;false;plains;1
 6488;86;54;16;land;false;dense_urban;1
@@ -9425,7 +9425,7 @@
 9424;128;15;74;land;false;plains;1
 9425;128;15;179;land;false;mountain;1
 9426;128;18;94;land;false;plains;6
-9427;128;18;144;land;false;urban;1
+9427;128;18;144;land;false;dense_urban;1
 9428;128;21;4;land;false;forest;1
 9429;128;21;209;land;false;plains;1
 9430;128;24;24;land;true;plains;1
@@ -13203,7 +13203,7 @@
 13202;138;235;160;land;true;mountain;2
 13203;211;241;202;land;true;mountain;2
 13204;95;65;145;land;true;forest;6
-13205;45;230;83;land;false;urban;1
+13205;45;230;83;land;false;dense_urban;1
 13206;87;127;34;land;false;forest;1
 13207;90;70;64;land;false;desert;6
 13208;76;238;232;land;false;forest;6
@@ -14188,3 +14188,19 @@
 13977;124;111;32;land;false;urban;1
 13978;119;204;43;land;false;sub_urban;1
 13979;16;183;226;land;false;sub_urban;1
+
+#Slaskie
+13980;209;188;189;land;false;sub_urban;1
+13981;128;157;49;land;false;sub_urban;1
+13982;209;246;130;land;false;dense_urban;1
+
+#Malopolskie
+13983;172;82;27;land;false;urban;1
+13984;19;32;124;land;false;urban;1
+13985;149;32;124;land;false;sub_urban;1
+13986;214;43;129;land;false;sub_urban;1
+13987;101;197;246;land;false;hills;1
+13988;206;52;253;land;false;mountain;1
+
+#Podkarpackie
+13989;235;67;99;land;false;urban;1
