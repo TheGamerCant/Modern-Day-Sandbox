@@ -11,6 +11,269 @@
 #
 # The 'name' property is how you refer to the rule in adjacencies.csv
 
+adjacency_rule =
+{
+	name = "CRIMEAN_BRIDGE"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 9680 6741 }
+
+	is_disabled = {
+
+	}
+	
+	icon = 9680
+	offset = { 5 0 -2 }
+}
+
+adjacency_rule =
+{
+	name = "EUROTUNNEL"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 3501 13995 }
+
+	is_disabled = {
+
+	}
+	
+	icon = 3501
+	offset = { 4 0 -5 }
+}
+
+adjacency_rule =
+{
+	name = "ST_MARYS_CANAL"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 12582 5205 }
+
+	is_disabled = {
+
+	}
+	
+	icon = 5205
+	offset = { 4 0 3 }
+}
+
+adjacency_rule =
+{
+	name = "ST_CLAIR_RIVER"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 9724 13524 6710 13527 9711 9667 }
+
+	is_disabled = {
+
+	}
+	
+	icon = 6710
+	offset = { 2 0 0 }
+}
+
+adjacency_rule =
+{
+	name = "WELLAND_CANAL"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 749 11654 13602 }
+
+	is_disabled = {
+
+	}
+	
+	icon = 749
+	offset = { 4 0 -2 }
+}
+
+
+adjacency_rule =
+{
+	name = "ST_LAWRENCE_RIVER"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 13619 13620 7433 7291 10320 9601 4417 7345 4345 13618 13615 13617 4270 3602 598 6625 6778 3605 }
+
+	is_disabled = {
+
+	}
+	
+	icon = 13619
+	offset = { 0 0 0 }
+}
+
+
+
+
+
 #Suez Canal
 adjacency_rule =
 {

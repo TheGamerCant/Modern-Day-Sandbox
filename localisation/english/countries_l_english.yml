@@ -102,3 +102,7 @@
  POL:0 "Poland"                                  
  POL_DEF:0 "the Republic of Poland"                                  
  POL_ADJ:0 "Polish"
+
+ FRA:0 "France"                                  
+ FRA_DEF:0 "the French Republic"                                  
+ FRA_ADJ:0 "French"

@@ -204,3 +204,7 @@ POL = {
 	color = rgb { 194 85 85 }
 	color_ui = rgb { 194 85 85 }
 }
+FRA = {
+	color = rgb { 27 35 167 }
+	color_ui = rgb { 27 35 167 }
+}

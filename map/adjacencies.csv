@@ -2,6 +2,12 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 13654;13656;sea;2977;-1;-1;-1;-1;;Isle of Wight
 13654;13658;sea;2977;-1;-1;-1;-1;;Isle of Wight
 13671;6363;sea;2824;-1;-1;-1;-1;;Isle of Anglesey
+3501;13995;sea;11748;-1;-1;-1;-1;EUROTUNNEL;Eurotunnel
+9680;6741;sea;8282;-1;-1;-1;-1;CRIMEAN_BRIDGE;Kerch Strait
+13155;13159;sea;12582;-1;-1;-1;-1;ST_MARYS_CANAL;St Marys Canal
+13199;13154;sea;13156;-1;-1;-1;-1;ST_CLAIR_RIVER;St Clair River
+13157;13154;sea;749;-1;-1;-1;-1;WELLAND_CANAL;Niagra Falls Canals
+13157;8642;sea;13615;-1;-1;-1;-1;ST_LAWRENCE_RIVER;St Lawrence
 6771;9718;impassable;-1;-1;-1;-1;-1;;Crimean Spit
 12251;10321;sea;8313;-1;-1;-1;-1;;Andaman
 7413;1419;sea;5294;-1;-1;-1;-1;;Moluccas
@@ -120,7 +126,6 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 7003;9941;sea;7226;-1;-1;-1;-1;;Kos-Bodrum
 10007;10122;sea;7226;-1;-1;-1;-1;;Rhodes-Turkey
 9833;11829;sea;5412;-1;-1;-1;-1;;Bosphorus
-9680;6741;sea;8282;-1;-1;-1;-1;;Kerch Strait
 9859;3962;sea;5946;-1;-1;-1;-1;;Tsugaru Strait
 10011;7110;sea;2708;4825;1219;-1;-1;;Tushima-Kyushu
 4160;1070;sea;5244;-1;-1;-1;-1;;Hainan-Strait
