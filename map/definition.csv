@@ -6447,7 +6447,7 @@
 6446;86;21;196;land;true;plains;1
 6447;86;21;232;sea;false;ocean;0
 6448;86;22;240;sea;false;ocean;0
-6449;86;24;11;land;true;urban;1
+6449;86;24;11;land;true;hills;1
 6450;86;24;161;land;false;plains;6
 6451;86;24;216;land;false;plains;1
 6452;86;24;248;sea;false;ocean;0
@@ -9521,7 +9521,7 @@
 9520;128;132;179;land;false;forest;1
 9521;128;135;94;land;false;plains;1
 9522;128;135;144;land;false;plains;1
-9523;128;135;199;land;false;urban;1
+9523;128;135;199;land;false;dense_urban;1
 9524;128;138;59;land;false;forest;1
 9525;128;138;164;land;true;plains;1
 9526;128;141;24;land;false;plains;6
@@ -9557,7 +9557,7 @@
 9556;128;180;129;land;false;plains;1
 9557;128;183;44;land;false;plains;1
 9558;128;183;194;land;false;forest;1
-9559;128;186;9;land;false;hills;1
+9559;128;186;9;land;false;sub_urban;1
 9560;128;186;159;land;false;forest;1
 9561;128;189;74;land;false;forest;1
 9562;128;189;224;land;true;forest;1
@@ -11463,7 +11463,7 @@
 11462;170;84;142;land;false;plains;1
 11463;170;84;197;land;false;plains;1
 11464;170;87;57;land;false;plains;1
-11465;170;87;162;land;true;urban;1
+11465;170;87;162;land;false;dense_urban;1
 11466;170;87;207;land;false;plains;1
 11467;170;90;22;land;false;urban;1
 11468;170;90;172;land;false;hills;1
@@ -11504,7 +11504,7 @@
 11503;170;135;52;land;false;marsh;1
 11504;170;135;157;land;false;forest;1
 11505;170;138;17;land;false;forest;1
-11506;170;138;72;land;false;urban;1
+11506;170;138;72;land;false;dense_urban;1
 11507;170;138;222;land;false;forest;1
 11508;170;141;37;land;true;plains;1
 11509;170;144;2;land;false;plains;2
@@ -11561,7 +11561,7 @@
 11560;170;207;77;land;false;urban;1
 11561;170;207;182;land;false;plains;1
 11562;170;207;227;land;false;forest;1
-11563;170;210;42;land;false;plains;1
+11563;170;210;42;land;true;plains;1
 11564;171;0;17;land;true;hills;1
 11565;171;0;167;land;true;plains;1
 11566;171;3;27;land;false;plains;1
@@ -14125,7 +14125,7 @@
 13934;53;55;115;land;false;sub_urban;1
 
 #Warmińsko-Mazurskie
-13935;238;67;155;land;false;urban;1
+13935;29;159;166;land;false;urban;1		#Changed to Grand-Est
 13936;89;229;246;land;false;forest;1
 13937;128;90;167;land;false;forest;1
 13938;129;46;97;land;false;forest;1
@@ -14165,7 +14165,7 @@
 
 #Lubuskie
 13962;241;210;10;land;false;forest;1
-13963;201;180;115;land;false;urban;1
+13963;88;198;126;land;false;sub_urban;1			#Changed to Grand-Est
 
 #Lower Silesia
 13964;33;113;99;land;false;hills;1
@@ -14215,3 +14215,34 @@
 13996;112;51;157;land;false;urban;1
 13997;9;187;172;land;false;dense_urban;1
 13998;89;0;34;land;false;sub_urban;1
+
+#Brittany
+13999;74;32;32;land;true;urban;1
+14000;129;125;22;land;false;urban;1
+14001;59;197;62;land;false;sub_urban;1
+
+#Normandy
+14002;166;10;146;land;false;urban;1
+14003;130;113;158;land;true;sub_urban;1
+14004;8;101;130;land;false;dense_urban;1
+14005;137;69;203;land;false;urban;1
+14006;13;236;15;land;false;sub_urban;1
+
+#Ile-de-France
+14007;253;176;135;land;false;plains;1
+14008;131;250;202;land;false;urban;1
+14009;125;249;248;land;false;sub_urban;1
+14010;179;254;191;land;false;urban;1
+14011;251;142;204;land;false;urban;1
+14012;21;90;152;land;false;sub_urban;1
+14013;218;234;182;land;false;sub_urban;1
+
+#Grand-Est
+14014;141;118;76;land;false;sub_urban;1
+14015;95;56;40;land;false;sub_urban;1
+
+#Pays de la Loire
+14016;202;182;36;land;true;sub_urban;1
+14017;36;241;53;land;false;urban;1
+14018;183;44;84;land;false;sub_urban;1
+14019;170;15;30;land;true;sub_urban;1

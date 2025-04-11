@@ -5,14 +5,14 @@ state={
 		owner = POL
 		add_core_of = POL
 		
-		victory_points = { 13935 4 }
+		victory_points = { 6375 4 }
 		victory_points = { 6402 3 }
 		victory_points = { 11386 2 }
 		victory_points = { 266 1 }
 		victory_points = { 9346 2 }
 	}
 	provinces={
-		266 3351 6347 6375 6402 9327 9346 9372 9398 11245 11386 13935 13936 13937 13938 
+		266 3351 6347 6375 6402 9327 9346 9372 9398 11245 11386 13936 13937 13938 
 	}
 	manpower= 1447841
 	buildings_max_level_factor=1.000

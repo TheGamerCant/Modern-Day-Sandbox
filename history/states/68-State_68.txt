@@ -6,10 +6,10 @@ state={
 		add_core_of = POL
 		
 		victory_points = { 11478 3 }
-		victory_points = { 13963 5 }
+		victory_points = { 3438 5 }
 	}
 	provinces={
-		444 3438 3473 3572 6595 9387 9470 11478 13962 13963 
+		444 3438 3473 3572 6595 9387 9470 11478 13962 
 	}
 	manpower= 1019810
 	buildings_max_level_factor=1.000

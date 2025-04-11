@@ -2624,17 +2624,19 @@ guiTypes = {
 		position = { x=5 y=5 }
 		size = { width=60 height= 60 }
 
-#		iconType = {
-#			name = "First"
-#			position = { x=0 y=0 }
-#			spriteType = "GFX_techtree_xor_left"
-#		}
-#
-#		iconType = {
-#			name = "Second"
-#			position = { x=0 y=0 }
-#			spriteType = "GFX_techtree_xor_right"
-#		}
+		iconType = {
+			name = "First"
+			position = { x=0 y=0 }
+			spriteType = "GFX_techtree_xor_left"
+			hide = yes
+		}
+
+		iconType = {
+			name = "Second"
+			position = { x=0 y=0 }
+			spriteType = "GFX_techtree_xor_right"
+			hide = yes
+		}
 	}
 
 	containerWindowType = {
