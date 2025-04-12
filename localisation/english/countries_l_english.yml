@@ -106,3 +106,19 @@
  FRA:0 "France"                                  
  FRA_DEF:0 "the French Republic"                                  
  FRA_ADJ:0 "French"
+
+ MCO:0 "Monaco"                                  
+ MCO_DEF:0 "the Principality of Monaco"                                  
+ MCO_ADJ:0 "Monégasque"
+
+ NRD:0 "Netherlands"                                  
+ NRD_DEF:0 "the Kingdom of the Netherlands"                                  
+ NRD_ADJ:0 "Dutch"
+
+ BLG:0 "Belgium"                                  
+ BLG_DEF:0 "the Kingdom of Belgium"                                  
+ BLG_ADJ:0 "Belgian"
+
+ LUX:0 "Luxembourg"                                  
+ LUX_DEF:0 "the Grand Dutchy of Luxembourg"                                  
+ LUX_ADJ:0 "Luxembourgish"

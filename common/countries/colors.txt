@@ -208,3 +208,19 @@ FRA = {
 	color = rgb { 27 35 167 }
 	color_ui = rgb { 27 35 167 }
 }
+MCO = {
+	color = rgb { 255 170 104 }
+	color_ui = rgb { 255 170 104 }
+}
+NRD = {
+	color = rgb { 255 184 122 }
+	color_ui = rgb { 255 184 122 }
+}
+BLG = {
+	color = rgb { 248 184 8 }
+	color_ui = rgb { 248 184 8 }
+}
+LUX = {
+	color = rgb { 117 196 188 }
+	color_ui = rgb { 117 196 188 }
+}
