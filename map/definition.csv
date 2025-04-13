@@ -3957,7 +3957,7 @@
 3956;46;174;88;land;false;hills;1
 3957;46;174;193;land;false;urban;2
 3958;46;177;8;land;false;mountain;1
-3959;46;177;53;land;false;mountain;1
+3959;46;177;53;land;true;mountain;1
 3960;46;177;158;land;false;plains;2
 3961;46;180;18;land;false;mountain;1
 3962;46;180;73;land;true;hills;6
@@ -9907,7 +9907,7 @@
 9906;130;180;89;land;false;mountain;1
 9907;130;183;54;land;false;urban;1
 9908;130;183;159;land;false;hills;2
-9909;130;186;19;land;true;urban;1
+9909;130;186;19;land;true;dense_urban;1
 9910;130;186;74;land;false;plains;2
 9911;130;186;224;land;false;plains;2
 9912;130;189;39;land;false;plains;7
@@ -11832,7 +11832,7 @@
 11831;172;114;62;land;false;hills;7
 11832;172;114;212;land;false;hills;1
 11833;172;117;177;land;true;forest;1
-11834;172;120;142;land;true;urban;1
+11834;172;120;142;land;true;dense_urban;1
 11835;172;120;197;land;true;hills;6
 11836;172;123;57;land;false;plains;6
 11837;172;123;162;land;true;urban;1
@@ -14283,3 +14283,16 @@
 14044;193;65;11;land;false;hills;1
 14045;75;87;155;land;false;urban;1
 14046;248;66;135;land;false;sub_urban;1
+
+#Monaco
+14047;207;193;60;land;true;dense_urban;1
+
+#Provence-Alpes-Cote d'Azur
+14048;168;141;7;land;true;urban;1
+14049;218;251;5;land;false;sub_urban;1
+14050;28;247;165;land;false;sub_urban;1
+
+14051;31;53;92;land;true;dense_urban;1
+14052;124;120;241;land;false;urban;1
+14053;203;84;31;land;true;sub_urban;1
+14054;231;246;234;land;false;sub_urban;1

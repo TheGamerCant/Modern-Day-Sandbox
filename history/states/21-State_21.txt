@@ -2,12 +2,28 @@ state={
 	id=21
 	name="STATE_21"
 	history={
-		owner = ZZZ
+		owner = FRA
+		add_core_of = FRA
+		
+		victory_points = { 9909 15 }
+		victory_points = { 14048 4 }
+		victory_points = { 11834 20 }
+		victory_points = { 14053 2 }
+		victory_points = { 14051 6 }
+		victory_points = { 11849 6 }
+		victory_points = { 3762 2 }
+		victory_points = { 11875 3 }
+		victory_points = { 6975 1 }
+		
+		buildings = {
+			infrastructure = 4
+			air_base = 5
+		}
 	}
 	provinces={
-		958 3762 11834 11849 11875 14024 764 3764 3959 6975 9736 9909 
+		958 3762 11834 11849 11875 14024 764 3764 3959 6975 9736 9909 911 956 3928 3961 14048 14049 14050 14051 14052 14053 14054 
 	}
-	manpower= 100000
+	manpower= 4940749
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=city
