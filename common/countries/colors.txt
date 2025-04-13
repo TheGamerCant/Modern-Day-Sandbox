@@ -217,8 +217,8 @@ NRD = {
 	color_ui = rgb { 255 184 122 }
 }
 BLG = {
-	color = rgb { 248 184 8 }
-	color_ui = rgb { 248 184 8 }
+	color = rgb { 219 162 8 }
+	color_ui = rgb { 219 162 8 }
 }
 LUX = {
 	color = rgb { 117 196 188 }

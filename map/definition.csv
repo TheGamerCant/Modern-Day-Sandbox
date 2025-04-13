@@ -514,7 +514,7 @@
 513;2;108;25;land;false;plains;1
 514;2;111;90;land;false;plains;1
 515;2;111;195;land;false;plains;2
-516;2;114;55;land;false;urban;1
+516;2;114;55;land;false;dense_urban;1
 517;2;114;160;land;false;mountain;6
 518;2;117;20;land;false;plains;1
 519;2;117;75;land;false;hills;1
@@ -9534,7 +9534,7 @@
 9533;128;150;224;land;false;plains;1
 9534;128;153;39;land;false;plains;1
 9535;128;153;189;land;false;plains;1
-9536;128;156;154;land;false;forest;1
+9536;128;156;154;land;false;plains;1
 9537;128;156;209;land;false;forest;1
 9538;128;159;69;land;false;desert;6
 9539;128;159;174;land;false;forest;1
@@ -14291,8 +14291,22 @@
 14048;168;141;7;land;true;urban;1
 14049;218;251;5;land;false;sub_urban;1
 14050;28;247;165;land;false;sub_urban;1
-
 14051;31;53;92;land;true;dense_urban;1
 14052;124;120;241;land;false;urban;1
 14053;203;84;31;land;true;sub_urban;1
 14054;231;246;234;land;false;sub_urban;1
+
+#Brussels and Flanders
+14055;234;2;104;land;false;sub_urban;1
+14056;22;231;153;land;false;urban;1
+14057;131;90;116;land;false;urban;1
+14058;10;179;69;land;false;dense_urban;1
+14059;105;87;31;land;true;urban;1
+14060;231;191;3;land;false;sub_urban;1
+14061;228;231;104;land;false;dense_urban;1
+14062;20;202;200;land;false;urban;1
+
+#Wallonia
+14063;77;156;222;land;false;forest;1
+14064;48;133;155;land;false;urban;1
+14065;112;160;239;land;false;sub_urban;1

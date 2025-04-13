@@ -2,12 +2,15 @@ state={
 	id=843
 	name="STATE_843"
 	history={
-		owner = ZZZ
+		owner = BLG
+		add_core_of = BLG
+		
+		victory_points = { 516 50 }
 	}
 	provinces={
-		6598 9574 13068 11419 
+		516 
 	}
-	manpower= 100000
+	manpower= 1089538
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral

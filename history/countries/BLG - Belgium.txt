@@ -1,4 +1,4 @@
-capital = 6
+capital = 843
 
 set_popularities = {
 	IDEOLOGY_liberal = 100
