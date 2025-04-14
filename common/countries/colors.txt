@@ -213,8 +213,8 @@ MCO = {
 	color_ui = rgb { 255 170 104 }
 }
 NRD = {
-	color = rgb { 255 184 122 }
-	color_ui = rgb { 255 184 122 }
+	color = rgb { 198 135 87 }
+	color_ui = rgb { 198 135 87 }
 }
 BLG = {
 	color = rgb { 219 162 8 }

@@ -66,7 +66,7 @@
 65;0;45;190;land;true;mountain;1
 66;0;48;50;land;true;plains;1
 67;0;48;155;land;false;plains;1
-68;0;51;15;land;true;plains;1
+68;0;51;15;land;true;sub_urban;1
 69;0;51;70;land;false;forest;1
 70;0;51;220;land;false;forest;1
 71;0;54;35;land;false;forest;1
@@ -389,7 +389,7 @@
 388;1;189;90;land;false;forest;1
 389;1;189;140;land;false;forest;1
 390;1;192;0;land;false;forest;6
-391;1;192;55;land;false;urban;1
+391;1;192;55;land;false;dense_urban;1
 392;1;192;205;land;false;hills;6
 393;1;195;20;land;false;plains;6
 394;1;195;65;land;true;plains;1
@@ -3209,7 +3209,7 @@
 3208;43;12;232;land;true;plains;2
 3209;43;14;240;sea;false;ocean;0
 3210;43;15;48;land;false;forest;1
-3211;43;15;153;land;true;urban;1
+3211;43;15;153;land;true;dense_urban;1
 3212;43;16;248;sea;false;ocean;0
 3213;43;17;236;sea;false;ocean;0
 3214;43;18;13;land;false;forest;6
@@ -14310,3 +14310,21 @@
 14063;77;156;222;land;false;forest;1
 14064;48;133;155;land;false;urban;1
 14065;112;160;239;land;false;sub_urban;1
+
+#Friesland and Brabant
+14066;149;87;74;land;false;plains;1
+14067;165;38;82;land;false;plains;1
+14068;49;104;56;land;false;urban;1	
+14069;204;84;239;land;false;urban;1
+14070;25;24;68;land;false;urban;1
+14071;152;28;46;land;false;sub_urban;1
+14072;79;133;101;land;false;dense_urban;1
+14073;90;218;213;land;false;plains;1
+
+#Holland
+14074;88;134;200;land;false;dense_urban;1
+14075;12;23;220;land;false;urban;1
+14076;90;195;54;land;false;sub_urban;1
+14077;124;68;184;land;false;urban;1
+14078;25;228;250;land;true;sub_urban;1
+14079;3;180;123;land;true;sub_urban;1
