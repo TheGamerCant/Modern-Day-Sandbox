@@ -513,6 +513,306 @@ guiTypes = {
 				quadTextureSprite ="GFX_TDA_tiled_window_thick_border"
 			}
 			
+			instantTextBoxType = {
+				name = "artillery_year_1960_left"
+				position = { x = 0 y = 159 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1960"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1965_left"
+				position = { x = 0 y = 299 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1965"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1970_left"
+				position = { x = 0 y = 439 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1970"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1975_left"
+				position = { x = 0 y = 579 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1975"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1980_left"
+				position = { x = 0 y = 719 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1980"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1985_left"
+				position = { x = 0 y = 859 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1985"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1990_left"
+				position = { x = 0 y = 999 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1990"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1995_left"
+				position = { x = 0 y = 1139 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1995"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2000_left"
+				position = { x = 0 y = 1279 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2000"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2005_left"
+				position = { x = 0 y = 1419 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2005"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2010_left"
+				position = { x = 0 y = 1559 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2010"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2015_left"
+				position = { x = 0 y = 1699 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2015"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2020_left"
+				position = { x = 0 y = 1839 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2020"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2025_left"
+				position = { x = 0 y = 1979 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2025"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2030_left"
+				position = { x = 0 y = 2119 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2030"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1960_right"
+				position = { x = -175 y = 159 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1960"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1965_right"
+				position = { x = -175 y = 299 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1965"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1970_right"
+				position = { x = -175 y = 439 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1970"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1975_right"
+				position = { x = -175 y = 579 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1975"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1980_right"
+				position = { x = -175 y = 719 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1980"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1985_right"
+				position = { x = -175 y = 859 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1985"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1990_right"
+				position = { x = -175 y = 999 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1990"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_1995_right"
+				position = { x = -175 y = 1139 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_1995"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2000_right"
+				position = { x = -175 y = 1279 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2000"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2005_right"
+				position = { x = -175 y = 1419 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2005"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2010_right"
+				position = { x = -175 y = 1559 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2010"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2015_right"
+				position = { x = -175 y = 1699 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2015"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2020_right"
+				position = { x = -175 y = 1839 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2020"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2025_right"
+				position = { x = -175 y = 1979 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2025"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
+			instantTextBoxType = {
+				name = "artillery_year_2030_right"
+				position = { x = -175 y = 2119 }
+				font = "Blender_Heavy_White_32"
+				text = "TECHNOLOGY_YEAR_2030"
+				maxWidth = 175
+				format = center
+				Orientation = "UPPER_RIGHT"
+			}
+			
 			gridboxtype = {
 				name = "TECHNOLOGY_artillery_equipment_1_tree"
 				position = { x = 250 y = 140 }

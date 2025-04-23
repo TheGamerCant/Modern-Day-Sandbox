@@ -11,16 +11,31 @@ equipments = {
 		
 		group_by = archetype
 
-		active = yes
+		year = 1965
 
 		interface_category = interface_category_armor
 
-		maximum_speed = 4
+		#Misc Abilities
+		maximum_speed = 8
 		reliability = 0.8
 
-		build_cost_ic = 1
+		#Defensive Abilities
+		defense = 5
+		breakthrough = 4
+		hardness = 0.65
+		armor_value = 56
+
+		#Offensive Abilities
+		soft_attack = 4
+		hard_attack = 48
+		ap_attack = 110
+		air_attack = 0
+
+		build_cost_ic = 10
+		
 		resources = {
-			steel = 1
+			tungsten = 2
+			steel = 2
 		}
 	}
 
@@ -28,5 +43,37 @@ equipments = {
 		archetype = tank_destroyer_equipment
 		
 		active = yes
+	}
+	
+	tank_destroyer_equipment_2 = {
+		year = 1985
+
+		archetype = infantry_anti_tank_equipment
+		parent = infantry_anti_tank_equipment_1
+		
+		defense = 6.7
+		armor_value = 72.8
+		breakthrough = 5.3
+		soft_attack = 5.3
+		hard_attack = 65
+		ap_attack = 142
+		
+		build_cost_ic = 12.5
+	}
+	
+	tank_destroyer_equipment_3 = {
+		year = 2015
+
+		archetype = infantry_anti_tank_equipment
+		parent = infantry_anti_tank_equipment_2
+		
+		defense = 9.0
+		armor_value = 100
+		breakthrough = 7.0
+		soft_attack = 7.0
+		hard_attack = 91
+		ap_attack = 194
+		
+		build_cost_ic = 16
 	}
 }

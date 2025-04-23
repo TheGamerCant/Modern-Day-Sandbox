@@ -14324,7 +14324,7 @@
 #Holland
 14074;88;134;200;land;false;dense_urban;1
 14075;12;23;220;land;false;urban;1
-14076;90;195;54;land;false;sub_urban;1
+14076;90;195;54;land;true;sub_urban;1
 14077;124;68;184;land;false;urban;1
 14078;25;228;250;land;true;sub_urban;1
 14079;3;180;123;land;true;sub_urban;1
