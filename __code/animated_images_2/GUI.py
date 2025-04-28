@@ -44,10 +44,11 @@ def main():
         var10 = str(loopingVar.get())
         var11 = str(alwaysTransparentVar.get())
         var12 = str(transparencyCheckVar.get())
-        var13 = str(coresSlider.get())
+        var13 = str(debugVar.get())
+        var14 = str(coresSlider.get())
         
         try:
-            result = subprocess.run(["./animatedImages", var01, var02, var03, var04, var05, var06, var07, var08, var09, var10, var11, var12, var13], capture_output=True, text=True, creationflags=subprocess.CREATE_NO_WINDOW)
+            result = subprocess.run(["./animatedImages", var01, var02, var03, var04, var05, var06, var07, var08, var09, var10, var11, var12, var13, var14], capture_output=True, text=True, creationflags=subprocess.CREATE_NO_WINDOW)
             print(result.stdout)
         except Exception as e:
             print(f"Error: {e}")
@@ -128,6 +129,11 @@ def main():
     transparencyCheckCheckBox = tk.Checkbutton(root, text = "transparencyCheck", variable = transparencyCheckVar, onvalue = 1, offvalue = 0, height = 2, width = 20) 
     transparencyCheckCheckBox.pack()
     ToolTip(transparencyCheckCheckBox, "User can click through the animation if the alpha channel of a pixel is 0.")
+
+    debugVar = tk.IntVar(value = 0) 
+    debugCheckBox = tk.Checkbutton(root, text = "debug", variable = debugVar, onvalue = 1, offvalue = 0, height = 2, width = 20) 
+    debugCheckBox.pack()
+    ToolTip(debugCheckBox, "Print debug messages to the console.")
 
     coresSlider = tk.Scale(root, from_=1, to=os.cpu_count(), orient=tk.HORIZONTAL, length=180)
     coresSlider.pack()
