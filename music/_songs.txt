@@ -55,7 +55,13 @@ music = {
 			factor = 2
 
 			has_war = no
-			THIS_has_western_government = yes
+			has_government = IDEOLOGY_democratic
+		}
+		modifier = {
+			factor = 1
+
+			has_war = no
+			has_government = IDEOLOGY_hybrid_regime
 		}		
 	}	
 }
@@ -68,7 +74,13 @@ music = {
 			factor = 2
 
 			has_war = no
-			THIS_has_western_government = yes
+			has_government = IDEOLOGY_democratic
+		}	
+		modifier = {
+			factor = 1
+
+			has_war = no
+			has_government = IDEOLOGY_hybrid_regime
 		}		
 	}	
 }
@@ -81,8 +93,17 @@ music = {
 			factor = 2
 
 			has_war = no
-			THIS_has_far_right_government = yes
-		}		
+			OR = {
+				has_government = IDEOLOGY_authoritarian
+				has_government = IDEOLOGY_fundamentalist
+			}
+		}
+		modifier = {
+			factor = 1
+
+			has_war = no
+			has_government = IDEOLOGY_hybrid_regime
+		}				
 	}	
 }
 
@@ -94,7 +115,16 @@ music = {
 			factor = 2
 
 			has_war = no
-			THIS_has_far_right_government = yes
+			OR = {
+				has_government = IDEOLOGY_authoritarian
+				has_government = IDEOLOGY_fundamentalist
+			}
+		}	
+		modifier = {
+			factor = 1
+
+			has_war = no
+			has_government = IDEOLOGY_hybrid_regime
 		}		
 	}	
 }
@@ -133,8 +163,17 @@ music = {
 			factor = 2
 
 			has_war = yes
-			THIS_has_far_right_government = yes
-		}		
+			OR = {
+				has_government = IDEOLOGY_authoritarian
+				has_government = IDEOLOGY_fundamentalist
+			}
+		}	
+		modifier = {
+			factor = 1
+
+			has_war = yes
+			has_government = IDEOLOGY_hybrid_regime
+		}	
 	}	
 }
 
@@ -146,8 +185,17 @@ music = {
 			factor = 2
 
 			has_war = yes
-			THIS_has_far_right_government = yes
-		}		
+			OR = {
+				has_government = IDEOLOGY_authoritarian
+				has_government = IDEOLOGY_fundamentalist
+			}
+		}	
+		modifier = {
+			factor = 1
+
+			has_war = yes
+			has_government = IDEOLOGY_hybrid_regime
+		}	
 	}	
 }
 
@@ -159,8 +207,17 @@ music = {
 			factor = 2
 
 			has_war = yes
-			THIS_has_far_right_government = yes
-		}		
+			OR = {
+				has_government = IDEOLOGY_authoritarian
+				has_government = IDEOLOGY_fundamentalist
+			}
+		}	
+		modifier = {
+			factor = 1
+
+			has_war = yes
+			has_government = IDEOLOGY_hybrid_regime
+		}	
 	}	
 }
 
@@ -172,7 +229,16 @@ music = {
 			factor = 2
 
 			has_war = yes
-			THIS_has_far_right_government = yes
+			OR = {
+				has_government = IDEOLOGY_authoritarian
+				has_government = IDEOLOGY_fundamentalist
+			}
+		}
+		modifier = {
+			factor = 1
+
+			has_war = yes
+			has_government = IDEOLOGY_hybrid_regime
 		}		
 	}	
 }
@@ -185,7 +251,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			THIS_has_western_government = yes
+			has_government = IDEOLOGY_democratic
 		}		
 	}	
 }
@@ -198,7 +264,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			THIS_has_western_government = yes
+			has_government = IDEOLOGY_democratic
 		}		
 	}	
 }
@@ -211,7 +277,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			THIS_has_far_left_government = yes
+			has_government = IDEOLOGY_clandestine
 		}		
 	}	
 }
@@ -224,7 +290,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			THIS_has_far_left_government = yes
+			has_government = IDEOLOGY_clandestine
 		}		
 	}	
 }
@@ -237,7 +303,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			THIS_has_far_left_government = yes
+			has_government = IDEOLOGY_clandestine
 		}		
 	}	
 }
@@ -251,7 +317,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			THIS_has_far_left_government = yes
+			has_government = IDEOLOGY_clandestine
 		}		
 	}	
 }
@@ -264,7 +330,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			THIS_has_far_left_government = yes
+			has_government = IDEOLOGY_clandestine
 		}		
 	}	
 }
@@ -277,7 +343,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			THIS_has_far_left_government = yes
+			has_government = IDEOLOGY_clandestine
 		}		
 	}	
 }

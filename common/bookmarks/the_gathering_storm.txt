@@ -9,7 +9,7 @@ bookmarks = {
 		
 		"ZZZ"={
 			history = ""
-			ideology = IDEOLOGY_liberal
+			ideology = IDEOLOGY_democratic
 			ideas = {
 
 			}
