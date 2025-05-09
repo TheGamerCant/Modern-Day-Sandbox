@@ -661,7 +661,7 @@
 660;3;54;55;land;false;forest;1
 661;3;54;205;land;false;mountain;1
 662;3;57;20;land;false;hills;1
-663;3;57;170;land;false;urban;1
+663;3;57;170;land;false;dense_urban;1
 664;3;57;225;land;false;hills;6
 665;3;63;50;land;false;forest;1
 666;3;63;155;land;false;hills;1
@@ -14340,3 +14340,16 @@
 14085;113;227;167;land;false;sub_urban;1
 14086;13;146;78;land;false;plains;1
 14087;229;137;73;land;false;sub_urban;1
+
+#Switzerland
+14088;187;255;191;land;false;forest;1
+14089;1;212;190;land;false;urban;1
+14090;253;223;55;land;false;urban;1
+14091;226;49;158;land;false;urban;1
+14092;205;49;158;land;false;sub_urban;1
+14093;128;69;246;land;false;sub_urban;1
+14094;202;57;19;land;false;dense_urban;1
+14095;109;59;85;land;false;urban;1
+
+#Liechtenstein
+14096;87;222;254;land;false;mountain;1

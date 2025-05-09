@@ -2,13 +2,18 @@ state={
 	id=847
 	name="STATE_847"
 	history={
-		owner = ZZZ
+		owner = GBR
+		add_core_of = GBR
+		add_core_of = SCT
+		
+		victory_points = { 11064 1 }
+		victory_points = { 6196 2 }
 	}
 	provinces={
-		636 9587 3612 9618 
+		6196 11064 
 	}
-	manpower= 100000
+	manpower= 43861
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=pastoral
+	state_category=tiny_island
 }

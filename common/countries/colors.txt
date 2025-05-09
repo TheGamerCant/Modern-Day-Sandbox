@@ -232,3 +232,15 @@ SLO = {
 	color = rgb { 113 113 125 }
 	color_ui = rgb { 113 113 125 }
 }
+SWI = {
+	color = rgb { 178 5 5 }
+	color_ui = rgb { 178 5 5 }
+}
+LTN = {
+	color = rgb { 43 10 180 }
+	color_ui = rgb { 43 10 180 }
+}
+ITA = {
+	color = rgb { 9 153 106 }
+	color_ui = rgb { 9 153 106 }
+}

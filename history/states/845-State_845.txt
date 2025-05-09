@@ -2,12 +2,17 @@ state={
 	id=845
 	name="STATE_845"
 	history={
-		owner = ZZZ
+		owner = SWI
+		add_core_of = SWI
+		
+		victory_points = { 14089 10 }
+		victory_points = { 6666 6 }
+		victory_points = { 9622 2 }
 	}
 	provinces={
-		6666 6683 9622 9638 13124 
+		3612 6666 6683 9622 11590 13124 14089 
 	}
-	manpower= 100000
+	manpower= 2086568
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=large_town

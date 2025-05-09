@@ -130,3 +130,15 @@
  SLO:0 "Slovakia"                                  
  SLO_DEF:0 "the Slovak Republic"                                  
  SLO_ADJ:0 "Slovak"
+
+ SWI:0 "Switzerland"                                  
+ SWI_DEF:0 "the Swiss Confederation"                                  
+ SWI_ADJ:0 "Swiss"
+
+ LTN:0 "Liechtenstein"                                  
+ LTN_DEF:0 "the Principality of Liechtenstein"                                  
+ LTN_ADJ:0 "Liechtensteiner"
+
+ ITA:0 "Italy"                                  
+ ITA_DEF:0 "the Italian Republic"                                  
+ ITA_ADJ:0 "Italian"
