@@ -122,3 +122,11 @@
  LUX:0 "Luxembourg"                                  
  LUX_DEF:0 "the Grand Dutchy of Luxembourg"                                  
  LUX_ADJ:0 "Luxembourgish"
+
+ CZE:0 "Czechia"                                  
+ CZE_DEF:0 "the Czech Republic"                                  
+ CZE_ADJ:0 "Czech"
+
+ SLO:0 "Slovakia"                                  
+ SLO_DEF:0 "the Slovak Republic"                                  
+ SLO_ADJ:0 "Slovak"

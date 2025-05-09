@@ -224,3 +224,11 @@ LUX = {
 	color = rgb { 117 196 188 }
 	color_ui = rgb { 117 196 188 }
 }
+CZE = {
+	color = rgb { 65 62 222 }
+	color_ui = rgb { 65 62 222 }
+}
+SLO = {
+	color = rgb { 113 113 125 }
+	color_ui = rgb { 113 113 125 }
+}

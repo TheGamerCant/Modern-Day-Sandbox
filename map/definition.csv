@@ -3583,7 +3583,7 @@
 3582;44;204;133;land;false;forest;1
 3583;44;207;48;land;false;hills;1
 3584;44;207;198;land;false;plains;1
-3585;44;210;13;land;false;mountain;1
+3585;44;210;13;land;false;plains;1
 3586;44;210;163;land;false;forest;1
 3587;44;210;218;land;false;plains;1
 3588;45;0;33;land;false;mountain;2
@@ -9690,7 +9690,7 @@
 9689;129;135;4;land;true;forest;1
 9690;129;135;49;land;false;forest;1
 9691;129;135;154;land;false;hills;1
-9692;129;138;14;land;false;plains;1
+9692;129;138;14;land;false;forest;1
 9693;129;138;69;land;false;forest;2
 9694;129;138;219;land;false;hills;1
 9695;129;141;34;land;false;mountain;2
@@ -11540,7 +11540,7 @@
 11539;170;180;142;land;false;mountain;1
 11540;170;180;187;land;false;plains;1
 11541;170;183;2;land;false;forest;1
-11542;170;183;207;land;false;urban;1
+11542;170;183;207;land;false;dense_urban;1
 11543;170;186;67;land;false;marsh;1
 11544;170;186;172;land;false;dense_urban;1
 11545;170;189;32;land;false;forest;1
@@ -14328,3 +14328,15 @@
 14077;124;68;184;land;false;urban;1
 14078;25;228;250;land;true;sub_urban;1
 14079;3;180;123;land;true;sub_urban;1
+
+#Slovakia
+14080;242;206;18;land;false;dense_urban;1
+14081;27;185;126;land;false;urban;1
+14082;152;53;138;land;false;sub_urban;1
+
+#Czechia
+14083;195;31;98;land;false;urban;1
+14084;79;148;93;land;false;sub_urban;1
+14085;113;227;167;land;false;sub_urban;1
+14086;13;146;78;land;false;plains;1
+14087;229;137;73;land;false;sub_urban;1
