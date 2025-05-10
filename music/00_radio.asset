@@ -307,6 +307,11 @@ music = {
 }
 
 music = {
+	name = "Green Day - American Idiot"
+	file = "Generic/american_idiot.ogg"
+}
+
+music = {
 	name = "Green Day - Twenty-One Guns"
 	file = "Generic/21_guns.ogg"
 }
@@ -379,4 +384,24 @@ music = {
 music = {
 	name = "Dead or Alive - You Spin Me Round"
 	file = "Generic/you_spin_me_round.ogg"
+}
+
+music = {
+	name = "Joy Division - Love Will Tear Us Apart"
+	file = "Generic/love_will_tear_us_apart.ogg"
+}
+
+music = {
+	name = "Soundgarden - Black Hole Sun"
+	file = "Generic/black_hole_sun.ogg"
+}
+
+music = {
+	name = "KISS - I Was Made For Lovin' You"
+	file = "Generic/i_was_made_for_lovin_you.ogg"
+}
+
+music = {
+	name = "The Cranberries - Zombie"
+	file = "Generic/zombie.ogg"
 }

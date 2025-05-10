@@ -73,6 +73,15 @@ music = {
 	}	
 }
 music = {
+	song = "Green Day - American Idiot"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
 	song = "Green Day - Twenty-One Guns"
 	
 	chance = {
@@ -200,6 +209,42 @@ music = {
 }
 music = {
 	song = "Dead or Alive - You Spin Me Round"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Joy Division - Love Will Tear Us Apart"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Soundgarden - Black Hole Sun"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "KISS - I Was Made For Lovin' You"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "The Cranberries - Zombie"
 	
 	chance = {
 		modifier = {

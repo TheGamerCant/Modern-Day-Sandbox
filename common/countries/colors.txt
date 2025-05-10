@@ -241,6 +241,14 @@ LTN = {
 	color_ui = rgb { 43 10 180 }
 }
 ITA = {
-	color = rgb { 9 153 106 }
-	color_ui = rgb { 9 153 106 }
+	color = rgb { 8 145 100 }
+	color_ui = rgb { 8 145 100 }
+}
+SNM = {
+	color = rgb { 82 160 198 }
+	color_ui = rgb { 82 160 198 }
+}
+VCY = {
+	color = rgb { 219 191 0 }
+	color_ui = rgb { 219 191 0 }
 }

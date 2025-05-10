@@ -142,3 +142,11 @@
  ITA:0 "Italy"                                  
  ITA_DEF:0 "the Italian Republic"                                  
  ITA_ADJ:0 "Italian"
+
+ SNM:0 "San Marino"                                  
+ SNM_DEF:0 "the Republic of San Marino"                                  
+ SNM_ADJ:0 "Sammarinese"
+
+ VCY:0 "Vatican City"                                  
+ VCY_DEF:0 "the Vatican City State"                                  
+ VCY_ADJ:0 "Vatican"

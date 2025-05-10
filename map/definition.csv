@@ -605,7 +605,7 @@
 604;3;10;244;sea;true;ocean;0
 605;3;12;35;land;false;forest;2
 606;3;12;90;land;false;hills;1
-607;3;12;140;land;false;plains;1
+607;3;12;140;land;false;sub_urban;1
 608;3;12;232;sea;true;ocean;0
 609;3;14;240;sea;true;ocean;0
 610;3;15;0;land;true;mountain;2
@@ -817,7 +817,7 @@
 816;4;23;240;sea;false;ocean;0
 817;4;24;5;land;false;plains;1
 818;4;24;155;land;false;plains;1
-819;4;24;210;land;true;urban;1
+819;4;24;210;land;true;dense_urban;1
 820;4;24;248;sea;false;ocean;0
 821;4;25;236;sea;false;ocean;0
 822;4;27;70;land;false;hills;2
@@ -921,7 +921,7 @@
 920;4;132;10;land;false;plains;1
 921;4;132;65;land;false;plains;7
 922;4;132;215;land;true;plains;1
-923;4;135;30;land;true;mountain;1
+923;4;135;30;land;false;mountain;1
 924;4;138;95;land;false;plains;1
 925;4;138;145;land;true;hills;1
 926;4;138;200;land;false;plains;2
@@ -3778,9 +3778,9 @@
 3777;45;204;188;land;false;plains;1
 3778;45;207;3;land;false;dense_urban;2
 3779;45;207;153;land;false;plains;1
-3780;45;207;208;land;false;urban;1
+3780;45;207;208;land;false;dense_urban;1
 3781;45;210;68;land;false;mountain;2
-3782;45;210;173;land;false;plains;1
+3782;45;210;173;land;false;hills;1
 3783;46;0;43;land;true;hills;6
 3784;46;0;193;land;false;hills;2
 3785;46;0;236;sea;true;ocean;0
@@ -4012,7 +4012,7 @@
 4011;47;16;244;sea;true;ocean;0
 4012;47;17;232;sea;false;ocean;0
 4013;47;18;43;land;true;mountain;6
-4014;47;18;193;land;true;plains;1
+4014;47;18;193;land;false;hills;1
 4015;47;18;240;sea;false;ocean;0
 4016;47;20;248;sea;true;ocean;0
 4017;47;21;8;land;false;mountain;7
@@ -6604,7 +6604,7 @@
 6603;86;207;156;land;false;forest;1
 6604;86;207;211;land;false;hills;1
 6605;86;210;71;land;false;plains;1
-6606;87;0;46;land;false;urban;1
+6606;87;0;46;land;false;dense_urban;1
 6607;87;0;196;land;true;forest;2
 6608;87;0;240;sea;true;ocean;0
 6609;87;3;11;land;false;mountain;1
@@ -6778,7 +6778,7 @@
 6777;87;186;6;land;true;forest;1
 6778;87;189;71;land;true;mountain;2
 6779;87;192;36;land;false;forest;2
-6780;87;192;141;land;false;urban;1
+6780;87;192;141;land;false;dense_urban;1
 6781;87;192;186;land;false;plains;1
 6782;87;195;1;land;false;plains;2
 6783;87;195;151;land;true;plains;1
@@ -6786,7 +6786,7 @@
 6785;87;198;66;land;true;plains;2
 6786;87;198;171;land;false;mountain;1
 6787;87;201;31;land;false;forest;6
-6788;87;201;86;land;true;urban;1
+6788;87;201;86;land;true;dense_urban;1
 6789;87;201;136;land;false;mountain;1
 6790;87;204;51;land;false;hills;1
 6791;87;204;96;land;false;hills;6
@@ -9582,7 +9582,7 @@
 9581;129;0;154;land;false;plains;1
 9582;129;0;209;land;true;marsh;1
 9583;129;3;69;land;false;forest;2
-9584;129;3;174;land;false;mountain;1
+9584;129;3;174;land;false;sub_urban;1
 9585;129;6;34;land;true;forest;2
 9586;129;6;89;land;false;hills;1
 9587;129;6;139;land;false;mountain;1
@@ -9750,7 +9750,7 @@
 9749;129;204;159;land;false;mountain;6
 9750;129;204;214;land;false;hills;1
 9751;129;207;74;land;false;forest;1
-9752;129;207;179;land;false;hills;1
+9752;129;207;179;land;false;urban;1
 9753;129;207;224;land;false;urban;6
 9754;129;210;39;land;false;hills;2
 9755;130;0;14;land;false;hills;7
@@ -9782,7 +9782,7 @@
 9781;130;30;19;land;false;mountain;6
 9782;130;30;64;land;false;forest;6
 9783;130;33;29;land;true;plains;1
-9784;130;33;84;land;true;plains;1
+9784;130;33;84;land;false;plains;1
 9785;130;33;134;land;false;hills;1
 9786;130;36;49;land;true;forest;2
 9787;130;36;199;land;false;forest;1
@@ -9902,7 +9902,7 @@
 9901;130;174;164;land;false;plains;7
 9902;130;177;24;land;true;forest;1
 9903;130;177;79;land;false;hills;1
-9904;130;177;129;land;true;urban;1
+9904;130;177;129;land;false;dense_urban;1
 9905;130;180;44;land;false;plains;6
 9906;130;180;89;land;false;mountain;1
 9907;130;183;54;land;false;urban;1
@@ -10072,7 +10072,7 @@
 10071;131;147;29;land;false;jungle;5
 10072;131;147;179;land;false;hills;6
 10073;131;150;94;land;false;plains;5
-10074;131;150;144;land;true;urban;1
+10074;131;150;144;land;true;dense_urban;1
 10075;131;150;199;land;false;mountain;6
 10076;131;153;59;land;true;urban;6
 10077;131;153;164;land;false;plains;6
@@ -11771,7 +11771,7 @@
 11770;172;42;92;land;false;hills;6
 11771;172;42;142;land;false;urban;6
 11772;172;45;2;land;false;hills;2
-11773;172;45;57;land;true;urban;1
+11773;172;45;57;land;true;dense_urban;1
 11774;172;45;207;land;true;hills;1
 11775;172;48;22;land;false;hills;6
 11776;172;48;67;land;false;plains;2
@@ -14353,3 +14353,74 @@
 
 #Liechtenstein
 14096;87;222;254;land;false;mountain;1
+ 
+#Sardinia
+14097;178;98;191;land;true;hills;1
+14098;11;130;28;land;true;urban;1
+
+#Sicily
+14099;210;116;130;land;false;urban;1
+14100;187;251;171;land;true;sub_urban;1
+14101;160;20;245;land;true;sub_urban;1
+14102;214;134;135;land;true;dense_urban;1
+14103;31;171;91;land;true;urban;1
+14104;110;234;29;land;true;sub_urban;1
+
+#Puglia
+14105;26;73;105;land;true;dense_urban;1
+14106;200;92;246;land;true;urban;1
+14107;229;53;149;land;true;sub_urban;1
+14108;145;237;7;land;false;sub_urban;1
+14109;38;249;21;land;true;plains;1
+
+#Campania
+14110;174;222;160;land;true;urban;1
+14111;127;156;2;land;false;urban;1
+14112;3;20;115;land;true;sub_urban;1
+14113;106;52;153;land;false;sub_urban;1
+
+#Piedmonte
+14114;32;186;213;land;false;urban;1
+14115;188;164;23;land;false;sub_urban;1
+14116;191;240;90;land;false;sub_urban;1
+14117;164;144;193;land;true;urban;1
+14118;236;147;84;land;true;sub_urban;1
+
+#Toscana
+14119;201;134;171;land;false;sub_urban;1
+14120;63;88;103;land;false;hills;1
+
+#San Marino
+14121;5;35;81;land;false;hills;1
+
+#Vatican city
+14122;137;57;31;land;false;dense_urban;1
+
+#Lazio
+14123;48;58;191;land;true;sub_urban;1
+14124;198;30;216;land;true;sub_urban;1
+14125;66;54;75;land;false;sub_urban;1
+14126;44;163;162;land;false;urban;1
+14127;208;108;43;land;false;sub_urban;1
+14128;17;230;229;land;false;mountain;1
+14129;144;56;211;land;false;hills;1
+
+#Adriatic Italy
+14130;153;19;114;land;true;urban;1
+14131;15;221;4;land;true;sub_urban;1
+
+#Emilia Romagna
+14132;137;232;146;land;false;plains;1
+14133;89;167;244;land;false;urban;1
+14134;169;187;246;land;false;sub_urban;1
+14135;68;184;18;land;false;urban;1
+
+#Lombardia
+14136;181;239;101;land;false;sub_urban;1
+14137;221;254;93;land;false;dense_urban;1
+14138;252;141;28;land;false;sub_urban;1
+14139;163;174;206;land;false;urban;1
+14140;252;241;127;land;false;sub_urban;1
+14141;198;100;239;land;false;sub_urban;1
+14142;203;155;1;land;false;sub_urban;1
+14143;23;187;92;land;false;urban;1
