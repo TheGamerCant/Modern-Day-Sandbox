@@ -1,0 +1,12 @@
+capital = 219
+
+set_popularities = {
+	IDEOLOGY_hybrid_regime = 100
+}
+
+set_politics = {                                  
+	ruling_party = IDEOLOGY_hybrid_regime
+	last_election = "2021.1.1"
+	election_frequency = 48                                  
+	elections_allowed = no
+}

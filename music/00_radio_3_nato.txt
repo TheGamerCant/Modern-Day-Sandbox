@@ -252,3 +252,12 @@ music = {
 		}		
 	}
 }
+music = {
+	song = "Don McLean - American Pie"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}

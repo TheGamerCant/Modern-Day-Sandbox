@@ -405,3 +405,8 @@ music = {
 	name = "The Cranberries - Zombie"
 	file = "Generic/zombie.ogg"
 }
+
+music = {
+	name = "Don McLean - American Pie"
+	file = "Generic/american_pie.ogg"
+}

@@ -252,3 +252,11 @@ VCY = {
 	color = rgb { 219 191 0 }
 	color_ui = rgb { 219 191 0 }
 }
+BLR = {
+	color = rgb { 176 216 189 }
+	color_ui = rgb { 176 216 189 }
+}
+SOV = {
+	color = rgb { 6 89 14 }
+	color_ui = rgb { 6 89 14 }
+}

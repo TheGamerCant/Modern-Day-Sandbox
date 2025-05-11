@@ -150,3 +150,11 @@
  VCY:0 "Vatican City"                                  
  VCY_DEF:0 "the Vatican City State"                                  
  VCY_ADJ:0 "Vatican"
+
+ BLR:0 "Belarus"                                  
+ BLR_DEF:0 "the Republic of Belarus"                                  
+ BLR_ADJ:0 "Belarussian"
+
+ SOV:0 "Russia"                                  
+ SOV_DEF:0 "the Russian Federation"                                  
+ SOV_ADJ:0 "Russian"
