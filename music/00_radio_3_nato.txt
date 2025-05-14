@@ -261,3 +261,21 @@ music = {
 		}		
 	}
 }
+music = {
+	song = "The Offspring - The Kids Aren't Alright"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Dead Kennedys - California Über Alles"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}

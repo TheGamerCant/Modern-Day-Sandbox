@@ -2,13 +2,17 @@ state={
 	id=657
 	name="STATE_657"
 	history={
-		owner = ZZZ
+		owner = SWI
+		add_core_of = SWI
+
+		victory_points = { 14094 10 }
+		victory_points = { 9618 2 }
 	}
 	provinces={
-		675 1802 4246 4701 4725 4779 4805 4829 7616 7672 7763 7801 10655 10722 12192 12261 12263 12654 12678 
+		636 9587 9618 9620 14094 14095 
 	}
-	manpower= 100000
+	manpower= 1716947
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=pastoral
+	state_category=city
 }

@@ -410,3 +410,13 @@ music = {
 	name = "Don McLean - American Pie"
 	file = "Generic/american_pie.ogg"
 }
+
+music = {
+	name = "The Offspring - The Kids Aren't Alright"
+	file = "Generic/the_kids_arent_alright.ogg"
+}
+
+music = {
+	name = "Dead Kennedys - California Über Alles"
+	file = "Generic/california_uber_alles.ogg"
+}

@@ -2,13 +2,19 @@ state={
 	id=644
 	name="STATE_644"
 	history={
-		owner = ZZZ
+		owner = GBR
+		add_core_of = GBR
+		add_core_of = WLS
+		
+		victory_points = { 13673 10 }
+		victory_points = { 13674 5 }
+		victory_points = { 13676 5 }
 	}
 	provinces={
-		1819 4006 4229 4455 12592 13061 
+		377 13672 13673 13674 13675 13676 13677 13678 
 	}
-	manpower= 100000
+	manpower= 3154641
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=city
+	state_category=rural
 }
