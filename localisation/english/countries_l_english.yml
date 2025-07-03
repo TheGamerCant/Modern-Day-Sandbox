@@ -120,7 +120,7 @@
  BLG_ADJ:0 "Belgian"
 
  LUX:0 "Luxembourg"                                  
- LUX_DEF:0 "the Grand Dutchy of Luxembourg"                                  
+ LUX_DEF:0 "the Grand Duchy of Luxembourg"                                  
  LUX_ADJ:0 "Luxembourgish"
 
  CZE:0 "Czechia"                                  
@@ -153,8 +153,8 @@
 
  BLR:0 "Belarus"                                  
  BLR_DEF:0 "the Republic of Belarus"                                  
- BLR_ADJ:0 "Belarussian"
+ BLR_ADJ:0 "Belarusian"
 
- SOV:0 "Russia"                                  
+ SOV:0 "Russian Federation"                                  
  SOV_DEF:0 "the Russian Federation"                                  
  SOV_ADJ:0 "Russian"

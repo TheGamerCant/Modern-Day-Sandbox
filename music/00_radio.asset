@@ -37,13 +37,18 @@ music = {
 }
 
 music = {
-	name = "Kino - Svezda po imeni solnze"
+	name = "Kino - Svezda Po Imeni Solnze"
 	file = "Russia/svezda_po_imeni_solnze.ogg"
 }
 
 music = {
-	name = "Kino - Stuk (Odno lish slovo)"
+	name = "Kino - Stuk (Odno Lish Slovo)"
 	file = "Russia/stuk.ogg"
+}
+
+music = {
+	name = "Kino - Zakroy Za Mnoy Dver, Ya Uxhozhu"
+	file = "Russia/zakroy.ogg"
 }
 
 music = {
@@ -57,7 +62,7 @@ music = {
 }
 
 music = {
-	name = "Vrata Overtona - Tsbetyot geran"
+	name = "Vrata Overtona - Tsbetyot Geran"
 	file = "Russia/geranium_blooms.ogg"
 }
 
@@ -419,4 +424,49 @@ music = {
 music = {
 	name = "Dead Kennedys - California Über Alles"
 	file = "Generic/california_uber_alles.ogg"
+}
+
+music = {
+	name = "Radiohead - No Surprises"
+	file = "Generic/no_surprises.ogg"
+}
+
+music = {
+	name = "Radiohead - Let Down"
+	file = "Generic/let_down.ogg"
+}
+
+music = {
+	name = "Radiohead - Karma Police"
+	file = "Generic/karma_police.ogg"
+}
+
+music = {
+	name = "Radiohead - Creep"
+	file = "Generic/creep.ogg"
+}
+
+music = {
+	name = "Radiohead - Exit Music (For a Film)"
+	file = "Generic/exit_music.ogg"
+}
+
+music = {
+	name = "Radiohead - Street Spirit (Fade Out)"
+	file = "Generic/street_spirit.ogg"
+}
+
+music = {
+	name = "Keane - Everybody's Changing"
+	file = "Generic/everybodys_changing.ogg"
+}
+
+music = {
+	name = "Keane - Somewhere Only We Know"
+	file = "Generic/somewhere_only_we_know.ogg"
+}
+
+music = {
+	name = "Goyte - Somebody That I Used To Know"
+	file = "Generic/somebody_that_i_used_to_know.ogg"
 }

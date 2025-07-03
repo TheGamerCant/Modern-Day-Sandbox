@@ -3732,7 +3732,7 @@
 3731;45;147;143;land;false;forest;1
 3732;45;147;198;land;true;plains;2
 3733;45;150;163;land;true;hills;2
-3734;45;153;23;land;false;urban;1
+3734;45;153;23;land;false;plains;1
 3735;45;153;78;land;false;mountain;1
 3736;45;153;128;land;false;forest;2
 3737;45;156;43;land;false;mountain;1
@@ -14447,7 +14447,7 @@
 14160;147;178;20;land;false;urban;1
 14161;65;118;197;land;false;hills;1
 
-#Siberia
+#Central Siberia
 14162;53;208;131;land;false;forest;1
 14163;111;185;56;land;false;urban;1
 14164;54;134;244;land;false;sub_urban;1
@@ -14462,3 +14462,23 @@
 14173;92;32;92;land;false;urban;1
 14174;2;239;222;land;false;sub_urban;1
 14175;158;35;2;land;false;forest;1
+
+#North Caucus
+14176;89;213;53;land;false;hills;1
+14177;28;179;123;land;false;dense_urban;1
+14178;198;22;116;land;false;urban;1
+14179;17;75;122;land;false;urban;1
+14180;76;227;130;land;false;sub_urban;1
+14181;142;126;248;land;false;dense_urban;1
+14182;187;254;48;land;false;urban;1
+14183;200;77;233;land;false;urban;1
+14184;113;141;117;land;false;sub_urban;1
+
+14185;142;184;25;land;false;dense_urban;1
+14186;224;199;119;land;false;urban;1
+14187;77;138;27;land;false;sub_urban;1
+14188;76;173;240;land;false;sub_urban;1
+14189;43;67;148;land;true;dense_urban;1
+14190;70;19;247;land;false;sub_urban;1
+14191;140;199;180;land;true;dense_urban;1
+14192;80;13;127;land;true;urban;1

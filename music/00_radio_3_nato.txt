@@ -279,3 +279,84 @@ music = {
 		}		
 	}
 }
+music = {
+	song = "Radiohead - No Surprises"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Radiohead - Let Down"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Radiohead - Karma Police"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Radiohead - Creep"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Radiohead - Exit Music (For a Film)"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Radiohead - Street Spirit (Fade Out)"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Keane - Everybody's Changing"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Keane - Somewhere Only We Know"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}
+music = {
+	song = "Goyte - Somebody That I Used To Know"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}
+}

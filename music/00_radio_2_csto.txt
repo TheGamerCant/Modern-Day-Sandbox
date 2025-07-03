@@ -61,7 +61,7 @@ music = {
 }
 
 music = {
-	song = "Kino - Svezda po imeni solnze"
+	song = "Kino - Svezda Po Imeni Solnze"
 	
 	chance = {
 		modifier = {
@@ -81,7 +81,7 @@ music = {
 }
 
 music = {
-	song = "Kino - Stuk (Odno lish slovo)"
+	song = "Kino - Stuk (Odno Lish Slovo)"
 	
 	chance = {
 		modifier = {
@@ -110,9 +110,29 @@ music = {
 	}	
 }
 
+music = {
+	song = "Kino - Kukushka"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
 
 music = {
-	song = "Vrata Overtona - Tsbetyot geran"
+	song = "Kino - Zakroy Za Mnoy Dver, Ya Uxhozhu"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+
+
+music = {
+	song = "Vrata Overtona - Tsbetyot Geran"
 	
 	chance = {
 		modifier = {
