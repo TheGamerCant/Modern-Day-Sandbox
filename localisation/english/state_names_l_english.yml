@@ -435,7 +435,7 @@
  STATE_398:0 "Perm"
  STATE_399:1 "Udmurtia"
  STATE_400:0 "Kirov"
- STATE_401:1 "Balakovo"
+ STATE_401:1 "Jämtland"
  STATE_402:0 "Akhtubinsk"
  STATE_403:0 "Tyumen"
  STATE_404:0 "Kyzyl Orda"
@@ -958,4 +958,3 @@
  STATE_914: "Jan Mayen"
  STATE_915: "Donegal"
  STATE_916: "Dalarna"
- STATE_917: "Jämtland"

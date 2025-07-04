@@ -11473,7 +11473,7 @@
 11472;170;93;192;land;false;desert;6
 11473;170;96;52;land;false;desert;6
 11474;170;96;157;land;false;plains;1
-11475;170;99;17;land;false;forest;1
+11475;170;99;17;land;false;dense_urban;1
 11476;170;99;222;land;false;plains;1
 11477;170;102;82;land;false;plains;1
 11478;170;105;47;land;false;forest;1
@@ -14505,3 +14505,20 @@
 
 #Volgograd
 14208;156;24;206;land;false;urban;1
+14209;198;254;149;land;false;urban;1
+
+#Saratov
+14210;135;137;31;land;false;dense_urban;1
+14211;205;12;90;land;false;urban;1
+14212;5;87;68;land;false;sub_urban;1
+
+#Voronezh
+14213;67;185;23;land;false;urban;1
+14214;243;164;95;land;false;sub_urban;1
+
+#Belgorod
+14215;135;121;55;land;false;urban;1
+14216;134;189;250;land;false;sub_urban;1
+
+#Kursk
+14217;83;7;18;land;false;urban;1
