@@ -2,13 +2,16 @@ state={
 	id=147
 	name="STATE_147"
 	history={
-		owner = ZZZ
+		owner = IRE
+		add_core_of = IRE
+		
+		victory_points = { 337 1 }
 	}
 	provinces={
-		197 9158 11085 
+		337 
 	}
-	manpower= 100000
+	manpower= 161137
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=enclave
+	state_category=rural
 }
