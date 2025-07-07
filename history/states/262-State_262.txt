@@ -5,9 +5,9 @@ state={
 		owner = ZZZ
 	}
 	provinces={
-		154 6016 6177 6538 9099 9121 9230 10723 11182 
+		154 6016 6177 6538 9099 9121 9230 10723 11182 11098 12393 14258 6 99 1295 1307 3000 3155 4298 6121 6202 7318 7712 7898 9145 9225 10579 11179 11200 11203 12558 14260 14261 14262 4314 12587 14263 
 	}
-	manpower= 100000
+	manpower= 907189
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=rural

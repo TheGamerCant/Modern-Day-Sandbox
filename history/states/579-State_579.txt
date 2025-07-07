@@ -5,7 +5,7 @@ state={
 		owner = ZZZ
 	}
 	provinces={
-		1664 1684 3169 4669 7689 7738 8461 9142 13076 
+		1664 1684 3169 4669 7689 7738 8461 9142 12502 13076 
 	}
 	manpower= 100000
 	buildings_max_level_factor=1.000
