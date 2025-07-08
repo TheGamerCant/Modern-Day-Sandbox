@@ -687,7 +687,7 @@
  STATE_651:0 "Ufa"
  STATE_652:0 "Orenburg"
  STATE_653:0 "Sverdlovsk"
- STATE_654:1 "Oyrot Region"
+ STATE_654:1 "Altai"
  STATE_655:0 "Liechtenstein"
  STATE_656:0 "Kuwait"
  STATE_657:0 "Bern"
@@ -945,3 +945,4 @@
  STATE_903:0 "Garissa"
  STATE_904:0 "Nyanza-Rift Valley"
  STATE_905:0 "Mombasa"
+ STATE_906:0 "Kemerovo"

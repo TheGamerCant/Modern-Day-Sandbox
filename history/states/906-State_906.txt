@@ -1,0 +1,24 @@
+state={
+	id=906
+	name="STATE_906"
+	history={
+		owner = SOV
+		add_core_of = SOV
+		
+		victory_points = { 14268 10 }
+		victory_points = { 14271 9 }
+		victory_points = { 7822 1 }
+		victory_points = { 1369 5 }
+		victory_points = { 14274 3 }
+		victory_points = { 7757 2 }
+		victory_points = { 4789 1 }
+		victory_points = { 7886 2 }
+	}
+	provinces={
+		7886 4793 4789 12631 7757 4665 1369 1685 7822 14268 14269 14270 14271 14272 14273 14274 14275 
+	}
+	manpower= 2763135
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=pastoral
+}
