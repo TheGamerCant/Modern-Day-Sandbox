@@ -4,14 +4,14 @@ state={
 	history={
 		owner = SOV
 		add_core_of = SOV
+		
+		victory_points = { 4859 3 }
 	}
 	provinces={
 		2923 2972 3336 4692 4733 4859 10607 10635 11261 11328 12643 13064 4812 11122 12687 13065 
 	}
-	manpower= 270000
+	manpower= 370000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral
-	
-	impassable = yes
 }
