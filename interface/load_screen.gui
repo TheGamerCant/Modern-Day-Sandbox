@@ -16,17 +16,17 @@ guiTypes = {
 		iconType = {
 			name ="bg_clausewitz_logo"
 			spriteType = "GFX_clausewitz_logo"
-			position = { x= 23 y = -152 }
-			Orientation = "LOWER_LEFT"
-			hide = yes
+			position = { x= -258 y = -152 }
+			Orientation = "LOWER_RIGHT"
+#			hide = yes
 		}		
 		
 		iconType = {
 			name ="bg_pdx_int_logo"
 			spriteType = "GFX_frontend_dev_logo_s"
-			position = { x= -130 y = -158 }
+			position = { x= -112 y = -152 }
 			Orientation = "LOWER_RIGHT"
-			hide = yes
+#			hide = yes
 		}	
 				
 		windowType = {
@@ -49,7 +49,7 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "text"
-				position = { x = 4 y = 11 }
+				position = { x = 7 y = 11 }
 				textureFile = ""
 				font = "loadscreen_header"
 				borderSize = {x = 0 y = 0}
