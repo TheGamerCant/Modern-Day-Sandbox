@@ -260,3 +260,11 @@ SOV = {
 	color = rgb { 6 89 14 }
 	color_ui = rgb { 6 89 14 }
 }
+ASA = {
+	color = rgb { 210 210 210 }
+	color_ui = rgb { 210 210 210 }
+}
+HUN = {
+	color = rgb { 224 133 75 }
+	color_ui = rgb { 224 133 75 }
+}

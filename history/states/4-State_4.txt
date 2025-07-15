@@ -2,12 +2,31 @@ state={
 	id=4
 	name="STATE_4"
 	history={
-		owner = ZZZ
+		owner = ASA
+		add_core_of = ASA
+		
+		victory_points = { 14440 25 }
+		victory_points = { 14444 10 }
+		victory_points = { 14443 2 }
+		victory_points = { 14447 5 }
+		victory_points = { 704 2 }
+		victory_points = { 9661 2 }
+		victory_points = { 14448 2 }
+		victory_points = { 6690 2 }
+		victory_points = { 6739 1 }
+		victory_points = { 6687 1 }
+		victory_points = { 6552 2 }
+		victory_points = { 732 1 }
+		
+		buildings = {
+			infrastructure = 5
+			air_base = 8
+		}
 	}
 	provinces={
-		704 732 3718 6552 6690 6723 6739 9527 11651 11666
+		704 3718 6552 6690 6723 6739 9527 9661 11651 11666 6687 9646 9648 9650 9679 732 6691 3684 6708 3703 9665 14440 14441 14442 14443 14444 14445 14446 14447 14448 
 	}
-	manpower= 100000
+	manpower= 5931230
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=large_city

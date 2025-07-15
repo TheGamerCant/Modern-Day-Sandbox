@@ -158,3 +158,11 @@
  SOV:0 "Russian Federation"                                  
  SOV_DEF:0 "the Russian Federation"                                  
  SOV_ADJ:0 "Russian"
+
+ ASA:0 "Austria"                                  
+ ASA_DEF:0 "the Republic of Austria"                                  
+ ASA_ADJ:0 "Austrian"
+
+ HUN:0 "Hungary"                                  
+ HUN_DEF:0 "Hungary"                                  
+ HUN_ADJ:0 "Hungarian"
