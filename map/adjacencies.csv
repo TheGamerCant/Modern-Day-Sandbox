@@ -188,7 +188,6 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 4391;4828;impassable;-1;-1;-1;-1;-1;;pamir mountains
 4391;1703;impassable;-1;-1;-1;-1;-1;;pamir mountains
 4391;12526;impassable;-1;-1;-1;-1;-1;;pamir mountains
-3314;6336;sea;2752;2885;1578;2890;1581;;Afsluitdijk
 12960;13292;sea;2580;-1;-1;-1;-1;;Falklands
 8198;13295;sea;5473;-1;-1;-1;-1;;Aysen
 13307;13296;sea;9009;-1;-1;-1;-1;;Chubut
