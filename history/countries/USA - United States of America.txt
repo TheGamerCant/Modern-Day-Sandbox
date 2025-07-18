@@ -10,3 +10,105 @@ set_politics = {
 	election_frequency = 48                                  
 	elections_allowed = no
 }
+
+set_technology = {
+	TECHNOLOGY_infantry_equipment_1 = 1
+	TECHNOLOGY_infantry_equipment_2 = 1
+	TECHNOLOGY_infantry_equipment_3 = 1
+	TECHNOLOGY_infantry_equipment_4 = 1
+	TECHNOLOGY_infantry_equipment_5 = 1
+	
+	TECHNOLOGY_cartridge_upgrades_1 = 1
+	TECHNOLOGY_cartridge_upgrades_2 = 1
+	TECHNOLOGY_cartridge_upgrades_3 = 1
+	TECHNOLOGY_cartridge_upgrades_4 = 1
+	
+	TECHNOLOGY_body_armour_1 = 1
+	TECHNOLOGY_body_armour_2 = 1
+	TECHNOLOGY_body_armour_3 = 1
+	TECHNOLOGY_body_armour_4 = 1
+	
+	TECHNOLOGY_weapon_sights_1 = 1
+	TECHNOLOGY_weapon_sights_2 = 1
+	TECHNOLOGY_weapon_sights_3 = 1
+	TECHNOLOGY_weapon_sights_4 = 1
+	
+	TECHNOLOGY_night_vision_1 = 1
+	TECHNOLOGY_night_vision_2 = 1
+	TECHNOLOGY_night_vision_3 = 1
+
+	TECHNOLOGY_infantry_anti_tank_equipment_1 = 1
+	TECHNOLOGY_infantry_anti_tank_equipment_2 = 1
+	TECHNOLOGY_infantry_anti_tank_equipment_3 = 1
+	TECHNOLOGY_infantry_anti_tank_equipment_4 = 1
+	
+	TECHNOLOGY_improved_anti_tank_missiles_1 = 1
+	TECHNOLOGY_improved_anti_tank_missiles_2 = 1
+	
+	TECHNOLOGY_infantry_anti_air_equipment_1 = 1
+	TECHNOLOGY_infantry_anti_air_equipment_2 = 1
+	TECHNOLOGY_infantry_anti_air_equipment_3 = 1
+	
+	TECHNOLOGY_improved_anti_air_missiles_1 = 1
+	TECHNOLOGY_improved_anti_air_missiles_2 = 1
+	
+	TECHNOLOGY_heat_seeking_missiles_1 = 1
+	
+	TECHNOLOGY_special_forces_base = 1
+	TECHNOLOGY_paratroopers_1 = 1
+	TECHNOLOGY_extensive_special_forces_training_1 = 1
+	TECHNOLOGY_amphibious_2 = 1
+	TECHNOLOGY_special_forces_environment_training = 1
+	TECHNOLOGY_extensive_special_forces_training_2 = 1
+	TECHNOLOGY_amphibious_3 = 1
+	
+	TECHNOLOGY_support_equipment = 1
+	TECHNOLOGY_support_companies = 1
+	
+	TECHNOLOGY_artillery_equipment_1 = 1
+	TECHNOLOGY_artillery_equipment_2 = 1
+	TECHNOLOGY_artillery_equipment_3 = 1
+	TECHNOLOGY_artillery_equipment_4 = 1
+	
+	TECHNOLOGY_self_propelled_artillery_equipment_1 = 1
+	TECHNOLOGY_self_propelled_artillery_equipment_2 = 2
+	TECHNOLOGY_self_propelled_artillery_equipment_3 = 3
+	
+	TECHNOLOGY_shell_upgrades_1 = 1
+	TECHNOLOGY_shell_upgrades_2 = 1
+	TECHNOLOGY_shell_upgrades_3 = 1
+	
+	TECHNOLOGY_tank_destroyer_equipment_1 = 1
+	TECHNOLOGY_tank_destroyer_equipment_2 = 1
+	
+	TECHNOLOGY_armour_piercing_rounds_1 = 1
+	TECHNOLOGY_armour_piercing_rounds_2 = 1
+	TECHNOLOGY_armour_piercing_rounds_3 = 1
+	
+	TECHNOLOGY_armoured_anti_air_equipment_1 = 1
+	TECHNOLOGY_armoured_anti_air_equipment_2 = 1
+	
+	TECHNOLOGY_anti_aircraft_rounds_1 = 1
+	TECHNOLOGY_anti_aircraft_rounds_2 = 1
+	TECHNOLOGY_anti_aircraft_rounds_3 = 1
+	
+	TECHNOLOGY_main_battle_tank_equipment_1 = 1
+	TECHNOLOGY_main_battle_tank_equipment_2 = 1
+	TECHNOLOGY_main_battle_tank_equipment_3 = 1
+	
+	TECHNOLOGY_train_equipment_1 = 1
+	TECHNOLOGY_train_equipment_2 = 1
+	
+	TECHNOLOGY_truck_equipment_1 = 1
+	TECHNOLOGY_truck_equipment_2 = 1
+	TECHNOLOGY_truck_equipment_3 = 1
+	
+	TECHNOLOGY_armoured_personnel_carrier_equipment_1 = 1
+	TECHNOLOGY_armoured_personnel_carrier_equipment_2 = 1
+	TECHNOLOGY_armoured_personnel_carrier_equipment_3 = 1
+	TECHNOLOGY_armoured_personnel_carrier_equipment_4 = 1
+	
+	TECHNOLOGY_infantry_fighting_vehicle_equipment_1 = 1
+	TECHNOLOGY_infantry_fighting_vehicle_equipment_2 = 1
+	TECHNOLOGY_infantry_fighting_vehicle_equipment_3 = 1
+}

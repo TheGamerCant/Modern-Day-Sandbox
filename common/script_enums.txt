@@ -198,8 +198,8 @@ script_enum_equipment_bonus_type = {
 	convoy_1
 	floating_harbor_equipment
 	floating_harbor_equipment_1
-	railway_gun_equipment
-	railway_gun_equipment_1
+#	railway_gun_equipment
+# 	railway_gun_equipment_1
 	ship_hull_carrier
 	ship_hull_carrier_1
 	ship_hull_carrier_2
@@ -329,15 +329,30 @@ script_enum_equipment_bonus_type = {
 	
 	truck_equipment
 	truck_equipment_1
+	truck_equipment_2
+	truck_equipment_3
+	truck_equipment_4
 	armoured_personnel_carrier_equipment
 	armoured_personnel_carrier_equipment_1
+	armoured_personnel_carrier_equipment_2
+	armoured_personnel_carrier_equipment_3
+	armoured_personnel_carrier_equipment_4
+	armoured_personnel_carrier_equipment_5
 	infantry_fighting_vehicle_equipment
 	infantry_fighting_vehicle_equipment_1
+	infantry_fighting_vehicle_equipment_2
+	infantry_fighting_vehicle_equipment_3
+	infantry_fighting_vehicle_equipment_4
 	train_equipment
 	train_equipment_1
+	train_equipment_2
+	train_equipment_3
 	
 	main_battle_tank_equipment
 	main_battle_tank_equipment_1
+	main_battle_tank_equipment_2
+	main_battle_tank_equipment_3
+	main_battle_tank_equipment_4
 	
 	fighter_equipment
 	fighter_equipment_1

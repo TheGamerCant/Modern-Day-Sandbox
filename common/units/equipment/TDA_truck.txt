@@ -11,13 +11,14 @@ equipments = {
 		
 		group_by = archetype
 
-		active = yes
+		year = 1960
 
 		interface_category = interface_category_land
 
-		maximum_speed = 12
+		maximum_speed = 16
 		reliability = 0.8
 		hardness = 0.12
+		armor_value = 4
 
 		breakthrough = 4
 
@@ -39,6 +40,51 @@ equipments = {
 	truck_equipment_1 = {
 		archetype = truck_equipment
 		
-		active = yes
+		year = 1960
+	}
+
+	truck_equipment_2 = {
+		
+		archetype = truck_equipment
+		parent = truck_equipment_1
+		
+		year = 1980
+		
+		maximum_speed = 19.8
+		hardness = 0.15
+		breakthrough = 5.1
+		armor_value = 4.8
+		
+		build_cost_ic = 2.3
+	}
+
+	truck_equipment_3 = {
+		
+		archetype = truck_equipment
+		parent = truck_equipment_2
+		
+		year = 2000
+		
+		maximum_speed = 27.5
+		hardness = 0.2
+		breakthrough = 6.9
+		armor_value = 6.3
+		
+		build_cost_ic = 3.0
+	}
+
+	truck_equipment_4 = {
+		
+		archetype = truck_equipment
+		parent = truck_equipment_3
+		
+		year = 2020
+		
+		maximum_speed = 36
+		hardness = 0.27
+		breakthrough = 9.1
+		armor_value = 9.5
+		
+		build_cost_ic = 3.8
 	}
 }

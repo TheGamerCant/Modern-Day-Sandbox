@@ -10,7 +10,7 @@ equipments = {
 		
 		group_by = archetype
 
-		active = yes
+		active = no
 
 		interface_category = interface_category_air
 
@@ -26,6 +26,6 @@ equipments = {
 	recon_plane_equipment_1 = {
 		archetype = recon_plane_equipment
 		
-		active = yes
+		active = no
 	}
 }

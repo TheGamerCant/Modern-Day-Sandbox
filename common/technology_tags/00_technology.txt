@@ -30,6 +30,15 @@ technology_categories = {
 	cat_anti_air_equipment
 	cat_anti_tank_equipment
 	
+	cat_armour
+	cat_main_battle_tank
+	
+	cat_military_vehicles
+	cat_apc
+	cat_ifv
+	cat_truck
+	cat_train
+	
 
 	mio_cat_tech_all_armor_and_modules #Includes modules and chassis (DOES NOT INCLUDE ARMORED CARS)
 	mio_cat_tech_light_armor_and_modules #Includes modules and stand-alone Amphibious Chassis

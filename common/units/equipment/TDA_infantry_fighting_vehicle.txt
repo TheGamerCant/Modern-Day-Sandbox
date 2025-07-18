@@ -11,7 +11,7 @@ equipments = {
 		
 		group_by = archetype
 
-		active = yes
+		year = 1980
 
 		interface_category = interface_category_armor
 
@@ -48,6 +48,54 @@ equipments = {
 	infantry_fighting_vehicle_equipment_1 = {
 		archetype = infantry_fighting_vehicle_equipment
 		
-		active = yes
+		year = 1980
+	}
+	
+	infantry_fighting_vehicle_equipment_2 = {
+		year = 1995
+
+		archetype = infantry_fighting_vehicle_equipment
+		parent = infantry_fighting_vehicle_equipment_1	
+		
+		defense = 53.8
+		breakthrough = 40.2
+		ap_attack = 40.2
+		armor_value = 29.8
+		soft_attack = 26.9
+		hard_attack = 13.5
+		
+		build_cost_ic = 13
+	}
+	
+	infantry_fighting_vehicle_equipment_3 = {
+		year = 2010
+
+		archetype = infantry_fighting_vehicle_equipment
+		parent = infantry_fighting_vehicle_equipment_2
+		
+		defense = 73.8
+		breakthrough = 55.0
+		ap_attack = 55.0
+		armor_value = 41.1
+		soft_attack = 26.9
+		hard_attack = 13.5
+		
+		build_cost_ic = 17.4
+	}
+	
+	infantry_fighting_vehicle_equipment_4 = {
+		year = 2025
+
+		archetype = infantry_fighting_vehicle_equipment
+		parent = infantry_fighting_vehicle_equipment_2
+		
+		defense = 95.0
+		breakthrough = 70.8
+		ap_attack = 70.8
+		armor_value = 53.6
+		soft_attack = 35.9
+		hard_attack = 18.2
+		
+		build_cost_ic = 22
 	}
 }

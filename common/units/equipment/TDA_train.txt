@@ -1,23 +1,23 @@
 equipments = {
 	train_equipment = {
 		is_archetype = yes
-		picture = archetype_train_equipment
 		is_buildable = no
 		
-		type = {
-			train
-		}
+		year = 1960
 		
+		type = train
+		picture = archetype_train
 		group_by = archetype
-
-		active = yes
+		sprite = train
 
 		interface_category = interface_category_land
 
-		maximum_speed = 4
-		reliability = 0.8
+		armor_value = 10
+		air_attack = 0
 
-		build_cost_ic = 1
+		lend_lease_cost = 20
+
+		build_cost_ic = 60
 		resources = {
 			steel = 1
 		}
@@ -26,6 +26,30 @@ equipments = {
 	train_equipment_1 = {
 		archetype = train_equipment
 		
-		active = yes
+		year = 1960
+	}
+	
+	train_equipment_2 = {
+		
+		archetype = train_equipment
+		parent = train_equipment_1
+		
+		year = 1985
+		
+		armor_value = 15
+		air_attack = 0
+		build_cost_ic = 55
+	}
+	
+	train_equipment_3 = {
+		
+		archetype = train_equipment
+		parent = train_equipment_2
+		
+		year = 2010
+		
+		armor_value = 25
+		air_attack = 0
+		build_cost_ic = 50
 	}
 }

@@ -34,39 +34,21 @@ spriteTypes = {
 	
 	
 	spriteType = {
-		name = "GFX_scroll_up_blue"
-		texturefile = "gfx/interface/scrollbars/scroll_up_blue.dds"
+		name = "GFX_scroll_button_empty_17x17"
+		texturefile = "gfx/interface/scrollbars/scroll_button_empty_17x17.dds"
 	}
 	spriteType = {
-		name = "GFX_scroll_down_blue"
-		texturefile = "gfx/interface/scrollbars/scroll_down_blue.dds"
+		name = "GFX_scroll_slider_leftright_grey_17x17"
+		texturefile = "gfx/interface/scrollbars/scroll_slider_leftright_grey_17x17.dds"
 	}
 	spriteType = {
-		name = "GFX_scroll_right_blue"
-		texturefile = "gfx/interface/scrollbars/scroll_right_blue.dds"
-	}
-	spriteType = {
-		name = "GFX_scroll_left_blue"
-		texturefile = "gfx/interface/scrollbars/scroll_left_blue.dds"
-	}
-	spriteType = {
-		name = "GFX_scroll_slider_updown_blue"
-		texturefile = "gfx/interface/scrollbars/scroll_slider_updown_blue.dds"
-	}
-	spriteType = {
-		name = "GFX_scroll_slider_leftright_blue"
-		texturefile = "gfx/interface/scrollbars/scroll_slider_leftright_blue.dds"
+		name = "GFX_scroll_slider_updown_grey_17x17"
+		texturefile = "gfx/interface/scrollbars/scroll_slider_updown_grey_17x17.dds"
 	}
 	corneredTileSpriteType = {
-		name = "GFX_scroll_track_grey"
-		size= {x =12 y = 12 }
-		texturefile = "gfx/interface/scrollbars/scroll_track_grey.dds"
-		borderSize = { x=4 y=4 }
-	}
-	corneredTileSpriteType = {
-		name = "GFX_scroll_track_transparent"
-		size= {x =12 y = 12 }
-		texturefile = "gfx/interface/scrollbars/scroll_track_transparent.dds"
+		name = "GFX_scroll_track_grey_13x13"
+		size= {x =13 y = 13 }
+		texturefile = "gfx/interface/scrollbars/scroll_track_grey_13x13.dds"
 		borderSize = { x=4 y=4 }
 	}
 }

@@ -11,7 +11,7 @@ equipments = {
 		
 		group_by = archetype
 
-		active = yes
+		year = 1960
 
 		interface_category = interface_category_armor
 
@@ -26,7 +26,8 @@ equipments = {
 		armor_value = 12
 
 		#Offensive Abilities
-		ap_attack = 11
+		ap_attack = 6.6
+		soft_attack = 12
 		air_attack = 0
 
 		#Space taken in convoy
@@ -46,6 +47,66 @@ equipments = {
 	armoured_personnel_carrier_equipment_1 = {
 		archetype = armoured_personnel_carrier_equipment
 		
-		active = yes
+		year = 1960
+	}
+	
+	armoured_personnel_carrier_equipment_2 = {
+		year = 1980
+
+		archetype = armoured_personnel_carrier_equipment
+		parent = armoured_personnel_carrier_equipment_1	
+		
+		defense = 42.0
+		breakthrough = 13.6
+		armor_value = 16.0
+		ap_attack = 9.0
+		soft_attack = 16.2
+		
+		build_cost_ic = 6.0
+	}
+	
+	armoured_personnel_carrier_equipment_3 = {
+		year = 1990
+
+		archetype = armoured_personnel_carrier_equipment
+		parent = armoured_personnel_carrier_equipment_1	
+		
+		defense = 55.2
+		breakthrough = 18.1
+		armor_value = 21.5
+		ap_attack = 12.0
+		soft_attack = 21.8
+		
+		build_cost_ic = 7.8
+	}
+	
+	armoured_personnel_carrier_equipment_4 = {
+		year = 2005
+
+		archetype = armoured_personnel_carrier_equipment
+		parent = armoured_personnel_carrier_equipment_2
+		
+		defense = 75.8
+		breakthrough = 25.0
+		armor_value = 30.1
+		ap_attack = 16.8
+		soft_attack = 30.0
+		
+		build_cost_ic = 10.5
+	}
+	
+	armoured_personnel_carrier_equipment_5 = {
+		year = 2022
+
+		archetype = armoured_personnel_carrier_equipment
+		parent = armoured_personnel_carrier_equipment_3
+		
+		defense = 100.9
+		breakthrough = 33.8
+		armor_value = 41.3
+		ap_attack = 22.6
+		soft_attack = 40.9
+		
+		build_cost_ic = 13.7
 	}
 }

@@ -628,16 +628,16 @@ sp_land_generic_reward_armor_tech_1 = {
 		token = sp_land_generic_reward_option_armor_tech
 		
 		iteration_output = {
-			country_effects = { 
-				add_tech_bonus = {
-					name = sp_land_generic_reward_option_armor_tech_bonus_name
-					bonus = 0.1
-					uses = 1
-					category = armor
-				}
-
-				FROM = { set_project_flag = sp_land_generic_reward_armor_tech_flag }
-			}
+#			country_effects = { 
+#				add_tech_bonus = {
+#					name = sp_land_generic_reward_option_armor_tech_bonus_name
+#					bonus = 0.1
+#					uses = 1
+#					category = armor
+#				}
+#
+#				FROM = { set_project_flag = sp_land_generic_reward_armor_tech_flag }
+#			}
 		}
 	}
 }
@@ -668,16 +668,16 @@ sp_land_generic_reward_armor_tech_2 = {
 		token = sp_land_generic_reward_option_armor_tech
 		
 		iteration_output = {
-			country_effects = { 
-				add_tech_bonus = {
-					name = sp_land_generic_reward_option_armor_tech_bonus_name
-					bonus = 0.2
-					uses = 1
-					category = armor
-				}
-
-				FROM = { set_project_flag = sp_land_generic_reward_armor_tech_flag }
-			}
+#			country_effects = { 
+#				add_tech_bonus = {
+#					name = sp_land_generic_reward_option_armor_tech_bonus_name
+#					bonus = 0.2
+#					uses = 1
+#					category = armor
+#				}
+#
+#				FROM = { set_project_flag = sp_land_generic_reward_armor_tech_flag }
+#			}
 		}
 	}
 }
@@ -708,21 +708,21 @@ sp_land_generic_reward_armor_tech_3 = {
 		token = sp_land_generic_reward_option_armor_tech
 		
 		iteration_output = {
-			country_effects = { 
-				add_tech_bonus = {
-					name = sp_land_generic_reward_option_armor_tech_bonus_name
-					bonus = 0.35
-					uses = 1
-					category = armor
-				}
-
-				add_breakthrough_progress = {
-					specialization = specialization_land
-					value = sp_breakthrough_progress.medium
-				}
-
-				FROM = { set_project_flag = sp_land_generic_reward_armor_tech_flag }
-			}
+#			country_effects = { 
+#				add_tech_bonus = {
+#					name = sp_land_generic_reward_option_armor_tech_bonus_name
+#					bonus = 0.35
+#					uses = 1
+#					category = armor
+#				}
+#
+#				add_breakthrough_progress = {
+#					specialization = specialization_land
+#					value = sp_breakthrough_progress.medium
+#				}
+#
+#				FROM = { set_project_flag = sp_land_generic_reward_armor_tech_flag }
+#			}
 		}
 	}
 }
@@ -753,16 +753,16 @@ sp_land_generic_reward_artillery_tech_1 = {
 		token = sp_land_generic_reward_option_artillery_tech
 		
 		iteration_output = {
-			country_effects = {
-				add_tech_bonus = {
-					name = sp_land_generic_reward_option_artillery_tech_bonus_name
-					bonus = 0.1
-					uses = 1
-					category = mio_cat_artillery
-				}
-
-				FROM = { set_project_flag = sp_land_generic_reward_artillery_tech_flag }
-			}
+#			country_effects = {
+#				add_tech_bonus = {
+#					name = sp_land_generic_reward_option_artillery_tech_bonus_name
+#					bonus = 0.1
+#					uses = 1
+#					category = mio_cat_artillery
+#				}
+#
+#				FROM = { set_project_flag = sp_land_generic_reward_artillery_tech_flag }
+#			}
 		}
 	}
 }
@@ -793,16 +793,16 @@ sp_land_generic_reward_artillery_tech_2 = {
 		token = sp_land_generic_reward_option_artillery_tech
 		
 		iteration_output = {
-			country_effects = {
-				add_tech_bonus = {
-					name = sp_land_generic_reward_option_artillery_tech_bonus_name
-					bonus = 0.2
-					uses = 1
-					category = mio_cat_artillery
-				}
-
-				FROM = { set_project_flag = sp_land_generic_reward_artillery_tech_flag }
-			}
+#			country_effects = {
+#				add_tech_bonus = {
+#					name = sp_land_generic_reward_option_artillery_tech_bonus_name
+#					bonus = 0.2
+#					uses = 1
+#					category = mio_cat_artillery
+#				}
+#
+#				FROM = { set_project_flag = sp_land_generic_reward_artillery_tech_flag }
+#			}
 		}
 	}
 }
@@ -833,21 +833,21 @@ sp_land_generic_reward_artillery_tech_3 = {
 		token = sp_land_generic_reward_option_artillery_tech
 		
 		iteration_output = {
-			country_effects = {
-				add_tech_bonus = {
-					name = sp_land_generic_reward_option_artillery_tech_bonus_name
-					bonus = 0.35
-					uses = 1
-					category = mio_cat_artillery
-				}
-
-				add_breakthrough_progress = {
-					specialization = specialization_land
-					value = sp_breakthrough_progress.medium
-				}
-
-				FROM = { set_project_flag = sp_land_generic_reward_artillery_tech_flag }
-			}
+#			country_effects = {
+#				add_tech_bonus = {
+#					name = sp_land_generic_reward_option_artillery_tech_bonus_name
+#					bonus = 0.35
+#					uses = 1
+#					category = mio_cat_artillery
+#				}
+#
+#				add_breakthrough_progress = {
+#					specialization = specialization_land
+#					value = sp_breakthrough_progress.medium
+#				}
+#
+#				FROM = { set_project_flag = sp_land_generic_reward_artillery_tech_flag }
+#			}
 		}
 	}
 }

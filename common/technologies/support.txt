@@ -1,0 +1,97 @@
+@tech_1960_y_pos = 0
+@tech_1962_y_pos = 1
+@tech_1964_y_pos = 2
+@tech_1965_y_pos = 3
+@tech_1970_y_pos = 6
+@tech_1972_y_pos = 7
+@tech_1975_y_pos = 9
+@tech_1978_y_pos = 11
+@tech_1980_y_pos = 12
+@tech_1982_y_pos = 13
+@tech_1985_y_pos = 15
+@tech_1988_y_pos = 17
+@tech_1990_y_pos = 18
+@tech_1992_y_pos = 19
+@tech_1995_y_pos = 21
+@tech_1996_y_pos = 22
+@tech_1998_y_pos = 23
+@tech_2000_y_pos = 24
+@tech_2005_y_pos = 27
+@tech_2008_y_pos = 29
+@tech_2010_y_pos = 30
+@tech_2012_y_pos = 31
+@tech_2014_y_pos = 32
+@tech_2015_y_pos = 33
+@tech_2018_y_pos = 35
+@tech_2020_y_pos = 36
+@tech_2022_y_pos = 37
+@tech_2024_y_pos = 38
+@tech_2025_y_pos = 39
+@tech_2026_y_pos = 40
+
+
+
+@tech_engineers_x_pos = 0
+
+
+technologies = {
+	TECHNOLOGY_support_equipment = {
+
+		enable_equipments = {
+			support_equipment
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_support_companies
+			research_cost_coeff = 1
+		}
+
+		research_cost = 1.0
+		start_year = 1960
+		folder = {
+			name = support_folder
+			position = { x = @tech_engineers_x_pos y = @tech_1960_y_pos }
+		}
+
+		categories = {
+			cat_support
+			cat_support_equipment
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_support_companies = {
+
+		enable_subunits = {
+			SUPPORT_UNIT_engineers
+			SUPPORT_UNIT_fpv_recon_drone
+			SUPPORT_UNIT_fpv_combat_drone
+			SUPPORT_UNIT_light_recon
+			SUPPORT_UNIT_heavy_recon
+			SUPPORT_UNIT_helicopter_recon
+			SUPPORT_UNIT_electronic_warfare
+			SUPPORT_UNIT_medical
+			SUPPORT_UNIT_maintainance
+			SUPPORT_UNIT_military_police
+			SUPPORT_UNIT_logistics
+		}
+
+		research_cost = 1.0
+		start_year = 1965
+		folder = {
+			name = support_folder
+			position = { x = @tech_engineers_x_pos y = @tech_1965_y_pos }
+		}
+
+		categories = {
+			cat_support
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

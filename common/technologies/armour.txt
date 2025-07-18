@@ -1,0 +1,151 @@
+@tech_1960_y_pos = 0
+@tech_1965_y_pos = 2
+@tech_1970_y_pos = 4
+@tech_1975_y_pos = 6
+@tech_1978_y_pos = 7
+@tech_1980_y_pos = 8
+@tech_1982_y_pos = 9
+@tech_1985_y_pos = 10
+@tech_1990_y_pos = 12
+@tech_1995_y_pos = 14
+@tech_1998_y_pos = 15
+@tech_2000_y_pos = 16
+@tech_2002_y_pos = 17
+@tech_2005_y_pos = 18
+@tech_2010_y_pos = 20
+@tech_2015_y_pos = 22
+@tech_2018_y_pos = 23
+@tech_2020_y_pos = 24
+@tech_2025_y_pos = 26
+@tech_2028_y_pos = 27
+@tech_2030_y_pos = 28
+
+
+
+@tech_main_battle_tank_x_pos = 0
+
+
+technologies = {
+	TECHNOLOGY_main_battle_tank_equipment_1 = {
+
+		enable_equipments = {
+			main_battle_tank_equipment_1
+		}
+
+		enable_subunits = {
+			COMBAT_UNIT_armour
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_main_battle_tank_equipment_2
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3.0
+		start_year = 1960
+		folder = {
+			name = armour_folder
+			position = { x = @tech_main_battle_tank_x_pos y = @tech_1960_y_pos }
+		}
+
+		categories = {
+			cat_armour
+			cat_main_battle_tank
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_main_battle_tank_equipment_2 = {
+
+		enable_equipments = {
+			main_battle_tank_equipment_2
+		}
+
+		enable_subunits = {
+			COMBAT_UNIT_armour
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_main_battle_tank_equipment_3
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3.0
+		start_year = 1980
+		folder = {
+			name = armour_folder
+			position = { x = @tech_main_battle_tank_x_pos y = @tech_1980_y_pos }
+		}
+
+		categories = {
+			cat_armour
+			cat_main_battle_tank
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_main_battle_tank_equipment_3 = {
+
+		enable_equipments = {
+			main_battle_tank_equipment_3
+		}
+
+		enable_subunits = {
+			COMBAT_UNIT_armour
+		}
+		
+		path = {
+			leads_to_tech = TECHNOLOGY_main_battle_tank_equipment_4
+			research_cost_coeff = 1
+		}
+
+		research_cost = 3.5
+		start_year = 2000
+		folder = {
+			name = armour_folder
+			position = { x = @tech_main_battle_tank_x_pos y = @tech_2000_y_pos }
+		}
+
+		categories = {
+			cat_armour
+			cat_main_battle_tank
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TECHNOLOGY_main_battle_tank_equipment_4 = {
+
+		enable_equipments = {
+			main_battle_tank_equipment_4
+		}
+
+		enable_subunits = {
+			COMBAT_UNIT_armour
+		}
+
+		research_cost = 4.0
+		start_year = 2020
+		folder = {
+			name = armour_folder
+			position = { x = @tech_main_battle_tank_x_pos y = @tech_2020_y_pos }
+		}
+
+		categories = {
+			cat_armour
+			cat_main_battle_tank
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

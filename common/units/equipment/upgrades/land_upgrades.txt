@@ -10,20 +10,20 @@ upgrades = {
 			cost_by_level_for_licensed_equipment = 5
 		}
 
-		level_requirements = {
-			5 = {
-				has_tech = engine_tech_1
-			}
-			10 = {
-				has_tech = engine_tech_2
-			}
-			15 = {
-				has_tech = engine_tech_3
-			}
-			18 = { 
-				has_tech = engine_tech_4
-			}
-		}
+#		level_requirements = {
+#			5 = {
+#				has_tech = engine_tech_1
+#			}
+#			10 = {
+#				has_tech = engine_tech_2
+#			}
+#			15 = {
+#				has_tech = engine_tech_3
+#			}
+#			18 = { 
+#				has_tech = engine_tech_4
+#			}
+#		}
 
 		resource_cost_thresholds = {
 			10 = { #higher level engines do require more strategic resources
@@ -50,20 +50,20 @@ upgrades = {
 			cost_by_level_for_licensed_equipment = 2
 		}
 
-		level_requirements = {
-			5 = {
-				has_tech = armor_tech_1
-			}
-			10 = {
-				has_tech = armor_tech_2
-			}
-			15 = {
-				has_tech = armor_tech_3
-			}
-			18 = {
-				has_tech = armor_tech_4
-			}
-		}
+#		level_requirements = {
+#			5 = {
+#				has_tech = armor_tech_1
+#			}
+#			10 = {
+#				has_tech = armor_tech_2
+#			}
+#			15 = {
+#				has_tech = armor_tech_3
+#			}
+#			18 = {
+#				has_tech = armor_tech_4
+#			}
+#		}
 
 		resource_cost_thresholds = { # resource values defined here are TOTAL added cost, not cumulative
 			5 = { #more armor requires more resources

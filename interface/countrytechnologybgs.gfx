@@ -1,0 +1,300 @@
+spriteTypes = {
+
+	##Folder tabs##
+
+	spriteType = {
+		name = "GFX_infantry_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_infantry_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_techtree_armour_tab"
+		textureFile = "gfx//interface//techtree//techtree_armour_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_techtree_military_vehicles_tab"
+		textureFile = "gfx//interface//techtree//techtree_military_vehicles_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_artillery_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_artillery_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_land_doctrine_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_landdoctrine_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_landdoctrine_tab_large"
+		textureFile = "gfx/interface/techtree/techtree_landdoctrine_tab_large.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_airdoctrine_tab_large"
+		textureFile = "gfx/interface/techtree/techtree_airdoctrine_tab_large.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_navaldoctrine_tab_large"
+		textureFile = "gfx/interface/techtree/techtree_navaldoctrine_tab_large.dds"
+		noOfFrames = 2		
+	}
+	spriteType = {
+		name = "GFX_specialforcesdoctrine_tab_large"
+		textureFile = "gfx/interface/techtree/techtree_specialforcesdoctrine_tab_large.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_naval_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_naval_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_naval_support_tab"
+		textureFile = "gfx/interface/techtree/techtree_naval_support_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_naval_doctrine_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_navaldoctrine_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_air_techs_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_air_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_air_doctrine_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_airdoctrine_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_secret_weapons_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_special_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_techtree_engineering_tab"
+		textureFile = "gfx//interface//techtree//techtree_engineering_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_industry_folder_tab"
+		textureFile = "gfx//interface//techtree//techtree_industry_tab.dds"
+		noOfFrames = 2		
+	}
+
+	spriteType = {
+		name = "GFX_techtree_tabs"
+		textureFile = "gfx//interface//techtree//techtree_tabs.dds"
+		noOfFrames = 2		
+	}
+	
+	
+	##Generic research bgs (large)##
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_available_item_bg"
+		texturefile = "gfx//interface//techtree//technology_large_available.dds"
+		noOfFrames = 3
+		animation_rate_fps = 0.7
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_technology_branch_item_bg"
+		textureFile = "gfx//interface//techtree//technology_large_branch_item.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_technology_unavailable_item_bg"
+		textureFile = "gfx//interface//techtree//technology_large_unavailable.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_technology_researched_item_bg"
+		textureFile = "gfx//interface//techtree//technology_large_researched.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_currently_researching_item_bg"
+		texturefile = "gfx//interface//techtree//technology_large_researching.dds"
+		noOfFrames = 2
+		animation_rate_fps = 1
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	
+	##Small research bgs##
+	
+	
+	spriteType = {
+		name = "GFX_technology_infantry_folder_small_unavailable_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_unavailable.dds"
+	}	
+	spriteType = {
+		name = "GFX_technology_infantry_folder_small_branch_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_branch_item.dds"
+	}	
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_infantry_folder_small_available_item_bg"
+		texturefile = "gfx//interface//techtree//technology_small_available.dds"
+		noOfFrames = 3
+		animation_rate_fps = 0.7
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	spriteType = {
+		name = "GFX_technology_infantry_folder_small_researched_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_researched.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_infantry_folder_small_currently_researching_item_bg"
+		texturefile = "gfx//interface//techtree//technology_small_researching.png"
+		noOfFrames = 2
+		animation_rate_fps = 1
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	
+	
+	
+	spriteType = {
+		name = "GFX_technology_artillery_folder_small_unavailable_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_unavailable.dds"
+	}	
+	spriteType = {
+		name = "GFX_technology_artillery_folder_small_branch_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_branch_item.dds"
+	}	
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_artillery_folder_small_available_item_bg"
+		texturefile = "gfx//interface//techtree//technology_small_available.dds"
+		noOfFrames = 3
+		animation_rate_fps = 0.7
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	spriteType = {
+		name = "GFX_technology_artillery_folder_small_researched_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_researched.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_artillery_folder_small_currently_researching_item_bg"
+		texturefile = "gfx//interface//techtree//technology_small_researching.png"
+		noOfFrames = 2
+		animation_rate_fps = 1
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_technology_support_folder_small_unavailable_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_unavailable.dds"
+	}	
+	spriteType = {
+		name = "GFX_technology_support_folder_small_branch_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_branch_item.dds"
+	}	
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_support_folder_small_available_item_bg"
+		texturefile = "gfx//interface//techtree//technology_small_available.dds"
+		noOfFrames = 3
+		animation_rate_fps = 0.7
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	spriteType = {
+		name = "GFX_technology_support_folder_small_researched_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_researched.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_support_folder_small_currently_researching_item_bg"
+		texturefile = "gfx//interface//techtree//technology_small_researching.png"
+		noOfFrames = 2
+		animation_rate_fps = 1
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	
+	
+	
+	
+	spriteType = {
+		name = "GFX_technology_land_doctrine_folder_unavailable_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_unavailable.dds"
+	}	
+	spriteType = {
+		name = "GFX_technology_land_doctrine_folder_branch_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_branch_item.dds"
+	}	
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_land_doctrine_folder_available_item_bg"
+		texturefile = "gfx//interface//techtree//technology_small_available.dds"
+		noOfFrames = 3
+		animation_rate_fps = 0.7
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+	spriteType = {
+		name = "GFX_technology_land_doctrine_folder_researched_item_bg"
+		textureFile = "gfx//interface//techtree//technology_small_researched.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_technology_land_doctrine_folder_currently_researching_item_bg"
+		texturefile = "gfx//interface//techtree//technology_small_researching.png"
+		noOfFrames = 2
+		animation_rate_fps = 1
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+}

@@ -22,6 +22,7 @@ sub_units = {
 			category_artillery
 			category_mobile_and_mobile_combat_sup
 			category_front_line
+			category_self_propelled_artillery
 		}
 
 		combat_width = 3
@@ -95,6 +96,7 @@ sub_units = {
 			category_army
 			category_mobile_and_mobile_combat_sup
 			category_anti_air
+			category_self_propelled_anti_air
 			category_front_line
 		}		
 		

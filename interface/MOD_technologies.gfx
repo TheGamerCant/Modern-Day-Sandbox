@@ -140,34 +140,6 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/GBR/GBR_TECHNOLOGY_infantry_equipment_7.dds"
 	}
 	SpriteType = {
-		name = "GFX_GER_TECHNOLOGY_armoured_anti_air_equipment_1_medium"
-		texturefile = "gfx/interface/technologies/GER/GER_TECHNOLOGY_armoured_anti_air_equipment_1.dds"
-	}
-	SpriteType = {
-		name = "GFX_GER_TECHNOLOGY_armoured_anti_air_equipment_4_medium"
-		texturefile = "gfx/interface/technologies/GER/GER_TECHNOLOGY_armoured_anti_air_equipment_4.dds"
-	}
-	SpriteType = {
-		name = "GFX_GER_TECHNOLOGY_self_propelled_artillery_equipment_4_medium"
-		texturefile = "gfx/interface/technologies/GER/GER_TECHNOLOGY_self_propelled_artillery_equipment_4.dds"
-	}
-	SpriteType = {
-		name = "GFX_GER_TECHNOLOGY_tank_destroyer_equipment_1_medium"
-		texturefile = "gfx/interface/technologies/GER/GER_TECHNOLOGY_tank_destroyer_equipment_1.dds"
-	}
-	SpriteType = {
-		name = "GFX_IND_TECHNOLOGY_tank_destroyer_equipment_3_medium"
-		texturefile = "gfx/interface/technologies/IND/IND_TECHNOLOGY_tank_destroyer_equipment_3.dds"
-	}
-	SpriteType = {
-		name = "GFX_RUS_TECHNOLOGY_armoured_anti_air_equipment_2_medium"
-		texturefile = "gfx/interface/technologies/RUS/RUS_TECHNOLOGY_armoured_anti_air_equipment_2.dds"
-	}
-	SpriteType = {
-		name = "GFX_RUS_TECHNOLOGY_armoured_anti_air_equipment_3_medium"
-		texturefile = "gfx/interface/technologies/RUS/RUS_TECHNOLOGY_armoured_anti_air_equipment_3.dds"
-	}
-	SpriteType = {
 		name = "GFX_TECHNOLOGY_amphibious_1_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_amphibious_1.dds"
 	}
@@ -188,6 +160,26 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_amphibious_5.dds"
 	}
 	SpriteType = {
+		name = "GFX_TECHNOLOGY_anti_aircraft_rounds_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_anti_aircraft_rounds_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_anti_aircraft_rounds_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_anti_aircraft_rounds_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_anti_aircraft_rounds_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_anti_aircraft_rounds_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_anti_aircraft_rounds_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_anti_aircraft_rounds_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_anti_aircraft_rounds_5_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_anti_aircraft_rounds_5.dds"
+	}
+	SpriteType = {
 		name = "GFX_TECHNOLOGY_armoured_anti_air_equipment_1_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_armoured_anti_air_equipment_1.dds"
 	}
@@ -202,6 +194,42 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_armoured_anti_air_equipment_4_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_armoured_anti_air_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_armoured_personnel_carrier_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_armoured_personnel_carrier_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_armoured_personnel_carrier_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_armoured_personnel_carrier_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_armoured_personnel_carrier_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_armoured_personnel_carrier_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_armoured_personnel_carrier_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_armoured_personnel_carrier_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_armoured_personnel_carrier_equipment_5_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_armoured_personnel_carrier_equipment_5.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_armour_piercing_rounds_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_armour_piercing_rounds_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_armour_piercing_rounds_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_armour_piercing_rounds_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_armour_piercing_rounds_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_armour_piercing_rounds_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_armour_piercing_rounds_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_armour_piercing_rounds_4.dds"
 	}
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_artillery_equipment_1_medium"
@@ -396,6 +424,38 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_equipment_7.dds"
 	}
 	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_fighting_vehicle_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_fighting_vehicle_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_fighting_vehicle_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_fighting_vehicle_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_fighting_vehicle_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_fighting_vehicle_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_infantry_fighting_vehicle_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_infantry_fighting_vehicle_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_main_battle_tank_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_main_battle_tank_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_main_battle_tank_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_main_battle_tank_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_main_battle_tank_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_main_battle_tank_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_main_battle_tank_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_main_battle_tank_equipment_4.dds"
+	}
+	SpriteType = {
 		name = "GFX_TECHNOLOGY_mountaineers_1_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_mountaineers_1.dds"
 	}
@@ -508,6 +568,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_special_forces_tip_of_the_spear.dds"
 	}
 	SpriteType = {
+		name = "GFX_TECHNOLOGY_support_equipment_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_support_equipment.dds"
+	}
+	SpriteType = {
 		name = "GFX_TECHNOLOGY_tank_destroyer_equipment_1_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_tank_destroyer_equipment_1.dds"
 	}
@@ -518,6 +582,34 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_tank_destroyer_equipment_3_medium"
 		texturefile = "gfx/interface/technologies/TECHNOLOGY_tank_destroyer_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_train_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_train_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_train_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_train_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_train_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_train_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_truck_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_truck_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_truck_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_truck_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_truck_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_truck_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_TECHNOLOGY_truck_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/TECHNOLOGY_truck_equipment_4.dds"
 	}
 	SpriteType = {
 		name = "GFX_TECHNOLOGY_weapon_sights_1_medium"
@@ -632,6 +724,38 @@ spriteTypes = {
 		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_infantry_equipment_7.dds"
 	}
 	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_main_battle_tank_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_main_battle_tank_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_main_battle_tank_equipment_1_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_main_battle_tank_equipment_1.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_main_battle_tank_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_main_battle_tank_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_main_battle_tank_equipment_2_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_main_battle_tank_equipment_2.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_main_battle_tank_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_main_battle_tank_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_main_battle_tank_equipment_3_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_main_battle_tank_equipment_3.dds"
+	}
+	SpriteType = {
+		name = "GFX_USA_TECHNOLOGY_main_battle_tank_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_main_battle_tank_equipment_4.dds"
+	}
+	SpriteType = {
+		name = "GFX_PUE_TECHNOLOGY_main_battle_tank_equipment_4_medium"
+		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_main_battle_tank_equipment_4.dds"
+	}
+	SpriteType = {
 		name = "GFX_USA_TECHNOLOGY_self_propelled_artillery_equipment_1_medium"
 		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_1.dds"
 	}
@@ -670,13 +794,5 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_PUE_TECHNOLOGY_self_propelled_artillery_equipment_5_medium"
 		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_self_propelled_artillery_equipment_5.dds"
-	}
-	SpriteType = {
-		name = "GFX_USA_TECHNOLOGY_tank_destroyer_equipment_1_medium"
-		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_tank_destroyer_equipment_1.dds"
-	}
-	SpriteType = {
-		name = "GFX_PUE_TECHNOLOGY_tank_destroyer_equipment_1_medium"
-		texturefile = "gfx/interface/technologies/USA/USA_TECHNOLOGY_tank_destroyer_equipment_1.dds"
 	}
 }

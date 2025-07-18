@@ -10,7 +10,7 @@ equipments = {
 		
 		group_by = archetype
 
-		active = yes
+		active = no
 
 		interface_category = interface_category_fighter
 
@@ -26,6 +26,6 @@ equipments = {
 	fighter_equipment_1 = {
 		archetype = fighter_equipment
 		
-		active = yes
+		active = no
 	}
 }

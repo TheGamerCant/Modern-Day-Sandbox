@@ -17,7 +17,7 @@ equipments = {
 			sub_torpedo_upgrade
 		}
 		
-		active = yes
+		active = no
 
 		interface_category = interface_category_other_ships
 
@@ -655,7 +655,7 @@ equipments = {
 		archetype = ship_hull_submarine
 		priority = 2500
 		visual_level = 0
-		active = yes
+		active = no
 
 		interface_category = interface_category_other_ships
 		model = ship_hull_cruiser_submarine
@@ -756,7 +756,7 @@ equipments = {
 		archetype = ship_hull_submarine
 		priority = 2500
 		visual_level = 0
-		active = yes
+		active = no
 
 		interface_category = interface_category_other_ships
 		model = ship_hull_fleet_submarine

@@ -10,7 +10,7 @@ equipments = {
 		group_by = archetype
 		sprite = floating_harbor
 
-		active = yes
+		active = no
 
 		interface_category = interface_category_other_ships
 

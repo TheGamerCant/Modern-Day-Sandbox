@@ -6,12 +6,17 @@ state={
 		add_core_of = USA
 
 		victory_points = { 3957 100 }
+		
+		buildings = {
+			arms_factory = 3
+			industrial_complex = 4
+		}
 	}
 	provinces={
 		3957 
 	}
 	manpower=601723
 	buildings_max_level_factor=1.000
-	state_category=rural
+	state_category=metropolis
 	local_supplies=0.500
 }

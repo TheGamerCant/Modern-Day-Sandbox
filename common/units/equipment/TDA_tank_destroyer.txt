@@ -42,7 +42,7 @@ equipments = {
 	tank_destroyer_equipment_1 = {
 		archetype = tank_destroyer_equipment
 		
-		active = yes
+		year = 1965
 	}
 	
 	tank_destroyer_equipment_2 = {

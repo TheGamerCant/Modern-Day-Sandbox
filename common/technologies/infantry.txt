@@ -59,7 +59,7 @@ technologies = {
 			COMBAT_UNIT_advanced_infantry
 		}
 
-		research_cost = 1.0
+		research_cost = 2.5
 		start_year = 1960
 		folder = {
 			name = infantry_folder
@@ -107,7 +107,7 @@ technologies = {
 			infantry_equipment_2
 		}
 
-		research_cost = 1.0
+		research_cost = 2.5
 		start_year = 1972
 		folder = {
 			name = infantry_folder
@@ -133,7 +133,7 @@ technologies = {
 
 		category_all_infantry = { soft_attack = 0.03 }
 
-		research_cost = 1.0
+		research_cost = 1.25
 		start_year = 1975
 		folder = {
 			name = infantry_folder
@@ -159,7 +159,7 @@ technologies = {
 
 		category_all_infantry = { soft_attack = 0.03 }
 
-		research_cost = 1.0
+		research_cost = 1.25
 		start_year = 1980
 		folder = {
 			name = infantry_folder
@@ -187,7 +187,7 @@ technologies = {
 			infantry_equipment_3
 		}
 
-		research_cost = 1.0
+		research_cost = 2.5
 		start_year = 1985
 		folder = {
 			name = infantry_folder
@@ -213,7 +213,7 @@ technologies = {
 
 		category_all_infantry = { soft_attack = 0.04 }
 
-		research_cost = 1.0
+		research_cost = 1.25
 		start_year = 1990
 		folder = {
 			name = infantry_folder
@@ -241,7 +241,7 @@ technologies = {
 			infantry_equipment_4
 		}
 
-		research_cost = 1.0
+		research_cost = 2.5
 		start_year = 1995
 		folder = {
 			name = infantry_folder
@@ -267,7 +267,7 @@ technologies = {
 
 		category_all_infantry = { soft_attack = 0.07 }
 
-		research_cost = 1.0
+		research_cost = 1.4
 		start_year = 2000
 		folder = {
 			name = infantry_folder
@@ -295,7 +295,7 @@ technologies = {
 			infantry_equipment_5
 		}
 
-		research_cost = 1.0
+		research_cost = 3.0
 		start_year = 2005
 		folder = {
 			name = infantry_folder
@@ -321,7 +321,7 @@ technologies = {
 
 		category_all_infantry = { soft_attack = 0.10 }
 
-		research_cost = 1.0
+		research_cost = 1.4
 		start_year = 2010
 		folder = {
 			name = infantry_folder
@@ -349,7 +349,7 @@ technologies = {
 			infantry_equipment_6
 		}
 
-		research_cost = 1.0
+		research_cost = 3.0
 		start_year = 2015
 		folder = {
 			name = infantry_folder
@@ -375,7 +375,7 @@ technologies = {
 
 		category_all_infantry = { soft_attack = 0.14 }
 
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 2018
 		folder = {
 			name = infantry_folder
@@ -403,7 +403,7 @@ technologies = {
 			infantry_equipment_7
 		}
 
-		research_cost = 1.0
+		research_cost = 3.25
 		start_year = 2022
 		folder = {
 			name = infantry_folder
@@ -431,7 +431,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 2.5
 		start_year = 1965
 		folder = {
 			name = infantry_folder
@@ -460,7 +460,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 2.5
 		start_year = 1975
 		folder = {
 			name = infantry_folder
@@ -480,7 +480,7 @@ technologies = {
 	
 	TECHNOLOGY_improved_anti_tank_missiles_1 = {
 
-		category_all_infantry = { hard_attack = 0.05 ap_attack = 0.15 }
+		category_all_infantry = { hard_attack = 0.05 ap_attack = 0.10 }
 		
 		path = {
 			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_3
@@ -492,7 +492,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.3
 		start_year = 1980
 		folder = {
 			name = infantry_folder
@@ -521,7 +521,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 2.75
 		start_year = 1995
 		folder = {
 			name = infantry_folder
@@ -541,7 +541,7 @@ technologies = {
 	
 	TECHNOLOGY_improved_anti_tank_missiles_2 = {
 
-		category_all_infantry = { hard_attack = 0.10 ap_attack = 0.30 }
+		category_all_infantry = { hard_attack = 0.10 ap_attack = 0.20 }
 		
 		path = {
 			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_4
@@ -553,7 +553,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.3
 		start_year = 2000
 		folder = {
 			name = infantry_folder
@@ -587,7 +587,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 3.4
 		start_year = 2010
 		folder = {
 			name = infantry_folder
@@ -607,7 +607,7 @@ technologies = {
 	
 	TECHNOLOGY_improved_anti_tank_missiles_3 = {
 
-		category_all_infantry = { hard_attack = 0.15 ap_attack = 0.50 }
+		category_all_infantry = { hard_attack = 0.16 ap_attack = 0.32 }
 		
 		path = {
 			leads_to_tech = TECHNOLOGY_infantry_anti_tank_equipment_5
@@ -619,7 +619,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 2018
 		folder = {
 			name = infantry_folder
@@ -643,7 +643,7 @@ technologies = {
 			infantry_anti_tank_equipment_5
 		}
 
-		research_cost = 1.0
+		research_cost = 3.8
 		start_year = 2025
 		folder = {
 			name = infantry_folder
@@ -672,7 +672,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 2.75
 		start_year = 1965
 		folder = {
 			name = infantry_folder
@@ -692,14 +692,14 @@ technologies = {
 
 	TECHNOLOGY_improved_anti_air_missiles_1 = {
 
-		category_all_infantry = { air_attack = 0.12 }
+		category_all_infantry = { air_attack = 0.08 }
 
 		path = {
 			leads_to_tech = TECHNOLOGY_infantry_anti_air_equipment_2
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 1.35
 		start_year = 1970
 		folder = {
 			name = infantry_folder
@@ -733,7 +733,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 2.75
 		start_year = 1980
 		folder = {
 			name = infantry_folder
@@ -753,14 +753,14 @@ technologies = {
 	
 	TECHNOLOGY_improved_anti_air_missiles_2 = {
 
-		category_all_infantry = { air_attack = 0.20 }
+		category_all_infantry = { air_attack = 0.18 }
 
 		path = {
 			leads_to_tech = TECHNOLOGY_infantry_anti_air_equipment_3
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 1.35
 		start_year = 1990
 		folder = {
 			name = infantry_folder
@@ -795,7 +795,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 3.25
 		start_year = 2000
 		folder = {
 			name = infantry_folder
@@ -815,7 +815,7 @@ technologies = {
 	
 	TECHNOLOGY_improved_anti_air_missiles_3 = {
 
-		category_all_infantry = { air_attack = 0.35 }
+		category_all_infantry = { air_attack = 0.30 }
 
 		path = {
 			leads_to_tech = TECHNOLOGY_infantry_anti_air_equipment_4
@@ -827,7 +827,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 1.55
 		start_year = 2012
 		folder = {
 			name = infantry_folder
@@ -856,7 +856,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 4.0
 		start_year = 2020
 		folder = {
 			name = infantry_folder
@@ -876,16 +876,16 @@ technologies = {
 
 	TECHNOLOGY_heat_seeking_missiles_1 = {
 
-		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.10 ap_attack = 0.10 breakthrough = 0.03 }
-		COMBAT_UNIT_advanced_infantry = { air_attack = 0.10 ap_attack = 0.10 breakthrough = 0.03 }
-		category_special_forces = { air_attack = 0.12 ap_attack = 0.12 breakthrough = 0.04 }
+		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.07 ap_attack = 0.07 breakthrough = 0.03 }
+		COMBAT_UNIT_advanced_infantry = { air_attack = 0.07 ap_attack = 0.07 breakthrough = 0.03 }
+		category_special_forces = { air_attack = 0.10 ap_attack = 0.10 breakthrough = 0.04 }
 
 		path = {
 			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_2
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 1.6
 		start_year = 1992
 		folder = {
 			name = infantry_folder
@@ -907,16 +907,16 @@ technologies = {
 
 	TECHNOLOGY_heat_seeking_missiles_2 = {
 
-		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.18 ap_attack = 0.18 breakthrough = 0.05 }
-		COMBAT_UNIT_advanced_infantry= { air_attack = 0.18 ap_attack = 0.18 breakthrough = 0.05 }
-		category_special_forces = { air_attack = 0.20 ap_attack = 0.20 breakthrough = 0.06 }
+		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.15 ap_attack = 0.15 breakthrough = 0.05 }
+		COMBAT_UNIT_advanced_infantry= { air_attack = 0.15 ap_attack = 0.15 breakthrough = 0.05 }
+		category_special_forces = { air_attack = 0.18 ap_attack = 0.18 breakthrough = 0.06 }
 		
 		path = {
 			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_3
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 1.6
 		start_year = 2005
 		folder = {
 			name = infantry_folder
@@ -938,16 +938,16 @@ technologies = {
 
 	TECHNOLOGY_heat_seeking_missiles_3 = {
 		
-		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.28 ap_attack = 0.28 breakthrough = 0.08 }
-		COMBAT_UNIT_advanced_infantry= { air_attack = 0.28 ap_attack = 0.28 breakthrough = 0.08 }
-		category_special_forces = { air_attack = 0.32 ap_attack = 0.32 breakthrough = 0.10 }
+		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.25 ap_attack = 0.25 breakthrough = 0.08 }
+		COMBAT_UNIT_advanced_infantry= { air_attack = 0.25 ap_attack = 0.25 breakthrough = 0.08 }
+		category_special_forces = { air_attack = 0.30 ap_attack = 0.30 breakthrough = 0.10 }
 		
 		path = {
 			leads_to_tech = TECHNOLOGY_heat_seeking_missiles_4
 			research_cost_coeff = 1
 		}
 
-		research_cost = 1.0
+		research_cost = 1.7
 		start_year = 2015
 		folder = {
 			name = infantry_folder
@@ -969,11 +969,11 @@ technologies = {
 
 	TECHNOLOGY_heat_seeking_missiles_4 = {
 		
-		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.40 ap_attack = 0.40 breakthrough = 0.12 }
-		COMBAT_UNIT_advanced_infantry = { air_attack = 0.40 ap_attack = 0.40 breakthrough = 0.12 }
-		category_special_forces = { air_attack = 0.45 ap_attack = 0.45 breakthrough = 0.15 }
+		COMBAT_UNIT_mobile_advanced_infantry = { air_attack = 0.34 ap_attack = 0.34 breakthrough = 0.12 }
+		COMBAT_UNIT_advanced_infantry = { air_attack = 0.34 ap_attack = 0.34 breakthrough = 0.12 }
+		category_special_forces = { air_attack = 0.42 ap_attack = 0.42 breakthrough = 0.15 }
 
-		research_cost = 1.0
+		research_cost = 1.8
 		start_year = 2024
 		folder = {
 			name = infantry_folder
@@ -1031,7 +1031,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.2
 		start_year = 1978
 		folder = {
 			name = infantry_folder
@@ -1059,7 +1059,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.35
 		start_year = 1990
 		folder = {
 			name = infantry_folder
@@ -1087,7 +1087,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 2005
 		folder = {
 			name = infantry_folder
@@ -1115,7 +1115,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.6
 		start_year = 2014
 		folder = {
 			name = infantry_folder
@@ -1138,7 +1138,7 @@ technologies = {
 			soft_attack = 0.15
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.7
 		start_year = 2024
 		folder = {
 			name = infantry_folder
@@ -1165,7 +1165,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.2
 		start_year = 1962
 		folder = {
 			name = infantry_folder
@@ -1197,7 +1197,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.2
 		start_year = 1975
 		folder = {
 			name = infantry_folder
@@ -1229,7 +1229,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.3
 		start_year = 1988
 		folder = {
 			name = infantry_folder
@@ -1248,7 +1248,7 @@ technologies = {
 	
 	TECHNOLOGY_body_armour_4 = {
 
-		category_all_infantry = { defense = 0.06 max_strength = 0.30 }
+		category_all_infantry = { defense = 0.06 max_strength = 0.12 }
 		SUPPORT_UNIT_medical = { casualty_trickleback = 0.08 experience_loss_factor = -0.08 }
 		
 		path = {
@@ -1261,7 +1261,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.45
 		start_year = 2000
 		folder = {
 			name = infantry_folder
@@ -1280,7 +1280,7 @@ technologies = {
 	
 	TECHNOLOGY_body_armour_5 = {
 
-		category_all_infantry = { defense = 0.08 max_strength = 0.50 }
+		category_all_infantry = { defense = 0.08 max_strength = 0.20 }
 		SUPPORT_UNIT_medical = { casualty_trickleback = 0.10 experience_loss_factor = -0.10 }
 		
 		path = {
@@ -1288,7 +1288,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.6
 		start_year = 2008
 		folder = {
 			name = infantry_folder
@@ -1307,7 +1307,7 @@ technologies = {
 	
 	TECHNOLOGY_body_armour_6 = {
 
-		category_all_infantry = { defense = 0.10 max_strength = 0.75 }
+		category_all_infantry = { defense = 0.10 max_strength = 0.30 }
 		SUPPORT_UNIT_medical = { casualty_trickleback = 0.12 experience_loss_factor = -0.12 }
 
 		path = {
@@ -1315,7 +1315,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.8
 		start_year = 2020
 		folder = {
 			name = infantry_folder
@@ -1367,7 +1367,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.2
 		start_year = 1995
 		folder = {
 			name = infantry_folder
@@ -1393,7 +1393,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.4
 		start_year = 2010
 		folder = {
 			name = infantry_folder
@@ -1418,7 +1418,7 @@ technologies = {
 		COMBAT_UNIT_advanced_infantry= { defense = 0.05 }
 		category_special_forces = { defense = 0.05 }
 		
-		research_cost = 1.0
+		research_cost = 1.65
 		start_year = 2026
 		folder = {
 			name = infantry_folder
@@ -1443,7 +1443,7 @@ technologies = {
             COMBAT_UNIT_mountaineers
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 1960
 		folder = {
 			name = infantry_folder
@@ -1491,7 +1491,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_amphibious_1 TECHNOLOGY_mountaineers_1 }
 		
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 1964
 		folder = {
 			name = infantry_folder
@@ -1528,7 +1528,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_paratroopers_1 TECHNOLOGY_mountaineers_1 }
 		
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 1964
 		folder = {
 			name = infantry_folder
@@ -1565,7 +1565,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_paratroopers_1 TECHNOLOGY_amphibious_1 }
 		
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 1964
 		folder = {
 			name = infantry_folder
@@ -1678,7 +1678,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_amphibious_2 TECHNOLOGY_mountaineers_2 }
 		
-		research_cost = 1.0
+		research_cost = 1.65
 		start_year = 1975
 		folder = {
 			name = infantry_folder
@@ -1712,7 +1712,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_paratroopers_2 TECHNOLOGY_mountaineers_2 }
 		
-		research_cost = 1.0
+		research_cost = 1.65
 		start_year = 1975
 		folder = {
 			name = infantry_folder
@@ -1746,7 +1746,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_paratroopers_2 TECHNOLOGY_amphibious_2 }
 		
-		research_cost = 1.0
+		research_cost = 1.65
 		start_year = 1975
 		folder = {
 			name = infantry_folder
@@ -1819,7 +1819,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.1
 		start_year = 1992
 		folder = {
 			name = infantry_folder
@@ -1860,7 +1860,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.1
 		start_year = 1992
 		folder = {
 			name = infantry_folder
@@ -1897,7 +1897,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_amphibious_3 TECHNOLOGY_mountaineers_3 }
 		
-		research_cost = 1.0
+		research_cost = 1.75
 		start_year = 1995
 		folder = {
 			name = infantry_folder
@@ -1935,7 +1935,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_paratroopers_3 TECHNOLOGY_mountaineers_3 }
 		
-		research_cost = 1.0
+		research_cost = 1.75
 		start_year = 1995
 		folder = {
 			name = infantry_folder
@@ -1973,7 +1973,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_paratroopers_3 TECHNOLOGY_amphibious_3 }
 		
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 1995
 		folder = {
 			name = infantry_folder
@@ -2059,7 +2059,7 @@ technologies = {
 		
 		XOR = { TECHNOLOGY_special_forces_global_operations }
 
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 2005
 		folder = {
 			name = infantry_folder
@@ -2098,7 +2098,7 @@ technologies = {
 		
 		XOR = { TECHNOLOGY_special_forces_tip_of_the_spear }
 
-		research_cost = 1.0
+		research_cost = 1.5
 		start_year = 2005
 		folder = {
 			name = infantry_folder
@@ -2135,7 +2135,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.25
 		start_year = 2015
 		folder = {
 			name = infantry_folder
@@ -2176,7 +2176,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 1.0
+		research_cost = 1.25
 		start_year = 2015
 		folder = {
 			name = infantry_folder
@@ -2210,7 +2210,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_amphibious_4 TECHNOLOGY_mountaineers_4 }
 		
-		research_cost = 1.0
+		research_cost = 1.9
 		start_year = 2018
 		folder = {
 			name = infantry_folder
@@ -2239,7 +2239,7 @@ technologies = {
 			defense = 0.15
 		}
 		
-		research_cost = 1.0
+		research_cost = 2.1
 		start_year = 2025
 		folder = {
 			name = infantry_folder
@@ -2274,7 +2274,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_paratroopers_4 TECHNOLOGY_mountaineers_4 }
 		
-		research_cost = 1.0
+		research_cost = 1.9
 		start_year = 2018
 		folder = {
 			name = infantry_folder
@@ -2303,7 +2303,7 @@ technologies = {
 			defense = 0.15
 		}
 		
-		research_cost = 1.0
+		research_cost = 2.1
 		start_year = 2025
 		folder = {
 			name = infantry_folder
@@ -2338,7 +2338,7 @@ technologies = {
 
 		XOR = { TECHNOLOGY_paratroopers_4 TECHNOLOGY_amphibious_4 }
 		
-		research_cost = 1.0
+		research_cost = 1.9
 		start_year = 2018
 		folder = {
 			name = infantry_folder
@@ -2367,7 +2367,7 @@ technologies = {
 			defense = 0.15
 		}
 		
-		research_cost = 1.0
+		research_cost = 2.1
 		start_year = 2025
 		folder = {
 			name = infantry_folder

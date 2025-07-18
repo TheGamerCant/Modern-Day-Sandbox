@@ -41,7 +41,7 @@ equipments = {
 	armoured_anti_air_equipment_1 = {
 		archetype = armoured_anti_air_equipment
 		
-		active = yes
+		year = 1975
 	}
 	
 	armoured_anti_air_equipment_2 = {

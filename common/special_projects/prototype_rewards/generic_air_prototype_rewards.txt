@@ -90,14 +90,14 @@ sp_air_generic_discoveries_reward = {
 		token =sp_air_generic_avionics_advancements_reward_option
 				
 		iteration_output = {
-			country_effects = {
-				add_tech_bonus = {
-					name = sp_air_generic_discoveries_reward
-					bonus = 0.25
-					uses = 1
-					category = air_equipment
-				} 
-			}
+#			country_effects = {
+#				add_tech_bonus = {
+#					name = sp_air_generic_discoveries_reward
+#					bonus = 0.25
+#					uses = 1
+#					category = air_equipment
+#				} 
+#			}
 		}
 	}
 }
