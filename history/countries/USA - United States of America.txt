@@ -112,3 +112,5 @@ set_technology = {
 	TECHNOLOGY_infantry_fighting_vehicle_equipment_2 = 1
 	TECHNOLOGY_infantry_fighting_vehicle_equipment_3 = 1
 }
+
+load_oob = "USA_test"
