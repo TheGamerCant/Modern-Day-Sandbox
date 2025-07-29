@@ -109,25 +109,11 @@ bitmapfonts = {
 		color = 0xffffffff
 	}
 
+	#§
+
 	textcolors = {
-		F = { 150 75 0 }		#Fascist
-		U = { 56 56 56 }		#Ultanationalist
-		D = { 80 80 80 }		#Right Despotist
-		f = { 255 145 0 }		#Fundamentalist
-		M = { 178 0 255 }		#Monarchist
-		P = { 62 166 58 }		#Populist
-
-		l = { 255 225 0 }		#Libertarian
-		c = { 0 0 170 }			#Conservative
-		n = { 0 0 255 }			#Liberal
-		s = { 186 32 86 }		#Social Democrat
-
-		S = { 255 63 63 }		#Socialist
-		m = { 255 0 0 }			#Moderate Communist
-		h = { 110 0 0 }			#Hardline Communist
-		d = { 119 76 76 }		#Left Despotist
-		A = { 48 36 36 }		#Anarchist
-
+		F = { 150 97 55 }			# Brown / Native American
+	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac
 		W = { 255 255 255 } 		# White

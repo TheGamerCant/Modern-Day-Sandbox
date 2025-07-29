@@ -1,0 +1,376 @@
+#Adds ethnicities to the array and sorts it
+STATE_sort_demographics_array = {
+	#Either doesn't have an array or the array is 100% other
+	if = {
+		limit = { 
+			OR = {
+				NOT = { has_variable  = demographics_index_array^num } 
+				AND = {
+					has_variable = demographics_index_array^num				#Has array, is one long, and that one is 'other'
+					check_variable = { demographics_index_array^num = 1 }
+					check_variable = { demographics_value_array^0 = 0 }
+				}
+			}
+		}
+		
+		resize_array = { array = demographics_index_array size = 1 value = 0 }
+		resize_array = { array = demographics_value_array size = 1 value = 0 }
+		
+		set_variable = { demographics_index_array^0 = 0 }
+		set_variable = { demographics_value_array^0 = 100 }
+	}
+	#Array exists - make sure the variables add up to 100 then sort them
+	else = {
+		#Create new arrays to hold our variables
+		clear_array = demographics_index_array_HOLD
+		clear_array = demographics_value_array_HOLD
+		
+		for_loop_effect = {
+			end = demographics_index_array^num
+			break = break1
+			value = v1
+			
+			if = {
+				limit = { is_in_array = { array = demographics_index_array_HOLD value = demographics_index_array^v1 } }		#Is the current index value already in the array? (Do we have the same ethnicity twice)
+				
+				#Find the repeated ethnicity and add to it
+				for_loop_effect = {
+					end = demographics_index_array_HOLD^num
+					break = break2
+					value = v2
+					
+					if = {
+						limit = { check_variable = { demographics_index_array_HOLD^v2 = demographics_index_array^v1 } }
+						add_to_variable = { demographics_value_array_HOLD^v2 = demographics_value_array^v1 }
+						set_temp_variable = { break2 = 1 }
+					}
+				}
+			}
+			else = {	#Otherwise add it to our array
+				add_to_array = { demographics_index_array_HOLD = demographics_index_array^v1 }
+				add_to_array = { demographics_value_array_HOLD = demographics_value_array^v1 }
+			}
+		}
+			
+		#Get the sum of the array
+		set_variable = { total_count = 0 }
+		for_each_loop = {
+			array = demographics_value_array_HOLD
+			value = v
+
+			add_to_variable = { total_count = v }
+		}
+		
+		#If not equal to 100 multiply each value by (100 / total)
+		if = { 
+			limit = { NOT = { check_variable = { total_count = 100 } } } 
+			set_temp_variable = { multiplier = 100 }
+			divide_temp_variable = { multiplier = total_count }
+			clear_variable = total_count
+			
+			for_loop_effect = {
+				end = demographics_value_array_HOLD^num
+				value = v
+				
+				multiply_variable = { demographics_value_array_HOLD^v = multiplier }
+			}
+		}
+		
+		
+		#We now have our array - now we sort it
+		resize_array = { array = arr size = demographics_value_array_HOLD^num value = 0 }
+		for_each_loop = {
+			array = demographics_value_array_HOLD
+			value = v
+			index = i
+			
+			set_variable = { arr^i = v }
+		}
+		
+		#Sort array 'arr'
+		set_variable = { high = arr^num }
+		subtract_from_variable = { high = 1 }
+		set_variable = { low = 0 }
+		
+		STATE_sort_demographics_quicksort = yes
+		
+		clear_variable = high
+		clear_variable = low
+		
+#		log = "Standard:"
+#		for_each_loop = {
+#			array = demographics_index_array
+#			value = v
+#			index = i
+#			
+#			log = "[?v] : [?demographics_value_array^i]"
+#		}
+#		
+#		log = " "
+#		log = "Hold:"
+#		for_each_loop = {
+#			array = demographics_index_array_HOLD
+#			value = v
+#			index = i
+#			
+#			log = "[?v] : [?demographics_value_array_HOLD^i]"
+#		}
+#		
+#		log = " "
+#		log = "arr:"
+#		for_each_loop = {
+#			array = arr
+#			value = v
+#			index = i
+#			
+#			log = "[?v]"
+#		}
+#	
+#		log = " "
+		
+		#We now have 5 arrays
+		clear_array = demographics_index_array
+		clear_array = demographics_value_array
+		
+		resize_array = { array = demographics_index_array value = 0 size = demographics_index_array_HOLD^num }
+		resize_array = { array = demographics_value_array value = 0 size = demographics_value_array_HOLD^num }
+	
+		#Go over 'arr' (the ordered array) and set the values of demographics_index_array and demographics_value_array
+		#Used a linear search instead of binary search as the ethnicity lists are very small
+		for_each_loop = {
+			array = arr
+			value = v
+			index = i
+			break = break
+			
+			for_loop_effect = {
+				end = demographics_value_array_HOLD^num
+				value = i2
+				break = break2
+				
+#				log = "[?i], [?i2]: [?v], [?demographics_value_array_HOLD^i2]"
+
+				if = {
+					limit = { check_variable = { demographics_value_array_HOLD^i2 = v } }
+					set_variable = { demographics_index_array^i = demographics_index_array_HOLD^i2 }
+					set_variable = { demographics_value_array^i = demographics_value_array_HOLD^i2 }
+					set_temp_variable = { break2 = 1 }
+				}
+			}
+		}
+		
+		clear_array = arr
+		clear_array = demographics_index_array_HOLD
+		clear_array = demographics_value_array_HOLD
+	}
+	
+	#We now have our sorted arrays 'demographics_value_array' and 'demographics_index_array' -> Now get colours
+	set_temp_variable = { largest_ethnicity = demographics_index_array^0 }
+
+	set_variable = { demographics_r = global.demographics_colour_array^largest_ethnicity }
+	divide_variable = { demographics_r = 1000000 }
+	multiply_variable = { demographics_r = 1000 }
+	
+	set_variable = { demographics_g =  global.demographics_colour_array^largest_ethnicity }
+	multiply_variable = { demographics_g = 0.001 }
+	multiply_variable = { demographics_g = 1000 }
+	set_variable = { demographics_b =  global.demographics_colour_array^largest_ethnicity }
+	subtract_from_variable = { demographics_b = demographics_g }
+	modulo_variable = { demographics_g = 1000 }
+	multiply_variable = { demographics_b = 1000 }
+	
+	#Colours are currently RGB integers (0-255), convert to a float (0-1)
+	divide_variable = { demographics_r = 255 }
+	divide_variable = { demographics_g = 255 }
+	divide_variable = { demographics_b = 255 }
+	
+	#Weaken the colour if there's more than one ethnicity
+	if = {
+		limit = { check_variable = { demographics_index_array^num > 1 } }
+
+		#Get float strength between 0-1, equal to how strong we want the colour to be.
+		#For this, I have % of majority ethnicity + difference between the first and second most common ethnicities divided by 150
+		set_temp_variable = { strength = demographics_value_array^0 }
+		multiply_temp_variable = { strength = 2 }
+		subtract_from_temp_variable = { strength = demographics_value_array^1 }
+		divide_temp_variable = { strength = 150 }
+		
+		clamp_temp_variable = { var = strength min = 0 max = 1 }
+		
+		#Create greyscale value luminance
+		set_temp_variable = { luminance = demographics_r }
+		add_to_temp_variable = { luminance = demographics_g }
+		add_to_temp_variable = { luminance = demographics_b }
+#		multiply_temp_variable = { luminance = 0.9 }
+#		divide_temp_variable = { luminance = 3 }
+		multiply_temp_variable = { luminance = 0.3 }
+		
+		#Create 'mutedColours', which makes the colour duller by default
+		#Using 0.8 for the luminance greyscale and 0.2 for the colour
+		#More luminence = a bigger on-map difference between strengths
+		set_temp_variable = { mutedColour_r = luminance }
+		multiply_temp_variable = { mutedColour_r = 0.8 }
+		set_temp_variable = { mutedColour_r2 = demographics_r }
+		multiply_temp_variable = { mutedColour_r2 = 0.2 }
+		add_to_temp_variable = { mutedColour_r = mutedColour_r2 }
+		
+		set_temp_variable = { mutedColour_g = luminance }
+		multiply_temp_variable = { mutedColour_g = 0.8 }
+		set_temp_variable = { mutedColour_g2 = demographics_g }
+		multiply_temp_variable = { mutedColour_g2 = 0.2 }
+		add_to_temp_variable = { mutedColour_g = mutedColour_g2 }
+		
+		set_temp_variable = { mutedColour_b = luminance }
+		multiply_temp_variable = { mutedColour_b = 0.8 }
+		set_temp_variable = { mutedColour_b2 = demographics_b }
+		multiply_temp_variable = { mutedColour_b2 = 0.2 }
+		add_to_temp_variable = { mutedColour_b = mutedColour_b2 }
+		
+		#Now blend it with the equaltion 'mutedColour * (1 - strength) + ethnicity * strength'
+		set_temp_variable = { r_HOLD = 1 }
+		subtract_from_temp_variable = { r_HOLD = strength }
+		multiply_temp_variable = { r_HOLD = mutedColour_r }
+		set_temp_variable = { r_HOLD2 = demographics_r }
+		multiply_temp_variable = { r_HOLD2 = strength }
+		add_to_temp_variable = { r_HOLD = r_HOLD2 }
+		set_variable = { demographics_r = r_HOLD }
+		
+		set_temp_variable = { g_HOLD = 1 }
+		subtract_from_temp_variable = { g_HOLD = strength }
+		multiply_temp_variable = { g_HOLD = mutedColour_g }
+		set_temp_variable = { g_HOLD2 = demographics_g }
+		multiply_temp_variable = { g_HOLD2 = strength }
+		add_to_temp_variable = { g_HOLD = g_HOLD2 }
+		set_variable = { demographics_g = g_HOLD }
+		
+		set_temp_variable = { b_HOLD = 1 }
+		subtract_from_temp_variable = { b_HOLD = strength }
+		multiply_temp_variable = { b_HOLD = mutedColour_b }
+		set_temp_variable = { b_HOLD2 = demographics_b }
+		multiply_temp_variable = { b_HOLD2 = strength }
+		add_to_temp_variable = { b_HOLD = b_HOLD2 }
+		set_variable = { demographics_b = b_HOLD }
+	}
+}
+
+update_every_state_ethnicity = { every_state = { STATE_sort_demographics_array = yes } }
+
+#Code taken from Yard1
+STATE_sort_demographics_quicksort = {
+	# set up the auxilary stack
+	set_temp_variable = { stack_size = high }
+	subtract_from_temp_variable = { stack_size = low }
+	add_to_temp_variable = { stack_size = 1 }
+	resize_temp_array = {
+		array = stack
+		value = 0
+		size = stack_size
+	}
+
+	set_temp_variable = { top = 0 }
+	set_temp_variable = { stack^top = low }
+	add_to_temp_variable = { top = 1 }
+	set_temp_variable = { stack^top = high }
+
+	while_loop_effect = {
+		limit = { 
+			check_variable = {
+				var = top
+				value = 0
+				compare = greater_than_or_equals
+			}
+		}
+		set_variable = { high = stack^top }
+		subtract_from_temp_variable = { top = 1 }
+		set_variable = { low = stack^top }
+		subtract_from_temp_variable = { top = 1 }
+
+		# Get random pivot
+		set_variable = { random_pivot = random }
+		multiply_variable = { random_pivot = high }
+		round_variable = random_pivot
+		add_to_variable = { random_pivot = low }
+		clamp_variable = {
+			var = random_pivot
+			min = low
+			max = high
+		}
+		set_temp_variable = { swap = arr^high }
+		set_variable = { arr^high = arr^random_pivot }
+		set_variable = { arr^random_pivot = swap }
+
+		set_temp_variable = { idx = low }
+		subtract_from_temp_variable = { idx = 1 }
+
+		set_temp_variable = { min = arr^high }
+	  
+		for_loop_effect = {
+			start = low
+			end = high
+			if = {
+				limit = {
+					check_variable = {
+						var = arr^v
+						value = min
+						compare = greater_than_or_equals
+					}
+				}
+				add_to_temp_variable = { idx = 1 }
+				set_temp_variable = { swap = arr^idx }
+				set_variable = { arr^idx = arr^v }
+				set_variable = { arr^v = swap }
+			}
+		}
+
+		add_to_temp_variable = { idx = 1 }
+		set_temp_variable = { swap = arr^idx }
+		set_variable = { arr^idx = arr^high }
+		set_variable = { arr^high = swap }
+
+		# we return the index
+		set_variable = { qs_partition_return = idx }
+
+		set_temp_variable = { qs_partition_return_plus_1 = qs_partition_return }
+		set_temp_variable = { qs_partition_return_minus_1 = qs_partition_return }
+		add_to_temp_variable = { qs_partition_return_plus_1 = 1 } 
+		subtract_from_temp_variable = { qs_partition_return_minus_1 = 1 } 
+
+		if = {
+			limit = { check_variable = { qs_partition_return_minus_1 > low } }
+			add_to_temp_variable = { top = 1 }
+			set_temp_variable = { stack^top = low }
+			add_to_temp_variable = { top = 1 }
+			set_temp_variable = { stack^top = qs_partition_return_minus_1 }
+		}
+
+		if = {
+			limit = { check_variable = { qs_partition_return_plus_1 < high } }
+			add_to_temp_variable = { top = 1 }
+			set_temp_variable = { stack^top = qs_partition_return_plus_1 }
+			add_to_temp_variable = { top = 1 }
+			set_temp_variable = { stack^top = high }
+		}
+	}
+
+	# clear "temporary" variables
+	clear_variable = qs_partition_return
+	clear_variable = random_pivot
+}
+
+ETHNICITIES_TEST = {
+	set_temp_variable = { t = 091007.934 }
+	
+	set_temp_variable = { r = t }
+	divide_temp_variable = { r = 1000000 }
+	multiply_temp_variable = { r = 1000 }
+	
+	set_temp_variable = { g = t }
+	multiply_temp_variable = { g = 0.001 }
+	multiply_temp_variable = { g = 1000 }
+	set_temp_variable = { b = t }
+	subtract_from_temp_variable = { b = g }
+	modulo_temp_variable = { g = 1000 }
+	multiply_temp_variable = { b = 1000 }
+	
+	log = "[?r] [?g] [?b]"
+}

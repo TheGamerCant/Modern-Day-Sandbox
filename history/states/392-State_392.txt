@@ -9,6 +9,21 @@ state={
 		victory_points = { 10478 3 }
 		victory_points = { 7306 5 }
 		victory_points = { 12646 2 }
+		
+		resize_array = { array = 392.demographics_index_array size = 4 value = 0 }
+		resize_array = { array = 392.demographics_value_array size = 4 value = 0 }
+		
+		set_variable = { 392.demographics_index_array^0 = 1 }
+		set_variable = { 392.demographics_value_array^0 = 82.8 }
+		
+		set_variable = { 392.demographics_index_array^1 = 3 }
+		set_variable = { 392.demographics_value_array^1 = 6.8 }
+		
+		set_variable = { 392.demographics_index_array^2 = 0 }
+		set_variable = { 392.demographics_value_array^2 = 6.7 }
+		
+		set_variable = { 392.demographics_index_array^3 = 2 }
+		set_variable = { 392.demographics_value_array^3 = 3.7 }
 	}
 	provinces={
 		1586 1678 1770 1831 4691 7306 7458 7539 9892 9910 10478 10666 11788 11971 12418 12646 13430 13431 

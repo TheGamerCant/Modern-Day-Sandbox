@@ -1,0 +1,29 @@
+on_actions = {
+	on_startup = {
+        effect = {
+			#Set up the ethnicity colours and names array
+			resize_array = { array = global.demographics_colour_array size = 6 value = 0 }
+			resize_array = { array = global.demographics_names_array size = 6 value = 0 }
+			
+			#Initially tried doing (256^2 * r + 256 * g + b) / 1000 but that was too hard to reverse engineer with the shitty variable types paradox uses
+			#Easier to store them as whole integers
+			set_variable = { global.demographics_colour_array^0 = 100100.100 }		#100, 100, 100 - Other
+			set_variable = { global.demographics_colour_array^1 = 072113.232 }		#72,  113, 232 - White American
+			set_variable = { global.demographics_colour_array^2 = 017105.017 }		#17,  105, 17  - African American
+			set_variable = { global.demographics_colour_array^3 = 194128.028 }		#194, 128, 28  - Hispanic American
+			set_variable = { global.demographics_colour_array^4 = 156128.229 }		#156, 128, 229 - Asian American
+			set_variable = { global.demographics_colour_array^5 = 150097.055 }		#150, 97,  55  - Native North American
+			
+			#Set up the names
+			set_variable = { global.demographics_names_array^0 = token:TDA_ethnicity_other_placeholder_idea }
+			set_variable = { global.demographics_names_array^1 = token:TDA_ethnicity_white_american_placeholder_idea }
+			set_variable = { global.demographics_names_array^2 = token:TDA_ethnicity_african_american_placeholder_idea }
+			set_variable = { global.demographics_names_array^3 = token:TDA_ethnicity_hispanic_american_placeholder_idea }
+			set_variable = { global.demographics_names_array^4 = token:TDA_ethnicity_asian_american_placeholder_idea }
+			set_variable = { global.demographics_names_array^5 = token:TDA_ethnicity_native_north_american_placeholder_idea }
+			
+			#Do this after setting up the colours
+			every_state = { STATE_sort_demographics_array = yes }
+		}
+	}
+}

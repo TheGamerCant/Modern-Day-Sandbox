@@ -8,6 +8,24 @@ state={
 		victory_points = { 13537 5 }
 		victory_points = { 13538 2 }
 		
+		resize_array = { array = 463.demographics_index_array size = 5 value = 0 }
+		resize_array = { array = 463.demographics_value_array size = 5 value = 0 }
+		
+		set_variable = { 463.demographics_index_array^0 = 1 }
+		set_variable = { 463.demographics_value_array^0 = 57.4 }
+		
+		set_variable = { 463.demographics_index_array^1 = 5 }
+		set_variable = { 463.demographics_value_array^1 = 14.7 }
+		
+		set_variable = { 463.demographics_index_array^2 = 0 }
+		set_variable = { 463.demographics_value_array^2 = 14.1 }
+		
+		set_variable = { 463.demographics_index_array^3 = 4 }
+		set_variable = { 463.demographics_value_array^3 = 7.7 }
+		
+		set_variable = { 463.demographics_index_array^4 = 3 }
+		set_variable = { 463.demographics_value_array^4 = 6.1 }
+		
 		buildings = {
 			infrastructure = 2
 			air_base = 7

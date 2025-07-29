@@ -69,3 +69,13 @@ Equipment:
 	
 	- attack_helicopter_equipment
 	- transport_helicopter_equipment
+	
+Demograpics:
+	STATE_sort_demographics_array	-> Scripted effect, state scope. Orders the array and sets the rgb values
+
+	0 - Other
+	1 - White American
+	2 - African American
+	3 - Hispanic American
+	4 - Asian American
+	5 - Native North American

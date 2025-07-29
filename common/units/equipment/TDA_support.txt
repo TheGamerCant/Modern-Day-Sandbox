@@ -6,6 +6,7 @@ equipments = {
 		
 		type = {
 			infantry
+			motorized
 			support
 		}
 		
@@ -15,7 +16,8 @@ equipments = {
 
 		interface_category = interface_category_land
 
-		maximum_speed = 4
+		lend_lease_cost = 1
+
 		reliability = 0.8
 
 		build_cost_ic = 1

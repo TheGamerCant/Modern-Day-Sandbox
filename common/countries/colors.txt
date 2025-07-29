@@ -268,3 +268,11 @@ HUN = {
 	color = rgb { 224 133 75 }
 	color_ui = rgb { 224 133 75 }
 }
+SPA = {
+	color = rgb { 233 190 56 }
+	color_ui = rgb { 233 190 56 }
+}
+POR = {
+	color = rgb { 0 104 56 }
+	color_ui = rgb { 0 104 56 }
+}

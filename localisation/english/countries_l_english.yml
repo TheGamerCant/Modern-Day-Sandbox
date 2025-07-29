@@ -166,3 +166,11 @@
  HUN:0 "Hungary"                                  
  HUN_DEF:0 "Hungary"                                  
  HUN_ADJ:0 "Hungarian"
+
+ SPA:0 "Spain"                                  
+ SPA_DEF:0 "the Kingdom of Spain"                                  
+ SPA_ADJ:0 "Spanish"
+
+ POR:0 "Portugal"                                  
+ POR_DEF:0 "the Portugese Republic"                                  
+ POR_ADJ:0 "Portugese"

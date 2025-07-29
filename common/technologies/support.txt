@@ -38,7 +38,7 @@ technologies = {
 	TECHNOLOGY_support_equipment = {
 
 		enable_equipments = {
-			support_equipment
+			support_equipment_1
 		}
 		
 		path = {
