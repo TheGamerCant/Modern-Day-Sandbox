@@ -6,6 +6,15 @@ state={
 		add_core_of = USA
 		
 		victory_points = { 7629 4 }
+		
+		resize_array = { array = 808.culture_index_array size = 2 value = 0 }
+		resize_array = { array = 808.culture_value_array size = 2 value = 0 }
+		
+		set_variable = { 808.culture_index_array^0 = 1 }
+		set_variable = { 808.culture_value_array^0 = 90.2 }
+		
+		set_variable = { 808.culture_index_array^1 = 0 }
+		set_variable = { 808.culture_value_array^1 = 9.8 }
 	}
 	provinces={
 		9675 4445 7629 13158 

@@ -5,23 +5,23 @@ state={
 		owner = USA
 		add_core_of = USA
 		
-		resize_array = { array = 865.demographics_index_array size = 5 value = 0 }
-		resize_array = { array = 865.demographics_value_array size = 5 value = 0 }
+		resize_array = { array = 865.culture_index_array size = 5 value = 0 }
+		resize_array = { array = 865.culture_value_array size = 5 value = 0 }
 		
-		set_variable = { 865.demographics_index_array^0 = 1 }
-		set_variable = { 865.demographics_value_array^0 = 57.4 }
+		set_variable = { 865.culture_index_array^0 = 1 }
+		set_variable = { 865.culture_value_array^0 = 57.4 }
 		
-		set_variable = { 865.demographics_index_array^1 = 5 }
-		set_variable = { 865.demographics_value_array^1 = 14.7 }
+		set_variable = { 865.culture_index_array^1 = 5 }
+		set_variable = { 865.culture_value_array^1 = 14.7 }
 		
-		set_variable = { 865.demographics_index_array^2 = 0 }
-		set_variable = { 865.demographics_value_array^2 = 14.1 }
+		set_variable = { 865.culture_index_array^2 = 0 }
+		set_variable = { 865.culture_value_array^2 = 14.1 }
 		
-		set_variable = { 865.demographics_index_array^3 = 4 }
-		set_variable = { 865.demographics_value_array^3 = 7.7 }
+		set_variable = { 865.culture_index_array^3 = 4 }
+		set_variable = { 865.culture_value_array^3 = 7.7 }
 		
-		set_variable = { 865.demographics_index_array^4 = 3 }
-		set_variable = { 865.demographics_value_array^4 = 6.1 }
+		set_variable = { 865.culture_index_array^4 = 3 }
+		set_variable = { 865.culture_value_array^4 = 6.1 }
 	}
 	provinces={
 		13069 13530 

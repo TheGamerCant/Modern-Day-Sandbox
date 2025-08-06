@@ -11,6 +11,18 @@ state={
 		victory_points = { 1998 4 }
 		victory_points = { 2019 1 }
 		victory_points = { 6785 5 }
+		
+		resize_array = { array = 860.culture_index_array size = 3 value = 0 }
+		resize_array = { array = 860.culture_value_array size = 3 value = 0 }
+		
+		set_variable = { 860.culture_index_array^0 = 3 }
+		set_variable = { 860.culture_value_array^0 = 68.7 }
+		
+		set_variable = { 860.culture_index_array^1 = 1 }
+		set_variable = { 860.culture_value_array^1 = 24.8 }
+		
+		set_variable = { 860.culture_index_array^2 = 0 }
+		set_variable = { 860.culture_value_array^2 = 6.5 }
 	}
 	provinces={
 		1927 1954 1998 2019 2042 4884 4955 5038 5061 6785 6798 6987 8064 10740 10894 12369 12728 12782 13464 13467 13468 13469 13470 

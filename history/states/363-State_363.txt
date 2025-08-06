@@ -12,23 +12,23 @@ state={
 		victory_points = { 12054 6 }
 		victory_points = { 7643 3 }
 		
-		resize_array = { array = 363.demographics_index_array size = 5 value = 0 }
-		resize_array = { array = 363.demographics_value_array size = 5 value = 0 }
+		resize_array = { array = 363.culture_index_array size = 5 value = 0 }
+		resize_array = { array = 363.culture_value_array size = 5 value = 0 }
 		
-		set_variable = { 363.demographics_index_array^0 = 1 }
-		set_variable = { 363.demographics_value_array^0 = 60.7 }
+		set_variable = { 363.culture_index_array^0 = 1 }
+		set_variable = { 363.culture_value_array^0 = 60.7 }
 		
-		set_variable = { 363.demographics_index_array^1 = 2 }
-		set_variable = { 363.demographics_value_array^1 = 20.1 }
+		set_variable = { 363.culture_index_array^1 = 2 }
+		set_variable = { 363.culture_value_array^1 = 20.1 }
 		
-		set_variable = { 363.demographics_index_array^2 = 3 }
-		set_variable = { 363.demographics_value_array^2 = 10.4 }
+		set_variable = { 363.culture_index_array^2 = 3 }
+		set_variable = { 363.culture_value_array^2 = 10.4 }
 		
-		set_variable = { 363.demographics_index_array^3 = 0 }
-		set_variable = { 363.demographics_value_array^3 = 5.6 }
+		set_variable = { 363.culture_index_array^3 = 0 }
+		set_variable = { 363.culture_value_array^3 = 5.6 }
 		
-		set_variable = { 363.demographics_index_array^4 = 4 }
-		set_variable = { 363.demographics_value_array^4 = 3.2 }
+		set_variable = { 363.culture_index_array^4 = 4 }
+		set_variable = { 363.culture_value_array^4 = 3.2 }
 	}
 	provinces={
 		1019 1077 1132 1163 4168 6943 7045 7083 7138 7643 9876 9967 10051 10081 10096 10468 10495 11783 12054 12445 13514 13515 13516 13518 13519 
