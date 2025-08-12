@@ -113,6 +113,7 @@ bitmapfonts = {
 
 	textcolors = {
 		F = { 150 97 55 }			# Brown / Native American
+		r = { 174 12 12 }			# Dark red
 	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac

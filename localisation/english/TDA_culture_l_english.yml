@@ -23,14 +23,24 @@
  TDA_culture_map_mode_5_row:0 "[?global.culture_names_array^loc_row_1.GetTokenLocalizedKey] - [?value_row_1|2%%]\n[?global.culture_names_array^loc_row_2.GetTokenLocalizedKey] - [?value_row_2|2%%]\n[?global.culture_names_array^loc_row_3.GetTokenLocalizedKey] - [?value_row_3|2%%]\n[?global.culture_names_array^loc_row_4.GetTokenLocalizedKey] - [?value_row_4|2%%]\n[?global.culture_names_array^loc_row_5.GetTokenLocalizedKey] - [?value_row_5|2%%]"
  TDA_culture_map_mode_6_row:0 "[?global.culture_names_array^loc_row_1.GetTokenLocalizedKey] - [?value_row_1|2%%]\n[?global.culture_names_array^loc_row_2.GetTokenLocalizedKey] - [?value_row_2|2%%]\n[?global.culture_names_array^loc_row_3.GetTokenLocalizedKey] - [?value_row_3|2%%]\n[?global.culture_names_array^loc_row_4.GetTokenLocalizedKey] - [?value_row_4|2%%]\n[?global.culture_names_array^loc_row_5.GetTokenLocalizedKey] - [?value_row_5|2%%]\n[?global.culture_names_array^loc_row_6.GetTokenLocalizedKey] - [?value_row_6|2%%]"
  TDA_culture_map_mode_7_row:0 "[?global.culture_names_array^loc_row_1.GetTokenLocalizedKey] - [?value_row_1|2%%]\n[?global.culture_names_array^loc_row_2.GetTokenLocalizedKey] - [?value_row_2|2%%]\n[?global.culture_names_array^loc_row_3.GetTokenLocalizedKey] - [?value_row_3|2%%]\n[?global.culture_names_array^loc_row_4.GetTokenLocalizedKey] - [?value_row_4|2%%]\n[?global.culture_names_array^loc_row_5.GetTokenLocalizedKey] - [?value_row_5|2%%]\n[?global.culture_names_array^loc_row_6.GetTokenLocalizedKey] - [?value_row_6|2%%]\n[?global.culture_names_array^loc_row_7.GetTokenLocalizedKey] - [?value_row_7|2%%]"
+
+ TDA_culture_other_token_idea:0 "§gOther§!"
+ TDA_culture_other_desc_token_idea:0 ""
  
- TDA_culture_other_placeholder_idea:0 "§gOther§!"
- TDA_culture_white_american_placeholder_idea:0 "§2White American§!"
- TDA_culture_african_american_placeholder_idea:0 "§GAfrican American§!"
- TDA_culture_hispanic_american_placeholder_idea:0 "§OHispanic American§!"
- TDA_culture_asian_american_placeholder_idea:0 "§1Asian American§!"
- TDA_culture_native_north_american_placeholder_idea:0 "§FNative North American§!"
+ TDA_culture_native_north_american_token_idea:0 "§FNative North American§!"
+ TDA_culture_native_north_american_desc_token_idea:0 "After centuries of persecution, the Native population of North America have reached a series of agreements with their national governments, granting them large amounts of autonomy and recognition of self-government. As a result, they have managed to have an outsized role in both local and national politics."
  
- TDA_culture_anglo_canadian_placeholder_idea:0 "§tAnglo Canadian§!"
- TDA_culture_french_canadian_placeholder_idea:0 "§BFrench Canadian§!"
- TDA_culture_asian_canadian_placeholder_idea:0 "§Y8Asian Canadian§!"
+ TDA_culture_ontarian_token_idea:0 "§RAnglo-Canadian§!"
+ TDA_culture_ontarian_desc_token_idea:0 ""
+ 
+ TDA_culture_quebecois_token_idea:0 "§BFrench-Canadian§!"
+ TDA_culture_quebecois_desc_token_idea:0 ""
+ 
+ TDA_culture_atlantic_canadian_token_idea:0 "§tAtlantic Canadian§!"
+ TDA_culture_atlantic_canadian_desc_token_idea:0 "Atlantic Canadian culture is defined by it's maritime traditions and access to the coast. Despite it's long history of European settlement and outsized role in Canadian politics, the Atlantic provinces of Canada are some of the poorest regions of Canada, as it's lack of large cities causes a large brain drain to Central Canada. It's economy is largely based on fishing, natural resource extraction and power generation."
+ 
+ TDA_culture_prairie_canadian_token_idea:0 "§rPrairie Canadian§!"
+ TDA_culture_prairie_canadian_desc_token_idea:0 "The Prairie provinces of Canada are defined by their well-educated workforce, cultural conservatism and above all - their large oil industry. The Prairie provinces often feel ignored by the so-called 'Lawrentian Elite' of eastern Canada, although outside observations of Prairie separatism are often overblown."
+ 
+ TDA_culture_british_columbian_token_idea:0 "§tBritish Columbian§!"
+ TDA_culture_british_columbian_desc_token_idea:0 "As the westernmost province of Canada, British Columbia has a history of settlement from both the eastern provinces of Canada and Asia to the west. It's hilly and mountainous terrain, rich in natural resources, occasionally gives way to flatlands for large settlements, notably Vancouver, home to nearly half of the provinces population.\n\nThis has lead to one of the starkest urban-rural divides in Canada, as the largely white, rural and conservative parts of the provinces often feel ignored by the more diverse and progressive cities."

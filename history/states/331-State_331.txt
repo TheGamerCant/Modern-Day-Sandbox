@@ -6,11 +6,20 @@ state={
 		add_core_of = CAN
 		
 		victory_points = { 12505 4 }
+		
+		resize_array = { array = 331.culture_index_array size = 2 value = 0 }
+		resize_array = { array = 331.culture_value_array size = 2 value = 0 }
+		
+		set_variable = { 331.culture_index_array^0 = 4 }
+		set_variable = { 331.culture_value_array^0 = 97.5 }
+		
+		set_variable = { 331.culture_index_array^1 = 0 }
+		set_variable = { 331.culture_value_array^1 = 2.5 }
 	}
 	provinces={
 		7758 7788 12505 12680 12698 
 	}
-	manpower= 479105
+	manpower= 494105
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=rural

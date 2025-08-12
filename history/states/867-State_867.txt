@@ -7,24 +7,6 @@ state={
 
 		victory_points = { 3957 100 }
 		
-		resize_array = { array = 867.culture_index_array size = 5 value = 0 }
-		resize_array = { array = 867.culture_value_array size = 5 value = 0 }
-		
-		set_variable = { 867.culture_index_array^0 = 2 }
-		set_variable = { 867.culture_value_array^0 = 41.7 }
-		
-		set_variable = { 867.culture_index_array^1 = 1 }
-		set_variable = { 867.culture_value_array^1 = 36.7 }
-		
-		set_variable = { 867.culture_index_array^2 = 3 }
-		set_variable = { 867.culture_value_array^2 = 11.7 }
-		
-		set_variable = { 867.culture_index_array^3 = 0 }
-		set_variable = { 867.culture_value_array^3 = 5.8 }
-		
-		set_variable = { 867.culture_index_array^4 = 4 }
-		set_variable = { 867.culture_value_array^4 = 4.1 }
-		
 		buildings = {
 			arms_factory = 3
 			industrial_complex = 4

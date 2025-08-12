@@ -74,12 +74,11 @@ Cultures:
 	STATE_sort_culture_array	-> Scripted effect, state scope. Orders the array and sets the rgb values
 
 	0 - Other
-	1 - White American
-	2 - African American
-	3 - Hispanic American
-	4 - Asian American
-	5 - Native North American
 	
-	6 - Anglo Canadian
-	7 - French Canadian
-	8 - Asian Canandian
+	1 - Native North American
+	
+	2 - Ontarian
+	3 - Quebecois
+	4 - Atlantic Canadian
+	5 - Prairie Canadian
+	6 - British Columbian

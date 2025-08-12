@@ -8,21 +8,6 @@ state={
 		victory_points = { 12489 10 }
 		victory_points = { 4625 2 }
 		victory_points = { 12778 2 }
-		
-		resize_array = { array = 372.culture_index_array size = 4 value = 0 }
-		resize_array = { array = 372.culture_value_array size = 4 value = 0 }
-		
-		set_variable = { 372.culture_index_array^0 = 1 }
-		set_variable = { 372.culture_value_array^0 = 67.5 }
-		
-		set_variable = { 372.culture_index_array^1 = 2 }
-		set_variable = { 372.culture_value_array^1 = 14.3 }
-		
-		set_variable = { 372.culture_index_array^2 = 0 }
-		set_variable = { 372.culture_value_array^2 = 9.8 }
-		
-		set_variable = { 372.culture_index_array^3 = 3 }
-		set_variable = { 372.culture_value_array^3 = 8.4 }
 	}
 	provinces={
 		1503 1646 4444 4567 4597 4625 7485 7543 7586 10355 10477 12458 12489 12778 

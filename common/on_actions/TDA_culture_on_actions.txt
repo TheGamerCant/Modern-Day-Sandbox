@@ -2,32 +2,42 @@ on_actions = {
 	on_startup = {
         effect = {
 			#Set up the culture colours and names array
-			resize_array = { array = global.culture_colour_array size = 9 value = 0 }
-			resize_array = { array = global.culture_names_array size = 9 value = 0 }
+			resize_array = { array = global.culture_colour_array size = 7 value = 0 }
+			resize_array = { array = global.culture_names_array size = 7 value = 0 }
+			resize_array = { array = global.culture_desc_array size = 7 value = 0 }
 			
 			#Initially tried doing (256^2 * r + 256 * g + b) / 1000 but that was too hard to reverse engineer with the shitty variable types paradox uses
 			#Easier to store them as whole integers, even if my CS self hates it
-			set_variable = { global.culture_colour_array^0 = 100100.100 }		#100, 100, 100 - Other
-			set_variable = { global.culture_colour_array^1 = 072113.232 }		#72,  113, 232 - White American
-			set_variable = { global.culture_colour_array^2 = 017105.017 }		#17,  105, 17  - African American
-			set_variable = { global.culture_colour_array^3 = 194128.028 }		#194, 128, 28  - Hispanic American
-			set_variable = { global.culture_colour_array^4 = 156128.229 }		#156, 128, 229 - Asian American
-			set_variable = { global.culture_colour_array^5 = 150097.055 }		#150, 97,  55  - Native North American
-			
-			set_variable = { global.culture_colour_array^6 = 242050.052 }		#242, 50,  52  - Anglo Canadian
-			set_variable = { global.culture_colour_array^6 = 000000.217 }		#0  , 0 , 217  - French Canadian
-			set_variable = { global.culture_colour_array^6 = 240163.051 }		#240, 163, 51  - Asian Canadian
+			set_variable = { global.culture_colour_array^0 = 100100.100 }		#100, 100, 100  - Other
+			set_variable = { global.culture_colour_array^1 = 150097.055 }		#150,  97,  55  - Native North American
+			set_variable = { global.culture_colour_array^2 = 225000.000 }		#225,   0,   0  - Ontarian
+			set_variable = { global.culture_colour_array^3 = 000000.180 }		#  0,   0, 180  - Quebecois
+			set_variable = { global.culture_colour_array^4 = 242050.052 }		#242,  50,  52  - Atlantic Canadian
+			set_variable = { global.culture_colour_array^5 = 194039.004 }		#194,  39,   4  - Prairie Canadian
+			set_variable = { global.culture_colour_array^6 = 228039.000 }		#228,  39,   0  - British Columbian
 			
 			#Set up the names
-			set_variable = { global.culture_names_array^0 = token:TDA_culture_other_placeholder_idea }
-			set_variable = { global.culture_names_array^1 = token:TDA_culture_white_american_placeholder_idea }
-			set_variable = { global.culture_names_array^2 = token:TDA_culture_african_american_placeholder_idea }
-			set_variable = { global.culture_names_array^3 = token:TDA_culture_hispanic_american_placeholder_idea }
-			set_variable = { global.culture_names_array^4 = token:TDA_culture_asian_american_placeholder_idea }
-			set_variable = { global.culture_names_array^5 = token:TDA_culture_native_north_american_placeholder_idea }
-			set_variable = { global.culture_names_array^6 = token:TDA_culture_anglo_canadian_placeholder_idea }
-			set_variable = { global.culture_names_array^7 = token:TDA_culture_french_canadian_placeholder_idea }
-			set_variable = { global.culture_names_array^8 = token:TDA_culture_asian_canadian_placeholder_idea }
+			set_variable = { global.culture_names_array^0 = token:TDA_culture_other_token_idea }
+			set_variable = { global.culture_desc_array^0 = token:TDA_culture_other_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^1 = token:TDA_culture_native_north_american_token_idea }
+			set_variable = { global.culture_desc_array^1 = token:TDA_culture_native_north_american_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^2 = token:TDA_culture_ontarian_token_idea }
+			set_variable = { global.culture_desc_array^2 = token:TDA_culture_ontarian_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^3 = token:TDA_culture_quebecois_token_idea }
+			set_variable = { global.culture_desc_array^3 = token:TDA_culture_quebecois_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^4 = token:TDA_culture_atlantic_canadian_token_idea }
+			set_variable = { global.culture_desc_array^4 = token:TDA_culture_atlantic_canadian_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^5 = token:TDA_culture_prairie_canadian_token_idea }
+			set_variable = { global.culture_desc_array^5 = token:TDA_culture_prairie_canadian_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^6 = token:TDA_culture_british_columbian_token_idea }
+			set_variable = { global.culture_desc_array^6 = token:TDA_culture_british_columbian_desc_token_idea }
+
 			
 			#Do this after setting up the colours
 			every_state = { STATE_sort_culture_array = yes }

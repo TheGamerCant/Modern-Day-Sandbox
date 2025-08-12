@@ -1,0 +1,24 @@
+ideas ={
+	country = {
+		TDA_culture_other_token_idea = {}
+		TDA_culture_other_desc_token_idea = {}
+		
+		TDA_culture_native_north_american_token_idea = {}
+		TDA_culture_native_north_american_desc_token_idea = {}
+		
+		TDA_culture_ontarian_token_idea = {}
+		TDA_culture_ontarian_desc_token_idea = {}
+		
+		TDA_culture_quebecois_token_idea = {}
+		TDA_culture_quebecois_desc_token_idea = {}
+		
+		TDA_culture_atlantic_canadian_token_idea = {}
+		TDA_culture_atlantic_canadian_desc_token_idea = {}
+		
+		TDA_culture_prairie_canadian_token_idea = {}
+		TDA_culture_prairie_canadian_desc_token_idea = {}
+		
+		TDA_culture_british_columbian_token_idea = {}
+		TDA_culture_british_columbian_desc_token_idea = {}
+	}
+}

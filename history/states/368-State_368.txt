@@ -12,21 +12,6 @@ state={
 		victory_points = { 1758 6 }
 		victory_points = { 10657 10 }
 		
-		resize_array = { array = 368.culture_index_array size = 4 value = 0 }
-		resize_array = { array = 368.culture_value_array size = 4 value = 0 }
-		
-		set_variable = { 368.culture_index_array^0 = 1 }
-		set_variable = { 368.culture_value_array^0 = 71.9 }
-		
-		set_variable = { 368.culture_index_array^1 = 2 }
-		set_variable = { 368.culture_value_array^1 = 15.5 }
-		
-		set_variable = { 368.culture_index_array^2 = 5 }
-		set_variable = { 368.culture_value_array^2 = 6.3 }
-		
-		set_variable = { 368.culture_index_array^3 = 3 }
-		set_variable = { 368.culture_value_array^3 = 6.3 }
-		
 		buildings = {
 			infrastructure = 3
 			air_base = 3
