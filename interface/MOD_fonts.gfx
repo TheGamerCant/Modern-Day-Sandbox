@@ -114,6 +114,9 @@ bitmapfonts = {
 	textcolors = {
 		F = { 150 97 55 }			# Brown / Native American
 		r = { 174 12 12 }			# Dark red
+		A = { 18 62 119 }			# Navy blue / Alaskan
+		P = { 63 51 205 }			# Purple / Pacific North-Westerner
+		d = { 45 85 112 }			# Blueish-grey / Deep Southerner
 	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac

@@ -10,9 +10,18 @@ state={
 		victory_points = { 528 3 }
 		victory_points = { 4274 1 }
 		victory_points = { 12553 1 }
+		
+		resize_array = { array = culture_index_array size = 2 value = 0 }
+		resize_array = { array = culture_value_array size = 2 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 9 }
+		set_variable = { culture_value_array^0 = 98.5 }
+
+		set_variable = { culture_index_array^1 = 0 }
+		set_variable = { culture_value_array^1 = 1.5 }
 	}
 	provinces={
-		505 528 1414 3471 3513 4274 4328 4347 4380 4826 7398 7721 7865 10151 10183 10305 10625 11495 11733 12183 12211 12281 12553 13396 13397 13398 
+		505 528 1414 3471 3513 4274 4328 4347 4380 4826 7398 7721 7865 10151 10183 10305 10625 11495 11733 12183 12211 12281 12553 13396 13397 13398 14468 
 	}
 	manpower= 3831074
 	buildings_max_level_factor=1.000

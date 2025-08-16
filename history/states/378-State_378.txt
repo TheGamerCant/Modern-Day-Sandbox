@@ -6,15 +6,25 @@ state={
 		add_core_of = USA
 		
 		victory_points = { 13374 2 }
-		victory_points = { 13370 15 }
+		victory_points = { 13370 20 }
 		victory_points = { 9671 25 }
 		victory_points = { 13369 15 }
-		victory_points = { 6699 5 }
+		victory_points = { 14464 10 }
 		victory_points = { 6694 4 }
-		victory_points = { 9911 6 }
-		victory_points = { 4518 10 }
+		victory_points = { 14462 10 }
+		victory_points = { 14459 12 }
 		victory_points = { 9637 2 }
 		victory_points = { 986 1 }
+		victory_points = { 13368 5 }
+		
+		resize_array = { array = culture_index_array size = 2 value = 0 }
+		resize_array = { array = culture_value_array size = 2 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 13 }
+		set_variable = { culture_value_array^0 = 96.3 }
+
+		set_variable = { culture_index_array^1 = 0 }
+		set_variable = { culture_value_array^1 = 3.7 }
 		
 		buildings = {
 			infrastructure = 4
@@ -22,7 +32,7 @@ state={
 		}
 	}
 	provinces={
-		677 941 986 1432 1601 1651 3677 3678 3784 3840 4518 6694 6699 6861 6876 6881 7667 9637 9671 9713 9911 11658 11763 11876 13367 13368 13369 13370 13371 13372 13373 13374 
+		677 941 986 1432 1601 1651 3677 3678 3784 3840 4518 6694 6699 6861 6876 6881 7667 9637 9671 9713 9911 11658 11763 11876 13367 13368 13369 13370 13371 13372 13373 13374 14459 14460 14461 14462 14463 14464 14465 14466 14467 
 	}
 	manpower=14666345
 	buildings_max_level_factor=1.000

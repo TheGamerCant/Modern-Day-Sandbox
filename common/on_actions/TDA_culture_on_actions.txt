@@ -2,19 +2,38 @@ on_actions = {
 	on_startup = {
         effect = {
 			#Set up the culture colours and names array
-			resize_array = { array = global.culture_colour_array size = 7 value = 0 }
-			resize_array = { array = global.culture_names_array size = 7 value = 0 }
-			resize_array = { array = global.culture_desc_array size = 7 value = 0 }
+			resize_array = { array = global.culture_colour_array size = 22 value = 0 }
+			resize_array = { array = global.culture_names_array size = 22 value = 0 }
+			resize_array = { array = global.culture_desc_array size = 22 value = 0 }
 			
 			#Initially tried doing (256^2 * r + 256 * g + b) / 1000 but that was too hard to reverse engineer with the shitty variable types paradox uses
 			#Easier to store them as whole integers, even if my CS self hates it
 			set_variable = { global.culture_colour_array^0 = 100100.100 }		#100, 100, 100  - Other
+			
 			set_variable = { global.culture_colour_array^1 = 150097.055 }		#150,  97,  55  - Native North American
-			set_variable = { global.culture_colour_array^2 = 225000.000 }		#225,   0,   0  - Ontarian
-			set_variable = { global.culture_colour_array^3 = 000000.180 }		#  0,   0, 180  - Quebecois
+			
+			set_variable = { global.culture_colour_array^2 = 225000.000 }		#225,   0,   0  - Anglo Canadian
+			set_variable = { global.culture_colour_array^3 = 000000.180 }		#  0,   0, 180  - French Canadian
 			set_variable = { global.culture_colour_array^4 = 242050.052 }		#242,  50,  52  - Atlantic Canadian
 			set_variable = { global.culture_colour_array^5 = 194039.004 }		#194,  39,   4  - Prairie Canadian
 			set_variable = { global.culture_colour_array^6 = 228039.000 }		#228,  39,   0  - British Columbian
+			
+			set_variable = { global.culture_colour_array^7 = 017105.184 }		# 17, 105, 184  - New Englander
+			set_variable = { global.culture_colour_array^8 = 008062.119 }		#  8,  62, 119  - Alaskan
+			set_variable = { global.culture_colour_array^9 = 063051.205 }		# 63,  51, 205  - Pacific North-Westerner
+			set_variable = { global.culture_colour_array^10 = 000101.163 }		#  0, 101, 163  - Utahan
+			set_variable = { global.culture_colour_array^11 = 000024.225 }		#  0,  24, 225  - New Yorker
+			set_variable = { global.culture_colour_array^12 = 035062.211 }		# 35,  62, 211  - South-Western
+			set_variable = { global.culture_colour_array^13 = 000163.255 }		#  0, 163, 255  - Californian
+			set_variable = { global.culture_colour_array^14 = 062041.174 }		#  62, 41, 174  - Texan
+			set_variable = { global.culture_colour_array^15 = 045085.112 }		# 45,  85, 112  - Deep Southerner
+			set_variable = { global.culture_colour_array^16 = 062145.190 }		# 62, 145, 190  - Floridian
+			set_variable = { global.culture_colour_array^17 = 000047.159 }		#  0,  47, 159  - Northern Rockies
+			set_variable = { global.culture_colour_array^18 = 059113.220 }		# 59, 113, 220  - Atlantic Southerner
+			
+			set_variable = { global.culture_colour_array^19 = 136167.223 }		#136, 167, 223  - Great Plains
+			set_variable = { global.culture_colour_array^20 = 062128.213 }		# 62, 128, 213  - Midwesterner
+			set_variable = { global.culture_colour_array^21 = 024041.140 }		# 24,  41, 140  - Rustbelter
 			
 			#Set up the names
 			set_variable = { global.culture_names_array^0 = token:TDA_culture_other_token_idea }
@@ -23,11 +42,11 @@ on_actions = {
 			set_variable = { global.culture_names_array^1 = token:TDA_culture_native_north_american_token_idea }
 			set_variable = { global.culture_desc_array^1 = token:TDA_culture_native_north_american_desc_token_idea }
 			
-			set_variable = { global.culture_names_array^2 = token:TDA_culture_ontarian_token_idea }
-			set_variable = { global.culture_desc_array^2 = token:TDA_culture_ontarian_desc_token_idea }
+			set_variable = { global.culture_names_array^2 = token:TDA_culture_anglo_canadian_token_idea }
+			set_variable = { global.culture_desc_array^2 = token:TDA_culture_anglo_canadian_desc_token_idea }
 			
-			set_variable = { global.culture_names_array^3 = token:TDA_culture_quebecois_token_idea }
-			set_variable = { global.culture_desc_array^3 = token:TDA_culture_quebecois_desc_token_idea }
+			set_variable = { global.culture_names_array^3 = token:TDA_culture_french_canadian_token_idea }
+			set_variable = { global.culture_desc_array^3 = token:TDA_culture_french_canadian_desc_token_idea }
 			
 			set_variable = { global.culture_names_array^4 = token:TDA_culture_atlantic_canadian_token_idea }
 			set_variable = { global.culture_desc_array^4 = token:TDA_culture_atlantic_canadian_desc_token_idea }
@@ -37,6 +56,51 @@ on_actions = {
 			
 			set_variable = { global.culture_names_array^6 = token:TDA_culture_british_columbian_token_idea }
 			set_variable = { global.culture_desc_array^6 = token:TDA_culture_british_columbian_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^7 = token:TDA_culture_new_englander_token_idea }
+			set_variable = { global.culture_desc_array^7 = token:TDA_culture_new_englander_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^8 = token:TDA_culture_alaskan_token_idea }
+			set_variable = { global.culture_desc_array^8 = token:TDA_culture_alaskan_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^9 = token:TDA_culture_pacific_northwest_token_idea }
+			set_variable = { global.culture_desc_array^9 = token:TDA_culture_pacific_northwest_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^10 = token:TDA_culture_utahan_token_idea }
+			set_variable = { global.culture_desc_array^10 = token:TDA_culture_utahan_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^11 = token:TDA_culture_new_yorker_token_idea }
+			set_variable = { global.culture_desc_array^11 = token:TDA_culture_new_yorker_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^12 = token:TDA_culture_south_west_token_idea }
+			set_variable = { global.culture_desc_array^12 = token:TDA_culture_south_west_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^13 = token:TDA_culture_californian_token_idea }
+			set_variable = { global.culture_desc_array^13 = token:TDA_culture_californian_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^14 = token:TDA_culture_texan_token_idea }
+			set_variable = { global.culture_desc_array^14 = token:TDA_culture_texan_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^15 = token:TDA_culture_deep_south_token_idea }
+			set_variable = { global.culture_desc_array^15 = token:TDA_culture_deep_south_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^16 = token:TDA_culture_floridan_token_idea }
+			set_variable = { global.culture_desc_array^16 = token:TDA_culture_floridan_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^17 = token:TDA_culture_northern_rockies_token_idea }
+			set_variable = { global.culture_desc_array^17 = token:TDA_culture_northern_rockies_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^18 = token:TDA_culture_atlantic_south_token_idea }
+			set_variable = { global.culture_desc_array^18 = token:TDA_culture_atlantic_south_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^19 = token:TDA_culture_great_plains_token_idea }
+			set_variable = { global.culture_desc_array^19 = token:TDA_culture_great_plains_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^20 = token:TDA_culture_midwestern_token_idea }
+			set_variable = { global.culture_desc_array^20 = token:TDA_culture_midwestern_desc_token_idea }
+			
+			set_variable = { global.culture_names_array^21 = token:TDA_culture_rustbelt_token_idea }
+			set_variable = { global.culture_desc_array^21 = token:TDA_culture_rustbelt_desc_token_idea }
 
 			
 			#Do this after setting up the colours

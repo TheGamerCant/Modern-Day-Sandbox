@@ -77,8 +77,24 @@ Cultures:
 	
 	1 - Native North American
 	
-	2 - Ontarian
-	3 - Quebecois
+	2 - Anglo Canadian
+	3 - French Canadian
 	4 - Atlantic Canadian
 	5 - Prairie Canadian
 	6 - British Columbian
+	
+	7 - New Englander
+	8 - Alaskan
+	9 - Pacific North-Westerner
+	10 - Utahan
+	11 - New Yorker
+	12 - South-Westerner
+	13 - Californian
+	14 - Texan
+	15 - Deep Southerner
+	16 - Floridian
+	17 - Northern Rockies
+	18 - Atlantic Southerner
+	19 - Great Plains
+	20 - Midwesterner
+	21 - Rustbelter

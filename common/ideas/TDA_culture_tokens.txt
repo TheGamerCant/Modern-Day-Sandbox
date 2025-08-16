@@ -6,11 +6,11 @@ ideas ={
 		TDA_culture_native_north_american_token_idea = {}
 		TDA_culture_native_north_american_desc_token_idea = {}
 		
-		TDA_culture_ontarian_token_idea = {}
-		TDA_culture_ontarian_desc_token_idea = {}
+		TDA_culture_anglo_canadian_token_idea = {}
+		TDA_culture_anglo_canadian_desc_token_idea = {}
 		
-		TDA_culture_quebecois_token_idea = {}
-		TDA_culture_quebecois_desc_token_idea = {}
+		TDA_culture_french_canadian_token_idea = {}
+		TDA_culture_french_canadian_desc_token_idea = {}
 		
 		TDA_culture_atlantic_canadian_token_idea = {}
 		TDA_culture_atlantic_canadian_desc_token_idea = {}
@@ -20,5 +20,50 @@ ideas ={
 		
 		TDA_culture_british_columbian_token_idea = {}
 		TDA_culture_british_columbian_desc_token_idea = {}
+		
+		TDA_culture_new_englander_token_idea = {}
+		TDA_culture_new_englander_desc_token_idea = {}
+		
+		TDA_culture_alaskan_token_idea = {}
+		TDA_culture_alaskan_desc_token_idea = {}
+		
+		TDA_culture_pacific_northwest_token_idea = {}
+		TDA_culture_pacific_northwest_desc_token_idea = {}
+		
+		TDA_culture_utahan_token_idea = {}
+		TDA_culture_utahan_desc_token_idea = {}
+		
+		TDA_culture_new_yorker_token_idea = {}
+		TDA_culture_new_yorker_desc_token_idea = {}
+		
+		TDA_culture_south_west_token_idea = {}
+		TDA_culture_south_west_desc_token_idea = {}
+		
+		TDA_culture_californian_token_idea = {}
+		TDA_culture_californian_desc_token_idea = {}
+		
+		TDA_culture_texan_token_idea = {}
+		TDA_culture_texan_desc_token_idea = {}
+		
+		TDA_culture_deep_south_token_idea = {}
+		TDA_culture_deep_south_desc_token_idea = {}
+		
+		TDA_culture_floridan_token_idea = {}
+		TDA_culture_floridan_desc_token_idea = {}
+		
+		TDA_culture_northern_rockies_token_idea = {}
+		TDA_culture_northern_rockies_desc_token_idea = {}
+		
+		TDA_culture_atlantic_south_token_idea = {}
+		TDA_culture_atlantic_south_desc_token_idea = {}
+		
+		TDA_culture_great_plains_token_idea = {}
+		TDA_culture_great_plains_desc_token_idea = {}
+		
+		TDA_culture_midwestern_token_idea = {}
+		TDA_culture_midwestern_desc_token_idea = {}
+		
+		TDA_culture_rustbelt_token_idea = {}
+		TDA_culture_rustbelt_desc_token_idea = {}
 	}
 }

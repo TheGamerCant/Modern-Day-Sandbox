@@ -2,19 +2,19 @@
  TDA_culture_map_mode_tooltip:0 "[GetCultureMapModeTT]"
  TDA_culture_map_mode_tooltip_delayed:0 "[GetCultureMapModeTTDelayed]"
  
- TDA_culture_state_is_homogenous:0 "[FROM.GetName] is almost entirely [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
- TDA_culture_state_has_large_majority_no_minority:0 "[FROM.GetName] is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
- TDA_culture_state_has_large_majority_one_minority:0 "[FROM.GetName] is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey], with a large [?global.culture_names_array^dem2.GetTokenLocalizedKey] minority."
- TDA_culture_state_has_large_majority_two_minorities:0 "[FROM.GetName] is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey] and [?global.culture_names_array^dem3.GetTokenLocalizedKey] minorities."
- TDA_culture_state_has_simple_majority_no_minority:0 "[FROM.GetName] is majority [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
- TDA_culture_state_has_simple_majority_one_minority:0 "[FROM.GetName] is majority [?global.culture_names_array^dem1.GetTokenLocalizedKey], with a large [?global.culture_names_array^dem2.GetTokenLocalizedKey] minority."
- TDA_culture_state_has_simple_majority_two_minorities:0"[FROM.GetName] is majority [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey] and [?global.culture_names_array^dem3.GetTokenLocalizedKey] minorities."
- TDA_culture_state_has_simple_majority_three_minorities:0"[FROM.GetName] is majority [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey], [?global.culture_names_array^dem3.GetTokenLocalizedKey] and [?global.culture_names_array^dem4.GetTokenLocalizedKey] minorities."
- TDA_culture_state_has_plurality_no_minority:0 "[FROM.GetName] is plurality [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
- TDA_culture_state_has_plurality_one_minority:0 "[FROM.GetName] is plurality [?global.culture_names_array^dem1.GetTokenLocalizedKey], with a large [?global.culture_names_array^dem2.GetTokenLocalizedKey] minority."
- TDA_culture_state_has_plurality_two_minorities:0"[FROM.GetName] is plurality [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey] and [?global.culture_names_array^dem3.GetTokenLocalizedKey] minorities."
- TDA_culture_state_has_plurality_three_minorities:0"[FROM.GetName] is plurality [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey], [?global.culture_names_array^dem3.GetTokenLocalizedKey] and [?global.culture_names_array^dem4.GetTokenLocalizedKey] minorities."
- TDA_culture_state_mostly_other:0 "[FROM.GetName] has no clear ethnic majority or plurality."
+ TDA_culture_state_is_homogenous:0 "The culture of §Y[FROM.GetName]§! is almost entirely [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
+ TDA_culture_state_has_large_majority_no_minority:0 "The culture of §Y[FROM.GetName]§! is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
+ TDA_culture_state_has_large_majority_one_minority:0 "The culture of §Y[FROM.GetName]§! is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey], with a large [?global.culture_names_array^dem2.GetTokenLocalizedKey] minority."
+ TDA_culture_state_has_large_majority_two_minorities:0 "The culture of §Y[FROM.GetName]§! is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey] and [?global.culture_names_array^dem3.GetTokenLocalizedKey] minorities."
+ TDA_culture_state_has_simple_majority_no_minority:0 "The culture of §Y[FROM.GetName]§! is majority [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
+ TDA_culture_state_has_simple_majority_one_minority:0 "The culture of §Y[FROM.GetName]§! is majority [?global.culture_names_array^dem1.GetTokenLocalizedKey], with a large [?global.culture_names_array^dem2.GetTokenLocalizedKey] minority."
+ TDA_culture_state_has_simple_majority_two_minorities:0"The culture of §Y[FROM.GetName]§! is majority [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey] and [?global.culture_names_array^dem3.GetTokenLocalizedKey] minorities."
+ TDA_culture_state_has_simple_majority_three_minorities:0"The culture of §Y[FROM.GetName]§! is majority [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey], [?global.culture_names_array^dem3.GetTokenLocalizedKey] and [?global.culture_names_array^dem4.GetTokenLocalizedKey] minorities."
+ TDA_culture_state_has_plurality_no_minority:0 "The culture of §Y[FROM.GetName]§! is plurality [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
+ TDA_culture_state_has_plurality_one_minority:0 "The culture of §Y[FROM.GetName]§! is plurality [?global.culture_names_array^dem1.GetTokenLocalizedKey], with a large [?global.culture_names_array^dem2.GetTokenLocalizedKey] minority."
+ TDA_culture_state_has_plurality_two_minorities:0"The culture of §Y[FROM.GetName]§! is plurality [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey] and [?global.culture_names_array^dem3.GetTokenLocalizedKey] minorities."
+ TDA_culture_state_has_plurality_three_minorities:0"The culture of §Y[FROM.GetName]§! is plurality [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey], [?global.culture_names_array^dem3.GetTokenLocalizedKey] and [?global.culture_names_array^dem4.GetTokenLocalizedKey] minorities."
+ TDA_culture_state_mostly_other:0 "The culture of §Y[FROM.GetName]§! has no clear cultural majority or plurality."
  
  TDA_culture_map_mode_1_row:0 "[?global.culture_names_array^loc_row_1.GetTokenLocalizedKey] - [?value_row_1|2%%]"
  TDA_culture_map_mode_2_row:0 "[?global.culture_names_array^loc_row_1.GetTokenLocalizedKey] - [?value_row_1|2%%]\n[?global.culture_names_array^loc_row_2.GetTokenLocalizedKey] - [?value_row_2|2%%]"
@@ -28,19 +28,64 @@
  TDA_culture_other_desc_token_idea:0 ""
  
  TDA_culture_native_north_american_token_idea:0 "§FNative North American§!"
- TDA_culture_native_north_american_desc_token_idea:0 "After centuries of persecution, the Native population of North America have reached a series of agreements with their national governments, granting them large amounts of autonomy and recognition of self-government. As a result, they have managed to have an outsized role in both local and national politics."
+ TDA_culture_native_north_american_desc_token_idea:0 ""
  
- TDA_culture_ontarian_token_idea:0 "§RAnglo-Canadian§!"
- TDA_culture_ontarian_desc_token_idea:0 ""
+ TDA_culture_anglo_canadian_token_idea:0 "§RAnglo-Canadian§!"
+ TDA_culture_anglo_canadian_desc_token_idea:0 ""
  
- TDA_culture_quebecois_token_idea:0 "§BFrench-Canadian§!"
- TDA_culture_quebecois_desc_token_idea:0 ""
+ TDA_culture_french_canadian_token_idea:0 "§BFrench-Canadian§!"
+ TDA_culture_french_canadian_desc_token_idea:0 ""
  
  TDA_culture_atlantic_canadian_token_idea:0 "§tAtlantic Canadian§!"
- TDA_culture_atlantic_canadian_desc_token_idea:0 "Atlantic Canadian culture is defined by it's maritime traditions and access to the coast. Despite it's long history of European settlement and outsized role in Canadian politics, the Atlantic provinces of Canada are some of the poorest regions of Canada, as it's lack of large cities causes a large brain drain to Central Canada. It's economy is largely based on fishing, natural resource extraction and power generation."
+ TDA_culture_atlantic_canadian_desc_token_idea:0 ""
  
  TDA_culture_prairie_canadian_token_idea:0 "§rPrairie Canadian§!"
- TDA_culture_prairie_canadian_desc_token_idea:0 "The Prairie provinces of Canada are defined by their well-educated workforce, cultural conservatism and above all - their large oil industry. The Prairie provinces often feel ignored by the so-called 'Lawrentian Elite' of eastern Canada, although outside observations of Prairie separatism are often overblown."
+ TDA_culture_prairie_canadian_desc_token_idea:0 ""
  
  TDA_culture_british_columbian_token_idea:0 "§tBritish Columbian§!"
- TDA_culture_british_columbian_desc_token_idea:0 "As the westernmost province of Canada, British Columbia has a history of settlement from both the eastern provinces of Canada and Asia to the west. It's hilly and mountainous terrain, rich in natural resources, occasionally gives way to flatlands for large settlements, notably Vancouver, home to nearly half of the provinces population.\n\nThis has lead to one of the starkest urban-rural divides in Canada, as the largely white, rural and conservative parts of the provinces often feel ignored by the more diverse and progressive cities."
+ TDA_culture_british_columbian_desc_token_idea:0 ""
+ 
+ TDA_culture_new_englander_token_idea:0 "§2New Englander§!"
+ TDA_culture_new_englander_desc_token_idea:0 ""
+ 
+ TDA_culture_alaskan_token_idea:0 "§AAlaskan§!"
+ TDA_culture_alaskan_desc_token_idea:0 ""
+ 
+ TDA_culture_pacific_northwest_token_idea:0 "§PPacific North-Western§!"
+ TDA_culture_pacific_northwest_desc_token_idea:0 ""
+ 
+ TDA_culture_utahan_token_idea:0 "§AUtahan§!"
+ TDA_culture_utahan_desc_token_idea:0 ""
+ 
+ TDA_culture_new_yorker_token_idea:0 "§BNew Yorker§!"
+ TDA_culture_new_yorker_desc_token_idea:0 ""
+ 
+ TDA_culture_south_west_token_idea:0 "§4South-Western§!"
+ TDA_culture_south_west_desc_token_idea:0 ""
+ 
+ TDA_culture_californian_token_idea:0 "§4Californian§!"
+ TDA_culture_californian_desc_token_idea:0 ""
+ 
+ TDA_culture_texan_token_idea:0 "§1Texan§!"
+ TDA_culture_texan_desc_token_idea:0 ""
+ 
+ TDA_culture_deep_south_token_idea:0 "§dDeep Southern§!"
+ TDA_culture_deep_south_desc_token_idea:0 ""
+ 
+ TDA_culture_floridan_token_idea:0 "§CFloridan§!"
+ TDA_culture_floridan_desc_token_idea:0 ""
+ 
+ TDA_culture_northern_rockies_token_idea:0 "§ANorthern Rockies§!"
+ TDA_culture_northern_rockies_desc_token_idea:0 ""
+ 
+ TDA_culture_atlantic_south_token_idea:0 "§2Atlantic Southern§!"
+ TDA_culture_atlantic_south_desc_token_idea:0 ""
+ 
+ TDA_culture_great_plains_token_idea:0 "§4Great Plains§!"
+ TDA_culture_great_plains_desc_token_idea:0 ""
+ 
+ TDA_culture_midwestern_token_idea:0 "§2Midwestern§!"
+ TDA_culture_midwestern_desc_token_idea:0 ""
+ 
+ TDA_culture_rustbelt_token_idea:0 "§AAlaskan§!"
+ TDA_culture_rustbelt_desc_token_idea:0 ""

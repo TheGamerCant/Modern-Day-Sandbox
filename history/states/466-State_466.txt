@@ -5,17 +5,17 @@ state={
 		owner = CAN
 		add_core_of = CAN
 		
-		resize_array = { array = 466.culture_index_array size = 3 value = 0 }
-		resize_array = { array = 466.culture_value_array size = 3 value = 0 }
+		resize_array = { array = culture_index_array size = 3 value = 0 }
+		resize_array = { array = culture_value_array size = 3 value = 0 }
 		
-		set_variable = { 466.culture_index_array^0 = 3 }
-		set_variable = { 466.culture_value_array^0 = 82.5 }
+		set_variable = { culture_index_array^0 = 3 }
+		set_variable = { culture_value_array^0 = 82.5 }
 		
-		set_variable = { 466.culture_index_array^1 = 2 }
-		set_variable = { 466.culture_value_array^1 = 9.7 }
+		set_variable = { culture_index_array^1 = 2 }
+		set_variable = { culture_value_array^1 = 9.7 }
 		
-		set_variable = { 466.culture_index_array^2 = 0 }
-		set_variable = { 466.culture_value_array^2 = 7.8 }
+		set_variable = { culture_index_array^2 = 0 }
+		set_variable = { culture_value_array^2 = 7.8 }
 	}
 	provinces={
 		490 3208 6740 7364 10176 12147 13162 13166 13181 13184 13186 13196 1657 4666 13164 7683 7807 7810 10534 10715 12600 

@@ -6,6 +6,18 @@ state={
 		add_core_of = CAN
 		
 		victory_points = { 12571 1 }
+		
+		resize_array = { array = culture_index_array size = 3 value = 0 }
+		resize_array = { array = culture_value_array size = 3 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 6 }
+		set_variable = { culture_value_array^0 = 72.2 }
+		
+		set_variable = { culture_index_array^1 = 1 }
+		set_variable = { culture_value_array^1 = 22.5 }
+		
+		set_variable = { culture_index_array^2 = 0 }
+		set_variable = { culture_value_array^2 = 5.3 }
 	}
 	provinces={
 		917 1411 1799 1869 1872 4678 5403 7858 10548 12508 12571 

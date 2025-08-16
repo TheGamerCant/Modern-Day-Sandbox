@@ -4,6 +4,18 @@ state={
 	history={
 		owner = CAN
 		add_core_of = CAN
+		
+		resize_array = { array = culture_index_array size = 3 value = 0 }
+		resize_array = { array = culture_value_array size = 3 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 2 }
+		set_variable = { culture_value_array^0 = 73.0 }
+		
+		set_variable = { culture_index_array^1 = 1 }
+		set_variable = { culture_value_array^1 = 24.6 }
+		
+		set_variable = { culture_index_array^2 = 0 }
+		set_variable = { culture_value_array^2 = 2.4 }
 	}
 	provinces={
 		3606 7869 7891 

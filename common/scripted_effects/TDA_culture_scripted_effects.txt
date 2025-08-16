@@ -189,11 +189,11 @@ STATE_sort_culture_array = {
 		limit = { check_variable = { culture_index_array^num > 1 } }
 
 		#Get float strength between 0-1, equal to how strong we want the colour to be.
-		#For this, I have % of majority culture + difference between the first and second most common ethnicities divided by 150
+		#For this, I have % of majority culture + difference between the first and second most common ethnicities divided by 190
 		set_temp_variable = { strength = culture_value_array^0 }
 		multiply_temp_variable = { strength = 2 }
 		subtract_from_temp_variable = { strength = culture_value_array^1 }
-		divide_temp_variable = { strength = 150 }
+		divide_temp_variable = { strength = 190 }
 		
 		clamp_temp_variable = { var = strength min = 0 max = 1 }
 		

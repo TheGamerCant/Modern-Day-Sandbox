@@ -5,7 +5,7 @@ state={
 		owner = USA
 		add_core_of = USA
 		
-		victory_points = { 13408 20 }
+		victory_points = { 13408 40 }
 		#victory_points = { 13409 3 }
 		victory_points = { 13411 3 }
 		victory_points = { 13413 6 }
@@ -13,6 +13,15 @@ state={
 		victory_points = { 1809 5 }
 		victory_points = { 12627 2 }
 		victory_points = { 7999 1 }
+		
+		resize_array = { array = culture_index_array size = 2 value = 0 }
+		resize_array = { array = culture_value_array size = 2 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 12 }
+		set_variable = { culture_value_array^0 = 99.5 }
+
+		set_variable = { culture_index_array^1 = 0 }
+		set_variable = { culture_value_array^1 = 0.5 }
 		
 		buildings = {
 			infrastructure = 3
