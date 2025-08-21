@@ -53,7 +53,8 @@ guiTypes = {
 		
 		buttonType = {
 			name = "enabled_tick"
-			spriteType = "GFX_general_check"
+			spriteType = "GFX_tiled_window_transparent"
+#			spriteType = "GFX_general_check"
 			position = { x = 28 y = 24 }
 			Orientation = center_left
 			alwaysTransparent = yes
@@ -108,6 +109,8 @@ guiTypes = {
 			slotsize = {width=50 height=51 }
 			max_slots_vertical = 1
 			format = "RIGHT"
+			
+			hide = yes
 		}
 		
 	}
@@ -282,7 +285,8 @@ guiTypes = {
 		position = { x=0 y =0}
 		size = { width = 320 height = 450 }
 		Orientation = CENTER
-		Origo = center		
+		Origo = center
+		clipping = no
 
 		positionType = {
 			name = "subscription_size"
@@ -297,20 +301,20 @@ guiTypes = {
 			
 		ButtonType = {
 			name = "single_player_button"
-			position = { x = 16 y = 18 }
-			quadTextureSprite ="GFX_main_lobby_button"
+			position = { x = -270 y = -111 }
+			quadTextureSprite ="GFX_main_menu_single_player_button"
 			font = "hoi_24header"			
-			text = "FE_SINGLE_PLAYER"				
+#			text = "FE_SINGLE_PLAYER"				
 			clicksound = click_default			
 			oversound = ui_menu_over
 		}
 
 		ButtonType = {
 			name = "multi_player_button"
-			position = { x = 16 y = 58}
-			quadTextureSprite ="GFX_main_lobby_button"
+			position = { x = -45 y = -241 }
+			quadTextureSprite ="GFX_main_menu_multi_player_button"
 			font = "hoi_24header"			
-			text = "FE_MULTI_PLAYER"			
+#			text = "FE_MULTI_PLAYER"			
 			clicksound = click_default
 			oversound = ui_menu_over
 		}
@@ -333,6 +337,8 @@ guiTypes = {
 			format = centre
 			maxWidth = 250
 			maxHeight = 20	
+			
+			hide = yes
 		}
 
 		positionType = {
@@ -343,9 +349,9 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "settings_button"
-			position = { x = 16 y = 98 }
-			quadTextureSprite ="GFX_main_lobby_button"	
-			buttonText = "OPTIONS"
+			position = { x = -45 y = 19 }
+			quadTextureSprite ="GFX_main_settings_button"	
+#			buttonText = "OPTIONS"
 			buttonFont = "hoi_24header"
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -353,9 +359,9 @@ guiTypes = {
 		
 		buttonType = {
 			name = "career_profile_button"
-			position = { x = 16 y = 138 }
-			quadTextureSprite ="GFX_main_lobby_button"
-			buttonText = "MENU_BAR_CAREER_PROFILE"
+			position = { x = 180 y = -111 }
+			quadTextureSprite ="GFX_main_menu_career_profile_button"
+#			buttonText = "MENU_BAR_CAREER_PROFILE"
 			buttonFont = "hoi_24header"
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -368,13 +374,15 @@ guiTypes = {
 			centerposition = yes
 			orientation = upper_right
 			alwaysTransparent = yes
+			
+			hide = yes
 		}
 		
 		buttonType = {
 			name = "friends_button"
-			position = { x = 16 y = 178 }
-			quadTextureSprite ="GFX_main_lobby_button"
-			buttonText = "MENU_BAR_FRIENDS"
+			position = { x = 180 y = 149 }
+			quadTextureSprite ="GFX_main_menu_friends_button"
+#			buttonText = "MENU_BAR_FRIENDS"
 			buttonFont = "hoi_24header"
 			clicksound = click_default
 			oversound = ui_menu_over
@@ -388,22 +396,24 @@ guiTypes = {
 			buttonFont = "hoi_24header"
 			clicksound = click_default
 			oversound = ui_menu_over
+			
+			hide = yes
 		}
 		
 		ButtonType = {
 			name = "nudge_button"
-			position = { x = 16 y = 258 }
-			quadTextureSprite ="GFX_main_lobby_button"	
-			buttonText = "Nudge!"
+			position = { x = -45 y = 279 }
+			quadTextureSprite ="GFX_main_menu_nudge_button"	
+#			buttonText = "Nudge!"
 			buttonFont = "hoi_24header"
 		}
 
 		ButtonType = {
 			name = "exit_button"
-			position = { x = 16 y = 300 }
-			quadTextureSprite ="GFX_main_lobby_button"
+			position = { x = 405 y = 19 }
+			quadTextureSprite ="GFX_main_menu_exit_game_button"
 			font = "hoi_24header"			
-			text = "FE_EXIT"			
+#			text = "FE_EXIT"			
 			clicksound = click_default
 			oversound = ui_menu_over
 			

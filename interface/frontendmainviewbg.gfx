@@ -7,4 +7,47 @@ spriteTypes = {
 		tilingCenter = no
 		effectFile = "gfx/FX/buttonstate.shader"
 	}
+	
+	spriteType = {
+		name = "GFX_main_menu_career_profile_button"
+		textureFile = "gfx/interface/main_menu/career_profile.dds"
+		noOfFrames = 3
+		#effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	spriteType = {
+		name = "GFX_main_menu_exit_game_button"
+		textureFile = "gfx/interface/main_menu/exit_game.dds"
+		noOfFrames = 3
+		#effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	spriteType = {
+		name = "GFX_main_menu_friends_button"
+		textureFile = "gfx/interface/main_menu/friends.dds"
+		noOfFrames = 3
+		#effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	spriteType = {
+		name = "GFX_main_menu_multi_player_button"
+		textureFile = "gfx/interface/main_menu/multi_player.dds"
+		noOfFrames = 3
+		#effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	spriteType = {
+		name = "GFX_main_menu_nudge_button"
+		textureFile = "gfx/interface/main_menu/nudge.dds"
+		noOfFrames = 3
+		#effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	spriteType = {
+		name = "GFX_main_settings_button"
+		textureFile = "gfx/interface/main_menu/settings.dds"
+		noOfFrames = 3
+		#effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	spriteType = {
+		name = "GFX_main_menu_single_player_button"
+		textureFile = "gfx/interface/main_menu/single_player.dds"
+		noOfFrames = 3
+		#effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
 }
