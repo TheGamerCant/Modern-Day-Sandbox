@@ -290,13 +290,32 @@ guiTypes = {
 
 		positionType = {
 			name = "subscription_size"
-			position = { x = 320 y = 575 }
+			position = { x = 320 y = 450 }
 			hide = yes
 		}
 				
 		background = {
 			name = "Background"		
 			quadTextureSprite ="GFX_tiled_window_transparent"
+		}
+			
+		iconType = {
+			name = "single_player_0"
+			spriteType = "GFX_single_player_0"
+			position = { x = -270 y = -111 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "single_player_1"
+			spriteType = "GFX_single_player_1"
+			position = { x = -169 y = -111 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "single_player_2"
+			spriteType = "GFX_single_player_2"
+			position = { x = -68 y = -111 }
+			alwaystransparent = yes
 		}
 			
 		ButtonType = {
@@ -307,6 +326,25 @@ guiTypes = {
 #			text = "FE_SINGLE_PLAYER"				
 			clicksound = click_default			
 			oversound = ui_menu_over
+		}
+
+		iconType = {
+			name = "multiplayer_0"
+			spriteType = "GFX_multiplayer_0"
+			position = { x = -45 y = -241 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "multiplayer_1"
+			spriteType = "GFX_multiplayer_1"
+			position = { x = 56 y = -241 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "multiplayer_2"
+			spriteType = "GFX_multiplayer_2"
+			position = { x = 157 y = -241 }
+			alwaystransparent = yes
 		}
 
 		ButtonType = {
@@ -346,6 +384,37 @@ guiTypes = {
 			position = { x = 35 y = 539 }
 		}
 		
+		iconType = {
+			name = "settings_anim_0"
+			spriteType = "GFX_settings_anim_0"
+			position = { x = -45 y = 19 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "settings_anim_1"
+			spriteType = "GFX_settings_anim_1"
+			position = { x = 16 y = 19 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "settings_anim_2"
+			spriteType = "GFX_settings_anim_2"
+			position = { x = 77 y = 19 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "settings_anim_3"
+			spriteType = "GFX_settings_anim_3"
+			position = { x = 138 y = 19 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "settings_anim_4"
+			spriteType = "GFX_settings_anim_4"
+			position = { x = 199 y = 19 }
+			alwaystransparent = yes
+		}
+		
 		
 		ButtonType = {
 			name = "settings_button"
@@ -355,6 +424,13 @@ guiTypes = {
 			buttonFont = "hoi_24header"
 			clicksound = click_default
 			oversound = ui_menu_over
+		}
+		
+		iconType = {
+			name = "career_profile_anim_0"
+			spriteType = "GFX_career_profile_anim_0"
+			position = { x = 180 y = -111 }
+			alwaystransparent = yes
 		}
 		
 		buttonType = {
@@ -369,12 +445,10 @@ guiTypes = {
 		
 		iconType = {
 			name = "career_profile_button_star"
-			position = { x = -37 y = 155 }
+			position = { x = 9999 y = 9999 }
 			spriteType = "GFX_icon_best_in_career"
-			centerposition = yes
 			orientation = upper_right
 			alwaysTransparent = yes
-			
 			hide = yes
 		}
 		
@@ -386,6 +460,8 @@ guiTypes = {
 			buttonFont = "hoi_24header"
 			clicksound = click_default
 			oversound = ui_menu_over
+			
+			hide = yes
 		}
 
 		ButtonType = {
@@ -407,6 +483,37 @@ guiTypes = {
 #			buttonText = "Nudge!"
 			buttonFont = "hoi_24header"
 		}
+		
+		iconType = {
+			name = "exit_game_anim_0"
+			spriteType = "GFX_exit_game_anim_0"
+			position = { x = 405 y = 19 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "exit_game_anim_1"
+			spriteType = "GFX_exit_game_anim_1"
+			position = { x = 466 y = 19 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "exit_game_anim_2"
+			spriteType = "GFX_exit_game_anim_2"
+			position = { x = 527 y = 19 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "exit_game_anim_3"
+			spriteType = "GFX_exit_game_anim_3"
+			position = { x = 588 y = 19 }
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "exit_game_anim_4"
+			spriteType = "GFX_exit_game_anim_4"
+			position = { x = 649 y = 19 }
+			alwaystransparent = yes
+		}
 
 		ButtonType = {
 			name = "exit_button"
@@ -416,13 +523,13 @@ guiTypes = {
 #			text = "FE_EXIT"			
 			clicksound = click_default
 			oversound = ui_menu_over
-			
 		}
 
 		iconType = {
 			name = "subscription_divider"
 			position = { x = 4 y = 336 }
 			spriteType = "GFX_main_lobby_divider"
+			hide = yes
 		}
 
 		containerWindowType = {
@@ -437,6 +544,7 @@ guiTypes = {
 				buttonText = "SUBSCRIPTION_WIDGET"
 				buttonFont = "hoi_24header"
 				multiline = yes
+				hide = yes
 			}
 		}
 
@@ -453,6 +561,7 @@ guiTypes = {
 				buttonText = "SUBSCRIPTION_WIDGET_SUBSCRIBED"
 				buttonFont = "hoi_24header"
 				multiline = yes
+				hide = yes`
 			}
 		}
 	}

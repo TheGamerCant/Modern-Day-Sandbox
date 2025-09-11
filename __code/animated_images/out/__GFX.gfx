@@ -1,0 +1,32 @@
+spriteTypes = {
+	FrameAnimatedSpriteType = {
+		name = "GFX_multiplayer_0"
+		textureFile = "gfx/interface/main_menu/animated/multiplayer_0.png"
+		noOfFrames = 146
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_multiplayer_1"
+		textureFile = "gfx/interface/main_menu/animated/multiplayer_1.png"
+		noOfFrames = 146
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_multiplayer_2"
+		textureFile = "gfx/interface/main_menu/animated/multiplayer_2.png"
+		noOfFrames = 146
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+}

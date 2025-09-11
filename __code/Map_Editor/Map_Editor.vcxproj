@@ -107,7 +107,7 @@
       <Optimization>MaxSpeed</Optimization>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,12 +132,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\functions.cpp" />
+    <ClCompile Include="src\loadMap.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\getModAndVanillaDirectories.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\functions.hpp" />
     <ClInclude Include="src\getModAndVanillaDirectories.hpp" />
+    <ClInclude Include="src\loadMap.hpp" />
+    <ClInclude Include="src\mapTypes.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

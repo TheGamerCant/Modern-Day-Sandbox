@@ -1,0 +1,20 @@
+guiTypes = {
+	iconType = {
+		name = "multiplayer_0"
+		spriteType = "GFX_multiplayer_0"
+		position = { x = -45 y = -241 }
+		alwaystransparent = yes
+	}
+	iconType = {
+		name = "multiplayer_1"
+		spriteType = "GFX_multiplayer_1"
+		position = { x = 56 y = -241 }
+		alwaystransparent = yes
+	}
+	iconType = {
+		name = "multiplayer_2"
+		spriteType = "GFX_multiplayer_2"
+		position = { x = 157 y = -241 }
+		alwaystransparent = yes
+	}
+}

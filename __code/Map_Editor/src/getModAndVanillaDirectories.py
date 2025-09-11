@@ -33,8 +33,8 @@ if os.path.exists(config_path):
             elif key == "max_cores" and str.isnumeric(value) and int(value) < os.cpu_count():
                 max_cores = int(value)
 
-dir1 = tk.StringVar(value=mod_dir)
-dir2 = tk.StringVar(value=vanilla_dir)
+dir1 = tk.StringVar(value=vanilla_dir)
+dir2 = tk.StringVar(value=mod_dir)
 
 def choose_dir(var):
     path = filedialog.askdirectory(initialdir=var.get())

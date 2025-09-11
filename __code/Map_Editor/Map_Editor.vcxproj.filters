@@ -24,12 +24,21 @@
     <ClCompile Include="src\functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\loadMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\getModAndVanillaDirectories.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\functions.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mapTypes.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\loadMap.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

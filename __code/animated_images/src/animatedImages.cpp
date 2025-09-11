@@ -172,7 +172,7 @@ void getOutDirectoryNames(std::vector<segmentStruct>& segmentsArray, const std::
 }
 
 //Create the .gfx file (spriteTypes)
-void createGFXFile(const std::vector<segmentStruct>& segmentsArray, const uint16_t noOfInImages, const bool looping, const bool transparencyCheck) {
+void createGFXFile(const std::vector<segmentStruct>& segmentsArray, const uint16_t noOfInImages, const std::string& framesPerSecond, const bool looping, const bool transparencyCheck) {
 	std::filesystem::path GFXFileName = "out/__GFX.gfx";
     std::ofstream file(GFXFileName, std::ios::out | std::ios::binary);
 	
@@ -183,6 +183,7 @@ void createGFXFile(const std::vector<segmentStruct>& segmentsArray, const uint16
 				"\n\t\tname = \"GFX_" << segment.fileName << "\"" <<
 				"\n\t\ttextureFile = \"" << segment.PDXDirectory << "\"" <<
 				"\n\t\tnoOfFrames = " << noOfInImages <<
+				"\n\t\tanimation_rate_fps = " << framesPerSecond <<
 				"\n\t\talwaysTransparent = " << (transparencyCheck ? "yes" : "no") <<
 				"\n\t\tlooping = " << (looping ? "yes" : "no") <<
 				"\n\t\tplay_on_show = yes" <<
@@ -423,7 +424,7 @@ int main(int argc, char* argv[]) {
 		getOutDirectoryNames(segmentsArray, outputFilePrefix, outputFileDirectory);
 
 		//Create the .gfx and .gui files
-		std::thread threadGFX(createGFXFile, std::ref(segmentsArray), noOfInImages, looping, transparencyCheck);
+		std::thread threadGFX(createGFXFile, std::ref(segmentsArray), noOfInImages, framesPerSecond, looping, transparencyCheck);
 		std::thread threadGUI(createGUIFile, std::ref(segmentsArray), alwaysTransparent, startingGuiXPos, startingGuiYPos);
 		
 		threadGFX.join();

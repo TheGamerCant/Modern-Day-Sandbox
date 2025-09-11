@@ -1,0 +1,176 @@
+spriteTypes = {
+	FrameAnimatedSpriteType = {
+		name = "GFX_exit_game_anim_0"
+		textureFile = "gfx/interface/main_menu/animated/exit_game_anim_0.dds"
+		noOfFrames = 240
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_exit_game_anim_1"
+		textureFile = "gfx/interface/main_menu/animated/exit_game_anim_1.dds"
+		noOfFrames = 240
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_exit_game_anim_2"
+		textureFile = "gfx/interface/main_menu/animated/exit_game_anim_2.dds"
+		noOfFrames = 240
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_exit_game_anim_3"
+		textureFile = "gfx/interface/main_menu/animated/exit_game_anim_3.dds"
+		noOfFrames = 240
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_exit_game_anim_4"
+		textureFile = "gfx/interface/main_menu/animated/exit_game_anim_4.dds"
+		noOfFrames = 240
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	
+	FrameAnimatedSpriteType = {
+		name = "GFX_career_profile_anim_0"
+		textureFile = "gfx/interface/main_menu/animated/career_profile_anim_0.dds"
+		noOfFrames = 35
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	
+	FrameAnimatedSpriteType = {
+		name = "GFX_settings_anim_0"
+		textureFile = "gfx/interface/main_menu/animated/settings_anim_0.dds"
+		noOfFrames = 235
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_settings_anim_1"
+		textureFile = "gfx/interface/main_menu/animated/settings_anim_1.dds"
+		noOfFrames = 235
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_settings_anim_2"
+		textureFile = "gfx/interface/main_menu/animated/settings_anim_2.dds"
+		noOfFrames = 235
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_settings_anim_3"
+		textureFile = "gfx/interface/main_menu/animated/settings_anim_3.dds"
+		noOfFrames = 235
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_settings_anim_4"
+		textureFile = "gfx/interface/main_menu/animated/settings_anim_4.dds"
+		noOfFrames = 235
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	
+	FrameAnimatedSpriteType = {
+		name = "GFX_single_player_0"
+		textureFile = "gfx/interface/main_menu/animated/single_player_0.dds"
+		noOfFrames = 154
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_single_player_1"
+		textureFile = "gfx/interface/main_menu/animated/single_player_1.dds"
+		noOfFrames = 154
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_single_player_2"
+		textureFile = "gfx/interface/main_menu/animated/single_player_2.dds"
+		noOfFrames = 154
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	
+	FrameAnimatedSpriteType = {
+		name = "GFX_multiplayer_0"
+		textureFile = "gfx/interface/main_menu/animated/multiplayer_0.dds"
+		noOfFrames = 146
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_multiplayer_1"
+		textureFile = "gfx/interface/main_menu/animated/multiplayer_1.dds"
+		noOfFrames = 146
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_multiplayer_2"
+		textureFile = "gfx/interface/main_menu/animated/multiplayer_2.dds"
+		noOfFrames = 146
+		animation_rate_fps = 24
+		alwaysTransparent = no
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+}
