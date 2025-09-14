@@ -283,10 +283,11 @@ guiTypes = {
 	containerWindowType = {
 		name ="mainmenu_panel_bottom"
 		position = { x=0 y =0}
-		size = { width = 320 height = 450 }
+		size = { width = 977 height = 522 }
 		Orientation = CENTER
 		Origo = center
 		clipping = no
+#		movable = no
 
 		positionType = {
 			name = "subscription_size"
@@ -296,31 +297,32 @@ guiTypes = {
 				
 		background = {
 			name = "Background"		
-			quadTextureSprite ="GFX_tiled_window_transparent"
+#			quadTextureSprite ="GFX_tiled_window_transparent"
+			quadTextureSprite ="GFX_pink_bold_selection_frame"
 		}
 			
 		iconType = {
 			name = "single_player_0"
 			spriteType = "GFX_single_player_0"
-			position = { x = -270 y = -111 }
+			position = { x = 0 y = 130 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "single_player_1"
 			spriteType = "GFX_single_player_1"
-			position = { x = -169 y = -111 }
+			position = { x = 101 y = 130 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "single_player_2"
 			spriteType = "GFX_single_player_2"
-			position = { x = -68 y = -111 }
+			position = { x = 202 y = 130 }
 			alwaystransparent = yes
 		}
 			
 		ButtonType = {
 			name = "single_player_button"
-			position = { x = -270 y = -111 }
+			position = { x = 0 y = 130 }
 			quadTextureSprite ="GFX_main_menu_single_player_button"
 			font = "hoi_24header"			
 #			text = "FE_SINGLE_PLAYER"				
@@ -331,25 +333,25 @@ guiTypes = {
 		iconType = {
 			name = "multiplayer_0"
 			spriteType = "GFX_multiplayer_0"
-			position = { x = -45 y = -241 }
+			position = { x = 225 y = 0 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "multiplayer_1"
 			spriteType = "GFX_multiplayer_1"
-			position = { x = 56 y = -241 }
+			position = { x = 326 y = 0 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "multiplayer_2"
 			spriteType = "GFX_multiplayer_2"
-			position = { x = 157 y = -241 }
+			position = { x = 427 y = 0 }
 			alwaystransparent = yes
 		}
 
 		ButtonType = {
 			name = "multi_player_button"
-			position = { x = -45 y = -241 }
+			position = { x = 225 y = 0 }
 			quadTextureSprite ="GFX_main_menu_multi_player_button"
 			font = "hoi_24header"			
 #			text = "FE_MULTI_PLAYER"			
@@ -387,38 +389,37 @@ guiTypes = {
 		iconType = {
 			name = "settings_anim_0"
 			spriteType = "GFX_settings_anim_0"
-			position = { x = -45 y = 19 }
+			position = { x = 225 y = 260 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "settings_anim_1"
 			spriteType = "GFX_settings_anim_1"
-			position = { x = 16 y = 19 }
+			position = { x = 286 y = 260 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "settings_anim_2"
 			spriteType = "GFX_settings_anim_2"
-			position = { x = 77 y = 19 }
+			position = { x = 347 y = 260 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "settings_anim_3"
 			spriteType = "GFX_settings_anim_3"
-			position = { x = 138 y = 19 }
+			position = { x = 408 y = 260 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "settings_anim_4"
 			spriteType = "GFX_settings_anim_4"
-			position = { x = 199 y = 19 }
+			position = { x = 469 y = 260 }
 			alwaystransparent = yes
 		}
 		
-		
 		ButtonType = {
 			name = "settings_button"
-			position = { x = -45 y = 19 }
+			position = { x = 225 y = 260 }
 			quadTextureSprite ="GFX_main_settings_button"	
 #			buttonText = "OPTIONS"
 			buttonFont = "hoi_24header"
@@ -429,13 +430,13 @@ guiTypes = {
 		iconType = {
 			name = "career_profile_anim_0"
 			spriteType = "GFX_career_profile_anim_0"
-			position = { x = 180 y = -111 }
+			position = { x = 450 y = 130 }
 			alwaystransparent = yes
 		}
 		
 		buttonType = {
 			name = "career_profile_button"
-			position = { x = 180 y = -111 }
+			position = { x = 450 y = 130 }
 			quadTextureSprite ="GFX_main_menu_career_profile_button"
 #			buttonText = "MENU_BAR_CAREER_PROFILE"
 			buttonFont = "hoi_24header"
@@ -454,7 +455,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "friends_button"
-			position = { x = 180 y = 149 }
+			position = { x = 450 y = 390 }
 			quadTextureSprite ="GFX_main_menu_friends_button"
 #			buttonText = "MENU_BAR_FRIENDS"
 			buttonFont = "hoi_24header"
@@ -478,7 +479,7 @@ guiTypes = {
 		
 		ButtonType = {
 			name = "nudge_button"
-			position = { x = -45 y = 279 }
+			position = { x = 675 y = 0 }
 			quadTextureSprite ="GFX_main_menu_nudge_button"	
 #			buttonText = "Nudge!"
 			buttonFont = "hoi_24header"
@@ -487,37 +488,37 @@ guiTypes = {
 		iconType = {
 			name = "exit_game_anim_0"
 			spriteType = "GFX_exit_game_anim_0"
-			position = { x = 405 y = 19 }
+			position = { x = 675 y = 260 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "exit_game_anim_1"
 			spriteType = "GFX_exit_game_anim_1"
-			position = { x = 466 y = 19 }
+			position = { x = 736 y = 260 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "exit_game_anim_2"
 			spriteType = "GFX_exit_game_anim_2"
-			position = { x = 527 y = 19 }
+			position = { x = 797 y = 260 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "exit_game_anim_3"
 			spriteType = "GFX_exit_game_anim_3"
-			position = { x = 588 y = 19 }
+			position = { x = 858 y = 260 }
 			alwaystransparent = yes
 		}
 		iconType = {
 			name = "exit_game_anim_4"
 			spriteType = "GFX_exit_game_anim_4"
-			position = { x = 649 y = 19 }
+			position = { x = 919 y = 260 }
 			alwaystransparent = yes
 		}
 
 		ButtonType = {
 			name = "exit_button"
-			position = { x = 405 y = 19 }
+			position = { x = 675 y = 260 }
 			quadTextureSprite ="GFX_main_menu_exit_game_button"
 			font = "hoi_24header"			
 #			text = "FE_EXIT"			
@@ -561,7 +562,7 @@ guiTypes = {
 				buttonText = "SUBSCRIPTION_WIDGET_SUBSCRIBED"
 				buttonFont = "hoi_24header"
 				multiline = yes
-				hide = yes`
+				hide = yes
 			}
 		}
 	}

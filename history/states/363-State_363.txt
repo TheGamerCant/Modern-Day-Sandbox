@@ -5,12 +5,13 @@ state={
 		owner = USA
 		add_core_of = USA
 		
-		victory_points = { 13514 20 }
+		victory_points = { 13514 35 }
 		victory_points = { 13518 12 }
-		victory_points = { 10081 8 }
+		victory_points = { 10081 10 }
 		victory_points = { 1132 5 }
 		victory_points = { 12054 6 }
 		victory_points = { 7643 3 }
+		victory_points = { 13519 5 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }
@@ -22,7 +23,7 @@ state={
 		set_variable = { culture_value_array^1 = 1.5 }
 	}
 	provinces={
-		1019 1077 1132 1163 4168 6943 7045 7083 7138 7643 9876 9967 10051 10081 10096 10468 10495 11783 12054 12445 13514 13515 13516 13518 13519 
+		1019 1077 1132 1163 4168 6943 7045 7083 7138 7643 9876 9967 10051 10081 10096 10468 10495 11783 12054 12445 13514 13515 13516 13518 13519 14492 14493 
 	}
 	manpower= 9535483
 	buildings_max_level_factor=1.000

@@ -1,6 +1,6 @@
 #pragma once
 
+#include <filesystem>
 #include "mapTypes.hpp"
-#include "functions.hpp"
 
-void loadTerrainTypes(data_manager<terrain>& terrains);
+data_manager<terrain> loadTerrainTypes(const std::filesystem::path& vanillaDirectory, const std::filesystem::path& modDirectory, const int cores, const std::vector<std::string>& modReplaceDirectories);

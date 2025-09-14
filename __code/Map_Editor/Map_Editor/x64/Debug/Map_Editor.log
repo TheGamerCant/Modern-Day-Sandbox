@@ -4,11 +4,13 @@ C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\sr
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\functions.cpp(15,26): warning C4244:         [
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\functions.cpp(15,26): warning C4244:             _Rep=__int64
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\functions.cpp(15,26): warning C4244:         ]
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\functions.cpp(160,45): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\functions.cpp(162,45): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
   getModAndVanillaDirectories.cpp
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\getModAndVanillaDirectories.cpp(27,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\getModAndVanillaDirectories.cpp(37,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\getModAndVanillaDirectories.cpp(44,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  loadMap.cpp
+  main.cpp
   Generating Code...
   Map_Editor.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\x64\Debug\Map_Editor.exe
   'pwsh.exe' is not recognized as an internal or external command,

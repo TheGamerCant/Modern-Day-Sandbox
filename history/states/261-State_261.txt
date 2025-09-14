@@ -5,12 +5,12 @@ state={
 		owner = USA
 		add_core_of = USA
 		
-		victory_points = { 13560 25 }
-		victory_points = { 13566 20 }
-		victory_points = { 6890 20 }
+		victory_points = { 13560 30 }
+		victory_points = { 13566 25 }
+		victory_points = { 6890 25 }
 		victory_points = { 13563 4 }
 		victory_points = { 689 7 }
-		victory_points = { 13562 10 }
+		victory_points = { 13562 6 }
 		victory_points = { 4442 2 }
 	}
 	provinces={

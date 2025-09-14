@@ -10,13 +10,13 @@ state={
 		victory_points = { 13416 5 }
 		victory_points = { 13417 10 }
 		victory_points = { 1913 3 }
-		victory_points = { 13423 20 }
+		victory_points = { 13423 25 }
 		victory_points = { 13427 2 }
-		victory_points = { 13419 40 }
+		victory_points = { 13419 50 }
 		victory_points = { 13421 15 }
 		victory_points = { 13422 8 }
 		victory_points = { 10407 4 }
-		victory_points = { 13428 12 }
+		victory_points = { 13428 18 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

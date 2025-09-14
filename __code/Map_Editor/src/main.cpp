@@ -13,8 +13,7 @@ int main() {
     std::vector<std::string> modReplaceDirectories;       //File directories overwritten by our mod
     getModAndVanillaDirectories(vanillaDirectory, modDirectory, cores, modReplaceDirectories, startTime);      //Get our directories and core count
 
-    data_manager<terrain> terrains;
-    //std::vector<std::filesystem::path> terrain_files = getGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "history/states", {".txt"});
+    data_manager<terrain> terrains = loadTerrainTypes(vanillaDirectory, modDirectory, cores, modReplaceDirectories);
 
     std::cout << "Program ran for " << getTimeElapsedFromStart(startTime) << "ms";
     return 0;

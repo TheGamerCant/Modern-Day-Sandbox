@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <memory>
 #include <unordered_map>
+#include <vector>
 
 class country;
 class terrain;
@@ -128,6 +129,8 @@ private:
 	std::unordered_map<std::string, std::shared_ptr<T>> lookup_map;
 
 public:
+
+
 	//Rebuilds the map from objects vector
 	void rebuildMap() {
 		lookup_map.clear();
@@ -144,6 +147,11 @@ public:
 	void emplace_back(const T& obj) {
 		objects.emplace_back(obj);
 		lookup_map[obj.name] = std::make_shared<T>(objects.back());
+	}
+
+	//Reserve data in the vector
+	void reserve(const int64_t reserveCount) {
+		objects.reserve(reserveCount);
 	}
 
 	//Look up by name, return shared pointer
