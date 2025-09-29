@@ -7,7 +7,6 @@ NDefines.NTechnology.BASE_TECH_COST = 100		--Defines what 1.0 units of research 
 NDefines_Graphics.NGraphics.COUNTRY_COLOR_SATURATION_MODIFIER = 1.0		--Base is 0.6, defines the saturation of the country's RGB value on the map
 NDefines_Graphics.NGraphics.COUNTRY_COLOR_BRIGHTNESS_MODIFIER = 1.0		--Base is 0.8, defines the brightness of the country's RGB value on the map
 
-
 --What colour is the highlight when you select a state / province on the map
 --[[
 NDefines_Graphics.NGraphics.BORDER_COLOR_SELECTION_STATE_R = 0.48
