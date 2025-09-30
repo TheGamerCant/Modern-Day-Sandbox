@@ -28,10 +28,14 @@ nodes = [
     [2, [[0]], [1]],
     [3, [[1]], []],
     [4, [[2]], []],
-    [5, [[3, 4]], []]
+    [5, [[3, 4]], []],
+    [6, [[]], [7]],
+    [7, [[]], [6]]
 ]
 
 
 results = generate_routes(nodes)
 results.pop(0)
 print(len(results))
+#for route in results:
+#    print(route)
