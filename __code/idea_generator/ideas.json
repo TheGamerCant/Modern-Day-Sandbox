@@ -32,7 +32,7 @@
             "transformations": [
                 {
                     "transformation_name": "plus_5_pp_factor_minus_5_stab_factor_1",
-                    "prerequisite": [["USA_example_idea"]],
+                    "prerequisite": [[]],
                     "mutually_exclusive": [],
                     "modifiers": {
                         "political_power_factor": "0.05",
