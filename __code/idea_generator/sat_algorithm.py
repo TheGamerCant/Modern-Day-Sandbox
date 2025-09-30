@@ -1,7 +1,7 @@
 def generate_routes(nodes):
-    id_to_prereq = {nid: [set(g) for g in prereqs if g] for nid, prereqs, _ in nodes}
-    id_to_excl   = {nid: set(excl) for nid, _, excl in nodes}
-    node_ids = [nid for nid, _, _ in nodes]
+    id_to_prereq : dict[list] = {nid: [set(g) for g in prereqs if g] for nid, prereqs, _ in nodes}
+    id_to_excl : dict[dict]  = {nid: set(excl) for nid, _, excl in nodes}
+    node_ids : list[int] = [nid for nid, _, _ in nodes]
 
     def backtrack(route_list, route_set):
         yield route_list[:]
