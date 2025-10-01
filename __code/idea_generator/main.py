@@ -1,11 +1,22 @@
 import json
 import os
 from typing import Union
+from decimal import Decimal, InvalidOperation
+import copy
 
 #Define our output directories
 OUTPUT_DIR = "out"
 IDEAS_FILE = os.path.join(OUTPUT_DIR, "ideas.txt")
 EFFECTS_FILE = os.path.join(OUTPUT_DIR, "scripted_effects.txt")
+LOCALISATION_FILE = os.path.join(OUTPUT_DIR, "ideas_l_english.yml")
+
+#Check if a string can be converted into a decimal
+def boolStringIsDecimal(s: str) -> bool:
+    try:
+        Decimal(s)
+        return True
+    except (InvalidOperation, ValueError):
+        return False
 
 #Define our transformation class
 class transformationClass:
@@ -33,12 +44,71 @@ class ideaClass:
         self.idea_id : str = idea_id
         self.localised_name : str = localised_name
         self.gfx : str = gfx
+        self.idea_routes : list[list[int]] = [[]]
 
         self.modifiers : dict[str, str] = modifiers
         self.equipment_modifiers : dict[str, dict[str, str]] = equipment_modifiers
         self.research_bonuses : dict[str, str] = research_bonuses
         self.targeted_modifiers : dict[str, dict[str, str]] = targeted_modifiers
         self.rules : dict[str, str] = rules
+
+    def applyTransformation(self, transformation : transformationClass):
+        if transformation.modifiers is not None:
+            for key, value in transformation.modifiers.items():
+                if not boolStringIsDecimal(value):
+                    raise Exception("Modifier value for", key, "in transformation",
+                        transformation.transformation_name, "is not a decimal value!")
+                self.modifiers[key] = str(Decimal(self.modifiers.get(key, "0.00")) + Decimal(value))
+        
+        if transformation.equipment_modifiers is not None:
+            for equipment_key, equipment_modifiers_dictionary in transformation.equipment_modifiers.items():
+                #If this equipment type doesn't already exist just add the modifier dictionary as-is
+                if self.equipment_modifiers.get(equipment_key, None) == None:
+                    self.equipment_modifiers[equipment_key] = equipment_modifiers_dictionary
+                else:
+                    for key, value in equipment_modifiers_dictionary.items():
+                        #Need unique handling for instant = yes/no
+                        if key == "instant":
+                            self.equipment_modifiers[equipment_key][key] = value
+                        else:
+                            if not boolStringIsDecimal(value):
+                                raise Exception("Modifier value for",equipment_key, "->", key, "in transformation",
+                                    transformation.transformation_name, "is not a decimal value!")
+                            self.equipment_modifiers[equipment_key][key] = str(Decimal(self.equipment_modifiers[equipment_key].get(key, "0.00")) + Decimal(value))
+
+        if transformation.research_bonuses is not None:
+            for key, value in transformation.research_bonuses.items():
+                if not boolStringIsDecimal(value):
+                    raise Exception("Research bonus value for", key, "in transformation",
+                        transformation.transformation_name, "is not a decimal value!")
+                self.research_bonuses[key] = str(Decimal(self.research_bonuses.get(key, "0.00")) + Decimal(value))
+
+        if transformation.targeted_modifiers is not None:
+            for target_tag, targeted_modifiers_dictionary in transformation.targeted_modifiers.items():
+                if self.targeted_modifiers.get(target_tag, None) == None:
+                    self.targeted_modifiers[target_tag] = targeted_modifiers_dictionary
+                else:
+                    for key, value in targeted_modifiers_dictionary.items():
+                        if not boolStringIsDecimal(value):
+                            raise Exception("Targeted modifier value for", key, "against", target_tag, "in transformation",
+                                transformation.transformation_name, "is not a decimal value!")
+                        self.targeted_modifiers[target_tag][key] = str(Decimal(self.targeted_modifiers[target_tag].get(key, "0.00")) + Decimal(value))
+
+        if transformation.rules is not None:
+            for key, value in transformation.rules.items():
+                self.rules[key] = value
+
+    def append_int_to_idea_route(self, node : int):
+        self.idea_route.append(node)
+
+def boolAreTwoIdeasEqual(idea_one : ideaClass, idea_two : ideaClass):
+    if idea_one.modifiers == idea_two.modifiers and idea_one.equipment_modifiers == idea_two.equipment_modifiers \
+    and idea_one.research_bonuses == idea_two.research_bonuses \
+    and idea_one.targeted_modifiers == idea_two.targeted_modifiers and idea_one.rules == idea_two.rules:
+        return True
+    
+    return False
+
 
 #Get a dictionary for transformation names -> index
 def getTransformationsIndexDictionary(transformationsJson) -> dict[str, int]:
@@ -92,64 +162,271 @@ def getTransformationsArray(transformationsJson, transformationsIndexDict : dict
     
     return transformationsArray
 
-#Validate data in the transformations array - for now, we are just checking mutually exclusives
+#Validate data in the transformations array
 def validateTransformationsArray(transformationsArray : list[transformationClass]):
-    for transformaiton in transformationsArray:
-        this_id : int = transformaiton.transformation_id
+    for transformation in transformationsArray:
+        this_id : int = transformation.transformation_id
         
-        for mutual_transformaition in transformaiton.mutually_exclusive:
+        #Validate mutually exclusives
+        for mutual_transformaition in transformation.mutually_exclusive:
             if not this_id in transformationsArray[mutual_transformaition].mutually_exclusive:
                 raise Exception("Transformation", transformationsArray[this_id].transformation_name,
                                 "contains a mutually_exclusive argument for transformation", transformationsArray[mutual_transformaition].transformation_name,
                                 "which does not contain a mutully_exclusive argument back!")
+            
+        #Ensure all strings are standardised
+        if transformation.modifiers:
+            transformation.modifiers = {
+                modifier.lower() : value for modifier, value in  transformation.modifiers.items()
+            }
+        if transformation.equipment_modifiers:
+            transformation.equipment_modifiers = {
+                equipment_type.lower(): {equipment_modifier.lower(): equipment_value for equipment_modifier, equipment_value in equipment_modifiers_dict.items()}
+                for equipment_type, equipment_modifiers_dict in transformation.equipment_modifiers.items()
+            }
+        if transformation.research_bonuses:
+            transformation.research_bonuses = {
+                category.lower() : value for category, value in  transformation.research_bonuses.items()
+            }
+        if transformation.targeted_modifiers:
+            for tag in transformation.targeted_modifiers.keys():
+                if len(tag) != 3:
+                    raise Exception(tag, "in", transformation.transformation_name, "is not a valid tag!")
 
+            transformation.targeted_modifiers = {
+                tag.upper(): {modifier.lower(): value for modifier, value in target_dict.items()}
+                for tag, target_dict in transformation.targeted_modifiers.items()
+            }
+        if transformation.rules:
+            transformation.rules = {
+                rule.lower() : value.lower() for rule, value in  transformation.rules.items()
+            }
 
-#Idea handling
-def parse_idea(ideasArray : list, jsonData):
-    for idea in jsonData.get("ideas", None):
-        idea_id : str = idea.get("idea_id", None)
-        localised_name : str = idea.get("localised_name", "")
-        gfx : Union[str, None] = idea.get("gfx", None)
+#Treat transformations like nodes in a graph - find all possible routes
+def generateAllPossibleRoutes(transformationsArray : list[transformationClass]) -> list:
+    nodesData = [(
+        transformation.transformation_id, 
+        transformation.prerequisite, 
+        transformation.mutually_exclusive
+        ) for transformation in transformationsArray]
 
-        if idea_id is None or idea_id == "":
-            raise Exception("Idea ID cannot be unset!")
-        
-        base_modifiers = idea.get("base_modifiers")
+    id_to_prereq : dict[list] = {nid: [set(g) for g in prereqs if g] for nid, prereqs, _ in nodesData}
+    id_to_excl : dict[dict]  = {nid: set(excl) for nid, _, excl in nodesData}
+    node_ids : list[int] = [nid for nid, _, _ in nodesData]
 
-        modifiers : Union[dict[str, str], None] = base_modifiers.get("modifiers", None)
-        equipment_modifiers : Union[dict[str, dict[str, str]], None] = base_modifiers.get("equipment_modifiers", None)
-        research_bonuses : Union[dict[str, str], None] = base_modifiers.get("research_bonuses", None)
-        targeted_modifiers : Union[dict[str, dict[str, str]], None] = base_modifiers.get("targeted_modifiers", None)
-        rules : Union[dict[str, str], None] = base_modifiers.get("rules", None)
+    def backtrack(route_list, route_set):
+        yield route_list[:]
 
-        ideasArray.append(ideaClass(
-            idea_id, localised_name, gfx, modifiers, equipment_modifiers, research_bonuses, targeted_modifiers, rules
-        ))
+        for nid in node_ids:
+            if nid in route_set:
+                continue
+            if route_set & id_to_excl[nid]: #Exclusive with something already in the route
+                continue
+            if any(len(g & route_set) == 0 for g in id_to_prereq[nid]): #Prerequisite logic has't been met
+                continue
 
-        #We now have our base idea - get the transformations
-        transformationsJson = idea.get("transformations", None)
-        if transformationsJson is None:
-            raise Exception("The idea", idea_id, " has no transformations!")
-        
-        transformationsIndexDict : dict[str, int] = getTransformationsIndexDictionary(transformationsJson)
-        transformationsArray : list[transformationClass] = getTransformationsArray(transformationsJson, transformationsIndexDict)
+            route_list.append(nid)
+            route_set.add(nid)
+            yield from backtrack(route_list, route_set)
+            route_list.pop()
+            route_set.remove(nid)
 
-        #We now have our transformations array - start by validating the data
-        validateTransformationsArray(transformationsArray)
+    #Return generator object as list without the first (empty) entry
+    #return [r for r in backtrack([], set()) if r]
 
-        print("")
+    return [r for r in backtrack([], set())]
+
+#Return an array with a single entry for our intitial idea
+def getBaseIdeasArray(jsonData) -> list[ideaClass]:
+    ideasArray : list[ideaClass] = []
+
+    idea_id : str = jsonData.get("idea_id", None)
+    localised_name : str = jsonData.get("localised_name", "")
+    gfx : Union[str, None] = jsonData.get("gfx", None)
+
+    if idea_id is None or idea_id == "":
+        raise Exception("Idea ID cannot be unset!")
+    
+    base_modifiers = jsonData.get("base_modifiers")
+
+    modifiers : Union[dict[str, str], None] = base_modifiers.get("modifiers", None)
+    equipment_modifiers : Union[dict[str, dict[str, str]], None] = base_modifiers.get("equipment_modifiers", None)
+    research_bonuses : Union[dict[str, str], None] = base_modifiers.get("research_bonuses", None)
+    targeted_modifiers : Union[dict[str, dict[str, str]], None] = base_modifiers.get("targeted_modifiers", None)
+    rules : Union[dict[str, str], None] = base_modifiers.get("rules", None)
+
+    ideasArray.append(ideaClass(
+        idea_id, localised_name, gfx, modifiers, equipment_modifiers, research_bonuses, targeted_modifiers, rules
+    ))
+
+    return ideasArray
+
+def getAllIdeasAndRoutes(ideasArray : list[ideaClass], transformationsArray : list[transformationClass], allPossibleRoutesArray : list[list[int]]):
+    for index, route in enumerate(allPossibleRoutesArray):
+        #print(index, ": ", route)
+
+        if index == 0:
+            continue
+
+        #Check if the previous idea's route is equal to the current route minus the final transformation
+        #If yes copy the previous idea and apply the transformation
+        #Else start from the base idea and apply all transformations in the route
+        if ideasArray[-1].idea_routes[0] == route[:-1]:
+            ideasArray.append(copy.deepcopy(ideasArray[-1]))
+            ideasArray[-1].applyTransformation(transformationsArray[route[-1]])
+        else:
+            ideasArray.append(copy.deepcopy(ideasArray[0]))
+            for transformation in route:
+                ideasArray[-1].applyTransformation(transformationsArray[transformation])
+
+        ideasArray[-1].idea_routes[0] = route
+
+    #ideasArray now contains a list of ideas equal in size to the number of possible routes
+    #Routes can end up in the same place -> if the sets of any two ideas routes are the same, merge them
+    #Store their routes so we can reverse oure way back / see how we got to the idea previously
+    i : int = 1
+    currentListLen : int = len(ideasArray)
+    while i < currentListLen:
+        j : int = i + 1
+        while j < currentListLen:
+            if set(ideasArray[i].idea_routes[0]) == set(ideasArray[j].idea_routes[0]) and boolAreTwoIdeasEqual(ideasArray[i], ideasArray[j]):
+                ideasArray[i].idea_routes.append(ideasArray[j].idea_routes[0])
+                ideasArray.pop(j)
+                currentListLen -= 1   
+
+            j += 1
+        i += 1
+
+def printScriptedEffectsFile(ideasArray : list[ideaClass], transformationsArray : list[transformationClass], routeTupleToIndexDictionary: dict[tuple, int]):
+    with open(EFFECTS_FILE, "w") as outfile:
+        idea_name : str = ideasArray[0].idea_id
+
+        for transformation in transformationsArray:
+            transformation_name : str = transformation.transformation_name
+            transformation_id : int = transformation.transformation_id
+            outfile.write(f"EFFECT_{idea_name}_modify_{transformation_name} = {{\n")
+
+            if_prefix : str = ""
+            idea_swaps_completed : list[tuple] = []
+
+            #Go through every route -> If the last step is equal to this ID, get the idea from the previous steps and swap with this idea id
+            for route, idea_id in routeTupleToIndexDictionary.items():
+                #Ignore the first entry, which is an empty tuple
+                if len(route) > 0 and route[-1] == transformation_id:
+                    route_prev_steps : tuple = route[:-1]
+                    prev_idea_id : int = routeTupleToIndexDictionary.get(route_prev_steps)
+
+                    if (prev_idea_id, idea_id) not in idea_swaps_completed:
+                        outfile.write(f"\t{if_prefix}if = {{\n\t\tlimit = {{ has_idea = {idea_name}_{prev_idea_id} }}" \
+                        f"\n\t\tswap_ideas = {{\n\t\t\tremove_idea = {idea_name}_{prev_idea_id}" \
+                        f"\n\t\t\tadd_idea = {idea_name}_{idea_id}\n\t\t}}\n\t}}\n")
+
+                        if_prefix = "else_"
+
+                        idea_swaps_completed.append((prev_idea_id, idea_id))
+       
+            if len(idea_swaps_completed) > 0:
+                    outfile.write(f"\telse = {{\n\t\teffect_tooltip = {{\n\t\t\tswap_ideas = {{\n\t\t\t\tremove_idea = {idea_name}_{idea_swaps_completed[0][0]}" \
+                                f"\n\t\t\t\tadd_idea = {idea_name}_{idea_swaps_completed[0][1]}\n\t\t\t}}\n\t\t}}\n\t}}\n")
+
+            outfile.write(f"}}\n")
+
+def printIdeasFile(ideasArray : list[ideaClass]):
+    with open(IDEAS_FILE, "w") as outfile:
+        outfile.write(f"ideas = {{\n\tcountry = {{\n")
+
+        for idea_index, idea in enumerate(ideasArray):
+            outfile.write(f"\t\t{idea.idea_id}_{idea_index} = {{\n\t\t\tremoval_cost = -1\n\n\t\t\t" \
+                          f"picture = {idea.gfx}\n")
+            
+            if idea.modifiers:
+                outfile.write(f"\n\t\t\tmodifier = {{\n")
+                for key, value in idea.modifiers.items():
+                    outfile.write(f"\t\t\t\t{key} = {value}\n")
+                outfile.write(f"\t\t\t}}\n")
+
+            if idea.equipment_modifiers:
+                outfile.write(f"\n\t\t\tequipment_bonus = {{\n")
+                for equipment_type, equipment_modifiers_dictionary in idea.equipment_modifiers.items():
+                    if equipment_modifiers_dictionary:
+                        outfile.write(f"\t\t\t\t{equipment_type} = {{\n")
+
+                        for key, value in equipment_modifiers_dictionary.items():
+                            outfile.write(f"\t\t\t\t\t{key} = {value}\n")
+                        
+                        outfile.write(f"\t\t\t\t}}\n")
+                outfile.write(f"\t\t\t}}\n")
+
+            if idea.research_bonuses:
+                outfile.write(f"\n\t\t\tresearch_bonus = {{\n")
+                for key, value in idea.research_bonuses.items():
+                    outfile.write(f"\t\t\t\t{key} = {value}\n")
+                outfile.write(f"\t\t\t}}\n")
+            
+            if idea.targeted_modifiers:
+                for target_tag, targeted_modifiers_dictionary in idea.targeted_modifiers.items():
+                    if targeted_modifiers_dictionary:
+                        outfile.write(f"\n\t\t\ttargeted_modifier = {{\n\t\t\t\ttag = {target_tag}\n")
+
+                        for key, value in targeted_modifiers_dictionary.items():
+                            outfile.write(f"\t\t\t\t{key} = {value}\n")
+                        
+                        outfile.write(f"\t\t\t}}\n")
+            
+            if idea.rules:
+                outfile.write(f"\n\t\t\trule = {{\n")
+                for key, value in idea.rules.items():
+                    outfile.write(f"\t\t\t\t{key} = {value}\n")
+                outfile.write(f"\t\t\t}}\n")
+
+            outfile.write(f"\t\t}}\n")
+
+        outfile.write(f"\t}}\n}}")
+
+def printLocalisationFile(ideasArray : list[ideaClass]):
+    with open(LOCALISATION_FILE, "w") as outfile:
+        outfile.write(f"l_english:\n#Uses a nested localisation key to reduce memory use\n {ideasArray[0].idea_id}_0: \"{ideasArray[0].localised_name}\"")
+
+        for index, idea in enumerate(ideasArray):
+            if index == 0:
+                continue
+
+            outfile.write(f"\n {idea.idea_id}_{index}: \"${ideasArray[0].idea_id}_0$\"")
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    with open("ideas.json", "r", encoding="utf-8") as json_file:
+    with open("idea.json", "r", encoding="utf-8") as json_file:
         jsonData = json.load(json_file)
 
-    ideasArray = []
-    parse_idea(ideasArray, jsonData)
+    ideasArray : list[ideaClass] = getBaseIdeasArray(jsonData)
 
+    #We now have our base idea - get the transformations
+    transformationsJson = jsonData.get("transformations", None)
+    if transformationsJson is None:
+        raise Exception("The idea", ideasArray.idea_id, "has no transformations!")
     
-        
+    transformationsIndexDict : dict[str, int] = getTransformationsIndexDictionary(transformationsJson)
+    transformationsArray : list[transformationClass] = getTransformationsArray(transformationsJson, transformationsIndexDict)
 
+    #We now have our transformations array - validate the data
+    validateTransformationsArray(transformationsArray)
+
+    #Now begin creating the routes
+    allPossibleRoutesArray : list[list[int]] = generateAllPossibleRoutes(transformationsArray)
+
+    getAllIdeasAndRoutes(ideasArray, transformationsArray, allPossibleRoutesArray)
+
+    #Get a dictionary that takes a unique tuple for the route and points to the idea it gives
+    routeTupleToIndexDictionary: dict[tuple, int] = {
+        tuple(route): index
+        for index, idea in enumerate(ideasArray)
+        for route in idea.idea_routes
+    }
+    
+    printScriptedEffectsFile(ideasArray, transformationsArray, routeTupleToIndexDictionary)
+    printIdeasFile(ideasArray)
+    printLocalisationFile(ideasArray)
+    
 
 if __name__ == "__main__":
     main()

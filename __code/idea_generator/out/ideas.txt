@@ -1,0 +1,391 @@
+ideas = {
+	country = {
+		USA_example_idea_0 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.1
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					reliability_factor = 0.05
+				}
+				artillery = {
+					soft_attack = 0.10
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.1
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = yes
+			}
+		}
+		USA_example_idea_1 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = -0.05
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = no
+					reliability_factor = 0.10
+				}
+				artillery = {
+					soft_attack = 0.05
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.12
+			}
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = no
+			}
+		}
+		USA_example_idea_2 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.20
+				stability_factor = -0.10
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = no
+					reliability_factor = 0.10
+				}
+				artillery = {
+					soft_attack = 0.05
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.12
+			}
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = no
+			}
+		}
+		USA_example_idea_3 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.20
+				stability_factor = -0.10
+				consumer_goods_factor = -0.10
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = no
+					reliability_factor = 0.10
+				}
+				artillery = {
+					soft_attack = 0.05
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.12
+			}
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = no
+			}
+		}
+		USA_example_idea_4 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.20
+				stability_factor = -0.10
+				consumer_goods_factor = -0.10
+				research_speed_factor = 0.075
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = no
+					reliability_factor = 0.10
+				}
+				artillery = {
+					soft_attack = 0.05
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.12
+			}
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = no
+			}
+		}
+		USA_example_idea_5 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = -0.05
+				fascism_drift = 0.10
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = no
+					reliability_factor = 0.10
+				}
+				artillery = {
+					soft_attack = 0.05
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.12
+			}
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = yes
+			}
+		}
+		USA_example_idea_6 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = -0.05
+				fascism_drift = 0.10
+				consumer_goods_factor = -0.10
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = no
+					reliability_factor = 0.10
+				}
+				artillery = {
+					soft_attack = 0.05
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.12
+			}
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = yes
+			}
+		}
+		USA_example_idea_7 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = -0.05
+				fascism_drift = 0.10
+				consumer_goods_factor = -0.10
+				research_speed_factor = 0.075
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = no
+					reliability_factor = 0.10
+				}
+				artillery = {
+					soft_attack = 0.05
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.12
+			}
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = yes
+			}
+		}
+		USA_example_idea_8 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = -0.05
+				consumer_goods_factor = -0.10
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = no
+					reliability_factor = 0.10
+				}
+				artillery = {
+					soft_attack = 0.05
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.12
+			}
+
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = no
+			}
+		}
+		USA_example_idea_9 = {
+			removal_cost = -1
+
+			picture = GFX_idea_example
+
+			modifier = {
+				political_power_factor = 0.1
+				consumer_goods_factor = -0.10
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					reliability_factor = 0.05
+				}
+				artillery = {
+					soft_attack = 0.10
+				}
+			}
+
+			research_bonus = {
+				artillery = -0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.1
+			}
+
+			rule = {
+				can_declare_war_without_wargoal = yes
+			}
+		}
+	}
+}

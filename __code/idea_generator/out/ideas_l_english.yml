@@ -1,0 +1,12 @@
+l_english:
+#Uses a nested localisation key to reduce memory use
+ USA_example_idea_0: "Example Idea"
+ USA_example_idea_1: "$USA_example_idea_0$"
+ USA_example_idea_2: "$USA_example_idea_0$"
+ USA_example_idea_3: "$USA_example_idea_0$"
+ USA_example_idea_4: "$USA_example_idea_0$"
+ USA_example_idea_5: "$USA_example_idea_0$"
+ USA_example_idea_6: "$USA_example_idea_0$"
+ USA_example_idea_7: "$USA_example_idea_0$"
+ USA_example_idea_8: "$USA_example_idea_0$"
+ USA_example_idea_9: "$USA_example_idea_0$"

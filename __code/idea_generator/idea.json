@@ -1,0 +1,114 @@
+{
+    "idea_id": "USA_example_idea",
+    "localised_name": "Example Idea",
+    "gfx": "GFX_idea_example",
+    "base_modifiers": {
+        "modifiers": {
+            "political_power_factor": "0.1"
+        },
+        "equipment_modifiers": {
+            "infantry_equipment": {
+                "instant" : "yes",
+                "reliability_factor": "0.05"
+            },
+            "artillery": {
+                "soft_attack": "0.10"
+            }
+        },
+        "research_bonuses": {
+            "artillery": "-0.05"
+        },
+        "targeted_modifiers": {
+            "SOV": {
+				"attack_bonus_against": "0.1"
+            }
+        },
+        "rules": {
+            "can_declare_war_without_wargoal": "yes"
+        }
+    },
+    "transformations": [
+        {
+            "transformation_name": "plus_5_pp_factor_minus_5_stab_factor_1",
+            "prerequisite": [[]],
+            "mutually_exclusive": [],
+            "modifiers": {
+                "political_power_factor": "0.05",
+                "stability_factor": "-0.05"
+            },
+            "equipment_modifiers": {
+				"infantry_equipment": {
+					"instant" : "no",
+					"reliability_factor": "0.05"
+				},
+				"artillery": {
+					"soft_attack": "-0.05"
+				}
+			},
+            "research_bonuses": {},
+            "targeted_modifiers": {
+				"SOV": {
+					"attack_bonus_against": "-0.05",
+					"breakthrough_bonus_against": "0.12"
+				},
+				"GER": {
+					"attack_bonus_against": "0.05"
+				}
+			},
+            "rules": {
+                "can_declare_war_without_wargoal": "no"
+            }
+        },
+        {
+            "transformation_name": "plus_5_pp_factor_minus_5_stab_factor_2",
+            "prerequisite": [["plus_5_pp_factor_minus_5_stab_factor_1"]],
+            "mutually_exclusive": ["plus_0_10_facism_drift"],
+            "modifiers": {
+                "political_power_factor": "0.05",
+                "stability_factor": "-0.05"
+            },
+            "equipment_modifiers": {},
+            "research_bonuses": {},
+            "targeted_modifiers": {},
+            "rules": {}
+        },
+        {
+            "transformation_name": "plus_0_10_facism_drift",
+            "prerequisite": [["plus_5_pp_factor_minus_5_stab_factor_1"]],
+            "mutually_exclusive": ["plus_5_pp_factor_minus_5_stab_factor_2"],
+            "modifiers": {
+                "fascism_drift": "0.10"
+            },
+            "equipment_modifiers": {},
+            "research_bonuses": {},
+            "targeted_modifiers": {},
+            "rules": {
+                "can_declare_war_without_wargoal": "yes"
+            }
+        },
+        {
+            "transformation_name": "minus_10_consumer_goods_factor",
+            "prerequisite": [[]],
+            "mutually_exclusive": [],
+            "modifiers": {
+                "consumer_goods_factor": "-0.10"
+            },
+            "equipment_modifiers": {},
+            "research_bonuses": {},
+            "targeted_modifiers": {},
+            "rules": {}
+        },
+        {
+            "transformation_name": "plus_7_5_research_speed",
+            "prerequisite": [["plus_5_pp_factor_minus_5_stab_factor_2", "plus_0_10_facism_drift"], ["minus_10_consumer_goods_factor"]],
+            "mutually_exclusive": [],
+            "modifiers": {
+                "research_speed_factor": "0.075"
+            },
+            "equipment_modifiers": {},
+            "research_bonuses": {},
+            "targeted_modifiers": {},
+            "rules": {}
+        }
+    ]
+}
