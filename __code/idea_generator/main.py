@@ -20,14 +20,16 @@ def boolStringIsDecimal(s: str) -> bool:
 
 #Define our transformation class
 class transformationClass:
-    def __init__(self, transformation_id : int, transformation_name : str, prerequisite : Union[list[list[int]], None],
-                 mutually_exclusive : Union[list[int], None], modifiers : Union[dict[str, str], None],
-                 equipment_modifiers : Union[dict[str, dict[str, str]], None],
+    def __init__(self, transformation_index : int, transformation_id : str, localised_name : str, localised_desc : str,
+                 prerequisite : Union[list[list[int]], None], mutually_exclusive : Union[list[int], None], 
+                 modifiers : Union[dict[str, str], None], equipment_modifiers : Union[dict[str, dict[str, str]], None],
                  research_bonuses : Union[dict[str, str], None], targeted_modifiers : Union[dict[str, dict[str, str]], None],
                  rules : Union[dict[str, str], None]):
         
-        self.transformation_id : int = transformation_id
-        self.transformation_name : str = transformation_name
+        self.transformation_index : int = transformation_index
+        self.transformation_id : str = transformation_id
+        self.localised_name : str = localised_name
+        self.localised_desc : str = localised_desc
         self.prerequisite : Union[list[list[int]], None] = prerequisite
         self.mutually_exclusive : Union[list[int], None] = mutually_exclusive
         self.modifiers : Union[dict[str, str], None] = modifiers
@@ -38,11 +40,12 @@ class transformationClass:
 
 #Define our idea class
 class ideaClass:
-    def __init__(self, idea_id : str, localised_name : str, gfx : Union[str, None], modifiers : Union[dict[str, str], None],
+    def __init__(self, idea_id : str, localised_name : str, localised_desc : str, gfx : str, modifiers : Union[dict[str, str], None],
                  equipment_modifiers : Union[dict[str, dict[str, str]], None], research_bonuses : Union[dict[str, str], None],
                  targeted_modifiers : Union[dict[str, dict[str, str]], None], rules : Union[dict[str, str], None]):
         self.idea_id : str = idea_id
         self.localised_name : str = localised_name
+        self.localised_desc : str = localised_desc
         self.gfx : str = gfx
         self.idea_routes : list[list[int]] = [[]]
 
@@ -57,7 +60,7 @@ class ideaClass:
             for key, value in transformation.modifiers.items():
                 if not boolStringIsDecimal(value):
                     raise Exception("Modifier value for", key, "in transformation",
-                        transformation.transformation_name, "is not a decimal value!")
+                        transformation.transformation_id, "is not a decimal value!")
                 self.modifiers[key] = str(Decimal(self.modifiers.get(key, "0.00")) + Decimal(value))
         
         if transformation.equipment_modifiers is not None:
@@ -73,14 +76,14 @@ class ideaClass:
                         else:
                             if not boolStringIsDecimal(value):
                                 raise Exception("Modifier value for",equipment_key, "->", key, "in transformation",
-                                    transformation.transformation_name, "is not a decimal value!")
+                                    transformation.transformation_id, "is not a decimal value!")
                             self.equipment_modifiers[equipment_key][key] = str(Decimal(self.equipment_modifiers[equipment_key].get(key, "0.00")) + Decimal(value))
 
         if transformation.research_bonuses is not None:
             for key, value in transformation.research_bonuses.items():
                 if not boolStringIsDecimal(value):
                     raise Exception("Research bonus value for", key, "in transformation",
-                        transformation.transformation_name, "is not a decimal value!")
+                        transformation.transformation_id, "is not a decimal value!")
                 self.research_bonuses[key] = str(Decimal(self.research_bonuses.get(key, "0.00")) + Decimal(value))
 
         if transformation.targeted_modifiers is not None:
@@ -91,12 +94,19 @@ class ideaClass:
                     for key, value in targeted_modifiers_dictionary.items():
                         if not boolStringIsDecimal(value):
                             raise Exception("Targeted modifier value for", key, "against", target_tag, "in transformation",
-                                transformation.transformation_name, "is not a decimal value!")
+                                transformation.transformation_id, "is not a decimal value!")
                         self.targeted_modifiers[target_tag][key] = str(Decimal(self.targeted_modifiers[target_tag].get(key, "0.00")) + Decimal(value))
 
         if transformation.rules is not None:
             for key, value in transformation.rules.items():
                 self.rules[key] = value
+   
+        if transformation.localised_name != "" and transformation.localised_name is not None:
+            self.localised_name = transformation.localised_name
+
+        if transformation.localised_desc != "" and transformation.localised_desc is not None:
+            self.localised_desc = transformation.localised_desc
+
 
     def append_int_to_idea_route(self, node : int):
         self.idea_route.append(node)
@@ -104,7 +114,8 @@ class ideaClass:
 def boolAreTwoIdeasEqual(idea_one : ideaClass, idea_two : ideaClass):
     if idea_one.modifiers == idea_two.modifiers and idea_one.equipment_modifiers == idea_two.equipment_modifiers \
     and idea_one.research_bonuses == idea_two.research_bonuses \
-    and idea_one.targeted_modifiers == idea_two.targeted_modifiers and idea_one.rules == idea_two.rules:
+    and idea_one.targeted_modifiers == idea_two.targeted_modifiers and idea_one.rules == idea_two.rules \
+    and idea_one.localised_name == idea_two.localised_name and idea_one.localised_desc == idea_two.localised_desc:
         return True
     
     return False
@@ -114,14 +125,14 @@ def boolAreTwoIdeasEqual(idea_one : ideaClass, idea_two : ideaClass):
 def getTransformationsIndexDictionary(transformationsJson) -> dict[str, int]:
     transformationsNamesArray : list[str] = []
     for transformation in transformationsJson:
-        transformation_name = transformation.get("transformation_name", None)
-        if transformation_name is None:
+        transformation_id = transformation.get("id", None)
+        if transformation_id is None:
             raise Exception("Every transformation needs a name!")
     
-        if transformation_name in transformationsNamesArray:
-            raise Exception(transformation_name, " appears twice - no two transformations can have the same name!")
+        if transformation_id in transformationsNamesArray:
+            raise Exception(transformation_id, " appears twice - no two transformations can have the same name!")
         
-        transformationsNamesArray.append(transformation_name)
+        transformationsNamesArray.append(transformation_id)
     
     return {name: index for index, name in enumerate(transformationsNamesArray)}
 
@@ -129,15 +140,18 @@ def getTransformationsIndexDictionary(transformationsJson) -> dict[str, int]:
 def getTransformationsArray(transformationsJson, transformationsIndexDict : dict[str, int]) -> list[transformationClass]:
     transformationsArray : list[transformationClass] = []
     for index, transformation in enumerate(transformationsJson):
-        transformation_name : str = transformation.get("transformation_name", None)
+        transformation_id : str = transformation.get("id", None)
         prerequisite = transformation.get("prerequisite", None)
+
+        localised_name : str = transformation.get("localised_name", "")
+        localised_desc : str = transformation.get("localised_desc", "")
 
         #Check if the list is a 2d string array and handle indexes[list[str]] by turning them into a 2d array of indexes
         if all(isinstance(row, list) and all(isinstance(item, str) for item in row) for row in prerequisite):
             prerequisite = [[transformationsIndexDict.get(trnsfrm_name) for trnsfrm_name in entry] for entry in prerequisite]
         #If not 2d array or None raise exception
         elif prerequisite is not None:
-            raise Exception("The prerequisites entry for transformation", transformation_name,
+            raise Exception("The prerequisites entry for transformation", transformation_id,
                             "needs to be a two-dimensional array!")
 
 
@@ -146,7 +160,7 @@ def getTransformationsArray(transformationsJson, transformationsIndexDict : dict
         if isinstance(mutually_exclusive, list) and all(isinstance(item, str) for item in mutually_exclusive):
             mutually_exclusive = [transformationsIndexDict.get(trnsfrm_name) for trnsfrm_name in mutually_exclusive]
         elif mutually_exclusive is not None:
-            raise Exception("The mutually_exclusive entry for", transformation_name,
+            raise Exception("The mutually_exclusive entry for", transformation_id,
                             "needs to be an array!")
 
         modifiers : Union[dict[str, str], None] = transformation.get("modifiers", None)
@@ -156,8 +170,8 @@ def getTransformationsArray(transformationsJson, transformationsIndexDict : dict
         rules : Union[dict[str, str], None] = transformation.get("rules", None)
 
         transformationsArray.append(transformationClass(
-            index, transformation_name, prerequisite, mutually_exclusive, modifiers,
-            equipment_modifiers, research_bonuses, targeted_modifiers, rules
+            index, transformation_id, localised_name, localised_desc, prerequisite, mutually_exclusive,
+            modifiers, equipment_modifiers, research_bonuses, targeted_modifiers, rules
         ))
     
     return transformationsArray
@@ -165,13 +179,13 @@ def getTransformationsArray(transformationsJson, transformationsIndexDict : dict
 #Validate data in the transformations array
 def validateTransformationsArray(transformationsArray : list[transformationClass]):
     for transformation in transformationsArray:
-        this_id : int = transformation.transformation_id
+        this_id : int = transformation.transformation_index
         
         #Validate mutually exclusives
         for mutual_transformaition in transformation.mutually_exclusive:
             if not this_id in transformationsArray[mutual_transformaition].mutually_exclusive:
-                raise Exception("Transformation", transformationsArray[this_id].transformation_name,
-                                "contains a mutually_exclusive argument for transformation", transformationsArray[mutual_transformaition].transformation_name,
+                raise Exception("Transformation", transformationsArray[this_id].transformation_id,
+                                "contains a mutually_exclusive argument for transformation", transformationsArray[mutual_transformaition].transformation_id,
                                 "which does not contain a mutully_exclusive argument back!")
             
         #Ensure all strings are standardised
@@ -191,7 +205,7 @@ def validateTransformationsArray(transformationsArray : list[transformationClass
         if transformation.targeted_modifiers:
             for tag in transformation.targeted_modifiers.keys():
                 if len(tag) != 3:
-                    raise Exception(tag, "in", transformation.transformation_name, "is not a valid tag!")
+                    raise Exception(tag, "in", transformation.transformation_id, "is not a valid tag!")
 
             transformation.targeted_modifiers = {
                 tag.upper(): {modifier.lower(): value for modifier, value in target_dict.items()}
@@ -205,7 +219,7 @@ def validateTransformationsArray(transformationsArray : list[transformationClass
 #Treat transformations like nodes in a graph - find all possible routes
 def generateAllPossibleRoutes(transformationsArray : list[transformationClass]) -> list:
     nodesData = [(
-        transformation.transformation_id, 
+        transformation.transformation_index, 
         transformation.prerequisite, 
         transformation.mutually_exclusive
         ) for transformation in transformationsArray]
@@ -240,9 +254,10 @@ def generateAllPossibleRoutes(transformationsArray : list[transformationClass]) 
 def getBaseIdeasArray(jsonData) -> list[ideaClass]:
     ideasArray : list[ideaClass] = []
 
-    idea_id : str = jsonData.get("idea_id", None)
+    idea_id : str = jsonData.get("id", None)
     localised_name : str = jsonData.get("localised_name", "")
-    gfx : Union[str, None] = jsonData.get("gfx", None)
+    localised_desc : str = jsonData.get("localised_desc", "")
+    gfx : str = jsonData.get("gfx", "")
 
     if idea_id is None or idea_id == "":
         raise Exception("Idea ID cannot be unset!")
@@ -256,7 +271,7 @@ def getBaseIdeasArray(jsonData) -> list[ideaClass]:
     rules : Union[dict[str, str], None] = base_modifiers.get("rules", None)
 
     ideasArray.append(ideaClass(
-        idea_id, localised_name, gfx, modifiers, equipment_modifiers, research_bonuses, targeted_modifiers, rules
+        idea_id, localised_name, localised_desc, gfx, modifiers, equipment_modifiers, research_bonuses, targeted_modifiers, rules
     ))
 
     return ideasArray
@@ -289,7 +304,7 @@ def getAllIdeasAndRoutes(ideasArray : list[ideaClass], transformationsArray : li
     while i < currentListLen:
         j : int = i + 1
         while j < currentListLen:
-            if set(ideasArray[i].idea_routes[0]) == set(ideasArray[j].idea_routes[0]) and boolAreTwoIdeasEqual(ideasArray[i], ideasArray[j]):
+            if boolAreTwoIdeasEqual(ideasArray[i], ideasArray[j]):
                 ideasArray[i].idea_routes.append(ideasArray[j].idea_routes[0])
                 ideasArray.pop(j)
                 currentListLen -= 1   
@@ -302,9 +317,9 @@ def printScriptedEffectsFile(ideasArray : list[ideaClass], transformationsArray 
         idea_name : str = ideasArray[0].idea_id
 
         for transformation in transformationsArray:
-            transformation_name : str = transformation.transformation_name
-            transformation_id : int = transformation.transformation_id
-            outfile.write(f"EFFECT_{idea_name}_modify_{transformation_name} = {{\n")
+            transformation_id : str = transformation.transformation_id
+            transformation_index : int = transformation.transformation_index
+            outfile.write(f"EFFECT_{idea_name}_modify_{transformation_id} = {{\n")
 
             if_prefix : str = ""
             idea_swaps_completed : list[tuple] = []
@@ -312,7 +327,7 @@ def printScriptedEffectsFile(ideasArray : list[ideaClass], transformationsArray 
             #Go through every route -> If the last step is equal to this ID, get the idea from the previous steps and swap with this idea id
             for route, idea_id in routeTupleToIndexDictionary.items():
                 #Ignore the first entry, which is an empty tuple
-                if len(route) > 0 and route[-1] == transformation_id:
+                if len(route) > 0 and route[-1] == transformation_index:
                     route_prev_steps : tuple = route[:-1]
                     prev_idea_id : int = routeTupleToIndexDictionary.get(route_prev_steps)
 
@@ -385,13 +400,23 @@ def printIdeasFile(ideasArray : list[ideaClass]):
 
 def printLocalisationFile(ideasArray : list[ideaClass]):
     with open(LOCALISATION_FILE, "w") as outfile:
-        outfile.write(f"l_english:\n#Uses a nested localisation key to reduce memory use\n {ideasArray[0].idea_id}_0: \"{ideasArray[0].localised_name}\"")
+        used_names_dict : dict[str, str] = {}
+        used_descs_dict : dict[str, str] = {}
+
+        outfile.write(f"l_english:\n")
 
         for index, idea in enumerate(ideasArray):
-            if index == 0:
-                continue
-
-            outfile.write(f"\n {idea.idea_id}_{index}: \"${ideasArray[0].idea_id}_0$\"")
+            if used_names_dict.get(idea.localised_name, None) == None:
+                used_names_dict[idea.localised_name] = f"{idea.idea_id}_{index}"
+                outfile.write(f"\n {idea.idea_id}_{index}: \"{idea.localised_name}\"")
+            else:
+                outfile.write(f"\n {idea.idea_id}_{index}: \"{used_names_dict.get(idea.localised_name)}\"")
+            
+            if used_descs_dict.get(idea.localised_desc, None) == None:
+                used_descs_dict[idea.localised_desc] = f"{idea.idea_id}_{index}"
+                outfile.write(f"\n {idea.idea_id}_{index}: \"{idea.localised_desc}\"")
+            else:
+                outfile.write(f"\n {idea.idea_id}_{index}: \"{used_descs_dict.get(idea.localised_desc)}\"")
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)

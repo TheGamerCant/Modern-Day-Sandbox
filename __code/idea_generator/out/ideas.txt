@@ -3,7 +3,7 @@ ideas = {
 		USA_example_idea_0 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.1
@@ -35,7 +35,7 @@ ideas = {
 		USA_example_idea_1 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.15
@@ -74,7 +74,7 @@ ideas = {
 		USA_example_idea_2 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.20
@@ -113,7 +113,7 @@ ideas = {
 		USA_example_idea_3 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.20
@@ -153,7 +153,7 @@ ideas = {
 		USA_example_idea_4 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.20
@@ -194,7 +194,7 @@ ideas = {
 		USA_example_idea_5 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.15
@@ -234,7 +234,7 @@ ideas = {
 		USA_example_idea_6 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.15
@@ -275,7 +275,7 @@ ideas = {
 		USA_example_idea_7 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.15
@@ -317,7 +317,7 @@ ideas = {
 		USA_example_idea_8 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.15
@@ -357,7 +357,7 @@ ideas = {
 		USA_example_idea_9 = {
 			removal_cost = -1
 
-			picture = GFX_idea_example
+			picture = my_gfx
 
 			modifier = {
 				political_power_factor = 0.1

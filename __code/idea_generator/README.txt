@@ -8,12 +8,13 @@ Here's how it works:
 
 To set your idea, edit the idea.json file in any text editor of your choice.
 
-It must have a string name at "idea_id", and can optionally have a localised name at "localised_name" and a gfx at "localised_name"
+It must have a string name at "id", and can optionally have a localised name at "localised_name", a description at "localised_desc" and a gfx at "gfx" (whatever you put here will appear in the ideas.txt file, so don't prefix it with "GFX" or "GFX_idea" for example)
 
 You then set the original base idea's modifiers under the "base_modifiers" branch - this should be fairly self-explanatory for anyone who's modded HoI4 before
 
 After that, you define "transformations" - each transformation representing an effect from a focus, decision, event, etc. that changes the modifiers of the idea.
-Each transformation needs a unique name at "transformation_name", as well as "prerequisite" and "mutually_exlusive" arguments.
+Each transformation needs a unique string id at "id", as well as "prerequisite" and "mutually_exlusive" arguments.
+The transformation's "localised_name" and "localised_desc" arguments are optional, filling them out will ensure that after this focus/event/decision, the idea will have that name/description
 
 Mutually exclusive arguments are fairly simple to understand - you enter a list of transformation names that this transformation cannot be taken with - such as mutually exclusive focuses or different event decisions
 

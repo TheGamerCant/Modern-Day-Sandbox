@@ -1,7 +1,8 @@
 {
-    "idea_id": "USA_example_idea",
+    "id": "USA_example_idea",
     "localised_name": "Example Idea",
-    "gfx": "GFX_idea_example",
+	"localised_desc" : "My description",
+    "gfx": "my_gfx",
     "base_modifiers": {
         "modifiers": {
             "political_power_factor": "0.1"
@@ -29,7 +30,9 @@
     },
     "transformations": [
         {
-            "transformation_name": "plus_5_pp_factor_minus_5_stab_factor_1",
+            "id": "plus_5_pp_factor_minus_5_stab_factor_1",
+            "localised_name": "",
+            "localised_desc": "",
             "prerequisite": [[]],
             "mutually_exclusive": [],
             "modifiers": {
@@ -60,7 +63,9 @@
             }
         },
         {
-            "transformation_name": "plus_5_pp_factor_minus_5_stab_factor_2",
+            "id": "plus_5_pp_factor_minus_5_stab_factor_2",
+			"localised_name": "",
+            "localised_desc": "",
             "prerequisite": [["plus_5_pp_factor_minus_5_stab_factor_1"]],
             "mutually_exclusive": ["plus_0_10_facism_drift"],
             "modifiers": {
@@ -73,7 +78,9 @@
             "rules": {}
         },
         {
-            "transformation_name": "plus_0_10_facism_drift",
+            "id": "plus_0_10_facism_drift",
+			"localised_name": "",
+            "localised_desc": "",
             "prerequisite": [["plus_5_pp_factor_minus_5_stab_factor_1"]],
             "mutually_exclusive": ["plus_5_pp_factor_minus_5_stab_factor_2"],
             "modifiers": {
@@ -87,7 +94,9 @@
             }
         },
         {
-            "transformation_name": "minus_10_consumer_goods_factor",
+            "id": "minus_10_consumer_goods_factor",
+			"localised_name": "",
+            "localised_desc": "",
             "prerequisite": [[]],
             "mutually_exclusive": [],
             "modifiers": {
@@ -99,7 +108,9 @@
             "rules": {}
         },
         {
-            "transformation_name": "plus_7_5_research_speed",
+            "id": "plus_7_5_research_speed",
+			"localised_name": "Final Idea Name",
+            "localised_desc": "A new description",
             "prerequisite": [["plus_5_pp_factor_minus_5_stab_factor_2", "plus_0_10_facism_drift"], ["minus_10_consumer_goods_factor"]],
             "mutually_exclusive": [],
             "modifiers": {
