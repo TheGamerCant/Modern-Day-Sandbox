@@ -410,13 +410,13 @@ def printLocalisationFile(ideasArray : list[ideaClass]):
                 used_names_dict[idea.localised_name] = f"{idea.idea_id}_{index}"
                 outfile.write(f"\n {idea.idea_id}_{index}: \"{idea.localised_name}\"")
             else:
-                outfile.write(f"\n {idea.idea_id}_{index}: \"{used_names_dict.get(idea.localised_name)}\"")
+                outfile.write(f"\n {idea.idea_id}_{index}: \"${used_names_dict.get(idea.localised_name)}$\"")
             
             if used_descs_dict.get(idea.localised_desc, None) == None:
                 used_descs_dict[idea.localised_desc] = f"{idea.idea_id}_{index}"
-                outfile.write(f"\n {idea.idea_id}_{index}: \"{idea.localised_desc}\"")
+                outfile.write(f"\n {idea.idea_id}_{index}_desc: \"{idea.localised_desc}\"")
             else:
-                outfile.write(f"\n {idea.idea_id}_{index}: \"{used_descs_dict.get(idea.localised_desc)}\"")
+                outfile.write(f"\n {idea.idea_id}_{index}_desc: \"${used_descs_dict.get(idea.localised_desc)}_desc$\"")
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
