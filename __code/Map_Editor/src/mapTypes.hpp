@@ -5,39 +5,40 @@
 #include <unordered_map>
 #include <vector>
 
-class country;
-class terrain;
-class building;
-class resource;
-class state_category;
-class province;
-class state;
-class strategic_region;
+struct country;
+struct terrain;
+struct building;
+struct resource;
+struct state_category;
+struct province;
+struct state;
+struct strategic_region;
 
-class country {
+struct country {
 private:
+	uint16_t id;					//Country ID
 	uint8_t r, g, b;				//Country colour
-	std::string name;				//Country name
-	std::string loc_name;			//Localised name
+	char tag[3];					//Country tag
 
 public:
-	country() : r(0), g(0), b(0), name(""), loc_name("") {};
+	country() : id(0), r(0), g(0), b(0), tag("") {};
 };
 
-class terrain {
+struct terrain {
 private:
+	uint16_t id;					//Terrain ID
 	uint8_t r, g, b;				//Terrain colour
 	bool naval_terrain;				//Can be used by navies
 	bool is_water;					//Is a water tile
 	std::string name;				//Terrain name
-	std::string loc_name;			//Localised name
 
 public:
-	terrain() : r(0), g(0), b(0), naval_terrain(false), is_water(false), name(""), loc_name("") {};
+	terrain() : id(0), r(0), g(0), b(0), naval_terrain(false), is_water(false), name("") {};
 };
 
-class building {
+struct building {
 private:
+	uint16_t id;					//Building ID		
 	bool shares_slots;				//Does this state building share slots with other buildings
 	uint8_t state_max;				//Maximum number of buildings per state
 	uint8_t province_max;			//Maximum number of buildings per province, also used to define a state as provincial
@@ -49,11 +50,10 @@ private:
 	bool is_in_group;				//Is this building part of a group
 	std::string group_by;			//What group is this building a part of
 	std::string name;				//Building name
-	std::string loc_name;			//Localised name
 
 public:
-	building() : shares_slots(false), state_max(255), province_max(255), show_on_map(0), show_on_map_meshes(1), centered(false), only_costal(false), is_port(false),
-	is_in_group(false), group_by(""), name(""), loc_name("") { };
+	building() : id(0), shares_slots(false), state_max(255), province_max(255), show_on_map(0), show_on_map_meshes(1), centered(false), only_costal(false), is_port(false),
+	is_in_group(false), group_by(""), name("") { };
 
 	//Is this a province-level building
 	bool isProvincial() const { return province_max; };
@@ -61,27 +61,27 @@ public:
 	bool isState() const { return !province_max; };
 };
 
-class resource {
+struct resource {
 private:
+	uint16_t id;					//Resource ID
 	std::string name;				//Resource name
-	std::string loc_name;			//Localised name
 
 public:
-	resource() : name(""), loc_name("") {};
+	resource() : name("") {};
 };
 
-class state_category {
+struct state_category {
 private:
-	uint8_t building_slots;			//No. of building slots
+	uint16_t id;					//Category ID	
+	uint16_t building_slots;		//No. of building slots
 	uint8_t r, g, b;				//State category colour
 	std::string name;				//State category name
-	std::string loc_name;			//Localised name
 
 public:
 	state_category() : building_slots(0), r(0), g(0), b(0) {}
 };
 
-class province {
+struct province {
 private:
 	uint16_t id;														//Province ID
 	uint8_t r, g, b;													//Province colour
@@ -89,13 +89,12 @@ private:
 	uint8_t continent;													//Province continent
 	uint16_t victoryPoints;												//How many VPs this province is worth
 	std::shared_ptr<state> state;										//The state we are a part of
-	std::shared_ptr<terrain> terrain;									//Province terrain
-	std::unordered_map<std::shared_ptr<building>, uint8_t> buildings;	//Provincial buildings and their count
+	uint16_t;															//Province terrain
+	std::vector<uint8_t> buildings;										//Provincial building count by index
 	std::string name;													//Province name
-	std::string loc_name;												//Localised name
 };
 
-class state {
+struct state {
 private:
 	uint16_t id;														//State ID
 	uint8_t red, green, blue;											//State colour
@@ -114,7 +113,7 @@ private:
 	std::string loc_name;												//Localised name
 };
 
-class strategic_region {
+struct strategic_region {
 	uint16_t id;									//Strategic region ID
 	std::vector<std::shared_ptr<state>> states;		//States that are part of this strategic region
 	std::vector<std::string> weather;				//Weather arguments
@@ -123,7 +122,7 @@ class strategic_region {
 };
 
 template<typename T>
-class data_manager {
+struct data_manager {
 private:
 	std::vector<T> objects;
 	std::unordered_map<std::string, std::shared_ptr<T>> lookup_map;

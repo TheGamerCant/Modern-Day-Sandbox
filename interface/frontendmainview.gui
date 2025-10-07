@@ -297,8 +297,8 @@ guiTypes = {
 				
 		background = {
 			name = "Background"		
-#			quadTextureSprite ="GFX_tiled_window_transparent"
-			quadTextureSprite ="GFX_pink_bold_selection_frame"
+			quadTextureSprite ="GFX_tiled_window_transparent"
+#			quadTextureSprite ="GFX_pink_bold_selection_frame"
 		}
 			
 		iconType = {

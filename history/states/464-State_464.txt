@@ -5,7 +5,7 @@ state={
 		owner = CAN
 		add_core_of = CAN
 		
-		victory_points = { 7361 6 }
+		victory_points = { 14003 6 }
 		victory_points = { 7304 2 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
@@ -18,7 +18,7 @@ state={
 		set_variable = { culture_value_array^1 = 2.4 }
 	}
 	provinces={
-		1354 4430 4623 7304 7361 7644 10244 
+		1354 4430 4623 7304 7361 7644 10244 14003  
 	}
 	manpower= 921727
 	buildings_max_level_factor=1.000
