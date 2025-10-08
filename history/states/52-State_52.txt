@@ -6,7 +6,7 @@ state={
 		add_core_of = GER
 		
 		victory_points = { 11544 10 }
-		victory_points = { 13896 20 }
+		victory_points = { 13896 35 }
 		victory_points = { 13899 2 }
 		victory_points = { 9515 4 }
 		victory_points = { 3705 5 }
@@ -16,6 +16,7 @@ state={
 		victory_points = { 9666 2 }
 		victory_points = { 11529 2 }
 		victory_points = { 586 2 }
+		victory_points = { 13893 3 }
 		
 		buildings = {
 			infrastructure = 4
