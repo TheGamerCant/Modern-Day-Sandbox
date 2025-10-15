@@ -8,7 +8,7 @@ state={
 		victory_points = { 13836 3 }
 	}
 	provinces={
-		4640 11443 13127 13836 
+		4640 11443 13836 
 	}
 	manpower= 129941
 	buildings_max_level_factor=1.000
