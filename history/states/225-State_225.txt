@@ -5,14 +5,14 @@ state={
 		owner = UKR
 		add_core_of = UKR
 		
-		victory_points = { 3520 5 }
+		victory_points = { 13815 5 }
 		victory_points = { 9477 2 }
 		victory_points = { 3225 2 }
 		victory_points = { 3455 2 }
 		victory_points = { 463 2 }
 	}
 	provinces={
-		288 463 501 522 3225 3455 3520 6565 9477 9566 11462 11553 
+		288 463 501 522 3225 3455 3520 6565 9477 9566 11462 11553 13815 
 	}
 	manpower= 1167610
 	buildings_max_level_factor=1.000

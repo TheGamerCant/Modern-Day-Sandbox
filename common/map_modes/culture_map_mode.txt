@@ -24,7 +24,7 @@ scripted_map_modes = {
 #				modulo_temp_variable = { culture_g = 1000 }
 #				multiply_temp_variable = { blue = 1000 }
 
-				set_temp_variable = { alpha = 0.95 }
+				set_temp_variable = { alpha = 1.0 }
 			}
 		}
 		far_text = none
