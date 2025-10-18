@@ -276,3 +276,15 @@ POR = {
 	color = rgb { 0 104 56 }
 	color_ui = rgb { 0 104 56 }
 }
+ISR = {
+	color = rgb { 156 224 252 }
+	color_ui = rgb { 156 224 252 }
+}
+PST = {
+	color = rgb { 186 63 10 }
+	color_ui = rgb { 186 63 10 }
+}
+HMS = {
+	color = rgb { 47 166 33 }
+	color_ui = rgb { 47 166 33 }
+}

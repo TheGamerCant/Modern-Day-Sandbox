@@ -174,3 +174,15 @@
  POR:0 "Portugal"                                  
  POR_DEF:0 "the Portugese Republic"                                  
  POR_ADJ:0 "Portugese"
+
+ ISR:0 "Israel"                                  
+ ISR_DEF:0 "the State of Israel"                                  
+ ISR_ADJ:0 "Israeli"
+
+ PST:0 "Palestine"                                  
+ PST_DEF:0 "the State of Palestine"                                  
+ PST_ADJ:0 "Palestinian"
+
+ HMS:0 "Hamas"                                  
+ HMS_DEF:0 "the Islamic Resistance Movement"                                  
+ HMS_ADJ:0 "Gazan"
