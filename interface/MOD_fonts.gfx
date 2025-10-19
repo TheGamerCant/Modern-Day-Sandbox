@@ -117,6 +117,7 @@ bitmapfonts = {
 		A = { 18 62 119 }			# Navy blue / Alaskan
 		P = { 63 51 205 }			# Purple / Pacific North-Westerner
 		d = { 45 85 112 }			# Blueish-grey / Deep Southerner
+		e = { 16 89 220 }			# Ocean blue / East Coast
 	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac

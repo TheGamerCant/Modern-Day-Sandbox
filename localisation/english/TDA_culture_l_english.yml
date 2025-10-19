@@ -60,8 +60,8 @@
  TDA_culture_new_yorker_token_idea:0 "§BNew Yorker§!"
  TDA_culture_new_yorker_desc_token_idea:0 ""
  
- TDA_culture_south_west_token_idea:0 "§4South-Western§!"
- TDA_culture_south_west_desc_token_idea:0 ""
+ TDA_culture_usa_south_west_token_idea:0 "§4South-Western§!"
+ TDA_culture_usa_south_west_desc_token_idea:0 ""
  
  TDA_culture_californian_token_idea:0 "§4Californian§!"
  TDA_culture_californian_desc_token_idea:0 ""
@@ -69,8 +69,8 @@
  TDA_culture_texan_token_idea:0 "§1Texan§!"
  TDA_culture_texan_desc_token_idea:0 ""
  
- TDA_culture_deep_south_token_idea:0 "§dDeep Southern§!"
- TDA_culture_deep_south_desc_token_idea:0 ""
+ TDA_culture_usa_deep_south_token_idea:0 "§dDeep Southern§!"
+ TDA_culture_usa_deep_south_desc_token_idea:0 ""
  
  TDA_culture_floridan_token_idea:0 "§CFloridan§!"
  TDA_culture_floridan_desc_token_idea:0 ""
@@ -87,5 +87,11 @@
  TDA_culture_midwestern_token_idea:0 "§2Midwestern§!"
  TDA_culture_midwestern_desc_token_idea:0 ""
  
- TDA_culture_rustbelt_token_idea:0 "§AAlaskan§!"
+ TDA_culture_rustbelt_token_idea:0 "§ARustbelt§!"
  TDA_culture_rustbelt_desc_token_idea:0 ""
+ 
+ TDA_culture_usa_east_coast_token_idea:0 "§eEast Coast§!"
+ TDA_culture_usa_east_coast_desc_token_idea:0 ""
+ 
+ TDA_culture_usa_southern_token_idea:0 "§dSouthern§!"
+ TDA_culture_usa_southern_desc_token_idea:0 ""

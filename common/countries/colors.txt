@@ -277,8 +277,8 @@ POR = {
 	color_ui = rgb { 0 104 56 }
 }
 ISR = {
-	color = rgb { 156 224 252 }
-	color_ui = rgb { 156 224 252 }
+	color = rgb { 127 198 230 }
+	color_ui = rgb { 127 198 230 }
 }
 PST = {
 	color = rgb { 186 63 10 }

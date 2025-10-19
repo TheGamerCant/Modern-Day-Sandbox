@@ -163,7 +163,9 @@ STATE_sort_culture_array = {
 		clear_array = culture_index_array_HOLD
 		clear_array = culture_value_array_HOLD
 	}
-	
+}
+
+STATE_get_culture_colours = {
 	#We now have our sorted arrays 'culture_value_array' and 'culture_index_array' -> Now get colours
 	set_temp_variable = { largest_ethnicity = culture_index_array^0 }
 
@@ -253,7 +255,7 @@ STATE_sort_culture_array = {
 	}
 }
 
-update_every_state_culture = { every_state = { STATE_sort_culture_array = yes } }
+update_every_state_culture = { every_state = { STATE_sort_culture_array = yes STATE_get_culture_colours = yes } }
 
 #Code taken from Yard1
 STATE_sort_culture_quicksort = {

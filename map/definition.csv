@@ -1013,7 +1013,7 @@
 1012;5;17;244;sea;false;ocean;0
 1013;5;18;30;land;true;plains;5
 1014;5;18;85;land;true;jungle;6
-1015;5;18;135;land;true;desert;7
+1015;5;18;135;land;false;desert;7
 1016;5;19;240;sea;false;ocean;0
 1017;5;20;248;sea;false;ocean;0
 1018;5;21;50;land;true;forest;6
@@ -7105,7 +7105,7 @@
 7104;89;84;146;land;false;plains;6
 7105;89;87;6;land;true;hills;6
 7106;89;87;61;land;false;mountain;6
-7107;89;87;211;land;false;plains;7
+7107;89;87;211;land;false;dense_urban;7
 7108;89;90;26;land;true;hills;6
 7109;89;90;71;land;false;plains;6
 7110;89;90;176;land;true;urban;6
@@ -9751,7 +9751,7 @@
 9750;129;204;214;land;false;hills;1
 9751;129;207;74;land;false;forest;1
 9752;129;207;179;land;false;urban;1
-9753;129;207;224;land;false;urban;1
+9753;129;207;224;land;false;dense_urban;7
 9754;129;210;39;land;false;hills;2
 9755;130;0;14;land;false;hills;7
 9756;130;0;59;land;false;forest;1
@@ -14176,11 +14176,11 @@
 14175;158;35;2;land;false;forest;6
 14176;89;213;53;land;false;hills;1
 14177;28;179;123;land;false;dense_urban;1
-14178;198;22;116;land;false;urban;1
+14178;198;22;116;land;true;urban;7
 14179;17;75;122;land;false;urban;1
 14180;76;227;130;land;false;sub_urban;1
 14181;142;126;248;land;false;dense_urban;1
-14182;187;254;48;land;false;urban;1
+14182;187;254;48;land;true;sub_urban;7
 14183;200;77;233;land;false;urban;1
 14184;113;141;117;land;false;sub_urban;1
 14185;142;184;25;land;false;dense_urban;1
@@ -14190,7 +14190,7 @@
 14189;43;67;148;land;true;dense_urban;1
 14190;80;13;127;land;true;dense_urban;7
 14191;140;199;180;land;true;dense_urban;1
-14192;70;19;247;land;true;urban;1
+14192;70;19;247;land;false;dense_urban;7
 14193;136;198;155;land;false;dense_urban;1
 14194;81;74;169;land;true;sub_urban;1
 14195;142;228;200;land;true;plains;1
@@ -14214,7 +14214,7 @@
 14213;67;185;23;land;false;urban;1
 14214;243;164;95;land;false;sub_urban;1
 14215;135;121;55;land;false;urban;1
-14216;134;189;250;land;false;sub_urban;1
+14216;134;189;250;land;false;dense_urban;7
 14217;83;7;18;land;false;urban;1
 14218;41;14;162;land;false;dense_urban;1
 14219;82;133;238;land;true;urban;1

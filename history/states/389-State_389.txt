@@ -8,6 +8,18 @@ state={
 		victory_points = { 1836 5 }
 		victory_points = { 3719 3 }
 		victory_points = { 4759 1 }
+		
+		resize_array = { array = culture_index_array size = 3 value = 0 }
+		resize_array = { array = culture_value_array size = 3 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 19 }
+		set_variable = { culture_value_array^0 = 94.3 }
+
+		set_variable = { culture_index_array^1 = 1 }
+		set_variable = { culture_value_array^1 = 4.5 }
+
+		set_variable = { culture_index_array^2 = 0 }
+		set_variable = { culture_value_array^2 = 1.2 }
 	}
 	provinces={
 		1752 1836 1870 3719 4759 4772 6722 7877 10685 10709 12566 12685 

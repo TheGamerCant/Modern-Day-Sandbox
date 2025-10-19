@@ -928,4 +928,6 @@
  STATE_903:0 "Garissa"
  STATE_904:0 "Gaza Strip"
  STATE_905:0 "Golan Heights"
- STATE_906:0 "West Bank"
+ STATE_906:0 "West Bank Zone C"
+ STATE_907:0 "West Bank Zones A&B"
+ STATE_908:0 "Negev"

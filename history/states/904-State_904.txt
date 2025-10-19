@@ -4,9 +4,9 @@ state={
 	history={
 		owner = HMS
 		add_core_of = HMS
-		add_core_of = PLS
+		add_core_of = PST
 		
-		victory_pints = { 14190 15 }
+		victory_points = { 14190 10 }
 	}
 	provinces={
 		14190 
