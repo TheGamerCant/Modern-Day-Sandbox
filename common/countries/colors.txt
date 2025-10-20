@@ -288,3 +288,19 @@ HMS = {
 	color = rgb { 47 166 33 }
 	color_ui = rgb { 47 166 33 }
 }
+ADR = {
+	color = rgb { 124 159 211 }
+	color_ui = rgb { 124 159 211 }
+}
+BSQ = {
+	color = rgb { 129 19 28 }
+	color_ui = rgb { 129 19 28 }
+}
+CAT = {
+	color = rgb { 204 89 41 }
+	color_ui = rgb { 204 89 41 }
+}
+GLC = {
+	color = rgb { 128 220 219 }
+	color_ui = rgb { 128 220 219 }
+}

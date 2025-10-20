@@ -2,12 +2,21 @@ state={
 	id=299
 	name="STATE_299"
 	history={
-		owner = ZZZ
+		owner = GBR
+		add_core_of = GBR
+		
+		victory_points = { 14184 1 }
+		victory_points = { 12960 1 }
+		
+		buildings = {
+			infrastructure = 1
+			air_base = 8
+		}
 	}
 	provinces={
-		12960 13292 
+		12960 13292 14184 
 	}
-	manpower= 100000
+	manpower= 2941
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=enclave

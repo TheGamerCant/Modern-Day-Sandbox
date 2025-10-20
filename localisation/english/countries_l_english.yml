@@ -186,3 +186,19 @@
  HMS:0 "Hamas"                                  
  HMS_DEF:0 "the Islamic Resistance Movement"                                  
  HMS_ADJ:0 "Gazan"
+
+ ADR:0 "Andorra"                                  
+ ADR_DEF:0 "the Principality of Andorra"                                  
+ ADR_ADJ:0 "Andorran"
+
+ BSQ:0 "Basque Country"                                  
+ BSQ_DEF:0 "the Basque Country"                                  
+ BSQ_ADJ:0 "Basque"
+
+ CAT:0 "Catalonia"                                  
+ CAT_DEF:0 "the Republic of Catalonia"                                  
+ CAT_ADJ:0 "Catalan"
+
+ GLC:0 "Galicia"                                  
+ GLC_DEF:0 "the Republic of Galicia"                                  
+ GLC_ADJ:0 "Galician"

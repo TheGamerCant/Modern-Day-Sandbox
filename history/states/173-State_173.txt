@@ -2,13 +2,18 @@ state={
 	id=173
 	name="STATE_173"
 	history={
-		owner = ZZZ
+		owner = ISR
+		add_core_of = ISR
+		add_claim_by = HMS
+		
+		victory_points = { 14182 2 }
+		victory_points = { 4088 2 }
 	}
 	provinces={
-		747 1176 4065 7068 7153 7196 9979 10009 10063 11956 12038 
+		1015 4088 7176 11970 14182 
 	}
-	manpower= 100000
+	manpower= 1087078
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=city
+	state_category=pastoral
 }
