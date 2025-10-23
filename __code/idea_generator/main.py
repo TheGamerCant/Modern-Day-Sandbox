@@ -3,12 +3,14 @@ import os
 from typing import Union
 from decimal import Decimal, InvalidOperation
 import copy
+import math
 
 #Define our output directories
 OUTPUT_DIR = "out"
 IDEAS_FILE = os.path.join(OUTPUT_DIR, "ideas.txt")
 EFFECTS_FILE = os.path.join(OUTPUT_DIR, "scripted_effects.txt")
 LOCALISATION_FILE = os.path.join(OUTPUT_DIR, "ideas_l_english.yml")
+USE_INDEX_VARIABLE = False
 
 #Check if a string can be converted into a decimal
 def boolStringIsDecimal(s: str) -> bool:
@@ -119,7 +121,6 @@ def boolAreTwoIdeasEqual(idea_one : ideaClass, idea_two : ideaClass):
         return True
     
     return False
-
 
 #Get a dictionary for transformation names -> index
 def getTransformationsIndexDictionary(transformationsJson) -> dict[str, int]:
@@ -259,6 +260,11 @@ def getBaseIdeasArray(jsonData) -> list[ideaClass]:
     localised_desc : str = jsonData.get("localised_desc", "")
     gfx : str = jsonData.get("gfx", "")
 
+    use_index_variable_local : bool = jsonData.get("use_index_variable", False)
+    if use_index_variable_local:
+        global USE_INDEX_VARIABLE
+        USE_INDEX_VARIABLE = True
+
     if idea_id is None or idea_id == "":
         raise Exception("Idea ID cannot be unset!")
     
@@ -312,39 +318,85 @@ def getAllIdeasAndRoutes(ideasArray : list[ideaClass], transformationsArray : li
             j += 1
         i += 1
 
-def printScriptedEffectsFile(ideasArray : list[ideaClass], transformationsArray : list[transformationClass], routeTupleToIndexDictionary: dict[tuple, int]):
+def getAllIdeaSwaps(transformation_index : int, routeTupleToIdeaIndexDictionary : dict[tuple, int]) -> list[tuple]:
+    all_idea_swaps : list[tuple] = []
+    for route, idea_id in routeTupleToIdeaIndexDictionary.items():
+        if len(route) > 0 and route[-1] == transformation_index:
+            prev_idea_id : int = routeTupleToIdeaIndexDictionary.get(route[:-1])
+            if not tuple((prev_idea_id, idea_id)) in all_idea_swaps:
+                all_idea_swaps.append((prev_idea_id, idea_id))
+
+    return list(all_idea_swaps)
+
+def generateIfBinaryTree(arr : list[int], dic : dict[int, int], idea : str, variable_name : str, indent=1) -> str:
+    indent_str : str = "\t" * indent
+    
+    if len(arr) == 1:
+        return indent_str + f"swap_ideas = {{ remove_idea = {idea}_{arr[0]} add_idea = {idea}_{dic.get(arr[0])} }}\n"
+    
+    mid = len(arr) // 2
+    split = (arr[mid - 1] + arr[mid]) / 2
+    
+    code = indent_str + "if = {\n" + indent_str + "\t" + f"limit = {{ check_variable = {{ var = {variable_name} value = {split} compare = greater_than_or_equals }} }}\n"
+    code += generateIfBinaryTree(arr[mid:], dic, idea, variable_name, indent + 1)
+    code += indent_str + "}\n" + indent_str + "else = {\n"
+    code += generateIfBinaryTree(arr[:mid], dic, idea, variable_name, indent + 1)
+    code += indent_str + "}\n"
+    return code
+
+def printScriptedEffectsFile(ideasArray : list[ideaClass], transformationsArray : list[transformationClass], routeTupleToIdeaIndexDictionary: dict[tuple, int]):
     with open(EFFECTS_FILE, "w") as outfile:
         idea_name : str = ideasArray[0].idea_id
 
         for transformation in transformationsArray:
             transformation_id : str = transformation.transformation_id
             transformation_index : int = transformation.transformation_index
+
+            all_idea_swaps : list[tuple] = getAllIdeaSwaps(transformation_index, routeTupleToIdeaIndexDictionary)
+
             outfile.write(f"EFFECT_{idea_name}_modify_{transformation_id} = {{\n")
 
-            if_prefix : str = ""
-            idea_swaps_completed : list[tuple] = []
+            #If we have an index variable, create a binary tree, otherwise just do an if-if_else block
+            #Index variable method has guarenteed complexity of log(N), while without is average of .5N
 
-            #Go through every route -> If the last step is equal to this ID, get the idea from the previous steps and swap with this idea id
-            for route, idea_id in routeTupleToIndexDictionary.items():
-                #Ignore the first entry, which is an empty tuple
-                if len(route) > 0 and route[-1] == transformation_index:
-                    route_prev_steps : tuple = route[:-1]
-                    prev_idea_id : int = routeTupleToIndexDictionary.get(route_prev_steps)
+            if USE_INDEX_VARIABLE:
+                swap_init_values : list[int] = [swap[0] for swap in all_idea_swaps]
+                swap_dictionary : dict[int, int] = {swap[0]: swap[1] for swap in all_idea_swaps}
 
-                    if (prev_idea_id, idea_id) not in idea_swaps_completed:
-                        outfile.write(f"\t{if_prefix}if = {{\n\t\tlimit = {{ has_idea = {idea_name}_{prev_idea_id} }}" \
-                        f"\n\t\tswap_ideas = {{\n\t\t\tremove_idea = {idea_name}_{prev_idea_id}" \
-                        f"\n\t\t\tadd_idea = {idea_name}_{idea_id}\n\t\t}}\n\t}}\n")
+                tree : str = generateIfBinaryTree(swap_init_values, swap_dictionary, idea_name, f"{idea_name}_idea_index")
 
-                        if_prefix = "else_"
+                outfile.write(tree)
 
-                        idea_swaps_completed.append((prev_idea_id, idea_id))
-       
-            if len(idea_swaps_completed) > 0:
-                    outfile.write(f"\telse = {{\n\t\teffect_tooltip = {{\n\t\t\tswap_ideas = {{\n\t\t\t\tremove_idea = {idea_name}_{idea_swaps_completed[0][0]}" \
-                                f"\n\t\t\t\tadd_idea = {idea_name}_{idea_swaps_completed[0][1]}\n\t\t\t}}\n\t\t}}\n\t}}\n")
+            else:
+                if_prefix : str = ""
+                for swap in all_idea_swaps:
+                    outfile.write(f"\t{if_prefix}if = {{\n\t\tlimit = {{ has_idea = {idea_name}_{swap[0]} }}" \
+                    f"\n\t\tswap_ideas = {{\n\t\t\tremove_idea = {idea_name}_{swap[0]}" \
+                    f"\n\t\t\tadd_idea = {idea_name}_{swap[1]}\n\t\t}}\n\t}}\n")
+
+                    if_prefix = "else_"
+        
+                outfile.write(f"\telse = {{\n\t\teffect_tooltip = {{\n\t\t\tswap_ideas = {{\n\t\t\t\tremove_idea = {idea_name}_{all_idea_swaps[0][0]}" \
+                            f"\n\t\t\t\tadd_idea = {idea_name}_{all_idea_swaps[0][1]}\n\t\t\t}}\n\t\t}}\n\t}}\n")
 
             outfile.write(f"}}\n")
+        
+        outfile.write(f"EFFECT_remove_{idea_name} = {{\n")
+        
+        if not USE_INDEX_VARIABLE:
+            if_prefix : str = ""
+            for index, idea in enumerate(ideasArray):
+                outfile.write(f"\t{if_prefix}if = {{ limit = {{ has_idea = {idea.idea_id}_{index} }} remove_ideas = {idea.idea_id}_{index} }}\n")
+                if_prefix = "else_"
+
+        else:
+            outfile.write(f"\tmeta_effect = {{\n\t\ttext = {{\n\t\t\tremove_ideas = {idea_name}_[IDEA_INDEX]\n\t\t}}" \
+                          f"\n\n\t\tIDEA_INDEX = \"[?{idea_name}_idea_index|0]\"\n\t}}\n")
+
+            outfile.write(f"\n\tclear_variable = {idea_name}_idea_index\n")
+
+        outfile.write(f"}}\n")
+
 
 def printIdeasFile(ideasArray : list[ideaClass]):
     with open(IDEAS_FILE, "w") as outfile:
@@ -394,6 +446,9 @@ def printIdeasFile(ideasArray : list[ideaClass]):
                     outfile.write(f"\t\t\t\t{key} = {value}\n")
                 outfile.write(f"\t\t\t}}\n")
 
+            if USE_INDEX_VARIABLE:
+                outfile.write(f"\n\t\t\ton_add = {{\n\t\t\t\tset_variable = {{ {idea.idea_id}_idea_index = {idea_index} }}\n\t\t\t}}\n")
+
             outfile.write(f"\t\t}}\n")
 
         outfile.write(f"\t}}\n}}")
@@ -442,13 +497,13 @@ def main():
     getAllIdeasAndRoutes(ideasArray, transformationsArray, allPossibleRoutesArray)
 
     #Get a dictionary that takes a unique tuple for the route and points to the idea it gives
-    routeTupleToIndexDictionary: dict[tuple, int] = {
+    routeTupleToIdeaIndexDictionary: dict[tuple, int] = {
         tuple(route): index
         for index, idea in enumerate(ideasArray)
         for route in idea.idea_routes
     }
     
-    printScriptedEffectsFile(ideasArray, transformationsArray, routeTupleToIndexDictionary)
+    printScriptedEffectsFile(ideasArray, transformationsArray, routeTupleToIdeaIndexDictionary)
     printIdeasFile(ideasArray)
     printLocalisationFile(ideasArray)
     
