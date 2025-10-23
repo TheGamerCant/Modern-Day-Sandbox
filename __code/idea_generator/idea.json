@@ -3,6 +3,7 @@
     "localised_name": "Example Idea",
 	"localised_desc" : "My description",
     "gfx": "my_gfx",
+    "use_index_variable": true, 
     "base_modifiers": {
         "modifiers": {
             "political_power_factor": "0.1"

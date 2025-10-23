@@ -1,134 +1,68 @@
 EFFECT_USA_example_idea_modify_plus_5_pp_factor_minus_5_stab_factor_1 = {
 	if = {
-		limit = { has_idea = USA_example_idea_0 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_0
-			add_idea = USA_example_idea_1
-		}
-	}
-	else_if = {
-		limit = { has_idea = USA_example_idea_9 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_9
-			add_idea = USA_example_idea_8
-		}
+		limit = { check_variable = { var = USA_example_idea_idea_index value = 4.5 compare = greater_than_or_equals } }
+		swap_ideas = { remove_idea = USA_example_idea_9 add_idea = USA_example_idea_8 }
 	}
 	else = {
-		effect_tooltip = {
-			swap_ideas = {
-				remove_idea = USA_example_idea_0
-				add_idea = USA_example_idea_1
-			}
-		}
+		swap_ideas = { remove_idea = USA_example_idea_0 add_idea = USA_example_idea_1 }
 	}
 }
 EFFECT_USA_example_idea_modify_plus_5_pp_factor_minus_5_stab_factor_2 = {
 	if = {
-		limit = { has_idea = USA_example_idea_1 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_1
-			add_idea = USA_example_idea_2
-		}
-	}
-	else_if = {
-		limit = { has_idea = USA_example_idea_8 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_8
-			add_idea = USA_example_idea_3
-		}
+		limit = { check_variable = { var = USA_example_idea_idea_index value = 4.5 compare = greater_than_or_equals } }
+		swap_ideas = { remove_idea = USA_example_idea_8 add_idea = USA_example_idea_3 }
 	}
 	else = {
-		effect_tooltip = {
-			swap_ideas = {
-				remove_idea = USA_example_idea_1
-				add_idea = USA_example_idea_2
-			}
-		}
+		swap_ideas = { remove_idea = USA_example_idea_1 add_idea = USA_example_idea_2 }
 	}
 }
 EFFECT_USA_example_idea_modify_plus_0_10_facism_drift = {
 	if = {
-		limit = { has_idea = USA_example_idea_1 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_1
-			add_idea = USA_example_idea_5
-		}
-	}
-	else_if = {
-		limit = { has_idea = USA_example_idea_8 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_8
-			add_idea = USA_example_idea_6
-		}
+		limit = { check_variable = { var = USA_example_idea_idea_index value = 4.5 compare = greater_than_or_equals } }
+		swap_ideas = { remove_idea = USA_example_idea_8 add_idea = USA_example_idea_6 }
 	}
 	else = {
-		effect_tooltip = {
-			swap_ideas = {
-				remove_idea = USA_example_idea_1
-				add_idea = USA_example_idea_5
-			}
-		}
+		swap_ideas = { remove_idea = USA_example_idea_1 add_idea = USA_example_idea_5 }
 	}
 }
 EFFECT_USA_example_idea_modify_minus_10_consumer_goods_factor = {
 	if = {
-		limit = { has_idea = USA_example_idea_2 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_2
-			add_idea = USA_example_idea_3
+		limit = { check_variable = { var = USA_example_idea_idea_index value = 3.0 compare = greater_than_or_equals } }
+		if = {
+			limit = { check_variable = { var = USA_example_idea_idea_index value = 0.5 compare = greater_than_or_equals } }
+			swap_ideas = { remove_idea = USA_example_idea_0 add_idea = USA_example_idea_9 }
 		}
-	}
-	else_if = {
-		limit = { has_idea = USA_example_idea_5 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_5
-			add_idea = USA_example_idea_6
-		}
-	}
-	else_if = {
-		limit = { has_idea = USA_example_idea_1 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_1
-			add_idea = USA_example_idea_8
-		}
-	}
-	else_if = {
-		limit = { has_idea = USA_example_idea_0 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_0
-			add_idea = USA_example_idea_9
+		else = {
+			swap_ideas = { remove_idea = USA_example_idea_1 add_idea = USA_example_idea_8 }
 		}
 	}
 	else = {
-		effect_tooltip = {
-			swap_ideas = {
-				remove_idea = USA_example_idea_2
-				add_idea = USA_example_idea_3
-			}
+		if = {
+			limit = { check_variable = { var = USA_example_idea_idea_index value = 3.5 compare = greater_than_or_equals } }
+			swap_ideas = { remove_idea = USA_example_idea_5 add_idea = USA_example_idea_6 }
+		}
+		else = {
+			swap_ideas = { remove_idea = USA_example_idea_2 add_idea = USA_example_idea_3 }
 		}
 	}
 }
 EFFECT_USA_example_idea_modify_plus_7_5_research_speed = {
 	if = {
-		limit = { has_idea = USA_example_idea_3 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_3
-			add_idea = USA_example_idea_4
-		}
-	}
-	else_if = {
-		limit = { has_idea = USA_example_idea_6 }
-		swap_ideas = {
-			remove_idea = USA_example_idea_6
-			add_idea = USA_example_idea_7
-		}
+		limit = { check_variable = { var = USA_example_idea_idea_index value = 4.5 compare = greater_than_or_equals } }
+		swap_ideas = { remove_idea = USA_example_idea_6 add_idea = USA_example_idea_7 }
 	}
 	else = {
-		effect_tooltip = {
-			swap_ideas = {
-				remove_idea = USA_example_idea_3
-				add_idea = USA_example_idea_4
-			}
-		}
+		swap_ideas = { remove_idea = USA_example_idea_3 add_idea = USA_example_idea_4 }
 	}
+}
+EFFECT_remove_USA_example_idea = {
+	meta_effect = {
+		text = {
+			remove_ideas = USA_example_idea_[IDEA_INDEX]
+		}
+
+		IDEA_INDEX = "[?USA_example_idea_idea_index|0]"
+	}
+
+	clear_variable = USA_example_idea_idea_index
 }
