@@ -37,6 +37,11 @@ bitmapfonts = {
 		color = 0xffffffff
 	}	
 	bitmapfont = {
+		name = "Blender_Bold_White_16_Outline"
+		path = "gfx/fonts/Blender_Bold_White_16_Outline"
+		color = 0xffffffff
+	}	
+	bitmapfont = {
 		name = "Blender_Bold_White_18"
 		path = "gfx/fonts/Blender_Bold_White_18"
 		color = 0xffffffff
@@ -44,6 +49,11 @@ bitmapfonts = {
 	bitmapfont = {
 		name = "Blender_Bold_White_18_Outline"
 		path = "gfx/fonts/Blender_Bold_White_18_Outline"
+		color = 0xffffffff
+	}
+	bitmapfont = {
+		name = "Blender_Heavy_White_18_Outline"
+		path = "gfx/fonts/Blender_Heavy_White_18_Outline"
 		color = 0xffffffff
 	}
 	bitmapfont = {

@@ -1,44 +1,34 @@
 #pragma once
+#include "data_types.hpp"
 
-#include <string>
-#include <chrono>
-#include <cstdint>
-#include <string_view>
-#include <filesystem>
-#include <vector>
+//Global throw error function
+[[noreturn]] void FATALERROR(const String& msg, const char* file, int line);
+#define FatalError(msg) FATALERROR(msg, __FILE__, __LINE__)
 
+//Get time elapsed since beginning of program
+UnsignedInteger64 GetTimeElapsedFromStart(const Timestamp& startTime);
 
-[[noreturn]] void FATALERROR(const std::string& msg, const char* file, int line);
-#define fatalError(msg) FATALERROR(msg, __FILE__, __LINE__)
+//Convert HSV values to RGB
+void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& blue, Float64 H, Float64 S, Float64 V);
 
-uint32_t getTimeElapsedFromStart(const std::chrono::steady_clock::time_point& startTime);
+//Return all files of the specified types in a vector
+Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String folderPath, const Vector<String>& fileTypes, UnsignedInteger16 reserve = 16);
+Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String folderPath, const String& fileType, UnsignedInteger16 reserve = 16);
+Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String folderPath, UnsignedInteger16 reserve = 16);
 
-void HSVToRGB(uint8_t& red, uint8_t& green, uint8_t& blue, double H, double S, double V);
+//Get a singluar game file
+Path GetGameFile(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String path);
 
-std::string returnStringBetweenBrackets(std::string_view fullStr, std::string_view strToFind);
-std::string removeStringBetweenBrackets(std::string_view fullStr, std::string_view strToFind);
+//Loads a file to string, removing all comments
+String LoadFileToString(const String& file);
 
-std::vector<std::filesystem::path> getGameFiles(const std::filesystem::path& vanillaDirectory, const std::filesystem::path& modDirectory,
-	const std::vector<std::string>& modReplaceDirectories, std::string path, const std::vector<std::string>& fileTypes);
+//Different string parsers for each need
+HashMap<String, String> ParseStringForPairsMapUnique(const String& stringIn);
+HashMap<String, Vector<String>> ParseStringForPairsMapRepeat(const String& stringIn);
+Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedInteger32 reserve = 16);
 
-//Take a vector and divide it into a 2d vector based on our number of cores
-template <typename dateType>
-std::vector<std::vector<dateType>> divideVector(const std::vector<dateType>& inputVector, std::size_t cores) {
-    std::vector<std::vector<dateType>> returnVector;
+//Parses a string as a space-seperated array
+Vector<String> ParseStringAsArray(const String& stringIn, Boolean ignoreQuotations = false);
 
-    if (cores == 0 || inputVector.empty()) return returnVector;
-
-    std::size_t noOfEntries = inputVector.size();
-    std::size_t groups = std::min<std::size_t>(cores, noOfEntries);
-    std::size_t chunkSize = noOfEntries / cores;
-    std::size_t remainder = noOfEntries % cores;
-
-    auto it = inputVector.begin();
-    for (std::size_t i = 0; i < groups; ++i) {
-        std::size_t currentChunkSize = chunkSize + (i < remainder ? 1 : 0);
-        returnVector.emplace_back(it, it + currentChunkSize);
-        it += currentChunkSize;
-    }
-
-    return returnVector;
-}
+//Checks if a country tag is valid
+Boolean TagIsValid(const String& tag);

@@ -1,21 +1,20 @@
 #include <iostream>
-#include <chrono>
+#include <thread>
 
-#include "getModAndVanillaDirectories.hpp"
 #include "functions.hpp"
-#include "loadMap.hpp"
-#include "mapTypes.hpp"
+#include "data_types.hpp"
+#include "load_files.hpp"
 
-int main() {
-    std::chrono::steady_clock::time_point startTime;        //Time at the start of the program
-    std::filesystem::path vanillaDirectory, modDirectory;       //File directories
-    int cores;      //No. of cores we're allowed to use for multiprocessing
-    std::vector<std::string> modReplaceDirectories;       //File directories overwritten by our mod
-    getModAndVanillaDirectories(vanillaDirectory, modDirectory, cores, modReplaceDirectories, startTime);      //Get our directories and core count
+int main()
+{
+    Timestamp startTime = std::chrono::high_resolution_clock::now();
+    Vector<String>errorsLog; errorsLog.reserve(256);
 
-    data_manager<terrain> terrains = loadTerrainTypes(vanillaDirectory, modDirectory, cores, modReplaceDirectories);
+    Path vanillaDirectory, modDirectory; Vector<String> modReplaceDirectories;
+    LoadFileDirectories(vanillaDirectory, modDirectory, modReplaceDirectories);
 
-    std::cout << "Program ran for " << getTimeElapsedFromStart(startTime) << "ms";
-    return 0;
+    Vector<Country> countriesArray;
+    LoadCountryFiles(countriesArray, vanillaDirectory, modDirectory, modReplaceDirectories, errorsLog);
+
+    std::cout << "Program ran for " << GetTimeElapsedFromStart(startTime) << "ms.";
 }
-

@@ -1,4 +1,8 @@
-﻿  loadMap.cpp
+﻿  data_types.cpp
+  functions.cpp
+  load_files.cpp
+  main.cpp
+  Generating Code...
   Map_Editor.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\x64\Debug\Map_Editor.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

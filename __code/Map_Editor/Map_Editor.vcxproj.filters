@@ -18,27 +18,24 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\getModAndVanillaDirectories.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\loadMap.cpp">
+    <ClCompile Include="src\data_types.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\load_files.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\getModAndVanillaDirectories.hpp">
+    <ClInclude Include="src\data_types.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\functions.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\mapTypes.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\loadMap.hpp">
+    <ClInclude Include="src\load_files.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

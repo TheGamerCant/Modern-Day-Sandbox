@@ -608,7 +608,7 @@ guiTypes = {
 		instantTextboxType = {
 			name = "text"
 			position = { x=26 y=7 }
-			font = "Blender_Bold_White_18_Outline"
+			font = "Blender_Bold_White_16_Outline"
 			text = ""
 			maxWidth = @max_font_width
 			maxHeight = 30
@@ -635,8 +635,8 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "text"
-			position = { x=26 y=3 }
-			font = "Blender_Heavy_White_22_Outline"
+			position = { x=26 y=6 }
+			font = "Blender_Heavy_White_18_Outline"
 			text = ""
 			maxWidth = @max_font_width
 			maxHeight = 30
