@@ -7,14 +7,56 @@
 
 Decimal::Decimal() : value(0) {}
 
-Decimal::Decimal(int i) : value(static_cast<SignedInteger64>(i) * 100000) {}
+Decimal::Decimal(SignedInteger32 i) : value(i * 100000) {}
+Decimal::Decimal(UnsignedInteger32 i) : value(i * 100000) {}
+Decimal::Decimal(SignedInteger64 i) : value(i * 100000) {}
+Decimal::Decimal(UnsignedInteger64 i) : value(i * 100000) {}
 Decimal::Decimal(Float32 f) : value(static_cast<SignedInteger64>(std::round(f * 100000))) {}
 Decimal::Decimal(Float64 d) : value(static_cast<SignedInteger64>(std::round(d * 100000))) {}
+Decimal::Decimal(String str) {
+    Boolean decimalPointFound = false;
+    SizeT numbersAfterDecimalPoint = 0;
+
+    SizeT stringLength = str.size();
+    Char* charArray = new Char[stringLength + 3];
+    UnsignedInteger64 charArrayLength = 0;
+
+    if (!StringCanBecomeFloat(str)) FatalError("String \"" + str +"\" cannot become a decimal number");
+
+    for (const auto& c : str) {
+        //We can ignore the addition sign
+        if (c == 43) {}
+        else if (c == 46) {
+            decimalPointFound = true;
+        }
+        else if (numbersAfterDecimalPoint < 5){
+            charArray[charArrayLength++] = c;
+            if (decimalPointFound) ++numbersAfterDecimalPoint;
+        }
+    }
+
+    if (numbersAfterDecimalPoint < 5) {
+        const UnsignedInteger8 zeroesToAdd = 5 - numbersAfterDecimalPoint;
+        for (SizeT i = 0; i < zeroesToAdd; ++i) {
+            charArray[charArrayLength++] = 48;
+        }
+    }
+
+    charArray[charArrayLength++] = 0;
+
+    value = std::stoi(String(charArray));
+    delete[] charArray;
+}
 Decimal::Decimal(SignedInteger64 raw, bool) : value(raw) {}
 
-Decimal::operator double() const { return value / 100000.0; }
-Decimal::operator float() const { return static_cast<float>(value / 100000.0); }
-Decimal::operator int() const { return static_cast<int>(value / 100000); }
+Decimal::operator SignedInteger32() const { return value / 10000; }
+Decimal::operator UnsignedInteger32() const { return value / 10000; }
+Decimal::operator SignedInteger64() const { return value / 10000; }
+Decimal::operator UnsignedInteger64() const { return value / 10000; }
+Decimal::operator Float64() const { return value / 100000.0; }
+Decimal::operator Float32() const { return static_cast<Float32>(value / 100000.0); }
+
+Decimal::Decimal(const char* str) : Decimal(String(str)) {}
 
 Decimal Decimal::operator+(const Decimal& other) const { return Decimal(value + other.value, true); }
 Decimal Decimal::operator-(const Decimal& other) const { return Decimal(value - other.value, true); }
@@ -56,3 +98,27 @@ std::ostream& operator<<(std::ostream& os, const Decimal& d) {
     os.flags(old_flags);
     return os;
 }
+
+String Country::GetTag() { return String(tag); }
+const String Country::GetTag() const { return String(tag); }
+void Country::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 Country::GetId() { return id; }
+const UnsignedInteger16 Country::GetId() const { return id; }
+
+String GraphicalCulture::GetName() { return name; }
+const String GraphicalCulture::GetName() const { return name; }
+void GraphicalCulture::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 GraphicalCulture::GetId() { return id; }
+const UnsignedInteger16 GraphicalCulture::GetId() const { return id; }
+
+String Terrain::GetName() { return name; }
+const String Terrain::GetName() const { return name; }
+void Terrain::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 Terrain::GetId() { return id; }
+const UnsignedInteger16 Terrain::GetId() const { return id; }
+
+String Building::GetName() { return name; }
+const String Building::GetName() const { return name; }
+void Building::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 Building::GetId() { return id; }
+const UnsignedInteger16 Building::GetId() const { return id; }

@@ -1,8 +1,13 @@
-﻿  data_types.cpp
-  functions.cpp
-  load_files.cpp
-  main.cpp
-  Generating Code...
+﻿  main.cpp
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(278,26): warning C4244: 'argument': conversion from 'UnsignedInteger64' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/main.cpp')
+  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(286,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/main.cpp')
+  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(292,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/main.cpp')
+  
   Map_Editor.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\x64\Debug\Map_Editor.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

@@ -37,11 +37,65 @@ void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& 
     blue = static_cast<UnsignedInteger8>((bPrime + m) * 255);
 }
 
+static Boolean CharIsCapitalOrNumber(const Char c) { return (c >= 48 && c <= 57) || (c >= 65 && c <= 90); }
+static Boolean CharIsCapital(const Char c) { return c >= 65 && c <= 90; }
+static Boolean CharIsLower(const Char c) { return c >= 97 && c <= 122; }
+static Boolean CharIsNumber(const Char c) { return c >= 48 && c <= 57; }
+
+String RemoveQuotes(String str) {
+    Char first = str.front();
+    Char last = str.back();
+
+    // '"' & '\''
+    if ((first == 34 && last == 34) || (first == 39 && last == 39)) { str = str.substr(1, str.size() - 2); }
+    return str;
+}
+
+String ForwardToBackslashes(String str) { 
+    for (char& c : str) { if (c == 47) { c = 92; } } 
+    return str;
+}
+
+String ToUpper(String str) {
+    std::transform(str.begin(), str.end(), str.begin(),
+        [](unsigned char c) { return std::tolower(c); });
+    return str;
+}
+String ToLower(String str) {
+    std::transform(str.begin(), str.end(), str.begin(),
+        [](unsigned char c) { return std::tolower(c); });
+    return str;
+}
+
+Boolean StringCanBecomeInteger(const String& str) {
+    SizeT stringLength = str.size();
+    for (SizeT i = 0; i < stringLength; ++i) { 
+        if (i == 0 && !CharIsNumber(str[i]) && str[i] != 43 && str[i] != 45) return false; 
+        else if (!CharIsNumber(str[i])) return false; 
+    }
+    return true;
+}
+Boolean StringCanBecomeFloat(const String& str) {
+    if (str.ends_with(".") || str.ends_with("+") || str.ends_with("-")) return false;
+
+    SizeT stringLength = str.size(); 
+    UnsignedInteger64 dotCount = 0;
+    for (SizeT i = 0; i < stringLength; ++i) { 
+        if (i == 0 && !CharIsNumber(str[i]) && str[i] != 43 && str[i] != 45) return false;
+        else if (i == 0 && (str[i] == 43 || str[i] == 45) && str.length() > 1) { 
+            if (str[1] == 46) return false; 
+        }
+        else if (i > 0 && str[i] == 46) { if (dotCount > 0) { return false; } dotCount++; }
+        else if (i > 0 && !CharIsNumber(str[i])) return false;
+    }
+    return true;
+}
+
 Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String folderPath, const Vector<String>& fileTypes, UnsignedInteger16 reserve) {
     Vector<Path> filesReturnVector;
     filesReturnVector.reserve(reserve);
 
-    for (char& c : folderPath) { if (c == '/') { c = '\\'; } }
+    folderPath = ForwardToBackslashes(folderPath);
 
     const Boolean modReplacesDirectory = std::binary_search(modReplaceDirectories.begin(), modReplaceDirectories.end(), folderPath);
     const Path vanillaFolder = vanillaDirectory / folderPath;
@@ -105,7 +159,7 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
     Vector<Path> filesReturnVector;
     filesReturnVector.reserve(reserve);
 
-    for (char& c : folderPath) { if (c == '/') { c = '\\'; } }
+    folderPath = ForwardToBackslashes(folderPath);
 
     const Boolean modReplacesDirectory = std::binary_search(modReplaceDirectories.begin(), modReplaceDirectories.end(), folderPath);
     const Path vanillaFolder = vanillaDirectory / folderPath;
@@ -169,7 +223,7 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
     Vector<Path> filesReturnVector;
     filesReturnVector.reserve(reserve);
 
-    for (char& c : folderPath) { if (c == '/') { c = '\\'; } }
+    folderPath = ForwardToBackslashes(folderPath);
 
     const Boolean modReplacesDirectory = std::binary_search(modReplaceDirectories.begin(), modReplaceDirectories.end(), folderPath);
     const Path vanillaFolder = vanillaDirectory / folderPath;
@@ -230,7 +284,7 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
 }
 
 Path GetGameFile(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String path) {
-    for (char& c : path) { if (c == '/') { c = '\\'; } }
+    path = ForwardToBackslashes(path);
 
     const Path vanillaPath = vanillaDirectory / path;
     const Path modPath = modDirectory / path;
@@ -420,8 +474,10 @@ HashMap<String, String> ParseStringForPairsMapUnique(const String& stringIn) {
         }
     }
 
-    valueArray[currentIndex++] = 0;
-    returnMap[String(keyArray)] = String(valueArray);
+    if (currentIndex > 0) {
+        valueArray[currentIndex++] = 0;
+        returnMap[String(keyArray)] = String(valueArray);
+    }
 
     delete[] keyArray;
     delete[] valueArray;
@@ -483,8 +539,10 @@ HashMap<String, Vector<String>> ParseStringForPairsMapRepeat(const String& strin
         }
     }
 
-    valueArray[currentIndex++] = 0;
-    returnMap[String(keyArray)].emplace_back(valueArray);
+    if (currentIndex > 0) {
+        valueArray[currentIndex++] = 0;
+        returnMap[String(keyArray)].emplace_back(valueArray);
+    }
 
     delete[] keyArray;
     delete[] valueArray;
@@ -547,8 +605,10 @@ Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedIn
         }
     }
 
-    valueArray[currentIndex++] = 0;
-    returnArray.emplace_back(keyArray, valueArray);
+    if (currentIndex > 0) {
+        valueArray[currentIndex++] = 0;
+        returnArray.emplace_back(keyArray, valueArray);
+    }
 
     delete[] keyArray;
     delete[] valueArray;
@@ -578,14 +638,13 @@ Vector<String> ParseStringAsArray(const String& stringIn, Boolean ignoreQuotatio
         }
     }
 
-    currentStringArray[currentStringSize++] = 0;
-    returnVector.emplace_back(currentStringArray);
+    if (currentStringSize > 0) {
+        currentStringArray[currentStringSize++] = 0;
+        returnVector.emplace_back(currentStringArray);
+    }
+    delete[] currentStringArray;
     return returnVector;
 }
-
-static Boolean CharIsCapitalOrNumber(const Char c) { return (c >= 48 && c <= 57) || (c >= 65 && c <= 90); }
-static Boolean CharIsCapital(const Char c) { return c >= 65 && c <= 90; }
-static Boolean CharIsNumber(const Char c) { return c >= 48 && c <= 57; }
 
 Boolean TagIsValid(const String& tag) {
     if (tag.size() != 3) { return false; }

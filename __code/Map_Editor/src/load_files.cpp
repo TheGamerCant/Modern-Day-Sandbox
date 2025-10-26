@@ -8,12 +8,7 @@ void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<Stri
 
     //Remove any trailing quotation marks we may have
     for (auto& [key, value] : directoriesMap) {
-        if (value.size() >= 2) {
-            Char first = value.front();
-            Char last = value.back();
-
-            if ((first == '"' && last == '"') || (first == '\'' && last == '\'')) { value = value.substr(1, value.size() - 2); }
-        }
+        if (value.size() >= 2) { value = RemoveQuotes(value); }
     }
 
     if (directoriesMap.find("mod_directory") == directoriesMap.end()) FatalError("Mod directory is not defined in file_directories.txt");
@@ -48,11 +43,9 @@ void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<Stri
         if (modFolderMap.find("replace_path") != modFolderMap.end()) {
             for (auto& pathToReplace : modFolderMap.at("replace_path")) {
                 if (pathToReplace.size() >= 2) {
-                    Char first = pathToReplace.front();
-                    Char last = pathToReplace.back();
+                    pathToReplace = RemoveQuotes(pathToReplace);
+                    pathToReplace = ForwardToBackslashes(pathToReplace);
 
-                    if ((first == '"' && last == '"') || (first == '\'' && last == '\'')) { pathToReplace = pathToReplace.substr(1, pathToReplace.size() - 2); }
-                    for (char& c : pathToReplace) { if (c == '/') { c = '\\'; } }
                     modReplaceDirectories.push_back(pathToReplace);
                 }
             }
@@ -62,26 +55,99 @@ void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<Stri
     std::sort(modReplaceDirectories.begin(), modReplaceDirectories.end());
 }
 
-void LoadCountryFiles(Vector<Country>& countriesArray, const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<String>& errorsLog) {
-    Vector<Path> countryTagFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\country_tags", ".txt", 4);
+VectorMap<GraphicalCulture> LoadGraphicalCultureFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories) {
+    VectorMap<GraphicalCulture> culturesReturnArray;
+    Vector<String> culturesArray = ParseStringAsArray(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\graphicalculturetype.txt").string()));
+    culturesReturnArray.Reserve(culturesArray.size() / 2);
 
-    UnsignedInteger16 countryIndex = 0;
+    for (auto& culture : culturesArray) {
+        if (!culturesReturnArray.NameInArray(culture)) culturesReturnArray.EmplaceBack(culture);
+    }
+
+    return culturesReturnArray;
+}
+
+static void BadColourDefinition(const String& countryFile) { FatalError("Bad colour definition at " + countryFile); }
+
+VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, const VectorMap<GraphicalCulture>& graphicalCulturesArray) {
+    Vector<Path> countryTagFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\country_tags", ".txt", 4);
+    VectorMap<Country> countriesReturnArray;
+
     for (const Path& file : countryTagFiles) {
         Vector<DoubleString> countryTagAndDefinitionFiles = ParseStringForPairsArray(LoadFileToString(file.string()), 128);
-        countriesArray.reserve(countriesArray.capacity() + countryTagAndDefinitionFiles.size());
+        countriesReturnArray.Reserve(countriesReturnArray.Capacity() + countryTagAndDefinitionFiles.size());
 
-        for (const auto& [tag, countryFile] : countryTagAndDefinitionFiles) {
+        for (auto& [tag, countryFile] : countryTagAndDefinitionFiles) {
             if (tag == "dynamic_tags" && countryFile == "yes") break;
 
             if (!TagIsValid(tag)) { 
-                errorsLog.push_back("Error in " + file.string() + ", tag " + tag + " is not a valid tag"); 
-                continue; 
+                FatalError("Error in " + file.string() + ", tag " + tag + " is not a valid tag"); 
             }
+        
+            countryFile = RemoveQuotes(countryFile);
+            countryFile = ForwardToBackslashes(countryFile);
+
+            HashMap<String, String> countryCosmeticData = ParseStringForPairsMapUnique(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\" + countryFile).string()));
+            UnsignedInteger16 cultureIndex = 0, cultureIndex2D = 0;
+
+            if (countryCosmeticData.find("graphical_culture") == countryCosmeticData.end() || countryCosmeticData.find("graphical_culture_2d") == countryCosmeticData.end() || 
+                !graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture")) || !graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture"))) {
+                
+                FatalError("Incorrect graphical cultures definition at " + countryFile);
+            }
+            cultureIndex = graphicalCulturesArray[countryCosmeticData.at("graphical_culture")].GetId();
+            cultureIndex2D = graphicalCulturesArray[countryCosmeticData.at("graphical_culture_2d")].GetId();
+
+            UnsignedInteger8 rgbArray[3] = { 0, 0, 0 };
+            Float64 hsvArray[3] = { 0.0f, 0.0f, 0.0f };
+
+            if (countryCosmeticData.find("color") == countryCosmeticData.end()) {
+                FatalError("Color not defined at " + countryFile);
+            }
+
+            String colourData = ToLower(countryCosmeticData.at("color"));
             
-            countriesArray.emplace_back(countryIndex++, tag);
+            if (colourData.starts_with("rgb")) {
+                colourData = colourData.substr(3);
+            }
+            else if (colourData.starts_with("hsv")) {
+                colourData = colourData.substr(3);
+            }
+
+            Vector<String> colours = ParseStringAsArray(colourData);
+            if (colours.size() != 3) { BadColourDefinition(countryFile); }
+            
+            //Must all be the same type (all ints or all floats)
+            if (!((StringCanBecomeInteger(colours[0]) && StringCanBecomeInteger(colours[1]) && StringCanBecomeInteger(colours[2])) ||
+                ((!StringCanBecomeInteger(colours[0]) && StringCanBecomeFloat(colours[0])) && (!StringCanBecomeInteger(colours[1])
+                    && StringCanBecomeFloat(colours[1])) && (!StringCanBecomeInteger(colours[2]) && StringCanBecomeFloat(colours[2]))))) {
+                BadColourDefinition(countryFile);
+            }
+
+            Boolean HSVbool = false;
+            UnsignedInteger8 i = 0;
+            for (const auto& colour : colours) {
+                if (StringCanBecomeInteger(colour)) {
+                    SignedInteger64 colourInt = std::stoi(colour);
+                    if (colourInt > 255 || colourInt < 0) { BadColourDefinition(countryFile); }
+                    rgbArray[i++] = static_cast<UnsignedInteger8>(colourInt);
+                }
+                else if (StringCanBecomeFloat(colour)) {
+                    Float64 colourFloat = std::stod(colour);
+                    if (colourFloat > 1.0f || colourFloat < 0.0f) { BadColourDefinition(countryFile); }
+                    hsvArray[i++] = colourFloat;
+                    HSVbool = true;
+                }
+                else { BadColourDefinition(countryFile); }
+            }
+
+            if (HSVbool) { HSVToRGB(rgbArray[0], rgbArray[1], rgbArray[2], hsvArray[0], hsvArray[1], hsvArray[2]); }
+
+            countriesReturnArray.EmplaceBack(tag, rgbArray[0], rgbArray[1], rgbArray[2], cultureIndex, cultureIndex2D);
         }
     }
-    countriesArray.shrink_to_fit();
+    countriesReturnArray.ShrinkToFit();
+    return countriesReturnArray;
 }
 
 void LoadTerrainFiles() {

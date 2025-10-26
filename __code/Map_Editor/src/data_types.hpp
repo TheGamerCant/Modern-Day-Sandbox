@@ -59,14 +59,23 @@ private:
 
 public:
     Decimal();
-    Decimal(int i);
+    Decimal(SignedInteger32 i);
+    Decimal(UnsignedInteger32 i);
+    Decimal(SignedInteger64 i);
+    Decimal(UnsignedInteger64 i);
     Decimal(Float32 f);
     Decimal(Float64 d);
+    Decimal(String str);
     explicit Decimal(SignedInteger64 raw, bool);
 
-    operator double() const;
-    operator float() const;
-    operator int() const;
+    Decimal(const char* str);
+
+    operator SignedInteger32() const;
+    operator UnsignedInteger32() const;
+    operator SignedInteger64() const;
+    operator UnsignedInteger64() const;
+    operator Float64() const;
+    operator Float32() const;
 
     Decimal operator+(const Decimal& other) const;
     Decimal operator-(const Decimal& other) const;
@@ -96,19 +105,34 @@ private:
     String name;
 public:
     GraphicalCulture() : id(0), name("") {};
+    GraphicalCulture(const String& name) : id(0), name(name) {};
     GraphicalCulture(UnsignedInteger16 id, const String& name) : id(id), name(name) {};
+
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
 };
 
 struct Country {
 private:
-    UnsignedInteger16 id;
     Char tag[4];
     UnsignedInteger8 r, g, b;
+    UnsignedInteger16 id;
+    UnsignedInteger16 graphicalCulture, graphicalCulture2D;
 
 public:
-    Country() : id(0), tag{ 0, 0, 0, 0 }, r(0), g(0), b(0) {};
-    //This will only get called after we call TagIsValid() on tagIn, no need to check
-    Country(UnsignedInteger16 id, const String& tagIn) : id(id), r(0), g(0), b(0) { std::strncpy(tag, tagIn.c_str(), sizeof(tag)); };
+    Country() : id(0), tag{ 0, 0, 0, 0 }, r(0), g(0), b(0), graphicalCulture(0), graphicalCulture2D(0) {};
+    //These will only get called after we call TagIsValid() on tagIn, no need to check
+    Country(const String& tagIn, const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b, const UnsignedInteger16 graphicalCulture, const UnsignedInteger16 graphicalCulture2D) :
+        id(0), r(r), g(g), b(b), graphicalCulture(graphicalCulture), graphicalCulture2D(graphicalCulture2D) { std::strncpy(tag, tagIn.c_str(), sizeof(tag)); };
+
+    String GetTag();
+    const String GetTag() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
 };
 
 struct Terrain {
@@ -130,45 +154,185 @@ private:
     //Ignoring units for now
 
 public:
-
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
 };
 
 struct Building {
 public:
     UnsignedInteger16 id;
     UnsignedInteger16 value;
-    UnsignedInteger32 baseCost;
+    UnsignedInteger32 baseCost, per_level_extra_cost;
+    UnsignedInteger16 iconFrame;
     Boolean infrastructure, airBase, supplyNode, isPort, antiAir, refinery, fuelSilo, radar, nuclearReactor;
     Boolean showModifier;
     Boolean alliedBuild;
     Boolean infrastructureConstructionEffect;
-    //Level cap
-    UnsignedInteger16 provinceMax, stateMax;
-    String groupBy;
-    //
+    Boolean onlyCoastal;    //Base game has a spelling error (only_costal)
+    Boolean disabledInDmz;
+    Boolean levelCapSharesSlots;
+    UnsignedInteger16 levelCapProvinceMax, levelCapStateMax;
+    String levelCapGroupBy;
+
+    String name;
+    Decimal damageFactor;
 
 private:
-
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
 };
 
+//Custom data type that allows indexing by index or name/tag
+//e.g
+//std::cout << countriesArray[8].GetTag() << ", " << countriesArray["SCT"].GetTag();
 
 template<typename DataType>
 struct VectorMap {
 private:
     Vector<DataType> array;
-    HashMap<String, UnsignedInteger32> indexMap;
+    HashMap<String, UnsignedInteger64> indexMap;
 
 public:
-
-    void rebuildMap() {
-        lookup_map.clear();
-        for (auto& obj : objects) {
-            lookup_map[obj.name] = std::make_shared<T>(obj);
+    void RebuildMap() {
+        indexMap.clear();
+        UnsignedInteger64 i = 0;
+        for (auto& obj : array) {
+            obj.updateId(i);
+            indexMap[obj.name] = i++;
         }
     }
 
-    void push_back(const T& obj) { array.push_back(obj); }
-    void emplace_back(const T& obj) { array.emplace_back(obj); }
-    void reserve(const SiztT reserve) { array.reserve(reserve); }
-    void shrink_to_fit() { array.shrink_to_fit(); }
+    void PushBack(const DataType& obj) {
+        array.push_back(obj);
+        indexMap[obj.name] = array.size() - 1;
+        array.back().UpdateId(array.size() - 1);
+    }
+    void PushBack(DataType&& obj) {
+        array.push_back(std::move(obj));
+        indexMap[array.back().GetName()] = array.size() - 1;
+        array.back().UpdateId(array.size() - 1);
+    }
+    
+    template<typename... Args>
+    void EmplaceBack(Args&&... args) {
+        array.emplace_back(std::forward<Args>(args)...);
+        indexMap[array.back().GetName()] = array.size() - 1;
+        array.back().UpdateId(array.size() - 1);
+    }
+
+    void Reserve(const SizeT reserve) { array.reserve(reserve); }
+    SizeT Capacity() { return array.capacity(); }
+    void ShrinkToFit() { array.shrink_to_fit(); }
+
+    Boolean NameInArray(const String& findString) {
+        if (indexMap.find(findString) == indexMap.end()) return false;
+        return true;
+    }
+
+    const Boolean NameInArray(const String& findString) const {
+        if (indexMap.find(findString) == indexMap.end()) return false;
+        return true;
+    }
+
+    DataType& operator[](SizeT index) { return array[index]; }
+    const DataType& operator[](SizeT index) const { return array[index]; }
+
+    DataType& operator[](const String& key) {
+        auto it = indexMap.find(key);
+        if (it != indexMap.end()) {
+            return array[it->second];
+        }
+        else {
+            throw std::out_of_range("Key" + key + "not found in VectorMap");
+        }
+    }
+
+    const DataType& operator[](const String& key) const {
+        auto it = indexMap.find(key);
+        if (it != indexMap.end()) {
+            return array[it->second];
+        }
+        else {
+            throw std::out_of_range("Key" + key + "not found in VectorMap");
+        }
+    }
+};
+
+template<>
+struct VectorMap<Country> {
+private:
+    Vector<Country> array;
+    HashMap<String, UnsignedInteger64> indexMap;
+
+public:
+    void RebuildMap() {
+        indexMap.clear();
+        UnsignedInteger64 i = 0;
+        for (auto& obj : array) {
+            obj.UpdateId(i);
+            indexMap[obj.GetTag()] = i++;
+        }
+    }
+
+    void PushBack(const Country& obj) {
+        array.push_back(obj);
+        indexMap[obj.GetTag()] = array.size() - 1;
+        array.back().UpdateId(array.size() - 1);
+    }
+
+    void PushBack(Country&& obj) {
+        array.push_back(std::move(obj));
+        indexMap[array.back().GetTag()] = array.size() - 1;
+        array.back().UpdateId(array.size() - 1);
+    }
+
+    template<typename... Args>
+    void EmplaceBack(Args&&... args) {
+        array.emplace_back(std::forward<Args>(args)...);
+        indexMap[array.back().GetTag()] = array.size() - 1;
+        array.back().UpdateId(array.size() - 1);
+    }
+
+    void Reserve(const SizeT reserve) { array.reserve(reserve); }
+    SizeT Capacity() const { return array.capacity(); }
+    void ShrinkToFit() { array.shrink_to_fit(); }
+
+    Boolean NameInArray(const String& findString) {
+        if (indexMap.find(findString) == indexMap.end()) return false;
+        return true;
+    }
+
+    const Boolean NameInArray(const String& findString) const {
+        if (indexMap.find(findString) == indexMap.end()) return false;
+        return true;
+    }
+
+    Country& operator[](SizeT index) { return array[index]; }
+    const Country& operator[](SizeT index) const { return array[index]; }
+
+    Country& operator[](const String& key) {
+        auto it = indexMap.find(key);
+        if (it != indexMap.end()) {
+            return array[it->second];
+        }
+        else {
+            throw std::out_of_range("Key" + key + "not found in VectorMap");
+        }
+    }
+
+    const Country& operator[](const String& key) const {
+        auto it = indexMap.find(key);
+        if (it != indexMap.end()) {
+            return array[it->second];
+        }
+        else {
+            throw std::out_of_range("Key" + key + "not found in VectorMap");
+        }
+    }
 };

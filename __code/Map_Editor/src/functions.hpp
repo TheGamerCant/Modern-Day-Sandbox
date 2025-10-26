@@ -11,6 +11,14 @@ UnsignedInteger64 GetTimeElapsedFromStart(const Timestamp& startTime);
 //Convert HSV values to RGB
 void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& blue, Float64 H, Float64 S, Float64 V);
 
+//String manipulations
+String RemoveQuotes(String str);
+String ForwardToBackslashes(String str);
+String ToUpper(String str);
+String ToLower(String str);
+Boolean StringCanBecomeInteger(const String& str);
+Boolean StringCanBecomeFloat(const String& str);
+
 //Return all files of the specified types in a vector
 Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String folderPath, const Vector<String>& fileTypes, UnsignedInteger16 reserve = 16);
 Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String folderPath, const String& fileType, UnsignedInteger16 reserve = 16);

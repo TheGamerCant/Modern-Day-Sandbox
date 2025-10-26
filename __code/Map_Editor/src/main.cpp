@@ -8,13 +8,12 @@
 int main()
 {
     Timestamp startTime = std::chrono::high_resolution_clock::now();
-    Vector<String>errorsLog; errorsLog.reserve(256);
 
     Path vanillaDirectory, modDirectory; Vector<String> modReplaceDirectories;
     LoadFileDirectories(vanillaDirectory, modDirectory, modReplaceDirectories);
 
-    Vector<Country> countriesArray;
-    LoadCountryFiles(countriesArray, vanillaDirectory, modDirectory, modReplaceDirectories, errorsLog);
+    VectorMap<GraphicalCulture> graphicalCulturesArray = LoadGraphicalCultureFiles(vanillaDirectory, modDirectory, modReplaceDirectories);
+    VectorMap<Country> countriesArray = LoadCountryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, graphicalCulturesArray);
 
     std::cout << "Program ran for " << GetTimeElapsedFromStart(startTime) << "ms.";
 }
