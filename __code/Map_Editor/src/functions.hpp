@@ -19,6 +19,9 @@ String ToLower(String str);
 Boolean StringCanBecomeInteger(const String& str);
 Boolean StringCanBecomeFloat(const String& str);
 
+//Returns a boolean from a string "yes" or "no"
+Boolean GetBoolFromYesNo(String str);
+
 //Return all files of the specified types in a vector
 Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String folderPath, const Vector<String>& fileTypes, UnsignedInteger16 reserve = 16);
 Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String folderPath, const String& fileType, UnsignedInteger16 reserve = 16);
@@ -27,7 +30,7 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
 //Get a singluar game file
 Path GetGameFile(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String path);
 
-//Loads a file to string, removing all comments
+//Loads a file to string, removing all comments and handling @ variables
 String LoadFileToString(const String& file);
 
 //Different string parsers for each need

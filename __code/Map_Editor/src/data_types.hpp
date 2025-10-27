@@ -135,6 +135,89 @@ public:
     const UnsignedInteger16 GetId() const;
 };
 
+struct Building {
+private:
+    UnsignedInteger16 id;
+    UnsignedInteger16 value;
+    UnsignedInteger32 baseCost, baseCostConversion, perLevelExtraCost, perControlledBuildingExtraCost;
+    SignedInteger16 iconFrame;
+    UnsignedInteger8 landFort, navalFort;
+    UnsignedInteger8 rocketProduction, rocketLaunchCapacity;
+    Boolean infrastructure, airBase, supplyNode, isPort, antiAir, refinery, fuelSilo, radar, nuclearReactor, gunEmplacement;
+    Boolean showModifier;
+    Boolean alliedBuild;
+    Boolean infrastructureConstructionEffect;
+    Boolean onlyCoastal;    //Base game has a spelling error (only_costal)
+    Boolean disabledInDmz;
+    Boolean needSupply;
+    Boolean needDetection;
+    Boolean hideIfMissingTech;
+    Boolean onlyDisplayIfExists;
+    Boolean isBuildable;
+    UnsignedInteger8 showOnMap, showOnMapMeshes;
+    Boolean alwaysShown, hasDestroyedMesh, centered;
+    Boolean levelCapSharesSlots;
+    UnsignedInteger16 levelCapProvinceMax, levelCapStateMax;        //levelCapProvinceMax defines a building as provincial
+    SignedInteger32 levelCapExclusiveWith;
+    String levelCapGroupBy;
+    String name;
+    String specialIcon;
+    String detectingIntelType;
+    Decimal damageFactor;
+    Decimal militaryProduction, generalProduction, navalProduction;
+    Vector<String> tags;
+    Vector<String> specialization, dlcAllowed;  //Should usually only be one but can be more I believe
+    Vector<String> provinceDamageModifiers, stateDamageModifier;
+    HashMap<String, Decimal> countryModifiers, stateModifiers;
+    HashMap<UnsignedInteger16, HashMap<String, Decimal>> countryModifiersCountryLimited;
+    HashMap<String, String> missingTechLoc;
+    //Nuclear_facility also has a 'construction_speed_factor' modifier that is commented out and doesn't appear anywhere else or on the wiki
+
+
+public:
+    Building() : 
+        
+        id(0), value(0), baseCost(0), baseCostConversion(0), perLevelExtraCost(0), perControlledBuildingExtraCost(0), iconFrame(-1), landFort(0), navalFort(0), rocketProduction(0), 
+        rocketLaunchCapacity(0), infrastructure(false), airBase(false), supplyNode(false), isPort(false), antiAir(false), refinery(false), fuelSilo(false), radar(false), 
+        nuclearReactor(false), gunEmplacement(false), showModifier(false), alliedBuild(false), infrastructureConstructionEffect(false), onlyCoastal(false), disabledInDmz(false), 
+        needSupply(false), needDetection(false), hideIfMissingTech(false), onlyDisplayIfExists(false), isBuildable(true), showOnMap(0), showOnMapMeshes(1), alwaysShown(false), 
+        hasDestroyedMesh(false), centered(false), levelCapSharesSlots(false), levelCapProvinceMax(0), levelCapStateMax(15), levelCapExclusiveWith(-1), levelCapGroupBy(""), name(""), 
+        specialIcon(""), detectingIntelType(""), damageFactor(1.0f), militaryProduction(0.0f), generalProduction(0.0f), navalProduction(0.0f), tags(), specialization(), dlcAllowed(),
+        provinceDamageModifiers(), stateDamageModifier(), countryModifiers(), stateModifiers(), countryModifiersCountryLimited(), missingTechLoc() {}
+
+    Building(const UnsignedInteger16 value, const UnsignedInteger32 baseCost, const UnsignedInteger32 baseCostConversion, const UnsignedInteger32 perLevelExtraCost,
+        const UnsignedInteger32 perControlledBuildingExtraCost, const SignedInteger16 iconFrame, const UnsignedInteger8 landFort, const UnsignedInteger8 navalFort,
+        const UnsignedInteger8 rocketProduction, const UnsignedInteger8 rocketLaunchCapacity, const Boolean infrastructure, const Boolean airBase, const Boolean supplyNode,
+        const Boolean isPort, const Boolean antiAir, const Boolean refinery, const Boolean fuelSilo, const Boolean radar, const Boolean nuclearReactor, const Boolean gunEmplacement,
+        const Boolean showModifier, const Boolean alliedBuild, const Boolean infrastructureConstructionEffect, const Boolean onlyCoastal, const Boolean disabledInDmz,
+        const Boolean needSupply, const Boolean needDetection, const Boolean hideIfMissingTech, const Boolean onlyDisplayIfExists, const Boolean isBuildable, const UnsignedInteger8 showOnMap,
+        const UnsignedInteger8 showOnMapMeshes, const Boolean alwaysShown, const Boolean hasDestroyedMesh, const Boolean centered, const Boolean levelCapSharesSlots,
+        const UnsignedInteger16 levelCapProvinceMax, const UnsignedInteger16 levelCapStateMax, const SignedInteger32 levelCapExclusiveWith, const String& levelCapGroupBy,
+        const String& name, const String& specialIcon, const String& detectingIntelType, const Decimal damageFactor, const Decimal militaryProduction, const Decimal generalProduction, 
+        const Decimal navalProduction, const Vector<String>& tags, const Vector<String>& specialization, const Vector<String>& dlcAllowed, const Vector<String>& provinceDamageModifiers,
+        const Vector<String>& stateDamageModifier, const HashMap<String, Decimal>& countryModifiers, const HashMap<String, Decimal>& stateModifiers,
+        const HashMap<UnsignedInteger16, HashMap<String, Decimal>>& countryModifiersCountryLimited, const HashMap<String, String>& missingTechLoc) :
+
+        id(0), value(value), baseCost(baseCost), baseCostConversion(baseCostConversion), perLevelExtraCost(perLevelExtraCost), perControlledBuildingExtraCost(perControlledBuildingExtraCost), 
+        iconFrame(iconFrame), landFort(landFort), navalFort(navalFort), rocketProduction(rocketProduction), rocketLaunchCapacity(rocketLaunchCapacity), infrastructure(infrastructure), 
+        airBase(airBase), supplyNode(supplyNode), isPort(isPort), antiAir(antiAir), refinery(refinery), fuelSilo(fuelSilo), radar(radar), nuclearReactor(nuclearReactor), gunEmplacement(gunEmplacement), 
+        showModifier(showModifier), alliedBuild(alliedBuild), infrastructureConstructionEffect(infrastructureConstructionEffect), onlyCoastal(onlyCoastal), disabledInDmz(disabledInDmz),
+        needSupply(needSupply), needDetection(needDetection), hideIfMissingTech(hideIfMissingTech), onlyDisplayIfExists(onlyDisplayIfExists), isBuildable(isBuildable), showOnMap(showOnMap),
+        showOnMapMeshes(showOnMapMeshes), alwaysShown(alwaysShown), hasDestroyedMesh(hasDestroyedMesh), centered(centered), levelCapSharesSlots(levelCapSharesSlots), levelCapProvinceMax(levelCapProvinceMax), 
+        levelCapStateMax(levelCapStateMax), levelCapExclusiveWith(levelCapExclusiveWith), levelCapGroupBy(levelCapGroupBy), name(name), specialIcon(specialIcon), detectingIntelType(detectingIntelType), 
+        damageFactor(damageFactor), militaryProduction(militaryProduction), generalProduction(generalProduction), navalProduction(navalProduction), tags(tags), specialization(specialization),
+        dlcAllowed(dlcAllowed), provinceDamageModifiers(provinceDamageModifiers), stateDamageModifier(stateDamageModifier), countryModifiers(countryModifiers), stateModifiers(stateModifiers),
+        countryModifiersCountryLimited(countryModifiersCountryLimited), missingTechLoc(missingTechLoc) {}
+
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
+
+    void setExclusive(const SignedInteger32 exclusive);
+};
+
 struct Terrain {
 private:
     UnsignedInteger16 id;
@@ -161,32 +244,6 @@ public:
     const UnsignedInteger16 GetId() const;
 };
 
-struct Building {
-public:
-    UnsignedInteger16 id;
-    UnsignedInteger16 value;
-    UnsignedInteger32 baseCost, per_level_extra_cost;
-    UnsignedInteger16 iconFrame;
-    Boolean infrastructure, airBase, supplyNode, isPort, antiAir, refinery, fuelSilo, radar, nuclearReactor;
-    Boolean showModifier;
-    Boolean alliedBuild;
-    Boolean infrastructureConstructionEffect;
-    Boolean onlyCoastal;    //Base game has a spelling error (only_costal)
-    Boolean disabledInDmz;
-    Boolean levelCapSharesSlots;
-    UnsignedInteger16 levelCapProvinceMax, levelCapStateMax;
-    String levelCapGroupBy;
-
-    String name;
-    Decimal damageFactor;
-
-private:
-    String GetName();
-    const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
-    UnsignedInteger16 GetId();
-    const UnsignedInteger16 GetId() const;
-};
 
 //Custom data type that allows indexing by index or name/tag
 //e.g

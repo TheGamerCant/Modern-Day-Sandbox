@@ -150,6 +150,129 @@ VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& mo
     return countriesReturnArray;
 }
 
-void LoadTerrainFiles() {
+void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Building>& provinceBuildingsArray,
+    VectorMap<Building>& stateBuildingsArray, VectorMap<Country>& countriesArray) {
+    Vector<Path> buildingsFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\buildings", ".txt", 4);
 
+    //Store exclusives here and convert the string names to IDs at the end
+    HashMap<String, String> exclusives;
+
+    for (const auto& file : buildingsFiles) {
+        HashMap<String, String> buildingsFileLvl1 = ParseStringForPairsMapUnique(LoadFileToString(file.string()));
+
+        if (buildingsFileLvl1.find("buildings") != buildingsFileLvl1.end()) {
+            HashMap<String, String> buildings = ParseStringForPairsMapUnique(buildingsFileLvl1.at("buildings"));
+
+            provinceBuildingsArray.Reserve(provinceBuildingsArray.Capacity() + buildings.size());
+            stateBuildingsArray.Reserve(stateBuildingsArray.Capacity() + buildings.size());
+
+            for (const auto& [buildingName, buildingDataWhole] : buildings) {
+                HashMap<String, String> buildingData = ParseStringForPairsMapUnique(buildingDataWhole);
+
+                UnsignedInteger16 value = (buildingData.find("value") != buildingData.end()) ? std::stoi(buildingData.at("value")) : 0;
+                UnsignedInteger32 baseCost = (buildingData.find("base_cost") != buildingData.end()) ? std::stoi(buildingData.at("base_cost")) : 0;
+                UnsignedInteger32 baseCostConversion = (buildingData.find("base_cost_conversion") != buildingData.end()) ? std::stoi(buildingData.at("base_cost_conversion")) : 0;
+                UnsignedInteger32 perLevelExtraCost = (buildingData.find("per_level_extra_cost") != buildingData.end()) ? std::stoi(buildingData.at("per_level_extra_cost")) : 0;
+                UnsignedInteger32 perControlledBuildingExtraCost = (buildingData.find("per_controlled_building_extra_cost") != buildingData.end()) ? std::stoi(buildingData.at("per_controlled_building_extra_cost")) : 0;
+                SignedInteger16 iconFrame = (buildingData.find("icon_frame") != buildingData.end()) ? std::stoi(buildingData.at("icon_frame")) : -1;
+                UnsignedInteger8 landFort = (buildingData.find("land_fort") != buildingData.end()) ? std::stoi(buildingData.at("land_fort")) : 0;
+                UnsignedInteger8 navalFort = (buildingData.find("naval_fort") != buildingData.end()) ? std::stoi(buildingData.at("naval_fort")) : 0;
+                UnsignedInteger8 rocketProduction = (buildingData.find("rocket_production") != buildingData.end()) ? std::stoi(buildingData.at("rocket_production")) : 0;
+                UnsignedInteger8 rocketLaunchCapacity = (buildingData.find("rocket_launch_capacity") != buildingData.end()) ? std::stoi(buildingData.at("rocket_launch_capacity")) : 0;
+                Boolean infrastructure = (buildingData.find("infrastructure") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("infrastructure")) : false;
+                Boolean airBase = (buildingData.find("air_base") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("air_base")) : false;
+                Boolean supplyNode = (buildingData.find("supply_node") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("supply_node")) : false;
+                Boolean isPort = (buildingData.find("is_port") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("is_port")) : false;
+                Boolean antiAir = (buildingData.find("anti_air") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("anti_air")) : false;
+                Boolean refinery = (buildingData.find("refinery") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("refinery")) : false;
+                Boolean fuelSilo = (buildingData.find("fuel_silo") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("fuel_silo")) : false;
+                Boolean radar = (buildingData.find("radar") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("radar")) : false;
+                Boolean nuclearReactor = (buildingData.find("nuclear_reactor") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("nuclear_reactor")) : false;
+                Boolean gunEmplacement = (buildingData.find("gun_emplacement") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("gun_emplacement")) : false;
+                Boolean showModifier = (buildingData.find("show_modifier") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("show_modifier")) : false;
+                Boolean alliedBuild = (buildingData.find("allied_build") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("allied_build")) : false;
+                Boolean infrastructureConstructionEffect = (buildingData.find("infrastructure_construction_effect ") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("infrastructure_construction_effect ")) : false;
+                Boolean onlyCoastal = (buildingData.find("only_costal") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("only_costal")) : false;      //Spelt wrong on purpose
+                Boolean disabledInDmz = (buildingData.find("disabled_in_dmz") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("disabled_in_dmz")) : false;
+                Boolean needSupply = (buildingData.find("need_supply") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("need_supply")) : false;
+                Boolean needDetection = (buildingData.find("need_detection") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("need_detection")) : false;
+                Boolean hideIfMissingTech = (buildingData.find("hide_if_missing_tech") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("hide_if_missing_tech")) : false;
+                Boolean onlyDisplayIfExists = (buildingData.find("only_display_if_exists") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("only_display_if_exists")) : false;
+                Boolean isBuildable = (buildingData.find("is_buildable") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("is_buildable")) : true;
+                UnsignedInteger8 showOnMap = (buildingData.find("show_on_map") != buildingData.end()) ? std::stoi(buildingData.at("show_on_map")) : 0;
+                UnsignedInteger8 showOnMapMeshes = (buildingData.find("show_on_map_meshes") != buildingData.end()) ? std::stoi(buildingData.at("show_on_map_meshes")) : 1;
+                Boolean alwaysShown = (buildingData.find("always_shown") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("always_shown")) : false;
+                Boolean hasDestroyedMesh = (buildingData.find("has_destroyed_mesh") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("has_destroyed_mesh")) : false;
+                Boolean centered = (buildingData.find("centered") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("centered")) : false;
+
+                Boolean levelCapSharesSlots = false;
+                UnsignedInteger16 levelCapProvinceMax = 0, levelCapStateMax = 15;
+                SignedInteger32 levelCapExclusiveWith = -1;
+                String levelCapGroupBy = "";
+
+                if (buildingData.find("level_cap") != buildingData.end()) {
+                    HashMap<String, String> levelCapData = ParseStringForPairsMapUnique(buildingData.at("level_cap"));
+
+                    levelCapSharesSlots = (levelCapData.find("shares_slots") != levelCapData.end()) ? GetBoolFromYesNo(levelCapData.at("shares_slots")) : false;
+                    levelCapProvinceMax = (levelCapData.find("province_max") != levelCapData.end()) ? std::stoi(levelCapData.at("province_max")) : 0;
+                    levelCapStateMax = (levelCapData.find("state_max") != levelCapData.end()) ? std::stoi(levelCapData.at("state_max")) : 15;
+                    levelCapGroupBy = (levelCapData.find("group_by") != levelCapData.end()) ? levelCapData.at("group_by") : "";
+                    if (levelCapData.find("exclusive_with") != levelCapData.end()) { exclusives[buildingName] = levelCapData.at("exclusive_with"); }
+                    
+                }
+
+                String name = buildingName;
+                String specialIcon = (buildingData.find("special_icon") != buildingData.end()) ? buildingData.at("special_icon") : "";
+                String detectingIntelType = (buildingData.find("detecting_intel_type") != buildingData.end()) ? buildingData.at("detecting_intel_type") : "";
+                Decimal damageFactor = (buildingData.find("damage_factor") != buildingData.end()) ? buildingData.at("damage_factor") : "1.0";
+                Decimal militaryProduction = (buildingData.find("military_production") != buildingData.end()) ? buildingData.at("military_production") : "0.0";
+                Decimal generalProduction = (buildingData.find("general_production") != buildingData.end()) ? buildingData.at("general_production") : "0.0";
+                Decimal navalProduction = (buildingData.find("naval_production") != buildingData.end()) ? buildingData.at("naval_production") : "0.0";
+                Vector<String> tags;
+                Vector<String> specialization;
+                Vector<String> dlcAllowed;
+                Vector<String> provinceDamageModifiers, stateDamageModifier;
+                HashMap<String, Decimal> countryModifiers, stateModifiers;
+                HashMap<UnsignedInteger16, HashMap<String, Decimal>> countryModifiersCountryLimited;
+                HashMap<String, String> missingTechLoc;
+
+                if (buildingData.find("tags") != buildingData.end()) { tags = ParseStringAsArray(buildingData.at("tags")); }
+                if (buildingData.find("specialization") != buildingData.end()) { specialization = ParseStringAsArray(buildingData.at("specialization")); }
+                if (buildingData.find("dlc_allowed") != buildingData.end()) { 
+                    Vector<DoubleString> dlcs = ParseStringForPairsArray(buildingData.at("specialisation"));
+                    for (const auto& dlc_entry : dlcs) { dlcAllowed.push_back(dlc_entry.b); }
+                }
+
+                if (levelCapProvinceMax == 0) {
+                    stateBuildingsArray.EmplaceBack(value, baseCost, baseCostConversion, perLevelExtraCost, perControlledBuildingExtraCost, iconFrame, landFort, navalFort, rocketProduction,
+                        rocketLaunchCapacity, infrastructure, airBase, supplyNode, isPort, antiAir, refinery, fuelSilo, radar, nuclearReactor, gunEmplacement, showModifier, alliedBuild,
+                        infrastructureConstructionEffect, onlyCoastal, disabledInDmz, needSupply, needDetection, hideIfMissingTech, onlyDisplayIfExists, isBuildable, showOnMap, showOnMapMeshes,
+                        alwaysShown, hasDestroyedMesh, centered, levelCapSharesSlots, levelCapProvinceMax, levelCapStateMax, levelCapExclusiveWith, levelCapGroupBy, name, specialIcon, detectingIntelType,
+                        damageFactor, militaryProduction, generalProduction, navalProduction, tags, specialization, dlcAllowed, provinceDamageModifiers, stateDamageModifier, countryModifiers,
+                        stateModifiers, countryModifiersCountryLimited, missingTechLoc);
+                }
+                else {
+                    provinceBuildingsArray.EmplaceBack(value, baseCost, baseCostConversion, perLevelExtraCost, perControlledBuildingExtraCost, iconFrame, landFort, navalFort, rocketProduction,
+                        rocketLaunchCapacity, infrastructure, airBase, supplyNode, isPort, antiAir, refinery, fuelSilo, radar, nuclearReactor, gunEmplacement, showModifier, alliedBuild,
+                        infrastructureConstructionEffect, onlyCoastal, disabledInDmz, needSupply, needDetection, hideIfMissingTech, onlyDisplayIfExists, isBuildable, showOnMap, showOnMapMeshes,
+                        alwaysShown, hasDestroyedMesh, centered, levelCapSharesSlots, levelCapProvinceMax, levelCapStateMax, levelCapExclusiveWith, levelCapGroupBy, name, specialIcon, detectingIntelType, 
+                        damageFactor, militaryProduction, generalProduction, navalProduction, tags, specialization, dlcAllowed, provinceDamageModifiers, stateDamageModifier, countryModifiers,
+                        stateModifiers, countryModifiersCountryLimited, missingTechLoc);
+                }
+            }
+        }
+
+        //if (buildingsFileLvl1.find("spawn_points") != buildingsFileLvl1.end()) {
+        // 
+        //}
+    }
+
+    for (const auto& exclusiveBuildings : exclusives) {
+        if (provinceBuildingsArray.NameInArray(exclusiveBuildings.first) && provinceBuildingsArray.NameInArray(exclusiveBuildings.second)) {
+            provinceBuildingsArray[exclusiveBuildings.first].setExclusive(provinceBuildingsArray[exclusiveBuildings.second].GetId());
+        }
+    }
+
+    provinceBuildingsArray.ShrinkToFit();
+    stateBuildingsArray.ShrinkToFit();
 }

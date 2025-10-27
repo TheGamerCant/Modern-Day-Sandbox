@@ -122,3 +122,4 @@ const String Building::GetName() const { return name; }
 void Building::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 Building::GetId() { return id; }
 const UnsignedInteger16 Building::GetId() const { return id; }
+void Building::setExclusive(const SignedInteger32 exclusive) { levelCapExclusiveWith = exclusive;  }

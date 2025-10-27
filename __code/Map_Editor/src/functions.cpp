@@ -91,6 +91,14 @@ Boolean StringCanBecomeFloat(const String& str) {
     return true;
 }
 
+Boolean GetBoolFromYesNo(String str) {
+    str = ToLower(str);
+    if (str == "yes") return true;
+    else if (str != "no") FatalError("String " + str + " must be \"yes\" or \"no\"");
+
+    return false;
+}
+
 Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, String folderPath, const Vector<String>& fileTypes, UnsignedInteger16 reserve) {
     Vector<Path> filesReturnVector;
     filesReturnVector.reserve(reserve);
@@ -306,6 +314,7 @@ String LoadFileToString(const String& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) FatalError("Failed to open file: " + filename);
 
+    HashMap<String, String> variables;
     std::ostringstream result;
     std::string line;
 
@@ -319,12 +328,46 @@ String LoadFileToString(const String& filename) {
         for (SizeT i = 0; i < line.size(); ++i) {
             Char c = line[i];
 
-            if (c == '\'' && !inDoubleQuotes && (i == 0 || line[i - 1] != '\\')) { inSingleQuotes = !inSingleQuotes; }
-            else if (c == '"' && !inSingleQuotes && (i == 0 || line[i - 1] != '\\')) { inDoubleQuotes = !inDoubleQuotes; }
+            if (c == '\'' && !inDoubleQuotes && (i == 0 || line[i - 1] != '\\'))
+                inSingleQuotes = !inSingleQuotes;
+            else if (c == '"' && !inSingleQuotes && (i == 0 || line[i - 1] != '\\'))
+                inDoubleQuotes = !inDoubleQuotes;
 
-            if (c == '#' && !inSingleQuotes && !inDoubleQuotes) { break; }
+            if (c == '#' && !inSingleQuotes && !inDoubleQuotes)
+                break;
 
             processedLine += c;
+        }
+
+        //Trim whitespace (This is for variables won't get added to result)
+        auto trim = [](String& s) {
+            const auto start = s.find_first_not_of(" \t\r\n");
+            const auto end = s.find_last_not_of(" \t\r\n");
+            s = (start == String::npos) ? "" : s.substr(start, end - start + 1);
+            };
+        trim(processedLine);
+
+        //Handle variable definition
+        if (!processedLine.empty() && processedLine[0] == '@') {
+            SizeT eq = processedLine.find('=');
+            if (eq != String::npos) {
+                String varName = processedLine.substr(1, eq - 1);
+                String varValue = processedLine.substr(eq + 1);
+                trim(varName);
+                trim(varValue);
+                variables[varName] = varValue;
+            }
+            continue;
+        }
+
+        //Replace variable references outside quotes
+        for (const auto& [name, value] : variables) {
+            String token = "@" + name;
+            SizeT pos = 0;
+            while ((pos = processedLine.find(token, pos)) != String::npos) {
+                processedLine.replace(pos, token.size(), value);
+                pos += value.size();
+            }
         }
 
         result << processedLine << '\n';
@@ -451,6 +494,9 @@ HashMap<String, String> ParseStringForPairsMapUnique(const String& stringIn) {
             default:
                 if (c == 123 && !inQuotation) {
                     ++bracketCount;
+                    if (bracketCount > 1) {
+                        valueArray[currentIndex++] = c;
+                    }
                 }
                 else if (c == 125 && !inQuotation) {
                     --bracketCount;
@@ -460,6 +506,9 @@ HashMap<String, String> ParseStringForPairsMapUnique(const String& stringIn) {
                         onValue = false;
                         currentIndex = 0;
                         returnMap[String(keyArray)] = String(valueArray);
+                    }
+                    else {
+                        valueArray[currentIndex++] = c;
                     }
                 }
                 else if (c == 32 && !inQuotation && bracketCount == 0) {
@@ -516,15 +565,21 @@ HashMap<String, Vector<String>> ParseStringForPairsMapRepeat(const String& strin
             default:
                 if (c == 123 && !inQuotation) {
                     ++bracketCount;
+                    if (bracketCount > 1) {
+                        valueArray[currentIndex++] = c;
+                    }
                 }
                 else if (c == 125 && !inQuotation) {
                     --bracketCount;
-                    
+
                     if (bracketCount == 0) {
                         valueArray[currentIndex++] = 0;
                         onValue = false;
                         currentIndex = 0;
                         returnMap[String(keyArray)].emplace_back(valueArray);
+                    }
+                    else {
+                        valueArray[currentIndex++] = c;
                     }
                 }
                 else if (c == 32 && !inQuotation && bracketCount == 0) {
@@ -582,6 +637,9 @@ Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedIn
         default:
             if (c == 123 && !inQuotation) {
                 ++bracketCount;
+                if (bracketCount > 1) {
+                    valueArray[currentIndex++] = c;
+                }
             }
             else if (c == 125 && !inQuotation) {
                 --bracketCount;
@@ -591,6 +649,9 @@ Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedIn
                     onValue = false;
                     currentIndex = 0;
                     returnArray.emplace_back(keyArray, valueArray);
+                }
+                else {
+                    valueArray[currentIndex++] = c;
                 }
             }
             else if (c == 32 && !inQuotation && bracketCount == 0) {
