@@ -169,7 +169,7 @@ private:
     Vector<String> specialization, dlcAllowed;  //Should usually only be one but can be more I believe
     Vector<String> provinceDamageModifiers, stateDamageModifier;
     HashMap<String, Decimal> countryModifiers, stateModifiers;
-    HashMap<UnsignedInteger16, HashMap<String, Decimal>> countryModifiersCountryLimited;
+    Vector<UnsignedInteger16> countryModifiersCountries;
     HashMap<String, String> missingTechLoc;
     //Nuclear_facility also has a 'construction_speed_factor' modifier that is commented out and doesn't appear anywhere else or on the wiki
 
@@ -183,7 +183,7 @@ public:
         needSupply(false), needDetection(false), hideIfMissingTech(false), onlyDisplayIfExists(false), isBuildable(true), showOnMap(0), showOnMapMeshes(1), alwaysShown(false), 
         hasDestroyedMesh(false), centered(false), levelCapSharesSlots(false), levelCapProvinceMax(0), levelCapStateMax(15), levelCapExclusiveWith(-1), levelCapGroupBy(""), name(""), 
         specialIcon(""), detectingIntelType(""), damageFactor(1.0f), militaryProduction(0.0f), generalProduction(0.0f), navalProduction(0.0f), tags(), specialization(), dlcAllowed(),
-        provinceDamageModifiers(), stateDamageModifier(), countryModifiers(), stateModifiers(), countryModifiersCountryLimited(), missingTechLoc() {}
+        provinceDamageModifiers(), stateDamageModifier(), countryModifiers(), stateModifiers(), countryModifiersCountries(), missingTechLoc() {}
 
     Building(const UnsignedInteger16 value, const UnsignedInteger32 baseCost, const UnsignedInteger32 baseCostConversion, const UnsignedInteger32 perLevelExtraCost,
         const UnsignedInteger32 perControlledBuildingExtraCost, const SignedInteger16 iconFrame, const UnsignedInteger8 landFort, const UnsignedInteger8 navalFort,
@@ -196,7 +196,7 @@ public:
         const String& name, const String& specialIcon, const String& detectingIntelType, const Decimal damageFactor, const Decimal militaryProduction, const Decimal generalProduction, 
         const Decimal navalProduction, const Vector<String>& tags, const Vector<String>& specialization, const Vector<String>& dlcAllowed, const Vector<String>& provinceDamageModifiers,
         const Vector<String>& stateDamageModifier, const HashMap<String, Decimal>& countryModifiers, const HashMap<String, Decimal>& stateModifiers,
-        const HashMap<UnsignedInteger16, HashMap<String, Decimal>>& countryModifiersCountryLimited, const HashMap<String, String>& missingTechLoc) :
+        const Vector<UnsignedInteger16>& countryModifiersCountries, const HashMap<String, String>& missingTechLoc) :
 
         id(0), value(value), baseCost(baseCost), baseCostConversion(baseCostConversion), perLevelExtraCost(perLevelExtraCost), perControlledBuildingExtraCost(perControlledBuildingExtraCost), 
         iconFrame(iconFrame), landFort(landFort), navalFort(navalFort), rocketProduction(rocketProduction), rocketLaunchCapacity(rocketLaunchCapacity), infrastructure(infrastructure), 
@@ -207,7 +207,7 @@ public:
         levelCapStateMax(levelCapStateMax), levelCapExclusiveWith(levelCapExclusiveWith), levelCapGroupBy(levelCapGroupBy), name(name), specialIcon(specialIcon), detectingIntelType(detectingIntelType), 
         damageFactor(damageFactor), militaryProduction(militaryProduction), generalProduction(generalProduction), navalProduction(navalProduction), tags(tags), specialization(specialization),
         dlcAllowed(dlcAllowed), provinceDamageModifiers(provinceDamageModifiers), stateDamageModifier(stateDamageModifier), countryModifiers(countryModifiers), stateModifiers(stateModifiers),
-        countryModifiersCountryLimited(countryModifiersCountryLimited), missingTechLoc(missingTechLoc) {}
+        countryModifiersCountries(countryModifiersCountries), missingTechLoc(missingTechLoc) {}
 
     String GetName();
     const String GetName() const;
@@ -216,6 +216,27 @@ public:
     const UnsignedInteger16 GetId() const;
 
     void setExclusive(const SignedInteger32 exclusive);
+};
+
+struct BuildingSpawnPoint {
+private:
+    UnsignedInteger16 id;
+    UnsignedInteger16 max;
+    Boolean typeState, typeProvince;
+    Boolean onlyCoastal;        //Once again, spelt "only_costal" in the base game files
+    Boolean disableAutoNudging;
+    String name;
+
+public:
+    BuildingSpawnPoint() : id(0), max(0), typeState(false), typeProvince(false), onlyCoastal(false), disableAutoNudging(false), name("") {};
+    BuildingSpawnPoint(const UnsignedInteger16 max, const Boolean typeState, const Boolean typeProvince, const Boolean onlyCoastal, const Boolean disableAutoNudging, const String& name) :
+        id(0), max(0), typeState(typeState), typeProvince(typeProvince), onlyCoastal(onlyCoastal), disableAutoNudging(disableAutoNudging), name(name) {};
+
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
 };
 
 struct Terrain {
@@ -379,7 +400,7 @@ public:
             return array[it->second];
         }
         else {
-            throw std::out_of_range("Key" + key + "not found in VectorMap");
+            throw std::out_of_range("Key " + key + " not found in VectorMap");
         }
     }
 
@@ -389,7 +410,7 @@ public:
             return array[it->second];
         }
         else {
-            throw std::out_of_range("Key" + key + "not found in VectorMap");
+            throw std::out_of_range("Key " + key + " not found in VectorMap");
         }
     }
 };

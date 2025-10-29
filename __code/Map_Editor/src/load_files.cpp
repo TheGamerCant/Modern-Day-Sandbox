@@ -151,7 +151,7 @@ VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& mo
 }
 
 void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Building>& provinceBuildingsArray,
-    VectorMap<Building>& stateBuildingsArray, VectorMap<Country>& countriesArray) {
+    VectorMap<Building>& stateBuildingsArray, VectorMap<BuildingSpawnPoint>& buildingSpawnPointsArray, VectorMap<Country>& countriesArray) {
     Vector<Path> buildingsFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\buildings", ".txt", 4);
 
     //Store exclusives here and convert the string names to IDs at the end
@@ -233,14 +233,44 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                 Vector<String> dlcAllowed;
                 Vector<String> provinceDamageModifiers, stateDamageModifier;
                 HashMap<String, Decimal> countryModifiers, stateModifiers;
-                HashMap<UnsignedInteger16, HashMap<String, Decimal>> countryModifiersCountryLimited;
+                Vector<UnsignedInteger16> countryModifiersCountries;
                 HashMap<String, String> missingTechLoc;
 
                 if (buildingData.find("tags") != buildingData.end()) { tags = ParseStringAsArray(buildingData.at("tags")); }
                 if (buildingData.find("specialization") != buildingData.end()) { specialization = ParseStringAsArray(buildingData.at("specialization")); }
                 if (buildingData.find("dlc_allowed") != buildingData.end()) { 
-                    Vector<DoubleString> dlcs = ParseStringForPairsArray(buildingData.at("specialisation"));
+                    Vector<DoubleString> dlcs = ParseStringForPairsArray(buildingData.at("dlc_allowed"));
                     for (const auto& dlc_entry : dlcs) { dlcAllowed.push_back(dlc_entry.b); }
+                }
+                if (buildingData.find("province_damage_modifiers") != buildingData.end()) { 
+                    Vector<String> modifiers = ParseStringAsArray(buildingData.at("province_damage_modifiers"));
+                    for (const auto& modfier : modifiers) { provinceDamageModifiers.push_back(modfier); }
+                }
+                if (buildingData.find("state_damage_modifier") != buildingData.end()) { 
+                    Vector<String> modifiers = ParseStringAsArray(buildingData.at("state_damage_modifier"));
+                    for (const auto& modfier : modifiers) { stateDamageModifier.push_back(modfier); }
+                }
+                if (buildingData.find("country_modifiers") != buildingData.end()) { 
+                    HashMap<String, String> countryModifiersData = ParseStringForPairsMapUnique(buildingData.at("country_modifiers"));
+
+                    if (countryModifiersData.find("modifiers") != countryModifiersData.end()) {
+                        if (countryModifiersData.find("enable_for_controllers") != countryModifiersData.end()) {
+                            Vector<String> countryTags = ParseStringAsArray(countryModifiersData.at("enable_for_controllers"));
+                            for (const auto& tag : countryTags) { 
+                                if (!countriesArray.NameInArray(tag)) FatalError("Tag defined in building " + buildingName + " does not exist");
+                                countryModifiersCountries.push_back(countriesArray[tag].GetId());
+                            }
+                        }
+                        HashMap<String, String> countryModifiersString = ParseStringForPairsMapUnique(countryModifiersData.at("modifiers"));
+                        for (const auto& modifier : countryModifiersString) countryModifiers[modifier.first] = modifier.second;
+                    }
+                }
+                if (buildingData.find("state_modifiers") != buildingData.end()) {
+                    HashMap<String, String> stateModifiersString = ParseStringForPairsMapUnique(buildingData.at("state_modifiers"));
+                    for (const auto& modifier : stateModifiersString) stateModifiers[modifier.first] = modifier.second;
+                }
+                if (buildingData.find("missing_tech_loc") != buildingData.end()) {
+                    missingTechLoc = ParseStringForPairsMapUnique(buildingData.at("missing_tech_loc"));
                 }
 
                 if (levelCapProvinceMax == 0) {
@@ -249,7 +279,7 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                         infrastructureConstructionEffect, onlyCoastal, disabledInDmz, needSupply, needDetection, hideIfMissingTech, onlyDisplayIfExists, isBuildable, showOnMap, showOnMapMeshes,
                         alwaysShown, hasDestroyedMesh, centered, levelCapSharesSlots, levelCapProvinceMax, levelCapStateMax, levelCapExclusiveWith, levelCapGroupBy, name, specialIcon, detectingIntelType,
                         damageFactor, militaryProduction, generalProduction, navalProduction, tags, specialization, dlcAllowed, provinceDamageModifiers, stateDamageModifier, countryModifiers,
-                        stateModifiers, countryModifiersCountryLimited, missingTechLoc);
+                        stateModifiers, countryModifiersCountries, missingTechLoc);
                 }
                 else {
                     provinceBuildingsArray.EmplaceBack(value, baseCost, baseCostConversion, perLevelExtraCost, perControlledBuildingExtraCost, iconFrame, landFort, navalFort, rocketProduction,
@@ -257,19 +287,42 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                         infrastructureConstructionEffect, onlyCoastal, disabledInDmz, needSupply, needDetection, hideIfMissingTech, onlyDisplayIfExists, isBuildable, showOnMap, showOnMapMeshes,
                         alwaysShown, hasDestroyedMesh, centered, levelCapSharesSlots, levelCapProvinceMax, levelCapStateMax, levelCapExclusiveWith, levelCapGroupBy, name, specialIcon, detectingIntelType, 
                         damageFactor, militaryProduction, generalProduction, navalProduction, tags, specialization, dlcAllowed, provinceDamageModifiers, stateDamageModifier, countryModifiers,
-                        stateModifiers, countryModifiersCountryLimited, missingTechLoc);
+                        stateModifiers, countryModifiersCountries, missingTechLoc);
                 }
             }
         }
 
-        //if (buildingsFileLvl1.find("spawn_points") != buildingsFileLvl1.end()) {
-        // 
-        //}
+        if (buildingsFileLvl1.find("spawn_points") != buildingsFileLvl1.end()) {
+            HashMap<String, String> spawnPoints = ParseStringForPairsMapUnique(buildingsFileLvl1.at("spawn_points"));
+
+            buildingSpawnPointsArray.Reserve(buildingSpawnPointsArray.Capacity() + spawnPoints.size());
+
+            for (const auto& [spawnPointName, spawnPointDataWhole] : spawnPoints) {
+                HashMap<String, String> spawnPointData = ParseStringForPairsMapUnique(spawnPointDataWhole);
+
+                UnsignedInteger16 max = (spawnPointData.find("max") != spawnPointData.end()) ? std::stoi(spawnPointData.at("max")) : 1;
+                Boolean typeState = false, typeProvince = false;
+                Boolean onlyCoastal = (spawnPointData.find("only_costal") != spawnPointData.end()) ? GetBoolFromYesNo(spawnPointData.at("only_costal")) : false;
+                Boolean disableAutoNudging = (spawnPointData.find("disable_auto_nudging") != spawnPointData.end()) ? GetBoolFromYesNo(spawnPointData.at("disable_auto_nudging")) : false;
+                String name = spawnPointName;
+
+                if (spawnPointData.find("type") == spawnPointData.end()) { FatalError("Spawn point " + spawnPointName + " must have a type defined"); }
+
+                if (spawnPointData.at("type") == "state") { typeState = true; }
+                else if (spawnPointData.at("type") == "province") { typeProvince = true; }
+                else { FatalError("Spawn point " + spawnPointName + " must have type \"state\" or \"province\""); }
+
+                buildingSpawnPointsArray.EmplaceBack(max, typeState, typeProvince, onlyCoastal, disableAutoNudging, name);
+            }
+        }
     }
 
     for (const auto& exclusiveBuildings : exclusives) {
         if (provinceBuildingsArray.NameInArray(exclusiveBuildings.first) && provinceBuildingsArray.NameInArray(exclusiveBuildings.second)) {
             provinceBuildingsArray[exclusiveBuildings.first].setExclusive(provinceBuildingsArray[exclusiveBuildings.second].GetId());
+        }
+        else if (stateBuildingsArray.NameInArray(exclusiveBuildings.first) && stateBuildingsArray.NameInArray(exclusiveBuildings.second)) {
+            stateBuildingsArray[exclusiveBuildings.first].setExclusive(stateBuildingsArray[exclusiveBuildings.second].GetId());
         }
     }
 

@@ -7,10 +7,10 @@
 
 Decimal::Decimal() : value(0) {}
 
-Decimal::Decimal(SignedInteger32 i) : value(i * 100000) {}
-Decimal::Decimal(UnsignedInteger32 i) : value(i * 100000) {}
+Decimal::Decimal(SignedInteger32 i) : value(static_cast<SignedInteger64>(i) * 100000) {}
+Decimal::Decimal(UnsignedInteger32 i) : value(static_cast<SignedInteger64>(i) * 100000) {}
 Decimal::Decimal(SignedInteger64 i) : value(i * 100000) {}
-Decimal::Decimal(UnsignedInteger64 i) : value(i * 100000) {}
+Decimal::Decimal(UnsignedInteger64 i) : value(static_cast<SignedInteger64>(i) * 100000) {}
 Decimal::Decimal(Float32 f) : value(static_cast<SignedInteger64>(std::round(f * 100000))) {}
 Decimal::Decimal(Float64 d) : value(static_cast<SignedInteger64>(std::round(d * 100000))) {}
 Decimal::Decimal(String str) {
@@ -18,7 +18,7 @@ Decimal::Decimal(String str) {
     SizeT numbersAfterDecimalPoint = 0;
 
     SizeT stringLength = str.size();
-    Char* charArray = new Char[stringLength + 3];
+    Char* charArray = new Char[stringLength + 6];
     UnsignedInteger64 charArrayLength = 0;
 
     if (!StringCanBecomeFloat(str)) FatalError("String \"" + str +"\" cannot become a decimal number");
@@ -49,10 +49,10 @@ Decimal::Decimal(String str) {
 }
 Decimal::Decimal(SignedInteger64 raw, bool) : value(raw) {}
 
-Decimal::operator SignedInteger32() const { return value / 10000; }
-Decimal::operator UnsignedInteger32() const { return value / 10000; }
-Decimal::operator SignedInteger64() const { return value / 10000; }
-Decimal::operator UnsignedInteger64() const { return value / 10000; }
+Decimal::operator SignedInteger32() const { return static_cast<SignedInteger32>(value) / 100000; }
+Decimal::operator UnsignedInteger32() const { return static_cast<UnsignedInteger32>(value) / 100000; }
+Decimal::operator SignedInteger64() const { return value / 100000; }
+Decimal::operator UnsignedInteger64() const { return static_cast<UnsignedInteger64>(value) / 100000; }
 Decimal::operator Float64() const { return value / 100000.0; }
 Decimal::operator Float32() const { return static_cast<Float32>(value / 100000.0); }
 
@@ -123,3 +123,9 @@ void Building::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 Building::GetId() { return id; }
 const UnsignedInteger16 Building::GetId() const { return id; }
 void Building::setExclusive(const SignedInteger32 exclusive) { levelCapExclusiveWith = exclusive;  }
+
+String BuildingSpawnPoint::GetName() { return name; }
+const String BuildingSpawnPoint::GetName() const { return name; }
+void BuildingSpawnPoint::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 BuildingSpawnPoint::GetId() { return id; }
+const UnsignedInteger16 BuildingSpawnPoint::GetId() const { return id; }
