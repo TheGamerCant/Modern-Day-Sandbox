@@ -129,3 +129,9 @@ const String BuildingSpawnPoint::GetName() const { return name; }
 void BuildingSpawnPoint::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 BuildingSpawnPoint::GetId() { return id; }
 const UnsignedInteger16 BuildingSpawnPoint::GetId() const { return id; }
+
+String GraphicalTerrain::GetName() { return name; }
+const String GraphicalTerrain::GetName() const { return name; }
+void GraphicalTerrain::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 GraphicalTerrain::GetId() { return id; }
+const UnsignedInteger16 GraphicalTerrain::GetId() const { return id; }

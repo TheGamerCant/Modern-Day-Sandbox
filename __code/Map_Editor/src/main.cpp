@@ -16,6 +16,8 @@ int main()
     VectorMap<Country> countriesArray = LoadCountryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, graphicalCulturesArray);
     VectorMap<Building> provinceBuildingsArray, stateBuildingsArray; VectorMap<BuildingSpawnPoint> buildingSpawnPointsArray;
     LoadBuildingFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provinceBuildingsArray, stateBuildingsArray, buildingSpawnPointsArray, countriesArray);
+    VectorMap<Terrain> terrainsArray; VectorMap<GraphicalTerrain> graphicalTerrainsArray;
+    LoadTerrainFiles(vanillaDirectory, modDirectory, modReplaceDirectories, terrainsArray, graphicalTerrainsArray, provinceBuildingsArray);
 
-    std::cout << "Program ran for " << GetTimeElapsedFromStart(startTime) << "ms.";
+    std::cout << "Program ran for " << GetTimeElapsedFromStart(startTime);
 }

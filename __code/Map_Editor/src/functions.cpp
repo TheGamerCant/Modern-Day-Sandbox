@@ -11,10 +11,28 @@
 }
 
 //Get time elapsed since beginning of program
-UnsignedInteger64 GetTimeElapsedFromStart(const Timestamp& startTime) {
+String GetTimeElapsedFromStart(const Timestamp& startTime) {
     auto endTime = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
-    return duration.count();
+
+    SignedInteger64 totalDuration = duration.count();
+
+    SignedInteger64 milliseconds = totalDuration;
+    SignedInteger64 seconds = milliseconds / 1000;
+    SignedInteger64 minutes = seconds / 60;
+    SignedInteger64 hours = minutes / 60;
+
+    if (totalDuration < 1000) {
+        return std::to_string(milliseconds) + "ms";
+    }
+    if (totalDuration < 60000) {
+        return std::to_string(seconds) + "s, " + std::to_string(milliseconds % 1000) + "ms";
+    }
+    if (totalDuration < 3600000) {
+        return std::to_string(minutes) + "m, " + std::to_string(seconds % 60) + "s, " + std::to_string(milliseconds % 1000) + "ms";
+    }
+
+    return std::to_string(hours) + "h, " + std::to_string(minutes % 60) + "m, " + std::to_string(seconds % 60) + "s, " + std::to_string(milliseconds % 1000) + "ms";
 }
 
 void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& blue, Float64 H, Float64 S, Float64 V) {

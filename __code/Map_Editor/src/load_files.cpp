@@ -67,7 +67,7 @@ VectorMap<GraphicalCulture> LoadGraphicalCultureFiles(const Path& vanillaDirecto
     return culturesReturnArray;
 }
 
-static void BadColourDefinition(const String& countryFile) { FatalError("Bad colour definition at " + countryFile); }
+static void BadColourDefinition(const String& objectName, const String& fileIn) { FatalError("Bad colour definition for object " + objectName + " in file " + fileIn); }
 
 VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, const VectorMap<GraphicalCulture>& graphicalCulturesArray) {
     Vector<Path> countryTagFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\country_tags", ".txt", 4);
@@ -115,13 +115,13 @@ VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& mo
             }
 
             Vector<String> colours = ParseStringAsArray(colourData);
-            if (colours.size() != 3) { BadColourDefinition(countryFile); }
+            if (colours.size() != 3) { BadColourDefinition(tag, countryFile); }
             
             //Must all be the same type (all ints or all floats)
             if (!((StringCanBecomeInteger(colours[0]) && StringCanBecomeInteger(colours[1]) && StringCanBecomeInteger(colours[2])) ||
                 ((!StringCanBecomeInteger(colours[0]) && StringCanBecomeFloat(colours[0])) && (!StringCanBecomeInteger(colours[1])
                     && StringCanBecomeFloat(colours[1])) && (!StringCanBecomeInteger(colours[2]) && StringCanBecomeFloat(colours[2]))))) {
-                BadColourDefinition(countryFile);
+                BadColourDefinition(tag, countryFile);
             }
 
             Boolean HSVbool = false;
@@ -129,16 +129,16 @@ VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& mo
             for (const auto& colour : colours) {
                 if (StringCanBecomeInteger(colour)) {
                     SignedInteger64 colourInt = std::stoi(colour);
-                    if (colourInt > 255 || colourInt < 0) { BadColourDefinition(countryFile); }
+                    if (colourInt > 255 || colourInt < 0) { BadColourDefinition(tag, countryFile); }
                     rgbArray[i++] = static_cast<UnsignedInteger8>(colourInt);
                 }
                 else if (StringCanBecomeFloat(colour)) {
                     Float64 colourFloat = std::stod(colour);
-                    if (colourFloat > 1.0f || colourFloat < 0.0f) { BadColourDefinition(countryFile); }
+                    if (colourFloat > 1.0f || colourFloat < 0.0f) { BadColourDefinition(tag, countryFile); }
                     hsvArray[i++] = colourFloat;
                     HSVbool = true;
                 }
-                else { BadColourDefinition(countryFile); }
+                else { BadColourDefinition(tag, countryFile); }
             }
 
             if (HSVbool) { HSVToRGB(rgbArray[0], rgbArray[1], rgbArray[2], hsvArray[0], hsvArray[1], hsvArray[2]); }
@@ -328,4 +328,110 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
 
     provinceBuildingsArray.ShrinkToFit();
     stateBuildingsArray.ShrinkToFit();
+}
+
+void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Terrain> terrainsArray,
+    VectorMap<GraphicalTerrain> graphicalTerrainsArray, VectorMap<Building>& provinceBuildingsArray) {
+    Vector<Path> terrainFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\terrain", ".txt", 4);
+
+
+    for (const auto& file : terrainFiles) {
+        HashMap<String, String> terrainFileLvl1 = ParseStringForPairsMapUnique(LoadFileToString(file.string()));
+
+        if (terrainFileLvl1.find("categories") != terrainFileLvl1.end()) {
+            HashMap<String, String> terrains = ParseStringForPairsMapUnique(terrainFileLvl1.at("categories"));
+
+            terrainsArray.Reserve(terrainsArray.Capacity() + terrains.size());
+
+            for (const auto& [terrainName, terrainDataWhole] : terrains) {
+                HashMap<String, String> terrainData = ParseStringForPairsMapUnique(terrainDataWhole);
+
+                if (terrainData.find("color") == terrainData.end()) FatalError("No colour defined for terrain " + terrainName);
+                Vector<String> colourArray = ParseStringAsArray(terrainData.at("color"));
+
+                if (colourArray.size() != 3) BadColourDefinition(terrainName, file.string());
+                else if (!StringCanBecomeInteger(colourArray[0]) || !StringCanBecomeInteger(colourArray[1]) || !StringCanBecomeInteger(colourArray[2])) BadColourDefinition(terrainName, file.string());
+
+                //Have to erase afterwards so we don't store them in our modifiers vectors
+                UnsignedInteger8 rgbArray[3] = { std::stoi(colourArray[0]), std::stoi(colourArray[1]), std::stoi(colourArray[2]) }; terrainData.erase("color");
+                Boolean navalTerrain = (terrainData.find("naval_terrain") != terrainData.end()) ? GetBoolFromYesNo(terrainData.at("naval_terrain")) : false; terrainData.erase("naval_terrain");
+                Boolean isWater = (terrainData.find("is_water") != terrainData.end()) ? GetBoolFromYesNo(terrainData.at("is_water")) : false; terrainData.erase("is_water");
+                UnsignedInteger16 combatWidth = (terrainData.find("combat_width") != terrainData.end()) ? std::stoi(terrainData.at("combat_width")) : 0; terrainData.erase("combat_width");
+                UnsignedInteger16 combatSupportWidth = (terrainData.find("combat_support_width") != terrainData.end()) ? std::stoi(terrainData.at("combat_support_width")) : 0; terrainData.erase("combat_support_width");
+                UnsignedInteger16 matchValue = (terrainData.find("match_value") != terrainData.end()) ? std::stoi(terrainData.at("match_value")) : 0; terrainData.erase("match_value");
+                Decimal aiTerrainImportanceFactor = (terrainData.find("ai_terrain_importance_factor") != terrainData.end()) ? terrainData.at("ai_terrain_importance_factor") : "1.0"; terrainData.erase("ai_terrain_importance_factor");
+                Decimal supplyFlowPenaltyFactor = (terrainData.find("supply_flow_penalty_factor") != terrainData.end()) ? terrainData.at("supply_flow_penalty_factor") : "0.0"; terrainData.erase("supply_flow_penalty_factor");
+                String soundType = (terrainData.find("sound_type") != terrainData.end()) ? terrainData.at("sound_type") : ""; terrainData.erase("sound_type");
+                String name = terrainName;
+
+                HashMap<UnsignedInteger16, UnsignedInteger16> buildingsMaxLevel;
+                if (terrainData.find("buildings_max_level") != terrainData.end()) {
+                    HashMap<String, String> buildingsData = ParseStringForPairsMapUnique(terrainData.at("buildings_max_level"));
+                    for (const auto& [building, level] : buildingsData) {
+                        if (!provinceBuildingsArray.NameInArray(building)) FatalError("Building \"" + building + "\" in file " + file.string() + " is not a valid province building");
+                        buildingsMaxLevel[provinceBuildingsArray[building].GetId()] = std::stoi(level);
+                    }
+                    terrainData.erase("buildings_max_level");
+                }
+
+                HashMap<String, Decimal> modifiers;
+                HashMap<String, Decimal> unitModifiers;
+                HashMap<String, HashMap<String, Decimal>> subUnitModifiers;
+
+                for (const auto& [modifierName, modifierData] : terrainData) {
+                    if (StringCanBecomeFloat(modifierData)) {
+                        modifiers[modifierName] = Decimal(modifierData);
+                    }
+                    else if (modifierName == "units") {
+                        Vector<DoubleString> unitsData =  ParseStringForPairsArray(modifierData, 3);
+                        for (const auto& modifier : unitsData) {
+                            unitModifiers[modifier.a] = Decimal(modifier.b);
+                        }
+                    }
+                    else {
+                        HashMap<String, String> subUnitModifiersData = ParseStringForPairsMapUnique(modifierData);
+                        if (subUnitModifiersData.find("units") != subUnitModifiersData.end()) {
+                            Vector<DoubleString> unitsData = ParseStringForPairsArray(subUnitModifiersData.at("units"), 3);
+                            for (const auto& modifier : unitsData) {
+                                subUnitModifiers[modifierName][modifier.a] = Decimal(modifier.b);
+                            }
+                            subUnitModifiersData.erase("units");
+                        }
+
+                        for (const auto& modifier : subUnitModifiersData) {
+                            subUnitModifiers[modifierName][modifier.first] = Decimal(modifier.second);
+                        }
+                    }
+                }
+
+                terrainsArray.EmplaceBack(rgbArray[0], rgbArray[1], rgbArray[2], navalTerrain, isWater, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor, supplyFlowPenaltyFactor,
+                    soundType, name, buildingsMaxLevel, modifiers, unitModifiers, subUnitModifiers);
+            }
+        }
+
+
+        if (terrainFileLvl1.find("terrain") != terrainFileLvl1.end()) {
+            HashMap<String, String> graphicalTerrains = ParseStringForPairsMapUnique(terrainFileLvl1.at("terrain"));
+
+            graphicalTerrainsArray.Reserve(graphicalTerrainsArray.Capacity() + graphicalTerrains.size());
+            for (const auto& [graphicalTerrainName, graphicalTerrainDataWhole] : graphicalTerrains) {
+                HashMap<String, String> graphicalTerrainsData = ParseStringForPairsMapUnique(graphicalTerrainDataWhole);
+
+                if (graphicalTerrainsData.find("type") == graphicalTerrainsData.end() || !terrainsArray.NameInArray(graphicalTerrainsData.at("type"))) FatalError("Bad type definition for graphical terrain " + graphicalTerrainName);
+                UnsignedInteger16 type = terrainsArray[graphicalTerrainsData.at("type")].GetId();
+
+                if (graphicalTerrainsData.find("color") == graphicalTerrainsData.end()) FatalError("No colour defined for graphical terrain " + graphicalTerrainName);
+                UnsignedInteger32 colour = (graphicalTerrainsData.find("color") != graphicalTerrainsData.end()) ? std::stoi(graphicalTerrainsData.at("color")) : 0;
+                UnsignedInteger32 texture = (graphicalTerrainsData.find("texture") != graphicalTerrainsData.end()) ? std::stoi(graphicalTerrainsData.at("texture")) : 0;
+                Boolean spawnCity = (graphicalTerrainsData.find("spawn_city") != graphicalTerrainsData.end()) ? GetBoolFromYesNo(graphicalTerrainsData.at("spawn_city")) : false;
+                Boolean permSnow = (graphicalTerrainsData.find("perm_snow") != graphicalTerrainsData.end()) ? GetBoolFromYesNo(graphicalTerrainsData.at("perm_snow")) : false;
+                String name = graphicalTerrainName;
+
+                graphicalTerrainsArray.EmplaceBack(type, colour, texture, spawnCity, permSnow, name);
+            }
+        }
+    }
+
+    terrainsArray.ShrinkToFit();
+    graphicalTerrainsArray.ShrinkToFit();
 }

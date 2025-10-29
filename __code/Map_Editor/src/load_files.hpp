@@ -7,3 +7,5 @@ VectorMap<GraphicalCulture> LoadGraphicalCultureFiles(const Path& vanillaDirecto
 VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, const VectorMap<GraphicalCulture>& graphicalCulturesArray);
 void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Building>& provinceBuildingsArray, 
 	VectorMap<Building>& stateBuildingsArray, VectorMap<BuildingSpawnPoint>& buildingSpawnPointsArray, VectorMap<Country>& countriesArray);
+void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Terrain> terrainsArray,
+	VectorMap<GraphicalTerrain> graphicalTerrainsArray , VectorMap<Building>& provinceBuildingsArray);

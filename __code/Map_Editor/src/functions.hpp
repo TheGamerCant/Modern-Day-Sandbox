@@ -6,7 +6,7 @@
 #define FatalError(msg) FATALERROR(msg, __FILE__, __LINE__)
 
 //Get time elapsed since beginning of program
-UnsignedInteger64 GetTimeElapsedFromStart(const Timestamp& startTime);
+String GetTimeElapsedFromStart(const Timestamp& startTime);
 
 //Convert HSV values to RGB
 void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& blue, Float64 H, Float64 S, Float64 V);

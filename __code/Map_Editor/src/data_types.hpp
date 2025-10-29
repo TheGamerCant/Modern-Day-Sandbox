@@ -182,7 +182,7 @@ public:
         nuclearReactor(false), gunEmplacement(false), showModifier(false), alliedBuild(false), infrastructureConstructionEffect(false), onlyCoastal(false), disabledInDmz(false), 
         needSupply(false), needDetection(false), hideIfMissingTech(false), onlyDisplayIfExists(false), isBuildable(true), showOnMap(0), showOnMapMeshes(1), alwaysShown(false), 
         hasDestroyedMesh(false), centered(false), levelCapSharesSlots(false), levelCapProvinceMax(0), levelCapStateMax(15), levelCapExclusiveWith(-1), levelCapGroupBy(""), name(""), 
-        specialIcon(""), detectingIntelType(""), damageFactor(1.0f), militaryProduction(0.0f), generalProduction(0.0f), navalProduction(0.0f), tags(), specialization(), dlcAllowed(),
+        specialIcon(""), detectingIntelType(""), damageFactor(1), militaryProduction(0), generalProduction(0), navalProduction(0), tags(), specialization(), dlcAllowed(),
         provinceDamageModifiers(), stateDamageModifier(), countryModifiers(), stateModifiers(), countryModifiersCountries(), missingTechLoc() {}
 
     Building(const UnsignedInteger16 value, const UnsignedInteger32 baseCost, const UnsignedInteger32 baseCostConversion, const UnsignedInteger32 perLevelExtraCost,
@@ -247,17 +247,47 @@ private:
     UnsignedInteger16 combatWidth, combatSupportWidth;
     UnsignedInteger16 matchValue;
     Decimal aiTerrainImportanceFactor;
-    Decimal movementCost, navalMineHitChance;
-    Decimal enemyArmyBonusAirSuperiorityFactor;
-    Decimal sicknessChance;
     Decimal supplyFlowPenaltyFactor;
-    Decimal truckAttritionFactor;
     String soundType;
     String name;
     HashMap<UnsignedInteger16, UnsignedInteger16> buildingsMaxLevel;
-    //Ignoring units for now
+    HashMap<String, Decimal> modifiers, unitModifiers;      //attack, movement and defence are stored as regular modifiers for unitModifiers and subUnitModifiers
+    HashMap<String, HashMap<String, Decimal>> subUnitModifiers;
+
+    //Note to self - do StringCanBecomeFloat() on terrain keys to find out if modifier or unit/subunit modifier
 
 public:
+    Terrain() : id(0), r(0), g(0), b(0), navalTerrain(false), isWater(false), combatWidth(0), combatSupportWidth(0), matchValue(0), aiTerrainImportanceFactor(1), supplyFlowPenaltyFactor(0),
+        soundType(""), name(""), buildingsMaxLevel(), modifiers(), unitModifiers(), subUnitModifiers() {}
+    Terrain(const UnsignedInteger8 r,const UnsignedInteger8 g,const UnsignedInteger8 b, const Boolean navalTerrain, const Boolean isWater, const UnsignedInteger16 combatWidth, 
+        const UnsignedInteger16 combatSupportWidth, const UnsignedInteger16 matchValue, const Decimal aiTerrainImportanceFactor, const Decimal supplyFlowPenaltyFactor,
+        const String& soundType, const String& name, const HashMap<UnsignedInteger16, UnsignedInteger16>& buildingsMaxLevel, const HashMap<String, Decimal>& modifiers, 
+        const HashMap<String, Decimal>& unitModifiers, const HashMap<String, HashMap<String, Decimal>>& subUnitModifiers) :
+        id(0), r(r), g(g), b(b), navalTerrain(navalTerrain), isWater(isWater), combatWidth(combatWidth), combatSupportWidth(combatSupportWidth), matchValue(matchValue), 
+        aiTerrainImportanceFactor(aiTerrainImportanceFactor), supplyFlowPenaltyFactor(supplyFlowPenaltyFactor), soundType(soundType), name(name), buildingsMaxLevel(buildingsMaxLevel),
+        modifiers(modifiers), unitModifiers(unitModifiers), subUnitModifiers(subUnitModifiers) {}
+
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
+};
+
+struct GraphicalTerrain{
+private:
+    UnsignedInteger16 id;
+    UnsignedInteger16 type;
+    UnsignedInteger32 colour, texture;
+    Boolean spawnCity, permSnow;
+    String name;
+
+public:
+    GraphicalTerrain() : id(0), type(0), colour(0), texture(0), spawnCity(false), permSnow(false) {}
+    GraphicalTerrain(const UnsignedInteger16 type, const UnsignedInteger32 colour, const UnsignedInteger32 texture, const Boolean spawnCity,
+        const Boolean permSnow, const String& name) :
+        id(0), type(type), colour(colour), texture(texture), spawnCity(spawnCity), permSnow(permSnow) {}
+
     String GetName();
     const String GetName() const;
     void UpdateId(const UnsignedInteger16 idIn);
