@@ -1,19 +1,41 @@
-﻿  load_files.cpp
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(386,26): warning C4244: 'argument': conversion from 'UnsignedInteger64' to 'const UnsignedInteger16', possible loss of data
+﻿  data_types.cpp
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(466,26): warning C4244: 'argument': conversion from 'UnsignedInteger64' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/data_types.cpp')
+  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(474,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/data_types.cpp')
+  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(480,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/data_types.cpp')
+  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.cpp(39,48): warning C4267: 'initializing': conversion from 'size_t' to 'UnsignedInteger8', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.cpp(39,44): warning C4267: 'initializing': conversion from 'size_t' to 'const UnsignedInteger8', possible loss of data
+  functions.cpp
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(466,26): warning C4244: 'argument': conversion from 'UnsignedInteger64' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/functions.cpp')
+  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(474,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/functions.cpp')
+  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(480,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/functions.cpp')
+  
+  load_files.cpp
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(466,26): warning C4244: 'argument': conversion from 'UnsignedInteger64' to 'const UnsignedInteger16', possible loss of data
   (compiling source file 'src/load_files.cpp')
   
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(394,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(474,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
   (compiling source file 'src/load_files.cpp')
   
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(400,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(480,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
   (compiling source file 'src/load_files.cpp')
   
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\load_files.cpp(356,59): warning C4838: conversion from 'int' to 'UnsignedInteger8' requires a narrowing conversion
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\load_files.cpp(356,86): warning C4838: conversion from 'int' to 'UnsignedInteger8' requires a narrowing conversion
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\load_files.cpp(356,113): warning C4838: conversion from 'int' to 'UnsignedInteger8' requires a narrowing conversion
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(334,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\load_files.cpp(366,59): warning C4838: conversion from 'int' to 'UnsignedInteger8' requires a narrowing conversion
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\load_files.cpp(366,86): warning C4838: conversion from 'int' to 'UnsignedInteger8' requires a narrowing conversion
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\load_files.cpp(366,113): warning C4838: conversion from 'int' to 'UnsignedInteger8' requires a narrowing conversion
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(414,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
   (compiling source file 'src/load_files.cpp')
-      C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(334,44):
+      C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(414,44):
       the template instantiation context (the oldest one first) is
           C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\load_files.cpp(64,76):
           see reference to function template instantiation 'void VectorMap<GraphicalCulture>::EmplaceBack<_Ty&>(_Ty &)' being compiled
@@ -24,13 +46,24 @@ C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\sr
               C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\load_files.cpp(64,87):
               see the first reference to 'VectorMap<GraphicalCulture>::EmplaceBack' in 'LoadGraphicalCultureFiles'
   
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(407,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(487,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
   (compiling source file 'src/load_files.cpp')
-      C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(407,44):
+      C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(487,44):
       the template instantiation context (the oldest one first) is
           C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\load_files.cpp(146,34):
           see reference to function template instantiation 'void VectorMap<Country>::EmplaceBack<String&,UnsignedInteger8&,UnsignedInteger8&,UnsignedInteger8&,UnsignedInteger16&,UnsignedInteger16&>(String &,UnsignedInteger8 &,UnsignedInteger8 &,UnsignedInteger8 &,UnsignedInteger16 &,UnsignedInteger16 &)' being compiled
   
+  main.cpp
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(466,26): warning C4244: 'argument': conversion from 'UnsignedInteger64' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/main.cpp')
+  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(474,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/main.cpp')
+  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(480,44): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
+  (compiling source file 'src/main.cpp')
+  
+  Generating Code...
   Map_Editor.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\x64\Debug\Map_Editor.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

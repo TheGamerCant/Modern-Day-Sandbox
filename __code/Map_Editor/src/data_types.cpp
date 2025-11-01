@@ -99,6 +99,54 @@ std::ostream& operator<<(std::ostream& os, const Decimal& d) {
     return os;
 }
 
+ColourRGB::ColourRGB() : r(0), g(0), b(0) {}
+ColourRGB::ColourRGB(const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b) : r(r), g(g), b(b) {}
+ColourRGB::ColourRGB(const String& str) {
+    Char* charArray = new Char[str.size() + 2];
+    SizeT arraySize = 0;
+    UnsignedInteger8 colour = 0;
+
+    for (const auto& c : str) {
+        if (CharIsNumber(c)) {
+            charArray[arraySize++] = c;
+        }
+        else if (CharIsWhitespace(c) && (colour > 0 || arraySize > 0)) {
+            charArray[arraySize++] = 0;
+            switch (colour) {
+                case 0:
+                    r = std::stoi(String(charArray));
+                    break;
+                case 1:
+                    g = std::stoi(String(charArray));
+                    break;
+                default:
+                    b = std::stoi(String(charArray));
+            }
+            arraySize = 0;
+            ++colour;
+        }
+        else if (colour > 0 || arraySize > 0) {
+            FatalError("Bad character in ColourRGB intialisation string \"" + str + "\"");
+        }
+    }
+
+    if (colour < 2 && arraySize > 0) {
+        charArray[arraySize++] = 0;
+        switch (colour) {
+        case 0:
+            r = std::stoi(String(charArray));
+            break;
+        case 1:
+            g = std::stoi(String(charArray));
+            break;
+        default:
+            b = std::stoi(String(charArray));
+        }
+        arraySize = 0;
+        ++colour;
+    }
+}
+
 String Country::GetTag() { return String(tag); }
 const String Country::GetTag() const { return String(tag); }
 void Country::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
@@ -135,3 +183,15 @@ const String GraphicalTerrain::GetName() const { return name; }
 void GraphicalTerrain::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 GraphicalTerrain::GetId() { return id; }
 const UnsignedInteger16 GraphicalTerrain::GetId() const { return id; }
+
+String Resource::GetName() { return name; }
+const String Resource::GetName() const { return name; }
+void Resource::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 Resource::GetId() { return id; }
+const UnsignedInteger16 Resource::GetId() const { return id; }
+
+String StateCategory::GetName() { return name; }
+const String StateCategory::GetName() const { return name; }
+void StateCategory::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 StateCategory::GetId() { return id; }
+const UnsignedInteger16 StateCategory::GetId() const { return id; }

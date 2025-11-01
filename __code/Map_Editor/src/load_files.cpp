@@ -161,7 +161,7 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
         HashMap<String, String> buildingsFileLvl1 = ParseStringForPairsMapUnique(LoadFileToString(file.string()));
 
         if (buildingsFileLvl1.find("buildings") != buildingsFileLvl1.end()) {
-            HashMap<String, String> buildings = ParseStringForPairsMapUnique(buildingsFileLvl1.at("buildings"));
+            Vector<DoubleString> buildings = ParseStringForPairsArray(buildingsFileLvl1.at("buildings"));
 
             provinceBuildingsArray.Reserve(provinceBuildingsArray.Capacity() + buildings.size());
             stateBuildingsArray.Reserve(stateBuildingsArray.Capacity() + buildings.size());
@@ -179,16 +179,21 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                 UnsignedInteger8 navalFort = (buildingData.find("naval_fort") != buildingData.end()) ? std::stoi(buildingData.at("naval_fort")) : 0;
                 UnsignedInteger8 rocketProduction = (buildingData.find("rocket_production") != buildingData.end()) ? std::stoi(buildingData.at("rocket_production")) : 0;
                 UnsignedInteger8 rocketLaunchCapacity = (buildingData.find("rocket_launch_capacity") != buildingData.end()) ? std::stoi(buildingData.at("rocket_launch_capacity")) : 0;
-                Boolean infrastructure = (buildingData.find("infrastructure") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("infrastructure")) : false;
-                Boolean airBase = (buildingData.find("air_base") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("air_base")) : false;
-                Boolean supplyNode = (buildingData.find("supply_node") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("supply_node")) : false;
-                Boolean isPort = (buildingData.find("is_port") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("is_port")) : false;
-                Boolean antiAir = (buildingData.find("anti_air") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("anti_air")) : false;
-                Boolean refinery = (buildingData.find("refinery") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("refinery")) : false;
-                Boolean fuelSilo = (buildingData.find("fuel_silo") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("fuel_silo")) : false;
-                Boolean radar = (buildingData.find("radar") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("radar")) : false;
-                Boolean nuclearReactor = (buildingData.find("nuclear_reactor") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("nuclear_reactor")) : false;
-                Boolean gunEmplacement = (buildingData.find("gun_emplacement") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("gun_emplacement")) : false;
+
+                //Could do this with an array such as { "infrastructure", "air_base" } etc. but that doesn't really matter
+                BuildingMetadata::Enum buildingMetadata = BuildingMetadata::None;
+
+                if (buildingData.find("infrastructure") != buildingData.end() && GetBoolFromYesNo(buildingData.at("infrastructure"))) { buildingMetadata = BuildingMetadata::Infrastructure; }
+                else if (buildingData.find("air_base") != buildingData.end() && GetBoolFromYesNo(buildingData.at("air_base"))) { buildingMetadata = BuildingMetadata::AirBase; }
+                else if (buildingData.find("supply_node") != buildingData.end() && GetBoolFromYesNo(buildingData.at("supply_node"))) { buildingMetadata = BuildingMetadata::SupplyNode; }
+                else if (buildingData.find("is_port") != buildingData.end() && GetBoolFromYesNo(buildingData.at("is_port"))) { buildingMetadata = BuildingMetadata::IsPort; }
+                else if (buildingData.find("anti_air") != buildingData.end() && GetBoolFromYesNo(buildingData.at("anti_air"))) { buildingMetadata = BuildingMetadata::AntiAir; }
+                else if (buildingData.find("refinery") != buildingData.end() && GetBoolFromYesNo(buildingData.at("refinery"))) { buildingMetadata = BuildingMetadata::Refinery; }
+                else if (buildingData.find("fuel_silo") != buildingData.end() && GetBoolFromYesNo(buildingData.at("fuel_silo"))) { buildingMetadata = BuildingMetadata::FuelSilo; }
+                else if (buildingData.find("radar") != buildingData.end() && GetBoolFromYesNo(buildingData.at("radar"))) { buildingMetadata = BuildingMetadata::Radar; }
+                else if (buildingData.find("nuclear_reactor") != buildingData.end() && GetBoolFromYesNo(buildingData.at("nuclear_reactor"))) { buildingMetadata = BuildingMetadata::NuclearReactor; }
+                else if (buildingData.find("gun_emplacement") != buildingData.end() && GetBoolFromYesNo(buildingData.at("gun_emplacement"))) { buildingMetadata = BuildingMetadata::GunEmplacement; }
+
                 Boolean showModifier = (buildingData.find("show_modifier") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("show_modifier")) : false;
                 Boolean alliedBuild = (buildingData.find("allied_build") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("allied_build")) : false;
                 Boolean infrastructureConstructionEffect = (buildingData.find("infrastructure_construction_effect ") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("infrastructure_construction_effect ")) : false;
@@ -204,6 +209,14 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                 Boolean alwaysShown = (buildingData.find("always_shown") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("always_shown")) : false;
                 Boolean hasDestroyedMesh = (buildingData.find("has_destroyed_mesh") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("has_destroyed_mesh")) : false;
                 Boolean centered = (buildingData.find("centered") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("centered")) : false;
+                IntelligenceType::Enum detectingIntelType;
+                if (buildingData.find("detecting_intel_type") != buildingData.end()) {
+                    if (buildingData.at("detecting_intel_type") == "civilian") detectingIntelType = IntelligenceType::Civilian;
+                    else if (buildingData.at("detecting_intel_type") == "army") detectingIntelType = IntelligenceType::Army;
+                    else if (buildingData.at("detecting_intel_type") == "airforce") detectingIntelType = IntelligenceType::Airforce;
+                    else if (buildingData.at("detecting_intel_type") == "navy") detectingIntelType = IntelligenceType::Navy;
+                    else FatalError("Bad intelligence type for building " + buildingName + " in file " + file.string());
+                }
 
                 Boolean levelCapSharesSlots = false;
                 UnsignedInteger16 levelCapProvinceMax = 0, levelCapStateMax = 15;
@@ -221,9 +234,7 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                     
                 }
 
-                String name = buildingName;
                 String specialIcon = (buildingData.find("special_icon") != buildingData.end()) ? buildingData.at("special_icon") : "";
-                String detectingIntelType = (buildingData.find("detecting_intel_type") != buildingData.end()) ? buildingData.at("detecting_intel_type") : "";
                 Decimal damageFactor = (buildingData.find("damage_factor") != buildingData.end()) ? buildingData.at("damage_factor") : "1.0";
                 Decimal militaryProduction = (buildingData.find("military_production") != buildingData.end()) ? buildingData.at("military_production") : "0.0";
                 Decimal generalProduction = (buildingData.find("general_production") != buildingData.end()) ? buildingData.at("general_production") : "0.0";
@@ -275,25 +286,23 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
 
                 if (levelCapProvinceMax == 0) {
                     stateBuildingsArray.EmplaceBack(value, baseCost, baseCostConversion, perLevelExtraCost, perControlledBuildingExtraCost, iconFrame, landFort, navalFort, rocketProduction,
-                        rocketLaunchCapacity, infrastructure, airBase, supplyNode, isPort, antiAir, refinery, fuelSilo, radar, nuclearReactor, gunEmplacement, showModifier, alliedBuild,
-                        infrastructureConstructionEffect, onlyCoastal, disabledInDmz, needSupply, needDetection, hideIfMissingTech, onlyDisplayIfExists, isBuildable, showOnMap, showOnMapMeshes,
-                        alwaysShown, hasDestroyedMesh, centered, levelCapSharesSlots, levelCapProvinceMax, levelCapStateMax, levelCapExclusiveWith, levelCapGroupBy, name, specialIcon, detectingIntelType,
-                        damageFactor, militaryProduction, generalProduction, navalProduction, tags, specialization, dlcAllowed, provinceDamageModifiers, stateDamageModifier, countryModifiers,
-                        stateModifiers, countryModifiersCountries, missingTechLoc);
+                        rocketLaunchCapacity, buildingMetadata, showModifier, alliedBuild, infrastructureConstructionEffect, onlyCoastal, disabledInDmz, needSupply, needDetection, hideIfMissingTech, 
+                        onlyDisplayIfExists, isBuildable, showOnMap, showOnMapMeshes, alwaysShown, hasDestroyedMesh, centered, detectingIntelType, levelCapSharesSlots, levelCapProvinceMax,
+                        levelCapStateMax, levelCapExclusiveWith, levelCapGroupBy, buildingName, specialIcon, damageFactor, militaryProduction, generalProduction, navalProduction, tags, specialization,
+                        dlcAllowed, provinceDamageModifiers, stateDamageModifier, countryModifiers, stateModifiers, countryModifiersCountries, missingTechLoc);
                 }
                 else {
                     provinceBuildingsArray.EmplaceBack(value, baseCost, baseCostConversion, perLevelExtraCost, perControlledBuildingExtraCost, iconFrame, landFort, navalFort, rocketProduction,
-                        rocketLaunchCapacity, infrastructure, airBase, supplyNode, isPort, antiAir, refinery, fuelSilo, radar, nuclearReactor, gunEmplacement, showModifier, alliedBuild,
-                        infrastructureConstructionEffect, onlyCoastal, disabledInDmz, needSupply, needDetection, hideIfMissingTech, onlyDisplayIfExists, isBuildable, showOnMap, showOnMapMeshes,
-                        alwaysShown, hasDestroyedMesh, centered, levelCapSharesSlots, levelCapProvinceMax, levelCapStateMax, levelCapExclusiveWith, levelCapGroupBy, name, specialIcon, detectingIntelType, 
-                        damageFactor, militaryProduction, generalProduction, navalProduction, tags, specialization, dlcAllowed, provinceDamageModifiers, stateDamageModifier, countryModifiers,
-                        stateModifiers, countryModifiersCountries, missingTechLoc);
+                        rocketLaunchCapacity, buildingMetadata, showModifier, alliedBuild, infrastructureConstructionEffect, onlyCoastal, disabledInDmz, needSupply, needDetection, hideIfMissingTech,
+                        onlyDisplayIfExists, isBuildable, showOnMap, showOnMapMeshes, alwaysShown, hasDestroyedMesh, centered, detectingIntelType, levelCapSharesSlots, levelCapProvinceMax, 
+                        levelCapStateMax, levelCapExclusiveWith, levelCapGroupBy, buildingName, specialIcon, damageFactor, militaryProduction, generalProduction, navalProduction, tags, specialization,
+                        dlcAllowed, provinceDamageModifiers, stateDamageModifier, countryModifiers, stateModifiers, countryModifiersCountries, missingTechLoc);
                 }
             }
         }
 
         if (buildingsFileLvl1.find("spawn_points") != buildingsFileLvl1.end()) {
-            HashMap<String, String> spawnPoints = ParseStringForPairsMapUnique(buildingsFileLvl1.at("spawn_points"));
+            Vector<DoubleString> spawnPoints = ParseStringForPairsArray(buildingsFileLvl1.at("spawn_points"));
 
             buildingSpawnPointsArray.Reserve(buildingSpawnPointsArray.Capacity() + spawnPoints.size());
 
@@ -304,7 +313,6 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                 Boolean typeState = false, typeProvince = false;
                 Boolean onlyCoastal = (spawnPointData.find("only_costal") != spawnPointData.end()) ? GetBoolFromYesNo(spawnPointData.at("only_costal")) : false;
                 Boolean disableAutoNudging = (spawnPointData.find("disable_auto_nudging") != spawnPointData.end()) ? GetBoolFromYesNo(spawnPointData.at("disable_auto_nudging")) : false;
-                String name = spawnPointName;
 
                 if (spawnPointData.find("type") == spawnPointData.end()) { FatalError("Spawn point " + spawnPointName + " must have a type defined"); }
 
@@ -312,7 +320,7 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                 else if (spawnPointData.at("type") == "province") { typeProvince = true; }
                 else { FatalError("Spawn point " + spawnPointName + " must have type \"state\" or \"province\""); }
 
-                buildingSpawnPointsArray.EmplaceBack(max, typeState, typeProvince, onlyCoastal, disableAutoNudging, name);
+                buildingSpawnPointsArray.EmplaceBack(max, typeState, typeProvince, onlyCoastal, disableAutoNudging, spawnPointName);
             }
         }
     }
@@ -330,8 +338,8 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
     stateBuildingsArray.ShrinkToFit();
 }
 
-void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Terrain> terrainsArray,
-    VectorMap<GraphicalTerrain> graphicalTerrainsArray, VectorMap<Building>& provinceBuildingsArray) {
+void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Terrain>& landTerrainsArray,
+    VectorMap<Terrain>& seaTerrainsArray, VectorMap<Terrain>& lakeTerrainsArray, VectorMap<GraphicalTerrain>& graphicalTerrainsArray, const VectorMap<Building>& provinceBuildingsArray) {
     Vector<Path> terrainFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\terrain", ".txt", 4);
 
 
@@ -339,9 +347,11 @@ void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, co
         HashMap<String, String> terrainFileLvl1 = ParseStringForPairsMapUnique(LoadFileToString(file.string()));
 
         if (terrainFileLvl1.find("categories") != terrainFileLvl1.end()) {
-            HashMap<String, String> terrains = ParseStringForPairsMapUnique(terrainFileLvl1.at("categories"));
+            Vector<DoubleString> terrains = ParseStringForPairsArray(terrainFileLvl1.at("categories"));
 
-            terrainsArray.Reserve(terrainsArray.Capacity() + terrains.size());
+            landTerrainsArray.Reserve(landTerrainsArray.Capacity() + 12);
+            seaTerrainsArray.Reserve(seaTerrainsArray.Capacity() + 8);
+            lakeTerrainsArray.Reserve(lakeTerrainsArray.Capacity() + 2);
 
             for (const auto& [terrainName, terrainDataWhole] : terrains) {
                 HashMap<String, String> terrainData = ParseStringForPairsMapUnique(terrainDataWhole);
@@ -356,13 +366,17 @@ void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, co
                 UnsignedInteger8 rgbArray[3] = { std::stoi(colourArray[0]), std::stoi(colourArray[1]), std::stoi(colourArray[2]) }; terrainData.erase("color");
                 Boolean navalTerrain = (terrainData.find("naval_terrain") != terrainData.end()) ? GetBoolFromYesNo(terrainData.at("naval_terrain")) : false; terrainData.erase("naval_terrain");
                 Boolean isWater = (terrainData.find("is_water") != terrainData.end()) ? GetBoolFromYesNo(terrainData.at("is_water")) : false; terrainData.erase("is_water");
+                ProvinceType provinceType;
+                if (!navalTerrain && !isWater) { provinceType = Land; }
+                else if (navalTerrain && isWater) { provinceType = Sea; }
+                else if (!navalTerrain && isWater) { provinceType = Lake; }
+                else { FatalError("Terrain " + terrainName + " in file " + file.string() + " cannot be have naval_terrain set to yes and is_water set to false"); }
                 UnsignedInteger16 combatWidth = (terrainData.find("combat_width") != terrainData.end()) ? std::stoi(terrainData.at("combat_width")) : 0; terrainData.erase("combat_width");
                 UnsignedInteger16 combatSupportWidth = (terrainData.find("combat_support_width") != terrainData.end()) ? std::stoi(terrainData.at("combat_support_width")) : 0; terrainData.erase("combat_support_width");
                 UnsignedInteger16 matchValue = (terrainData.find("match_value") != terrainData.end()) ? std::stoi(terrainData.at("match_value")) : 0; terrainData.erase("match_value");
                 Decimal aiTerrainImportanceFactor = (terrainData.find("ai_terrain_importance_factor") != terrainData.end()) ? terrainData.at("ai_terrain_importance_factor") : "1.0"; terrainData.erase("ai_terrain_importance_factor");
                 Decimal supplyFlowPenaltyFactor = (terrainData.find("supply_flow_penalty_factor") != terrainData.end()) ? terrainData.at("supply_flow_penalty_factor") : "0.0"; terrainData.erase("supply_flow_penalty_factor");
                 String soundType = (terrainData.find("sound_type") != terrainData.end()) ? terrainData.at("sound_type") : ""; terrainData.erase("sound_type");
-                String name = terrainName;
 
                 HashMap<UnsignedInteger16, UnsignedInteger16> buildingsMaxLevel;
                 if (terrainData.find("buildings_max_level") != terrainData.end()) {
@@ -404,34 +418,82 @@ void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, co
                     }
                 }
 
-                terrainsArray.EmplaceBack(rgbArray[0], rgbArray[1], rgbArray[2], navalTerrain, isWater, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor, supplyFlowPenaltyFactor,
-                    soundType, name, buildingsMaxLevel, modifiers, unitModifiers, subUnitModifiers);
+
+                if (!navalTerrain && !isWater) {
+                    landTerrainsArray.EmplaceBack(rgbArray[0], rgbArray[1], rgbArray[2], navalTerrain, isWater, provinceType, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor,
+                        supplyFlowPenaltyFactor, soundType, terrainName, buildingsMaxLevel, modifiers, unitModifiers, subUnitModifiers);
+                }
+                else if (navalTerrain && isWater) {
+                    seaTerrainsArray.EmplaceBack(rgbArray[0], rgbArray[1], rgbArray[2], navalTerrain, isWater, provinceType, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor,
+                        supplyFlowPenaltyFactor, soundType, terrainName, buildingsMaxLevel, modifiers, unitModifiers, subUnitModifiers);
+                }
+                //We've already checked for the possibility of !isWater && navalTerrain, no need to check again
+                else{
+                    lakeTerrainsArray.EmplaceBack(rgbArray[0], rgbArray[1], rgbArray[2], navalTerrain, isWater, provinceType, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor,
+                        supplyFlowPenaltyFactor, soundType, terrainName, buildingsMaxLevel, modifiers, unitModifiers, subUnitModifiers);
+                }
             }
         }
 
 
         if (terrainFileLvl1.find("terrain") != terrainFileLvl1.end()) {
-            HashMap<String, String> graphicalTerrains = ParseStringForPairsMapUnique(terrainFileLvl1.at("terrain"));
+            Vector<DoubleString> graphicalTerrains = ParseStringForPairsArray(terrainFileLvl1.at("terrain"));
 
             graphicalTerrainsArray.Reserve(graphicalTerrainsArray.Capacity() + graphicalTerrains.size());
             for (const auto& [graphicalTerrainName, graphicalTerrainDataWhole] : graphicalTerrains) {
                 HashMap<String, String> graphicalTerrainsData = ParseStringForPairsMapUnique(graphicalTerrainDataWhole);
 
-                if (graphicalTerrainsData.find("type") == graphicalTerrainsData.end() || !terrainsArray.NameInArray(graphicalTerrainsData.at("type"))) FatalError("Bad type definition for graphical terrain " + graphicalTerrainName);
-                UnsignedInteger16 type = terrainsArray[graphicalTerrainsData.at("type")].GetId();
+                UnsignedInteger16 type; ProvinceType provinceType;
+                if (graphicalTerrainsData.find("type") == graphicalTerrainsData.end()) { FatalError("No type defined for graphical terrain " + graphicalTerrainName + " in file" + file.string()); }
+                if (landTerrainsArray.NameInArray(graphicalTerrainsData.at("type"))) { type = landTerrainsArray[graphicalTerrainsData.at("type")].GetId(); provinceType = Land; }
+                else if (seaTerrainsArray.NameInArray(graphicalTerrainsData.at("type"))) { type = seaTerrainsArray[graphicalTerrainsData.at("type")].GetId(); provinceType = Sea; }
+                else if (lakeTerrainsArray.NameInArray(graphicalTerrainsData.at("type"))) { type = lakeTerrainsArray[graphicalTerrainsData.at("type")].GetId(); provinceType = Lake; }
+                else { FatalError("Incorrect type defined for graphical terrain " + graphicalTerrainName + " in file" + file.string()); }
 
                 if (graphicalTerrainsData.find("color") == graphicalTerrainsData.end()) FatalError("No colour defined for graphical terrain " + graphicalTerrainName);
                 UnsignedInteger32 colour = (graphicalTerrainsData.find("color") != graphicalTerrainsData.end()) ? std::stoi(graphicalTerrainsData.at("color")) : 0;
                 UnsignedInteger32 texture = (graphicalTerrainsData.find("texture") != graphicalTerrainsData.end()) ? std::stoi(graphicalTerrainsData.at("texture")) : 0;
                 Boolean spawnCity = (graphicalTerrainsData.find("spawn_city") != graphicalTerrainsData.end()) ? GetBoolFromYesNo(graphicalTerrainsData.at("spawn_city")) : false;
                 Boolean permSnow = (graphicalTerrainsData.find("perm_snow") != graphicalTerrainsData.end()) ? GetBoolFromYesNo(graphicalTerrainsData.at("perm_snow")) : false;
-                String name = graphicalTerrainName;
 
-                graphicalTerrainsArray.EmplaceBack(type, colour, texture, spawnCity, permSnow, name);
+                graphicalTerrainsArray.EmplaceBack(type, colour, texture, spawnCity, permSnow, provinceType, graphicalTerrainName);
             }
         }
     }
 
-    terrainsArray.ShrinkToFit();
+    landTerrainsArray.ShrinkToFit();
+    seaTerrainsArray.ShrinkToFit();
+    lakeTerrainsArray.ShrinkToFit();
     graphicalTerrainsArray.ShrinkToFit();
+}
+
+void LoadResourceFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Resource>& resourcesArray) {
+    Vector<Path> resourceFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\resources", ".txt", 4);
+
+    for (const auto& file : resourceFiles) {
+        HashMap<String, String> resourceFileLvl1 = ParseStringForPairsMapUnique(LoadFileToString(file.string()));
+
+        if (resourceFileLvl1.find("resources") != resourceFileLvl1.end()) {
+            Vector<DoubleString> resources = ParseStringForPairsArray(resourceFileLvl1.at("resources"));
+
+            resourcesArray.Reserve(resourcesArray.Capacity() + resources.size());
+
+            for (const auto& [resourceName, resourceDataWhole] : resources) {
+                HashMap<String, String> resourceData = ParseStringForPairsMapUnique(resourceDataWhole);
+
+                UnsignedInteger16 iconFrame;
+                if (resourceData.find("icon_frame") == resourceData.end() || !StringCanBecomeInteger(resourceData.at("icon_frame"))) { FatalError("No icon frame defined for " + resourceDataWhole + " in file" + file.string()); }
+                iconFrame = std::stoi(resourceData.at("icon_frame"));
+                Decimal cic = (resourceData.find("cic") != resourceData.end()) ? resourceData.at("cic") : "0.125";
+                Decimal convoys = (resourceData.find("convoys") != resourceData.end()) ? resourceData.at("convoys") : "0.1";
+
+                resourcesArray.EmplaceBack(iconFrame, cic, convoys, resourceName);
+            }
+        }
+    }
+    resourcesArray.ShrinkToFit();
+}
+
+void LoadStateCategoryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<StateCategory>& stateCategoriesArray) {
+
 }

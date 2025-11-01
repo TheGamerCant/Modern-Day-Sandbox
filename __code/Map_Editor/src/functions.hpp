@@ -12,6 +12,11 @@ String GetTimeElapsedFromStart(const Timestamp& startTime);
 void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& blue, Float64 H, Float64 S, Float64 V);
 
 //String manipulations
+Boolean CharIsCapitalOrNumber(const Char c);
+Boolean CharIsCapital(const Char c);
+Boolean CharIsLower(const Char c);
+Boolean CharIsNumber(const Char c);
+Boolean CharIsWhitespace(Char c);
 String RemoveQuotes(String str);
 String ForwardToBackslashes(String str);
 String ToUpper(String str);

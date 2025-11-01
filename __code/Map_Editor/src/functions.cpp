@@ -13,26 +13,27 @@
 //Get time elapsed since beginning of program
 String GetTimeElapsedFromStart(const Timestamp& startTime) {
     auto endTime = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime);
 
-    SignedInteger64 totalDuration = duration.count();
+    UnsignedInteger64 totalDuration = duration.count();
 
-    SignedInteger64 milliseconds = totalDuration;
-    SignedInteger64 seconds = milliseconds / 1000;
-    SignedInteger64 minutes = seconds / 60;
-    SignedInteger64 hours = minutes / 60;
+    UnsignedInteger64 microseconds = totalDuration;
+    UnsignedInteger64 milliseconds = microseconds / 1000;
+    UnsignedInteger64 seconds = milliseconds / 1000;
+    UnsignedInteger64 minutes = seconds / 60;
+    UnsignedInteger64 hours = minutes / 60;
 
-    if (totalDuration < 1000) {
-        return std::to_string(milliseconds) + "ms";
+    if (totalDuration < 1000000) {
+        return std::to_string(milliseconds) + "ms, " + std::to_string(microseconds % 1000) + "us";
     }
-    if (totalDuration < 60000) {
-        return std::to_string(seconds) + "s, " + std::to_string(milliseconds % 1000) + "ms";
+    if (totalDuration < 60000000) {
+        return std::to_string(seconds) + "s, " + std::to_string(milliseconds % 1000) + "ms, " + std::to_string(microseconds % 1000) + "us";
     }
-    if (totalDuration < 3600000) {
-        return std::to_string(minutes) + "m, " + std::to_string(seconds % 60) + "s, " + std::to_string(milliseconds % 1000) + "ms";
+    if (totalDuration < 3600000000) {
+        return std::to_string(minutes) + "m, " + std::to_string(seconds % 60) + "s, " + std::to_string(milliseconds % 1000) + "ms, " + std::to_string(microseconds % 1000) + "us";
     }
 
-    return std::to_string(hours) + "h, " + std::to_string(minutes % 60) + "m, " + std::to_string(seconds % 60) + "s, " + std::to_string(milliseconds % 1000) + "ms";
+    return std::to_string(hours) + "h, " + std::to_string(minutes % 60) + "m, " + std::to_string(seconds % 60) + "s, " + std::to_string(milliseconds % 1000) + "ms, " + std::to_string(microseconds % 1000) + "us";
 }
 
 void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& blue, Float64 H, Float64 S, Float64 V) {
@@ -55,10 +56,10 @@ void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& 
     blue = static_cast<UnsignedInteger8>((bPrime + m) * 255);
 }
 
-static Boolean CharIsCapitalOrNumber(const Char c) { return (c >= 48 && c <= 57) || (c >= 65 && c <= 90); }
-static Boolean CharIsCapital(const Char c) { return c >= 65 && c <= 90; }
-static Boolean CharIsLower(const Char c) { return c >= 97 && c <= 122; }
-static Boolean CharIsNumber(const Char c) { return c >= 48 && c <= 57; }
+Boolean CharIsCapitalOrNumber(const Char c) { return (c >= 48 && c <= 57) || (c >= 65 && c <= 90); }
+Boolean CharIsCapital(const Char c) { return c >= 65 && c <= 90; }
+Boolean CharIsLower(const Char c) { return c >= 97 && c <= 122; }
+Boolean CharIsNumber(const Char c) { return c >= 48 && c <= 57; }
 
 String RemoveQuotes(String str) {
     Char first = str.front();
@@ -394,8 +395,8 @@ String LoadFileToString(const String& filename) {
     return result.str();
 }
 
-//                                        32 = ' ', 10 = '\n', 9 = '\t', 11 = '\v', 12 = '\f', 13 = '\r'
-static Boolean CharIsWhitespace(Char c) { return c == 32 || (c >= 9 && c <= 13); }
+//                                    32 = ' ', 10 = '\n', 9 = '\t', 11 = '\v', 12 = '\f', 13 = '\r'
+Boolean CharIsWhitespace(Char c) { return c == 32 || (c >= 9 && c <= 13); }
 
 static String RemoveStringWhitespace(const String& stringIn) {
     SizeT stringLength = stringIn.size();

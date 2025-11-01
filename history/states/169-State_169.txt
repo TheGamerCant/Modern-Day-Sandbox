@@ -2,12 +2,34 @@ state={
 	id=169
 	name="STATE_169"
 	history={
-		owner = ZZZ
+		owner = SPA
+		add_core_of = SPA
+		
+		victory_points = { 14522 20 }
+		victory_points = { 14523 2 }
+		victory_points = { 14525 15 }
+		victory_points = { 14528 8 }
+		victory_points = { 14529 4 }
+		victory_points = { 7183 3 }
+		victory_points = { 13228 3 }
+		victory_points = { 9815 3 }
+		victory_points = { 14530 7 }
+		victory_points = { 950 2 }
+		victory_points = { 10111 3 }
+		victory_points = { 4095 1 }
+		victory_points = { 14527 3 }
+		victory_points = { 7153 2 }
+		victory_points = { 3810 1 }
+		
+		buildings = {
+			infrastructure = 4
+			air_base = 4
+		}
 	}
 	provinces={
-		1048 1178 3940 4080 4182 7098 7183 9815 9891 10094 11749 12070 13228 13231 875 879 950 1090 1192 3810 3871 4095 6744 7198 10111 12083 747 1176 4065 7068 7153 7196 9979 10009 10063 11956 12038 
+		1048 1178 3940 4080 4182 7098 7183 9815 9891 10094 11749 12070 13228 13231 875 879 950 1090 1192 3810 3871 4095 6744 7198 10111 12083 747 1176 4065 7068 7153 7196 9979 10009 10063 11956 12038 14522 14523 14524 14525 14526 14527 14528 14529 14530 
 	}
-	manpower= 100000
+	manpower= 8371268
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=large_town

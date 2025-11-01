@@ -98,7 +98,24 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Decimal& d);
 };
 
+//Colour Structs
+struct ColourRGB {
+public:
+    UnsignedInteger8 r, g, b;
+
+    ColourRGB();
+    ColourRGB(const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b);
+    ColourRGB(const String& str);
+};
+
 // ----Map Data Structures----
+enum ProvinceType : UnsignedInteger8 {
+    Land,
+    Sea,
+    Lake
+};
+
+
 struct GraphicalCulture {
 private:
     UnsignedInteger16 id;
@@ -135,6 +152,32 @@ public:
     const UnsignedInteger16 GetId() const;
 };
 
+namespace BuildingMetadata {
+    enum Enum : UnsignedInteger8 {
+        None,
+        Infrastructure,
+        AirBase,
+        SupplyNode,
+        IsPort,
+        AntiAir,
+        Refinery,
+        FuelSilo,
+        Radar,
+        NuclearReactor,
+        GunEmplacement
+    };
+}
+
+namespace IntelligenceType {
+    enum Enum : UnsignedInteger8 {
+        None,
+        Civilian,
+        Army,
+        Airforce,
+        Navy
+    };
+}
+
 struct Building {
 private:
     UnsignedInteger16 id;
@@ -143,7 +186,7 @@ private:
     SignedInteger16 iconFrame;
     UnsignedInteger8 landFort, navalFort;
     UnsignedInteger8 rocketProduction, rocketLaunchCapacity;
-    Boolean infrastructure, airBase, supplyNode, isPort, antiAir, refinery, fuelSilo, radar, nuclearReactor, gunEmplacement;
+    BuildingMetadata::Enum buildingMetadata;
     Boolean showModifier;
     Boolean alliedBuild;
     Boolean infrastructureConstructionEffect;
@@ -156,13 +199,13 @@ private:
     Boolean isBuildable;
     UnsignedInteger8 showOnMap, showOnMapMeshes;
     Boolean alwaysShown, hasDestroyedMesh, centered;
+    IntelligenceType::Enum detectingIntelType;
     Boolean levelCapSharesSlots;
     UnsignedInteger16 levelCapProvinceMax, levelCapStateMax;        //levelCapProvinceMax defines a building as provincial
     SignedInteger32 levelCapExclusiveWith;
     String levelCapGroupBy;
     String name;
     String specialIcon;
-    String detectingIntelType;
     Decimal damageFactor;
     Decimal militaryProduction, generalProduction, navalProduction;
     Vector<String> tags;
@@ -178,33 +221,30 @@ public:
     Building() : 
         
         id(0), value(0), baseCost(0), baseCostConversion(0), perLevelExtraCost(0), perControlledBuildingExtraCost(0), iconFrame(-1), landFort(0), navalFort(0), rocketProduction(0), 
-        rocketLaunchCapacity(0), infrastructure(false), airBase(false), supplyNode(false), isPort(false), antiAir(false), refinery(false), fuelSilo(false), radar(false), 
-        nuclearReactor(false), gunEmplacement(false), showModifier(false), alliedBuild(false), infrastructureConstructionEffect(false), onlyCoastal(false), disabledInDmz(false), 
+        rocketLaunchCapacity(0), buildingMetadata(BuildingMetadata::None), showModifier(false), alliedBuild(false), infrastructureConstructionEffect(false), onlyCoastal(false), disabledInDmz(false),
         needSupply(false), needDetection(false), hideIfMissingTech(false), onlyDisplayIfExists(false), isBuildable(true), showOnMap(0), showOnMapMeshes(1), alwaysShown(false), 
-        hasDestroyedMesh(false), centered(false), levelCapSharesSlots(false), levelCapProvinceMax(0), levelCapStateMax(15), levelCapExclusiveWith(-1), levelCapGroupBy(""), name(""), 
-        specialIcon(""), detectingIntelType(""), damageFactor(1), militaryProduction(0), generalProduction(0), navalProduction(0), tags(), specialization(), dlcAllowed(),
+        hasDestroyedMesh(false), centered(false), detectingIntelType(IntelligenceType::None), levelCapSharesSlots(false), levelCapProvinceMax(0), levelCapStateMax(15), levelCapExclusiveWith(-1), 
+        levelCapGroupBy(""), name(""), specialIcon(""), damageFactor(1), militaryProduction(0), generalProduction(0), navalProduction(0), tags(), specialization(), dlcAllowed(),
         provinceDamageModifiers(), stateDamageModifier(), countryModifiers(), stateModifiers(), countryModifiersCountries(), missingTechLoc() {}
 
     Building(const UnsignedInteger16 value, const UnsignedInteger32 baseCost, const UnsignedInteger32 baseCostConversion, const UnsignedInteger32 perLevelExtraCost,
         const UnsignedInteger32 perControlledBuildingExtraCost, const SignedInteger16 iconFrame, const UnsignedInteger8 landFort, const UnsignedInteger8 navalFort,
-        const UnsignedInteger8 rocketProduction, const UnsignedInteger8 rocketLaunchCapacity, const Boolean infrastructure, const Boolean airBase, const Boolean supplyNode,
-        const Boolean isPort, const Boolean antiAir, const Boolean refinery, const Boolean fuelSilo, const Boolean radar, const Boolean nuclearReactor, const Boolean gunEmplacement,
-        const Boolean showModifier, const Boolean alliedBuild, const Boolean infrastructureConstructionEffect, const Boolean onlyCoastal, const Boolean disabledInDmz,
-        const Boolean needSupply, const Boolean needDetection, const Boolean hideIfMissingTech, const Boolean onlyDisplayIfExists, const Boolean isBuildable, const UnsignedInteger8 showOnMap,
-        const UnsignedInteger8 showOnMapMeshes, const Boolean alwaysShown, const Boolean hasDestroyedMesh, const Boolean centered, const Boolean levelCapSharesSlots,
-        const UnsignedInteger16 levelCapProvinceMax, const UnsignedInteger16 levelCapStateMax, const SignedInteger32 levelCapExclusiveWith, const String& levelCapGroupBy,
-        const String& name, const String& specialIcon, const String& detectingIntelType, const Decimal damageFactor, const Decimal militaryProduction, const Decimal generalProduction, 
-        const Decimal navalProduction, const Vector<String>& tags, const Vector<String>& specialization, const Vector<String>& dlcAllowed, const Vector<String>& provinceDamageModifiers,
-        const Vector<String>& stateDamageModifier, const HashMap<String, Decimal>& countryModifiers, const HashMap<String, Decimal>& stateModifiers,
-        const Vector<UnsignedInteger16>& countryModifiersCountries, const HashMap<String, String>& missingTechLoc) :
+        const UnsignedInteger8 rocketProduction, const UnsignedInteger8 rocketLaunchCapacity, const BuildingMetadata::Enum buildingMetadata, const Boolean showModifier, const Boolean alliedBuild,
+        const Boolean infrastructureConstructionEffect, const Boolean onlyCoastal, const Boolean disabledInDmz, const Boolean needSupply, const Boolean needDetection,
+        const Boolean hideIfMissingTech, const Boolean onlyDisplayIfExists, const Boolean isBuildable, const UnsignedInteger8 showOnMap, const UnsignedInteger8 showOnMapMeshes, 
+        const Boolean alwaysShown, const Boolean hasDestroyedMesh, const Boolean centered, const IntelligenceType::Enum detectingIntelType, const Boolean levelCapSharesSlots, const UnsignedInteger16 levelCapProvinceMax,
+        const UnsignedInteger16 levelCapStateMax, const SignedInteger32 levelCapExclusiveWith, const String& levelCapGroupBy, const String& name, const String& specialIcon, 
+        const Decimal damageFactor, const Decimal militaryProduction, const Decimal generalProduction, const Decimal navalProduction,
+        const Vector<String>& tags, const Vector<String>& specialization, const Vector<String>& dlcAllowed, const Vector<String>& provinceDamageModifiers, const Vector<String>& stateDamageModifier,
+        const HashMap<String, Decimal>& countryModifiers, const HashMap<String, Decimal>& stateModifiers, const Vector<UnsignedInteger16>& countryModifiersCountries,
+        const HashMap<String, String>& missingTechLoc) :
 
         id(0), value(value), baseCost(baseCost), baseCostConversion(baseCostConversion), perLevelExtraCost(perLevelExtraCost), perControlledBuildingExtraCost(perControlledBuildingExtraCost), 
-        iconFrame(iconFrame), landFort(landFort), navalFort(navalFort), rocketProduction(rocketProduction), rocketLaunchCapacity(rocketLaunchCapacity), infrastructure(infrastructure), 
-        airBase(airBase), supplyNode(supplyNode), isPort(isPort), antiAir(antiAir), refinery(refinery), fuelSilo(fuelSilo), radar(radar), nuclearReactor(nuclearReactor), gunEmplacement(gunEmplacement), 
+        iconFrame(iconFrame), landFort(landFort), navalFort(navalFort), rocketProduction(rocketProduction), rocketLaunchCapacity(rocketLaunchCapacity), buildingMetadata(buildingMetadata),
         showModifier(showModifier), alliedBuild(alliedBuild), infrastructureConstructionEffect(infrastructureConstructionEffect), onlyCoastal(onlyCoastal), disabledInDmz(disabledInDmz),
         needSupply(needSupply), needDetection(needDetection), hideIfMissingTech(hideIfMissingTech), onlyDisplayIfExists(onlyDisplayIfExists), isBuildable(isBuildable), showOnMap(showOnMap),
-        showOnMapMeshes(showOnMapMeshes), alwaysShown(alwaysShown), hasDestroyedMesh(hasDestroyedMesh), centered(centered), levelCapSharesSlots(levelCapSharesSlots), levelCapProvinceMax(levelCapProvinceMax), 
-        levelCapStateMax(levelCapStateMax), levelCapExclusiveWith(levelCapExclusiveWith), levelCapGroupBy(levelCapGroupBy), name(name), specialIcon(specialIcon), detectingIntelType(detectingIntelType), 
+        showOnMapMeshes(showOnMapMeshes), alwaysShown(alwaysShown), hasDestroyedMesh(hasDestroyedMesh), centered(centered), detectingIntelType(detectingIntelType), levelCapSharesSlots(levelCapSharesSlots),
+        levelCapProvinceMax(levelCapProvinceMax), levelCapStateMax(levelCapStateMax), levelCapExclusiveWith(levelCapExclusiveWith), levelCapGroupBy(levelCapGroupBy), name(name), specialIcon(specialIcon), 
         damageFactor(damageFactor), militaryProduction(militaryProduction), generalProduction(generalProduction), navalProduction(navalProduction), tags(tags), specialization(specialization),
         dlcAllowed(dlcAllowed), provinceDamageModifiers(provinceDamageModifiers), stateDamageModifier(stateDamageModifier), countryModifiers(countryModifiers), stateModifiers(stateModifiers),
         countryModifiersCountries(countryModifiersCountries), missingTechLoc(missingTechLoc) {}
@@ -244,26 +284,27 @@ private:
     UnsignedInteger16 id;
     UnsignedInteger8 r, g, b;
     Boolean navalTerrain, isWater;
+    ProvinceType provinceType;
     UnsignedInteger16 combatWidth, combatSupportWidth;
     UnsignedInteger16 matchValue;
     Decimal aiTerrainImportanceFactor;
     Decimal supplyFlowPenaltyFactor;
     String soundType;
     String name;
-    HashMap<UnsignedInteger16, UnsignedInteger16> buildingsMaxLevel;
+    HashMap<UnsignedInteger16, UnsignedInteger16> buildingsMaxLevel;        //Will always be province building
     HashMap<String, Decimal> modifiers, unitModifiers;      //attack, movement and defence are stored as regular modifiers for unitModifiers and subUnitModifiers
     HashMap<String, HashMap<String, Decimal>> subUnitModifiers;
 
     //Note to self - do StringCanBecomeFloat() on terrain keys to find out if modifier or unit/subunit modifier
 
 public:
-    Terrain() : id(0), r(0), g(0), b(0), navalTerrain(false), isWater(false), combatWidth(0), combatSupportWidth(0), matchValue(0), aiTerrainImportanceFactor(1), supplyFlowPenaltyFactor(0),
+    Terrain() : id(0), r(0), g(0), b(0), navalTerrain(false), isWater(false), provinceType(Land), combatWidth(0), combatSupportWidth(0), matchValue(0), aiTerrainImportanceFactor(1), supplyFlowPenaltyFactor(0),
         soundType(""), name(""), buildingsMaxLevel(), modifiers(), unitModifiers(), subUnitModifiers() {}
-    Terrain(const UnsignedInteger8 r,const UnsignedInteger8 g,const UnsignedInteger8 b, const Boolean navalTerrain, const Boolean isWater, const UnsignedInteger16 combatWidth, 
-        const UnsignedInteger16 combatSupportWidth, const UnsignedInteger16 matchValue, const Decimal aiTerrainImportanceFactor, const Decimal supplyFlowPenaltyFactor,
-        const String& soundType, const String& name, const HashMap<UnsignedInteger16, UnsignedInteger16>& buildingsMaxLevel, const HashMap<String, Decimal>& modifiers, 
-        const HashMap<String, Decimal>& unitModifiers, const HashMap<String, HashMap<String, Decimal>>& subUnitModifiers) :
-        id(0), r(r), g(g), b(b), navalTerrain(navalTerrain), isWater(isWater), combatWidth(combatWidth), combatSupportWidth(combatSupportWidth), matchValue(matchValue), 
+    Terrain(const UnsignedInteger8 r,const UnsignedInteger8 g,const UnsignedInteger8 b, const Boolean navalTerrain, const Boolean isWater, const ProvinceType provinceType, 
+        const UnsignedInteger16 combatWidth, const UnsignedInteger16 combatSupportWidth, const UnsignedInteger16 matchValue, const Decimal aiTerrainImportanceFactor,
+        const Decimal supplyFlowPenaltyFactor, const String& soundType, const String& name, const HashMap<UnsignedInteger16, UnsignedInteger16>& buildingsMaxLevel,
+        const HashMap<String, Decimal>& modifiers, const HashMap<String, Decimal>& unitModifiers, const HashMap<String, HashMap<String, Decimal>>& subUnitModifiers) :
+        id(0), r(r), g(g), b(b), navalTerrain(navalTerrain), isWater(isWater), provinceType(provinceType), combatWidth(combatWidth), combatSupportWidth(combatSupportWidth), matchValue(matchValue),
         aiTerrainImportanceFactor(aiTerrainImportanceFactor), supplyFlowPenaltyFactor(supplyFlowPenaltyFactor), soundType(soundType), name(name), buildingsMaxLevel(buildingsMaxLevel),
         modifiers(modifiers), unitModifiers(unitModifiers), subUnitModifiers(subUnitModifiers) {}
 
@@ -280,13 +321,14 @@ private:
     UnsignedInteger16 type;
     UnsignedInteger32 colour, texture;
     Boolean spawnCity, permSnow;
+    ProvinceType provinceType;
     String name;
 
 public:
-    GraphicalTerrain() : id(0), type(0), colour(0), texture(0), spawnCity(false), permSnow(false) {}
+    GraphicalTerrain() : id(0), type(0), colour(0), texture(0), spawnCity(false), permSnow(false), provinceType(Land), name("") {}
     GraphicalTerrain(const UnsignedInteger16 type, const UnsignedInteger32 colour, const UnsignedInteger32 texture, const Boolean spawnCity,
-        const Boolean permSnow, const String& name) :
-        id(0), type(type), colour(colour), texture(texture), spawnCity(spawnCity), permSnow(permSnow) {}
+        const Boolean permSnow, const ProvinceType provinceType, const String& name) :
+        id(0), type(type), colour(colour), texture(texture), spawnCity(spawnCity), permSnow(permSnow), provinceType(provinceType), name(name) {}
 
     String GetName();
     const String GetName() const;
@@ -295,6 +337,44 @@ public:
     const UnsignedInteger16 GetId() const;
 };
 
+struct Resource {
+private:
+    UnsignedInteger16 id;
+    UnsignedInteger16 iconFrame;
+    Decimal cic;        //Factories per 1 resource - by default 0.125 (1 factory = 8 resources)
+    Decimal convoys;    //Convoys needed to transport 1 resource - default 0.1 (1 convoy = 10 resources)
+    String name;
+
+public:
+    Resource() : id(0), iconFrame(0), cic("0.125"), convoys("0.1"), name("") {}
+    Resource(const UnsignedInteger16 iconFrame, const Decimal cic, const Decimal convoys, const String& name) :
+        id(0), iconFrame(iconFrame) ,cic(cic), convoys(convoys), name(name) {}
+
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
+};
+
+struct StateCategory {
+private:
+    UnsignedInteger16 id;
+    UnsignedInteger16 buildingSlots;
+    UnsignedInteger8 r, g, b;
+    String name;
+
+public:
+    StateCategory() : id(0), buildingSlots(0), r(0), g(0), b(0), name("") {}
+    StateCategory(const UnsignedInteger16 buildingSlots, const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b, const String& name) :
+        id(0), buildingSlots(buildingSlots), r(r), g(g), b(b), name(name) {}
+
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
+};
 
 //Custom data type that allows indexing by index or name/tag
 //e.g
