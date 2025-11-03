@@ -2,6 +2,10 @@
 #include "data_types.hpp"
 #include <fstream>
 #include <iostream>
+#include <thread>
+#include <future>
+#include <algorithm>
+
 
 void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories) {
     HashMap<String, String> directoriesMap = ParseStringForPairsMapUnique(LoadFileToString("file_directories.txt"));
@@ -33,10 +37,8 @@ void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<Stri
         }
     }
 
-    if (modFileCount == 0) { FatalError("Could not find any .mod files in the mod directory " + modDirectory.string()); }
-    else if (modFileCount == 0) { FatalError("More than one .mod files in the mod directory " + modDirectory.string()); }
-
-    else {
+    //If zero we can load vanilla
+    if (modFileCount == 1) {
         modReplaceDirectories.reserve(64);
         HashMap<String, Vector<String>> modFolderMap = ParseStringForPairsMapRepeat(LoadFileToString(modFilePath.string()));
 
@@ -55,33 +57,31 @@ void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<Stri
     std::sort(modReplaceDirectories.begin(), modReplaceDirectories.end());
 }
 
-VectorMap<GraphicalCulture> LoadGraphicalCultureFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories) {
-    VectorMap<GraphicalCulture> culturesReturnArray;
-    Vector<String> culturesArray = ParseStringAsArray(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\graphicalculturetype.txt").string()));
-    culturesReturnArray.Reserve(culturesArray.size() / 2);
+void LoadGraphicalCultureFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<GraphicalCulture>& graphicalCulturesArray) {
+    Vector<String> culturesArray = ParseStringAsStringArray(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\graphicalculturetype.txt").string()));
+    graphicalCulturesArray.Reserve(culturesArray.size());
 
     for (auto& culture : culturesArray) {
-        if (!culturesReturnArray.NameInArray(culture)) culturesReturnArray.EmplaceBack(culture);
+        if (!graphicalCulturesArray.NameInArray(culture)) graphicalCulturesArray.EmplaceBack(culture);
     }
-
-    return culturesReturnArray;
 }
 
 static void BadColourDefinition(const String& objectName, const String& fileIn) { FatalError("Bad colour definition for object " + objectName + " in file " + fileIn); }
 
-VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, const VectorMap<GraphicalCulture>& graphicalCulturesArray) {
+void LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Country>& countriesArray,
+    const VectorMap<GraphicalCulture>& graphicalCulturesArray) {
     Vector<Path> countryTagFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\country_tags", ".txt", 4);
-    VectorMap<Country> countriesReturnArray;
 
     for (const Path& file : countryTagFiles) {
         Vector<DoubleString> countryTagAndDefinitionFiles = ParseStringForPairsArray(LoadFileToString(file.string()), 128);
-        countriesReturnArray.Reserve(countriesReturnArray.Capacity() + countryTagAndDefinitionFiles.size());
+        countriesArray.Reserve(countriesArray.Capacity() + countryTagAndDefinitionFiles.size());
 
         for (auto& [tag, countryFile] : countryTagAndDefinitionFiles) {
             if (tag == "dynamic_tags" && countryFile == "yes") break;
 
             if (!TagIsValid(tag)) { 
-                FatalError("Error in " + file.string() + ", tag " + tag + " is not a valid tag"); 
+                printf("Tag %s is not a valid tag in file %s\n", tag.c_str(), file.c_str());
+                continue;
             }
         
             countryFile = RemoveQuotes(countryFile);
@@ -90,19 +90,24 @@ VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& mo
             HashMap<String, String> countryCosmeticData = ParseStringForPairsMapUnique(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\" + countryFile).string()));
             UnsignedInteger16 cultureIndex = 0, cultureIndex2D = 0;
 
-            if (countryCosmeticData.find("graphical_culture") == countryCosmeticData.end() || countryCosmeticData.find("graphical_culture_2d") == countryCosmeticData.end() || 
-                !graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture")) || !graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture"))) {
-                
-                FatalError("Incorrect graphical cultures definition at " + countryFile);
+            //Special case for Guanxi clique vanilla file
+            if (countryCosmeticData.find("graphical_culture") != countryCosmeticData.end() && countryCosmeticData.at("graphical_culture") == "asian_european_gfx") { 
+                cultureIndex = graphicalCulturesArray["asian_2d"].GetId();
             }
-            cultureIndex = graphicalCulturesArray[countryCosmeticData.at("graphical_culture")].GetId();
-            cultureIndex2D = graphicalCulturesArray[countryCosmeticData.at("graphical_culture_2d")].GetId();
+            else if (countryCosmeticData.find("graphical_culture") == countryCosmeticData.end() || countryCosmeticData.find("graphical_culture_2d") == countryCosmeticData.end() || 
+                !graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture")) || !graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture"))) {
+                FatalError("Bad graphical cultures definition in " + countryFile);
+            }
+            else {
+                cultureIndex = graphicalCulturesArray[countryCosmeticData.at("graphical_culture")].GetId();
+                cultureIndex2D = graphicalCulturesArray[countryCosmeticData.at("graphical_culture_2d")].GetId();
+            }
 
             UnsignedInteger8 rgbArray[3] = { 0, 0, 0 };
             Float64 hsvArray[3] = { 0.0f, 0.0f, 0.0f };
 
             if (countryCosmeticData.find("color") == countryCosmeticData.end()) {
-                FatalError("Color not defined at " + countryFile);
+                FatalError("No colour defined in " + countryFile);
             }
 
             String colourData = ToLower(countryCosmeticData.at("color"));
@@ -114,7 +119,7 @@ VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& mo
                 colourData = colourData.substr(3);
             }
 
-            Vector<String> colours = ParseStringAsArray(colourData);
+            Vector<String> colours = ParseStringAsStringArray(colourData);
             if (colours.size() != 3) { BadColourDefinition(tag, countryFile); }
             
             //Must all be the same type (all ints or all floats)
@@ -142,16 +147,16 @@ VectorMap<Country> LoadCountryFiles(const Path& vanillaDirectory, const Path& mo
             }
 
             if (HSVbool) { HSVToRGB(rgbArray[0], rgbArray[1], rgbArray[2], hsvArray[0], hsvArray[1], hsvArray[2]); }
+            ColourRGB colour(rgbArray[0], rgbArray[1], rgbArray[2]);
 
-            countriesReturnArray.EmplaceBack(tag, rgbArray[0], rgbArray[1], rgbArray[2], cultureIndex, cultureIndex2D);
+            countriesArray.EmplaceBack(tag, colour, cultureIndex, cultureIndex2D);
         }
     }
-    countriesReturnArray.ShrinkToFit();
-    return countriesReturnArray;
+    countriesArray.ShrinkToFit();
 }
 
 void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Building>& provinceBuildingsArray,
-    VectorMap<Building>& stateBuildingsArray, VectorMap<BuildingSpawnPoint>& buildingSpawnPointsArray, VectorMap<Country>& countriesArray) {
+    VectorMap<Building>& stateBuildingsArray, VectorMap<BuildingSpawnPoint>& buildingSpawnPointsArray, const VectorMap<Country>& countriesArray) {
     Vector<Path> buildingsFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\buildings", ".txt", 4);
 
     //Store exclusives here and convert the string names to IDs at the end
@@ -209,13 +214,13 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                 Boolean alwaysShown = (buildingData.find("always_shown") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("always_shown")) : false;
                 Boolean hasDestroyedMesh = (buildingData.find("has_destroyed_mesh") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("has_destroyed_mesh")) : false;
                 Boolean centered = (buildingData.find("centered") != buildingData.end()) ? GetBoolFromYesNo(buildingData.at("centered")) : false;
-                IntelligenceType::Enum detectingIntelType;
+                IntelligenceType::Enum detectingIntelType = IntelligenceType::None;
                 if (buildingData.find("detecting_intel_type") != buildingData.end()) {
                     if (buildingData.at("detecting_intel_type") == "civilian") detectingIntelType = IntelligenceType::Civilian;
                     else if (buildingData.at("detecting_intel_type") == "army") detectingIntelType = IntelligenceType::Army;
                     else if (buildingData.at("detecting_intel_type") == "airforce") detectingIntelType = IntelligenceType::Airforce;
                     else if (buildingData.at("detecting_intel_type") == "navy") detectingIntelType = IntelligenceType::Navy;
-                    else FatalError("Bad intelligence type for building " + buildingName + " in file " + file.string());
+                    else printf("Bad intelligence type for building %s in file %s\n", buildingName.c_str(), file.c_str());
                 }
 
                 Boolean levelCapSharesSlots = false;
@@ -247,18 +252,18 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                 Vector<UnsignedInteger16> countryModifiersCountries;
                 HashMap<String, String> missingTechLoc;
 
-                if (buildingData.find("tags") != buildingData.end()) { tags = ParseStringAsArray(buildingData.at("tags")); }
-                if (buildingData.find("specialization") != buildingData.end()) { specialization = ParseStringAsArray(buildingData.at("specialization")); }
+                if (buildingData.find("tags") != buildingData.end()) { tags = ParseStringAsStringArray(buildingData.at("tags")); }
+                if (buildingData.find("specialization") != buildingData.end()) { specialization = ParseStringAsStringArray(buildingData.at("specialization")); }
                 if (buildingData.find("dlc_allowed") != buildingData.end()) { 
                     Vector<DoubleString> dlcs = ParseStringForPairsArray(buildingData.at("dlc_allowed"));
                     for (const auto& dlc_entry : dlcs) { dlcAllowed.push_back(dlc_entry.b); }
                 }
                 if (buildingData.find("province_damage_modifiers") != buildingData.end()) { 
-                    Vector<String> modifiers = ParseStringAsArray(buildingData.at("province_damage_modifiers"));
+                    Vector<String> modifiers = ParseStringAsStringArray(buildingData.at("province_damage_modifiers"));
                     for (const auto& modfier : modifiers) { provinceDamageModifiers.push_back(modfier); }
                 }
                 if (buildingData.find("state_damage_modifier") != buildingData.end()) { 
-                    Vector<String> modifiers = ParseStringAsArray(buildingData.at("state_damage_modifier"));
+                    Vector<String> modifiers = ParseStringAsStringArray(buildingData.at("state_damage_modifier"));
                     for (const auto& modfier : modifiers) { stateDamageModifier.push_back(modfier); }
                 }
                 if (buildingData.find("country_modifiers") != buildingData.end()) { 
@@ -266,10 +271,14 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
 
                     if (countryModifiersData.find("modifiers") != countryModifiersData.end()) {
                         if (countryModifiersData.find("enable_for_controllers") != countryModifiersData.end()) {
-                            Vector<String> countryTags = ParseStringAsArray(countryModifiersData.at("enable_for_controllers"));
+                            Vector<String> countryTags = ParseStringAsStringArray(countryModifiersData.at("enable_for_controllers"));
                             for (const auto& tag : countryTags) { 
-                                if (!countriesArray.NameInArray(tag)) FatalError("Tag defined in building " + buildingName + " does not exist");
-                                countryModifiersCountries.push_back(countriesArray[tag].GetId());
+                                if (countriesArray.NameInArray(tag)) {
+                                    countryModifiersCountries.push_back(countriesArray[tag].GetId());
+                                }
+                                else {
+                                    printf("Tag defined in building %s in file %s does not exist\n", buildingName.c_str(), file.c_str());
+                                }
                             }
                         }
                         HashMap<String, String> countryModifiersString = ParseStringForPairsMapUnique(countryModifiersData.at("modifiers"));
@@ -342,6 +351,8 @@ void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, co
     VectorMap<Terrain>& seaTerrainsArray, VectorMap<Terrain>& lakeTerrainsArray, VectorMap<GraphicalTerrain>& graphicalTerrainsArray, const VectorMap<Building>& provinceBuildingsArray) {
     Vector<Path> terrainFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\terrain", ".txt", 4);
 
+    Vector<UnsignedInteger16> baseBuildingsMaxLevel(provinceBuildingsArray.Size(), 0);
+    for (SizeT i = 0; i < provinceBuildingsArray.Size(); ++i) { baseBuildingsMaxLevel[i] = provinceBuildingsArray[i].GetMaxLevel(); }
 
     for (const auto& file : terrainFiles) {
         HashMap<String, String> terrainFileLvl1 = ParseStringForPairsMapUnique(LoadFileToString(file.string()));
@@ -357,20 +368,16 @@ void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, co
                 HashMap<String, String> terrainData = ParseStringForPairsMapUnique(terrainDataWhole);
 
                 if (terrainData.find("color") == terrainData.end()) FatalError("No colour defined for terrain " + terrainName);
-                Vector<String> colourArray = ParseStringAsArray(terrainData.at("color"));
-
-                if (colourArray.size() != 3) BadColourDefinition(terrainName, file.string());
-                else if (!StringCanBecomeInteger(colourArray[0]) || !StringCanBecomeInteger(colourArray[1]) || !StringCanBecomeInteger(colourArray[2])) BadColourDefinition(terrainName, file.string());
-
-                //Have to erase afterwards so we don't store them in our modifiers vectors
-                UnsignedInteger8 rgbArray[3] = { std::stoi(colourArray[0]), std::stoi(colourArray[1]), std::stoi(colourArray[2]) }; terrainData.erase("color");
+                ColourRGB colour(terrainData.at("color")); terrainData.erase("color");
                 Boolean navalTerrain = (terrainData.find("naval_terrain") != terrainData.end()) ? GetBoolFromYesNo(terrainData.at("naval_terrain")) : false; terrainData.erase("naval_terrain");
                 Boolean isWater = (terrainData.find("is_water") != terrainData.end()) ? GetBoolFromYesNo(terrainData.at("is_water")) : false; terrainData.erase("is_water");
-                ProvinceType provinceType;
-                if (!navalTerrain && !isWater) { provinceType = Land; }
-                else if (navalTerrain && isWater) { provinceType = Sea; }
-                else if (!navalTerrain && isWater) { provinceType = Lake; }
-                else { FatalError("Terrain " + terrainName + " in file " + file.string() + " cannot be have naval_terrain set to yes and is_water set to false"); }
+                //ProvinceType provinceType;
+                //if (!navalTerrain && !isWater) { provinceType = Land; }
+                //else if (navalTerrain && isWater) { provinceType = Sea; }
+                //else if (!navalTerrain && isWater) { provinceType = Lake; }
+                //else { FatalError("Terrain " + terrainName + " in file " + file.string() + " cannot be have naval_terrain set to yes and is_water set to false"); }
+                if (navalTerrain && !isWater) { FatalError("Terrain " + terrainName + " cannot be have naval_terrain set to yes and is_water set to false"); }
+
                 UnsignedInteger16 combatWidth = (terrainData.find("combat_width") != terrainData.end()) ? std::stoi(terrainData.at("combat_width")) : 0; terrainData.erase("combat_width");
                 UnsignedInteger16 combatSupportWidth = (terrainData.find("combat_support_width") != terrainData.end()) ? std::stoi(terrainData.at("combat_support_width")) : 0; terrainData.erase("combat_support_width");
                 UnsignedInteger16 matchValue = (terrainData.find("match_value") != terrainData.end()) ? std::stoi(terrainData.at("match_value")) : 0; terrainData.erase("match_value");
@@ -378,11 +385,11 @@ void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, co
                 Decimal supplyFlowPenaltyFactor = (terrainData.find("supply_flow_penalty_factor") != terrainData.end()) ? terrainData.at("supply_flow_penalty_factor") : "0.0"; terrainData.erase("supply_flow_penalty_factor");
                 String soundType = (terrainData.find("sound_type") != terrainData.end()) ? terrainData.at("sound_type") : ""; terrainData.erase("sound_type");
 
-                HashMap<UnsignedInteger16, UnsignedInteger16> buildingsMaxLevel;
+                Vector<UnsignedInteger16> buildingsMaxLevel = baseBuildingsMaxLevel;
                 if (terrainData.find("buildings_max_level") != terrainData.end()) {
                     HashMap<String, String> buildingsData = ParseStringForPairsMapUnique(terrainData.at("buildings_max_level"));
                     for (const auto& [building, level] : buildingsData) {
-                        if (!provinceBuildingsArray.NameInArray(building)) FatalError("Building \"" + building + "\" in file " + file.string() + " is not a valid province building");
+                        if (!provinceBuildingsArray.NameInArray(building)) FatalError("Building " + building + " in terrain " + terrainName + " is not a valid province building");
                         buildingsMaxLevel[provinceBuildingsArray[building].GetId()] = std::stoi(level);
                     }
                     terrainData.erase("buildings_max_level");
@@ -420,16 +427,16 @@ void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, co
 
 
                 if (!navalTerrain && !isWater) {
-                    landTerrainsArray.EmplaceBack(rgbArray[0], rgbArray[1], rgbArray[2], navalTerrain, isWater, provinceType, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor,
+                    landTerrainsArray.EmplaceBack(colour, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor,
                         supplyFlowPenaltyFactor, soundType, terrainName, buildingsMaxLevel, modifiers, unitModifiers, subUnitModifiers);
                 }
                 else if (navalTerrain && isWater) {
-                    seaTerrainsArray.EmplaceBack(rgbArray[0], rgbArray[1], rgbArray[2], navalTerrain, isWater, provinceType, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor,
+                    seaTerrainsArray.EmplaceBack(colour, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor,
                         supplyFlowPenaltyFactor, soundType, terrainName, buildingsMaxLevel, modifiers, unitModifiers, subUnitModifiers);
                 }
                 //We've already checked for the possibility of !isWater && navalTerrain, no need to check again
                 else{
-                    lakeTerrainsArray.EmplaceBack(rgbArray[0], rgbArray[1], rgbArray[2], navalTerrain, isWater, provinceType, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor,
+                    lakeTerrainsArray.EmplaceBack(colour, combatWidth, combatSupportWidth, matchValue, aiTerrainImportanceFactor,
                         supplyFlowPenaltyFactor, soundType, terrainName, buildingsMaxLevel, modifiers, unitModifiers, subUnitModifiers);
                 }
             }
@@ -444,11 +451,11 @@ void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, co
                 HashMap<String, String> graphicalTerrainsData = ParseStringForPairsMapUnique(graphicalTerrainDataWhole);
 
                 UnsignedInteger16 type; ProvinceType provinceType;
-                if (graphicalTerrainsData.find("type") == graphicalTerrainsData.end()) { FatalError("No type defined for graphical terrain " + graphicalTerrainName + " in file" + file.string()); }
+                if (graphicalTerrainsData.find("type") == graphicalTerrainsData.end()) { FatalError("No type defined for graphical terrain " + graphicalTerrainName); }
                 if (landTerrainsArray.NameInArray(graphicalTerrainsData.at("type"))) { type = landTerrainsArray[graphicalTerrainsData.at("type")].GetId(); provinceType = Land; }
                 else if (seaTerrainsArray.NameInArray(graphicalTerrainsData.at("type"))) { type = seaTerrainsArray[graphicalTerrainsData.at("type")].GetId(); provinceType = Sea; }
                 else if (lakeTerrainsArray.NameInArray(graphicalTerrainsData.at("type"))) { type = lakeTerrainsArray[graphicalTerrainsData.at("type")].GetId(); provinceType = Lake; }
-                else { FatalError("Incorrect type defined for graphical terrain " + graphicalTerrainName + " in file" + file.string()); }
+                else { FatalError("Incorrect type defined for graphical terrain " + graphicalTerrainName); }
 
                 if (graphicalTerrainsData.find("color") == graphicalTerrainsData.end()) FatalError("No colour defined for graphical terrain " + graphicalTerrainName);
                 UnsignedInteger32 colour = (graphicalTerrainsData.find("color") != graphicalTerrainsData.end()) ? std::stoi(graphicalTerrainsData.at("color")) : 0;
@@ -482,7 +489,7 @@ void LoadResourceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                 HashMap<String, String> resourceData = ParseStringForPairsMapUnique(resourceDataWhole);
 
                 UnsignedInteger16 iconFrame;
-                if (resourceData.find("icon_frame") == resourceData.end() || !StringCanBecomeInteger(resourceData.at("icon_frame"))) { FatalError("No icon frame defined for " + resourceDataWhole + " in file" + file.string()); }
+                if (resourceData.find("icon_frame") == resourceData.end() || !StringCanBecomeInteger(resourceData.at("icon_frame"))) { FatalError("No icon frame defined for " + resourceDataWhole); }
                 iconFrame = std::stoi(resourceData.at("icon_frame"));
                 Decimal cic = (resourceData.find("cic") != resourceData.end()) ? resourceData.at("cic") : "0.125";
                 Decimal convoys = (resourceData.find("convoys") != resourceData.end()) ? resourceData.at("convoys") : "0.1";
@@ -495,5 +502,413 @@ void LoadResourceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
 }
 
 void LoadStateCategoryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<StateCategory>& stateCategoriesArray) {
+    Vector<Path> stateCategoryFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\state_category", ".txt", 12);
+    stateCategoriesArray.Reserve(12);
 
+    for (const auto& file : stateCategoryFiles) {
+        HashMap<String, String> stateCategoryFileLvl1 = ParseStringForPairsMapUnique(LoadFileToString(file.string()));
+
+        if (stateCategoryFileLvl1.find("state_categories") != stateCategoryFileLvl1.end()) {
+            Vector<DoubleString> stateCategories = ParseStringForPairsArray(stateCategoryFileLvl1.at("state_categories"));
+
+            for (const auto& [stateCategoryName, stateCategoryDataWhole] : stateCategories) {
+                HashMap<String, String> stateCategoryData = ParseStringForPairsMapUnique(stateCategoryDataWhole);
+
+                if (stateCategoryData.find("local_building_slots") == stateCategoryData.end() || !StringCanBecomeInteger(stateCategoryData.at("local_building_slots"))) {
+                    FatalError("Bad local building slots definition for state category " + stateCategoryName);
+                }
+                UnsignedInteger16 localBuildingSlots = std::stoi(stateCategoryData.at("local_building_slots")); stateCategoryData.erase("local_building_slots");
+
+                if (stateCategoryData.find("color") == stateCategoryData.end()) FatalError("No colour defined for " + stateCategoryName);
+                ColourRGB colour(stateCategoryData.at("color")); stateCategoryData.erase("color");
+
+                HashMap<String, Decimal> modifiers;
+                for (const auto& [modifierName, modifierData] : stateCategoryData) {
+                    modifiers[modifierName] = modifierData;
+                }
+                
+                stateCategoriesArray.EmplaceBack(localBuildingSlots, colour, stateCategoryName, modifiers);
+            }
+        }
+    }
+    stateCategoriesArray.ShrinkToFit();
+}
+
+void LoadContinentFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Continent>& continentsArray) {
+    HashMap<String, String> continentsFile = ParseStringForPairsMapUnique(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "map\\continent.txt").string()));
+    continentsArray.EmplaceBack("ocean");
+
+    if (continentsFile.find("continents") != continentsFile.end()) {
+        Vector<String> continents = ParseStringAsStringArray(continentsFile.at("continents"));
+
+        for (const auto& continent : continents) {
+            continentsArray.EmplaceBack(continent);
+        }
+    }
+}
+
+Date GetDefaultDate(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories) {
+    Vector<Path> bookmarkFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\bookmarks", ".txt", 2);
+
+    for (const auto& file : bookmarkFiles) {
+        HashMap<String, String> bookmarkDataLvl1 = ParseStringForPairsMapUnique(LoadFileToString(file.string()));
+
+        if (bookmarkDataLvl1.find("bookmarks") == bookmarkDataLvl1.end()) continue;
+
+        HashMap<String, Vector<String>> bookmarkDataLvl2 = ParseStringForPairsMapRepeat(bookmarkDataLvl1.at("bookmarks"));
+
+        if (bookmarkDataLvl2.find("bookmark") == bookmarkDataLvl2.end()) continue;
+        Vector<String> bookmarks = bookmarkDataLvl2.at("bookmark");
+        for (const auto& bookmark : bookmarks) {
+            HashMap<String, String> bookmarkData = ParseStringForPairsMapUnique(bookmark);
+
+            if (bookmarkData.find("default") != bookmarkData.end() && bookmarkData.at("default") == "yes" && bookmarkData.find("date") != bookmarkData.end()) { 
+                return bookmarkData.at("date");
+            }
+        }
+    }
+
+    return Date(0);
+}
+
+void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<Province>& provincesArray,
+    const VectorMap<Terrain>& landTerrainsArray, const VectorMap<Terrain>& seaTerrainsArray, const VectorMap<Terrain>& lakeTerrainsArray, const SizeT continentsArraySize,
+    const SizeT provinceBuildingsArraySize) {
+    //Removes all comments and unnecessary whitespace
+    String provinceDefinitions = RemoveStringWhitespace(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "map\\definition.csv").string()));
+
+    UnsignedInteger64 newLinesCount = 1;
+    for (const auto& c : provinceDefinitions) if (c == ' ') { ++newLinesCount; }
+    provincesArray.reserve(newLinesCount);
+
+    Char csvEntryArray[256]{};
+    UnsignedInteger16 currentStringLength = 0;
+    String entry;
+
+    //UnsignedInteger16 id = 0;     //Use currentLine instead
+    ColourRGB colour(0, 0, 0);
+    ProvinceType type = Land;
+    Boolean coastal = false;
+    UnsignedInteger16 terrain = 0;
+    UnsignedInteger16 continent = 0;
+
+    //Empty vectors
+    Vector<UnsignedInteger16> buildings(provinceBuildingsArraySize, 0);
+
+    UnsignedInteger8 column = 0;
+    UnsignedInteger16 currentLine = 0;
+
+    for (const auto& c : provinceDefinitions) {
+
+
+        if (c == ' ') {
+            if (column == 7) {
+                csvEntryArray[currentStringLength++] = 0;
+                entry = String(csvEntryArray);
+
+                if (!StringCanBecomeInteger(entry)) { FatalError("Bad continent definition in definition.csv at line " + std::to_string(currentLine)); }
+                continent = std::stoi(entry);
+                if (continent >= continentsArraySize) { FatalError("Bad continent definition in definition.csv at line " + std::to_string(currentLine)); }
+            }
+            else if (column < 7) { FatalError("Column in definition.csv at line " + std::to_string(currentLine) + " is too short"); }
+
+            provincesArray.emplace_back(currentLine, colour, type, coastal, terrain, continent, buildings);
+
+            currentLine++; column = 0; currentStringLength = 0;
+        }
+        else if (c == ';') {
+            csvEntryArray[currentStringLength++] = 0;
+            entry = String(csvEntryArray);
+
+            switch (column) {
+                //ID - ignore this and just use currentLine
+                case 0:
+                    break;
+
+                //Red
+                case 1:
+                    if (StringCanBecomeInteger(entry)) { colour.r = std::stoi(entry); }
+                    else { FatalError("Bad colour definition in definition.csv at line " + std::to_string(currentLine)); }
+                    break;
+
+                //Green
+                case 2:
+                    if (StringCanBecomeInteger(entry)) { colour.g = std::stoi(entry); }
+                    else { FatalError("Bad colour definition in definition.csv at line " + std::to_string(currentLine)); }
+                    break;
+
+                //Blue
+                case 3:
+                    if (StringCanBecomeInteger(entry)) { colour.b = std::stoi(entry); }
+                    else { FatalError("Bad colour definition in definition.csv at line " + std::to_string(currentLine)); }
+                    break;
+
+                //Land/Sea/Lake
+                case 4:
+                    if (entry == "land") { type = Land; }
+                    else if (entry == "sea") { type = Sea; }
+                    else if (entry == "lake") { type = Lake; }
+                    else { FatalError("Bad province type definition in definition.csv at line " + std::to_string(currentLine)); }
+                    break;
+
+                //Coastal
+                case 5:
+                    if (entry == "false") { coastal = false; }
+                    else if (entry == "true") { coastal = true; }
+                    else { FatalError("Bad coastal in definition.csv at line " + std::to_string(currentLine)); }
+                    break;
+
+                //Terrain
+                case 6:
+                    switch (type) {
+                        case Land:
+                            if (!landTerrainsArray.NameInArray(entry)) { FatalError("Bad terrain in definition.csv at line " + std::to_string(currentLine)); }
+                            terrain = landTerrainsArray[entry].GetId();
+                            break;
+                        case Sea:
+                            if (!seaTerrainsArray.NameInArray(entry)) { FatalError("Bad terrain in definition.csv at line " + std::to_string(currentLine)); }
+                            terrain = seaTerrainsArray[entry].GetId();
+                            break;
+                        case Lake:
+                            if (!lakeTerrainsArray.NameInArray(entry)) { FatalError("Bad terrain in definition.csv at line " + std::to_string(currentLine)); }
+                            terrain = lakeTerrainsArray[entry].GetId();
+                            break;
+                        default:
+                            break;
+                    }
+
+                    break;
+
+                //Continent
+                case 7:
+                    if (!StringCanBecomeInteger(entry)) { FatalError("Bad continent definition in definition.csv at line " + std::to_string(currentLine)); }
+                    continent = std::stoi(entry);
+                    if (continent >= continentsArraySize) { FatalError("Bad continent definition in definition.csv at line " + std::to_string(currentLine)); }
+                    break;
+
+                //Just ignore anything else
+                default:
+                    break;
+            }
+
+            column++;
+            currentStringLength = 0;
+        }
+        else {
+            if (currentStringLength > 254) { FatalError("Entry too long in definition.csv at line " + std::to_string(currentLine)); }
+            csvEntryArray[currentStringLength++] = c;
+        }
+    }
+
+    if (column != 0) {
+        if (column == 7) {
+            csvEntryArray[currentStringLength++] = 0;
+            entry = String(csvEntryArray);
+
+            if (!StringCanBecomeInteger(entry)) { FatalError("Bad continent definition in definition.csv at line " + std::to_string(currentLine)); }
+            continent = std::stoi(entry);
+            if (continent >= continentsArraySize) { FatalError("Bad continent definition in definition.csv at line " + std::to_string(currentLine)); }
+        }
+        else if (column < 7) { FatalError("Column in definition.csv at line " + std::to_string(currentLine) + " is too short"); }
+
+        provincesArray.emplace_back(currentLine, colour, type, coastal, terrain, continent, buildings);
+    }
+}
+
+struct ProvinceVictoryPoint {
+    UnsignedInteger16 provinceId, victoryPointValue;
+};
+
+static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State>& statesArray, Vector<ProvinceVictoryPoint>& victoryPoints, const VectorMap<Country>& countriesArray,
+    const VectorMap<Building>& provinceBuildingsArray, const VectorMap<Building>& stateBuildingsArray, const VectorMap<Resource>& resourcesArray, const VectorMap<StateCategory>& stateCategoriesArray, 
+    const Date defaultDate) {
+
+    for (const auto& file : stateFiles) {
+        HashMap<String, Vector<String>> states = ParseStringForPairsMapRepeat(LoadFileToString(file.string()));
+        if (states.find("state") != states.end()) {
+            Vector<String> statesDataWhole = states.at("state");
+            for (const auto& stateDataWhole : statesDataWhole) {
+                HashMap<String, Vector<String>> stateData = ParseStringForPairsMapRepeat(stateDataWhole);
+
+                if (stateData.find("id") == stateData.end() || stateData.at("id").size() != 1 || !StringCanBecomeInteger(stateData.at("id")[0])) { FatalError("No/invalid ID defined in " + file.string()); }
+                UnsignedInteger16 id = std::stoi(stateData.at("id")[0]);
+                String stringId = std::to_string(id);
+
+                if (stateData.find("name") == stateData.end() || stateData.at("name").size() != 1) { FatalError("No name defined for state " + stringId); }
+                String name = stateData.at("name")[0];
+
+                if (stateData.find("manpower") == stateData.end() || stateData.at("manpower").size() != 1 || !StringCanBecomeInteger(stateData.at("manpower")[0])) 
+                    { FatalError("Bad manpower definition for state " + stringId + " in " + file.string()); }
+                UnsignedInteger32 manpower = std::stoi(stateData.at("manpower")[0]);
+
+                if (stateData.find("state_category") == stateData.end() || stateData.at("state_category").size() != 1 || !stateCategoriesArray.NameInArray(stateData.at("state_category")[0])) 
+                    { FatalError("Bad state category definition for state " + stringId + " in " + file.string()); }
+                UnsignedInteger16 stateCategory = stateCategoriesArray[stateData.at("state_category")[0]].GetId();
+
+                if (stateData.find("provinces") == stateData.end() || stateData.at("provinces").size() != 1) { FatalError("No provinces defined for state " + stringId); }
+                Vector<UnsignedInteger16> provinces = ParseStringAsUnsignedInteger16Array(stateData.at("provinces")[0]);
+
+                Boolean impassable = (stateData.find("impassable") != stateData.end() && stateData.at("impassable").size() == 1) ? GetBoolFromYesNo(stateData.at("impassable")[0]) : false;
+
+                Vector<UnsignedInteger16> resources(resourcesArray.Size(), 0);
+                if (stateData.find("resources") != stateData.end()) {
+                    for (const auto& resourcesData : stateData.at("resources")) {
+                        Vector<DoubleString> resourcesEntries = ParseStringForPairsArray(resourcesData);
+
+                        for (const auto& [resource, resourceValue] : resourcesEntries) {
+                            if (!resourcesArray.NameInArray(resource) || !StringCanBecomeInteger(resourceValue)) {
+                                printf("Bad resource definition in file %s\n", file.c_str());
+                            }
+                            else {
+                                resources[resourcesArray[resource].GetId()] += std::stoi(resourceValue);
+                            }
+                        }
+                    }
+                }
+              
+                Decimal localSupplies = (stateData.find("local_supplies") != stateData.end() && stateData.at("local_supplies").size() == 1) ? stateData.at("local_supplies")[0] : "0.0";
+                Decimal buildingsMaxLevelFactor = (stateData.find("buildings_max_level_factor") != stateData.end() && stateData.at("buildings_max_level_factor").size() == 1) ? stateData.at("buildings_max_level_factor")[0] : "1.0";
+
+                Vector<StateHistory> stateHistoriesArray;
+                if (stateData.find("history") != stateData.end() && stateData.at("history").size() < 2) {
+                    HashMap<String, Vector<String>> stateHistoryEntries = ParseStringForPairsMapRepeat(stateData.at("history")[0]);
+
+                    if (stateHistoryEntries.find("victory_points") != stateHistoryEntries.end()) {
+                        victoryPoints.reserve(victoryPoints.capacity() + stateHistoryEntries.at("victory_points").capacity());
+
+                        for (const auto& victoryPointsData : stateHistoryEntries.at("victory_points")) {
+                            //I could do a char array here as there should only be two but I'm lazy :3
+                            Vector<UnsignedInteger16> vpData = ParseStringAsUnsignedInteger16Array(victoryPointsData);
+
+                            if (vpData.size() == 2) {
+                                victoryPoints.emplace_back(vpData[0], vpData[1]);
+                            }
+                            else {
+                                printf("Bad victory point definition in state %s\n", stringId.c_str());
+                            }
+                        }
+
+                        stateHistoryEntries.erase("victory_points");
+                    }
+
+                    HashMap<SignedInteger64, String> historyEntriesMap;
+                    Vector<String> datesToRemove;
+
+                    for (const auto& historyEntry : stateHistoryEntries) {
+                        if (StringCanBecomeDate(historyEntry.first)) {
+                            const SizeT historyEntrySecondIndex = historyEntry.second.size() - 1;
+                            if (historyEntrySecondIndex > 0) printf("More than one entry for date %s found in state %s, only the last one will be read\n", String(historyEntry.first).c_str(), stringId.c_str());
+
+                            historyEntriesMap[Date(historyEntry.first).GetHoursSinceStart()] = historyEntry.second[historyEntrySecondIndex];
+                            datesToRemove.push_back(historyEntry.first);
+                        }
+                    }
+
+                    for (const auto& date : datesToRemove) { stateHistoryEntries.erase(date); }
+                    
+                    String baseHistoryString = "";
+                    for (const auto& historyEntry : stateHistoryEntries) {
+                        baseHistoryString += historyEntry.first + "={";
+                        const SizeT historyEntrySecondSize = historyEntry.second.size();
+                        for (SizeT i = 0; i < historyEntrySecondSize; ++i) {
+                            if (i < historyEntrySecondSize - 1) { baseHistoryString += historyEntry.second[i] + " "; }
+                            else { baseHistoryString += historyEntry.second[i]; }
+                        }
+                        baseHistoryString += "}";
+                    }
+
+                    historyEntriesMap[0] = baseHistoryString;
+                    stateHistoriesArray.reserve(historyEntriesMap.size());
+
+                    for (const auto& historyEntry : historyEntriesMap) {
+                        HashMap<String, Vector<String>> historyData = ParseStringForPairsMapRepeat(historyEntry.second);
+
+                        SignedInteger32 owner = -1;
+                        if (historyData.find("owner") != historyData.end()) {
+                            if (historyData.at("owner").size() > 1) { printf("Cannot have more than one owner defined for state %s\n", stringId.c_str()); }
+                            owner = countriesArray[historyData.at("owner")[historyData.at("owner").size() - 1]].GetId();
+                            historyData.erase("owner");
+                        }
+
+                        SignedInteger32 controller = -1;
+                        if (historyData.find("controller") != historyData.end()) {
+                            if (historyData.at("controller").size() > 1) { printf("Cannot have more than one controller defined for state %s\n", stringId.c_str()); }
+                            controller = countriesArray[historyData.at("controller")[historyData.at("controller").size() - 1]].GetId();
+                            historyData.erase("controller");
+                        }
+
+                        Vector<UnsignedInteger16> stateBuildings(stateBuildingsArray.Size(), 0);
+                        Vector<UnsignedInteger16> provinceBuildingsBase(provinceBuildingsArray.Size(), 0);
+                        HashMap<UnsignedInteger16, Vector<UnsignedInteger16>> provinceBuildings;
+                        if (historyData.find("buildings") != historyData.end()) {
+                            if (historyData.at("buildings").size() > 1) { printf("Cannot have more than one buildings block defined for state %s\n", stringId.c_str()); }
+                            HashMap<String, String> buildingsData = ParseStringForPairsMapUnique(historyData.at("buildings")[historyData.at("buildings").size() - 1]);
+
+                            for (const auto& buildingEntry : buildingsData) {
+                                if (StringCanBecomeInteger(buildingEntry.first)) {
+                                    HashMap<String, String> provinceBuildingsData = ParseStringForPairsMapUnique(buildingEntry.second);
+                                    Vector<UnsignedInteger16> provinceBuildingsCopy = provinceBuildingsBase;
+
+                                    for (const auto& provinceBuildingEntry : provinceBuildingsData) {
+                                        if (!provinceBuildingsArray.NameInArray(provinceBuildingEntry.first)) { printf("Building %s in state %s is not a valid building\n", provinceBuildingEntry.first.c_str(), stringId.c_str()); }
+                                        else if (!StringCanBecomeInteger(provinceBuildingEntry.second)) { printf("%s in state %s is not a valid number\n", provinceBuildingEntry.second.c_str(), stringId.c_str()); }
+                                        else {
+                                            stateBuildings[provinceBuildingsArray[provinceBuildingEntry.first].GetId()] = std::stoi(provinceBuildingEntry.second);
+                                        }
+                                    }
+                                    provinceBuildings[std::stoi(buildingEntry.first)] = provinceBuildingsCopy;
+                                }
+                                else {
+                                    if (!stateBuildingsArray.NameInArray(buildingEntry.first)) { printf("Building %s in state %s is not a valid building\n", buildingEntry.first.c_str(), stringId.c_str()); }
+                                    else if (!StringCanBecomeInteger(buildingEntry.second)) { printf("%s in state %s is not a valid number\n", buildingEntry.second.c_str(), stringId.c_str()); }
+                                    else {
+                                        stateBuildings[stateBuildingsArray[buildingEntry.first].GetId()] = std::stoi(buildingEntry.second);
+                                    }
+                                }
+                            }
+
+                            historyData.erase("buildings");
+                        }
+
+                        HashMap<String, Vector<String>> effects;
+
+                        stateHistoriesArray.emplace_back(Date(historyEntry.first), owner, controller, stateBuildings, provinceBuildings, effects);
+                    }
+                }
+                else if (stateData.find("history") != stateData.end() && stateData.at("history").size() < 2) { FatalError("State " + stringId + " cannot have more than one history definitions"); }
+
+                statesArray.emplace_back(id, impassable, stateCategory, manpower, name, provinces, resources, localSupplies, buildingsMaxLevelFactor, stateHistoriesArray);
+            }
+        }
+    }
+}
+
+void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<State>& statesArray,
+    Vector<Province>& provincesArray, const VectorMap<Country>& countriesArray, const VectorMap<Building>provinceBuildingsArray, const VectorMap<Building>stateBuildingsArray,
+    const VectorMap<Resource>& resourcesArray, const VectorMap<StateCategory>& stateCategoriesArray, const Date defaultDate) {
+
+    Vector<Path> stateFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "history\\states", ".txt", 1200);
+    Float32 coresCount = std::thread::hardware_concurrency();
+    SizeT vectorsToDivideInto = std::floor(std::max(coresCount * 0.4f, 3.0f));
+
+    Vector<Vector<Path>> stateFilesSubVectors = SplitVector(stateFiles, vectorsToDivideInto);
+    Vector<Vector<State>> statesArray2D(vectorsToDivideInto);
+    Vector<Vector<ProvinceVictoryPoint>> provinceVictoryPointsArray2D(vectorsToDivideInto);
+
+    for (SizeT i = 0; i < stateFilesSubVectors.size(); ++i) { statesArray2D[i].reserve(stateFilesSubVectors[i].size()); }
+
+    Vector<std::future<void>> futures;
+
+    for (SizeT i = 0; i < vectorsToDivideInto; ++i) {
+        futures.push_back(std::async(std::launch::async, ProcessStateFilesVector, std::cref(stateFilesSubVectors[i]), std::ref(statesArray2D[i]), std::ref(provinceVictoryPointsArray2D[i]),
+            std::cref(countriesArray), std::cref(provinceBuildingsArray), std::cref(stateBuildingsArray), std::cref(resourcesArray), std::cref(stateCategoriesArray), std::cref(defaultDate)));
+    }
+
+    for (auto& f : futures) f.get();
+
+    for (const auto& a : statesArray2D) {
+        for (const auto& b : a) {
+            statesArray.push_back(b);
+        }
+    }
 }

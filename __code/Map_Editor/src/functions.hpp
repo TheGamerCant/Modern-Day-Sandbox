@@ -21,8 +21,12 @@ String RemoveQuotes(String str);
 String ForwardToBackslashes(String str);
 String ToUpper(String str);
 String ToLower(String str);
+String RemoveStringWhitespace(const String& stringIn);
 Boolean StringCanBecomeInteger(const String& str);
 Boolean StringCanBecomeFloat(const String& str);
+
+Boolean ValidDateMonth(const UnsignedInteger8 month, const UnsignedInteger8 date);
+Boolean StringCanBecomeDate(const String& str);
 
 //Returns a boolean from a string "yes" or "no"
 Boolean GetBoolFromYesNo(String str);
@@ -44,7 +48,28 @@ HashMap<String, Vector<String>> ParseStringForPairsMapRepeat(const String& strin
 Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedInteger32 reserve = 16);
 
 //Parses a string as a space-seperated array
-Vector<String> ParseStringAsArray(const String& stringIn, Boolean ignoreQuotations = false);
+Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQuotations = false);
+Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn, Boolean ignoreQuotations = false);
+Vector<UnsignedInteger16> ParseStringAsUnsignedInteger16Array(const String& stringIn, Boolean ignoreQuotations = false);
 
 //Checks if a country tag is valid
 Boolean TagIsValid(const String& tag);
+
+//Split a vector into n no. of vectors
+template<typename VectorType>
+Vector<Vector<VectorType>> SplitVector(const Vector<VectorType>& vec, SizeT chunks) {
+    Vector<Vector<VectorType>> returnVector(chunks);
+    SignedInteger32 maxEntriesInVec = (vec.size() / chunks) + 1;
+    Vector<SizeT> entriesPerVector(chunks, maxEntriesInVec - 1);
+    SignedInteger32 vectorsWithExtra = vec.size() - (chunks * maxEntriesInVec) + chunks;
+    for (SizeT i = 0; i < vectorsWithExtra; ++i) entriesPerVector[i] += 1;
+    for (SizeT i = 0; i < chunks; ++i) returnVector[i].reserve(entriesPerVector[i]);
+
+    SizeT index = 0;
+    for (SizeT i = 0; i < chunks; ++i) {
+        for (SizeT j = 0; j < entriesPerVector[i]; ++j) {
+            returnVector[i].push_back(vec[index++]);
+        }
+    }
+    return returnVector;
+}

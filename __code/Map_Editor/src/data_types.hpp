@@ -6,6 +6,7 @@
 #include <vector>
 #include <filesystem>
 #include <chrono>
+#include <array>
 
 //  ----Rename Types----
 
@@ -40,6 +41,9 @@ using HashMap = std::unordered_map<HashKey, HashValue>;
 
 template<typename VectorType>
 using Vector = std::vector<VectorType>;
+
+template<typename ArrayType, SizeT amount>
+using Array = std::array<ArrayType, amount>;
 
 // ----Custom Data Structures----
 struct DoubleString {
@@ -108,13 +112,38 @@ public:
     ColourRGB(const String& str);
 };
 
+struct ColourRGBA {
+public:
+    UnsignedInteger8 r, g, b, a;
+
+    ColourRGBA();
+    ColourRGBA(const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b);
+    ColourRGBA(const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b, const UnsignedInteger8 a);
+    ColourRGBA(const String& str);
+};
+
+//Date
+struct Date {
+private:
+    SignedInteger64 hoursSinceStart;
+    SignedInteger32 year;
+    UnsignedInteger8 month, date, hour;
+
+public:
+    Date() : hoursSinceStart(0), year(-5000), month(1), date(1), hour(1) {};
+    Date(const UnsignedInteger32 date);
+    Date(const String& str);
+
+    SignedInteger64 GetHoursSinceStart();
+    const SignedInteger64 GetHoursSinceStart() const;
+};
+
 // ----Map Data Structures----
 enum ProvinceType : UnsignedInteger8 {
     Land,
     Sea,
     Lake
 };
-
 
 struct GraphicalCulture {
 private:
@@ -123,7 +152,23 @@ private:
 public:
     GraphicalCulture() : id(0), name("") {};
     GraphicalCulture(const String& name) : id(0), name(name) {};
-    GraphicalCulture(UnsignedInteger16 id, const String& name) : id(id), name(name) {};
+    GraphicalCulture(const UnsignedInteger16 id, const String& name) : id(id), name(name) {};
+
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
+};
+
+struct Continent {
+private:
+    UnsignedInteger16 id;
+    String name;
+public:
+    Continent() : id(0), name("") {};
+    Continent(const String& name) : id(0), name(name) {};
+    Continent(const UnsignedInteger16 id, const String& name) : id(id), name(name) {};
 
     String GetName();
     const String GetName() const;
@@ -135,15 +180,15 @@ public:
 struct Country {
 private:
     Char tag[4];
-    UnsignedInteger8 r, g, b;
+    ColourRGB colour;
     UnsignedInteger16 id;
     UnsignedInteger16 graphicalCulture, graphicalCulture2D;
 
 public:
-    Country() : id(0), tag{ 0, 0, 0, 0 }, r(0), g(0), b(0), graphicalCulture(0), graphicalCulture2D(0) {};
+    Country() : id(0), tag{ 0, 0, 0, 0 }, colour(0, 0, 0), graphicalCulture(0), graphicalCulture2D(0) {};
     //These will only get called after we call TagIsValid() on tagIn, no need to check
-    Country(const String& tagIn, const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b, const UnsignedInteger16 graphicalCulture, const UnsignedInteger16 graphicalCulture2D) :
-        id(0), r(r), g(g), b(b), graphicalCulture(graphicalCulture), graphicalCulture2D(graphicalCulture2D) { std::strncpy(tag, tagIn.c_str(), sizeof(tag)); };
+    Country(const String& tagIn, const ColourRGB colour, const UnsignedInteger16 graphicalCulture, const UnsignedInteger16 graphicalCulture2D) :
+        id(0), colour(colour), graphicalCulture(graphicalCulture), graphicalCulture2D(graphicalCulture2D) { std::strncpy(tag, tagIn.c_str(), sizeof(tag)); };
 
     String GetTag();
     const String GetTag() const;
@@ -255,6 +300,8 @@ public:
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
 
+    UnsignedInteger16 GetMaxLevel();
+    const UnsignedInteger16 GetMaxLevel() const;
     void setExclusive(const SignedInteger32 exclusive);
 };
 
@@ -282,31 +329,30 @@ public:
 struct Terrain {
 private:
     UnsignedInteger16 id;
-    UnsignedInteger8 r, g, b;
-    Boolean navalTerrain, isWater;
-    ProvinceType provinceType;
+    ColourRGB colour;
+    //Boolean navalTerrain, isWater;        //Store them in seperate land/sea/lake arrays so these are redundant
+    //ProvinceType provinceType;
     UnsignedInteger16 combatWidth, combatSupportWidth;
     UnsignedInteger16 matchValue;
     Decimal aiTerrainImportanceFactor;
     Decimal supplyFlowPenaltyFactor;
     String soundType;
     String name;
-    HashMap<UnsignedInteger16, UnsignedInteger16> buildingsMaxLevel;        //Will always be province building
+    Vector<UnsignedInteger16> buildingsMaxLevel;        //Index = building (will always be province building), value - max level
     HashMap<String, Decimal> modifiers, unitModifiers;      //attack, movement and defence are stored as regular modifiers for unitModifiers and subUnitModifiers
     HashMap<String, HashMap<String, Decimal>> subUnitModifiers;
 
     //Note to self - do StringCanBecomeFloat() on terrain keys to find out if modifier or unit/subunit modifier
 
 public:
-    Terrain() : id(0), r(0), g(0), b(0), navalTerrain(false), isWater(false), provinceType(Land), combatWidth(0), combatSupportWidth(0), matchValue(0), aiTerrainImportanceFactor(1), supplyFlowPenaltyFactor(0),
+    Terrain() : id(0), colour(0, 0, 0), combatWidth(0), combatSupportWidth(0), matchValue(0), aiTerrainImportanceFactor(1), supplyFlowPenaltyFactor(0),
         soundType(""), name(""), buildingsMaxLevel(), modifiers(), unitModifiers(), subUnitModifiers() {}
-    Terrain(const UnsignedInteger8 r,const UnsignedInteger8 g,const UnsignedInteger8 b, const Boolean navalTerrain, const Boolean isWater, const ProvinceType provinceType, 
-        const UnsignedInteger16 combatWidth, const UnsignedInteger16 combatSupportWidth, const UnsignedInteger16 matchValue, const Decimal aiTerrainImportanceFactor,
-        const Decimal supplyFlowPenaltyFactor, const String& soundType, const String& name, const HashMap<UnsignedInteger16, UnsignedInteger16>& buildingsMaxLevel,
+    Terrain(const ColourRGB colour, const UnsignedInteger16 combatWidth, const UnsignedInteger16 combatSupportWidth, const UnsignedInteger16 matchValue, 
+        const Decimal aiTerrainImportanceFactor, const Decimal supplyFlowPenaltyFactor, const String& soundType, const String& name, const Vector<UnsignedInteger16>& buildingsMaxLevel,
         const HashMap<String, Decimal>& modifiers, const HashMap<String, Decimal>& unitModifiers, const HashMap<String, HashMap<String, Decimal>>& subUnitModifiers) :
-        id(0), r(r), g(g), b(b), navalTerrain(navalTerrain), isWater(isWater), provinceType(provinceType), combatWidth(combatWidth), combatSupportWidth(combatSupportWidth), matchValue(matchValue),
-        aiTerrainImportanceFactor(aiTerrainImportanceFactor), supplyFlowPenaltyFactor(supplyFlowPenaltyFactor), soundType(soundType), name(name), buildingsMaxLevel(buildingsMaxLevel),
-        modifiers(modifiers), unitModifiers(unitModifiers), subUnitModifiers(subUnitModifiers) {}
+        id(0), colour(colour), combatWidth(combatWidth), combatSupportWidth(combatSupportWidth), matchValue(matchValue), aiTerrainImportanceFactor(aiTerrainImportanceFactor), 
+        supplyFlowPenaltyFactor(supplyFlowPenaltyFactor), soundType(soundType), name(name), buildingsMaxLevel(buildingsMaxLevel), modifiers(modifiers), unitModifiers(unitModifiers),
+        subUnitModifiers(subUnitModifiers) {}
 
     String GetName();
     const String GetName() const;
@@ -360,20 +406,78 @@ public:
 struct StateCategory {
 private:
     UnsignedInteger16 id;
-    UnsignedInteger16 buildingSlots;
-    UnsignedInteger8 r, g, b;
+    UnsignedInteger16 localBuildingSlots;
+    ColourRGB colour;
     String name;
+    HashMap<String, Decimal> modifiers;
 
 public:
-    StateCategory() : id(0), buildingSlots(0), r(0), g(0), b(0), name("") {}
-    StateCategory(const UnsignedInteger16 buildingSlots, const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b, const String& name) :
-        id(0), buildingSlots(buildingSlots), r(r), g(g), b(b), name(name) {}
+    StateCategory() : id(0), localBuildingSlots(0), colour(0, 0, 0), name(""), modifiers() {}
+    StateCategory(const UnsignedInteger16 localBuildingSlots, const ColourRGB colour, const String& name, const HashMap<String, Decimal>& modifiers) :
+        id(0), localBuildingSlots(localBuildingSlots), colour(colour), name(name), modifiers(modifiers) {}
 
     String GetName();
     const String GetName() const;
     void UpdateId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
+};
+
+//The following go in Vectors instead of VectorMaps, as you index and reference them by ID
+struct Province;
+struct State;
+struct StrategicRegion;
+
+struct Province {
+private:
+    UnsignedInteger16 id;
+    ColourRGB colour;
+    ProvinceType type;
+    Boolean coastal;
+    UnsignedInteger16 terrainId, continentId, stateId, strategicRegionId;
+    Vector<UnsignedInteger16> buildings;
+
+public:
+    Province() : id(0), colour(0, 0, 0), type(Land), coastal(false), terrainId(0), continentId(0), stateId(0), strategicRegionId(0), buildings() {};
+    Province(const UnsignedInteger16 id, const ColourRGB colour, const ProvinceType type, const Boolean coastal, const UnsignedInteger16 terrainId, const UnsignedInteger16 continentId,
+        const Vector<UnsignedInteger16>& buildings) :
+        id(id), colour(colour), type(type), coastal(coastal), terrainId(terrainId), continentId(continentId), stateId(0), strategicRegionId(0), buildings(buildings) {};
+};
+
+struct StateHistory {
+public:
+    Date date;
+    SignedInteger32 owner, controller;
+    Vector<UnsignedInteger16> stateBuildings;
+    HashMap<UnsignedInteger16, Vector<UnsignedInteger16>> provinceBuildings;
+    HashMap<String, Vector<String>> effects;
+
+    StateHistory(const Date date) : date(date), owner(-1), controller(-1), stateBuildings(), provinceBuildings(), effects() {}
+    StateHistory(const Date date, const SignedInteger32 owner, const SignedInteger32 controller, const Vector<UnsignedInteger16>& stateBuildings,
+        const HashMap<UnsignedInteger16, Vector<UnsignedInteger16>>& provinceBuildings, const HashMap<String, Vector<String>>& effects) :
+        date(date), owner(owner), controller(controller), stateBuildings(stateBuildings), provinceBuildings(provinceBuildings), effects(effects) {}
+};
+
+struct State {
+private:
+    UnsignedInteger16 id;
+    ColourRGB colour;
+    Boolean impassable;
+    UnsignedInteger16 strategicRegionId;
+    UnsignedInteger16 stateCategoryId;
+    UnsignedInteger32 manpower;
+    String name;
+    Vector<UnsignedInteger16> provinces;
+    Vector<UnsignedInteger16> resources;
+    Decimal localSupplies;
+    Decimal buildingsMaxLevelFactor;
+    Vector<StateHistory> stateHistoriesArray;
+
+public:
+    State(const UnsignedInteger16 id, const Boolean impassable, const UnsignedInteger16 stateCategoryId, const UnsignedInteger32 manpower, const String& name, const Vector<UnsignedInteger16>& provinces, 
+        const Vector<UnsignedInteger16>& resources, const Decimal localSupplies, const Decimal buildingsMaxLevelFactor, const Vector<StateHistory>& stateHistoriesArray) :
+        id(id), colour(0, 0, 0), impassable(impassable), strategicRegionId(0), stateCategoryId(stateCategoryId), manpower(manpower), name(name), provinces(provinces), resources(resources), 
+        localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray) {}
 };
 
 //Custom data type that allows indexing by index or name/tag
@@ -391,14 +495,14 @@ public:
         indexMap.clear();
         UnsignedInteger64 i = 0;
         for (auto& obj : array) {
-            obj.updateId(i);
-            indexMap[obj.name] = i++;
+            obj.UpdateId(i);
+            indexMap[obj.GetName()] = i++;
         }
     }
 
     void PushBack(const DataType& obj) {
         array.push_back(obj);
-        indexMap[obj.name] = array.size() - 1;
+        indexMap[obj.GetName()] = array.size() - 1;
         array.back().UpdateId(array.size() - 1);
     }
     void PushBack(DataType&& obj) {
@@ -415,7 +519,10 @@ public:
     }
 
     void Reserve(const SizeT reserve) { array.reserve(reserve); }
+    SizeT Size() { return array.size(); }
+    const SizeT Size() const { return array.size(); }
     SizeT Capacity() { return array.capacity(); }
+    const SizeT Capacity() const { return array.capacity(); }
     void ShrinkToFit() { array.shrink_to_fit(); }
 
     Boolean NameInArray(const String& findString) {
@@ -430,6 +537,18 @@ public:
 
     DataType& operator[](SizeT index) { return array[index]; }
     const DataType& operator[](SizeT index) const { return array[index]; }
+
+    using iterator = typename Vector<DataType>::iterator;
+    using const_iterator = typename Vector<DataType>::const_iterator;
+
+    iterator begin() { return array.begin(); }
+    iterator end() { return array.end(); }
+
+    const_iterator begin() const { return array.begin(); }
+    const_iterator end() const { return array.end(); }
+
+    const_iterator cbegin() const { return array.cbegin(); }
+    const_iterator cend() const { return array.cend(); }
 
     DataType& operator[](const String& key) {
         auto it = indexMap.find(key);
@@ -451,6 +570,17 @@ public:
         }
     }
 };
+
+
+template struct VectorMap<GraphicalCulture>;
+//template struct VectorMap<Country>;
+template struct VectorMap<Building>;
+template struct VectorMap<BuildingSpawnPoint>;
+template struct VectorMap<Terrain>;
+template struct VectorMap<GraphicalTerrain>;
+template struct VectorMap<Resource>;
+template struct VectorMap<StateCategory>;
+template struct VectorMap<Continent>;
 
 template<>
 struct VectorMap<Country> {
@@ -488,7 +618,10 @@ public:
     }
 
     void Reserve(const SizeT reserve) { array.reserve(reserve); }
-    SizeT Capacity() const { return array.capacity(); }
+    SizeT Size() { return array.size(); }
+    const SizeT Size() const { return array.size(); }
+    SizeT Capacity() { return array.capacity(); }
+    const SizeT Capacity() const { return array.capacity(); }
     void ShrinkToFit() { array.shrink_to_fit(); }
 
     Boolean NameInArray(const String& findString) {
@@ -503,6 +636,18 @@ public:
 
     Country& operator[](SizeT index) { return array[index]; }
     const Country& operator[](SizeT index) const { return array[index]; }
+
+    using iterator = typename Vector<Country>::iterator;
+    using const_iterator = typename Vector<Country>::const_iterator;
+
+    iterator begin() { return array.begin(); }
+    iterator end() { return array.end(); }
+
+    const_iterator begin() const { return array.begin(); }
+    const_iterator end() const { return array.end(); }
+
+    const_iterator cbegin() const { return array.cbegin(); }
+    const_iterator cend() const { return array.cend(); }
 
     Country& operator[](const String& key) {
         auto it = indexMap.find(key);

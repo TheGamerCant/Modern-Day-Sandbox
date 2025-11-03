@@ -12,14 +12,31 @@ int main()
     Path vanillaDirectory, modDirectory; Vector<String> modReplaceDirectories;
     LoadFileDirectories(vanillaDirectory, modDirectory, modReplaceDirectories);
 
-    VectorMap<GraphicalCulture> graphicalCulturesArray = LoadGraphicalCultureFiles(vanillaDirectory, modDirectory, modReplaceDirectories);
-    VectorMap<Country> countriesArray = LoadCountryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, graphicalCulturesArray);
+    VectorMap<GraphicalCulture> graphicalCulturesArray;
+    VectorMap<Country> countriesArray;
     VectorMap<Building> provinceBuildingsArray, stateBuildingsArray; VectorMap<BuildingSpawnPoint> buildingSpawnPointsArray;
-    LoadBuildingFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provinceBuildingsArray, stateBuildingsArray, buildingSpawnPointsArray, countriesArray);
     VectorMap<Terrain> landTerrainsArray, seaTerrainsArray, lakeTerrainsArray; VectorMap<GraphicalTerrain> graphicalTerrainsArray;
+    VectorMap<Resource> resourcesArray; 
+    VectorMap<StateCategory> stateCategoriesArray;
+    VectorMap<Continent> continentsArray;
+
+    LoadGraphicalCultureFiles(vanillaDirectory, modDirectory, modReplaceDirectories, graphicalCulturesArray);
+    LoadCountryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, countriesArray, graphicalCulturesArray);
+    LoadBuildingFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provinceBuildingsArray, stateBuildingsArray, buildingSpawnPointsArray, countriesArray);
     LoadTerrainFiles(vanillaDirectory, modDirectory, modReplaceDirectories, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray, graphicalTerrainsArray, provinceBuildingsArray);
-    VectorMap<Resource> resourcesArray; VectorMap<StateCategory> stateCategoriesArray;
 
+    //You could put these into std::threads at the top and then join them after but it's so negligible there's no point
+    LoadResourceFiles(vanillaDirectory, modDirectory, modReplaceDirectories, resourcesArray);
+    LoadStateCategoryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, stateCategoriesArray);
+    LoadContinentFiles(vanillaDirectory, modDirectory, modReplaceDirectories, continentsArray);
+    Date defaultBookmarkDate = GetDefaultDate(vanillaDirectory, modDirectory, modReplaceDirectories);
 
-    std::cout << "Program ran for " << GetTimeElapsedFromStart(startTime);
+    Vector<Province> provincesArray;
+    LoadProvinceFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provincesArray, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray, continentsArray.Size(), provinceBuildingsArray.Size());
+
+    Vector<State> statesArary;
+    LoadStateFiles(vanillaDirectory, modDirectory, modReplaceDirectories, statesArary, provincesArray, countriesArray, provinceBuildingsArray, stateBuildingsArray,
+        resourcesArray, stateCategoriesArray, defaultBookmarkDate);
+    
+    std::cout << "Files took " << GetTimeElapsedFromStart(startTime) << " to load.";
 }

@@ -110,6 +110,137 @@ Boolean StringCanBecomeFloat(const String& str) {
     return true;
 }
 
+Boolean ValidDateMonth(const UnsignedInteger8 month, const UnsignedInteger8 date) {
+    switch (month) {
+    case 1:
+        if (date < 1 || date > 31) return false;
+        break;
+
+    case 2:
+        if (date < 1 || date > 28) return false;        //Paradox don't do leap years
+        break;
+
+    case 3:
+        if (date < 1 || date > 31) return false;
+        break;
+
+    case 4:
+        if (date < 1 || date > 30) return false;
+        break;
+
+    case 5:
+        if (date < 1 || date > 31) return false;
+        break;
+
+    case 6:
+        if (date < 1 || date > 30) return false;
+        break;
+
+    case 7:
+        if (date < 1 || date > 31) return false;
+        break;
+
+    case 8:
+        if (date < 1 || date > 31) return false;
+        break;
+
+    case 9:
+        if (date < 1 || date > 30) return false;
+        break;
+
+    case 10:
+        if (date < 1 || date > 31) return false;
+        break;
+
+    case 11:
+        if (date < 1 || date > 30) return false;
+        break;
+
+    case 12:
+        if (date < 1 || date > 31) return false;
+        break;
+
+
+    default:
+        return false;
+        break;
+    }
+
+    return true;
+}
+
+Boolean StringCanBecomeDate(const String& str) {
+    Char* charArray = new Char[str.size() + 2];
+    SizeT arraySize = 0;
+    UnsignedInteger64 stringColumn = 0;
+    UnsignedInteger8 dateColumn = 0;
+
+    SignedInteger32 year, month, date, hour;
+
+    for (const auto& c : str) {
+        if (c == '.') {
+            charArray[arraySize++] = 0;
+            String currentStr = String(charArray);
+
+            if (!StringCanBecomeInteger(currentStr)) { return false; }
+            SignedInteger32 entry = std::stoi(currentStr);
+
+            switch (dateColumn) {
+            case 0:
+                if (entry < -5000) { return false; }
+                year = entry;
+                break;
+            case 1:
+                if (entry < 1 || entry > 12) { return false; }
+                month = entry;
+                break;
+            case 2:
+                if (!ValidDateMonth(month, entry)) { return false; }
+                date = entry;
+                break;
+            case 3:
+                if (entry < 0 || entry > 23) { return false; }
+                hour = entry;
+                break;
+            default:
+                break;
+            }
+
+            arraySize = 0; dateColumn++;
+        }
+        else { charArray[arraySize++] = c; }
+    }
+
+    if (dateColumn == 2) {
+        charArray[arraySize++] = 0;
+        String currentStr = String(charArray);
+
+        if (!StringCanBecomeInteger(currentStr)) { return false; }
+        SignedInteger32 entry = std::stoi(currentStr);
+
+        if (!ValidDateMonth(month, entry)) { return false; }
+        date = entry;
+        hour = 1;
+        arraySize = 0;
+    }
+    else if (dateColumn == 3) {
+        charArray[arraySize++] = 0;
+        String currentStr = String(charArray);
+
+        if (!StringCanBecomeInteger(currentStr)) { return false; }
+        SignedInteger32 entry = std::stoi(currentStr);
+
+        if (entry < 1 || entry > 24) { return false; }
+        hour = entry;
+        arraySize = 0;
+    }
+
+    if (arraySize != 0) return false;
+
+    delete[] charArray;
+    return true;
+}
+
 Boolean GetBoolFromYesNo(String str) {
     str = ToLower(str);
     if (str == "yes") return true;
@@ -143,8 +274,8 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
             }
         }
     }
-    //If the mod does not replace the directory and there is no equivilent directory in our mod OR if it does exist but is empty, load solely from vanilla
-    else if (!modReplacesDirectory && (!modFolderExists || (modFolderExists && std::filesystem::is_empty(modFolder)))) {
+    //If the mod does not replace the directory and there is no equivilent directory in our mod or if it does exist but is empty OR if the vanilla and mod directories are the same, load solely from vanilla
+    else if ((!modReplacesDirectory && (!modFolderExists || (modFolderExists && std::filesystem::is_empty(modFolder)))) || modDirectory == vanillaDirectory) {
         SizeT fileCount = 0;
         for (const auto& entry : std::filesystem::directory_iterator(vanillaFolder)) { if (entry.is_regular_file()) { ++fileCount; } }
         filesReturnVector.reserve(fileCount);
@@ -207,8 +338,8 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
             }
         }
     }
-    //If the mod does not replace the directory and there is no equivilent directory in our mod OR if it does exist but is empty, load solely from vanilla
-    else if (!modReplacesDirectory && (!modFolderExists || (modFolderExists && std::filesystem::is_empty(modFolder)))) {
+    //If the mod does not replace the directory and there is no equivilent directory in our mod or if it does exist but is empty OR if the vanilla and mod directories are the same, load solely from vanilla
+    else if ((!modReplacesDirectory && (!modFolderExists || (modFolderExists && std::filesystem::is_empty(modFolder)))) || modDirectory == vanillaDirectory) {
         SizeT fileCount = 0;
         for (const auto& entry : std::filesystem::directory_iterator(vanillaFolder)) { if (entry.is_regular_file()) { ++fileCount; } }
         filesReturnVector.reserve(fileCount);
@@ -271,8 +402,8 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
             }
         }
     }
-    //If the mod does not replace the directory and there is no equivilent directory in our mod OR if it does exist but is empty, load solely from vanilla
-    else if (!modReplacesDirectory && (!modFolderExists || (modFolderExists && std::filesystem::is_empty(modFolder)))) {
+    //If the mod does not replace the directory and there is no equivilent directory in our mod or if it does exist but is empty OR if the vanilla and mod directories are the same, load solely from vanilla
+    else if ((!modReplacesDirectory && (!modFolderExists || (modFolderExists && std::filesystem::is_empty(modFolder)))) || modDirectory == vanillaDirectory) {
         SizeT fileCount = 0;
         for (const auto& entry : std::filesystem::directory_iterator(vanillaFolder)) { if (entry.is_regular_file()) { ++fileCount; } }
         filesReturnVector.reserve(fileCount);
@@ -398,7 +529,7 @@ String LoadFileToString(const String& filename) {
 //                                    32 = ' ', 10 = '\n', 9 = '\t', 11 = '\v', 12 = '\f', 13 = '\r'
 Boolean CharIsWhitespace(Char c) { return c == 32 || (c >= 9 && c <= 13); }
 
-static String RemoveStringWhitespace(const String& stringIn) {
+String RemoveStringWhitespace(const String& stringIn) {
     SizeT stringLength = stringIn.size();
 
     Char* returnCharArray = new Char[stringLength + 2];
@@ -695,7 +826,7 @@ Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedIn
     return returnArray;
 }
 
-Vector<String> ParseStringAsArray(const String& stringIn, Boolean ignoreQuotations) {
+Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQuotations) {
     Vector<String> returnVector;
     SizeT stringLength = stringIn.size();
 
@@ -721,6 +852,74 @@ Vector<String> ParseStringAsArray(const String& stringIn, Boolean ignoreQuotatio
     if (currentStringSize > 0) {
         currentStringArray[currentStringSize++] = 0;
         returnVector.emplace_back(currentStringArray);
+    }
+    delete[] currentStringArray;
+    return returnVector;
+}
+
+Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn, Boolean ignoreQuotations) {
+    Vector<SignedInteger64> returnVector;
+    SizeT stringLength = stringIn.size();
+
+    Char* currentStringArray = new Char[stringLength + 2];
+    SizeT currentStringSize = 0;
+
+    SizeT entriesCount = 1;
+    String currentInteger;
+
+    for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
+    returnVector.reserve(entriesCount);
+
+    for (Char c : stringIn) { 
+        if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
+            currentStringArray[currentStringSize++] = c;
+        } 
+        else if (CharIsWhitespace(c)){
+            currentStringArray[currentStringSize++] = 0;
+            currentStringSize = 0;
+            currentInteger = String(currentStringArray);
+            if (StringCanBecomeInteger(currentInteger)) { returnVector.push_back(std::stoi(currentInteger)); }
+        }
+    }
+
+    if (currentStringSize > 0) {
+        currentStringArray[currentStringSize++] = 0;
+        currentInteger = String(currentStringArray);
+        if (StringCanBecomeInteger(currentInteger)) { returnVector.push_back(std::stoi(currentInteger)); }
+    }
+    delete[] currentStringArray;
+    return returnVector;
+}
+
+Vector<UnsignedInteger16> ParseStringAsUnsignedInteger16Array(const String& stringIn, Boolean ignoreQuotations) {
+    Vector<UnsignedInteger16> returnVector;
+    SizeT stringLength = stringIn.size();
+
+    Char* currentStringArray = new Char[stringLength + 2];
+    SizeT currentStringSize = 0;
+
+    SizeT entriesCount = 1;
+    String currentInteger;
+
+    for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
+    returnVector.reserve(entriesCount);
+
+    for (Char c : stringIn) { 
+        if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
+            currentStringArray[currentStringSize++] = c;
+        } 
+        else if (CharIsWhitespace(c)){
+            currentStringArray[currentStringSize++] = 0;
+            currentStringSize = 0;
+            currentInteger = String(currentStringArray);
+            if (StringCanBecomeInteger(currentInteger)) { returnVector.push_back(std::stoi(currentInteger)); }
+        }
+    }
+
+    if (currentStringSize > 0) {
+        currentStringArray[currentStringSize++] = 0;
+        currentInteger = String(currentStringArray);
+        if (StringCanBecomeInteger(currentInteger)) { returnVector.push_back(std::stoi(currentInteger)); }
     }
     delete[] currentStringArray;
     return returnVector;
