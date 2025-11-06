@@ -50,6 +50,7 @@ Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedIn
 //Parses a string as a space-seperated array
 Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn, Boolean ignoreQuotations = false);
+Vector<Float64> ParseStringAsFloat64Array(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<UnsignedInteger16> ParseStringAsUnsignedInteger16Array(const String& stringIn, Boolean ignoreQuotations = false);
 
 //Checks if a country tag is valid

@@ -445,3 +445,15 @@ const String StateCategory::GetName() const { return name; }
 void StateCategory::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 StateCategory::GetId() { return id; }
 const UnsignedInteger16 StateCategory::GetId() const { return id; }
+
+String Province::GetName() { return name; }
+const String Province::GetName() const { return name; }
+void Province::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 Province::GetId() { return id; }
+const UnsignedInteger16 Province::GetId() const { return id; }
+
+String State::GetName() { return name; }
+const String State::GetName() const { return name; }
+void State::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 State::GetId() { return id; }
+const UnsignedInteger16 State::GetId() const { return id; }

@@ -870,11 +870,11 @@ Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn
     for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
     returnVector.reserve(entriesCount);
 
-    for (Char c : stringIn) { 
+    for (Char c : stringIn) {
         if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
             currentStringArray[currentStringSize++] = c;
-        } 
-        else if (CharIsWhitespace(c)){
+        }
+        else if (CharIsWhitespace(c)) {
             currentStringArray[currentStringSize++] = 0;
             currentStringSize = 0;
             currentInteger = String(currentStringArray);
@@ -886,6 +886,40 @@ Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn
         currentStringArray[currentStringSize++] = 0;
         currentInteger = String(currentStringArray);
         if (StringCanBecomeInteger(currentInteger)) { returnVector.push_back(std::stoi(currentInteger)); }
+    }
+    delete[] currentStringArray;
+    return returnVector;
+}
+
+Vector<Float64> ParseStringAsFloat64Array(const String& stringIn, Boolean ignoreQuotations) {
+    Vector<Float64> returnVector;
+    SizeT stringLength = stringIn.size();
+
+    Char* currentStringArray = new Char[stringLength + 2];
+    SizeT currentStringSize = 0;
+
+    SizeT entriesCount = 1;
+    String currentInteger;
+
+    for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
+    returnVector.reserve(entriesCount);
+
+    for (Char c : stringIn) {
+        if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
+            currentStringArray[currentStringSize++] = c;
+        }
+        else if (CharIsWhitespace(c)) {
+            currentStringArray[currentStringSize++] = 0;
+            currentStringSize = 0;
+            currentInteger = String(currentStringArray);
+            if (StringCanBecomeFloat(currentInteger)) { returnVector.push_back(std::stod(currentInteger)); }
+        }
+    }
+
+    if (currentStringSize > 0) {
+        currentStringArray[currentStringSize++] = 0;
+        currentInteger = String(currentStringArray);
+        if (StringCanBecomeFloat(currentInteger)) { returnVector.push_back(std::stod(currentInteger)); }
     }
     delete[] currentStringArray;
     return returnVector;

@@ -38,5 +38,5 @@ int main()
     LoadStateFiles(vanillaDirectory, modDirectory, modReplaceDirectories, statesArary, provincesArray, countriesArray, provinceBuildingsArray, stateBuildingsArray,
         resourcesArray, stateCategoriesArray, defaultBookmarkDate);
     
-    std::cout << "Files took " << GetTimeElapsedFromStart(startTime) << " to load.";
+    std::cout << "Files took " << GetTimeElapsedFromStart(startTime) << " to load.\n";
 }

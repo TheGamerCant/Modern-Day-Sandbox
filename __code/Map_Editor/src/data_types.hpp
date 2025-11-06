@@ -436,12 +436,19 @@ private:
     Boolean coastal;
     UnsignedInteger16 terrainId, continentId, stateId, strategicRegionId;
     Vector<UnsignedInteger16> buildings;
+    String name;
 
 public:
-    Province() : id(0), colour(0, 0, 0), type(Land), coastal(false), terrainId(0), continentId(0), stateId(0), strategicRegionId(0), buildings() {};
+    Province() : id(0), colour(0, 0, 0), type(Land), coastal(false), terrainId(0), continentId(0), stateId(0), strategicRegionId(0), buildings(), name("") {};
     Province(const UnsignedInteger16 id, const ColourRGB colour, const ProvinceType type, const Boolean coastal, const UnsignedInteger16 terrainId, const UnsignedInteger16 continentId,
         const Vector<UnsignedInteger16>& buildings) :
-        id(id), colour(colour), type(type), coastal(coastal), terrainId(terrainId), continentId(continentId), stateId(0), strategicRegionId(0), buildings(buildings) {};
+        id(id), colour(colour), type(type), coastal(coastal), terrainId(terrainId), continentId(continentId), stateId(0), strategicRegionId(0), buildings(buildings), name("") { };
+
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
 };
 
 struct StateHistory {
@@ -478,6 +485,13 @@ public:
         const Vector<UnsignedInteger16>& resources, const Decimal localSupplies, const Decimal buildingsMaxLevelFactor, const Vector<StateHistory>& stateHistoriesArray) :
         id(id), colour(0, 0, 0), impassable(impassable), strategicRegionId(0), stateCategoryId(stateCategoryId), manpower(manpower), name(name), provinces(provinces), resources(resources), 
         localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray) {}
+
+
+    String GetName();
+    const String GetName() const;
+    void UpdateId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
 };
 
 //Custom data type that allows indexing by index or name/tag

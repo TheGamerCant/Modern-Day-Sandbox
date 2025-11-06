@@ -80,7 +80,8 @@ void LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, co
             if (tag == "dynamic_tags" && countryFile == "yes") break;
 
             if (!TagIsValid(tag)) { 
-                printf("Tag %s is not a valid tag in file %s\n", tag.c_str(), file.c_str());
+                String outString = "Tag " + tag + " is not a valid tag in file " + file.string() + "\n";
+                std::cout << outString;
                 continue;
             }
         
@@ -220,7 +221,10 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                     else if (buildingData.at("detecting_intel_type") == "army") detectingIntelType = IntelligenceType::Army;
                     else if (buildingData.at("detecting_intel_type") == "airforce") detectingIntelType = IntelligenceType::Airforce;
                     else if (buildingData.at("detecting_intel_type") == "navy") detectingIntelType = IntelligenceType::Navy;
-                    else printf("Bad intelligence type for building %s in file %s\n", buildingName.c_str(), file.c_str());
+                    else {
+                        String outString = "Bad intelligence type for building " + buildingName + " in file " + file.string() + "\n";
+                        std::cout << outString;
+                    }
                 }
 
                 Boolean levelCapSharesSlots = false;
@@ -277,7 +281,8 @@ void LoadBuildingFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                                     countryModifiersCountries.push_back(countriesArray[tag].GetId());
                                 }
                                 else {
-                                    printf("Tag defined in building %s in file %s does not exist\n", buildingName.c_str(), file.c_str());
+                                    String outString = "Tag defined in building " + buildingName + " in file " + file.string() + " does not exist\n";
+                                    std::cout << outString;
                                 }
                             }
                         }
@@ -730,25 +735,25 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
             for (const auto& stateDataWhole : statesDataWhole) {
                 HashMap<String, Vector<String>> stateData = ParseStringForPairsMapRepeat(stateDataWhole);
 
-                if (stateData.find("id") == stateData.end() || stateData.at("id").size() != 1 || !StringCanBecomeInteger(stateData.at("id")[0])) { FatalError("No/invalid ID defined in " + file.string()); }
-                UnsignedInteger16 id = std::stoi(stateData.at("id")[0]);
+                if (stateData.find("id") == stateData.end() || !StringCanBecomeInteger(stateData.at("id")[0])) { FatalError("No/invalid ID defined in " + file.string()); }
+                UnsignedInteger16 id = std::stoi(stateData.at("id")[stateData.at("id").size() - 1]);
                 String stringId = std::to_string(id);
 
-                if (stateData.find("name") == stateData.end() || stateData.at("name").size() != 1) { FatalError("No name defined for state " + stringId); }
-                String name = stateData.at("name")[0];
+                if (stateData.find("name") == stateData.end()) { FatalError("No name defined for state " + stringId); }
+                String name = stateData.at("name")[stateData.at("name").size() - 1];
 
-                if (stateData.find("manpower") == stateData.end() || stateData.at("manpower").size() != 1 || !StringCanBecomeInteger(stateData.at("manpower")[0])) 
+                if (stateData.find("manpower") == stateData.end() || !StringCanBecomeInteger(stateData.at("manpower")[stateData.at("manpower").size() - 1]))
                     { FatalError("Bad manpower definition for state " + stringId + " in " + file.string()); }
-                UnsignedInteger32 manpower = std::stoi(stateData.at("manpower")[0]);
+                UnsignedInteger32 manpower = std::stoi(stateData.at("manpower")[stateData.at("manpower").size() - 1]);
 
-                if (stateData.find("state_category") == stateData.end() || stateData.at("state_category").size() != 1 || !stateCategoriesArray.NameInArray(stateData.at("state_category")[0])) 
+                if (stateData.find("state_category") == stateData.end() || !stateCategoriesArray.NameInArray(RemoveQuotes(stateData.at("state_category")[stateData.at("state_category").size() - 1])))
                     { FatalError("Bad state category definition for state " + stringId + " in " + file.string()); }
-                UnsignedInteger16 stateCategory = stateCategoriesArray[stateData.at("state_category")[0]].GetId();
+                UnsignedInteger16 stateCategory = stateCategoriesArray[RemoveQuotes(stateData.at("state_category")[stateData.at("state_category").size() - 1])].GetId();
 
                 if (stateData.find("provinces") == stateData.end() || stateData.at("provinces").size() != 1) { FatalError("No provinces defined for state " + stringId); }
                 Vector<UnsignedInteger16> provinces = ParseStringAsUnsignedInteger16Array(stateData.at("provinces")[0]);
 
-                Boolean impassable = (stateData.find("impassable") != stateData.end() && stateData.at("impassable").size() == 1) ? GetBoolFromYesNo(stateData.at("impassable")[0]) : false;
+                Boolean impassable = (stateData.find("impassable") != stateData.end()) ? GetBoolFromYesNo(stateData.at("impassable")[stateData.at("impassable").size() - 1]) : false;
 
                 Vector<UnsignedInteger16> resources(resourcesArray.Size(), 0);
                 if (stateData.find("resources") != stateData.end()) {
@@ -756,12 +761,20 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                         Vector<DoubleString> resourcesEntries = ParseStringForPairsArray(resourcesData);
 
                         for (const auto& [resource, resourceValue] : resourcesEntries) {
-                            if (!resourcesArray.NameInArray(resource) || !StringCanBecomeInteger(resourceValue)) {
-                                printf("Bad resource definition in file %s\n", file.c_str());
+                            if (!resourcesArray.NameInArray(resource) || !StringCanBecomeFloat(resourceValue)) {
+                                String outString = "Bad resource defined in file " + file.string() + "\n";
+                                std::cout << outString;
+                                continue;
                             }
-                            else {
-                                resources[resourcesArray[resource].GetId()] += std::stoi(resourceValue);
+                            Float64 resourceValueDouble = std::stod(resourceValue);
+                            if (std::floor(resourceValueDouble) != resourceValueDouble || resourceValueDouble < 0.0f || resourceValueDouble > 65536.0f) {
+                                String outString = "Bad resource defined in file " + file.string() + "\n";
+                                std::cout << outString;
+                                continue;
                             }
+
+                            resources[resourcesArray[resource].GetId()] += UnsignedInteger16(resourceValueDouble);
+                            
                         }
                     }
                 }
@@ -778,13 +791,17 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
 
                         for (const auto& victoryPointsData : stateHistoryEntries.at("victory_points")) {
                             //I could do a char array here as there should only be two but I'm lazy :3
-                            Vector<UnsignedInteger16> vpData = ParseStringAsUnsignedInteger16Array(victoryPointsData);
+                            Vector<Float64> vpData = ParseStringAsFloat64Array(victoryPointsData);
 
-                            if (vpData.size() == 2) {
-                                victoryPoints.emplace_back(vpData[0], vpData[1]);
+                            if (vpData.size() == 2 
+                                && std::floor(vpData[0]) == vpData[0] && vpData[0] >= 0.0f || vpData[0] <= 65536.0f
+                                && std::floor(vpData[1]) == vpData[1] && vpData[1] >= 0.0f || vpData[1] <= 65536.0f
+                                ) {
+                                victoryPoints.emplace_back(UnsignedInteger16(vpData[0]), UnsignedInteger16(vpData[1]));
                             }
                             else {
-                                printf("Bad victory point definition in state %s\n", stringId.c_str());
+                                String outString = "Bad victory point definition in state " + stringId + "\n";
+                                std::cout << outString;
                             }
                         }
 
@@ -797,7 +814,10 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                     for (const auto& historyEntry : stateHistoryEntries) {
                         if (StringCanBecomeDate(historyEntry.first)) {
                             const SizeT historyEntrySecondIndex = historyEntry.second.size() - 1;
-                            if (historyEntrySecondIndex > 0) printf("More than one entry for date %s found in state %s, only the last one will be read\n", String(historyEntry.first).c_str(), stringId.c_str());
+                            if (historyEntrySecondIndex > 0) {
+                                String outString = "More than one entry for date " + historyEntry.first + " found in state " + stringId + ", only the last entry will be read\n";
+                                std::cout << outString;
+                            }
 
                             historyEntriesMap[Date(historyEntry.first).GetHoursSinceStart()] = historyEntry.second[historyEntrySecondIndex];
                             datesToRemove.push_back(historyEntry.first);
@@ -825,14 +845,20 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
 
                         SignedInteger32 owner = -1;
                         if (historyData.find("owner") != historyData.end()) {
-                            if (historyData.at("owner").size() > 1) { printf("Cannot have more than one owner defined for state %s\n", stringId.c_str()); }
+                            if (historyData.at("owner").size() > 1) { 
+                                String outString = "Cannot have more than one owner defined for state " + stringId + ", only the last entry will be read\n"; 
+                                std::cout << outString;
+                            }
                             owner = countriesArray[historyData.at("owner")[historyData.at("owner").size() - 1]].GetId();
                             historyData.erase("owner");
                         }
 
                         SignedInteger32 controller = -1;
                         if (historyData.find("controller") != historyData.end()) {
-                            if (historyData.at("controller").size() > 1) { printf("Cannot have more than one controller defined for state %s\n", stringId.c_str()); }
+                            if (historyData.at("controller").size() > 1) {
+                                String outString = "Cannot have more than one controller defined for state " + stringId + ", only the last entry will be read\n";
+                                std::cout << outString;
+                            }
                             controller = countriesArray[historyData.at("controller")[historyData.at("controller").size() - 1]].GetId();
                             historyData.erase("controller");
                         }
@@ -841,8 +867,24 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                         Vector<UnsignedInteger16> provinceBuildingsBase(provinceBuildingsArray.Size(), 0);
                         HashMap<UnsignedInteger16, Vector<UnsignedInteger16>> provinceBuildings;
                         if (historyData.find("buildings") != historyData.end()) {
-                            if (historyData.at("buildings").size() > 1) { printf("Cannot have more than one buildings block defined for state %s\n", stringId.c_str()); }
-                            HashMap<String, String> buildingsData = ParseStringForPairsMapUnique(historyData.at("buildings")[historyData.at("buildings").size() - 1]);
+//                            if (historyData.at("buildings").size() > 1) {
+//                                String outString = "Cannot have more than one buildings block defined for state " + stringId + ", only the last entry will be read\n";
+//                                std::cout << outString;
+//                            }
+//                            HashMap<String, String> buildingsData = ParseStringForPairsMapUnique(historyData.at("buildings")[historyData.at("buildings").size() - 1]);
+
+                            HashMap<String, String> buildingsData;
+                            for (const auto& buildingsDataWhole : historyData.at("buildings")) {
+                                HashMap<String, String> buildingsDataLocal = ParseStringForPairsMapUnique(buildingsDataWhole);
+
+                                for (const auto& [key, value] : buildingsDataLocal) {
+                                    if (buildingsData.find(key) != buildingsData.end()) {
+                                        String outString = "Building " + key + " has already been defined for this bookmark in state " + stringId +", overwriting.\n";
+                                        std::cout << outString;
+                                    }
+                                    buildingsData[key] = value;
+                                }
+                            }
 
                             for (const auto& buildingEntry : buildingsData) {
                                 if (StringCanBecomeInteger(buildingEntry.first)) {
@@ -850,17 +892,19 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                                     Vector<UnsignedInteger16> provinceBuildingsCopy = provinceBuildingsBase;
 
                                     for (const auto& provinceBuildingEntry : provinceBuildingsData) {
-                                        if (!provinceBuildingsArray.NameInArray(provinceBuildingEntry.first)) { printf("Building %s in state %s is not a valid building\n", provinceBuildingEntry.first.c_str(), stringId.c_str()); }
-                                        else if (!StringCanBecomeInteger(provinceBuildingEntry.second)) { printf("%s in state %s is not a valid number\n", provinceBuildingEntry.second.c_str(), stringId.c_str()); }
+                                        if (!provinceBuildingsArray.NameInArray(provinceBuildingEntry.first) || !StringCanBecomeInteger(provinceBuildingEntry.second)) {
+                                            String outString = "Bad building definition \"" + provinceBuildingEntry.first + " = " + provinceBuildingEntry.second + " in state " + stringId + "\n";
+                                        }
                                         else {
-                                            stateBuildings[provinceBuildingsArray[provinceBuildingEntry.first].GetId()] = std::stoi(provinceBuildingEntry.second);
+                                            provinceBuildingsCopy[provinceBuildingsArray[provinceBuildingEntry.first].GetId()] = std::stoi(provinceBuildingEntry.second);
                                         }
                                     }
                                     provinceBuildings[std::stoi(buildingEntry.first)] = provinceBuildingsCopy;
                                 }
                                 else {
-                                    if (!stateBuildingsArray.NameInArray(buildingEntry.first)) { printf("Building %s in state %s is not a valid building\n", buildingEntry.first.c_str(), stringId.c_str()); }
-                                    else if (!StringCanBecomeInteger(buildingEntry.second)) { printf("%s in state %s is not a valid number\n", buildingEntry.second.c_str(), stringId.c_str()); }
+                                    if (!stateBuildingsArray.NameInArray(buildingEntry.first) || !StringCanBecomeInteger(buildingEntry.second)) {
+                                        String outString = "Bad building definition \"" + buildingEntry.first + " = " + buildingEntry.second + " in state " + stringId + "\n";
+                                    }
                                     else {
                                         stateBuildings[stateBuildingsArray[buildingEntry.first].GetId()] = std::stoi(buildingEntry.second);
                                     }
@@ -877,6 +921,10 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                 }
                 else if (stateData.find("history") != stateData.end() && stateData.at("history").size() < 2) { FatalError("State " + stringId + " cannot have more than one history definitions"); }
 
+                if (stateHistoriesArray.size() > 1) {
+                    std::sort(stateHistoriesArray.begin(), stateHistoriesArray.end(), [](const StateHistory& a, const StateHistory& b) { return a.date.GetHoursSinceStart() < b.date.GetHoursSinceStart(); });
+                }
+
                 statesArray.emplace_back(id, impassable, stateCategory, manpower, name, provinces, resources, localSupplies, buildingsMaxLevelFactor, stateHistoriesArray);
             }
         }
@@ -889,7 +937,8 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
 
     Vector<Path> stateFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "history\\states", ".txt", 1200);
     Float32 coresCount = std::thread::hardware_concurrency();
-    SizeT vectorsToDivideInto = std::floor(std::max(coresCount * 0.4f, 3.0f));
+    //SizeT vectorsToDivideInto = std::floor(std::max(coresCount * 0.5f, 3.0f));
+    SizeT vectorsToDivideInto = 2;      //Dividing into many vectors requires a lot of overhead - 2 seems to be best
 
     Vector<Vector<Path>> stateFilesSubVectors = SplitVector(stateFiles, vectorsToDivideInto);
     Vector<Vector<State>> statesArray2D(vectorsToDivideInto);
@@ -911,4 +960,6 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
             statesArray.push_back(b);
         }
     }
+
+    std::sort(statesArray.begin(), statesArray.end(), [](const State& a, const State& b) { return a.GetId() < b.GetId(); });
 }
