@@ -44,7 +44,7 @@ Decimal::Decimal(String str) {
 
     charArray[charArrayLength++] = 0;
 
-    value = std::stoi(String(charArray));
+    value = std::stoll(String(charArray));
     delete[] charArray;
 }
 Decimal::Decimal(SignedInteger64 raw, bool) : value(raw) {}
@@ -84,6 +84,9 @@ bool Decimal::operator<(const Decimal& o) const { return value < o.value; }
 bool Decimal::operator<=(const Decimal& o) const { return value <= o.value; }
 bool Decimal::operator>(const Decimal& o) const { return value > o.value; }
 bool Decimal::operator>=(const Decimal& o) const { return value >= o.value; }
+
+SignedInteger64 Decimal::GetRawValue() { return value; }
+const SignedInteger64 Decimal::GetRawValue() const { return value; }
 
 String Decimal::ToString(SignedInteger16 precision) const {
     std::ostringstream oss;
@@ -148,6 +151,27 @@ ColourRGB::ColourRGB(const String& str) : r(0), g(0), b(0) {
 
     delete[] charArray;
 }
+ColourRGB::ColourRGB(const ColourRGBA rgba) : r(rgba.r), g(rgba.g), b(rgba.b) {}
+UnsignedInteger32 ColourRGB::ToInteger() {
+    return (static_cast<UnsignedInteger32>(r) << 16) |
+        (static_cast<UnsignedInteger32>(g) << 8) |
+        (static_cast<UnsignedInteger32>(b));
+}
+const UnsignedInteger32 ColourRGB::ToInteger() const {
+    return (static_cast<UnsignedInteger32>(r) << 16) |
+        (static_cast<UnsignedInteger32>(g) << 8) |
+        (static_cast<UnsignedInteger32>(b));
+}
+String ColourRGB::ToHex() {
+    std::stringstream stream;
+    stream << std::hex << ToInteger();
+    return stream.str();
+}
+const String ColourRGB::ToHex() const {
+    std::stringstream stream;
+    stream << std::hex << ToInteger();
+    return stream.str();
+}
 
 ColourRGBA::ColourRGBA() : r(0), g(0), b(0), a(255) {}
 ColourRGBA::ColourRGBA(const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b) : r(r), g(g), b(b), a(255) {}
@@ -204,6 +228,29 @@ ColourRGBA::ColourRGBA(const String& str) : r(0), g(0), b(0), a(255) {
     }
 
     delete[] charArray;
+}
+ColourRGBA::ColourRGBA(const ColourRGB rgb) : r(rgb.r), g(rgb.g), b(rgb.b), a(255) {}
+UnsignedInteger32 ColourRGBA::ToInteger() {
+    return (static_cast<UnsignedInteger32>(r) << 24) |
+        (static_cast<UnsignedInteger32>(g) << 16) |
+        (static_cast<UnsignedInteger32>(b) << 8) |
+        (static_cast<UnsignedInteger32>(a));
+}
+const UnsignedInteger32 ColourRGBA::ToInteger() const {
+    return (static_cast<UnsignedInteger32>(r) << 24) |
+        (static_cast<UnsignedInteger32>(g) << 16) |
+        (static_cast<UnsignedInteger32>(b) << 8) |
+        (static_cast<UnsignedInteger32>(a));
+}
+String ColourRGBA::ToHex() {
+    std::stringstream stream;
+    stream << std::hex << ToInteger();
+    return stream.str();
+}
+const String ColourRGBA::ToHex() const {
+    std::stringstream stream;
+    stream << std::hex << ToInteger();
+    return stream.str();
 }
 
 Date::Date(const UnsignedInteger32 dateIn) : hoursSinceStart(dateIn), year(-5000), month(1), date(1), hour(1) {
@@ -384,31 +431,37 @@ const SignedInteger64 Date::GetHoursSinceStart() const { return hoursSinceStart;
 
 String Country::GetTag() { return String(tag); }
 const String Country::GetTag() const { return String(tag); }
-void Country::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void Country::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 Country::GetId() { return id; }
 const UnsignedInteger16 Country::GetId() const { return id; }
+void Country::SetColour(const ColourRGB colourIn) { colour = colourIn; }
+ColourRGB Country::GetColour() { return colour; }
+const ColourRGB Country::GetColour() const { return colour; }
 
 String GraphicalCulture::GetName() { return name; }
 const String GraphicalCulture::GetName() const { return name; }
-void GraphicalCulture::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void GraphicalCulture::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 GraphicalCulture::GetId() { return id; }
 const UnsignedInteger16 GraphicalCulture::GetId() const { return id; }
 
 String Continent::GetName() { return name; }
 const String Continent::GetName() const { return name; }
-void Continent::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void Continent::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 Continent::GetId() { return id; }
 const UnsignedInteger16 Continent::GetId() const { return id; }
 
 String Terrain::GetName() { return name; }
 const String Terrain::GetName() const { return name; }
-void Terrain::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void Terrain::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 Terrain::GetId() { return id; }
 const UnsignedInteger16 Terrain::GetId() const { return id; }
+void Terrain::SetColour(const ColourRGB colourIn) { colour = colourIn; }
+ColourRGB Terrain::GetColour() { return colour; }
+const ColourRGB Terrain::GetColour() const { return colour; }
 
 String Building::GetName() { return name; }
 const String Building::GetName() const { return name; }
-void Building::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void Building::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 Building::GetId() { return id; }
 const UnsignedInteger16 Building::GetId() const { return id; }
 
@@ -424,36 +477,82 @@ void Building::setExclusive(const SignedInteger32 exclusive) { levelCapExclusive
 
 String BuildingSpawnPoint::GetName() { return name; }
 const String BuildingSpawnPoint::GetName() const { return name; }
-void BuildingSpawnPoint::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void BuildingSpawnPoint::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 BuildingSpawnPoint::GetId() { return id; }
 const UnsignedInteger16 BuildingSpawnPoint::GetId() const { return id; }
 
 String GraphicalTerrain::GetName() { return name; }
 const String GraphicalTerrain::GetName() const { return name; }
-void GraphicalTerrain::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void GraphicalTerrain::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 GraphicalTerrain::GetId() { return id; }
 const UnsignedInteger16 GraphicalTerrain::GetId() const { return id; }
 
 String Resource::GetName() { return name; }
 const String Resource::GetName() const { return name; }
-void Resource::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void Resource::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 Resource::GetId() { return id; }
 const UnsignedInteger16 Resource::GetId() const { return id; }
 
 String StateCategory::GetName() { return name; }
 const String StateCategory::GetName() const { return name; }
-void StateCategory::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void StateCategory::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 StateCategory::GetId() { return id; }
 const UnsignedInteger16 StateCategory::GetId() const { return id; }
+void StateCategory::SetColour(const ColourRGB colourIn) { colour = colourIn; }
+ColourRGB StateCategory::GetColour() { return colour; }
+const ColourRGB StateCategory::GetColour() const { return colour; }
 
 String Province::GetName() { return name; }
 const String Province::GetName() const { return name; }
-void Province::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void Province::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 Province::GetId() { return id; }
 const UnsignedInteger16 Province::GetId() const { return id; }
+void Province::SetColour(const ColourRGB colourIn) { colour = colourIn; }
+ColourRGB Province::GetColour() { return colour; }
+const ColourRGB Province::GetColour() const { return colour; }
+
+UnsignedInteger16 Province::GetVictoryPoints() { return victoryPoints; }
+const UnsignedInteger16 Province::GetVictoryPoints() const { return victoryPoints; }
+void Province::SetVictoryPoints(const UnsignedInteger16 vps) { victoryPoints = vps; }
+void Province::ModifyVictoryPoints(const SignedInteger16 vps) { 
+    if (victoryPoints >= vps) victoryPoints += vps;
+    else victoryPoints = 0;
+}
+UnsignedInteger16 Province::GetStateId() { return stateId; }
+const UnsignedInteger16 Province::GetStateId() const { return stateId; }
+void Province::SetStateId(const UnsignedInteger16 idIn) { stateId = idIn; }
+UnsignedInteger16 Province::GetStrategicRegionId() { return strategicRegionId; }
+const UnsignedInteger16 Province::GetStrategicRegionId() const { return strategicRegionId; }
+void Province::SetStrategicRegionId(const UnsignedInteger16 idIn) { strategicRegionId = idIn; }
+ProvinceType Province::GetProvinceType() { return type; }
+const ProvinceType Province::GetProvinceType() const { return type; }
 
 String State::GetName() { return name; }
 const String State::GetName() const { return name; }
-void State::UpdateId(const UnsignedInteger16 idIn) { id = idIn; }
+void State::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 State::GetId() { return id; }
 const UnsignedInteger16 State::GetId() const { return id; }
+void State::SetColour(const ColourRGB colourIn) { colour = colourIn; }
+ColourRGB State::GetColour() { return colour; }
+const ColourRGB State::GetColour() const { return colour; }
+
+void State::SetStrategicRegionId(const UnsignedInteger16 idIn) { strategicRegionId = idIn; }
+UnsignedInteger16 State::GetStrategicRegionId() { return strategicRegionId; }
+const UnsignedInteger16 State::GetStrategicRegionId() const { return strategicRegionId; }
+void State::SetMultipleStrategicRegions(const Boolean in) { multipleStrategicRegions = in; }
+UnsignedInteger16 State::GetMultipleStrategicRegions() { return multipleStrategicRegions; }
+const UnsignedInteger16 State::GetMultipleStrategicRegions() const { return multipleStrategicRegions; }
+const Vector<UnsignedInteger16>& State::GetProvinces() const { return provinces; }
+Vector<UnsignedInteger16>& State::GetProvinces() { return provinces; }
+
+String StrategicRegion::GetName() { return name; }
+const String StrategicRegion::GetName() const { return name; }
+void StrategicRegion::SetId(const UnsignedInteger16 idIn) { id = idIn; }
+UnsignedInteger16 StrategicRegion::GetId() { return id; }
+const UnsignedInteger16 StrategicRegion::GetId() const { return id; }
+void StrategicRegion::SetColour(const ColourRGB colourIn) { colour = colourIn; }
+ColourRGB StrategicRegion::GetColour() { return colour; }
+const ColourRGB StrategicRegion::GetColour() const { return colour; }
+
+const Vector<UnsignedInteger16>& StrategicRegion::GetProvinces() const { return provinces; }
+Vector<UnsignedInteger16>& StrategicRegion::GetProvinces() { return provinces; }

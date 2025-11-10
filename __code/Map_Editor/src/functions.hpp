@@ -52,9 +52,14 @@ Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQu
 Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<Float64> ParseStringAsFloat64Array(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<UnsignedInteger16> ParseStringAsUnsignedInteger16Array(const String& stringIn, Boolean ignoreQuotations = false);
+Vector<Decimal> ParseStringAsDecimalArray(const String& stringIn, Boolean ignoreQuotations = false);
 
 //Checks if a country tag is valid
 Boolean TagIsValid(const String& tag);
+
+//Generate x amount of random colours
+Vector<ColourRGB> GenerateRandomColours(const UnsignedInteger32 colourCount);
+Vector<ColourRGB> GenerateRandomColours(HashMap<UnsignedInteger32, UnsignedInteger16>& usedColours, const UnsignedInteger32 newColourCount);
 
 //Split a vector into n no. of vectors
 template<typename VectorType>

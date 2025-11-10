@@ -134,7 +134,7 @@ void LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, co
             UnsignedInteger8 i = 0;
             for (const auto& colour : colours) {
                 if (StringCanBecomeInteger(colour)) {
-                    SignedInteger64 colourInt = std::stoi(colour);
+                    SignedInteger64 colourInt = std::stoll(colour);
                     if (colourInt > 255 || colourInt < 0) { BadColourDefinition(tag, countryFile); }
                     rgbArray[i++] = static_cast<UnsignedInteger8>(colourInt);
                 }
@@ -578,7 +578,7 @@ Date GetDefaultDate(const Path& vanillaDirectory, const Path& modDirectory, cons
 
 void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<Province>& provincesArray,
     const VectorMap<Terrain>& landTerrainsArray, const VectorMap<Terrain>& seaTerrainsArray, const VectorMap<Terrain>& lakeTerrainsArray, const SizeT continentsArraySize,
-    const SizeT provinceBuildingsArraySize) {
+    const SizeT provinceBuildingsArraySize, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap) {
     //Removes all comments and unnecessary whitespace
     String provinceDefinitions = RemoveStringWhitespace(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "map\\definition.csv").string()));
 
@@ -718,6 +718,16 @@ void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
 
         provincesArray.emplace_back(currentLine, colour, type, coastal, terrain, continent, buildings);
     }
+
+    UnsignedInteger32 currentColour = 0;
+    for (const auto& province : provincesArray) {
+        currentColour = province.GetColour().ToInteger();
+        if (provinceColoursToIdMap.find(currentColour) != provinceColoursToIdMap.end()) {
+            FatalError("Provinces " + std::to_string(provinceColoursToIdMap.at(currentColour)) + " and " + std::to_string(province.GetId()) + " have the same colour (" + province.GetColour().ToHex() + ")");
+        }
+
+        provinceColoursToIdMap[currentColour] = province.GetId();
+    }
 }
 
 struct ProvinceVictoryPoint {
@@ -740,7 +750,7 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                 String stringId = std::to_string(id);
 
                 if (stateData.find("name") == stateData.end()) { FatalError("No name defined for state " + stringId); }
-                String name = stateData.at("name")[stateData.at("name").size() - 1];
+                String name = RemoveQuotes(stateData.at("name")[stateData.at("name").size() - 1]);
 
                 if (stateData.find("manpower") == stateData.end() || !StringCanBecomeInteger(stateData.at("manpower")[stateData.at("manpower").size() - 1]))
                     { FatalError("Bad manpower definition for state " + stringId + " in " + file.string()); }
@@ -752,6 +762,8 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
 
                 if (stateData.find("provinces") == stateData.end() || stateData.at("provinces").size() != 1) { FatalError("No provinces defined for state " + stringId); }
                 Vector<UnsignedInteger16> provinces = ParseStringAsUnsignedInteger16Array(stateData.at("provinces")[0]);
+
+                std::sort(provinces.begin(), provinces.end(), [](const UnsignedInteger16& a, const UnsignedInteger16& b) { return a < b; });
 
                 Boolean impassable = (stateData.find("impassable") != stateData.end()) ? GetBoolFromYesNo(stateData.at("impassable")[stateData.at("impassable").size() - 1]) : false;
 
@@ -914,9 +926,7 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                             historyData.erase("buildings");
                         }
 
-                        HashMap<String, Vector<String>> effects;
-
-                        stateHistoriesArray.emplace_back(Date(historyEntry.first), owner, controller, stateBuildings, provinceBuildings, effects);
+                        stateHistoriesArray.emplace_back(Date(historyEntry.first), owner, controller, stateBuildings, provinceBuildings, historyData);
                     }
                 }
                 else if (stateData.find("history") != stateData.end() && stateData.at("history").size() < 2) { FatalError("State " + stringId + " cannot have more than one history definitions"); }
@@ -932,8 +942,8 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
 }
 
 void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<State>& statesArray,
-    Vector<Province>& provincesArray, const VectorMap<Country>& countriesArray, const VectorMap<Building>provinceBuildingsArray, const VectorMap<Building>stateBuildingsArray,
-    const VectorMap<Resource>& resourcesArray, const VectorMap<StateCategory>& stateCategoriesArray, const Date defaultDate) {
+    Vector<Province>& provincesArray, const  VectorMap<Country>& countriesArray, const VectorMap<Building>provinceBuildingsArray, const VectorMap<Building>stateBuildingsArray,
+    const VectorMap<Resource>& resourcesArray, const VectorMap<StateCategory>& stateCategoriesArray, const Date defaultDate, HashMap<UnsignedInteger32, UnsignedInteger16>& stateColoursToIdMap) {
 
     Vector<Path> stateFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "history\\states", ".txt", 1200);
     Float32 coresCount = std::thread::hardware_concurrency();
@@ -955,6 +965,7 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
 
     for (auto& f : futures) f.get();
 
+    statesArray.emplace_back(0);
     for (const auto& a : statesArray2D) {
         for (const auto& b : a) {
             statesArray.push_back(b);
@@ -962,4 +973,165 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
     }
 
     std::sort(statesArray.begin(), statesArray.end(), [](const State& a, const State& b) { return a.GetId() < b.GetId(); });
+
+    for (const auto& a : provinceVictoryPointsArray2D) {
+        for (const auto& b : a) {
+            provincesArray[b.provinceId].SetVictoryPoints(b.victoryPointValue);
+        }
+    }
+
+    for (const auto& state : statesArray) {
+        for (auto& provinceId : state.GetProvinces()) {
+            if (provincesArray[provinceId].GetStateId() != 0) {
+                String outString = "Province " + std::to_string(provincesArray[provinceId].GetId()) + " is in both state " + std::to_string(provincesArray[provinceId].GetStateId())
+                    + " and state " + std::to_string(state.GetId()) + ", will be overwritten to be the latter\n";
+                std::cout << outString;
+            }
+            provincesArray[provinceId].SetStateId(state.GetId());
+        }
+    }
+
+    for (const auto& province : provincesArray) {
+        if (province.GetId() == 0) continue;
+
+        if (province.GetProvinceType() == ProvinceType::Land && province.GetStateId() == 0) {
+            FatalError("Province " + std::to_string(province.GetId()) + " is not in any state");
+        }
+    }
+
+    Vector<ColourRGB> randomColours = GenerateRandomColours(stateColoursToIdMap, statesArray.size());
+    for (SizeT i = 1; i < statesArray.size(); ++i) { statesArray[i].SetColour(randomColours[i]); }
+    statesArray[0] = 0;
+}
+
+void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<StrategicRegion>& strategicRegionsArray,
+    Vector<State>& statesArray, Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& strategicRegionColoursToIdMap) {
+    Vector<Path> strategicRegionFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "map\\strategicregions", ".txt", 256);
+    strategicRegionsArray.emplace_back(0);
+
+    for (const auto& file : strategicRegionFiles) {
+        HashMap<String, Vector<String>> strategicRegions = ParseStringForPairsMapRepeat(LoadFileToString(file.string()));
+        if (strategicRegions.find("strategic_region") != strategicRegions.end()) {
+            for (const auto& strategicRegionDataWhole : strategicRegions.at("strategic_region")) {
+                HashMap<String, String> strategicRegionData = ParseStringForPairsMapUnique(strategicRegionDataWhole);
+
+                if (strategicRegionData.find("id") == strategicRegionData.end() || !StringCanBecomeInteger(strategicRegionData.at("id"))) {
+                    FatalError("Strategic region has no ID in file " + file.string());
+                }
+                UnsignedInteger16 id = std::stoi(strategicRegionData.at("id"));
+
+                if (strategicRegionData.find("name") == strategicRegionData.end()) {
+                    FatalError("Strategic region " + std::to_string(id) + " has no name in file " + file.string());
+                }
+                String name = RemoveQuotes(strategicRegionData.at("name"));
+
+                if (strategicRegionData.find("provinces") == strategicRegionData.end()) {
+                    FatalError("Strategic region " + std::to_string(id) + " has no provinces in file " + file.string());
+                }
+                Vector<UnsignedInteger16> provinces = ParseStringAsUnsignedInteger16Array(strategicRegionData.at("provinces"));
+
+                Vector<WeatherPeriod> weather; weather.reserve(12);
+                if (strategicRegionData.find("weather") != strategicRegionData.end()) {
+                    HashMap<String, Vector<String>> periodsData = ParseStringForPairsMapRepeat(strategicRegionData.at("weather"));
+
+                    if (periodsData.find("period") != periodsData.end()) {
+                        for (const auto& periodDataWhole : periodsData.at("period")) {
+                            HashMap<String, String> periodData = ParseStringForPairsMapUnique(periodDataWhole);
+                            if (periodData.find("between") == periodData.end()) { 
+                                String outString = "Weather period in strategic region " + std::to_string(id) + " does not have a 'between' argument defined\n";
+                                std::cout << outString;
+                                continue;
+                            }
+
+                            String betweenWhole = periodData.at("between");
+                            for (auto& c : betweenWhole) if (c == '.') c = ' ';
+                            Vector<UnsignedInteger16> between = ParseStringAsUnsignedInteger16Array(betweenWhole);
+
+                            if (between.size() != 4) {
+                                String outString = "Weather period in strategic region " + std::to_string(id) + " must have a 'between' argument in the format { DD.MM DD.MM }\n";
+                                std::cout << outString;
+                                continue;
+                            }
+
+                            if (!ValidDateMonth(between[1] + 1, between[0] + 1) || !ValidDateMonth(between[3] + 1, between[2] + 1)) {
+                                String outString = "Bad date argument in weather period in strategic region " + std::to_string(id) + "\n";
+                                std::cout << outString;
+                                continue;
+                            }
+
+                            if (periodData.find("temperature") == periodData.end()) {
+                                String outString = "Weather period in strategic region " + std::to_string(id) + " does not have a 'temperature' argument defined\n";
+                                std::cout << outString;
+                                continue;
+                            }
+
+                            Vector<Decimal> temperature = ParseStringAsDecimalArray(periodData.at("temperature"));
+
+                            if (temperature.size() != 2) {
+                                String outString = "Weather period in strategic region " + std::to_string(id) + " has a 'temperature' argument with " + std::to_string(temperature.size()) + "entries when only 2 are allowed\n";
+                                std::cout << outString;
+                                continue;
+                            }
+
+                            String requiredArguments[9] = { "no_phenomenon", "rain_light", "rain_heavy", "snow", "blizzard", "arctic_water", "mud", "sandstorm", "min_snow_level"};
+                            Boolean missingArg = false;
+                            for (const auto& arg : requiredArguments) {
+                                if (periodData.find(arg) == periodData.end()) {
+                                    String outString = "Weather period in strategic region " + std::to_string(id) + " does not have a '" + arg + "' argument defined\n";
+                                    std::cout << outString;
+                                    missingArg = true;
+                                }
+                                else if (!StringCanBecomeFloat(periodData.at(arg))) {
+                                    String outString = "Weather period in strategic region " + std::to_string(id) + " has a non-decimal '" + arg + "' argument defined\n";
+                                    std::cout << outString;
+                                    missingArg = true;
+                                }
+                            }
+                            
+                            if (missingArg == true) continue;
+
+                            weather.emplace_back(between[0], between[1], between[2], between[3], temperature[0], temperature[1], Decimal(periodData.at("no_phenomenon")), 
+                                Decimal(periodData.at("rain_light")), Decimal(periodData.at("rain_heavy")), Decimal(periodData.at("snow")), Decimal(periodData.at("blizzard")),
+                                Decimal(periodData.at("arctic_water")), Decimal(periodData.at("mud")), Decimal(periodData.at("sandstorm")), Decimal(periodData.at("min_snow_level")));
+                        }
+                    }
+                }
+
+                strategicRegionsArray.emplace_back(id, name, provinces, weather);
+            }
+        }
+    }
+
+    std::sort(strategicRegionsArray.begin(), strategicRegionsArray.end(), [](const StrategicRegion& a, const StrategicRegion& b) { return a.GetId() < b.GetId(); });
+
+    for (const auto& strategicRegion : strategicRegionsArray) {
+        for (auto& provinceId : strategicRegion.GetProvinces()) {
+            if (provincesArray[provinceId].GetStrategicRegionId() != 0) {
+                String outString = "Province " + std::to_string(provincesArray[provinceId].GetId()) + " is in both strategic region " + std::to_string(provincesArray[provinceId].GetStrategicRegionId())
+                    + " and state " + std::to_string(strategicRegion.GetId()) + ", will be overwritten to be the latter\n";
+                std::cout << outString;
+            }
+            provincesArray[provinceId].SetStrategicRegionId(strategicRegion.GetId());
+        }
+    }
+
+    UnsignedInteger16 stateId = 0;
+    for (const auto& province : provincesArray) {
+        stateId = province.GetStateId();
+
+        if (province.GetProvinceType() == ProvinceType::Land) {
+            if (statesArray[stateId].GetStrategicRegionId() != province.GetStrategicRegionId() && statesArray[stateId].GetStrategicRegionId() != 0) {
+                String outString = "State " + std::to_string(stateId) + " has provinces in two strategic regions, " + std::to_string(statesArray[stateId].GetStrategicRegionId()) + " and " +
+                    std::to_string(province.GetStrategicRegionId()) + "\n";
+                std::cout << outString;
+                statesArray[stateId].SetMultipleStrategicRegions(true);
+            }
+
+            statesArray[stateId].SetStrategicRegionId(province.GetStrategicRegionId());
+        }
+    }
+
+    Vector<ColourRGB> randomColours = GenerateRandomColours(strategicRegionColoursToIdMap, strategicRegionsArray.size());
+    for (SizeT i = 1; i < strategicRegionsArray.size(); ++i) { strategicRegionsArray[i].SetColour(randomColours[i]); }
+    strategicRegionColoursToIdMap[0] = 0;
 }

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <random>
 #include "data_types.hpp"
 
 
@@ -899,7 +900,7 @@ Vector<Float64> ParseStringAsFloat64Array(const String& stringIn, Boolean ignore
     SizeT currentStringSize = 0;
 
     SizeT entriesCount = 1;
-    String currentInteger;
+    String currentNumber;
 
     for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
     returnVector.reserve(entriesCount);
@@ -911,15 +912,15 @@ Vector<Float64> ParseStringAsFloat64Array(const String& stringIn, Boolean ignore
         else if (CharIsWhitespace(c)) {
             currentStringArray[currentStringSize++] = 0;
             currentStringSize = 0;
-            currentInteger = String(currentStringArray);
-            if (StringCanBecomeFloat(currentInteger)) { returnVector.push_back(std::stod(currentInteger)); }
+            currentNumber = String(currentStringArray);
+            if (StringCanBecomeFloat(currentNumber)) { returnVector.push_back(std::stod(currentNumber)); }
         }
     }
 
     if (currentStringSize > 0) {
         currentStringArray[currentStringSize++] = 0;
-        currentInteger = String(currentStringArray);
-        if (StringCanBecomeFloat(currentInteger)) { returnVector.push_back(std::stod(currentInteger)); }
+        currentNumber = String(currentStringArray);
+        if (StringCanBecomeFloat(currentNumber)) { returnVector.push_back(std::stod(currentNumber)); }
     }
     delete[] currentStringArray;
     return returnVector;
@@ -959,10 +960,83 @@ Vector<UnsignedInteger16> ParseStringAsUnsignedInteger16Array(const String& stri
     return returnVector;
 }
 
+Vector<Decimal> ParseStringAsDecimalArray(const String& stringIn, Boolean ignoreQuotations) {
+    Vector<Decimal> returnVector;
+    SizeT stringLength = stringIn.size();
+
+    Char* currentStringArray = new Char[stringLength + 2];
+    SizeT currentStringSize = 0;
+
+    SizeT entriesCount = 1;
+    String currentNumber;
+
+    for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
+    returnVector.reserve(entriesCount);
+
+    for (Char c : stringIn) { 
+        if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
+            currentStringArray[currentStringSize++] = c;
+        } 
+        else if (CharIsWhitespace(c)){
+            currentStringArray[currentStringSize++] = 0;
+            currentStringSize = 0;
+            currentNumber = String(currentStringArray);
+            if (StringCanBecomeFloat(currentNumber)) { returnVector.emplace_back(currentNumber); }
+        }
+    }
+
+    if (currentStringSize > 0) {
+        currentStringArray[currentStringSize++] = 0;
+        currentNumber = String(currentStringArray);
+        if (StringCanBecomeFloat(currentNumber)) { returnVector.emplace_back(currentNumber); }
+    }
+    delete[] currentStringArray;
+    return returnVector;
+}
+
 Boolean TagIsValid(const String& tag) {
     if (tag.size() != 3) { return false; }
     if (!CharIsCapital(tag[0]) || !CharIsCapitalOrNumber(tag[1]) || !CharIsCapitalOrNumber(tag[2])) { return false; }
     if (tag == "NOT" || tag == "AND" || tag == "TAG" || tag == "OOB" || tag == "LOG" || tag == "NUM" || tag == "RED") { return false; }
 
     return true;
+}
+
+Vector<ColourRGB> GenerateRandomColours(const UnsignedInteger32 newColourCount) {
+    std::mt19937 gen(std::random_device{}());
+    std::uniform_int_distribution<SignedInteger32> dist(0, 255);
+
+    Set<UnsignedInteger32> usedColours;
+    Vector<ColourRGB> newColours; newColours.reserve(newColourCount);
+
+    while (newColours.size() < newColourCount) {
+        ColourRGB colour{ static_cast<UnsignedInteger8>(dist(gen)),
+              static_cast<UnsignedInteger8>(dist(gen)),
+              static_cast<UnsignedInteger8>(dist(gen))};
+
+        if (usedColours.insert(colour.ToInteger()).second)
+            newColours.push_back(colour);
+    }
+
+    return newColours;
+}
+
+Vector<ColourRGB> GenerateRandomColours(HashMap<UnsignedInteger32, UnsignedInteger16>& usedColours, const UnsignedInteger32 newColourCount) {
+    std::mt19937 gen(std::random_device{}());
+    std::uniform_int_distribution<SignedInteger32> dist(0, 255);
+
+    Vector<ColourRGB> newColours; newColours.reserve(newColourCount);
+
+    while (newColours.size() < newColourCount) {
+        ColourRGB colour{ static_cast<UnsignedInteger8>(dist(gen)),
+              static_cast<UnsignedInteger8>(dist(gen)),
+              static_cast<UnsignedInteger8>(dist(gen))};
+
+        if (usedColours.find(colour.ToInteger()) == usedColours.end()) {
+            usedColours[colour.ToInteger()] = newColours.size();
+            newColours.push_back(colour);
+        }
+    }
+
+    return newColours;
 }

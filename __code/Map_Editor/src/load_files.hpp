@@ -25,8 +25,11 @@ Date GetDefaultDate(const Path& vanillaDirectory, const Path& modDirectory, cons
 
 void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<Province>& provincesArray,
 	const VectorMap<Terrain>& landTerrainsArray, const VectorMap<Terrain>& seaTerrainsArray, const VectorMap<Terrain>& lakeTerrainsArray, const SizeT continentsArraySize, 
-	const SizeT provinceBuildingsArraySize);
+	const SizeT provinceBuildingsArraySize, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap);
 
 void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<State>& statesArray, 
 	Vector<Province>& provincesArray, const  VectorMap<Country>& countriesArray, const VectorMap<Building>provinceBuildingsArray, const VectorMap<Building>stateBuildingsArray, 
-	const VectorMap<Resource>& resourcesArray, const VectorMap<StateCategory>& stateCategoriesArray, const Date defaultDate);
+	const VectorMap<Resource>& resourcesArray, const VectorMap<StateCategory>& stateCategoriesArray, const Date defaultDate, HashMap<UnsignedInteger32, UnsignedInteger16>& stateColoursToIdMap);
+
+void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<StrategicRegion>& strategicRegionsArray,
+	Vector<State>& statesArray, Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& strategicRegionColoursToIdMap);

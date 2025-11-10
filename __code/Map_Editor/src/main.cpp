@@ -31,12 +31,18 @@ int main()
     LoadContinentFiles(vanillaDirectory, modDirectory, modReplaceDirectories, continentsArray);
     Date defaultBookmarkDate = GetDefaultDate(vanillaDirectory, modDirectory, modReplaceDirectories);
 
-    Vector<Province> provincesArray;
-    LoadProvinceFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provincesArray, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray, continentsArray.Size(), provinceBuildingsArray.Size());
+    HashMap<UnsignedInteger32, UnsignedInteger16> provinceColoursToIdMap, stateColoursToIdMap, strategicRegionColoursToIdMap;
 
-    Vector<State> statesArary;
-    LoadStateFiles(vanillaDirectory, modDirectory, modReplaceDirectories, statesArary, provincesArray, countriesArray, provinceBuildingsArray, stateBuildingsArray,
-        resourcesArray, stateCategoriesArray, defaultBookmarkDate);
+    Vector<Province> provincesArray;
+    LoadProvinceFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provincesArray, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray, continentsArray.Size(), provinceBuildingsArray.Size(),
+        provinceColoursToIdMap);
+
+    Vector<State> statesArray;
+    LoadStateFiles(vanillaDirectory, modDirectory, modReplaceDirectories, statesArray, provincesArray, countriesArray, provinceBuildingsArray, stateBuildingsArray,
+        resourcesArray, stateCategoriesArray, defaultBookmarkDate, stateColoursToIdMap);
+
+    Vector<StrategicRegion> strategicRegionsArray;
+    LoadStrategicRegionFiles(vanillaDirectory, modDirectory, modReplaceDirectories, strategicRegionsArray, statesArray, provincesArray, strategicRegionColoursToIdMap);
     
     std::cout << "Files took " << GetTimeElapsedFromStart(startTime) << " to load.\n";
 }

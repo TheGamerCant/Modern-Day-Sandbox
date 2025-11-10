@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 #include <filesystem>
 #include <chrono>
@@ -38,6 +39,9 @@ using Timestamp = std::chrono::steady_clock::time_point;
 
 template<typename HashKey, typename HashValue>
 using HashMap = std::unordered_map<HashKey, HashValue>;
+
+template<typename SetType>
+using Set = std::unordered_set<SetType>;
 
 template<typename VectorType>
 using Vector = std::vector<VectorType>;
@@ -98,11 +102,17 @@ public:
     bool operator>(const Decimal& o) const;
     bool operator>=(const Decimal& o) const;
 
+    SignedInteger64 GetRawValue();
+    const SignedInteger64 GetRawValue() const;
+
     String ToString(SignedInteger16 precision = 3) const;
     friend std::ostream& operator<<(std::ostream& os, const Decimal& d);
 };
 
 //Colour Structs
+struct ColourRGB;
+struct ColourRGBA;
+
 struct ColourRGB {
 public:
     UnsignedInteger8 r, g, b;
@@ -110,6 +120,16 @@ public:
     ColourRGB();
     ColourRGB(const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b);
     ColourRGB(const String& str);
+    ColourRGB(const ColourRGBA rgba);
+
+    bool operator==(const ColourRGB& other) const noexcept {
+        return r == other.r && g == other.g && b == other.b;
+    }
+
+    UnsignedInteger32 ToInteger();
+    const UnsignedInteger32 ToInteger() const;
+    String ToHex();
+    const String ToHex() const;
 };
 
 struct ColourRGBA {
@@ -120,6 +140,16 @@ public:
     ColourRGBA(const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b);
     ColourRGBA(const UnsignedInteger8 r, const UnsignedInteger8 g, const UnsignedInteger8 b, const UnsignedInteger8 a);
     ColourRGBA(const String& str);
+    ColourRGBA(const ColourRGB rgb);
+
+    bool operator==(const ColourRGBA& other) const noexcept {
+        return r == other.r && g == other.g && b == other.b && a == other.a;
+    }
+
+    UnsignedInteger32 ToInteger();
+    const UnsignedInteger32 ToInteger() const;
+    String ToHex();
+    const String ToHex() const;
 };
 
 //Date
@@ -156,7 +186,7 @@ public:
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
 };
@@ -172,7 +202,7 @@ public:
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
 };
@@ -192,9 +222,12 @@ public:
 
     String GetTag();
     const String GetTag() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
+    void SetColour(const ColourRGB colourIn);
+    ColourRGB GetColour();
+    const ColourRGB GetColour() const;
 };
 
 namespace BuildingMetadata {
@@ -296,7 +329,7 @@ public:
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
 
@@ -321,7 +354,7 @@ public:
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
 };
@@ -356,9 +389,12 @@ public:
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
+    void SetColour(const ColourRGB colourIn);
+    ColourRGB GetColour();
+    const ColourRGB GetColour() const;
 };
 
 struct GraphicalTerrain{
@@ -378,7 +414,7 @@ public:
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
 };
@@ -398,7 +434,7 @@ public:
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
 };
@@ -418,9 +454,12 @@ public:
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
+    void SetColour(const ColourRGB colourIn);
+    ColourRGB GetColour();
+    const ColourRGB GetColour() const;
 };
 
 //The following go in Vectors instead of VectorMaps, as you index and reference them by ID
@@ -435,20 +474,42 @@ private:
     ProvinceType type;
     Boolean coastal;
     UnsignedInteger16 terrainId, continentId, stateId, strategicRegionId;
+    UnsignedInteger16 victoryPoints;
     Vector<UnsignedInteger16> buildings;
     String name;
 
 public:
-    Province() : id(0), colour(0, 0, 0), type(Land), coastal(false), terrainId(0), continentId(0), stateId(0), strategicRegionId(0), buildings(), name("") {};
+    Province() : id(0), colour(0, 0, 0), type(Land), coastal(false), terrainId(0), continentId(0), stateId(0), strategicRegionId(0), buildings(), name(""),
+        victoryPoints(0) {};
     Province(const UnsignedInteger16 id, const ColourRGB colour, const ProvinceType type, const Boolean coastal, const UnsignedInteger16 terrainId, const UnsignedInteger16 continentId,
         const Vector<UnsignedInteger16>& buildings) :
-        id(id), colour(colour), type(type), coastal(coastal), terrainId(terrainId), continentId(continentId), stateId(0), strategicRegionId(0), buildings(buildings), name("") { };
+        id(id), colour(colour), type(type), coastal(coastal), terrainId(terrainId), continentId(continentId), stateId(0), strategicRegionId(0), buildings(buildings), name(""),
+        victoryPoints(0) {};
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
+    void SetColour(const ColourRGB colourIn);
+    ColourRGB GetColour();
+    const ColourRGB GetColour() const;
+
+    UnsignedInteger16 GetVictoryPoints();
+    const UnsignedInteger16 GetVictoryPoints() const;
+    void SetVictoryPoints(const UnsignedInteger16 vps);
+    void ModifyVictoryPoints(const SignedInteger16 vps);
+
+    UnsignedInteger16 GetStateId();
+    const UnsignedInteger16 GetStateId() const;
+    void SetStateId(const UnsignedInteger16 idIn);
+
+    UnsignedInteger16 GetStrategicRegionId();
+    const UnsignedInteger16 GetStrategicRegionId() const;
+    void SetStrategicRegionId(const UnsignedInteger16 idIn);
+
+    ProvinceType GetProvinceType();
+    const ProvinceType GetProvinceType() const;
 };
 
 struct StateHistory {
@@ -470,6 +531,7 @@ private:
     UnsignedInteger16 id;
     ColourRGB colour;
     Boolean impassable;
+    Boolean multipleStrategicRegions;
     UnsignedInteger16 strategicRegionId;
     UnsignedInteger16 stateCategoryId;
     UnsignedInteger32 manpower;
@@ -481,17 +543,76 @@ private:
     Vector<StateHistory> stateHistoriesArray;
 
 public:
+    State(const UnsignedInteger16 id) :
+        id(id), colour(0, 0, 0), impassable(false), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(0), manpower(0), name(""), provinces(), resources(),
+        localSupplies(), buildingsMaxLevelFactor(), stateHistoriesArray() {}
     State(const UnsignedInteger16 id, const Boolean impassable, const UnsignedInteger16 stateCategoryId, const UnsignedInteger32 manpower, const String& name, const Vector<UnsignedInteger16>& provinces, 
         const Vector<UnsignedInteger16>& resources, const Decimal localSupplies, const Decimal buildingsMaxLevelFactor, const Vector<StateHistory>& stateHistoriesArray) :
-        id(id), colour(0, 0, 0), impassable(impassable), strategicRegionId(0), stateCategoryId(stateCategoryId), manpower(manpower), name(name), provinces(provinces), resources(resources), 
-        localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray) {}
+        id(id), colour(0, 0, 0), impassable(impassable), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(stateCategoryId), manpower(manpower), name(name), provinces(provinces), 
+        resources(resources), localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray) {}
 
 
     String GetName();
     const String GetName() const;
-    void UpdateId(const UnsignedInteger16 idIn);
+    void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
+    void SetColour(const ColourRGB colourIn);
+    ColourRGB GetColour();
+    const ColourRGB GetColour() const;
+
+    void SetStrategicRegionId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetStrategicRegionId();
+    const UnsignedInteger16 GetStrategicRegionId() const;
+
+    void SetMultipleStrategicRegions(const Boolean in);
+    UnsignedInteger16 GetMultipleStrategicRegions();
+    const UnsignedInteger16 GetMultipleStrategicRegions() const;
+
+    const Vector<UnsignedInteger16>& GetProvinces() const;
+    Vector<UnsignedInteger16>& GetProvinces();
+};
+
+struct WeatherPeriod {
+public:
+    UnsignedInteger8 startDate, startMonth, endDate, endMonth;
+    Decimal minTemperature, maxTemperature;
+    Decimal noPhenomenon;
+    Decimal rainLight, rainHeavy;
+    Decimal snow, blizzard, arcticWater, mud, sandstorm;
+    Decimal minSnowLevel;
+
+    WeatherPeriod(const UnsignedInteger8 startDate, const UnsignedInteger8 startMonth, const UnsignedInteger8 endDate, const UnsignedInteger8 endMonth, const Decimal minTemperature,
+        const Decimal maxTemperature, const Decimal noPhenomenon, const Decimal rainLight, const Decimal rainHeavy, const Decimal snow, const Decimal blizzard, const Decimal arcticWater,
+        const Decimal mud, const Decimal sandstorm, const Decimal minSnowLevel) :
+        startDate(startDate), startMonth(startMonth), endDate(endDate), endMonth(endMonth), minTemperature(minTemperature), maxTemperature(maxTemperature), noPhenomenon(noPhenomenon),
+        rainLight(rainLight), rainHeavy(rainHeavy), snow(snow), blizzard(blizzard), arcticWater(arcticWater), mud(mud), sandstorm(sandstorm), minSnowLevel(minSnowLevel) {}
+};
+
+struct StrategicRegion {
+private:
+    UnsignedInteger16 id;
+    ColourRGB colour;
+    String name;
+    Vector<UnsignedInteger16> provinces, states;
+    Vector<WeatherPeriod> weather;
+public:
+    StrategicRegion() : id(0), colour(0, 0, 0), name(""), provinces(), states(), weather() {}
+    StrategicRegion(const UnsignedInteger16 id) : id(id), colour(0, 0, 0), name(""), provinces(), states(), weather() {}
+    StrategicRegion(const UnsignedInteger16 id, const String& name, const Vector<UnsignedInteger16>& provinces, const Vector<WeatherPeriod>& weather) :
+        id(id), colour(0, 0, 0), name(name), provinces(provinces), states(), weather(weather) {}
+
+    String GetName();
+    const String GetName() const;
+    void SetId(const UnsignedInteger16 idIn);
+    UnsignedInteger16 GetId();
+    const UnsignedInteger16 GetId() const;
+    void SetColour(const ColourRGB colourIn);
+    ColourRGB GetColour();
+    const ColourRGB GetColour() const;
+
+    const Vector<UnsignedInteger16>& GetProvinces() const;
+    Vector<UnsignedInteger16>& GetProvinces();
 };
 
 //Custom data type that allows indexing by index or name/tag
@@ -509,7 +630,7 @@ public:
         indexMap.clear();
         UnsignedInteger64 i = 0;
         for (auto& obj : array) {
-            obj.UpdateId(i);
+            obj.SetId(i);
             indexMap[obj.GetName()] = i++;
         }
     }
@@ -517,19 +638,19 @@ public:
     void PushBack(const DataType& obj) {
         array.push_back(obj);
         indexMap[obj.GetName()] = array.size() - 1;
-        array.back().UpdateId(array.size() - 1);
+        array.back().SetId(array.size() - 1);
     }
     void PushBack(DataType&& obj) {
         array.push_back(std::move(obj));
         indexMap[array.back().GetName()] = array.size() - 1;
-        array.back().UpdateId(array.size() - 1);
+        array.back().SetId(array.size() - 1);
     }
     
     template<typename... Args>
     void EmplaceBack(Args&&... args) {
         array.emplace_back(std::forward<Args>(args)...);
         indexMap[array.back().GetName()] = array.size() - 1;
-        array.back().UpdateId(array.size() - 1);
+        array.back().SetId(array.size() - 1);
     }
 
     void Reserve(const SizeT reserve) { array.reserve(reserve); }
@@ -607,7 +728,7 @@ public:
         indexMap.clear();
         UnsignedInteger64 i = 0;
         for (auto& obj : array) {
-            obj.UpdateId(i);
+            obj.SetId(i);
             indexMap[obj.GetTag()] = i++;
         }
     }
@@ -615,20 +736,20 @@ public:
     void PushBack(const Country& obj) {
         array.push_back(obj);
         indexMap[obj.GetTag()] = array.size() - 1;
-        array.back().UpdateId(array.size() - 1);
+        array.back().SetId(array.size() - 1);
     }
 
     void PushBack(Country&& obj) {
         array.push_back(std::move(obj));
         indexMap[array.back().GetTag()] = array.size() - 1;
-        array.back().UpdateId(array.size() - 1);
+        array.back().SetId(array.size() - 1);
     }
 
     template<typename... Args>
     void EmplaceBack(Args&&... args) {
         array.emplace_back(std::forward<Args>(args)...);
         indexMap[array.back().GetTag()] = array.size() - 1;
-        array.back().UpdateId(array.size() - 1);
+        array.back().SetId(array.size() - 1);
     }
 
     void Reserve(const SizeT reserve) { array.reserve(reserve); }
