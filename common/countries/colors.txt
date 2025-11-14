@@ -304,3 +304,11 @@ GLC = {
 	color = rgb { 128 220 219 }
 	color_ui = rgb { 128 220 219 }
 }
+EGY = {
+	color = rgb { 235 223 63 }
+	color_ui = rgb { 235 223 63 }
+}
+LYB = {
+	color = rgb { 0 133 66 }
+	color_ui = rgb { 0 133 66 }
+}
