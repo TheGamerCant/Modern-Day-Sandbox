@@ -1000,8 +1000,7 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
     }
 
     Vector<ColourRGB> randomColours = GenerateRandomColours(stateColoursToIdMap, statesArray.size());
-    for (SizeT i = 1; i < statesArray.size(); ++i) { statesArray[i].SetColour(randomColours[i]); }
-    statesArray[0] = 0;
+    for (SizeT i = 0; i < statesArray.size(); ++i) { statesArray[i].SetColour(randomColours[i]); }
 }
 
 void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<StrategicRegion>& strategicRegionsArray,
@@ -1132,6 +1131,37 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
     }
 
     Vector<ColourRGB> randomColours = GenerateRandomColours(strategicRegionColoursToIdMap, strategicRegionsArray.size());
-    for (SizeT i = 1; i < strategicRegionsArray.size(); ++i) { strategicRegionsArray[i].SetColour(randomColours[i]); }
-    strategicRegionColoursToIdMap[0] = 0;
+    for (SizeT i = 0; i < strategicRegionsArray.size(); ++i) { strategicRegionsArray[i].SetColour(randomColours[i]); }
+}
+
+void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap, const BitmapImage& provincesBitmap,
+    const BitmapImage& terrainBitmap, const BitmapImage& heightmapBitmap) {
+    const UnsignedInteger64 width = provincesBitmap.GetWidth();
+    const UnsignedInteger64 height = provincesBitmap.GetHeight();
+
+    UnsignedInteger64 currentHeightTimesWidth = 0, index = 0, index3 = 0;
+    ColourRGB colour(0, 0, 0);
+    UnsignedInteger32 colourInteger = 0;
+
+
+    for (SizeT i = 0; i < height; ++i) {
+        currentHeightTimesWidth = i * width;
+        for (SizeT j = 0; j < provincesBitmap.GetWidth(); ++j) {
+            index = currentHeightTimesWidth + j;
+            index3 = index * 3;
+
+            colour = provincesBitmap.GetColourFromIndexPremultiplied(index3);
+            colourInteger = colour.ToInteger();
+
+            if (provinceColoursToIdMap.find(colourInteger) == provinceColoursToIdMap.end()) {
+                FatalError("No province with colour " + colour.ToHex() + " exists");
+            }
+
+            provincesArray[provinceColoursToIdMap.at(colourInteger)].EmplacePixel(index, j, i, heightmapBitmap.GetRawDataFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
+        }
+    }
+
+    for (auto& prov : provincesArray) {
+        prov.UpdateBoundingBox();
+    }
 }

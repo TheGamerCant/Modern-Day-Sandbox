@@ -1,6 +1,7 @@
 #pragma once
 #include "functions.hpp"
 #include "data_types.hpp"
+#include "bmp.hpp"
 
 void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories);
 
@@ -33,3 +34,6 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
 
 void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<StrategicRegion>& strategicRegionsArray,
 	Vector<State>& statesArray, Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& strategicRegionColoursToIdMap);
+
+void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap, const BitmapImage& provincesBitmap,
+	const BitmapImage& terrainBitmap, const BitmapImage& heightmapBitmap);

@@ -502,8 +502,6 @@ void StateCategory::SetColour(const ColourRGB colourIn) { colour = colourIn; }
 ColourRGB StateCategory::GetColour() { return colour; }
 const ColourRGB StateCategory::GetColour() const { return colour; }
 
-String Province::GetName() { return name; }
-const String Province::GetName() const { return name; }
 void Province::SetId(const UnsignedInteger16 idIn) { id = idIn; }
 UnsignedInteger16 Province::GetId() { return id; }
 const UnsignedInteger16 Province::GetId() const { return id; }
@@ -526,6 +524,32 @@ const UnsignedInteger16 Province::GetStrategicRegionId() const { return strategi
 void Province::SetStrategicRegionId(const UnsignedInteger16 idIn) { strategicRegionId = idIn; }
 ProvinceType Province::GetProvinceType() { return type; }
 const ProvinceType Province::GetProvinceType() const { return type; }
+
+const Vector<Pixel>& Province::GetPixels() const { return pixels; }
+Vector<Pixel>& Province::GetPixels() { return pixels; }
+void Province::AddPixel(const Pixel& pixel) { pixels.push_back(pixel); }
+void Province::EmplacePixel(const UnsignedInteger32 index, const UnsignedInteger16 x, const UnsignedInteger16 y, const UnsignedInteger8 height, const UnsignedInteger8 terrainIndex) {
+    pixels.emplace_back(index, x, y, height, terrainIndex);
+}
+void Province::UpdateBoundingBox() {
+    for (const auto& pixel : pixels) {
+        if (pixel.x < x0) x0 = pixel.x;
+        else if (pixel.x > x1) x1 = pixel.x;
+
+        if (pixel.y < y0) y0 = pixel.y;
+        else if (pixel.y > y1) y1 = pixel.y;
+    }
+}
+Boolean Province::BoundingBoxHasBeenUpdated() {
+    if (x0 ==UINT16_MAX && y0 ==UINT16_MAX && x1 ==0 && y1 == 0) return false;
+
+    return true;
+}
+const Boolean Province::BoundingBoxHasBeenUpdated() const {
+    if (x0 ==UINT16_MAX && y0 ==UINT16_MAX && x1 ==0 && y1 == 0) return false;
+
+    return true;
+}
 
 String State::GetName() { return name; }
 const String State::GetName() const { return name; }

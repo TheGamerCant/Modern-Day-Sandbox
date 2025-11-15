@@ -467,6 +467,18 @@ struct Province;
 struct State;
 struct StrategicRegion;
 
+struct Pixel {
+public:
+    UnsignedInteger32 index;
+    UnsignedInteger16 x, y;
+    UnsignedInteger8 height;
+    UnsignedInteger8 terrainIndex;
+
+    Pixel() : index(0), x(0), y(0), height(0), terrainIndex(0) {}
+    Pixel(const UnsignedInteger32 index, const UnsignedInteger16 x, const UnsignedInteger16 y, const UnsignedInteger8 height, const UnsignedInteger8 terrainIndex) : 
+        index(index), x(x), y(y), height(height), terrainIndex(terrainIndex) {}
+};
+
 struct Province {
 private:
     UnsignedInteger16 id;
@@ -476,18 +488,18 @@ private:
     UnsignedInteger16 terrainId, continentId, stateId, strategicRegionId;
     UnsignedInteger16 victoryPoints;
     Vector<UnsignedInteger16> buildings;
-    String name;
+
+    Vector<Pixel> pixels;
+    UnsignedInteger16 x0, y0, x1, y1;
 
 public:
-    Province() : id(0), colour(0, 0, 0), type(Land), coastal(false), terrainId(0), continentId(0), stateId(0), strategicRegionId(0), buildings(), name(""),
-        victoryPoints(0) {};
+    Province() : id(0), colour(0, 0, 0), type(Land), coastal(false), terrainId(0), continentId(0), stateId(0), strategicRegionId(0), buildings(), victoryPoints(0), 
+        pixels(), x0(UINT16_MAX), y0(UINT16_MAX), x1(0), y1(0) { pixels.reserve(64); };
     Province(const UnsignedInteger16 id, const ColourRGB colour, const ProvinceType type, const Boolean coastal, const UnsignedInteger16 terrainId, const UnsignedInteger16 continentId,
         const Vector<UnsignedInteger16>& buildings) :
-        id(id), colour(colour), type(type), coastal(coastal), terrainId(terrainId), continentId(continentId), stateId(0), strategicRegionId(0), buildings(buildings), name(""),
-        victoryPoints(0) {};
+        id(id), colour(colour), type(type), coastal(coastal), terrainId(terrainId), continentId(continentId), stateId(0), strategicRegionId(0), buildings(buildings), victoryPoints(0), 
+        pixels(), x0(UINT16_MAX), y0(UINT16_MAX), x1(0), y1(0) { pixels.reserve(64); };
 
-    String GetName();
-    const String GetName() const;
     void SetId(const UnsignedInteger16 idIn);
     UnsignedInteger16 GetId();
     const UnsignedInteger16 GetId() const;
@@ -510,6 +522,14 @@ public:
 
     ProvinceType GetProvinceType();
     const ProvinceType GetProvinceType() const;
+
+    const Vector<Pixel>& GetPixels() const;
+    Vector<Pixel>& GetPixels();
+    void AddPixel(const Pixel& pixel);
+    void EmplacePixel(const UnsignedInteger32 index, const UnsignedInteger16 x, const UnsignedInteger16 y, const UnsignedInteger8 height, const UnsignedInteger8 terrainIndex);
+    void UpdateBoundingBox();
+    Boolean BoundingBoxHasBeenUpdated();
+    const Boolean BoundingBoxHasBeenUpdated() const;
 };
 
 struct StateHistory {
