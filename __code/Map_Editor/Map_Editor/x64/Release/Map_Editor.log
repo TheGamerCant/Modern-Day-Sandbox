@@ -1,18 +1,16 @@
-﻿  main.cpp
+﻿  bmp.cpp
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(751,23): warning C4244: 'argument': conversion from 'UnsignedInteger64' to 'const UnsignedInteger16', possible loss of data
-  (compiling source file 'src/main.cpp')
+  (compiling source file 'src/bmp.cpp')
   
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(759,41): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
-  (compiling source file 'src/main.cpp')
+  (compiling source file 'src/bmp.cpp')
   
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(765,41): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
-  (compiling source file 'src/main.cpp')
+  (compiling source file 'src/bmp.cpp')
   
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\bmp.hpp(167,57): warning C4267: '=': conversion from 'size_t' to 'unsigned short', possible loss of data
-  (compiling source file 'src/main.cpp')
-  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\bmp.cpp(130,53): warning C4267: '=': conversion from 'size_t' to 'unsigned short', possible loss of data
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(666,41): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
-  (compiling source file 'src/main.cpp')
+  (compiling source file 'src/bmp.cpp')
       C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(666,41):
       the template instantiation context (the oldest one first) is
           C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(738,37):
@@ -25,7 +23,7 @@ C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\sr
           ]
   
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(661,41): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
-  (compiling source file 'src/main.cpp')
+  (compiling source file 'src/bmp.cpp')
       C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(661,41):
       the template instantiation context (the oldest one first) is
           C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(658,10):
@@ -36,16 +34,16 @@ C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\sr
           ]
   
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(653,23): warning C4244: 'argument': conversion from 'UnsignedInteger64' to 'const UnsignedInteger16', possible loss of data
-  (compiling source file 'src/main.cpp')
+  (compiling source file 'src/bmp.cpp')
       C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(653,23):
       the template instantiation context (the oldest one first) is
           C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(649,10):
           while compiling class template member function 'void VectorMap<Continent>::RebuildMap(void)'
   
   Generating code
-  1 of 5134 functions (<0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    8 functions had inline decision re-evaluated but remain unchanged
+  8 of 5163 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    6 functions were new in current compilation
+    33 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Map_Editor.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\x64\Release\Map_Editor.exe
   'pwsh.exe' is not recognized as an internal or external command,

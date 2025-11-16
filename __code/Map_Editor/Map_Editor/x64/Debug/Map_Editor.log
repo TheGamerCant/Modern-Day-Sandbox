@@ -8,9 +8,13 @@ C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\sr
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(765,41): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
   (compiling source file 'src/main.cpp')
   
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\bmp.hpp(167,57): warning C4267: '=': conversion from 'size_t' to 'unsigned short', possible loss of data
-  (compiling source file 'src/main.cpp')
-  
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\main.cpp(90,48): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\main.cpp(101,76): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\main.cpp(101,135): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\main.cpp(143,47): warning C4244: '=': conversion from 'float' to 'UnsignedInteger16', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\main.cpp(146,58): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\main.cpp(150,86): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\main.cpp(150,145): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(666,41): warning C4267: 'argument': conversion from 'size_t' to 'const UnsignedInteger16', possible loss of data
   (compiling source file 'src/main.cpp')
       C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\Map_Editor\src\data_types.hpp(666,41):

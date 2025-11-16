@@ -1,5 +1,6 @@
 #include <iostream>
 #include <thread>
+#include <cmath>
 
 #include "functions.hpp"
 #include "data_types.hpp"
@@ -69,83 +70,166 @@ int main()
 
     
 
-    //const UnsignedInteger16 screenWidth = GetScreenWidth();
-    //const UnsignedInteger16 screenHeight = GetScreenHeight();
-
-    const UnsignedInteger16 screenWidth = GetScreenWidth();
-    const UnsignedInteger16 screenHeight = GetScreenHeight();
-
+    UnsignedInteger16 windowWidth = 1200;
+    UnsignedInteger16 windowHeight = 720;
 
     //Set up camera with possible zoom levels
     Camera2D camera = { 0 };
     camera.zoom = 0.5f;
-    const UnsignedInteger8 cameraZoomLevelCount = 10;
+    const UnsignedInteger8 cameraZoomLevelCount = 14;
     const Float32 cameraZoomLevels[cameraZoomLevelCount] = {
-        0.125f, 0.166667f, 0.25f, 0.666667f, 0.5f, 1.0f, 1.5f, 2.0f, 3.0f, 4.0f
+		0.125f, 0.166667f, 0.25f, 0.666667f, 0.5f, 1.0f, 1.5f, 2.0f, 3.0f, 4.0f, 6.0f, 8.0f, 12.0f, 16.0f
     };
     const String cameraZoomLevelStrings[cameraZoomLevelCount] = {
-        "12.5%", "16.7%", "25.0%", "50.0%", "66.7%", "100.0%", "150.0%", "200.0%", "300.0%", "400.0%"
+		"12.5%", "16.7%", "25.0%", "50.0%", "66.7%", "100.0%", "150.0%", "200.0%", "300.0%", "400.0%", "600.0%", "800.0%", "1200.0%", "1600.0%"
     };
     SignedInteger8 currentZoomLevel = 3;
 
-    //Main loop
-    InitWindow(screenWidth, screenHeight, "raylib [core] example - 2d camera mouse zoom");
+    //Right-hand panel
+    UnsignedInteger16 rightHandPanelWidth = 320;
+    Rectangle rightHandPanelBounds(windowWidth - rightHandPanelWidth, 0, rightHandPanelWidth, windowHeight);
+
+    //Topbar
+    const UnsignedInteger16 topbarHeight = 40;
+    Rectangle topbarBounds(0, 0, windowWidth, topbarHeight);
+
+    //Left-hand panel
+    const UnsignedInteger16 leftHandPanelWidth = 40;
+    Rectangle leftHandPanelBounds(0, 0, leftHandPanelWidth, windowHeight);
+
+    //Map bounding box
+    Rectangle mapBoundingBox(leftHandPanelWidth, topbarHeight, windowWidth - (rightHandPanelWidth + leftHandPanelWidth), windowHeight - topbarHeight);
+
+    //Mouse data
+    SignedInteger16 mouseX = 0, mouseY = 0;
+    Vector2 mouseDelta(0.0f, 0.0f);
+    Boolean mouseHasMoved = false;
+    Float32 mouseWheelMove = 0.0f;
+
+    //Is mouse within map or GUI 
+    Boolean mouseWithinMapNow = false;
+    Boolean mouseWithinMapStartingHold = false;
+
+	//Pixel the mouse is over (-1, -1 if not on the map)
+	Vector2 mousePositionOnMap(0.0f, 0.0f);
+	SignedInteger16 mousePositionOnMapX = -1, mousePositionOnMapY = -1;
+
+    //Define the window and give GPU access
+    InitWindow(windowWidth, windowHeight, "Map Editor :)");
     GuiLoadStyle("raygui-styles\\dark\\style_dark.rgs");
     SetTargetFPS(60);
-    while (!WindowShouldClose())
-    {
-        //Drag with mouse
-        if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) { camera.target = Vector2Add(camera.target, Vector2Scale(GetMouseDelta(), -1.0f / camera.zoom)); }
 
-        // Zoom based on mouse wheel
-        float wheel = GetMouseWheelMove();
-        if (wheel != 0)
-        {
-            Vector2 mouseWorldPos = GetScreenToWorld2D(GetMousePosition(), camera);
-            camera.offset = GetMousePosition();
-            camera.target = mouseWorldPos;
+    SetWindowState(FLAG_WINDOW_RESIZABLE);
+    SetWindowMinSize(1200, 720);
+    SetTraceLogLevel(LOG_NONE);
 
-            if (wheel < 0 && currentZoomLevel > 0) {
-                --currentZoomLevel;
-                camera.zoom = cameraZoomLevels[currentZoomLevel];
-            }
-            else if (wheel > 0 && currentZoomLevel < cameraZoomLevelCount - 1) {
-                ++currentZoomLevel;
-                camera.zoom = cameraZoomLevels[currentZoomLevel];
+    //Define our bmp files
+	const UnsignedInteger16 mapWidth = provincesBitmap.GetWidth();
+	const UnsignedInteger16 mapHeight = provincesBitmap.GetHeight();
+    Image provincesImage = {
+        .data = provincesBitmap.GetRgbDataPointer(),
+        .width = mapWidth,
+        .height = mapHeight,
+        .mipmaps = 1,
+        .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8 
+    }; 
+    Texture2D provincesTexture = LoadTextureFromImage(provincesImage);
+   
+    //Load our fonts
+    Font blenderBookFont18 = LoadFontEx("blender-font\\BlenderPro-Book.ttf", 18, NULL, 0);
+
+    //Main loop
+    while (!WindowShouldClose()) {
+        //Get GUI positions if we changed the window size
+        if (IsWindowResized()) {
+            windowWidth = GetRenderWidth();
+            windowHeight = GetRenderHeight();
+
+            rightHandPanelWidth = windowWidth * 0.4f;
+            if (rightHandPanelWidth < 300) rightHandPanelWidth = 300;
+            else if (rightHandPanelWidth > 600) rightHandPanelWidth = 600;
+            rightHandPanelBounds = Rectangle(windowWidth - rightHandPanelWidth, 0, rightHandPanelWidth, windowHeight);
+
+            topbarBounds = Rectangle(0, 0, windowWidth, topbarHeight);
+            leftHandPanelBounds = Rectangle(0, 0, leftHandPanelWidth, windowHeight);
+            mapBoundingBox = Rectangle(leftHandPanelWidth, topbarHeight, windowWidth - (rightHandPanelWidth + leftHandPanelWidth), windowHeight - topbarHeight);
+        }
+
+        //Get mouse data
+        mouseX = GetMouseX(); mouseY = GetMouseY(); mouseDelta = GetMouseDelta();
+        if (mouseDelta.x == 0 && mouseDelta.y == 0) mouseHasMoved = false;
+        else mouseHasMoved = true;
+
+        
+        if (mouseHasMoved) {
+            if (CheckCollisionPointRec(Vector2(mouseX, mouseY), mapBoundingBox)) { mouseWithinMapNow = true; }
+            else mouseWithinMapNow = false;
+        }
+
+        if (IsMouseButtonPressed(MOUSE_BUTTON_MIDDLE) && mouseWithinMapNow) mouseWithinMapStartingHold = true;
+        else if (IsMouseButtonReleased(MOUSE_BUTTON_MIDDLE) && mouseWithinMapStartingHold) mouseWithinMapStartingHold = false;
+        
+
+        //Drag w/ middle mouse button
+        if (IsMouseButtonDown(MOUSE_BUTTON_MIDDLE) && mouseWithinMapStartingHold) { camera.target = Vector2Add(camera.target, Vector2Scale(mouseDelta, -1.0f / camera.zoom)); }
+        //Zoom w/ scroll wheel
+        if (mouseWithinMapNow) {
+            mouseWheelMove = GetMouseWheelMove();
+            if (mouseWheelMove != 0) {
+                Vector2 mouseWorldPos = GetScreenToWorld2D(GetMousePosition(), camera);
+                camera.offset = GetMousePosition();
+                camera.target = mouseWorldPos;
+
+                if (mouseWheelMove < 0 && currentZoomLevel > 0) {
+                    --currentZoomLevel;
+                    camera.zoom = cameraZoomLevels[currentZoomLevel];
+                }
+                else if (mouseWheelMove > 0 && currentZoomLevel < cameraZoomLevelCount - 1) {
+                    ++currentZoomLevel;
+                    camera.zoom = cameraZoomLevels[currentZoomLevel];
+                }
             }
         }
 
-        //----------------------------------------------------------------------------------
+        mousePositionOnMap = GetScreenToWorld2D(Vector2(mouseX, mouseY), camera);
+        if (mousePositionOnMap.x < 0 || mousePositionOnMap.x > mapWidth || mousePositionOnMap.y < 0 || mousePositionOnMap.y > mapHeight) {
+			mousePositionOnMapX = -1; mousePositionOnMapY = -1;
+        }
+        else {
+			mousePositionOnMapX = static_cast<SignedInteger16>(std::floor(mousePositionOnMap.x));
+			mousePositionOnMapY = static_cast<SignedInteger16>(std::floor(mousePositionOnMap.y));
+        }
 
-        // Draw
-        //----------------------------------------------------------------------------------
+        //Drawing
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        ClearBackground(Color(22, 26, 31, 255));
 
         BeginMode2D(camera);
+            /*
+            rlPushMatrix();
+            rlTranslatef(0, 25 * 50, 0);
+            rlRotatef(90, 1, 0, 0);
+            DrawGrid(100, 50);
+            rlPopMatrix();
 
-        // Draw the 3d grid, rotated 90 degrees and centered around 0,0
-        // just so we have something in the XY plane
-        rlPushMatrix();
-        rlTranslatef(0, 25 * 50, 0);
-        rlRotatef(90, 1, 0, 0);
-        DrawGrid(100, 50);
-        rlPopMatrix();
-
-        // Draw a reference circle
-        DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 50, MAROON);
+            DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 50, MAROON);
+            */
+            DrawTexture(provincesTexture, 0, 0, WHITE);
 
         EndMode2D();
 
-        // Draw mouse reference
-        //Vector2 mousePos = GetWorldToScreen2D(GetMousePosition(), camera)
-        DrawCircleV(GetMousePosition(), 4, DARKGRAY);
-        DrawTextEx(GetFontDefault(), TextFormat("[%i, %i]", GetMouseX(), GetMouseY()),
-            Vector2Add(GetMousePosition(),Vector2(-44, -24)), 20, 2, BLACK);
+        DrawRectangleRec(rightHandPanelBounds, GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
+        DrawRectangleRec(topbarBounds, GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
+        DrawRectangleRec(leftHandPanelBounds, GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
 
-        DrawText(TextFormat("Current zoom level: %s", cameraZoomLevelStrings[currentZoomLevel].c_str()), 20, 20, 20, DARKGRAY);
+        DrawRectangleLinesEx(mapBoundingBox, 2, GetColor(GuiGetStyle(DEFAULT, BORDER_COLOR_NORMAL)));
+
+        DrawTextEx(blenderBookFont18, TextFormat("Current zoom level: %s\nMouse pos: %i, %i", cameraZoomLevelStrings[currentZoomLevel].c_str(), mousePositionOnMapX, mousePositionOnMapY), Vector2(0, 0), 18, 0, WHITE);
 
         EndDrawing();
     }
     CloseWindow();
+
+    provincesBitmap.PrintBitmapFile("provinces.bmp");
+    terrainBitmap.PrintBitmapFile("terrain.bmp");
 }
