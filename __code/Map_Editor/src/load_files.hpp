@@ -35,5 +35,6 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
 void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<StrategicRegion>& strategicRegionsArray,
 	Vector<State>& statesArray, Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& strategicRegionColoursToIdMap);
 
-void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap, const BitmapImage& provincesBitmap,
-	const BitmapImage& terrainBitmap, const BitmapImage& heightmapBitmap);
+void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap, const Vector<State>& statesArray,
+	const BitmapImage& provincesBitmap, BitmapImage& terrainBitmap, const BitmapImage& heightmapBitmap, BitmapImage& statesBitmap, BitmapImage& provinceTerrainsBitmap,
+	const VectorMap<Terrain>& landTerrainsArray, const VectorMap<Terrain>& seaTerrainsArray, const VectorMap<Terrain>& lakeTerrainsArray);

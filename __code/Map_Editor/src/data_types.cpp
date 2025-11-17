@@ -524,6 +524,8 @@ const UnsignedInteger16 Province::GetStrategicRegionId() const { return strategi
 void Province::SetStrategicRegionId(const UnsignedInteger16 idIn) { strategicRegionId = idIn; }
 ProvinceType Province::GetProvinceType() { return type; }
 const ProvinceType Province::GetProvinceType() const { return type; }
+UnsignedInteger16 Province::GetTerrain() { return terrainId; }
+const UnsignedInteger16 Province::GetTerrain() const { return terrainId; }
 
 const Vector<Pixel>& Province::GetPixels() const { return pixels; }
 Vector<Pixel>& Province::GetPixels() { return pixels; }

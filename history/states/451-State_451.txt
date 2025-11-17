@@ -2,13 +2,15 @@ state={
 	id=451
 	name="STATE_451"
 	history={
-		owner = ZZZ
+		owner = LYB
+		add_core_of = LYB
 	}
 	provinces={
-		1130 1204 4136 4151 7082 9992 10120 12094 
+		1057 
 	}
-	manpower= 100000
+	manpower= 1
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=wasteland
+	impassable = yes
 }

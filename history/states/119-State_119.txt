@@ -6,7 +6,7 @@ state={
 		add_core_of = GBR
 		add_core_of = ULS
 		
-		victory_points = { 13650 10 }
+		victory_points = { 13650 12 }
 		victory_points = { 385 4 }
 	}
 	provinces={

@@ -522,6 +522,8 @@ public:
 
     ProvinceType GetProvinceType();
     const ProvinceType GetProvinceType() const;
+	UnsignedInteger16 GetTerrain();
+	const UnsignedInteger16 GetTerrain() const;
 
     const Vector<Pixel>& GetPixels() const;
     Vector<Pixel>& GetPixels();

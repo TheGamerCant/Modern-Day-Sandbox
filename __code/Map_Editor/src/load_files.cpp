@@ -1001,6 +1001,23 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
 
     Vector<ColourRGB> randomColours = GenerateRandomColours(stateColoursToIdMap, statesArray.size());
     for (SizeT i = 0; i < statesArray.size(); ++i) { statesArray[i].SetColour(randomColours[i]); }
+
+    //Set state 0 to black
+    if (stateColoursToIdMap.find(0) == stateColoursToIdMap.end()) {
+        stateColoursToIdMap.erase(statesArray[0].GetColour().ToInteger());
+		stateColoursToIdMap[0] = 0;
+        statesArray[0].SetColour(ColourRGB(0, 0, 0));
+    }
+    else {
+		ColourRGB stateZeroOriginalColour = statesArray[0].GetColour();
+		UnsignedInteger16 blackStateId = stateColoursToIdMap.at(0);
+
+		statesArray[0].SetColour(ColourRGB(0, 0, 0));
+		statesArray[blackStateId].SetColour(stateZeroOriginalColour);
+
+        stateColoursToIdMap[0] = 0;
+        stateColoursToIdMap[stateZeroOriginalColour.ToInteger()] = blackStateId;
+    }
 }
 
 void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<StrategicRegion>& strategicRegionsArray,
@@ -1132,10 +1149,28 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
 
     Vector<ColourRGB> randomColours = GenerateRandomColours(strategicRegionColoursToIdMap, strategicRegionsArray.size());
     for (SizeT i = 0; i < strategicRegionsArray.size(); ++i) { strategicRegionsArray[i].SetColour(randomColours[i]); }
+
+    //Set strategic region 0 to black
+    if (strategicRegionColoursToIdMap.find(0) == strategicRegionColoursToIdMap.end()) {
+        strategicRegionColoursToIdMap.erase(strategicRegionsArray[0].GetColour().ToInteger());
+        strategicRegionColoursToIdMap[0] = 0;
+        strategicRegionsArray[0].SetColour(ColourRGB(0, 0, 0));
+    }
+    else {
+        ColourRGB strategicRegionZeroOriginalColour = strategicRegionsArray[0].GetColour();
+        UnsignedInteger16 blackStrategicRegionId = strategicRegionColoursToIdMap.at(0);
+
+        strategicRegionsArray[0].SetColour(ColourRGB(0, 0, 0));
+        strategicRegionsArray[blackStrategicRegionId].SetColour(strategicRegionZeroOriginalColour);
+
+        strategicRegionColoursToIdMap[0] = 0;
+        strategicRegionColoursToIdMap[strategicRegionZeroOriginalColour.ToInteger()] = blackStrategicRegionId;
+    }
 }
 
-void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap, const BitmapImage& provincesBitmap,
-    const BitmapImage& terrainBitmap, const BitmapImage& heightmapBitmap) {
+void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap, const Vector<State>& statesArray,
+    const BitmapImage& provincesBitmap, BitmapImage& terrainBitmap, const BitmapImage& heightmapBitmap, BitmapImage& statesBitmap, BitmapImage& provinceTerrainsBitmap,
+    const VectorMap<Terrain>& landTerrainsArray, const VectorMap<Terrain>& seaTerrainsArray, const VectorMap<Terrain>& lakeTerrainsArray) {
     const UnsignedInteger64 width = provincesBitmap.GetWidth();
     const UnsignedInteger64 height = provincesBitmap.GetHeight();
 
@@ -1164,4 +1199,45 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
     for (auto& prov : provincesArray) {
         prov.UpdateBoundingBox();
     }
+
+	const SizeT dimensions = provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 3;
+    ColourRGB currentProvinceColour (0, 0, 0);
+    ColourRGB prevProvinceColour (0, 0, 0);
+    UnsignedInteger16 provinceId = 0;
+	ColourRGB currentStateColour(0, 0, 0);
+    Vector<UnsignedInteger8> statesRgbData(dimensions, 0);
+
+	ColourRGB currentTerrainColour(0, 0, 0);
+    Vector<UnsignedInteger8> terrainsRgbData(dimensions, 0);
+
+    for (SizeT i = 0; i < dimensions; i += 3) {
+        currentProvinceColour = provincesBitmap.GetColourFromIndexPremultiplied(i);
+        if (currentProvinceColour != prevProvinceColour) {
+            prevProvinceColour = currentProvinceColour;
+			provinceId = provinceColoursToIdMap.at(currentProvinceColour.ToInteger());
+
+			currentStateColour = statesArray[provincesArray[provinceId].GetStateId()].GetColour();
+            switch (provincesArray[provinceId].GetProvinceType()) {
+                case ProvinceType::Lake:
+                    currentTerrainColour = lakeTerrainsArray[provincesArray[provinceId].GetTerrain()].GetColour();
+					break;
+                case ProvinceType::Sea:
+                    currentTerrainColour = seaTerrainsArray[provincesArray[provinceId].GetTerrain()].GetColour();
+					break;
+                default:
+                    currentTerrainColour = landTerrainsArray[provincesArray[provinceId].GetTerrain()].GetColour();
+                    break;
+            }
+        }
+        statesRgbData[i] = currentStateColour.r;
+        statesRgbData[i + 1] = currentStateColour.g;
+        statesRgbData[i + 2] = currentStateColour.b;
+
+        terrainsRgbData[i] = currentTerrainColour.r;
+        terrainsRgbData[i + 1] = currentTerrainColour.g;
+        terrainsRgbData[i + 2] = currentTerrainColour.b;
+    }
+
+    statesBitmap = BitmapImage(statesRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight());
+    provinceTerrainsBitmap = BitmapImage(terrainsRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight());
 }

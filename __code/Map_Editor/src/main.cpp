@@ -55,7 +55,7 @@ int main()
     Vector<StrategicRegion> strategicRegionsArray;
     LoadStrategicRegionFiles(vanillaDirectory, modDirectory, modReplaceDirectories, strategicRegionsArray, statesArray, provincesArray, strategicRegionColoursToIdMap);
     
-    BitmapImage provincesBitmap, terrainBitmap, heightmapBitmap;
+    BitmapImage provincesBitmap, terrainBitmap, heightmapBitmap, statesBitmap, provinceTerrainsBitmap;
 
     std::thread loadProvincesBMPThread(LoadBitmap, std::ref(provincesBitmap), std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories), "map\\provinces.bmp");
     std::thread loadTerrainBMPThread(LoadBitmap, std::ref(terrainBitmap), std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories), "map\\terrain.bmp");
@@ -63,7 +63,7 @@ int main()
 
     loadProvincesBMPThread.join(); loadTerrainBMPThread.join(); loadHeightmapBMPThread.join();
 
-    LoadProvincePixelData(provincesArray, provinceColoursToIdMap, provincesBitmap, terrainBitmap, heightmapBitmap);
+    LoadProvincePixelData(provincesArray, provinceColoursToIdMap, statesArray, provincesBitmap, terrainBitmap, heightmapBitmap, statesBitmap, provinceTerrainsBitmap, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray);
 
     std::cout << "Files took " << GetTimeElapsedFromStart(startTime) << " to load.\n\n\n";
 
@@ -128,12 +128,35 @@ int main()
 	const UnsignedInteger16 mapHeight = provincesBitmap.GetHeight();
     Image provincesImage = {
         .data = provincesBitmap.GetRgbDataPointer(),
-        .width = mapWidth,
-        .height = mapHeight,
-        .mipmaps = 1,
+        .width = mapWidth, .height = mapHeight, .mipmaps = 1,
         .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8 
     }; 
     Texture2D provincesTexture = LoadTextureFromImage(provincesImage);
+
+    Image provinceTerrainsImage = {
+        .data = provinceTerrainsBitmap.GetRgbDataPointer(),
+        .width = mapWidth, .height = mapHeight, .mipmaps = 1,
+        .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8 
+    }; 
+    Texture2D provinceTerrainsTexture = LoadTextureFromImage(provinceTerrainsImage);
+
+    Image statesImage = {
+        .data = statesBitmap.GetRgbDataPointer(),
+        .width = mapWidth, .height = mapHeight, .mipmaps = 1,
+        .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8 
+    }; 
+    Texture2D statesTexture = LoadTextureFromImage(statesImage);
+
+    //Map mode dropdown box
+    enum MapModeEnum : UnsignedInteger8 {
+        Provinces = 0,
+		ProvinceTerrains,
+        States
+    };
+
+    SignedInteger32 currentMapMode = Provinces;
+    Boolean mapModeDropdownBoxState = false;
+	Rectangle mapModeDropdownBoxBounds(210, 6, 180, topbarHeight - 12);
    
     //Load our fonts
     Font blenderBookFont18 = LoadFontEx("blender-font\\BlenderPro-Book.ttf", 18, NULL, 0);
@@ -191,8 +214,9 @@ int main()
             }
         }
 
+		//Get the pixel on the map the mouse is over
         mousePositionOnMap = GetScreenToWorld2D(Vector2(mouseX, mouseY), camera);
-        if (mousePositionOnMap.x < 0 || mousePositionOnMap.x > mapWidth || mousePositionOnMap.y < 0 || mousePositionOnMap.y > mapHeight) {
+        if (!mouseWithinMapNow || mousePositionOnMap.x < 0 || mousePositionOnMap.x > mapWidth || mousePositionOnMap.y < 0 || mousePositionOnMap.y > mapHeight) {
 			mousePositionOnMapX = -1; mousePositionOnMapY = -1;
         }
         else {
@@ -205,16 +229,26 @@ int main()
         ClearBackground(Color(22, 26, 31, 255));
 
         BeginMode2D(camera);
-            /*
-            rlPushMatrix();
-            rlTranslatef(0, 25 * 50, 0);
-            rlRotatef(90, 1, 0, 0);
-            DrawGrid(100, 50);
-            rlPopMatrix();
 
-            DrawCircle(GetScreenWidth() / 2, GetScreenHeight() / 2, 50, MAROON);
-            */
-            DrawTexture(provincesTexture, 0, 0, WHITE);
+            //Draw map
+            switch (currentMapMode) {
+                case Provinces:
+                    DrawTexture(provincesTexture, 0, 0, WHITE);
+                    break;
+                case ProvinceTerrains:
+                    DrawTexture(provinceTerrainsTexture, 0, 0, WHITE);
+                    break;
+                case States:
+                    DrawTexture(statesTexture, 0, 0, WHITE);
+                    break;
+                default:
+                    break;
+            }
+
+            if (mousePositionOnMapX != -1) {
+                //Draw lines over current pixel
+                DrawRectangleLinesEx(Rectangle(mousePositionOnMapX, mousePositionOnMapY, 1, 1), 1, Color(150, 150, 150, 127));
+            }
 
         EndMode2D();
 
@@ -224,12 +258,14 @@ int main()
 
         DrawRectangleLinesEx(mapBoundingBox, 2, GetColor(GuiGetStyle(DEFAULT, BORDER_COLOR_NORMAL)));
 
-        DrawTextEx(blenderBookFont18, TextFormat("Current zoom level: %s\nMouse pos: %i, %i", cameraZoomLevelStrings[currentZoomLevel].c_str(), mousePositionOnMapX, mousePositionOnMapY), Vector2(0, 0), 18, 0, WHITE);
+        DrawTextEx(blenderBookFont18, TextFormat("Current zoom level: %s\nMouse pos: %i, %i", cameraZoomLevelStrings[currentZoomLevel].c_str(), mousePositionOnMapX, mousePositionOnMapY), Vector2(2, 2), 18, 0, WHITE);
+
+		if (GuiDropdownBox(mapModeDropdownBoxBounds, "Provinces\nProvince Terrains\nStates", &currentMapMode, mapModeDropdownBoxState)) mapModeDropdownBoxState = !mapModeDropdownBoxState;
 
         EndDrawing();
     }
     CloseWindow();
 
-    provincesBitmap.PrintBitmapFile("provinces.bmp");
-    terrainBitmap.PrintBitmapFile("terrain.bmp");
+	statesBitmap.PrintBitmapFile("states.bmp");
+	provinceTerrainsBitmap.PrintBitmapFile("province_terrains.bmp");
 }
