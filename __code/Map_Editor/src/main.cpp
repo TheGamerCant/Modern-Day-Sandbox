@@ -7,6 +7,9 @@
 #include "load_files.hpp"
 #include "bmp.hpp"
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 #include "raylib.h"
 #include "rlgl.h"
 #include "raymath.h"
@@ -115,13 +118,13 @@ int main()
 	SignedInteger16 mousePositionOnMapX = -1, mousePositionOnMapY = -1;
 
     //Define the window and give GPU access
+    SetTraceLogLevel(LOG_NONE)
     InitWindow(windowWidth, windowHeight, "Map Editor :)");
     GuiLoadStyle("raygui-styles\\dark\\style_dark.rgs");
     SetTargetFPS(60);
 
     SetWindowState(FLAG_WINDOW_RESIZABLE);
     SetWindowMinSize(1200, 720);
-    SetTraceLogLevel(LOG_NONE);
 
     //Define our bmp files
 	const UnsignedInteger16 mapWidth = provincesBitmap.GetWidth();
