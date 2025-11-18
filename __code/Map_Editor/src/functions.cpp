@@ -183,24 +183,24 @@ Boolean StringCanBecomeDate(const String& str) {
             charArray[arraySize++] = 0;
             String currentStr = String(charArray);
 
-            if (!StringCanBecomeInteger(currentStr)) { return false; }
+            if (!StringCanBecomeInteger(currentStr)) { delete[] charArray; return false; }
             SignedInteger32 entry = std::stoi(currentStr);
 
             switch (dateColumn) {
             case 0:
-                if (entry < -5000) { return false; }
+                if (entry < -5000) { delete[] charArray; return false; }
                 year = entry;
                 break;
             case 1:
-                if (entry < 1 || entry > 12) { return false; }
+                if (entry < 1 || entry > 12) { delete[] charArray; return false; }
                 month = entry;
                 break;
             case 2:
-                if (!ValidDateMonth(month, entry)) { return false; }
+                if (!ValidDateMonth(month, entry)) { delete[] charArray; return false; }
                 date = entry;
                 break;
             case 3:
-                if (entry < 0 || entry > 23) { return false; }
+                if (entry < 0 || entry > 23) { delete[] charArray; return false; }
                 hour = entry;
                 break;
             default:
@@ -216,10 +216,10 @@ Boolean StringCanBecomeDate(const String& str) {
         charArray[arraySize++] = 0;
         String currentStr = String(charArray);
 
-        if (!StringCanBecomeInteger(currentStr)) { return false; }
+        if (!StringCanBecomeInteger(currentStr)) { delete[] charArray; return false; }
         SignedInteger32 entry = std::stoi(currentStr);
 
-        if (!ValidDateMonth(month, entry)) { return false; }
+        if (!ValidDateMonth(month, entry)) { delete[] charArray; return false; }
         date = entry;
         hour = 1;
         arraySize = 0;
@@ -228,15 +228,15 @@ Boolean StringCanBecomeDate(const String& str) {
         charArray[arraySize++] = 0;
         String currentStr = String(charArray);
 
-        if (!StringCanBecomeInteger(currentStr)) { return false; }
+        if (!StringCanBecomeInteger(currentStr)) { delete[] charArray; return false; }
         SignedInteger32 entry = std::stoi(currentStr);
 
-        if (entry < 1 || entry > 24) { return false; }
+        if (entry < 1 || entry > 24) { delete[] charArray; return false; }
         hour = entry;
         arraySize = 0;
     }
 
-    if (arraySize != 0) return false;
+    if (arraySize != 0) { delete[] charArray; return false; }
 
     delete[] charArray;
     return true;

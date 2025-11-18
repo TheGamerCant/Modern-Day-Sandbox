@@ -1,0 +1,1726 @@
+#Higher priority = higher in the if block
+#Best used to order for "most likely to control" so we don't waste CPU power
+
+525 = {
+    default = "Kyiv"
+    entry = { 
+        name = "Kyiv"
+        required = {
+            "TAG_using_ukrainian_names = yes"
+        }
+        priority = 0
+    }
+    entry = { 
+        name = "Kiev"
+        required = {
+            "TAG_using_russian_names = yes"
+        }
+        priority = 1
+    }
+}
+
+
+3479 = {
+    default = "Artemivsk"
+    entry = { 
+        name = "Artemivsk"
+        required = {
+            "TAG_using_russian_names = yes"
+        }
+        priority = 0
+    }
+    entry = { 
+        name = "Bakhmut"
+        required = {
+            "has_global_flag = UKR_decommunisation_2016_flag"
+        }
+        priority = 1
+    }
+}
+
+13374 = { default = "Sacramento International Airport" }
+13370 = { default = "Sacramento" }
+9671 = { default = "San Francisco" }
+13369 = { default = "San Jose" }
+768 = { default = "Redding" }
+610 = { default = "Eureka" }
+9697 = { default = "Chico" }
+9730 = { default = "Fort Bragg" }
+14464 = { default = "Stockton" }
+6694 = { default = "Modesto" }
+14462 = { default = "Bakersfield" }
+14459 = { default = "Fresno" }
+9637 = { default = "Monterey" }
+986 = { default = "San Luis Obispo" }
+9814 = { default = "Los Angeles International Airport" }
+13378 = { default = "Los Angeles" }
+13381 = { default = "San Bernardino" }
+13368 = { default = "Fremont" }
+13376 = { default = "San Diego" }
+7986 = { default = "El Centro" }
+13375 = { default = "Santa Barbara" }
+4727 = { default = "Blythe" }
+10159 = { default = "Alturas" }
+13383 = { default = "Las Vegas" }
+13384 = { default = "Henderson" }
+4607 = { default = "Carson City" }
+10422 = { default = "Reno" }
+7756 = { default = "Elko" }
+13386 = { default = "Salt Lake City" }
+13387 = { default = "Provo" }
+13389 = { default = "Ogden" }
+12699 = { default = "St. George" }
+13390 = { default = "Phoenix" }
+13393 = { default = "Phoenix-Mesa Gateway Airport" }
+13394 = { default = "Tuscon" }
+1793 = { default = "Prescott" }
+12765 = { default = "Flagstaff" }
+13396 = { default = "Portland" }
+3513 = { default = "Salem" }
+528 = { default = "Eugene" }
+4274 = { default = "Bend" }
+12553 = { default = "Baker City" }
+13399 = { default = "Vancouver" }
+14472 = { default = "San Juan" }
+13400 = { default = "Seattle" }
+13402 = { default = "Tacoma" }
+10155 = { default = "Yakima" }
+10690 = { default = "Kennewick" }
+4747 = { default = "Richland" }
+14471 = { default = "Honolulu" }
+12021 = { default = "Hilo" }
+7195 = { default = "Kahului" }
+13407 = { default = "Albuquerque" }
+12684 = { default = "Santa Fe" }
+12791 = { default = "Las Cruces" }
+8070 = { default = "Roswell" }
+13408 = { default = "Denver" }
+13409 = { default = "Lakewood" }
+13411 = { default = "Denver International Airport" }
+13413 = { default = "Boulder" }
+6887 = { default = "Grand Junction" }
+1809 = { default = "Colorado Springs" }
+12627 = { default = "Pueblo" }
+14469 = { default = "Boise" }
+12535 = { default = "Pocatello" }
+1690 = { default = "Spokane" }
+1832 = { default = "Sandpoint" }
+4778 = { default = "Moscow" }
+7999 = { default = "Durango" }
+4723 = { default = "Cheyenne" }
+10711 = { default = "Casper" }
+4610 = { default = "Buffalo" }
+12633 = { default = "Rock Springs" }
+4857 = { default = "Billings" }
+12585 = { default = "Bozeman" }
+6742 = { default = "Missoula" }
+1854 = { default = "Whitefish" }
+10706 = { default = "Glendive" }
+10352 = { default = "Pensacola" }
+13415 = { default = "Tampa" }
+13416 = { default = "St. Petersburg" }
+13417 = { default = "Clearwater" }
+1913 = { default = "Fort Myers" }
+13423 = { default = "Orlando" }
+13427 = { default = "Orlando International Airport" }
+13419 = { default = "Miami" }
+13421 = { default = "Fort Lauderdale" }
+13422 = { default = "West Palm Beach" }
+10407 = { default = "Tallahassee" }
+13428 = { default = "Jacksonville" }
+1836 = { default = "Bismark" }
+3719 = { default = "Fargo" }
+4759 = { default = "Williston" }
+1747 = { default = "Rapid City" }
+7862 = { default = "Aberdeen" }
+14485 = { default = "Omaha" }
+10676 = { default = "Lincoln" }
+7852 = { default = "Grand Island" }
+4749 = { default = "Scottsbluff" }
+1352 = { default = "Topeka" }
+10532 = { default = "Hays" }
+14483 = { default = "Wichita" }
+13293 = { default = "Minneapolis" }
+13315 = { default = "St. Paul" }
+4664 = { default = "Rochester" }
+1734 = { default = "Duluth" }
+1867 = { default = "Marshall" }
+12667 = { default = "Sioux Falls" }
+13430 = { default = "Des Moines" }
+10478 = { default = "Davenport" }
+7306 = { default = "Cedar Rapids" }
+12646 = { default = "Sioux City" }
+13438 = { default = "Overland Park" }
+10717 = { default = "Kansas City" }
+4569 = { default = "St. Louis" }
+7607 = { default = "Columbia" }
+10370 = { default = "Springfield" }
+4540 = { default = "Sikeston" }
+13439 = { default = "Oklahoma City" }
+1806 = { default = "Tulsa" }
+1618 = { default = "Muskogee" }
+13454 = { default = "Dallas" }
+13455 = { default = "Fort Worth" }
+13456 = { default = "Dallas Fort Worth International Airport" }
+13465 = { default = "Austin" }
+13446 = { default = "Houston" }
+9908 = { default = "Amarillo" }
+9773 = { default = "Lubbock" }
+10778 = { default = "Tyler" }
+5022 = { default = "Waco" }
+1915 = { default = "Abilene" }
+13451 = { default = "Cypress" }
+13444 = { default = "League City" }
+13467 = { default = "San Antonio" }
+14476 = { default = "New Braunfels" }
+14482 = { default = "El Paso" }
+4955 = { default = "Odessa" }
+1998 = { default = "Midland" }
+2019 = { default = "Bandera" }
+6785 = { default = "Corpus Christi" }
+13471 = { default = "New Orleans" }
+13473 = { default = "Baton Rouge" }
+1643 = { default = "Lafayette" }
+12401 = { default = "Shreveport" }
+1559 = { default = "Bastrop" }
+14488 = { default = "Little Rock" }
+10477 = { default = "Conway" }
+4625 = { default = "Jonesboro" }
+12778 = { default = "Fort Smith" }
+9786 = { default = "Dover" }
+13474 = { default = "Wilmington" }
+3957 = { default = "Washington" }
+3712 = { default = "Concord" }
+7629 = { default = "Burlington" }
+3732 = { default = "Portland" }
+12459 = { default = "Bangor" }
+7462 = { default = "Augusta" }
+6732 = { default = "Boston" }
+13478 = { default = "Springfield" }
+3710 = { default = "Worcester" }
+13480 = { default = "Yarmouth" }
+13481 = { default = "Providence" }
+13483 = { default = "Hartford" }
+13484 = { default = "New Haven" }
+13485 = { default = "Sikorsky Memorial Airport" }
+9832 = { default = "New London" }
+14491 = { default = "Jackson" }
+7668 = { default = "Biloxi" }
+1615 = { default = "Hattiesburg" }
+11717 = { default = "Tupelo" }
+13488 = { default = "Birmingham" }
+5059 = { default = "Huntsville" }
+1587 = { default = "Tuscaloosa" }
+860 = { default = "Montgomery" }
+7480 = { default = "Mobile" }
+13492 = { default = "Nashville" }
+13495 = { default = "Nashville International Airport" }
+13496 = { default = "Memphis" }
+12670 = { default = "Clarksville" }
+1758 = { default = "Chattanooga" }
+10657 = { default = "Knoxville" }
+13501 = { default = "Atlanta" }
+13504 = { default = "Marietta" }
+13507 = { default = "Hartsfield-Jackson Atlanta International Airport" }
+13499 = { default = "Augusta" }
+638 = { default = "Athens" }
+11975 = { default = "Savannah" }
+12498 = { default = "Columbus" }
+10492 = { default = "Macon" }
+13510 = { default = "Charleston" }
+13513 = { default = "Columbia" }
+4653 = { default = "Greeneville" }
+11927 = { default = "Myrtle Beach" }
+13514 = { default = "Charlotte" }
+13518 = { default = "Raleigh" }
+10081 = { default = "Greensboro" }
+13519 = { default = "Durham" }
+1132 = { default = "Wilmington" }
+12054 = { default = "Fayetteville" }
+7643 = { default = "Asheville" }
+13520 = { default = "Milwaukee" }
+13521 = { default = "Milwaukee Mitchell International Airport" }
+13569 = { default = "Green Bay" }
+13972 = { default = "Appleton" }
+13754 = { default = "Madison" }
+4029 = { default = "Eau Claire" }
+703 = { default = "Rhinelander" }
+4854 = { default = "Marquette" }
+6710 = { default = "Detroit" }
+13528 = { default = "Grand Rapids" }
+6769 = { default = "Lansing" }
+11656 = { default = "Ann Arbor" }
+11669 = { default = "Flint" }
+7420 = { default = "Traverse City" }
+10303 = { default = "Alpena" }
+13537 = { default = "Anchorage" }
+13538 = { default = "Ted Stevens Anchorage International Airport" }
+9450 = { default = "Chicago" }
+1527 = { default = "Peoria" }
+10457 = { default = "Springfield" }
+7831 = { default = "Carbondale" }
+13546 = { default = "Naperville" }
+12312 = { default = "Rockford" }
+13549 = { default = "Indianapolis" }
+13543 = { default = "Gary" }
+9654 = { default = "South Bend" }
+1595 = { default = "Fort Wayne" }
+11635 = { default = "Evansville" }
+12437 = { default = "Bloomington" }
+13557 = { default = "Lexington" }
+13553 = { default = "Louisville" }
+10586 = { default = "Paducah" }
+4988 = { default = "Bowling Green" }
+12637 = { default = "Pikeville" }
+6971 = { default = "Charleston" }
+9923 = { default = "Morgantown" }
+7466 = { default = "Beckley" }
+13560 = { default = "Cincinnati" }
+13566 = { default = "Columbus" }
+6890 = { default = "Cleveland" }
+13563 = { default = "Akron" }
+689 = { default = "Toledo" }
+13562 = { default = "Dayton" }
+4442 = { default = "Youngstown" }
+13570 = { default = "Alexandria" }
+13571 = { default = "Dulles International Airport" }
+13572 = { default = "Richmond" }
+13575 = { default = "Newport News" }
+13576 = { default = "Norfolk" }
+1506 = { default = "Roanoke" }
+3823 = { default = "Charlottesville" }
+13579 = { default = "Baltimore" }
+6984 = { default = "Frederick" }
+6929 = { default = "Hagerstown" }
+6882 = { default = "Newark" }
+13589 = { default = "Toms River" }
+13842 = { default = "Trenton" }
+6845 = { default = "Philadelphia" }
+13593 = { default = "Pittsburgh" }
+11785 = { default = "Harrisburg" }
+880 = { default = "Butler" }
+882 = { default = "Erie" }
+9820 = { default = "Scranton" }
+3847 = { default = "York" }
+13601 = { default = "New York City" }
+3878 = { default = "JFK International Airport" }
+13602 = { default = "Buffalo" }
+68 = { default = "Rochester" }
+13901 = { default = "Syracuse" }
+607 = { default = "Albany" }
+3747 = { default = "Oswego" }
+11650 = { default = "Elmira" }
+11662 = { default = "Plattsburgh" }
+3775 = { default = "Toronto" }
+13607 = { default = "Toronto Pearson International Airport" }
+13614 = { default = "London" }
+13613 = { default = "Hamilton" }
+14046 = { default = "Windsor" }
+749 = { default = "Niagra Falls" }
+6610 = { default = "Owen Sound" }
+3605 = { default = "Kingston" }
+3778 = { default = "Ottawa" }
+13608 = { default = "Gatineau" }
+12505 = { default = "St. John's" }
+13615 = { default = "Montreal" }
+13619 = { default = "Quebec City" }
+9601 = { default = "Trois-Rivières" }
+10230 = { default = "Sherbrooke" }
+10174 = { default = "St. Georges" }
+4285 = { default = "St. John" }
+634 = { default = "Fredericton" }
+14003 = { default = "Halifax" }
+7304 = { default = "Truro" }
+4360 = { default = "Charlottetown" }
+7893 = { default = "Saguenay" }
+11902 = { default = "Rouyn-Noranda" }
+9740 = { default = "Fort Albany" }
+7899 = { default = "Thunder Bay" }
+13621 = { default = "Winnipeg" }
+12145 = { default = "Brandon" }
+1873 = { default = "Steinbach" }
+12603 = { default = "Regina" }
+1788 = { default = "Estevan" }
+3769 = { default = "Swift Current" }
+13630 = { default = "Edmonton" }
+13625 = { default = "Calgary" }
+13627 = { default = "Calgary International Airport" }
+1262 = { default = "Lethbridge" }
+7887 = { default = "Red Deer" }
+13635 = { default = "Medicine Hat" }
+12571 = { default = "Prince George" }
+13639 = { default = "Nanaimo" }
+13640 = { default = "Victoria" }
+12259 = { default = "Port Hardy" }
+13642 = { default = "Vancouver" }
+4428 = { default = "Abbotsford" }
+7753 = { default = "Chilliwack" }
+12578 = { default = "Kelowna" }
+1323 = { default = "Kamloops" }
+11293 = { default = "Dublin" }
+13648 = { default = "Dublin Airport" }
+3359 = { default = "Drogheda" }
+337 = { default = "Letterkenny" }
+11237 = { default = "Waterford" }
+6313 = { default = "Limerick" }
+7394 = { default = "Cork" }
+9303 = { default = "Galway" }
+11371 = { default = "Sligo" }
+303 = { default = "Tullamore" }
+13650 = { default = "Belfast" }
+385 = { default = "Londonderry" }
+540 = { default = "Plymouth" }
+3463 = { default = "Exeter" }
+13653 = { default = "Bournemouth" }
+13658 = { default = "Portsmouth" }
+13656 = { default = "Southampton" }
+13654 = { default = "Newport" }
+13659 = { default = "Brighton" }
+13655 = { default = "Basingstoke" }
+507 = { default = "Crawley" }
+3501 = { default = "Dover" }
+13070 = { default = "Maidstone" }
+6526 = { default = "Truro" }
+13661 = { default = "Reading" }
+6103 = { default = "London" }
+13667 = { default = "Chatham" }
+13662 = { default = "Heathrow Airport" }
+13668 = { default = "Southend-on-Sea" }
+13666 = { default = "Norwich" }
+11253 = { default = "Cambridge" }
+11221 = { default = "Luton" }
+13673 = { default = "Cardiff" }
+13674 = { default = "Newport" }
+13676 = { default = "Swansea" }
+13671 = { default = "Llanfairpwllgwyngyll" }
+9364 = { default = "Wrexham" }
+3274 = { default = "Aberystwyth" }
+13679 = { default = "Bristol" }
+13680 = { default = "Gloucester" }
+6318 = { default = "Manchester" }
+13685 = { default = "Manchester Airport" }
+13681 = { default = "Liverpool" }
+9239 = { default = "Milton Keynes" }
+13689 = { default = "Birmingham" }
+13690 = { default = "Wolverhampton" }
+3241 = { default = "Hereford" }
+11345 = { default = "Stoke-on-Trent" }
+9268 = { default = "Northampton" }
+13695 = { default = "Nottingham" }
+13696 = { default = "Derby" }
+9322 = { default = "Boston" }
+13698 = { default = "Leicester" }
+13700 = { default = "Sheffield" }
+13702 = { default = "Doncaster" }
+9379 = { default = "Leeds" }
+11297 = { default = "Hull" }
+9269 = { default = "York" }
+9332 = { default = "Harrogate" }
+3311 = { default = "Douglas" }
+11332 = { default = "Carlisle" }
+13710 = { default = "Newcastle" }
+13708 = { default = "Middlesbrough" }
+13711 = { default = "Sunderland" }
+11299 = { default = "Berwick-upon-Tweed" }
+6335 = { default = "Blackpool" }
+11064 = { default = "Kirkwall" }
+6196 = { default = "Lerwick" }
+13713 = { default = "Aberdeen" }
+3150 = { default = "Dundee" }
+9075 = { default = "Inverness" }
+11161 = { default = "Fort William" }
+11207 = { default = "Elgin" }
+13719 = { default = "Glasgow" }
+3273 = { default = "Glasgow Airport" }
+11218 = { default = "Dumfries" }
+6350 = { default = "Stranraer" }
+13716 = { default = "Edinburgh" }
+9383 = { default = "Falkirk" }
+11378 = { default = "Cockburnspath" }
+13727 = { default = "Sevastopol" }
+9680 = { default = "Kerch" }
+13731 = { default = "Simferopol" }
+577 = { default = "Chernivtsi" }
+9548 = { default = "Storozhynets" }
+3457 = { default = "Khmelnytskyi" }
+3511 = { default = "Shepetivka" }
+3430 = { default = "Kamianets-Podilskyi" }
+11691 = { default = "Uzhorod" }
+3548 = { default = "Mukachevo" }
+11479 = { default = "Lviv" }
+3483 = { default = "Ternopil" }
+11411 = { default = "Ivano-Frankivsk" }
+536 = { default = "Sheptytskyi" }
+6483 = { default = "Drohobych" }
+13805 = { default = "Lutsk" }
+6435 = { default = "Rivne" }
+11441 = { default = "Volodymyr-Volynskyi" }
+535 = { default = "Sarny" }
+13737 = { default = "Kherson" }
+11715 = { default = "Velyka Oleksandrivka" }
+3573 = { default = "Nova Kakhovka" }
+568 = { default = "Skadovsk" }
+13741 = { default = "Dontesk" }
+13742 = { default = "Donetsk International Airport" }
+13751 = { default = "Horlivka" }
+13753 = { default = "Mariupol" }
+13743 = { default = "Avdiivka" }
+3491 = { default = "Krasnyi Lyman" }
+13747 = { default = "Luhansk" }
+6505 = { default = "Alchevsk" }
+9446 = { default = "Rovenky" }
+13740 = { default = "Lysychansk" }
+13756 = { default = "Siverskodonetsk" }
+11513 = { default = "Starobilsk" }
+570 = { default = "Svatove" }
+13760 = { default = "Zaporizhzhia" }
+13763 = { default = "Melitopol" }
+9571 = { default = "Berdyansk" }
+13765 = { default = "Tokmak" }
+13767 = { default = "Kharkiv" }
+9556 = { default = "Chuhuiv" }
+3409 = { default = "Vovchansk" }
+9531 = { default = "Izyum" }
+11461 = { default = "Lozova" }
+13768 = { default = "Kharkiv International Airport" }
+13779 = { default = "Dnipropetrovsk" }
+13774 = { default = "Kryvyi Rih" }
+9419 = { default = "Nikopol" }
+9433 = { default = "Kamianske" }
+9463 = { default = "Novomoskovsk" }
+486 = { default = "Pavlohrad" }
+13815 = { default = "Sumy" }
+9477 = { default = "Konotop" }
+3225 = { default = "Shostka" }
+9454 = { default = "Zolochiv" }
+3455 = { default = "Okhtyrka" }
+463 = { default = "Romny" }
+13782 = { default = "Mykolaiv" }
+6597 = { default = "Pervomaisk" }
+3738 = { default = "Ochakiv" }
+11546 = { default = "Yuzhnoukrainsk" }
+574 = { default = "Kazanka" }
+13785 = { default = "Slovyansk" }
+13786 = { default = "Kramatorsk" }
+13787 = { default = "Kostyantynivka" }
+3466 = { default = "Pokrovsk" }
+429 = { default = "Hulyaipole" }
+6776 = { default = "Vuhledar" }
+13788 = { default = "Tiraspol" }
+13790 = { default = "Bendery" }
+13789 = { default = "Rybnitsa" }
+13792 = { default = "Dubossary" }
+13797 = { default = "Odesa" }
+13798 = { default = "Odesa International Airport" }
+9576 = { default = "Podilsk" }
+13799 = { default = "Bilhorod-Dnistrovsky" }
+3701 = { default = "Izmail" }
+9698 = { default = "Berezivka" }
+13802 = { default = "Vinnytsia" }
+6480 = { default = "Haisyn" }
+476 = { default = "Zhmerynka" }
+6455 = { default = "Mohyliv-Podilskyi" }
+11514 = { default = "Zhytomyr" }
+11477 = { default = "Korosten" }
+3470 = { default = "Zviahel" }
+511 = { default = "Poltava" }
+6495 = { default = "Kremenchuk" }
+559 = { default = "Lubny" }
+13808 = { default = "Chernihiv" }
+3480 = { default = "Nizhyn" }
+9437 = { default = "Pryluky" }
+238 = { default = "Novhorod-Siverskyi" }
+504 = { default = "Bila Tserkva" }
+13811 = { default = "Hostolmel" }
+11557 = { default = "Brovary" }
+9543 = { default = "Pereiaslav" }
+13818 = { default = "Cherkasy" }
+11424 = { default = "Uman" }
+488 = { default = "Smila" }
+3452 = { default = "Kirovohrad" }
+3468 = { default = "Svitlovodsk" }
+13820 = { default = "Vilnius" }
+6281 = { default = "Alytus" }
+327 = { default = "Trakai" }
+13822 = { default = "Vilnius International Airport" }
+13823 = { default = "Kaunas" }
+3288 = { default = "Klaipėda" }
+9438 = { default = "Panevėžys" }
+6376 = { default = "Šiauliai" }
+9731 = { default = "Telšiai" }
+6314 = { default = "Palanga" }
+3272 = { default = "Marijampolė" }
+6360 = { default = "Raseiniai" }
+13827 = { default = "Riga" }
+13831 = { default = "Riga Airport" }
+9501 = { default = "Valmiera" }
+310 = { default = "Daugavpils" }
+341 = { default = "Rēzekne" }
+9262 = { default = "Liepāja" }
+3296 = { default = "Ventspils" }
+265 = { default = "Bauska" }
+3298 = { default = "Alūksne" }
+9240 = { default = "Cēsis" }
+13833 = { default = "Tallinn" }
+13834 = { default = "Tallinn Airport" }
+83 = { default = "Haapsalu" }
+11127 = { default = "Rakvere" }
+13836 = { default = "Varna" }
+9221 = { default = "Tartu" }
+592 = { default = "Võru" }
+6408 = { default = "Valga" }
+185 = { default = "Kuressaare" }
+3174 = { default = "Pärnu" }
+6178 = { default = "Viljandi" }
+13837 = { default = "Skopje" }
+11856 = { default = "Bitola" }
+907 = { default = "Kumanovo" }
+13840 = { default = "Prishtina" }
+9849 = { default = "Prizren" }
+13841 = { default = "Tirana" }
+6900 = { default = "Durrës" }
+11767 = { default = "Vlorë" }
+9914 = { default = "Elbasan" }
+9780 = { default = "Shkodër" }
+13844 = { default = "Split" }
+13846 = { default = "Zagreb" }
+3868 = { default = "Dubrovnik" }
+3943 = { default = "Zadar" }
+11735 = { default = "Pular" }
+13848 = { default = "Franjo Tuđman International Airport" }
+11564 = { default = "Rijelka" }
+6611 = { default = "Gospić" }
+6647 = { default = "Osijek" }
+9595 = { default = "Slavonski Brod" }
+9611 = { default = "Varaždin" }
+13252 = { default = "Čakovec" }
+3601 = { default = "Karlovac" }
+13851 = { default = "Ljubljana" }
+596 = { default = "Maribor" }
+13855 = { default = "Koper" }
+9596 = { default = "Celje" }
+3631 = { default = "Kranj" }
+6672 = { default = "Murska Sobota" }
+13856 = { default = "Podgorica" }
+9821 = { default = "Budva" }
+13857 = { default = "Nikshic" }
+11574 = { default = "Brčko" }
+6983 = { default = "Banja Luka" }
+6619 = { default = "Prijedor" }
+9591 = { default = "Doboj" }
+11845 = { default = "Trebinje" }
+11741 = { default = "Srebrenica" }
+606 = { default = "Bijeljina" }
+13860 = { default = "Sarajevo" }
+6799 = { default = "Tuzla" }
+11572 = { default = "Zenica" }
+9894 = { default = "Mostar" }
+6614 = { default = "Bihać" }
+6957 = { default = "Livno" }
+13869 = { default = "Novi Sad" }
+13867 = { default = "Nikola Tesla Airport" }
+3623 = { default = "Sombor" }
+13864 = { default = "Belgrade" }
+3609 = { default = "Šabac" }
+3984 = { default = "Čačak" }
+3939 = { default = "Novi Pazar" }
+11586 = { default = "Kragujevac" }
+3956 = { default = "Užice" }
+11787 = { default = "Zrenjanin" }
+11887 = { default = "Niš" }
+6634 = { default = "Požarevac" }
+9906 = { default = "Leskovac" }
+11832 = { default = "Vranje" }
+13874 = { default = "Rostock" }
+9388 = { default = "Stralsund" }
+11305 = { default = "Schwerin" }
+3258 = { default = "Neubrandenburg" }
+13876 = { default = "Leipzig" }
+13879 = { default = "Dresden" }
+9471 = { default = "Chemnitz" }
+9441 = { default = "Zwickau" }
+3514 = { default = "Görlitz" }
+13884 = { default = "Berlin" }
+13889 = { default = "Berlin Brandenburg Airport" }
+13887 = { default = "Spandau" }
+9496 = { default = "Frankfurt an der Oder" }
+11415 = { default = "Cottbus" }
+3499 = { default = "Brandenburg an der Havel" }
+11219 = { default = "Perleberg" }
+13891 = { default = "Magdeburg" }
+13892 = { default = "Haale" }
+538 = { default = "Naumburg" }
+11359 = { default = "Stendal" }
+13881 = { default = "Wittenberg" }
+425 = { default = "Wernigerode" }
+6524 = { default = "Erfurt" }
+6501 = { default = "Jena" }
+11544 = { default = "Nürnberg" }
+13893 = { default = "Erlangen" }
+13896 = { default = "München" }
+13899 = { default = "München-Flughafen Airport" }
+9515 = { default = "Regensburg" }
+3705 = { default = "Augsburg" }
+11417 = { default = "Würzburg" }
+3299 = { default = "Ingolstadt" }
+13116 = { default = "Bamberg" }
+9666 = { default = "Kempten" }
+11529 = { default = "Ansbach" }
+586 = { default = "Weiden in der Oberpfalz" }
+3679 = { default = "Stuggart" }
+13902 = { default = "Ludwigsburg" }
+6712 = { default = "Freiburg im Breisgau" }
+13908 = { default = "Wiesbaden" }
+11499 = { default = "Ulm" }
+3530 = { default = "Karlsruhe" }
+6568 = { default = "Mannheim" }
+11531 = { default = "Saarbrücken" }
+11560 = { default = "Mainz" }
+14108 = { default = "Koblenz" }
+13934 = { default = "Neuwied" }
+9575 = { default = "Trier" }
+11547 = { default = "Kaiserslauten" }
+3558 = { default = "Ludwigshafen am Rhein" }
+6488 = { default = "Frankfurt am Main" }
+589 = { default = "Frankfurt Airport" }
+564 = { default = "Kassel" }
+3524 = { default = "Marburg" }
+11445 = { default = "Fulda" }
+317 = { default = "Flensburg" }
+13909 = { default = "Kiel" }
+9347 = { default = "Hamburg" }
+11331 = { default = "Lübeck" }
+6257 = { default = "Neumünster" }
+6377 = { default = "Hannover" }
+3326 = { default = "Bremen" }
+309 = { default = "Oldenburg" }
+9375 = { default = "Wolfsburg" }
+11388 = { default = "Osnabrück" }
+11264 = { default = "Meppen" }
+6513 = { default = "Göttingen" }
+13922 = { default = "Bonn" }
+13923 = { default = "Köln" }
+13927 = { default = "Düsseldorf" }
+13929 = { default = "Düsseldorf Airport" }
+13930 = { default = "Duisburg" }
+13932 = { default = "Essen" }
+13920 = { default = "Bremerhaven" }
+13933 = { default = "Dortmund" }
+9522 = { default = "Aachen" }
+6535 = { default = "Münster" }
+9509 = { default = "Bielefeld" }
+6375 = { default = "Olsztyn" }
+6402 = { default = "Elbląg" }
+11386 = { default = "Ełk" }
+266 = { default = "Giżycko" }
+9346 = { default = "Ostróda" }
+362 = { default = "Gdańsk" }
+13942 = { default = "Gdynia" }
+13939 = { default = "Gdańsk Lech Wałęsa Airport" }
+13944 = { default = "Słupsk" }
+13943 = { default = "Tczew" }
+334 = { default = "Chojnice" }
+6282 = { default = "Szczecin" }
+9361 = { default = "Koszalin" }
+9306 = { default = "Szczecinek" }
+6390 = { default = "Stargrad" }
+6236 = { default = "Choszczno" }
+13949 = { default = "Bydgoszcz" }
+243 = { default = "Inowrocław" }
+13948 = { default = "Toruń" }
+13947 = { default = "Włocławek" }
+13951 = { default = "Białystok" }
+3254 = { default = "Suwałki" }
+400 = { default = "Augustów" }
+11274 = { default = "Łomża" }
+3230 = { default = "Płock" }
+3544 = { default = "Warsaw" }
+13955 = { default = "Warsaw Chopin Airport" }
+6511 = { default = "Radom" }
+402 = { default = "Siedlce" }
+9316 = { default = "Ostrołęka" }
+11385 = { default = "Wyszków" }
+11492 = { default = "Żyrardów" }
+13960 = { default = "Lublin" }
+9452 = { default = "Chełm" }
+9544 = { default = "Zamość" }
+11466 = { default = "Biała Podlaska" }
+11478 = { default = "Gorzów Wielkopolski" }
+3438 = { default = "Zielona Góra" }
+9570 = { default = "Wrocław" }
+552 = { default = "Głogów" }
+6464 = { default = "Gliwice" }
+3545 = { default = "Legnica" }
+11414 = { default = "Wałbrzych" }
+6558 = { default = "Poznań" }
+388 = { default = "Piła" }
+17 = { default = "Gniezno" }
+11515 = { default = "Konin" }
+11558 = { default = "Kalisz" }
+13974 = { default = "Leszno" }
+9508 = { default = "Łódz" }
+3482 = { default = "Piotrków Trybunalski" }
+584 = { default = "Wieluń" }
+9400 = { default = "Łowicz" }
+6416 = { default = "Kielce" }
+562 = { default = "Ostrowiec Świętokrzyski" }
+9511 = { default = "Opole" }
+6485 = { default = "Nysa" }
+479 = { default = "Kędzierzyn-Koźle" }
+11467 = { default = "Częstochowa" }
+13205 = { default = "Katowice" }
+13982 = { default = "Dąbrowa Górnicza" }
+9412 = { default = "Bielsko-Biała" }
+9427 = { default = "Kraków" }
+13986 = { default = "John Paul II International Airport" }
+13988 = { default = "Zakopane" }
+442 = { default = "Tarnów" }
+417 = { default = "Nowy Sącz" }
+13989 = { default = "Rzeszów" }
+3434 = { default = "Przemyśl" }
+6499 = { default = "Mielec" }
+11507 = { default = "Stalowa Wola" }
+3838 = { default = "Ajaccio" }
+11483 = { default = "Lille" }
+13993 = { default = "Lens" }
+13990 = { default = "Tourcoing" }
+13994 = { default = "Dunkirk" }
+13995 = { default = "Calais" }
+6504 = { default = "Arras" }
+13997 = { default = "Amiens" }
+11420 = { default = "Abbeville" }
+6585 = { default = "Beauvais" }
+9561 = { default = "Compiègne" }
+12582 = { default = "Sault Ste. Marie" }
+13999 = { default = "Brest" }
+14000 = { default = "Rennes" }
+6536 = { default = "Lorient" }
+542 = { default = "Quipmer" }
+3402 = { default = "Saint-Quentin" }
+14004 = { default = "Rouen" }
+9434 = { default = "Le Havre" }
+6449 = { default = "Cherbourg-en-Cotentin" }
+11535 = { default = "Caen" }
+485 = { default = "Dieppe" }
+3549 = { default = "Évreux" }
+553 = { default = "Alençon" }
+11506 = { default = "Paris" }
+14010 = { default = "Charles de Gaulle Airport" }
+14012 = { default = "Versailles" }
+9725 = { default = "Étampes" }
+11518 = { default = "Meaux" }
+11491 = { default = "Montereau-Fault-Yonne" }
+9503 = { default = "Strasbourg" }
+13935 = { default = "Metz" }
+9559 = { default = "Thionville" }
+678 = { default = "Mulhouse" }
+6529 = { default = "Colmar" }
+11516 = { default = "Nancy" }
+13011 = { default = "Reims" }
+9490 = { default = "Troyes" }
+9505 = { default = "Saint-Dizier" }
+5291 = { default = "Verdun" }
+6545 = { default = "Châlons-en-Champagne" }
+551 = { default = "Sézanne" }
+11465 = { default = "Nantes" }
+14016 = { default = "Saint-Nazaire" }
+3509 = { default = "Le Mans" }
+503 = { default = "Angers" }
+3495 = { default = "Laval" }
+11600 = { default = "La Roche-sur-Yon" }
+11613 = { default = "Cholet" }
+14020 = { default = "Orléans" }
+6547 = { default = "Chatres" }
+14022 = { default = "Tours" }
+9629 = { default = "Châteauroux" }
+3655 = { default = "Bourges" }
+6533 = { default = "Blois" }
+6766 = { default = "Toulouse" }
+14027 = { default = "Toulouse-Blagnac Airport" }
+14029 = { default = "Montpellier" }
+14030 = { default = "Béziers" }
+11699 = { default = "Tarbes" }
+9853 = { default = "Perpignan" }
+6770 = { default = "Mende" }
+6917 = { default = "Carcassonne" }
+11702 = { default = "Montauban" }
+3751 = { default = "Albi" }
+11711 = { default = "Alès" }
+11709 = { default = "Millau" }
+9737 = { default = "Bordeaux" }
+14036 = { default = "La Rochelle" }
+11596 = { default = "Poiters" }
+620 = { default = "Limoges" }
+929 = { default = "Condom" }
+6775 = { default = "Agen" }
+11697 = { default = "Pau" }
+743 = { default = "Bayonne" }
+595 = { default = "Angoulême" }
+6777 = { default = "Arcachon" }
+3771 = { default = "Brive-la-Gaillarde" }
+11582 = { default = "Ruffec" }
+14038 = { default = "Dijon" }
+9642 = { default = "Besançon" }
+648 = { default = "Chalon-sur-Saône" }
+373 = { default = "Saint-Pierre" }
+9525 = { default = "Saint-Brieuc" }
+667 = { default = "Nevers" }
+3681 = { default = "Auxerre" }
+9658 = { default = "Langres" }
+14041 = { default = "Lyon-Saint Exupéry Airport" }
+6613 = { default = "Lyon" }
+14045 = { default = "Clermont-Ferrand" }
+6583 = { default = "Luxembourg City" }
+9607 = { default = "Vichy" }
+14044 = { default = "Saint-Étienne" }
+11573 = { default = "Annecy" }
+3768 = { default = "Grenoble" }
+6773 = { default = "Aurillac" }
+762 = { default = "Valence" }
+9732 = { default = "Le Puy-en-Velay" }
+769 = { default = "Brioude" }
+11713 = { default = "Montélimar" }
+3621 = { default = "Guéret" }
+9751 = { default = "Périgueux" }
+14047 = { default = "Monaco" }
+9909 = { default = "Nice" }
+14048 = { default = "Cannes" }
+11834 = { default = "Marseille" }
+14053 = { default = "Marseille Provence Airport" }
+14051 = { default = "Toulon" }
+11849 = { default = "Avignon" }
+3762 = { default = "Gap" }
+11875 = { default = "Aix-en-Provence" }
+6975 = { default = "Guillestre" }
+516 = { default = "Brussels" }
+14056 = { default = "Brussels Airport" }
+14061 = { default = "Ghent" }
+14058 = { default = "Antwerp" }
+6560 = { default = "Bruges" }
+6598 = { default = "Sint-Niklaas" }
+9574 = { default = "Genk" }
+14057 = { default = "Waterloo" }
+14064 = { default = "Liège" }
+3488 = { default = "Eupen" }
+13081 = { default = "Charleroi" }
+9536 = { default = "Mons" }
+11407 = { default = "Bastogne" }
+14068 = { default = "Nijmegen" }
+14067 = { default = "Almere" }
+11318 = { default = "Groningen" }
+14070 = { default = "Enschede" }
+14071 = { default = "Almelo" }
+6286 = { default = "Zwolle" }
+6336 = { default = "Leeuwarden" }
+14072 = { default = "Eindhoven" }
+3262 = { default = "Breda" }
+11562 = { default = "Maastricht" }
+6500 = { default = "Venlo" }
+14074 = { default = "Rotterdam" }
+3211 = { default = "Den Haag" }
+14077 = { default = "Utrecht" }
+391 = { default = "Amsterdam" }
+14078 = { default = "Amsterdam Airport Schiphol" }
+14080 = { default = "Bratislava" }
+14082 = { default = "M. R. Štefánik Airport" }
+6573 = { default = "Košice" }
+3550 = { default = "Prešov" }
+9692 = { default = "Trnava" }
+541 = { default = "Nitra" }
+9551 = { default = "Žilina" }
+3537 = { default = "Banská Bystrica" }
+581 = { default = "Poprad" }
+11542 = { default = "Prague" }
+14084 = { default = "Václav Havel Airport" }
+11432 = { default = "Ústí nad Labem" }
+6470 = { default = "Karlovy Vary" }
+6592 = { default = "Plzeň" }
+9414 = { default = "Liberec" }
+445 = { default = "Hradec Králové" }
+9541 = { default = "České Budějovice" }
+11556 = { default = "Jihlava" }
+9421 = { default = "Příbram" }
+3569 = { default = "Brno" }
+3583 = { default = "Ostrava" }
+6562 = { default = "Olomouc" }
+557 = { default = "Znojmo" }
+705 = { default = "Yevpatoriya" }
+9677 = { default = "Feodosia" }
+569 = { default = "Třebíč" }
+421 = { default = "Šumperk" }
+6576 = { default = "Zlín" }
+9600 = { default = "Lugano" }
+14089 = { default = "Geneva" }
+6666 = { default = "Lausanne" }
+9622 = { default = "Neuchâtel" }
+14090 = { default = "Basel" }
+663 = { default = "Zürich" }
+14094 = { default = "Bern" }
+14092 = { default = "Zürich Airport" }
+9618 = { default = "Interlaken" }
+11604 = { default = "Lucerne" }
+3660 = { default = "Davos" }
+14096 = { default = "Vaduz" }
+11773 = { default = "Cagliari" }
+9772 = { default = "Sassari" }
+9863 = { default = "Olbia" }
+11824 = { default = "Oristano" }
+10074 = { default = "Palermo" }
+14101 = { default = "Palermo Airport" }
+14102 = { default = "Catania" }
+14103 = { default = "Syracuse" }
+4159 = { default = "Messina" }
+7147 = { default = "Sciacca" }
+1009 = { default = "Ragusa" }
+3901 = { default = "Cosenza" }
+12098 = { default = "Catanzaro" }
+11837 = { default = "Taranto" }
+14105 = { default = "Bari" }
+6979 = { default = "Lecce" }
+883 = { default = "Foggia" }
+6843 = { default = "Barletta" }
+819 = { default = "Naples" }
+3958 = { default = "Potenza" }
+955 = { default = "Salerno" }
+9856 = { default = "Policoro" }
+6780 = { default = "Turin" }
+6788 = { default = "Genoa" }
+9924 = { default = "Rimini" }
+14117 = { default = "La Spezia" }
+11891 = { default = "Sanremo" }
+9741 = { default = "Alessandria" }
+6635 = { default = "Novara" }
+11730 = { default = "Asti" }
+11723 = { default = "Alba" }
+11721 = { default = "Cuneo" }
+9907 = { default = "Florence" }
+14119 = { default = "Prato" }
+6946 = { default = "Pisa" }
+910 = { default = "Siena" }
+6875 = { default = "Grosseto" }
+14121 = { default = "San Marino" }
+14122 = { default = "Vatican City" }
+9904 = { default = "Rome" }
+14123 = { default = "Leonardo da Vinci International Airport" }
+6862 = { default = "Viterbo" }
+14128 = { default = "Rieti" }
+11846 = { default = "Latina" }
+14130 = { default = "Pescara" }
+967 = { default = "Ancona" }
+3885 = { default = "Perugia" }
+6926 = { default = "Assisi" }
+9794 = { default = "Terni" }
+6831 = { default = "Vasto" }
+3923 = { default = "Campobasso" }
+6606 = { default = "Bologna" }
+14135 = { default = "Modena" }
+9752 = { default = "Parma" }
+6790 = { default = "Piacenza" }
+14132 = { default = "Ferrara" }
+782 = { default = "Ravenna" }
+14142 = { default = "Milano Malpensa Airport" }
+14143 = { default = "Bergamo" }
+3780 = { default = "Milan" }
+14141 = { default = "Monza" }
+773 = { default = "Cremona" }
+3776 = { default = "Mantua" }
+11584 = { default = "Venice" }
+6626 = { default = "Trieste" }
+628 = { default = "Udine" }
+603 = { default = "Verona" }
+9598 = { default = "Trento" }
+9630 = { default = "Bolzano" }
+3392 = { default = "Brest" }
+560 = { default = "Pinsk" }
+9304 = { default = "Baranavichy" }
+6306 = { default = "Ivatsevichy" }
+3556 = { default = "Luninets" }
+13206 = { default = "Hrodna" }
+6413 = { default = "Lida" }
+11391 = { default = "Smarhoń" }
+3309 = { default = "Slonim" }
+9359 = { default = "Navahrudak" }
+318 = { default = "Vawkavysk" }
+11370 = { default = "Minsk" }
+14147 = { default = "Minsk International Airport" }
+11313 = { default = "Salihorsk" }
+277 = { default = "Maladzyechna" }
+294 = { default = "Barysaw" }
+11216 = { default = "Dzyarzhynsk" }
+14146 = { default = "Slutsk" }
+360 = { default = "Maryina Horka" }
+11241 = { default = "Vitebsk" }
+6249 = { default = "Polatsk" }
+6326 = { default = "Navapolatsk" }
+11220 = { default = "Orsha" }
+233 = { default = "Pastavy" }
+9341 = { default = "Hlybokaye" }
+14153 = { default = "Mogilev" }
+3350 = { default = "Babruysk" }
+289 = { default = "Krychaw" }
+6354 = { default = "Horki" }
+386 = { default = "Asipovichy" }
+9288 = { default = "Homel" }
+6232 = { default = "Mazyr" }
+6319 = { default = "Rečyca" }
+6373 = { default = "Žlobin" }
+3293 = { default = "Svietlahorsk" }
+9342 = { default = "Dobrush" }
+3378 = { default = "Bychaŭ" }
+11230 = { default = "Kastsyukovichy" }
+12446 = { default = "Yuzhno-Sakhalinsk" }
+855 = { default = "Okha" }
+14156 = { default = "Vladivostok" }
+14157 = { default = "Vladivostok International Airport" }
+3787 = { default = "Spassk-Dalny" }
+664 = { default = "Dalnerechensk" }
+11745 = { default = "Dalnegorsk" }
+6961 = { default = "Nakhodka" }
+3977 = { default = "Ussuriysk" }
+6989 = { default = "Arsenyev" }
+3739 = { default = "Svetlaya" }
+14158 = { default = "Khabarovsk" }
+9604 = { default = "Sovetskaya Gavan" }
+10466 = { default = "Pereyaslavka" }
+3963 = { default = "Lidoga" }
+7672 = { default = "Birobidzhan" }
+12559 = { default = "Nikolayevsk-na-Amur" }
+1399 = { default = "Severo-Kurilsk" }
+12654 = { default = "Belogorsk" }
+14160 = { default = "Blagoveshchensk" }
+1845 = { default = "Tunda" }
+10678 = { default = "Zeya" }
+12657 = { default = "Svobodny" }
+4728 = { default = "Petropavlovsk-Kamchatskiy" }
+12683 = { default = "Magadan" }
+10641 = { default = "Yakutsk" }
+10557 = { default = "Mirny" }
+4726 = { default = "Aldan" }
+7844 = { default = "Neryungri" }
+14168 = { default = "Chita" }
+4719 = { default = "Krasnokamensk" }
+7860 = { default = "Petrovsk-Zabaykalsky" }
+4677 = { default = "Borzya" }
+14167 = { default = "Ulan-Ude" }
+12575 = { default = "Severobaykalsk" }
+4766 = { default = "Khyagt" }
+10528 = { default = "Gusinoozyorsk" }
+7736 = { default = "Bagdarin" }
+14163 = { default = "Irkutsk" }
+14164 = { default = "International Airport Irkutsk" }
+14166 = { default = "Bratsk" }
+10699 = { default = "Ust-Ilimsk" }
+12540 = { default = "Cheremkhovo" }
+1735 = { default = "Ust-Kut" }
+1876 = { default = "Tayshet" }
+10596 = { default = "Zhigalovo" }
+10627 = { default = "Kyzyl" }
+1676 = { default = "Shagonar" }
+10649 = { default = "Abakan" }
+14169 = { default = "Sayanogorsk" }
+14171 = { default = "Krasnoyarsk" }
+12621 = { default = "Kansk" }
+4724 = { default = "Achinsk" }
+7815 = { default = "Nazarovo" }
+12595 = { default = "Lesosibirsk" }
+4690 = { default = "Minusinsk" }
+10712 = { default = "Sharypovo" }
+12523 = { default = "Kodinsk" }
+14177 = { default = "Makhachkala" }
+14180 = { default = "Mezhdunarodnyy Aeroport Makhachkala" }
+6730 = { default = "Kizlyar" }
+3682 = { default = "Khasavyurt" }
+7624 = { default = "Derbent" }
+728 = { default = "Terekli-Mekteb" }
+1450 = { default = "Akhty" }
+14181 = { default = "Grozny" }
+3672 = { default = "Urus-Martan" }
+666 = { default = "Shali" }
+14183 = { default = "Stavropol" }
+3748 = { default = "Ipatovo" }
+6750 = { default = "Budyonnovsk" }
+6718 = { default = "Pyatigorsk" }
+11633 = { default = "Kislovodsk" }
+11678 = { default = "Nevinnomyssk" }
+14185 = { default = "Krasnodar" }
+14188 = { default = "Krasnodar International Airport" }
+3720 = { default = "Maykop" }
+9696 = { default = "Belorechensk" }
+14189 = { default = "Novorossiysk" }
+14191 = { default = "Sochi" }
+719 = { default = "Gelendzhik" }
+750 = { default = "Yeysk" }
+9709 = { default = "Kropotkin" }
+3765 = { default = "Tikhoretsk" }
+735 = { default = "Armavir" }
+9628 = { default = "Vladikavkaz" }
+685 = { default = "Nalchik" }
+714 = { default = "Cherkessk" }
+9647 = { default = "Prokhladny" }
+6692 = { default = "Zelenchukskaya" }
+6794 = { default = "Elista" }
+759 = { default = "Yashkul" }
+14194 = { default = "Voyennyy Aerodrom" }
+14193 = { default = "Kaliningrad" }
+348 = { default = "Sovetsk" }
+14197 = { default = "Astrakhan" }
+6516 = { default = "Znamensk" }
+6486 = { default = "Akhtubinsk" }
+6620 = { default = "Kharabali" }
+9417 = { default = "Rostov-na-Donu" }
+14202 = { default = "Aeroport Rostov-na-Donu" }
+14199 = { default = "Azov" }
+14200 = { default = "Bataysk" }
+14204 = { default = "Taganrog" }
+14205 = { default = "Shakhty" }
+6490 = { default = "Volgodonsk" }
+775 = { default = "Salsk" }
+11418 = { default = "Novocherkassk" }
+3519 = { default = "Millerovo" }
+3431 = { default = "Veshenskaya" }
+509 = { default = "Morozovsk" }
+11450 = { default = "Kamensk-Shakhtinsky" }
+3587 = { default = "Egorlykskaya" }
+3443 = { default = "Zimovniki" }
+3529 = { default = "Volgograd" }
+14208 = { default = "Volzhskiy" }
+487 = { default = "Mikhaylovka" }
+9502 = { default = "Uryupinsk" }
+6506 = { default = "Kamyshin" }
+9436 = { default = "Frolovo" }
+6454 = { default = "Serafimovich" }
+6503 = { default = "Kotelnikovo" }
+14210 = { default = "Saratov" }
+14211 = { default = "Engels" }
+11408 = { default = "Balashov" }
+6328 = { default = "Rtishchevo" }
+326 = { default = "Volsk" }
+6502 = { default = "Balakovo" }
+3490 = { default = "Novouzensk" }
+9337 = { default = "Pugachyov" }
+6539 = { default = "Krasnoarmeysk" }
+9577 = { default = "Yershov" }
+11449 = { default = "Atkarsk" }
+11475 = { default = "Voronezh" }
+11412 = { default = "Rossosh" }
+3527 = { default = "Liski" }
+3566 = { default = "Borisoglebsk" }
+6494 = { default = "Pavlovsk" }
+437 = { default = "Kalach" }
+11540 = { default = "Ertil" }
+14215 = { default = "Belgorod" }
+534 = { default = "Stary Oskol" }
+6577 = { default = "Gubkin" }
+6517 = { default = "Shebekino" }
+6432 = { default = "Valuyki" }
+3580 = { default = "Kursk" }
+6543 = { default = "Sudzha" }
+580 = { default = "Kurchatov" }
+457 = { default = "Shchigry" }
+9260 = { default = "Zheleznogorsk" }
+9140 = { default = "Zapolyarny" }
+11142 = { default = "Nikel" }
+14218 = { default = "Murmansk" }
+14221 = { default = "Severomorsk" }
+14220 = { default = "Kola" }
+9201 = { default = "Apatity" }
+11085 = { default = "Alakurtti" }
+6181 = { default = "Kandalaksha" }
+3187 = { default = "Sortavala" }
+6175 = { default = "Kostomuksha" }
+155 = { default = "Segezha" }
+2356 = { default = "Petrozavodsk" }
+3033 = { default = "Kondopoga" }
+11092 = { default = "Medvezhyegorsk" }
+9195 = { default = "Kem" }
+9206 = { default = "Vyborg" }
+9105 = { default = "Priozersk" }
+14222 = { default = "Saint-Petersburg" }
+14226 = { default = "Pulkovo Airport" }
+9098 = { default = "Luga" }
+11080 = { default = "Gatchina" }
+126 = { default = "Kingisepp" }
+6095 = { default = "Kirishi" }
+9197 = { default = "Volkhov" }
+3140 = { default = "Tikhvin" }
+9190 = { default = "Podporozhye" }
+11059 = { default = "Lodeynoye Pole" }
+9097 = { default = "Sosnovy Bor" }
+11202 = { default = "Pskov" }
+11234 = { default = "Velikiye Luki" }
+6324 = { default = "Ostrov" }
+6242 = { default = "Opochka" }
+14229 = { default = "Smolensk" }
+9272 = { default = "Vyazma" }
+11336 = { default = "Roslavl" }
+6243 = { default = "Desnogorsk" }
+335 = { default = "Gagarin" }
+3362 = { default = "Yartsevo" }
+6380 = { default = "Moscow" }
+14234 = { default = "Alexander S. Pushkin International Airport" }
+14236 = { default = "Lyubertsy" }
+14237 = { default = "Podolsk" }
+14231 = { default = "Khimki" }
+6283 = { default = "Sergiyev Posad" }
+14238 = { default = "Kolomna" }
+6290 = { default = "Serpukhov" }
+9302 = { default = "Volokolamsk" }
+6262 = { default = "Tula" }
+6315 = { default = "Novomoskovsk" }
+3292 = { default = "Shchyokino" }
+3376 = { default = "Yefremov" }
+300 = { default = "Belyov" }
+14240 = { default = "Lipetsk" }
+3346 = { default = "Yelets" }
+6317 = { default = "Usman" }
+3199 = { default = "Lebedyan" }
+6369 = { default = "Gryazi" }
+9355 = { default = "Oryol" }
+3335 = { default = "Bryansk" }
+11325 = { default = "Klintsy" }
+315 = { default = "Starodub" }
+398 = { default = "Pochep" }
+3226 = { default = "Dyatkovo" }
+6411 = { default = "Karachev" }
+371 = { default = "Unecha" }
+14244 = { default = "Kaluga" }
+9301 = { default = "Kirov" }
+6365 = { default = "Kozelsk" }
+3377 = { default = "Obninsk" }
+14249 = { default = "Veliky Novgorod" }
+11109 = { default = "Staraya Russa" }
+110 = { default = "Valday" }
+11048 = { default = "Borovichi" }
+14250 = { default = "Tver" }
+11349 = { default = "Rzhev" }
+85 = { default = "Bezhetsk" }
+3321 = { default = "Ostashkov" }
+3344 = { default = "Toropets" }
+6346 = { default = "Kalyazin" }
+9343 = { default = "Torzhok" }
+2999 = { default = "Vyshny Volochyok" }
+6367 = { default = "Nelidovo" }
+3143 = { default = "Krasny Kholm" }
+14255 = { default = "Archangelsk" }
+14256 = { default = "Severodvinsk" }
+9248 = { default = "Onega" }
+11071 = { default = "Kargopol" }
+186 = { default = "Kotlas" }
+11074 = { default = "Velsk" }
+3065 = { default = "Bereznik" }
+72 = { default = "Konosha" }
+3130 = { default = "Plesetsk" }
+105 = { default = "Naryan-Mar" }
+14266 = { default = "Syktyvkar" }
+14260 = { default = "Vorkuta" }
+11098 = { default = "Inta" }
+11182 = { default = "Usinsk" }
+10579 = { default = "Ukhta" }
+12393 = { default = "Pechora" }
+6538 = { default = "Ust-Tsilma" }
+3155 = { default = "Zheshart" }
+4800 = { default = "Gorno-Altaysk" }
+10531 = { default = "Ust-Koksa" }
+14268 = { default = "Kemerovo" }
+14271 = { default = "Novokuznetsk" }
+7822 = { default = "Sheregesh" }
+1369 = { default = "Prokopyevsk" }
+14274 = { default = "Leninsk-Kuznetskiy" }
+7757 = { default = "Yurga" }
+4789 = { default = "Tayga" }
+7886 = { default = "Mariinsk" }
+14276 = { default = "Barnaul" }
+4803 = { default = "Biysk" }
+11410 = { default = "Rubtsovsk" }
+1779 = { default = "Belokurikha" }
+10537 = { default = "Kamen-na-Obi" }
+1794 = { default = "Aleysk" }
+14279 = { default = "Novosibirsk" }
+14282 = { default = "Novosibirsk International Airport" }
+12606 = { default = "Kuybyshev" }
+4806 = { default = "Karasuk" }
+12679 = { default = "Tatarsk" }
+7274 = { default = "Iskitim" }
+14284 = { default = "Tomsk" }
+14285 = { default = "Seversk" }
+10617 = { default = "Kolpashevo" }
+1718 = { default = "Asino" }
+4681 = { default = "Belyi Yar" }
+4827 = { default = "Kargasok" }
+14288 = { default = "Omsk" }
+14291 = { default = "Mezhdunarodnyy Aeroport Omsk" }
+14292 = { default = "Tara" }
+14286 = { default = "Tevriz" }
+12546 = { default = "Cherlak" }
+14294 = { default = "Isilkul" }
+1684 = { default = "Salekhard" }
+10536 = { default = "Novy Urengoy" }
+4859 = { default = "Norilsk" }
+4669 = { default = "Labytnangi" }
+1812 = { default = "Khanty-Mansiysk" }
+4817 = { default = "Surgut" }
+12602 = { default = "Lyantor" }
+12672 = { default = "Nizhnevartovsk" }
+7796 = { default = "Nyagan" }
+7895 = { default = "Yugorsk" }
+1768 = { default = "Salym" }
+14326 = { default = "Tyumen" }
+4209 = { default = "Zavodoukovsk" }
+1387 = { default = "Yalutorovsk" }
+10670 = { default = "Ishim" }
+4659 = { default = "Tobolsk" }
+14331 = { default = "Uvat" }
+7846 = { default = "Yarkovo" }
+14346 = { default = "Yekaterinburg" }
+14350 = { default = "Koltsovo Airport" }
+14339 = { default = "Nizhny Tagil" }
+14342 = { default = "Serov" }
+14351 = { default = "Pervouralsk" }
+10133 = { default = "Revda" }
+4813 = { default = "Tavda" }
+10648 = { default = "Krasnoturyinsk" }
+14334 = { default = "Kamensk-Uralsky" }
+10189 = { default = "Tugulym" }
+14340 = { default = "Alapayevsk" }
+1750 = { default = "Irbit" }
+14356 = { default = "Kurgan" }
+12106 = { default = "Shadrinsk" }
+1294 = { default = "Petukhovo" }
+10170 = { default = "Tselinnoe" }
+14358 = { default = "Yurgamysh" }
+4242 = { default = "Kargapole" }
+14363 = { default = "Chelyabinsk" }
+12157 = { default = "Miass" }
+10329 = { default = "Zlatoust" }
+14369 = { default = "Magnitogorsk" }
+14359 = { default = "Asha" }
+14361 = { default = "Kartaly" }
+12287 = { default = "Ozersk" }
+12584 = { default = "Snezhinsk" }
+10213 = { default = "Troitsk" }
+14373 = { default = "Orenburg" }
+14371 = { default = "Orsk" }
+3357 = { default = "Buzuluk" }
+3265 = { default = "Buguruslan" }
+6379 = { default = "Sorochinsk" }
+10196 = { default = "Yasny" }
+4261 = { default = "Gay" }
+14377 = { default = "Ufa" }
+14384 = { default = "Ufa International Airport" }
+6246 = { default = "Neftekamsk" }
+12172 = { default = "Oktyabrsky" }
+1378 = { default = "Kumertau" }
+1305 = { default = "Sterlitamak" }
+4311 = { default = "Beloretsk" }
+12200 = { default = "Sibay" }
+10142 = { default = "Mesyagutovo" }
+291 = { default = "Birsk" }
+4354 = { default = "Salavat" }
+9349 = { default = "Tuymazy" }
+7444 = { default = "Askino" }
+14385 = { default = "Samara" }
+14388 = { default = "Tolyatti" }
+14386 = { default = "Novokuybyshevsk" }
+6226 = { default = "Syzran" }
+9243 = { default = "Chapayevsk" }
+11256 = { default = "Pokhvistnevo" }
+3216 = { default = "Otradny" }
+9271 = { default = "Sukhodol" }
+14395 = { default = "Perm" }
+12216 = { default = "Kungur" }
+1336 = { default = "Krasnokamsk" }
+12626 = { default = "Osa" }
+1380 = { default = "Chernushka" }
+12527 = { default = "Berezniki" }
+12187 = { default = "Cherdyn" }
+123 = { default = "Gainy" }
+14394 = { default = "Gubakha" }
+14398 = { default = "Ulyanovsk" }
+11319 = { default = "Dimitrovgrad" }
+286 = { default = "Inza" }
+3276 = { default = "Barysh" }
+3246 = { default = "Novospasskoye" }
+14403 = { default = "Kazan" }
+14402 = { default = "Kazan Airport" }
+6338 = { default = "Zelenodolsk" }
+9354 = { default = "Buinsk" }
+11339 = { default = "Bolgar" }
+14405 = { default = "Naberezhnye Chelny" }
+14406 = { default = "Nizhnekamsk" }
+6323 = { default = "Yelabuga" }
+11389 = { default = "Almetyevsk" }
+11496 = { default = "Chistopol" }
+260 = { default = "Arsk" }
+370 = { default = "Glazov" }
+14409 = { default = "Izhevsk" }
+4400 = { default = "Sarapul" }
+206 = { default = "Chaykovsky" }
+12244 = { default = "Votkinsk" }
+305 = { default = "Uva" }
+6388 = { default = "Mozhga" }
+6278 = { default = "Agryz" }
+7359 = { default = "Balezino" }
+14412 = { default = "Cheboksary" }
+9373 = { default = "Novocheboksarsk" }
+9259 = { default = "Kanash" }
+6253 = { default = "Vurnary" }
+6357 = { default = "Alatyr" }
+9402 = { default = "Yoshkar-Ola" }
+11387 = { default = "Morki" }
+3315 = { default = "Volzhsk" }
+340 = { default = "Tambov" }
+232 = { default = "Morshansk" }
+11381 = { default = "Michurinsk" }
+9422 = { default = "Uvarovo" }
+11436 = { default = "Zherdevka" }
+14414 = { default = "Ryazan" }
+3387 = { default = "Kasimov" }
+3356 = { default = "Skopin" }
+11363 = { default = "Shatsk" }
+6284 = { default = "Sasovo" }
+14417 = { default = "Penza" }
+257 = { default = "Kuznetsk" }
+6382 = { default = "Serdobsk" }
+6291 = { default = "Nizhny Lomov" }
+3266 = { default = "Zemetchino" }
+3317 = { default = "Nikolsk" }
+6409 = { default = "Kamenka" }
+324 = { default = "Saransk" }
+6391 = { default = "Ruzayevka" }
+3371 = { default = "Kovylkino" }
+376 = { default = "Zubova Polyana" }
+14419 = { default = "Vologda" }
+14421 = { default = "Cherepovets" }
+166 = { default = "Vytegra" }
+3154 = { default = "Kirillov" }
+75 = { default = "Vozhega" }
+9124 = { default = "Veliky Ustyug" }
+11192 = { default = "Kichmengskii Gorodok" }
+14423 = { default = "Yaroslavl" }
+6167 = { default = "Rybinsk" }
+252 = { default = "Rostov" }
+231 = { default = "Uglich" }
+11099 = { default = "Danilov" }
+6143 = { default = "Poshekhonye" }
+14426 = { default = "Vladimir" }
+6231 = { default = "Murom" }
+3268 = { default = "Kovrov" }
+9278 = { default = "Alexandrov" }
+214 = { default = "Gus-Khrustalny" }
+14428 = { default = "Ivanovo" }
+3240 = { default = "Ivanovo-Severnyy" }
+6135 = { default = "Furmanov" }
+9257 = { default = "Kineshma" }
+6358 = { default = "Vichuga" }
+14430 = { default = "Kostroma" }
+73 = { default = "Sharya" }
+164 = { default = "Buy" }
+3116 = { default = "Nerekhta" }
+9065 = { default = "Vokhma" }
+9043 = { default = "Soligalich" }
+11027 = { default = "Makaryev" }
+14431 = { default = "Kirov" }
+272 = { default = "Kirovo-Chepetsk" }
+45 = { default = "Yurya" }
+3363 = { default = "Omutninsk" }
+9214 = { default = "Kotelnich" }
+6224 = { default = "Urzhum" }
+11255 = { default = "Yaransk" }
+6383 = { default = "Sovetsk" }
+9146 = { default = "Slobodskoy" }
+3102 = { default = "Luza" }
+3177 = { default = "Demyanovo" }
+14265 = { default = "Lesnoi" }
+14437 = { default = "Nizhny Novgorod" }
+14436 = { default = "Dzerzhinsk" }
+9407 = { default = "Sarov" }
+11344 = { default = "Arzamas" }
+9358 = { default = "Gorodets" }
+11340 = { default = "Semyonov" }
+9172 = { default = "Shakhunya" }
+11324 = { default = "Pochinki" }
+9360 = { default = "Vyksa" }
+6149 = { default = "Uren" }
+3352 = { default = "Sergach" }
+9325 = { default = "Lyskovo" }
+3700 = { default = "Eisenstadt" }
+6680 = { default = "Dornbirn" }
+673 = { default = "Innsbruck" }
+688 = { default = "Salzburg" }
+671 = { default = "Lienz" }
+6673 = { default = "Villach" }
+3673 = { default = "Klagenfurt am Wörthersee" }
+14440 = { default = "Vienna" }
+14443 = { default = "Vienna-Flughafen" }
+14444 = { default = "Graz" }
+14447 = { default = "Linz" }
+704 = { default = "St Pölten" }
+9661 = { default = "Wiener Neustadt" }
+14448 = { default = "Wels" }
+6690 = { default = "Leoben" }
+6739 = { default = "Liezen" }
+6687 = { default = "Judenburg" }
+6552 = { default = "Krems an der Donau" }
+732 = { default = "Freistadt" }
+14451 = { default = "Budapest" }
+9660 = { default = "Ferenc Liszt International Airport" }
+6700 = { default = "Kecskemét" }
+6670 = { default = "Baja" }
+6751 = { default = "Miskolc" }
+3731 = { default = "Eger" }
+9690 = { default = "Vác" }
+14455 = { default = "Szeged" }
+14456 = { default = "Debreccen" }
+11646 = { default = "Békéscsaba" }
+3730 = { default = "Nyíregyháza" }
+6716 = { default = "Szolnok" }
+11644 = { default = "Békés" }
+6720 = { default = "Győr" }
+686 = { default = "Sopron" }
+11627 = { default = "Szombathely" }
+701 = { default = "Székesfehérvár" }
+6703 = { default = "Dunaújváros" }
+11610 = { default = "Pécs" }
+6685 = { default = "Kaposvár" }
+14203 = { default = "Kenosha" }
+7551 = { default = "Lafayette" }
+14190 = { default = "Gaza City" }
+7107 = { default = "Ramallah" }
+14192 = { default = "Hebron" }
+14178 = { default = "Haifa" }
+4088 = { default = "Ashqelon" }
+14216 = { default = "Ben Gurion Airport" }
+4206 = { default = "Tel-Aviv" }
+9753 = { default = "Jerusalem" }
+14182 = { default = "Eilat" }
+14184 = { default = "Port Stanley" }
+12960 = { default = "Mount Pleasant" }
+9817 = { default = "Porto" }
+11673 = { default = "Braga" }
+724 = { default = "Villa Real" }
+3892 = { default = "Bragança" }
+11805 = { default = "Lisbon" }
+14493 = { default = "Humberto Delgado Airport" }
+14495 = { default = "Setúbal" }
+14496 = { default = "Portimão" }
+6880 = { default = "Faro" }
+6933 = { default = "Évora" }
+9787 = { default = "Coimbra" }
+6924 = { default = "Aveiro" }
+6818 = { default = "Viseu" }
+924 = { default = "Santarem" }
+3969 = { default = "Castelo Branco" }
+3861 = { default = "Caldas da Rainha" }
+3926 = { default = "Portalegre" }
+3898 = { default = "Andorra la Vella" }
+14497 = { default = "A Coruña" }
+14498 = { default = "Vigo" }
+11692 = { default = "Lugo" }
+6734 = { default = "Ourense" }
+758 = { default = "Santiago de Compostela" }
+13218 = { default = "Oviedo" }
+14499 = { default = "Gijón" }
+11688 = { default = "Santander" }
+14500 = { default = "Valladolid" }
+885 = { default = "Burgos" }
+726 = { default = "León" }
+6867 = { default = "Salamanca" }
+857 = { default = "Soria" }
+11843 = { default = "Ponferrada" }
+13227 = { default = "Segovia" }
+939 = { default = "Ávila" }
+6936 = { default = "Palencia" }
+918 = { default = "Zamora" }
+3902 = { default = "Logroño" }
+14501 = { default = "Bilbao" }
+14502 = { default = "Bilbao Airport" }
+13233 = { default = "Vitoria-Gasteiz" }
+3933 = { default = "Pampalona" }
+14503 = { default = "Madrid" }
+14504 = { default = "Adolfo Suárez Madrid-Barajas Airport" }
+14506 = { default = "Getafe" }
+4135 = { default = "Gibraltar" }
+14508 = { default = "Zaragoza" }
+11821 = { default = "Huesca" }
+871 = { default = "Teruel" }
+813 = { default = "Calatayud" }
+3954 = { default = "Alcañiz" }
+11819 = { default = "Monzón" }
+9764 = { default = "Barcelona" }
+14510 = { default = "Josep Tarradellas Airport" }
+14512 = { default = "Terrassa" }
+854 = { default = "Girona" }
+14514 = { default = "Tarragona" }
+872 = { default = "Lleida" }
+9797 = { default = "Manresa" }
+6812 = { default = "Tortosa" }
+14515 = { default = "Palma" }
+7114 = { default = "Ibiza" }
+9845 = { default = "Mahón" }
+6906 = { default = "Valencia" }
+6817 = { default = "Castellón de la Plana" }
+962 = { default = "Alicante" }
+6959 = { default = "Gandia" }
+3799 = { default = "Requena" }
+858 = { default = "Toledo" }
+9778 = { default = "Ciudad Real" }
+3945 = { default = "Cuenca" }
+832 = { default = "Albacete" }
+11820 = { default = "Talavera de la Reina" }
+14520 = { default = "Murcia" }
+14521 = { default = "Molina de Segura" }
+10024 = { default = "Cartagena" }
+7111 = { default = "Lorca" }
+11851 = { default = "Badajoz" }
+9917 = { default = "Plasencia" }
+6866 = { default = "Cáceres" }
+9925 = { default = "Mérida" }
+14522 = { default = "Sevilla" }
+14523 = { default = "Sevilla Airport" }
+14525 = { default = "Málaga" }
+14528 = { default = "Granada" }
+14529 = { default = "Almería" }
+7183 = { default = "Dos Hermanas" }
+13228 = { default = "Cádiz" }
+9815 = { default = "Huelva" }
+14530 = { default = "Córdoba" }
+950 = { default = "Linares" }
+10111 = { default = "Jaén" }
+4095 = { default = "Baza" }
+14527 = { default = "Marbella" }
+7153 = { default = "Ronda" }
+3810 = { default = "Pozoblanco" }
+14534 = { default = "Kharga" }
+5078 = { default = "Mut" }
+1977 = { default = "Halaib" }
+9947 = { default = "Sharm El-Sheikh" }
+14537 = { default = "Arish" }
+10099 = { default = "El-Tor" }
+1155 = { default = "Bir al-Abd" }
+14535 = { default = "Fouad" }
+12049 = { default = "Port Said" }
+4073 = { default = "Suez" }
+12002 = { default = "Hurghada" }
+4068 = { default = "Port Ghalib" }
+1068 = { default = "Faiyum" }
+11974 = { default = "Asyut" }
+12071 = { default = "Luxor" }
+11999 = { default = "Aswan" }
+12044 = { default = "Sohag" }
+7079 = { default = "Sallum" }
+11967 = { default = "Marsa Matrouh" }
+11910 = { default = "El Dabaa" }
+12004 = { default = "Cairo" }
+7011 = { default = "Cairo International Airport" }
+4055 = { default = "Giza" }
+10005 = { default = "Mansoura" }
+4076 = { default = "Alexandria" }
+7091 = { default = "Kafr El-Shaikh" }
+14540 = { default = "Damietta" }
+14542 = { default = "Tanta" }
+14549 = { default = "Al-Jawf" }
+1140 = { default = "Tazirbu" }
+14553 = { default = "Sabhā" }
+14550 = { default = "Ghat" }
+14552 = { default = "Brak" }
+12866 = { default = "Hun" }

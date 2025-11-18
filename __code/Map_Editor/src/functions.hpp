@@ -61,21 +61,27 @@ Boolean TagIsValid(const String& tag);
 Vector<ColourRGB> GenerateRandomColours(const UnsignedInteger32 colourCount);
 Vector<ColourRGB> GenerateRandomColours(HashMap<UnsignedInteger32, UnsignedInteger16>& usedColours, const UnsignedInteger32 newColourCount);
 
-//Split a vector into n no. of vectors
+//Split a vector into n no. of vectors (original vector becomes empty)
 template<typename VectorType>
-Vector<Vector<VectorType>> SplitVector(const Vector<VectorType>& vec, SizeT chunks) {
+Vector<Vector<VectorType>> SplitVector(Vector<VectorType>& vec, SizeT chunks) {
     Vector<Vector<VectorType>> returnVector(chunks);
+
     SignedInteger32 maxEntriesInVec = (vec.size() / chunks) + 1;
     Vector<SizeT> entriesPerVector(chunks, maxEntriesInVec - 1);
     SignedInteger32 vectorsWithExtra = vec.size() - (chunks * maxEntriesInVec) + chunks;
     for (SizeT i = 0; i < vectorsWithExtra; ++i) entriesPerVector[i] += 1;
-    for (SizeT i = 0; i < chunks; ++i) returnVector[i].reserve(entriesPerVector[i]);
+    //for (SizeT i = 0; i < chunks; ++i) returnVector[i].reserve(entriesPerVector[i]);      //Move into loop
 
-    SizeT index = 0;
+    auto index = vec.begin();
     for (SizeT i = 0; i < chunks; ++i) {
+        returnVector[i].reserve(entriesPerVector[i]);
+        
         for (SizeT j = 0; j < entriesPerVector[i]; ++j) {
-            returnVector[i].push_back(vec[index++]);
+            returnVector[i].push_back(std::move(index));
+            ++index;
         }
     }
+
+    vec.clear(); vec.shrink_to_fit();
     return returnVector;
 }

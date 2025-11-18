@@ -948,7 +948,8 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
     Vector<Path> stateFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "history\\states", ".txt", 1200);
     Float32 coresCount = std::thread::hardware_concurrency();
     //SizeT vectorsToDivideInto = std::floor(std::max(coresCount * 0.5f, 3.0f));
-    SizeT vectorsToDivideInto = 2;      //Dividing into many vectors requires a lot of overhead - 2 seems to be best
+    SizeT vectorsToDivideInto = 4;      //Dividing into many vectors requires a lot of overhead - 2 seems to be best 
+                                        //Testing 4 manual threads
 
     Vector<Vector<Path>> stateFilesSubVectors = SplitVector(stateFiles, vectorsToDivideInto);
     Vector<Vector<State>> statesArray2D(vectorsToDivideInto);
@@ -956,6 +957,7 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
 
     for (SizeT i = 0; i < stateFilesSubVectors.size(); ++i) { statesArray2D[i].reserve(stateFilesSubVectors[i].size()); }
 
+    /*
     Vector<std::future<void>> futures;
 
     for (SizeT i = 0; i < vectorsToDivideInto; ++i) {
@@ -964,8 +966,28 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
     }
 
     for (auto& f : futures) f.get();
+    */
+
+    std::thread stateThread1(ProcessStateFilesVector, std::cref(stateFilesSubVectors[1]), std::ref(statesArray2D[1]), 
+        std::ref(provinceVictoryPointsArray2D[1]), std::cref(countriesArray), std::cref(provinceBuildingsArray), std::cref(stateBuildingsArray), 
+        std::cref(resourcesArray), std::cref(stateCategoriesArray), std::cref(defaultDate));
+    std::thread stateThread2(ProcessStateFilesVector, std::cref(stateFilesSubVectors[2]), std::ref(statesArray2D[2]), 
+        std::ref(provinceVictoryPointsArray2D[2]), std::cref(countriesArray), std::cref(provinceBuildingsArray), std::cref(stateBuildingsArray), 
+        std::cref(resourcesArray), std::cref(stateCategoriesArray), std::cref(defaultDate));
+    std::thread stateThread3(ProcessStateFilesVector, std::cref(stateFilesSubVectors[3]), std::ref(statesArray2D[3]), 
+        std::ref(provinceVictoryPointsArray2D[3]), std::cref(countriesArray), std::cref(provinceBuildingsArray), std::cref(stateBuildingsArray), 
+        std::cref(resourcesArray), std::cref(stateCategoriesArray), std::cref(defaultDate));
+    std::thread stateThread4(ProcessStateFilesVector, std::cref(stateFilesSubVectors[4]), std::ref(statesArray2D[4]), 
+        std::ref(provinceVictoryPointsArray2D[4]), std::cref(countriesArray), std::cref(provinceBuildingsArray), std::cref(stateBuildingsArray), 
+        std::cref(resourcesArray), std::cref(stateCategoriesArray), std::cref(defaultDate));
 
     statesArray.emplace_back(0);
+    
+    stateThread1.join();
+    stateThread2.join();
+    stateThread3.join();
+    stateThread4.join();
+    
     for (const auto& a : statesArray2D) {
         for (const auto& b : a) {
             statesArray.push_back(b);
