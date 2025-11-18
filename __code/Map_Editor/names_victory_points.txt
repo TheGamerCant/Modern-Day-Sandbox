@@ -1,42 +1,12 @@
 #Higher priority = higher in the if block
 #Best used to order for "most likely to control" so we don't waste CPU power
 
-525 = {
-    default = "Kyiv"
-    entry = { 
-        name = "Kyiv"
-        required = {
-            "TAG_using_ukrainian_names = yes"
-        }
-        priority = 0
-    }
-    entry = { 
-        name = "Kiev"
-        required = {
-            "TAG_using_russian_names = yes"
-        }
-        priority = 1
-    }
-}
+###  DOCUMENTATION  ###
 
+#TAG_using_russian_names
+#TAG_using_ukrainian_names
 
-3479 = {
-    default = "Artemivsk"
-    entry = { 
-        name = "Artemivsk"
-        required = {
-            "TAG_using_russian_names = yes"
-        }
-        priority = 0
-    }
-    entry = { 
-        name = "Bakhmut"
-        required = {
-            "has_global_flag = UKR_decommunisation_2016_flag"
-        }
-        priority = 1
-    }
-}
+#UKR_decommunisation_2016_flag
 
 13374 = { default = "Sacramento International Airport" }
 13370 = { default = "Sacramento" }
@@ -503,6 +473,23 @@
 13785 = { default = "Slovyansk" }
 13786 = { default = "Kramatorsk" }
 13787 = { default = "Kostyantynivka" }
+3479 = {
+    default = "Artemivsk"
+    entry = { 
+        name = "Artemivsk"
+        required = {
+            "TAG_using_russian_names = yes"
+        }
+        priority = 0
+    }
+    entry = { 
+        name = "Bakhmut"
+        required = {
+            "has_global_flag = UKR_decommunisation_2016_flag"
+        }
+        priority = 1
+    }
+}
 3466 = { default = "Pokrovsk" }
 429 = { default = "Hulyaipole" }
 6776 = { default = "Vuhledar" }
@@ -530,6 +517,23 @@
 3480 = { default = "Nizhyn" }
 9437 = { default = "Pryluky" }
 238 = { default = "Novhorod-Siverskyi" }
+525 = {
+    default = "Kyiv"
+    entry = { 
+        name = "Kyiv"
+        required = {
+            "TAG_using_ukrainian_names = yes"
+        }
+        priority = 0
+    }
+    entry = { 
+        name = "Kiev"
+        required = {
+            "TAG_using_russian_names = yes"
+        }
+        priority = 1
+    }
+}
 504 = { default = "Bila Tserkva" }
 13811 = { default = "Hostolmel" }
 11557 = { default = "Brovary" }
