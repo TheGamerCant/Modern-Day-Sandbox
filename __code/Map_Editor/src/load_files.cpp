@@ -584,7 +584,7 @@ void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
 
     UnsignedInteger64 newLinesCount = 1;
     for (const auto& c : provinceDefinitions) if (c == ' ') { ++newLinesCount; }
-    provincesArray.reserve(newLinesCount);
+    provincesArray.reserve(newLinesCount + 1);
 
     Char csvEntryArray[256]{};
     UnsignedInteger16 currentStringLength = 0;
@@ -727,6 +727,66 @@ void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
         }
 
         provinceColoursToIdMap[currentColour] = province.GetId();
+    }
+
+	Vector<DoubleString> vpNames = ParseStringForPairsArray(LoadFileToString("names_victory_points.txt"));
+    
+    HashMap<UnsignedInteger16, HashMap<String, Vector<String>>> vpNameEntries;
+    for (const auto& [vp, data] : vpNames) {
+        if (StringCanBecomeInteger(vp)) {
+            UnsignedInteger16 vpId = std::stoi(vp);
+            vpNameEntries[vpId] = ParseStringForPairsMapRepeat(data);
+		}
+        else {
+			String outString = "Bad victory point ID defined in names_victory_points.txt\n";
+            std::cout << outString;
+        }
+    }
+
+    for (const auto& [vp, dataHashMap] : vpNameEntries) {
+        if (dataHashMap.find("default") == dataHashMap.end()) {
+            String outString = "No default name defined for victory point " + std::to_string(vp) + "\n";
+			std::cout << outString;
+            continue;
+        }
+
+        if (dataHashMap.at("default").size() > 1) {
+            String outString = "More than one default name defined for " + std::to_string(vp) + ", the last one will be used\n";
+            std::cout << outString;
+        }
+
+		String defaultName = RemoveQuotes(dataHashMap.at("default")[dataHashMap.at("default").size() - 1]);
+        Vector<ChangeableName> nameEntries;
+
+        if (dataHashMap.find("entry") != dataHashMap.end() && dataHashMap.at("entry").size() > 0) {
+			Vector<String> entriesDataVector = dataHashMap.at("entry");
+            for (const auto& entryDataWhole : entriesDataVector) {
+				HashMap<String, String> entryData = ParseStringForPairsMapUnique(entryDataWhole);
+
+                if (entryData.find("name") == entryData.end()) {
+                    String outString = "Name entry for victory point " + std::to_string(vp) + " does not have a name defined.\n";
+                    std::cout << outString;
+                    continue;
+                }
+                String changedName = RemoveQuotes(entryData.at("name"));
+
+                if (entryData.find("requirements") == entryData.end()) {
+                    String outString = "Name entry for victory point " + std::to_string(vp) + " does not have a requirements defined.\n";
+                    std::cout << outString;
+                    continue;
+                }
+                Vector<String> nameRequirements = ParseStringAsStringArrayHandleQuotes(entryData.at("requirements"));
+
+                SignedInteger16 priority = (entryData.find("priority") != entryData.end()) ? std::stoi(entryData.at("priority")) : INT16_MAX;
+
+                nameEntries.emplace_back(changedName, nameRequirements, priority);
+            }
+        }
+
+        if (provincesArray.size() >= vp) {
+            provincesArray[vp].SetDefaultName(defaultName);
+            provincesArray[vp].SetNameEntries(nameEntries);
+        }
     }
 }
 
@@ -948,16 +1008,16 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
     Vector<Path> stateFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "history\\states", ".txt", 1200);
     Float32 coresCount = std::thread::hardware_concurrency();
     //SizeT vectorsToDivideInto = std::floor(std::max(coresCount * 0.5f, 3.0f));
-    SizeT vectorsToDivideInto = 4;      //Dividing into many vectors requires a lot of overhead - 2 seems to be best 
-                                        //Testing 4 manual threads
+    SizeT vectorsToDivideInto = 2;      //Dividing into many vectors and setting up threads requires overhead - 2 seems to be best 
 
+    statesArray.reserve(stateFiles.size() + 1);
     Vector<Vector<Path>> stateFilesSubVectors = SplitVector(stateFiles, vectorsToDivideInto);
     Vector<Vector<State>> statesArray2D(vectorsToDivideInto);
     Vector<Vector<ProvinceVictoryPoint>> provinceVictoryPointsArray2D(vectorsToDivideInto);
 
     for (SizeT i = 0; i < stateFilesSubVectors.size(); ++i) { statesArray2D[i].reserve(stateFilesSubVectors[i].size()); }
 
-    /*
+    
     Vector<std::future<void>> futures;
 
     for (SizeT i = 0; i < vectorsToDivideInto; ++i) {
@@ -966,31 +1026,17 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
     }
 
     for (auto& f : futures) f.get();
-    */
+    
 
-    std::thread stateThread1(ProcessStateFilesVector, std::cref(stateFilesSubVectors[1]), std::ref(statesArray2D[1]), 
-        std::ref(provinceVictoryPointsArray2D[1]), std::cref(countriesArray), std::cref(provinceBuildingsArray), std::cref(stateBuildingsArray), 
-        std::cref(resourcesArray), std::cref(stateCategoriesArray), std::cref(defaultDate));
-    std::thread stateThread2(ProcessStateFilesVector, std::cref(stateFilesSubVectors[2]), std::ref(statesArray2D[2]), 
-        std::ref(provinceVictoryPointsArray2D[2]), std::cref(countriesArray), std::cref(provinceBuildingsArray), std::cref(stateBuildingsArray), 
-        std::cref(resourcesArray), std::cref(stateCategoriesArray), std::cref(defaultDate));
-    std::thread stateThread3(ProcessStateFilesVector, std::cref(stateFilesSubVectors[3]), std::ref(statesArray2D[3]), 
-        std::ref(provinceVictoryPointsArray2D[3]), std::cref(countriesArray), std::cref(provinceBuildingsArray), std::cref(stateBuildingsArray), 
-        std::cref(resourcesArray), std::cref(stateCategoriesArray), std::cref(defaultDate));
-    std::thread stateThread4(ProcessStateFilesVector, std::cref(stateFilesSubVectors[4]), std::ref(statesArray2D[4]), 
-        std::ref(provinceVictoryPointsArray2D[4]), std::cref(countriesArray), std::cref(provinceBuildingsArray), std::cref(stateBuildingsArray), 
-        std::cref(resourcesArray), std::cref(stateCategoriesArray), std::cref(defaultDate));
-
+    
     statesArray.emplace_back(0);
-    
-    stateThread1.join();
-    stateThread2.join();
-    stateThread3.join();
-    stateThread4.join();
-    
     for (const auto& a : statesArray2D) {
-        for (const auto& b : a) {
-            statesArray.push_back(b);
+
+        auto it = a.begin();
+        const SizeT arraySize = a.size();
+        for (SizeT i = 0; i < arraySize; ++i) {
+            statesArray.push_back(std::move(*it));
+            ++it;
         }
     }
 
@@ -1045,6 +1091,7 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
 void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<StrategicRegion>& strategicRegionsArray,
     Vector<State>& statesArray, Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& strategicRegionColoursToIdMap) {
     Vector<Path> strategicRegionFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "map\\strategicregions", ".txt", 256);
+    strategicRegionsArray.reserve(strategicRegionFiles.size() + 1);
     strategicRegionsArray.emplace_back(0);
 
     for (const auto& file : strategicRegionFiles) {

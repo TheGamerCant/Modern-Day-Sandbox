@@ -1,0 +1,25 @@
+TAG_using_russian_names = {
+	OR = {
+		AND = {
+			OR = {
+				original_tag = SOV
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = SOV
+	}
+}
+
+TAG_using_ukrainian_names = {
+	OR = {
+		AND = {
+			OR = {
+				original_tag = UKR
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = UKR
+	}
+}

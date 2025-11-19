@@ -553,6 +553,14 @@ const Boolean Province::BoundingBoxHasBeenUpdated() const {
     return true;
 }
 
+String Province::GetDefaultName() { return defaultName; }
+const String Province::GetDefaultName() const { return defaultName; }
+void Province::SetDefaultName(const String& name) { defaultName = name; }
+Vector<ChangeableName>& Province::GetNameEntries() { return nameEntries; }
+const Vector<ChangeableName>& Province::GetNameEntries() const { return nameEntries; }
+void Province::SetNameEntries(const Vector<ChangeableName>& entries) { nameEntries = entries; }
+
+
 String State::GetName() { return name; }
 const String State::GetName() const { return name; }
 void State::SetId(const UnsignedInteger16 idIn) { id = idIn; }

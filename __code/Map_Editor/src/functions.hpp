@@ -48,6 +48,9 @@ HashMap<String, Vector<String>> ParseStringForPairsMapRepeat(const String& strin
 Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedInteger32 reserve = 16);
 
 //Parses a string as a space-seperated array
+Vector<String> ParseStringAsStringArrayHandleQuotes(const String& stringIn);
+
+//These ones treat quotation marks as normal characters unless ignoreQuotations is true
 Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<Float64> ParseStringAsFloat64Array(const String& stringIn, Boolean ignoreQuotations = false);
@@ -64,24 +67,25 @@ Vector<ColourRGB> GenerateRandomColours(HashMap<UnsignedInteger32, UnsignedInteg
 //Split a vector into n no. of vectors (original vector becomes empty)
 template<typename VectorType>
 Vector<Vector<VectorType>> SplitVector(Vector<VectorType>& vec, SizeT chunks) {
-    Vector<Vector<VectorType>> returnVector(chunks);
+    Vector<Vector<VectorType>> result(chunks);
 
-    SignedInteger32 maxEntriesInVec = (vec.size() / chunks) + 1;
-    Vector<SizeT> entriesPerVector(chunks, maxEntriesInVec - 1);
-    SignedInteger32 vectorsWithExtra = vec.size() - (chunks * maxEntriesInVec) + chunks;
-    for (SizeT i = 0; i < vectorsWithExtra; ++i) entriesPerVector[i] += 1;
-    //for (SizeT i = 0; i < chunks; ++i) returnVector[i].reserve(entriesPerVector[i]);      //Move into loop
+    SizeT base = vec.size() / chunks;
+    SizeT extra = vec.size() % chunks;
 
-    auto index = vec.begin();
-    for (SizeT i = 0; i < chunks; ++i) {
-        returnVector[i].reserve(entriesPerVector[i]);
-        
-        for (SizeT j = 0; j < entriesPerVector[i]; ++j) {
-            returnVector[i].push_back(std::move(index));
-            ++index;
+    auto it = vec.begin();
+
+    for (size_t i = 0; i < chunks; ++i) {
+        SizeT count = base + (i < extra ? 1 : 0);
+
+        result[i].reserve(count);
+
+        for (SizeT j = 0; j < count; ++j) {
+            result[i].push_back(std::move(*it));
+            ++it;
         }
     }
 
-    vec.clear(); vec.shrink_to_fit();
-    return returnVector;
+    vec.clear();
+    vec.shrink_to_fit();
+    return result;
 }

@@ -827,6 +827,41 @@ Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedIn
     return returnArray;
 }
 
+Vector<String> ParseStringAsStringArrayHandleQuotes(const String& stringIn) {
+    Vector<String> returnVector;
+    SizeT stringLength = stringIn.size();
+
+    Char* currentStringArray = new Char[stringLength + 2];
+    SizeT currentStringSize = 0;
+	Boolean inQuotations = false;
+
+    SizeT entriesCount = 1;
+
+    for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
+    returnVector.reserve(entriesCount);
+
+    for (Char c : stringIn) { 
+        if (c == '\"') {
+			inQuotations = !inQuotations;
+        }
+        else if (!CharIsWhitespace(c) || inQuotations == true) {
+            currentStringArray[currentStringSize++] = c;
+        } 
+        else if (CharIsWhitespace(c) && inQuotations == false){
+            currentStringArray[currentStringSize++] = 0;
+            currentStringSize = 0;
+            returnVector.emplace_back(currentStringArray);
+        }
+    }
+
+    if (currentStringSize > 0) {
+        currentStringArray[currentStringSize++] = 0;
+        returnVector.emplace_back(currentStringArray);
+    }
+    delete[] currentStringArray;
+    return returnVector;
+}
+
 Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQuotations) {
     Vector<String> returnVector;
     SizeT stringLength = stringIn.size();
@@ -836,10 +871,14 @@ Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQu
 
     SizeT entriesCount = 1;
 
+    Boolean quotationsFound = false;
+
     for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
     returnVector.reserve(entriesCount);
 
     for (Char c : stringIn) { 
+		if (c == 34) quotationsFound = true;
+
         if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
             currentStringArray[currentStringSize++] = c;
         } 
@@ -855,6 +894,13 @@ Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQu
         returnVector.emplace_back(currentStringArray);
     }
     delete[] currentStringArray;
+
+	if (quotationsFound) { 
+        String outString = stringIn + "\n";
+        std::cout << outString;
+    }
+
+
     return returnVector;
 }
 
