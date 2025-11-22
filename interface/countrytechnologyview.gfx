@@ -43,6 +43,18 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+	
+	frameAnimatedSpriteType = {
+		name = "GFX_empty_research_slot_glow"
+		texturefile = "gfx/interface/empty_research_slot_glow.dds"
+		noOfFrames = 2
+		animation_rate_fps = 1
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+		alwaystransparent = yes
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
 
 	spriteType = {
 		name = "GFX_research_speed_icon"
@@ -156,6 +168,13 @@ spriteTypes = {
 		alwaystransparent = yes		
 	}
 
+	spriteType = {
+		name = "GFX_rangers_bg"
+		textureFile = "gfx/interface/officer_corp/special_forces/doctrine_special_forces_rangers_bg.dds"
+		alwaystransparent = yes		
+	}
+
+
 	corneredTileSpriteType = {
 		name = "GFX_fullborder_tiled"
 		size= { x=190 y=190 }
@@ -221,6 +240,11 @@ spriteTypes = {
 		effectFile = "gfx/FX/progress_startend.lua"
 	}
 	
+	spriteType = {
+		name = "GFX_research_line_bg"
+		textureFile = "gfx//interface//research_line_bg.dds"
+	}
+	
 	frameAnimatedSpriteType = {
 		name = "GFX_tutorial_research_folder_icon_glow"
 		texturefile = "gfx//interface//tutorial//research_folder_icon_glow.dds"
@@ -245,4 +269,21 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_blendframes.lua"
 	}		
 	
+
+
+### SEA
+
+	spriteType = {
+		name = "GFX_tac_operation_bg"
+		textureFile = "gfx//interface//tac_operation_bg.dds"
+		alwaystransparent = yes		
+	}
+
+	spriteType = {
+		name = "GFX_screens_bg"
+		textureFile = "gfx//interface//screens_bg.dds"
+		alwaystransparent = yes		
+	}
+
+
 }

@@ -1,4 +1,4 @@
-#Removed "textcolors" section
+#Removed "textcolors" section, moved to new mod file
 
 spriteTypes = {
 
@@ -1644,7 +1644,8 @@ bitmapfonts = {
 	bitmapfont_override = {
 		name = "tahoma_60"
 		fontfiles = {
-			"gfx/fonts/japanese/hoi_mapfont4"
+			"gfx/fonts/japanese/hoi_mapfont4_0"
+			"gfx/fonts/japanese/hoi_mapfont4_1"
 		}
 		languages = { "l_japanese" }
 	}
