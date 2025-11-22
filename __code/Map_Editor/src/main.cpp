@@ -41,7 +41,7 @@ int main()
 
     //You could put these into std::threads at the top and then join them after but it's so negligible there's no point
     LoadResourceFiles(vanillaDirectory, modDirectory, modReplaceDirectories, resourcesArray);
-    LoadStateCategoryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, stateCategoriesArray);
+    LoadStateCategoryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, stateCategoriesArray, provinceBuildingsArray, stateBuildingsArray);
     LoadContinentFiles(vanillaDirectory, modDirectory, modReplaceDirectories, continentsArray);
     Date defaultBookmarkDate = GetDefaultDate(vanillaDirectory, modDirectory, modReplaceDirectories);
 

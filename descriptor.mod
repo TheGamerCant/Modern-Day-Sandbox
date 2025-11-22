@@ -10,7 +10,7 @@ tags={
 	"Events"
 }
 name="The Disinfomation Age"
-supported_version="1.16.*"
+supported_version="1.17.*"
 
 replace_path="history/states"
 replace_path="history/countries"

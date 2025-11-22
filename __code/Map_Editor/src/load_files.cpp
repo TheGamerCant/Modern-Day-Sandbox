@@ -506,9 +506,15 @@ void LoadResourceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
     resourcesArray.ShrinkToFit();
 }
 
-void LoadStateCategoryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<StateCategory>& stateCategoriesArray) {
+void LoadStateCategoryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<StateCategory>& stateCategoriesArray,
+    const VectorMap<Building>& provinceBuildingsArray, const VectorMap<Building>& stateBuildingsArray) {
     Vector<Path> stateCategoryFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\state_category", ".txt", 12);
     stateCategoriesArray.Reserve(12);
+
+    Vector<UnsignedInteger16> baseProvinceBuildingsMaxLevel(provinceBuildingsArray.Size(), 0);
+    for (SizeT i = 0; i < provinceBuildingsArray.Size(); ++i) { baseProvinceBuildingsMaxLevel[i] = provinceBuildingsArray[i].GetMaxLevel(); }
+    Vector<UnsignedInteger16> baseStateBuildingsMaxLevel(stateBuildingsArray.Size(), 0);
+    for (SizeT i = 0; i < stateBuildingsArray.Size(); ++i) { baseStateBuildingsMaxLevel[i] = stateBuildingsArray[i].GetMaxLevel(); }
 
     for (const auto& file : stateCategoryFiles) {
         HashMap<String, String> stateCategoryFileLvl1 = ParseStringForPairsMapUnique(LoadFileToString(file.string()));
@@ -527,12 +533,25 @@ void LoadStateCategoryFiles(const Path& vanillaDirectory, const Path& modDirecto
                 if (stateCategoryData.find("color") == stateCategoryData.end()) FatalError("No colour defined for " + stateCategoryName);
                 ColourRGB colour(stateCategoryData.at("color")); stateCategoryData.erase("color");
 
+                Vector<UnsignedInteger16> provinceBuildingsMaxLevel = baseProvinceBuildingsMaxLevel;
+                Vector<UnsignedInteger16> stateBuildingsMaxLevel = baseStateBuildingsMaxLevel;
+
+                if (stateCategoryData.find("buildings_max_level") != stateCategoryData.end()) {
+                    HashMap<String, String> buildingsData = ParseStringForPairsMapUnique(stateCategoryData.at("buildings_max_level"));
+                    for (const auto& [building, level] : buildingsData) {
+                        if (provinceBuildingsArray.NameInArray(building)) provinceBuildingsMaxLevel[provinceBuildingsArray[building].GetId()] = std::stoi(level);
+                        else if (stateBuildingsArray.NameInArray(building)) stateBuildingsMaxLevel[stateBuildingsArray[building].GetId()] = std::stoi(level);
+                        else FatalError("Building " + building + " in terrain " + stateCategoryName + " is not a valid province building");
+                    }
+                    stateCategoryData.erase("buildings_max_level");
+                }
+
                 HashMap<String, Decimal> modifiers;
                 for (const auto& [modifierName, modifierData] : stateCategoryData) {
                     modifiers[modifierName] = modifierData;
                 }
                 
-                stateCategoriesArray.EmplaceBack(localBuildingSlots, colour, stateCategoryName, modifiers);
+                stateCategoriesArray.EmplaceBack(localBuildingSlots, colour, stateCategoryName, modifiers, provinceBuildingsMaxLevel, stateBuildingsMaxLevel);
             }
         }
     }
@@ -826,6 +845,7 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                 std::sort(provinces.begin(), provinces.end(), [](const UnsignedInteger16& a, const UnsignedInteger16& b) { return a < b; });
 
                 Boolean impassable = (stateData.find("impassable") != stateData.end()) ? GetBoolFromYesNo(stateData.at("impassable")[stateData.at("impassable").size() - 1]) : false;
+                UnsignedInteger16 forceOwnershipLinkTo = (stateData.find("force_link_ownership_to") != stateData.end()) ? std::stoi(stateData.at("force_link_ownership_to")[stateData.at("force_link_ownership_to").size() - 1]) : 0;
 
                 Vector<UnsignedInteger16> resources(resourcesArray.Size(), 0);
                 if (stateData.find("resources") != stateData.end()) {
@@ -995,7 +1015,7 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                     std::sort(stateHistoriesArray.begin(), stateHistoriesArray.end(), [](const StateHistory& a, const StateHistory& b) { return a.date.GetHoursSinceStart() < b.date.GetHoursSinceStart(); });
                 }
 
-                statesArray.emplace_back(id, impassable, stateCategory, manpower, name, provinces, resources, localSupplies, buildingsMaxLevelFactor, stateHistoriesArray);
+                statesArray.emplace_back(id, impassable, stateCategory, forceOwnershipLinkTo, manpower, name, provinces, resources, localSupplies, buildingsMaxLevelFactor, stateHistoriesArray);
             }
         }
     }

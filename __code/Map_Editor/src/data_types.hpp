@@ -446,11 +446,15 @@ private:
     ColourRGB colour;
     String name;
     HashMap<String, Decimal> modifiers;
+    Vector<UnsignedInteger16> provinceBuildingsMaxLevel;
+    Vector<UnsignedInteger16> stateBuildingsMaxLevel;
 
 public:
-    StateCategory() : id(0), localBuildingSlots(0), colour(0, 0, 0), name(""), modifiers() {}
-    StateCategory(const UnsignedInteger16 localBuildingSlots, const ColourRGB colour, const String& name, const HashMap<String, Decimal>& modifiers) :
-        id(0), localBuildingSlots(localBuildingSlots), colour(colour), name(name), modifiers(modifiers) {}
+    StateCategory() : id(0), localBuildingSlots(0), colour(0, 0, 0), name(""), modifiers(), provinceBuildingsMaxLevel(), stateBuildingsMaxLevel() {}
+    StateCategory(const UnsignedInteger16 localBuildingSlots, const ColourRGB colour, const String& name, const HashMap<String, Decimal>& modifiers,
+        const Vector<UnsignedInteger16>& provinceBuildingsMaxLevel, const Vector<UnsignedInteger16>& stateBuildingsMaxLevel) :
+        id(0), localBuildingSlots(localBuildingSlots), colour(colour), name(name), modifiers(modifiers), provinceBuildingsMaxLevel(provinceBuildingsMaxLevel), 
+        stateBuildingsMaxLevel(stateBuildingsMaxLevel) {}
 
     String GetName();
     const String GetName() const;
@@ -578,6 +582,7 @@ private:
     Boolean multipleStrategicRegions;
     UnsignedInteger16 strategicRegionId;
     UnsignedInteger16 stateCategoryId;
+    UnsignedInteger16 forceOwnershipLinkTo;
     UnsignedInteger32 manpower;
     String name;
     Vector<UnsignedInteger16> provinces;
@@ -591,12 +596,12 @@ private:
 
 public:
     State(const UnsignedInteger16 id) :
-        id(id), colour(0, 0, 0), impassable(false), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(0), manpower(0), name(""), provinces(), resources(),
+        id(id), colour(0, 0, 0), impassable(false), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(0), forceOwnershipLinkTo(0), manpower(0), name(""), provinces(), resources(),
         localSupplies(), buildingsMaxLevelFactor(), stateHistoriesArray(), defaultName(""), nameEntries() {}
-    State(const UnsignedInteger16 id, const Boolean impassable, const UnsignedInteger16 stateCategoryId, const UnsignedInteger32 manpower, const String& name, const Vector<UnsignedInteger16>& provinces, 
-        const Vector<UnsignedInteger16>& resources, const Decimal localSupplies, const Decimal buildingsMaxLevelFactor, const Vector<StateHistory>& stateHistoriesArray) :
-        id(id), colour(0, 0, 0), impassable(impassable), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(stateCategoryId), manpower(manpower), name(name), provinces(provinces), 
-        resources(resources), localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray), defaultName(""), nameEntries() {}
+    State(const UnsignedInteger16 id, const Boolean impassable, const UnsignedInteger16 stateCategoryId, const UnsignedInteger16 forceOwnershipLinkTo, const UnsignedInteger32 manpower, const String& name, 
+        const Vector<UnsignedInteger16>& provinces, const Vector<UnsignedInteger16>& resources, const Decimal localSupplies, const Decimal buildingsMaxLevelFactor, const Vector<StateHistory>& stateHistoriesArray) :
+        id(id), colour(0, 0, 0), impassable(impassable), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(stateCategoryId), forceOwnershipLinkTo(forceOwnershipLinkTo), manpower(manpower), name(name), 
+        provinces(provinces), resources(resources), localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray), defaultName(""), nameEntries() {}
 
 
     String GetName();

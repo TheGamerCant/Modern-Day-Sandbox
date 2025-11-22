@@ -18,7 +18,8 @@ void LoadTerrainFiles(const Path& vanillaDirectory, const Path& modDirectory, co
 
 void LoadResourceFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Resource>& resourcesArray);
 
-void LoadStateCategoryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<StateCategory>& stateCategoriesArray);
+void LoadStateCategoryFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<StateCategory>& stateCategoriesArray,
+	const VectorMap<Building>& provinceBuildingsArray, const VectorMap<Building>& stateBuildingsArray);
 
 void LoadContinentFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Continent>& continentsArray);
 
