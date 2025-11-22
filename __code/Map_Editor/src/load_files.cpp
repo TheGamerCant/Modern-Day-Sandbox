@@ -794,7 +794,7 @@ void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                     std::cout << outString;
                     continue;
                 }
-                Vector<String> nameRequirements = ParseStringAsStringArrayHandleQuotes(entryData.at("requirements"));
+                Vector<String> nameRequirements = ParseStringAsStringArray(entryData.at("requirements"));
 
                 SignedInteger16 priority = (entryData.find("priority") != entryData.end()) ? std::stoi(entryData.at("priority")) : INT16_MAX;
 

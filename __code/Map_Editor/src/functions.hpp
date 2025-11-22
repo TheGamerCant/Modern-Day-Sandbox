@@ -47,10 +47,6 @@ HashMap<String, String> ParseStringForPairsMapUnique(const String& stringIn);
 HashMap<String, Vector<String>> ParseStringForPairsMapRepeat(const String& stringIn);
 Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedInteger32 reserve = 16);
 
-//Parses a string as a space-seperated array
-Vector<String> ParseStringAsStringArrayHandleQuotes(const String& stringIn);
-
-//These ones treat quotation marks as normal characters unless ignoreQuotations is true
 Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<Float64> ParseStringAsFloat64Array(const String& stringIn, Boolean ignoreQuotations = false);

@@ -827,62 +827,27 @@ Vector<DoubleString> ParseStringForPairsArray(const String& stringIn, UnsignedIn
     return returnArray;
 }
 
-Vector<String> ParseStringAsStringArrayHandleQuotes(const String& stringIn) {
-    Vector<String> returnVector;
-    SizeT stringLength = stringIn.size();
-
-    Char* currentStringArray = new Char[stringLength + 2];
-    SizeT currentStringSize = 0;
-	Boolean inQuotations = false;
-
-    SizeT entriesCount = 1;
-
-    for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
-    returnVector.reserve(entriesCount);
-
-    for (Char c : stringIn) { 
-        if (c == '\"') {
-			inQuotations = !inQuotations;
-        }
-        else if (!CharIsWhitespace(c) || inQuotations == true) {
-            currentStringArray[currentStringSize++] = c;
-        } 
-        else if (CharIsWhitespace(c) && inQuotations == false){
-            currentStringArray[currentStringSize++] = 0;
-            currentStringSize = 0;
-            returnVector.emplace_back(currentStringArray);
-        }
-    }
-
-    if (currentStringSize > 0) {
-        currentStringArray[currentStringSize++] = 0;
-        returnVector.emplace_back(currentStringArray);
-    }
-    delete[] currentStringArray;
-    return returnVector;
-}
-
 Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQuotations) {
     Vector<String> returnVector;
     SizeT stringLength = stringIn.size();
 
     Char* currentStringArray = new Char[stringLength + 2];
     SizeT currentStringSize = 0;
+    Boolean inQuotations = false;
 
     SizeT entriesCount = 1;
-
-    Boolean quotationsFound = false;
 
     for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
     returnVector.reserve(entriesCount);
 
-    for (Char c : stringIn) { 
-		if (c == 34) quotationsFound = true;
-
-        if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
+    for (Char c : stringIn) {
+        if (c == '\"' && !ignoreQuotations) {
+            inQuotations = !inQuotations;
+        }
+        else if (!CharIsWhitespace(c) || inQuotations == true) {
             currentStringArray[currentStringSize++] = c;
-        } 
-        else if (CharIsWhitespace(c)){
+        }
+        else if (CharIsWhitespace(c) && inQuotations == false) {
             currentStringArray[currentStringSize++] = 0;
             currentStringSize = 0;
             returnVector.emplace_back(currentStringArray);
@@ -894,13 +859,6 @@ Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQu
         returnVector.emplace_back(currentStringArray);
     }
     delete[] currentStringArray;
-
-	if (quotationsFound) { 
-        String outString = stringIn + "\n";
-        std::cout << outString;
-    }
-
-
     return returnVector;
 }
 
@@ -910,29 +868,34 @@ Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn
 
     Char* currentStringArray = new Char[stringLength + 2];
     SizeT currentStringSize = 0;
+    Boolean inQuotations = false;
+
+    String currentNumber;
 
     SizeT entriesCount = 1;
-    String currentInteger;
 
     for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
     returnVector.reserve(entriesCount);
 
     for (Char c : stringIn) {
-        if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
+        if (c == '\"' && !ignoreQuotations) {
+            inQuotations = !inQuotations;
+        }
+        else if (!CharIsWhitespace(c) || inQuotations == true) {
             currentStringArray[currentStringSize++] = c;
         }
-        else if (CharIsWhitespace(c)) {
+        else if (CharIsWhitespace(c) && inQuotations == false) {
             currentStringArray[currentStringSize++] = 0;
             currentStringSize = 0;
-            currentInteger = String(currentStringArray);
-            if (StringCanBecomeInteger(currentInteger)) { returnVector.push_back(std::stoi(currentInteger)); }
+            currentNumber = String(currentStringArray);
+            if (StringCanBecomeInteger(currentNumber)) { returnVector.push_back(std::stoll(currentNumber)); }
         }
     }
 
     if (currentStringSize > 0) {
         currentStringArray[currentStringSize++] = 0;
-        currentInteger = String(currentStringArray);
-        if (StringCanBecomeInteger(currentInteger)) { returnVector.push_back(std::stoi(currentInteger)); }
+        currentNumber = String(currentStringArray);
+        if (StringCanBecomeInteger(currentNumber)) { returnVector.push_back(std::stoll(currentNumber)); }
     }
     delete[] currentStringArray;
     return returnVector;
@@ -944,18 +907,23 @@ Vector<Float64> ParseStringAsFloat64Array(const String& stringIn, Boolean ignore
 
     Char* currentStringArray = new Char[stringLength + 2];
     SizeT currentStringSize = 0;
+    Boolean inQuotations = false;
+
+    String currentNumber;
 
     SizeT entriesCount = 1;
-    String currentNumber;
 
     for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
     returnVector.reserve(entriesCount);
 
     for (Char c : stringIn) {
-        if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
+        if (c == '\"' && !ignoreQuotations) {
+            inQuotations = !inQuotations;
+        }
+        else if (!CharIsWhitespace(c) || inQuotations == true) {
             currentStringArray[currentStringSize++] = c;
         }
-        else if (CharIsWhitespace(c)) {
+        else if (CharIsWhitespace(c) && inQuotations == false) {
             currentStringArray[currentStringSize++] = 0;
             currentStringSize = 0;
             currentNumber = String(currentStringArray);
@@ -978,29 +946,34 @@ Vector<UnsignedInteger16> ParseStringAsUnsignedInteger16Array(const String& stri
 
     Char* currentStringArray = new Char[stringLength + 2];
     SizeT currentStringSize = 0;
+    Boolean inQuotations = false;
+
+    String currentNumber;
 
     SizeT entriesCount = 1;
-    String currentInteger;
 
     for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
     returnVector.reserve(entriesCount);
 
-    for (Char c : stringIn) { 
-        if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
+    for (Char c : stringIn) {
+        if (c == '\"' && !ignoreQuotations) {
+            inQuotations = !inQuotations;
+        }
+        else if (!CharIsWhitespace(c) || inQuotations == true) {
             currentStringArray[currentStringSize++] = c;
-        } 
-        else if (CharIsWhitespace(c)){
+        }
+        else if (CharIsWhitespace(c) && inQuotations == false) {
             currentStringArray[currentStringSize++] = 0;
             currentStringSize = 0;
-            currentInteger = String(currentStringArray);
-            if (StringCanBecomeInteger(currentInteger)) { returnVector.push_back(std::stoi(currentInteger)); }
+            currentNumber = String(currentStringArray);
+            if (StringCanBecomeInteger(currentNumber)) { returnVector.push_back(std::stoi(currentNumber)); }
         }
     }
 
     if (currentStringSize > 0) {
         currentStringArray[currentStringSize++] = 0;
-        currentInteger = String(currentStringArray);
-        if (StringCanBecomeInteger(currentInteger)) { returnVector.push_back(std::stoi(currentInteger)); }
+        currentNumber = String(currentStringArray);
+        if (StringCanBecomeInteger(currentNumber)) { returnVector.push_back(std::stoi(currentNumber)); }
     }
     delete[] currentStringArray;
     return returnVector;
@@ -1012,18 +985,23 @@ Vector<Decimal> ParseStringAsDecimalArray(const String& stringIn, Boolean ignore
 
     Char* currentStringArray = new Char[stringLength + 2];
     SizeT currentStringSize = 0;
+    Boolean inQuotations = false;
+
+    String currentNumber;
 
     SizeT entriesCount = 1;
-    String currentNumber;
 
     for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
     returnVector.reserve(entriesCount);
 
-    for (Char c : stringIn) { 
-        if (!CharIsWhitespace(c) && (c != 34 || !ignoreQuotations)) {
+    for (Char c : stringIn) {
+        if (c == '\"' && !ignoreQuotations) {
+            inQuotations = !inQuotations;
+        }
+        else if (!CharIsWhitespace(c) || inQuotations == true) {
             currentStringArray[currentStringSize++] = c;
-        } 
-        else if (CharIsWhitespace(c)){
+        }
+        else if (CharIsWhitespace(c) && inQuotations == false) {
             currentStringArray[currentStringSize++] = 0;
             currentStringSize = 0;
             currentNumber = String(currentStringArray);
