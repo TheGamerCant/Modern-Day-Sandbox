@@ -13,4 +13,5 @@ state={
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=rural
 	impassable = yes
+	force_link_ownership_to = 273
 }

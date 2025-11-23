@@ -58,8 +58,7 @@
               "RelativeToolTip": "src\\bmp.cpp",
               "ViewState": "AgIAAJkAAAAAAAAAAAAAALoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-15T20:28:56.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-15T20:28:56.505Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "src\\bmp.hpp",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAADoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-14T10:25:09.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T10:25:09.36Z"
             },
             {
               "$type": "Document",
@@ -84,8 +82,7 @@
               "RelativeToolTip": "src\\load_files.hpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-24T12:54:25.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T12:54:25.165Z"
             },
             {
               "$type": "Document",
@@ -97,8 +94,7 @@
               "RelativeToolTip": "src\\load_files.cpp",
               "ViewState": "AgIAAAMDAAAAAAAAAAAgwCADAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-24T12:54:34.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T12:54:34.866Z"
             },
             {
               "$type": "Document",
@@ -110,8 +106,7 @@
               "RelativeToolTip": "src\\functions.hpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-24T13:05:02.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T13:05:02.361Z"
             },
             {
               "$type": "Document",
@@ -123,8 +118,7 @@
               "RelativeToolTip": "src\\functions.cpp",
               "ViewState": "AgIAADQDAAAAAAAAAAAAAEsDAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-24T08:39:39.848Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T08:39:39.848Z"
             },
             {
               "$type": "Document",
@@ -158,7 +152,7 @@
               "RelativeDocumentMoniker": "src\\main.cpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAADkAAAAAAAAAAAAwwDoAAABUAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAwwEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-31T08:59:42.81Z",
               "EditorCaption": ""

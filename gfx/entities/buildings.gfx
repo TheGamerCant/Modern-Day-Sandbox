@@ -1,5 +1,112 @@
 objectTypes = {
+
+#### Cities ########################################################
+	pdxmesh = {
+		name = "westerngfx_house_1_1"
+		file = "gfx/models/buildings/city_4_01.mesh"
+
+	}
+	pdxmesh = {
+		name = "westerngfx_house_1_2"
+		file = "gfx/models/buildings/city_4_02.mesh"
+
+	}
+	pdxmesh = {
+		name = "westerngfx_house_1_3"
+		file = "gfx/models/buildings/city_4_03.mesh"
+
+	}
+	pdxmesh = {
+		name = "westerngfx_house_1_4"
+		file = "gfx/models/buildings/city_4_04.mesh"
+
+	}
+	
+
+	### French city
+	
+	pdxmesh = {
+		name = "french_city_4_01"
+		file = "gfx/models/buildings/french_city_4_01.mesh"
+		scale = 1.8
+	}
+	pdxmesh = {
+		name = "french_city_4_02"
+		file = "gfx/models/buildings/french_city_4_02.mesh"
+		scale = 0.36
+	}
+	pdxmesh = {
+		name = "french_city_4_03"
+		file = "gfx/models/buildings/french_city_4_03.mesh"
+		scale = 1.8
+	}
+	pdxmesh = {
+		name = "french_city_4_04"
+		file = "gfx/models/buildings/french_city_4_04.mesh"
+		scale = 1.8
+	}
+		
+		### asian city
+	
+	pdxmesh = {
+		name = "asia_city_01"
+		file = "gfx/models/buildings/asia_city_01.mesh"
+		scale = 1.8
+	}
+	pdxmesh = {
+		name = "asia_city_02"
+		file = "gfx/models/buildings/asia_city_02.mesh"
+		scale = 0.45
+	}
+	pdxmesh = {
+		name = "asia_city_03"
+		file = "gfx/models/buildings/asia_city_03.mesh"
+		scale = 1.8
+	}
+	pdxmesh = {
+		name = "asia_city_04"
+		file = "gfx/models/buildings/asia_city_04.mesh"
+		scale = 0.63
+	}
+	
+	### unciv city
+	
+	pdxmesh = {
+		name = "unciv_city_01"
+		file = "gfx/models/buildings/unciv_city_01.mesh"
+		
+	}
+	pdxmesh = {
+		name = "unciv_city_02"
+		file = "gfx/models/buildings/unciv_city_02.mesh"
+		
+		scale = 0.5
+	}
+	pdxmesh = {
+		name = "unciv_city_03"
+		file = "gfx/models/buildings/unciv_city_03.mesh"
+
+	}
+	pdxmesh = {
+		name = "unciv_city_04"
+		file = "gfx/models/buildings/unciv_city_04.mesh"
+
+	}
+	
+	
+
 #### buildings ########################################################
+
+	pdxmesh = {
+		name = "building_naval_supply_hub"
+		file = "gfx/models/buildings/naval_supply_hub.mesh"
+	}
+
+	pdxmesh = {
+		name = "building_naval_headquarters"
+		file = "gfx/models/buildings/naval_headquarters.mesh"
+	}
+
 	pdxmesh = {
 		name = "building_dockyard_1"
 		file = "gfx/models/buildings/dock_01.mesh"
@@ -422,7 +529,7 @@ objectTypes = {
 	pdxmesh = {
 		name = "building_landmark_spawn"
 		file = "gfx/models/buildings/TEST_building1.mesh"
-		scale = 2.0
+		scale = 1.0
 		
 		meshsettings = {
             name = "TEST_building3Shape"
@@ -477,6 +584,15 @@ objectTypes = {
 		animation = { id = "attack"  		type = "artillery_frame_attack_animation" }
 	}
 	
+	pdxmesh = {
+		name = "JAP_anti_tank_type_97_mesh"
+		file = "gfx/models/buildings/JAP_anti_tank_type_97.mesh"
+		
+		animation = { id = "idle"  			type = "JAP_anti_tank_type_97_idle_animation" }
+		animation = { id = "move"  			type = "JAP_anti_tank_type_97_moving_animation" }
+		animation = { id = "attack"  		type = "JAP_anti_tank_type_97_attack_animation" }
+	}
+
 	pdxmesh = {
 		name = "building_anti_air_building"
 		file = "gfx/models/buildings/88aagun.mesh"

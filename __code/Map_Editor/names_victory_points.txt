@@ -5549,3 +5549,57 @@
 12866 = {
 	default = "Hun"
 }
+1149 = {
+	default = "Tripoli"
+}
+14558 = {
+	default = "Tripoli International Airport"
+}
+14560 = {
+	default = "Zawiya"
+}
+14563 = {
+	default = "Misrata"
+}
+12039 = {
+	default = "Zuwara"
+}
+7066 = {
+	default = "Bani Waled"
+}
+4051 = {
+	default = "Zintan"
+}
+10884 = {
+	default = "Gadamis"
+}
+4047 = {
+	default = "Sirte"
+}
+1127 = {
+	default = "Ajdabiya"
+}
+10117 = {
+	default = "Bin Jawad"
+}
+11954 = {
+	default = "Benghazi"
+}
+14561 = {
+	default = "Kuwayfiyah"
+}
+4063 = {
+	default = "Al Bayda"
+}
+1130 = {
+	default = "Tobruk"
+}
+7082 = {
+	default = "Derna"
+}
+1060 = {
+	default = "Al Jaghbub"
+}
+12764 = {
+	default = "Siwa"
+}
