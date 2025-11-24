@@ -566,11 +566,11 @@ public:
     SignedInteger32 owner, controller;
     Vector<UnsignedInteger16> stateBuildings;
     HashMap<UnsignedInteger16, Vector<UnsignedInteger16>> provinceBuildings;
-    HashMap<String, Vector<String>> effects;
+    Vector<DoubleString> effects;
 
     StateHistory(const Date date) : date(date), owner(-1), controller(-1), stateBuildings(), provinceBuildings(), effects() {}
     StateHistory(const Date date, const SignedInteger32 owner, const SignedInteger32 controller, const Vector<UnsignedInteger16>& stateBuildings,
-        const HashMap<UnsignedInteger16, Vector<UnsignedInteger16>>& provinceBuildings, const HashMap<String, Vector<String>>& effects) :
+        const HashMap<UnsignedInteger16, Vector<UnsignedInteger16>>& provinceBuildings, const Vector<DoubleString>& effects) :
         date(date), owner(owner), controller(controller), stateBuildings(stateBuildings), provinceBuildings(provinceBuildings), effects(effects) {}
 };
 

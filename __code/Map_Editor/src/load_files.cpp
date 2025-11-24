@@ -876,16 +876,16 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
 
                 Vector<StateHistory> stateHistoriesArray;
                 if (stateData.find("history") != stateData.end() && stateData.at("history").size() < 2) {
-                    HashMap<String, Vector<String>> stateHistoryEntries = ParseStringForPairsMapRepeat(stateData.at("history")[0]);
+                    Vector<DoubleString> stateHistoryEntries = ParseStringForPairsArray(stateData.at("history")[0]);
 
-                    if (stateHistoryEntries.find("victory_points") != stateHistoryEntries.end()) {
-                        victoryPoints.reserve(victoryPoints.capacity() + stateHistoryEntries.at("victory_points").capacity());
-
-                        for (const auto& victoryPointsData : stateHistoryEntries.at("victory_points")) {
+                    HashMap<SignedInteger64, String> historyEntriesMap;
+                    Set<String> stringsToRemove = { "victory_points" };
+                    for (const auto& entry : stateHistoryEntries) {
+                        if (entry.a == "victory_points") {
                             //I could do a char array here as there should only be two but I'm lazy :3
-                            Vector<Float64> vpData = ParseStringAsFloat64Array(victoryPointsData);
+                            Vector<Float64> vpData = ParseStringAsFloat64Array(entry.b);
 
-                            if (vpData.size() == 2 
+                            if (vpData.size() == 2
                                 && std::floor(vpData[0]) == vpData[0] && vpData[0] >= 0.0f || vpData[0] <= 65536.0f
                                 && std::floor(vpData[1]) == vpData[1] && vpData[1] >= 0.0f || vpData[1] <= 65536.0f
                                 ) {
@@ -897,114 +897,107 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                             }
                         }
 
-                        stateHistoryEntries.erase("victory_points");
-                    }
-
-                    HashMap<SignedInteger64, String> historyEntriesMap;
-                    Vector<String> datesToRemove;
-
-                    for (const auto& historyEntry : stateHistoryEntries) {
-                        if (StringCanBecomeDate(historyEntry.first)) {
-                            const SizeT historyEntrySecondIndex = historyEntry.second.size() - 1;
-                            if (historyEntrySecondIndex > 0) {
-                                String outString = "More than one entry for date " + historyEntry.first + " found in state " + stringId + ", only the last entry will be read\n";
+                        else if (StringCanBecomeDate(entry.a)) {
+                            if (std::find(stringsToRemove.begin(), stringsToRemove.end(), entry.a) != stringsToRemove.end()) {
+                                String outString = "More than one entry for date " + entry.a + " found in state " + stringId + ", only the first entry will be read\n";
                                 std::cout << outString;
                             }
-
-                            historyEntriesMap[Date(historyEntry.first).GetHoursSinceStart()] = historyEntry.second[historyEntrySecondIndex];
-                            datesToRemove.push_back(historyEntry.first);
+                            else {
+                                historyEntriesMap[Date(entry.a).GetHoursSinceStart()] = entry.b;
+                                stringsToRemove.insert(entry.a);
+                            }
                         }
                     }
 
-                    for (const auto& date : datesToRemove) { stateHistoryEntries.erase(date); }
+                    stateHistoryEntries.erase(
+                        std::remove_if(stateHistoryEntries.begin(), stateHistoryEntries.end(),
+                            [&](const DoubleString& s) {
+                                return stringsToRemove.count(s.a) != 0;
+                            }),
+                        stateHistoryEntries.end()
+                    );
                     
                     String baseHistoryString = "";
                     for (const auto& historyEntry : stateHistoryEntries) {
-                        baseHistoryString += historyEntry.first + "={";
-                        const SizeT historyEntrySecondSize = historyEntry.second.size();
-                        for (SizeT i = 0; i < historyEntrySecondSize; ++i) {
-                            if (i < historyEntrySecondSize - 1) { baseHistoryString += historyEntry.second[i] + " "; }
-                            else { baseHistoryString += historyEntry.second[i]; }
-                        }
-                        baseHistoryString += "}";
+                        baseHistoryString += historyEntry.a + "={" + historyEntry.b + "}";
                     }
 
                     historyEntriesMap[0] = baseHistoryString;
                     stateHistoriesArray.reserve(historyEntriesMap.size());
-
+                     
                     for (const auto& historyEntry : historyEntriesMap) {
-                        HashMap<String, Vector<String>> historyData = ParseStringForPairsMapRepeat(historyEntry.second);
+                        Vector<DoubleString> historyData = ParseStringForPairsArray(historyEntry.second);
 
                         SignedInteger32 owner = -1;
-                        if (historyData.find("owner") != historyData.end()) {
-                            if (historyData.at("owner").size() > 1) { 
-                                String outString = "Cannot have more than one owner defined for state " + stringId + ", only the last entry will be read\n"; 
-                                std::cout << outString;
+                        for (SignedInteger32 i = historyData.size() - 1; i >= 0; --i) {
+                            if (historyData[i].a == "owner") {
+                                owner = countriesArray[historyData[i].b].GetId();
+                                break;
                             }
-                            owner = countriesArray[historyData.at("owner")[historyData.at("owner").size() - 1]].GetId();
-                            historyData.erase("owner");
                         }
 
                         SignedInteger32 controller = -1;
-                        if (historyData.find("controller") != historyData.end()) {
-                            if (historyData.at("controller").size() > 1) {
-                                String outString = "Cannot have more than one controller defined for state " + stringId + ", only the last entry will be read\n";
-                                std::cout << outString;
+                        for (SignedInteger32 i = historyData.size() - 1; i >= 0; --i) {
+                            if (historyData[i].a == "controller") {
+                                owner = countriesArray[historyData[i].b].GetId();
+                                break;
                             }
-                            controller = countriesArray[historyData.at("controller")[historyData.at("controller").size() - 1]].GetId();
-                            historyData.erase("controller");
                         }
 
                         Vector<UnsignedInteger16> stateBuildings(stateBuildingsArray.Size(), 0);
                         Vector<UnsignedInteger16> provinceBuildingsBase(provinceBuildingsArray.Size(), 0);
                         HashMap<UnsignedInteger16, Vector<UnsignedInteger16>> provinceBuildings;
-                        if (historyData.find("buildings") != historyData.end()) {
-//                            if (historyData.at("buildings").size() > 1) {
-//                                String outString = "Cannot have more than one buildings block defined for state " + stringId + ", only the last entry will be read\n";
-//                                std::cout << outString;
-//                            }
-//                            HashMap<String, String> buildingsData = ParseStringForPairsMapUnique(historyData.at("buildings")[historyData.at("buildings").size() - 1]);
 
-                            HashMap<String, String> buildingsData;
-                            for (const auto& buildingsDataWhole : historyData.at("buildings")) {
-                                HashMap<String, String> buildingsDataLocal = ParseStringForPairsMapUnique(buildingsDataWhole);
+                        HashMap<String, String> buildingsData;
+                        for (SignedInteger32 i = historyData.size() - 1; i >= 0; --i) {
+                            if (historyData[i].a == "buildings") {
+                                HashMap<String, String> buildingsDataLocal = ParseStringForPairsMapUnique(historyData[i].b);
 
                                 for (const auto& [key, value] : buildingsDataLocal) {
                                     if (buildingsData.find(key) != buildingsData.end()) {
-                                        String outString = "Building " + key + " has already been defined for this bookmark in state " + stringId +", overwriting.\n";
+                                        String outString = "Building " + key + " has already been defined for this bookmark in state " + stringId + ", overwriting.\n";
                                         std::cout << outString;
                                     }
                                     buildingsData[key] = value;
                                 }
                             }
+                        }
 
-                            for (const auto& buildingEntry : buildingsData) {
-                                if (StringCanBecomeInteger(buildingEntry.first)) {
-                                    HashMap<String, String> provinceBuildingsData = ParseStringForPairsMapUnique(buildingEntry.second);
-                                    Vector<UnsignedInteger16> provinceBuildingsCopy = provinceBuildingsBase;
+                        for (const auto& buildingEntry : buildingsData) {
+                            if (StringCanBecomeInteger(buildingEntry.first)) {
+                                HashMap<String, String> provinceBuildingsData = ParseStringForPairsMapUnique(buildingEntry.second);
+                                Vector<UnsignedInteger16> provinceBuildingsCopy = provinceBuildingsBase;
 
-                                    for (const auto& provinceBuildingEntry : provinceBuildingsData) {
-                                        if (!provinceBuildingsArray.NameInArray(provinceBuildingEntry.first) || !StringCanBecomeInteger(provinceBuildingEntry.second)) {
-                                            String outString = "Bad building definition \"" + provinceBuildingEntry.first + " = " + provinceBuildingEntry.second + " in state " + stringId + "\n";
-                                        }
-                                        else {
-                                            provinceBuildingsCopy[provinceBuildingsArray[provinceBuildingEntry.first].GetId()] = std::stoi(provinceBuildingEntry.second);
-                                        }
-                                    }
-                                    provinceBuildings[std::stoi(buildingEntry.first)] = provinceBuildingsCopy;
-                                }
-                                else {
-                                    if (!stateBuildingsArray.NameInArray(buildingEntry.first) || !StringCanBecomeInteger(buildingEntry.second)) {
-                                        String outString = "Bad building definition \"" + buildingEntry.first + " = " + buildingEntry.second + " in state " + stringId + "\n";
+                                for (const auto& provinceBuildingEntry : provinceBuildingsData) {
+                                    if (!provinceBuildingsArray.NameInArray(provinceBuildingEntry.first) || !StringCanBecomeInteger(provinceBuildingEntry.second)) {
+                                        String outString = "Bad building definition \"" + provinceBuildingEntry.first + " = " + provinceBuildingEntry.second + " in state " + stringId + "\n";
                                     }
                                     else {
-                                        stateBuildings[stateBuildingsArray[buildingEntry.first].GetId()] = std::stoi(buildingEntry.second);
+                                        provinceBuildingsCopy[provinceBuildingsArray[provinceBuildingEntry.first].GetId()] = std::stoi(provinceBuildingEntry.second);
                                     }
                                 }
+                                provinceBuildings[std::stoi(buildingEntry.first)] = provinceBuildingsCopy;
                             }
-
-                            historyData.erase("buildings");
+                            else {
+                                if (!stateBuildingsArray.NameInArray(buildingEntry.first) || !StringCanBecomeInteger(buildingEntry.second)) {
+                                    String outString = "Bad building definition \"" + buildingEntry.first + " = " + buildingEntry.second + " in state " + stringId + "\n";
+                                }
+                                else {
+                                    stateBuildings[stateBuildingsArray[buildingEntry.first].GetId()] = std::stoi(buildingEntry.second);
+                                }
+                            }
                         }
+                        
+
+                        Set<String> removeSet = { "buildings", "owner", "controller" };
+
+                        historyData.erase(
+                            std::remove_if(historyData.begin(), historyData.end(),
+                                [&](const DoubleString& s) {
+                                    return removeSet.count(s.a) != 0;
+                                }),
+                            historyData.end()
+                        );
 
                         stateHistoriesArray.emplace_back(Date(historyEntry.first), owner, controller, stateBuildings, provinceBuildings, historyData);
                     }

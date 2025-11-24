@@ -140,6 +140,7 @@
     <ClCompile Include="src\load_files.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\bmp.cpp" />
+    <ClCompile Include="src\write_files.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\bmp.hpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="src\functions.hpp" />
     <ClInclude Include="src\load_files.hpp" />
     <ClInclude Include="src\stb_image.h" />
+    <ClInclude Include="src\write_files.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
