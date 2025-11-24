@@ -6,6 +6,7 @@
 #include "data_types.hpp"
 #include "load_files.hpp"
 #include "bmp.hpp"
+#include "write_files.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -16,6 +17,8 @@
 
 #define RAYGUI_IMPLEMENTATION
 #include "raygui.h"
+
+#include "gui.hpp"
 
 static void LoadBitmap(BitmapImage& bmp, const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, const String& file) { bmp.LoadFile(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, file).string()); }
 
@@ -90,6 +93,7 @@ int main()
 
     //Right-hand panel
     UnsignedInteger16 rightHandPanelWidth = 320;
+    UnsignedInteger16 halfRightHandPanelWidth = 160;
     Rectangle rightHandPanelBounds(windowWidth - rightHandPanelWidth, 0, rightHandPanelWidth, windowHeight);
 
     //Topbar
@@ -102,6 +106,21 @@ int main()
 
     //Map bounding box
     Rectangle mapBoundingBox(leftHandPanelWidth, topbarHeight, windowWidth - (rightHandPanelWidth + leftHandPanelWidth), windowHeight - topbarHeight);
+
+    //Map mode dropdown box
+    enum MapModeEnum : UnsignedInteger8 {
+        Provinces = 0,
+        ProvinceTerrains,
+        States
+    };
+
+    SignedInteger32 currentMapMode = Provinces;
+    Boolean mapModeDropdownBoxState = false;
+    Rectangle mapModeDropdownBoxBounds(210, 6, 180, topbarHeight - 12);
+
+    //Update pixels button
+    Rectangle stateBasedColoursPixelsButtonBounds(rightHandPanelBounds.x + 6, 6, halfRightHandPanelWidth - 12, topbarHeight - 12);
+    Rectangle randomColoursPixelsButtonBounds(rightHandPanelBounds.x + halfRightHandPanelWidth + 6, 6, halfRightHandPanelWidth - 12, topbarHeight - 12);
 
     //Mouse data
     SignedInteger16 mouseX = 0, mouseY = 0;
@@ -150,17 +169,6 @@ int main()
     }; 
     Texture2D statesTexture = LoadTextureFromImage(statesImage);
 
-    //Map mode dropdown box
-    enum MapModeEnum : UnsignedInteger8 {
-        Provinces = 0,
-		ProvinceTerrains,
-        States
-    };
-
-    SignedInteger32 currentMapMode = Provinces;
-    Boolean mapModeDropdownBoxState = false;
-	Rectangle mapModeDropdownBoxBounds(210, 6, 180, topbarHeight - 12);
-   
     //Load our fonts
     Font blenderBookFont18 = LoadFontEx("blender-font\\BlenderPro-Book.ttf", 18, NULL, 0);
 
@@ -175,10 +183,13 @@ int main()
             if (rightHandPanelWidth < 300) rightHandPanelWidth = 300;
             else if (rightHandPanelWidth > 600) rightHandPanelWidth = 600;
             rightHandPanelBounds = Rectangle(windowWidth - rightHandPanelWidth, 0, rightHandPanelWidth, windowHeight);
+			halfRightHandPanelWidth = rightHandPanelWidth / 2;
 
             topbarBounds = Rectangle(0, 0, windowWidth, topbarHeight);
             leftHandPanelBounds = Rectangle(0, 0, leftHandPanelWidth, windowHeight);
             mapBoundingBox = Rectangle(leftHandPanelWidth, topbarHeight, windowWidth - (rightHandPanelWidth + leftHandPanelWidth), windowHeight - topbarHeight);
+            stateBasedColoursPixelsButtonBounds = Rectangle(rightHandPanelBounds.x + 6, 6, halfRightHandPanelWidth - 12, topbarHeight - 12);
+            randomColoursPixelsButtonBounds = Rectangle(rightHandPanelBounds.x + halfRightHandPanelWidth + 6, 6, halfRightHandPanelWidth - 12, topbarHeight - 12);
         }
 
         //Get mouse data
@@ -265,10 +276,25 @@ int main()
 
 		if (GuiDropdownBox(mapModeDropdownBoxBounds, "Provinces\nProvince Terrains\nStates", &currentMapMode, mapModeDropdownBoxState)) mapModeDropdownBoxState = !mapModeDropdownBoxState;
 
+        if (GuiButton(stateBasedColoursPixelsButtonBounds, "State-based province colours")) {
+            UpdateProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
+            UpdateTexture(provincesTexture, provincesBitmap.GetRgbDataPointer());
+        }
+
+        if (GuiButton(randomColoursPixelsButtonBounds, "Random province colours")) {
+            UpdateProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
+            UpdateTexture(provincesTexture, provincesBitmap.GetRgbDataPointer());
+        }
+
         EndDrawing();
     }
     CloseWindow();
 
+
+    if (std::filesystem::exists("out") && std::filesystem::is_directory("out")) { std::filesystem::remove_all("out"); }
+    std::filesystem::create_directory("out");
+
 	statesBitmap.PrintBitmapFile("out\\states.bmp");
 	provinceTerrainsBitmap.PrintBitmapFile("out\\province_terrains.bmp");
+    WriteStateAndStrategicRegionColours(statesArray, strategicRegionsArray);
 }

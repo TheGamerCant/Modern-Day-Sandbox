@@ -1055,6 +1055,8 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
 
     std::sort(statesArray.begin(), statesArray.end(), [](const State& a, const State& b) { return a.GetId() < b.GetId(); });
 
+	//Assign victory points and state IDs to provinces
+
     for (const auto& a : provinceVictoryPointsArray2D) {
         for (const auto& b : a) {
             provincesArray[b.provinceId].SetVictoryPoints(b.victoryPointValue);
@@ -1080,24 +1082,55 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
         }
     }
 
-    Vector<ColourRGB> randomColours = GenerateRandomColours(stateColoursToIdMap, statesArray.size());
-    for (SizeT i = 0; i < statesArray.size(); ++i) { statesArray[i].SetColour(randomColours[i]); }
+    //Load state colours
 
-    //Set state 0 to black
-    if (stateColoursToIdMap.find(0) == stateColoursToIdMap.end()) {
-        stateColoursToIdMap.erase(statesArray[0].GetColour().ToInteger());
-		stateColoursToIdMap[0] = 0;
-        statesArray[0].SetColour(ColourRGB(0, 0, 0));
+	Boolean generateRandomColours = true;
+    if (std::filesystem::exists("stateColours.raw")) {
+        std::ifstream file("stateColours.raw", std::ios::binary | std::ios::ate);
+
+        if (!file) { FatalError("Cannot open file stateColours.raw"); }
+
+        SizeT fileSize = file.tellg();
+        file.seekg(0, std::ios::beg);
+
+        Char* data = new Char[fileSize];
+        file.read(data, fileSize);
+        SizeT parse = 0;
+
+        if (fileSize == statesArray.size() * 3) {
+            generateRandomColours = false;
+
+            for (SizeT i = 0; i < statesArray.size(); ++i) {
+                ColourRGB colour { UnsignedInteger8(data[parse]), UnsignedInteger8(data[parse + 1]), UnsignedInteger8(data[parse + 2]) };
+				statesArray[i].SetColour(colour);
+                parse += 3;
+                stateColoursToIdMap[colour.ToInteger()] = i;
+            }
+        }
+
+        delete[] data;
     }
-    else {
-		ColourRGB stateZeroOriginalColour = statesArray[0].GetColour();
-		UnsignedInteger16 blackStateId = stateColoursToIdMap.at(0);
+    
+    if (generateRandomColours){
+        Vector<ColourRGB> randomColours = GenerateRandomColours(stateColoursToIdMap, statesArray.size());
+        for (SizeT i = 0; i < statesArray.size(); ++i) { statesArray[i].SetColour(randomColours[i]); }
 
-		statesArray[0].SetColour(ColourRGB(0, 0, 0));
-		statesArray[blackStateId].SetColour(stateZeroOriginalColour);
+        //Set state 0 to black
+        if (stateColoursToIdMap.find(0) == stateColoursToIdMap.end()) {
+            stateColoursToIdMap.erase(statesArray[0].GetColour().ToInteger());
+            stateColoursToIdMap[0] = 0;
+            statesArray[0].SetColour(ColourRGB(0, 0, 0));
+        }
+        else {
+            ColourRGB stateZeroOriginalColour = statesArray[0].GetColour();
+            UnsignedInteger16 blackStateId = stateColoursToIdMap.at(0);
 
-        stateColoursToIdMap[0] = 0;
-        stateColoursToIdMap[stateZeroOriginalColour.ToInteger()] = blackStateId;
+            statesArray[0].SetColour(ColourRGB(0, 0, 0));
+            statesArray[blackStateId].SetColour(stateZeroOriginalColour);
+
+            stateColoursToIdMap[0] = 0;
+            stateColoursToIdMap[stateZeroOriginalColour.ToInteger()] = blackStateId;
+        }
     }
 }
 
@@ -1229,24 +1262,53 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
         }
     }
 
-    Vector<ColourRGB> randomColours = GenerateRandomColours(strategicRegionColoursToIdMap, strategicRegionsArray.size());
-    for (SizeT i = 0; i < strategicRegionsArray.size(); ++i) { strategicRegionsArray[i].SetColour(randomColours[i]); }
+    Boolean generateRandomColours = true;
+    if (std::filesystem::exists("strategicRegionColours.raw")) {
+        std::ifstream file("strategicRegionColours.raw", std::ios::binary | std::ios::ate);
 
-    //Set strategic region 0 to black
-    if (strategicRegionColoursToIdMap.find(0) == strategicRegionColoursToIdMap.end()) {
-        strategicRegionColoursToIdMap.erase(strategicRegionsArray[0].GetColour().ToInteger());
-        strategicRegionColoursToIdMap[0] = 0;
-        strategicRegionsArray[0].SetColour(ColourRGB(0, 0, 0));
+        if (!file) { FatalError("Cannot open file strategicRegionColours.raw"); }
+
+        SizeT fileSize = file.tellg();
+        file.seekg(0, std::ios::beg);
+
+        Char* data = new Char[fileSize];
+        file.read(data, fileSize);
+        SizeT parse = 0;
+
+        if (fileSize == strategicRegionsArray.size() * 3) {
+            generateRandomColours = false;
+
+            for (SizeT i = 0; i < strategicRegionsArray.size(); ++i) {
+                ColourRGB colour{ UnsignedInteger8(data[parse]), UnsignedInteger8(data[parse + 1]), UnsignedInteger8(data[parse + 2]) };
+                strategicRegionsArray[i].SetColour(colour);
+                parse += 3;
+                strategicRegionColoursToIdMap[colour.ToInteger()] = i;
+            }
+        }
+
+        delete[] data;
     }
-    else {
-        ColourRGB strategicRegionZeroOriginalColour = strategicRegionsArray[0].GetColour();
-        UnsignedInteger16 blackStrategicRegionId = strategicRegionColoursToIdMap.at(0);
 
-        strategicRegionsArray[0].SetColour(ColourRGB(0, 0, 0));
-        strategicRegionsArray[blackStrategicRegionId].SetColour(strategicRegionZeroOriginalColour);
+    if (generateRandomColours) {
+        Vector<ColourRGB> randomColours = GenerateRandomColours(strategicRegionColoursToIdMap, strategicRegionsArray.size());
+        for (SizeT i = 0; i < strategicRegionsArray.size(); ++i) { strategicRegionsArray[i].SetColour(randomColours[i]); }
 
-        strategicRegionColoursToIdMap[0] = 0;
-        strategicRegionColoursToIdMap[strategicRegionZeroOriginalColour.ToInteger()] = blackStrategicRegionId;
+        //Set strategic regions 0 to black
+        if (strategicRegionColoursToIdMap.find(0) == strategicRegionColoursToIdMap.end()) {
+            strategicRegionColoursToIdMap.erase(strategicRegionsArray[0].GetColour().ToInteger());
+            strategicRegionColoursToIdMap[0] = 0;
+            strategicRegionsArray[0].SetColour(ColourRGB(0, 0, 0));
+        }
+        else {
+            ColourRGB strategicRegionZeroOriginalColour = strategicRegionsArray[0].GetColour();
+            UnsignedInteger16 blackStrategicRegionId = strategicRegionColoursToIdMap.at(0);
+
+            strategicRegionsArray[0].SetColour(ColourRGB(0, 0, 0));
+            strategicRegionsArray[blackStrategicRegionId].SetColour(strategicRegionZeroOriginalColour);
+
+            strategicRegionColoursToIdMap[0] = 0;
+            strategicRegionColoursToIdMap[strategicRegionZeroOriginalColour.ToInteger()] = blackStrategicRegionId;
+        }
     }
 }
 

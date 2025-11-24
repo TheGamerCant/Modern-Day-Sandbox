@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClCompile Include="src\data_types.cpp" />
     <ClCompile Include="src\functions.cpp" />
+    <ClCompile Include="src\gui.cpp" />
     <ClCompile Include="src\load_files.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\bmp.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="src\bmp.hpp" />
     <ClInclude Include="src\data_types.hpp" />
     <ClInclude Include="src\functions.hpp" />
+    <ClInclude Include="src\gui.hpp" />
     <ClInclude Include="src\load_files.hpp" />
     <ClInclude Include="src\stb_image.h" />
     <ClInclude Include="src\write_files.hpp" />

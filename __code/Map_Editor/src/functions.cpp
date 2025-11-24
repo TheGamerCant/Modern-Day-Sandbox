@@ -1064,3 +1064,33 @@ Vector<ColourRGB> GenerateRandomColours(HashMap<UnsignedInteger32, UnsignedInteg
 
     return newColours;
 }
+
+Vector<ColourRGB> GenerateRandomColoursInRange(Set<UnsignedInteger32>& usedColours, const UnsignedInteger32 newColourCount, 
+    const ColourRGB colour, const UnsignedInteger8 range) {
+    SignedInteger16 r0 = (colour.r > range) ? colour.r - range : 0;
+    SignedInteger16 r1 = (colour.r + range < 255) ? colour.r + range : 255;
+    SignedInteger16 g0 = (colour.g > range) ? colour.g - range : 0;
+    SignedInteger16 g1 = (colour.g + range < 255) ? colour.g + range : 255;
+    SignedInteger16 b0 = (colour.b > range) ? colour.b - range : 0;
+    SignedInteger16 b1 = (colour.b + range < 255) ? colour.b + range : 255;
+
+    std::mt19937 gen(std::random_device{}());
+    std::uniform_int_distribution<SignedInteger16> dist_r(r0, r1);
+    std::uniform_int_distribution<SignedInteger16> dist_g(g0, g1);
+    std::uniform_int_distribution<SignedInteger16> dist_b(b0, b1);
+
+    Vector<ColourRGB> newColours; newColours.reserve(newColourCount);
+
+    while (newColours.size() < newColourCount) {
+        ColourRGB colour{ 
+            static_cast<UnsignedInteger8>(dist_r(gen)), 
+            static_cast<UnsignedInteger8>(dist_g(gen)),
+            static_cast<UnsignedInteger8>(dist_b(gen)) 
+        };
+
+        if (usedColours.insert(colour.ToInteger()).second)
+            newColours.push_back(colour);
+    }
+
+    return newColours;
+}
