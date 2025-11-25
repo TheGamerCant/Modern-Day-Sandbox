@@ -58,7 +58,6 @@ Boolean TagIsValid(const String& tag);
 
 //Generate x amount of random colours
 Vector<ColourRGB> GenerateRandomColours(const UnsignedInteger32 colourCount);
-Vector<ColourRGB> GenerateRandomColours(HashMap<UnsignedInteger32, UnsignedInteger16>& usedColours, const UnsignedInteger32 newColourCount);
 Vector<ColourRGB> GenerateRandomColoursInRange(Set<UnsignedInteger32>& usedColours, const UnsignedInteger32 newColourCount,
     const ColourRGB colour, const UnsignedInteger8 range);
 

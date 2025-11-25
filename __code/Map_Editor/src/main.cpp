@@ -82,12 +82,12 @@ int main()
     //Set up camera with possible zoom levels
     Camera2D camera = { 0 };
     camera.zoom = 0.5f;
-    const UnsignedInteger8 cameraZoomLevelCount = 14;
+    const UnsignedInteger8 cameraZoomLevelCount = 15;
     const Float32 cameraZoomLevels[cameraZoomLevelCount] = {
-		0.125f, 0.166667f, 0.25f, 0.666667f, 0.5f, 1.0f, 1.5f, 2.0f, 3.0f, 4.0f, 6.0f, 8.0f, 12.0f, 16.0f
+		0.125f, 0.166667f, 0.25f, 0.5f, 0.666667f, 1.0f, 1.5f, 2.0f, 3.0f, 4.0f, 6.0f, 8.0f, 12.0f, 16.0f, 24.0f
     };
     const String cameraZoomLevelStrings[cameraZoomLevelCount] = {
-		"12.5%", "16.7%", "25.0%", "50.0%", "66.7%", "100.0%", "150.0%", "200.0%", "300.0%", "400.0%", "600.0%", "800.0%", "1200.0%", "1600.0%"
+		"12.5%", "16.7%", "25.0%", "50.0%", "66.7%", "100.0%", "150.0%", "200.0%", "300.0%", "400.0%", "600.0%", "800.0%", "1200.0%", "1600.0%", "2400.0%"
     };
     SignedInteger8 currentZoomLevel = 3;
 
@@ -104,6 +104,21 @@ int main()
     const UnsignedInteger16 leftHandPanelWidth = 40;
     Rectangle leftHandPanelBounds(0, 0, leftHandPanelWidth, windowHeight);
 
+	//Right-hand panel buttons
+    const UnsignedInteger8 buttonPadding = 6;
+    const UnsignedInteger8 buttonsCount = 12;
+    Rectangle rightHandButtonsArray[buttonsCount];
+    std::fill(std::begin(rightHandButtonsArray), std::end(rightHandButtonsArray), Rectangle(0, 0, 0, 0));
+
+    for (SizeT i = 0; i < buttonsCount; ++i) {
+        rightHandButtonsArray[i] = Rectangle(
+			rightHandPanelBounds.x + (i % 2 * halfRightHandPanelWidth) + buttonPadding,
+            topbarHeight * (i / 2) + buttonPadding,
+			halfRightHandPanelWidth - (buttonPadding * 2),
+			topbarHeight - (buttonPadding * 2)
+        );
+    }
+
     //Map bounding box
     Rectangle mapBoundingBox(leftHandPanelWidth, topbarHeight, windowWidth - (rightHandPanelWidth + leftHandPanelWidth), windowHeight - topbarHeight);
 
@@ -116,11 +131,7 @@ int main()
 
     SignedInteger32 currentMapMode = Provinces;
     Boolean mapModeDropdownBoxState = false;
-    Rectangle mapModeDropdownBoxBounds(210, 6, 180, topbarHeight - 12);
-
-    //Update pixels button
-    Rectangle stateBasedColoursPixelsButtonBounds(rightHandPanelBounds.x + 6, 6, halfRightHandPanelWidth - 12, topbarHeight - 12);
-    Rectangle randomColoursPixelsButtonBounds(rightHandPanelBounds.x + halfRightHandPanelWidth + 6, 6, halfRightHandPanelWidth - 12, topbarHeight - 12);
+    Rectangle mapModeDropdownBoxBounds(210, buttonPadding, 180, topbarHeight - (buttonPadding * 2));
 
     //Mouse data
     SignedInteger16 mouseX = 0, mouseY = 0;
@@ -188,8 +199,15 @@ int main()
             topbarBounds = Rectangle(0, 0, windowWidth, topbarHeight);
             leftHandPanelBounds = Rectangle(0, 0, leftHandPanelWidth, windowHeight);
             mapBoundingBox = Rectangle(leftHandPanelWidth, topbarHeight, windowWidth - (rightHandPanelWidth + leftHandPanelWidth), windowHeight - topbarHeight);
-            stateBasedColoursPixelsButtonBounds = Rectangle(rightHandPanelBounds.x + 6, 6, halfRightHandPanelWidth - 12, topbarHeight - 12);
-            randomColoursPixelsButtonBounds = Rectangle(rightHandPanelBounds.x + halfRightHandPanelWidth + 6, 6, halfRightHandPanelWidth - 12, topbarHeight - 12);
+
+            for (SizeT i = 0; i < buttonsCount; ++i) {
+                rightHandButtonsArray[i] = Rectangle(
+                    rightHandPanelBounds.x + (i % 2 * halfRightHandPanelWidth) + buttonPadding,
+                    topbarHeight * (i / 2) + buttonPadding,
+                    halfRightHandPanelWidth - (buttonPadding * 2),
+                    topbarHeight - (buttonPadding * 2)
+                );
+            }
         }
 
         //Get mouse data
@@ -206,36 +224,34 @@ int main()
         if (IsMouseButtonPressed(MOUSE_BUTTON_MIDDLE) && mouseWithinMapNow) mouseWithinMapStartingHold = true;
         else if (IsMouseButtonReleased(MOUSE_BUTTON_MIDDLE) && mouseWithinMapStartingHold) mouseWithinMapStartingHold = false;
         
+        //Get the pixel on the map the mouse is over
+        mousePositionOnMap = GetScreenToWorld2D(Vector2(mouseX, mouseY), camera);
+        if (!mouseWithinMapNow || mousePositionOnMap.x < 0 || mousePositionOnMap.x > mapWidth || mousePositionOnMap.y < 0 || mousePositionOnMap.y > mapHeight) {
+            mousePositionOnMapX = -1; mousePositionOnMapY = -1;
+        }
+        else {
+            mousePositionOnMapX = static_cast<SignedInteger16>(std::floor(mousePositionOnMap.x));
+            mousePositionOnMapY = static_cast<SignedInteger16>(std::floor(mousePositionOnMap.y));
+        }
 
         //Drag w/ middle mouse button
-        if (IsMouseButtonDown(MOUSE_BUTTON_MIDDLE) && mouseWithinMapStartingHold) { camera.target = Vector2Add(camera.target, Vector2Scale(mouseDelta, -1.0f / camera.zoom)); }
+        if (IsMouseButtonDown(MOUSE_BUTTON_MIDDLE) && mouseWithinMapStartingHold) { 
+            camera.target = Vector2Add(camera.target, Vector2Scale(mouseDelta, -1.0f / camera.zoom)); 
+        }
         //Zoom w/ scroll wheel
         if (mouseWithinMapNow) {
             mouseWheelMove = GetMouseWheelMove();
             if (mouseWheelMove != 0) {
-                Vector2 mouseWorldPos = GetScreenToWorld2D(GetMousePosition(), camera);
-                camera.offset = GetMousePosition();
-                camera.target = mouseWorldPos;
+                camera.offset = Vector2(mouseX, mouseY);
+                camera.target = mousePositionOnMap;
 
                 if (mouseWheelMove < 0 && currentZoomLevel > 0) {
-                    --currentZoomLevel;
-                    camera.zoom = cameraZoomLevels[currentZoomLevel];
+                    camera.zoom = cameraZoomLevels[--currentZoomLevel];
                 }
                 else if (mouseWheelMove > 0 && currentZoomLevel < cameraZoomLevelCount - 1) {
-                    ++currentZoomLevel;
-                    camera.zoom = cameraZoomLevels[currentZoomLevel];
+                    camera.zoom = cameraZoomLevels[++currentZoomLevel];
                 }
             }
-        }
-
-		//Get the pixel on the map the mouse is over
-        mousePositionOnMap = GetScreenToWorld2D(Vector2(mouseX, mouseY), camera);
-        if (!mouseWithinMapNow || mousePositionOnMap.x < 0 || mousePositionOnMap.x > mapWidth || mousePositionOnMap.y < 0 || mousePositionOnMap.y > mapHeight) {
-			mousePositionOnMapX = -1; mousePositionOnMapY = -1;
-        }
-        else {
-			mousePositionOnMapX = static_cast<SignedInteger16>(std::floor(mousePositionOnMap.x));
-			mousePositionOnMapY = static_cast<SignedInteger16>(std::floor(mousePositionOnMap.y));
         }
 
         //Drawing
@@ -276,15 +292,17 @@ int main()
 
 		if (GuiDropdownBox(mapModeDropdownBoxBounds, "Provinces\nProvince Terrains\nStates", &currentMapMode, mapModeDropdownBoxState)) mapModeDropdownBoxState = !mapModeDropdownBoxState;
 
-        if (GuiButton(stateBasedColoursPixelsButtonBounds, "State-based province colours")) {
-            UpdateProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
+        
+        if (GuiButton(rightHandButtonsArray[0], "State-based province colours")) {
+            SetProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
             UpdateTexture(provincesTexture, provincesBitmap.GetRgbDataPointer());
         }
 
-        if (GuiButton(randomColoursPixelsButtonBounds, "Random province colours")) {
-            UpdateProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
+        if (GuiButton(rightHandButtonsArray[1], "Random province colours")) {
+            SetProvinceColoursToRandom(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
             UpdateTexture(provincesTexture, provincesBitmap.GetRgbDataPointer());
         }
+        
 
         EndDrawing();
     }

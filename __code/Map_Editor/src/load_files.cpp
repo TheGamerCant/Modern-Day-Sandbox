@@ -1112,24 +1112,13 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
     }
     
     if (generateRandomColours){
-        Vector<ColourRGB> randomColours = GenerateRandomColours(stateColoursToIdMap, statesArray.size());
-        for (SizeT i = 0; i < statesArray.size(); ++i) { statesArray[i].SetColour(randomColours[i]); }
+		statesArray[0].SetColour(ColourRGB(0, 0, 0));
+        stateColoursToIdMap[0] = 0;
 
-        //Set state 0 to black
-        if (stateColoursToIdMap.find(0) == stateColoursToIdMap.end()) {
-            stateColoursToIdMap.erase(statesArray[0].GetColour().ToInteger());
-            stateColoursToIdMap[0] = 0;
-            statesArray[0].SetColour(ColourRGB(0, 0, 0));
-        }
-        else {
-            ColourRGB stateZeroOriginalColour = statesArray[0].GetColour();
-            UnsignedInteger16 blackStateId = stateColoursToIdMap.at(0);
-
-            statesArray[0].SetColour(ColourRGB(0, 0, 0));
-            statesArray[blackStateId].SetColour(stateZeroOriginalColour);
-
-            stateColoursToIdMap[0] = 0;
-            stateColoursToIdMap[stateZeroOriginalColour.ToInteger()] = blackStateId;
+        Vector<ColourRGB> randomColours = GenerateRandomColours(statesArray.size());
+        for (SizeT i = 1; i < statesArray.size(); ++i) { 
+            statesArray[i].SetColour(randomColours[i]); 
+			stateColoursToIdMap[randomColours[i].ToInteger()] = i;
         }
     }
 }
@@ -1290,24 +1279,13 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
     }
 
     if (generateRandomColours) {
-        Vector<ColourRGB> randomColours = GenerateRandomColours(strategicRegionColoursToIdMap, strategicRegionsArray.size());
-        for (SizeT i = 0; i < strategicRegionsArray.size(); ++i) { strategicRegionsArray[i].SetColour(randomColours[i]); }
+        strategicRegionsArray[0].SetColour(ColourRGB(0, 0, 0));
+        strategicRegionColoursToIdMap[0] = 0;
 
-        //Set strategic regions 0 to black
-        if (strategicRegionColoursToIdMap.find(0) == strategicRegionColoursToIdMap.end()) {
-            strategicRegionColoursToIdMap.erase(strategicRegionsArray[0].GetColour().ToInteger());
-            strategicRegionColoursToIdMap[0] = 0;
-            strategicRegionsArray[0].SetColour(ColourRGB(0, 0, 0));
-        }
-        else {
-            ColourRGB strategicRegionZeroOriginalColour = strategicRegionsArray[0].GetColour();
-            UnsignedInteger16 blackStrategicRegionId = strategicRegionColoursToIdMap.at(0);
-
-            strategicRegionsArray[0].SetColour(ColourRGB(0, 0, 0));
-            strategicRegionsArray[blackStrategicRegionId].SetColour(strategicRegionZeroOriginalColour);
-
-            strategicRegionColoursToIdMap[0] = 0;
-            strategicRegionColoursToIdMap[strategicRegionZeroOriginalColour.ToInteger()] = blackStrategicRegionId;
+        Vector<ColourRGB> randomColours = GenerateRandomColours(strategicRegionsArray.size());
+        for (SizeT i = 1; i < strategicRegionsArray.size(); ++i) {
+            strategicRegionsArray[i].SetColour(randomColours[i]);
+            strategicRegionColoursToIdMap[randomColours[i].ToInteger()] = i;
         }
     }
 }
