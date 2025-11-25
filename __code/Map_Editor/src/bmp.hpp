@@ -31,6 +31,25 @@ static ColourRGB ReadToRGB(Char*& data, SizeT& parse) {
     return bgr;
 }
 
+enum BitmapImageType : UnsignedInteger8 {
+    RGBA = 0,
+    GREYSCALE,
+    COLOURMAP
+};
+
+static UnsignedInteger8 GetBytesPerPixel(const BitmapImageType imageType) {
+    switch (imageType) {
+        case RGBA:
+            return 4;
+        case GREYSCALE:
+            return 1;
+        case COLOURMAP:
+            return 1;
+        default:
+            return 0;
+    }
+}
+
 struct BitmapImage {
 private:
     UnsignedInteger32 sizeOfBitmapFile;
@@ -48,21 +67,23 @@ private:
     UnsignedInteger32 colourTableEntries;
     UnsignedInteger32 noOfImportantColours;
 
+	BitmapImageType imageType;
     UnsignedInteger32 rawDataSize;
-    Vector<ColourRGB> colourTable;
+    Vector<ColourRGBA> colourTable;
     HashMap<UnsignedInteger32, UnsignedInteger16> colourToIndex;
     Vector<UnsignedInteger8> rawData;
-    Vector<UnsignedInteger8> rgbData;
+    Vector<UnsignedInteger8> imgData;
 
 public:
     BitmapImage();
-    BitmapImage(const String& fileIn);
-    BitmapImage(Vector<UnsignedInteger8>& data, const UnsignedInteger32 width, const UnsignedInteger32 height);
+    BitmapImage(const BitmapImageType imageType);
+    BitmapImage(const String& fileIn, const BitmapImageType imageType);
+    BitmapImage(Vector<UnsignedInteger8>& data, const UnsignedInteger32 width, const UnsignedInteger32 height, const BitmapImageType imageType);
 
 
     void LoadFile(const String& fileIn);
 
-    void RawToRGB();
+    void RawToRgba();
     void UpdateColourHashmap();
     void SwapRBData();
     void FlipImage();
@@ -78,10 +99,13 @@ public:
     ColourRGB GetColourFromIndexPremultiplied(const SizeT index);
     const ColourRGB GetColourFromIndexPremultiplied(const SizeT index) const;
 
+    UnsignedInteger8 GetValueFromIndex(const SizeT index);
+    const UnsignedInteger8 GetValueFromIndex(const SizeT index) const;
+
     UnsignedInteger8 GetRawDataFromIndex(const SizeT index);
     const UnsignedInteger8 GetRawDataFromIndex(const SizeT index) const;
-    UnsignedInteger8* GetRgbDataPointer();
-    const UnsignedInteger8* GetRgbDataPointer() const;
+    UnsignedInteger8* GetImgDataPointer();
+    const UnsignedInteger8* GetImgDataPointer() const;
 
     void PrintBitmapFile(const String& fileOut);
 };

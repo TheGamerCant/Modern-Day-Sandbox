@@ -61,7 +61,7 @@ int main()
     Vector<StrategicRegion> strategicRegionsArray;
     LoadStrategicRegionFiles(vanillaDirectory, modDirectory, modReplaceDirectories, strategicRegionsArray, statesArray, provincesArray, strategicRegionColoursToIdMap);
     
-    BitmapImage provincesBitmap, terrainBitmap, heightmapBitmap, statesBitmap, provinceTerrainsBitmap;
+    BitmapImage provincesBitmap(RGBA), terrainBitmap(COLOURMAP), heightmapBitmap(GREYSCALE), statesBitmap(RGBA), provinceTerrainsBitmap(RGBA);
 
     std::thread loadProvincesBMPThread(LoadBitmap, std::ref(provincesBitmap), std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories), "map\\provinces.bmp");
     std::thread loadTerrainBMPThread(LoadBitmap, std::ref(terrainBitmap), std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories), "map\\terrain.bmp");
@@ -160,23 +160,23 @@ int main()
 	const UnsignedInteger16 mapWidth = provincesBitmap.GetWidth();
 	const UnsignedInteger16 mapHeight = provincesBitmap.GetHeight();
     Image provincesImage = {
-        .data = provincesBitmap.GetRgbDataPointer(),
+        .data = provincesBitmap.GetImgDataPointer(),
         .width = mapWidth, .height = mapHeight, .mipmaps = 1,
-        .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8 
+        .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8A8
     }; 
     Texture2D provincesTexture = LoadTextureFromImage(provincesImage);
 
     Image provinceTerrainsImage = {
-        .data = provinceTerrainsBitmap.GetRgbDataPointer(),
+        .data = provinceTerrainsBitmap.GetImgDataPointer(),
         .width = mapWidth, .height = mapHeight, .mipmaps = 1,
-        .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8 
+        .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8A8
     }; 
     Texture2D provinceTerrainsTexture = LoadTextureFromImage(provinceTerrainsImage);
 
     Image statesImage = {
-        .data = statesBitmap.GetRgbDataPointer(),
+        .data = statesBitmap.GetImgDataPointer(),
         .width = mapWidth, .height = mapHeight, .mipmaps = 1,
-        .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8 
+        .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8A8
     }; 
     Texture2D statesTexture = LoadTextureFromImage(statesImage);
 
@@ -295,12 +295,12 @@ int main()
         
         if (GuiButton(rightHandButtonsArray[0], "State-based province colours")) {
             SetProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
-            UpdateTexture(provincesTexture, provincesBitmap.GetRgbDataPointer());
+            UpdateTexture(provincesTexture, provincesBitmap.GetImgDataPointer());
         }
 
         if (GuiButton(rightHandButtonsArray[1], "Random province colours")) {
             SetProvinceColoursToRandom(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
-            UpdateTexture(provincesTexture, provincesBitmap.GetRgbDataPointer());
+            UpdateTexture(provincesTexture, provincesBitmap.GetImgDataPointer());
         }
         
 

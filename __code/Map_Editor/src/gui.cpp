@@ -22,21 +22,21 @@ void SetProvinceColoursBasedOnStateColour(Vector<Province>& provincesArray, Hash
 		}
 	}
 
-	Vector<UnsignedInteger8> newRgbData(provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 3);
+	Vector<UnsignedInteger8> newRgbData(provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 4, 255);
 	ColourRGB colour;
 	SizeT pixelIndex = 0;
 
 	for (const auto& province : provincesArray) {
 		colour = province.GetColour();
 		for (const auto& pixel : province.GetPixels()) {
-			pixelIndex = pixel.index * 3;
+			pixelIndex = pixel.index * 4;
 			newRgbData[pixelIndex] = colour.r;
 			newRgbData[pixelIndex + 1] = colour.g;
 			newRgbData[pixelIndex + 2] = colour.b;
 		}
 	}
 
-	provincesBitmap = BitmapImage(newRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight());
+	provincesBitmap = BitmapImage(newRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight(), RGBA);
 }
 
 void SetProvinceColoursToRandom(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap,
@@ -56,19 +56,19 @@ void SetProvinceColoursToRandom(Vector<Province>& provincesArray, HashMap<Unsign
 		}
 	}
 
-	Vector<UnsignedInteger8> newRgbData(provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 3);
+	Vector<UnsignedInteger8> newRgbData(provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 4, 255);
 	ColourRGB colour;
 	SizeT pixelIndex = 0;
 
 	for (const auto& province : provincesArray) {
 		colour = province.GetColour();
 		for (const auto& pixel : province.GetPixels()) {
-			pixelIndex = pixel.index * 3;
+			pixelIndex = pixel.index * 4;
 			newRgbData[pixelIndex] = colour.r;
 			newRgbData[pixelIndex + 1] = colour.g;
 			newRgbData[pixelIndex + 2] = colour.b;
 		}
 	}
 
-	provincesBitmap = BitmapImage(newRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight());
+	provincesBitmap = BitmapImage(newRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight(), RGBA);
 }

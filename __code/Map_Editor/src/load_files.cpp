@@ -1296,7 +1296,7 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
     const UnsignedInteger64 width = provincesBitmap.GetWidth();
     const UnsignedInteger64 height = provincesBitmap.GetHeight();
 
-    UnsignedInteger64 currentHeightTimesWidth = 0, index = 0, index3 = 0;
+    UnsignedInteger64 currentHeightTimesWidth = 0, index = 0, index4 = 0;
     ColourRGB colour(0, 0, 0);
     UnsignedInteger32 colourInteger = 0;
 
@@ -1305,16 +1305,16 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
         currentHeightTimesWidth = i * width;
         for (SizeT j = 0; j < provincesBitmap.GetWidth(); ++j) {
             index = currentHeightTimesWidth + j;
-            index3 = index * 3;
+            index4 = index * 4;
 
-            colour = provincesBitmap.GetColourFromIndexPremultiplied(index3);
+            colour = provincesBitmap.GetColourFromIndexPremultiplied(index4);
             colourInteger = colour.ToInteger();
 
             if (provinceColoursToIdMap.find(colourInteger) == provinceColoursToIdMap.end()) {
                 FatalError("No province with colour " + colour.ToHex() + " exists");
             }
 
-            provincesArray[provinceColoursToIdMap.at(colourInteger)].EmplacePixel(index, j, i, heightmapBitmap.GetRawDataFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
+            provincesArray[provinceColoursToIdMap.at(colourInteger)].EmplacePixel(index, j, i, heightmapBitmap.GetValueFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
         }
     }
 
@@ -1322,7 +1322,7 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
         prov.UpdateBoundingBox();
     }
 
-	const SizeT dimensions = provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 3;
+	const SizeT dimensions = provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 4;
     ColourRGB currentProvinceColour (0, 0, 0);
     ColourRGB prevProvinceColour (0, 0, 0);
     UnsignedInteger16 provinceId = 0;
@@ -1332,7 +1332,7 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
 	ColourRGB currentTerrainColour(0, 0, 0);
     Vector<UnsignedInteger8> terrainsRgbData(dimensions, 0);
 
-    for (SizeT i = 0; i < dimensions; i += 3) {
+    for (SizeT i = 0; i < dimensions; i += 4) {
         currentProvinceColour = provincesBitmap.GetColourFromIndexPremultiplied(i);
         if (currentProvinceColour != prevProvinceColour) {
             prevProvinceColour = currentProvinceColour;
@@ -1354,12 +1354,14 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
         statesRgbData[i] = currentStateColour.r;
         statesRgbData[i + 1] = currentStateColour.g;
         statesRgbData[i + 2] = currentStateColour.b;
+        statesRgbData[i + 3] = 255;
 
         terrainsRgbData[i] = currentTerrainColour.r;
         terrainsRgbData[i + 1] = currentTerrainColour.g;
         terrainsRgbData[i + 2] = currentTerrainColour.b;
+        terrainsRgbData[i + 3] = 255;
     }
 
-    statesBitmap = BitmapImage(statesRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight());
-    provinceTerrainsBitmap = BitmapImage(terrainsRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight());
+    statesBitmap = BitmapImage(statesRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight(), RGBA);
+    provinceTerrainsBitmap = BitmapImage(terrainsRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight(), RGBA);
 }
