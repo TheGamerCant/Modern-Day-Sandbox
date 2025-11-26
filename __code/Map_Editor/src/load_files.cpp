@@ -796,9 +796,7 @@ void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
                 }
                 Vector<String> nameRequirements = ParseStringAsStringArray(entryData.at("requirements"));
 
-                SignedInteger16 priority = (entryData.find("priority") != entryData.end()) ? std::stoi(entryData.at("priority")) : INT16_MAX;
-
-                nameEntries.emplace_back(changedName, nameRequirements, priority);
+                nameEntries.emplace_back(changedName, nameRequirements);
             }
         }
 
@@ -1124,7 +1122,7 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
 }
 
 void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<StrategicRegion>& strategicRegionsArray,
-    Vector<State>& statesArray, Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& strategicRegionColoursToIdMap) {
+    Vector<State>& statesArray, Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& strategicRegionColoursToIdMap, const VectorMap<Terrain>& seaTerrainsArray) {
     Vector<Path> strategicRegionFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "map\\strategicregions", ".txt", 256);
     strategicRegionsArray.reserve(strategicRegionFiles.size() + 1);
     strategicRegionsArray.emplace_back(0);
@@ -1144,6 +1142,18 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
                     FatalError("Strategic region " + std::to_string(id) + " has no name in file " + file.string());
                 }
                 String name = RemoveQuotes(strategicRegionData.at("name"));
+
+                UnsignedInteger16 navalTerrainIndex = 0;
+                if (strategicRegionData.find("naval_terrain") != strategicRegionData.end()) {
+                    String navalTerrainName = strategicRegionData.at("naval_terrain");
+                    if (!seaTerrainsArray.NameInArray(navalTerrainName)) {
+                        String outString = "Strategic region " + std::to_string(id) + " has an invalid naval terrain\n";
+                        std::cout << outString;
+                    }
+                    else {
+                        navalTerrainIndex = seaTerrainsArray[navalTerrainName].GetId();
+                    }
+				}
 
                 if (strategicRegionData.find("provinces") == strategicRegionData.end()) {
                     FatalError("Strategic region " + std::to_string(id) + " has no provinces in file " + file.string());
@@ -1217,7 +1227,7 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
                     }
                 }
 
-                strategicRegionsArray.emplace_back(id, name, provinces, weather);
+                strategicRegionsArray.emplace_back(id, navalTerrainIndex, name, provinces, weather);
             }
         }
     }
@@ -1290,15 +1300,16 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
     }
 }
 
-void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap, const Vector<State>& statesArray,
-    const BitmapImage& provincesBitmap, BitmapImage& terrainBitmap, const BitmapImage& heightmapBitmap, BitmapImage& statesBitmap, BitmapImage& provinceTerrainsBitmap,
-    const VectorMap<Terrain>& landTerrainsArray, const VectorMap<Terrain>& seaTerrainsArray, const VectorMap<Terrain>& lakeTerrainsArray) {
+void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap, Vector<State>& statesArray,
+    const Vector<StrategicRegion>& strategicRegionsArray, const BitmapImage& provincesBitmap, BitmapImage& terrainBitmap, const BitmapImage& heightmapBitmap, BitmapImage& statesBitmap,
+    BitmapImage& provinceTerrainsBitmap, const VectorMap<Terrain>& landTerrainsArray, const VectorMap<Terrain>& seaTerrainsArray, const VectorMap<Terrain>& lakeTerrainsArray) {
     const UnsignedInteger64 width = provincesBitmap.GetWidth();
     const UnsignedInteger64 height = provincesBitmap.GetHeight();
 
     UnsignedInteger64 currentHeightTimesWidth = 0, index = 0, index4 = 0;
     ColourRGB colour(0, 0, 0);
     UnsignedInteger32 colourInteger = 0;
+    UnsignedInteger16 provinceId = 0;
 
 
     for (SizeT i = 0; i < height; ++i) {
@@ -1314,7 +1325,9 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
                 FatalError("No province with colour " + colour.ToHex() + " exists");
             }
 
-            provincesArray[provinceColoursToIdMap.at(colourInteger)].EmplacePixel(index, j, i, heightmapBitmap.GetValueFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
+			provinceId = provinceColoursToIdMap.at(colourInteger);
+            provincesArray[provinceId].EmplacePixel(index, j, i, heightmapBitmap.GetValueFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
+            statesArray[provincesArray[provinceId].GetStateId()].EmplacePixel(index, j, i, heightmapBitmap.GetValueFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
         }
     }
 
@@ -1325,7 +1338,6 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
 	const SizeT dimensions = provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 4;
     ColourRGB currentProvinceColour (0, 0, 0);
     ColourRGB prevProvinceColour (0, 0, 0);
-    UnsignedInteger16 provinceId = 0;
 	ColourRGB currentStateColour(0, 0, 0);
     Vector<UnsignedInteger8> statesRgbData(dimensions, 0);
 
@@ -1344,7 +1356,7 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
                     currentTerrainColour = lakeTerrainsArray[provincesArray[provinceId].GetTerrain()].GetColour();
 					break;
                 case ProvinceType::Sea:
-                    currentTerrainColour = seaTerrainsArray[provincesArray[provinceId].GetTerrain()].GetColour();
+                    currentTerrainColour = seaTerrainsArray[strategicRegionsArray[provincesArray[provinceId].GetStrategicRegionId()].GetNavalTerrainIndex()].GetColour();
 					break;
                 default:
                     currentTerrainColour = landTerrainsArray[provincesArray[provinceId].GetTerrain()].GetColour();

@@ -6,16 +6,16 @@
 
 BitmapImage::BitmapImage() : sizeOfBitmapFile(0), reservedBytes(0), pixelDataOffset(0), headerSize(0), imgWidth(0), imgHeight(0),
 numberOfColourPlanes(0), colourBitDepth(0), compression(0), imgSize(0), pixelsPerMeterWidth(0), pixelsPerMeterHeight(0),
-colourTableEntries(0), noOfImportantColours(0), imageType(RGBA), rawDataSize(0), colourTable(), colourToIndex(), rawData(), imgData() {}
+colourTableEntries(0), noOfImportantColours(0), imageType(RGBA), widthTimesHeight(0), colourTable(), colourToIndex(), rawData(), imgData() {}
 
 BitmapImage::BitmapImage(const BitmapImageType imageType) : sizeOfBitmapFile(0), reservedBytes(0), pixelDataOffset(0), headerSize(0), imgWidth(0), imgHeight(0),
 numberOfColourPlanes(0), colourBitDepth(0), compression(0), imgSize(0), pixelsPerMeterWidth(0), pixelsPerMeterHeight(0),
-colourTableEntries(0), noOfImportantColours(0), imageType(imageType), rawDataSize(0), colourTable(), colourToIndex(), rawData(), imgData() {}
+colourTableEntries(0), noOfImportantColours(0), imageType(imageType), widthTimesHeight(0), colourTable(), colourToIndex(), rawData(), imgData() {}
 
 BitmapImage::BitmapImage(const String& fileIn, const BitmapImageType imageType) :
     sizeOfBitmapFile(0), reservedBytes(0), pixelDataOffset(0), headerSize(0), imgWidth(0), imgHeight(0),
     numberOfColourPlanes(0), colourBitDepth(0), compression(0), imgSize(0), pixelsPerMeterWidth(0), pixelsPerMeterHeight(0),
-    colourTableEntries(0), noOfImportantColours(0), imageType(imageType), rawDataSize(0), colourTable(), colourToIndex(), rawData(), imgData()
+    colourTableEntries(0), noOfImportantColours(0), imageType(imageType), widthTimesHeight(0), colourTable(), colourToIndex(), rawData(), imgData()
 {
     LoadFile(fileIn);
 }
@@ -23,7 +23,7 @@ BitmapImage::BitmapImage(const String& fileIn, const BitmapImageType imageType) 
 BitmapImage::BitmapImage(Vector<UnsignedInteger8>& data, const UnsignedInteger32 width, const UnsignedInteger32 height, const BitmapImageType imageType) :
     sizeOfBitmapFile(0), reservedBytes(0), pixelDataOffset(54), headerSize(40), imgWidth(width), imgHeight(height),
     numberOfColourPlanes(1), colourBitDepth(8), compression(0), imgSize(0), pixelsPerMeterWidth(2834), pixelsPerMeterHeight(2834),
-    colourTableEntries(0), noOfImportantColours(0), imageType(imageType), rawDataSize(width * height * 3), colourTable(), colourToIndex(), rawData(), imgData() {
+    colourTableEntries(0), noOfImportantColours(0), imageType(imageType), widthTimesHeight(width * height), colourTable(), colourToIndex(), rawData(), imgData() {
 
     if (width * height * GetBytesPerPixel(imageType) != data.size()) {
         FatalError("Data size does not match width and height for BitmapImage constructor.");
@@ -77,9 +77,6 @@ void BitmapImage::LoadFile(const String& fileIn) {
         FatalError("BMP files have be either 8-bit or 24-bit depth: " + fileIn);
     }
 
-    //Heightmap.bmp has incorrect formatting
-    if (imageType == COLOURMAP) { colourTableEntries = 255; noOfImportantColours = 255; }
-
     if (colourTableEntries > 0) {
         colourTable.reserve(colourTableEntries);
 
@@ -97,9 +94,9 @@ void BitmapImage::LoadFile(const String& fileIn) {
         FatalError("Header definition for bmp file too long in: " + fileIn);
     }
 
-    rawDataSize = imgWidth * imgHeight;
+    widthTimesHeight = imgWidth * imgHeight;
     if (imageType == COLOURMAP) {
-        rawData.resize(rawDataSize);
+        rawData.resize(widthTimesHeight);
         file.seekg(pixelDataOffset, std::ios::beg);
         file.read((Char*)rawData.data(), rawData.size());
 
@@ -107,16 +104,17 @@ void BitmapImage::LoadFile(const String& fileIn) {
         SwapRBData();
     }
     else if (imageType == GREYSCALE) {
-        imgData.resize(rawDataSize);
+        imgData.resize(widthTimesHeight);
         file.seekg(pixelDataOffset, std::ios::beg);
         file.read((Char*)imgData.data(), imgData.size());
     }
     else if (imageType == RGBA) {
-        rawDataSize *= 4;
-        imgData.assign(rawDataSize, 255);
+		const UnsignedInteger32 widthTimesHeight4 = widthTimesHeight * 4;
+
+        imgData.assign(widthTimesHeight4, 255);
         file.seekg(pixelDataOffset, std::ios::beg);
 
-        for (SizeT i = 0; i < rawDataSize; i += 4) {
+        for (SizeT i = 0; i < widthTimesHeight4; i += 4) {
 			imgData[i + 0] = (UnsignedInteger8)data[parse + 2];
 			imgData[i + 1] = (UnsignedInteger8)data[parse + 1];
 			imgData[i + 2] = (UnsignedInteger8)data[parse + 0];
@@ -133,7 +131,7 @@ void BitmapImage::LoadFile(const String& fileIn) {
 
 void BitmapImage::RawToRgba() {
     imgData.clear();
-    imgData.reserve(rawDataSize * 4);
+    imgData.reserve(widthTimesHeight * 4);
 
     for (const auto& pixel : rawData) {
         ColourRGB colour = colourTable[pixel];
@@ -161,7 +159,7 @@ void BitmapImage::SwapRBData() {
             colour.b = r;
         }
 
-        for (SizeT i = 0; i < rawDataSize * 4; i += 4) {
+        for (SizeT i = 0; i < widthTimesHeight * 4; i += 4) {
             r = imgData[i];
             imgData[i] = imgData[i + 2];
             imgData[i + 2] = r;
@@ -277,7 +275,7 @@ void BitmapImage::PrintBitmapFile(const String& fileOut) {
     }
     else if (imageType == RGBA){
         Vector<UnsignedInteger8> rawData;
-        rawData.reserve(rawDataSize);
+        rawData.reserve(widthTimesHeight * 3);
 
         for (SizeT i = 0; i < imgData.size(); i += 4) {
 			rawData.push_back(imgData[i + 2]);

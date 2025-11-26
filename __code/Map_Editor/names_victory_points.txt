@@ -1953,13 +1953,6 @@
 525 = {
     default = "Kyiv"
     entry = { 
-        name = "Kyiv"
-        requirements = {
-            "TAG_using_ukrainian_names = yes"
-        }
-        priority = 0
-    }
-    entry = { 
         name = "Kiev"
         requirements = {
             "TAG_using_russian_names = yes"

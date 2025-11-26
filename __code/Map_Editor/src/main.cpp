@@ -59,7 +59,7 @@ int main()
         resourcesArray, stateCategoriesArray, defaultBookmarkDate, stateColoursToIdMap);
 
     Vector<StrategicRegion> strategicRegionsArray;
-    LoadStrategicRegionFiles(vanillaDirectory, modDirectory, modReplaceDirectories, strategicRegionsArray, statesArray, provincesArray, strategicRegionColoursToIdMap);
+    LoadStrategicRegionFiles(vanillaDirectory, modDirectory, modReplaceDirectories, strategicRegionsArray, statesArray, provincesArray, strategicRegionColoursToIdMap, seaTerrainsArray);
     
     BitmapImage provincesBitmap(RGBA), terrainBitmap(COLOURMAP), heightmapBitmap(GREYSCALE), statesBitmap(RGBA), provinceTerrainsBitmap(RGBA);
 
@@ -69,7 +69,7 @@ int main()
 
     loadProvincesBMPThread.join(); loadTerrainBMPThread.join(); loadHeightmapBMPThread.join();
 
-    LoadProvincePixelData(provincesArray, provinceColoursToIdMap, statesArray, provincesBitmap, terrainBitmap, heightmapBitmap, statesBitmap, provinceTerrainsBitmap, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray);
+    LoadProvincePixelData(provincesArray, provinceColoursToIdMap, statesArray, strategicRegionsArray, provincesBitmap, terrainBitmap, heightmapBitmap, statesBitmap, provinceTerrainsBitmap, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray);
 
     std::cout << "Files took " << GetTimeElapsedFromStart(startTime) << " to load.\n\n\n";
 
@@ -126,12 +126,29 @@ int main()
     enum MapModeEnum : UnsignedInteger8 {
         Provinces = 0,
         ProvinceTerrains,
-        States
+        States,
+        Heightmap
     };
 
     SignedInteger32 currentMapMode = Provinces;
     Boolean mapModeDropdownBoxState = false;
     Rectangle mapModeDropdownBoxBounds(210, buttonPadding, 180, topbarHeight - (buttonPadding * 2));
+
+    //Selected operation
+	const UnsignedInteger8 operationCount = 4;
+    enum SelectedOperationEnum : SignedInteger32 {
+        Standard = 0,
+        Pencil,
+		MagicWand,
+        Fill
+    };
+    const char* MouseIconsArray[operationCount] = {
+        "#21#",
+        "#22#",
+		"#220#",
+		"#29#"
+	};
+    SignedInteger32 selectedOperation = Standard;
 
     //Mouse data
     SignedInteger16 mouseX = 0, mouseY = 0;
@@ -151,6 +168,7 @@ int main()
     SetTraceLogLevel(LOG_NONE);
     InitWindow(windowWidth, windowHeight, "Map Editor :)");
     GuiLoadStyle("raygui-styles\\dark\\style_dark.rgs");
+    GuiLoadIcons("raygui-styles\\iconset.rgi", true);
     SetTargetFPS(60);
 
     SetWindowState(FLAG_WINDOW_RESIZABLE);
@@ -180,8 +198,18 @@ int main()
     }; 
     Texture2D statesTexture = LoadTextureFromImage(statesImage);
 
+    Image heightmapImage = {
+        .data = heightmapBitmap.GetImgDataPointer(),
+        .width = mapWidth, .height = mapHeight, .mipmaps = 1,
+		.format = PIXELFORMAT_UNCOMPRESSED_GRAYSCALE
+    }; 
+    Texture2D heightmapTexture = LoadTextureFromImage(heightmapImage);
+
     //Load our fonts
     Font blenderBookFont18 = LoadFontEx("blender-font\\BlenderPro-Book.ttf", 18, NULL, 0);
+
+    //Hide the cursor
+    HideCursor();
 
     //Main loop
     while (!WindowShouldClose()) {
@@ -194,7 +222,7 @@ int main()
             if (rightHandPanelWidth < 300) rightHandPanelWidth = 300;
             else if (rightHandPanelWidth > 600) rightHandPanelWidth = 600;
             rightHandPanelBounds = Rectangle(windowWidth - rightHandPanelWidth, 0, rightHandPanelWidth, windowHeight);
-			halfRightHandPanelWidth = rightHandPanelWidth / 2;
+            halfRightHandPanelWidth = rightHandPanelWidth / 2;
 
             topbarBounds = Rectangle(0, 0, windowWidth, topbarHeight);
             leftHandPanelBounds = Rectangle(0, 0, leftHandPanelWidth, windowHeight);
@@ -215,7 +243,7 @@ int main()
         if (mouseDelta.x == 0 && mouseDelta.y == 0) mouseHasMoved = false;
         else mouseHasMoved = true;
 
-        
+
         if (mouseHasMoved) {
             if (CheckCollisionPointRec(Vector2(mouseX, mouseY), mapBoundingBox)) { mouseWithinMapNow = true; }
             else mouseWithinMapNow = false;
@@ -223,7 +251,7 @@ int main()
 
         if (IsMouseButtonPressed(MOUSE_BUTTON_MIDDLE) && mouseWithinMapNow) mouseWithinMapStartingHold = true;
         else if (IsMouseButtonReleased(MOUSE_BUTTON_MIDDLE) && mouseWithinMapStartingHold) mouseWithinMapStartingHold = false;
-        
+
         //Get the pixel on the map the mouse is over
         mousePositionOnMap = GetScreenToWorld2D(Vector2(mouseX, mouseY), camera);
         if (!mouseWithinMapNow || mousePositionOnMap.x < 0 || mousePositionOnMap.x > mapWidth || mousePositionOnMap.y < 0 || mousePositionOnMap.y > mapHeight) {
@@ -235,8 +263,8 @@ int main()
         }
 
         //Drag w/ middle mouse button
-        if (IsMouseButtonDown(MOUSE_BUTTON_MIDDLE) && mouseWithinMapStartingHold) { 
-            camera.target = Vector2Add(camera.target, Vector2Scale(mouseDelta, -1.0f / camera.zoom)); 
+        if (IsMouseButtonDown(MOUSE_BUTTON_MIDDLE) && mouseWithinMapStartingHold) {
+            camera.target = Vector2Add(camera.target, Vector2Scale(mouseDelta, -1.0f / camera.zoom));
         }
         //Zoom w/ scroll wheel
         if (mouseWithinMapNow) {
@@ -253,6 +281,19 @@ int main()
                 }
             }
         }
+
+        //Check if we should switch map mode from key input
+        if (IsKeyPressed(KEY_ONE) || IsKeyPressed(KEY_KP_1)) { currentMapMode = Provinces; }
+        else if (IsKeyPressed(KEY_TWO) || IsKeyPressed(KEY_KP_2)) { currentMapMode = ProvinceTerrains; }
+        else if (IsKeyPressed(KEY_THREE) || IsKeyPressed(KEY_KP_3)) { currentMapMode = States; }
+        else if (IsKeyPressed(KEY_FOUR) || IsKeyPressed(KEY_KP_4)) { currentMapMode = Heightmap; }
+
+        //Change cursor based if arrow key pressed
+        if (IsKeyPressed(KEY_DOWN)) selectedOperation++;
+        else if (IsKeyPressed(KEY_UP)) selectedOperation--;
+
+        if (selectedOperation < 0) { selectedOperation = operationCount - 1; }
+        else if (selectedOperation > operationCount - 1) { selectedOperation = 0; }
 
         //Drawing
         BeginDrawing();
@@ -271,6 +312,9 @@ int main()
                 case States:
                     DrawTexture(statesTexture, 0, 0, WHITE);
                     break;
+                case Heightmap:
+                    DrawTexture(heightmapTexture, 0, 0, WHITE);
+                    break;
                 default:
                     break;
             }
@@ -285,24 +329,21 @@ int main()
         DrawRectangleRec(rightHandPanelBounds, GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
         DrawRectangleRec(topbarBounds, GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
         DrawRectangleRec(leftHandPanelBounds, GetColor(GuiGetStyle(DEFAULT, BACKGROUND_COLOR)));
-
         DrawRectangleLinesEx(mapBoundingBox, 2, GetColor(GuiGetStyle(DEFAULT, BORDER_COLOR_NORMAL)));
 
         DrawTextEx(blenderBookFont18, TextFormat("Current zoom level: %s\nMouse pos: %i, %i", cameraZoomLevelStrings[currentZoomLevel].c_str(), mousePositionOnMapX, mousePositionOnMapY), Vector2(2, 2), 18, 0, WHITE);
 
-		if (GuiDropdownBox(mapModeDropdownBoxBounds, "Provinces\nProvince Terrains\nStates", &currentMapMode, mapModeDropdownBoxState)) mapModeDropdownBoxState = !mapModeDropdownBoxState;
 
-        
-        if (GuiButton(rightHandButtonsArray[0], "State-based province colours")) {
-            SetProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
-            UpdateTexture(provincesTexture, provincesBitmap.GetImgDataPointer());
-        }
+        //Buttons/inputs
+        if (GuiDropdownBox(mapModeDropdownBoxBounds, "(1) Provinces\n(2) Province Terrains\n(3) States\n(4) Heightmap", &currentMapMode, mapModeDropdownBoxState)) { mapModeDropdownBoxState = !mapModeDropdownBoxState; }
 
-        if (GuiButton(rightHandButtonsArray[1], "Random province colours")) {
-            SetProvinceColoursToRandom(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray);
-            UpdateTexture(provincesTexture, provincesBitmap.GetImgDataPointer());
-        }
+        if (GuiButton(rightHandButtonsArray[0], "State-based province colours")) { SetProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray, provincesTexture); }
+        if (GuiButton(rightHandButtonsArray[1], "Random province colours")) { SetProvinceColoursToRandom(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray, provincesTexture); }
         
+        GuiToggleGroup(Rectangle(6, 40, 28, 28), "#21#\n#22#\n#220#\n#29#", &selectedOperation);
+        
+		//Draw cursor, must be the last thing drawn
+        GuiLabel(Rectangle(mouseX, mouseY, 16, 16), MouseIconsArray[selectedOperation]);
 
         EndDrawing();
     }
@@ -312,7 +353,5 @@ int main()
     if (std::filesystem::exists("out") && std::filesystem::is_directory("out")) { std::filesystem::remove_all("out"); }
     std::filesystem::create_directory("out");
 
-	statesBitmap.PrintBitmapFile("out\\states.bmp");
-	provinceTerrainsBitmap.PrintBitmapFile("out\\province_terrains.bmp");
     WriteStateAndStrategicRegionColours(statesArray, strategicRegionsArray);
 }

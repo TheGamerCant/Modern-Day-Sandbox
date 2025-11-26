@@ -487,11 +487,10 @@ struct ChangeableName {
 public:
     String name;
     Vector<String> nameRequirements;
-	SignedInteger16 priority;
 
-    ChangeableName() : name(""), nameRequirements(), priority(0) {};
-    ChangeableName(const String& name, const Vector<String>& nameRequirements, const SignedInteger16 priority) :
-		name(name), nameRequirements(nameRequirements), priority(priority) {
+    ChangeableName() : name(""), nameRequirements() {};
+    ChangeableName(const String& name, const Vector<String>& nameRequirements) :
+		name(name), nameRequirements(nameRequirements) {
 	};
 };
 
@@ -551,6 +550,14 @@ public:
     void UpdateBoundingBox();
     Boolean BoundingBoxHasBeenUpdated();
     const Boolean BoundingBoxHasBeenUpdated() const;
+    UnsignedInteger16 GetX0();
+	const UnsignedInteger16 GetX0() const;
+    UnsignedInteger16 GetX1();
+	const UnsignedInteger16 GetX1() const;
+    UnsignedInteger16 GetY0();
+	const UnsignedInteger16 GetY0() const;
+    UnsignedInteger16 GetY1();
+	const UnsignedInteger16 GetY1() const;
 
     String GetDefaultName();
 	const String GetDefaultName() const;
@@ -591,17 +598,21 @@ private:
     Decimal buildingsMaxLevelFactor;
     Vector<StateHistory> stateHistoriesArray;
 
+    Vector<Pixel> pixels;
+    UnsignedInteger16 x0, y0, x1, y1;
+
     String defaultName;
     Vector<ChangeableName> nameEntries;
 
 public:
     State(const UnsignedInteger16 id) :
         id(id), colour(0, 0, 0), impassable(false), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(0), forceOwnershipLinkTo(0), manpower(0), name(""), provinces(), resources(),
-        localSupplies(), buildingsMaxLevelFactor(), stateHistoriesArray(), defaultName(""), nameEntries() {}
+        localSupplies(), buildingsMaxLevelFactor(), stateHistoriesArray(), pixels(), x0(UINT16_MAX), y0(UINT16_MAX), x1(0), y1(0), defaultName(""), nameEntries() {}
     State(const UnsignedInteger16 id, const Boolean impassable, const UnsignedInteger16 stateCategoryId, const UnsignedInteger16 forceOwnershipLinkTo, const UnsignedInteger32 manpower, const String& name, 
         const Vector<UnsignedInteger16>& provinces, const Vector<UnsignedInteger16>& resources, const Decimal localSupplies, const Decimal buildingsMaxLevelFactor, const Vector<StateHistory>& stateHistoriesArray) :
         id(id), colour(0, 0, 0), impassable(impassable), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(stateCategoryId), forceOwnershipLinkTo(forceOwnershipLinkTo), manpower(manpower), name(name), 
-        provinces(provinces), resources(resources), localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray), defaultName(""), nameEntries() {}
+        provinces(provinces), resources(resources), localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray), pixels(), x0(UINT16_MAX), y0(UINT16_MAX),
+        x1(0), y1(0), defaultName(""), nameEntries() {}
 
 
     String GetName();
@@ -623,6 +634,22 @@ public:
 
     Vector<UnsignedInteger16>& GetProvinces();
     const Vector<UnsignedInteger16>& GetProvinces() const;
+
+    const Vector<Pixel>& GetPixels() const;
+    Vector<Pixel>& GetPixels();
+    void AddPixel(const Pixel& pixel);
+    void EmplacePixel(const UnsignedInteger32 index, const UnsignedInteger16 x, const UnsignedInteger16 y, const UnsignedInteger8 height, const UnsignedInteger8 terrainIndex);
+    void UpdateBoundingBox();
+    Boolean BoundingBoxHasBeenUpdated();
+    const Boolean BoundingBoxHasBeenUpdated() const;
+    UnsignedInteger16 GetX0();
+    const UnsignedInteger16 GetX0() const;
+    UnsignedInteger16 GetX1();
+    const UnsignedInteger16 GetX1() const;
+    UnsignedInteger16 GetY0();
+    const UnsignedInteger16 GetY0() const;
+    UnsignedInteger16 GetY1();
+    const UnsignedInteger16 GetY1() const;
 };
 
 struct WeatherPeriod {
@@ -645,15 +672,16 @@ struct StrategicRegion {
 private:
     UnsignedInteger16 id;
     ColourRGB colour;
-    SignedInteger16 navalTerrainIndex;
+    UnsignedInteger16 navalTerrainIndex;
     String name;
     Vector<UnsignedInteger16> provinces, states;
     Vector<WeatherPeriod> weather;
 public:
-    StrategicRegion() : id(0), colour(0, 0, 0), name(""), provinces(), states(), weather() {}
-    StrategicRegion(const UnsignedInteger16 id) : id(id), colour(0, 0, 0), name(""), provinces(), states(), weather() {}
-    StrategicRegion(const UnsignedInteger16 id, const String& name, const Vector<UnsignedInteger16>& provinces, const Vector<WeatherPeriod>& weather) :
-        id(id), colour(0, 0, 0), name(name), provinces(provinces), states(), weather(weather) {}
+    StrategicRegion() : id(0), colour(0, 0, 0), navalTerrainIndex(-1), name(""), provinces(), states(), weather() {}
+    StrategicRegion(const UnsignedInteger16 id) : id(id), colour(0, 0, 0), navalTerrainIndex(-1), name(""), provinces(), states(), weather() {}
+    StrategicRegion(const UnsignedInteger16 id, const UnsignedInteger16 navalTerrainIndex, const String& name, const Vector<UnsignedInteger16>& provinces,
+        const Vector<WeatherPeriod>& weather) :
+        id(id), colour(0, 0, 0), navalTerrainIndex(navalTerrainIndex), name(name), provinces(provinces), states(), weather(weather) { }
 
     String GetName();
     const String GetName() const;
@@ -663,6 +691,8 @@ public:
     void SetColour(const ColourRGB colourIn);
     ColourRGB GetColour();
     const ColourRGB GetColour() const;
+    UnsignedInteger16 GetNavalTerrainIndex();
+    const UnsignedInteger16 GetNavalTerrainIndex() const;
 
     const Vector<UnsignedInteger16>& GetProvinces() const;
     Vector<UnsignedInteger16>& GetProvinces();

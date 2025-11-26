@@ -2,9 +2,14 @@
 #include "functions.hpp"
 
 void SetProvinceColoursBasedOnStateColour(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap,
-	BitmapImage& provincesBitmap, const Vector<State>& statesArray) {
+	BitmapImage& provincesBitmap, const Vector<State>& statesArray, Texture2D& provincesTexture) {
 	provinceColoursToIdMap.clear();
 	Set<UnsignedInteger32> usedColours;
+	for (const auto& prov : provincesArray) {
+		if (prov.GetStateId() == 0) {
+			usedColours.insert(prov.GetColour().ToInteger());
+		}
+	}
 
 	//HashMap<UnsignedInteger32, UnsignedInteger32> oldColourToNewColour;
 
@@ -37,15 +42,23 @@ void SetProvinceColoursBasedOnStateColour(Vector<Province>& provincesArray, Hash
 	}
 
 	provincesBitmap = BitmapImage(newRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight(), RGBA);
+	UpdateTexture(provincesTexture, provincesBitmap.GetImgDataPointer());
 }
 
 void SetProvinceColoursToRandom(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap,
-	BitmapImage& provincesBitmap, const Vector<State>& statesArray) {
+	BitmapImage& provincesBitmap, const Vector<State>& statesArray, Texture2D& provincesTexture) {
 	provinceColoursToIdMap.clear();
 	provincesArray[0].SetColour(ColourRGB(0, 0, 0));
 	provinceColoursToIdMap[0] = 0;
 
-	Vector<ColourRGB> randomColours = GenerateRandomColours(provincesArray.size());
+	Set<UnsignedInteger32> usedColours;
+	for (const auto& prov : provincesArray) {
+		if (prov.GetStateId() == 0) {
+			usedColours.insert(prov.GetColour().ToInteger());
+		}
+	}
+
+	Vector<ColourRGB> randomColours = GenerateRandomColours(usedColours, provincesArray.size());
 	for (SizeT i = 1; i < provincesArray.size(); ++i) {
 		if (provincesArray[i].GetProvinceType() == ProvinceType::Land) {
 			provincesArray[i].SetColour(randomColours[i]);
@@ -71,4 +84,5 @@ void SetProvinceColoursToRandom(Vector<Province>& provincesArray, HashMap<Unsign
 	}
 
 	provincesBitmap = BitmapImage(newRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight(), RGBA);
+	UpdateTexture(provincesTexture, provincesBitmap.GetImgDataPointer());
 }

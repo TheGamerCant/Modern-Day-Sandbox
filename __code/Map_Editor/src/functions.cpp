@@ -1045,6 +1045,24 @@ Vector<ColourRGB> GenerateRandomColours(const UnsignedInteger32 newColourCount) 
     return newColours;
 }
 
+Vector<ColourRGB> GenerateRandomColours(Set<UnsignedInteger32>& usedColours, const UnsignedInteger32 newColourCount) {
+    std::mt19937 gen(std::random_device{}());
+    std::uniform_int_distribution<SignedInteger32> dist(0, 255);
+
+    Vector<ColourRGB> newColours; newColours.reserve(newColourCount);
+
+    while (newColours.size() < newColourCount) {
+        ColourRGB colour{ static_cast<UnsignedInteger8>(dist(gen)),
+              static_cast<UnsignedInteger8>(dist(gen)),
+              static_cast<UnsignedInteger8>(dist(gen))};
+
+        if (usedColours.insert(colour.ToInteger()).second)
+            newColours.push_back(colour);
+    }
+
+    return newColours;
+}
+
 Vector<ColourRGB> GenerateRandomColoursInRange(Set<UnsignedInteger32>& usedColours, const UnsignedInteger32 newColourCount, 
     const ColourRGB colour, const UnsignedInteger8 range) {
     SignedInteger16 r0 = (colour.r > range) ? colour.r - range : 0;

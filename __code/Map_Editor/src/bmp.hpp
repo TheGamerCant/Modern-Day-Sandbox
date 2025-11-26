@@ -68,7 +68,7 @@ private:
     UnsignedInteger32 noOfImportantColours;
 
 	BitmapImageType imageType;
-    UnsignedInteger32 rawDataSize;
+    UnsignedInteger32 widthTimesHeight;
     Vector<ColourRGBA> colourTable;
     HashMap<UnsignedInteger32, UnsignedInteger16> colourToIndex;
     Vector<UnsignedInteger8> rawData;
