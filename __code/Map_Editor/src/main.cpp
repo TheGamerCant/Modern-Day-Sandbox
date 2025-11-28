@@ -20,7 +20,47 @@
 
 #include "gui.hpp"
 
-static void LoadBitmap(BitmapImage& bmp, const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, const String& file) { bmp.LoadFile(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, file).string()); }
+static void LoadBitmap(BitmapImage& bmp, const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, const String& file) { 
+    bmp.LoadFile(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, file).string()); 
+}
+
+static void LoadFilesMain(
+	const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories,
+
+    VectorMap<GraphicalCulture>& graphicalCulturesArray,
+    VectorMap<Country>& countriesArray,
+    VectorMap<Building>& provinceBuildingsArray, VectorMap<Building>& stateBuildingsArray, VectorMap<BuildingSpawnPoint>& buildingSpawnPointsArray,
+    VectorMap<Terrain>& landTerrainsArray, VectorMap<Terrain>& seaTerrainsArray, VectorMap<Terrain>& lakeTerrainsArray, VectorMap<GraphicalTerrain>& graphicalTerrainsArray,
+    VectorMap<Resource>& resourcesArray,
+    VectorMap<StateCategory>& stateCategoriesArray,
+    VectorMap<Continent>& continentsArray,
+
+    Date& defaultBookmarkDate,
+
+	HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap,
+	HashMap<UnsignedInteger32, UnsignedInteger16>& stateColoursToIdMap,
+	HashMap<UnsignedInteger32, UnsignedInteger16>& strategicRegionColoursToIdMap,
+
+    Vector<Province>& provincesArray,
+    Vector<State>& statesArray,
+    Vector<StrategicRegion>& strategicRegionsArray
+    ) 
+
+    {
+    LoadGraphicalCultureFiles(vanillaDirectory, modDirectory, modReplaceDirectories, graphicalCulturesArray);
+    LoadCountryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, countriesArray, graphicalCulturesArray);
+    LoadBuildingFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provinceBuildingsArray, stateBuildingsArray, buildingSpawnPointsArray, countriesArray);
+    LoadTerrainFiles(vanillaDirectory, modDirectory, modReplaceDirectories, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray, graphicalTerrainsArray, provinceBuildingsArray);
+
+    LoadResourceFiles(vanillaDirectory, modDirectory, modReplaceDirectories, resourcesArray);
+    LoadStateCategoryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, stateCategoriesArray, provinceBuildingsArray, stateBuildingsArray);
+    LoadContinentFiles(vanillaDirectory, modDirectory, modReplaceDirectories, continentsArray);
+    GetDefaultDate(defaultBookmarkDate, vanillaDirectory, modDirectory, modReplaceDirectories);
+
+    LoadProvinceFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provincesArray, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray, continentsArray.Size(), provinceBuildingsArray.Size(), provinceColoursToIdMap);
+    LoadStateFiles(vanillaDirectory, modDirectory, modReplaceDirectories, statesArray, provincesArray, countriesArray, provinceBuildingsArray, stateBuildingsArray,resourcesArray, stateCategoriesArray, defaultBookmarkDate, stateColoursToIdMap);
+    LoadStrategicRegionFiles(vanillaDirectory, modDirectory, modReplaceDirectories, strategicRegionsArray, statesArray, provincesArray, strategicRegionColoursToIdMap, seaTerrainsArray);
+}
 
 int main()
 {
@@ -37,29 +77,35 @@ int main()
     VectorMap<StateCategory> stateCategoriesArray;
     VectorMap<Continent> continentsArray;
 
-    LoadGraphicalCultureFiles(vanillaDirectory, modDirectory, modReplaceDirectories, graphicalCulturesArray);
-    LoadCountryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, countriesArray, graphicalCulturesArray);
-    LoadBuildingFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provinceBuildingsArray, stateBuildingsArray, buildingSpawnPointsArray, countriesArray);
-    LoadTerrainFiles(vanillaDirectory, modDirectory, modReplaceDirectories, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray, graphicalTerrainsArray, provinceBuildingsArray);
-
-    //You could put these into std::threads at the top and then join them after but it's so negligible there's no point
-    LoadResourceFiles(vanillaDirectory, modDirectory, modReplaceDirectories, resourcesArray);
-    LoadStateCategoryFiles(vanillaDirectory, modDirectory, modReplaceDirectories, stateCategoriesArray, provinceBuildingsArray, stateBuildingsArray);
-    LoadContinentFiles(vanillaDirectory, modDirectory, modReplaceDirectories, continentsArray);
-    Date defaultBookmarkDate = GetDefaultDate(vanillaDirectory, modDirectory, modReplaceDirectories);
+    Date defaultBookmarkDate;
 
     HashMap<UnsignedInteger32, UnsignedInteger16> provinceColoursToIdMap, stateColoursToIdMap, strategicRegionColoursToIdMap;
 
     Vector<Province> provincesArray;
-    LoadProvinceFiles(vanillaDirectory, modDirectory, modReplaceDirectories, provincesArray, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray, continentsArray.Size(), provinceBuildingsArray.Size(),
-        provinceColoursToIdMap);
-
     Vector<State> statesArray;
-    LoadStateFiles(vanillaDirectory, modDirectory, modReplaceDirectories, statesArray, provincesArray, countriesArray, provinceBuildingsArray, stateBuildingsArray,
-        resourcesArray, stateCategoriesArray, defaultBookmarkDate, stateColoursToIdMap);
-
     Vector<StrategicRegion> strategicRegionsArray;
-    LoadStrategicRegionFiles(vanillaDirectory, modDirectory, modReplaceDirectories, strategicRegionsArray, statesArray, provincesArray, strategicRegionColoursToIdMap, seaTerrainsArray);
+    
+    std::thread loadMainFilesThread(
+        LoadFilesMain, 
+        std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories),
+        std::ref(graphicalCulturesArray),
+        std::ref(countriesArray),
+        std::ref(provinceBuildingsArray), std::ref(stateBuildingsArray), std::ref(buildingSpawnPointsArray),
+        std::ref(landTerrainsArray), std::ref(seaTerrainsArray), std::ref(lakeTerrainsArray), std::ref(graphicalTerrainsArray),
+        std::ref(resourcesArray),
+        std::ref(stateCategoriesArray),
+        std::ref(continentsArray),
+
+        std::ref(defaultBookmarkDate),
+
+        std::ref(provinceColoursToIdMap),
+        std::ref(stateColoursToIdMap),
+        std::ref(strategicRegionColoursToIdMap),
+
+        std::ref(provincesArray),
+        std::ref(statesArray),
+        std::ref(strategicRegionsArray)
+    );
     
     BitmapImage provincesBitmap(RGBA), terrainBitmap(COLOURMAP), heightmapBitmap(GREYSCALE), statesBitmap(RGBA), provinceTerrainsBitmap(RGBA);
 
@@ -67,7 +113,7 @@ int main()
     std::thread loadTerrainBMPThread(LoadBitmap, std::ref(terrainBitmap), std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories), "map\\terrain.bmp");
     std::thread loadHeightmapBMPThread(LoadBitmap, std::ref(heightmapBitmap), std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories), "map\\heightmap.bmp");
 
-    loadProvincesBMPThread.join(); loadTerrainBMPThread.join(); loadHeightmapBMPThread.join();
+    loadMainFilesThread.join();  loadProvincesBMPThread.join(); loadTerrainBMPThread.join(); loadHeightmapBMPThread.join();
 
     LoadProvincePixelData(provincesArray, provinceColoursToIdMap, statesArray, strategicRegionsArray, provincesBitmap, terrainBitmap, heightmapBitmap, statesBitmap, provinceTerrainsBitmap, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray);
 

@@ -100,8 +100,8 @@ void BitmapImage::LoadFile(const String& fileIn) {
         file.seekg(pixelDataOffset, std::ios::beg);
         file.read((Char*)rawData.data(), rawData.size());
 
-        RawToRgba();
         SwapRBData();
+        RawToRgba();
     }
     else if (imageType == GREYSCALE) {
         imgData.resize(widthTimesHeight);
@@ -159,10 +159,12 @@ void BitmapImage::SwapRBData() {
             colour.b = r;
         }
 
-        for (SizeT i = 0; i < widthTimesHeight * 4; i += 4) {
-            r = imgData[i];
-            imgData[i] = imgData[i + 2];
-            imgData[i + 2] = r;
+        if (imgData.size() != 0) {
+            for (SizeT i = 0; i < widthTimesHeight * 4; i += 4) {
+                r = imgData[i];
+                imgData[i] = imgData[i + 2];
+                imgData[i + 2] = r;
+            }
         }
     }
     else if (imageType == RGBA) {
@@ -177,23 +179,27 @@ void BitmapImage::SwapRBData() {
 }
 
 void BitmapImage::FlipImage() {
+    UnsignedInteger8* row1{};
+    UnsignedInteger8* row2{};
+
     if (rawData.size() != 0) {
-        const SizeT rowSize = imgWidth;
+		SizeT rowIndexes[2] = { 0, (imgHeight - 1) * imgWidth };
         const SizeT iterations = imgHeight / 2;
 
         for (int y = 0; y < iterations; ++y) {
-            UnsignedInteger8* row1 = &rawData[y * rowSize];
-            UnsignedInteger8* row2 = &rawData[(imgHeight - 1 - y) * rowSize];
-            std::swap_ranges(row1, row1 + rowSize, row2);
+            row1 = &rawData[rowIndexes[0] += imgWidth];
+            row2 = &rawData[rowIndexes[1] -= imgWidth];
+            std::swap_ranges(row1, row1 + imgWidth, row2);
         }
     }
 
     const SizeT rowSize = imgWidth * GetBytesPerPixel(imageType);
+    SizeT rowIndexes[2] = { 0, (imgHeight - 1) * rowSize };
     const SizeT iterations = imgHeight / 2;
 
     for (int y = 0; y < iterations; ++y) {
-        UnsignedInteger8* row1 = &imgData[y * rowSize];
-        UnsignedInteger8* row2 = &imgData[(imgHeight - 1 - y) * rowSize];
+        row1 = &imgData[rowIndexes[0] += rowSize];
+        row2 = &imgData[rowIndexes[1] -= rowSize];
         std::swap_ranges(row1, row1 + rowSize, row2);
     }
 }

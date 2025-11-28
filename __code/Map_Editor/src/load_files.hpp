@@ -23,7 +23,7 @@ void LoadStateCategoryFiles(const Path& vanillaDirectory, const Path& modDirecto
 
 void LoadContinentFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<Continent>& continentsArray);
 
-Date GetDefaultDate(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories);
+void GetDefaultDate(Date& defaultDate, const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories);
 
 void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<Province>& provincesArray,
 	const VectorMap<Terrain>& landTerrainsArray, const VectorMap<Terrain>& seaTerrainsArray, const VectorMap<Terrain>& lakeTerrainsArray, const SizeT continentsArraySize, 

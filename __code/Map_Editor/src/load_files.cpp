@@ -5,6 +5,7 @@
 #include <thread>
 #include <future>
 #include <algorithm>
+#include <omp.h>
 
 
 void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories) {
@@ -571,7 +572,7 @@ void LoadContinentFiles(const Path& vanillaDirectory, const Path& modDirectory, 
     }
 }
 
-Date GetDefaultDate(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories) {
+void GetDefaultDate(Date& defaultDate, const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories) {
     Vector<Path> bookmarkFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\bookmarks", ".txt", 2);
 
     for (const auto& file : bookmarkFiles) {
@@ -587,12 +588,13 @@ Date GetDefaultDate(const Path& vanillaDirectory, const Path& modDirectory, cons
             HashMap<String, String> bookmarkData = ParseStringForPairsMapUnique(bookmark);
 
             if (bookmarkData.find("default") != bookmarkData.end() && bookmarkData.at("default") == "yes" && bookmarkData.find("date") != bookmarkData.end()) { 
-                return bookmarkData.at("date");
+                defaultDate = bookmarkData.at("date");
+                return;
             }
         }
     }
 
-    return Date(0);
+    defaultDate = 0;
 }
 
 void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, Vector<Province>& provincesArray,
@@ -748,16 +750,15 @@ void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
         provinceColoursToIdMap[currentColour] = province.GetId();
     }
 
-	Vector<DoubleString> vpNames = ParseStringForPairsArray(LoadFileToString("names_victory_points.txt"));
+	Vector<DoubleString> vpNames = ParseStringForPairsArray(LoadFileToString("in\\names_victory_points.txt"));
     
     HashMap<UnsignedInteger16, HashMap<String, Vector<String>>> vpNameEntries;
     for (const auto& [vp, data] : vpNames) {
         if (StringCanBecomeInteger(vp)) {
-            UnsignedInteger16 vpId = std::stoi(vp);
-            vpNameEntries[vpId] = ParseStringForPairsMapRepeat(data);
+            vpNameEntries[std::stoi(vp)] = ParseStringForPairsMapRepeat(data);
 		}
         else {
-			String outString = "Bad victory point ID defined in names_victory_points.txt\n";
+			String outString = "Bad victory point ID defined in in\\names_victory_points.txt\n";
             std::cout << outString;
         }
     }
@@ -1081,10 +1082,10 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
     //Load state colours
 
 	Boolean generateRandomColours = true;
-    if (std::filesystem::exists("stateColours.raw")) {
-        std::ifstream file("stateColours.raw", std::ios::binary | std::ios::ate);
+    if (std::filesystem::exists("in\\stateColours.raw")) {
+        std::ifstream file("in\\stateColours.raw", std::ios::binary | std::ios::ate);
 
-        if (!file) { FatalError("Cannot open file stateColours.raw"); }
+        if (!file) { FatalError("Cannot open file in\\stateColours.raw"); }
 
         SizeT fileSize = file.tellg();
         file.seekg(0, std::ios::beg);
@@ -1115,6 +1116,63 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
         for (SizeT i = 1; i < statesArray.size(); ++i) { 
             statesArray[i].SetColour(randomColours[i]); 
 			stateColoursToIdMap[randomColours[i].ToInteger()] = i;
+        }
+    }
+
+    Vector<DoubleString> stateNames = ParseStringForPairsArray(LoadFileToString("in\\names_states.txt"));
+
+    HashMap<UnsignedInteger16, HashMap<String, Vector<String>>> stateNameEntries;
+    for (const auto& [stateId, data] : stateNames) {
+        if (StringCanBecomeInteger(stateId)) {
+            stateNameEntries[std::stoi(stateId)] = ParseStringForPairsMapRepeat(data);
+        }
+        else {
+            String outString = "Bad state ID defined in in\\names_states.txt\n";
+            std::cout << outString;
+        }
+    }
+
+    for (const auto& [stateId, dataHashMap] : stateNameEntries) {
+        if (dataHashMap.find("default") == dataHashMap.end()) {
+            String outString = "No default name defined for state " + std::to_string(stateId) + "\n";
+            std::cout << outString;
+            continue;
+        }
+
+        if (dataHashMap.at("default").size() > 1) {
+            String outString = "More than one default name defined for " + std::to_string(stateId) + ", the last one will be used\n";
+            std::cout << outString;
+        }
+
+        String defaultName = RemoveQuotes(dataHashMap.at("default")[dataHashMap.at("default").size() - 1]);
+        Vector<ChangeableName> nameEntries;
+
+        if (dataHashMap.find("entry") != dataHashMap.end() && dataHashMap.at("entry").size() > 0) {
+            Vector<String> entriesDataVector = dataHashMap.at("entry");
+            for (const auto& entryDataWhole : entriesDataVector) {
+                HashMap<String, String> entryData = ParseStringForPairsMapUnique(entryDataWhole);
+
+                if (entryData.find("name") == entryData.end()) {
+                    String outString = "Name entry for state " + std::to_string(stateId) + " does not have a name defined.\n";
+                    std::cout << outString;
+                    continue;
+                }
+                String changedName = RemoveQuotes(entryData.at("name"));
+
+                if (entryData.find("requirements") == entryData.end()) {
+                    String outString = "Name entry for state " + std::to_string(stateId) + " does not have a requirements defined.\n";
+                    std::cout << outString;
+                    continue;
+                }
+                Vector<String> nameRequirements = ParseStringAsStringArray(entryData.at("requirements"));
+
+                nameEntries.emplace_back(changedName, nameRequirements);
+            }
+        }
+
+        if (statesArray.size() >= stateId) {
+            statesArray[stateId].SetDefaultName(defaultName);
+            statesArray[stateId].SetNameEntries(nameEntries);
         }
     }
 }
@@ -1265,10 +1323,10 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
     }
 
     Boolean generateRandomColours = true;
-    if (std::filesystem::exists("strategicRegionColours.raw")) {
-        std::ifstream file("strategicRegionColours.raw", std::ios::binary | std::ios::ate);
+    if (std::filesystem::exists("in\\strategicRegionColours.raw")) {
+        std::ifstream file("in\\strategicRegionColours.raw", std::ios::binary | std::ios::ate);
 
-        if (!file) { FatalError("Cannot open file strategicRegionColours.raw"); }
+        if (!file) { FatalError("Cannot open file in\\strategicRegionColours.raw"); }
 
         SizeT fileSize = file.tellg();
         file.seekg(0, std::ios::beg);
@@ -1306,47 +1364,55 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
 void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInteger32, UnsignedInteger16>& provinceColoursToIdMap, Vector<State>& statesArray,
     const Vector<StrategicRegion>& strategicRegionsArray, const BitmapImage& provincesBitmap, BitmapImage& terrainBitmap, const BitmapImage& heightmapBitmap, BitmapImage& statesBitmap,
     BitmapImage& provinceTerrainsBitmap, const VectorMap<Terrain>& landTerrainsArray, const VectorMap<Terrain>& seaTerrainsArray, const VectorMap<Terrain>& lakeTerrainsArray) {
-    const UnsignedInteger64 width = provincesBitmap.GetWidth();
-    const UnsignedInteger64 height = provincesBitmap.GetHeight();
+
+
+    const SizeT width = provincesBitmap.GetWidth();
+    const SizeT height = provincesBitmap.GetHeight();
+    const SizeT dimensions = width * height * 4;
 
     UnsignedInteger64 currentHeightTimesWidth = 0, index = 0, index4 = 0;
     ColourRGB colour(0, 0, 0);
     UnsignedInteger32 colourInteger = 0;
     UnsignedInteger16 provinceId = 0;
 
+    const UnsignedInteger8* provPtr = provincesBitmap.GetImgDataPointer();
 
-    for (SizeT i = 0; i < height; ++i) {
-        currentHeightTimesWidth = i * width;
-        for (SizeT j = 0; j < provincesBitmap.GetWidth(); ++j) {
-            index = currentHeightTimesWidth + j;
-            index4 = index * 4;
+    for (SizeT y = 0; y < height; ++y) {
+        for (SizeT x = 0; x < width; ++x) {
+            ++index;
+            index4 += 4;
 
-            colour = provincesBitmap.GetColourFromIndexPremultiplied(index4);
+            colour.r = provPtr[index4 + 0];
+            colour.g = provPtr[index4 + 1];
+            colour.b = provPtr[index4 + 2];
             colourInteger = colour.ToInteger();
 
-            if (provinceColoursToIdMap.find(colourInteger) == provinceColoursToIdMap.end()) {
-                FatalError("No province with colour " + colour.ToHex() + " exists");
-            }
+            auto it = provinceColoursToIdMap.find(colourInteger);
+            if (it == provinceColoursToIdMap.end()) { FatalError("No province with colour " + colour.ToHex() + " exists"); }
 
-			provinceId = provinceColoursToIdMap.at(colourInteger);
-            provincesArray[provinceId].EmplacePixel(index, j, i, heightmapBitmap.GetValueFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
+			provinceId = it->second;
+            provincesArray[provinceId].EmplacePixel(index, y, x, heightmapBitmap.GetValueFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
         }
     }
 
     for (auto& prov : provincesArray) { prov.UpdateBoundingBox(); }
     for (auto& state : statesArray) { state.UpdateBoundingBox(provincesArray); }
 
-	const SizeT dimensions = provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 4;
     ColourRGB currentProvinceColour (0, 0, 0);
     ColourRGB prevProvinceColour (0, 0, 0);
 	ColourRGB currentStateColour(0, 0, 0);
     Vector<UnsignedInteger8> statesRgbData(dimensions, 0);
+    UnsignedInteger8* statesRgbDataPointer = statesRgbData.data();
 
 	ColourRGB currentTerrainColour(0, 0, 0);
     Vector<UnsignedInteger8> terrainsRgbData(dimensions, 0);
+    UnsignedInteger8* terrainsRgbDataPointer = terrainsRgbData.data();
 
     for (SizeT i = 0; i < dimensions; i += 4) {
-        currentProvinceColour = provincesBitmap.GetColourFromIndexPremultiplied(i);
+        currentProvinceColour.r = provPtr[i + 0];
+        currentProvinceColour.g = provPtr[i + 1];
+        currentProvinceColour.b = provPtr[i + 2];
+
         if (currentProvinceColour != prevProvinceColour) {
             prevProvinceColour = currentProvinceColour;
 			provinceId = provinceColoursToIdMap.at(currentProvinceColour.ToInteger());
@@ -1364,17 +1430,20 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
                     break;
             }
         }
-        statesRgbData[i] = currentStateColour.r;
-        statesRgbData[i + 1] = currentStateColour.g;
-        statesRgbData[i + 2] = currentStateColour.b;
-        statesRgbData[i + 3] = 255;
 
-        terrainsRgbData[i] = currentTerrainColour.r;
-        terrainsRgbData[i + 1] = currentTerrainColour.g;
-        terrainsRgbData[i + 2] = currentTerrainColour.b;
-        terrainsRgbData[i + 3] = 255;
+        statesRgbDataPointer[0] = currentStateColour.r;
+        statesRgbDataPointer[1] = currentStateColour.g;
+        statesRgbDataPointer[2] = currentStateColour.b;
+        statesRgbDataPointer[3] = 255;
+        statesRgbDataPointer += 4;
+
+        terrainsRgbDataPointer[0] = currentTerrainColour.r;
+        terrainsRgbDataPointer[1] = currentTerrainColour.g;
+        terrainsRgbDataPointer[2] = currentTerrainColour.b;
+        terrainsRgbDataPointer[3] = 255;
+        terrainsRgbDataPointer += 4;
     }
 
-    statesBitmap = BitmapImage(statesRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight(), RGBA);
-    provinceTerrainsBitmap = BitmapImage(terrainsRgbData, provincesBitmap.GetWidth(), provincesBitmap.GetHeight(), RGBA);
+    statesBitmap = BitmapImage(statesRgbData, width, height, RGBA);
+    provinceTerrainsBitmap = BitmapImage(terrainsRgbData, width, height, RGBA);
 }

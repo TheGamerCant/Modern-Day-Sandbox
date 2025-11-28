@@ -1,0 +1,2721 @@
+1 = {
+	default = "Corsica"
+}
+2 = {
+	default = "Lazio"
+}
+3 = {
+	default = "Zürich"
+}
+4 = {
+	default = "Niederösterreich-Oberösterreich-Steinermark"
+}
+5 = {
+	default = "Warmińsko-Mazurskie"
+}
+6 = {
+	default = "Flanders"
+}
+7 = {
+	default = "Holland"
+}
+8 = {
+	default = "Luxembourg"
+}
+9 = {
+	default = "Bohemia"
+}
+10 = {
+	default = "Mazowieckie Południowe"
+}
+11 = {
+	default = "Dzūkija"
+}
+12 = {
+	default = "Vidzeme"
+}
+13 = {
+	default = "Pärnu"
+}
+14 = {
+	default = "Bretagne"
+}
+15 = {
+	default = "Normandie"
+}
+16 = {
+	default = "Île-de-France"
+}
+17 = {
+	default = "Grand-Est"
+}
+18 = {
+	default = "Uruguay"
+}
+19 = {
+	default = "Nouvelle-Aquitaine"
+}
+20 = {
+	default = "Auvergne-Rhône-Alpes"
+}
+21 = {
+	default = "Provence-Alpes-Côte d'Azur"
+}
+22 = {
+	default = "Occitanie"
+}
+23 = {
+	default = "Espírito Santo"
+}
+24 = {
+	default = "Centre-Val de Loire"
+}
+25 = {
+	default = "San Juan y La Rioja"
+}
+26 = {
+	default = "Pará"
+}
+27 = {
+	default = "Bourgogne-Franche-Comté"
+}
+28 = {
+	default = "Alsace-Lorraine"
+}
+29 = {
+	default = "Pas-de-Calais"
+}
+30 = {
+	default = "Pays de la Loire"
+}
+31 = {
+	default = "Tocantins"
+}
+32 = {
+	default = "Amapá"
+}
+33 = {
+	default = "LNR"
+}
+34 = {
+	default = "Wallonia"
+}
+35 = {
+	default = "Brabant"
+}
+36 = {
+	default = "Friesland"
+}
+37 = {
+	default = "Sjaelland"
+}
+38 = {
+	default = "Gävleborg"
+}
+39 = {
+	default = "Bolzano"
+}
+40 = {
+	default = "Altai Krai"
+}
+41 = {
+	default = "Madrid"
+}
+42 = {
+	default = "Rheinland-Pfalz"
+}
+43 = {
+	default = "Northern Hungary"
+}
+44 = {
+	default = "Albania"
+}
+45 = {
+	default = "Vojvodina"
+} 
+46 = {
+	default = "Muntenia"
+}
+47 = {
+	default = "Attica"
+}
+48 = {
+	default = "Sofia"
+}
+49 = {
+	default = "Ankara"
+}
+50 = {
+	default = "Baden-Württemberg"
+}
+51 = {
+	default = "Nordrhein-Westfalen"
+}
+52 = {
+	default = "Bavaria"
+}
+53 = {
+	default = "Sachsen-Anhalt"
+}
+54 = {
+	default = "Aysén"
+}
+55 = {
+	default = "Hessen"
+}
+56 = {
+	default = "Niedersachsen"
+}
+57 = {
+	default = "Idehan Ubari"
+}
+58 = {
+	default = "Holstein"
+}
+59 = {
+	default = "Tacna-Moquegua"
+}
+60 = {
+	default = "Thüringen"
+}
+61 = {
+	default = "Mecklenburg-Vorpommern"
+}
+62 = {
+	default = "Eastern Srpska"
+}
+63 = {
+	default = "Zachodniopomorskie"
+}
+64 = {
+	default = "Brandenburg"
+}
+65 = {
+	default = "Sachsen"
+}
+66 = {
+	default = "Dolnośląskie"
+}
+67 = {
+	default = "Opolskie"
+}
+68 = {
+	default = "Lubuskie"
+}
+69 = {
+	default = "Pernambuco"
+}
+70 = {
+	default = "Western Slovakia"
+}
+71 = {
+	default = "Eastern Slovakia"
+}
+72 = {
+	default = "Podkarpackie"
+}
+73 = {
+	default = "Zakarpattia"
+}
+74 = {
+	default = "Ceará"
+}
+75 = {
+	default = "Moravia"
+}
+76 = {
+	default = "North Transylvania"
+}
+77 = {
+	default = "Dobrudja"
+}
+78 = {
+	default = "Bessarabia"
+}
+79 = {
+	default = "Moldova"
+}
+80 = {
+	default = "Chernivtsi"
+}
+81 = {
+	default = "Oltenia"
+}
+82 = {
+	default = "Banat"
+}
+83 = {
+	default = "Crisana"
+}
+84 = {
+	default = "Transylvania"
+}
+85 = {
+	default = "Pomorskie"
+}
+86 = {
+	default = "Wielkopolskie"
+}
+87 = {
+	default = "Łódzkie"
+}
+88 = {
+	default = "Małopolskie"
+}
+89 = {
+	default = "East Galicia"
+}
+90 = {
+	default = "Świętokrzyskie"
+}
+91 = {
+	default = "New Hampshire"
+}
+92 = {
+	default = "Lubelskie"
+}
+93 = {
+	default = "Volhynia"
+}
+94 = {
+	default = "Brest"
+}
+95 = {
+	default = "Hrodna"
+}
+96 = {
+	default = "Vatican City"
+}
+97 = {
+	default = "Podlaskie"
+}
+98 = {
+	default = "Mazowieckie Północne"
+}
+99 = {
+	default = "Jutland"
+}
+100 = {
+	default = "Iceland"
+}
+101 = {
+	default = "Greenland"
+}
+102 = {
+	default = "Slovenia"
+}
+103 = {
+	default = "Dalmatia"
+}
+104 = {
+	default = "Bosnia and Herzegovina"
+}
+105 = {
+	default = "Montenegro"
+}
+106 = {
+	default = "Macedonia"
+}
+107 = {
+	default = "Central Serbia"
+}
+108 = {
+	default = "Eastern Serbia"
+}
+109 = {
+	default = "Croatia Proper"
+}
+110 = {
+	default = "Oslofjord"
+}
+111 = {
+	default = "Uusimaa"
+}
+112 = {
+	default = "Lisbon"
+}
+113 = {
+	default = "Leinster"
+}
+114 = {
+	default = "Sardinia"
+}
+115 = {
+	default = "Sicily"
+}
+116 = {
+	default = "Malta"
+}
+117 = {
+	default = "Campania and Basilicata"
+}
+118 = {
+	default = "Gibraltar"
+}
+119 = {
+	default = "Northern Ireland"
+}
+120 = {
+	default = "Scottish Highlands"
+}
+121 = {
+	default = "Lothian"
+}
+122 = {
+	default = "Northern Wales"
+}
+123 = {
+	default = "South-West England"
+}
+124 = {
+	default = "Gotland"
+}
+125 = {
+	default = "East Anglia"
+}
+126 = {
+	default = "Greater London"
+}
+127 = {
+	default = "South-East England"
+}
+128 = {
+	default = "West Midlands"
+}
+129 = {
+	default = "East Midlands"
+}
+130 = {
+	default = "Yorkshire"
+}
+131 = {
+	default = "North-East England"
+}
+132 = {
+	default = "Lancashire"
+}
+133 = {
+	default = "Lanark"
+}
+134 = {
+	default = "Connaught"
+}
+135 = {
+	default = "Munster"
+}
+136 = {
+	default = "Rhode Island"
+}
+137 = {
+	default = "Crimea"
+}
+138 = {
+	default = "Skåne"
+}
+139 = {
+	default = "Småland"
+}
+140 = {
+	default = "Västergötland"
+}
+141 = {
+	default = "Södermanland"
+}
+142 = {
+	default = "Vestlandet"
+}
+143 = {
+	default = "Trøndelag"
+}
+144 = {
+	default = "Nordland"
+}
+145 = {
+	default = "Åland"
+}
+146 = {
+	default = "Karelian Isthmus"
+}
+147 = {
+	default = "Donegal"
+}
+148 = {
+	default = "Lappi"
+}
+149 = {
+	default = "Vaasa"
+}
+150 = {
+	default = "Kuopio"
+}
+151 = {
+	default = "Connecticut"
+}
+152 = {
+	default = "Kärnten-Salzburg-Tirol"
+}
+153 = {
+	default = "Vladimir"
+}
+154 = {
+	default = "Transtisza"
+}
+155 = {
+	default = "Transdanubia"
+}
+156 = {
+	default = "Calabria"
+}
+157 = {
+	default = "Adriatic Italy"
+}
+158 = {
+	default = "Piedmonte and Liguria"
+}
+159 = {
+	default = "Lombardy"
+}
+160 = {
+	default = "Veneto"
+}
+161 = {
+	default = "Emilia Romagna"
+}
+162 = {
+	default = "Tuscany"
+}
+163 = {
+	default = "Kaiser-Wilhelmsland"
+}
+164 = {
+	default = "Dodecanese"
+}
+165 = {
+	default = "Cataluña"
+}
+166 = {
+	default = "Aragón"
+}
+167 = {
+	default = "Valencia"
+}
+168 = {
+	default = "Murcia"
+}
+169 = {
+	default = "Andalucía"
+}
+170 = {
+	default = "Extremadura"
+}
+171 = {
+	default = "Galicia"
+}
+172 = {
+	default = "Navarra"
+}
+173 = {
+	default = "Negev"
+}
+174 = {
+	default = "Castilla y León"
+}
+175 = {
+	default = "Castilla-La Mancha"
+}
+176 = {
+	default = "La Rioja"
+}
+177 = {
+	default = "Islas Baleares"
+}
+178 = {
+	default = "Islas Canarias"
+}
+179 = {
+	default = "Setúbal"
+}
+180 = {
+	default = "Porto"
+}
+181 = {
+	default = "Aveiro"
+}
+182 = {
+	default = "Crete"
+}
+183 = {
+	default = "Cyprus"
+}
+184 = {
+	default = "Thrace"
+}
+185 = {
+	default = "Epirus"
+}
+186 = {
+	default = "Peloponnese"
+}
+187 = {
+	default = "Aegean Islands"
+}
+188 = {
+	default = "Mažoji Lietuva"
+}
+189 = {
+	default = "Žemaitija"
+}
+190 = {
+	default = "Courland"
+}
+191 = {
+	default = "Tartu"
+}
+192 = {
+	default = "Odesa"
+}
+193 = {
+	default = "Chernihiv"
+}
+194 = {
+	default = "Homel"
+}
+195 = {
+	default = "Gorod Sankt-Peterburg"
+}
+196 = {
+	default = "Tavriya"
+}
+197 = {
+	default = "Mykolaiv"
+}
+198 = {
+	default = "Vinnytsia"
+}
+199 = {
+	default = "Khmelnytskyi"
+}
+200 = {
+	default = "Zaporizhzhia"
+}
+201 = {
+	default = "Zhytomyr"
+}
+202 = {
+	default = "Kyiv"
+}
+203 = {
+	default = "Naddniprianshchyna"
+}
+204 = {
+	default = "San Marino"
+}
+205 = {
+	default = "Kaluga"
+}
+206 = {
+	default = "Minsk"
+}
+207 = {
+	default = "Vitebsk"
+}
+208 = {
+	default = "Leningrad"
+}
+209 = {
+	default = "Pskov"
+}
+210 = {
+	default = "Southern Jutland"
+}
+211 = {
+	default = "Burgas"
+}
+212 = {
+	default = "Plovdiv"
+}
+213 = {
+	default = "Murmansk"
+}
+214 = {
+	default = "Arkhangelsk"
+}
+215 = {
+	default = "Karelia"
+}
+216 = {
+	default = "Jan Mayen"
+}
+217 = {
+	default = "Volgograd"
+}
+218 = {
+	default = "Rostov"
+}
+219 = {
+	default = "Gorod Moskva"
+}
+220 = {
+	default = "Kursk"
+}
+221 = {
+	default = "Kharkiv"
+}
+222 = {
+	default = "Oryol"
+}
+223 = {
+	default = "Tula"
+}
+224 = {
+	default = "Bryansk"
+}
+225 = {
+	default = "Sumy"
+}
+226 = {
+	default = "Dnipropetrovsk"
+}
+227 = {
+	default = "Donetsk"
+}
+228 = {
+	default = "Luhansk"
+}
+229 = {
+	default = "Azerbaijan"
+}
+230 = {
+	default = "Armenia"
+}
+231 = {
+	default = "Georgia"
+}
+232 = {
+	default = "Dagestan"
+}
+233 = {
+	default = "Agder"
+}
+234 = {
+	default = "Krasnodar"
+}
+235 = {
+	default = "Stavropol"
+}
+236 = {
+	default = "Astrakhan"
+}
+237 = {
+	default = "Kalmykia"
+}
+238 = {
+	default = "Opplandene"
+}
+239 = {
+	default = "Saratov"
+}
+240 = {
+	default = "Belgorod"
+}
+241 = {
+	default = "Mogilev"
+}
+242 = {
+	default = "Smolensk"
+}
+243 = {
+	default = "Fyn"
+}
+244 = {
+	default = "Saarland"
+}
+245 = {
+	default = "Telemark"
+}
+246 = {
+	default = "Tver"
+}
+247 = {
+	default = "Bornholm"
+}
+248 = {
+	default = "Yaroslavl"
+}
+249 = {
+	default = "Tatarstan"
+}
+250 = {
+	default = "Ulyanovsk"
+}
+251 = {
+	default = "Samara"
+}
+252 = {
+	default = "Nizhny Novgorod"
+}
+253 = {
+	default = "Ivanovo"
+}
+254 = {
+	default = "Ryazan"
+}
+255 = {
+	default = "Penza"
+}
+256 = {
+	default = "Chuvashia"
+}
+257 = {
+	default = "Tambov"
+}
+258 = {
+	default = "Lipetsk"
+}
+259 = {
+	default = "Poltava"
+}
+260 = {
+	default = "Voronezh"
+}
+261 = {
+	default = "Ohio"
+}
+262 = {
+	default = "Komi"
+}
+263 = {
+	default = "Novgorod"
+}
+264 = {
+	default = "Moscow"
+}
+265 = {
+	default = "Värmland"
+}
+266 = {
+	default = "Tehran"
+}
+267 = {
+	default = "Kabul"
+}
+268 = {
+	default = "French Somaliland"
+}
+269 = {
+	default = "British Somaliland"
+}
+270 = {
+	default = "Pitcairn Island"
+}
+271 = {
+	default = "Ethiopia"
+}
+272 = {
+	default = "Senegal"
+}
+273 = {
+	default = "Cyrenican Desert"
+}
+274 = {
+	default = "Ghana"
+}
+275 = {
+	default = "Transvaal"
+}
+276 = {
+	default = "Southern Ontario"
+}
+277 = {
+	default = "Mexico City"
+}
+278 = {
+	default = "Buenos Aires"
+}
+279 = {
+	default = "Santiago"
+}
+280 = {
+	default = "Mato Grosso"
+}
+281 = {
+	default = "Maldives"
+}
+282 = {
+	default = "Kanto"
+}
+283 = {
+	default = "Gansu"
+}
+284 = {
+	default = "North Island"
+}
+285 = {
+	default = "New South Wales"
+}
+286 = {
+	default = "Southern Indochina"
+}
+287 = {
+	default = "Taklamakan"
+}
+288 = {
+	default = "Burma"
+}
+289 = {
+	default = "Siam"
+}
+290 = {
+	default = "Cavan and Monaghan"
+}
+291 = {
+	default = "Baghdad"
+}
+292 = {
+	default = "Nejd"
+}
+293 = {
+	default = "Yemen"
+}
+294 = {
+	default = "Oman"
+}
+295 = {
+	default = "Léopoldville"
+}
+296 = {
+	default = "Portuguese Guinea"
+}
+297 = {
+	default = "Equatorial Guinea"
+}
+298 = {
+	default = "Liberia"
+}
+299 = {
+	default = "Falkland Islands"
+}
+300 = {
+	default = "Erg Murzuq"
+}
+301 = {
+	default = "Paraguay"
+}
+302 = {
+	default = "La Paz"
+}
+303 = {
+	default = "Lima"
+}
+304 = {
+	default = "Panamá"
+}
+305 = {
+	default = "Ecuador"
+}
+306 = {
+	default = "Cundinamarca"
+}
+307 = {
+	default = "Miranda"
+}
+308 = {
+	default = "Leeward Islands"
+}
+309 = {
+	default = "Suriname"
+}
+310 = {
+	default = "French Guiana"
+}
+311 = {
+	default = "British Honduras"
+}
+312 = {
+	default = "Honduras"
+}
+313 = {
+	default = "Guatemala"
+}
+314 = {
+	default = "El Salvador"
+}
+315 = {
+	default = "Cuba"
+}
+316 = {
+	default = "Costa Rica"
+}
+317 = {
+	default = "Nicaragua"
+}
+318 = {
+	default = "Haiti"
+}
+319 = {
+	default = "Dominican Republic"
+}
+320 = {
+	default = "San Luis y La Pampa"
+}
+321 = {
+	default = "Amazon"
+}
+322 = {
+	default = "Tibet"
+}
+323 = {
+	default = "Nepal"
+}
+324 = {
+	default = "Bhutan"
+}
+325 = {
+	default = "Yunnan"
+}
+326 = {
+	default = "Hong Kong"
+}
+327 = {
+	default = "Manila"
+}
+328 = {
+	default = "Kirin"
+}
+329 = {
+	default = "Tuva"
+}
+330 = {
+	default = "Ulaanbaatar"
+}
+331 = {
+	default = "Newfoundland"
+}
+332 = {
+	default = "Labrador"
+}
+333 = {
+	default = "North Borneo"
+}
+334 = {
+	default = "Kalimantan"
+}
+335 = {
+	default = "Java"
+}
+336 = {
+	default = "Singapore"
+}
+337 = {
+	default = "Faroe Islands"
+}
+338 = {
+	default = "Ottawa-Gatineau"
+}
+339 = {
+	default = "Izmir"
+}
+340 = {
+	default = "Bursa"
+}
+341 = {
+	default = "Edirne"
+}
+342 = {
+	default = "Antalya"
+}
+343 = {
+	default = "Afyon"
+}
+344 = {
+	default = "Malatya"
+}
+345 = {
+	default = "Mersin"
+}
+346 = {
+	default = "Konya"
+}
+347 = {
+	default = "Izmit"
+}
+348 = {
+	default = "Kayseri"
+}
+349 = {
+	default = "Sivas"
+}
+350 = {
+	default = "Diyarbakır"
+}
+351 = {
+	default = "Vologda"
+}
+352 = {
+	default = "Hakkari"
+}
+353 = {
+	default = "Tunceli"
+}
+354 = {
+	default = "Trabzon"
+}
+355 = {
+	default = "Samsun"
+}
+356 = {
+	default = "Kastamonu"
+}
+357 = {
+	default = "Maine"
+}
+358 = {
+	default = "Upstate New York"
+}
+359 = {
+	default = "New Jersey"
+}
+360 = {
+	default = "Pennsylvania"
+}
+361 = {
+	default = "Maryland"
+}
+362 = {
+	default = "Virginia"
+}
+363 = {
+	default = "North Carolina"
+}
+364 = {
+	default = "South Carolina"
+}
+365 = {
+	default = "Georgia"
+}
+366 = {
+	default = "Florida"
+}
+367 = {
+	default = "Alabama"
+}
+368 = {
+	default = "Tennessee"
+}
+369 = {
+	default = "Kentucky"
+}
+370 = {
+	default = "Mississippi"
+}
+371 = {
+	default = "Louisiana"
+}
+372 = {
+	default = "Arkansas"
+}
+373 = {
+	default = "Missouri"
+}
+374 = {
+	default = "Oklahoma"
+}
+375 = {
+	default = "North Texas"
+}
+376 = {
+	default = "New Mexico"
+}
+377 = {
+	default = "Arizona"
+}
+378 = {
+	default = "Central Valley"
+}
+379 = {
+	default = "Nevada"
+}
+380 = {
+	default = "Utah"
+}
+381 = {
+	default = "Wyoming"
+}
+382 = {
+	default = "Colorado"
+}
+383 = {
+	default = "Kansas"
+}
+384 = {
+	default = "Nebraska"
+}
+385 = {
+	default = "Oregon"
+}
+386 = {
+	default = "Washington"
+}
+387 = {
+	default = "Idaho"
+}
+388 = {
+	default = "Montana"
+}
+389 = {
+	default = "North Dakota"
+}
+390 = {
+	default = "South Dakota"
+}
+391 = {
+	default = "Minnesota"
+}
+392 = {
+	default = "Iowa"
+}
+393 = {
+	default = "Michigan"
+}
+394 = {
+	default = "Wisconsin"
+}
+395 = {
+	default = "Illinois"
+}
+396 = {
+	default = "Indiana"
+}
+397 = {
+	default = "Socotra"
+}
+398 = {
+	default = "Perm"
+}
+399 = {
+	default = "Udmurtia"
+}
+400 = {
+	default = "Kirov"
+}
+401 = {
+	default = "Jämtland"
+}
+402 = {
+	default = "Akhtubinsk"
+}
+403 = {
+	default = "Tyumen"
+}
+404 = {
+	default = "Kyzyl Orda"
+}
+405 = {
+	default = "Tashkent"
+}
+406 = {
+	default = "Guryev"
+}
+407 = {
+	default = "Ural'sk"
+}
+408 = {
+	default = "Primorskiy"
+}
+409 = {
+	default = "Khabarovsk"
+}
+410 = {
+	default = "Sistan"
+}
+411 = {
+	default = "Isfahan"
+}
+412 = {
+	default = "Fars"
+}
+413 = {
+	default = "Khuzestan"
+}
+414 = {
+	default = "Kerman"
+}
+415 = {
+	default = "Herat"
+}
+416 = {
+	default = "Khorasan"
+}
+417 = {
+	default = "Hamadan"
+}
+418 = {
+	default = "Semnan"
+}
+419 = {
+	default = "Tibriz"
+}
+420 = {
+	default = "Gilan"
+}
+421 = {
+	default = "Kurdistan"
+}
+422 = {
+	default = "Ceylon"
+}
+423 = {
+	default = "Madurai"
+}
+424 = {
+	default = "Madras"
+}
+425 = {
+	default = "Mysore"
+}
+426 = {
+	default = "Orissa"
+}
+427 = {
+	default = "Hyderabad"
+}
+428 = {
+	default = "Gujarat"
+}
+429 = {
+	default = "Bombay"
+}
+430 = {
+	default = "East Bengal"
+}
+431 = {
+	default = "West Bengal"
+}
+432 = {
+	default = "Assam"
+}
+433 = {
+	default = "Rajahsthan"
+}
+434 = {
+	default = "Arunachal Pradesh"
+}
+435 = {
+	default = "Bihar"
+}
+436 = {
+	default = "Jabalpur"
+}
+437 = {
+	default = "Indore"
+}
+438 = {
+	default = "Lucknow"
+}
+439 = {
+	default = "Delhi"
+}
+440 = {
+	default = "Punjab"
+}
+441 = {
+	default = "Kashmir"
+}
+442 = {
+	default = "Peshawar"
+}
+443 = {
+	default = "Sind"
+}
+444 = {
+	default = "Baluchistan"
+}
+445 = {
+	default = "Quetta"
+}
+446 = {
+	default = "Suez"
+}
+447 = {
+	default = "Nile Delta"
+}
+448 = {
+	default = "Tripoli"
+}
+449 = {
+	default = "Sirte"
+}
+450 = {
+	default = "Benghasi"
+}
+451 = {
+	default = "Rebiana Sand Sea"
+}
+452 = {
+	default = "Matrouh"
+}
+453 = {
+	default = "Sinai"
+}
+454 = {
+	default = "Israel"
+}
+455 = {
+	default = "Jordan"
+}
+456 = {
+	default = "Upper Nile"
+}
+457 = {
+	default = "Eastern Desert"
+}
+458 = {
+	default = "Tunisia"
+}
+459 = {
+	default = "Algiers"
+}
+460 = {
+	default = "Constantine"
+}
+461 = {
+	default = "Casablanca"
+}
+462 = {
+	default = "Marrakech"
+}
+463 = {
+	default = "Alaska"
+}
+464 = {
+	default = "Nova Scotia"
+}
+465 = {
+	default = "New Brunswick"
+}
+466 = {
+	default = "Nord du Quebec"
+}
+467 = {
+	default = "Manitoba"
+}
+468 = {
+	default = "Saint Lawrence"
+}
+469 = {
+	default = "Saskatchewan"
+}
+470 = {
+	default = "Alberta"
+}
+471 = {
+	default = "Prince Rupert"
+}
+472 = {
+	default = "N.W Territories"
+}
+473 = {
+	default = "British Columbia"
+}
+474 = {
+	default = "Yucatan"
+}
+475 = {
+	default = "Chiapas"
+}
+476 = {
+	default = "Oaxaca"
+}
+477 = {
+	default = "Veracruz"
+}
+478 = {
+	default = "Jalisco"
+}
+479 = {
+	default = "Tamaulipas"
+}
+480 = {
+	default = "Coahuila"
+}
+481 = {
+	default = "Durango"
+}
+482 = {
+	default = "Chihuahua"
+}
+483 = {
+	default = "Sonora"
+}
+484 = {
+	default = "Baja California"
+}
+485 = {
+	default = "Guerrero"
+}
+486 = {
+	default = "Meta"
+}
+487 = {
+	default = "Santa Cruz"
+}
+488 = {
+	default = "Bolivar"
+}
+489 = {
+	default = "Zulia"
+}
+490 = {
+	default = "Pastaza"
+}
+491 = {
+	default = "Loreto"
+}
+492 = {
+	default = "Arequipa"
+}
+493 = {
+	default = "La Libertad"
+}
+494 = {
+	default = "Ucayali"
+}
+495 = {
+	default = "Amazonas"
+}
+496 = {
+	default = "Minas Gerais"
+}
+497 = {
+	default = "Maranhão"
+}
+498 = {
+	default = "Rio Grande do Norte"
+}
+499 = {
+	default = "Bahia"
+}
+500 = {
+	default = "Rio de Janeiro"
+}
+501 = {
+	default = "São Paulo"
+}
+502 = {
+	default = "Rio Grande do Sul"
+}
+503 = {
+	default = "Santa Catarina"
+}
+504 = {
+	default = "Punta Porá"
+}
+505 = {
+	default = "Goiás"
+} 
+506 = {
+	default = "Antofagasta"
+}
+507 = {
+	default = "Magallanes"
+}
+508 = {
+	default = "Tucumán"
+}
+509 = {
+	default = "Chaco Austral"
+}
+510 = {
+	default = "Región Mesopotámica"
+}
+511 = {
+	default = "Mendoza"
+}
+512 = {
+	default = "Río Negro"
+}
+513 = {
+	default = "Tlemcen"
+}
+514 = {
+	default = "Algerian Desert"
+}
+515 = {
+	default = "Southern Sahara"
+}
+516 = {
+	default = "Norilsk"
+}
+517 = {
+	default = "Victoria"
+}
+518 = {
+	default = "Tasmania"
+}
+519 = {
+	default = "South Australia"
+}
+520 = {
+	default = "Northern Territory"
+}
+521 = {
+	default = "Queensland"
+}
+522 = {
+	default = "Western Australia"
+}
+523 = {
+	default = "Papua"
+}
+524 = {
+	default = "Taiwan"
+}
+525 = {
+	default = "South Korea"
+}
+526 = {
+	default = "Okinawa"
+}
+527 = {
+	default = "North Korea"
+}
+528 = {
+	default = "Kyushu"
+}
+529 = {
+	default = "Chugoku"
+}
+530 = {
+	default = "Shikoku"
+}
+531 = {
+	default = "Kansai"
+}
+532 = {
+	default = "Tokai"
+}
+533 = {
+	default = "Tohoku"
+}
+534 = {
+	default = "Hokuriku"
+}
+535 = {
+	default = "Koshinetsu"
+}
+536 = {
+	default = "Hokkaido"
+}
+537 = {
+	default = "Sakhalin"
+}
+538 = {
+	default = "Coquilhatville"
+}
+539 = {
+	default = "Gabon"
+}
+540 = {
+	default = "Angola"
+}
+541 = {
+	default = "Namibia"
+}
+542 = {
+	default = "Bechuanaland"
+}
+543 = {
+	default = "Madagascar"
+}
+544 = {
+	default = "Lourenço Marques"
+}
+545 = {
+	default = "Rhodesia"
+}
+546 = {
+	default = "Tanganyika"
+}
+547 = {
+	default = "Nairobi"
+}
+548 = {
+	default = "Uganda"
+}
+549 = {
+	default = "Kurdufan"
+}
+550 = {
+	default = "Eritrea"
+}
+551 = {
+	default = "Khartoum"
+}
+552 = {
+	default = "Western Desert"
+}
+553 = {
+	default = "Lebanon"
+}
+554 = {
+	default = "Damascus"
+}
+555 = {
+	default = "Kuril Islands"
+}
+556 = {
+	default = "Bamako"
+}
+557 = {
+	default = "Mauritania"
+}
+558 = {
+	default = "Lagos"
+}
+559 = {
+	default = "Somaliland"
+}
+560 = {
+	default = "Komsomolsk"
+}
+561 = {
+	default = "Amur"
+}
+562 = {
+	default = "Okhotsk"
+}
+563 = {
+	default = "Zabaykalskiy"
+}
+564 = {
+	default = "Buryatia"
+}
+565 = {
+	default = "Kymi"
+}
+566 = {
+	default = "Irkutsk"
+}
+567 = {
+	default = "Turku"
+}
+568 = {
+	default = "Krasnoyarsk"
+}
+569 = {
+	default = "Khakassia"
+}
+570 = {
+	default = "Novosibirsk"
+}
+571 = {
+	default = "Omsk"
+}
+572 = {
+	default = "Chelyabinsk"
+}
+573 = {
+	default = "Kurgan"
+}
+574 = {
+	default = "Yakutsk"
+}
+575 = {
+	default = "DNR"
+}
+576 = {
+	default = "Troms"
+}
+577 = {
+	default = "Nova Zemlya"
+}
+578 = {
+	default = "Tomsk"
+}
+579 = {
+	default = "Yamalo-Nenets"
+}
+580 = {
+	default = "Khanty-Mansi"
+}
+581 = {
+	default = "Cairo"
+}
+582 = {
+	default = "Mombasa"
+}
+583 = {
+	default = "Kostanay"
+}
+584 = {
+	default = "Ashkhabad"
+}
+585 = {
+	default = "Navoi"
+}
+586 = {
+	default = "Alma-Ata"
+}
+587 = {
+	default = "Ust Urt"
+}
+588 = {
+	default = "Semipalatinsk"
+}
+589 = {
+	default = "Ayaguz"
+}
+590 = {
+	default = "Akmolinsk"
+}
+591 = {
+	default = "Hainan"
+}
+592 = {
+	default = "Guangzhou"
+}
+593 = {
+	default = "Guangdong"
+}
+594 = {
+	default = "Nanning"
+}
+595 = {
+	default = "Fujian"
+}
+596 = {
+	default = "Zhejiang"
+}
+597 = {
+	default = "Shandong"
+}
+598 = {
+	default = "Jiangsu"
+}
+599 = {
+	default = "Guangxi"
+}
+600 = {
+	default = "Jiangxi"
+}
+601 = {
+	default = "Xikang"
+}
+602 = {
+	default = "Hunan"
+}
+603 = {
+	default = "Guizhou"
+}
+604 = {
+	default = "Qinghai"
+}
+605 = {
+	default = "Sichuan"
+}
+606 = {
+	default = "Anhui"
+}
+607 = {
+	default = "Henan"
+}
+608 = {
+	default = "Beijing"
+}
+609 = {
+	default = "East Hebei"
+}
+610 = {
+	default = "Jehol"
+}
+611 = {
+	default = "South Chahar"
+}
+612 = {
+	default = "Chahar"
+}
+613 = {
+	default = "Shanghai"
+}
+614 = {
+	default = "Hebei"
+}
+615 = {
+	default = "Shanxi"
+}
+616 = {
+	default = "Ningxia"
+}
+617 = {
+	default = "Urumqi"
+}
+618 = {
+	default = "Dzungaria"
+}
+619 = {
+	default = "Yarkand"
+}
+620 = {
+	default = "Hubei"
+}
+621 = {
+	default = "Suiyuan"
+}
+622 = {
+	default = "Shaanxi"
+}
+623 = {
+	default = "Luzon"
+}
+624 = {
+	default = "Central islands"
+}
+625 = {
+	default = "Samar"
+}
+626 = {
+	default = "Palawan"
+}
+627 = {
+	default = "Mindanao"
+}
+628 = {
+	default = "Cebu"
+}
+629 = {
+	default = "Hawaii"
+}
+630 = {
+	default = "Johnston Atoll"
+}
+631 = {
+	default = "Midway Island"
+}
+632 = {
+	default = "Wake Island"
+}
+633 = {
+	default = "Marshall Islands"
+}
+634 = {
+	default = "Solomon Islands"
+}
+635 = {
+	default = "New Caledonia"
+}
+636 = {
+	default = "Fiji"
+}
+637 = {
+	default = "Kamchatka"
+}
+638 = {
+	default = "Guam"
+}
+639 = {
+	default = "Gilbert Islands"
+}
+640 = {
+	default = "Mandalay"
+}
+641 = {
+	default = "Tahiti"
+}
+642 = {
+	default = "Phoenix Island"
+}
+643 = {
+	default = "Ellice Islands"
+}
+644 = {
+	default = "Southern Wales"
+}
+645 = {
+	default = "Iwo Jima"
+}
+646 = {
+	default = "Saipan"
+}
+647 = {
+	default = "Palau"
+}
+648 = {
+	default = "Marcus Island"
+}
+649 = {
+	default = "Galapagos Islands"
+}
+650 = {
+	default = "Attu Island"
+}
+651 = {
+	default = "Bashkortostan"
+}
+652 = {
+	default = "Orenburg"
+}
+653 = {
+	default = "Sverdlovsk"
+}
+654 = {
+	default = "Altai"
+}
+655 = {
+	default = "Liechtenstein"
+}
+656 = {
+	default = "Kuwait"
+}
+657 = {
+	default = "Bern"
+}
+658 = {
+	default = "Abu Dhabi"
+}
+659 = {
+	default = "Aden"
+}
+660 = {
+	default = "Equatorial Africa"
+}
+661 = {
+	default = "Libyan Great Sand Sea"
+}
+662 = {
+	default = "Halaib Triangle"
+}
+663 = {
+	default = "Cyrenaica"
+}
+664 = {
+	default = "Southern Slovakia"
+}
+665 = {
+	default = "Gabès"
+}
+666 = {
+	default = "Norrbotten"
+}
+667 = {
+	default = "Lesser Sunda Islands"
+}
+668 = {
+	default = "The Moluccas"
+}
+669 = {
+	default = "West Papua"
+}
+670 = {
+	default = "Laos"
+}
+671 = {
+	default = "Tonkin"
+}
+672 = {
+	default = "Sumatra"
+}
+673 = {
+	default = "Sulawesi"
+}
+674 = {
+	default = "Central Australia"
+}
+675 = {
+	default = "Al Hajara"
+}
+676 = {
+	default = "Mosul"
+}
+677 = {
+	default = "Aleppo"
+}
+678 = {
+	default = "Rub al Khali"
+}
+679 = {
+	default = "Madinah"
+}
+680 = {
+	default = "Deir-az-Zur"
+}
+681 = {
+	default = "Cape"
+}
+682 = {
+	default = "Northern Ontario"
+}
+683 = {
+	default = "Nunavut"
+}
+684 = {
+	default = "Caroline Islands"
+}
+685 = {
+	default = "Panamá Canal"
+}
+686 = {
+	default = "Puerto Rico"
+}
+687 = {
+	default = "British Guyana"
+}
+688 = {
+	default = "Chaco Boreal"
+}
+689 = {
+	default = "Jamaica"
+}
+690 = {
+	default = "Northern Bahamas"
+}
+691 = {
+	default = "Trinidad"
+}
+692 = {
+	default = "Windward Islands"
+}
+693 = {
+	default = "Southern Bahamas"
+}
+694 = {
+	default = "French Caribbean"
+}
+695 = {
+	default = "Curaçao"
+}
+696 = {
+	default = "Bermuda"
+}
+697 = {
+	default = "Madeira"
+}
+698 = {
+	default = "Azores"
+}
+699 = {
+	default = "Rio de Oro"
+}
+700 = {
+	default = "Sierra Leone"
+}
+701 = {
+	default = "Gambia"
+}
+702 = {
+	default = "Cape Verde"
+}
+703 = {
+	default = "Ascension"
+}
+704 = {
+	default = "Saint Helena"
+}
+705 = {
+	default = "Sao Tome"
+}
+706 = {
+	default = "Reunion"
+}
+707 = {
+	default = "Mauritius"
+}
+708 = {
+	default = "Comoro Islands"
+}
+709 = {
+	default = "Seychelles"
+}
+710 = {
+	default = "Diego Garcia"
+}
+711 = {
+	default = "Christmas Island"
+}
+712 = {
+	default = "Cocos Islands"
+}
+713 = {
+	default = "Kerguelen"
+}
+714 = {
+	default = "Heilungkiang"
+}
+715 = {
+	default = "Liaoning"
+}
+716 = {
+	default = "Liaotung"
+}
+717 = {
+	default = "Sungkiang"
+}
+718 = {
+	default = "Stanleyville"
+}
+719 = {
+	default = "Natal"
+}
+720 = {
+	default = "South Georgia"
+}
+721 = {
+	default = "Portuguese Timor"
+}
+722 = {
+	default = "Dalarna"
+}
+723 = {
+	default = "South Island"
+}
+724 = {
+	default = "Northern Malay"
+}
+725 = {
+	default = "Nauru"
+}
+726 = {
+	default = "Samoa"
+}
+727 = {
+	default = "Line Islands"
+}
+728 = {
+	default = "Formosa"
+}
+729 = {
+	default = "Macau"
+}
+730 = {
+	default = "St Pierre and Miquelon"
+}
+731 = {
+	default = "Central Macedonia"
+}
+732 = {
+	default = "Pamir"
+}
+733 = {
+	default = "Andaman"
+}
+734 = {
+	default = "Nendo"
+}
+735 = {
+	default = "Piauí"
+}
+736 = {
+	default = "Araucanía"
+}
+737 = {
+	default = "Bismarck"
+}
+738 = {
+	default = "Aru Islands"
+}
+739 = {
+	default = "Massachusetts"
+}
+740 = {
+	default = "Vancouver Island"
+}
+741 = {
+	default = "Cambodia"
+}
+742 = {
+	default = "Stalinabad"
+}
+743 = {
+	default = "North Kosovo"
+}
+744 = {
+	default = "Xian"
+}
+745 = {
+	default = "Upper Peninsula"
+}
+746 = {
+	default = "Ordos"
+}
+747 = {
+	default = "Dali"
+}
+748 = {
+	default = "Zunyi"
+}
+749 = {
+	default = "Huangshan"
+}
+750 = {
+	default = "Changde"
+}
+751 = {
+	default = "Liangshan"
+}
+752 = {
+	default = "Ganzi"
+}
+753 = {
+	default = "Gannan"
+}
+754 = {
+	default = "Golog"
+}
+755 = {
+	default = "Haixi"
+}
+756 = {
+	default = "Jiuquan"
+}
+757 = {
+	default = "Haruj"
+}
+758 = {
+	default = "Fezzan"
+}
+759 = {
+	default = "Kunlun Shan"
+}
+760 = {
+	default = "Dabancheng"
+}
+761 = {
+	default = "Hulunbuir"
+}
+762 = {
+	default = "Śląskie"
+}
+763 = {
+	default = "Königsberg"
+}
+764 = {
+	default = "West Banat"
+}
+765 = {
+	default = "Qatar"
+}
+766 = {
+	default = "Budzhak"
+}
+767 = {
+	default = "North Darfur"
+}
+768 = {
+	default = "Rwanda"
+}
+769 = {
+	default = "Burundi"
+}
+770 = {
+	default = "Malawi"
+}
+771 = {
+	default = "Zambia"
+}
+772 = {
+	default = "Middle Congo"
+}
+773 = {
+	default = "Cameroon"
+}
+774 = {
+	default = "Chad"
+}
+775 = {
+	default = "B.E.T."
+}
+776 = {
+	default = "Dahomey"
+}
+777 = {
+	default = "Togo"
+}
+778 = {
+	default = "Upper Volta"
+}
+779 = {
+	default = "Ivory Coast"
+}
+780 = {
+	default = "Guinea"
+}
+781 = {
+	default = "Niger"
+}
+782 = {
+	default = "Tombouctou"
+}
+783 = {
+	default = "Dublin"
+}
+784 = {
+	default = "Kherson"
+}
+785 = {
+	default = "Picardy"
+}
+786 = {
+	default = "Mauritanian Desert"
+}
+787 = {
+	default = "Northern Kashmir"
+}
+788 = {
+	default = "West Bank Zones A&B"
+}
+789 = {
+	default = "Jerusalem"
+}
+790 = {
+	default = "Asturias"
+}
+791 = {
+	default = "Cantabria"
+}
+792 = {
+	default = "País Vasco"
+}
+793 = {
+	default = "West Bank Zone C"
+}
+794 = {
+	default = "Andorra"
+}
+795 = {
+	default = "Santarém"
+}
+796 = {
+	default = "Cabinda"
+}
+797 = {
+	default = "Istanbul"
+}
+798 = {
+	default = "Amasya"
+}
+799 = {
+	default = "Hatay"
+}
+800 = {
+	default = "Van"
+}
+801 = {
+	default = "Moesia"
+}
+802 = {
+	default = "Kosovo"
+}
+803 = {
+	default = "Slavonia"
+}
+804 = {
+	default = "Brčko District"
+}
+805 = {
+	default = "Arica y Tarapacá"
+}
+806 = {
+	default = "Paraná"
+}
+807 = {
+	default = "Kujawsko-Pomorskie"
+}
+808 = {
+	default = "Vermont"
+}
+809 = {
+	default = "Port of Sevastopol"
+}
+810 = {
+	default = "Latgale"
+}
+811 = {
+	default = "Saare and Hiiu"
+}
+812 = {
+	default = "Harju"
+}
+813 = {
+	default = "Ida-Viru"
+}
+814 = {
+	default = "Sūduva"
+}
+815 = {
+	default = "Aukštaitija"
+}
+816 = {
+	default = "West Virginia"
+}
+817 = {
+	default = "Gobi"
+}
+818 = {
+	default = "Khovd"
+}
+819 = {
+	default = "Dornod"
+}
+820 = {
+	default = "Khövsgöl"
+}
+821 = {
+	default = "Chechnya"
+}
+822 = {
+	default = "Chukotka"
+}
+823 = {
+	default = "Karakalpakstan"
+}
+824 = {
+	default = "Kemerovo"
+}
+825 = {
+	default = "Nenets"
+}
+826 = {
+	default = "Abkhazia"
+}
+827 = {
+	default = "North Caucuses"
+}
+828 = {
+	default = "Helgeland"
+}
+829 = {
+	default = "Västerbotten"
+}
+830 = {
+	default = "Bukhara"
+}
+831 = {
+	default = "Barotseland"
+}
+832 = {
+	default = "Eupen-Malmedy"
+}
+833 = {
+	default = "Mari El"
+}
+834 = {
+	default = "Transnistria"
+}
+835 = {
+	default = "Kostroma"
+}
+836 = {
+	default = "Burgenland"
+}
+837 = {
+	default = "Mordoviya"
+}
+838 = {
+	default = "Nyanza-Rift Valley"
+}
+839 = {
+	default = "Rio Branco"
+}
+840 = {
+	default = "Northern Srpska"
+}
+841 = {
+	default = "Northern Dobruja"
+}
+842 = {
+	default = "Northern California"
+}
+843 = {
+	default = "Brussels"
+}
+844 = {
+	default = "Jubaland"
+}
+845 = {
+	default = "Geneva"
+}
+846 = {
+	default = "Ticino"
+}
+847 = {
+	default = "Orkney and Shetland Islands"
+}
+848 = {
+	default = "Vorarlberg"
+}
+849 = {
+	default = "Puglia"
+}
+850 = {
+	default = "Trentino"
+}
+851 = {
+	default = "Monaco"
+}
+852 = {
+	default = "Istria"
+}
+853 = {
+	default = "Los Angeles"
+}
+854 = {
+	default = "Jawf"
+}
+855 = {
+	default = "Tabuk"
+}
+856 = {
+	default = "Asir-Makkah"
+}
+857 = {
+	default = "Al-Qassim"
+}
+858 = {
+	default = "Najiran"
+}
+859 = {
+	default = "Dammam"
+}
+860 = {
+	default = "Rio Grande"
+}
+861 = {
+	default = "Prince Edward Island"
+}
+862 = {
+	default = "Ouest du Quebec"
+}
+863 = {
+	default = "Delaware"
+}
+864 = {
+	default = "Yukon Territory"
+}
+865 = {
+	default = "Northern Alaska"
+}
+866 = {
+	default = "New York City"
+}
+867 = {
+	default = "District of Columbia"
+}
+868 = {
+	default = "Isan"
+}
+869 = {
+	default = "Lanna"
+}
+870 = {
+	default = "North West Australia"
+}
+871 = {
+	default = "South West Australia"
+}
+872 = {
+	default = "North Queensland"
+}
+873 = {
+	default = "South West Queensland"
+}
+874 = {
+	default = "Magadan"
+}
+875 = {
+	default = "Cumbria and the Isle of Man"
+}
+876 = {
+	default = "Sakha"
+}
+877 = {
+	default = "Oulu"
+}
+878 = {
+	default = "Finnmark"
+}
+879 = {
+	default = "Easter Island"
+}
+880 = {
+	default = "Schleswig"
+}
+881 = {
+	default = "Karagandy"
+}
+882 = {
+	default = "Pavlodar"
+}
+883 = {
+	default = "Kassala"
+}
+884 = {
+	default = "Upper Nile"
+}
+885 = {
+	default = "Bahr al Ghazal"
+}
+886 = {
+	default = "Blue Nile"
+}
+887 = {
+	default = "South Darfur"
+}
+888 = {
+	default = "Lusambo"
+}
+889 = {
+	default = "Elisabethville"
+}
+890 = {
+	default = "Costermansville"
+}
+891 = {
+	default = "Atacama"
+}
+892 = {
+	default = "Tierra del Fuego"
+}
+893 = {
+	default = "Santa Fe"
+}
+894 = {
+	default = "Chubut"
+}
+895 = {
+	default = "Santa Cruz"
+}
+896 = {
+	default = "Manica e Sofala"
+}
+897 = {
+	default = "Zambezia-Moçambique"
+}
+898 = {
+	default = "Gao"
+}
+899 = {
+	default = "Kayes-Koulikoro"
+}
+900 = {
+	default = "Benue"
+}
+901 = {
+	default = "Borno"
+}
+902 = {
+	default = "Sokoto"
+}
+903 = {
+	default = "Garissa"
+}
+904 = {
+	default = "Gaza Strip"
+}
+905 = {
+	default = "Golan Heights"
+}
+906 = {
+	default = "Fouad"
+}
+907 = {
+	default = "Egyptian Great Sand Sea"
+}

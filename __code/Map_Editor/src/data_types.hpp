@@ -647,6 +647,13 @@ public:
     const UnsignedInteger16 GetY0() const;
     UnsignedInteger16 GetY1();
     const UnsignedInteger16 GetY1() const;
+
+    String GetDefaultName();
+    const String GetDefaultName() const;
+    void SetDefaultName(const String& name);
+    Vector<ChangeableName>& GetNameEntries();
+    const Vector<ChangeableName>& GetNameEntries() const;
+    void SetNameEntries(const Vector<ChangeableName>& entries);
 };
 
 struct WeatherPeriod {

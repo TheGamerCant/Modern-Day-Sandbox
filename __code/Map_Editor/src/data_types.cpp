@@ -594,7 +594,9 @@ const Vector<UnsignedInteger16>& State::GetProvinces() const { return provinces;
 Vector<UnsignedInteger16>& State::GetProvinces() { return provinces; }
 
 void State::UpdateBoundingBox(const Vector<Province>& provincesArray) {
-    for (const auto& province : provincesArray) {
+    for (const auto& provinceId : provinces) {
+		const Province& province = provincesArray[provinceId];
+
         if (province.GetX0() < x0) x0 = province.GetX0();
         else if (province.GetX1() > x1) x1 = province.GetX1();
 
@@ -620,6 +622,13 @@ UnsignedInteger16 State::GetY0() { return y0; }
 const UnsignedInteger16 State::GetY0() const { return y0; }
 UnsignedInteger16 State::GetY1() { return y1; }
 const UnsignedInteger16 State::GetY1() const { return y1; }
+
+String State::GetDefaultName() { return defaultName; }
+const String State::GetDefaultName() const { return defaultName; }
+void State::SetDefaultName(const String& name) { defaultName = name; }
+Vector<ChangeableName>& State::GetNameEntries() { return nameEntries; }
+const Vector<ChangeableName>& State::GetNameEntries() const { return nameEntries; }
+void State::SetNameEntries(const Vector<ChangeableName>& entries) { nameEntries = entries; }
 
 
 String StrategicRegion::GetName() { return name; }
