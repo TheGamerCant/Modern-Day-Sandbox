@@ -840,8 +840,6 @@ static void ProcessStateFilesVector(const Vector<Path>& stateFiles, Vector<State
                 if (stateData.find("provinces") == stateData.end() || stateData.at("provinces").size() != 1) { FatalError("No provinces defined for state " + stringId); }
                 Vector<UnsignedInteger16> provinces = ParseStringAsUnsignedInteger16Array(stateData.at("provinces")[0]);
 
-                std::sort(provinces.begin(), provinces.end(), [](const UnsignedInteger16& a, const UnsignedInteger16& b) { return a < b; });
-
                 Boolean impassable = (stateData.find("impassable") != stateData.end()) ? GetBoolFromYesNo(stateData.at("impassable")[stateData.at("impassable").size() - 1]) : false;
                 UnsignedInteger16 forceOwnershipLinkTo = (stateData.find("force_link_ownership_to") != stateData.end()) ? std::stoi(stateData.at("force_link_ownership_to")[stateData.at("force_link_ownership_to").size() - 1]) : 0;
 
@@ -1261,6 +1259,11 @@ void LoadStrategicRegionFiles(const Path& vanillaDirectory, const Path& modDirec
         }
     }
 
+    for (const auto& state : statesArray) {
+        if (state.GetId() == 0) continue;
+        strategicRegionsArray[state.GetStrategicRegionId()].AddState(state.GetId());
+    }
+
     Boolean generateRandomColours = true;
     if (std::filesystem::exists("strategicRegionColours.raw")) {
         std::ifstream file("strategicRegionColours.raw", std::ios::binary | std::ios::ate);
@@ -1327,13 +1330,11 @@ void LoadProvincePixelData(Vector<Province>& provincesArray, HashMap<UnsignedInt
 
 			provinceId = provinceColoursToIdMap.at(colourInteger);
             provincesArray[provinceId].EmplacePixel(index, j, i, heightmapBitmap.GetValueFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
-            statesArray[provincesArray[provinceId].GetStateId()].EmplacePixel(index, j, i, heightmapBitmap.GetValueFromIndex(index), terrainBitmap.GetRawDataFromIndex(index));
         }
     }
 
-    for (auto& prov : provincesArray) {
-        prov.UpdateBoundingBox();
-    }
+    for (auto& prov : provincesArray) { prov.UpdateBoundingBox(); }
+    for (auto& state : statesArray) { state.UpdateBoundingBox(provincesArray); }
 
 	const SizeT dimensions = provincesBitmap.GetWidth() * provincesBitmap.GetHeight() * 4;
     ColourRGB currentProvinceColour (0, 0, 0);

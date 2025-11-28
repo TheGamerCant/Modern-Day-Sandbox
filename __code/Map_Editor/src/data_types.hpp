@@ -598,7 +598,6 @@ private:
     Decimal buildingsMaxLevelFactor;
     Vector<StateHistory> stateHistoriesArray;
 
-    Vector<Pixel> pixels;
     UnsignedInteger16 x0, y0, x1, y1;
 
     String defaultName;
@@ -607,12 +606,12 @@ private:
 public:
     State(const UnsignedInteger16 id) :
         id(id), colour(0, 0, 0), impassable(false), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(0), forceOwnershipLinkTo(0), manpower(0), name(""), provinces(), resources(),
-        localSupplies(), buildingsMaxLevelFactor(), stateHistoriesArray(), pixels(), x0(UINT16_MAX), y0(UINT16_MAX), x1(0), y1(0), defaultName(""), nameEntries() {}
+        localSupplies(), buildingsMaxLevelFactor(), stateHistoriesArray(), x0(UINT16_MAX), y0(UINT16_MAX), x1(0), y1(0), defaultName(""), nameEntries() {}
     State(const UnsignedInteger16 id, const Boolean impassable, const UnsignedInteger16 stateCategoryId, const UnsignedInteger16 forceOwnershipLinkTo, const UnsignedInteger32 manpower, const String& name, 
         const Vector<UnsignedInteger16>& provinces, const Vector<UnsignedInteger16>& resources, const Decimal localSupplies, const Decimal buildingsMaxLevelFactor, const Vector<StateHistory>& stateHistoriesArray) :
         id(id), colour(0, 0, 0), impassable(impassable), multipleStrategicRegions(false), strategicRegionId(0), stateCategoryId(stateCategoryId), forceOwnershipLinkTo(forceOwnershipLinkTo), manpower(manpower), name(name), 
-        provinces(provinces), resources(resources), localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray), pixels(), x0(UINT16_MAX), y0(UINT16_MAX),
-        x1(0), y1(0), defaultName(""), nameEntries() {}
+        provinces(provinces), resources(resources), localSupplies(localSupplies), buildingsMaxLevelFactor(buildingsMaxLevelFactor), stateHistoriesArray(stateHistoriesArray), x0(UINT16_MAX), y0(UINT16_MAX), x1(0), y1(0),
+        defaultName(""), nameEntries() {}
 
 
     String GetName();
@@ -632,14 +631,12 @@ public:
     UnsignedInteger16 GetMultipleStrategicRegions();
     const UnsignedInteger16 GetMultipleStrategicRegions() const;
 
-    Vector<UnsignedInteger16>& GetProvinces();
+    void AddProvince(const UnsignedInteger16 provinceId);
+    void RemoveProvince(const UnsignedInteger16 provinceId);
     const Vector<UnsignedInteger16>& GetProvinces() const;
+    Vector<UnsignedInteger16>& GetProvinces();
 
-    const Vector<Pixel>& GetPixels() const;
-    Vector<Pixel>& GetPixels();
-    void AddPixel(const Pixel& pixel);
-    void EmplacePixel(const UnsignedInteger32 index, const UnsignedInteger16 x, const UnsignedInteger16 y, const UnsignedInteger8 height, const UnsignedInteger8 terrainIndex);
-    void UpdateBoundingBox();
+    void UpdateBoundingBox(const Vector<Province>& provincesArray);
     Boolean BoundingBoxHasBeenUpdated();
     const Boolean BoundingBoxHasBeenUpdated() const;
     UnsignedInteger16 GetX0();
@@ -694,8 +691,15 @@ public:
     UnsignedInteger16 GetNavalTerrainIndex();
     const UnsignedInteger16 GetNavalTerrainIndex() const;
 
+	void AddProvince(const UnsignedInteger16 provinceId);
+	void RemoveProvince(const UnsignedInteger16 provinceId);
     const Vector<UnsignedInteger16>& GetProvinces() const;
     Vector<UnsignedInteger16>& GetProvinces();
+
+	void AddState(const UnsignedInteger16 stateId);
+	void RemoveState(const UnsignedInteger16 stateId);
+    const Vector<UnsignedInteger16>& GetStates() const;
+    Vector<UnsignedInteger16>& GetStates();
 };
 
 //Custom data type that allows indexing by index or name/tag

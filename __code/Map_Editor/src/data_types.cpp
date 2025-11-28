@@ -543,14 +543,14 @@ void Province::UpdateBoundingBox() {
     }
 }
 Boolean Province::BoundingBoxHasBeenUpdated() {
-    if (x0 ==UINT16_MAX && y0 ==UINT16_MAX && x1 ==0 && y1 == 0) return false;
+    if (x0 != UINT16_MAX || y0 != UINT16_MAX || x1 != 0 || y1 != 0) return true;
 
-    return true;
+    return false;
 }
 const Boolean Province::BoundingBoxHasBeenUpdated() const {
-    if (x0 ==UINT16_MAX && y0 ==UINT16_MAX && x1 ==0 && y1 == 0) return false;
+    if (x0 != UINT16_MAX || y0 != UINT16_MAX || x1 != 0 || y1 != 0) return true;
 
-    return true;
+    return false;
 }
 UnsignedInteger16 Province::GetX0() { return x0; }
 const UnsignedInteger16 Province::GetX0() const { return x0; }
@@ -584,33 +584,33 @@ const UnsignedInteger16 State::GetStrategicRegionId() const { return strategicRe
 void State::SetMultipleStrategicRegions(const Boolean in) { multipleStrategicRegions = in; }
 UnsignedInteger16 State::GetMultipleStrategicRegions() { return multipleStrategicRegions; }
 const UnsignedInteger16 State::GetMultipleStrategicRegions() const { return multipleStrategicRegions; }
+
+void State::AddProvince(const UnsignedInteger16 provinceId) { provinces.push_back(provinceId); }
+void State::RemoveProvince(const UnsignedInteger16 provinceId) {
+    auto it = std::find(provinces.begin(), provinces.end(), provinceId);
+    if (it != provinces.end()) { provinces.erase(it); }
+}
 const Vector<UnsignedInteger16>& State::GetProvinces() const { return provinces; }
 Vector<UnsignedInteger16>& State::GetProvinces() { return provinces; }
 
-const Vector<Pixel>& State::GetPixels() const { return pixels; }
-Vector<Pixel>& State::GetPixels() { return pixels; }
-void State::AddPixel(const Pixel& pixel) { pixels.push_back(pixel); }
-void State::EmplacePixel(const UnsignedInteger32 index, const UnsignedInteger16 x, const UnsignedInteger16 y, const UnsignedInteger8 height, const UnsignedInteger8 terrainIndex) {
-    pixels.emplace_back(index, x, y, height, terrainIndex);
-}
-void State::UpdateBoundingBox() {
-    for (const auto& pixel : pixels) {
-        if (pixel.x < x0) x0 = pixel.x;
-        else if (pixel.x > x1) x1 = pixel.x;
+void State::UpdateBoundingBox(const Vector<Province>& provincesArray) {
+    for (const auto& province : provincesArray) {
+        if (province.GetX0() < x0) x0 = province.GetX0();
+        else if (province.GetX1() > x1) x1 = province.GetX1();
 
-        if (pixel.y < y0) y0 = pixel.y;
-        else if (pixel.y > y1) y1 = pixel.y;
+        if (province.GetY0() < y0) y0 = province.GetY0();
+        else if (province.GetY1() > y1) y1 = province.GetY1();
     }
 }
 Boolean State::BoundingBoxHasBeenUpdated() {
-    if (x0 == UINT16_MAX && y0 == UINT16_MAX && x1 == 0 && y1 == 0) return false;
+    if (x0 != UINT16_MAX || y0 != UINT16_MAX || x1 != 0 || y1 != 0) return true;
 
-    return true;
+    return false;
 }
 const Boolean State::BoundingBoxHasBeenUpdated() const {
-    if (x0 == UINT16_MAX && y0 == UINT16_MAX && x1 == 0 && y1 == 0) return false;
+    if (x0 != UINT16_MAX || y0 != UINT16_MAX || x1 != 0 || y1 != 0) return true;
 
-    return true;
+    return false;
 }
 UnsignedInteger16 State::GetX0() { return x0; }
 const UnsignedInteger16 State::GetX0() const { return x0; }
@@ -633,5 +633,18 @@ const ColourRGB StrategicRegion::GetColour() const { return colour; }
 UnsignedInteger16 StrategicRegion::GetNavalTerrainIndex() { return navalTerrainIndex; }
 const UnsignedInteger16 StrategicRegion::GetNavalTerrainIndex() const { return navalTerrainIndex; }
 
+void StrategicRegion::AddProvince(const UnsignedInteger16 provinceId) { provinces.push_back(provinceId); }
+void StrategicRegion::RemoveProvince(const UnsignedInteger16 provinceId) {
+    auto it = std::find(provinces.begin(), provinces.end(), provinceId);
+    if (it != provinces.end()) { provinces.erase(it); }
+}
 const Vector<UnsignedInteger16>& StrategicRegion::GetProvinces() const { return provinces; }
 Vector<UnsignedInteger16>& StrategicRegion::GetProvinces() { return provinces; }
+
+void StrategicRegion::AddState(const UnsignedInteger16 stateId) { states.push_back(stateId); }
+void StrategicRegion::RemoveState(const UnsignedInteger16 stateId) {
+    auto it = std::find(states.begin(), states.end(), stateId);
+    if (it != states.end()) { states.erase(it); }
+}
+const Vector<UnsignedInteger16>& StrategicRegion::GetStates() const { return states; }
+Vector<UnsignedInteger16>& StrategicRegion::GetStates() { return states; }

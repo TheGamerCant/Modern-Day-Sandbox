@@ -245,8 +245,7 @@ int main()
 
 
         if (mouseHasMoved) {
-            if (CheckCollisionPointRec(Vector2(mouseX, mouseY), mapBoundingBox)) { mouseWithinMapNow = true; }
-            else mouseWithinMapNow = false;
+            mouseWithinMapNow = CheckCollisionPointRec(Vector2(mouseX, mouseY), mapBoundingBox);
         }
 
         if (IsMouseButtonPressed(MOUSE_BUTTON_MIDDLE) && mouseWithinMapNow) mouseWithinMapStartingHold = true;
