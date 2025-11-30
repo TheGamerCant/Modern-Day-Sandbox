@@ -17,12 +17,6 @@
  SUBIDEOLOGY_GENERIC_democratic:0 "Democratic"
  SUBIDEOLOGY_GENERIC_democratic_desc:0 "Democratic systems of government seek stable and popular government through regular elections, rule of law and strong institutions, although in practice, the implementation of these ideals can be flawed or subverted, often in the name of democracy itself."
 
- IDEOLOGY_fundamentalist:0 "Fundamentalist"
- IDEOLOGY_fundamentalist_noun:0 "Fundamentalism"
- IDEOLOGY_fundamentalist_desc:0 "Theocratic Regime"
- SUBIDEOLOGY_GENERIC_fundamentalist:0 "Fundamentalist"
- SUBIDEOLOGY_GENERIC_fundamentalist_desc:0 "Fundamentalists believe in an extreme form of religious rule, almost always resorting to violence against supposed heretics and non-believers."
-
  IDEOLOGY_clandestine:0 "Clandestine"
  IDEOLOGY_clandestine_noun:0 "Clandestine Movement"
  IDEOLOGY_clandestine_desc:0 "No Government"

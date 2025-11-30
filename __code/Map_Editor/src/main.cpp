@@ -120,7 +120,9 @@ int main()
     std::cout << "Files took " << GetTimeElapsedFromStart(startTime) << " to load.\n\n\n";
 
 
-    
+    Boolean writeDefinitions = false;
+    Boolean writeStateHistories = false;
+    Boolean writeStrategicRegions = false;
 
     UnsignedInteger16 windowWidth = 1200;
     UnsignedInteger16 windowHeight = 720;
@@ -191,8 +193,8 @@ int main()
     const char* MouseIconsArray[operationCount] = {
         "#21#",
         "#22#",
-		"#220#",
-		"#29#"
+		"#222#",
+		"#221#"
 	};
     SignedInteger32 selectedOperation = Standard;
 
@@ -366,7 +368,7 @@ int main()
 
             if (mousePositionOnMapX != -1) {
                 //Draw lines over current pixel
-                DrawRectangleLinesEx(Rectangle(mousePositionOnMapX, mousePositionOnMapY, 1, 1), 1, Color(150, 150, 150, 127));
+                DrawRectangleLinesEx(Rectangle(mousePositionOnMapX, mousePositionOnMapY, 1, 1), 1, Color(197, 197, 197, 105));
             }
 
         EndMode2D();
@@ -382,10 +384,16 @@ int main()
         //Buttons/inputs
         if (GuiDropdownBox(mapModeDropdownBoxBounds, "(1) Provinces\n(2) Province Terrains\n(3) States\n(4) Heightmap", &currentMapMode, mapModeDropdownBoxState)) { mapModeDropdownBoxState = !mapModeDropdownBoxState; }
 
-        if (GuiButton(rightHandButtonsArray[0], "State-based province colours")) { SetProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray, provincesTexture); }
-        if (GuiButton(rightHandButtonsArray[1], "Random province colours")) { SetProvinceColoursToRandom(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray, provincesTexture); }
+        if (GuiButton(rightHandButtonsArray[0], "State-based province colours")) { 
+            SetProvinceColoursBasedOnStateColour(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray, provincesTexture);
+            writeDefinitions = true; 
+        }
+        if (GuiButton(rightHandButtonsArray[1], "Random province colours")) { 
+            SetProvinceColoursToRandom(provincesArray, provinceColoursToIdMap, provincesBitmap, statesArray, provincesTexture); 
+            writeDefinitions = true;
+        }
         
-        GuiToggleGroup(Rectangle(6, 40, 28, 28), "#21#\n#22#\n#220#\n#29#", &selectedOperation);
+        GuiToggleGroup(Rectangle(6, 40, 28, 28), "#21#\n#22#\n#222#\n#221#", &selectedOperation);
         
 		//Draw cursor, must be the last thing drawn
         GuiLabel(Rectangle(mouseX, mouseY, 16, 16), MouseIconsArray[selectedOperation]);
@@ -397,6 +405,27 @@ int main()
 
     if (std::filesystem::exists("out") && std::filesystem::is_directory("out")) { std::filesystem::remove_all("out"); }
     std::filesystem::create_directory("out");
+    std::filesystem::create_directory("out\\common");
+    std::filesystem::create_directory("out\\common\\scripted_effects");
+    std::filesystem::create_directory("out\\map");
+    std::filesystem::create_directory("out\\map\\strategicregions");
+    std::filesystem::create_directory("out\\history");
+    std::filesystem::create_directory("out\\history\\states");
+    std::filesystem::create_directory("out\\localisation");
+    std::filesystem::create_directory("out\\localisation\\english");
+
+    for (auto& state : statesArray) {
+        state.SortProvinces();
+    }
+    for (auto& strategicRegion : strategicRegionsArray) {
+        strategicRegion.SortProvinces();
+        strategicRegion.SortStates();
+    }
 
     WriteStateAndStrategicRegionColours(statesArray, strategicRegionsArray);
+    WriteNames(provincesArray, statesArray);
+
+    if (writeDefinitions) {
+        WriteProvinceDefinitions(provincesArray, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray);
+    }
 }

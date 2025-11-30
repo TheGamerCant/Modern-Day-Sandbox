@@ -187,9 +187,12 @@ void BitmapImage::FlipImage() {
         const SizeT iterations = imgHeight / 2;
 
         for (int y = 0; y < iterations; ++y) {
-            row1 = &rawData[rowIndexes[0] += imgWidth];
-            row2 = &rawData[rowIndexes[1] -= imgWidth];
+            row1 = &rawData[rowIndexes[0]];
+            row2 = &rawData[rowIndexes[1]];
             std::swap_ranges(row1, row1 + imgWidth, row2);
+
+			rowIndexes[0] += imgWidth;
+			rowIndexes[1] -= imgWidth;
         }
     }
 
@@ -198,9 +201,12 @@ void BitmapImage::FlipImage() {
     const SizeT iterations = imgHeight / 2;
 
     for (int y = 0; y < iterations; ++y) {
-        row1 = &imgData[rowIndexes[0] += rowSize];
-        row2 = &imgData[rowIndexes[1] -= rowSize];
+        row1 = &imgData[rowIndexes[0]];
+        row2 = &imgData[rowIndexes[1]];
         std::swap_ranges(row1, row1 + rowSize, row2);
+
+        rowIndexes[0] += rowSize;
+        rowIndexes[1] -= rowSize;
     }
 }
 

@@ -1,3 +1,13 @@
+###  DOCUMENTATION  ###
+
+#TAG_using_russian_names
+#TAG_using_ukrainian_names
+#TAG_using_german_names
+#TAG_using_polish_names
+#TAG_using_italian_names
+
+#UKR_decommunisation_2016_flag
+
 1 = {
 	default = "Corsica"
 }
@@ -7,11 +17,24 @@
 3 = {
 	default = "Zürich"
 }
+#Niederösterreich-Oberösterreich-Steinermark
 4 = {
-	default = "Niederösterreich-Oberösterreich-Steinermark"
+	default = "Eastern Austria"
+	entry = {
+        name = "Ostösterreich"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 5 = {
-	default = "Warmińsko-Mazurskie"
+	default = "Warmia-Masuria"
+	entry = {
+	    name = "Warmińsko-Mazurskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 6 = {
 	default = "Flanders"
@@ -26,7 +49,13 @@
 	default = "Bohemia"
 }
 10 = {
-	default = "Mazowieckie Południowe"
+	default = "South Masovia"
+	entry = {
+        name = "Mazowieckie Południowe"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 11 = {
 	default = "Dzūkija"
@@ -113,7 +142,19 @@
 	default = "Gävleborg"
 }
 39 = {
-	default = "Bolzano"
+	default = "South Tyrol"
+	entry = {
+        name = "Alto Adige"
+        requirements = {
+            "TAG_using_italian_names = yes"
+        }
+    }
+	entry = {
+        name = "Südtirol"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 40 = {
 	default = "Altai Krai"
@@ -149,10 +190,22 @@
 	default = "Baden-Württemberg"
 }
 51 = {
-	default = "Nordrhein-Westfalen"
+	default = "North Rhein-Westphalia"
+	entry = {
+        name = "Nordrhein-Westfalen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 52 = {
 	default = "Bavaria"
+	entry = {
+        name = "Bayern"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 53 = {
 	default = "Sachsen-Anhalt"
@@ -161,10 +214,22 @@
 	default = "Aysén"
 }
 55 = {
-	default = "Hessen"
+	default = "Hesse"
+	entry = {
+        name = "Hessen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 56 = {
-	default = "Niedersachsen"
+	default = "Lower Saxony"
+	entry = {
+        name = "Niedersachsen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 57 = {
 	default = "Idehan Ubari"
@@ -176,7 +241,13 @@
 	default = "Tacna-Moquegua"
 }
 60 = {
-	default = "Thüringen"
+	default = "Thuringia"
+	entry = {
+        name = "Thüringen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 61 = {
 	default = "Mecklenburg-Vorpommern"
@@ -185,22 +256,52 @@
 	default = "Eastern Srpska"
 }
 63 = {
-	default = "Zachodniopomorskie"
+	default = "West Pomerania"
+	entry = {
+        name = "Zachodniopomorskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 64 = {
 	default = "Brandenburg"
 }
 65 = {
-	default = "Sachsen"
+	default = "Saxony"
+	entry = {
+        name = "Sachsen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 66 = {
-	default = "Dolnośląskie"
+	default = "Lower Silesia"
+	entry = {
+        name = "Dolnośląskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 67 = {
-	default = "Opolskie"
+	default = "Opole"
+	entry = {
+        name = "Opolskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 68 = {
-	default = "Lubuskie"
+	default = "Lubusz"
+	entry = {
+        name = "Lubuskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 69 = {
 	default = "Pernambuco"
@@ -212,10 +313,22 @@
 	default = "Eastern Slovakia"
 }
 72 = {
-	default = "Podkarpackie"
+	default = "Subcarpathia"
+	entry = {
+        name = "Podkarpackie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 73 = {
 	default = "Zakarpattia"
+	entry = { 
+        name = "Zakarpat'ye"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 74 = {
 	default = "Ceará"
@@ -237,6 +350,12 @@
 }
 80 = {
 	default = "Chernivtsi"
+	entry = { 
+        name = "Chernovtsy"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 81 = {
 	default = "Oltenia"
@@ -251,31 +370,97 @@
 	default = "Transylvania"
 }
 85 = {
-	default = "Pomorskie"
+	default = "Pomerania"
+	entry = {
+        name = "Pomorskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 86 = {
-	default = "Wielkopolskie"
+	default = "Greater Poland"
+	entry = {
+        name = "Wielkopolskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 87 = {
-	default = "Łódzkie"
+	default = "Łódź"
+	entry = {
+        name = "Łódzkie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 88 = {
-	default = "Małopolskie"
+	default = "Lesser Poland"
+	entry = {
+        name = "Małopolskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 89 = {
 	default = "East Galicia"
+	entry = { 
+        name = "Skhidna Halychyna"
+        requirements = {
+            "TAG_using_ukrainian_names = yes"
+        }
+    }
+	entry = {
+        name = "Vostochnaya Galitsiya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+	entry = {
+        name = "Galicja Wschodnia"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 90 = {
-	default = "Świętokrzyskie"
+	default = "Holy Cross"
+	entry = {
+        name = "Świętokrzyskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 91 = {
 	default = "New Hampshire"
 }
 92 = {
-	default = "Lubelskie"
+	default = "Lublin"
+	entry = {
+        name = "Lubelskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 93 = {
 	default = "Volhynia"
+	entry = { 
+        name = "Volyn'"
+        requirements = {
+            "OR = { TAG_using_ukrainian_names = yes TAG_using_russian_names = yes }"
+        }
+    }
+	entry = {
+        name = "Wołyń"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 94 = {
 	default = "Brest"
@@ -285,12 +470,24 @@
 }
 96 = {
 	default = "Vatican City"
+	entry = {
+        name = "Città del Vaticano"
+        requirements = {
+            "TAG_using_italian_names = yes"
+        }
+    }
 }
 97 = {
 	default = "Podlaskie"
 }
 98 = {
-	default = "Mazowieckie Północne"
+	default = "North Masovia"
+	entry = {
+        name = "Mazowieckie Północne"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 99 = {
 	default = "Jutland"
@@ -339,15 +536,28 @@
 }
 114 = {
 	default = "Sardinia"
+	entry = {
+        name = "Sardegna"
+        requirements = {
+            "TAG_using_italian_names = yes"
+        }
+    }
 }
 115 = {
 	default = "Sicily"
+	entry = {
+        name = "Sicilia"
+        requirements = {
+            "TAG_using_italian_names = yes"
+        }
+    }
 }
 116 = {
 	default = "Malta"
 }
 117 = {
 	default = "Campania and Basilicata"
+	
 }
 118 = {
 	default = "Gibraltar"
@@ -408,6 +618,12 @@
 }
 137 = {
 	default = "Crimea"
+	entry = { 
+        name = "Krym"
+        requirements = {
+            "OR = { TAG_using_ukrainian_names = yes TAG_using_russian_names = yes }"
+        }
+    }
 }
 138 = {
 	default = "Skåne"
@@ -451,8 +667,15 @@
 151 = {
 	default = "Connecticut"
 }
+#Kärnten-Salzburg-Tirol
 152 = {
-	default = "Kärnten-Salzburg-Tirol"
+	default = "Western Austria"
+	entry = {
+        name = "Westösterreich"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 153 = {
 	default = "Vladimir"
@@ -468,12 +691,30 @@
 }
 157 = {
 	default = "Adriatic Italy"
+	entry = {
+        name = "Italia Adriatica"
+        requirements = {
+            "TAG_using_italian_names = yes"
+        }
+    }
 }
 158 = {
-	default = "Piedmonte and Liguria"
+	default = "Piedmont-Liguria"
+	entry = {
+        name = "Piemonte-Liguria"
+        requirements = {
+            "TAG_using_italian_names = yes"
+        }
+    }
 }
 159 = {
 	default = "Lombardy"
+	entry = {
+        name = "Lombardia"
+        requirements = {
+            "TAG_using_italian_names = yes"
+        }
+    }
 }
 160 = {
 	default = "Veneto"
@@ -483,6 +724,12 @@
 }
 162 = {
 	default = "Tuscany"
+	entry = {
+        name = "Tuscana"
+        requirements = {
+            "TAG_using_italian_names = yes"
+        }
+    }
 }
 163 = {
 	default = "Kaiser-Wilhelmsland"
@@ -573,9 +820,21 @@
 }
 192 = {
 	default = "Odesa"
+	entry = { 
+        name = "Odessa"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 193 = {
 	default = "Chernihiv"
+	entry = { 
+        name = "Chernigov"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 194 = {
 	default = "Homel"
@@ -584,28 +843,82 @@
 	default = "Gorod Sankt-Peterburg"
 }
 196 = {
-	default = "Tavriya"
+	default = "Tauriya"
+	entry = { 
+        name = "Tavriysʹkyy"
+        requirements = {
+            "TAG_using_ukrainian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Tavriya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 197 = {
 	default = "Mykolaiv"
+	entry = { 
+        name = "Mykolayiv"
+        requirements = {
+			"TAG_using_ukrainian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Nikolayev"
+        requirements = {
+			"TAG_using_russian_names = yes"
+        }
+    }
 }
 198 = {
 	default = "Vinnytsia"
 }
 199 = {
 	default = "Khmelnytskyi"
+	entry = { 
+        name = "Khmel'nyts'kyy"
+        requirements = {
+            "TAG_using_ukrainian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Khmel'nytskiy"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 200 = {
 	default = "Zaporizhzhia"
+	entry = { 
+        name = "Zaporozh'ye"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 201 = {
 	default = "Zhytomyr"
 }
 202 = {
 	default = "Kyiv"
+	entry = { 
+        name = "Kiev"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 203 = {
 	default = "Naddniprianshchyna"
+	entry = { 
+        name = "Pridneprov'ye"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 204 = {
 	default = "San Marino"
@@ -660,6 +973,12 @@
 }
 221 = {
 	default = "Kharkiv"
+	entry = { 
+        name = "Khar'kov"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 222 = {
 	default = "Oryol"
@@ -678,9 +997,27 @@
 }
 227 = {
 	default = "Donetsk"
+	entry = { 
+        name = "Donets'k"
+        requirements = {
+            "TAG_using_ukrainian_names = yes"
+        }
+    }
 }
 228 = {
 	default = "Luhansk"
+	entry = { 
+        name = "Luhans'k"
+        requirements = {
+            "TAG_using_ukrainian_names = yes"
+        }
+    }
+	entry = {
+        name = "Lugansk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 229 = {
 	default = "Azerbaijan"
@@ -2294,7 +2631,13 @@
 	default = "Qatar"
 }
 766 = {
-	default = "Budzhak"
+	default = "Budjak"
+	entry = { 
+        name = "Budzhak"
+        requirements = {
+            "OR = { TAG_using_ukrainian_names = yes TAG_using_russian_names = yes }"
+        }
+    }
 }
 767 = {
 	default = "North Darfur"
@@ -2417,13 +2760,31 @@
 	default = "Paraná"
 }
 807 = {
-	default = "Kujawsko-Pomorskie"
+	default = "Kuyavia-Pomerania"
+	entry = {
+	    name = "Kujawsko-Pomorskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 808 = {
 	default = "Vermont"
 }
 809 = {
 	default = "Port of Sevastopol"
+	entry = { 
+        name = "Sevastopolʹsʹkyy port"
+        requirements = {
+            "TAG_using_ukrainian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Sevastopol'skiy port"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 810 = {
 	default = "Latgale"
@@ -2543,10 +2904,22 @@
 	default = "Vorarlberg"
 }
 849 = {
-	default = "Puglia"
+	default = "Apulia"
+	entry = {
+        name = "Puglia"
+        requirements = {
+            "TAG_using_italian_names = yes"
+        }
+    }
 }
 850 = {
 	default = "Trentino"
+	entry = {
+        name = "Trient"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 851 = {
 	default = "Monaco"

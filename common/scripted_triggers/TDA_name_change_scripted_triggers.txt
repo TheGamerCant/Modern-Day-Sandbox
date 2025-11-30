@@ -1,0 +1,77 @@
+TAG_using_russian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = SOV
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = SOV
+	}
+}
+
+TAG_using_ukrainian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = UKR
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = UKR
+	}
+}
+
+TAG_using_german_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = GER
+				original_tag = ASA
+				original_tag = LTN
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = GER
+		is_puppet_of = ASA
+		is_puppet_of = LTN
+	}
+}
+
+TAG_using_polish_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = POL
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = POL
+	}
+}
+
+TAG_using_italian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = ITA
+				original_tag = SNM
+				original_tag = VCY
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = ITA
+		is_puppet_of = SNM
+		is_puppet_of = VCY
+	}
+}

@@ -104,39 +104,6 @@ ideologies = {
 			airforce_intel_to_others = 20.0
 		}
 	}
-	
-	IDEOLOGY_fundamentalist = {
-		types = {
-			SUBIDEOLOGY_GENERIC_fundamentalist={}
-		}
-
-		dynamic_faction_names = {
-			"FACTION_NAME_FUNDAMENTALIST_1"
-			"FACTION_NAME_FUNDAMENTALIST_2"
-			"FACTION_NAME_FUNDAMENTALIST_3"
-			"FACTION_NAME_FUNDAMENTALIST_4"
-		}
-		color = { 255 145 0 }
-
-		rules = {
-			can_create_collaboration_government = yes
-			can_send_volunteers = yes
-		}
-
-		can_host_government_in_exile = yes
-
-		war_impact_on_world_tension = 1.0
-		faction_impact_on_world_tension = 1.0
-
-		modifiers = {	
-			generate_wargoal_tension = 0.00
-			guarantee_tension = 0.00
-			civilian_intel_to_others = 5.0
-			army_intel_to_others = 5.0
-			navy_intel_to_others = 5.0
-			airforce_intel_to_others = 5.0
-		}
-	}
 
 	IDEOLOGY_clandestine = {
 		types = {

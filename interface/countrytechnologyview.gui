@@ -46,7 +46,7 @@ guiTypes = {
 
 		background = {
 			name = "Background"		
-			quadTextureSprite ="GFX_TDA_tiled_window_thin_border"
+			quadTextureSprite ="GFX_TDA_tiled_window_thin_border_grey"
 		}
 
 #		iconType ={

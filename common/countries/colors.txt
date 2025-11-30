@@ -312,3 +312,15 @@ LYB = {
 	color = rgb { 0 133 66 }
 	color_ui = rgb { 0 133 66 }
 }
+MON = {
+	color = rgb { 151 36 104 }
+	color_ui = rgb { 151 36 104 }
+}
+DPK = {
+	color = rgb { 171 21 28 }
+	color_ui = rgb { 171 21 28 }
+}
+ROK = {
+	color = rgb { 81 132 209 }
+	color_ui = rgb { 81 132 209 }
+}

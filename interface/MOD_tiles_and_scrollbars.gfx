@@ -1,37 +1,53 @@
 spriteTypes = {
 	corneredTileSpriteType = {
-		name = "GFX_TDA_tiled_window_2b_border"
+		name = "GFX_TDA_tiled_window_2b_border_blue"
 		size= { x=1000 y=1000 }
-		textureFile = "gfx//interface//tiles//TDA_tiled_window_2b_border.dds"
+		textureFile = "gfx//interface//tiles//TDA_tiled_window_2b_border_blue.dds"
 		borderSize = { x=35 y=35 }
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}	
 	corneredTileSpriteType = {
-		name = "GFX_TDA_tiled_window_thick_border"
+		name = "GFX_TDA_tiled_window_thick_border_blue"
 		size= { x=1000 y=1000 }
-		textureFile = "gfx//interface//tiles//TDA_tiled_window_thick_border.dds"
+		textureFile = "gfx//interface//tiles//TDA_tiled_window_thick_border_blue.dds"
 		borderSize = { x=24 y=24 }
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}	
 	corneredTileSpriteType = {
-		name = "GFX_TDA_tiled_window_thin_border"
+		name = "GFX_TDA_tiled_window_thin_border_blue"
 		size= { x=1000 y=1000 }
-		textureFile = "gfx//interface//tiles//TDA_tiled_window_thin_border.dds"
+		textureFile = "gfx//interface//tiles//TDA_tiled_window_thin_border_blue.dds"
 		borderSize = { x=16 y=16 }
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}		
 	corneredTileSpriteType = {
-		name = "GFX_TDA_tiled_window_r_border"
+		name = "GFX_TDA_tiled_window_r_border_blue"
 		size= { x=1000 y=1000 }
-		textureFile = "gfx//interface//tiles//TDA_tiled_window_r_border.dds"
+		textureFile = "gfx//interface//tiles//TDA_tiled_window_r_border_blue.dds"
 		borderSize = { x=28 y=28 }
 		tilingCenter = yes
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}	
-	
+
+	corneredTileSpriteType = {
+		name = "GFX_TDA_tiled_window_thick_border_grey"
+		size= { x=1000 y=1000 }
+		textureFile = "gfx//interface//tiles//TDA_tiled_window_thick_border_grey.dds"
+		borderSize = { x=24 y=24 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}	
+	corneredTileSpriteType = {
+		name = "GFX_TDA_tiled_window_thin_border_grey"
+		size= { x=1000 y=1000 }
+		textureFile = "gfx//interface//tiles//TDA_tiled_window_thin_border_grey.dds"
+		borderSize = { x=16 y=16 }
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}	
 	
 	spriteType = {
 		name = "GFX_scroll_button_empty_17x17"

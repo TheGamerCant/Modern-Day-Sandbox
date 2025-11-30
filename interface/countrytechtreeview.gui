@@ -50,7 +50,7 @@ guiTypes = {
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_TDA_tiled_window_thick_border"
+				quadTextureSprite ="GFX_TDA_tiled_window_thick_border_grey"
 			}
 			
 			
@@ -495,7 +495,7 @@ guiTypes = {
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_TDA_tiled_window_thick_border"
+				quadTextureSprite ="GFX_TDA_tiled_window_thick_border_grey"
 			}
 
 			gridboxtype = {
@@ -517,7 +517,7 @@ guiTypes = {
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_TDA_tiled_window_thick_border"
+				quadTextureSprite ="GFX_TDA_tiled_window_thick_border_grey"
 			}
 			
 			instantTextBoxType = {
@@ -840,7 +840,7 @@ guiTypes = {
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_TDA_tiled_window_thick_border"
+				quadTextureSprite ="GFX_TDA_tiled_window_thick_border_grey"
 			}
 			
 			instantTextBoxType = {
@@ -1163,7 +1163,7 @@ guiTypes = {
 
 			background = {
 				name = "Background"
-				quadTextureSprite ="GFX_TDA_tiled_window_thick_border"
+				quadTextureSprite ="GFX_TDA_tiled_window_thick_border_grey"
 			}
 			
 			instantTextBoxType = {

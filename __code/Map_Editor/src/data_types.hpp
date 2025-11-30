@@ -538,6 +538,11 @@ public:
     const UnsignedInteger16 GetStrategicRegionId() const;
     void SetStrategicRegionId(const UnsignedInteger16 idIn);
 
+	Boolean GetCoastal();
+	const Boolean GetCoastal() const;
+	UnsignedInteger16 GetContinent();
+	const UnsignedInteger16 GetContinent() const;
+
     ProvinceType GetProvinceType();
     const ProvinceType GetProvinceType() const;
 	UnsignedInteger16 GetTerrain();
@@ -565,6 +570,8 @@ public:
     Vector<ChangeableName>& GetNameEntries();
     const Vector<ChangeableName>& GetNameEntries() const;
 	void SetNameEntries(const Vector<ChangeableName>& entries);
+    SizeT GetChangeableNameCount();
+    const SizeT GetChangeableNameCount() const;
 };
 
 struct StateHistory {
@@ -635,6 +642,7 @@ public:
     void RemoveProvince(const UnsignedInteger16 provinceId);
     const Vector<UnsignedInteger16>& GetProvinces() const;
     Vector<UnsignedInteger16>& GetProvinces();
+    void SortProvinces();
 
     void UpdateBoundingBox(const Vector<Province>& provincesArray);
     Boolean BoundingBoxHasBeenUpdated();
@@ -654,6 +662,8 @@ public:
     Vector<ChangeableName>& GetNameEntries();
     const Vector<ChangeableName>& GetNameEntries() const;
     void SetNameEntries(const Vector<ChangeableName>& entries);
+	SizeT GetChangeableNameCount();
+	const SizeT GetChangeableNameCount() const;
 };
 
 struct WeatherPeriod {
@@ -702,11 +712,13 @@ public:
 	void RemoveProvince(const UnsignedInteger16 provinceId);
     const Vector<UnsignedInteger16>& GetProvinces() const;
     Vector<UnsignedInteger16>& GetProvinces();
+    void SortProvinces();
 
 	void AddState(const UnsignedInteger16 stateId);
 	void RemoveState(const UnsignedInteger16 stateId);
     const Vector<UnsignedInteger16>& GetStates() const;
     Vector<UnsignedInteger16>& GetStates();
+    void SortStates();
 };
 
 //Custom data type that allows indexing by index or name/tag

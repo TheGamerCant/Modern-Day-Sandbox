@@ -1,0 +1,60 @@
+on_actions = {
+	#Update all states monthly
+	on_monthly_ZZZ = {
+		effect = {
+			if = {
+				limit = { has_global_flag = TDA_city_name_changes_active_flag }
+				TDA_change_all_city_names = yes
+			}
+		}
+	}
+	on_startup  = {
+		effect = {
+			set_global_flag = TDA_city_name_changes_active_flag
+			ZZZ = { country_event = tda_startup_events.1 }
+		}
+	}
+	
+	#Update a state upon change, update all neighbour states to reduce the chance of stragglers
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = { has_global_flag = TDA_city_name_changes_active_flag }
+				FROM.FROM = {
+					meta_effect = {
+						text = {
+							TDA_update_state_[STATE_TO_BE_UPDATED_ID]_names = yes
+						}
+						STATE_TO_BE_UPDATED_ID = "[THIS.GetID]"
+					}
+					
+					every_neighbor_state = {
+						meta_effect = {
+							text = {
+								TDA_update_state_[STATE_TO_BE_UPDATED_ID]_names = yes
+							}
+							STATE_TO_BE_UPDATED_ID = "[THIS.GetID]"
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	#Triggers whenever a nation changes gov or gets puppeted
+	on_ruling_party_change = {
+		effect = {
+			if = {
+				limit = { has_global_flag = TDA_city_name_changes_active_flag }
+				every_controlled_state = {
+					meta_effect = {
+						text = {
+							TDA_update_state_[STATE_TO_BE_UPDATED_ID]_names = yes
+						}
+						STATE_TO_BE_UPDATED_ID = "[THIS.GetID]"
+					}
+				}
+			}
+		}
+	}
+}

@@ -210,3 +210,15 @@
  LYB:0 "Libya"                                  
  LYB_DEF:0 " the Great Socialist People's Libyan Arab Jamahiriya"                                  
  LYB_ADJ:0 "Libyan"
+
+ MON:0 "Mongolia"                                  
+ MON_DEF:0 "Mongolia"                                  
+ MON_ADJ:0 "Mongolian"
+
+ DPK:0 "North Korea"                                  
+ DPK_DEF:0 "the Democratic People's Republic of Korea"                                  
+ DPK_ADJ:0 "North Korean"
+
+ ROK:0 "South Korea"                                  
+ ROK_DEF:0 "the Republic of Korea"                                  
+ ROK_ADJ:0 "South Korean"

@@ -1,0 +1,17 @@
+﻿###########################
+# Startup events
+###########################
+
+add_namespace = tda_startup_events
+
+#
+country_event = {
+	id = tda_startup_events.1
+
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+		TDA_change_all_city_names = yes
+	}
+}

@@ -254,10 +254,6 @@ peace_ai_desires = {
                 ROOT.FROM.FROM = { pc_is_forced_government_to = IDEOLOGY_democratic }
             }
             else_if = {
-                limit = { has_government = IDEOLOGY_fundamentalist }
-                ROOT.FROM.FROM = { pc_is_forced_government_to = IDEOLOGY_fundamentalist }
-            }
-            else_if = {
                 limit = { has_government = IDEOLOGY_clandestine }
                 ROOT.FROM.FROM = { pc_is_forced_government_to = IDEOLOGY_clandestine }
             }
@@ -399,10 +395,6 @@ peace_ai_desires = {
             else_if = {
                 limit = { has_government = IDEOLOGY_democratic }
                 ROOT.FROM.FROM = { pc_is_forced_government_to = IDEOLOGY_democratic }
-            }
-            else_if = {
-                limit = { has_government = IDEOLOGY_fundamentalist }
-                ROOT.FROM.FROM = { pc_is_forced_government_to = IDEOLOGY_fundamentalist }
             }
             else_if = {
                 limit = { has_government = IDEOLOGY_clandestine }
@@ -776,10 +768,6 @@ peace_ai_desires = {
             else_if = {
                 limit = { has_government = IDEOLOGY_democratic }
                 ROOT.FROM.FROM = { pc_is_forced_government_to = IDEOLOGY_democratic }
-            }
-            else_if = {
-                limit = { has_government = IDEOLOGY_fundamentalist }
-                ROOT.FROM.FROM = { pc_is_forced_government_to = IDEOLOGY_fundamentalist }
             }
             else_if = {
                 limit = { has_government = IDEOLOGY_clandestine }

@@ -522,6 +522,10 @@ void Province::SetStateId(const UnsignedInteger16 idIn) { stateId = idIn; }
 UnsignedInteger16 Province::GetStrategicRegionId() { return strategicRegionId; }
 const UnsignedInteger16 Province::GetStrategicRegionId() const { return strategicRegionId; }
 void Province::SetStrategicRegionId(const UnsignedInteger16 idIn) { strategicRegionId = idIn; }
+Boolean Province::GetCoastal() { return coastal; }
+const Boolean Province::GetCoastal() const { return coastal; }
+UnsignedInteger16 Province::GetContinent() { return continentId; }
+const UnsignedInteger16 Province::GetContinent() const { return continentId; }
 ProvinceType Province::GetProvinceType() { return type; }
 const ProvinceType Province::GetProvinceType() const { return type; }
 UnsignedInteger16 Province::GetTerrain() { return terrainId; }
@@ -567,7 +571,8 @@ void Province::SetDefaultName(const String& name) { defaultName = name; }
 Vector<ChangeableName>& Province::GetNameEntries() { return nameEntries; }
 const Vector<ChangeableName>& Province::GetNameEntries() const { return nameEntries; }
 void Province::SetNameEntries(const Vector<ChangeableName>& entries) { nameEntries = entries; }
-
+SizeT Province::GetChangeableNameCount() { return nameEntries.size(); }
+const SizeT Province::GetChangeableNameCount() const { return nameEntries.size(); }
 
 String State::GetName() { return name; }
 const String State::GetName() const { return name; }
@@ -592,6 +597,7 @@ void State::RemoveProvince(const UnsignedInteger16 provinceId) {
 }
 const Vector<UnsignedInteger16>& State::GetProvinces() const { return provinces; }
 Vector<UnsignedInteger16>& State::GetProvinces() { return provinces; }
+void State::SortProvinces() { std::sort(provinces.begin(), provinces.end()); }
 
 void State::UpdateBoundingBox(const Vector<Province>& provincesArray) {
     for (const auto& provinceId : provinces) {
@@ -629,7 +635,8 @@ void State::SetDefaultName(const String& name) { defaultName = name; }
 Vector<ChangeableName>& State::GetNameEntries() { return nameEntries; }
 const Vector<ChangeableName>& State::GetNameEntries() const { return nameEntries; }
 void State::SetNameEntries(const Vector<ChangeableName>& entries) { nameEntries = entries; }
-
+SizeT State::GetChangeableNameCount() { return nameEntries.size(); }
+const SizeT State::GetChangeableNameCount() const { return nameEntries.size(); }
 
 String StrategicRegion::GetName() { return name; }
 const String StrategicRegion::GetName() const { return name; }
@@ -649,6 +656,7 @@ void StrategicRegion::RemoveProvince(const UnsignedInteger16 provinceId) {
 }
 const Vector<UnsignedInteger16>& StrategicRegion::GetProvinces() const { return provinces; }
 Vector<UnsignedInteger16>& StrategicRegion::GetProvinces() { return provinces; }
+void StrategicRegion::SortProvinces() { std::sort(provinces.begin(), provinces.end()); }
 
 void StrategicRegion::AddState(const UnsignedInteger16 stateId) { states.push_back(stateId); }
 void StrategicRegion::RemoveState(const UnsignedInteger16 stateId) {
@@ -657,3 +665,4 @@ void StrategicRegion::RemoveState(const UnsignedInteger16 stateId) {
 }
 const Vector<UnsignedInteger16>& StrategicRegion::GetStates() const { return states; }
 Vector<UnsignedInteger16>& StrategicRegion::GetStates() { return states; }
+void StrategicRegion::SortStates() { std::sort(states.begin(), states.end()); }

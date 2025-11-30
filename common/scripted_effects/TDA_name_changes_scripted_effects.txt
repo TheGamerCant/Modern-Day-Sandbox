@@ -1,0 +1,6203 @@
+#Corsica
+TDA_update_state_1_names = {
+}
+
+#Lazio
+TDA_update_state_2_names = {
+	#Roma
+	if = {
+		limit = { any_country = { controls_province = 9904 TAG_using_italian_names = yes } }
+		set_province_name = { id = 9904 name = VICTORY_POINTS_9904_0 }
+	}
+	#Rome
+	else = {
+		reset_province_name = 9904
+	}
+	#Aeroporto Leonardo da Vinci
+	if = {
+		limit = { any_country = { controls_province = 14123 TAG_using_italian_names = yes } }
+		set_province_name = { id = 14123 name = VICTORY_POINTS_14123_0 }
+	}
+	#Leonardo da Vinci Airport
+	else = {
+		reset_province_name = 14123
+	}
+}
+
+#Zürich
+TDA_update_state_3_names = {
+}
+
+#Eastern Austria
+TDA_update_state_4_names = {
+	4 = {
+		#Ostösterreich
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_4_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Wien
+	if = {
+		limit = { any_country = { controls_province = 14440 TAG_using_german_names = yes } }
+		set_province_name = { id = 14440 name = VICTORY_POINTS_14440_0 }
+	}
+	#Vienna
+	else = {
+		reset_province_name = 14440
+	}
+	#Wien-Flughafen
+	if = {
+		limit = { any_country = { controls_province = 14443 TAG_using_german_names = yes } }
+		set_province_name = { id = 14443 name = VICTORY_POINTS_14443_0 }
+	}
+	#Vienna Airport
+	else = {
+		reset_province_name = 14443
+	}
+}
+
+#Warmia-Masuria
+TDA_update_state_5_names = {
+	5 = {
+		#Warmińsko-Mazurskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_5_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Flanders
+TDA_update_state_6_names = {
+}
+
+#Holland
+TDA_update_state_7_names = {
+}
+
+#Luxembourg
+TDA_update_state_8_names = {
+}
+
+#Bohemia
+TDA_update_state_9_names = {
+}
+
+#South Masovia
+TDA_update_state_10_names = {
+	10 = {
+		#Mazowieckie Południowe
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_10_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Warszawa
+	if = {
+		limit = { any_country = { controls_province = 3544 TAG_using_polish_names = yes } }
+		set_province_name = { id = 3544 name = VICTORY_POINTS_3544_0 }
+	}
+	#Warsaw
+	else = {
+		reset_province_name = 3544
+	}
+	#Lotnisko Chopina Warszawa
+	if = {
+		limit = { any_country = { controls_province = 13955 TAG_using_polish_names = yes } }
+		set_province_name = { id = 13955 name = VICTORY_POINTS_13955_0 }
+	}
+	#Warsaw Chopin Airport
+	else = {
+		reset_province_name = 13955
+	}
+}
+
+#Dzūkija
+TDA_update_state_11_names = {
+}
+
+#Vidzeme
+TDA_update_state_12_names = {
+}
+
+#Pärnu
+TDA_update_state_13_names = {
+}
+
+#Bretagne
+TDA_update_state_14_names = {
+}
+
+#Normandie
+TDA_update_state_15_names = {
+}
+
+#Île-de-France
+TDA_update_state_16_names = {
+}
+
+#Grand-Est
+TDA_update_state_17_names = {
+}
+
+#Uruguay
+TDA_update_state_18_names = {
+}
+
+#Nouvelle-Aquitaine
+TDA_update_state_19_names = {
+}
+
+#Auvergne-Rhône-Alpes
+TDA_update_state_20_names = {
+}
+
+#Provence-Alpes-Côte d'Azur
+TDA_update_state_21_names = {
+}
+
+#Occitanie
+TDA_update_state_22_names = {
+}
+
+#Espírito Santo
+TDA_update_state_23_names = {
+}
+
+#Centre-Val de Loire
+TDA_update_state_24_names = {
+}
+
+#San Juan y La Rioja
+TDA_update_state_25_names = {
+}
+
+#Pará
+TDA_update_state_26_names = {
+}
+
+#Bourgogne-Franche-Comté
+TDA_update_state_27_names = {
+}
+
+#Alsace-Lorraine
+TDA_update_state_28_names = {
+}
+
+#Pas-de-Calais
+TDA_update_state_29_names = {
+}
+
+#Pays de la Loire
+TDA_update_state_30_names = {
+}
+
+#Tocantins
+TDA_update_state_31_names = {
+}
+
+#Amapá
+TDA_update_state_32_names = {
+}
+
+#LNR
+TDA_update_state_33_names = {
+	#Alchevs'k
+	if = {
+		limit = { any_country = { controls_province = 6505 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 6505 name = VICTORY_POINTS_6505_0 }
+	}
+	#Alchevsk
+	else = {
+		reset_province_name = 6505
+	}
+	#Roven'ky
+	if = {
+		limit = { any_country = { controls_province = 9446 OR = { TAG_using_russian_names = yes TAG_using_ukrainian_names = yes } } }
+		set_province_name = { id = 9446 name = VICTORY_POINTS_9446_0 }
+	}
+	#Rovenky
+	else = {
+		reset_province_name = 9446
+	}
+	#Luhans'k
+	if = {
+		limit = { any_country = { controls_province = 13747 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13747 name = VICTORY_POINTS_13747_0 }
+	}
+	#Lugansk
+	else_if = {
+		limit = { any_country = { controls_province = 13747 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13747 name = VICTORY_POINTS_13747_1 }
+	}
+	#Luhansk
+	else = {
+		reset_province_name = 13747
+	}
+}
+
+#Wallonia
+TDA_update_state_34_names = {
+}
+
+#Brabant
+TDA_update_state_35_names = {
+}
+
+#Friesland
+TDA_update_state_36_names = {
+}
+
+#Sjaelland
+TDA_update_state_37_names = {
+}
+
+#Gävleborg
+TDA_update_state_38_names = {
+}
+
+#South Tyrol
+TDA_update_state_39_names = {
+	39 = {
+		#Alto Adige
+		if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_39_0
+		}
+		#Südtirol
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_39_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Bozen
+	if = {
+		limit = { any_country = { controls_province = 9630 TAG_using_german_names = yes } }
+		set_province_name = { id = 9630 name = VICTORY_POINTS_9630_0 }
+	}
+	#Bolzano
+	else = {
+		reset_province_name = 9630
+	}
+}
+
+#Altai Krai
+TDA_update_state_40_names = {
+}
+
+#Madrid
+TDA_update_state_41_names = {
+}
+
+#Rheinland-Pfalz
+TDA_update_state_42_names = {
+}
+
+#Northern Hungary
+TDA_update_state_43_names = {
+}
+
+#Albania
+TDA_update_state_44_names = {
+}
+
+#Vojvodina
+TDA_update_state_45_names = {
+}
+
+#Muntenia
+TDA_update_state_46_names = {
+}
+
+#Attica
+TDA_update_state_47_names = {
+}
+
+#Sofia
+TDA_update_state_48_names = {
+}
+
+#Ankara
+TDA_update_state_49_names = {
+}
+
+#Baden-Württemberg
+TDA_update_state_50_names = {
+}
+
+#North Rhein-Westphalia
+TDA_update_state_51_names = {
+	51 = {
+		#Nordrhein-Westfalen
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_51_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Köln
+	if = {
+		limit = { any_country = { controls_province = 13923 TAG_using_german_names = yes } }
+		set_province_name = { id = 13923 name = VICTORY_POINTS_13923_0 }
+	}
+	#Cologne
+	else = {
+		reset_province_name = 13923
+	}
+	#Flughafen Düsseldorf
+	if = {
+		limit = { any_country = { controls_province = 13929 TAG_using_german_names = yes } }
+		set_province_name = { id = 13929 name = VICTORY_POINTS_13929_0 }
+	}
+	#Düsseldorf
+	else = {
+		reset_province_name = 13929
+	}
+}
+
+#Bavaria
+TDA_update_state_52_names = {
+	52 = {
+		#Bayern
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_52_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Nürnberg
+	if = {
+		limit = { any_country = { controls_province = 11544 TAG_using_german_names = yes } }
+		set_province_name = { id = 11544 name = VICTORY_POINTS_11544_0 }
+	}
+	#Nuremburg
+	else = {
+		reset_province_name = 11544
+	}
+	#München
+	if = {
+		limit = { any_country = { controls_province = 13896 TAG_using_german_names = yes } }
+		set_province_name = { id = 13896 name = VICTORY_POINTS_13896_0 }
+	}
+	#Munich
+	else = {
+		reset_province_name = 13896
+	}
+	#München Flughafen
+	if = {
+		limit = { any_country = { controls_province = 13899 TAG_using_german_names = yes } }
+		set_province_name = { id = 13899 name = VICTORY_POINTS_13899_0 }
+	}
+	#Munich Airport
+	else = {
+		reset_province_name = 13899
+	}
+}
+
+#Sachsen-Anhalt
+TDA_update_state_53_names = {
+}
+
+#Aysén
+TDA_update_state_54_names = {
+}
+
+#Hesse
+TDA_update_state_55_names = {
+	55 = {
+		#Hessen
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_55_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Lower Saxony
+TDA_update_state_56_names = {
+	56 = {
+		#Niedersachsen
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_56_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Idehan Ubari
+TDA_update_state_57_names = {
+}
+
+#Holstein
+TDA_update_state_58_names = {
+}
+
+#Tacna-Moquegua
+TDA_update_state_59_names = {
+}
+
+#Thuringia
+TDA_update_state_60_names = {
+	60 = {
+		#Thüringen
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_60_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Mecklenburg-Vorpommern
+TDA_update_state_61_names = {
+}
+
+#Eastern Srpska
+TDA_update_state_62_names = {
+}
+
+#West Pomerania
+TDA_update_state_63_names = {
+	63 = {
+		#Zachodniopomorskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_63_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Brandenburg
+TDA_update_state_64_names = {
+}
+
+#Saxony
+TDA_update_state_65_names = {
+	65 = {
+		#Sachsen
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_65_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Lower Silesia
+TDA_update_state_66_names = {
+	66 = {
+		#Dolnośląskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_66_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Opole
+TDA_update_state_67_names = {
+	67 = {
+		#Opolskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_67_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Lubusz
+TDA_update_state_68_names = {
+	68 = {
+		#Lubuskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_68_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Pernambuco
+TDA_update_state_69_names = {
+}
+
+#Western Slovakia
+TDA_update_state_70_names = {
+}
+
+#Eastern Slovakia
+TDA_update_state_71_names = {
+}
+
+#Subcarpathia
+TDA_update_state_72_names = {
+	72 = {
+		#Podkarpackie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_72_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Zakarpattia
+TDA_update_state_73_names = {
+	73 = {
+		#Zakarpat'ye
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_73_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Uzhgorod
+	if = {
+		limit = { any_country = { controls_province = 11691 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11691 name = VICTORY_POINTS_11691_0 }
+	}
+	#Uzhorod
+	else = {
+		reset_province_name = 11691
+	}
+}
+
+#Ceará
+TDA_update_state_74_names = {
+}
+
+#Moravia
+TDA_update_state_75_names = {
+}
+
+#North Transylvania
+TDA_update_state_76_names = {
+}
+
+#Dobrudja
+TDA_update_state_77_names = {
+}
+
+#Bessarabia
+TDA_update_state_78_names = {
+}
+
+#Moldova
+TDA_update_state_79_names = {
+}
+
+#Chernivtsi
+TDA_update_state_80_names = {
+	80 = {
+		#Chernovtsy
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_80_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Chernovtsy
+	if = {
+		limit = { any_country = { controls_province = 577 TAG_using_russian_names = yes } }
+		set_province_name = { id = 577 name = VICTORY_POINTS_577_0 }
+	}
+	#Chernivtsi
+	else = {
+		reset_province_name = 577
+	}
+	#Storozhynets'
+	if = {
+		limit = { any_country = { controls_province = 9548 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 9548 name = VICTORY_POINTS_9548_0 }
+	}
+	#Storozhinets
+	else_if = {
+		limit = { any_country = { controls_province = 9548 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9548 name = VICTORY_POINTS_9548_1 }
+	}
+	#Storozhynets
+	else = {
+		reset_province_name = 9548
+	}
+}
+
+#Oltenia
+TDA_update_state_81_names = {
+}
+
+#Banat
+TDA_update_state_82_names = {
+}
+
+#Crisana
+TDA_update_state_83_names = {
+}
+
+#Transylvania
+TDA_update_state_84_names = {
+}
+
+#Pomerania
+TDA_update_state_85_names = {
+	85 = {
+		#Pomorskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_85_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Lotnisko im. Lecha Wałęsy
+	if = {
+		limit = { any_country = { controls_province = 13939 TAG_using_polish_names = yes } }
+		set_province_name = { id = 13939 name = VICTORY_POINTS_13939_0 }
+	}
+	#Lech Wałęsa Airport
+	else = {
+		reset_province_name = 13939
+	}
+}
+
+#Greater Poland
+TDA_update_state_86_names = {
+	86 = {
+		#Wielkopolskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_86_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Łódź
+TDA_update_state_87_names = {
+	87 = {
+		#Łódzkie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_87_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Lesser Poland
+TDA_update_state_88_names = {
+	88 = {
+		#Małopolskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_88_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Lotnisko Jana Pawła II
+	if = {
+		limit = { any_country = { controls_province = 13986 TAG_using_polish_names = yes } }
+		set_province_name = { id = 13986 name = VICTORY_POINTS_13986_0 }
+	}
+	#John Paul II Airport
+	else = {
+		reset_province_name = 13986
+	}
+}
+
+#East Galicia
+TDA_update_state_89_names = {
+	89 = {
+		#Skhidna Halychyna
+		if = {
+			limit = { CONTROLLER = { TAG_using_ukrainian_names = yes } }
+			set_state_name = STATE_89_0
+		}
+		#Vostochnaya Galitsiya
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_89_1
+		}
+		#Galicja Wschodnia
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_89_2
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Sheptyts'kyy
+	if = {
+		limit = { any_country = { controls_province = 536 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 536 name = VICTORY_POINTS_536_0 }
+	}
+	#Sheptitskiy
+	else_if = {
+		limit = { any_country = { controls_province = 536 TAG_using_russian_names = yes } }
+		set_province_name = { id = 536 name = VICTORY_POINTS_536_1 }
+	}
+	#Szeptycki
+	else_if = {
+		limit = { any_country = { controls_province = 536 TAG_using_polish_names = yes } }
+		set_province_name = { id = 536 name = VICTORY_POINTS_536_2 }
+	}
+	#Sheptytskyi
+	else = {
+		reset_province_name = 536
+	}
+	#Ternopil'
+	if = {
+		limit = { any_country = { controls_province = 3483 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3483 name = VICTORY_POINTS_3483_0 }
+	}
+	#Ternopol'
+	else_if = {
+		limit = { any_country = { controls_province = 3483 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3483 name = VICTORY_POINTS_3483_1 }
+	}
+	#Tarnopol
+	else_if = {
+		limit = { any_country = { controls_province = 3483 TAG_using_polish_names = yes } }
+		set_province_name = { id = 3483 name = VICTORY_POINTS_3483_2 }
+	}
+	#Ternopil
+	else = {
+		reset_province_name = 3483
+	}
+	#Drogobich
+	if = {
+		limit = { any_country = { controls_province = 6483 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6483 name = VICTORY_POINTS_6483_0 }
+	}
+	#Drohobycz
+	else_if = {
+		limit = { any_country = { controls_province = 6483 TAG_using_polish_names = yes } }
+		set_province_name = { id = 6483 name = VICTORY_POINTS_6483_1 }
+	}
+	#Drohobych
+	else = {
+		reset_province_name = 6483
+	}
+	#Zolochev
+	if = {
+		limit = { any_country = { controls_province = 9454 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9454 name = VICTORY_POINTS_9454_0 }
+	}
+	#Złoczów
+	else_if = {
+		limit = { any_country = { controls_province = 9454 TAG_using_polish_names = yes } }
+		set_province_name = { id = 9454 name = VICTORY_POINTS_9454_1 }
+	}
+	#Zolochiv
+	else = {
+		reset_province_name = 9454
+	}
+	#Ivano-Frankivs'k
+	if = {
+		limit = { any_country = { controls_province = 11411 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 11411 name = VICTORY_POINTS_11411_0 }
+	}
+	#Ivano-Frankovsk
+	else_if = {
+		limit = { any_country = { controls_province = 11411 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11411 name = VICTORY_POINTS_11411_1 }
+	}
+	#Ivano-Frankivsk
+	else_if = {
+		limit = { any_country = { controls_province = 11411 TAG_using_polish_names = yes } }
+		set_province_name = { id = 11411 name = VICTORY_POINTS_11411_2 }
+	}
+	#Ivano-Frankivsk
+	else = {
+		reset_province_name = 11411
+	}
+	#L'viv
+	if = {
+		limit = { any_country = { controls_province = 11479 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 11479 name = VICTORY_POINTS_11479_0 }
+	}
+	#L'vov
+	else_if = {
+		limit = { any_country = { controls_province = 11479 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11479 name = VICTORY_POINTS_11479_1 }
+	}
+	#Lwów 
+	else_if = {
+		limit = { any_country = { controls_province = 11479 TAG_using_polish_names = yes } }
+		set_province_name = { id = 11479 name = VICTORY_POINTS_11479_2 }
+	}
+	#Lviv
+	else = {
+		reset_province_name = 11479
+	}
+}
+
+#Holy Cross
+TDA_update_state_90_names = {
+	90 = {
+		#Świętokrzyskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_90_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#New Hampshire
+TDA_update_state_91_names = {
+}
+
+#Lublin
+TDA_update_state_92_names = {
+	92 = {
+		#Lubelskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_92_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Volhynia
+TDA_update_state_93_names = {
+	93 = {
+		#Volyn'
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_ukrainian_names = yes TAG_using_russian_names = yes } } }
+			set_state_name = STATE_93_0
+		}
+		#Wołyń
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_93_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Rovno
+	if = {
+		limit = { any_country = { controls_province = 6435 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6435 name = VICTORY_POINTS_6435_0 }
+	}
+	#Równe
+	else_if = {
+		limit = { any_country = { controls_province = 6435 TAG_using_polish_names = yes } }
+		set_province_name = { id = 6435 name = VICTORY_POINTS_6435_1 }
+	}
+	#Rivne
+	else = {
+		reset_province_name = 6435
+	}
+	#Volodymyr-Volyns'kyy
+	if = {
+		limit = { any_country = { controls_province = 11441 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 11441 name = VICTORY_POINTS_11441_0 }
+	}
+	#Vladimir-Volyns'kiy
+	else_if = {
+		limit = { any_country = { controls_province = 11441 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11441 name = VICTORY_POINTS_11441_1 }
+	}
+	#Włodzimierz-Wołyński
+	else_if = {
+		limit = { any_country = { controls_province = 11441 TAG_using_polish_names = yes } }
+		set_province_name = { id = 11441 name = VICTORY_POINTS_11441_2 }
+	}
+	#Volodymyr-Volynskyi
+	else = {
+		reset_province_name = 11441
+	}
+	#Luts'k
+	if = {
+		limit = { any_country = { controls_province = 13805 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13805 name = VICTORY_POINTS_13805_0 }
+	}
+	#Łuck
+	else_if = {
+		limit = { any_country = { controls_province = 13805 TAG_using_polish_names = yes } }
+		set_province_name = { id = 13805 name = VICTORY_POINTS_13805_1 }
+	}
+	#Lutsk
+	else = {
+		reset_province_name = 13805
+	}
+}
+
+#Brest
+TDA_update_state_94_names = {
+}
+
+#Hrodna
+TDA_update_state_95_names = {
+}
+
+#Vatican City
+TDA_update_state_96_names = {
+	96 = {
+		#Città del Vaticano
+		if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_96_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Città del Vaticano
+	if = {
+		limit = { any_country = { controls_province = 14122 TAG_using_italian_names = yes } }
+		set_province_name = { id = 14122 name = VICTORY_POINTS_14122_0 }
+	}
+	#Vatican City
+	else = {
+		reset_province_name = 14122
+	}
+}
+
+#Podlaskie
+TDA_update_state_97_names = {
+}
+
+#North Masovia
+TDA_update_state_98_names = {
+	98 = {
+		#Mazowieckie Północne
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_98_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Jutland
+TDA_update_state_99_names = {
+}
+
+#Iceland
+TDA_update_state_100_names = {
+}
+
+#Greenland
+TDA_update_state_101_names = {
+}
+
+#Slovenia
+TDA_update_state_102_names = {
+}
+
+#Dalmatia
+TDA_update_state_103_names = {
+}
+
+#Bosnia and Herzegovina
+TDA_update_state_104_names = {
+}
+
+#Montenegro
+TDA_update_state_105_names = {
+}
+
+#Macedonia
+TDA_update_state_106_names = {
+}
+
+#Central Serbia
+TDA_update_state_107_names = {
+}
+
+#Eastern Serbia
+TDA_update_state_108_names = {
+}
+
+#Croatia Proper
+TDA_update_state_109_names = {
+}
+
+#Oslofjord
+TDA_update_state_110_names = {
+}
+
+#Uusimaa
+TDA_update_state_111_names = {
+}
+
+#Lisbon
+TDA_update_state_112_names = {
+}
+
+#Leinster
+TDA_update_state_113_names = {
+}
+
+#Sardinia
+TDA_update_state_114_names = {
+	114 = {
+		#Sardegna
+		if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_114_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Sicily
+TDA_update_state_115_names = {
+	115 = {
+		#Sicilia
+		if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_115_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Malta
+TDA_update_state_116_names = {
+}
+
+#Campania and Basilicata
+TDA_update_state_117_names = {
+	#Napoli
+	if = {
+		limit = { any_country = { controls_province = 819 TAG_using_italian_names = yes } }
+		set_province_name = { id = 819 name = VICTORY_POINTS_819_0 }
+	}
+	#Naples
+	else = {
+		reset_province_name = 819
+	}
+}
+
+#Gibraltar
+TDA_update_state_118_names = {
+}
+
+#Northern Ireland
+TDA_update_state_119_names = {
+}
+
+#Scottish Highlands
+TDA_update_state_120_names = {
+}
+
+#Lothian
+TDA_update_state_121_names = {
+}
+
+#Northern Wales
+TDA_update_state_122_names = {
+}
+
+#South-West England
+TDA_update_state_123_names = {
+}
+
+#Gotland
+TDA_update_state_124_names = {
+}
+
+#East Anglia
+TDA_update_state_125_names = {
+}
+
+#Greater London
+TDA_update_state_126_names = {
+}
+
+#South-East England
+TDA_update_state_127_names = {
+}
+
+#West Midlands
+TDA_update_state_128_names = {
+}
+
+#East Midlands
+TDA_update_state_129_names = {
+}
+
+#Yorkshire
+TDA_update_state_130_names = {
+}
+
+#North-East England
+TDA_update_state_131_names = {
+}
+
+#Lancashire
+TDA_update_state_132_names = {
+}
+
+#Lanark
+TDA_update_state_133_names = {
+}
+
+#Connaught
+TDA_update_state_134_names = {
+}
+
+#Munster
+TDA_update_state_135_names = {
+}
+
+#Rhode Island
+TDA_update_state_136_names = {
+}
+
+#Crimea
+TDA_update_state_137_names = {
+	137 = {
+		#Krym
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_ukrainian_names = yes TAG_using_russian_names = yes } } }
+			set_state_name = STATE_137_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Kerch'
+	if = {
+		limit = { any_country = { controls_province = 9680 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9680 name = VICTORY_POINTS_9680_0 }
+	}
+	#Kerch
+	else = {
+		reset_province_name = 9680
+	}
+	#Sevastopol'
+	if = {
+		limit = { any_country = { controls_province = 13727 OR = { TAG_using_russian_names = yes TAG_using_ukrainian_names = yes } } }
+		set_province_name = { id = 13727 name = VICTORY_POINTS_13727_0 }
+	}
+	#Sevastopol
+	else = {
+		reset_province_name = 13727
+	}
+	#Simferopol'
+	if = {
+		limit = { any_country = { controls_province = 13731 OR = { TAG_using_russian_names = yes TAG_using_ukrainian_names = yes } } }
+		set_province_name = { id = 13731 name = VICTORY_POINTS_13731_0 }
+	}
+	#Simferopol
+	else = {
+		reset_province_name = 13731
+	}
+}
+
+#Skåne
+TDA_update_state_138_names = {
+}
+
+#Småland
+TDA_update_state_139_names = {
+}
+
+#Västergötland
+TDA_update_state_140_names = {
+}
+
+#Södermanland
+TDA_update_state_141_names = {
+}
+
+#Vestlandet
+TDA_update_state_142_names = {
+}
+
+#Trøndelag
+TDA_update_state_143_names = {
+}
+
+#Nordland
+TDA_update_state_144_names = {
+}
+
+#Åland
+TDA_update_state_145_names = {
+}
+
+#Karelian Isthmus
+TDA_update_state_146_names = {
+}
+
+#Donegal
+TDA_update_state_147_names = {
+}
+
+#Lappi
+TDA_update_state_148_names = {
+}
+
+#Vaasa
+TDA_update_state_149_names = {
+}
+
+#Kuopio
+TDA_update_state_150_names = {
+}
+
+#Connecticut
+TDA_update_state_151_names = {
+}
+
+#Western Austria
+TDA_update_state_152_names = {
+	152 = {
+		#Westösterreich
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_152_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Vladimir
+TDA_update_state_153_names = {
+}
+
+#Transtisza
+TDA_update_state_154_names = {
+}
+
+#Transdanubia
+TDA_update_state_155_names = {
+}
+
+#Calabria
+TDA_update_state_156_names = {
+}
+
+#Adriatic Italy
+TDA_update_state_157_names = {
+	157 = {
+		#Italia Adriatica
+		if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_157_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Piedmont-Liguria
+TDA_update_state_158_names = {
+	158 = {
+		#Piemonte-Liguria
+		if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_158_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Torino
+	if = {
+		limit = { any_country = { controls_province = 6780 TAG_using_italian_names = yes } }
+		set_province_name = { id = 6780 name = VICTORY_POINTS_6780_0 }
+	}
+	#Turin
+	else = {
+		reset_province_name = 6780
+	}
+	#Genova
+	if = {
+		limit = { any_country = { controls_province = 6788 TAG_using_italian_names = yes } }
+		set_province_name = { id = 6788 name = VICTORY_POINTS_6788_0 }
+	}
+	#Genoa
+	else = {
+		reset_province_name = 6788
+	}
+}
+
+#Lombardy
+TDA_update_state_159_names = {
+	159 = {
+		#Lombardia
+		if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_159_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Milano
+	if = {
+		limit = { any_country = { controls_province = 3780 TAG_using_italian_names = yes } }
+		set_province_name = { id = 3780 name = VICTORY_POINTS_3780_0 }
+	}
+	#Milan
+	else = {
+		reset_province_name = 3780
+	}
+	#Aeroporto di Milano Malpensa
+	if = {
+		limit = { any_country = { controls_province = 14142 TAG_using_italian_names = yes } }
+		set_province_name = { id = 14142 name = VICTORY_POINTS_14142_0 }
+	}
+	#Milano Malpensa Airport
+	else = {
+		reset_province_name = 14142
+	}
+}
+
+#Veneto
+TDA_update_state_160_names = {
+	#Venezia
+	if = {
+		limit = { any_country = { controls_province = 11584 TAG_using_italian_names = yes } }
+		set_province_name = { id = 11584 name = VICTORY_POINTS_11584_0 }
+	}
+	#Venice
+	else = {
+		reset_province_name = 11584
+	}
+}
+
+#Emilia Romagna
+TDA_update_state_161_names = {
+}
+
+#Tuscany
+TDA_update_state_162_names = {
+	162 = {
+		#Tuscana
+		if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_162_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Firenze
+	if = {
+		limit = { any_country = { controls_province = 9907 TAG_using_italian_names = yes } }
+		set_province_name = { id = 9907 name = VICTORY_POINTS_9907_0 }
+	}
+	#Florence
+	else = {
+		reset_province_name = 9907
+	}
+}
+
+#Kaiser-Wilhelmsland
+TDA_update_state_163_names = {
+}
+
+#Dodecanese
+TDA_update_state_164_names = {
+}
+
+#Cataluña
+TDA_update_state_165_names = {
+}
+
+#Aragón
+TDA_update_state_166_names = {
+}
+
+#Valencia
+TDA_update_state_167_names = {
+}
+
+#Murcia
+TDA_update_state_168_names = {
+}
+
+#Andalucía
+TDA_update_state_169_names = {
+}
+
+#Extremadura
+TDA_update_state_170_names = {
+}
+
+#Galicia
+TDA_update_state_171_names = {
+}
+
+#Navarra
+TDA_update_state_172_names = {
+}
+
+#Negev
+TDA_update_state_173_names = {
+}
+
+#Castilla y León
+TDA_update_state_174_names = {
+}
+
+#Castilla-La Mancha
+TDA_update_state_175_names = {
+}
+
+#La Rioja
+TDA_update_state_176_names = {
+}
+
+#Islas Baleares
+TDA_update_state_177_names = {
+}
+
+#Islas Canarias
+TDA_update_state_178_names = {
+}
+
+#Setúbal
+TDA_update_state_179_names = {
+}
+
+#Porto
+TDA_update_state_180_names = {
+}
+
+#Aveiro
+TDA_update_state_181_names = {
+}
+
+#Crete
+TDA_update_state_182_names = {
+}
+
+#Cyprus
+TDA_update_state_183_names = {
+}
+
+#Thrace
+TDA_update_state_184_names = {
+}
+
+#Epirus
+TDA_update_state_185_names = {
+}
+
+#Peloponnese
+TDA_update_state_186_names = {
+}
+
+#Aegean Islands
+TDA_update_state_187_names = {
+}
+
+#Mažoji Lietuva
+TDA_update_state_188_names = {
+}
+
+#Žemaitija
+TDA_update_state_189_names = {
+}
+
+#Courland
+TDA_update_state_190_names = {
+}
+
+#Tartu
+TDA_update_state_191_names = {
+}
+
+#Odesa
+TDA_update_state_192_names = {
+	192 = {
+		#Odessa
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_192_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Podils'k
+	if = {
+		limit = { any_country = { controls_province = 9576 has_global_flag = UKR_decommunisation_2016_flag TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 9576 name = VICTORY_POINTS_9576_0 }
+	}
+	#Podol'sk
+	else_if = {
+		limit = { any_country = { controls_province = 9576 has_global_flag = UKR_decommunisation_2016_flag TAG_using_russian_names = yes } }
+		set_province_name = { id = 9576 name = VICTORY_POINTS_9576_1 }
+	}
+	#Podilsk
+	else_if = {
+		limit = { any_country = { controls_province = 9576 has_global_flag = UKR_decommunisation_2016_flag } }
+		set_province_name = { id = 9576 name = VICTORY_POINTS_9576_2 }
+	}
+	#Kotovs'k
+	else_if = {
+		limit = { any_country = { controls_province = 9576 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 9576 name = VICTORY_POINTS_9576_3 }
+	}
+	#Kotovsk
+	else = {
+		reset_province_name = 9576
+	}
+	#Odessa
+	if = {
+		limit = { any_country = { controls_province = 13797 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13797 name = VICTORY_POINTS_13797_0 }
+	}
+	#Odesa
+	else = {
+		reset_province_name = 13797
+	}
+	#Mizhnarodnyy Aeroport Odesa
+	if = {
+		limit = { any_country = { controls_province = 13798 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13798 name = VICTORY_POINTS_13798_0 }
+	}
+	#Mezhdunarodnyy Aeroport Odessa
+	else_if = {
+		limit = { any_country = { controls_province = 13798 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13798 name = VICTORY_POINTS_13798_1 }
+	}
+	#Odesa International Airport
+	else = {
+		reset_province_name = 13798
+	}
+}
+
+#Chernihiv
+TDA_update_state_193_names = {
+	193 = {
+		#Chernigov
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_193_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Novhorod-Sivers'kyy
+	if = {
+		limit = { any_country = { controls_province = 238 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 238 name = VICTORY_POINTS_238_0 }
+	}
+	#Novgorod-Severskiy
+	else_if = {
+		limit = { any_country = { controls_province = 238 TAG_using_russian_names = yes } }
+		set_province_name = { id = 238 name = VICTORY_POINTS_238_1 }
+	}
+	#Novhorod-Siverskyi
+	else = {
+		reset_province_name = 238
+	}
+	#Nezhin
+	if = {
+		limit = { any_country = { controls_province = 3480 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3480 name = VICTORY_POINTS_3480_0 }
+	}
+	#Nizhyn
+	else = {
+		reset_province_name = 3480
+	}
+	#Chernigov
+	if = {
+		limit = { any_country = { controls_province = 13808 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13808 name = VICTORY_POINTS_13808_0 }
+	}
+	#Chernihiv
+	else = {
+		reset_province_name = 13808
+	}
+}
+
+#Homel
+TDA_update_state_194_names = {
+}
+
+#Gorod Sankt-Peterburg
+TDA_update_state_195_names = {
+}
+
+#Tauriya
+TDA_update_state_196_names = {
+	196 = {
+		#Tavriysʹkyy
+		if = {
+			limit = { CONTROLLER = { TAG_using_ukrainian_names = yes } }
+			set_state_name = STATE_196_0
+		}
+		#Tavriya
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_196_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Skadovs'k
+	if = {
+		limit = { any_country = { controls_province = 568 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 568 name = VICTORY_POINTS_568_0 }
+	}
+	#Skadovsk
+	else = {
+		reset_province_name = 568
+	}
+	#Novaya Kakhovka
+	if = {
+		limit = { any_country = { controls_province = 3573 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3573 name = VICTORY_POINTS_3573_0 }
+	}
+	#Nova Kakhovka
+	else = {
+		reset_province_name = 3573
+	}
+}
+
+#Mykolaiv
+TDA_update_state_197_names = {
+	197 = {
+		#Mykolayiv
+		if = {
+			limit = { CONTROLLER = { TAG_using_ukrainian_names = yes } }
+			set_state_name = STATE_197_0
+		}
+		#Nikolayev
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_197_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Ochakov
+	if = {
+		limit = { any_country = { controls_province = 3738 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3738 name = VICTORY_POINTS_3738_0 }
+	}
+	#Ochakiv
+	else = {
+		reset_province_name = 3738
+	}
+	#Pervomays'k
+	if = {
+		limit = { any_country = { controls_province = 6597 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 6597 name = VICTORY_POINTS_6597_0 }
+	}
+	#Pervomaisk
+	else = {
+		reset_province_name = 6597
+	}
+	#Yuzhnoukrayins'k
+	if = {
+		limit = { any_country = { controls_province = 11546 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 11546 name = VICTORY_POINTS_11546_0 }
+	}
+	#Yuzhnoukrainsk
+	else = {
+		reset_province_name = 11546
+	}
+	#Mykolayiv
+	if = {
+		limit = { any_country = { controls_province = 13782 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13782 name = VICTORY_POINTS_13782_0 }
+	}
+	#Nikolayev
+	else_if = {
+		limit = { any_country = { controls_province = 13782 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13782 name = VICTORY_POINTS_13782_1 }
+	}
+	#Mykolaiv
+	else = {
+		reset_province_name = 13782
+	}
+}
+
+#Vinnytsia
+TDA_update_state_198_names = {
+}
+
+#Khmelnytskyi
+TDA_update_state_199_names = {
+	199 = {
+		#Khmel'nyts'kyy
+		if = {
+			limit = { CONTROLLER = { TAG_using_ukrainian_names = yes } }
+			set_state_name = STATE_199_0
+		}
+		#Khmel'nytskiy
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_199_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Kam'yanets'-Podil's'kyy
+	if = {
+		limit = { any_country = { controls_province = 3430 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3430 name = VICTORY_POINTS_3430_0 }
+	}
+	#Kamenets-Podol'skiy
+	else_if = {
+		limit = { any_country = { controls_province = 3430 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3430 name = VICTORY_POINTS_3430_1 }
+	}
+	#Kamianets-Podilskyi
+	else = {
+		reset_province_name = 3430
+	}
+	#Khmel'nyts'kyy
+	if = {
+		limit = { any_country = { controls_province = 3457 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3457 name = VICTORY_POINTS_3457_0 }
+	}
+	#Khmel'nytskiy
+	else_if = {
+		limit = { any_country = { controls_province = 3457 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3457 name = VICTORY_POINTS_3457_1 }
+	}
+	#Khmelnytskyi
+	else = {
+		reset_province_name = 3457
+	}
+	#Shepetovka
+	if = {
+		limit = { any_country = { controls_province = 3511 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3511 name = VICTORY_POINTS_3511_0 }
+	}
+	#Shepetivka
+	else = {
+		reset_province_name = 3511
+	}
+}
+
+#Zaporizhzhia
+TDA_update_state_200_names = {
+	200 = {
+		#Zaporozh'ye
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_200_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Gulyaipole
+	if = {
+		limit = { any_country = { controls_province = 429 TAG_using_russian_names = yes } }
+		set_province_name = { id = 429 name = VICTORY_POINTS_429_0 }
+	}
+	#Hulyaipole
+	else = {
+		reset_province_name = 429
+	}
+	#Berdyans'k
+	if = {
+		limit = { any_country = { controls_province = 9571 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 9571 name = VICTORY_POINTS_9571_0 }
+	}
+	#Berdyansk
+	else = {
+		reset_province_name = 9571
+	}
+	#Zaporozh'ye
+	if = {
+		limit = { any_country = { controls_province = 13760 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13760 name = VICTORY_POINTS_13760_0 }
+	}
+	#Zaporizhzhia
+	else = {
+		reset_province_name = 13760
+	}
+	#Melitopol'
+	if = {
+		limit = { any_country = { controls_province = 13763 OR = { TAG_using_russian_names = yes TAG_using_ukrainian_names = yes } } }
+		set_province_name = { id = 13763 name = VICTORY_POINTS_13763_0 }
+	}
+	#Melitopol
+	else = {
+		reset_province_name = 13763
+	}
+}
+
+#Zhytomyr
+TDA_update_state_201_names = {
+}
+
+#Kyiv
+TDA_update_state_202_names = {
+	202 = {
+		#Kiev
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_202_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Belaya Tserkov'
+	if = {
+		limit = { any_country = { controls_province = 504 TAG_using_russian_names = yes } }
+		set_province_name = { id = 504 name = VICTORY_POINTS_504_0 }
+	}
+	#Bila Tserkva
+	else = {
+		reset_province_name = 504
+	}
+	#Kiev
+	if = {
+		limit = { any_country = { controls_province = 525 TAG_using_russian_names = yes } }
+		set_province_name = { id = 525 name = VICTORY_POINTS_525_0 }
+	}
+	#Kyiv
+	else = {
+		reset_province_name = 525
+	}
+	#Hostomel'
+	if = {
+		limit = { any_country = { controls_province = 13811 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13811 name = VICTORY_POINTS_13811_0 }
+	}
+	#Gostomel'
+	else_if = {
+		limit = { any_country = { controls_province = 13811 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13811 name = VICTORY_POINTS_13811_1 }
+	}
+	#Hostomel
+	else = {
+		reset_province_name = 13811
+	}
+}
+
+#Naddniprianshchyna
+TDA_update_state_203_names = {
+	203 = {
+		#Pridneprov'ye
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_203_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Smela
+	if = {
+		limit = { any_country = { controls_province = 488 TAG_using_russian_names = yes } }
+		set_province_name = { id = 488 name = VICTORY_POINTS_488_0 }
+	}
+	#Smila
+	else = {
+		reset_province_name = 488
+	}
+	#Kropivnits'kyy
+	if = {
+		limit = { any_country = { controls_province = 3452 has_global_flag = UKR_decommunisation_2016_flag TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3452 name = VICTORY_POINTS_3452_0 }
+	}
+	#Kropivnitskiy
+	else_if = {
+		limit = { any_country = { controls_province = 3452 has_global_flag = UKR_decommunisation_2016_flag TAG_using_russian_names = yes } }
+		set_province_name = { id = 3452 name = VICTORY_POINTS_3452_1 }
+	}
+	#Kropyvnytskyi
+	else_if = {
+		limit = { any_country = { controls_province = 3452 has_global_flag = UKR_decommunisation_2016_flag } }
+		set_province_name = { id = 3452 name = VICTORY_POINTS_3452_2 }
+	}
+	#Kirovograd
+	else_if = {
+		limit = { any_country = { controls_province = 3452 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3452 name = VICTORY_POINTS_3452_3 }
+	}
+	#Kirovohrad
+	else = {
+		reset_province_name = 3452
+	}
+	#Svitlovods'k
+	if = {
+		limit = { any_country = { controls_province = 3468 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3468 name = VICTORY_POINTS_3468_0 }
+	}
+	#Svetlovodsk
+	else_if = {
+		limit = { any_country = { controls_province = 3468 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3468 name = VICTORY_POINTS_3468_1 }
+	}
+	#Svitlovodsk
+	else = {
+		reset_province_name = 3468
+	}
+	#Uman'
+	if = {
+		limit = { any_country = { controls_province = 11424 OR = { TAG_using_ukrainian_names = yes TAG_using_russian_names = yes } } }
+		set_province_name = { id = 11424 name = VICTORY_POINTS_11424_0 }
+	}
+	#Uman
+	else = {
+		reset_province_name = 11424
+	}
+	#Cherkassy
+	if = {
+		limit = { any_country = { controls_province = 13818 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13818 name = VICTORY_POINTS_13818_0 }
+	}
+	#Cherkasy
+	else = {
+		reset_province_name = 13818
+	}
+}
+
+#San Marino
+TDA_update_state_204_names = {
+}
+
+#Kaluga
+TDA_update_state_205_names = {
+}
+
+#Minsk
+TDA_update_state_206_names = {
+}
+
+#Vitebsk
+TDA_update_state_207_names = {
+}
+
+#Leningrad
+TDA_update_state_208_names = {
+}
+
+#Pskov
+TDA_update_state_209_names = {
+}
+
+#Southern Jutland
+TDA_update_state_210_names = {
+}
+
+#Burgas
+TDA_update_state_211_names = {
+}
+
+#Plovdiv
+TDA_update_state_212_names = {
+}
+
+#Murmansk
+TDA_update_state_213_names = {
+}
+
+#Arkhangelsk
+TDA_update_state_214_names = {
+}
+
+#Karelia
+TDA_update_state_215_names = {
+}
+
+#Jan Mayen
+TDA_update_state_216_names = {
+}
+
+#Volgograd
+TDA_update_state_217_names = {
+}
+
+#Rostov
+TDA_update_state_218_names = {
+}
+
+#Gorod Moskva
+TDA_update_state_219_names = {
+}
+
+#Kursk
+TDA_update_state_220_names = {
+}
+
+#Kharkiv
+TDA_update_state_221_names = {
+	221 = {
+		#Khar'kov
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_221_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Vovchans'k
+	if = {
+		limit = { any_country = { controls_province = 3409 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3409 name = VICTORY_POINTS_3409_0 }
+	}
+	#Volchansk
+	else_if = {
+		limit = { any_country = { controls_province = 3409 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3409 name = VICTORY_POINTS_3409_1 }
+	}
+	#Vovchansk
+	else = {
+		reset_province_name = 3409
+	}
+	#Chuguyev
+	if = {
+		limit = { any_country = { controls_province = 9556 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9556 name = VICTORY_POINTS_9556_0 }
+	}
+	#Chuhuiv
+	else = {
+		reset_province_name = 9556
+	}
+	#Lozovaya
+	if = {
+		limit = { any_country = { controls_province = 11461 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11461 name = VICTORY_POINTS_11461_0 }
+	}
+	#Lozova
+	else = {
+		reset_province_name = 11461
+	}
+	#Khar'kov
+	if = {
+		limit = { any_country = { controls_province = 13767 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13767 name = VICTORY_POINTS_13767_0 }
+	}
+	#Kharkiv
+	else = {
+		reset_province_name = 13767
+	}
+	#Mizhnarodnyy Aeroport Kharkiv
+	if = {
+		limit = { any_country = { controls_province = 13768 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13768 name = VICTORY_POINTS_13768_0 }
+	}
+	#Mezhdunarodnyy Aeroport Khar'kov
+	else_if = {
+		limit = { any_country = { controls_province = 13768 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13768 name = VICTORY_POINTS_13768_1 }
+	}
+	#Kharkiv International Airport
+	else = {
+		reset_province_name = 13768
+	}
+}
+
+#Oryol
+TDA_update_state_222_names = {
+}
+
+#Tula
+TDA_update_state_223_names = {
+}
+
+#Bryansk
+TDA_update_state_224_names = {
+}
+
+#Sumy
+TDA_update_state_225_names = {
+	#Akhtyrka
+	if = {
+		limit = { any_country = { controls_province = 3455 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3455 name = VICTORY_POINTS_3455_0 }
+	}
+	#Okhtyrka
+	else = {
+		reset_province_name = 3455
+	}
+}
+
+#Dnipropetrovsk
+TDA_update_state_226_names = {
+	#Pavlograd
+	if = {
+		limit = { any_country = { controls_province = 486 TAG_using_russian_names = yes } }
+		set_province_name = { id = 486 name = VICTORY_POINTS_486_0 }
+	}
+	#Pavlohrad
+	else = {
+		reset_province_name = 486
+	}
+	#Nikopol'
+	if = {
+		limit = { any_country = { controls_province = 9419 OR = { TAG_using_russian_names = yes TAG_using_ukrainian_names = yes } } }
+		set_province_name = { id = 9419 name = VICTORY_POINTS_9419_0 }
+	}
+	#Nikopol
+	else = {
+		reset_province_name = 9419
+	}
+	#Dneprodzerzhinsk
+	if = {
+		limit = { any_country = { controls_province = 9433 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9433 name = VICTORY_POINTS_9433_0 }
+	}
+	#Kam'yans'ke
+	else_if = {
+		limit = { any_country = { controls_province = 9433 has_global_flag = UKR_decommunisation_2016_flag TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 9433 name = VICTORY_POINTS_9433_1 }
+	}
+	#Dniprodzerzhins'k
+	else_if = {
+		limit = { any_country = { controls_province = 9433 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 9433 name = VICTORY_POINTS_9433_2 }
+	}
+	#Kamianske
+	else_if = {
+		limit = { any_country = { controls_province = 9433 has_global_flag = UKR_decommunisation_2016_flag } }
+		set_province_name = { id = 9433 name = VICTORY_POINTS_9433_3 }
+	}
+	#Dniprodzerzhynsk
+	else = {
+		reset_province_name = 9433
+	}
+	#Kryvoy Rog
+	if = {
+		limit = { any_country = { controls_province = 13774 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13774 name = VICTORY_POINTS_13774_0 }
+	}
+	#Kryvyi Rih
+	else = {
+		reset_province_name = 13774
+	}
+	#Dnipropetrovsk
+	if = {
+		limit = { any_country = { controls_province = 13779 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13779 name = VICTORY_POINTS_13779_0 }
+	}
+	#Dnipro
+	else_if = {
+		limit = { any_country = { controls_province = 13779 has_global_flag = UKR_decommunisation_2016_flag } }
+		set_province_name = { id = 13779 name = VICTORY_POINTS_13779_1 }
+	}
+	#Dnipropetrovsk
+	else = {
+		reset_province_name = 13779
+	}
+}
+
+#Donetsk
+TDA_update_state_227_names = {
+	227 = {
+		#Donets'k
+		if = {
+			limit = { CONTROLLER = { TAG_using_ukrainian_names = yes } }
+			set_state_name = STATE_227_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Pokrovs'k
+	if = {
+		limit = { any_country = { controls_province = 3466 has_global_flag = UKR_decommunisation_2016_flag TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3466 name = VICTORY_POINTS_3466_0 }
+	}
+	#Pokrovsk
+	else_if = {
+		limit = { any_country = { controls_province = 3466 has_global_flag = UKR_decommunisation_2016_flag } }
+		set_province_name = { id = 3466 name = VICTORY_POINTS_3466_1 }
+	}
+	#Krasnoarmiys'k
+	else_if = {
+		limit = { any_country = { controls_province = 3466 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3466 name = VICTORY_POINTS_3466_2 }
+	}
+	#Krasnoarmeysk
+	else_if = {
+		limit = { any_country = { controls_province = 3466 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3466 name = VICTORY_POINTS_3466_3 }
+	}
+	#Krasnoarmiisk
+	else = {
+		reset_province_name = 3466
+	}
+	#Artemivsk
+	if = {
+		limit = { any_country = { controls_province = 3479 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3479 name = VICTORY_POINTS_3479_0 }
+	}
+	#Bakhmut
+	else_if = {
+		limit = { any_country = { controls_province = 3479 has_global_flag = UKR_decommunisation_2016_flag } }
+		set_province_name = { id = 3479 name = VICTORY_POINTS_3479_1 }
+	}
+	#Artemivsk
+	else = {
+		reset_province_name = 3479
+	}
+	#Lyman
+	if = {
+		limit = { any_country = { controls_province = 3491 has_global_flag = UKR_decommunisation_2016_flag } }
+		set_province_name = { id = 3491 name = VICTORY_POINTS_3491_0 }
+	}
+	#Krasnyy Lyman
+	else_if = {
+		limit = { any_country = { controls_province = 3491 OR = { TAG_using_russian_names = yes TAG_using_ukrainian_names = yes } } }
+		set_province_name = { id = 3491 name = VICTORY_POINTS_3491_1 }
+	}
+	#Krasnyi Lyman
+	else = {
+		reset_province_name = 3491
+	}
+	#Ugledar
+	if = {
+		limit = { any_country = { controls_province = 6776 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6776 name = VICTORY_POINTS_6776_0 }
+	}
+	#Vuhledar
+	else = {
+		reset_province_name = 6776
+	}
+	#Avdeevka
+	if = {
+		limit = { any_country = { controls_province = 13743 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13743 name = VICTORY_POINTS_13743_0 }
+	}
+	#Avdiivka
+	else = {
+		reset_province_name = 13743
+	}
+	#Mariupol'
+	if = {
+		limit = { any_country = { controls_province = 13753 OR = { TAG_using_russian_names = yes TAG_using_ukrainian_names = yes } } }
+		set_province_name = { id = 13753 name = VICTORY_POINTS_13753_0 }
+	}
+	#Mariupol
+	else = {
+		reset_province_name = 13753
+	}
+	#Slov'yans'k
+	if = {
+		limit = { any_country = { controls_province = 13785 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13785 name = VICTORY_POINTS_13785_0 }
+	}
+	#Slavyansk
+	else_if = {
+		limit = { any_country = { controls_province = 13785 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13785 name = VICTORY_POINTS_13785_1 }
+	}
+	#Slovyansk
+	else = {
+		reset_province_name = 13785
+	}
+	#Kramators'k
+	if = {
+		limit = { any_country = { controls_province = 13786 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13786 name = VICTORY_POINTS_13786_0 }
+	}
+	#Kramatorsk
+	else = {
+		reset_province_name = 13786
+	}
+	#Konstantinovka
+	if = {
+		limit = { any_country = { controls_province = 13787 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13787 name = VICTORY_POINTS_13787_0 }
+	}
+	#Kostyantynivka
+	else = {
+		reset_province_name = 13787
+	}
+}
+
+#Luhansk
+TDA_update_state_228_names = {
+	228 = {
+		#Luhans'k
+		if = {
+			limit = { CONTROLLER = { TAG_using_ukrainian_names = yes } }
+			set_state_name = STATE_228_0
+		}
+		#Lugansk
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_228_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Svatoveo
+	if = {
+		limit = { any_country = { controls_province = 570 TAG_using_russian_names = yes } }
+		set_province_name = { id = 570 name = VICTORY_POINTS_570_0 }
+	}
+	#Svatove
+	else = {
+		reset_province_name = 570
+	}
+	#Starobil's'k
+	if = {
+		limit = { any_country = { controls_province = 11513 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 11513 name = VICTORY_POINTS_11513_0 }
+	}
+	#Starobel'sk
+	else_if = {
+		limit = { any_country = { controls_province = 11513 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11513 name = VICTORY_POINTS_11513_1 }
+	}
+	#Starobilsk
+	else = {
+		reset_province_name = 11513
+	}
+	#Lysychans'k
+	if = {
+		limit = { any_country = { controls_province = 13740 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13740 name = VICTORY_POINTS_13740_0 }
+	}
+	#Lysychansk
+	else = {
+		reset_province_name = 13740
+	}
+	#Sivers'kodonets'k
+	if = {
+		limit = { any_country = { controls_province = 13756 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13756 name = VICTORY_POINTS_13756_0 }
+	}
+	#Severodonetsk
+	else_if = {
+		limit = { any_country = { controls_province = 13756 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13756 name = VICTORY_POINTS_13756_1 }
+	}
+	#Siverskodonetsk
+	else = {
+		reset_province_name = 13756
+	}
+}
+
+#Azerbaijan
+TDA_update_state_229_names = {
+}
+
+#Armenia
+TDA_update_state_230_names = {
+}
+
+#Georgia
+TDA_update_state_231_names = {
+}
+
+#Dagestan
+TDA_update_state_232_names = {
+}
+
+#Agder
+TDA_update_state_233_names = {
+}
+
+#Krasnodar
+TDA_update_state_234_names = {
+}
+
+#Stavropol
+TDA_update_state_235_names = {
+}
+
+#Astrakhan
+TDA_update_state_236_names = {
+}
+
+#Kalmykia
+TDA_update_state_237_names = {
+}
+
+#Opplandene
+TDA_update_state_238_names = {
+}
+
+#Saratov
+TDA_update_state_239_names = {
+}
+
+#Belgorod
+TDA_update_state_240_names = {
+}
+
+#Mogilev
+TDA_update_state_241_names = {
+}
+
+#Smolensk
+TDA_update_state_242_names = {
+}
+
+#Fyn
+TDA_update_state_243_names = {
+}
+
+#Saarland
+TDA_update_state_244_names = {
+}
+
+#Telemark
+TDA_update_state_245_names = {
+}
+
+#Tver
+TDA_update_state_246_names = {
+}
+
+#Bornholm
+TDA_update_state_247_names = {
+}
+
+#Yaroslavl
+TDA_update_state_248_names = {
+}
+
+#Tatarstan
+TDA_update_state_249_names = {
+}
+
+#Ulyanovsk
+TDA_update_state_250_names = {
+}
+
+#Samara
+TDA_update_state_251_names = {
+}
+
+#Nizhny Novgorod
+TDA_update_state_252_names = {
+}
+
+#Ivanovo
+TDA_update_state_253_names = {
+}
+
+#Ryazan
+TDA_update_state_254_names = {
+}
+
+#Penza
+TDA_update_state_255_names = {
+}
+
+#Chuvashia
+TDA_update_state_256_names = {
+}
+
+#Tambov
+TDA_update_state_257_names = {
+}
+
+#Lipetsk
+TDA_update_state_258_names = {
+}
+
+#Poltava
+TDA_update_state_259_names = {
+}
+
+#Voronezh
+TDA_update_state_260_names = {
+}
+
+#Ohio
+TDA_update_state_261_names = {
+}
+
+#Komi
+TDA_update_state_262_names = {
+}
+
+#Novgorod
+TDA_update_state_263_names = {
+}
+
+#Moscow
+TDA_update_state_264_names = {
+}
+
+#Värmland
+TDA_update_state_265_names = {
+}
+
+#Tehran
+TDA_update_state_266_names = {
+}
+
+#Kabul
+TDA_update_state_267_names = {
+}
+
+#French Somaliland
+TDA_update_state_268_names = {
+}
+
+#British Somaliland
+TDA_update_state_269_names = {
+}
+
+#Pitcairn Island
+TDA_update_state_270_names = {
+}
+
+#Ethiopia
+TDA_update_state_271_names = {
+}
+
+#Senegal
+TDA_update_state_272_names = {
+}
+
+#Cyrenican Desert
+TDA_update_state_273_names = {
+}
+
+#Ghana
+TDA_update_state_274_names = {
+}
+
+#Transvaal
+TDA_update_state_275_names = {
+}
+
+#Southern Ontario
+TDA_update_state_276_names = {
+}
+
+#Mexico City
+TDA_update_state_277_names = {
+}
+
+#Buenos Aires
+TDA_update_state_278_names = {
+}
+
+#Santiago
+TDA_update_state_279_names = {
+}
+
+#Mato Grosso
+TDA_update_state_280_names = {
+}
+
+#Maldives
+TDA_update_state_281_names = {
+}
+
+#Kanto
+TDA_update_state_282_names = {
+}
+
+#Gansu
+TDA_update_state_283_names = {
+}
+
+#North Island
+TDA_update_state_284_names = {
+}
+
+#New South Wales
+TDA_update_state_285_names = {
+}
+
+#Southern Indochina
+TDA_update_state_286_names = {
+}
+
+#Taklamakan
+TDA_update_state_287_names = {
+}
+
+#Burma
+TDA_update_state_288_names = {
+}
+
+#Siam
+TDA_update_state_289_names = {
+}
+
+#Cavan and Monaghan
+TDA_update_state_290_names = {
+}
+
+#Baghdad
+TDA_update_state_291_names = {
+}
+
+#Nejd
+TDA_update_state_292_names = {
+}
+
+#Yemen
+TDA_update_state_293_names = {
+}
+
+#Oman
+TDA_update_state_294_names = {
+}
+
+#Léopoldville
+TDA_update_state_295_names = {
+}
+
+#Portuguese Guinea
+TDA_update_state_296_names = {
+}
+
+#Equatorial Guinea
+TDA_update_state_297_names = {
+}
+
+#Liberia
+TDA_update_state_298_names = {
+}
+
+#Falkland Islands
+TDA_update_state_299_names = {
+}
+
+#Erg Murzuq
+TDA_update_state_300_names = {
+}
+
+#Paraguay
+TDA_update_state_301_names = {
+}
+
+#La Paz
+TDA_update_state_302_names = {
+}
+
+#Lima
+TDA_update_state_303_names = {
+}
+
+#Panamá
+TDA_update_state_304_names = {
+}
+
+#Ecuador
+TDA_update_state_305_names = {
+}
+
+#Cundinamarca
+TDA_update_state_306_names = {
+}
+
+#Miranda
+TDA_update_state_307_names = {
+}
+
+#Leeward Islands
+TDA_update_state_308_names = {
+}
+
+#Suriname
+TDA_update_state_309_names = {
+}
+
+#French Guiana
+TDA_update_state_310_names = {
+}
+
+#British Honduras
+TDA_update_state_311_names = {
+}
+
+#Honduras
+TDA_update_state_312_names = {
+}
+
+#Guatemala
+TDA_update_state_313_names = {
+}
+
+#El Salvador
+TDA_update_state_314_names = {
+}
+
+#Cuba
+TDA_update_state_315_names = {
+}
+
+#Costa Rica
+TDA_update_state_316_names = {
+}
+
+#Nicaragua
+TDA_update_state_317_names = {
+}
+
+#Haiti
+TDA_update_state_318_names = {
+}
+
+#Dominican Republic
+TDA_update_state_319_names = {
+}
+
+#San Luis y La Pampa
+TDA_update_state_320_names = {
+}
+
+#Amazon
+TDA_update_state_321_names = {
+}
+
+#Tibet
+TDA_update_state_322_names = {
+}
+
+#Nepal
+TDA_update_state_323_names = {
+}
+
+#Bhutan
+TDA_update_state_324_names = {
+}
+
+#Yunnan
+TDA_update_state_325_names = {
+}
+
+#Hong Kong
+TDA_update_state_326_names = {
+}
+
+#Manila
+TDA_update_state_327_names = {
+}
+
+#Kirin
+TDA_update_state_328_names = {
+}
+
+#Tuva
+TDA_update_state_329_names = {
+}
+
+#Ulaanbaatar
+TDA_update_state_330_names = {
+}
+
+#Newfoundland
+TDA_update_state_331_names = {
+}
+
+#Labrador
+TDA_update_state_332_names = {
+}
+
+#North Borneo
+TDA_update_state_333_names = {
+}
+
+#Kalimantan
+TDA_update_state_334_names = {
+}
+
+#Java
+TDA_update_state_335_names = {
+}
+
+#Singapore
+TDA_update_state_336_names = {
+}
+
+#Faroe Islands
+TDA_update_state_337_names = {
+}
+
+#Ottawa-Gatineau
+TDA_update_state_338_names = {
+}
+
+#Izmir
+TDA_update_state_339_names = {
+}
+
+#Bursa
+TDA_update_state_340_names = {
+}
+
+#Edirne
+TDA_update_state_341_names = {
+}
+
+#Antalya
+TDA_update_state_342_names = {
+}
+
+#Afyon
+TDA_update_state_343_names = {
+}
+
+#Malatya
+TDA_update_state_344_names = {
+}
+
+#Mersin
+TDA_update_state_345_names = {
+}
+
+#Konya
+TDA_update_state_346_names = {
+}
+
+#Izmit
+TDA_update_state_347_names = {
+}
+
+#Kayseri
+TDA_update_state_348_names = {
+}
+
+#Sivas
+TDA_update_state_349_names = {
+}
+
+#Diyarbakır
+TDA_update_state_350_names = {
+}
+
+#Vologda
+TDA_update_state_351_names = {
+}
+
+#Hakkari
+TDA_update_state_352_names = {
+}
+
+#Tunceli
+TDA_update_state_353_names = {
+}
+
+#Trabzon
+TDA_update_state_354_names = {
+}
+
+#Samsun
+TDA_update_state_355_names = {
+}
+
+#Kastamonu
+TDA_update_state_356_names = {
+}
+
+#Maine
+TDA_update_state_357_names = {
+}
+
+#Upstate New York
+TDA_update_state_358_names = {
+}
+
+#New Jersey
+TDA_update_state_359_names = {
+}
+
+#Pennsylvania
+TDA_update_state_360_names = {
+}
+
+#Maryland
+TDA_update_state_361_names = {
+}
+
+#Virginia
+TDA_update_state_362_names = {
+}
+
+#North Carolina
+TDA_update_state_363_names = {
+}
+
+#South Carolina
+TDA_update_state_364_names = {
+}
+
+#Georgia
+TDA_update_state_365_names = {
+}
+
+#Florida
+TDA_update_state_366_names = {
+}
+
+#Alabama
+TDA_update_state_367_names = {
+}
+
+#Tennessee
+TDA_update_state_368_names = {
+}
+
+#Kentucky
+TDA_update_state_369_names = {
+}
+
+#Mississippi
+TDA_update_state_370_names = {
+}
+
+#Louisiana
+TDA_update_state_371_names = {
+}
+
+#Arkansas
+TDA_update_state_372_names = {
+}
+
+#Missouri
+TDA_update_state_373_names = {
+}
+
+#Oklahoma
+TDA_update_state_374_names = {
+}
+
+#North Texas
+TDA_update_state_375_names = {
+}
+
+#New Mexico
+TDA_update_state_376_names = {
+}
+
+#Arizona
+TDA_update_state_377_names = {
+}
+
+#Central Valley
+TDA_update_state_378_names = {
+}
+
+#Nevada
+TDA_update_state_379_names = {
+}
+
+#Utah
+TDA_update_state_380_names = {
+}
+
+#Wyoming
+TDA_update_state_381_names = {
+}
+
+#Colorado
+TDA_update_state_382_names = {
+}
+
+#Kansas
+TDA_update_state_383_names = {
+}
+
+#Nebraska
+TDA_update_state_384_names = {
+}
+
+#Oregon
+TDA_update_state_385_names = {
+}
+
+#Washington
+TDA_update_state_386_names = {
+}
+
+#Idaho
+TDA_update_state_387_names = {
+}
+
+#Montana
+TDA_update_state_388_names = {
+}
+
+#North Dakota
+TDA_update_state_389_names = {
+}
+
+#South Dakota
+TDA_update_state_390_names = {
+}
+
+#Minnesota
+TDA_update_state_391_names = {
+}
+
+#Iowa
+TDA_update_state_392_names = {
+}
+
+#Michigan
+TDA_update_state_393_names = {
+}
+
+#Wisconsin
+TDA_update_state_394_names = {
+}
+
+#Illinois
+TDA_update_state_395_names = {
+}
+
+#Indiana
+TDA_update_state_396_names = {
+}
+
+#Socotra
+TDA_update_state_397_names = {
+}
+
+#Perm
+TDA_update_state_398_names = {
+}
+
+#Udmurtia
+TDA_update_state_399_names = {
+}
+
+#Kirov
+TDA_update_state_400_names = {
+}
+
+#Jämtland
+TDA_update_state_401_names = {
+}
+
+#Akhtubinsk
+TDA_update_state_402_names = {
+}
+
+#Tyumen
+TDA_update_state_403_names = {
+}
+
+#Kyzyl Orda
+TDA_update_state_404_names = {
+}
+
+#Tashkent
+TDA_update_state_405_names = {
+}
+
+#Guryev
+TDA_update_state_406_names = {
+}
+
+#Ural'sk
+TDA_update_state_407_names = {
+}
+
+#Primorskiy
+TDA_update_state_408_names = {
+}
+
+#Khabarovsk
+TDA_update_state_409_names = {
+}
+
+#Sistan
+TDA_update_state_410_names = {
+}
+
+#Isfahan
+TDA_update_state_411_names = {
+}
+
+#Fars
+TDA_update_state_412_names = {
+}
+
+#Khuzestan
+TDA_update_state_413_names = {
+}
+
+#Kerman
+TDA_update_state_414_names = {
+}
+
+#Herat
+TDA_update_state_415_names = {
+}
+
+#Khorasan
+TDA_update_state_416_names = {
+}
+
+#Hamadan
+TDA_update_state_417_names = {
+}
+
+#Semnan
+TDA_update_state_418_names = {
+}
+
+#Tibriz
+TDA_update_state_419_names = {
+}
+
+#Gilan
+TDA_update_state_420_names = {
+}
+
+#Kurdistan
+TDA_update_state_421_names = {
+}
+
+#Ceylon
+TDA_update_state_422_names = {
+}
+
+#Madurai
+TDA_update_state_423_names = {
+}
+
+#Madras
+TDA_update_state_424_names = {
+}
+
+#Mysore
+TDA_update_state_425_names = {
+}
+
+#Orissa
+TDA_update_state_426_names = {
+}
+
+#Hyderabad
+TDA_update_state_427_names = {
+}
+
+#Gujarat
+TDA_update_state_428_names = {
+}
+
+#Bombay
+TDA_update_state_429_names = {
+}
+
+#East Bengal
+TDA_update_state_430_names = {
+}
+
+#West Bengal
+TDA_update_state_431_names = {
+}
+
+#Assam
+TDA_update_state_432_names = {
+}
+
+#Rajahsthan
+TDA_update_state_433_names = {
+}
+
+#Arunachal Pradesh
+TDA_update_state_434_names = {
+}
+
+#Bihar
+TDA_update_state_435_names = {
+}
+
+#Jabalpur
+TDA_update_state_436_names = {
+}
+
+#Indore
+TDA_update_state_437_names = {
+}
+
+#Lucknow
+TDA_update_state_438_names = {
+}
+
+#Delhi
+TDA_update_state_439_names = {
+}
+
+#Punjab
+TDA_update_state_440_names = {
+}
+
+#Kashmir
+TDA_update_state_441_names = {
+}
+
+#Peshawar
+TDA_update_state_442_names = {
+}
+
+#Sind
+TDA_update_state_443_names = {
+}
+
+#Baluchistan
+TDA_update_state_444_names = {
+}
+
+#Quetta
+TDA_update_state_445_names = {
+}
+
+#Suez
+TDA_update_state_446_names = {
+}
+
+#Nile Delta
+TDA_update_state_447_names = {
+}
+
+#Tripoli
+TDA_update_state_448_names = {
+}
+
+#Sirte
+TDA_update_state_449_names = {
+}
+
+#Benghasi
+TDA_update_state_450_names = {
+}
+
+#Rebiana Sand Sea
+TDA_update_state_451_names = {
+}
+
+#Matrouh
+TDA_update_state_452_names = {
+}
+
+#Sinai
+TDA_update_state_453_names = {
+}
+
+#Israel
+TDA_update_state_454_names = {
+}
+
+#Jordan
+TDA_update_state_455_names = {
+}
+
+#Upper Nile
+TDA_update_state_456_names = {
+}
+
+#Eastern Desert
+TDA_update_state_457_names = {
+}
+
+#Tunisia
+TDA_update_state_458_names = {
+}
+
+#Algiers
+TDA_update_state_459_names = {
+}
+
+#Constantine
+TDA_update_state_460_names = {
+}
+
+#Casablanca
+TDA_update_state_461_names = {
+}
+
+#Marrakech
+TDA_update_state_462_names = {
+}
+
+#Alaska
+TDA_update_state_463_names = {
+}
+
+#Nova Scotia
+TDA_update_state_464_names = {
+}
+
+#New Brunswick
+TDA_update_state_465_names = {
+}
+
+#Nord du Quebec
+TDA_update_state_466_names = {
+}
+
+#Manitoba
+TDA_update_state_467_names = {
+}
+
+#Saint Lawrence
+TDA_update_state_468_names = {
+}
+
+#Saskatchewan
+TDA_update_state_469_names = {
+}
+
+#Alberta
+TDA_update_state_470_names = {
+}
+
+#Prince Rupert
+TDA_update_state_471_names = {
+}
+
+#N.W Territories
+TDA_update_state_472_names = {
+}
+
+#British Columbia
+TDA_update_state_473_names = {
+}
+
+#Yucatan
+TDA_update_state_474_names = {
+}
+
+#Chiapas
+TDA_update_state_475_names = {
+}
+
+#Oaxaca
+TDA_update_state_476_names = {
+}
+
+#Veracruz
+TDA_update_state_477_names = {
+}
+
+#Jalisco
+TDA_update_state_478_names = {
+}
+
+#Tamaulipas
+TDA_update_state_479_names = {
+}
+
+#Coahuila
+TDA_update_state_480_names = {
+}
+
+#Durango
+TDA_update_state_481_names = {
+}
+
+#Chihuahua
+TDA_update_state_482_names = {
+}
+
+#Sonora
+TDA_update_state_483_names = {
+}
+
+#Baja California
+TDA_update_state_484_names = {
+}
+
+#Guerrero
+TDA_update_state_485_names = {
+}
+
+#Meta
+TDA_update_state_486_names = {
+}
+
+#Santa Cruz
+TDA_update_state_487_names = {
+}
+
+#Bolivar
+TDA_update_state_488_names = {
+}
+
+#Zulia
+TDA_update_state_489_names = {
+}
+
+#Pastaza
+TDA_update_state_490_names = {
+}
+
+#Loreto
+TDA_update_state_491_names = {
+}
+
+#Arequipa
+TDA_update_state_492_names = {
+}
+
+#La Libertad
+TDA_update_state_493_names = {
+}
+
+#Ucayali
+TDA_update_state_494_names = {
+}
+
+#Amazonas
+TDA_update_state_495_names = {
+}
+
+#Minas Gerais
+TDA_update_state_496_names = {
+}
+
+#Maranhão
+TDA_update_state_497_names = {
+}
+
+#Rio Grande do Norte
+TDA_update_state_498_names = {
+}
+
+#Bahia
+TDA_update_state_499_names = {
+}
+
+#Rio de Janeiro
+TDA_update_state_500_names = {
+}
+
+#São Paulo
+TDA_update_state_501_names = {
+}
+
+#Rio Grande do Sul
+TDA_update_state_502_names = {
+}
+
+#Santa Catarina
+TDA_update_state_503_names = {
+}
+
+#Punta Porá
+TDA_update_state_504_names = {
+}
+
+#Goiás
+TDA_update_state_505_names = {
+}
+
+#Antofagasta
+TDA_update_state_506_names = {
+}
+
+#Magallanes
+TDA_update_state_507_names = {
+}
+
+#Tucumán
+TDA_update_state_508_names = {
+}
+
+#Chaco Austral
+TDA_update_state_509_names = {
+}
+
+#Región Mesopotámica
+TDA_update_state_510_names = {
+}
+
+#Mendoza
+TDA_update_state_511_names = {
+}
+
+#Río Negro
+TDA_update_state_512_names = {
+}
+
+#Tlemcen
+TDA_update_state_513_names = {
+}
+
+#Algerian Desert
+TDA_update_state_514_names = {
+}
+
+#Southern Sahara
+TDA_update_state_515_names = {
+}
+
+#Norilsk
+TDA_update_state_516_names = {
+}
+
+#Victoria
+TDA_update_state_517_names = {
+}
+
+#Tasmania
+TDA_update_state_518_names = {
+}
+
+#South Australia
+TDA_update_state_519_names = {
+}
+
+#Northern Territory
+TDA_update_state_520_names = {
+}
+
+#Queensland
+TDA_update_state_521_names = {
+}
+
+#Western Australia
+TDA_update_state_522_names = {
+}
+
+#Papua
+TDA_update_state_523_names = {
+}
+
+#Taiwan
+TDA_update_state_524_names = {
+}
+
+#South Korea
+TDA_update_state_525_names = {
+}
+
+#Okinawa
+TDA_update_state_526_names = {
+}
+
+#North Korea
+TDA_update_state_527_names = {
+}
+
+#Kyushu
+TDA_update_state_528_names = {
+}
+
+#Chugoku
+TDA_update_state_529_names = {
+}
+
+#Shikoku
+TDA_update_state_530_names = {
+}
+
+#Kansai
+TDA_update_state_531_names = {
+}
+
+#Tokai
+TDA_update_state_532_names = {
+}
+
+#Tohoku
+TDA_update_state_533_names = {
+}
+
+#Hokuriku
+TDA_update_state_534_names = {
+}
+
+#Koshinetsu
+TDA_update_state_535_names = {
+}
+
+#Hokkaido
+TDA_update_state_536_names = {
+}
+
+#Sakhalin
+TDA_update_state_537_names = {
+}
+
+#Coquilhatville
+TDA_update_state_538_names = {
+}
+
+#Gabon
+TDA_update_state_539_names = {
+}
+
+#Angola
+TDA_update_state_540_names = {
+}
+
+#Namibia
+TDA_update_state_541_names = {
+}
+
+#Bechuanaland
+TDA_update_state_542_names = {
+}
+
+#Madagascar
+TDA_update_state_543_names = {
+}
+
+#Lourenço Marques
+TDA_update_state_544_names = {
+}
+
+#Rhodesia
+TDA_update_state_545_names = {
+}
+
+#Tanganyika
+TDA_update_state_546_names = {
+}
+
+#Nairobi
+TDA_update_state_547_names = {
+}
+
+#Uganda
+TDA_update_state_548_names = {
+}
+
+#Kurdufan
+TDA_update_state_549_names = {
+}
+
+#Eritrea
+TDA_update_state_550_names = {
+}
+
+#Khartoum
+TDA_update_state_551_names = {
+}
+
+#Western Desert
+TDA_update_state_552_names = {
+}
+
+#Lebanon
+TDA_update_state_553_names = {
+}
+
+#Damascus
+TDA_update_state_554_names = {
+}
+
+#Kuril Islands
+TDA_update_state_555_names = {
+}
+
+#Bamako
+TDA_update_state_556_names = {
+}
+
+#Mauritania
+TDA_update_state_557_names = {
+}
+
+#Lagos
+TDA_update_state_558_names = {
+}
+
+#Somaliland
+TDA_update_state_559_names = {
+}
+
+#Komsomolsk
+TDA_update_state_560_names = {
+}
+
+#Amur
+TDA_update_state_561_names = {
+}
+
+#Okhotsk
+TDA_update_state_562_names = {
+}
+
+#Zabaykalskiy
+TDA_update_state_563_names = {
+}
+
+#Buryatia
+TDA_update_state_564_names = {
+}
+
+#Kymi
+TDA_update_state_565_names = {
+}
+
+#Irkutsk
+TDA_update_state_566_names = {
+}
+
+#Turku
+TDA_update_state_567_names = {
+}
+
+#Krasnoyarsk
+TDA_update_state_568_names = {
+}
+
+#Khakassia
+TDA_update_state_569_names = {
+}
+
+#Novosibirsk
+TDA_update_state_570_names = {
+}
+
+#Omsk
+TDA_update_state_571_names = {
+}
+
+#Chelyabinsk
+TDA_update_state_572_names = {
+}
+
+#Kurgan
+TDA_update_state_573_names = {
+}
+
+#Yakutsk
+TDA_update_state_574_names = {
+}
+
+#DNR
+TDA_update_state_575_names = {
+	#Donets'k
+	if = {
+		limit = { any_country = { controls_province = 13741 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13741 name = VICTORY_POINTS_13741_0 }
+	}
+	#Dontesk
+	else = {
+		reset_province_name = 13741
+	}
+	#Mizhnarodnyy Aeroport Donets'k
+	if = {
+		limit = { any_country = { controls_province = 13742 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13742 name = VICTORY_POINTS_13742_0 }
+	}
+	#Mezhdunarodnyy Aeroport Donetsk
+	else_if = {
+		limit = { any_country = { controls_province = 13742 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13742 name = VICTORY_POINTS_13742_1 }
+	}
+	#Donetsk International Airport
+	else = {
+		reset_province_name = 13742
+	}
+	#Gorlovka
+	if = {
+		limit = { any_country = { controls_province = 13751 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13751 name = VICTORY_POINTS_13751_0 }
+	}
+	#Horlivka
+	else = {
+		reset_province_name = 13751
+	}
+}
+
+#Troms
+TDA_update_state_576_names = {
+}
+
+#Nova Zemlya
+TDA_update_state_577_names = {
+}
+
+#Tomsk
+TDA_update_state_578_names = {
+}
+
+#Yamalo-Nenets
+TDA_update_state_579_names = {
+}
+
+#Khanty-Mansi
+TDA_update_state_580_names = {
+}
+
+#Cairo
+TDA_update_state_581_names = {
+}
+
+#Mombasa
+TDA_update_state_582_names = {
+}
+
+#Kostanay
+TDA_update_state_583_names = {
+}
+
+#Ashkhabad
+TDA_update_state_584_names = {
+}
+
+#Navoi
+TDA_update_state_585_names = {
+}
+
+#Alma-Ata
+TDA_update_state_586_names = {
+}
+
+#Ust Urt
+TDA_update_state_587_names = {
+}
+
+#Semipalatinsk
+TDA_update_state_588_names = {
+}
+
+#Ayaguz
+TDA_update_state_589_names = {
+}
+
+#Akmolinsk
+TDA_update_state_590_names = {
+}
+
+#Hainan
+TDA_update_state_591_names = {
+}
+
+#Guangzhou
+TDA_update_state_592_names = {
+}
+
+#Guangdong
+TDA_update_state_593_names = {
+}
+
+#Nanning
+TDA_update_state_594_names = {
+}
+
+#Fujian
+TDA_update_state_595_names = {
+}
+
+#Zhejiang
+TDA_update_state_596_names = {
+}
+
+#Shandong
+TDA_update_state_597_names = {
+}
+
+#Jiangsu
+TDA_update_state_598_names = {
+}
+
+#Guangxi
+TDA_update_state_599_names = {
+}
+
+#Jiangxi
+TDA_update_state_600_names = {
+}
+
+#Xikang
+TDA_update_state_601_names = {
+}
+
+#Hunan
+TDA_update_state_602_names = {
+}
+
+#Guizhou
+TDA_update_state_603_names = {
+}
+
+#Qinghai
+TDA_update_state_604_names = {
+}
+
+#Sichuan
+TDA_update_state_605_names = {
+}
+
+#Anhui
+TDA_update_state_606_names = {
+}
+
+#Henan
+TDA_update_state_607_names = {
+}
+
+#Beijing
+TDA_update_state_608_names = {
+}
+
+#East Hebei
+TDA_update_state_609_names = {
+}
+
+#Jehol
+TDA_update_state_610_names = {
+}
+
+#South Chahar
+TDA_update_state_611_names = {
+}
+
+#Chahar
+TDA_update_state_612_names = {
+}
+
+#Shanghai
+TDA_update_state_613_names = {
+}
+
+#Hebei
+TDA_update_state_614_names = {
+}
+
+#Shanxi
+TDA_update_state_615_names = {
+}
+
+#Ningxia
+TDA_update_state_616_names = {
+}
+
+#Urumqi
+TDA_update_state_617_names = {
+}
+
+#Dzungaria
+TDA_update_state_618_names = {
+}
+
+#Yarkand
+TDA_update_state_619_names = {
+}
+
+#Hubei
+TDA_update_state_620_names = {
+}
+
+#Suiyuan
+TDA_update_state_621_names = {
+}
+
+#Shaanxi
+TDA_update_state_622_names = {
+}
+
+#Luzon
+TDA_update_state_623_names = {
+}
+
+#Central islands
+TDA_update_state_624_names = {
+}
+
+#Samar
+TDA_update_state_625_names = {
+}
+
+#Palawan
+TDA_update_state_626_names = {
+}
+
+#Mindanao
+TDA_update_state_627_names = {
+}
+
+#Cebu
+TDA_update_state_628_names = {
+}
+
+#Hawaii
+TDA_update_state_629_names = {
+}
+
+#Johnston Atoll
+TDA_update_state_630_names = {
+}
+
+#Midway Island
+TDA_update_state_631_names = {
+}
+
+#Wake Island
+TDA_update_state_632_names = {
+}
+
+#Marshall Islands
+TDA_update_state_633_names = {
+}
+
+#Solomon Islands
+TDA_update_state_634_names = {
+}
+
+#New Caledonia
+TDA_update_state_635_names = {
+}
+
+#Fiji
+TDA_update_state_636_names = {
+}
+
+#Kamchatka
+TDA_update_state_637_names = {
+}
+
+#Guam
+TDA_update_state_638_names = {
+}
+
+#Gilbert Islands
+TDA_update_state_639_names = {
+}
+
+#Mandalay
+TDA_update_state_640_names = {
+}
+
+#Tahiti
+TDA_update_state_641_names = {
+}
+
+#Phoenix Island
+TDA_update_state_642_names = {
+}
+
+#Ellice Islands
+TDA_update_state_643_names = {
+}
+
+#Southern Wales
+TDA_update_state_644_names = {
+}
+
+#Iwo Jima
+TDA_update_state_645_names = {
+}
+
+#Saipan
+TDA_update_state_646_names = {
+}
+
+#Palau
+TDA_update_state_647_names = {
+}
+
+#Marcus Island
+TDA_update_state_648_names = {
+}
+
+#Galapagos Islands
+TDA_update_state_649_names = {
+}
+
+#Attu Island
+TDA_update_state_650_names = {
+}
+
+#Bashkortostan
+TDA_update_state_651_names = {
+}
+
+#Orenburg
+TDA_update_state_652_names = {
+}
+
+#Sverdlovsk
+TDA_update_state_653_names = {
+}
+
+#Altai
+TDA_update_state_654_names = {
+}
+
+#Liechtenstein
+TDA_update_state_655_names = {
+}
+
+#Kuwait
+TDA_update_state_656_names = {
+}
+
+#Bern
+TDA_update_state_657_names = {
+}
+
+#Abu Dhabi
+TDA_update_state_658_names = {
+}
+
+#Aden
+TDA_update_state_659_names = {
+}
+
+#Equatorial Africa
+TDA_update_state_660_names = {
+}
+
+#Libyan Great Sand Sea
+TDA_update_state_661_names = {
+}
+
+#Halaib Triangle
+TDA_update_state_662_names = {
+}
+
+#Cyrenaica
+TDA_update_state_663_names = {
+}
+
+#Southern Slovakia
+TDA_update_state_664_names = {
+}
+
+#Gabès
+TDA_update_state_665_names = {
+}
+
+#Norrbotten
+TDA_update_state_666_names = {
+}
+
+#Lesser Sunda Islands
+TDA_update_state_667_names = {
+}
+
+#The Moluccas
+TDA_update_state_668_names = {
+}
+
+#West Papua
+TDA_update_state_669_names = {
+}
+
+#Laos
+TDA_update_state_670_names = {
+}
+
+#Tonkin
+TDA_update_state_671_names = {
+}
+
+#Sumatra
+TDA_update_state_672_names = {
+}
+
+#Sulawesi
+TDA_update_state_673_names = {
+}
+
+#Central Australia
+TDA_update_state_674_names = {
+}
+
+#Al Hajara
+TDA_update_state_675_names = {
+}
+
+#Mosul
+TDA_update_state_676_names = {
+}
+
+#Aleppo
+TDA_update_state_677_names = {
+}
+
+#Rub al Khali
+TDA_update_state_678_names = {
+}
+
+#Madinah
+TDA_update_state_679_names = {
+}
+
+#Deir-az-Zur
+TDA_update_state_680_names = {
+}
+
+#Cape
+TDA_update_state_681_names = {
+}
+
+#Northern Ontario
+TDA_update_state_682_names = {
+}
+
+#Nunavut
+TDA_update_state_683_names = {
+}
+
+#Caroline Islands
+TDA_update_state_684_names = {
+}
+
+#Panamá Canal
+TDA_update_state_685_names = {
+}
+
+#Puerto Rico
+TDA_update_state_686_names = {
+}
+
+#British Guyana
+TDA_update_state_687_names = {
+}
+
+#Chaco Boreal
+TDA_update_state_688_names = {
+}
+
+#Jamaica
+TDA_update_state_689_names = {
+}
+
+#Northern Bahamas
+TDA_update_state_690_names = {
+}
+
+#Trinidad
+TDA_update_state_691_names = {
+}
+
+#Windward Islands
+TDA_update_state_692_names = {
+}
+
+#Southern Bahamas
+TDA_update_state_693_names = {
+}
+
+#French Caribbean
+TDA_update_state_694_names = {
+}
+
+#Curaçao
+TDA_update_state_695_names = {
+}
+
+#Bermuda
+TDA_update_state_696_names = {
+}
+
+#Madeira
+TDA_update_state_697_names = {
+}
+
+#Azores
+TDA_update_state_698_names = {
+}
+
+#Rio de Oro
+TDA_update_state_699_names = {
+}
+
+#Sierra Leone
+TDA_update_state_700_names = {
+}
+
+#Gambia
+TDA_update_state_701_names = {
+}
+
+#Cape Verde
+TDA_update_state_702_names = {
+}
+
+#Ascension
+TDA_update_state_703_names = {
+}
+
+#Saint Helena
+TDA_update_state_704_names = {
+}
+
+#Sao Tome
+TDA_update_state_705_names = {
+}
+
+#Reunion
+TDA_update_state_706_names = {
+}
+
+#Mauritius
+TDA_update_state_707_names = {
+}
+
+#Comoro Islands
+TDA_update_state_708_names = {
+}
+
+#Seychelles
+TDA_update_state_709_names = {
+}
+
+#Diego Garcia
+TDA_update_state_710_names = {
+}
+
+#Christmas Island
+TDA_update_state_711_names = {
+}
+
+#Cocos Islands
+TDA_update_state_712_names = {
+}
+
+#Kerguelen
+TDA_update_state_713_names = {
+}
+
+#Heilungkiang
+TDA_update_state_714_names = {
+}
+
+#Liaoning
+TDA_update_state_715_names = {
+}
+
+#Liaotung
+TDA_update_state_716_names = {
+}
+
+#Sungkiang
+TDA_update_state_717_names = {
+}
+
+#Stanleyville
+TDA_update_state_718_names = {
+}
+
+#Natal
+TDA_update_state_719_names = {
+}
+
+#South Georgia
+TDA_update_state_720_names = {
+}
+
+#Portuguese Timor
+TDA_update_state_721_names = {
+}
+
+#Dalarna
+TDA_update_state_722_names = {
+}
+
+#South Island
+TDA_update_state_723_names = {
+}
+
+#Northern Malay
+TDA_update_state_724_names = {
+}
+
+#Nauru
+TDA_update_state_725_names = {
+}
+
+#Samoa
+TDA_update_state_726_names = {
+}
+
+#Line Islands
+TDA_update_state_727_names = {
+}
+
+#Formosa
+TDA_update_state_728_names = {
+}
+
+#Macau
+TDA_update_state_729_names = {
+}
+
+#St Pierre and Miquelon
+TDA_update_state_730_names = {
+}
+
+#Central Macedonia
+TDA_update_state_731_names = {
+}
+
+#Pamir
+TDA_update_state_732_names = {
+}
+
+#Andaman
+TDA_update_state_733_names = {
+}
+
+#Nendo
+TDA_update_state_734_names = {
+}
+
+#Piauí
+TDA_update_state_735_names = {
+}
+
+#Araucanía
+TDA_update_state_736_names = {
+}
+
+#Bismarck
+TDA_update_state_737_names = {
+}
+
+#Aru Islands
+TDA_update_state_738_names = {
+}
+
+#Massachusetts
+TDA_update_state_739_names = {
+}
+
+#Vancouver Island
+TDA_update_state_740_names = {
+}
+
+#Cambodia
+TDA_update_state_741_names = {
+}
+
+#Stalinabad
+TDA_update_state_742_names = {
+}
+
+#North Kosovo
+TDA_update_state_743_names = {
+}
+
+#Xian
+TDA_update_state_744_names = {
+}
+
+#Upper Peninsula
+TDA_update_state_745_names = {
+}
+
+#Ordos
+TDA_update_state_746_names = {
+}
+
+#Dali
+TDA_update_state_747_names = {
+}
+
+#Zunyi
+TDA_update_state_748_names = {
+}
+
+#Huangshan
+TDA_update_state_749_names = {
+}
+
+#Changde
+TDA_update_state_750_names = {
+}
+
+#Liangshan
+TDA_update_state_751_names = {
+}
+
+#Ganzi
+TDA_update_state_752_names = {
+}
+
+#Gannan
+TDA_update_state_753_names = {
+}
+
+#Golog
+TDA_update_state_754_names = {
+}
+
+#Haixi
+TDA_update_state_755_names = {
+}
+
+#Jiuquan
+TDA_update_state_756_names = {
+}
+
+#Haruj
+TDA_update_state_757_names = {
+}
+
+#Fezzan
+TDA_update_state_758_names = {
+}
+
+#Kunlun Shan
+TDA_update_state_759_names = {
+}
+
+#Dabancheng
+TDA_update_state_760_names = {
+}
+
+#Hulunbuir
+TDA_update_state_761_names = {
+}
+
+#Śląskie
+TDA_update_state_762_names = {
+}
+
+#Königsberg
+TDA_update_state_763_names = {
+}
+
+#West Banat
+TDA_update_state_764_names = {
+}
+
+#Qatar
+TDA_update_state_765_names = {
+}
+
+#Budjak
+TDA_update_state_766_names = {
+	766 = {
+		#Budzhak
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_ukrainian_names = yes TAG_using_russian_names = yes } } }
+			set_state_name = STATE_766_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Izmayil
+	if = {
+		limit = { any_country = { controls_province = 3701 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3701 name = VICTORY_POINTS_3701_0 }
+	}
+	#Izmail
+	else = {
+		reset_province_name = 3701
+	}
+	#Bilhorod-Dnistrovs'kyy
+	if = {
+		limit = { any_country = { controls_province = 13799 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 13799 name = VICTORY_POINTS_13799_0 }
+	}
+	#Belgorod-Dnestrovskiy
+	else_if = {
+		limit = { any_country = { controls_province = 13799 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13799 name = VICTORY_POINTS_13799_1 }
+	}
+	#Bilhorod-Dnistrovsky
+	else = {
+		reset_province_name = 13799
+	}
+}
+
+#North Darfur
+TDA_update_state_767_names = {
+}
+
+#Rwanda
+TDA_update_state_768_names = {
+}
+
+#Burundi
+TDA_update_state_769_names = {
+}
+
+#Malawi
+TDA_update_state_770_names = {
+}
+
+#Zambia
+TDA_update_state_771_names = {
+}
+
+#Middle Congo
+TDA_update_state_772_names = {
+}
+
+#Cameroon
+TDA_update_state_773_names = {
+}
+
+#Chad
+TDA_update_state_774_names = {
+}
+
+#B.E.T.
+TDA_update_state_775_names = {
+}
+
+#Dahomey
+TDA_update_state_776_names = {
+}
+
+#Togo
+TDA_update_state_777_names = {
+}
+
+#Upper Volta
+TDA_update_state_778_names = {
+}
+
+#Ivory Coast
+TDA_update_state_779_names = {
+}
+
+#Guinea
+TDA_update_state_780_names = {
+}
+
+#Niger
+TDA_update_state_781_names = {
+}
+
+#Tombouctou
+TDA_update_state_782_names = {
+}
+
+#Dublin
+TDA_update_state_783_names = {
+}
+
+#Kherson
+TDA_update_state_784_names = {
+	#Velikaya Aleksandrovka
+	if = {
+		limit = { any_country = { controls_province = 11715 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11715 name = VICTORY_POINTS_11715_0 }
+	}
+	#Velyka Oleksandrivka
+	else = {
+		reset_province_name = 11715
+	}
+}
+
+#Picardy
+TDA_update_state_785_names = {
+}
+
+#Mauritanian Desert
+TDA_update_state_786_names = {
+}
+
+#Northern Kashmir
+TDA_update_state_787_names = {
+}
+
+#West Bank Zones A&B
+TDA_update_state_788_names = {
+}
+
+#Jerusalem
+TDA_update_state_789_names = {
+}
+
+#Asturias
+TDA_update_state_790_names = {
+}
+
+#Cantabria
+TDA_update_state_791_names = {
+}
+
+#País Vasco
+TDA_update_state_792_names = {
+}
+
+#West Bank Zone C
+TDA_update_state_793_names = {
+}
+
+#Andorra
+TDA_update_state_794_names = {
+}
+
+#Santarém
+TDA_update_state_795_names = {
+}
+
+#Cabinda
+TDA_update_state_796_names = {
+}
+
+#Istanbul
+TDA_update_state_797_names = {
+}
+
+#Amasya
+TDA_update_state_798_names = {
+}
+
+#Hatay
+TDA_update_state_799_names = {
+}
+
+#Van
+TDA_update_state_800_names = {
+}
+
+#Moesia
+TDA_update_state_801_names = {
+}
+
+#Kosovo
+TDA_update_state_802_names = {
+}
+
+#Slavonia
+TDA_update_state_803_names = {
+}
+
+#Brčko District
+TDA_update_state_804_names = {
+}
+
+#Arica y Tarapacá
+TDA_update_state_805_names = {
+}
+
+#Paraná
+TDA_update_state_806_names = {
+}
+
+#Kuyavia-Pomerania
+TDA_update_state_807_names = {
+	807 = {
+		#Kujawsko-Pomorskie
+		if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_807_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Vermont
+TDA_update_state_808_names = {
+}
+
+#Port of Sevastopol
+TDA_update_state_809_names = {
+	809 = {
+		#Sevastopolʹsʹkyy port
+		if = {
+			limit = { CONTROLLER = { TAG_using_ukrainian_names = yes } }
+			set_state_name = STATE_809_0
+		}
+		#Sevastopol'skiy port
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_809_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Latgale
+TDA_update_state_810_names = {
+}
+
+#Saare and Hiiu
+TDA_update_state_811_names = {
+}
+
+#Harju
+TDA_update_state_812_names = {
+}
+
+#Ida-Viru
+TDA_update_state_813_names = {
+}
+
+#Sūduva
+TDA_update_state_814_names = {
+}
+
+#Aukštaitija
+TDA_update_state_815_names = {
+}
+
+#West Virginia
+TDA_update_state_816_names = {
+}
+
+#Gobi
+TDA_update_state_817_names = {
+}
+
+#Khovd
+TDA_update_state_818_names = {
+}
+
+#Dornod
+TDA_update_state_819_names = {
+}
+
+#Khövsgöl
+TDA_update_state_820_names = {
+}
+
+#Chechnya
+TDA_update_state_821_names = {
+}
+
+#Chukotka
+TDA_update_state_822_names = {
+}
+
+#Karakalpakstan
+TDA_update_state_823_names = {
+}
+
+#Kemerovo
+TDA_update_state_824_names = {
+}
+
+#Nenets
+TDA_update_state_825_names = {
+}
+
+#Abkhazia
+TDA_update_state_826_names = {
+}
+
+#North Caucuses
+TDA_update_state_827_names = {
+}
+
+#Helgeland
+TDA_update_state_828_names = {
+}
+
+#Västerbotten
+TDA_update_state_829_names = {
+}
+
+#Bukhara
+TDA_update_state_830_names = {
+}
+
+#Barotseland
+TDA_update_state_831_names = {
+}
+
+#Eupen-Malmedy
+TDA_update_state_832_names = {
+}
+
+#Mari El
+TDA_update_state_833_names = {
+}
+
+#Transnistria
+TDA_update_state_834_names = {
+}
+
+#Kostroma
+TDA_update_state_835_names = {
+}
+
+#Burgenland
+TDA_update_state_836_names = {
+}
+
+#Mordoviya
+TDA_update_state_837_names = {
+}
+
+#Nyanza-Rift Valley
+TDA_update_state_838_names = {
+}
+
+#Rio Branco
+TDA_update_state_839_names = {
+}
+
+#Northern Srpska
+TDA_update_state_840_names = {
+}
+
+#Northern Dobruja
+TDA_update_state_841_names = {
+}
+
+#Northern California
+TDA_update_state_842_names = {
+}
+
+#Brussels
+TDA_update_state_843_names = {
+}
+
+#Jubaland
+TDA_update_state_844_names = {
+}
+
+#Geneva
+TDA_update_state_845_names = {
+}
+
+#Ticino
+TDA_update_state_846_names = {
+}
+
+#Orkney and Shetland Islands
+TDA_update_state_847_names = {
+}
+
+#Vorarlberg
+TDA_update_state_848_names = {
+}
+
+#Apulia
+TDA_update_state_849_names = {
+	849 = {
+		#Puglia
+		if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_849_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Trentino
+TDA_update_state_850_names = {
+	850 = {
+		#Trient
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_850_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Monaco
+TDA_update_state_851_names = {
+}
+
+#Istria
+TDA_update_state_852_names = {
+}
+
+#Los Angeles
+TDA_update_state_853_names = {
+}
+
+#Jawf
+TDA_update_state_854_names = {
+}
+
+#Tabuk
+TDA_update_state_855_names = {
+}
+
+#Asir-Makkah
+TDA_update_state_856_names = {
+}
+
+#Al-Qassim
+TDA_update_state_857_names = {
+}
+
+#Najiran
+TDA_update_state_858_names = {
+}
+
+#Dammam
+TDA_update_state_859_names = {
+}
+
+#Rio Grande
+TDA_update_state_860_names = {
+}
+
+#Prince Edward Island
+TDA_update_state_861_names = {
+}
+
+#Ouest du Quebec
+TDA_update_state_862_names = {
+}
+
+#Delaware
+TDA_update_state_863_names = {
+}
+
+#Yukon Territory
+TDA_update_state_864_names = {
+}
+
+#Northern Alaska
+TDA_update_state_865_names = {
+}
+
+#New York City
+TDA_update_state_866_names = {
+}
+
+#District of Columbia
+TDA_update_state_867_names = {
+}
+
+#Isan
+TDA_update_state_868_names = {
+}
+
+#Lanna
+TDA_update_state_869_names = {
+}
+
+#North West Australia
+TDA_update_state_870_names = {
+}
+
+#South West Australia
+TDA_update_state_871_names = {
+}
+
+#North Queensland
+TDA_update_state_872_names = {
+}
+
+#South West Queensland
+TDA_update_state_873_names = {
+}
+
+#Magadan
+TDA_update_state_874_names = {
+}
+
+#Cumbria and the Isle of Man
+TDA_update_state_875_names = {
+}
+
+#Sakha
+TDA_update_state_876_names = {
+}
+
+#Oulu
+TDA_update_state_877_names = {
+}
+
+#Finnmark
+TDA_update_state_878_names = {
+}
+
+#Easter Island
+TDA_update_state_879_names = {
+}
+
+#Schleswig
+TDA_update_state_880_names = {
+}
+
+#Karagandy
+TDA_update_state_881_names = {
+}
+
+#Pavlodar
+TDA_update_state_882_names = {
+}
+
+#Kassala
+TDA_update_state_883_names = {
+}
+
+#Upper Nile
+TDA_update_state_884_names = {
+}
+
+#Bahr al Ghazal
+TDA_update_state_885_names = {
+}
+
+#Blue Nile
+TDA_update_state_886_names = {
+}
+
+#South Darfur
+TDA_update_state_887_names = {
+}
+
+#Lusambo
+TDA_update_state_888_names = {
+}
+
+#Elisabethville
+TDA_update_state_889_names = {
+}
+
+#Costermansville
+TDA_update_state_890_names = {
+}
+
+#Atacama
+TDA_update_state_891_names = {
+}
+
+#Tierra del Fuego
+TDA_update_state_892_names = {
+}
+
+#Santa Fe
+TDA_update_state_893_names = {
+}
+
+#Chubut
+TDA_update_state_894_names = {
+}
+
+#Santa Cruz
+TDA_update_state_895_names = {
+}
+
+#Manica e Sofala
+TDA_update_state_896_names = {
+}
+
+#Zambezia-Moçambique
+TDA_update_state_897_names = {
+}
+
+#Gao
+TDA_update_state_898_names = {
+}
+
+#Kayes-Koulikoro
+TDA_update_state_899_names = {
+}
+
+#Benue
+TDA_update_state_900_names = {
+}
+
+#Borno
+TDA_update_state_901_names = {
+}
+
+#Sokoto
+TDA_update_state_902_names = {
+}
+
+#Garissa
+TDA_update_state_903_names = {
+}
+
+#Gaza Strip
+TDA_update_state_904_names = {
+}
+
+#Golan Heights
+TDA_update_state_905_names = {
+}
+
+#Fouad
+TDA_update_state_906_names = {
+}
+
+#Egyptian Great Sand Sea
+TDA_update_state_907_names = {
+}
+
+
+
+TDA_change_all_city_names = {
+	TDA_update_state_1_names = yes
+	TDA_update_state_2_names = yes
+	TDA_update_state_3_names = yes
+	TDA_update_state_4_names = yes
+	TDA_update_state_5_names = yes
+	TDA_update_state_6_names = yes
+	TDA_update_state_7_names = yes
+	TDA_update_state_8_names = yes
+	TDA_update_state_9_names = yes
+	TDA_update_state_10_names = yes
+	TDA_update_state_11_names = yes
+	TDA_update_state_12_names = yes
+	TDA_update_state_13_names = yes
+	TDA_update_state_14_names = yes
+	TDA_update_state_15_names = yes
+	TDA_update_state_16_names = yes
+	TDA_update_state_17_names = yes
+	TDA_update_state_18_names = yes
+	TDA_update_state_19_names = yes
+	TDA_update_state_20_names = yes
+	TDA_update_state_21_names = yes
+	TDA_update_state_22_names = yes
+	TDA_update_state_23_names = yes
+	TDA_update_state_24_names = yes
+	TDA_update_state_25_names = yes
+	TDA_update_state_26_names = yes
+	TDA_update_state_27_names = yes
+	TDA_update_state_28_names = yes
+	TDA_update_state_29_names = yes
+	TDA_update_state_30_names = yes
+	TDA_update_state_31_names = yes
+	TDA_update_state_32_names = yes
+	TDA_update_state_33_names = yes
+	TDA_update_state_34_names = yes
+	TDA_update_state_35_names = yes
+	TDA_update_state_36_names = yes
+	TDA_update_state_37_names = yes
+	TDA_update_state_38_names = yes
+	TDA_update_state_39_names = yes
+	TDA_update_state_40_names = yes
+	TDA_update_state_41_names = yes
+	TDA_update_state_42_names = yes
+	TDA_update_state_43_names = yes
+	TDA_update_state_44_names = yes
+	TDA_update_state_45_names = yes
+	TDA_update_state_46_names = yes
+	TDA_update_state_47_names = yes
+	TDA_update_state_48_names = yes
+	TDA_update_state_49_names = yes
+	TDA_update_state_50_names = yes
+	TDA_update_state_51_names = yes
+	TDA_update_state_52_names = yes
+	TDA_update_state_53_names = yes
+	TDA_update_state_54_names = yes
+	TDA_update_state_55_names = yes
+	TDA_update_state_56_names = yes
+	TDA_update_state_57_names = yes
+	TDA_update_state_58_names = yes
+	TDA_update_state_59_names = yes
+	TDA_update_state_60_names = yes
+	TDA_update_state_61_names = yes
+	TDA_update_state_62_names = yes
+	TDA_update_state_63_names = yes
+	TDA_update_state_64_names = yes
+	TDA_update_state_65_names = yes
+	TDA_update_state_66_names = yes
+	TDA_update_state_67_names = yes
+	TDA_update_state_68_names = yes
+	TDA_update_state_69_names = yes
+	TDA_update_state_70_names = yes
+	TDA_update_state_71_names = yes
+	TDA_update_state_72_names = yes
+	TDA_update_state_73_names = yes
+	TDA_update_state_74_names = yes
+	TDA_update_state_75_names = yes
+	TDA_update_state_76_names = yes
+	TDA_update_state_77_names = yes
+	TDA_update_state_78_names = yes
+	TDA_update_state_79_names = yes
+	TDA_update_state_80_names = yes
+	TDA_update_state_81_names = yes
+	TDA_update_state_82_names = yes
+	TDA_update_state_83_names = yes
+	TDA_update_state_84_names = yes
+	TDA_update_state_85_names = yes
+	TDA_update_state_86_names = yes
+	TDA_update_state_87_names = yes
+	TDA_update_state_88_names = yes
+	TDA_update_state_89_names = yes
+	TDA_update_state_90_names = yes
+	TDA_update_state_91_names = yes
+	TDA_update_state_92_names = yes
+	TDA_update_state_93_names = yes
+	TDA_update_state_94_names = yes
+	TDA_update_state_95_names = yes
+	TDA_update_state_96_names = yes
+	TDA_update_state_97_names = yes
+	TDA_update_state_98_names = yes
+	TDA_update_state_99_names = yes
+	TDA_update_state_100_names = yes
+	TDA_update_state_101_names = yes
+	TDA_update_state_102_names = yes
+	TDA_update_state_103_names = yes
+	TDA_update_state_104_names = yes
+	TDA_update_state_105_names = yes
+	TDA_update_state_106_names = yes
+	TDA_update_state_107_names = yes
+	TDA_update_state_108_names = yes
+	TDA_update_state_109_names = yes
+	TDA_update_state_110_names = yes
+	TDA_update_state_111_names = yes
+	TDA_update_state_112_names = yes
+	TDA_update_state_113_names = yes
+	TDA_update_state_114_names = yes
+	TDA_update_state_115_names = yes
+	TDA_update_state_116_names = yes
+	TDA_update_state_117_names = yes
+	TDA_update_state_118_names = yes
+	TDA_update_state_119_names = yes
+	TDA_update_state_120_names = yes
+	TDA_update_state_121_names = yes
+	TDA_update_state_122_names = yes
+	TDA_update_state_123_names = yes
+	TDA_update_state_124_names = yes
+	TDA_update_state_125_names = yes
+	TDA_update_state_126_names = yes
+	TDA_update_state_127_names = yes
+	TDA_update_state_128_names = yes
+	TDA_update_state_129_names = yes
+	TDA_update_state_130_names = yes
+	TDA_update_state_131_names = yes
+	TDA_update_state_132_names = yes
+	TDA_update_state_133_names = yes
+	TDA_update_state_134_names = yes
+	TDA_update_state_135_names = yes
+	TDA_update_state_136_names = yes
+	TDA_update_state_137_names = yes
+	TDA_update_state_138_names = yes
+	TDA_update_state_139_names = yes
+	TDA_update_state_140_names = yes
+	TDA_update_state_141_names = yes
+	TDA_update_state_142_names = yes
+	TDA_update_state_143_names = yes
+	TDA_update_state_144_names = yes
+	TDA_update_state_145_names = yes
+	TDA_update_state_146_names = yes
+	TDA_update_state_147_names = yes
+	TDA_update_state_148_names = yes
+	TDA_update_state_149_names = yes
+	TDA_update_state_150_names = yes
+	TDA_update_state_151_names = yes
+	TDA_update_state_152_names = yes
+	TDA_update_state_153_names = yes
+	TDA_update_state_154_names = yes
+	TDA_update_state_155_names = yes
+	TDA_update_state_156_names = yes
+	TDA_update_state_157_names = yes
+	TDA_update_state_158_names = yes
+	TDA_update_state_159_names = yes
+	TDA_update_state_160_names = yes
+	TDA_update_state_161_names = yes
+	TDA_update_state_162_names = yes
+	TDA_update_state_163_names = yes
+	TDA_update_state_164_names = yes
+	TDA_update_state_165_names = yes
+	TDA_update_state_166_names = yes
+	TDA_update_state_167_names = yes
+	TDA_update_state_168_names = yes
+	TDA_update_state_169_names = yes
+	TDA_update_state_170_names = yes
+	TDA_update_state_171_names = yes
+	TDA_update_state_172_names = yes
+	TDA_update_state_173_names = yes
+	TDA_update_state_174_names = yes
+	TDA_update_state_175_names = yes
+	TDA_update_state_176_names = yes
+	TDA_update_state_177_names = yes
+	TDA_update_state_178_names = yes
+	TDA_update_state_179_names = yes
+	TDA_update_state_180_names = yes
+	TDA_update_state_181_names = yes
+	TDA_update_state_182_names = yes
+	TDA_update_state_183_names = yes
+	TDA_update_state_184_names = yes
+	TDA_update_state_185_names = yes
+	TDA_update_state_186_names = yes
+	TDA_update_state_187_names = yes
+	TDA_update_state_188_names = yes
+	TDA_update_state_189_names = yes
+	TDA_update_state_190_names = yes
+	TDA_update_state_191_names = yes
+	TDA_update_state_192_names = yes
+	TDA_update_state_193_names = yes
+	TDA_update_state_194_names = yes
+	TDA_update_state_195_names = yes
+	TDA_update_state_196_names = yes
+	TDA_update_state_197_names = yes
+	TDA_update_state_198_names = yes
+	TDA_update_state_199_names = yes
+	TDA_update_state_200_names = yes
+	TDA_update_state_201_names = yes
+	TDA_update_state_202_names = yes
+	TDA_update_state_203_names = yes
+	TDA_update_state_204_names = yes
+	TDA_update_state_205_names = yes
+	TDA_update_state_206_names = yes
+	TDA_update_state_207_names = yes
+	TDA_update_state_208_names = yes
+	TDA_update_state_209_names = yes
+	TDA_update_state_210_names = yes
+	TDA_update_state_211_names = yes
+	TDA_update_state_212_names = yes
+	TDA_update_state_213_names = yes
+	TDA_update_state_214_names = yes
+	TDA_update_state_215_names = yes
+	TDA_update_state_216_names = yes
+	TDA_update_state_217_names = yes
+	TDA_update_state_218_names = yes
+	TDA_update_state_219_names = yes
+	TDA_update_state_220_names = yes
+	TDA_update_state_221_names = yes
+	TDA_update_state_222_names = yes
+	TDA_update_state_223_names = yes
+	TDA_update_state_224_names = yes
+	TDA_update_state_225_names = yes
+	TDA_update_state_226_names = yes
+	TDA_update_state_227_names = yes
+	TDA_update_state_228_names = yes
+	TDA_update_state_229_names = yes
+	TDA_update_state_230_names = yes
+	TDA_update_state_231_names = yes
+	TDA_update_state_232_names = yes
+	TDA_update_state_233_names = yes
+	TDA_update_state_234_names = yes
+	TDA_update_state_235_names = yes
+	TDA_update_state_236_names = yes
+	TDA_update_state_237_names = yes
+	TDA_update_state_238_names = yes
+	TDA_update_state_239_names = yes
+	TDA_update_state_240_names = yes
+	TDA_update_state_241_names = yes
+	TDA_update_state_242_names = yes
+	TDA_update_state_243_names = yes
+	TDA_update_state_244_names = yes
+	TDA_update_state_245_names = yes
+	TDA_update_state_246_names = yes
+	TDA_update_state_247_names = yes
+	TDA_update_state_248_names = yes
+	TDA_update_state_249_names = yes
+	TDA_update_state_250_names = yes
+	TDA_update_state_251_names = yes
+	TDA_update_state_252_names = yes
+	TDA_update_state_253_names = yes
+	TDA_update_state_254_names = yes
+	TDA_update_state_255_names = yes
+	TDA_update_state_256_names = yes
+	TDA_update_state_257_names = yes
+	TDA_update_state_258_names = yes
+	TDA_update_state_259_names = yes
+	TDA_update_state_260_names = yes
+	TDA_update_state_261_names = yes
+	TDA_update_state_262_names = yes
+	TDA_update_state_263_names = yes
+	TDA_update_state_264_names = yes
+	TDA_update_state_265_names = yes
+	TDA_update_state_266_names = yes
+	TDA_update_state_267_names = yes
+	TDA_update_state_268_names = yes
+	TDA_update_state_269_names = yes
+	TDA_update_state_270_names = yes
+	TDA_update_state_271_names = yes
+	TDA_update_state_272_names = yes
+	TDA_update_state_273_names = yes
+	TDA_update_state_274_names = yes
+	TDA_update_state_275_names = yes
+	TDA_update_state_276_names = yes
+	TDA_update_state_277_names = yes
+	TDA_update_state_278_names = yes
+	TDA_update_state_279_names = yes
+	TDA_update_state_280_names = yes
+	TDA_update_state_281_names = yes
+	TDA_update_state_282_names = yes
+	TDA_update_state_283_names = yes
+	TDA_update_state_284_names = yes
+	TDA_update_state_285_names = yes
+	TDA_update_state_286_names = yes
+	TDA_update_state_287_names = yes
+	TDA_update_state_288_names = yes
+	TDA_update_state_289_names = yes
+	TDA_update_state_290_names = yes
+	TDA_update_state_291_names = yes
+	TDA_update_state_292_names = yes
+	TDA_update_state_293_names = yes
+	TDA_update_state_294_names = yes
+	TDA_update_state_295_names = yes
+	TDA_update_state_296_names = yes
+	TDA_update_state_297_names = yes
+	TDA_update_state_298_names = yes
+	TDA_update_state_299_names = yes
+	TDA_update_state_300_names = yes
+	TDA_update_state_301_names = yes
+	TDA_update_state_302_names = yes
+	TDA_update_state_303_names = yes
+	TDA_update_state_304_names = yes
+	TDA_update_state_305_names = yes
+	TDA_update_state_306_names = yes
+	TDA_update_state_307_names = yes
+	TDA_update_state_308_names = yes
+	TDA_update_state_309_names = yes
+	TDA_update_state_310_names = yes
+	TDA_update_state_311_names = yes
+	TDA_update_state_312_names = yes
+	TDA_update_state_313_names = yes
+	TDA_update_state_314_names = yes
+	TDA_update_state_315_names = yes
+	TDA_update_state_316_names = yes
+	TDA_update_state_317_names = yes
+	TDA_update_state_318_names = yes
+	TDA_update_state_319_names = yes
+	TDA_update_state_320_names = yes
+	TDA_update_state_321_names = yes
+	TDA_update_state_322_names = yes
+	TDA_update_state_323_names = yes
+	TDA_update_state_324_names = yes
+	TDA_update_state_325_names = yes
+	TDA_update_state_326_names = yes
+	TDA_update_state_327_names = yes
+	TDA_update_state_328_names = yes
+	TDA_update_state_329_names = yes
+	TDA_update_state_330_names = yes
+	TDA_update_state_331_names = yes
+	TDA_update_state_332_names = yes
+	TDA_update_state_333_names = yes
+	TDA_update_state_334_names = yes
+	TDA_update_state_335_names = yes
+	TDA_update_state_336_names = yes
+	TDA_update_state_337_names = yes
+	TDA_update_state_338_names = yes
+	TDA_update_state_339_names = yes
+	TDA_update_state_340_names = yes
+	TDA_update_state_341_names = yes
+	TDA_update_state_342_names = yes
+	TDA_update_state_343_names = yes
+	TDA_update_state_344_names = yes
+	TDA_update_state_345_names = yes
+	TDA_update_state_346_names = yes
+	TDA_update_state_347_names = yes
+	TDA_update_state_348_names = yes
+	TDA_update_state_349_names = yes
+	TDA_update_state_350_names = yes
+	TDA_update_state_351_names = yes
+	TDA_update_state_352_names = yes
+	TDA_update_state_353_names = yes
+	TDA_update_state_354_names = yes
+	TDA_update_state_355_names = yes
+	TDA_update_state_356_names = yes
+	TDA_update_state_357_names = yes
+	TDA_update_state_358_names = yes
+	TDA_update_state_359_names = yes
+	TDA_update_state_360_names = yes
+	TDA_update_state_361_names = yes
+	TDA_update_state_362_names = yes
+	TDA_update_state_363_names = yes
+	TDA_update_state_364_names = yes
+	TDA_update_state_365_names = yes
+	TDA_update_state_366_names = yes
+	TDA_update_state_367_names = yes
+	TDA_update_state_368_names = yes
+	TDA_update_state_369_names = yes
+	TDA_update_state_370_names = yes
+	TDA_update_state_371_names = yes
+	TDA_update_state_372_names = yes
+	TDA_update_state_373_names = yes
+	TDA_update_state_374_names = yes
+	TDA_update_state_375_names = yes
+	TDA_update_state_376_names = yes
+	TDA_update_state_377_names = yes
+	TDA_update_state_378_names = yes
+	TDA_update_state_379_names = yes
+	TDA_update_state_380_names = yes
+	TDA_update_state_381_names = yes
+	TDA_update_state_382_names = yes
+	TDA_update_state_383_names = yes
+	TDA_update_state_384_names = yes
+	TDA_update_state_385_names = yes
+	TDA_update_state_386_names = yes
+	TDA_update_state_387_names = yes
+	TDA_update_state_388_names = yes
+	TDA_update_state_389_names = yes
+	TDA_update_state_390_names = yes
+	TDA_update_state_391_names = yes
+	TDA_update_state_392_names = yes
+	TDA_update_state_393_names = yes
+	TDA_update_state_394_names = yes
+	TDA_update_state_395_names = yes
+	TDA_update_state_396_names = yes
+	TDA_update_state_397_names = yes
+	TDA_update_state_398_names = yes
+	TDA_update_state_399_names = yes
+	TDA_update_state_400_names = yes
+	TDA_update_state_401_names = yes
+	TDA_update_state_402_names = yes
+	TDA_update_state_403_names = yes
+	TDA_update_state_404_names = yes
+	TDA_update_state_405_names = yes
+	TDA_update_state_406_names = yes
+	TDA_update_state_407_names = yes
+	TDA_update_state_408_names = yes
+	TDA_update_state_409_names = yes
+	TDA_update_state_410_names = yes
+	TDA_update_state_411_names = yes
+	TDA_update_state_412_names = yes
+	TDA_update_state_413_names = yes
+	TDA_update_state_414_names = yes
+	TDA_update_state_415_names = yes
+	TDA_update_state_416_names = yes
+	TDA_update_state_417_names = yes
+	TDA_update_state_418_names = yes
+	TDA_update_state_419_names = yes
+	TDA_update_state_420_names = yes
+	TDA_update_state_421_names = yes
+	TDA_update_state_422_names = yes
+	TDA_update_state_423_names = yes
+	TDA_update_state_424_names = yes
+	TDA_update_state_425_names = yes
+	TDA_update_state_426_names = yes
+	TDA_update_state_427_names = yes
+	TDA_update_state_428_names = yes
+	TDA_update_state_429_names = yes
+	TDA_update_state_430_names = yes
+	TDA_update_state_431_names = yes
+	TDA_update_state_432_names = yes
+	TDA_update_state_433_names = yes
+	TDA_update_state_434_names = yes
+	TDA_update_state_435_names = yes
+	TDA_update_state_436_names = yes
+	TDA_update_state_437_names = yes
+	TDA_update_state_438_names = yes
+	TDA_update_state_439_names = yes
+	TDA_update_state_440_names = yes
+	TDA_update_state_441_names = yes
+	TDA_update_state_442_names = yes
+	TDA_update_state_443_names = yes
+	TDA_update_state_444_names = yes
+	TDA_update_state_445_names = yes
+	TDA_update_state_446_names = yes
+	TDA_update_state_447_names = yes
+	TDA_update_state_448_names = yes
+	TDA_update_state_449_names = yes
+	TDA_update_state_450_names = yes
+	TDA_update_state_451_names = yes
+	TDA_update_state_452_names = yes
+	TDA_update_state_453_names = yes
+	TDA_update_state_454_names = yes
+	TDA_update_state_455_names = yes
+	TDA_update_state_456_names = yes
+	TDA_update_state_457_names = yes
+	TDA_update_state_458_names = yes
+	TDA_update_state_459_names = yes
+	TDA_update_state_460_names = yes
+	TDA_update_state_461_names = yes
+	TDA_update_state_462_names = yes
+	TDA_update_state_463_names = yes
+	TDA_update_state_464_names = yes
+	TDA_update_state_465_names = yes
+	TDA_update_state_466_names = yes
+	TDA_update_state_467_names = yes
+	TDA_update_state_468_names = yes
+	TDA_update_state_469_names = yes
+	TDA_update_state_470_names = yes
+	TDA_update_state_471_names = yes
+	TDA_update_state_472_names = yes
+	TDA_update_state_473_names = yes
+	TDA_update_state_474_names = yes
+	TDA_update_state_475_names = yes
+	TDA_update_state_476_names = yes
+	TDA_update_state_477_names = yes
+	TDA_update_state_478_names = yes
+	TDA_update_state_479_names = yes
+	TDA_update_state_480_names = yes
+	TDA_update_state_481_names = yes
+	TDA_update_state_482_names = yes
+	TDA_update_state_483_names = yes
+	TDA_update_state_484_names = yes
+	TDA_update_state_485_names = yes
+	TDA_update_state_486_names = yes
+	TDA_update_state_487_names = yes
+	TDA_update_state_488_names = yes
+	TDA_update_state_489_names = yes
+	TDA_update_state_490_names = yes
+	TDA_update_state_491_names = yes
+	TDA_update_state_492_names = yes
+	TDA_update_state_493_names = yes
+	TDA_update_state_494_names = yes
+	TDA_update_state_495_names = yes
+	TDA_update_state_496_names = yes
+	TDA_update_state_497_names = yes
+	TDA_update_state_498_names = yes
+	TDA_update_state_499_names = yes
+	TDA_update_state_500_names = yes
+	TDA_update_state_501_names = yes
+	TDA_update_state_502_names = yes
+	TDA_update_state_503_names = yes
+	TDA_update_state_504_names = yes
+	TDA_update_state_505_names = yes
+	TDA_update_state_506_names = yes
+	TDA_update_state_507_names = yes
+	TDA_update_state_508_names = yes
+	TDA_update_state_509_names = yes
+	TDA_update_state_510_names = yes
+	TDA_update_state_511_names = yes
+	TDA_update_state_512_names = yes
+	TDA_update_state_513_names = yes
+	TDA_update_state_514_names = yes
+	TDA_update_state_515_names = yes
+	TDA_update_state_516_names = yes
+	TDA_update_state_517_names = yes
+	TDA_update_state_518_names = yes
+	TDA_update_state_519_names = yes
+	TDA_update_state_520_names = yes
+	TDA_update_state_521_names = yes
+	TDA_update_state_522_names = yes
+	TDA_update_state_523_names = yes
+	TDA_update_state_524_names = yes
+	TDA_update_state_525_names = yes
+	TDA_update_state_526_names = yes
+	TDA_update_state_527_names = yes
+	TDA_update_state_528_names = yes
+	TDA_update_state_529_names = yes
+	TDA_update_state_530_names = yes
+	TDA_update_state_531_names = yes
+	TDA_update_state_532_names = yes
+	TDA_update_state_533_names = yes
+	TDA_update_state_534_names = yes
+	TDA_update_state_535_names = yes
+	TDA_update_state_536_names = yes
+	TDA_update_state_537_names = yes
+	TDA_update_state_538_names = yes
+	TDA_update_state_539_names = yes
+	TDA_update_state_540_names = yes
+	TDA_update_state_541_names = yes
+	TDA_update_state_542_names = yes
+	TDA_update_state_543_names = yes
+	TDA_update_state_544_names = yes
+	TDA_update_state_545_names = yes
+	TDA_update_state_546_names = yes
+	TDA_update_state_547_names = yes
+	TDA_update_state_548_names = yes
+	TDA_update_state_549_names = yes
+	TDA_update_state_550_names = yes
+	TDA_update_state_551_names = yes
+	TDA_update_state_552_names = yes
+	TDA_update_state_553_names = yes
+	TDA_update_state_554_names = yes
+	TDA_update_state_555_names = yes
+	TDA_update_state_556_names = yes
+	TDA_update_state_557_names = yes
+	TDA_update_state_558_names = yes
+	TDA_update_state_559_names = yes
+	TDA_update_state_560_names = yes
+	TDA_update_state_561_names = yes
+	TDA_update_state_562_names = yes
+	TDA_update_state_563_names = yes
+	TDA_update_state_564_names = yes
+	TDA_update_state_565_names = yes
+	TDA_update_state_566_names = yes
+	TDA_update_state_567_names = yes
+	TDA_update_state_568_names = yes
+	TDA_update_state_569_names = yes
+	TDA_update_state_570_names = yes
+	TDA_update_state_571_names = yes
+	TDA_update_state_572_names = yes
+	TDA_update_state_573_names = yes
+	TDA_update_state_574_names = yes
+	TDA_update_state_575_names = yes
+	TDA_update_state_576_names = yes
+	TDA_update_state_577_names = yes
+	TDA_update_state_578_names = yes
+	TDA_update_state_579_names = yes
+	TDA_update_state_580_names = yes
+	TDA_update_state_581_names = yes
+	TDA_update_state_582_names = yes
+	TDA_update_state_583_names = yes
+	TDA_update_state_584_names = yes
+	TDA_update_state_585_names = yes
+	TDA_update_state_586_names = yes
+	TDA_update_state_587_names = yes
+	TDA_update_state_588_names = yes
+	TDA_update_state_589_names = yes
+	TDA_update_state_590_names = yes
+	TDA_update_state_591_names = yes
+	TDA_update_state_592_names = yes
+	TDA_update_state_593_names = yes
+	TDA_update_state_594_names = yes
+	TDA_update_state_595_names = yes
+	TDA_update_state_596_names = yes
+	TDA_update_state_597_names = yes
+	TDA_update_state_598_names = yes
+	TDA_update_state_599_names = yes
+	TDA_update_state_600_names = yes
+	TDA_update_state_601_names = yes
+	TDA_update_state_602_names = yes
+	TDA_update_state_603_names = yes
+	TDA_update_state_604_names = yes
+	TDA_update_state_605_names = yes
+	TDA_update_state_606_names = yes
+	TDA_update_state_607_names = yes
+	TDA_update_state_608_names = yes
+	TDA_update_state_609_names = yes
+	TDA_update_state_610_names = yes
+	TDA_update_state_611_names = yes
+	TDA_update_state_612_names = yes
+	TDA_update_state_613_names = yes
+	TDA_update_state_614_names = yes
+	TDA_update_state_615_names = yes
+	TDA_update_state_616_names = yes
+	TDA_update_state_617_names = yes
+	TDA_update_state_618_names = yes
+	TDA_update_state_619_names = yes
+	TDA_update_state_620_names = yes
+	TDA_update_state_621_names = yes
+	TDA_update_state_622_names = yes
+	TDA_update_state_623_names = yes
+	TDA_update_state_624_names = yes
+	TDA_update_state_625_names = yes
+	TDA_update_state_626_names = yes
+	TDA_update_state_627_names = yes
+	TDA_update_state_628_names = yes
+	TDA_update_state_629_names = yes
+	TDA_update_state_630_names = yes
+	TDA_update_state_631_names = yes
+	TDA_update_state_632_names = yes
+	TDA_update_state_633_names = yes
+	TDA_update_state_634_names = yes
+	TDA_update_state_635_names = yes
+	TDA_update_state_636_names = yes
+	TDA_update_state_637_names = yes
+	TDA_update_state_638_names = yes
+	TDA_update_state_639_names = yes
+	TDA_update_state_640_names = yes
+	TDA_update_state_641_names = yes
+	TDA_update_state_642_names = yes
+	TDA_update_state_643_names = yes
+	TDA_update_state_644_names = yes
+	TDA_update_state_645_names = yes
+	TDA_update_state_646_names = yes
+	TDA_update_state_647_names = yes
+	TDA_update_state_648_names = yes
+	TDA_update_state_649_names = yes
+	TDA_update_state_650_names = yes
+	TDA_update_state_651_names = yes
+	TDA_update_state_652_names = yes
+	TDA_update_state_653_names = yes
+	TDA_update_state_654_names = yes
+	TDA_update_state_655_names = yes
+	TDA_update_state_656_names = yes
+	TDA_update_state_657_names = yes
+	TDA_update_state_658_names = yes
+	TDA_update_state_659_names = yes
+	TDA_update_state_660_names = yes
+	TDA_update_state_661_names = yes
+	TDA_update_state_662_names = yes
+	TDA_update_state_663_names = yes
+	TDA_update_state_664_names = yes
+	TDA_update_state_665_names = yes
+	TDA_update_state_666_names = yes
+	TDA_update_state_667_names = yes
+	TDA_update_state_668_names = yes
+	TDA_update_state_669_names = yes
+	TDA_update_state_670_names = yes
+	TDA_update_state_671_names = yes
+	TDA_update_state_672_names = yes
+	TDA_update_state_673_names = yes
+	TDA_update_state_674_names = yes
+	TDA_update_state_675_names = yes
+	TDA_update_state_676_names = yes
+	TDA_update_state_677_names = yes
+	TDA_update_state_678_names = yes
+	TDA_update_state_679_names = yes
+	TDA_update_state_680_names = yes
+	TDA_update_state_681_names = yes
+	TDA_update_state_682_names = yes
+	TDA_update_state_683_names = yes
+	TDA_update_state_684_names = yes
+	TDA_update_state_685_names = yes
+	TDA_update_state_686_names = yes
+	TDA_update_state_687_names = yes
+	TDA_update_state_688_names = yes
+	TDA_update_state_689_names = yes
+	TDA_update_state_690_names = yes
+	TDA_update_state_691_names = yes
+	TDA_update_state_692_names = yes
+	TDA_update_state_693_names = yes
+	TDA_update_state_694_names = yes
+	TDA_update_state_695_names = yes
+	TDA_update_state_696_names = yes
+	TDA_update_state_697_names = yes
+	TDA_update_state_698_names = yes
+	TDA_update_state_699_names = yes
+	TDA_update_state_700_names = yes
+	TDA_update_state_701_names = yes
+	TDA_update_state_702_names = yes
+	TDA_update_state_703_names = yes
+	TDA_update_state_704_names = yes
+	TDA_update_state_705_names = yes
+	TDA_update_state_706_names = yes
+	TDA_update_state_707_names = yes
+	TDA_update_state_708_names = yes
+	TDA_update_state_709_names = yes
+	TDA_update_state_710_names = yes
+	TDA_update_state_711_names = yes
+	TDA_update_state_712_names = yes
+	TDA_update_state_713_names = yes
+	TDA_update_state_714_names = yes
+	TDA_update_state_715_names = yes
+	TDA_update_state_716_names = yes
+	TDA_update_state_717_names = yes
+	TDA_update_state_718_names = yes
+	TDA_update_state_719_names = yes
+	TDA_update_state_720_names = yes
+	TDA_update_state_721_names = yes
+	TDA_update_state_722_names = yes
+	TDA_update_state_723_names = yes
+	TDA_update_state_724_names = yes
+	TDA_update_state_725_names = yes
+	TDA_update_state_726_names = yes
+	TDA_update_state_727_names = yes
+	TDA_update_state_728_names = yes
+	TDA_update_state_729_names = yes
+	TDA_update_state_730_names = yes
+	TDA_update_state_731_names = yes
+	TDA_update_state_732_names = yes
+	TDA_update_state_733_names = yes
+	TDA_update_state_734_names = yes
+	TDA_update_state_735_names = yes
+	TDA_update_state_736_names = yes
+	TDA_update_state_737_names = yes
+	TDA_update_state_738_names = yes
+	TDA_update_state_739_names = yes
+	TDA_update_state_740_names = yes
+	TDA_update_state_741_names = yes
+	TDA_update_state_742_names = yes
+	TDA_update_state_743_names = yes
+	TDA_update_state_744_names = yes
+	TDA_update_state_745_names = yes
+	TDA_update_state_746_names = yes
+	TDA_update_state_747_names = yes
+	TDA_update_state_748_names = yes
+	TDA_update_state_749_names = yes
+	TDA_update_state_750_names = yes
+	TDA_update_state_751_names = yes
+	TDA_update_state_752_names = yes
+	TDA_update_state_753_names = yes
+	TDA_update_state_754_names = yes
+	TDA_update_state_755_names = yes
+	TDA_update_state_756_names = yes
+	TDA_update_state_757_names = yes
+	TDA_update_state_758_names = yes
+	TDA_update_state_759_names = yes
+	TDA_update_state_760_names = yes
+	TDA_update_state_761_names = yes
+	TDA_update_state_762_names = yes
+	TDA_update_state_763_names = yes
+	TDA_update_state_764_names = yes
+	TDA_update_state_765_names = yes
+	TDA_update_state_766_names = yes
+	TDA_update_state_767_names = yes
+	TDA_update_state_768_names = yes
+	TDA_update_state_769_names = yes
+	TDA_update_state_770_names = yes
+	TDA_update_state_771_names = yes
+	TDA_update_state_772_names = yes
+	TDA_update_state_773_names = yes
+	TDA_update_state_774_names = yes
+	TDA_update_state_775_names = yes
+	TDA_update_state_776_names = yes
+	TDA_update_state_777_names = yes
+	TDA_update_state_778_names = yes
+	TDA_update_state_779_names = yes
+	TDA_update_state_780_names = yes
+	TDA_update_state_781_names = yes
+	TDA_update_state_782_names = yes
+	TDA_update_state_783_names = yes
+	TDA_update_state_784_names = yes
+	TDA_update_state_785_names = yes
+	TDA_update_state_786_names = yes
+	TDA_update_state_787_names = yes
+	TDA_update_state_788_names = yes
+	TDA_update_state_789_names = yes
+	TDA_update_state_790_names = yes
+	TDA_update_state_791_names = yes
+	TDA_update_state_792_names = yes
+	TDA_update_state_793_names = yes
+	TDA_update_state_794_names = yes
+	TDA_update_state_795_names = yes
+	TDA_update_state_796_names = yes
+	TDA_update_state_797_names = yes
+	TDA_update_state_798_names = yes
+	TDA_update_state_799_names = yes
+	TDA_update_state_800_names = yes
+	TDA_update_state_801_names = yes
+	TDA_update_state_802_names = yes
+	TDA_update_state_803_names = yes
+	TDA_update_state_804_names = yes
+	TDA_update_state_805_names = yes
+	TDA_update_state_806_names = yes
+	TDA_update_state_807_names = yes
+	TDA_update_state_808_names = yes
+	TDA_update_state_809_names = yes
+	TDA_update_state_810_names = yes
+	TDA_update_state_811_names = yes
+	TDA_update_state_812_names = yes
+	TDA_update_state_813_names = yes
+	TDA_update_state_814_names = yes
+	TDA_update_state_815_names = yes
+	TDA_update_state_816_names = yes
+	TDA_update_state_817_names = yes
+	TDA_update_state_818_names = yes
+	TDA_update_state_819_names = yes
+	TDA_update_state_820_names = yes
+	TDA_update_state_821_names = yes
+	TDA_update_state_822_names = yes
+	TDA_update_state_823_names = yes
+	TDA_update_state_824_names = yes
+	TDA_update_state_825_names = yes
+	TDA_update_state_826_names = yes
+	TDA_update_state_827_names = yes
+	TDA_update_state_828_names = yes
+	TDA_update_state_829_names = yes
+	TDA_update_state_830_names = yes
+	TDA_update_state_831_names = yes
+	TDA_update_state_832_names = yes
+	TDA_update_state_833_names = yes
+	TDA_update_state_834_names = yes
+	TDA_update_state_835_names = yes
+	TDA_update_state_836_names = yes
+	TDA_update_state_837_names = yes
+	TDA_update_state_838_names = yes
+	TDA_update_state_839_names = yes
+	TDA_update_state_840_names = yes
+	TDA_update_state_841_names = yes
+	TDA_update_state_842_names = yes
+	TDA_update_state_843_names = yes
+	TDA_update_state_844_names = yes
+	TDA_update_state_845_names = yes
+	TDA_update_state_846_names = yes
+	TDA_update_state_847_names = yes
+	TDA_update_state_848_names = yes
+	TDA_update_state_849_names = yes
+	TDA_update_state_850_names = yes
+	TDA_update_state_851_names = yes
+	TDA_update_state_852_names = yes
+	TDA_update_state_853_names = yes
+	TDA_update_state_854_names = yes
+	TDA_update_state_855_names = yes
+	TDA_update_state_856_names = yes
+	TDA_update_state_857_names = yes
+	TDA_update_state_858_names = yes
+	TDA_update_state_859_names = yes
+	TDA_update_state_860_names = yes
+	TDA_update_state_861_names = yes
+	TDA_update_state_862_names = yes
+	TDA_update_state_863_names = yes
+	TDA_update_state_864_names = yes
+	TDA_update_state_865_names = yes
+	TDA_update_state_866_names = yes
+	TDA_update_state_867_names = yes
+	TDA_update_state_868_names = yes
+	TDA_update_state_869_names = yes
+	TDA_update_state_870_names = yes
+	TDA_update_state_871_names = yes
+	TDA_update_state_872_names = yes
+	TDA_update_state_873_names = yes
+	TDA_update_state_874_names = yes
+	TDA_update_state_875_names = yes
+	TDA_update_state_876_names = yes
+	TDA_update_state_877_names = yes
+	TDA_update_state_878_names = yes
+	TDA_update_state_879_names = yes
+	TDA_update_state_880_names = yes
+	TDA_update_state_881_names = yes
+	TDA_update_state_882_names = yes
+	TDA_update_state_883_names = yes
+	TDA_update_state_884_names = yes
+	TDA_update_state_885_names = yes
+	TDA_update_state_886_names = yes
+	TDA_update_state_887_names = yes
+	TDA_update_state_888_names = yes
+	TDA_update_state_889_names = yes
+	TDA_update_state_890_names = yes
+	TDA_update_state_891_names = yes
+	TDA_update_state_892_names = yes
+	TDA_update_state_893_names = yes
+	TDA_update_state_894_names = yes
+	TDA_update_state_895_names = yes
+	TDA_update_state_896_names = yes
+	TDA_update_state_897_names = yes
+	TDA_update_state_898_names = yes
+	TDA_update_state_899_names = yes
+	TDA_update_state_900_names = yes
+	TDA_update_state_901_names = yes
+	TDA_update_state_902_names = yes
+	TDA_update_state_903_names = yes
+	TDA_update_state_904_names = yes
+	TDA_update_state_905_names = yes
+	TDA_update_state_906_names = yes
+	TDA_update_state_907_names = yes
+}
+
+TDA_toggle_change_city_names = {
+	if = {
+		limit = { has_global_flag = TDA_city_name_changes_active_flag }		
+		clr_global_flag = TDA_city_name_changes_active_flag
+	}
+	else = {
+		set_global_flag = TDA_city_name_changes_active_flag
+	}		
+	TDA_change_all_city_names = yes
+}

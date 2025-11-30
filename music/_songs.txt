@@ -93,10 +93,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			OR = {
-				has_government = IDEOLOGY_authoritarian
-				has_government = IDEOLOGY_fundamentalist
-			}
+			has_government = IDEOLOGY_authoritarian
 		}
 		modifier = {
 			factor = 1
@@ -115,10 +112,7 @@ music = {
 			factor = 2
 
 			has_war = no
-			OR = {
-				has_government = IDEOLOGY_authoritarian
-				has_government = IDEOLOGY_fundamentalist
-			}
+			has_government = IDEOLOGY_authoritarian
 		}	
 		modifier = {
 			factor = 1
@@ -163,10 +157,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			OR = {
-				has_government = IDEOLOGY_authoritarian
-				has_government = IDEOLOGY_fundamentalist
-			}
+			has_government = IDEOLOGY_authoritarian
 		}	
 		modifier = {
 			factor = 1
@@ -185,10 +176,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			OR = {
-				has_government = IDEOLOGY_authoritarian
-				has_government = IDEOLOGY_fundamentalist
-			}
+			has_government = IDEOLOGY_authoritarian
 		}	
 		modifier = {
 			factor = 1
@@ -207,10 +195,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			OR = {
-				has_government = IDEOLOGY_authoritarian
-				has_government = IDEOLOGY_fundamentalist
-			}
+			has_government = IDEOLOGY_authoritarian
 		}	
 		modifier = {
 			factor = 1
@@ -229,10 +214,7 @@ music = {
 			factor = 2
 
 			has_war = yes
-			OR = {
-				has_government = IDEOLOGY_authoritarian
-				has_government = IDEOLOGY_fundamentalist
-			}
+			has_government = IDEOLOGY_authoritarian
 		}
 		modifier = {
 			factor = 1

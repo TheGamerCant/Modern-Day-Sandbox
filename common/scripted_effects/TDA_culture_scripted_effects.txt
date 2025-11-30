@@ -170,18 +170,19 @@ STATE_get_culture_colours = {
 	set_temp_variable = { largest_ethnicity = culture_index_array^0 }
 
 	set_variable = { culture_r = global.culture_colour_array^largest_ethnicity }
-	divide_variable = { culture_r = 1000000 }
-	multiply_variable = { culture_r = 1000 }
+	divide_variable = { culture_r = 65536 }
 	
 	set_variable = { culture_g = global.culture_colour_array^largest_ethnicity }
-	multiply_variable = { culture_g = 0.001 }
-	multiply_variable = { culture_g = 1000 }
-	set_variable = { culture_b =  global.culture_colour_array^largest_ethnicity }
-	subtract_from_variable = { culture_b = culture_g }
-	modulo_variable = { culture_g = 1000 }
-	multiply_variable = { culture_b = 1000 }
+	modulo_variable = { culture_g = 65536 }
+	divide_variable = { culture_g = 256 }
 	
-	#Colours are currently RGB integers (0-255), convert to a float (0-1)
+	set_variable = { culture_b = global.culture_colour_array^largest_ethnicity }
+	modulo_variable = { culture_b = 256 }
+	
+	#round_variable = culture_r
+	#round_variable = culture_g
+	#round_variable = culture_b
+	
 	divide_variable = { culture_r = 255 }
 	divide_variable = { culture_g = 255 }
 	divide_variable = { culture_b = 255 }

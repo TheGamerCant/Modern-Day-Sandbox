@@ -33,6 +33,8 @@ void SetProvinceColoursBasedOnStateColour(Vector<Province>& provincesArray, Hash
 
 	for (const auto& province : provincesArray) {
 		colour = province.GetColour();
+		provinceColoursToIdMap[colour.ToInteger()] = province.GetId();
+
 		for (const auto& pixel : province.GetPixels()) {
 			pixelIndex = pixel.index * 4;
 			newRgbData[pixelIndex] = colour.r;
@@ -62,10 +64,6 @@ void SetProvinceColoursToRandom(Vector<Province>& provincesArray, HashMap<Unsign
 	for (SizeT i = 1; i < provincesArray.size(); ++i) {
 		if (provincesArray[i].GetProvinceType() == ProvinceType::Land) {
 			provincesArray[i].SetColour(randomColours[i]);
-			provinceColoursToIdMap[randomColours[i].ToInteger()] = i;
-		}
-		else {
-			provinceColoursToIdMap[provincesArray[i].GetColour().ToInteger()] = i;
 		}
 	}
 
@@ -75,6 +73,8 @@ void SetProvinceColoursToRandom(Vector<Province>& provincesArray, HashMap<Unsign
 
 	for (const auto& province : provincesArray) {
 		colour = province.GetColour();
+		provinceColoursToIdMap[colour.ToInteger()] = province.GetId();
+
 		for (const auto& pixel : province.GetPixels()) {
 			pixelIndex = pixel.index * 4;
 			newRgbData[pixelIndex] = colour.r;
