@@ -75,3 +75,65 @@ TAG_using_italian_names = {
 		is_puppet_of = VCY
 	}
 }
+
+TAG_using_swiss_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = SWI
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = SWI
+	}
+}
+
+TAG_using_french_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = FRA
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = FRA
+	}
+}
+
+TAG_using_israeli_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = ISR
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = ISR
+	}
+}
+
+TAG_using_arab_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = HMS
+				original_tag = PST
+				original_tag = EGY
+				original_tag = LYB
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = HMS
+		is_puppet_of = PST
+		is_puppet_of = EGY
+		is_puppet_of = LYB
+	}
+}

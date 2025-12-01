@@ -5,6 +5,8 @@ state={
 		owner = ISR
 		add_core_of = PST
 		add_claim_by = HMS
+		
+		victory_points = { 1086 1 }
 	}
 	provinces={
 		1086  

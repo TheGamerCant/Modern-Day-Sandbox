@@ -24,8 +24,84 @@ TDA_update_state_2_names = {
 	}
 }
 
-#Zürich
+#Zurich
 TDA_update_state_3_names = {
+	3 = {
+		#Zürich
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_german_names = yes TAG_using_swiss_names = yes } } }
+			set_state_name = STATE_3_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Zürich
+	if = {
+		limit = { any_country = { controls_province = 663 OR = { TAG_using_german_names = yes TAG_using_swiss_names = yes } } }
+		set_province_name = { id = 663 name = VICTORY_POINTS_663_0 }
+	}
+	#Zurigo
+	else_if = {
+		limit = { any_country = { controls_province = 663 TAG_using_italian_names = yes } }
+		set_province_name = { id = 663 name = VICTORY_POINTS_663_1 }
+	}
+	#Zurich
+	else = {
+		reset_province_name = 663
+	}
+	#Luzern
+	if = {
+		limit = { any_country = { controls_province = 11604 OR = { TAG_using_german_names = yes TAG_using_swiss_names = yes } } }
+		set_province_name = { id = 11604 name = VICTORY_POINTS_11604_0 }
+	}
+	#Lucerna
+	else_if = {
+		limit = { any_country = { controls_province = 11604 TAG_using_italian_names = yes } }
+		set_province_name = { id = 11604 name = VICTORY_POINTS_11604_1 }
+	}
+	#Lucerne
+	else = {
+		reset_province_name = 11604
+	}
+	#Basle
+	if = {
+		limit = { any_country = { controls_province = 14090 OR = { TAG_using_german_names = yes TAG_using_swiss_names = yes } } }
+		set_province_name = { id = 14090 name = VICTORY_POINTS_14090_0 }
+	}
+	#Bâle
+	else_if = {
+		limit = { any_country = { controls_province = 14090 TAG_using_french_names = yes } }
+		set_province_name = { id = 14090 name = VICTORY_POINTS_14090_1 }
+	}
+	#Basilea
+	else_if = {
+		limit = { any_country = { controls_province = 14090 TAG_using_italian_names = yes } }
+		set_province_name = { id = 14090 name = VICTORY_POINTS_14090_2 }
+	}
+	#Basel
+	else = {
+		reset_province_name = 14090
+	}
+	#Flughaven Zürich
+	if = {
+		limit = { any_country = { controls_province = 14092 OR = { TAG_using_german_names = yes TAG_using_swiss_names = yes } } }
+		set_province_name = { id = 14092 name = VICTORY_POINTS_14092_0 }
+	}
+	#Aéroport de Zurich
+	else_if = {
+		limit = { any_country = { controls_province = 14092 TAG_using_french_names = yes } }
+		set_province_name = { id = 14092 name = VICTORY_POINTS_14092_1 }
+	}
+	#Aeroporto di Zurigo
+	else_if = {
+		limit = { any_country = { controls_province = 14092 TAG_using_italian_names = yes } }
+		set_province_name = { id = 14092 name = VICTORY_POINTS_14092_2 }
+	}
+	#Zurich Airport
+	else = {
+		reset_province_name = 14092
+	}
 }
 
 #Eastern Austria
@@ -1116,6 +1192,15 @@ TDA_update_state_115_names = {
 			reset_state_name = yes
 		}
 	}
+	#Aeroporto di Palermo
+	if = {
+		limit = { any_country = { controls_province = 14101 TAG_using_italian_names = yes } }
+		set_province_name = { id = 14101 name = VICTORY_POINTS_14101_0 }
+	}
+	#Palermo Airport
+	else = {
+		reset_province_name = 14101
+	}
 }
 
 #Malta
@@ -1498,6 +1583,21 @@ TDA_update_state_172_names = {
 
 #Negev
 TDA_update_state_173_names = {
+	173 = {
+		#haNégev
+		if = {
+			limit = { CONTROLLER = { TAG_using_israeli_names = yes } }
+			set_state_name = STATE_173_0
+		}
+		#an-Naqab
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_173_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Castilla y León
@@ -1683,8 +1783,27 @@ TDA_update_state_193_names = {
 TDA_update_state_194_names = {
 }
 
-#Gorod Sankt-Peterburg
+#St. Petersburg City
 TDA_update_state_195_names = {
+	195 = {
+		#Gorod Sankt-Peterburg
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_195_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Sankt-Peterburg
+	if = {
+		limit = { any_country = { controls_province = 14222 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14222 name = VICTORY_POINTS_14222_0 }
+	}
+	#St. Petersburg
+	else = {
+		reset_province_name = 14222
+	}
 }
 
 #Tauriya
@@ -2083,8 +2202,27 @@ TDA_update_state_217_names = {
 TDA_update_state_218_names = {
 }
 
-#Gorod Moskva
+#Moscow City
 TDA_update_state_219_names = {
+	219 = {
+		#Gorod Moskva
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_219_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Moskva
+	if = {
+		limit = { any_country = { controls_province = 6380 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6380 name = VICTORY_POINTS_6380_0 }
+	}
+	#Moscow
+	else = {
+		reset_province_name = 6380
+	}
 }
 
 #Kursk
@@ -2586,6 +2724,25 @@ TDA_update_state_263_names = {
 
 #Moscow
 TDA_update_state_264_names = {
+	264 = {
+		#Moskva
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_264_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Aeroport imeni Aleksandra S. Pushkina
+	if = {
+		limit = { any_country = { controls_province = 14234 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14234 name = VICTORY_POINTS_14234_0 }
+	}
+	#Alexander S. Pushkin Airport
+	else = {
+		reset_province_name = 14234
+	}
 }
 
 #Värmland
@@ -3344,8 +3501,45 @@ TDA_update_state_452_names = {
 TDA_update_state_453_names = {
 }
 
-#Israel
+#Mediterranean Israel
 TDA_update_state_454_names = {
+	#Tel Aviv-Yafo
+	if = {
+		limit = { any_country = { controls_province = 4206 TAG_using_israeli_names = yes } }
+		set_province_name = { id = 4206 name = VICTORY_POINTS_4206_0 }
+	}
+	#Tall ʾAbīb-Yāfā
+	else_if = {
+		limit = { any_country = { controls_province = 4206 TAG_using_arab_names = yes } }
+		set_province_name = { id = 4206 name = VICTORY_POINTS_4206_1 }
+	}
+	#Tel Aviv
+	else = {
+		reset_province_name = 4206
+	}
+	#Hefa
+	if = {
+		limit = { any_country = { controls_province = 14178 TAG_using_israeli_names = yes } }
+		set_province_name = { id = 14178 name = VICTORY_POINTS_14178_0 }
+	}
+	#Haifa
+	else = {
+		reset_province_name = 14178
+	}
+	#Nimel Hitofa Ben Goryon
+	if = {
+		limit = { any_country = { controls_province = 14216 TAG_using_israeli_names = yes } }
+		set_province_name = { id = 14216 name = VICTORY_POINTS_14216_0 }
+	}
+	#Matar Tall ʾAbīb
+	else_if = {
+		limit = { any_country = { controls_province = 14216 TAG_using_arab_names = yes } }
+		set_province_name = { id = 14216 name = VICTORY_POINTS_14216_1 }
+	}
+	#Ben Gurion Airport
+	else = {
+		reset_province_name = 14216
+	}
 }
 
 #Jordan
@@ -4190,6 +4384,35 @@ TDA_update_state_656_names = {
 
 #Bern
 TDA_update_state_657_names = {
+	657 = {
+		#Berne
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_french_names = yes TAG_using_swiss_names = yes } } }
+			set_state_name = STATE_657_0
+		}
+		#Berna
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_657_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Berne
+	if = {
+		limit = { any_country = { controls_province = 14094 OR = { TAG_using_french_names = yes TAG_using_swiss_names = yes } } }
+		set_province_name = { id = 14094 name = VICTORY_POINTS_14094_0 }
+	}
+	#Berna
+	else_if = {
+		limit = { any_country = { controls_province = 14094 TAG_using_italian_names = yes } }
+		set_province_name = { id = 14094 name = VICTORY_POINTS_14094_1 }
+	}
+	#Bern
+	else = {
+		reset_province_name = 14094
+	}
 }
 
 #Abu Dhabi
@@ -4612,8 +4835,37 @@ TDA_update_state_761_names = {
 TDA_update_state_762_names = {
 }
 
-#Königsberg
+#Kaliningrad
 TDA_update_state_763_names = {
+	763 = {
+		#Königsberg
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_763_0
+		}
+		#Królewiec
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
+			set_state_name = STATE_763_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Königsberg
+	if = {
+		limit = { any_country = { controls_province = 14193 TAG_using_german_names = yes } }
+		set_province_name = { id = 14193 name = VICTORY_POINTS_14193_0 }
+	}
+	#Królewiec
+	else_if = {
+		limit = { any_country = { controls_province = 14193 TAG_using_polish_names = yes } }
+		set_province_name = { id = 14193 name = VICTORY_POINTS_14193_1 }
+	}
+	#Kaliningrad
+	else = {
+		reset_province_name = 14193
+	}
 }
 
 #West Banat
@@ -4756,10 +5008,82 @@ TDA_update_state_787_names = {
 
 #West Bank Zones A&B
 TDA_update_state_788_names = {
+	788 = {
+		#Yehuda Veshomron
+		if = {
+			limit = { CONTROLLER = { TAG_using_israeli_names = yes } }
+			set_state_name = STATE_788_0
+		}
+		#Hagada HaMa'aravit
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_788_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Rām Allāh
+	if = {
+		limit = { any_country = { controls_province = 7107 TAG_using_arab_names = yes } }
+		set_province_name = { id = 7107 name = VICTORY_POINTS_7107_0 }
+	}
+	#Ram'allah
+	else_if = {
+		limit = { any_country = { controls_province = 7107 TAG_using_israeli_names = yes } }
+		set_province_name = { id = 7107 name = VICTORY_POINTS_7107_1 }
+	}
+	#Ramallah
+	else = {
+		reset_province_name = 7107
+	}
+	#Ḥeḇrōn
+	if = {
+		limit = { any_country = { controls_province = 14192 TAG_using_arab_names = yes } }
+		set_province_name = { id = 14192 name = VICTORY_POINTS_14192_0 }
+	}
+	#Al-Khalīl
+	else_if = {
+		limit = { any_country = { controls_province = 14192 TAG_using_israeli_names = yes } }
+		set_province_name = { id = 14192 name = VICTORY_POINTS_14192_1 }
+	}
+	#Hebron
+	else = {
+		reset_province_name = 14192
+	}
 }
 
 #Jerusalem
 TDA_update_state_789_names = {
+	789 = {
+		#Yerushalayim
+		if = {
+			limit = { CONTROLLER = { TAG_using_israeli_names = yes } }
+			set_state_name = STATE_789_0
+		}
+		#Al-Quds
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_789_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Yerushalayim
+	if = {
+		limit = { any_country = { controls_province = 9753 TAG_using_israeli_names = yes } }
+		set_province_name = { id = 9753 name = VICTORY_POINTS_9753_0 }
+	}
+	#Al-Quds
+	else_if = {
+		limit = { any_country = { controls_province = 9753 TAG_using_arab_names = yes } }
+		set_province_name = { id = 9753 name = VICTORY_POINTS_9753_1 }
+	}
+	#Jerusalem
+	else = {
+		reset_province_name = 9753
+	}
 }
 
 #Asturias
@@ -4776,6 +5100,35 @@ TDA_update_state_792_names = {
 
 #West Bank Zone C
 TDA_update_state_793_names = {
+	793 = {
+		#Yericho
+		if = {
+			limit = { CONTROLLER = { TAG_using_israeli_names = yes } }
+			set_state_name = STATE_793_0
+		}
+		#Arīḥā
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_793_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Yericho
+	if = {
+		limit = { any_country = { controls_province = 1086 TAG_using_israeli_names = yes } }
+		set_province_name = { id = 1086 name = VICTORY_POINTS_1086_0 }
+	}
+	#Arīḥā
+	else_if = {
+		limit = { any_country = { controls_province = 1086 TAG_using_arab_names = yes } }
+		set_province_name = { id = 1086 name = VICTORY_POINTS_1086_1 }
+	}
+	#Jericho
+	else = {
+		reset_province_name = 1086
+	}
 }
 
 #Andorra
@@ -5009,6 +5362,63 @@ TDA_update_state_844_names = {
 
 #Geneva
 TDA_update_state_845_names = {
+	845 = {
+		#Genève
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_french_names = yes TAG_using_swiss_names = yes } } }
+			set_state_name = STATE_845_0
+		}
+		#Genf
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_845_1
+		}
+		#Ginevra
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_italian_names = yes } }
+			set_state_name = STATE_845_2
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Losanna
+	if = {
+		limit = { any_country = { controls_province = 6666 TAG_using_italian_names = yes } }
+		set_province_name = { id = 6666 name = VICTORY_POINTS_6666_0 }
+	}
+	#Lausanne
+	else = {
+		reset_province_name = 6666
+	}
+	#Neuenburg
+	if = {
+		limit = { any_country = { controls_province = 9622 TAG_using_german_names = yes } }
+		set_province_name = { id = 9622 name = VICTORY_POINTS_9622_0 }
+	}
+	#Neuchâtel
+	else = {
+		reset_province_name = 9622
+	}
+	#Genève
+	if = {
+		limit = { any_country = { controls_province = 14089 OR = { TAG_using_french_names = yes TAG_using_swiss_names = yes } } }
+		set_province_name = { id = 14089 name = VICTORY_POINTS_14089_0 }
+	}
+	#Genf
+	else_if = {
+		limit = { any_country = { controls_province = 14089 TAG_using_german_names = yes } }
+		set_province_name = { id = 14089 name = VICTORY_POINTS_14089_1 }
+	}
+	#Ginevra
+	else_if = {
+		limit = { any_country = { controls_province = 14089 TAG_using_italian_names = yes } }
+		set_province_name = { id = 14089 name = VICTORY_POINTS_14089_2 }
+	}
+	#Geneva
+	else = {
+		reset_province_name = 14089
+	}
 }
 
 #Ticino
@@ -5265,6 +5675,35 @@ TDA_update_state_903_names = {
 
 #Gaza Strip
 TDA_update_state_904_names = {
+	904 = {
+		#Retzo'at ʻAzzā
+		if = {
+			limit = { CONTROLLER = { TAG_using_israeli_names = yes } }
+			set_state_name = STATE_904_0
+		}
+		#Qiṭā' Ghazzah
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_904_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#ʻAzzā
+	if = {
+		limit = { any_country = { controls_province = 14190 TAG_using_israeli_names = yes } }
+		set_province_name = { id = 14190 name = VICTORY_POINTS_14190_0 }
+	}
+	#Ghazzah
+	else_if = {
+		limit = { any_country = { controls_province = 14190 TAG_using_arab_names = yes } }
+		set_province_name = { id = 14190 name = VICTORY_POINTS_14190_1 }
+	}
+	#Gaza
+	else = {
+		reset_province_name = 14190
+	}
 }
 
 #Golan Heights

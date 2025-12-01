@@ -6,7 +6,7 @@ state={
 		add_core_of = PST
 		add_claim_by = HMS
 		
-		victory_points = { 7107 12 }
+		victory_points = { 7107 10 }
 		victory_points = { 14192 7 }
 	}
 	provinces={
