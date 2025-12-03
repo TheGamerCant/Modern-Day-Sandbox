@@ -79,7 +79,7 @@ guiTypes = {
 		font = "Blender_Bold_White_16"
 		borderSize = { x=18 y=18 }
 		position = { x= 560 y=10 }
-		maxWidth = 400 #600 #320
+		maxWidth = 600 #400 #600 #320
 		maxHeight = 256
 	}
 

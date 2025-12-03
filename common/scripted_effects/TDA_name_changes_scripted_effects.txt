@@ -1584,15 +1584,10 @@ TDA_update_state_172_names = {
 #Negev
 TDA_update_state_173_names = {
 	173 = {
-		#haNégev
+		#An-Naqab
 		if = {
-			limit = { CONTROLLER = { TAG_using_israeli_names = yes } }
-			set_state_name = STATE_173_0
-		}
-		#an-Naqab
-		else_if = {
 			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
-			set_state_name = STATE_173_1
+			set_state_name = STATE_173_0
 		}
 		else = {
 			reset_state_name = yes
@@ -2063,13 +2058,18 @@ TDA_update_state_202_names = {
 	}
 }
 
-#Naddniprianshchyna
+#Dnieper Region
 TDA_update_state_203_names = {
 	203 = {
-		#Pridneprov'ye
+		#Naddniprianshchyna
 		if = {
-			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			limit = { CONTROLLER = { TAG_using_ukrainian_names = yes } }
 			set_state_name = STATE_203_0
+		}
+		#Pridneprov'ye
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_203_1
 		}
 		else = {
 			reset_state_name = yes
@@ -3508,7 +3508,7 @@ TDA_update_state_454_names = {
 		limit = { any_country = { controls_province = 4206 TAG_using_israeli_names = yes } }
 		set_province_name = { id = 4206 name = VICTORY_POINTS_4206_0 }
 	}
-	#Tall ʾAbīb-Yāfā
+	#Tall 'Abib-Yafa
 	else_if = {
 		limit = { any_country = { controls_province = 4206 TAG_using_arab_names = yes } }
 		set_province_name = { id = 4206 name = VICTORY_POINTS_4206_1 }
@@ -3531,7 +3531,7 @@ TDA_update_state_454_names = {
 		limit = { any_country = { controls_province = 14216 TAG_using_israeli_names = yes } }
 		set_province_name = { id = 14216 name = VICTORY_POINTS_14216_0 }
 	}
-	#Matar Tall ʾAbīb
+	#Matar Tall 'Abib
 	else_if = {
 		limit = { any_country = { controls_province = 14216 TAG_using_arab_names = yes } }
 		set_province_name = { id = 14216 name = VICTORY_POINTS_14216_1 }
@@ -5023,29 +5023,10 @@ TDA_update_state_788_names = {
 			reset_state_name = yes
 		}
 	}
-	#Rām Allāh
+	#Al-Khalil
 	if = {
-		limit = { any_country = { controls_province = 7107 TAG_using_arab_names = yes } }
-		set_province_name = { id = 7107 name = VICTORY_POINTS_7107_0 }
-	}
-	#Ram'allah
-	else_if = {
-		limit = { any_country = { controls_province = 7107 TAG_using_israeli_names = yes } }
-		set_province_name = { id = 7107 name = VICTORY_POINTS_7107_1 }
-	}
-	#Ramallah
-	else = {
-		reset_province_name = 7107
-	}
-	#Ḥeḇrōn
-	if = {
-		limit = { any_country = { controls_province = 14192 TAG_using_arab_names = yes } }
-		set_province_name = { id = 14192 name = VICTORY_POINTS_14192_0 }
-	}
-	#Al-Khalīl
-	else_if = {
 		limit = { any_country = { controls_province = 14192 TAG_using_israeli_names = yes } }
-		set_province_name = { id = 14192 name = VICTORY_POINTS_14192_1 }
+		set_province_name = { id = 14192 name = VICTORY_POINTS_14192_0 }
 	}
 	#Hebron
 	else = {
@@ -5106,7 +5087,7 @@ TDA_update_state_793_names = {
 			limit = { CONTROLLER = { TAG_using_israeli_names = yes } }
 			set_state_name = STATE_793_0
 		}
-		#Arīḥā
+		#Ariha
 		else_if = {
 			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
 			set_state_name = STATE_793_1
@@ -5120,7 +5101,7 @@ TDA_update_state_793_names = {
 		limit = { any_country = { controls_province = 1086 TAG_using_israeli_names = yes } }
 		set_province_name = { id = 1086 name = VICTORY_POINTS_1086_0 }
 	}
-	#Arīḥā
+	#Ariha
 	else_if = {
 		limit = { any_country = { controls_province = 1086 TAG_using_arab_names = yes } }
 		set_province_name = { id = 1086 name = VICTORY_POINTS_1086_1 }
@@ -5676,12 +5657,12 @@ TDA_update_state_903_names = {
 #Gaza Strip
 TDA_update_state_904_names = {
 	904 = {
-		#Retzo'at ʻAzzā
+		#Retzo'at 'Azza
 		if = {
 			limit = { CONTROLLER = { TAG_using_israeli_names = yes } }
 			set_state_name = STATE_904_0
 		}
-		#Qiṭā' Ghazzah
+		#Qita' Ghazzah
 		else_if = {
 			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
 			set_state_name = STATE_904_1
@@ -5690,7 +5671,7 @@ TDA_update_state_904_names = {
 			reset_state_name = yes
 		}
 	}
-	#ʻAzzā
+	#'Azza
 	if = {
 		limit = { any_country = { controls_province = 14190 TAG_using_israeli_names = yes } }
 		set_province_name = { id = 14190 name = VICTORY_POINTS_14190_0 }

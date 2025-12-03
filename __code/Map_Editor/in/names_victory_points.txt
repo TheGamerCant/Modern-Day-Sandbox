@@ -2942,7 +2942,7 @@
 	default = "Leszno"
 }
 9508 = {
-	default = "Łódz"
+	default = "Łódź"
 }
 3482 = {
 	default = "Piotrków Trybunalski"
@@ -5643,8 +5643,9 @@
 }
 14190 = {
 	default = "Gaza"
+	#ʻAzzā
 	entry = {
-        name = "ʻAzzā"
+        name = "'Azza"
         requirements = {
             "TAG_using_israeli_names = yes"
         }
@@ -5658,29 +5659,32 @@
 }
 7107 = {
 	default = "Ramallah"
-	entry = {
-        name = "Rām Allāh"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
-	entry = {
-        name = "Ram'allah"
-        requirements = {
-            "TAG_using_israeli_names = yes"
-        }
-    }
+	#Rām Allāh
+#	entry = {
+#        name = "Ram Allah"
+#        requirements = {
+#            "TAG_using_arab_names = yes"
+#        }
+#    }
+#	entry = {
+#        name = "Ram'allah"
+#        requirements = {
+#            "TAG_using_israeli_names = yes"
+#        }
+#    }
 }
 14192 = {
 	default = "Hebron"
+	#Ḥeḇrōn
+#	entry = {
+#        name = "Hebron"
+#        requirements = {
+#            "TAG_using_arab_names = yes"
+#        }
+#    }
+	#Al-Khalīl
 	entry = {
-        name = "Ḥeḇrōn"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
-	entry = {
-        name = "Al-Khalīl"
+        name = "Al-Khalil"
         requirements = {
             "TAG_using_israeli_names = yes"
         }
@@ -5706,8 +5710,9 @@
             "TAG_using_israeli_names = yes"
         }
     }
+	#Matar Tall ʾAbīb
 	entry = {
-        name = "Matar Tall ʾAbīb"
+        name = "Matar Tall 'Abib"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -5721,8 +5726,9 @@
             "TAG_using_israeli_names = yes"
         }
     }
+	#Tall ʾAbīb-Yāfā
 	entry = {
-        name = "Tall ʾAbīb-Yāfā"
+        name = "Tall 'Abib-Yafa"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -5754,8 +5760,9 @@
             "TAG_using_israeli_names = yes"
         }
 	}
+	#Arīḥā
 	entry = {
-        name = "Arīḥā"
+        name = "Ariha"
         requirements = {
             "TAG_using_arab_names = yes"
         }

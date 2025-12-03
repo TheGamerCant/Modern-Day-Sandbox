@@ -761,14 +761,15 @@
 }
 173 = {
 	default = "Negev"
+	#haNégev
+#	entry = {
+#        name = "Negev"
+#        requirements = {
+#            "TAG_using_israeli_names = yes"
+#        }
+#    }
 	entry = {
-        name = "haNégev"
-        requirements = {
-            "TAG_using_israeli_names = yes"
-        }
-    }
-	entry = {
-        name = "an-Naqab"
+        name = "An-Naqab"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -928,7 +929,13 @@
     }
 }
 203 = {
-	default = "Naddniprianshchyna"
+	default = "Dnieper Region"
+	entry = { 
+        name = "Naddniprianshchyna"
+        requirements = {
+            "TAG_using_ukrainian_names = yes"
+        }
+    }
 	entry = { 
         name = "Pridneprov'ye"
         requirements = {
@@ -2801,8 +2808,9 @@
             "TAG_using_israeli_names = yes"
         }
 	}
+	#Arīḥā
 	entry = {
-        name = "Arīḥā"
+        name = "Ariha"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -3188,14 +3196,16 @@
 }
 904 = {
 	default = "Gaza Strip"
+	#Retzo'at ʻAzzā
 	entry = {
-        name = "Retzo'at ʻAzzā"
+        name = "Retzo'at 'Azza"
         requirements = {
             "TAG_using_israeli_names = yes"
         }
     }
+	#Qiṭā' Ghazzah
 	entry = {
-        name = "Qiṭā' Ghazzah"
+        name = "Qita' Ghazzah"
         requirements = {
             "TAG_using_arab_names = yes"
         }
