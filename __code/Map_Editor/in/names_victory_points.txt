@@ -6061,6 +6061,12 @@
 }
 14534 = {
 	default = "Kharga"
+	entry = {
+        name = "Al-Kharijah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 5078 = {
 	default = "Mut"
