@@ -29,5 +29,11 @@
     <ClInclude Include="src\functions.hpp">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\dds.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stb_rect_pack.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

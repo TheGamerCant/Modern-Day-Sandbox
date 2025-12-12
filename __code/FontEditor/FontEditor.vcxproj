@@ -133,7 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\data_types.hpp" />
+    <ClInclude Include="src\dds.hpp" />
     <ClInclude Include="src\functions.hpp" />
+    <ClInclude Include="src\stb_rect_pack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
