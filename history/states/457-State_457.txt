@@ -6,7 +6,7 @@ state={
 		add_core_of = EGY
 		
 		victory_points = { 12002 2 }
-		victory_points = { 4068 1 }
+		victory_points = { 4068 2 }
 	}
 	provinces={
 		1080 4068 4910 5069 7156 9957 10126 10844 12002 12889 14531 

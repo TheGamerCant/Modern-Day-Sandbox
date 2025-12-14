@@ -85,6 +85,7 @@ static HashMap<UnsignedInteger32, Letter> GetLetterMapFromFont(const Font& font)
 
 static Letter LettersWithPunctuation(const Letter& letter, const Punctuation& punctuation, const UnsignedInteger32 unicodeChar) {
     if (punctuation.realWidth > letter.realWidth) {
+        std::cout << "Char " << unicodeChar << " has a wider accent than character";
         return Letter();
     }
 
@@ -112,14 +113,15 @@ static Letter LettersWithPunctuation(const Letter& letter, const Punctuation& pu
 
 
     UnsignedInteger32 imgWidth = letter.imgWidth;
-    UnsignedInteger32 imgHeight = 0, offsetY = 0;
+    UnsignedInteger32 imgHeight = 0;
+    SignedInteger32 offsetY = 0;
     if (letter.offsetY >= punctuation.offsetY) {
 		imgHeight = std::ceil(letter.imgHeight + letter.offsetY - punctuation.offsetY);
-        offsetY = punctuation.offsetY;
+        offsetY = (punctuation.offsetY >= 0.0) ? std::ceil(punctuation.offsetY) : std::floor(punctuation.offsetY);
     }
     else {
 		imgHeight = std::ceil(punctuation.imgHeight + punctuation.offsetY - letter.offsetY);
-        offsetY = letter.offsetY;
+        offsetY = (letter.offsetY >= 0.0) ? std::ceil(letter.offsetY) : std::floor(letter.offsetY);
     }
 
     RenderTexture2D target = LoadRenderTexture(imgWidth, imgHeight);
@@ -175,30 +177,105 @@ struct BmpFontEntry {
     UnsignedInteger16 size;
     Color colour;
     UnsignedInteger16 outline;
+    Float32 outlineXAdvance;
+    UnsignedInteger8 opacity;
    
-    BmpFontEntry() : name(""), size(0), outline(0) {}
-    BmpFontEntry(const String& name, const UnsignedInteger16 size, const Color colour) : name(name), size(size), colour(colour), outline(0) {}
-    BmpFontEntry(const String& name, const UnsignedInteger16 size, const Color colour, const UnsignedInteger16 outline) : name(name), size(size), colour(colour), outline(outline) {}
+    BmpFontEntry() : name(""), size(0), colour(WHITE), outline(0), outlineXAdvance(0.0f), opacity(255) {}
+    BmpFontEntry(const String& name, const UnsignedInteger16 size, const Color colour) : name(name), size(size), colour(colour), outline(0), outlineXAdvance(0.0f), opacity(255) {}
+    BmpFontEntry(const String& name, const UnsignedInteger16 size, const Color colour, const UnsignedInteger8 opacity) :
+        name(name), size(size), colour(colour), outline(0), outlineXAdvance(0.0f), opacity(opacity) {}
+    BmpFontEntry(const String& name, const UnsignedInteger16 size, const Color colour, const UnsignedInteger16 outline, const Float32 outlineXAdvance, const UnsignedInteger8 opacity) :
+        name(name), size(size), colour(colour), outline(outline), outlineXAdvance(outlineXAdvance), opacity(opacity) {}
 };
 
 struct FontsData {
     String dir;
+    String fontName;
     Vector<BmpFontEntry> entries;
 
-    FontsData() : dir(0) {}
-    FontsData(const String& dir, const Vector<BmpFontEntry>& entries) : dir(dir), entries(entries) {}
+    FontsData() {}
+    FontsData(const String& dir, const String& fontName, const Vector<BmpFontEntry>& entries) : dir(dir), fontName(fontName), entries(entries) {}
 };
 
 static Vector<FontsData> GetFonts() {
     return {
         FontsData{
-            "blender_font\\BlenderPro-Bold.ttf",
-            {
-                BmpFontEntry{"Blender_Bold_White_24", 24, WHITE, 0}
+            "blender_font\\BlenderPro-Bold.ttf", "Blender Pro Bold", {
+                BmpFontEntry{"Blender_Bold_White_10", 10, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_12", 12, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_13", 13, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_14", 14, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_15", 15, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_16", 16, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_16_outline", 16, WHITE, 2, 0.5f, 255},
+                BmpFontEntry{"Blender_Bold_White_18", 18, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_18_outline", 18, WHITE, 3, 0.5f, 255},
+                BmpFontEntry{"Blender_Bold_White_19", 19, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_20", 20, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_20_outline", 20, WHITE, 3, 0.5f, 255},
+                BmpFontEntry{"Blender_Bold_White_24", 24, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Bold_White_28", 28, WHITE, 0, 0.0f, 255},
+            }
+        },
+        FontsData{
+            "blender_font\\BlenderPro-Heavy.ttf", "Blender Pro Heavy", { 
+                BmpFontEntry{"Blender_Heavy_White_18_outline", 18, WHITE, 3, 0.5f, 255},
+                BmpFontEntry{"Blender_Heavy_White_22_outline", 22, WHITE, 3, 0.5f, 255},
+                BmpFontEntry{"Blender_Heavy_White_24", 24, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Heavy_White_24_50pc_opacity", 24, WHITE, 0, 0.0f, 127},
+                BmpFontEntry{"Blender_Heavy_White_24_outline", 24, WHITE, 3, 0.5f, 255},
+                BmpFontEntry{"Blender_Heavy_White_28", 28, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Heavy_White_30", 30, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"Blender_Heavy_White_32", 32, WHITE, 0, 0.0f, 255},
             }
         }
     };
 }
+
+static void ImageDropShadow(Image& src, int blurRadius, Color shadowColor) {
+    Image shadow = ImageCopy(src);
+    ImageFormat(&shadow, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);
+
+    unsigned char* px = (unsigned char*)shadow.data;
+    int count = shadow.width * shadow.height;
+
+    for (int i = 0; i < count; i++) {
+        px[i * 4 + 0] = shadowColor.r;
+        px[i * 4 + 1] = shadowColor.g;
+        px[i * 4 + 2] = shadowColor.b;
+        px[i * 4 + 3] = (px[i * 4 + 3] * shadowColor.a) / 255;
+    }
+
+
+    for (int i = 0; i < blurRadius; i++) {
+        ImageResize(&shadow, shadow.width / 2, shadow.height / 2);
+        ImageResize(&shadow, src.width, src.height);
+    }
+
+    Image out = GenImageColor(src.width, src.height, BLANK);
+
+    ImageDraw(
+        &out,
+        shadow,
+        { 0, 0, (float)shadow.width, (float)shadow.height },
+        { 0, 0, (float)shadow.width, (float)shadow.height },
+        WHITE
+    );
+
+    ImageDraw(
+        &out,
+        src,
+        { 0, 0, (float)src.width, (float)src.height },
+        { 0, 0, (float)src.width, (float)src.height },
+        WHITE
+    );
+
+    UnloadImage(shadow);
+    UnloadImage(src);
+
+    src = out;
+}
+
 int main(void)
 {
     Path modPath = std::filesystem::current_path().parent_path().parent_path();
@@ -221,10 +298,10 @@ int main(void)
 
     Vector<FontsData> fonts = GetFonts();
 
-    for (const auto& [dir, entries] : fonts) {
+    for (const auto& [dir, fontName, entries] : fonts) {
         String fontPath = (fontsPath / dir).string();
 
-        for (const auto& [name, size, colour, outline] : entries) {
+        for (const auto& [name, size, colour, outline, outlineXAdvance, opacity] : entries) {
             Font font = LoadFontEx(fontPath.c_str(), size, NULL, 0);
             LoadCodepoints(font, fontPath.c_str(), size);
 
@@ -243,8 +320,8 @@ int main(void)
             Punctuation lowerDiaeresis(fontLetterMap.at(0x0f6), fontLetterMap.at(0x6f));
 
             //Down arrow above
-            Punctuation capitalCharon(fontLetterMap.at(0x010c), fontLetterMap.at(0x43));
-            Punctuation lowerCharon(fontLetterMap.at(0x010d), fontLetterMap.at(0x63));
+            Punctuation capitalCharon(fontLetterMap.at(0x0160), fontLetterMap.at(0x53));
+            Punctuation lowerCharon(fontLetterMap.at(0x0161), fontLetterMap.at(0x73));
 
             //Dot above
             Punctuation capitalDotAbove(fontLetterMap.at(0x017b), fontLetterMap.at(0x5a));
@@ -288,7 +365,11 @@ int main(void)
 
             //B with dot above
             fontLetterMap[0x1e02] = LettersWithPunctuation(fontLetterMap.at(0x42), capitalDotAbove, 0x1e02);
-            fontLetterMap[0x1e03] = LettersWithPunctuation(fontLetterMap.at(0x63), lowerDotAbove, 0x1e03);
+            fontLetterMap[0x1e03] = LettersWithPunctuation(fontLetterMap.at(0x62), lowerDotAbove, 0x1e03);
+
+            //B with line below
+            fontLetterMap[0x1e06] = LettersWithPunctuation(fontLetterMap.at(0x42), macronBelow, 0x1e06);
+            fontLetterMap[0x1e07] = LettersWithPunctuation(fontLetterMap.at(0x62), macronBelow, 0x1e07);
 
             //P with dot above
             fontLetterMap[0x1e56] = LettersWithPunctuation(fontLetterMap.at(0x50), capitalDotAbove, 0x1e56);
@@ -318,13 +399,14 @@ int main(void)
 
 			Vector<stbrp_rect> rects(fontLetterMap.size());
             SizeT i = 0, area = 0;
+            const UnsignedInteger16 outline2 = outline * 2;
 
             for (const auto& [key, val] : fontLetterMap) {
-                area += val.imgWidth * val.imgHeight;
+                area += static_cast<SizeT>(val.imgWidth + outline2) * static_cast<SizeT>(val.imgHeight + outline2);
                 rects[i] = {
                     .id = static_cast<int>(key),
-                    .w = static_cast<stbrp_coord>(val.imgWidth),
-                    .h = static_cast<stbrp_coord>(val.imgHeight),
+                    .w = static_cast<stbrp_coord>(val.imgWidth + outline2),
+                    .h = static_cast<stbrp_coord>(val.imgHeight + outline2),
                     .x = 0,
                     .y = 0,
                     .was_packed = 0
@@ -345,13 +427,13 @@ int main(void)
             SizeT imgDataPtrIndex = 0, letterDataIndex = 0;
             for (const auto& letterData : rects) {
                 const Letter& letter = fontLetterMap.at(letterData.id);
-                imgDataPtrIndex = (static_cast<SizeT>(letterData.y) * static_cast<SizeT>(dimension) + letterData.x) * 2;
+                imgDataPtrIndex = (static_cast<SizeT>(letterData.y + outline) * static_cast<SizeT>(dimension) + letterData.x + outline) * 2;
                 letterDataIndex = 0;
 
-                for (SizeT row = 0; row < letterData.h; row++) {
-                    std::memcpy(&imgDataPtr[imgDataPtrIndex], &letter.imgDataGreyAlpha[letterDataIndex], static_cast<SizeT>(letterData.w) * 2);
+                for (SizeT row = 0; row < letter.imgHeight; row++) {
+                    std::memcpy(&imgDataPtr[imgDataPtrIndex], &letter.imgDataGreyAlpha[letterDataIndex], static_cast<SizeT>(letter.imgWidth) * 2);
 
-                    letterDataIndex += static_cast<SizeT>(letterData.w) * 2;
+                    letterDataIndex += static_cast<SizeT>(letter.imgWidth) * 2;
                     imgDataPtrIndex += static_cast<SizeT>(dimension) * 2;
                 }
             }
@@ -368,6 +450,24 @@ int main(void)
             ImageFormat(&outImg, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);
             ImageColorTint(&outImg, colour);
 
+            if (outline != 0) {
+                ImageResizeCanvas(
+                    &outImg,
+                    outImg.width + outline2,
+                    outImg.height + outline2,
+                    outline, outline,
+                    Color(0, 0, 0, 0) 
+                );
+
+                for (SizeT i = 0; i < outline; i++) {
+                    ImageDropShadow(outImg, 1, Color(0, 0, 0, 255));
+                }
+            }
+
+            if (opacity != 255) {
+                ImageColorTint(&outImg, Color ( 255, 255, 255, opacity));
+            }
+
             const String outName = name + ".dds";
 
             SaveDDS_RGBA(
@@ -378,6 +478,24 @@ int main(void)
             );
 
             UnloadImage(outImg);
+
+            
+            std::ofstream fntFile(name + ".fnt", std::ios::binary);
+            String fntFileString = "info face=\"" + fontName + "\" size=-" + std::to_string(size) + " bold=0 italic=0 charset=\"\" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=0,0 outline="
+                + std::to_string(outline) + "\ncommon lineheight=" + std::to_string(size) + " base=" + std::to_string(std::round(0.79f)) + " scaleW=" +
+                std::to_string(outImg.width) + " scaleH=" + std::to_string(outImg.height) + " pages=1 packed=0 alphaChnl=0 redChnl=0 greenChnl=0 blueChnl=0\npage id=0 file=\"" +
+                outName + "\"\nchars count=" + std::to_string(rects.size());
+
+            for (const auto& letterData : rects) {
+                const Letter& letter = fontLetterMap.at(letterData.id);
+
+                fntFileString += "\nchar id=" + std::to_string(letterData.id) + " x=" + std::to_string(letterData.x) + " y=" + std::to_string(letterData.y) + 
+                    " width=" + std::to_string(letterData.w) + " height=" + std::to_string(letterData.h) + " xoffset=" + std::to_string(int(letter.offsetX + outline)) + 
+                    " yoffset=" + std::to_string(int(letter.offsetY + outline)) + " xadvance=" + std::to_string(int(letter.advanceX + outline * outlineXAdvance)) + " page=0  chnl=15";
+            }
+
+            fntFile << fntFileString;
+            
         }
     }
 

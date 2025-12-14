@@ -5643,9 +5643,8 @@
 }
 14190 = {
 	default = "Gaza"
-	#ʻAzzā
 	entry = {
-        name = "'Azza"
+        name = "'Azzā"
         requirements = {
             "TAG_using_israeli_names = yes"
         }
@@ -5659,32 +5658,29 @@
 }
 7107 = {
 	default = "Ramallah"
-	#Rām Allāh
-#	entry = {
-#        name = "Ram Allah"
-#        requirements = {
-#            "TAG_using_arab_names = yes"
-#        }
-#    }
-#	entry = {
-#        name = "Ram'allah"
-#        requirements = {
-#            "TAG_using_israeli_names = yes"
-#        }
-#    }
+	entry = {
+        name = "Rām Allāh"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+	entry = {
+        name = "Ram'allah"
+        requirements = {
+            "TAG_using_israeli_names = yes"
+        }
+    }
 }
 14192 = {
 	default = "Hebron"
-	#Ḥeḇrōn
-#	entry = {
-#        name = "Hebron"
-#        requirements = {
-#            "TAG_using_arab_names = yes"
-#        }
-#    }
-	#Al-Khalīl
 	entry = {
-        name = "Al-Khalil"
+        name = "Ḥeḇrōn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+	entry = {
+        name = "Al-Khalīl"
         requirements = {
             "TAG_using_israeli_names = yes"
         }
@@ -5710,9 +5706,8 @@
             "TAG_using_israeli_names = yes"
         }
     }
-	#Matar Tall ʾAbīb
 	entry = {
-        name = "Matar Tall 'Abib"
+        name = "Maṭār Tall 'Abīb"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -5726,9 +5721,8 @@
             "TAG_using_israeli_names = yes"
         }
     }
-	#Tall ʾAbīb-Yāfā
 	entry = {
-        name = "Tall 'Abib-Yafa"
+        name = "Tall 'Abīb-Yāfā"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -5760,9 +5754,8 @@
             "TAG_using_israeli_names = yes"
         }
 	}
-	#Arīḥā
 	entry = {
-        name = "Ariha"
+        name = "Arīḥā"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -6073,151 +6066,430 @@
 }
 1977 = {
 	default = "Halaib"
+	entry = {
+        name = "Ḥalāyib"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 9947 = {
 	default = "Sharm El-Sheikh"
+	entry = {
+        name = "Sharm ash-Shaykh"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14537 = {
 	default = "Arish"
+	entry = {
+        name = "Al-'Arīsh"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 10099 = {
 	default = "El-Tor"
+	entry = {
+        name = "Aṭ-Ṭūr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 1155 = {
 	default = "Bir al-Abd"
+	entry = {
+        name = "B'īr al-'Abd"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14535 = {
 	default = "Fouad"
+	entry = {
+        name = "Būr Fo'ād"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 12049 = {
 	default = "Port Said"
+	entry = {
+        name = "Būr Sa'īd"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 4073 = {
 	default = "Suez"
+	entry = {
+        name = "As-Suways"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 12002 = {
 	default = "Hurghada"
+	entry = {
+        name = "Al-Ghurdaqah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 4068 = {
-	default = "Port Ghalib"
+	default = "Quseer"
+	entry = {
+        name = "Al-Quṣayr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 1068 = {
 	default = "Faiyum"
+	entry = {
+        name = "Al-Fayyūm"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 11974 = {
 	default = "Asyut"
+	entry = {
+        name = "Asyūṭ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 12071 = {
 	default = "Luxor"
+	entry = {
+        name = "Al-Uqṣur"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 11999 = {
 	default = "Aswan"
+	entry = {
+        name = "Aswān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 12044 = {
 	default = "Sohag"
+	entry = {
+        name = "Sawhāj"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 7079 = {
 	default = "Sallum"
+	entry = {
+        name = "As-Sallūm"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 11967 = {
 	default = "Marsa Matrouh"
+	entry = {
+        name = "Marsā Maṭrūḥ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 11910 = {
-	default = "El Dabaa"
+	default = "Aḍ-Ḍab'ah"
+	entry = {
+        name = "Al-Quṣayr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 12004 = {
 	default = "Cairo"
+	entry = {
+        name = "Al-Qāhirah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 7011 = {
 	default = "Cairo International Airport"
+	entry = {
+        name = "Maṭār Al-Qāhirah El-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 4055 = {
 	default = "Giza"
+	entry = {
+        name = "Al-Jīzah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 10005 = {
 	default = "Mansoura"
+	entry = {
+        name = "Al-Manṣūrah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 4076 = {
 	default = "Alexandria"
+	entry = {
+        name = "Al-Iskandariyah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 7091 = {
 	default = "Kafr El-Shaikh"
+	entry = {
+        name = "Kafr Ash-Shaykh"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14540 = {
 	default = "Damietta"
+	entry = {
+        name = "Dumyāṭ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14542 = {
 	default = "Tanta"
+	entry = {
+        name = "Ṭanṭā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14549 = {
 	default = "Al-Jawf"
 }
 1140 = {
 	default = "Tazirbu"
+	entry = {
+        name = "Tāzirbū"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14553 = {
-	default = "Sabhā"
+	default = "Sabha"
+	entry = {
+        name = "Sabhā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14550 = {
 	default = "Ghat"
+	entry = {
+        name = "Ghāt"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14552 = {
 	default = "Brak"
+	entry = {
+        name = "Birāk"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 12866 = {
 	default = "Hun"
+	entry = {
+        name = "Hūn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 1149 = {
 	default = "Tripoli"
+	entry = {
+        name = "Ṭarābulus"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14558 = {
 	default = "Tripoli International Airport"
+	entry = {
+        name = "Maṭār Ṭarābulus El-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14560 = {
 	default = "Zawiya"
+	entry = {
+        name = "Az-Zāwiyah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 14563 = {
 	default = "Misrata"
+	entry = {
+        name = "Miṣrātah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 12039 = {
 	default = "Zuwara"
+	entry = {
+        name = "Zuwārah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 7066 = {
 	default = "Bani Waled"
+	entry = {
+        name = "Banī Walīd"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 4051 = {
 	default = "Zintan"
+	entry = {
+        name = "Az-Zintān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 10884 = {
 	default = "Gadamis"
+	entry = {
+        name = "Ghadāmis"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 4047 = {
 	default = "Sirte"
+	entry = {
+        name = "Surt"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 1127 = {
 	default = "Ajdabiya"
+	entry = {
+        name = "Ajdābiyā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 10117 = {
 	default = "Bin Jawad"
 }
 11954 = {
 	default = "Benghazi"
+	entry = {
+        name = "Banghāzī"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
-14561 = {
-	default = "Kuwayfiyah"
-}
-4063 = {
+4151 = {
 	default = "Al Bayda"
+	entry = {
+        name = "Al-Bayḍā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 1130 = {
 	default = "Tobruk"
+	entry = {
+        name = "Ṭubruq"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 7082 = {
 	default = "Derna"
+	entry = {
+        name = "Darnah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 1060 = {
 	default = "Al Jaghbub"
+	entry = {
+        name = "Al-Jaġhbūb"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 12764 = {
 	default = "Siwa"
+	entry = {
+        name = "Sīwa"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }

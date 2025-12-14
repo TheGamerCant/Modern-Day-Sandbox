@@ -231,6 +231,12 @@
 }
 57 = {
 	default = "Idehan Ubari"
+	entry = {
+        name = "Adhān Aūbārī"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 58 = {
 	default = "Holstein"
@@ -761,13 +767,12 @@
 }
 173 = {
 	default = "Negev"
-	#haNégev
-#	entry = {
-#        name = "Negev"
-#        requirements = {
-#            "TAG_using_israeli_names = yes"
-#        }
-#    }
+	entry = {
+        name = "HaNégev"
+        requirements = {
+            "TAG_using_israeli_names = yes"
+        }
+    }
 	entry = {
         name = "An-Naqab"
         requirements = {
@@ -1188,6 +1193,12 @@
 }
 273 = {
 	default = "Cyrenican Desert"
+	entry = {
+        name = "Al-Ṣaḥrā' Barqah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 274 = {
 	default = "Ghana"
@@ -1268,7 +1279,13 @@
 	default = "Falkland Islands"
 }
 300 = {
-	default = "Erg Murzuq"
+	default = "Idehan Murzuq"
+	entry = {
+        name = "Adhān Murzuq"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 301 = {
 	default = "Paraguay"
@@ -1707,39 +1724,111 @@
 }
 446 = {
 	default = "Suez"
+	entry = {
+        name = "As-Suways"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 447 = {
 	default = "Nile Delta"
+	entry = {
+        name = "Delta An-Nīl"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 448 = {
 	default = "Tripoli"
+	entry = {
+        name = "Ṭarābulus"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 449 = {
 	default = "Sirte"
+	entry = {
+        name = "Surt"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 450 = {
-	default = "Benghasi"
+	default = "Benghazi"
+	entry = {
+        name = "Banghāzī"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 451 = {
 	default = "Rebiana Sand Sea"
+	entry = {
+        name = "Baḥr Al-'rimāl Rībīānā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 452 = {
 	default = "Matrouh"
+	entry = {
+        name = "Maṭrūḥ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 453 = {
 	default = "Sinai"
+	entry = {
+        name = "Sīnā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 454 = {
-	default = "Mediterranean Israel"
+	default = "Israel"
+	entry = {
+        name = "Yisrā'el"
+        requirements = {
+            "TAG_using_israeli_names = yes"
+        }
+    }
+	entry = {
+        name = "Filasṭīn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 455 = {
 	default = "Jordan"
 }
 456 = {
-	default = "Upper Nile"
+	default = "Upper Egypt"
+	entry = {
+        name = "Ṣaʿīd Miṣr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 457 = {
 	default = "Eastern Desert"
+	entry = {
+        name = "Al-Ṣaḥrā' Al-Šarqīa"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 458 = {
 	default = "Tunisia"
@@ -2025,6 +2114,13 @@
 }
 552 = {
 	default = "Western Desert"
+	#Al-Ṣaḥrā' Al-Ġharbīẗ
+	entry = {
+        name = "Al-Ṣaḥrā' Al-Ġharbīa"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 553 = {
 	default = "Lebanon"
@@ -2112,6 +2208,12 @@
 }
 581 = {
 	default = "Cairo"
+	entry = {
+        name = "Al-Qāhirah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 582 = {
 	default = "Mombasa"
@@ -2364,12 +2466,30 @@
 }
 661 = {
 	default = "Libyan Great Sand Sea"
+	entry = {
+        name = "Baḥr Al-'rimāl Al-Lībī Al-'kabīr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 662 = {
 	default = "Halaib Triangle"
+	entry = {
+        name = "Muthallath Ḥalāyib"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 663 = {
 	default = "Cyrenaica"
+	entry = {
+        name = "Barqah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 664 = {
 	default = "Southern Slovakia"
@@ -2652,9 +2772,21 @@
 }
 757 = {
 	default = "Haruj"
+	entry = {
+        name = "Harūǧ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 758 = {
 	default = "Fezzan"
+	entry = {
+        name = "Fazzān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 759 = {
 	default = "Kunlun Shan"
@@ -2808,9 +2940,8 @@
             "TAG_using_israeli_names = yes"
         }
 	}
-	#Arīḥā
 	entry = {
-        name = "Ariha"
+        name = "Arīḥā"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -3196,16 +3327,14 @@
 }
 904 = {
 	default = "Gaza Strip"
-	#Retzo'at ʻAzzā
 	entry = {
-        name = "Retzo'at 'Azza"
+        name = "Retzo'at ʻAzzā"
         requirements = {
             "TAG_using_israeli_names = yes"
         }
     }
-	#Qiṭā' Ghazzah
 	entry = {
-        name = "Qita' Ghazzah"
+        name = "Qiṭā' Ghazzah"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -3213,10 +3342,34 @@
 }
 905 = {
 	default = "Golan Heights"
+	entry = {
+        name = "Ramat HaGolan"
+        requirements = {
+            "TAG_using_israeli_names = yes"
+        }
+    }
+	entry = {
+        name = "Haḍbatu l-Jawlān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 906 = {
 	default = "Fouad"
+	entry = {
+        name = "Būr Fo'ād"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 907 = {
 	default = "Egyptian Great Sand Sea"
+	entry = {
+        name = "Baḥr Al-'rimāl Al-'miṣrī Al-'kabīr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }

@@ -190,7 +190,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_buildings_strip"
 		textureFile = "gfx/interface/buildings/building_icon_strip.dds"
-		noOfFrames = 29
+		noOfFrames = 31
 	}
 	
 	spriteType = {
@@ -752,6 +752,23 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_nuke_button"
 		textureFile = "gfx/interface/stateview_nuke_button.dds"
+	}
+
+	spriteType = {
+		name = "GFX_modifiers_sabotaged_resource"
+		textureFile = "gfx/interface/occupation/sabotaged_resource.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_scorched_earth_state"
+		texturefile = "gfx/interface/stateview/destroy_railway.dds"
+	}
+	
+	### Energy
+	
+	spriteType = {
+		name = "GFX_modifiers_energy"
+		textureFile = "gfx/interface/modifiers/modifiers_energy.dds"
 	}
 
 }

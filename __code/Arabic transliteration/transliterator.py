@@ -1,0 +1,69 @@
+while (True):
+    char_list = list(input("Enter the Arabic phrase to transliterate: "))
+
+    for char in char_list:
+        match char:
+          case 'ا':
+            print("'", end="")
+          case 'ب':
+            print("b", end="")
+          case 'ت':
+            print("t", end="")
+          case 'ث':
+            print("ṯ", end="")
+          case 'ج':
+            print("ǧ", end="")
+          case 'ح':
+            print("ḥ", end="")
+          case 'خ':
+            print("ẖ", end="")
+          case 'د':
+            print("d", end="")
+          case 'ذ':
+            print("ḏ", end="")
+          case 'ر':
+            print("r", end="")
+          case 'ز':
+            print("z", end="")
+          case 'س':
+            print("s", end="")
+          case 'ش':
+            print("š", end="")
+          case 'ص':
+            print("ṣ", end="")
+          case 'ض':
+            print("ḍ", end="")
+          case 'ط':
+            print("ṭ", end="")
+          case 'ظ':
+            print("ẓ", end="")
+          case 'ع':
+            print("'", end="")
+          case 'غ':
+            print("ġ", end="")
+          case 'ف':
+            print("f", end="")
+          case 'ق':
+            print("q", end="")
+          case 'ك':
+            print("k", end="")
+          case 'ل':
+            print("l", end="")
+          case 'م':
+            print("m", end="")
+          case 'ن':
+            print("n", end="")
+          case 'ه':
+            print("h", end="")
+          case 'ة':
+            print("ẗ", end="")
+          case 'و':
+            print("w", end="")
+          case 'ي':
+            print("y", end="")
+          case 'ى':
+            print("ỳ", end="")
+          case _:
+            print(char, end="")
+            
+    print("\n\n")
