@@ -152,10 +152,108 @@ TDA_update_state_5_names = {
 
 #Flanders
 TDA_update_state_6_names = {
+	6 = {
+		#Vlaanderen
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_belgian_names = yes TAG_using_dutch_names = yes } } }
+			set_state_name = STATE_6_0
+		}
+		#Flandre
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_french_names = yes } }
+			set_state_name = STATE_6_1
+		}
+		#Flandern
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_6_2
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Brugge
+	if = {
+		limit = { any_country = { controls_province = 6560 OR = { TAG_using_belgian_names = yes TAG_using_dutch_names = yes } } }
+		set_province_name = { id = 6560 name = VICTORY_POINTS_6560_0 }
+	}
+	#Bruges
+	else = {
+		reset_province_name = 6560
+	}
+	#Saint-Nicholas
+	if = {
+		limit = { any_country = { controls_province = 6598 TAG_using_french_names = yes } }
+		set_province_name = { id = 6598 name = VICTORY_POINTS_6598_0 }
+	}
+	#Sint-Niklaas
+	else = {
+		reset_province_name = 6598
+	}
+	#Aéroport de Bruxelles
+	if = {
+		limit = { any_country = { controls_province = 14056 OR = { TAG_using_belgian_names = yes TAG_using_french_names = yes } } }
+		set_province_name = { id = 14056 name = VICTORY_POINTS_14056_0 }
+	}
+	#Luchthaven Brussel
+	else_if = {
+		limit = { any_country = { controls_province = 14056 TAG_using_dutch_names = yes } }
+		set_province_name = { id = 14056 name = VICTORY_POINTS_14056_1 }
+	}
+	#Brussels Airport
+	else = {
+		reset_province_name = 14056
+	}
+	#Antwerpen
+	if = {
+		limit = { any_country = { controls_province = 14058 OR = { TAG_using_belgian_names = yes TAG_using_dutch_names = yes } } }
+		set_province_name = { id = 14058 name = VICTORY_POINTS_14058_0 }
+	}
+	#Anvers
+	else_if = {
+		limit = { any_country = { controls_province = 14058 TAG_using_french_names = yes } }
+		set_province_name = { id = 14058 name = VICTORY_POINTS_14058_1 }
+	}
+	#Antwerp
+	else = {
+		reset_province_name = 14058
+	}
+	#Gent
+	if = {
+		limit = { any_country = { controls_province = 14061 OR = { TAG_using_belgian_names = yes TAG_using_dutch_names = yes } } }
+		set_province_name = { id = 14061 name = VICTORY_POINTS_14061_0 }
+	}
+	#Gand
+	else_if = {
+		limit = { any_country = { controls_province = 14061 TAG_using_french_names = yes } }
+		set_province_name = { id = 14061 name = VICTORY_POINTS_14061_1 }
+	}
+	#Ghent
+	else = {
+		reset_province_name = 14061
+	}
 }
 
 #Holland
 TDA_update_state_7_names = {
+	#Den Haag
+	if = {
+		limit = { any_country = { controls_province = 3211 TAG_using_dutch_names = yes } }
+		set_province_name = { id = 3211 name = VICTORY_POINTS_3211_0 }
+	}
+	#The Hague
+	else = {
+		reset_province_name = 3211
+	}
+	#Luchthaven Schiphol
+	if = {
+		limit = { any_country = { controls_province = 14078 TAG_using_dutch_names = yes } }
+		set_province_name = { id = 14078 name = VICTORY_POINTS_14078_0 }
+	}
+	#Amsterdam Airport Schiphol
+	else = {
+		reset_province_name = 14078
+	}
 }
 
 #Luxembourg
@@ -210,16 +308,45 @@ TDA_update_state_12_names = {
 TDA_update_state_13_names = {
 }
 
-#Bretagne
+#Brittay
 TDA_update_state_14_names = {
+	14 = {
+		#Bretagne
+		if = {
+			limit = { CONTROLLER = { TAG_using_french_names = yes } }
+			set_state_name = STATE_14_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Normandie
+#Normandy
 TDA_update_state_15_names = {
+	15 = {
+		#Normandie
+		if = {
+			limit = { CONTROLLER = { TAG_using_french_names = yes } }
+			set_state_name = STATE_15_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Île-de-France
 TDA_update_state_16_names = {
+	#Aéroport de Charles-de-Gaulle
+	if = {
+		limit = { any_country = { controls_province = 14010 TAG_using_french_names = yes } }
+		set_province_name = { id = 14010 name = VICTORY_POINTS_14010_0 }
+	}
+	#Charles de Gaulle Airport
+	else = {
+		reset_province_name = 14010
+	}
 }
 
 #Grand-Est
@@ -236,14 +363,51 @@ TDA_update_state_19_names = {
 
 #Auvergne-Rhône-Alpes
 TDA_update_state_20_names = {
+	#Aéroport de Lyon-Saint Exupéry
+	if = {
+		limit = { any_country = { controls_province = 14041 TAG_using_french_names = yes } }
+		set_province_name = { id = 14041 name = VICTORY_POINTS_14041_0 }
+	}
+	#Lyon-Saint Exupéry Airport
+	else = {
+		reset_province_name = 14041
+	}
 }
 
 #Provence-Alpes-Côte d'Azur
 TDA_update_state_21_names = {
+	#Aéroport Marseille-Provence
+	if = {
+		limit = { any_country = { controls_province = 14053 TAG_using_french_names = yes } }
+		set_province_name = { id = 14053 name = VICTORY_POINTS_14053_0 }
+	}
+	#Marseille Provence Airport
+	else = {
+		reset_province_name = 14053
+	}
 }
 
-#Occitanie
+#Occitania
 TDA_update_state_22_names = {
+	22 = {
+		#Occitanie
+		if = {
+			limit = { CONTROLLER = { TAG_using_french_names = yes } }
+			set_state_name = STATE_22_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Aéroport de Toulouse–Blagnac
+	if = {
+		limit = { any_country = { controls_province = 14027 TAG_using_french_names = yes } }
+		set_province_name = { id = 14027 name = VICTORY_POINTS_14027_0 }
+	}
+	#Toulouse-Blagnac Airport
+	else = {
+		reset_province_name = 14027
+	}
 }
 
 #Espírito Santo
@@ -268,10 +432,57 @@ TDA_update_state_27_names = {
 
 #Alsace-Lorraine
 TDA_update_state_28_names = {
+	28 = {
+		#Elsaß–Lothringen
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_28_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Mülhausen
+	if = {
+		limit = { any_country = { controls_province = 678 TAG_using_german_names = yes } }
+		set_province_name = { id = 678 name = VICTORY_POINTS_678_0 }
+	}
+	#Mulhouse
+	else = {
+		reset_province_name = 678
+	}
+	#Straßburg
+	if = {
+		limit = { any_country = { controls_province = 9503 TAG_using_german_names = yes } }
+		set_province_name = { id = 9503 name = VICTORY_POINTS_9503_0 }
+	}
+	#Strasbourg
+	else = {
+		reset_province_name = 9503
+	}
 }
 
-#Pas-de-Calais
+#Calais
 TDA_update_state_29_names = {
+	29 = {
+		#Nord-Pas-de-Calais
+		if = {
+			limit = { CONTROLLER = { TAG_using_french_names = yes } }
+			set_state_name = STATE_29_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Dunkerque
+	if = {
+		limit = { any_country = { controls_province = 13994 TAG_using_french_names = yes } }
+		set_province_name = { id = 13994 name = VICTORY_POINTS_13994_0 }
+	}
+	#Dunkirk
+	else = {
+		reset_province_name = 13994
+	}
 }
 
 #Pays de la Loire
@@ -324,6 +535,58 @@ TDA_update_state_33_names = {
 
 #Wallonia
 TDA_update_state_34_names = {
+	34 = {
+		#Wallonie
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_belgian_names = yes TAG_using_french_names = yes } } }
+			set_state_name = STATE_34_0
+		}
+		#Wallonië
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_dutch_names = yes } }
+			set_state_name = STATE_34_1
+		}
+		#Wallonien
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_34_2
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Bergen
+	if = {
+		limit = { any_country = { controls_province = 9536 TAG_using_dutch_names = yes } }
+		set_province_name = { id = 9536 name = VICTORY_POINTS_9536_0 }
+	}
+	#Mons
+	else = {
+		reset_province_name = 9536
+	}
+	#Bastenaken
+	if = {
+		limit = { any_country = { controls_province = 11407 TAG_using_dutch_names = yes } }
+		set_province_name = { id = 11407 name = VICTORY_POINTS_11407_0 }
+	}
+	#Bastogne
+	else = {
+		reset_province_name = 11407
+	}
+	#Luik
+	if = {
+		limit = { any_country = { controls_province = 14064 TAG_using_dutch_names = yes } }
+		set_province_name = { id = 14064 name = VICTORY_POINTS_14064_0 }
+	}
+	#Lüttich
+	else_if = {
+		limit = { any_country = { controls_province = 14064 TAG_using_german_names = yes } }
+		set_province_name = { id = 14064 name = VICTORY_POINTS_14064_1 }
+	}
+	#Liège
+	else = {
+		reset_province_name = 14064
+	}
 }
 
 #Brabant
@@ -1819,7 +2082,7 @@ TDA_update_state_195_names = {
 #Tauriya
 TDA_update_state_196_names = {
 	196 = {
-		#Tavriysʹkyy
+		#Tavriys'kyy
 		if = {
 			limit = { CONTROLLER = { TAG_using_ukrainian_names = yes } }
 			set_state_name = STATE_196_0
@@ -3051,6 +3314,33 @@ TDA_update_state_329_names = {
 
 #Ulaanbaatar
 TDA_update_state_330_names = {
+	#Chinggis Khaan Olon Upsyn Nisėch Buudal
+	if = {
+		limit = { any_country = { controls_province = 14587 TAG_using_mongolian_names = yes } }
+		set_province_name = { id = 14587 name = VICTORY_POINTS_14587_0 }
+	}
+	#Ghengis Khan International Airport
+	else = {
+		reset_province_name = 14587
+	}
+	#Ėrdėnėt
+	if = {
+		limit = { any_country = { controls_province = 14597 TAG_using_mongolian_names = yes } }
+		set_province_name = { id = 14597 name = VICTORY_POINTS_14597_0 }
+	}
+	#Erdenet
+	else = {
+		reset_province_name = 14597
+	}
+	#Tsėtsėrlėg
+	if = {
+		limit = { any_country = { controls_province = 14598 TAG_using_mongolian_names = yes } }
+		set_province_name = { id = 14598 name = VICTORY_POINTS_14598_0 }
+	}
+	#Tsetserleg
+	else = {
+		reset_province_name = 14598
+	}
 }
 
 #Newfoundland
@@ -5895,16 +6185,64 @@ TDA_update_state_816_names = {
 TDA_update_state_817_names = {
 }
 
-#Khovd
+#Mongolian Altay
 TDA_update_state_818_names = {
+	818 = {
+		#Altain Nuruu
+		if = {
+			limit = { CONTROLLER = { TAG_using_mongolian_names = yes } }
+			set_state_name = STATE_818_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Mörön
+	if = {
+		limit = { any_country = { controls_province = 12649 TAG_using_mongolian_names = yes } }
+		set_province_name = { id = 12649 name = VICTORY_POINTS_12649_0 }
+	}
+	#Murun
+	else = {
+		reset_province_name = 12649
+	}
 }
 
-#Dornod
+#Egyptian Great Sand Sea
 TDA_update_state_819_names = {
+	819 = {
+		#Baḥr Al-'rimāl Al-'miṣrī Al-'kabīr
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_819_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Khövsgöl
+#Fouad
 TDA_update_state_820_names = {
+	820 = {
+		#Būr Fo'ād
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_820_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Būr Fo'ād
+	if = {
+		limit = { any_country = { controls_province = 14535 TAG_using_arab_names = yes } }
+		set_province_name = { id = 14535 name = VICTORY_POINTS_14535_0 }
+	}
+	#Fouad
+	else = {
+		reset_province_name = 14535
+	}
 }
 
 #Chechnya
@@ -5997,6 +6335,35 @@ TDA_update_state_842_names = {
 
 #Brussels
 TDA_update_state_843_names = {
+	843 = {
+		#Bruxelles
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_belgian_names = yes TAG_using_french_names = yes } } }
+			set_state_name = STATE_843_0
+		}
+		#Brussel
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_dutch_names = yes } }
+			set_state_name = STATE_843_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Bruxelles
+	if = {
+		limit = { any_country = { controls_province = 516 OR = { TAG_using_belgian_names = yes TAG_using_french_names = yes } } }
+		set_province_name = { id = 516 name = VICTORY_POINTS_516_0 }
+	}
+	#Brussel
+	else_if = {
+		limit = { any_country = { controls_province = 516 TAG_using_dutch_names = yes } }
+		set_province_name = { id = 516 name = VICTORY_POINTS_516_1 }
+	}
+	#Brussels
+	else = {
+		reset_province_name = 516
+	}
 }
 
 #Jubaland
@@ -6361,43 +6728,6 @@ TDA_update_state_905_names = {
 		else_if = {
 			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
 			set_state_name = STATE_905_1
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-}
-
-#Fouad
-TDA_update_state_906_names = {
-	906 = {
-		#Būr Fo'ād
-		if = {
-			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
-			set_state_name = STATE_906_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-	#Būr Fo'ād
-	if = {
-		limit = { any_country = { controls_province = 14535 TAG_using_arab_names = yes } }
-		set_province_name = { id = 14535 name = VICTORY_POINTS_14535_0 }
-	}
-	#Fouad
-	else = {
-		reset_province_name = 14535
-	}
-}
-
-#Egyptian Great Sand Sea
-TDA_update_state_907_names = {
-	907 = {
-		#Baḥr Al-'rimāl Al-'miṣrī Al-'kabīr
-		if = {
-			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
-			set_state_name = STATE_907_0
 		}
 		else = {
 			reset_state_name = yes
@@ -7313,8 +7643,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_903_names = yes
 	TDA_update_state_904_names = yes
 	TDA_update_state_905_names = yes
-	TDA_update_state_906_names = yes
-	TDA_update_state_907_names = yes
 }
 
 TDA_toggle_change_city_names = {

@@ -227,6 +227,7 @@ static Vector<FontsData> GetFonts() {
                 BmpFontEntry{"Blender_Heavy_White_28", 28, WHITE, 0, 0.0f, 255},
                 BmpFontEntry{"Blender_Heavy_White_30", 30, WHITE, 0, 0.0f, 255},
                 BmpFontEntry{"Blender_Heavy_White_32", 32, WHITE, 0, 0.0f, 255},
+                BmpFontEntry{"hoi_mapfont4", 110, WHITE, 6, 0.40f, 127},
             }
         }
     };
@@ -306,6 +307,20 @@ int main(void)
             LoadCodepoints(font, fontPath.c_str(), size);
 
             HashMap<UnsignedInteger32, Letter> fontLetterMap = GetLetterMapFromFont(font);
+
+
+            //Mapfont
+            /*
+            fontLetterMap.erase(0x3a); fontLetterMap.erase(0x3b); fontLetterMap.erase(0x3c); fontLetterMap.erase(0x3d);
+            fontLetterMap.erase(0x3e); fontLetterMap.erase(0xa1); fontLetterMap.erase(0xa2); fontLetterMap.erase(0xa3);
+            fontLetterMap.erase(0x2b); fontLetterMap.erase(0x5e); fontLetterMap.erase(0x2a); fontLetterMap.erase(0xb6);
+            fontLetterMap.erase(0xbc); fontLetterMap.erase(0xbd); fontLetterMap.erase(0xbe); fontLetterMap.erase(0xaa);
+            fontLetterMap.erase(0xb2); fontLetterMap.erase(0xb3); fontLetterMap.erase(0x017f); fontLetterMap.erase(0x0192);
+            fontLetterMap.erase(0x2020); fontLetterMap.erase(0x2021); fontLetterMap.erase(0x2030); fontLetterMap.erase(0x2126);
+            fontLetterMap.erase(0x2202); fontLetterMap.erase(0x2206); fontLetterMap.erase(0x220f); fontLetterMap.erase(0x2211);
+            fontLetterMap.erase(0x221e); fontLetterMap.erase(0x2248); fontLetterMap.erase(0x2260); fontLetterMap.erase(0x25ca);
+            fontLetterMap.erase(0xfb01); fontLetterMap.erase(0xfb02);
+            */
 
             //Right accent
             Punctuation capitalAcute(fontLetterMap.at(0xd3), fontLetterMap.at(0x4f));

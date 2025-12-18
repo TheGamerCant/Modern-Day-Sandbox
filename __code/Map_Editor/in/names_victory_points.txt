@@ -3027,6 +3027,12 @@
 }
 13994 = {
 	default = "Dunkirk"
+	entry = {
+        name = "Dunkerque"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 13995 = {
 	default = "Calais"
@@ -3090,6 +3096,12 @@
 }
 14010 = {
 	default = "Charles de Gaulle Airport"
+	entry = {
+        name = "Aéroport de Charles-de-Gaulle"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 14012 = {
 	default = "Versailles"
@@ -3105,6 +3117,12 @@
 }
 9503 = {
 	default = "Strasbourg"
+	entry = {
+        name = "Straßburg"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13935 = {
 	default = "Metz"
@@ -3114,6 +3132,12 @@
 }
 678 = {
 	default = "Mulhouse"
+	entry = {
+        name = "Mülhausen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 6529 = {
 	default = "Colmar"
@@ -3183,6 +3207,12 @@
 }
 14027 = {
 	default = "Toulouse-Blagnac Airport"
+	entry = {
+        name = "Aéroport de Toulouse–Blagnac"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 14029 = {
 	default = "Montpellier"
@@ -3276,6 +3306,12 @@
 }
 14041 = {
 	default = "Lyon-Saint Exupéry Airport"
+	entry = {
+        name = "Aéroport de Lyon-Saint Exupéry"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 6613 = {
 	default = "Lyon"
@@ -3333,6 +3369,12 @@
 }
 14053 = {
 	default = "Marseille Provence Airport"
+	entry = {
+        name = "Aéroport Marseille-Provence"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 14051 = {
 	default = "Toulon"
@@ -3351,21 +3393,81 @@
 }
 516 = {
 	default = "Brussels"
+	entry = {
+        name = "Bruxelles"
+        requirements = {
+            "OR = { TAG_using_belgian_names = yes TAG_using_french_names = yes }"
+        }
+    }
+	entry = {
+        name = "Brussel"
+        requirements = {
+            "TAG_using_dutch_names = yes"
+        }
+    }
 }
 14056 = {
 	default = "Brussels Airport"
+	entry = {
+        name = "Aéroport de Bruxelles"
+        requirements = {
+            "OR = { TAG_using_belgian_names = yes TAG_using_french_names = yes }"
+        }
+    }
+	entry = {
+        name = "Luchthaven Brussel"
+        requirements = {
+            "TAG_using_dutch_names = yes"
+        }
+    }
 }
 14061 = {
 	default = "Ghent"
+	entry = {
+        name = "Gent"
+        requirements = {
+            "OR = { TAG_using_belgian_names = yes TAG_using_dutch_names = yes }"
+        }
+    }
+	entry = {
+        name = "Gand"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 14058 = {
 	default = "Antwerp"
+	entry = {
+        name = "Antwerpen"
+        requirements = {
+            "OR = { TAG_using_belgian_names = yes TAG_using_dutch_names = yes }"
+        }
+    }
+	entry = {
+        name = "Anvers"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 6560 = {
 	default = "Bruges"
+	entry = {
+        name = "Brugge"
+        requirements = {
+            "OR = { TAG_using_belgian_names = yes TAG_using_dutch_names = yes }"
+        }
+    }
 }
 6598 = {
 	default = "Sint-Niklaas"
+	entry = {
+        name = "Saint-Nicholas"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 9574 = {
 	default = "Genk"
@@ -3375,6 +3477,18 @@
 }
 14064 = {
 	default = "Liège"
+	entry = {
+        name = "Luik"
+        requirements = {
+            "TAG_using_dutch_names = yes"
+        }
+    }
+	entry = {
+        name = "Lüttich"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 3488 = {
 	default = "Eupen"
@@ -3384,9 +3498,21 @@
 }
 9536 = {
 	default = "Mons"
+	entry = {
+        name = "Bergen"
+        requirements = {
+            "TAG_using_dutch_names = yes"
+        }
+    }
 }
 11407 = {
 	default = "Bastogne"
+	entry = {
+        name = "Bastenaken"
+        requirements = {
+            "TAG_using_dutch_names = yes"
+        }
+    }
 }
 14068 = {
 	default = "Nijmegen"
@@ -3425,7 +3551,13 @@
 	default = "Rotterdam"
 }
 3211 = {
-	default = "Den Haag"
+	default = "The Hague"
+	entry = {
+        name = "Den Haag"
+        requirements = {
+            "TAG_using_dutch_names = yes"
+        }
+    }
 }
 14077 = {
 	default = "Utrecht"
@@ -3435,6 +3567,12 @@
 }
 14078 = {
 	default = "Amsterdam Airport Schiphol"
+	entry = {
+        name = "Luchthaven Schiphol"
+        requirements = {
+            "TAG_using_dutch_names = yes"
+        }
+    }
 }
 14080 = {
 	default = "Bratislava"
@@ -6492,4 +6630,92 @@
             "TAG_using_arab_names = yes"
         }
     }
+}
+14585 = {
+	default = "Ulaanbaatar"
+}
+14587 = {
+	default = "Ghengis Khan International Airport"		#Name changed to Buyant-Ukhaa International Airport in 2020
+	entry = {
+        name = "Chinggis Khaan Olon Upsyn Nisėch Buudal"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14597 = {
+	default = "Erdenet"
+	entry = {
+        name = "Ėrdėnėt"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14594 = {
+	default = "Darkhan"
+}
+10708 = {
+	default = "Choibalsan"
+}
+#Renamed from Öndörkhaan to Chinggis in 2013
+14593 = {
+	default = "Chinggis"
+#	entry = {
+#        name = "Öndörkhaan"
+#        requirements = {
+#            "TAG_using_mongolian_names = yes"
+#        }
+#    }
+}
+14592 = {
+	default = "Baganuur"
+}
+14592 = {
+	default = "Sükhbaatar"
+}
+14598 = {
+	default = "Tsetserleg"
+	entry = {
+        name = "Tsėtsėrlėg"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+12649 = {
+	default = "Murun"
+	entry = {
+        name = "Mörön"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+12695 = {
+	default = "Ulaangom"
+}
+4751 = {
+	default = "Ölgii"
+}
+12520 = {
+	default = "Khovd"
+}
+12544 = {
+	default = "Uliastai"
+}
+14583 = {
+	default = "Altai"
+}
+12669 = {
+	default = "Dalanzadgad"
+}
+12612 = {
+	default = "Sainshand"
+}
+12612 = {
+	default = "Choyr"
+}
+14571 = {
+	default = "Baruun-Urt"
 }

@@ -36,6 +36,24 @@
 }
 6 = {
 	default = "Flanders"
+	entry = {
+        name = "Vlaanderen"
+        requirements = {
+            "OR = { TAG_using_belgian_names = yes TAG_using_dutch_names = yes }"
+        }
+    }
+	entry = {
+        name = "Flandre"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
+	entry = {
+        name = "Flandern"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 7 = {
 	default = "Holland"
@@ -65,10 +83,22 @@
 	default = "Pärnu"
 }
 14 = {
-	default = "Bretagne"
+	default = "Brittay"
+	entry = {
+        name = "Bretagne"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 15 = {
-	default = "Normandie"
+	default = "Normandy"
+	entry = {
+        name = "Normandie"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 16 = {
 	default = "Île-de-France"
@@ -89,7 +119,13 @@
 	default = "Provence-Alpes-Côte d'Azur"
 }
 22 = {
-	default = "Occitanie"
+	default = "Occitania"
+	entry = {
+        name = "Occitanie"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 23 = {
 	default = "Espírito Santo"
@@ -108,9 +144,21 @@
 }
 28 = {
 	default = "Alsace-Lorraine"
+	entry = {
+        name = "Elsaß–Lothringen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 29 = {
-	default = "Pas-de-Calais"
+	default = "Calais"
+	entry = {
+        name = "Nord-Pas-de-Calais"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 30 = {
 	default = "Pays de la Loire"
@@ -126,6 +174,24 @@
 }
 34 = {
 	default = "Wallonia"
+	entry = {
+        name = "Wallonie"
+        requirements = {
+            "OR = { TAG_using_belgian_names = yes TAG_using_french_names = yes }"
+        }
+    }
+	entry = {
+        name = "Wallonië"
+        requirements = {
+            "TAG_using_dutch_names = yes"
+        }
+    }
+	entry = {
+        name = "Wallonien"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 35 = {
 	default = "Brabant"
@@ -867,7 +933,7 @@
 196 = {
 	default = "Tauriya"
 	entry = { 
-        name = "Tavriysʹkyy"
+        name = "Tavriys'kyy"
         requirements = {
             "TAG_using_ukrainian_names = yes"
         }
@@ -3038,13 +3104,31 @@
 	default = "Gobi"
 }
 818 = {
-	default = "Khovd"
+	default = "Mongolian Altay"
+	entry = {
+        name = "Altain Nuruu"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
 }
 819 = {
-	default = "Dornod"
+	default = "Egyptian Great Sand Sea"
+	entry = {
+        name = "Baḥr Al-'rimāl Al-'miṣrī Al-'kabīr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 820 = {
-	default = "Khövsgöl"
+	default = "Fouad"
+	entry = {
+        name = "Būr Fo'ād"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 821 = {
 	default = "Chechnya"
@@ -3114,6 +3198,18 @@
 }
 843 = {
 	default = "Brussels"
+	entry = {
+        name = "Bruxelles"
+        requirements = {
+            "OR = { TAG_using_belgian_names = yes TAG_using_french_names = yes }"
+        }
+    }
+	entry = {
+        name = "Brussel"
+        requirements = {
+            "TAG_using_dutch_names = yes"
+        }
+    }
 }
 844 = {
 	default = "Jubaland"
@@ -3350,24 +3446,6 @@
     }
 	entry = {
         name = "Haḍbatu l-Jawlān"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
-}
-906 = {
-	default = "Fouad"
-	entry = {
-        name = "Būr Fo'ād"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
-}
-907 = {
-	default = "Egyptian Great Sand Sea"
-	entry = {
-        name = "Baḥr Al-'rimāl Al-'miṣrī Al-'kabīr"
         requirements = {
             "TAG_using_arab_names = yes"
         }

@@ -11,11 +11,11 @@ C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\sr
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\main.cpp(123,24): warning C4244: '=': conversion from 'float' to 'UnsignedInteger32', possible loss of data
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\main.cpp(124,43): warning C4244: '=': conversion from 'float' to 'SignedInteger32', possible loss of data
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\main.cpp(170,9): warning C4244: 'argument': conversion from 'SignedInteger32' to 'const Float32', possible loss of data
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\main.cpp(424,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\main.cpp(437,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   Generating code
-  2 of 968 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  7 of 973 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+    5 functions were new in current compilation
+    40 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   FontEditor.vcxproj -> C:\s\FontEditor.exe
   'pwsh.exe' is not recognized as an internal or external command,

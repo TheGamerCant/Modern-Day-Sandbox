@@ -104,6 +104,34 @@ TAG_using_french_names = {
 	}
 }
 
+TAG_using_dutch_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = NRD
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = NRD
+	}
+}
+
+TAG_using_belgian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = BLG
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = BLG
+	}
+}
+
 TAG_using_israeli_names = {
 	has_global_flag = TDA_city_name_changes_active_flag
 	OR = {
@@ -135,5 +163,19 @@ TAG_using_arab_names = {
 		is_puppet_of = PST
 		is_puppet_of = EGY
 		is_puppet_of = LYB
+	}
+}
+
+TAG_using_mongolian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = MON
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = MON
 	}
 }
