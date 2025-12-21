@@ -1196,6 +1196,12 @@
 }
 254 = {
 	default = "Ryazan"
+	entry = {
+        name = "Ryazan'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 255 = {
 	default = "Penza"
@@ -3192,6 +3198,12 @@
 }
 827 = {
 	default = "North Caucuses"
+	entry = {
+        name = "Severnyy Kavkaz"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 828 = {
 	default = "Helgeland"

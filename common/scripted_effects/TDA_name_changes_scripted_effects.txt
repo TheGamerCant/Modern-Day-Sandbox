@@ -2077,6 +2077,15 @@ TDA_update_state_195_names = {
 	else = {
 		reset_province_name = 14222
 	}
+	#Aeroport Pulkovo
+	if = {
+		limit = { any_country = { controls_province = 14226 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14226 name = VICTORY_POINTS_14226_0 }
+	}
+	#Pulkovo Airport
+	else = {
+		reset_province_name = 14226
+	}
 }
 
 #Tauriya
@@ -2478,6 +2487,24 @@ TDA_update_state_217_names = {
 
 #Rostov
 TDA_update_state_218_names = {
+	#Rostov-na-Donu
+	if = {
+		limit = { any_country = { controls_province = 9417 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9417 name = VICTORY_POINTS_9417_0 }
+	}
+	#Rostov-on-Don
+	else = {
+		reset_province_name = 9417
+	}
+	#Aeroport Krasnodar
+	if = {
+		limit = { any_country = { controls_province = 14202 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14202 name = VICTORY_POINTS_14202_0 }
+	}
+	#Rostov-on-Don Airport
+	else = {
+		reset_province_name = 14202
+	}
 }
 
 #Moscow City
@@ -2874,6 +2901,15 @@ TDA_update_state_231_names = {
 
 #Dagestan
 TDA_update_state_232_names = {
+	#Mezhdunarodnyy Aeroport Makhachkala
+	if = {
+		limit = { any_country = { controls_province = 14180 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14180 name = VICTORY_POINTS_14180_0 }
+	}
+	#Makhachkala International Airport
+	else = {
+		reset_province_name = 14180
+	}
 }
 
 #Agder
@@ -2882,6 +2918,15 @@ TDA_update_state_233_names = {
 
 #Krasnodar
 TDA_update_state_234_names = {
+	#Mezhdunarodnyy Aeroport Krasnodar
+	if = {
+		limit = { any_country = { controls_province = 14188 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14188 name = VICTORY_POINTS_14188_0 }
+	}
+	#Krasnodar International Airport
+	else = {
+		reset_province_name = 14188
+	}
 }
 
 #Stavropol
@@ -2942,6 +2987,15 @@ TDA_update_state_248_names = {
 
 #Tatarstan
 TDA_update_state_249_names = {
+	#Aeroport Kazan
+	if = {
+		limit = { any_country = { controls_province = 14402 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14402 name = VICTORY_POINTS_14402_0 }
+	}
+	#Kazan Airport
+	else = {
+		reset_province_name = 14402
+	}
 }
 
 #Ulyanovsk
@@ -2962,6 +3016,25 @@ TDA_update_state_253_names = {
 
 #Ryazan
 TDA_update_state_254_names = {
+	254 = {
+		#Ryazan'
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_254_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Ryazan'
+	if = {
+		limit = { any_country = { controls_province = 14414 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14414 name = VICTORY_POINTS_14414_0 }
+	}
+	#Ryazan
+	else = {
+		reset_province_name = 14414
+	}
 }
 
 #Penza
@@ -3653,6 +3726,15 @@ TDA_update_state_407_names = {
 
 #Primorskiy
 TDA_update_state_408_names = {
+	#Mezhdunarodnyy Aeroport Vladivostok
+	if = {
+		limit = { any_country = { controls_province = 14157 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14157 name = VICTORY_POINTS_14157_0 }
+	}
+	#Vladivostok International Airport
+	else = {
+		reset_province_name = 14157
+	}
 }
 
 #Khabarovsk
@@ -4822,6 +4904,15 @@ TDA_update_state_565_names = {
 
 #Irkutsk
 TDA_update_state_566_names = {
+	#Mezhdunarodnyy Aeroport Irkutsk
+	if = {
+		limit = { any_country = { controls_province = 14164 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14164 name = VICTORY_POINTS_14164_0 }
+	}
+	#Irkutsk International Airport
+	else = {
+		reset_province_name = 14164
+	}
 }
 
 #Chungcheong
@@ -4893,10 +4984,28 @@ TDA_update_state_569_names = {
 
 #Novosibirsk
 TDA_update_state_570_names = {
+	#Mezhdunarodnyy Aeroport Novosibirsk
+	if = {
+		limit = { any_country = { controls_province = 14282 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14282 name = VICTORY_POINTS_14282_0 }
+	}
+	#Novosibirsk International Airport
+	else = {
+		reset_province_name = 14282
+	}
 }
 
 #Omsk
 TDA_update_state_571_names = {
+	#Mezhdunarodnyy Aeroport Omsk
+	if = {
+		limit = { any_country = { controls_province = 14291 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14291 name = VICTORY_POINTS_14291_0 }
+	}
+	#Omsk International Airport
+	else = {
+		reset_province_name = 14291
+	}
 }
 
 #Chelyabinsk
@@ -5488,6 +5597,15 @@ TDA_update_state_650_names = {
 
 #Bashkortostan
 TDA_update_state_651_names = {
+	#Mezhdunarodnyy Aeroport Ufa
+	if = {
+		limit = { any_country = { controls_province = 14384 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14384 name = VICTORY_POINTS_14384_0 }
+	}
+	#Ufa International Airport
+	else = {
+		reset_province_name = 14384
+	}
 }
 
 #Orenburg
@@ -6153,6 +6271,15 @@ TDA_update_state_763_names = {
 	else = {
 		reset_province_name = 14193
 	}
+	#Mezhdunarodnyy Aeroport Khrabrovo
+	if = {
+		limit = { any_country = { controls_province = 14194 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14194 name = VICTORY_POINTS_14194_0 }
+	}
+	#Airport Khrabrovo
+	else = {
+		reset_province_name = 14194
+	}
 }
 
 #West Banat
@@ -6625,6 +6752,16 @@ TDA_update_state_826_names = {
 
 #North Caucuses
 TDA_update_state_827_names = {
+	827 = {
+		#Severnyy Kavkaz
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_827_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Helgeland
@@ -7150,6 +7287,11 @@ TDA_update_state_906_names = {
 	if = {
 		limit = { any_country = { controls_province = 14605 TAG_using_mr_korean_names = yes } }
 		set_province_name = { id = 14605 name = VICTORY_POINTS_14605_0 }
+	}
+	#Pyongyang Gukjegonghang
+	else_if = {
+		limit = { any_country = { controls_province = 14605 TAG_using_revised_korean_names = yes } }
+		set_province_name = { id = 14605 name = VICTORY_POINTS_14605_1 }
 	}
 	#Pyongyang International Airport
 	else = {

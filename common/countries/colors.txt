@@ -324,3 +324,7 @@ ROK = {
 	color = rgb { 81 132 209 }
 	color_ui = rgb { 81 132 209 }
 }
+PRC = {
+	color = rgb { 168 7 13 }
+	color_ui = rgb { 168 7 13 }
+}

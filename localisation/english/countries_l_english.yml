@@ -222,3 +222,7 @@
  ROK:0 "South Korea"                                  
  ROK_DEF:0 "the Republic of Korea"                                  
  ROK_ADJ:0 "South Korean"
+
+ PRC:0 "China"                                  
+ PRC_DEF:0 "the People's Republic of China"                                  
+ PRC_ADJ:0 "Chinese"

@@ -4200,6 +4200,12 @@
 }
 14157 = {
 	default = "Vladivostok International Airport"
+	entry = {
+        name = "Mezhdunarodnyy Aeroport Vladivostok"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 3787 = {
 	default = "Spassk-Dalny"
@@ -4307,7 +4313,13 @@
 	default = "Irkutsk"
 }
 14164 = {
-	default = "International Airport Irkutsk"
+	default = "Irkutsk International Airport"
+	entry = {
+        name = "Mezhdunarodnyy Aeroport Irkutsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14166 = {
 	default = "Bratsk"
@@ -4367,7 +4379,13 @@
 	default = "Makhachkala"
 }
 14180 = {
-	default = "Mezhdunarodnyy Aeroport Makhachkala"
+	default = "Makhachkala International Airport"
+	entry = {
+        name = "Mezhdunarodnyy Aeroport Makhachkala"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6730 = {
 	default = "Kizlyar"
@@ -4416,6 +4434,12 @@
 }
 14188 = {
 	default = "Krasnodar International Airport"
+	entry = {
+        name = "Mezhdunarodnyy Aeroport Krasnodar"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 3720 = {
 	default = "Maykop"
@@ -4466,7 +4490,13 @@
 	default = "Yashkul"
 }
 14194 = {
-	default = "Voyennyy Aerodrom"
+	default = "Airport Khrabrovo"
+	entry = {
+        name = "Mezhdunarodnyy Aeroport Khrabrovo"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14193 = {
 	default = "Kaliningrad"
@@ -4499,10 +4529,22 @@
 	default = "Kharabali"
 }
 9417 = {
-	default = "Rostov-na-Donu"
+	default = "Rostov-on-Don"
+	entry = {
+        name = "Rostov-na-Donu"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14202 = {
-	default = "Aeroport Rostov-na-Donu"
+	default = "Rostov-on-Don Airport"
+	entry = {
+        name = "Aeroport Krasnodar"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14199 = {
 	default = "Azov"
@@ -4713,6 +4755,12 @@
 }
 14226 = {
 	default = "Pulkovo Airport"
+	entry = {
+        name = "Aeroport Pulkovo"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 9098 = {
 	default = "Luga"
@@ -5025,6 +5073,12 @@
 }
 14282 = {
 	default = "Novosibirsk International Airport"
+	entry = {
+        name = "Mezhdunarodnyy Aeroport Novosibirsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 12606 = {
 	default = "Kuybyshev"
@@ -5060,7 +5114,13 @@
 	default = "Omsk"
 }
 14291 = {
-	default = "Mezhdunarodnyy Aeroport Omsk"
+	default = "Omsk International Airport"
+	entry = {
+        name = "Mezhdunarodnyy Aeroport Omsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14292 = {
 	default = "Tara"
@@ -5155,6 +5215,9 @@
 14334 = {
 	default = "Kamensk-Uralsky"
 }
+14196 = {
+	default = "Polevskoy"
+}
 10189 = {
 	default = "Tugulym"
 }
@@ -5235,6 +5298,12 @@
 }
 14384 = {
 	default = "Ufa International Airport"
+	entry = {
+        name = "Mezhdunarodnyy Aeroport Ufa"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6246 = {
 	default = "Neftekamsk"
@@ -5340,6 +5409,12 @@
 }
 14402 = {
 	default = "Kazan Airport"
+	entry = {
+        name = "Aeroport Kazan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6338 = {
 	default = "Zelenodolsk"
@@ -5436,6 +5511,12 @@
 }
 14414 = {
 	default = "Ryazan"
+	entry = {
+        name = "Ryazan'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 3387 = {
 	default = "Kasimov"
@@ -6734,6 +6815,12 @@
         name = "P'yŏngyang Kukche Pihaengjang"
         requirements = {
             "TAG_using_mr_korean_names = yes"
+        }
+    }
+	entry = {
+        name = "Pyongyang Gukjegonghang"
+        requirements = {
+            "TAG_using_revised_korean_names = yes"
         }
     }
 }
