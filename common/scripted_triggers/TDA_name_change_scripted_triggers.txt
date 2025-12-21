@@ -179,3 +179,36 @@ TAG_using_mongolian_names = {
 		is_puppet_of = MON
 	}
 }
+
+#Korean has two Latinisation/Romanisation systems: MR used by North Korea and RR used by South Korea since 2000
+#
+#https://en.wikipedia.org/wiki/McCune%E2%80%93Reischauer
+#https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean
+
+TAG_using_mr_korean_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = DPK
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = DPK
+	}
+}
+
+TAG_using_revised_korean_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = ROK
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = ROK
+	}
+}

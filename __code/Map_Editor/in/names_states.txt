@@ -2098,13 +2098,19 @@
 	default = "Taiwan"
 }
 525 = {
-	default = "South Korea"
+	default = "Gyeonggi"
+	entry = {
+        name = "Kyŏnggi"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
 }
 526 = {
 	default = "Okinawa"
 }
 527 = {
-	default = "North Korea"
+	default = "Hwanghae"
 }
 528 = {
 	default = "Kyushu"
@@ -2231,7 +2237,13 @@
 	default = "Irkutsk"
 }
 567 = {
-	default = "Turku"
+	default = "Chungcheong"
+	entry = {
+        name = "Ch'ungch'ŏng"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
 }
 568 = {
 	default = "Krasnoyarsk"
@@ -2312,13 +2324,25 @@
 	default = "Hainan"
 }
 592 = {
-	default = "Guangzhou"
+	default = "Gyeongsang"
+	entry = {
+        name = "Kyŏngsang"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
 }
 593 = {
 	default = "Guangdong"
 }
 594 = {
-	default = "Nanning"
+	default= "Jeolla"
+	entry = {
+        name = "Chŏlla"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
 }
 595 = {
 	default = "Fujian"
@@ -2339,7 +2363,19 @@
 	default = "Jiangxi"
 }
 601 = {
-	default = "Xikang"
+	default = "South Gangwon"
+	entry = {
+        name = "Kangwŏnnam"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+	entry = {
+        name = "Gangwonnam"
+        requirements = {
+            "TAG_using_revised_korean_names = yes"
+        }
+    }
 }
 602 = {
 	default = "Hunan"
@@ -2807,7 +2843,13 @@
 	default = "Ordos"
 }
 747 = {
-	default = "Dali"
+	default= "Jeju"
+	entry = {
+        name = "Cheju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
 }
 748 = {
 	default = "Zunyi"
@@ -3448,6 +3490,39 @@
         name = "Haḍbatu l-Jawlān"
         requirements = {
             "TAG_using_arab_names = yes"
+        }
+    }
+}
+906 = {
+	default = "Peongan"
+	entry = {
+        name = "P'yŏngan"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+907 = {
+	default = "Hamgyong"
+	entry = {
+        name = "Hamgyŏng"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+908 = {
+	default = "North Gangwon"
+	entry = {
+        name = "Kangwŏnbuk"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+	entry = {
+        name = "Gangwonbuk"
+        requirements = {
+            "TAG_using_revised_korean_names = yes"
         }
     }
 }

@@ -6719,3 +6719,420 @@
 14571 = {
 	default = "Baruun-Urt"
 }
+14604 = {
+	default = "Pyongyang"
+	entry = {
+        name = "P'yŏngyang"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14605 = {
+	default = "Pyongyang International Airport"
+	entry = {
+        name = "P'yŏngyang Kukche Pihaengjang"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+4052 = {
+	default = "Nampo"
+	entry = {
+        name = "Namp'o"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+9790 = {
+	default = "Kaechon"
+	entry = {
+        name = "Kaech'ŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+11835 = {
+	default = "Sinuiju"
+	entry = {
+        name = "Sinŭiju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+11828 = {
+	default = "Kanggye"
+}
+3912 = {
+	default = "Huichon"
+	entry = {
+        name = "Hŭich'ŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+11915 = {
+	default = "Sariwon"
+	entry = {
+        name = "Sariwŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+4107 = {
+	default = "Haeju"
+}
+12040 = {
+	default = "Kaesong"
+	entry = {
+        name = "Kaesŏng"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+7070 = {
+	default = "Koksan"
+}
+848 = {
+	default = "Wonsan"
+	entry = {
+        name = "Wŏnsan"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+11958 = {
+	default = "Jangjon"
+	entry = {
+        name = "Changchŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14607 = {
+	default = "Chongjin"
+	entry = {
+        name = "Ch'ŏngjin"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+6922 = {
+	default = "Tanchon"
+	entry = {
+        name = "Tanch'ŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14609 = {
+	default = "Hamhung"
+	entry = {
+        name = "Hamhŭng"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+3803 = {
+	default = "Hyesan"
+}
+6944 = {
+	default = "Rason"
+	entry = {
+        name = "Rasŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+1177 = {
+	default = "Jeju"
+	entry = {
+        name = "Cheju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+7125 = {
+	default = "Seoul"
+	entry = {
+        name = "Sŏul"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14612 = {
+	default = "Incheon"
+	entry = {
+        name = "Inch'ŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14614 = {
+	default = "Goyang"
+	entry = {
+        name = "Koyang"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14621 = {
+	default = "Incheon International Airport"
+	entry = {
+        name = "Incheon Gukjegonghang"
+        requirements = {
+            "TAG_using_revised_korean_names = yes"
+        }
+    }
+	entry = {
+        name = "Inch'ŏn Kukchegonghang"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+4056 = {
+	default = "Busan"
+	entry = {
+        name = "Pusan"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14616 = {
+	default = "Gimhae International Airport"
+	entry = {
+        name = "Gimhae Gukjegonghang"
+        requirements = {
+            "TAG_using_revised_korean_names = yes"
+        }
+    }
+	entry = {
+        name = "Kimhae Kukchegonghang"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14617 = {
+	default = "Ulsan"
+}
+14619 = {
+	default = "Daegu"
+	entry = {
+        name = "Taegu"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+12060 = {
+	default = "Changwon"
+	entry = {
+        name = "Ch'angwŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14618 = {
+	default = "Gyeongju"
+	entry = {
+        name = "Kyŏngju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+4086 = {
+	default = "Gyeongsang"
+	entry = {
+        name = "Kyŏngsang"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+1081 = {
+	default = "Gumi"
+	entry = {
+        name = "Kumi"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+4103 = {
+	default = "Yeongju"
+	entry = {
+        name = "Yŏngju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+1054 = {
+	default = "Jinju"
+	entry = {
+        name = "Chinju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14625 = {
+	default = "Daejeon"
+	entry = {
+        name = "Taejŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+7221 = {
+	default = "Pyeongtaek"
+	entry = {
+        name = "P'yŏngt'aek"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+7204 = {
+	default = "Asan"
+}
+14626 = {
+	default = "Cheongju"
+	entry = {
+        name = "Ch'ŏngju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+1100 = {
+	default = "Chungju"
+	entry = {
+        name = "Ch'ungju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14627 = {
+	default = "Jecheon"
+	entry = {
+        name = "Chech'ŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+11992 = {
+	default = "Seosan"
+	entry = {
+        name = "Sŏsan"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14622 = {
+	default = "Wonju"
+	entry = {
+        name = "Wŏnju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+9936 = {
+	default = "Chuncheon"
+	entry = {
+        name = "Ch'unch'ŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+7021 = {
+	default = "Gangneung"
+	entry = {
+        name = "Kangnŭng"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14623 = {
+	default = "Gwangju"
+	entry = {
+        name = "Kwangju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14628 = {
+	default = "Jeonju"
+	entry = {
+        name = "Chŏnju"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+11977 = {
+	default = "Gunsan"
+	entry = {
+        name = "Kunsan"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+4126 = {
+	default = "Namwon"
+	entry = {
+        name = "Namwŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+12085 = {
+	default = "Suncheon"
+	entry = {
+        name = "Sunch'ŏn"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+11948 = {
+	default = "Mokpo"
+	entry = {
+        name = "Mokp'o"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+}

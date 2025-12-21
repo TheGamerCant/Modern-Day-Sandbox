@@ -2,13 +2,31 @@ state={
 	id=592
 	name="STATE_592"
 	history={
-		owner = ZZZ
+		owner = ROK
+		add_core_of = ROK
+		add_claim_by = ROK
+		
+		victory_points = { 4056 35 }
+		victory_points = { 14616 2 }
+		victory_points = { 14617 12 }
+		victory_points = { 14619 25 }
+		victory_points = { 12060 10 }
+		victory_points = { 14618 5 }
+		victory_points = { 4086 5 }
+		victory_points = { 1081 8 }
+		victory_points = { 4103 3 }
+		victory_points = { 1054 7 }
+		
+		buildings = {
+			infrastructure = 4
+			air_base = 6
+		}
 	}
 	provinces={
-		1047 1087 1131 1187 4092 7039 7152 9963 11938 11941 12077 
+		1054 1081 4056 4086 4103 7121 10085 10115 11912 12060 12089 14616 14617 14618 14619 14620 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=12704121
+	buildings_max_level_factor=1
 	state_category=city
+	local_supplies=0.5
 }

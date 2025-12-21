@@ -150,30 +150,29 @@ void BitmapImage::UpdateColourHashmap() {
 }
 
 void BitmapImage::SwapRBData() {
+    auto* pixelPtr = reinterpret_cast<UnsignedInteger32*>(imgData.data());
+
     if (imageType == COLOURMAP) {
-        UnsignedInteger8 r = 0;
+        UnsignedInteger32 c = 0;
+        auto* colourPtr = reinterpret_cast<UnsignedInteger32*>(colourTable.data());
 
-        for (auto& colour : colourTable) {
-            r = colour.r;
-            colour.r = colour.b;
-            colour.b = r;
-        }
-
-        if (imgData.size() != 0) {
-            for (SizeT i = 0; i < widthTimesHeight * 4; i += 4) {
-                r = imgData[i];
-                imgData[i] = imgData[i + 2];
-                imgData[i + 2] = r;
-            }
+        for (SizeT i = 0; i < colourTable.size(); i++) {
+            c = colourPtr[i];
+            colourPtr[i] =
+                (c & 0xFF00FF00) |
+                ((c & 0x000000FF) << 16) |
+                ((c & 0x00FF0000) >> 16);
         }
     }
-    else if (imageType == RGBA) {
-        UnsignedInteger8 r = 0;
-
-        for (SizeT i = 0; i < imgData.size(); i += 4) {
-            r = imgData[i];
-            imgData[i] = imgData[i + 2];
-            imgData[i + 2] = r;
+    
+    if (imgData.size() != 0) {
+        UnsignedInteger32 p = 0;
+        for (SizeT i = 0; i < widthTimesHeight; i ++) {
+            p = pixelPtr[i];
+            pixelPtr[i] =
+                (p & 0xFF00FF00) |
+                ((p & 0x000000FF) << 16) |
+                ((p & 0x00FF0000) >> 16);
         }
     }
 }
