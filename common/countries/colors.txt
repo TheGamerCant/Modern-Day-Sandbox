@@ -317,14 +317,14 @@ MON = {
 	color_ui = rgb { 151 36 104 }
 }
 DPK = {
-	color = rgb { 171 21 28 }
-	color_ui = rgb { 171 21 28 }
+	color = rgb { 137 7 13 }
+	color_ui = rgb { 137 7 13 }
 }
 ROK = {
 	color = rgb { 81 132 209 }
 	color_ui = rgb { 81 132 209 }
 }
 PRC = {
-	color = rgb { 168 7 13 }
-	color_ui = rgb { 168 7 13 }
+	color = rgb { 194 21 28 }
+	color_ui = rgb { 194 21 28 }
 }

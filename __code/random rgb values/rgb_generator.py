@@ -10,5 +10,5 @@ for i in range(30):
     h = (r << 16) + (g << 8) + b
     
     print(
-        f"{str(r)};{str(g)};{str(b)} - {hex(h)}"
+        f"{str(r)};{str(g)};{str(b)} - {format(h, '#08x')}"
     )

@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|solutionrelative:src\\functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\functions.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|solutionrelative:src\\functions.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\data_types.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|solutionrelative:src\\data_types.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -16,14 +24,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\unordered_map||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\functions.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|solutionrelative:src\\functions.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C6D49DDD-7B6D-4B2C-91B6-1BF928B0B834}|FontEditor.vcxproj|solutionrelative:src\\functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,7 +37,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "unordered_map",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\unordered_map",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\unordered_map",
@@ -49,7 +49,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "dds.hpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\dds.hpp",
               "RelativeDocumentMoniker": "src\\dds.hpp",
@@ -57,11 +57,12 @@
               "RelativeToolTip": "src\\dds.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-10T10:17:23.74Z"
+              "WhenOpened": "2025-12-10T10:17:23.74Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "functions.hpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\functions.hpp",
               "RelativeDocumentMoniker": "src\\functions.hpp",
@@ -69,11 +70,12 @@
               "RelativeToolTip": "src\\functions.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-05T10:08:15.376Z"
+              "WhenOpened": "2025-12-05T10:08:15.376Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "functions.cpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\functions.cpp",
               "RelativeDocumentMoniker": "src\\functions.cpp",
@@ -81,19 +83,21 @@
               "RelativeToolTip": "src\\functions.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-05T10:08:06.94Z"
+              "WhenOpened": "2025-12-05T10:08:06.94Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "data_types.hpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\data_types.hpp",
               "RelativeDocumentMoniker": "src\\data_types.hpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\data_types.hpp",
               "RelativeToolTip": "src\\data_types.hpp",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAlwMYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAlwDoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-05T09:25:29.796Z"
+              "WhenOpened": "2025-12-05T09:25:29.796Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -103,7 +107,7 @@
               "RelativeDocumentMoniker": "src\\main.cpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\FontEditor\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAALgAAAAAAAAAAAAwwOUAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAQwIMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-05T09:13:59.819Z",
               "EditorCaption": ""

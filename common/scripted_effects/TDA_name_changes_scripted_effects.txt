@@ -635,6 +635,15 @@ TDA_update_state_39_names = {
 
 #Altai Krai
 TDA_update_state_40_names = {
+	#Kamen'-na-Obi
+	if = {
+		limit = { any_country = { controls_province = 10537 TAG_using_russian_names = yes } }
+		set_province_name = { id = 10537 name = VICTORY_POINTS_10537_0 }
+	}
+	#Kamen-on-Ob
+	else = {
+		reset_province_name = 10537
+	}
 }
 
 #Madrid
@@ -2435,6 +2444,15 @@ TDA_update_state_204_names = {
 
 #Kaluga
 TDA_update_state_205_names = {
+	#Kozel'sk
+	if = {
+		limit = { any_country = { controls_province = 6365 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6365 name = VICTORY_POINTS_6365_0 }
+	}
+	#Kozelsk
+	else = {
+		reset_province_name = 6365
+	}
 }
 
 #Minsk
@@ -2467,14 +2485,60 @@ TDA_update_state_212_names = {
 
 #Murmansk
 TDA_update_state_213_names = {
+	#Nikel'
+	if = {
+		limit = { any_country = { controls_province = 11142 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11142 name = VICTORY_POINTS_11142_0 }
+	}
+	#Nikel
+	else = {
+		reset_province_name = 11142
+	}
 }
 
 #Arkhangelsk
 TDA_update_state_214_names = {
+	214 = {
+		#Archangel'sk
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_214_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Archangel'sk
+	if = {
+		limit = { any_country = { controls_province = 14255 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14255 name = VICTORY_POINTS_14255_0 }
+	}
+	#Archangelsk
+	else = {
+		reset_province_name = 14255
+	}
 }
 
 #Karelia
 TDA_update_state_215_names = {
+	#Kem'
+	if = {
+		limit = { any_country = { controls_province = 9195 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9195 name = VICTORY_POINTS_9195_0 }
+	}
+	#Kem
+	else = {
+		reset_province_name = 9195
+	}
+	#Medvezh'yegorsk
+	if = {
+		limit = { any_country = { controls_province = 11092 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11092 name = VICTORY_POINTS_11092_0 }
+	}
+	#Medvezhyegorsk
+	else = {
+		reset_province_name = 11092
+	}
 }
 
 #Jan Mayen
@@ -2483,10 +2547,28 @@ TDA_update_state_216_names = {
 
 #Volgograd
 TDA_update_state_217_names = {
+	#Kotel'nikovo
+	if = {
+		limit = { any_country = { controls_province = 6503 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6503 name = VICTORY_POINTS_6503_0 }
+	}
+	#Kotelnikovo
+	else = {
+		reset_province_name = 6503
+	}
 }
 
 #Rostov
 TDA_update_state_218_names = {
+	#Sal'sk
+	if = {
+		limit = { any_country = { controls_province = 775 TAG_using_russian_names = yes } }
+		set_province_name = { id = 775 name = VICTORY_POINTS_775_0 }
+	}
+	#Salsk
+	else = {
+		reset_province_name = 775
+	}
 	#Rostov-na-Donu
 	if = {
 		limit = { any_country = { controls_province = 9417 TAG_using_russian_names = yes } }
@@ -2496,7 +2578,7 @@ TDA_update_state_218_names = {
 	else = {
 		reset_province_name = 9417
 	}
-	#Aeroport Krasnodar
+	#Aeroport Rostov-na-Donu
 	if = {
 		limit = { any_country = { controls_province = 14202 TAG_using_russian_names = yes } }
 		set_province_name = { id = 14202 name = VICTORY_POINTS_14202_0 }
@@ -2931,14 +3013,61 @@ TDA_update_state_234_names = {
 
 #Stavropol
 TDA_update_state_235_names = {
+	235 = {
+		#Stavropol'
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_235_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Stavropol'
+	if = {
+		limit = { any_country = { controls_province = 14183 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14183 name = VICTORY_POINTS_14183_0 }
+	}
+	#Stavropol
+	else = {
+		reset_province_name = 14183
+	}
 }
 
 #Astrakhan
 TDA_update_state_236_names = {
+	236 = {
+		#Astrakhan'
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_236_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Astrakhan'
+	if = {
+		limit = { any_country = { controls_province = 14197 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14197 name = VICTORY_POINTS_14197_0 }
+	}
+	#Astrakhan
+	else = {
+		reset_province_name = 14197
+	}
 }
 
 #Kalmykia
 TDA_update_state_237_names = {
+	#Yashkul'
+	if = {
+		limit = { any_country = { controls_province = 759 TAG_using_russian_names = yes } }
+		set_province_name = { id = 759 name = VICTORY_POINTS_759_0 }
+	}
+	#Yashkul
+	else = {
+		reset_province_name = 759
+	}
 }
 
 #Opplandene
@@ -2947,6 +3076,15 @@ TDA_update_state_238_names = {
 
 #Saratov
 TDA_update_state_239_names = {
+	#Vol'sk
+	if = {
+		limit = { any_country = { controls_province = 326 TAG_using_russian_names = yes } }
+		set_province_name = { id = 326 name = VICTORY_POINTS_326_0 }
+	}
+	#Volsk
+	else = {
+		reset_province_name = 326
+	}
 }
 
 #Belgorod
@@ -2959,6 +3097,15 @@ TDA_update_state_241_names = {
 
 #Smolensk
 TDA_update_state_242_names = {
+	#Roslavl'
+	if = {
+		limit = { any_country = { controls_province = 11336 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11336 name = VICTORY_POINTS_11336_0 }
+	}
+	#Roslavl
+	else = {
+		reset_province_name = 11336
+	}
 }
 
 #Fyn
@@ -2975,6 +3122,15 @@ TDA_update_state_245_names = {
 
 #Tver
 TDA_update_state_246_names = {
+	#Tver'
+	if = {
+		limit = { any_country = { controls_province = 14250 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14250 name = VICTORY_POINTS_14250_0 }
+	}
+	#Tver
+	else = {
+		reset_province_name = 14250
+	}
 }
 
 #Bornholm
@@ -2983,11 +3139,39 @@ TDA_update_state_247_names = {
 
 #Yaroslavl
 TDA_update_state_248_names = {
+	248 = {
+		#Yaroslavl'
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_248_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Yaroslavl'
+	if = {
+		limit = { any_country = { controls_province = 14423 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14423 name = VICTORY_POINTS_14423_0 }
+	}
+	#Yaroslavl
+	else = {
+		reset_province_name = 14423
+	}
 }
 
 #Tatarstan
 TDA_update_state_249_names = {
-	#Aeroport Kazan
+	#Al'met'yevsk
+	if = {
+		limit = { any_country = { controls_province = 11389 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11389 name = VICTORY_POINTS_11389_0 }
+	}
+	#Almetyevsk
+	else = {
+		reset_province_name = 11389
+	}
+	#Aeroport Kazan'
 	if = {
 		limit = { any_country = { controls_province = 14402 TAG_using_russian_names = yes } }
 		set_province_name = { id = 14402 name = VICTORY_POINTS_14402_0 }
@@ -2996,18 +3180,64 @@ TDA_update_state_249_names = {
 	else = {
 		reset_province_name = 14402
 	}
+	#Kazan'
+	if = {
+		limit = { any_country = { controls_province = 14403 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14403 name = VICTORY_POINTS_14403_0 }
+	}
+	#Kazan
+	else = {
+		reset_province_name = 14403
+	}
 }
 
 #Ulyanovsk
 TDA_update_state_250_names = {
+	250 = {
+		#Ul'yanovsk
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_250_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Ul'yanovsk
+	if = {
+		limit = { any_country = { controls_province = 14398 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14398 name = VICTORY_POINTS_14398_0 }
+	}
+	#Ulyanovsk
+	else = {
+		reset_province_name = 14398
+	}
 }
 
 #Samara
 TDA_update_state_251_names = {
+	#Syzran'
+	if = {
+		limit = { any_country = { controls_province = 6226 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6226 name = VICTORY_POINTS_6226_0 }
+	}
+	#Syzran
+	else = {
+		reset_province_name = 6226
+	}
 }
 
 #Nizhny Novgorod
 TDA_update_state_252_names = {
+	#Shakhun'ya
+	if = {
+		limit = { any_country = { controls_province = 9172 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9172 name = VICTORY_POINTS_9172_0 }
+	}
+	#Shakhunya
+	else = {
+		reset_province_name = 9172
+	}
 }
 
 #Ivanovo
@@ -3043,6 +3273,15 @@ TDA_update_state_255_names = {
 
 #Chuvashia
 TDA_update_state_256_names = {
+	#Alatyr'
+	if = {
+		limit = { any_country = { controls_province = 6357 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6357 name = VICTORY_POINTS_6357_0 }
+	}
+	#Alatyr
+	else = {
+		reset_province_name = 6357
+	}
 }
 
 #Tambov
@@ -3051,6 +3290,15 @@ TDA_update_state_257_names = {
 
 #Lipetsk
 TDA_update_state_258_names = {
+	#Lebedyan'
+	if = {
+		limit = { any_country = { controls_province = 3199 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3199 name = VICTORY_POINTS_3199_0 }
+	}
+	#Lebedyan
+	else = {
+		reset_province_name = 3199
+	}
 }
 
 #Poltava
@@ -3059,6 +3307,15 @@ TDA_update_state_259_names = {
 
 #Voronezh
 TDA_update_state_260_names = {
+	#Rossosh'
+	if = {
+		limit = { any_country = { controls_province = 11412 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11412 name = VICTORY_POINTS_11412_0 }
+	}
+	#Rossosh
+	else = {
+		reset_province_name = 11412
+	}
 }
 
 #Ohio
@@ -3093,6 +3350,15 @@ TDA_update_state_264_names = {
 	#Alexander S. Pushkin Airport
 	else = {
 		reset_province_name = 14234
+	}
+	#Podol'sk
+	if = {
+		limit = { any_country = { controls_province = 14237 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14237 name = VICTORY_POINTS_14237_0 }
+	}
+	#Podolsk
+	else = {
+		reset_province_name = 14237
 	}
 }
 
@@ -3203,8 +3469,18 @@ TDA_update_state_285_names = {
 TDA_update_state_286_names = {
 }
 
-#Taklamakan
+#Central Taklamakan
 TDA_update_state_287_names = {
+	287 = {
+		#Xī Tǎkèlāmǎgàn
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_287_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Burma
@@ -3355,6 +3631,61 @@ TDA_update_state_321_names = {
 
 #Tibet
 TDA_update_state_322_names = {
+	322 = {
+		#Xīzàng
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_322_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Samzhubzê
+	if = {
+		limit = { any_country = { controls_province = 2014 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 2014 name = VICTORY_POINTS_2014_0 }
+	}
+	#Sangzhuzi
+	else = {
+		reset_province_name = 2014
+	}
+	#Línzhī
+	if = {
+		limit = { any_country = { controls_province = 8041 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 8041 name = VICTORY_POINTS_8041_0 }
+	}
+	#Nyingchi
+	else = {
+		reset_province_name = 8041
+	}
+	#Chéngguān
+	if = {
+		limit = { any_country = { controls_province = 14637 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14637 name = VICTORY_POINTS_14637_0 }
+	}
+	#Chengguan
+	else = {
+		reset_province_name = 14637
+	}
+	#Lāsà
+	if = {
+		limit = { any_country = { controls_province = 14638 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14638 name = VICTORY_POINTS_14638_0 }
+	}
+	#Lhasa
+	else = {
+		reset_province_name = 14638
+	}
+	#Nàqū
+	if = {
+		limit = { any_country = { controls_province = 14642 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14642 name = VICTORY_POINTS_14642_0 }
+	}
+	#Nagqu
+	else = {
+		reset_province_name = 14642
+	}
 }
 
 #Nepal
@@ -3686,6 +4017,25 @@ TDA_update_state_397_names = {
 
 #Perm
 TDA_update_state_398_names = {
+	398 = {
+		#Perm'
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_398_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Perm'
+	if = {
+		limit = { any_country = { controls_province = 14395 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14395 name = VICTORY_POINTS_14395_0 }
+	}
+	#Perm
+	else = {
+		reset_province_name = 14395
+	}
 }
 
 #Udmurtia
@@ -3694,6 +4044,15 @@ TDA_update_state_399_names = {
 
 #Kirov
 TDA_update_state_400_names = {
+	#Kotel'nich
+	if = {
+		limit = { any_country = { controls_province = 9214 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9214 name = VICTORY_POINTS_9214_0 }
+	}
+	#Kotelnich
+	else = {
+		reset_province_name = 9214
+	}
 }
 
 #Jämtland
@@ -3706,6 +4065,34 @@ TDA_update_state_402_names = {
 
 #Tyumen
 TDA_update_state_403_names = {
+	403 = {
+		#Tyumen'
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_403_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Tobol'sk
+	if = {
+		limit = { any_country = { controls_province = 4659 TAG_using_russian_names = yes } }
+		set_province_name = { id = 4659 name = VICTORY_POINTS_4659_0 }
+	}
+	#Tobolsk
+	else = {
+		reset_province_name = 4659
+	}
+	#Tyumen'
+	if = {
+		limit = { any_country = { controls_province = 14326 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14326 name = VICTORY_POINTS_14326_0 }
+	}
+	#Tyumen
+	else = {
+		reset_province_name = 14326
+	}
 }
 
 #Kyzyl Orda
@@ -3726,6 +4113,33 @@ TDA_update_state_407_names = {
 
 #Primorskiy
 TDA_update_state_408_names = {
+	#Spassk-Dal'ny
+	if = {
+		limit = { any_country = { controls_province = 3787 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3787 name = VICTORY_POINTS_3787_0 }
+	}
+	#Spassk-Dalny
+	else = {
+		reset_province_name = 3787
+	}
+	#Arsen'yev
+	if = {
+		limit = { any_country = { controls_province = 6989 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6989 name = VICTORY_POINTS_6989_0 }
+	}
+	#Arsenyev
+	else = {
+		reset_province_name = 6989
+	}
+	#Dal'negorsk
+	if = {
+		limit = { any_country = { controls_province = 11745 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11745 name = VICTORY_POINTS_11745_0 }
+	}
+	#Dalnegorsk
+	else = {
+		reset_province_name = 11745
+	}
 	#Mezhdunarodnyy Aeroport Vladivostok
 	if = {
 		limit = { any_country = { controls_province = 14157 TAG_using_russian_names = yes } }
@@ -3739,6 +4153,15 @@ TDA_update_state_408_names = {
 
 #Khabarovsk
 TDA_update_state_409_names = {
+	#Sovetskaya Gavan'
+	if = {
+		limit = { any_country = { controls_province = 9604 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9604 name = VICTORY_POINTS_9604_0 }
+	}
+	#Sovetskaya Gavan
+	else = {
+		reset_province_name = 9604
+	}
 }
 
 #Sistan
@@ -4880,6 +5303,34 @@ TDA_update_state_559_names = {
 
 #Komsomolsk
 TDA_update_state_560_names = {
+	560 = {
+		#Komsomol'sk
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_560_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Komsomol'sk-na-Amure
+	if = {
+		limit = { any_country = { controls_province = 12263 TAG_using_russian_names = yes } }
+		set_province_name = { id = 12263 name = VICTORY_POINTS_12263_0 }
+	}
+	#Komsomolsk-on-Amur
+	else = {
+		reset_province_name = 12263
+	}
+	#Nikolayevsk-na-Amure
+	if = {
+		limit = { any_country = { controls_province = 12559 TAG_using_russian_names = yes } }
+		set_province_name = { id = 12559 name = VICTORY_POINTS_12559_0 }
+	}
+	#Nikolayevsk-on-Amur
+	else = {
+		reset_province_name = 12559
+	}
 }
 
 #Amur
@@ -4904,6 +5355,24 @@ TDA_update_state_565_names = {
 
 #Irkutsk
 TDA_update_state_566_names = {
+	#Ust'-Kut
+	if = {
+		limit = { any_country = { controls_province = 1735 TAG_using_russian_names = yes } }
+		set_province_name = { id = 1735 name = VICTORY_POINTS_1735_0 }
+	}
+	#Ust-Kut
+	else = {
+		reset_province_name = 1735
+	}
+	#Ust'-Ilimsk
+	if = {
+		limit = { any_country = { controls_province = 10699 TAG_using_russian_names = yes } }
+		set_province_name = { id = 10699 name = VICTORY_POINTS_10699_0 }
+	}
+	#Ust-Ilimsk
+	else = {
+		reset_province_name = 10699
+	}
 	#Mezhdunarodnyy Aeroport Irkutsk
 	if = {
 		limit = { any_country = { controls_province = 14164 TAG_using_russian_names = yes } }
@@ -5006,6 +5475,15 @@ TDA_update_state_571_names = {
 	else = {
 		reset_province_name = 14291
 	}
+	#Isil'kul
+	if = {
+		limit = { any_country = { controls_province = 14294 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14294 name = VICTORY_POINTS_14294_0 }
+	}
+	#Isilkul
+	else = {
+		reset_province_name = 14294
+	}
 }
 
 #Chelyabinsk
@@ -5074,6 +5552,15 @@ TDA_update_state_579_names = {
 
 #Khanty-Mansi
 TDA_update_state_580_names = {
+	#Nyagan'
+	if = {
+		limit = { any_country = { controls_province = 7796 TAG_using_russian_names = yes } }
+		set_province_name = { id = 7796 name = VICTORY_POINTS_7796_0 }
+	}
+	#Nyagan
+	else = {
+		reset_province_name = 7796
+	}
 }
 
 #Cairo
@@ -5463,8 +5950,18 @@ TDA_update_state_616_names = {
 TDA_update_state_617_names = {
 }
 
-#Dzungaria
+#Western Taklamakan
 TDA_update_state_618_names = {
+	618 = {
+		#Xī Tǎkèlāmǎgàn
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_618_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Yarkand
@@ -5614,10 +6111,55 @@ TDA_update_state_652_names = {
 
 #Sverdlovsk
 TDA_update_state_653_names = {
+	#Krasnotur'yinsk
+	if = {
+		limit = { any_country = { controls_province = 10648 TAG_using_russian_names = yes } }
+		set_province_name = { id = 10648 name = VICTORY_POINTS_10648_0 }
+	}
+	#Krasnoturyinsk
+	else = {
+		reset_province_name = 10648
+	}
+	#Kamensk-Ural'sky
+	if = {
+		limit = { any_country = { controls_province = 14334 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14334 name = VICTORY_POINTS_14334_0 }
+	}
+	#Kamensk-Uralsky
+	else = {
+		reset_province_name = 14334
+	}
+	#Aeroport Kol'tsovo
+	if = {
+		limit = { any_country = { controls_province = 14350 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14350 name = VICTORY_POINTS_14350_0 }
+	}
+	#Koltsovo Airport
+	else = {
+		reset_province_name = 14350
+	}
+	#Pervoural'sk
+	if = {
+		limit = { any_country = { controls_province = 14351 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14351 name = VICTORY_POINTS_14351_0 }
+	}
+	#Pervouralsk
+	else = {
+		reset_province_name = 14351
+	}
 }
 
 #Altai
 TDA_update_state_654_names = {
+	#Ust'-Koksa
+	if = {
+		limit = { any_country = { controls_province = 10531 TAG_using_russian_names = yes } }
+		set_province_name = { id = 10531 name = VICTORY_POINTS_10531_0 }
+	}
+	#Ust-Koksa
+	else = {
+		reset_province_name = 10531
+	}
 }
 
 #Liechtenstein
@@ -6224,12 +6766,55 @@ TDA_update_state_758_names = {
 	}
 }
 
-#Kunlun Shan
+#Eastern Taklamakan
 TDA_update_state_759_names = {
+	759 = {
+		#Dōng Tǎkèlāmǎgàn
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_759_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Dabancheng
+#North Gangwon
 TDA_update_state_760_names = {
+	760 = {
+		#Kangwŏnbuk
+		if = {
+			limit = { CONTROLLER = { TAG_using_mr_korean_names = yes } }
+			set_state_name = STATE_760_0
+		}
+		#Gangwonbuk
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_revised_korean_names = yes } }
+			set_state_name = STATE_760_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Wŏnsan
+	if = {
+		limit = { any_country = { controls_province = 848 TAG_using_mr_korean_names = yes } }
+		set_province_name = { id = 848 name = VICTORY_POINTS_848_0 }
+	}
+	#Wonsan
+	else = {
+		reset_province_name = 848
+	}
+	#Changchŏn
+	if = {
+		limit = { any_country = { controls_province = 11958 TAG_using_mr_korean_names = yes } }
+		set_province_name = { id = 11958 name = VICTORY_POINTS_11958_0 }
+	}
+	#Jangjon
+	else = {
+		reset_province_name = 11958
+	}
 }
 
 #Hulunbuir
@@ -6740,6 +7325,15 @@ TDA_update_state_823_names = {
 
 #Kemerovo
 TDA_update_state_824_names = {
+	#Prokop'yevsk
+	if = {
+		limit = { any_country = { controls_province = 1369 TAG_using_russian_names = yes } }
+		set_province_name = { id = 1369 name = VICTORY_POINTS_1369_0 }
+	}
+	#Prokopyevsk
+	else = {
+		reset_province_name = 1369
+	}
 }
 
 #Nenets
@@ -6761,6 +7355,15 @@ TDA_update_state_827_names = {
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Nal'chik
+	if = {
+		limit = { any_country = { controls_province = 685 TAG_using_russian_names = yes } }
+		set_province_name = { id = 685 name = VICTORY_POINTS_685_0 }
+	}
+	#Nalchik
+	else = {
+		reset_province_name = 685
 	}
 }
 
@@ -6794,6 +7397,15 @@ TDA_update_state_834_names = {
 
 #Kostroma
 TDA_update_state_835_names = {
+	#Shar'ya
+	if = {
+		limit = { any_country = { controls_province = 73 TAG_using_russian_names = yes } }
+		set_province_name = { id = 73 name = VICTORY_POINTS_73_0 }
+	}
+	#Sharya
+	else = {
+		reset_province_name = 73
+	}
 }
 
 #Burgenland
@@ -7346,43 +7958,6 @@ TDA_update_state_907_names = {
 	#Hamhung
 	else = {
 		reset_province_name = 14609
-	}
-}
-
-#North Gangwon
-TDA_update_state_908_names = {
-	908 = {
-		#Kangwŏnbuk
-		if = {
-			limit = { CONTROLLER = { TAG_using_mr_korean_names = yes } }
-			set_state_name = STATE_908_0
-		}
-		#Gangwonbuk
-		else_if = {
-			limit = { CONTROLLER = { TAG_using_revised_korean_names = yes } }
-			set_state_name = STATE_908_1
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-	#Wŏnsan
-	if = {
-		limit = { any_country = { controls_province = 848 TAG_using_mr_korean_names = yes } }
-		set_province_name = { id = 848 name = VICTORY_POINTS_848_0 }
-	}
-	#Wonsan
-	else = {
-		reset_province_name = 848
-	}
-	#Changchŏn
-	if = {
-		limit = { any_country = { controls_province = 11958 TAG_using_mr_korean_names = yes } }
-		set_province_name = { id = 11958 name = VICTORY_POINTS_11958_0 }
-	}
-	#Jangjon
-	else = {
-		reset_province_name = 11958
 	}
 }
 
@@ -8296,7 +8871,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_905_names = yes
 	TDA_update_state_906_names = yes
 	TDA_update_state_907_names = yes
-	TDA_update_state_908_names = yes
 }
 
 TDA_toggle_change_city_names = {

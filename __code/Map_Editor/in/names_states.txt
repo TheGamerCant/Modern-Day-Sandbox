@@ -1046,6 +1046,12 @@
 }
 214 = {
 	default = "Arkhangelsk"
+	entry = {
+        name = "Archangel'sk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 215 = {
 	default = "Karelia"
@@ -1139,9 +1145,21 @@
 }
 235 = {
 	default = "Stavropol"
+	entry = {
+        name = "Stavropol'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 236 = {
 	default = "Astrakhan"
+	entry = {
+        name = "Astrakhan'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 237 = {
 	default = "Kalmykia"
@@ -1172,18 +1190,36 @@
 }
 246 = {
 	default = "Tver"
+	ntry = {
+        name = "Tver'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 247 = {
 	default = "Bornholm"
 }
 248 = {
 	default = "Yaroslavl"
+	entry = {
+        name = "Yaroslavl'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 249 = {
 	default = "Tatarstan"
 }
 250 = {
 	default = "Ulyanovsk"
+	entry = {
+        name = "Ul'yanovsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 251 = {
 	default = "Samara"
@@ -1312,7 +1348,13 @@
 	default = "Southern Indochina"
 }
 287 = {
-	default = "Taklamakan"
+	default = "Central Taklamakan"
+	entry = {
+        name = "Zhōng Tǎkèlāmǎgàn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 288 = {
 	default = "Burma"
@@ -1424,6 +1466,12 @@
 }
 322 = {
 	default = "Tibet"
+	entry = {
+        name = "Xīzàng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 323 = {
 	default = "Nepal"
@@ -1652,6 +1700,12 @@
 }
 398 = {
 	default = "Perm"
+	entry = {
+        name = "Perm'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 399 = {
 	default = "Udmurtia"
@@ -1667,6 +1721,12 @@
 }
 403 = {
 	default = "Tyumen"
+	entry = {
+        name = "Tyumen'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    } 
 }
 404 = {
 	default = "Kyzyl Orda"
@@ -2223,6 +2283,12 @@
 }
 560 = {
 	default = "Komsomolsk"
+	entry = {
+        name = "Komsomol'sk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 561 = {
 	default = "Amur"
@@ -2432,7 +2498,13 @@
 	default = "Urumqi"
 }
 618 = {
-	default = "Dzungaria"
+	default = "Western Taklamakan"
+	entry = {
+        name = "Xī Tǎkèlāmǎgàn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 619 = {
 	default = "Yarkand"
@@ -2903,10 +2975,28 @@
     }
 }
 759 = {
-	default = "Kunlun Shan"
+	default = "Eastern Taklamakan"
+	entry = {
+        name = "Dōng Tǎkèlāmǎgàn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 760 = {
-	default = "Dabancheng"
+	default = "North Gangwon"
+	entry = {
+        name = "Kangwŏnbuk"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
+	entry = {
+        name = "Gangwonbuk"
+        requirements = {
+            "TAG_using_revised_korean_names = yes"
+        }
+    }
 }
 761 = {
 	default = "Hulunbuir"
@@ -3520,21 +3610,6 @@
         name = "Hamgyŏng"
         requirements = {
             "TAG_using_mr_korean_names = yes"
-        }
-    }
-}
-908 = {
-	default = "North Gangwon"
-	entry = {
-        name = "Kangwŏnbuk"
-        requirements = {
-            "TAG_using_mr_korean_names = yes"
-        }
-    }
-	entry = {
-        name = "Gangwonbuk"
-        requirements = {
-            "TAG_using_revised_korean_names = yes"
         }
     }
 }

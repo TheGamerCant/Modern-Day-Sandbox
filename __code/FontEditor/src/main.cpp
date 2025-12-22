@@ -84,18 +84,13 @@ static HashMap<UnsignedInteger32, Letter> GetLetterMapFromFont(const Font& font)
 }
 
 static Letter LettersWithPunctuation(const Letter& letter, const Punctuation& punctuation, const UnsignedInteger32 unicodeChar) {
-    if (punctuation.realWidth > letter.realWidth) {
-        std::cout << "Char " << unicodeChar << " has a wider accent than character";
-        return Letter();
-    }
-
     Image letterImage = {
         .data = const_cast<UnsignedInteger8*>(letter.imgDataGreyAlpha.data()),
         .width = letter.imgWidth,
         .height = letter.imgHeight,
         .mipmaps = 1,
         .format = PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA
-	};
+    };
     Texture2D letterTexture = LoadTextureFromImage(letterImage);
 
     Image punctuationImage = {
@@ -107,37 +102,78 @@ static Letter LettersWithPunctuation(const Letter& letter, const Punctuation& pu
     };
     Texture2D punctuationTexture = LoadTextureFromImage(punctuationImage);
 
-    Float32 puncXOffset = (255.0f - static_cast<Float32>(letter.leftAlpha)) + static_cast<Float32>(letter.realWidth) * 0.5f;
-    puncXOffset -= (255.0f - static_cast<Float32>(punctuation.leftAlpha)) + static_cast<Float32>(punctuation.realWidth) * 0.5f;
+    Float32 puncXOffset =
+        (255.0f - static_cast<Float32>(letter.leftAlpha)) +
+        static_cast<Float32>(letter.realWidth) * 0.5f;
+
+    puncXOffset -=
+        (255.0f - static_cast<Float32>(punctuation.leftAlpha)) +
+        static_cast<Float32>(punctuation.realWidth) * 0.5f;
+
     puncXOffset /= 255.0f;
 
-
-    UnsignedInteger32 imgWidth = letter.imgWidth;
     UnsignedInteger32 imgHeight = 0;
     SignedInteger32 offsetY = 0;
+
     if (letter.offsetY >= punctuation.offsetY) {
-		imgHeight = std::ceil(letter.imgHeight + letter.offsetY - punctuation.offsetY);
-        offsetY = (punctuation.offsetY >= 0.0) ? std::ceil(punctuation.offsetY) : std::floor(punctuation.offsetY);
+        imgHeight = static_cast<UnsignedInteger32>(
+            std::ceil(letter.imgHeight + letter.offsetY - punctuation.offsetY));
+        offsetY = static_cast<SignedInteger32>(
+            (punctuation.offsetY >= 0.0f)
+            ? std::ceil(punctuation.offsetY)
+            : std::floor(punctuation.offsetY));
     }
     else {
-		imgHeight = std::ceil(punctuation.imgHeight + punctuation.offsetY - letter.offsetY);
-        offsetY = (letter.offsetY >= 0.0) ? std::ceil(letter.offsetY) : std::floor(letter.offsetY);
+        imgHeight = static_cast<UnsignedInteger32>(
+            std::ceil(punctuation.imgHeight + punctuation.offsetY - letter.offsetY));
+        offsetY = static_cast<SignedInteger32>(
+            (letter.offsetY >= 0.0f)
+            ? std::ceil(letter.offsetY)
+            : std::floor(letter.offsetY));
     }
+
+    Float32 letterLeft = 0.0f;
+    Float32 letterRight = static_cast<Float32>(letter.imgWidth);
+
+    Float32 puncLeft = puncXOffset;
+    Float32 puncRight = puncXOffset + static_cast<Float32>(punctuation.imgWidth);
+
+    Float32 minX = std::min(letterLeft, puncLeft);
+    Float32 maxX = std::max(letterRight, puncRight);
+
+    UnsignedInteger32 imgWidth =
+        static_cast<UnsignedInteger32>(std::ceil(maxX - minX));
+
+    Float32 letterDrawX = letterLeft - minX;
+    Float32 puncDrawX = puncLeft - minX;
 
     RenderTexture2D target = LoadRenderTexture(imgWidth, imgHeight);
     BeginTextureMode(target);
     ClearBackground(BLANK);
-        //Punctuation is above letter
-        if (letter.offsetY >= punctuation.offsetY) {
-            DrawTextureV(letterTexture, Vector2(0, letter.offsetY - punctuation.offsetY), BLACK);
-            DrawTextureV(punctuationTexture, Vector2(puncXOffset, 0), BLACK);
-        }
 
-        //Punctuation is below letter
-        else {
-            DrawTextureV(letterTexture, Vector2(0, 0), BLACK);
-            DrawTextureV(punctuationTexture, Vector2(puncXOffset, punctuation.offsetY - letter.offsetY), BLACK);
-        }
+    if (letter.offsetY >= punctuation.offsetY) {
+        DrawTextureV(
+            letterTexture,
+            Vector2(letterDrawX, letter.offsetY - punctuation.offsetY),
+            BLACK);
+
+        DrawTextureV(
+            punctuationTexture,
+            Vector2(puncDrawX, 0),
+            BLACK);
+    }
+    else {
+        DrawTextureV(
+            letterTexture,
+            Vector2(letterDrawX, 0),
+            BLACK);
+
+        DrawTextureV(
+            punctuationTexture,
+            Vector2(puncDrawX, punctuation.offsetY - letter.offsetY),
+            BLACK);
+    }
+
     EndTextureMode();
 
     Image img = LoadImageFromTexture(target.texture);
@@ -147,18 +183,13 @@ static Letter LettersWithPunctuation(const Letter& letter, const Punctuation& pu
         ImageFormat(&img, PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA);
     }
 
-	const SizeT imgSize = img.width * img.height * 2;
-    UnsignedInteger8* imgDataPtr = static_cast<UnsignedInteger8*>(img.data);
-    Vector<UnsignedInteger8>newCharImgData(imgDataPtr, imgDataPtr + imgSize);
+    SizeT imgSize = img.width * img.height * 2;
+    UnsignedInteger8* imgDataPtr =static_cast<UnsignedInteger8*>(img.data);
+    Vector<UnsignedInteger8> newCharImgData(imgDataPtr, imgDataPtr + imgSize);
 
     UnloadTexture(letterTexture);
     UnloadTexture(punctuationTexture);
-
     UnloadRenderTexture(target);
-
-    //UnloadImage(letterImage);
-    //UnloadImage(punctuationImage);
-    //UnloadImage(img);
 
     return Letter(
         unicodeChar,
@@ -338,6 +369,10 @@ int main(void)
             Punctuation capitalCharon(fontLetterMap.at(0x0160), fontLetterMap.at(0x53));
             Punctuation lowerCharon(fontLetterMap.at(0x0161), fontLetterMap.at(0x73));
 
+            //Up arrow above
+            Punctuation capitalCircumflex(fontLetterMap.at(0x015c), fontLetterMap.at(0x53));
+            Punctuation lowerCircumflex(fontLetterMap.at(0x015d), fontLetterMap.at(0x73));
+
             //Dot above
             Punctuation capitalDotAbove(fontLetterMap.at(0x017b), fontLetterMap.at(0x5a));
             Punctuation lowerDotAbove(fontLetterMap.at(0x017c), fontLetterMap.at(0x7a));
@@ -411,6 +446,22 @@ int main(void)
             //Y with left accent
             fontLetterMap[0x1ef2] = LettersWithPunctuation(fontLetterMap.at(0x59), capitalGrave, 0x1ef2);
             fontLetterMap[0x1ef3] = LettersWithPunctuation(fontLetterMap.at(0x79), lowerGrave, 0x1ef3);
+
+			//A with charon
+            fontLetterMap[0x01cd] = LettersWithPunctuation(fontLetterMap.at(0x41), capitalCharon, 0x01cd);
+            fontLetterMap[0x01ce] = LettersWithPunctuation(fontLetterMap.at(0x61), lowerCharon, 0x01ce);
+
+			//O with charon
+            fontLetterMap[0x01d1] = LettersWithPunctuation(fontLetterMap.at(0x4f), capitalCharon, 0x01d1);
+            fontLetterMap[0x01d2] = LettersWithPunctuation(fontLetterMap.at(0x6f), lowerCharon, 0x01d2);
+
+			//U with charon
+            fontLetterMap[0x01d3] = LettersWithPunctuation(fontLetterMap.at(0x55), capitalCharon, 0x01d3);
+            fontLetterMap[0x01d4] = LettersWithPunctuation(fontLetterMap.at(0x75), lowerCharon, 0x01d4);
+
+			//I with charon - use Cyrillic I for capital
+            fontLetterMap[0x01cf] = LettersWithPunctuation(fontLetterMap.at(0x0406), capitalCharon, 0x01cf);
+            fontLetterMap[0x01d0] = LettersWithPunctuation(fontLetterMap.at(0x0131), lowerCharon, 0x01d0);
 
 			Vector<stbrp_rect> rects(fontLetterMap.size());
             SizeT i = 0, area = 0;

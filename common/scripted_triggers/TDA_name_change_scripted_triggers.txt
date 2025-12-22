@@ -212,3 +212,17 @@ TAG_using_revised_korean_names = {
 		is_puppet_of = ROK
 	}
 }
+
+TAG_using_chinese_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = PRC
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = PRC
+	}
+}

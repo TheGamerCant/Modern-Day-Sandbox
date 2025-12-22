@@ -4,3 +4,5 @@
 [1209/200549:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
 [1210/115323:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
 [1210/115509:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1222/140929:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.
+[1222/140934:WARNING:dns_config_service_win.cc(653)] Failed to read DnsConfig.

@@ -4209,12 +4209,24 @@
 }
 3787 = {
 	default = "Spassk-Dalny"
+	entry = {
+        name = "Spassk-Dal'ny"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 664 = {
 	default = "Dalnerechensk"
 }
 11745 = {
 	default = "Dalnegorsk"
+	entry = {
+        name = "Dal'negorsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6961 = {
 	default = "Nakhodka"
@@ -4224,6 +4236,12 @@
 }
 6989 = {
 	default = "Arsenyev"
+	entry = {
+        name = "Arsen'yev"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 3739 = {
 	default = "Svetlaya"
@@ -4233,6 +4251,12 @@
 }
 9604 = {
 	default = "Sovetskaya Gavan"
+	entry = {
+        name = "Sovetskaya Gavan'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 10466 = {
 	default = "Pereyaslavka"
@@ -4244,7 +4268,22 @@
 	default = "Birobidzhan"
 }
 12559 = {
-	default = "Nikolayevsk-na-Amur"
+	default = "Nikolayevsk-on-Amur"
+	entry = {
+        name = "Nikolayevsk-na-Amure"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+12263 = {
+	default = "Komsomolsk-on-Amur"
+	entry = {
+        name = "Komsomol'sk-na-Amure"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 1399 = {
 	default = "Severo-Kurilsk"
@@ -4256,7 +4295,7 @@
 	default = "Blagoveshchensk"
 }
 1845 = {
-	default = "Tunda"
+	default = "Tynda"
 }
 10678 = {
 	default = "Zeya"
@@ -4326,12 +4365,24 @@
 }
 10699 = {
 	default = "Ust-Ilimsk"
+	entry = {
+        name = "Ust'-Ilimsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    } 
 }
 12540 = {
 	default = "Cheremkhovo"
 }
 1735 = {
 	default = "Ust-Kut"
+	entry = {
+        name = "Ust'-Kut"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    } 
 }
 1876 = {
 	default = "Tayshet"
@@ -4413,6 +4464,12 @@
 }
 14183 = {
 	default = "Stavropol"
+	entry = {
+        name = "Stavropol'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 3748 = {
 	default = "Ipatovo"
@@ -4473,6 +4530,12 @@
 }
 685 = {
 	default = "Nalchik"
+	entry = {
+        name = "Nal'chik"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 714 = {
 	default = "Cherkessk"
@@ -4488,6 +4551,12 @@
 }
 759 = {
 	default = "Yashkul"
+	entry = {
+        name = "Yashkul'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14194 = {
 	default = "Airport Khrabrovo"
@@ -4518,6 +4587,12 @@
 }
 14197 = {
 	default = "Astrakhan"
+	entry = {
+        name = "Astrakhan'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6516 = {
 	default = "Znamensk"
@@ -4540,7 +4615,7 @@
 14202 = {
 	default = "Rostov-on-Don Airport"
 	entry = {
-        name = "Aeroport Krasnodar"
+        name = "Aeroport Rostov-na-Donu"
         requirements = {
             "TAG_using_russian_names = yes"
         }
@@ -4563,6 +4638,12 @@
 }
 775 = {
 	default = "Salsk"
+	entry = {
+        name = "Sal'sk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 11418 = {
 	default = "Novocherkassk"
@@ -4608,6 +4689,12 @@
 }
 6503 = {
 	default = "Kotelnikovo"
+	entry = {
+        name = "Kotel'nikovo"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14210 = {
 	default = "Saratov"
@@ -4623,6 +4710,12 @@
 }
 326 = {
 	default = "Volsk"
+	entry = {
+        name = "Vol'sk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6502 = {
 	default = "Balakovo"
@@ -4647,6 +4740,12 @@
 }
 11412 = {
 	default = "Rossosh"
+	entry = {
+        name = "Rossosh'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 3527 = {
 	default = "Liski"
@@ -4698,6 +4797,12 @@
 }
 11142 = {
 	default = "Nikel"
+	entry = {
+        name = "Nikel'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14218 = {
 	default = "Murmansk"
@@ -4734,9 +4839,21 @@
 }
 11092 = {
 	default = "Medvezhyegorsk"
+	entry = {
+        name = "Medvezh'yegorsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 9195 = {
 	default = "Kem"
+	entry = {
+        name = "Kem'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 9206 = {
 	default = "Vyborg"
@@ -4809,6 +4926,12 @@
 }
 11336 = {
 	default = "Roslavl"
+	entry = {
+        name = "Roslavl'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6243 = {
 	default = "Desnogorsk"
@@ -4842,6 +4965,12 @@
 }
 14237 = {
 	default = "Podolsk"
+	entry = {
+        name = "Podol'sk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14231 = {
 	default = "Khimki"
@@ -4884,6 +5013,12 @@
 }
 3199 = {
 	default = "Lebedyan"
+	entry = {
+        name = "Lebedyan'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6369 = {
 	default = "Gryazi"
@@ -4920,6 +5055,12 @@
 }
 6365 = {
 	default = "Kozelsk"
+	entry = {
+        name = "Kozel'sk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 3377 = {
 	default = "Obninsk"
@@ -4938,6 +5079,12 @@
 }
 14250 = {
 	default = "Tver"
+	entry = {
+        name = "Tver'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 11349 = {
 	default = "Rzhev"
@@ -4968,6 +5115,12 @@
 }
 14255 = {
 	default = "Archangelsk"
+	entry = {
+        name = "Archangel'sk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14256 = {
 	default = "Severodvinsk"
@@ -5025,6 +5178,12 @@
 }
 10531 = {
 	default = "Ust-Koksa"
+	entry = {
+        name = "Ust'-Koksa"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    } 
 }
 14268 = {
 	default = "Kemerovo"
@@ -5037,6 +5196,12 @@
 }
 1369 = {
 	default = "Prokopyevsk"
+	entry = {
+        name = "Prokop'yevsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    } 
 }
 14274 = {
 	default = "Leninsk-Kuznetskiy"
@@ -5063,7 +5228,13 @@
 	default = "Belokurikha"
 }
 10537 = {
-	default = "Kamen-na-Obi"
+	default = "Kamen-on-Ob"
+	entry = {
+        name = "Kamen'-na-Obi"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    } 
 }
 1794 = {
 	default = "Aleysk"
@@ -5133,6 +5304,12 @@
 }
 14294 = {
 	default = "Isilkul"
+	entry = {
+        name = "Isil'kul"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    } 
 }
 1684 = {
 	default = "Salekhard"
@@ -5160,6 +5337,12 @@
 }
 7796 = {
 	default = "Nyagan"
+	entry = {
+        name = "Nyagan'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 7895 = {
 	default = "Yugorsk"
@@ -5169,6 +5352,12 @@
 }
 14326 = {
 	default = "Tyumen"
+	entry = {
+        name = "Tyumen'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    } 
 }
 4209 = {
 	default = "Zavodoukovsk"
@@ -5181,6 +5370,12 @@
 }
 4659 = {
 	default = "Tobolsk"
+	entry = {
+        name = "Tobol'sk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    } 
 }
 14331 = {
 	default = "Uvat"
@@ -5193,6 +5388,12 @@
 }
 14350 = {
 	default = "Koltsovo Airport"
+	entry = {
+        name = "Aeroport Kol'tsovo"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14339 = {
 	default = "Nizhny Tagil"
@@ -5202,6 +5403,12 @@
 }
 14351 = {
 	default = "Pervouralsk"
+	entry = {
+        name = "Pervoural'sk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 10133 = {
 	default = "Revda"
@@ -5211,9 +5418,21 @@
 }
 10648 = {
 	default = "Krasnoturyinsk"
+	entry = {
+        name = "Krasnotur'yinsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14334 = {
 	default = "Kamensk-Uralsky"
+	entry = {
+        name = "Kamensk-Ural'sky"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14196 = {
 	default = "Polevskoy"
@@ -5349,6 +5568,12 @@
 }
 6226 = {
 	default = "Syzran"
+	entry = {
+        name = "Syzran'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 9243 = {
 	default = "Chapayevsk"
@@ -5364,6 +5589,12 @@
 }
 14395 = {
 	default = "Perm"
+	entry = {
+        name = "Perm'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 12216 = {
 	default = "Kungur"
@@ -5391,6 +5622,12 @@
 }
 14398 = {
 	default = "Ulyanovsk"
+	entry = {
+        name = "Ul'yanovsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 11319 = {
 	default = "Dimitrovgrad"
@@ -5406,11 +5643,17 @@
 }
 14403 = {
 	default = "Kazan"
+	entry = {
+        name = "Kazan'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 14402 = {
 	default = "Kazan Airport"
 	entry = {
-        name = "Aeroport Kazan"
+        name = "Aeroport Kazan'"
         requirements = {
             "TAG_using_russian_names = yes"
         }
@@ -5436,6 +5679,12 @@
 }
 11389 = {
 	default = "Almetyevsk"
+	entry = {
+        name = "Al'met'yevsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 11496 = {
 	default = "Chistopol"
@@ -5484,6 +5733,12 @@
 }
 6357 = {
 	default = "Alatyr"
+	entry = {
+        name = "Alatyr'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 9402 = {
 	default = "Yoshkar-Ola"
@@ -5586,6 +5841,12 @@
 }
 14423 = {
 	default = "Yaroslavl"
+	entry = {
+        name = "Yaroslavl'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6167 = {
 	default = "Rybinsk"
@@ -5637,6 +5898,12 @@
 }
 73 = {
 	default = "Sharya"
+	entry = {
+        name = "Shar'ya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 164 = {
 	default = "Buy"
@@ -5667,6 +5934,12 @@
 }
 9214 = {
 	default = "Kotelnich"
+	entry = {
+        name = "Kotel'nich"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6224 = {
 	default = "Urzhum"
@@ -5709,6 +5982,12 @@
 }
 9172 = {
 	default = "Shakhunya"
+	entry = {
+        name = "Shakhun'ya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 11324 = {
 	default = "Pochinki"
@@ -7220,6 +7499,52 @@
         name = "Mokp'o"
         requirements = {
             "TAG_using_mr_korean_names = yes"
+        }
+    }
+}
+14638 = {
+	default = "Lhasa"
+	entry = {
+        name = "Lāsà"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14642 = {
+	default = "Nagqu"
+	entry = {
+        name = "Nàqū"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+8041 = {
+	default = "Nyingchi"
+	entry = {
+        name = "Línzhī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14637 = {
+	default = "Chengguan"
+	entry = {
+        name = "Chéngguān"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+#Known as Shigatse prior to 2014
+2014 = {
+	default = "Sangzhuzi"
+	entry = {
+        name = "Samzhubzê"
+        requirements = {
+            "TAG_using_chinese_names = yes"
         }
     }
 }
