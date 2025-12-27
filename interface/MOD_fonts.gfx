@@ -123,17 +123,20 @@ bitmapfonts = {
 
 	textcolors = {
 		F = { 150 97 55 }			# Brown / Native American
-		r = { 174 12 12 }			# Dark red
-		A = { 18 62 119 }			# Navy blue / Alaskan
+		r = { 174 12 12 }			# Dark Red
+		A = { 18 62 119 }			# Navy Blue / Alaskan
 		P = { 63 51 205 }			# Purple / Pacific North-Westerner
-		d = { 45 85 112 }			# Blueish-grey / Deep Southerner
-		e = { 16 89 220 }			# Ocean blue / East Coast
+		d = { 45 85 112 }			# Blueish-Grey / Deep Southerner
+		e = { 16 89 220 }			# Ocean Blue / East Coast
+		I = { 3 76 19 }				# Ruby Green / Irish
+		l = { 255 86 173 }			# Pink / Londoner
+		m = { 187 63 63 }			# Dark Pink / Midlander
 	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac
 		W = { 255 255 255 } 		# White
 		B = { 0 0 255 }     		# Blue
-		G = { 0 159 3 }    		# Green
+		G = { 0 159 3 }    			# Green
 		R = { 255 50 50 }   		# Red
 		b = { 0 0 0 }       		# Black
 		g = { 176 176 176 } 		# Grey

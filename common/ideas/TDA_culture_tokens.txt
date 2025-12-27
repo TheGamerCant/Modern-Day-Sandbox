@@ -71,5 +71,38 @@ ideas ={
 		
 		TDA_culture_usa_southern_token_idea = {}
 		TDA_culture_usa_southern_desc_token_idea = {}
+		
+		TDA_culture_puerto_rican_token_idea = {}
+		TDA_culture_puerto_rican_desc_token_idea = {}
+		
+		TDA_culture_irish_token_idea = {}
+		TDA_culture_irish_desc_token_idea = {}
+		
+		TDA_culture_northern_irish_catholic_token_idea = {}
+		TDA_culture_northern_irish_catholic_desc_token_idea = {}
+		
+		TDA_culture_ulster_protestant_token_idea = {}
+		TDA_culture_ulster_protestant_desc_token_idea = {}
+		
+		TDA_culture_southern_english_token_idea = {}
+		TDA_culture_southern_english_desc_token_idea = {}
+		
+		TDA_culture_midland_english_token_idea = {}
+		TDA_culture_midland_english_desc_token_idea = {}
+		
+		TDA_culture_northern_english_token_idea = {}
+		TDA_culture_northern_english_desc_token_idea = {}
+		
+		TDA_culture_londoner_token_idea = {}
+		TDA_culture_londoner_desc_token_idea = {}
+		
+		TDA_culture_southern_welsh_token_idea = {}
+		TDA_culture_southern_welsh_desc_token_idea = {}
+		
+		TDA_culture_northern_welsh_token_idea = {}
+		TDA_culture_northern_welsh_desc_token_idea = {}
+		
+		TDA_culture_scottish_token_idea = {}
+		TDA_culture_scottish_desc_token_idea = {}
 	}
 }

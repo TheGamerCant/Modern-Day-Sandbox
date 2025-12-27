@@ -13,10 +13,10 @@ state={
 		resize_array = { array = culture_value_array size = 2 value = 0 }
 		
 		set_variable = { culture_index_array^0 = 22 }
-		set_variable = { culture_value_array^0 = 99.2 }
+		set_variable = { culture_value_array^0 = 97.2 }
 		
-		set_variable = { culture_index_array^2 = 0 }
-		set_variable = { culture_value_array^2 = 0.8 }
+		set_variable = { culture_index_array^1 = 0 }
+		set_variable = { culture_value_array^1 = 2.8 }
 	}
 	provinces={
 		3693 3863 6882 9801 9864 11740 11782 11900 13586 13587 13588 13589 13590 13842 

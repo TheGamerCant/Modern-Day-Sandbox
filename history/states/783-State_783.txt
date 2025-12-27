@@ -12,6 +12,15 @@ state={
 			infrastructure = 5
 			air_base = 7
 		} 
+		
+		resize_array = { array = culture_index_array size = 2 value = 0 }
+		resize_array = { array = culture_value_array size = 2 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 25 }
+		set_variable = { culture_value_array^0 = 91.2 }
+
+		set_variable = { culture_index_array^1 = 0 }
+		set_variable = { culture_value_array^1 = 8.8 }
 	}
 	provinces={
 		11293 13647 13648 13649 

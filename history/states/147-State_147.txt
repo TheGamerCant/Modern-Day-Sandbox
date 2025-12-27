@@ -6,6 +6,15 @@ state={
 		add_core_of = IRE
 		
 		victory_points = { 337 1 }
+		
+		resize_array = { array = culture_index_array size = 2 value = 0 }
+		resize_array = { array = culture_value_array size = 2 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 25 }
+		set_variable = { culture_value_array^0 = 99.4 }
+
+		set_variable = { culture_index_array^1 = 0 }
+		set_variable = { culture_value_array^1 = 0.6 }
 	}
 	provinces={
 		337 

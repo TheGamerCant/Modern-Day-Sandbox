@@ -14,14 +14,17 @@ state={
 		victory_points = { 6610 1 }
 		victory_points = { 3605 2 }
 		
-		resize_array = { array = culture_index_array size = 2 value = 0 }
-		resize_array = { array = culture_value_array size = 2 value = 0 }
+		resize_array = { array = culture_index_array size = 3 value = 0 }
+		resize_array = { array = culture_value_array size = 3 value = 0 }
 		
 		set_variable = { culture_index_array^0 = 2 }
 		set_variable = { culture_value_array^0 = 92.1 }
 		
 		set_variable = { culture_index_array^1 = 0 }
-		set_variable = { culture_value_array^1 = 7.9 }
+		set_variable = { culture_value_array^1 = 6.7 }
+		
+		set_variable = { culture_index_array^2 = 1 }
+		set_variable = { culture_value_array^2 = 1.2 }
 		
 		buildings = {
 			infrastructure = 4
