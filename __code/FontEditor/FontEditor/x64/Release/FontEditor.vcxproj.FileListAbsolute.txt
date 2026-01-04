@@ -1,2 +1,0 @@
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\x64\Release\raylib.dll
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\FontEditor\x64\Release\FontEdit.CBC5143F.Up2Date
