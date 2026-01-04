@@ -2,8 +2,8 @@
 fileVersion=1
 
 # font settings
-fontName=Blender Pro Heavy
-fontFile=blender_font/BlenderPro-Heavy.ttf
+fontName=Blender Pro Bold
+fontFile=blender_font/BlenderPro-Bold.ttf
 charSet=0
 fontSize=-18
 aa=1

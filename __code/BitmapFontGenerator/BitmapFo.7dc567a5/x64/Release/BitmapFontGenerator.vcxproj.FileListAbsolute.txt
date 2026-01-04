@@ -1,0 +1,2 @@
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\BitmapFontGenerator\x64\Release\raylib.dll
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\BitmapFontGenerator\BitmapFo.7dc567a5\x64\Release\BitmapFo.0B400B02.Up2Date

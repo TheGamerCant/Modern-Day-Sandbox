@@ -41,10 +41,7 @@ static void LoadCodepoints(Font& font, const char* fontPath, const int fontSize)
     //Latin
     AddCodepointRange(&font, fontPath, fontSize, 0xa1, 0xac);
     AddCodepointRange(&font, fontPath, fontSize, 0xae, 0x17f);
-    AddCodepointRange(&font, fontPath, fontSize, 0x192, 0x192);
-    AddCodepointRange(&font, fontPath, fontSize, 0x218, 0x219);
-    AddCodepointRange(&font, fontPath, fontSize, 0x2c6, 0x2c7);
-    AddCodepointRange(&font, fontPath, fontSize, 0x2d8, 0x2dd);
+    AddCodepointRange(&font, fontPath, fontSize, 0x1e60, 0x1e63);
 
     //Cyrillic
     AddCodepointRange(&font, fontPath, fontSize, 0x401, 0x40c);

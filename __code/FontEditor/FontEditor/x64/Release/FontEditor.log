@@ -6,8 +6,8 @@ C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\sr
 C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\data_types.hpp(207,28): warning C4244: 'initializing': conversion from 'Float32' to 'const SizeT', possible loss of data
   (compiling source file 'src/main.cpp')
   
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\main.cpp(201,9): warning C4244: 'argument': conversion from 'SignedInteger32' to 'const Float32', possible loss of data
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\main.cpp(490,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\main.cpp(198,9): warning C4244: 'argument': conversion from 'SignedInteger32' to 'const Float32', possible loss of data
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\FontEditor\src\main.cpp(487,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   Generating code
   2 of 970 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
