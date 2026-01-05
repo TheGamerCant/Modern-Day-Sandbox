@@ -37,7 +37,7 @@ struct FontToLoad {
     String fontFileName;
     SignedInteger32 fontSize;
     UnsignedInteger8 r, g, b, a;
-    UnsignedInteger16 outline, additionalAdvanceX;
+    SignedInteger32 outline, additionalAdvanceX;
     Vector<UnsignedInteger32> charsToLoad;
 
 	FontToLoad() : fontPath(""), fontName(""), fontFileName(""), fontSize(0), r(255), g(255), b(255), a(255), outline(0), additionalAdvanceX(0), charsToLoad() {}
@@ -270,7 +270,7 @@ int main(void) {
 
             fntFileString += "\nchar id=" + std::to_string(letter.value) + " x=" + std::to_string(letterData.x) + " y=" + std::to_string(letterData.y) +
                 " width=" + std::to_string(letterData.w) + " height=" + std::to_string(letterData.h) + " xoffset=" + std::to_string(int(letter.offsetX + fontToLoad.outline)) +
-                " yoffset=" + std::to_string(int(letter.offsetY + fontToLoad.outline)) + " xadvance=" + std::to_string(int(letter.advanceX + fontToLoad.outline + fontToLoad.additionalAdvanceX)) + " page=0  chnl=15";
+                " yoffset=" + std::to_string(int(letter.offsetY + fontToLoad.outline)) + " xadvance=" + std::to_string(int(letter.advanceX + fontToLoad.outline + fontToLoad.additionalAdvanceX)) + " page=0 chnl=15";
         }
 
         fntFile << fntFileString;
