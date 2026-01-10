@@ -297,10 +297,10 @@ int main(void) {
                 const GlyphInfo& letter = raylibFont.glyphs[glyphIndex];
                 const stbrp_rect& letterData = rects[glyphIndex];
 
-				UnsignedInteger32 xOffset = letter.offsetX + subFont.outline;
-				UnsignedInteger32 xAdvance = letter.advanceX + subFont.outline + subFont.additionalAdvanceX;
+				SignedInteger32 xOffset = letter.offsetX + subFont.outline;
+				SignedInteger32 xAdvance = letter.advanceX + subFont.outline + subFont.additionalAdvanceX;
 
-                /*
+                
                 if (font.similarGlyphs.contains(letter.value)) {
                     const UnsignedInteger32 similarGlyphValue = font.similarGlyphs.at(letter.value);
                     const UnsignedInteger32 similarGlyphIndex = letterIndexMap.at(similarGlyphValue);
@@ -308,7 +308,7 @@ int main(void) {
                     xOffset = similarGlyph.offsetX + subFont.outline;
                     xAdvance = similarGlyph.advanceX + subFont.outline + subFont.additionalAdvanceX;
 				}
-                */
+                
 
                 fntFileString += "\nchar id=" + std::to_string(letter.value) + " x=" + std::to_string(letterData.x) + " y=" + std::to_string(letterData.y) +
                     " width=" + std::to_string(letterData.w) + " height=" + std::to_string(letterData.h) + " xoffset=" + std::to_string(xOffset) +
