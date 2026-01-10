@@ -71,6 +71,7 @@ C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\gfx\fonts\blender_fo
 	161 163
 	165 165
 	171 171
+	176 176
 	187 187
 	191 246
 	248 382

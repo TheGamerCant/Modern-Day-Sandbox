@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\BitmapFontGenerator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{54E56E46-7A4C-4A8C-A8AA-9DFFEFBF00EA}|Project1.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\BitmapFontGenerator\\src\\BitmapFontGenerator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{54E56E46-7A4C-4A8C-A8AA-9DFFEFBF00EA}|Project1.vcxproj|solutionrelative:src\\BitmapFontGenerator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BitmapFontGenerator.cpp",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\BitmapFontGenerator\\src\\BitmapFontGenerator.cpp",
+              "RelativeDocumentMoniker": "src\\BitmapFontGenerator.cpp",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\BitmapFontGenerator\\src\\BitmapFontGenerator.cpp",
+              "RelativeToolTip": "src\\BitmapFontGenerator.cpp",
+              "ViewState": "AgIAAAUBAAAAAAAAAAAAABwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-08T09:44:46.019Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
