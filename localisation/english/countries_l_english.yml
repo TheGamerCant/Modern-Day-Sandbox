@@ -226,3 +226,11 @@
  PRC:0 "China"                                  
  PRC_DEF:0 "the People's Republic of China"                                  
  PRC_ADJ:0 "Chinese"
+
+ UYG:0 "East Turkestan"                                  
+ UYG_DEF:0 "the Republic of East Turkestan"                                  
+ UYG_ADJ:0 "Uyghur"
+
+ TIB:0 "Tibet"                                  
+ TIB_DEF:0 "Tibet"                                  
+ TIB_ADJ:0 "Tibetan"

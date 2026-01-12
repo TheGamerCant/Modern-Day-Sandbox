@@ -1,7 +1,7 @@
 import random
 
 for i in range(30):
-    #256 non inclusive
+    #256 is non inclusive
 
     r: int = random.randrange(0, 256)
     g: int = random.randrange(0, 256)

@@ -7529,20 +7529,293 @@
         }
     }
 }
-14637 = {
-	default = "Chengguan"
+#Known as Shigatse prior to 2014
+2014 = {
+	default = "Sangzhuzi"
 	entry = {
-        name = "Chéngguān"
+        name = "Sāngzhūzī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Samzhubzê"
+        requirements = {
+            "TAG_using_tibetan_names = yes"
+        }
+    }
+}
+14637 = {
+	default = "Chamdo"
+	entry = {
+        name = "Chāngdū"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Qamdo"
+        requirements = {
+            "TAG_using_tibetan_names = yes"
+        }
+    }
+}
+14657 = {
+	default = "Kashgar"
+	entry = {
+        name = "Kāshí"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Qeshqer"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+14662 = {
+	default = "Makit"
+	entry = {
+        name = "Màigàití"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Mekit"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+2015 = {
+	default = "Yarkand"
+	entry = {
+        name = "Shāchē"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Yarkent"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+12119 = {
+	default = "Artush"
+	entry = {
+        name = "Ātúshí"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Atush"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+14661 = {
+	default = "Hotan"
+	entry = {
+        name = "Hétián"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Xoten"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+1703 = {
+	default = "Aksu"
+	entry = {
+        name = "Ākèsū"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Aqsu"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+7949 = {
+	default = "Tumxuk"
+	entry = {
+        name = "Túmùshūkè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Tumshuq"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+4682 = {
+	default = "Aral"
+	entry = {
+        name = "Ālā'ěr"
         requirements = {
             "TAG_using_chinese_names = yes"
         }
     }
 }
-#Known as Shigatse prior to 2014
-2014 = {
-	default = "Sangzhuzi"
+14666 = {
+	default = "Ürümqi"
 	entry = {
-        name = "Samzhubzê"
+        name = "Wūlǔmùqí"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ürümchi"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+14670 = {
+	default = "Ürümqi Tianshan International Airport"
+	entry = {
+        name = "Wūlǔmùqí Tiānshān Guójìjīchǎng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ürümchi Tianshan Xelqara Ayroporti"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+14671 = {
+	default = "Changji"
+	entry = {
+        name = "Chāngjí"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Sanji"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+14673 = {
+	default = "Korla"
+	entry = {
+        name = "Kù'ěrlè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+10614 = {
+	default = "Turpan"
+	entry = {
+        name = "Tǔlǔfān"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14676 = {
+	default = "Hami"
+	entry = {
+        name = "Hāmì"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Qumul"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+1844 = {
+	default = "Karamay"
+	entry = {
+        name = "Kèlāmǎyī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Qaramay"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+1708 = {
+	default = "Tacheng"
+	entry = {
+        name = "Tǎchéng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Chöchek"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+7866 = {
+	default = "Bole"
+	entry = {
+        name = "Bólè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Börtala"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+14677 = {
+	default = "Yining"
+	entry = {
+        name = "Yīníng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ghulja"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
+4823 = {
+	default = "Altay"
+	entry = {
+        name = "Ālètài"
         requirements = {
             "TAG_using_chinese_names = yes"
         }

@@ -328,3 +328,11 @@ PRC = {
 	color = rgb { 194 21 28 }
 	color_ui = rgb { 194 21 28 }
 }
+UYG = {
+	color = rgb { 76 141 199 }
+	color_ui = rgb { 76 141 199 }
+}
+TIB = {
+	color = rgb { 78 31 138 }
+	color_ui = rgb { 78 31 138 }
+}

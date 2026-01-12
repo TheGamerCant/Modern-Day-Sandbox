@@ -226,3 +226,31 @@ TAG_using_chinese_names = {
 		is_puppet_of = PRC
 	}
 }
+
+TAG_using_uyghur_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = UYG
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = UYG
+	}
+}
+
+TAG_using_tibetan_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = TIB
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = TIB
+	}
+}

@@ -1355,6 +1355,12 @@
             "TAG_using_chinese_names = yes"
         }
     }
+	entry = {
+        name = "'Ottura Teklimakan"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
 }
 288 = {
 	default = "Burma"
@@ -1470,6 +1476,12 @@
         name = "Xīzàng"
         requirements = {
             "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Poi"
+        requirements = {
+            "TAG_using_tibetan_names = yes"
         }
     }
 }
@@ -1947,7 +1959,7 @@
 456 = {
 	default = "Upper Egypt"
 	entry = {
-        name = "Ṣaʿīd Miṣr"
+        name = "Ṣa'īd Miṣr"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -2495,7 +2507,19 @@
 	default = "Ningxia"
 }
 617 = {
-	default = "Urumqi"
+	default = "Ürümqi"
+	entry = {
+        name = "Wūlǔmùqí"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ürümchi"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
 }
 618 = {
 	default = "Western Taklamakan"
@@ -2505,9 +2529,27 @@
             "TAG_using_chinese_names = yes"
         }
     }
+	entry = {
+        name = "Rerbiy Teklimakan"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
 }
 619 = {
-	default = "Yarkand"
+	default = "Kashgar"
+	entry = {
+        name = "Kāshí"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Qeshqer"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
 }
 620 = {
 	default = "Hubei"
@@ -2980,6 +3022,12 @@
         name = "Dōng Tǎkèlāmǎgàn"
         requirements = {
             "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Sherqiy Teklimakan"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
         }
     }
 }
@@ -3568,7 +3616,7 @@
 904 = {
 	default = "Gaza Strip"
 	entry = {
-        name = "Retzo'at ʻAzzā"
+        name = "Retzo'at 'Azzā"
         requirements = {
             "TAG_using_israeli_names = yes"
         }
@@ -3589,7 +3637,7 @@
         }
     }
 	entry = {
-        name = "Haḍbatu l-Jawlān"
+        name = "Haḍbatu Al-Jawlān"
         requirements = {
             "TAG_using_arab_names = yes"
         }

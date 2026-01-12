@@ -11,7 +11,7 @@ culturesArray = (
 )
 
 ideologiesArray = (
-   "IDEOLOGY_authoritarian", "IDEOLOGY_hybrid_regime", "IDEOLOGY_democratic", "IDEOLOGY_fundamentalist"
+   "IDEOLOGY_authoritarian", "IDEOLOGY_hybrid_regime", "IDEOLOGY_democratic", "IDEOLOGY_clandestine"
 )
 
 def isValidTag(tag: str) -> bool:
