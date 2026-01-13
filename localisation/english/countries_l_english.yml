@@ -234,3 +234,11 @@
  TIB:0 "Tibet"                                  
  TIB_DEF:0 "Tibet"                                  
  TIB_ADJ:0 "Tibetan"
+
+ HKG:0 "Hong Kong"                                  
+ HKG_DEF:0 "the Hong Kong Special Administrative Region of the People's Republic of China"                                  
+ HKG_ADJ:0 "Hong Konger"
+
+ MCU:0 "Macau"                                  
+ MCU_DEF:0 "the Macao Special Administrative Region of the People's Republic of China"                                  
+ MCU_ADJ:0 "Macau"

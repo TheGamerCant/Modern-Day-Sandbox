@@ -7821,3 +7821,147 @@
         }
     }
 }
+14685 = {
+	default = "Kunming"
+	entry = {
+        name = "Kūnmíng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14686 = {
+	default = "Kunming International Airport"
+	entry = {
+        name = "Kūnmíng Chángshuǐ Guójì Jīchǎng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14690 = {
+	default = "Dali"
+	entry = {
+        name = "Dàlǐ"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14694 = {
+	default = "Gejiu"
+	entry = {
+        name = "Gèjiù"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14695 = {
+	default = "Mengzi"
+	entry = {
+        name = "Méngzì"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+4192 = {
+	default = "Xuanwei"
+	entry = {
+        name = "Xuānwēi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+12841 = {
+	default = "Zhaotong"
+	entry = {
+        name = "Zhāotōng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+10413 = {
+	default = "Jinghong"
+	entry = {
+        name = "Jǐnghóng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+12262 = {
+	default = "Puer"
+	entry = {
+        name = "Pǔ'ěr"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14696 = {
+	default = "Qujing"
+	entry = {
+        name = "Qūjìng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14697 = {
+	default = "Songming"
+	entry = {
+        name = "Sōngmíng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14680 = {
+	default = "Lijiang"
+	entry = {
+        name = "Lìjiāng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+7976 = {
+	default = "Baoshan"
+	entry = {
+        name = "Bǎoshān"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+10863 = {
+	default = "Mangshi"
+	entry = {
+        name = "Mángshì"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+10062 = {
+	default = "Hong Kong"
+	entry = {
+        name = "Xiānggǎng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+4189 = {
+	default = "Macau"
+	entry = {
+        name = "Àomén"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}

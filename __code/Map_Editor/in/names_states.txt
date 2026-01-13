@@ -1493,9 +1493,21 @@
 }
 325 = {
 	default = "Yunnan"
+	entry = {
+        name = "Yúnnán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 326 = {
 	default = "Hong Kong"
+	entry = {
+        name = "Xiānggǎng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 327 = {
 	default = "Manila"
@@ -2910,6 +2922,12 @@
 }
 729 = {
 	default = "Macau"
+	entry = {
+        name = "Àomén"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 730 = {
 	default = "St Pierre and Miquelon"
