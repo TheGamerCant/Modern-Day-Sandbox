@@ -1,20 +1,416 @@
 guiTypes = {
 	iconType = {
-		name = "multiplayer_0"
-		spriteType = "GFX_multiplayer_0"
-		position = { x = -45 y = -241 }
-		alwaystransparent = yes
+		name = "my_hoi_animation_00"
+		spriteType = "GFX_my_hoi_animation_00"
+		position = { x = 0 y = 0 }
+		alwaystransparent = no
 	}
 	iconType = {
-		name = "multiplayer_1"
-		spriteType = "GFX_multiplayer_1"
-		position = { x = 56 y = -241 }
-		alwaystransparent = yes
+		name = "my_hoi_animation_01"
+		spriteType = "GFX_my_hoi_animation_01"
+		position = { x = 9 y = 0 }
+		alwaystransparent = no
 	}
 	iconType = {
-		name = "multiplayer_2"
-		spriteType = "GFX_multiplayer_2"
-		position = { x = 157 y = -241 }
-		alwaystransparent = yes
+		name = "my_hoi_animation_02"
+		spriteType = "GFX_my_hoi_animation_02"
+		position = { x = 18 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_03"
+		spriteType = "GFX_my_hoi_animation_03"
+		position = { x = 27 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_04"
+		spriteType = "GFX_my_hoi_animation_04"
+		position = { x = 36 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_05"
+		spriteType = "GFX_my_hoi_animation_05"
+		position = { x = 45 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_06"
+		spriteType = "GFX_my_hoi_animation_06"
+		position = { x = 54 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_07"
+		spriteType = "GFX_my_hoi_animation_07"
+		position = { x = 63 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_08"
+		spriteType = "GFX_my_hoi_animation_08"
+		position = { x = 72 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_09"
+		spriteType = "GFX_my_hoi_animation_09"
+		position = { x = 81 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_10"
+		spriteType = "GFX_my_hoi_animation_10"
+		position = { x = 90 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_11"
+		spriteType = "GFX_my_hoi_animation_11"
+		position = { x = 99 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_12"
+		spriteType = "GFX_my_hoi_animation_12"
+		position = { x = 108 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_13"
+		spriteType = "GFX_my_hoi_animation_13"
+		position = { x = 117 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_14"
+		spriteType = "GFX_my_hoi_animation_14"
+		position = { x = 126 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_15"
+		spriteType = "GFX_my_hoi_animation_15"
+		position = { x = 135 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_16"
+		spriteType = "GFX_my_hoi_animation_16"
+		position = { x = 144 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_17"
+		spriteType = "GFX_my_hoi_animation_17"
+		position = { x = 153 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_18"
+		spriteType = "GFX_my_hoi_animation_18"
+		position = { x = 162 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_19"
+		spriteType = "GFX_my_hoi_animation_19"
+		position = { x = 171 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_20"
+		spriteType = "GFX_my_hoi_animation_20"
+		position = { x = 180 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_21"
+		spriteType = "GFX_my_hoi_animation_21"
+		position = { x = 189 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_22"
+		spriteType = "GFX_my_hoi_animation_22"
+		position = { x = 197 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_23"
+		spriteType = "GFX_my_hoi_animation_23"
+		position = { x = 205 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_24"
+		spriteType = "GFX_my_hoi_animation_24"
+		position = { x = 213 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_25"
+		spriteType = "GFX_my_hoi_animation_25"
+		position = { x = 221 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_26"
+		spriteType = "GFX_my_hoi_animation_26"
+		position = { x = 229 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_27"
+		spriteType = "GFX_my_hoi_animation_27"
+		position = { x = 237 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_28"
+		spriteType = "GFX_my_hoi_animation_28"
+		position = { x = 245 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_29"
+		spriteType = "GFX_my_hoi_animation_29"
+		position = { x = 253 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_30"
+		spriteType = "GFX_my_hoi_animation_30"
+		position = { x = 261 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_31"
+		spriteType = "GFX_my_hoi_animation_31"
+		position = { x = 269 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_32"
+		spriteType = "GFX_my_hoi_animation_32"
+		position = { x = 277 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_33"
+		spriteType = "GFX_my_hoi_animation_33"
+		position = { x = 285 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_34"
+		spriteType = "GFX_my_hoi_animation_34"
+		position = { x = 293 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_35"
+		spriteType = "GFX_my_hoi_animation_35"
+		position = { x = 301 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_36"
+		spriteType = "GFX_my_hoi_animation_36"
+		position = { x = 309 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_37"
+		spriteType = "GFX_my_hoi_animation_37"
+		position = { x = 317 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_38"
+		spriteType = "GFX_my_hoi_animation_38"
+		position = { x = 325 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_39"
+		spriteType = "GFX_my_hoi_animation_39"
+		position = { x = 333 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_40"
+		spriteType = "GFX_my_hoi_animation_40"
+		position = { x = 341 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_41"
+		spriteType = "GFX_my_hoi_animation_41"
+		position = { x = 349 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_42"
+		spriteType = "GFX_my_hoi_animation_42"
+		position = { x = 357 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_43"
+		spriteType = "GFX_my_hoi_animation_43"
+		position = { x = 365 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_44"
+		spriteType = "GFX_my_hoi_animation_44"
+		position = { x = 373 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_45"
+		spriteType = "GFX_my_hoi_animation_45"
+		position = { x = 381 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_46"
+		spriteType = "GFX_my_hoi_animation_46"
+		position = { x = 389 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_47"
+		spriteType = "GFX_my_hoi_animation_47"
+		position = { x = 397 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_48"
+		spriteType = "GFX_my_hoi_animation_48"
+		position = { x = 405 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_49"
+		spriteType = "GFX_my_hoi_animation_49"
+		position = { x = 413 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_50"
+		spriteType = "GFX_my_hoi_animation_50"
+		position = { x = 421 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_51"
+		spriteType = "GFX_my_hoi_animation_51"
+		position = { x = 429 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_52"
+		spriteType = "GFX_my_hoi_animation_52"
+		position = { x = 437 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_53"
+		spriteType = "GFX_my_hoi_animation_53"
+		position = { x = 445 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_54"
+		spriteType = "GFX_my_hoi_animation_54"
+		position = { x = 453 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_55"
+		spriteType = "GFX_my_hoi_animation_55"
+		position = { x = 461 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_56"
+		spriteType = "GFX_my_hoi_animation_56"
+		position = { x = 469 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_57"
+		spriteType = "GFX_my_hoi_animation_57"
+		position = { x = 477 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_58"
+		spriteType = "GFX_my_hoi_animation_58"
+		position = { x = 485 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_59"
+		spriteType = "GFX_my_hoi_animation_59"
+		position = { x = 493 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_60"
+		spriteType = "GFX_my_hoi_animation_60"
+		position = { x = 501 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_61"
+		spriteType = "GFX_my_hoi_animation_61"
+		position = { x = 509 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_62"
+		spriteType = "GFX_my_hoi_animation_62"
+		position = { x = 517 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_63"
+		spriteType = "GFX_my_hoi_animation_63"
+		position = { x = 525 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_64"
+		spriteType = "GFX_my_hoi_animation_64"
+		position = { x = 533 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_65"
+		spriteType = "GFX_my_hoi_animation_65"
+		position = { x = 541 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_66"
+		spriteType = "GFX_my_hoi_animation_66"
+		position = { x = 549 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_67"
+		spriteType = "GFX_my_hoi_animation_67"
+		position = { x = 557 y = 0 }
+		alwaystransparent = no
+	}
+	iconType = {
+		name = "my_hoi_animation_68"
+		spriteType = "GFX_my_hoi_animation_68"
+		position = { x = 565 y = 0 }
+		alwaystransparent = no
 	}
 }

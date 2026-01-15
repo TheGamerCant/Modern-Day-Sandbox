@@ -2430,6 +2430,12 @@
 }
 593 = {
 	default = "Guangdong"
+	entry = {
+        name = "Guăngdōng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 594 = {
 	default= "Jeolla"
@@ -2999,7 +3005,13 @@
 	default = "Changde"
 }
 751 = {
-	default = "Liangshan"
+	default = "Aksai Chin"
+	entry = {
+        name = "Ākèsài Qīn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 752 = {
 	default = "Ganzi"

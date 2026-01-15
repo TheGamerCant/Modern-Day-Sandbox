@@ -22,6 +22,46 @@
 
 // g++ animatedImages.cpp -O3 -static -o animatedImages.exe
 
+static void SaveToDDS(const std::string& filename, const uint8_t* data, uint32_t width, uint32_t height) {
+    struct DDSHeader {
+        uint32_t magic = 0x20534444; // "DDS "
+        uint32_t size = 124;
+        uint32_t flags = 0x0002100F; // caps | height | width | pixelfmt | linearsize
+        uint32_t height = 0;
+        uint32_t width = 0;
+        uint32_t pitchOrLinearSize = 0;
+        uint32_t depth = 0;
+        uint32_t mipMapCount = 0;
+        uint32_t reserved1[11] = {};
+
+        // Pixel Format
+        uint32_t pfSize = 32;
+        uint32_t pfFlags = 0x41;       // uncompressed RGB + alpha
+        uint32_t pfFourCC = 0;
+        uint32_t pfRGBBitCount = 32;
+        uint32_t pfRMask = 0x00FF0000;
+        uint32_t pfGMask = 0x0000FF00;
+        uint32_t pfBMask = 0x000000FF;
+        uint32_t pfAMask = 0xFF000000;
+
+        // Caps
+        uint32_t caps = 0x1000;
+        uint32_t caps2 = 0;
+        uint32_t caps3 = 0;
+        uint32_t caps4 = 0;
+        uint32_t reserved2 = 0;
+    };
+
+    DDSHeader header;
+    header.width = width;
+    header.height = height;
+    header.pitchOrLinearSize = width * 4;
+
+    std::ofstream file(filename, std::ios::binary);
+    file.write(reinterpret_cast<char*>(&header), sizeof(header));
+    file.write(reinterpret_cast<const char*>(data), width * height * 4);
+}
+
 class segmentStruct {
 public:
 	int32_t x, y, width, height;
@@ -72,7 +112,7 @@ std::vector<std::string> returnFiles(){
 }
 
 //Get the width, height and starting x and y positions of our segments
-std::vector<segmentStruct> getSliceSizeArray(int32_t videoWidth, int32_t videoHeight, int32_t segmentWidth, int32_t segmentHeight, uint16_t noOfInImages){
+std::vector<segmentStruct> getSliceSizeArray(int32_t videoWidth, int32_t videoHeight, int32_t segmentWidth, int32_t segmentHeight, uint16_t noOfInImages, const bool pngOutType){
 	//Create a local vector for return
 	std::vector<segmentStruct> localArray;
 	
@@ -84,7 +124,7 @@ std::vector<segmentStruct> getSliceSizeArray(int32_t videoWidth, int32_t videoHe
 
 	//Define a variable to determine how large our sergments are going to be
 	//Larger no. = larger and fewer segments, smaller no. = smaller and more segments
-	double constant = 8000000.0f;
+	double constant = (pngOutType) ? 12000000.0f : 2400000.0f;
 
 	//User has left their desired width undefined, we should optimise 
 	if (segmentWidth < 1) {
@@ -153,7 +193,7 @@ std::vector<segmentStruct> getSliceSizeArray(int32_t videoWidth, int32_t videoHe
 
 
 //What will the names of our files be
-void getOutDirectoryNames(std::vector<segmentStruct>& segmentsArray, const std::string& outputFilePrefix, std::string& outputFileDirectory){
+void getOutDirectoryNames(std::vector<segmentStruct>& segmentsArray, const std::string& outputFilePrefix, std::string& outputFileDirectory, const std::string& outFileType){
 	uint32_t noOfOutImages = segmentsArray.size();
 	int numDigits = std::to_string(noOfOutImages - 1).length();
 	
@@ -166,8 +206,8 @@ void getOutDirectoryNames(std::vector<segmentStruct>& segmentsArray, const std::
 		outName = outputFilePrefix + (outputFilePrefix.back() == '_' ? "" : "_") + indexStream.str();
 	
 		segmentsArray[i].fileName = outName;	
-		segmentsArray[i].fileDirectory = "out/" + outName + ".png";
-		segmentsArray[i].PDXDirectory = outputFileDirectory + (outputFileDirectory.back() == '/' ? "" : "/") + outName  + ".png";
+		segmentsArray[i].fileDirectory = "out/" + outName + "." + outFileType;
+		segmentsArray[i].PDXDirectory = outputFileDirectory + (outputFileDirectory.back() == '/' ? "" : "/") + outName  + "." + outFileType;
 	}
 }
 
@@ -263,7 +303,7 @@ void pasteImage(unsigned char* dest, const int32_t destWidth, const int32_t dest
 }
 
 //Go over a vector of images
-void processImages(std::vector<segmentStruct>& segmentsArray, const std::vector<std::string>& inputFilesArray, const int32_t videoWidth, const int32_t videoHeight) {
+void processImages(std::vector<segmentStruct>& segmentsArray, const std::vector<std::string>& inputFilesArray, const int32_t videoWidth, const int32_t videoHeight, const bool pngOutType) {
 	for (auto& segment : segmentsArray) {
 		//Get the dimensions of the out image
 		int32_t outWidth = segment.width * inputFilesArray.size();
@@ -299,13 +339,19 @@ void processImages(std::vector<segmentStruct>& segmentsArray, const std::vector<
 		
 			delete[] croppedImage;
 		}
-	
-		stbi_write_png(segment.fileDirectory.c_str(), outWidth, outHeight, 4, currentOutImage, outWidth * 4);
+		if (pngOutType) {
+			stbi_write_png(segment.fileDirectory.c_str(), outWidth, outHeight, 4, currentOutImage, outWidth * 4);
+		}
+		else {
+			SaveToDDS(
+				segment.fileDirectory, currentOutImage, outWidth, outHeight
+			);
+		}
 		delete[] currentOutImage;
 	}
 }
 
-void divideVectorAndMultiThread(const std::vector<segmentStruct>& segmentsArray, const std::vector<std::string>& inputFilesArray, const int32_t coresToUse, const int32_t videoWidth, const int32_t videoHeight, bool debug) {
+void divideVectorAndMultiThread(const std::vector<segmentStruct>& segmentsArray, const std::vector<std::string>& inputFilesArray, const int32_t coresToUse, const int32_t videoWidth, const int32_t videoHeight, bool debug, bool pngOutType) {
     uint32_t baseSize = segmentsArray.size() / coresToUse;
     uint32_t remainder = segmentsArray.size() % coresToUse;
 
@@ -352,7 +398,7 @@ void divideVectorAndMultiThread(const std::vector<segmentStruct>& segmentsArray,
 	std::vector<std::thread> threads;
 	
 	for (size_t i = 0; i < segmentsArray2D.size(); ++i) { 
-		threads.emplace_back(processImages, std::ref(segmentsArray2D[i]), std::cref(inputFilesArray), videoWidth, videoHeight);
+		threads.emplace_back(processImages, std::ref(segmentsArray2D[i]), std::cref(inputFilesArray), videoWidth, videoHeight, pngOutType);
 	}
 	
 	for (auto& thread : threads) { thread.join(); }
@@ -389,11 +435,12 @@ int main(int argc, char* argv[]) {
 		std::string outputFileDirectory = argv[7];
 		int32_t startingGuiXPos = std::stoi(argv[8]);
 		int32_t startingGuiYPos = std::stoi(argv[9]);
-		bool looping = std::stoi(argv[10]);
-		bool alwaysTransparent = std::stoi(argv[11]);
-		bool transparencyCheck = std::stoi(argv[12]);
-		bool debug = std::stoi(argv[13]);
-		int32_t coresToUse = std::stoi(argv[14]);
+		bool pngOutType = std::stoi(argv[10]);
+		bool looping = std::stoi(argv[11]);
+		bool alwaysTransparent = std::stoi(argv[12]);
+		bool transparencyCheck = std::stoi(argv[13]);
+		bool debug = std::stoi(argv[14]);
+		int32_t coresToUse = std::stoi(argv[15]);
 		
 		
 		
@@ -406,6 +453,7 @@ int main(int argc, char* argv[]) {
 //		std::string outputFileDirectory = "gfx/interface/animated";
 //		int32_t startingGuiXPos = 0;
 //		int32_t startingGuiYPos = 0;
+//		bool pngOutType = true;
 //		bool looping = false;
 //		bool alwaysTransparent = false;
 //		bool transparencyCheck = false;
@@ -413,15 +461,16 @@ int main(int argc, char* argv[]) {
 //		int32_t coresToUse = 3;
 		
 		const uint16_t noOfInImages = inputFilesArray.size();
+		std::string outFileType = (pngOutType) ? "png" : "dds";
 		
 		if (videoHeight < 1) {
 			std::cout << "Error: Height cannot be less than 1.";
 			throw std::runtime_error("");
 		}
 
-		std::vector<segmentStruct> segmentsArray = getSliceSizeArray(videoWidth, videoHeight, segmentWidth, segmentHeight, noOfInImages);
+		std::vector<segmentStruct> segmentsArray = getSliceSizeArray(videoWidth, videoHeight, segmentWidth, segmentHeight, noOfInImages, pngOutType);
 
-		getOutDirectoryNames(segmentsArray, outputFilePrefix, outputFileDirectory);
+		getOutDirectoryNames(segmentsArray, outputFilePrefix, outputFileDirectory, outFileType);
 
 		//Create the .gfx and .gui files
 		std::thread threadGFX(createGFXFile, std::ref(segmentsArray), noOfInImages, framesPerSecond, looping, transparencyCheck);
@@ -434,7 +483,7 @@ int main(int argc, char* argv[]) {
 			printf("There are a total of %d output files:\n", segmentsArray.size());
 		}
 	
-		divideVectorAndMultiThread(segmentsArray, inputFilesArray, coresToUse, videoWidth, videoHeight, debug);
+		divideVectorAndMultiThread(segmentsArray, inputFilesArray, coresToUse, videoWidth, videoHeight, debug, pngOutType);
 		
 		printf("\nAnimation successful.\n\n");
 	}

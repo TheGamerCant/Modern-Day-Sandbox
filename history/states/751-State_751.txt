@@ -1,14 +1,16 @@
 state={
 	id=751
 	name="STATE_751"
-	history={
-		owner = ZZZ
+	history = {
+		owner = PRC
+		add_core_of = PRC
+		add_claim_by = UYG
 	}
 	provinces={
-		1999 2067 7294 10726 10841 12141 12819 
+		5042 14698 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=4238
+	buildings_max_level_factor=1
 	state_category=pastoral
+	local_supplies=0.5
 }

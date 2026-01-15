@@ -4,11 +4,17 @@ state={
 	history={
 		owner = PRC
 		add_core_of = PRC
+		
+		victory_points = { 14700 20 }
+		victory_points = { 14702 7 }
+		victory_points = { 1038 3 }
+		victory_points = { 11963 2 }
+		victory_points = { 1070 2 }
 	}
 	provinces={
-		994 1038 1070 11963 11990 
+		994 1038 1070 11963 11990 14699 14700 14701 14702 14703 
 	}
-	manpower= 100000
+	manpower= 8671485
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=town

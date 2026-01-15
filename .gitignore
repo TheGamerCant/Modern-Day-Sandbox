@@ -1,2 +1,5 @@
 *.ipch
 __code/Map_Editor/out/
+__code/animated_images/in/
+__code/animated_images/out/
+ColdWar1980.zip

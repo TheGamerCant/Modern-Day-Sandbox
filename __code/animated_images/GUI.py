@@ -1,6 +1,7 @@
 from PIL import Image
 import os
 import tkinter as tk
+from tkinter import ttk
 import subprocess
 
 class ToolTip:
@@ -41,14 +42,15 @@ def main():
         var07 = OutputFileDirectory.get()
         var08 = StartingXPos.get()
         var09 = StartingYPos.get()
-        var10 = str(loopingVar.get())
-        var11 = str(alwaysTransparentVar.get())
-        var12 = str(transparencyCheckVar.get())
-        var13 = str(debugVar.get())
-        var14 = str(coresSlider.get())
+        var10 = "1" if fileTypeVar.get() == "png" else "0"
+        var11 = str(loopingVar.get())
+        var12 = str(alwaysTransparentVar.get())
+        var13 = str(transparencyCheckVar.get())
+        var14 = str(debugVar.get())
+        var15 = str(coresSlider.get())
         
         try:
-            result = subprocess.run(["./animatedImages", var01, var02, var03, var04, var05, var06, var07, var08, var09, var10, var11, var12, var13, var14], capture_output=True, text=True, creationflags=subprocess.CREATE_NO_WINDOW)
+            result = subprocess.run(["./animatedImages", var01, var02, var03, var04, var05, var06, var07, var08, var09, var10, var11, var12, var13, var14, var15], capture_output=True, text=True, creationflags=subprocess.CREATE_NO_WINDOW)
             print(result.stdout)
         except Exception as e:
             print(f"Error: {e}")
@@ -115,6 +117,16 @@ def main():
     StartingYPos.pack()
     StartingYPos.insert(0, "0")
 
+    fileTypes = ["png", "dds"]  
+    fileTypeVar = tk.StringVar()
+    fileTypeLabel = tk.Label(root, text="Enter the file type to save to:")
+    fileTypeLabel.pack()
+    fileTypeDropdownBox = ttk.Combobox(root, textvariable=fileTypeVar)
+    fileTypeDropdownBox['values'] = fileTypes
+    fileTypeDropdownBox.current(1)  #dds
+    fileTypeDropdownBox.pack()
+    ToolTip(fileTypeDropdownBox, "What file format should we save to?")
+
     loopingVar = tk.IntVar(value = 0) 
     loopingCheckBox = tk.Checkbutton(root, text = "looping", variable = loopingVar, onvalue = 1, offvalue = 0, height = 2, width = 20) 
     loopingCheckBox.pack()
@@ -138,7 +150,7 @@ def main():
     coresSlider = tk.Scale(root, from_=1, to=os.cpu_count(), orient=tk.HORIZONTAL, length=180)
     coresSlider.pack()
     coresSlider.set(int(os.cpu_count() / 3 * 2))
-    ToolTip(coresSlider, "How many cores are we to use for multiprocessing?\n\nMore cores means the program will finish faster, however too\nmany will cause your computer to lag significantly.")
+    ToolTip(coresSlider, "How many cores should we use for multiprocessing?\n\nMore cores means the program will finish faster, however too\nmany will cause your computer to lag significantly.")
 
     
     run_button = tk.Button(root, text="Run Program", command=run_cpp_program)

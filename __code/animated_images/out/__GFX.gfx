@@ -1,31 +1,691 @@
 spriteTypes = {
 	FrameAnimatedSpriteType = {
-		name = "GFX_multiplayer_0"
-		textureFile = "gfx/interface/main_menu/animated/multiplayer_0.png"
-		noOfFrames = 146
-		animation_rate_fps = 24
+		name = "GFX_my_hoi_animation_00"
+		textureFile = "gfx/interface/animated/my_hoi_animation_00.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
 		alwaysTransparent = no
-		looping = yes
+		looping = no
 		play_on_show = yes
 		pause_on_loop = 0.0
 	}
 	FrameAnimatedSpriteType = {
-		name = "GFX_multiplayer_1"
-		textureFile = "gfx/interface/main_menu/animated/multiplayer_1.png"
-		noOfFrames = 146
-		animation_rate_fps = 24
+		name = "GFX_my_hoi_animation_01"
+		textureFile = "gfx/interface/animated/my_hoi_animation_01.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
 		alwaysTransparent = no
-		looping = yes
+		looping = no
 		play_on_show = yes
 		pause_on_loop = 0.0
 	}
 	FrameAnimatedSpriteType = {
-		name = "GFX_multiplayer_2"
-		textureFile = "gfx/interface/main_menu/animated/multiplayer_2.png"
-		noOfFrames = 146
-		animation_rate_fps = 24
+		name = "GFX_my_hoi_animation_02"
+		textureFile = "gfx/interface/animated/my_hoi_animation_02.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
 		alwaysTransparent = no
-		looping = yes
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_03"
+		textureFile = "gfx/interface/animated/my_hoi_animation_03.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_04"
+		textureFile = "gfx/interface/animated/my_hoi_animation_04.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_05"
+		textureFile = "gfx/interface/animated/my_hoi_animation_05.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_06"
+		textureFile = "gfx/interface/animated/my_hoi_animation_06.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_07"
+		textureFile = "gfx/interface/animated/my_hoi_animation_07.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_08"
+		textureFile = "gfx/interface/animated/my_hoi_animation_08.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_09"
+		textureFile = "gfx/interface/animated/my_hoi_animation_09.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_10"
+		textureFile = "gfx/interface/animated/my_hoi_animation_10.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_11"
+		textureFile = "gfx/interface/animated/my_hoi_animation_11.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_12"
+		textureFile = "gfx/interface/animated/my_hoi_animation_12.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_13"
+		textureFile = "gfx/interface/animated/my_hoi_animation_13.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_14"
+		textureFile = "gfx/interface/animated/my_hoi_animation_14.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_15"
+		textureFile = "gfx/interface/animated/my_hoi_animation_15.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_16"
+		textureFile = "gfx/interface/animated/my_hoi_animation_16.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_17"
+		textureFile = "gfx/interface/animated/my_hoi_animation_17.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_18"
+		textureFile = "gfx/interface/animated/my_hoi_animation_18.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_19"
+		textureFile = "gfx/interface/animated/my_hoi_animation_19.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_20"
+		textureFile = "gfx/interface/animated/my_hoi_animation_20.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_21"
+		textureFile = "gfx/interface/animated/my_hoi_animation_21.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_22"
+		textureFile = "gfx/interface/animated/my_hoi_animation_22.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_23"
+		textureFile = "gfx/interface/animated/my_hoi_animation_23.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_24"
+		textureFile = "gfx/interface/animated/my_hoi_animation_24.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_25"
+		textureFile = "gfx/interface/animated/my_hoi_animation_25.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_26"
+		textureFile = "gfx/interface/animated/my_hoi_animation_26.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_27"
+		textureFile = "gfx/interface/animated/my_hoi_animation_27.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_28"
+		textureFile = "gfx/interface/animated/my_hoi_animation_28.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_29"
+		textureFile = "gfx/interface/animated/my_hoi_animation_29.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_30"
+		textureFile = "gfx/interface/animated/my_hoi_animation_30.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_31"
+		textureFile = "gfx/interface/animated/my_hoi_animation_31.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_32"
+		textureFile = "gfx/interface/animated/my_hoi_animation_32.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_33"
+		textureFile = "gfx/interface/animated/my_hoi_animation_33.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_34"
+		textureFile = "gfx/interface/animated/my_hoi_animation_34.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_35"
+		textureFile = "gfx/interface/animated/my_hoi_animation_35.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_36"
+		textureFile = "gfx/interface/animated/my_hoi_animation_36.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_37"
+		textureFile = "gfx/interface/animated/my_hoi_animation_37.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_38"
+		textureFile = "gfx/interface/animated/my_hoi_animation_38.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_39"
+		textureFile = "gfx/interface/animated/my_hoi_animation_39.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_40"
+		textureFile = "gfx/interface/animated/my_hoi_animation_40.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_41"
+		textureFile = "gfx/interface/animated/my_hoi_animation_41.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_42"
+		textureFile = "gfx/interface/animated/my_hoi_animation_42.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_43"
+		textureFile = "gfx/interface/animated/my_hoi_animation_43.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_44"
+		textureFile = "gfx/interface/animated/my_hoi_animation_44.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_45"
+		textureFile = "gfx/interface/animated/my_hoi_animation_45.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_46"
+		textureFile = "gfx/interface/animated/my_hoi_animation_46.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_47"
+		textureFile = "gfx/interface/animated/my_hoi_animation_47.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_48"
+		textureFile = "gfx/interface/animated/my_hoi_animation_48.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_49"
+		textureFile = "gfx/interface/animated/my_hoi_animation_49.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_50"
+		textureFile = "gfx/interface/animated/my_hoi_animation_50.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_51"
+		textureFile = "gfx/interface/animated/my_hoi_animation_51.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_52"
+		textureFile = "gfx/interface/animated/my_hoi_animation_52.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_53"
+		textureFile = "gfx/interface/animated/my_hoi_animation_53.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_54"
+		textureFile = "gfx/interface/animated/my_hoi_animation_54.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_55"
+		textureFile = "gfx/interface/animated/my_hoi_animation_55.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_56"
+		textureFile = "gfx/interface/animated/my_hoi_animation_56.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_57"
+		textureFile = "gfx/interface/animated/my_hoi_animation_57.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_58"
+		textureFile = "gfx/interface/animated/my_hoi_animation_58.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_59"
+		textureFile = "gfx/interface/animated/my_hoi_animation_59.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_60"
+		textureFile = "gfx/interface/animated/my_hoi_animation_60.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_61"
+		textureFile = "gfx/interface/animated/my_hoi_animation_61.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_62"
+		textureFile = "gfx/interface/animated/my_hoi_animation_62.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_63"
+		textureFile = "gfx/interface/animated/my_hoi_animation_63.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_64"
+		textureFile = "gfx/interface/animated/my_hoi_animation_64.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_65"
+		textureFile = "gfx/interface/animated/my_hoi_animation_65.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_66"
+		textureFile = "gfx/interface/animated/my_hoi_animation_66.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_67"
+		textureFile = "gfx/interface/animated/my_hoi_animation_67.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+	FrameAnimatedSpriteType = {
+		name = "GFX_my_hoi_animation_68"
+		textureFile = "gfx/interface/animated/my_hoi_animation_68.dds"
+		noOfFrames = 718
+		animation_rate_fps = 30.0
+		alwaysTransparent = no
+		looping = no
 		play_on_show = yes
 		pause_on_loop = 0.0
 	}
