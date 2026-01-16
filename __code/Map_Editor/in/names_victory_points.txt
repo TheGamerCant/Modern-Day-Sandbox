@@ -8208,3 +8208,111 @@
         }
     }
 }
+7137 = {
+	default = "Nanning"
+	entry = {
+        name = "Nánníng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14725 = {
+	default = "Liuzhou"
+	entry = {
+        name = "Liŭzhōu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14728 = {
+	default = "Guilin"
+	entry = {
+        name = "Guìlín"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14723 = {
+	default = "Guigang"
+	entry = {
+        name = "Guìgăng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1018 = {
+	default = "Qinzhou"
+	entry = {
+        name = "Qīnzhōu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+11983 = {
+	default = "Yulin"
+	entry = {
+        name = "Yùlín"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+7210 = {
+	default = "Wuzhou"
+	entry = {
+        name = "Wúzhōu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1597 = {
+	default = "Laibin"
+	entry = {
+        name = "Láibīn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+4077 = {
+	default = "Baise"
+	entry = {
+        name = "Bǎisè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+10431 = {
+	default = "Hechi"
+	entry = {
+        name = "Héchí"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+10004 = {
+	default = "Fangchenggang"
+	entry = {
+        name = "Fángchénggǎng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1625 = {
+	default = "Longlin"
+	entry = {
+        name = "Lónglín"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
