@@ -8565,3 +8565,48 @@
         }
     }
 }
+14779 = {
+	default = "Zhongwei"
+	entry = {
+        name = "Zhōngwèi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14777 = {
+	default = "Yinchuan"
+	entry = {
+        name = "Yínchuān"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+8081 = {
+	default = "Wuzhong"
+	entry = {
+        name = "Wúzhōng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+5025 = {
+	default = "Guyuan"
+	entry = {
+        name = "Gùyuán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1985 = {
+	default = "Haiyuan"
+	entry = {
+        name = "Hǎiyuán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}

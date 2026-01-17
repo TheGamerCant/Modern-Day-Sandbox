@@ -2547,6 +2547,12 @@
 }
 616 = {
 	default = "Ningxia"
+	entry = {
+        name = "Níngxià"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 617 = {
 	default = "Ürümqi"
