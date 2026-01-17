@@ -1337,6 +1337,12 @@
 }
 283 = {
 	default = "Gansu"
+	entry = {
+        name = "Gānsù"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 284 = {
 	default = "North Island"
@@ -2493,6 +2499,12 @@
 }
 604 = {
 	default = "Qinghai"
+	entry = {
+        name = "Qīnghăi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 605 = {
 	default = "Sichuan"
@@ -3026,10 +3038,22 @@
 	default = "Gannan"
 }
 754 = {
-	default = "Golog"
+	default = "Peongan"
+	entry = {
+        name = "P'yŏngan"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
 }
 755 = {
-	default = "Haixi"
+	default = "Hamgyong"
+	entry = {
+        name = "Hamgyŏng"
+        requirements = {
+            "TAG_using_mr_korean_names = yes"
+        }
+    }
 }
 756 = {
 	default = "Jiuquan"
@@ -3676,24 +3700,6 @@
         name = "Haḍbatu Al-Jawlān"
         requirements = {
             "TAG_using_arab_names = yes"
-        }
-    }
-}
-906 = {
-	default = "Peongan"
-	entry = {
-        name = "P'yŏngan"
-        requirements = {
-            "TAG_using_mr_korean_names = yes"
-        }
-    }
-}
-907 = {
-	default = "Hamgyong"
-	entry = {
-        name = "Hamgyŏng"
-        requirements = {
-            "TAG_using_mr_korean_names = yes"
         }
     }
 }

@@ -1,14 +1,29 @@
 state={
 	id=754
 	name="STATE_754"
-	history={
-		owner = ZZZ
+	history = {
+		owner = DPK
+		add_core_of = DPK
+		add_claim_by = ROK
+		
+		victory_points = { 14604 25 }
+		victory_points = { 14605 1 }
+		victory_points = { 4052 4 }
+		victory_points = { 9790 3 }
+		victory_points = { 11835 4 }
+		victory_points = { 11828 4 }
+		victory_points = { 3912 2 }
+		
+		buildings = {
+			infrastructure = 2
+			air_base = 4
+		}
 	}
 	provinces={
-		1882 4536 4888 7270 10490 10817 11448 12732 12815 
+		912 978 3912 4052 6963 7171 9790 9795 9918 10065 11770 11775 11828 11835 11896 14604 14605 14606 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=rural
+	manpower=11079654
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
 }

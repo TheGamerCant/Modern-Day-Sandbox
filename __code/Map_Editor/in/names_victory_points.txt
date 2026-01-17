@@ -8316,3 +8316,207 @@
         }
     }
 }
+14749 = {
+	default = "Xining"
+	entry = {
+        name = "Xīníng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Zi-ling"
+        requirements = {
+            "TAG_using_tibetan_names = yes"
+        }
+    }
+}
+12815 = {
+	default = "Maqin"
+	entry = {
+        name = "Mǎqìn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Maqên"
+        requirements = {
+            "TAG_using_tibetan_names = yes"
+        }
+    }
+}
+14739 = {
+	default = "Delingha"
+	entry = {
+        name = "Délìnghā"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Dêrlinka"
+        requirements = {
+            "TAG_using_tibetan_names = yes"
+        }
+    }
+}
+4964 = {
+	default = "Yushu"
+	entry = {
+        name = "Yùshù"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Yüshu"
+        requirements = {
+            "TAG_using_tibetan_names = yes"
+        }
+    }
+}
+10834 = {
+	default = "Golmud"
+	entry = {
+        name = "Gé'ěrmù"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14762 = {
+	default = "Lanzhou"
+	entry = {
+        name = "Lánzhōu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1933 = {
+	default = "Tianshui"
+	entry = {
+        name = "Tiānshuǐshì"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+556 = {
+	default = "Dingxi"
+	entry = {
+        name = "Dìngxī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1630 = {
+	default = "Baiyin"
+	entry = {
+        name = "Báiyín"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+2028 = {
+	default = "Jiuquan"
+	entry = {
+        name = "Jiǔquán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14759 = {
+	default = "Jiayuguan"
+	entry = {
+        name = "Jiāyùguān"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+5100 = {
+	default = "Zhangye"
+	entry = {
+        name = "Zhāngyè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+7971 = {
+	default = "Yumen"
+	entry = {
+        name = "Yùmén"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+12820 = {
+	default = "Dunhuang"
+	entry = {
+        name = "Dūnhuáng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+531 = {
+	default = "Longnan"
+	entry = {
+        name = "Lǒngnán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+12797 = {
+	default = "Wushan"
+	entry = {
+        name = "Wǔshān"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1647 = {
+	default = "Pingliang"
+	entry = {
+        name = "Píngliàng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+517 = {
+	default = "Qingyang"
+	entry = {
+        name = "Qìngyáng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+12776 = {
+	default = "Wuwei"
+	entry = {
+        name = "Wǔwēi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+12327 = {
+	default = "Jinchang"
+	entry = {
+        name = "Jīnchāng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
