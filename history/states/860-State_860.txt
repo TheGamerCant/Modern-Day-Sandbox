@@ -2,30 +2,16 @@ state={
 	id=860
 	name="STATE_860"
 	history={
-		owner = USA
-		add_core_of = USA
+		owner = PRC
+		add_core_of = PRC
 		
-		victory_points = { 13467 20 }
-		victory_points = { 14482 10 }
-		victory_points = { 4955 3 }
-		victory_points = { 1998 4 }
-		victory_points = { 2019 1 }
-		victory_points = { 6785 5 }
-		victory_points = { 14476 3 }
-		
-		resize_array = { array = culture_index_array size = 2 value = 0 }
-		resize_array = { array = culture_value_array size = 2 value = 0 }
-		
-		set_variable = { culture_index_array^0 = 14 }
-		set_variable = { culture_value_array^0 = 98.4 }
-
-		set_variable = { culture_index_array^1 = 0 }
-		set_variable = { culture_value_array^1 = 1.6 }
+		victory_points = { 14766 75 }
+		victory_points = { 10068 12 }
 	}
 	provinces={
-		1927 1954 1998 2019 2042 4884 4955 5038 5061 6785 6798 6987 8064 10740 10894 12369 12728 12782 13464 13467 13468 13469 13470 14476 14477 14478 14479 14480 14482 
+		4137 10068 12043 14766 14767 14768 14769 14770 
 	}
-	manpower=6043668
+	manpower=12938693
 	buildings_max_level_factor=1.000
 	state_category=rural
 	local_supplies=0.500

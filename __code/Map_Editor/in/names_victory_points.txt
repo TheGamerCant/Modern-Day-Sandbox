@@ -8520,3 +8520,48 @@
         }
     }
 }
+14766 = {
+	default = "Tianjin"
+	entry = {
+        name = "Tiānjīn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+10068 = {
+	default = "Binhai"
+	entry = {
+        name = "Bīnhǎi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14771 = {
+	default = "Bejing"
+	entry = {
+        name = "Běijīng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+9843 = {
+	default = "Beijing Capital International Airport"
+	entry = {
+        name = "Běijīng Shǒudū Guójì Jīchǎng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+11761 = {
+	default = "Langfang"
+	entry = {
+        name = "Lángfáng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}

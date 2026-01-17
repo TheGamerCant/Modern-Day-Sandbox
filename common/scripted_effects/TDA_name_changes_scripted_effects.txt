@@ -4243,7 +4243,7 @@ TDA_update_state_373_names = {
 TDA_update_state_374_names = {
 }
 
-#North Texas
+#Texas
 TDA_update_state_375_names = {
 }
 
@@ -6667,8 +6667,45 @@ TDA_update_state_606_names = {
 TDA_update_state_607_names = {
 }
 
-#Beijing
+#Bejing
 TDA_update_state_608_names = {
+	608 = {
+		#Běijīng
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_608_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Běijīng Shǒudū Guójì Jīchǎng
+	if = {
+		limit = { any_country = { controls_province = 9843 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 9843 name = VICTORY_POINTS_9843_0 }
+	}
+	#Beijing Capital International Airport
+	else = {
+		reset_province_name = 9843
+	}
+	#Lángfáng
+	if = {
+		limit = { any_country = { controls_province = 11761 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 11761 name = VICTORY_POINTS_11761_0 }
+	}
+	#Langfang
+	else = {
+		reset_province_name = 11761
+	}
+	#Běijīng
+	if = {
+		limit = { any_country = { controls_province = 14771 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14771 name = VICTORY_POINTS_14771_0 }
+	}
+	#Bejing
+	else = {
+		reset_province_name = 14771
+	}
 }
 
 #East Hebei
@@ -8797,8 +8834,36 @@ TDA_update_state_858_names = {
 TDA_update_state_859_names = {
 }
 
-#Rio Grande
+#Tianjin
 TDA_update_state_860_names = {
+	860 = {
+		#Tiānjīn
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_860_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Bīnhǎi
+	if = {
+		limit = { any_country = { controls_province = 10068 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 10068 name = VICTORY_POINTS_10068_0 }
+	}
+	#Binhai
+	else = {
+		reset_province_name = 10068
+	}
+	#Tiānjīn
+	if = {
+		limit = { any_country = { controls_province = 14766 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14766 name = VICTORY_POINTS_14766_0 }
+	}
+	#Tianjin
+	else = {
+		reset_province_name = 14766
+	}
 }
 
 #Prince Edward Island

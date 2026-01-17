@@ -4135,7 +4135,7 @@
 4134;47;132;33;land;false;plains;6
 4135;47;132;78;land;true;dense_urban;1
 4136;47;132;183;land;true;mountain;5
-4137;47;135;43;land;true;plains;6
+4137;47;135;43;land;false;plains;6
 4138;47;135;98;land;false;desert;5
 4139;47;135;148;land;false;plains;5
 4140;47;138;8;land;false;hills;6
@@ -9841,7 +9841,7 @@
 9840;130;99;174;land;false;mountain;1
 9841;130;102;89;land;false;hills;6
 9842;130;102;139;land;false;mountain;1
-9843;130;102;194;land;false;urban;6
+9843;130;102;194;land;false;dense_urban;6
 9844;130;105;54;land;false;hills;7
 9845;130;105;159;land;true;plains;1
 9846;130;105;204;land;false;plains;1
@@ -10066,7 +10066,7 @@
 10065;131;141;44;land;false;sub_urban;6
 10066;131;141;99;land;false;plains;6
 10067;131;141;149;land;false;desert;5
-10068;131;144;9;land;true;urban;6
+10068;131;144;9;land;true;dense_urban;6
 10069;131;144;64;land;true;hills;6
 10070;131;144;214;land;true;plains;5
 10071;131;147;29;land;false;jungle;5
@@ -11759,7 +11759,7 @@
 11758;172;24;197;land;false;forest;2
 11759;172;27;12;land;false;plains;7
 11760;172;27;162;land;false;plains;2
-11761;172;27;217;land;false;plains;6
+11761;172;27;217;land;false;dense_urban;6
 11762;172;30;77;land;false;hills;1
 11763;172;30;227;land;false;mountain;2
 11764;172;33;147;land;true;hills;6
@@ -11820,7 +11820,7 @@
 11819;172;102;47;land;false;hills;1
 11820;172;102;152;land;false;plains;1
 11821;172;105;12;land;false;mountain;1
-11822;172;105;67;land;false;forest;6
+11822;172;105;67;land;true;plains;6
 11823;172;105;217;land;false;mountain;6
 11824;172;108;32;land;true;hills;1
 11825;172;108;77;land;false;plains;1
@@ -12041,7 +12041,7 @@
 12040;173;144;172;land;true;plains;6
 12041;173;144;227;land;false;desert;6
 12042;173;147;87;land;false;mountain;5
-12043;173;147;137;land;true;plains;6
+12043;173;147;137;land;false;forest;6
 12044;173;147;192;land;false;dense_urban;5
 12045;173;150;52;land;false;hills;6
 12046;173;150;157;land;false;plains;7
@@ -14764,3 +14764,13 @@
 14763;72;111;46;land;false;dense_urban;6
 14764;134;67;218;land;false;dense_urban;6
 14765;105;243;24;land;false;mountain;6
+14766;230;132;185;land;false;dense_urban;6
+14767;229;182;105;land;false;dense_urban;6
+14768;175;151;210;land;false;dense_urban;6
+14769;51;129;171;land;true;urban;6
+14770;226;20;110;land;true;sub_urban;6
+14771;19;219;213;land;false;dense_urban;6
+14772;158;178;215;land;false;dense_urban;6
+14773;35;188;33;land;false;dense_urban;6
+14774;197;89;248;land;false;dense_urban;6
+14775;70;65;120;land;false;dense_urban;6c

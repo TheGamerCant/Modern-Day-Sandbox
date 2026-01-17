@@ -1660,7 +1660,7 @@
 	default = "Oklahoma"
 }
 375 = {
-	default = "North Texas"
+	default = "Texas"
 }
 376 = {
 	default = "New Mexico"
@@ -2516,7 +2516,13 @@
 	default = "Henan"
 }
 608 = {
-	default = "Beijing"
+	default = "Bejing"
+	entry = {
+        name = "Běijīng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 609 = {
 	default = "East Hebei"
@@ -3542,7 +3548,13 @@
 	default = "Dammam"
 }
 860 = {
-	default = "Rio Grande"
+	default = "Tianjin"
+	entry = {
+        name = "Tiānjīn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 861 = {
 	default = "Prince Edward Island"
