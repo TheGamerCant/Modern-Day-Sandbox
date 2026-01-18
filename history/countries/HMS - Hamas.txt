@@ -1,4 +1,4 @@
-capital = 904
+capital = 752
 
 set_popularities = {
 	IDEOLOGY_authoritarian = 100

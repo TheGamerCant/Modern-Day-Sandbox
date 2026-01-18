@@ -1,11 +1,15 @@
 state={
 	id=753
 	name="STATE_753"
-	provinces={
-		1257 2045 4375 5193 9966 10787 10903 
+	history={
+		owner = ISR
+		add_core_of = ISR
 	}
-	manpower=100000
-	buildings_max_level_factor=1
-	state_category=rural
-	local_supplies=0.5
+	provinces={
+		14187 
+	}
+	manpower= 48000
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=pastoral
 }

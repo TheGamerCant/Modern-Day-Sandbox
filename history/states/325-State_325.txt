@@ -5,7 +5,7 @@ state={
 		owner = PRC
 		add_core_of = PRC
 		
-		victory_points = { 14685 35 }
+		victory_points = { 14685 45 }
 		victory_points = { 14686 2 }
 		victory_points = { 14690 9 }
 		victory_points = { 14694 4 }

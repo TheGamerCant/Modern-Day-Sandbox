@@ -2496,6 +2496,12 @@
 }
 603 = {
 	default = "Guizhou"
+	entry = {
+        name = "Guìzhōu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 604 = {
 	default = "Qinghai"
@@ -2508,6 +2514,12 @@
 }
 605 = {
 	default = "Sichuan"
+	entry = {
+        name = "Sìchuān"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 606 = {
 	default = "Anhui"
@@ -3026,7 +3038,13 @@
     }
 }
 748 = {
-	default = "Zunyi"
+	default = "Chongqing"
+	entry = {
+        name = "Chóngqìng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 749 = {
 	default = "Huangshan"
@@ -3044,10 +3062,34 @@
     }
 }
 752 = {
-	default = "Ganzi"
+	default = "Gaza Strip"
+	entry = {
+        name = "Retzo'at 'Azzā"
+        requirements = {
+            "TAG_using_israeli_names = yes"
+        }
+    }
+	entry = {
+        name = "Qiṭā' Ghazzah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 753 = {
-	default = "Gannan"
+	default = "Golan Heights"
+	entry = {
+        name = "Ramat HaGolan"
+        requirements = {
+            "TAG_using_israeli_names = yes"
+        }
+    }
+	entry = {
+        name = "Haḍbatu Al-Jawlān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 754 = {
 	default = "Peongan"
@@ -3690,34 +3732,4 @@
 }
 903 = {
 	default = "Garissa"
-}
-904 = {
-	default = "Gaza Strip"
-	entry = {
-        name = "Retzo'at 'Azzā"
-        requirements = {
-            "TAG_using_israeli_names = yes"
-        }
-    }
-	entry = {
-        name = "Qiṭā' Ghazzah"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
-}
-905 = {
-	default = "Golan Heights"
-	entry = {
-        name = "Ramat HaGolan"
-        requirements = {
-            "TAG_using_israeli_names = yes"
-        }
-    }
-	entry = {
-        name = "Haḍbatu Al-Jawlān"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
 }
