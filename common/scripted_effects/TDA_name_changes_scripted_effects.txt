@@ -6570,6 +6570,151 @@ TDA_update_state_601_names = {
 
 #Hunan
 TDA_update_state_602_names = {
+	602 = {
+		#Húnán
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_602_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Liúyáng
+	if = {
+		limit = { any_country = { controls_province = 1640 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 1640 name = VICTORY_POINTS_1640_0 }
+	}
+	#Liuyang
+	else = {
+		reset_province_name = 1640
+	}
+	#Yǒngzhōu
+	if = {
+		limit = { any_country = { controls_province = 4125 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 4125 name = VICTORY_POINTS_4125_0 }
+	}
+	#Yongzhou
+	else = {
+		reset_province_name = 4125
+	}
+	#Xiāngtán
+	if = {
+		limit = { any_country = { controls_province = 7097 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 7097 name = VICTORY_POINTS_7097_0 }
+	}
+	#Xiangtan
+	else = {
+		reset_province_name = 7097
+	}
+	#Chángdé
+	if = {
+		limit = { any_country = { controls_province = 7101 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 7101 name = VICTORY_POINTS_7101_0 }
+	}
+	#Changde
+	else = {
+		reset_province_name = 7101
+	}
+	#Zhāngjiājiè
+	if = {
+		limit = { any_country = { controls_province = 7279 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 7279 name = VICTORY_POINTS_7279_0 }
+	}
+	#Zhangjiajie
+	else = {
+		reset_province_name = 7279
+	}
+	#Chēnzhōu
+	if = {
+		limit = { any_country = { controls_province = 9982 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 9982 name = VICTORY_POINTS_9982_0 }
+	}
+	#Chenzhou
+	else = {
+		reset_province_name = 9982
+	}
+	#Jíshǒu
+	if = {
+		limit = { any_country = { controls_province = 10006 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 10006 name = VICTORY_POINTS_10006_0 }
+	}
+	#Jishou
+	else = {
+		reset_province_name = 10006
+	}
+	#Shàoyáng
+	if = {
+		limit = { any_country = { controls_province = 10377 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 10377 name = VICTORY_POINTS_10377_0 }
+	}
+	#Shaoyang
+	else = {
+		reset_province_name = 10377
+	}
+	#Huáihuà
+	if = {
+		limit = { any_country = { controls_province = 12017 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 12017 name = VICTORY_POINTS_12017_0 }
+	}
+	#Huaihua
+	else = {
+		reset_province_name = 12017
+	}
+	#Lóudǐ
+	if = {
+		limit = { any_country = { controls_province = 12310 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 12310 name = VICTORY_POINTS_12310_0 }
+	}
+	#Loudi
+	else = {
+		reset_province_name = 12310
+	}
+	#Chángshā
+	if = {
+		limit = { any_country = { controls_province = 14821 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14821 name = VICTORY_POINTS_14821_0 }
+	}
+	#Changsha
+	else = {
+		reset_province_name = 14821
+	}
+	#Zhūzhōu
+	if = {
+		limit = { any_country = { controls_province = 14825 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14825 name = VICTORY_POINTS_14825_0 }
+	}
+	#Zhuzhou
+	else = {
+		reset_province_name = 14825
+	}
+	#Yuèyáng
+	if = {
+		limit = { any_country = { controls_province = 14827 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14827 name = VICTORY_POINTS_14827_0 }
+	}
+	#Yueyang
+	else = {
+		reset_province_name = 14827
+	}
+	#Héngyáng
+	if = {
+		limit = { any_country = { controls_province = 14828 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14828 name = VICTORY_POINTS_14828_0 }
+	}
+	#Hengyang
+	else = {
+		reset_province_name = 14828
+	}
+	#Yìyáng
+	if = {
+		limit = { any_country = { controls_province = 14829 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14829 name = VICTORY_POINTS_14829_0 }
+	}
+	#Yiyang
+	else = {
+		reset_province_name = 14829
+	}
 }
 
 #Guizhou
@@ -6988,6 +7133,97 @@ TDA_update_state_614_names = {
 
 #Shanxi
 TDA_update_state_615_names = {
+	615 = {
+		#Shānxī
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_615_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Yùnchéng
+	if = {
+		limit = { any_country = { controls_province = 1575 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 1575 name = VICTORY_POINTS_1575_0 }
+	}
+	#Yuncheng
+	else = {
+		reset_province_name = 1575
+	}
+	#Línfén
+	if = {
+		limit = { any_country = { controls_province = 7571 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 7571 name = VICTORY_POINTS_7571_0 }
+	}
+	#Linfen
+	else = {
+		reset_province_name = 7571
+	}
+	#Lǚliáng
+	if = {
+		limit = { any_country = { controls_province = 10367 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 10367 name = VICTORY_POINTS_10367_0 }
+	}
+	#Luliang
+	else = {
+		reset_province_name = 10367
+	}
+	#Yángquán
+	if = {
+		limit = { any_country = { controls_province = 12078 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 12078 name = VICTORY_POINTS_12078_0 }
+	}
+	#Yangquan
+	else = {
+		reset_province_name = 12078
+	}
+	#Jìnchéng
+	if = {
+		limit = { any_country = { controls_province = 12344 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 12344 name = VICTORY_POINTS_12344_0 }
+	}
+	#Jincheng
+	else = {
+		reset_province_name = 12344
+	}
+	#Tàiyuán
+	if = {
+		limit = { any_country = { controls_province = 14848 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14848 name = VICTORY_POINTS_14848_0 }
+	}
+	#Taiyuan
+	else = {
+		reset_province_name = 14848
+	}
+	#Jìnzhōng
+	if = {
+		limit = { any_country = { controls_province = 14849 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14849 name = VICTORY_POINTS_14849_0 }
+	}
+	#Jinzhong
+	else = {
+		reset_province_name = 14849
+	}
+	#Chángzhì
+	if = {
+		limit = { any_country = { controls_province = 14850 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14850 name = VICTORY_POINTS_14850_0 }
+	}
+	#Changzhi
+	else = {
+		reset_province_name = 14850
+	}
+	#Dàtóng
+	if = {
+		limit = { any_country = { controls_province = 14851 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14851 name = VICTORY_POINTS_14851_0 }
+	}
+	#Datong
+	else = {
+		reset_province_name = 14851
+	}
 }
 
 #Ningxia
@@ -7362,6 +7598,124 @@ TDA_update_state_621_names = {
 
 #Shaanxi
 TDA_update_state_622_names = {
+	622 = {
+		#Shănxī
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_622_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Wèinán
+	if = {
+		limit = { any_country = { controls_province = 5007 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 5007 name = VICTORY_POINTS_5007_0 }
+	}
+	#Weinan
+	else = {
+		reset_province_name = 5007
+	}
+	#Shāngluò
+	if = {
+		limit = { any_country = { controls_province = 5092 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 5092 name = VICTORY_POINTS_5092_0 }
+	}
+	#Shangluo
+	else = {
+		reset_province_name = 5092
+	}
+	#Yúlín
+	if = {
+		limit = { any_country = { controls_province = 7314 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 7314 name = VICTORY_POINTS_7314_0 }
+	}
+	#Yulin
+	else = {
+		reset_province_name = 7314
+	}
+	#Ānkāng
+	if = {
+		limit = { any_country = { controls_province = 7418 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 7418 name = VICTORY_POINTS_7418_0 }
+	}
+	#Ankang
+	else = {
+		reset_province_name = 7418
+	}
+	#Tóngchuān
+	if = {
+		limit = { any_country = { controls_province = 8049 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 8049 name = VICTORY_POINTS_8049_0 }
+	}
+	#Tongchuan
+	else = {
+		reset_province_name = 8049
+	}
+	#Hànzhōng
+	if = {
+		limit = { any_country = { controls_province = 10257 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 10257 name = VICTORY_POINTS_10257_0 }
+	}
+	#Hanzhong
+	else = {
+		reset_province_name = 10257
+	}
+	#Yán'ān
+	if = {
+		limit = { any_country = { controls_province = 12356 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 12356 name = VICTORY_POINTS_12356_0 }
+	}
+	#Yan'an
+	else = {
+		reset_province_name = 12356
+	}
+	#Shénmù
+	if = {
+		limit = { any_country = { controls_province = 14830 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14830 name = VICTORY_POINTS_14830_0 }
+	}
+	#Shenmu
+	else = {
+		reset_province_name = 14830
+	}
+	#Xī'ān
+	if = {
+		limit = { any_country = { controls_province = 14831 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14831 name = VICTORY_POINTS_14831_0 }
+	}
+	#Xi'an
+	else = {
+		reset_province_name = 14831
+	}
+	#Xiányáng
+	if = {
+		limit = { any_country = { controls_province = 14832 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14832 name = VICTORY_POINTS_14832_0 }
+	}
+	#Xianyang
+	else = {
+		reset_province_name = 14832
+	}
+	#Xī'ān Xiányáng Guójì Jīchǎng
+	if = {
+		limit = { any_country = { controls_province = 14835 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14835 name = VICTORY_POINTS_14835_0 }
+	}
+	#Xi'an Xianyang International Airport
+	else = {
+		reset_province_name = 14835
+	}
+	#Băojī
+	if = {
+		limit = { any_country = { controls_province = 14841 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14841 name = VICTORY_POINTS_14841_0 }
+	}
+	#Baoji
+	else = {
+		reset_province_name = 14841
+	}
 }
 
 #Luzon
@@ -8025,7 +8379,7 @@ TDA_update_state_742_names = {
 TDA_update_state_743_names = {
 }
 
-#Xian
+#Borno
 TDA_update_state_744_names = {
 }
 
@@ -8119,11 +8473,11 @@ TDA_update_state_748_names = {
 	}
 }
 
-#Huangshan
+#Sokoto
 TDA_update_state_749_names = {
 }
 
-#Changde
+#Garissa
 TDA_update_state_750_names = {
 }
 
@@ -8904,6 +9258,15 @@ TDA_update_state_818_names = {
 	else = {
 		reset_province_name = 12649
 	}
+	#Shuòzhōu
+	if = {
+		limit = { any_country = { controls_province = 14583 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14583 name = VICTORY_POINTS_14583_0 }
+	}
+	#Shuozhou
+	else = {
+		reset_province_name = 14583
+	}
 }
 
 #Egyptian Great Sand Sea
@@ -9432,18 +9795,6 @@ TDA_update_state_899_names = {
 
 #Benue
 TDA_update_state_900_names = {
-}
-
-#Borno
-TDA_update_state_901_names = {
-}
-
-#Sokoto
-TDA_update_state_902_names = {
-}
-
-#Garissa
-TDA_update_state_903_names = {
 }
 
 
@@ -10349,9 +10700,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_898_names = yes
 	TDA_update_state_899_names = yes
 	TDA_update_state_900_names = yes
-	TDA_update_state_901_names = yes
-	TDA_update_state_902_names = yes
-	TDA_update_state_903_names = yes
 }
 
 TDA_toggle_change_city_names = {

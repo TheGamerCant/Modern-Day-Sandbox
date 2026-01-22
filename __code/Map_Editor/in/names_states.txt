@@ -2493,6 +2493,12 @@
 }
 602 = {
 	default = "Hunan"
+	entry = {
+        name = "Húnán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 603 = {
 	default = "Guizhou"
@@ -2556,6 +2562,12 @@
 }
 615 = {
 	default = "Shanxi"
+	entry = {
+        name = "Shānxī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 616 = {
 	default = "Ningxia"
@@ -2619,6 +2631,12 @@
 }
 622 = {
 	default = "Shaanxi"
+	entry = {
+        name = "Shănxī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 623 = {
 	default = "Luzon"
@@ -3020,7 +3038,7 @@
 	default = "North Kosovo"
 }
 744 = {
-	default = "Xian"
+	default = "Borno"
 }
 745 = {
 	default = "Upper Peninsula"
@@ -3047,10 +3065,10 @@
     }
 }
 749 = {
-	default = "Huangshan"
+	default = "Sokoto"
 }
 750 = {
-	default = "Changde"
+	default = "Garissa"
 }
 751 = {
 	default = "Aksai Chin"
@@ -3723,13 +3741,4 @@
 }
 900 = {
 	default = "Benue"
-}
-901 = {
-	default = "Borno"
-}
-902 = {
-	default = "Sokoto"
-}
-903 = {
-	default = "Garissa"
 }
