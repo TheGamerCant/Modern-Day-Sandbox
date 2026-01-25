@@ -6,17 +6,17 @@ state={
 		add_core_of = PRC
 		add_core_of = UYG
 		
-		victory_points = { 14657 10 }
-		victory_points = { 2015 6 }
+		victory_points = { 14657 4 }
+		victory_points = { 2015 3 }
 		victory_points = { 14662 3 }
-		victory_points = { 12119 3 }
-		victory_points = { 14661 8 }
-		victory_points = { 1703 4 }
-		victory_points = { 7949 3 }
-		victory_points = { 4682 3 }
+		victory_points = { 12119 2 }
+		victory_points = { 14661 3 }
+		victory_points = { 14658 4 }
+		victory_points = { 7949 2 }
+		victory_points = { 4682 2 }
 	}
 	provinces={
-		1703 4682 1766 1970 2015 4828 4973 5016 5087 7949 8086 8112 10911 12119 12864 1698 1943 2074 4947 5736 10315 14651 14652 14653 14654 14655 14656 14657 14658 14659 14660 14661 14662 14663 14664 14665  
+		1703 4682 1766 1970 2015 4828 4973 5016 5087 7949 8086 8112 10911 12119 12864 1698 1943 2074 4947 5736 10315 14651 14652 14653 14654 14655 14656 14657 14658 14660 14661 14662 14663 14664 14665  
 	}
 	manpower= 10040203
 	buildings_max_level_factor=1.000

@@ -7,9 +7,9 @@ state={
 		add_core_of = TIB
 		
 		victory_points = { 14638 7 }
-		victory_points = { 14642 2 }
-		victory_points = { 8041 2 }
-		victory_points = { 2014 3 }
+		victory_points = { 14642 1 }
+		victory_points = { 8041 1 }
+		victory_points = { 2014 2 }
 		victory_points = { 14637 2 }
 	}
 	provinces={

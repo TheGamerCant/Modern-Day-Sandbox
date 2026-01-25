@@ -1519,7 +1519,13 @@
 	default = "Manila"
 }
 328 = {
-	default = "Kirin"
+	default = "Jilin"
+	entry = {
+        name = "Jílín "
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 329 = {
 	default = "Tuva"
@@ -2546,13 +2552,37 @@
 	default = "East Hebei"
 }
 610 = {
-	default = "Jehol"
+	default = "Chifeng"
+	entry = {
+        name = "Chìfēng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ulaganqada"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
 }
 611 = {
-	default = "South Chahar"
+	default = "Xilingol"
+	entry = {
+        name = "Xīlínguōlè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Sili-yin Yool"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
 }
 612 = {
-	default = "Chahar"
+	default = "Kayes-Koulikoro"
 }
 613 = {
 	default = "Shanghai"
@@ -2627,7 +2657,19 @@
 	default = "Hubei"
 }
 621 = {
-	default = "Suiyuan"
+	default = "Hohhot"
+	entry = {
+        name = "Hūhéhàotè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Kökeqota"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
 }
 622 = {
 	default = "Shaanxi"
@@ -2942,16 +2984,34 @@
 	default = "Kerguelen"
 }
 714 = {
-	default = "Heilungkiang"
+	default = "Heilongjiang"
+	entry = {
+        name = "Hēilóngjiāng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 715 = {
-	default = "Liaoning"
+	default = "Gao"
 }
 716 = {
-	default = "Liaotung"
+	default = "Harbin"
+	entry = {
+        name = "Hā'ĕrbīn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 717 = {
-	default = "Sungkiang"
+	default = "Liaoning"
+	entry = {
+        name = "Liáoníng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 718 = {
 	default = "Stanleyville"
@@ -3044,7 +3104,7 @@
 	default = "Upper Peninsula"
 }
 746 = {
-	default = "Ordos"
+	default = "Benue"
 }
 747 = {
 	default= "Jeju"
@@ -3128,7 +3188,19 @@
     }
 }
 756 = {
-	default = "Jiuquan"
+	default = "Alxa"
+	entry = {
+        name = "Ālāshàn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Alaša Ayimay"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
 }
 757 = {
 	default = "Haruj"
@@ -3180,9 +3252,27 @@
 }
 761 = {
 	default = "Hulunbuir"
+	entry = {
+        name = "Hūlúnbèi'ĕr"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Kölön Buyir"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
 }
 762 = {
-	default = "Śląskie"
+	default = "Silesia"
+	entry = {
+        name = "Śląskie"
+        requirements = {
+            "TAG_using_polish_names = yes"
+        }
+    }
 }
 763 = {
 	default = "Kaliningrad"
@@ -3732,13 +3822,4 @@
 }
 897 = {
 	default = "Zambezia-Moçambique"
-}
-898 = {
-	default = "Gao"
-}
-899 = {
-	default = "Kayes-Koulikoro"
-}
-900 = {
-	default = "Benue"
 }

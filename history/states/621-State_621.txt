@@ -2,12 +2,23 @@ state={
 	id=621
 	name="STATE_621"
 	history={
-		owner = ZZZ
+		owner = PRC
+		add_core_of = PRC
+		
+		victory_points = { 14860 25 }
+		victory_points = { 14857 20 }
+		victory_points = { 10451 6 }
+		victory_points = { 3427 2 }
+		victory_points = { 1959 5 }
+		victory_points = { 7158 4 }
+		victory_points = { 10629 4 }
+		victory_points = { 12706 2 }
+		victory_points = { 7545 2 }
 	}
 	provinces={
-		2087 4525 7048 7158 7631 10424 10629 12331 12403 12609 12880 
+		2087 4525 7048 7158 7631 10424 10629 12331 12403 12609 12880 1959 3427 4960 4986 10451 10854 12706 7545 14857 14858 14859 14860 14861 14862 14863 14864 
 	}
-	manpower= 100000
+	manpower= 11804039
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral

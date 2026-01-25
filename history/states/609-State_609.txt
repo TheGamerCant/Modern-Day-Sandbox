@@ -1,14 +1,14 @@
 state={
 	id=609
 	name="STATE_609"
-	history={
+	history = {
 		owner = ZZZ
 	}
 	provinces={
-		900 1052 3830 3900 6969 11822 
+		814 881 900 1052 3830 3900 6937 6969 9768 9905 10331 11801 11822 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=100000
+	buildings_max_level_factor=1
 	state_category=town
+	local_supplies=0.5
 }

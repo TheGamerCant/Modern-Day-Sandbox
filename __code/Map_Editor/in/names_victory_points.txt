@@ -7529,17 +7529,16 @@
         }
     }
 }
-#Known as Shigatse prior to 2014
 2014 = {
-	default = "Sangzhuzi"
+	default = "Shigatse"
 	entry = {
-        name = "Sāngzhūzī"
+        name = "Rìkāzé"
         requirements = {
             "TAG_using_chinese_names = yes"
         }
     }
 	entry = {
-        name = "Samzhubzê"
+        name = "Xigazê"
         requirements = {
             "TAG_using_tibetan_names = yes"
         }
@@ -7635,7 +7634,7 @@
         }
     }
 }
-1703 = {
+14658 = {
 	default = "Aksu"
 	entry = {
         name = "Ākèsū"
@@ -7752,6 +7751,21 @@
         }
     }
 }
+7702 = {
+	default = "Kuqa"
+	entry = {
+        name = "Kùchē"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Kucha"
+        requirements = {
+            "TAG_using_uyghur_names = yes"
+        }
+    }
+}
 1844 = {
 	default = "Karamay"
 	entry = {
@@ -7797,7 +7811,7 @@
         }
     }
 }
-14677 = {
+14672 = {
 	default = "Yining"
 	entry = {
         name = "Yīníng"
@@ -9213,7 +9227,7 @@
         }
     }
 }
-14583 = {
+14674 = {
 	default = "Shuozhou"
 	entry = {
         name = "Shuòzhōu"
@@ -9228,6 +9242,501 @@
         name = "Lǚliáng"
         requirements = {
             "TAG_using_chinese_names = yes"
+        }
+    }
+}
+4634 = {
+	default = "Hongdong"
+	entry = {
+        name = "Hóngdòng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+4174 = {
+	default = "Xiaoyi"
+	entry = {
+        name = "Xiàoyì"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1203 = {
+	default = "Xinzhou"
+	entry = {
+        name = "Xīnzhōu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+4074 = {
+	default = "Xingxian"
+	entry = {
+        name = "Xīngxiàn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14854 = {
+	default = "Alxa Left"
+	entry = {
+        name = "Ālāshàn Zuŏ"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Alaša Jegün"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+5031 = {
+	default = "Alxa Right"
+	entry = {
+        name = "Ālāshàn Yòu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Alaša Barayun"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+4783 = {
+	default = "Ejin"
+	entry = {
+        name = "Éjǐnà"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ejen"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14857 = {
+	default = "Baotou"
+	entry = {
+        name = "Bāotóu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Bugutu"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14860 = {
+	default = "Hohhot"
+	entry = {
+        name = "Hūhéhàotè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Kökeqota"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+10451 = {
+	default = "Ordos"
+	entry = {
+        name = "È'ěrduōsī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ôrdôs"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+3427 = {
+	default = "Ejin Horo"
+	entry = {
+        name = "Yījīnhuòluò"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ejin Qoroga"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+1959 = {
+	default = "Wuhai"
+	entry = {
+        name = "Wūhǎi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Üqai"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+7158 = {
+	default = "Ulanqab"
+	entry = {
+        name = "Wūlánchábù"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ulagančab"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+10629 = {
+	default = "Bayannur"
+	entry = {
+        name = "Bāyànnào'ĕr"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Bayannagur"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+12706 = {
+	default = "Otog"
+	entry = {
+        name = "Ètuōkè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+7545 = {
+	default = "Shangdu"
+	entry = {
+        name = "Shāngdū"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Šangdu"		#Šaŋdu
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+12348 = {
+	default = "Xilinhot"
+	entry = {
+        name = "Xīlínhàotè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Siliyin hota"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+12448 = {
+	default = "Erenhot"
+	entry = {
+        name = "Èrliánhàotè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Eriyen Qota"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+10612 = {
+	default = "Manjur"
+	entry = {
+        name = "Mănzhōulĭ"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Manjuur"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+13150 = {
+	default = "Hulunbuir"
+	entry = {
+        name = "Hūlúnbèi'ĕr"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Kölön Buyir"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14873 = {
+	default = "Yakeshi"
+	entry = {
+        name = "Yákèshí"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Xuguit"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+1776 = {
+	default = "Oroqen"
+	entry = {
+        name = "Èlúnchūn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Orčonu"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+7894 = {
+	default = "Zalantun"
+	entry = {
+        name = "Zhālántún"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Jalan Ayil"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+12537 = {
+	default = "Genhe"
+	entry = {
+        name = "Gēnhé"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Gegen Gool"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14879 = {
+	default = "Chifeng"
+	entry = {
+        name = "Chìfēng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ulaganqada"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+3877 = {
+	default = "Tongliao"
+	entry = {
+        name = "Tōngliáo"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Tüngliyou"		#Tüŋliyou
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+9873 = {
+	default = "Ningcheng"
+	entry = {
+        name = "Níngchéng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ningčėng"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14876 = {
+	default = "Ulanhot"
+	entry = {
+        name = "Wūlánhàotè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ulahan"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+12469 = {
+	default = "Holingol"
+	entry = {
+        name = "Huòlínguōlè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Qoolin Gool"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+3828 = {
+	default = "Aohan"
+	entry = {
+        name = "Áohàn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Auqan"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+7575 = {
+	default = "Ongniud"
+	entry = {
+        name = "Wēngniútè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ongnigud"		#Oŋniɣud
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14878 = {
+	default = "Linxi"
+	entry = {
+        name = "Línxī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Linsi"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+12478 = {
+	default = "Kailu"
+	entry = {
+        name = "Kāilŭ"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Ḵayilü"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14877 = {
+	default = "Zhalute"
+	entry = {
+        name = "Zhālŭtè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Jarud"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
+        }
+    }
+}
+14875 = {
+	default = "Zhalaite"
+	entry = {
+        name = "Zhālàitè"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+	entry = {
+        name = "Jalaid"
+        requirements = {
+            "TAG_using_mongolian_names = yes"
         }
     }
 }
