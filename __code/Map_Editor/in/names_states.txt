@@ -2996,18 +2996,18 @@
 	default = "Gao"
 }
 716 = {
-	default = "Harbin"
+	default = "Liaoning"
 	entry = {
-        name = "Hā'ĕrbīn"
+        name = "Liáoníng"
         requirements = {
             "TAG_using_chinese_names = yes"
         }
     }
 }
 717 = {
-	default = "Liaoning"
+	default = "Harbin"
 	entry = {
-        name = "Liáoníng"
+        name = "Hā'ĕrbīn"
         requirements = {
             "TAG_using_chinese_names = yes"
         }

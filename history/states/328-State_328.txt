@@ -2,12 +2,34 @@ state={
 	id=328
 	name="STATE_328"
 	history = {
-		owner = ZZZ
+		owner = PRC
+		add_core_of = PRC
+		
+		victory_points = { 14890 35 }
+		victory_points = { 14889 15 }
+		victory_points = { 944 6 }
+		victory_points = { 9759 4 }
+		victory_points = { 9803 4 }
+		victory_points = { 4633 5 }
+		victory_points = { 1627 3 }
+		victory_points = { 4642 4 }
+		victory_points = { 4572 3 }
+		victory_points = { 4503 2 }
+		victory_points = { 930 2 }
+		victory_points = { 3913 4 }
+		victory_points = { 3888 4 }
+		victory_points = { 3932 2 }
+		victory_points = { 6905 2 }
+		victory_points = { 9897 2 }
+		victory_points = { 3947 2 }
+		victory_points = { 11862 2 }
+		victory_points = { 7523 2 }
+		victory_points = { 9913 2 }
 	}
 	provinces={
-		800 861 887 927 930 944 945 946 973 1499 1567 1627 3888 3913 3929 3932 3944 3947 3949 4503 4561 4572 4633 6806 6868 6905 6947 6964 7663 9759 9803 9841 9848 9866 9883 9897 9913 9928 11744 11781 11823 11850 11862 11864 11893 
+		800 861 927 930 944 946 973 1499 1567 1627 3888 3913 3929 3932 3944 3947 3949 4503 4561 4572 4633 4642 6806 6905 6947 6964 7523 7652 7663 9759 9803 9841 9866 9883 9897 9913 9928 11744 11781 11823 11850 11862 11864 11893 14888 14889 14890 14891 14892 14893 
 	}
-	manpower=100000
+	manpower=27452815
 	buildings_max_level_factor=1
 	state_category=rural
 	local_supplies=0.5

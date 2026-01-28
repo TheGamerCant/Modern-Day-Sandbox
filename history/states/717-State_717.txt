@@ -2,12 +2,31 @@ state={
 	id=717
 	name="STATE_717"
 	history = {
-		owner = ZZZ
+		owner = PRC
+		add_core_of = PRC
+		
+		victory_points = { 14895 45 }
+		victory_points = { 14897 2 }
+		victory_points = { 10463 7 }
+		victory_points = { 3815 6 }
+		victory_points = { 11906 8 }
+		victory_points = { 7591 2 }
+		victory_points = { 1571 4 }
+		victory_points = { 7526 2 }
+		victory_points = { 10519 3 }
+		victory_points = { 12342 2 }
+		victory_points = { 10503 2 }
+		victory_points = { 4551 2 }
+		
+		buildings = {
+			infrastructure = 2
+			air_base = 3
+		}
 	}
 	provinces={
-		783 1545 1571 1732 3791 3815 4551 4649 5427 6811 6863 7523 7526 7569 7591 7652 7670 7767 9623 9766 9782 9798 10215 10368 10376 10379 10433 10463 10503 10519 10521 10698 11906 12342 12355 12412 12443 12482 12500 
+		783 1545 1571 3791 3815 4551 4649 5427 6811 6863 7526 7569 7591 7670 9623 9766 9782 9798 10215 10376 10379 10433 10463 10503 10519 10521 11906 12342 12355 12412 12443 12482 12500 14894 14895 14896 14897 14898 14899 
 	}
-	manpower=100000
+	manpower=20232053
 	buildings_max_level_factor=1
 	state_category=pastoral
 	local_supplies=0.5
