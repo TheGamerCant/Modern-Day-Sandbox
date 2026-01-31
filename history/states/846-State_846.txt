@@ -6,6 +6,8 @@ state={
 		add_core_of = SWI
 		
 		victory_points = { 9600 2 }
+		
+		set_variable = { sq_km = 2812 }
 	}
 	provinces={
 		9600 3641 

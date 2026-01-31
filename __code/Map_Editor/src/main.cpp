@@ -428,4 +428,6 @@ int main()
     if (writeDefinitions) {
         WriteProvinceDefinitions(provincesArray, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray);
     }
+
+	//statesBitmap.PrintBitmapFile("out\\states.bmp");
 }

@@ -21,6 +21,8 @@ state={
 		set_variable = { culture_index_array^1 = 0 }
 		set_variable = { culture_value_array^1 = 4.1 }
 		
+		set_variable = { sq_km = 642317 }
+		
 		buildings = {
 			infrastructure = 3
 			air_base = 5

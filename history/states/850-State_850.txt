@@ -6,6 +6,8 @@ state={
 		add_core_of = ITA
 		
 		victory_points = { 9598 3 }
+		
+		set_variable = { sq_km = 6207 }
 	}
 	provinces={
 		6631 9598 11598 

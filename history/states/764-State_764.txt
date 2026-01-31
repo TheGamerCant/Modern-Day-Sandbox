@@ -6,6 +6,8 @@ state={
 		add_core_of = SRB
 		
 		victory_points = { 11787 2 }
+		
+		set_variable = { sq_km = 10670.33 }
 	}
 	provinces={
 		614 3614 6643 11787 13868

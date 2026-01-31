@@ -6,6 +6,8 @@ state={
 		add_core_of = LUX
 		
 		victory_points = { 6583 10 }
+		
+		set_variable = { sq_km = 2586 }
 	}
 	provinces={
 		6583 

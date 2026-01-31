@@ -6,6 +6,8 @@ state={
 		add_core_of = MCO
 		
 		victory_points = { 14047 5 }
+		
+		set_variable = { sq_km = 2.08 }
 	}
 	provinces={
 		14047 

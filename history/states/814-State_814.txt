@@ -6,6 +6,8 @@ state={
 		add_core_of = LIT
 		
 		victory_points = { 3272 2 }
+		
+		set_variable = { sq_km = 5794 }
 	}
 	provinces={
 		3272 6407 11312 13825 

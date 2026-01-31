@@ -4,6 +4,8 @@ state={
 	history={
 		owner = KOS
 		add_core_of = SRB
+		
+		set_variable = { sq_km = 2150.93 }
 	}
 	provinces={
 		9890 

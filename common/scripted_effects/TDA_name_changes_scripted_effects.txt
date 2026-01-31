@@ -5349,7 +5349,7 @@ TDA_update_state_469_names = {
 TDA_update_state_470_names = {
 }
 
-#Prince Rupert
+#Zambezia-Moçambique
 TDA_update_state_471_names = {
 }
 
@@ -10997,10 +10997,6 @@ TDA_update_state_895_names = {
 TDA_update_state_896_names = {
 }
 
-#Zambezia-Moçambique
-TDA_update_state_897_names = {
-}
-
 
 
 TDA_change_all_city_names = {
@@ -11900,7 +11896,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_894_names = yes
 	TDA_update_state_895_names = yes
 	TDA_update_state_896_names = yes
-	TDA_update_state_897_names = yes
 }
 
 TDA_toggle_change_city_names = {

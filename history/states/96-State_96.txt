@@ -6,6 +6,8 @@ state={
 		add_core_of = VCY
 
 		victory_points = { 14122 4 }
+		
+		set_variable = { sq_km = 0.49 }
 	}
 	provinces={
 		14122

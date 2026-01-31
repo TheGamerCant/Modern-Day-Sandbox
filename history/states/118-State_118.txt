@@ -6,6 +6,8 @@ state={
 		add_core_of = GBR
 		
 		victory_points = { 4135 5 }
+		
+		set_variable = { sq_km = 6.8 }
 	}
 	provinces={
 		4135 

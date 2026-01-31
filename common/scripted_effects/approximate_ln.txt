@@ -1,0 +1,60 @@
+#Take in y, return y
+
+#Use Taylor's series to approximate the log when y is close to 1
+taylor_approx = {
+	set_temp_variable = { z = y }
+	subtract_from_temp_variable = { z = 1 }
+	
+	set_temp_variable = { z2 = z }
+	multiply_temp_variable = { z2 = z }
+	
+	set_temp_variable = { z3 = z2 }
+	multiply_temp_variable = { z3 = z }
+	
+	set_temp_variable = { z4 = z3 }
+	multiply_temp_variable = { z4 = z }
+	
+	multiply_temp_variable = { z2 = 0.5 }
+	multiply_temp_variable = { z3 = 0.33333 }
+	multiply_temp_variable = { z4 = 0.25 }
+	
+	set_variable = { y = z }
+	subtract_from_variable = { y = z2 }
+	add_to_variable = { y = z3 }
+	subtract_from_variable = { y = z4 }
+}
+
+#Take in x, return x as ln x
+approximate_log = {
+	if = {
+		limit = { check_variable = { var = x value = 0 compare = less_than_or_equals }
+		#Return error
+	}
+	else = {
+		set_temp_variable = { k = 0 }
+		set_variable = { y = x }
+		
+		while_loop_effect = {
+			limit = { check_variable = { var = y value = 2.0 compare = greater_than_or_equals } }
+			multiply_variable = { y = 0.5 }
+			add_to_temp_variable = { k = 1 }
+		}
+		while_loop_effect = {
+			limit = { check_variable = { var = y value = 1.0 compare = less_than } }
+			multiply_variable = { y = 2 }
+			subtract_from_temp_variable = { k = 1 }
+		}
+		
+		#Get ln of y
+		taylor_approx = yes
+		
+		#ln(2) = 0.6931471806...
+		set_temp_variable = { m = k }
+		multiply_temp_variable = { m = 0.69315 }
+		
+		set_variable = { x = y }
+		add_to_variable = { x = m }
+		
+		clear_variable = y
+	}
+}

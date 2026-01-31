@@ -6,6 +6,8 @@ state={
 		add_core_of = ADR
 		
 		victory_points = { 3898 2 }
+		
+		set_variable = { sq_km = 467.6 }
 	}
 	provinces={
 		3898 

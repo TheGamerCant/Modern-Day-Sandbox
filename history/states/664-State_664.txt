@@ -6,6 +6,8 @@ state={
 		add_core_of = SLO
 		
 		victory_points = { 6573 6 }
+		
+		set_variable = { sq_km = 11399.87 }
 	}
 	provinces={
 		3565 3716 6561 6573 9537 11679 

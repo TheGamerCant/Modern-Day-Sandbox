@@ -6,6 +6,8 @@ state={
 		add_core_of = SPA
 		
 		victory_points = { 3902 3 }
+		
+		set_variable = { sq_km = 5045 }
 	}
 	provinces={
 		3902 6903 

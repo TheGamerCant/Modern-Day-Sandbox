@@ -6,6 +6,8 @@ state={
 		add_core_of = SNM
 
 		victory_points = { 14121 1 }
+		
+		set_variable = { sq_km = 61.2 }
 	}
 	provinces={
 		14121

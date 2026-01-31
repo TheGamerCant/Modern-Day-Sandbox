@@ -6,6 +6,8 @@ state={
 		add_core_of = LTN
 
 		victory_points = { 14096 1 }
+		
+		set_variable = { sq_km = 160.5 }
 	}
 	provinces={
 		14096

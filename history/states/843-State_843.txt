@@ -6,6 +6,8 @@ state={
 		add_core_of = BLG
 		
 		victory_points = { 516 50 }
+		
+		set_variable = { sq_km = 162.4 }
 	}
 	provinces={
 		516 

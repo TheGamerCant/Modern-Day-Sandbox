@@ -5,6 +5,8 @@ state={
 		owner = SOV
 		add_core_of = UKR
 		add_core_of = CRM
+		
+		set_variable = { sq_km = 2 }
 	}
 	provinces={
 		13728 

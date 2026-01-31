@@ -6,6 +6,8 @@ state={
 		add_core_of = EST
 		
 		victory_points = { 13836 3 }
+		
+		set_variable = { sq_km = 2972 }
 	}
 	provinces={
 		4640 11443 13836 

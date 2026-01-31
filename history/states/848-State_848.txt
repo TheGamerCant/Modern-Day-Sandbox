@@ -6,6 +6,8 @@ state={
 		add_core_of = ASA
 		
 		victory_points = { 6680 2 }
+		
+		set_variable = { sq_km = 2601 }
 	}
 	provinces={
 		6678 6680 

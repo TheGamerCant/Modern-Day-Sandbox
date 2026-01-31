@@ -66,7 +66,6 @@ STATE_sort_culture_array = {
 			limit = { NOT = { check_variable = { total_count = 100 } } } 
 			set_temp_variable = { multiplier = 100 }
 			divide_temp_variable = { multiplier = total_count }
-			clear_variable = total_count
 			
 			for_loop_effect = {
 				end = culture_value_array_HOLD^num
@@ -75,6 +74,8 @@ STATE_sort_culture_array = {
 				multiply_variable = { culture_value_array_HOLD^v = multiplier }
 			}
 		}
+		
+		clear_variable = total_count
 		
 		
 		#We now have our array - now we sort it

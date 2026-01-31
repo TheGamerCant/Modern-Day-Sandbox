@@ -6,6 +6,8 @@ state={
 		add_core_of = GER
 		
 		victory_points = { 317 3 }
+		
+		set_variable = { sq_km = 5300 }
 	}
 	provinces={
 		317 3231 11366 

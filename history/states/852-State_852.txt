@@ -6,6 +6,8 @@ state={
 		add_core_of = CRO
 		
 		victory_points = { 11735 2 }
+		
+		set_variable = { sq_km = 2813 }
 	}
 	provinces={
 		11735 

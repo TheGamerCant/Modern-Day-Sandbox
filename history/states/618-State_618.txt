@@ -6,7 +6,7 @@ state={
 		add_core_of = PRC
 		add_core_of = UYG
 		
-		set_variable = { sq_km = 63614.83 }
+		set_variable = { sq_km = 54063.34 }
 	}
 	provinces={
 		7790 

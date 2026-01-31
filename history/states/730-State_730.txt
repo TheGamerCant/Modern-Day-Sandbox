@@ -6,6 +6,8 @@ state={
 		add_core_of = FRA
 		
 		victory_points = { 373 1 }
+		
+		set_variable = { sq_km = 242 }
 	}
 	provinces={
 		373 

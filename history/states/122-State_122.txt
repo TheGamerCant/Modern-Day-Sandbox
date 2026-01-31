@@ -18,6 +18,8 @@ state={
 
 		set_variable = { culture_index_array^1 = 0 }
 		set_variable = { culture_value_array^1 = 0.7 }
+		
+		set_variable = { sq_km = 17104.2 }
 	}
 	provinces={
 		253 311 407 3274 6363 9364 11361 13671 

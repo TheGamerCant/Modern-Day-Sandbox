@@ -2038,7 +2038,7 @@
 	default = "Alberta"
 }
 471 = {
-	default = "Prince Rupert"
+	default = "Zambezia-Moçambique"
 }
 472 = {
 	default = "N.W Territories"
@@ -3819,7 +3819,4 @@
 }
 896 = {
 	default = "Manica e Sofala"
-}
-897 = {
-	default = "Zambezia-Moçambique"
 }
