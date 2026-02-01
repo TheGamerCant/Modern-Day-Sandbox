@@ -16,7 +16,7 @@ state={
 		victory_points = { 13070 3 }
 		victory_points = { 13661 6 }	
 		victory_points = { 13667 3 }
-		victory_points = { 9239 5 }
+		victory_points = { 9239 3 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

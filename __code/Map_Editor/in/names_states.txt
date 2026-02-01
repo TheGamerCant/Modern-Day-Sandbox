@@ -2549,7 +2549,13 @@
     }
 }
 609 = {
-	default = "East Hebei"
+	default = "Tangshan"
+	entry = {
+        name = "Tángshān"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 610 = {
 	default = "Chifeng"
@@ -2588,7 +2594,13 @@
 	default = "Shanghai"
 }
 614 = {
-	default = "Hebei"
+	default = "Shijiazhuang"
+	entry = {
+        name = "Shíjiāzhuāng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 615 = {
 	default = "Shanxi"
@@ -3819,4 +3831,13 @@
 }
 896 = {
 	default = "Manica e Sofala"
+}
+897 = {
+	default = "Zhangjiakou"
+	entry = {
+        name = "Zhāngjiākŏu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }

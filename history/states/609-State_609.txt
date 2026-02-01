@@ -2,12 +2,22 @@ state={
 	id=609
 	name="STATE_609"
 	history = {
-		owner = ZZZ
+		owner = PRC
+		add_core_of = PRC
+		
+		victory_points = { 14910 25 }
+		victory_points = { 3830 4 }
+		victory_points = { 900 3 }
+		victory_points = { 11822 3 }
+		victory_points = { 9905 15 }
+		victory_points = { 3900 2 }
+		
+		set_variable = { sq_km = 21847 }
 	}
 	provinces={
-		814 881 900 1052 3830 3900 6937 6969 9768 9905 10331 11801 11822 
+		900 1052 3830 3900 9905 11822 14910 14911 14912 14928 
 	}
-	manpower=100000
+	manpower=10564894
 	buildings_max_level_factor=1
 	state_category=town
 	local_supplies=0.5

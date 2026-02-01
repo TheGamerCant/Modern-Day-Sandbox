@@ -7,6 +7,8 @@ state={
 		add_claim_by = ROK
 		
 		victory_points = { 1177 8 }
+		
+		set_variable = { sq_km = 1849 }
 	}
 	provinces={
 		1177 
