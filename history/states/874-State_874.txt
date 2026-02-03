@@ -6,8 +6,6 @@ state={
 		add_core_of = SOV
 		
 		victory_points = { 12683 3 }
-		
-		set_variable = { sq_km = 462464 }
 	}
 	provinces={
 		1865 10540 12683 13254 14161 

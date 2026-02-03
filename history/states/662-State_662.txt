@@ -6,8 +6,6 @@ state={
 		add_core_of = EGY
 		
 		victory_points = { 1977 1 }
-		
-		set_variable = { sq_km = 20580 }
 	}
 	provinces={
 		1977 

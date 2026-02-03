@@ -6,8 +6,6 @@ state={
 		add_core_of = ISR
 		add_claim_by = HMS
 		
-		set_variable = { sq_km = 653 }
-		
 		victory_points = { 9753 15 }
 	}
 	provinces={

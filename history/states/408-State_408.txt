@@ -15,8 +15,6 @@ state={
 		victory_points = { 6989 2 }
 		victory_points = { 3739 1 }
 		
-		set_variable = { sq_km = 164673 }
-		
 		buildings = {
 			infrastructure = 4
 			air_base = 2

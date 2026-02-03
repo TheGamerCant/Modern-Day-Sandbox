@@ -1866,7 +1866,7 @@ TDA_update_state_172_names = {
 #Negev
 TDA_update_state_173_names = {
 	173 = {
-		#HaNégev
+		#HaDarom
 		if = {
 			limit = { CONTROLLER = { TAG_using_israeli_names = yes } }
 			set_state_name = STATE_173_0
@@ -2998,7 +2998,7 @@ TDA_update_state_232_names = {
 TDA_update_state_233_names = {
 }
 
-#Krasnodar
+#Krasnodar-Adygea
 TDA_update_state_234_names = {
 	#Mezhdunarodnyy Aeroport Krasnodar
 	if = {
@@ -6709,6 +6709,24 @@ TDA_update_state_597_names = {
 	else = {
 		reset_province_name = 14940
 	}
+	#Zōupíng
+	if = {
+		limit = { any_country = { controls_province = 14944 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14944 name = VICTORY_POINTS_14944_0 }
+	}
+	#Zouping
+	else = {
+		reset_province_name = 14944
+	}
+	#Zībó
+	if = {
+		limit = { any_country = { controls_province = 14945 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14945 name = VICTORY_POINTS_14945_0 }
+	}
+	#Zibo
+	else = {
+		reset_province_name = 14945
+	}
 	#Rìzhào
 	if = {
 		limit = { any_country = { controls_province = 14947 TAG_using_chinese_names = yes } }
@@ -6735,6 +6753,15 @@ TDA_update_state_597_names = {
 	#Liaocheng
 	else = {
 		reset_province_name = 14951
+	}
+	#Dōngyíng
+	if = {
+		limit = { any_country = { controls_province = 14954 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14954 name = VICTORY_POINTS_14954_0 }
+	}
+	#Dongying
+	else = {
+		reset_province_name = 14954
 	}
 }
 
