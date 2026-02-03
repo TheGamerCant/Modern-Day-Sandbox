@@ -1,3 +1,6 @@
+@lower_bound = 0.10
+@upper_bound = 0.96
+
 TDA_update_every_state_population_density = {
 	clear_array = ZZZ.arr
 	clear_array = ZZZ.pop_dens_ranked
@@ -26,6 +29,15 @@ TDA_update_every_state_population_density = {
 		subtract_from_variable = { high = 1 }
 		quicksort = yes
 		
+		for_each_loop = {
+			array = ZZZ.arr
+			value = v
+			index = i
+			break = break
+			
+			log = "[?v]"
+		}
+		
 		#Create a second array of all the indexes in order of pop density, as well as renaming the original array
 		resize_array = {
 			array = ZZZ.pop_dens_ranked
@@ -53,7 +65,7 @@ TDA_update_every_state_population_density = {
 		clear_variable = low
 	}
 
-	
+	#Binary search doesn't work if two states have the same pop_per_sq_km variable, but oh well
 	every_state = {
 		if = {
 			limit = { check_variable = { var = THIS.sq_km value = 0 compare = greater_than } }
@@ -101,15 +113,14 @@ TDA_update_every_state_population_density = {
 	}
 	
 	ZZZ = { 
-		#To avoid outliers, only consider values between 5% & 95% in the array
 		set_variable = { ZZZ.index_low = ZZZ.pop_dens_ranked^num }
 		subtract_from_variable = { ZZZ.index_low = 1 }
 		set_variable = { ZZZ.index_high = ZZZ.index_low }
-		multiply_variable = { ZZZ.index_low = 0.05 }
+		multiply_variable = { ZZZ.index_low = @lower_bound }
 		round_variable = ZZZ.index_low
 		set_variable = { ZZZ.value_low = ZZZ.pop_dens_ranked^index_low }
 
-		multiply_variable = { ZZZ.index_high = 0.95 }
+		multiply_variable = { ZZZ.index_high = @upper_bound }
 		round_variable = ZZZ.index_high
 		set_variable = { ZZZ.value_high = ZZZ.pop_dens_ranked^index_high }
 		
@@ -149,6 +160,7 @@ TDA_update_every_state_population_density = {
 			
 			
 			#Create a new variable in each state to use to interpolate the rgb colour to
+			#log = "[?ZZZ.pop_dens_indexes^i] - [?ZZZ.pop_dens_indexes^i.GetName]"
 			meta_effect = {
 				text = { 
 					set_variable = { [THIS_ID].pop_dens_prcnt = x } 

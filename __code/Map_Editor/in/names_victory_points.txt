@@ -5032,6 +5032,12 @@
 9355 = {
 	default = "Oryol"
 }
+328 = {
+	default = "Livny"
+}
+11368 = {
+	default = "Mtsensk"
+}
 3335 = {
 	default = "Bryansk"
 }
@@ -10677,6 +10683,159 @@
 	default = "Fuping"
 	entry = {
         name = "Fùpíng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+10000 = {
+	default = "Qingdao"
+	entry = {
+        name = "Qīngdăo"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14930 = {
+	default = "Qingdao Jiaodong International Airport"
+	entry = {
+        name = "Qīngdǎo Jiāodōng Guójì Jīchǎng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14931 = {
+	default = "Weihai"
+	entry = {
+        name = "Wēihăi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14933 = {
+	default = "Yantai"
+	entry = {
+        name = "Yāntái"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1104 = {
+	default = "Longkou"
+	entry = {
+        name = "Lóngkŏu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14947 = {
+	default = "Rizhao"
+	entry = {
+        name = "Rìzhào"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14950 = {
+	default = "Linyi"
+	entry = {
+        name = "Línyí"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14938 = {
+	default = "Zaozhuang"
+	entry = {
+        name = "Zăozhuāng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14937 = {
+	default = "Heze"
+	entry = {
+        name = "Hézé"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14939 = {
+	default = "Jining"
+	entry = {
+        name = "Jìníng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14940 = {
+	default = "Zoucheng"
+	entry = {
+        name = "Zōuchéng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+1069 = {
+	default = "Jinan"
+	entry = {
+        name = "Jìnán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14951 = {
+	default = "Liaocheng"
+	entry = {
+        name = "Liáochéng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+10119 = {
+	default = "Dezhou"
+	entry = {
+        name = "Dézhōu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14954 = {
+	default = "Dongying"
+	entry = {
+        name = "Dōngyíng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14945 = {
+	default = "Zibo"
+	entry = {
+        name = "Zībó"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+14944 = {
+	default = "Zouping"
+	entry = {
+        name = "Zōupíng"
         requirements = {
             "TAG_using_chinese_names = yes"
         }

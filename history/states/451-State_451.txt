@@ -4,6 +4,8 @@ state={
 	history={
 		owner = LYB
 		add_core_of = LYB
+		
+		set_variable = { sq_km = 48219.34 }
 	}
 	provinces={
 		1057 

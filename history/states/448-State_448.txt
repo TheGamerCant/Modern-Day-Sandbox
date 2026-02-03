@@ -8,10 +8,12 @@ state={
 		victory_points = { 1149 16 }
 		victory_points = { 14558 2 }
 		victory_points = { 14560 3 }
-		victory_points = { 14563 10 }
+		victory_points = { 14563 5 }
 		victory_points = { 12039 2 }
 		victory_points = { 7066 2 }
 		victory_points = { 4051 1 }
+		
+		set_variable = { sq_km = 170697.34 }
 		
 		buildings = {
 			infrastructure = 3

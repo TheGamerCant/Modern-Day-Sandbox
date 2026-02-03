@@ -4,6 +4,8 @@ state={
 	history={
 		owner = ISR
 		add_core_of = ISR
+		
+		set_variable = { sq_km = 1800 }
 	}
 	provinces={
 		14187 

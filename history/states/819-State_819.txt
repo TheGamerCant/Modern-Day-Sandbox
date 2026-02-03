@@ -4,6 +4,8 @@ state={
 	history = {
 		owner = EGY
 		add_core_of = EGY
+		
+		set_variable = { sq_km = 334958.02 }
 	}
 	provinces={
 		2064 10869 10907 12733 12816 

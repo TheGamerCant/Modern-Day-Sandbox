@@ -834,7 +834,8 @@
 173 = {
 	default = "Negev"
 	entry = {
-        name = "HaNégev"
+        #name = "HaNégev"
+        name = "HaDarom"		#Southern District
         requirements = {
             "TAG_using_israeli_names = yes"
         }
@@ -1141,7 +1142,7 @@
 	default = "Agder"
 }
 234 = {
-	default = "Krasnodar"
+	default = "Krasnodar-Adygea"
 }
 235 = {
 	default = "Stavropol"
@@ -2460,15 +2461,39 @@
 }
 595 = {
 	default = "Fujian"
+	entry = {
+        name = "Fújiàn"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 596 = {
 	default = "Zhejiang"
+	entry = {
+        name = "Zhèjiāng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 597 = {
 	default = "Shandong"
+	entry = {
+        name = "Shāndōng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 598 = {
 	default = "Jiangsu"
+	entry = {
+        name = "Jiāngsū"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 599 = {
 	default = "Guangxi"
@@ -2481,6 +2506,12 @@
 }
 600 = {
 	default = "Jiangxi"
+	entry = {
+        name = "Jiāngxī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 601 = {
 	default = "South Gangwon"
@@ -2535,9 +2566,21 @@
 }
 606 = {
 	default = "Anhui"
+	entry = {
+        name = "Ānhuī"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 607 = {
 	default = "Henan"
+	entry = {
+        name = "Hénán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 608 = {
 	default = "Bejing"
@@ -2592,6 +2635,12 @@
 }
 613 = {
 	default = "Shanghai"
+	entry = {
+        name = "Shànghăi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 614 = {
 	default = "Shijiazhuang"
@@ -2667,6 +2716,12 @@
 }
 620 = {
 	default = "Hubei"
+	entry = {
+        name = "Húbĕi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 621 = {
 	default = "Hohhot"

@@ -7,6 +7,8 @@ state={
 		add_core_of = PST
 		
 		victory_points = { 14190 10 }
+		
+		set_variable = { sq_km = 365 }
 	}
 	provinces={
 		14190 

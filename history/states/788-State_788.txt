@@ -8,11 +8,15 @@ state={
 		
 		victory_points = { 7107 10 }
 		victory_points = { 14192 7 }
+		
+		# ~99% Palestinian
+		
+		set_variable = { sq_km = 2255 }
 	}
 	provinces={
 		7107 14192 
 	}
-	manpower= 2395303
+	manpower= 2094055
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral

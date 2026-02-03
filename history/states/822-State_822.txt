@@ -4,6 +4,8 @@ state={
 	history={
 		owner = SOV
 		add_core_of = SOV
+		
+		set_variable = { sq_km = 721481 }
 	}
 	provinces={
 		5264 13062 13063 13204 

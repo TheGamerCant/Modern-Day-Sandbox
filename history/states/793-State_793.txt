@@ -7,11 +7,15 @@ state={
 		add_claim_by = HMS
 		
 		victory_points = { 1086 1 }
+		
+		# ~59% Israeli, 41% Palestinian
+		
+		set_variable = { sq_km = 3380 }
 	}
 	provinces={
 		1086  
 	}
-	manpower= 114692
+	manpower= 403853
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral
