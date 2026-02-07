@@ -1,6 +1,6 @@
 ﻿l_english:
- MAPMODE_TDA_POPULATION_DENSITY_MAP_MODE:0 "Population Density"
- MAPMODE_TDA_POPULATION_DENSITY_MAP_MODE_NAME:0 "$MAPMODE_TDA_POPULATION_DENSITY_MAP_MODE$"
+ MAPMODE_TDA_POPULATION_DENSITY_MAP_MODE:0 "§YPopulation Density§! map mode"
+ MAPMODE_TDA_POPULATION_DENSITY_MAP_MODE_NAME:0 "Population Density"
  MAPMODE_TDA_POPULATION_DENSITY_MAP_MODE_DESCRIPTION:0 ""
 
  TDA_population_density_map_mode_tooltip:0 "§Y[FROM.GetName]§! has a population density of §Y[?FROM.pop_per_sq_km|.2]§!/km²"

@@ -2,12 +2,40 @@ state={
 	id=595
 	name="STATE_595"
 	history={
-		owner = ZZZ
+		owner = PRC
+		add_core_of = PRC
+		
+		victory_points = { 7071 40 }
+		victory_points = { 15048 15 }
+		victory_points = { 15042 14 }
+		victory_points = { 15044 14 }
+		victory_points = { 15049 9 }
+		victory_points = { 10093 4 }
+		victory_points = { 4196 35 }
+		victory_points = { 1166 6 }
+		victory_points = { 15051 15 }
+		victory_points = { 15045 7 }
+		victory_points = { 7027 6 }
+		victory_points = { 12084 5 }
+		victory_points = { 7099 7 }
+		victory_points = { 1006 2 }
+		victory_points = { 10042 3 }
+		victory_points = { 15050 3 }
+		victory_points = { 4169 4 }
+		victory_points = { 1094 4 }
+		victory_points = { 10069 3 }
+		victory_points = { 4070 2 }
+		victory_points = { 1138 2 }
+		victory_points = { 10012 2 }
+		victory_points = { 4053 2 }
+		victory_points = { 10084 2 }
+		
+		set_variable = { sq_km = 123756 }
 	}
 	provinces={
-		1006 1094 1138 1166 1193 4053 4070 4113 4169 4196 7027 7071 7099 7131 10010 10012 10042 10054 10069 10084 10093 11961 11986 12057 12084 
+		1006 1094 1138 1166 1193 4053 4070 4113 4169 4196 7027 7071 7099 7131 10010 10012 10042 10054 10069 10084 10093 11961 11986 12057 12084 15042 15043 15044 15045 15046 15047 15048 15049 15050 15051 
 	}
-	manpower= 100000
+	manpower= 36894217 
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=city
