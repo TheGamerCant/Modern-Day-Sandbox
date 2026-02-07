@@ -9,6 +9,8 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 13157;13154;sea;749;-1;-1;-1;-1;WELLAND_CANAL;Niagra Falls Canals
 13157;8642;sea;13615;-1;-1;-1;-1;ST_LAWRENCE_RIVER;St Lawrence
 6771;9718;impassable;-1;-1;-1;-1;-1;;Crimean Spit
+7014;14992;sea;8396;-1;-1;-1;-1;;Shanghai
+11928;14992;sea;8396;-1;-1;-1;-1;;Shanghai
 12251;10321;sea;8313;-1;-1;-1;-1;;Andaman
 7413;1419;sea;5294;-1;-1;-1;-1;;Moluccas
 10141;1419;sea;5267;-1;-1;-1;-1;;Moluccas

@@ -4,6 +4,10 @@ state={
 	history = {
 		owner = SOV
 		add_core_of = SOV
+		
+		#Nova Zemlya = 79964
+		#Franz Josef Land = 16134
+		set_variable = { sq_km = 96098 }
 	}
 	provinces={
 		11047 

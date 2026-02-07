@@ -2,12 +2,24 @@ state={
 	id=613
 	name="STATE_613"
 	history={
-		owner = ZZZ
+		owner = PRC
+		add_core_of = PRC
+		
+		victory_points = { 7014 100 }
+		victory_points = { 14993 4 }
+		victory_points = { 14992 3 }
+		
+		set_variable = { sq_km = 6341 }
+		
+		buildings = {
+			infrastructure = 5
+			air_base = 10
+		}
 	}
 	provinces={
-		7014 12076
+		7014 12076 14992 14993 14994 14995 
 	}
-	manpower= 100000
+	manpower= 23019196
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=large_city

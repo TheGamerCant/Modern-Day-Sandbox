@@ -22,6 +22,27 @@ state={
 		victory_points = { 14954 10 }
 		victory_points = { 14945 25 }
 		victory_points = { 14944 5 }
+		victory_points = { 14955 14 }
+		victory_points = { 14935 20 }
+		victory_points = { 14936 7 }
+		victory_points = { 4205 4 }
+		victory_points = { 7105 4 }
+		victory_points = { 10043 9 }
+		victory_points = { 7129 6 }
+		victory_points = { 12069 5 }
+		victory_points = { 7055 7 }
+		victory_points = { 1084 6 }
+		victory_points = { 9987 3 }
+		victory_points = { 11962 4 }
+		victory_points = { 14946 6 }
+		victory_points = { 4186 4 }
+		victory_points = { 9956 4 }
+		victory_points = { 12015 4 }
+		victory_points = { 12045 7 }
+		victory_points = { 4157 6 }
+		victory_points = { 7089 5 }
+		victory_points = { 10072 3 }
+		victory_points = { 14952 4 }
 		
 		set_variable = { sq_km = 157704 }
 		

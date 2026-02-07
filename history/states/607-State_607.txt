@@ -2,12 +2,45 @@ state={
 	id=607
 	name="STATE_607"
 	history = {
-		owner = ZZZ
+		owner = PRC
+		add_core_of = PRC
+		
+		victory_points = { 14976 60 }
+		victory_points = { 14980 12 }
+		victory_points = { 14978 20 }
+		victory_points = { 14985 12 }
+		victory_points = { 14972 12 }
+		victory_points = { 11933 8 }
+		victory_points = { 4144 5 }
+		victory_points = { 1139 8 }
+		victory_points = { 4606 5 }
+		victory_points = { 14982 10 }
+		victory_points = { 14973 10 }
+		victory_points = { 14974 10 }
+		victory_points = { 14975 14 }
+		victory_points = { 14983 8 }
+		victory_points = { 14984 7 }
+		victory_points = { 14986 10 }
+		victory_points = { 4519 5 }
+		victory_points = { 1004 5 }
+		victory_points = { 14987 8 }
+		victory_points = { 6932 4 }
+		victory_points = { 4547 2 }
+		victory_points = { 4066 4 }
+		victory_points = { 10446 4 }
+		victory_points = { 14988 3 }
+		victory_points = { 14991 8 }
+		victory_points = { 12012 5 }
+		victory_points = { 7540 3 }
+		victory_points = { 1603 2 }
+		victory_points = { 7568 2 }
+		
+		set_variable = { sq_km = 165467 }
 	}
 	provinces={
-		1004 1139 1603 4066 4114 4144 4519 4547 4606 6932 7074 7085 7126 7459 7508 7540 7568 7656 9958 10098 10364 10434 10446 11931 11933 12012 12426 
+		1004 1139 1603 4066 4114 4144 4158 4519 4547 4606 6932 7074 7085 7126 7459 7508 7540 7568 7656 9958 10098 10364 10434 10446 11931 11933 12012 12426 14972 14973 14974 14975 14976 14977 14978 14979 14980 14981 14982 14983 14984 14985 14986 14987 14988 14989 14990 14991 
 	}
-	manpower=100000
+	manpower=94029939
 	buildings_max_level_factor=1
 	state_category=town
 	local_supplies=0.5

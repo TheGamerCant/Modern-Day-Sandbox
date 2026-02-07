@@ -1,10 +1,14 @@
-@lower_bound = 0.10
-@upper_bound = 0.96
+@lower_bound = 0.08
+@upper_bound = 0.975
 
 TDA_update_every_state_population_density = {
 	clear_array = ZZZ.arr
 	clear_array = ZZZ.pop_dens_ranked
 	clear_array = ZZZ.pop_dens_indexes
+	
+	#every_possible_country = {
+	#	set_variable = { sq_km = 0 }
+	#}
 	
 	every_state = {
 		set_variable = { pop_dens_r = 0 }
@@ -28,16 +32,7 @@ TDA_update_every_state_population_density = {
 		set_variable = { high = ZZZ.arr^num }
 		subtract_from_variable = { high = 1 }
 		quicksort = yes
-		
-		for_each_loop = {
-			array = ZZZ.arr
-			value = v
-			index = i
-			break = break
-			
-			log = "[?v]"
-		}
-		
+
 		#Create a second array of all the indexes in order of pop density, as well as renaming the original array
 		resize_array = {
 			array = ZZZ.pop_dens_ranked
@@ -65,10 +60,14 @@ TDA_update_every_state_population_density = {
 		clear_variable = low
 	}
 
-	#Binary search doesn't work if two states have the same pop_per_sq_km variable, but oh well
+	#Binary search doesn't work if two states have the same pop_per_sq_km variable, maybe update later?
 	every_state = {
 		if = {
 			limit = { check_variable = { var = THIS.sq_km value = 0 compare = greater_than } }
+			
+			#Get a sq_km value for the owner
+			#OWNER = { add_to_variable = { sq_km = PREV.sq_km } }
+			
 			set_variable = { upper_bound = ZZZ.pop_dens_ranked^num }
 			subtract_from_variable = { upper_bound = 1 }
 			set_variable = { lower_bound = 0 }

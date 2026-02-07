@@ -2382,7 +2382,7 @@
 	default = "Troms"
 }
 577 = {
-	default = "Nova Zemlya"
+	default = "Nova Zemlya & Zemlya Frantsa-Iosifa"
 }
 578 = {
 	default = "Tomsk"
