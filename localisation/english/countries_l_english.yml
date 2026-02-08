@@ -242,3 +242,7 @@
  MCU:0 "Macau"                                  
  MCU_DEF:0 "the Macao Special Administrative Region of the People's Republic of China"                                  
  MCU_ADJ:0 "Macau"
+
+ ROC:0 "Taiwan"                                  
+ ROC_DEF:0 "the Republic of China"                                  
+ ROC_ADJ:0 "Taiwanese"

@@ -2,12 +2,28 @@ state={
 	id=524
 	name="STATE_524"
 	history={
-		owner = ZZZ
+		owner = ROC
+		add_core_of = ROC
+		
+		victory_points = { 7186 70 }
+		victory_points = { 15078 2 }
+		victory_points = { 15077 2 }
+		victory_points = { 7214 10 }
+		victory_points = { 11959 40 }
+		victory_points = { 15079 4 }
+		victory_points = { 12068 16 }
+		victory_points = { 15076 25 }
+		
+		buildings = {
+			air_base = 8
+		}
+		
+		set_variable = { sq_km = 13203.93 }
 	}
 	provinces={
-		1091 1175 4096 7186 7214 9955 11914 11959 12027 12068 
+		1091 7186 7214 11914 11959 12068 15076 15077 15078 15079 15080 
 	}
-	manpower= 100000
+	manpower= 22224112
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=large_town

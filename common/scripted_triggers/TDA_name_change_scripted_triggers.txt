@@ -219,11 +219,13 @@ TAG_using_chinese_names = {
 		AND = {
 			OR = {
 				original_tag = PRC
+				original_tag = ROC
 			}
 			is_subject = no
 		}
 		
 		is_puppet_of = PRC
+		is_puppet_of = ROC
 	}
 }
 
@@ -253,4 +255,9 @@ TAG_using_tibetan_names = {
 		
 		is_puppet_of = TIB
 	}
+}
+
+TAG_using_vietnamese_names = {
+	#has_global_flag = TDA_city_name_changes_active_flag
+	always = no
 }

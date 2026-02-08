@@ -1355,15 +1355,15 @@
 	default = "Southern Indochina"
 }
 287 = {
-	default = "Central Taklamakan"
+	default = "Taklamakan Desert"
 	entry = {
-        name = "Zhōng Tǎkèlāmǎgàn"
+        name = "Tǎkèlāmǎgān Shāmò"
         requirements = {
             "TAG_using_chinese_names = yes"
         }
     }
 	entry = {
-        name = "'Ottura Teklimakan"
+        name = "Teklimakan Qumluqi"
         requirements = {
             "TAG_using_uyghur_names = yes"
         }
@@ -2199,6 +2199,12 @@
 }
 524 = {
 	default = "Taiwan"
+	entry = {
+        name = "Táiwān"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 525 = {
 	default = "Gyeonggi"
@@ -2685,17 +2691,17 @@
     }
 }
 618 = {
-	default = "Western Taklamakan"
+	default = "Paracel Islands"
 	entry = {
-        name = "Xī Tǎkèlāmǎgàn"
+        name = "Xīshā Qúndǎo"
         requirements = {
             "TAG_using_chinese_names = yes"
         }
     }
 	entry = {
-        name = "Rerbiy Teklimakan"
+        name = "Quần đảo Hoàng Sa"
         requirements = {
-            "TAG_using_uyghur_names = yes"
+            "TAG_using_vietnamese_names = yes"
         }
     }
 }
@@ -3288,17 +3294,11 @@
     }
 }
 759 = {
-	default = "Eastern Taklamakan"
+	default = "Pratas Island"
 	entry = {
-        name = "Dōng Tǎkèlāmǎgàn"
+        name = "Dōngshā Qúndǎo"
         requirements = {
             "TAG_using_chinese_names = yes"
-        }
-    }
-	entry = {
-        name = "Sherqiy Teklimakan"
-        requirements = {
-            "TAG_using_uyghur_names = yes"
         }
     }
 }
@@ -3891,6 +3891,51 @@
 	default = "Zhangjiakou"
 	entry = {
         name = "Zhāngjiākŏu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+898 = {
+	default = "Matsu Islands"
+	entry = {
+        name = "Mǎzǔ Qúndǎo"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+899 = {
+	default = "Penghu Islands"
+	entry = {
+        name = "Pénghú Qúndǎo"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+900 = {
+	default = "Kinmen Island"
+	entry = {
+        name = "Jīnmén Dǎo"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+901 = {
+	default = "Central Mountain Range"
+	entry = {
+        name = "Zhōngyāng Shānmài"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+902 = {
+	default = "Taitung"
+	entry = {
+        name = "Táidōng"
         requirements = {
             "TAG_using_chinese_names = yes"
         }

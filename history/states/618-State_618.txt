@@ -4,17 +4,14 @@ state={
 	history={
 		owner = PRC
 		add_core_of = PRC
-		add_core_of = UYG
 		
-		set_variable = { sq_km = 54063.34 }
+		set_variable = { sq_km = 7.75 }
 	}
 	provinces={
-		7790 
+		15070 
 	}
-	manpower= 22
+	manpower= 1280
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral
-	impassable = yes
-	force_link_ownership_to = 619
 }

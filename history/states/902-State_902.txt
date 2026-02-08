@@ -1,0 +1,20 @@
+state={
+	id=902
+	name="STATE_902"
+	history={
+		owner = ROC
+		add_core_of = ROC
+		
+		victory_points = { 1175 2 }
+		victory_points = { 15075 3 }
+		
+		set_variable = { sq_km = 3526.6 }
+	}
+	provinces={
+		1175 15075 
+	}
+	manpower= 527627
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=large_town
+}

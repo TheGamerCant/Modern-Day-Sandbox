@@ -12722,3 +12722,102 @@
         }
     }
 }
+1175 = {
+	default = "Hualien"
+	entry = {
+        name = "Huālián"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+15075 = {
+	default = "Taitung"
+	entry = {
+        name = "Táidōng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+15072 = {
+	default = "Jincheng"
+	entry = {
+        name = "Jīnchéng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+7186 = {
+	default = "Taipei"
+	entry = {
+        name = "Táiběi"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+15078 = {
+	default = "Taoyuan International Airport"
+	entry = {
+        name = "Táoyuán Gúojì Jīchǎng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+15077 = {
+	default = "Yilan"
+	entry = {
+        name = "Yílán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+7214 = {
+	default = "Hsinchu"
+	entry = {
+        name = "Xīnzhú"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+11959 = {
+	default = "Taichung"
+	entry = {
+        name = "Táizhōng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+15079 = {
+	default = "Chiayi"
+	entry = {
+        name = "Jiāyì"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+12068 = {
+	default = "Tainan"
+	entry = {
+        name = "Táinán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}
+15076 = {
+	default = "Kaohsiung"
+	entry = {
+        name = "Gāoxióng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
+}

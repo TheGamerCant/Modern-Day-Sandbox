@@ -1,0 +1,19 @@
+state={
+	id=901
+	name="STATE_901"
+	history={
+		owner = ROC
+		add_core_of = ROC
+		
+		set_variable = { sq_km = 15048.3 }
+	}
+	provinces={
+		4096 9955 12027 
+	}
+	manpower= 202374
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=large_town
+	impassable = yes
+	force_link_ownership_to = 524
+}
