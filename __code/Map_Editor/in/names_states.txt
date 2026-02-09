@@ -200,7 +200,13 @@
 	default = "Friesland"
 }
 37 = {
-	default = "Sjaelland"
+	default = "Danish Belts"
+	entry = {
+        name = "Danske Bælter"
+        requirements = {
+            "TAG_using_danish_names = yes"
+        }
+    }
 }
 38 = {
 	default = "Gävleborg"
@@ -561,12 +567,36 @@
 }
 99 = {
 	default = "Jutland"
+	entry = {
+        name = "Jylland"
+        requirements = {
+            "TAG_using_danish_names = yes"
+        }
+    }
 }
 100 = {
 	default = "Iceland"
+	entry = {
+        name = "Ísland"
+        requirements = {
+            "TAG_using_danish_names = yes"
+        }
+    }
 }
 101 = {
-	default = "Greenland"
+	default = "Coastal Greenland"
+	entry = {
+        name = "Kystgrønland"
+        requirements = {
+            "TAG_using_danish_names = yes"
+        }
+    }
+	entry = {
+        name = "Kalaallit Nunaata Sineriaa"
+        requirements = {
+            "TAG_using_greenlandic_names = yes"
+        }
+    }
 }
 102 = {
 	default = "Slovenia"
@@ -1034,7 +1064,13 @@
 	default = "Pskov"
 }
 210 = {
-	default = "Southern Jutland"
+	default = "Central Mountain Range"
+	entry = {
+        name = "Zhōngyāng Shānmài"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 211 = {
 	default = "Burgas"
@@ -1181,7 +1217,13 @@
 	default = "Smolensk"
 }
 243 = {
-	default = "Fyn"
+	default = "Taitung"
+	entry = {
+        name = "Táidōng"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 244 = {
 	default = "Saarland"
@@ -1554,6 +1596,18 @@
 }
 337 = {
 	default = "Faroe Islands"
+	entry = {
+        name = "Færøerne"
+        requirements = {
+            "TAG_using_danish_names = yes"
+        }
+    }
+	entry = {
+        name = "Føroyar"
+        requirements = {
+            "TAG_using_faroese_names = yes"
+        }
+    }
 }
 338 = {
 	default = "Ottawa-Gatineau"
@@ -3924,20 +3978,17 @@
     }
 }
 901 = {
-	default = "Central Mountain Range"
+	default = "Greenland"
 	entry = {
-        name = "Zhōngyāng Shānmài"
+        name = "Grønland"
         requirements = {
-            "TAG_using_chinese_names = yes"
+            "TAG_using_danish_names = yes"
         }
     }
-}
-902 = {
-	default = "Taitung"
 	entry = {
-        name = "Táidōng"
+        name = "Kalaallit Nunaat"
         requirements = {
-            "TAG_using_chinese_names = yes"
+            "TAG_using_greenlandic_names = yes"
         }
     }
 }

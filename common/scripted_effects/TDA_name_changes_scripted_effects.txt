@@ -597,8 +597,36 @@ TDA_update_state_35_names = {
 TDA_update_state_36_names = {
 }
 
-#Sjaelland
+#Danish Belts
 TDA_update_state_37_names = {
+	37 = {
+		#Danske Bælter
+		if = {
+			limit = { CONTROLLER = { TAG_using_danish_names = yes } }
+			set_state_name = STATE_37_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#København
+	if = {
+		limit = { any_country = { controls_province = 6287 TAG_using_danish_names = yes } }
+		set_province_name = { id = 6287 name = VICTORY_POINTS_6287_0 }
+	}
+	#Copenhagen
+	else = {
+		reset_province_name = 6287
+	}
+	#Københavns Lufthavn
+	if = {
+		limit = { any_country = { controls_province = 15102 TAG_using_danish_names = yes } }
+		set_province_name = { id = 15102 name = VICTORY_POINTS_15102_0 }
+	}
+	#Copenhagen Airport
+	else = {
+		reset_province_name = 15102
+	}
 }
 
 #Gävleborg
@@ -1390,14 +1418,76 @@ TDA_update_state_98_names = {
 
 #Jutland
 TDA_update_state_99_names = {
+	99 = {
+		#Jylland
+		if = {
+			limit = { CONTROLLER = { TAG_using_danish_names = yes } }
+			set_state_name = STATE_99_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Iceland
 TDA_update_state_100_names = {
+	100 = {
+		#Ísland
+		if = {
+			limit = { CONTROLLER = { TAG_using_danish_names = yes } }
+			set_state_name = STATE_100_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Ísafjörður
+	if = {
+		limit = { any_country = { controls_province = 13271 TAG_using_icelandic_names = yes } }
+		set_province_name = { id = 13271 name = VICTORY_POINTS_13271_0 }
+	}
+	#Ísafjörthur
+	else = {
+		reset_province_name = 13271
+	}
+	#Keflavíkurflugvöllur
+	if = {
+		limit = { any_country = { controls_province = 15082 TAG_using_icelandic_names = yes } }
+		set_province_name = { id = 15082 name = VICTORY_POINTS_15082_0 }
+	}
+	#Keflavík International Airport
+	else = {
+		reset_province_name = 15082
+	}
+	#Egilsstaðir
+	if = {
+		limit = { any_country = { controls_province = 15089 TAG_using_icelandic_names = yes } }
+		set_province_name = { id = 15089 name = VICTORY_POINTS_15089_0 }
+	}
+	#Egilsstathir
+	else = {
+		reset_province_name = 15089
+	}
 }
 
-#Greenland
+#Coastal Greenland
 TDA_update_state_101_names = {
+	101 = {
+		#Kystgrønland
+		if = {
+			limit = { CONTROLLER = { TAG_using_danish_names = yes } }
+			set_state_name = STATE_101_0
+		}
+		#Kalaallit Nunaata Sineriaa
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_greenlandic_names = yes } }
+			set_state_name = STATE_101_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Slovenia
@@ -2471,8 +2561,18 @@ TDA_update_state_208_names = {
 TDA_update_state_209_names = {
 }
 
-#Southern Jutland
+#Central Mountain Range
 TDA_update_state_210_names = {
+	210 = {
+		#Zhōngyāng Shānmài
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_210_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Burgas
@@ -3108,8 +3208,36 @@ TDA_update_state_242_names = {
 	}
 }
 
-#Fyn
+#Taitung
 TDA_update_state_243_names = {
+	243 = {
+		#Táidōng
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_243_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Huālián
+	if = {
+		limit = { any_country = { controls_province = 1175 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 1175 name = VICTORY_POINTS_1175_0 }
+	}
+	#Hualien
+	else = {
+		reset_province_name = 1175
+	}
+	#Táidōng
+	if = {
+		limit = { any_country = { controls_province = 15075 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 15075 name = VICTORY_POINTS_15075_0 }
+	}
+	#Taitung
+	else = {
+		reset_province_name = 15075
+	}
 }
 
 #Saarland
@@ -4283,6 +4411,21 @@ TDA_update_state_336_names = {
 
 #Faroe Islands
 TDA_update_state_337_names = {
+	337 = {
+		#Færøerne
+		if = {
+			limit = { CONTROLLER = { TAG_using_danish_names = yes } }
+			set_state_name = STATE_337_0
+		}
+		#Føroyar
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_faroese_names = yes } }
+			set_state_name = STATE_337_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Ottawa-Gatineau
@@ -13607,49 +13750,22 @@ TDA_update_state_900_names = {
 	}
 }
 
-#Central Mountain Range
+#Greenland
 TDA_update_state_901_names = {
 	901 = {
-		#Zhōngyāng Shānmài
+		#Grønland
 		if = {
-			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			limit = { CONTROLLER = { TAG_using_danish_names = yes } }
 			set_state_name = STATE_901_0
 		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-}
-
-#Taitung
-TDA_update_state_902_names = {
-	902 = {
-		#Táidōng
-		if = {
-			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
-			set_state_name = STATE_902_0
+		#Kalaallit Nunaat
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_greenlandic_names = yes } }
+			set_state_name = STATE_901_1
 		}
 		else = {
 			reset_state_name = yes
 		}
-	}
-	#Huālián
-	if = {
-		limit = { any_country = { controls_province = 1175 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 1175 name = VICTORY_POINTS_1175_0 }
-	}
-	#Hualien
-	else = {
-		reset_province_name = 1175
-	}
-	#Táidōng
-	if = {
-		limit = { any_country = { controls_province = 15075 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 15075 name = VICTORY_POINTS_15075_0 }
-	}
-	#Taitung
-	else = {
-		reset_province_name = 15075
 	}
 }
 
@@ -14557,7 +14673,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_899_names = yes
 	TDA_update_state_900_names = yes
 	TDA_update_state_901_names = yes
-	TDA_update_state_902_names = yes
 }
 
 TDA_toggle_change_city_names = {

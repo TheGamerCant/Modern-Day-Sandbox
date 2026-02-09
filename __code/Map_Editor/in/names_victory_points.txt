@@ -12821,3 +12821,108 @@
         }
     }
 }
+15081 = {
+	default = "Reykjavík"
+}
+15082 = {
+	default = "Keflavík International Airport"
+	entry = {
+        name = "Keflavíkurflugvöllur"
+        requirements = {
+            "TAG_using_icelandic_names = yes"
+        }
+    }
+}
+4861 = {
+	default = "Akureyri"
+}
+15089 = {
+	default = "Egilsstathir"
+	entry = {
+        name = "Egilsstaðir"
+        requirements = {
+            "TAG_using_icelandic_names = yes"
+        }
+    }
+}
+13271 = {
+	default = "Ísafjörthur"
+	entry = {
+        name = "Ísafjörður"
+        requirements = {
+            "TAG_using_icelandic_names = yes"
+        }
+    }
+}
+12674 = {
+	default = "Akranes"
+}
+13003 = {
+	default = "Tórshavn"
+}
+15091 = {
+	default = "Nuuk"
+}
+15090 = {
+	default = "Sisimiut"
+}
+15098 = {
+	default = "Qaqortoq"
+}
+6361 = {
+	default = "Rønne"
+}
+6287 = {
+	default = "Copenhagen"
+	entry = {
+        name = "København"
+        requirements = {
+            "TAG_using_danish_names = yes"
+        }
+    }
+}
+15102 = {
+	default = "Copenhagen Airport"
+	entry = {
+        name = "Københavns Lufthavn"
+        requirements = {
+            "TAG_using_danish_names = yes"
+        }
+    }
+}
+15100 = {
+	default = "Odense"
+}
+6393 = {
+	default = "Roskilde"
+}
+15099 = {
+	default = "Aarhus"
+}
+6235 = {
+	default = "Aalborg"
+}
+399 = {
+	default = "Esbjerg"
+}
+3341 = {
+	default = "Herning"
+}
+3206 = {
+	default = "Randers"
+}
+3277 = {
+	default = "Kolding"
+}
+3260 = {
+	default = "Slagelse"
+}
+3305 = {
+	default = "Nykøbing Falster"
+}
+13262 = {
+	default = "Holstebro"
+}
+394 = {
+	default = "Hjørring"
+}

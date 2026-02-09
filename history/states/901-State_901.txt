@@ -2,18 +2,19 @@ state={
 	id=901
 	name="STATE_901"
 	history={
-		owner = ROC
-		add_core_of = ROC
+		owner = DMK
+		add_core_of = DMK
+		add_core_of = GRN
 		
-		set_variable = { sq_km = 15048.3 }
+		set_variable =  { sq_km = 1971138.26 }
 	}
 	provinces={
-		4096 9955 12027 
+		13058 
 	}
-	manpower= 202374
+	manpower= 107
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=large_town
+	state_category=wasteland
 	impassable = yes
-	force_link_ownership_to = 524
+	force_link_ownership_to = 619
 }

@@ -15,7 +15,7 @@ state={
 		
 		set_variable = { sq_km = 48501 }
 		
-		buildings = {
+		buildings = {
 			air_base = 2
 		}
 	}

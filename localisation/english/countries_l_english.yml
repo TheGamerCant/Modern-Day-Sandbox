@@ -246,3 +246,31 @@
  ROC:0 "Taiwan"                                  
  ROC_DEF:0 "the Republic of China"                                  
  ROC_ADJ:0 "Taiwanese"
+
+ NWY:0 "Norway"                                  
+ NWY_DEF:0 "the Kingdom of Norway"                                  
+ NWY_ADJ:0 "Norwegian"
+
+ DMK:0 "Denmark"                                  
+ DMK_DEF:0 "the Kingdom of Denmark"                                  
+ DMK_ADJ:0 "Danish"
+
+ ICE:0 "Iceland"                                  
+ ICE_DEF:0 "Iceland"                                  
+ ICE_ADJ:0 "Icelandic"
+
+ SWE:0 "Sweden"                                  
+ SWE_DEF:0 "the Kingdom of Sweden"                                  
+ SWE_ADJ:0 "Swedish"
+
+ FIN:0 "Finland"                                  
+ FIN_DEF:0 "the Republic of Finland"                                  
+ FIN_ADJ:0 "Finnish"
+
+ GRN:0 "Greenland"                                  
+ GRN_DEF:0 "the Republic of Greenland"                                  
+ GRN_ADJ:0 "Greenlandic"
+
+ FOE:0 "Faroe Islands"                                  
+ FOE_DEF:0 "the Faroe Islands"                                  
+ FOE_ADJ:0 "Faroese"

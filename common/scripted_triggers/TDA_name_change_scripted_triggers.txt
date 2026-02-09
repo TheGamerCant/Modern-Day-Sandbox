@@ -261,3 +261,59 @@ TAG_using_vietnamese_names = {
 	#has_global_flag = TDA_city_name_changes_active_flag
 	always = no
 }
+
+TAG_using_icelandic_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = ICE
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = ICE
+	}
+}
+
+TAG_using_danish_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = DMK
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = DMK
+	}
+}
+
+TAG_using_faroese_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = FOE
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = FOE
+	}
+}
+
+TAG_using_greenlandic_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = GRN
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = GRN
+	}
+}

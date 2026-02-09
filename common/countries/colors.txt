@@ -348,3 +348,31 @@ ROC = {
 	color = rgb { 24 52 136 }
 	color_ui = rgb { 24 52 136 }
 }
+NWY = {
+	color = rgb { 124 56 56 }
+	color_ui = rgb { 124 56 56 }
+}
+DMK = {
+	color = rgb { 154 116 93 }
+	color_ui = rgb { 154 116 93 }
+}
+ICE = {
+	color = rgb { 139 154 184 }
+	color_ui = rgb { 139 154 184 }
+}
+SWE = {
+	color = rgb { 23 78 171 }
+	color_ui = rgb { 23 78 171 }
+}
+FIN = {
+	color = rgb { 206 221 231 }
+	color_ui = rgb { 206 221 231 }
+}
+GRN = {
+	color = rgb { 222 222 251 }
+	color_ui = rgb { 222 222 251 }
+}
+FOE = {
+	color = rgb { 72 137 197 }
+	color_ui = rgb { 72 137 197 }
+}
