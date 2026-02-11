@@ -167,6 +167,10 @@ STATE_sort_culture_array = {
 }
 
 STATE_get_culture_colours = {
+	clear_variable = culture_r_2
+	clear_variable = culture_g_2
+	clear_variable = culture_b_2
+	
 	#We now have our sorted arrays 'culture_value_array' and 'culture_index_array' -> Now get colours
 	set_temp_variable = { largest_ethnicity = culture_index_array^0 }
 
@@ -180,80 +184,96 @@ STATE_get_culture_colours = {
 	set_variable = { culture_b = global.culture_colour_array^largest_ethnicity }
 	modulo_variable = { culture_b = 256 }
 	
-	#round_variable = culture_r
-	#round_variable = culture_g
-	#round_variable = culture_b
-	
 	divide_variable = { culture_r = 255 }
 	divide_variable = { culture_g = 255 }
 	divide_variable = { culture_b = 255 }
 	
-	#Weaken the colour if there's more than one culture
+#	if = {
+#		limit = { check_variable = { culture_index_array^num > 1 } }
+#
+#		#Get float strength between 0-1, equal to how strong we want the colour to be.
+#		#For this, I have % of majority culture + difference between the first and second most common ethnicities divided by 190
+#		set_temp_variable = { strength = culture_value_array^0 }
+#		multiply_temp_variable = { strength = 2 }
+#		subtract_from_temp_variable = { strength = culture_value_array^1 }
+#		divide_temp_variable = { strength = 190 }
+#		
+#		clamp_temp_variable = { var = strength min = 0 max = 1 }
+#		
+#		#Create greyscale value luminance
+#		set_temp_variable = { luminance = culture_r }
+#		add_to_temp_variable = { luminance = culture_g }
+#		add_to_temp_variable = { luminance = culture_b }
+#		multiply_temp_variable = { luminance = 0.3 }
+#		
+#		#Create 'mutedColours', which makes the colour duller by default
+#		#Using 0.8 for the luminance greyscale and 0.2 for the colour
+#		#More luminance = a bigger on-map difference between strengths
+#		set_temp_variable = { mutedColour_r = luminance }
+#		multiply_temp_variable = { mutedColour_r = 0.8 }
+#		set_temp_variable = { mutedColour_r2 = culture_r }
+#		multiply_temp_variable = { mutedColour_r2 = 0.2 }
+#		add_to_temp_variable = { mutedColour_r = mutedColour_r2 }
+#		
+#		set_temp_variable = { mutedColour_g = luminance }
+#		multiply_temp_variable = { mutedColour_g = 0.8 }
+#		set_temp_variable = { mutedColour_g2 = culture_g }
+#		multiply_temp_variable = { mutedColour_g2 = 0.2 }
+#		add_to_temp_variable = { mutedColour_g = mutedColour_g2 }
+#		
+#		set_temp_variable = { mutedColour_b = luminance }
+#		multiply_temp_variable = { mutedColour_b = 0.8 }
+#		set_temp_variable = { mutedColour_b2 = culture_b }
+#		multiply_temp_variable = { mutedColour_b2 = 0.2 }
+#		add_to_temp_variable = { mutedColour_b = mutedColour_b2 }
+#		
+#		#Now blend it with the equation 'mutedColour * (1 - strength) + culture * strength'
+#		set_temp_variable = { r_HOLD = 1 }
+#		subtract_from_temp_variable = { r_HOLD = strength }
+#		multiply_temp_variable = { r_HOLD = mutedColour_r }
+#		set_temp_variable = { r_HOLD2 = culture_r }
+#		multiply_temp_variable = { r_HOLD2 = strength }
+#		add_to_temp_variable = { r_HOLD = r_HOLD2 }
+#		set_variable = { culture_r = r_HOLD }
+#		
+#		set_temp_variable = { g_HOLD = 1 }
+#		subtract_from_temp_variable = { g_HOLD = strength }
+#		multiply_temp_variable = { g_HOLD = mutedColour_g }
+#		set_temp_variable = { g_HOLD2 = culture_g }
+#		multiply_temp_variable = { g_HOLD2 = strength }
+#		add_to_temp_variable = { g_HOLD = g_HOLD2 }
+#		set_variable = { culture_g = g_HOLD }
+#		
+#		set_temp_variable = { b_HOLD = 1 }
+#		subtract_from_temp_variable = { b_HOLD = strength }
+#		multiply_temp_variable = { b_HOLD = mutedColour_b }
+#		set_temp_variable = { b_HOLD2 = culture_b }
+#		multiply_temp_variable = { b_HOLD2 = strength }
+#		add_to_temp_variable = { b_HOLD = b_HOLD2 }
+#		set_variable = { culture_b = b_HOLD }
+#	}
+	
 	if = {
-		limit = { check_variable = { culture_index_array^num > 1 } }
+		limit = { 
+			check_variable = { var = culture_value_array^1 value = 7.0 compare = greater_than_or_equals } 
+			check_variable = { var = culture_index_array^1 value = 0.0 compare = not_equals } 
+		}
+		
+		set_temp_variable = { second_largest_ethnicity = culture_index_array^1 }
 
-		#Get float strength between 0-1, equal to how strong we want the colour to be.
-		#For this, I have % of majority culture + difference between the first and second most common ethnicities divided by 190
-		set_temp_variable = { strength = culture_value_array^0 }
-		multiply_temp_variable = { strength = 2 }
-		subtract_from_temp_variable = { strength = culture_value_array^1 }
-		divide_temp_variable = { strength = 190 }
+		set_variable = { culture_r_2 = global.culture_colour_array^second_largest_ethnicity }
+		divide_variable = { culture_r_2 = 65536 }
 		
-		clamp_temp_variable = { var = strength min = 0 max = 1 }
+		set_variable = { culture_g_2 = global.culture_colour_array^second_largest_ethnicity }
+		modulo_variable = { culture_g_2 = 65536 }
+		divide_variable = { culture_g_2 = 256 }
 		
-		#Create greyscale value luminance
-		set_temp_variable = { luminance = culture_r }
-		add_to_temp_variable = { luminance = culture_g }
-		add_to_temp_variable = { luminance = culture_b }
-#		multiply_temp_variable = { luminance = 0.9 }
-#		divide_temp_variable = { luminance = 3 }
-		multiply_temp_variable = { luminance = 0.3 }
+		set_variable = { culture_b_2 = global.culture_colour_array^second_largest_ethnicity }
+		modulo_variable = { culture_b_2 = 256 }
 		
-		#Create 'mutedColours', which makes the colour duller by default
-		#Using 0.8 for the luminance greyscale and 0.2 for the colour
-		#More luminence = a bigger on-map difference between strengths
-		set_temp_variable = { mutedColour_r = luminance }
-		multiply_temp_variable = { mutedColour_r = 0.8 }
-		set_temp_variable = { mutedColour_r2 = culture_r }
-		multiply_temp_variable = { mutedColour_r2 = 0.2 }
-		add_to_temp_variable = { mutedColour_r = mutedColour_r2 }
-		
-		set_temp_variable = { mutedColour_g = luminance }
-		multiply_temp_variable = { mutedColour_g = 0.8 }
-		set_temp_variable = { mutedColour_g2 = culture_g }
-		multiply_temp_variable = { mutedColour_g2 = 0.2 }
-		add_to_temp_variable = { mutedColour_g = mutedColour_g2 }
-		
-		set_temp_variable = { mutedColour_b = luminance }
-		multiply_temp_variable = { mutedColour_b = 0.8 }
-		set_temp_variable = { mutedColour_b2 = culture_b }
-		multiply_temp_variable = { mutedColour_b2 = 0.2 }
-		add_to_temp_variable = { mutedColour_b = mutedColour_b2 }
-		
-		#Now blend it with the equaltion 'mutedColour * (1 - strength) + culture * strength'
-		set_temp_variable = { r_HOLD = 1 }
-		subtract_from_temp_variable = { r_HOLD = strength }
-		multiply_temp_variable = { r_HOLD = mutedColour_r }
-		set_temp_variable = { r_HOLD2 = culture_r }
-		multiply_temp_variable = { r_HOLD2 = strength }
-		add_to_temp_variable = { r_HOLD = r_HOLD2 }
-		set_variable = { culture_r = r_HOLD }
-		
-		set_temp_variable = { g_HOLD = 1 }
-		subtract_from_temp_variable = { g_HOLD = strength }
-		multiply_temp_variable = { g_HOLD = mutedColour_g }
-		set_temp_variable = { g_HOLD2 = culture_g }
-		multiply_temp_variable = { g_HOLD2 = strength }
-		add_to_temp_variable = { g_HOLD = g_HOLD2 }
-		set_variable = { culture_g = g_HOLD }
-		
-		set_temp_variable = { b_HOLD = 1 }
-		subtract_from_temp_variable = { b_HOLD = strength }
-		multiply_temp_variable = { b_HOLD = mutedColour_b }
-		set_temp_variable = { b_HOLD2 = culture_b }
-		multiply_temp_variable = { b_HOLD2 = strength }
-		add_to_temp_variable = { b_HOLD = b_HOLD2 }
-		set_variable = { culture_b = b_HOLD }
+		divide_variable = { culture_r_2 = 255 }
+		divide_variable = { culture_g_2 = 255 }
+		divide_variable = { culture_b_2 = 255 }
 	}
 }
 

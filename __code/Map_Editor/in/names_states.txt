@@ -747,7 +747,13 @@
 	default = "Nordland"
 }
 145 = {
-	default = "Åland"
+	default = "Aaland"
+	entry = {
+        name = "Åland"
+        requirements = {
+            "OR = { TAG_using_swedish_names = yes TAG_using_finnish_names = yes }"
+        }
+    }
 }
 146 = {
 	default = "Karelian Isthmus"
@@ -756,13 +762,31 @@
 	default = "Donegal"
 }
 148 = {
-	default = "Lappi"
+	default = "Lapland"
+	entry = {
+        name = "Lappi"
+        requirements = {
+            "TAG_using_finnish_names = yes"
+        }
+    }
 }
 149 = {
-	default = "Vaasa"
+	default = "Western Finland"
+	entry = {
+        name = "Länsi-Suomea"
+        requirements = {
+            "TAG_using_finnish_names = yes"
+        }
+    }
 }
 150 = {
-	default = "Kuopio"
+	default = "Eastern Finland"
+	entry = {
+        name = "Itä-Suomea"
+        requirements = {
+            "TAG_using_finnish_names = yes"
+        }
+    }
 }
 151 = {
 	default = "Connecticut"
@@ -2400,7 +2424,19 @@
 	default = "Buryatia"
 }
 565 = {
-	default = "Kymi"
+	default = "Greenland"
+	entry = {
+        name = "Grønland"
+        requirements = {
+            "TAG_using_danish_names = yes"
+        }
+    }
+	entry = {
+        name = "Kalaallit Nunaat"
+        requirements = {
+            "TAG_using_greenlandic_names = yes"
+        }
+    }
 }
 566 = {
 	default = "Irkutsk"
@@ -3882,7 +3918,13 @@
 	default = "Sakha"
 }
 877 = {
-	default = "Oulu"
+	default = "Kinmen Island"
+	entry = {
+        name = "Jīnmén Dǎo"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 878 = {
 	default = "Finnmark"
@@ -3965,30 +4007,6 @@
         name = "Pénghú Qúndǎo"
         requirements = {
             "TAG_using_chinese_names = yes"
-        }
-    }
-}
-900 = {
-	default = "Kinmen Island"
-	entry = {
-        name = "Jīnmén Dǎo"
-        requirements = {
-            "TAG_using_chinese_names = yes"
-        }
-    }
-}
-901 = {
-	default = "Greenland"
-	entry = {
-        name = "Grønland"
-        requirements = {
-            "TAG_using_danish_names = yes"
-        }
-    }
-	entry = {
-        name = "Kalaallit Nunaat"
-        requirements = {
-            "TAG_using_greenlandic_names = yes"
         }
     }
 }

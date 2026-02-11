@@ -2,13 +2,18 @@ state={
 	id=877
 	name="STATE_877"
 	history={
-		owner = ZZZ
+		owner = ROC
+		add_core_of = ROC
+		
+		victory_points = { 15072 1 }
+		
+		set_variable = { sq_km = 151.7 }
 	}
 	provinces={
-		7 82 120 132 158 195 3026 3073 3115 3149 3153 3156 6045 6081 6134 6179 6212 9233 11024 11041 11079 11081 11121 11132 
+		15072 
 	}
-	manpower= 100000
+	manpower= 103614
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=city
+	state_category=pastoral
 }

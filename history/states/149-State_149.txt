@@ -1,14 +1,32 @@
 state={
 	id=149
 	name="STATE_149"
-	history={
-		owner = ZZZ
+	history = {
+		owner = FIN
+		add_core_of = FIN
+		
+		victory_points = { 15108 4 }
+		victory_points = { 204 4 }
+		victory_points = { 3122 2 }
+		victory_points = { 169 2 }
+		victory_points = { 9038 2 }
+		victory_points = { 9160 3 }
+		victory_points = { 67 3 }
+		victory_points = { 11066 2 }
+		victory_points = { 66 2 }
+		victory_points = { 9194 2 }
+		victory_points = { 32 2 }
+		victory_points = { 6141 1 }
+		victory_points = { 3172 1 }
+		victory_points = { 6163 1 }
+		
+		set_variable = { sq_km = 84896 }
 	}
 	provinces={
-		63 66 3119 3122 3172 6013 6138 6141 6198 9038 9156 9166 9219 11033 11065 11126 11144 13113 
+		32 63 66 67 169 204 3009 3025 3083 3117 3119 3122 3137 3172 6013 6047 6066 6138 6141 6144 6163 6198 9038 9056 9073 9094 9156 9160 9166 9167 9194 9219 11033 11065 11066 11126 11144 11172 13100 13101 13102 13103 13106 13107 13113 15108 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=2276877
+	buildings_max_level_factor=1
 	state_category=town
+	local_supplies=0.5
 }

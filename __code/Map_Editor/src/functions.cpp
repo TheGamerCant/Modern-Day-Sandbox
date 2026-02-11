@@ -1021,7 +1021,10 @@ Vector<Decimal> ParseStringAsDecimalArray(const String& stringIn, Boolean ignore
 Boolean TagIsValid(const String& tag) {
     if (tag.size() != 3) { return false; }
     if (!CharIsCapital(tag[0]) || !CharIsCapitalOrNumber(tag[1]) || !CharIsCapitalOrNumber(tag[2])) { return false; }
-    if (tag == "NOT" || tag == "AND" || tag == "TAG" || tag == "OOB" || tag == "LOG" || tag == "NUM" || tag == "RED") { return false; }
+
+    //TAG is allowed?
+    //if (tag == "NOT" || tag == "AND" || tag == "TAG" || tag == "OOB" || tag == "LOG" || tag == "NUM" || tag == "RED") { return false; }
+    if (tag == "NOT" || tag == "AND" || tag == "OOB" || tag == "LOG" || tag == "NUM" || tag == "RED") { return false; }
 
     return true;
 }

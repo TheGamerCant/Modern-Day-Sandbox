@@ -11,5 +11,8 @@ NDefines_Graphics.NGraphics.GRADIENT_BORDERS_COUNTRY_CENTER_THICKNESS = 0.0		--B
 NDefines_Graphics.NGraphics.GRADIENT_BORDERS_THICKNESS_COUNTRY_LOW = 5.0 		--Base is 5.0, thickness in pixels
 NDefines_Graphics.NGraphics.GRADIENT_BORDERS_THICKNESS_COUNTRY_HIGH = 10.0		--Base is 25.0, thickness in pixels
 
+NDefines_Graphics.NMapMode.MAP_MODE_TERRAIN_TRANSPARENCY = 1.0				--Base is 0.5, terrain colour transparency when on the terrain map mode
+NDefines_Graphics.NMapMode.MAP_MODE_NAVAL_TERRAIN_TRANSPARENCY = 1.0			--Base is 0.8
+
 
 NDefines_Graphics.NGraphics.GRADIENT_BORDERS_THICKNESS_STRATEGIC_REGIONS = 25.0		--Base is 150.0, border thickness in strategic regions mode

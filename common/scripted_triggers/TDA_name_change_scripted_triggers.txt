@@ -317,3 +317,45 @@ TAG_using_greenlandic_names = {
 		is_puppet_of = GRN
 	}
 }
+
+TAG_using_finnish_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = FIN
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = FIN
+	}
+}
+
+TAG_using_swedish_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = SWE
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = SWE
+	}
+}
+
+TAG_using_norwegian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = NWY
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = NWY
+	}
+}

@@ -12926,3 +12926,99 @@
 394 = {
 	default = "Hjørring"
 }
+9228 = {
+	default = "Mariehamn"
+}
+11105 = {
+	default = "Helsinki"
+}
+15106 = {
+	default = "Helsinki-Vantaa Airport"
+	entry = {
+        name = "Helsinki-Vantaan Lentoasema"
+        requirements = {
+            "TAG_using_finnish_names = yes"
+        }
+    }
+}
+6009 = {
+	default = "Porvoo"
+}
+11211 = {
+	default = "Hanko"
+}
+15108 = {
+	default = "Tampere"
+}
+3083 = {
+	default = "Tampere"
+}
+204 = {
+	default = "Turku"
+}
+3122 = {
+	default = "Vaasa"
+}
+169 = {
+	default = "Pori"
+}
+9038 = {
+	default = "Seinäjoki"
+}
+9160 = {
+	default = "Jyväskylä"
+}
+67 = {
+	default = "Lahti"
+}
+11066 = {
+	default = "Hämeenlinna"
+}
+66 = {
+	default = "Kokkola"
+}
+9194 = {
+	default = "Salo"
+}
+32 = {
+	default = "Nokia"
+}
+6141 = {
+	default = "Äänekoski"
+}
+3172 = {
+	default = "Jakobstad"
+}
+6163 = {
+	default = "Jämsä"
+}
+11141 = {
+	default = "Kuopio"
+}
+3161 = {
+	default = "Kouvola"
+}
+6082 = {
+	default = "Lappeenranta"
+}
+3013 = {
+	default = "Mikkeli"
+}
+9061 = {
+	default = "Joensuu"
+}
+9104 = {
+	default = "Iisalmi"
+}
+3125 = {
+	default = "Kajaani"
+}
+11121 = {
+	default = "Oulu"
+}
+124 = {
+	default = "Rovaniemi"
+}
+11125 = {
+	default = "Tornio"
+}

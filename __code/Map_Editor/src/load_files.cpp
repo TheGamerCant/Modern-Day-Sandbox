@@ -9,7 +9,7 @@
 
 
 void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories) {
-    HashMap<String, String> directoriesMap = ParseStringForPairsMapUnique(LoadFileToString("file_directories.txt"));
+    HashMap<String, String> directoriesMap = ParseStringForPairsMapUnique(LoadFileToString("in\\file_directories.txt"));
 
     //Remove any trailing quotation marks we may have
     for (auto& [key, value] : directoriesMap) {
@@ -73,6 +73,18 @@ void LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, co
     const VectorMap<GraphicalCulture>& graphicalCulturesArray) {
     Vector<Path> countryTagFiles = GetGameFiles(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\country_tags", ".txt", 4);
 
+    HashMap<String, String> countryColoursOverride;
+    Vector<DoubleString> countryColoursArray = ParseStringForPairsArray(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\countries\\colors.txt").string()));
+    if (countryColoursArray.size() > 0) {
+        for (const auto& [tag, colourDataWhole] : countryColoursArray) {
+            HashMap<String, String> colourData = ParseStringForPairsMapUnique(colourDataWhole);
+
+            if (colourData.find("color") != colourData.end()) {
+                countryColoursOverride[tag] = colourData.at("color");
+            }
+        }
+    }
+
     for (const Path& file : countryTagFiles) {
         Vector<DoubleString> countryTagAndDefinitionFiles = ParseStringForPairsArray(LoadFileToString(file.string()), 128);
         countriesArray.Reserve(countriesArray.Capacity() + countryTagAndDefinitionFiles.size());
@@ -92,6 +104,7 @@ void LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, co
             HashMap<String, String> countryCosmeticData = ParseStringForPairsMapUnique(LoadFileToString(GetGameFile(vanillaDirectory, modDirectory, modReplaceDirectories, "common\\" + countryFile).string()));
             UnsignedInteger16 cultureIndex = 0, cultureIndex2D = 0;
 
+            /*
             //Special case for Guanxi clique vanilla file
             if (countryCosmeticData.find("graphical_culture") != countryCosmeticData.end() && countryCosmeticData.at("graphical_culture") == "asian_european_gfx") { 
                 cultureIndex = graphicalCulturesArray["asian_2d"].GetId();
@@ -101,18 +114,21 @@ void LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, co
                 FatalError("Bad graphical cultures definition in " + countryFile);
             }
             else {
-                cultureIndex = graphicalCulturesArray[countryCosmeticData.at("graphical_culture")].GetId();
-                cultureIndex2D = graphicalCulturesArray[countryCosmeticData.at("graphical_culture_2d")].GetId();
+                cultureIndex = (graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture"))) ? graphicalCulturesArray[countryCosmeticData.at("graphical_culture")].GetId() : 0;
+                cultureIndex2D = (graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture_2d"))) ? graphicalCulturesArray[countryCosmeticData.at("graphical_culture_2d")].GetId() : 0;
             }
+            */
+            cultureIndex = (graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture"))) ? graphicalCulturesArray[countryCosmeticData.at("graphical_culture")].GetId() : 0;
+            cultureIndex2D = (graphicalCulturesArray.NameInArray(countryCosmeticData.at("graphical_culture_2d"))) ? graphicalCulturesArray[countryCosmeticData.at("graphical_culture_2d")].GetId() : 0; 
 
             UnsignedInteger8 rgbArray[3] = { 0, 0, 0 };
             Float64 hsvArray[3] = { 0.0f, 0.0f, 0.0f };
 
-            if (countryCosmeticData.find("color") == countryCosmeticData.end()) {
-                FatalError("No colour defined in " + countryFile);
+            if (countryCosmeticData.find("color") == countryCosmeticData.end() && !countryColoursOverride.contains(tag)) {
+                FatalError("No colour defined for " + tag);
             }
 
-            String colourData = ToLower(countryCosmeticData.at("color"));
+            String colourData = (countryColoursOverride.contains(tag)) ? countryColoursOverride.at(tag) : ToLower(countryCosmeticData.at("color"));
             
             if (colourData.starts_with("rgb")) {
                 colourData = colourData.substr(3);
@@ -136,12 +152,14 @@ void LoadCountryFiles(const Path& vanillaDirectory, const Path& modDirectory, co
             for (const auto& colour : colours) {
                 if (StringCanBecomeInteger(colour)) {
                     SignedInteger64 colourInt = std::stoll(colour);
-                    if (colourInt > 255 || colourInt < 0) { BadColourDefinition(tag, countryFile); }
+                    if (colourInt > 255) { colourInt = 255; }
+                    else if (colourInt <  0) { colourInt = 0; }
                     rgbArray[i++] = static_cast<UnsignedInteger8>(colourInt);
                 }
                 else if (StringCanBecomeFloat(colour)) {
                     Float64 colourFloat = std::stod(colour);
-                    if (colourFloat > 1.0f || colourFloat < 0.0f) { BadColourDefinition(tag, countryFile); }
+                    if (colourFloat > 1.0f) { colourFloat = 1.0f; }
+                    else if (colourFloat < 0.0f) { colourFloat = 0.0f; }
                     hsvArray[i++] = colourFloat;
                     HSVbool = true;
                 }
@@ -625,8 +643,6 @@ void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
     UnsignedInteger16 currentLine = 0;
 
     for (const auto& c : provinceDefinitions) {
-
-
         if (c == ' ') {
             if (column == 7) {
                 csvEntryArray[currentStringLength++] = 0;
@@ -801,7 +817,7 @@ void LoadProvinceFiles(const Path& vanillaDirectory, const Path& modDirectory, c
             }
         }
 
-        if (provincesArray.size() >= vp) {
+        if (provincesArray.size() > vp) {
             provincesArray[vp].SetDefaultName(defaultName);
             provincesArray[vp].SetNameEntries(nameEntries);
         }

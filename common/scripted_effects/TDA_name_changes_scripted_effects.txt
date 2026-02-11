@@ -1528,6 +1528,15 @@ TDA_update_state_110_names = {
 
 #Uusimaa
 TDA_update_state_111_names = {
+	#Helsinki-Vantaan Lentoasema
+	if = {
+		limit = { any_country = { controls_province = 15106 TAG_using_finnish_names = yes } }
+		set_province_name = { id = 15106 name = VICTORY_POINTS_15106_0 }
+	}
+	#Helsinki-Vantaa Airport
+	else = {
+		reset_province_name = 15106
+	}
 }
 
 #Lisbon
@@ -1737,8 +1746,18 @@ TDA_update_state_143_names = {
 TDA_update_state_144_names = {
 }
 
-#Åland
+#Aaland
 TDA_update_state_145_names = {
+	145 = {
+		#Åland
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_swedish_names = yes TAG_using_finnish_names = yes } } }
+			set_state_name = STATE_145_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Karelian Isthmus
@@ -1749,16 +1768,46 @@ TDA_update_state_146_names = {
 TDA_update_state_147_names = {
 }
 
-#Lappi
+#Lapland
 TDA_update_state_148_names = {
+	148 = {
+		#Lappi
+		if = {
+			limit = { CONTROLLER = { TAG_using_finnish_names = yes } }
+			set_state_name = STATE_148_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Vaasa
+#Western Finland
 TDA_update_state_149_names = {
+	149 = {
+		#Länsi-Suomea
+		if = {
+			limit = { CONTROLLER = { TAG_using_finnish_names = yes } }
+			set_state_name = STATE_149_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Kuopio
+#Eastern Finland
 TDA_update_state_150_names = {
+	150 = {
+		#Itä-Suomea
+		if = {
+			limit = { CONTROLLER = { TAG_using_finnish_names = yes } }
+			set_state_name = STATE_150_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Connecticut
@@ -6084,8 +6133,23 @@ TDA_update_state_563_names = {
 TDA_update_state_564_names = {
 }
 
-#Kymi
+#Greenland
 TDA_update_state_565_names = {
+	565 = {
+		#Grønland
+		if = {
+			limit = { CONTROLLER = { TAG_using_danish_names = yes } }
+			set_state_name = STATE_565_0
+		}
+		#Kalaallit Nunaat
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_greenlandic_names = yes } }
+			set_state_name = STATE_565_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Irkutsk
@@ -13515,8 +13579,27 @@ TDA_update_state_875_names = {
 TDA_update_state_876_names = {
 }
 
-#Oulu
+#Kinmen Island
 TDA_update_state_877_names = {
+	877 = {
+		#Jīnmén Dǎo
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_877_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Jīnchéng
+	if = {
+		limit = { any_country = { controls_province = 15072 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 15072 name = VICTORY_POINTS_15072_0 }
+	}
+	#Jincheng
+	else = {
+		reset_province_name = 15072
+	}
 }
 
 #Finnmark
@@ -13720,48 +13803,6 @@ TDA_update_state_899_names = {
 		if = {
 			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
 			set_state_name = STATE_899_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-}
-
-#Kinmen Island
-TDA_update_state_900_names = {
-	900 = {
-		#Jīnmén Dǎo
-		if = {
-			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
-			set_state_name = STATE_900_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-	#Jīnchéng
-	if = {
-		limit = { any_country = { controls_province = 15072 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 15072 name = VICTORY_POINTS_15072_0 }
-	}
-	#Jincheng
-	else = {
-		reset_province_name = 15072
-	}
-}
-
-#Greenland
-TDA_update_state_901_names = {
-	901 = {
-		#Grønland
-		if = {
-			limit = { CONTROLLER = { TAG_using_danish_names = yes } }
-			set_state_name = STATE_901_0
-		}
-		#Kalaallit Nunaat
-		else_if = {
-			limit = { CONTROLLER = { TAG_using_greenlandic_names = yes } }
-			set_state_name = STATE_901_1
 		}
 		else = {
 			reset_state_name = yes
@@ -14671,8 +14712,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_897_names = yes
 	TDA_update_state_898_names = yes
 	TDA_update_state_899_names = yes
-	TDA_update_state_900_names = yes
-	TDA_update_state_901_names = yes
 }
 
 TDA_toggle_change_city_names = {

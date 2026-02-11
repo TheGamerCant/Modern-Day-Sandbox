@@ -85,6 +85,15 @@ int main()
     Vector<State> statesArray;
     Vector<StrategicRegion> strategicRegionsArray;
     
+    /*
+    LoadFilesMain(
+        vanillaDirectory, modDirectory, modReplaceDirectories, graphicalCulturesArray, countriesArray, provinceBuildingsArray, stateBuildingsArray, buildingSpawnPointsArray,
+		landTerrainsArray, seaTerrainsArray, lakeTerrainsArray, graphicalTerrainsArray, resourcesArray, stateCategoriesArray, continentsArray, defaultBookmarkDate,
+        provinceColoursToIdMap, stateColoursToIdMap, strategicRegionColoursToIdMap, provincesArray, statesArray, strategicRegionsArray
+    );
+    */
+
+
     std::thread loadMainFilesThread(
         LoadFilesMain, 
         std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories),
@@ -106,19 +115,20 @@ int main()
         std::ref(statesArray),
         std::ref(strategicRegionsArray)
     );
-    
+
+
     BitmapImage provincesBitmap(RGBA), terrainBitmap(COLOURMAP), heightmapBitmap(GREYSCALE), statesBitmap(RGBA), provinceTerrainsBitmap(RGBA);
 
     std::thread loadProvincesBMPThread(LoadBitmap, std::ref(provincesBitmap), std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories), "map\\provinces.bmp");
     std::thread loadTerrainBMPThread(LoadBitmap, std::ref(terrainBitmap), std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories), "map\\terrain.bmp");
     std::thread loadHeightmapBMPThread(LoadBitmap, std::ref(heightmapBitmap), std::cref(vanillaDirectory), std::cref(modDirectory), std::cref(modReplaceDirectories), "map\\heightmap.bmp");
 
-    loadMainFilesThread.join();  loadProvincesBMPThread.join(); loadTerrainBMPThread.join(); loadHeightmapBMPThread.join();
+    loadMainFilesThread.join();
+    loadProvincesBMPThread.join(); loadTerrainBMPThread.join(); loadHeightmapBMPThread.join();
 
     LoadProvincePixelData(provincesArray, provinceColoursToIdMap, statesArray, strategicRegionsArray, provincesBitmap, terrainBitmap, heightmapBitmap, statesBitmap, provinceTerrainsBitmap, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray);
 
     std::cout << "Files took " << GetTimeElapsedFromStart(startTime) << " to load.\n\n\n";
-
 
     Boolean writeDefinitions = false;
     Boolean writeStateHistories = false;
@@ -402,7 +412,6 @@ int main()
     }
     CloseWindow();
 
-
     if (std::filesystem::exists("out") && std::filesystem::is_directory("out")) { std::filesystem::remove_all("out"); }
     std::filesystem::create_directory("out");
     std::filesystem::create_directory("out\\common");
@@ -429,5 +438,5 @@ int main()
         WriteProvinceDefinitions(provincesArray, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray);
     }
 
-	//statesBitmap.PrintBitmapFile("out\\states.bmp");
+	statesBitmap.PrintBitmapFile("out\\states.bmp");
 }
