@@ -2,12 +2,21 @@ state={
 	id=878
 	name="STATE_878"
 	history={
-		owner = ZZZ
+		owner = NWY
+		add_core_of = NWY
+		
+		victory_points = { 11077 1 }
+		victory_points = { 22 1 }
+		victory_points = { 9116 1 }
+		victory_points = { 64 1 }
+		victory_points = { 11034 1 }
+		
+		set_variable = { sq_km = 45762 }
 	}
 	provinces={
 		22 64 76 128 2995 3016 3040 6015 6092 9042 9064 9089 9116 9128 9191 11034 11063 11077 11104 11169 
 	}
-	manpower= 100000
+	manpower= 76664
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral

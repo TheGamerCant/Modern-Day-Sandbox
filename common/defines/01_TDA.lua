@@ -14,5 +14,9 @@ NDefines_Graphics.NGraphics.GRADIENT_BORDERS_THICKNESS_COUNTRY_HIGH = 10.0		--Ba
 NDefines_Graphics.NMapMode.MAP_MODE_TERRAIN_TRANSPARENCY = 1.0				--Base is 0.5, terrain colour transparency when on the terrain map mode
 NDefines_Graphics.NMapMode.MAP_MODE_NAVAL_TERRAIN_TRANSPARENCY = 1.0			--Base is 0.8
 
+NDefines_Graphics.NMapMode.MAP_MODE_MANPOWER_RANGE_MAX = 17500000				-- Base is 20,000,000, max manpower for state population
+NDefines_Graphics.NMapMode.MAP_MODE_MANPOWER_RANGE_COLOR_FROM = { 0.1, 0.02, 0.0, 0.5 }		-- Base is { 0.2, 0.2, 0.7, 0.18 }	
+NDefines_Graphics.NMapMode.MAP_MODE_MANPOWER_RANGE_COLOR_TO = { 1, 0.125, 0.0, 0.9 }		--Base is { 1, 0.125, 0.0, 0.6 }
+
 
 NDefines_Graphics.NGraphics.GRADIENT_BORDERS_THICKNESS_STRATEGIC_REGIONS = 25.0		--Base is 150.0, border thickness in strategic regions mode

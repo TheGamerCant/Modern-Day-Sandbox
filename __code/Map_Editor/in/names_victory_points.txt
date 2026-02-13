@@ -13022,3 +13022,390 @@
 11125 = {
 	default = "Tornio"
 }
+15109 = {
+	default = "Oslo"
+}
+15111 = {
+	default = "Oslo Airport"
+	entry = {
+        name = "Oslo Lufthavn"
+        requirements = {
+            "TAG_using_norwegian_names = yes"
+        }
+    }
+}
+14 = {
+	default = "Sandefjord"
+}
+3171 = {
+	default = "Fredrikstad"
+}
+11184 = {
+	default = "Lillestrøm"
+}
+11151 = {
+	default = "Halden"
+}
+9204 = {
+	default = "Drammen"
+}
+144 = {
+	default = "Ringerike"
+}
+11029 = {
+	default = "Skien"
+}
+9296 = {
+	default = "Kristiansand"
+}
+11176 = {
+	default = "Arendal"
+}
+3021 = {
+	default = "Hamar"
+}
+11028 = {
+	default = "Lillehammer"
+}
+6042 = {
+	default = "Elverum"
+}
+9032 = {
+	default = "Vinstra"
+}
+3059 = {
+	default = "Geilo"
+}
+15114 = {
+	default = "Bergen"
+}
+53 = {
+	default = "Stavanger"
+}
+3192 = {
+	default = "Karmøy"
+}
+122 = {
+	default = "Alver"
+}
+3188 = {
+	default = "Leikanger"
+}
+3090 = {
+	default = "Sunnfjord"
+}
+9127 = {
+	default = "Ålesund"
+}
+11100 = {
+	default = "Molde"
+}
+6176 = {
+	default = "Hå"
+}
+15115 = {
+	default = "Trondheim"
+}
+3022 = {
+	default = "Stjørdal"
+}
+6038 = {
+	default = "Levanger"
+}
+9132 = {
+	default = "Steinkjer"
+}
+6041 = {
+	default = "Namsos"
+}
+6114 = {
+	default = "Dombås"
+}
+3183 = {
+	default = "Røros"
+}
+21 = {
+	default = "Orkanger"
+}
+6118 = {
+	default = "Oppdal"
+}
+6187 = {
+	default = "Brønnøysund"
+}
+9126 = {
+	default = "Bodø"
+}
+192 = {
+	default = "Narvik"
+}
+3088 = {
+	default = "Mo i Rana"
+}
+6214 = {
+	default = "Rognan"
+}
+11157 = {
+	default = "Sortland"
+}
+9196 = {
+	default = "Evje"
+}
+179 = {
+	default = "Kongsvinger"
+}
+11113 = {
+	default = "Tynset"
+}
+27 = {
+	default = "Fagernes"
+}
+15116 = {
+	default = "Harstad"
+}
+11050 = {
+	default = "Tromsø"
+}
+91 = {
+	default = "Finnsnes"
+}
+3082 = {
+	default = "Skjervøy"
+}
+11077 = {
+	default = "Alta"
+}
+22 = {
+	default = "Hammerfest"
+}
+9116 = {
+	default = "Kirkenes"
+}
+64 = {
+	default = "Vadsø"
+}
+11034 = {
+	default = "Båtsfjord"
+}
+6050 = {
+	default = "Stockholm"
+}
+15119 = {
+	default = "Stockholm Arlanda Airport"
+	entry = {
+        name = "Stockholm-Arlanda Flygplats"
+        requirements = {
+            "TAG_using_swedish_names = yes"
+        }
+    }
+}
+35 = {
+	default = "Västerås"
+}
+9149 = {
+	default = "Uppsala"
+}
+408 = {
+	default = "Visby"
+}
+15117 = {
+	default = "Södertälje"
+}
+11188 = {
+	default = "Eskilstuna"
+}
+11082 = {
+	default = "Nyköping"
+}
+6209 = {
+	default = "Norrtälje"
+}
+3182 = {
+	default = "Skutskär"
+}
+9185 = {
+	default = "Köping"
+}
+9109 = {
+	default = "Katrineholm"
+}
+9279 = {
+	default = "Malmö"
+}
+6345 = {
+	default = "Helsingborg"
+}
+6412 = {
+	default = "Halmstad"
+}
+11376 = {
+	default = "Lund"
+}
+11160 = {
+	default = "Kristianstad"
+}
+11215 = {
+	default = "Karlskrona"
+}
+6132 = {
+	default = "Umeå"
+}
+11201 = {
+	default = "Skellefteå"
+}
+9108 = {
+	default = "Piteå"
+}
+6165 = {
+	default = "Luleå"
+}
+9186 = {
+	default = "Boden"
+}
+3095 = {
+	default = "Kiruna"
+}
+11155 = {
+	default = "Gällivare"
+}
+201 = {
+	default = "Pajala"
+}
+6125 = {
+	default = "Kalix"
+}
+9093 = {
+	default = "Lycksele"
+}
+9211 = {
+	default = "Sorsele"
+}
+46 = {
+	default = "Östersund"
+}
+182 = {
+	default = "Örnsköldsvik"
+}
+9151 = {
+	default = "Sundsvall"
+}
+11091 = {
+	default = "Gävle"
+}
+9193 = {
+	default = "Borlänge"
+}
+11040 = {
+	default = "Hudiksvall"
+}
+11197 = {
+	default = "Ludvika"
+}
+6147 = {
+	default = "Mora"
+}
+156 = {
+	default = "Leksand"
+}
+9117 = {
+	default = "Sandviken"
+}
+11147 = {
+	default = "Söderhamn"
+}
+49 = {
+	default = "Bollnäs"
+}
+125 = {
+	default = "Ljusdal"
+}
+130 = {
+	default = "Härnösand"
+}
+11129 = {
+	default = "Sollefteå"
+}
+11148 = {
+	default = "Strömsund"
+}
+11049 = {
+	default = "Åre"
+}
+383 = {
+	default = "Gothenberg"
+}
+295 = {
+	default = "Trollhättan"
+}
+6310 = {
+	default = "Uddevalla"
+}
+6406 = {
+	default = "Borås"
+}
+3375 = {
+	default = "Skövde"
+}
+9329 = {
+	default = "Jönköping"
+}
+242 = {
+	default = "Växjö"
+}
+15122 = {
+	default = "Värnamo"
+}
+299 = {
+	default = "Kalmar"
+}
+11390 = {
+	default = "Västervik"
+}
+11380 = {
+	default = "Norrköping"
+}
+9393 = {
+	default = "Linköping"
+}
+9209 = {
+	default = "Örebro"
+}
+11114 = {
+	default = "Karlstad"
+}
+9138 = {
+	default = "Arvika"
+}
+6164 = {
+	default = "Karlskoga"
+}
+6311 = {
+	default = "Motala"
+}
+6084 = {
+	default = "Lindesberg"
+}
+6195 = {
+	default = "Torsby"
+}
+9054 = {
+	default = "Kristinehamn"
+}
+3229 = {
+	default = "Oskarshamn"
+}
+363 = {
+	default = "Nybro"
+}
+13264 = {
+	default = "Vimmerby"
+}
+13265 = {
+	default = "Tranås"
+}
+6397 = {
+	default = "Mjölby"
+}
+6188 = {
+	default = "Kumla"
+}

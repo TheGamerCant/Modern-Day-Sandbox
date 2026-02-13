@@ -2,13 +2,43 @@ state={
 	id=139
 	name="STATE_139"
 	history={
-		owner = ZZZ
+		owner = SWE
+		add_core_of = SWE
+		
+		victory_points = { 383 12 }
+		victory_points = { 295 2 }
+		victory_points = { 6310 2 }
+		victory_points = { 6406 2 }
+		victory_points = { 3375 2 }
+		victory_points = { 9329 3 }
+		victory_points = { 242 2 }
+		victory_points = { 15122 1 }
+		victory_points = { 299 2 }
+		victory_points = { 11390 1 }
+		victory_points = { 11380 3 }
+		victory_points = { 9393 3 }
+		victory_points = { 9209 3 }
+		victory_points = { 11114 2 }
+		victory_points = { 9138 1 }
+		victory_points = { 6164 2 }
+		victory_points = { 6311 2 }
+		victory_points = { 6084 1 }
+		victory_points = { 6195 1 }
+		victory_points = { 9054 1 }
+		victory_points = { 3229 1 }
+		victory_points = { 363 1 }
+		victory_points = { 13264 1 }
+		victory_points = { 13265 1 }
+		victory_points = { 6397 1 }
+		victory_points = { 6188 1 }
+		
+		set_variable = { sq_km = 90419 }
 	}
 	provinces={
-		211 242 299 329 363 3229 6148 9251 9329 9406 9410 11231 11280 6311 6397 9308 9393 11289 11311 11380 11390 13095 13264 13265 
+		69 147 171 211 242 295 299 329 363 383 3063 3128 3141 3229 3286 3375 3386 6028 6084 6148 6164 6188 6195 6310 6311 6331 6397 6406 9054 9138 9209 9218 9251 9308 9329 9393 9406 9410 11044 11070 11114 11231 11280 11289 11311 11380 11390 13095 13096 13264 13265 15120 15121 15122 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=3317776
+	buildings_max_level_factor=1
 	state_category=rural
+	local_supplies=0.5
 }

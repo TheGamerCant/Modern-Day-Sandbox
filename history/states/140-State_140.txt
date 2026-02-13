@@ -5,10 +5,10 @@ state={
 		owner = ZZZ
 	}
 	provinces={
-		171 295 383 3063 3286 3375 3386 6310 6331 6406 11070 13096  
+		2169 5173 12946 12952 13305 
 	}
 	manpower= 100000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=town
+	state_category=pastoral
 }

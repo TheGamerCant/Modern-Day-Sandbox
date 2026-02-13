@@ -2,12 +2,20 @@ state={
 	id=576
 	name="STATE_576"
 	history={
-		owner = ZZZ
+		owner = NWY
+		add_core_of = NWY
+		
+		victory_points = { 15116 1 }
+		victory_points = { 11050 2 }
+		victory_points = { 91 1 }
+		victory_points = { 3082 1 }
+		
+		set_variable = { sq_km = 25176 }
 	}
 	provinces={
-		44 91 3058 3082 6079 6107 6130 11050 11090 
+		44 91 3058 3082 6079 6107 6130 11050 11090 15116 
 	}
-	manpower= 100000
+	manpower= 162899
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=rural

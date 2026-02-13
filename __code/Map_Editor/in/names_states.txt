@@ -209,7 +209,13 @@
     }
 }
 38 = {
-	default = "Gävleborg"
+	default = "Lower Norrland"
+	entry = {
+        name = "Nedre Norrland"
+        requirements = {
+            "TAG_using_swedish_names = yes"
+        }
+    }
 }
 39 = {
 	default = "South Tyrol"
@@ -726,19 +732,25 @@
     }
 }
 138 = {
-	default = "Skåne"
+	default = "Scania"
+	entry = {
+        name = "Skåne"
+        requirements = {
+			"TAG_using_swedish_names = yes"
+		}
+	}
 }
 139 = {
-	default = "Småland"
+	default = "Götaland"
 }
 140 = {
-	default = "Västergötland"
+	default = "Santa Cruz"
 }
 141 = {
-	default = "Södermanland"
+	default = "Stockholm"
 }
 142 = {
-	default = "Vestlandet"
+	default = "Vestland"
 }
 143 = {
 	default = "Trøndelag"
@@ -1199,7 +1211,7 @@
 	default = "Dagestan"
 }
 233 = {
-	default = "Agder"
+	default = "Innlandet"
 }
 234 = {
 	default = "Krasnodar-Adygea"
@@ -1226,7 +1238,7 @@
 	default = "Kalmykia"
 }
 238 = {
-	default = "Opplandene"
+	default = "Tierra del Fuego"
 }
 239 = {
 	default = "Saratov"
@@ -1253,7 +1265,7 @@
 	default = "Saarland"
 }
 245 = {
-	default = "Telemark"
+	default = "Santa Fe"
 }
 246 = {
 	default = "Tver"
@@ -1343,7 +1355,7 @@
     }
 }
 265 = {
-	default = "Värmland"
+	default = "Manica e Sofala"
 }
 266 = {
 	default = "Tehran"
@@ -1829,7 +1841,13 @@
 	default = "Kirov"
 }
 401 = {
-	default = "Jämtland"
+	default = "Zhangjiakou"
+	entry = {
+        name = "Zhāngjiākŏu"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 402 = {
 	default = "Akhtubinsk"
@@ -3003,7 +3021,13 @@
 	default = "Gabès"
 }
 666 = {
-	default = "Norrbotten"
+	default = "Upper Norrland"
+	entry = {
+        name = "Övre Norrland"
+        requirements = {
+            "TAG_using_swedish_names = yes"
+        }
+    }
 }
 667 = {
 	default = "Lesser Sunda Islands"
@@ -3189,7 +3213,13 @@
 	default = "Portuguese Timor"
 }
 722 = {
-	default = "Dalarna"
+	default = "Matsu Islands"
+	entry = {
+        name = "Mǎzǔ Qúndǎo"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 723 = {
 	default = "South Island"
@@ -3723,10 +3753,16 @@
     }
 }
 828 = {
-	default = "Helgeland"
+	default = "Chubut"
 }
 829 = {
-	default = "Västerbotten"
+	default = "Penghu Islands"
+	entry = {
+        name = "Pénghú Qúndǎo"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 830 = {
 	default = "Bukhara"
@@ -3967,46 +4003,4 @@
 }
 891 = {
 	default = "Atacama"
-}
-892 = {
-	default = "Tierra del Fuego"
-}
-893 = {
-	default = "Santa Fe"
-}
-894 = {
-	default = "Chubut"
-}
-895 = {
-	default = "Santa Cruz"
-}
-896 = {
-	default = "Manica e Sofala"
-}
-897 = {
-	default = "Zhangjiakou"
-	entry = {
-        name = "Zhāngjiākŏu"
-        requirements = {
-            "TAG_using_chinese_names = yes"
-        }
-    }
-}
-898 = {
-	default = "Matsu Islands"
-	entry = {
-        name = "Mǎzǔ Qúndǎo"
-        requirements = {
-            "TAG_using_chinese_names = yes"
-        }
-    }
-}
-899 = {
-	default = "Penghu Islands"
-	entry = {
-        name = "Pénghú Qúndǎo"
-        requirements = {
-            "TAG_using_chinese_names = yes"
-        }
-    }
 }

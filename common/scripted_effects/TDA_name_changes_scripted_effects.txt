@@ -629,8 +629,18 @@ TDA_update_state_37_names = {
 	}
 }
 
-#Gävleborg
+#Lower Norrland
 TDA_update_state_38_names = {
+	38 = {
+		#Nedre Norrland
+		if = {
+			limit = { CONTROLLER = { TAG_using_swedish_names = yes } }
+			set_state_name = STATE_38_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #South Tyrol
@@ -1524,6 +1534,15 @@ TDA_update_state_109_names = {
 
 #Oslofjord
 TDA_update_state_110_names = {
+	#Oslo Lufthavn
+	if = {
+		limit = { any_country = { controls_province = 15111 TAG_using_norwegian_names = yes } }
+		set_province_name = { id = 15111 name = VICTORY_POINTS_15111_0 }
+	}
+	#Oslo Airport
+	else = {
+		reset_province_name = 15111
+	}
 }
 
 #Uusimaa
@@ -1718,23 +1737,42 @@ TDA_update_state_137_names = {
 	}
 }
 
-#Skåne
+#Scania
 TDA_update_state_138_names = {
+	138 = {
+		#Skåne
+		if = {
+			limit = { CONTROLLER = { TAG_using_swedish_names = yes } }
+			set_state_name = STATE_138_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Småland
+#Götaland
 TDA_update_state_139_names = {
 }
 
-#Västergötland
+#Santa Cruz
 TDA_update_state_140_names = {
 }
 
-#Södermanland
+#Stockholm
 TDA_update_state_141_names = {
+	#Stockholm-Arlanda Flygplats
+	if = {
+		limit = { any_country = { controls_province = 15119 TAG_using_swedish_names = yes } }
+		set_province_name = { id = 15119 name = VICTORY_POINTS_15119_0 }
+	}
+	#Stockholm Arlanda Airport
+	else = {
+		reset_province_name = 15119
+	}
 }
 
-#Vestlandet
+#Vestland
 TDA_update_state_142_names = {
 }
 
@@ -3143,7 +3181,7 @@ TDA_update_state_232_names = {
 	}
 }
 
-#Agder
+#Innlandet
 TDA_update_state_233_names = {
 }
 
@@ -3219,7 +3257,7 @@ TDA_update_state_237_names = {
 	}
 }
 
-#Opplandene
+#Tierra del Fuego
 TDA_update_state_238_names = {
 }
 
@@ -3293,7 +3331,7 @@ TDA_update_state_243_names = {
 TDA_update_state_244_names = {
 }
 
-#Telemark
+#Santa Fe
 TDA_update_state_245_names = {
 }
 
@@ -3539,7 +3577,7 @@ TDA_update_state_264_names = {
 	}
 }
 
-#Värmland
+#Manica e Sofala
 TDA_update_state_265_names = {
 }
 
@@ -4757,8 +4795,108 @@ TDA_update_state_400_names = {
 	}
 }
 
-#Jämtland
+#Zhangjiakou
 TDA_update_state_401_names = {
+	401 = {
+		#Zhāngjiākŏu
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_401_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Píngquán
+	if = {
+		limit = { any_country = { controls_province = 814 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 814 name = VICTORY_POINTS_814_0 }
+	}
+	#Pingquan
+	else = {
+		reset_province_name = 814
+	}
+	#Luánpíng
+	if = {
+		limit = { any_country = { controls_province = 881 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 881 name = VICTORY_POINTS_881_0 }
+	}
+	#Luanping
+	else = {
+		reset_province_name = 881
+	}
+	#Yùxiàn
+	if = {
+		limit = { any_country = { controls_province = 1137 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 1137 name = VICTORY_POINTS_1137_0 }
+	}
+	#Yuxian
+	else = {
+		reset_province_name = 1137
+	}
+	#Zhāngbĕi
+	if = {
+		limit = { any_country = { controls_province = 1489 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 1489 name = VICTORY_POINTS_1489_0 }
+	}
+	#Zhangbei
+	else = {
+		reset_province_name = 1489
+	}
+	#Wéichăng
+	if = {
+		limit = { any_country = { controls_province = 6937 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 6937 name = VICTORY_POINTS_6937_0 }
+	}
+	#Weichang
+	else = {
+		reset_province_name = 6937
+	}
+	#Xīnglóng
+	if = {
+		limit = { any_country = { controls_province = 6969 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 6969 name = VICTORY_POINTS_6969_0 }
+	}
+	#Xinglong
+	else = {
+		reset_province_name = 6969
+	}
+	#Fēngníng
+	if = {
+		limit = { any_country = { controls_province = 9768 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 9768 name = VICTORY_POINTS_9768_0 }
+	}
+	#Fengning
+	else = {
+		reset_province_name = 9768
+	}
+	#Chìchéng
+	if = {
+		limit = { any_country = { controls_province = 10397 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 10397 name = VICTORY_POINTS_10397_0 }
+	}
+	#Chicheng
+	else = {
+		reset_province_name = 10397
+	}
+	#Chéngdé
+	if = {
+		limit = { any_country = { controls_province = 11801 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 11801 name = VICTORY_POINTS_11801_0 }
+	}
+	#Chengde
+	else = {
+		reset_province_name = 11801
+	}
+	#Zhāngjiākŏu
+	if = {
+		limit = { any_country = { controls_province = 14913 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14913 name = VICTORY_POINTS_14913_0 }
+	}
+	#Zhangjiakou
+	else = {
+		reset_province_name = 14913
+	}
 }
 
 #Akhtubinsk
@@ -11312,8 +11450,18 @@ TDA_update_state_664_names = {
 TDA_update_state_665_names = {
 }
 
-#Norrbotten
+#Upper Norrland
 TDA_update_state_666_names = {
+	666 = {
+		#Övre Norrland
+		if = {
+			limit = { CONTROLLER = { TAG_using_swedish_names = yes } }
+			set_state_name = STATE_666_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Lesser Sunda Islands
@@ -11998,8 +12146,18 @@ TDA_update_state_720_names = {
 TDA_update_state_721_names = {
 }
 
-#Dalarna
+#Matsu Islands
 TDA_update_state_722_names = {
+	722 = {
+		#Mǎzǔ Qúndǎo
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_722_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #South Island
@@ -13240,12 +13398,22 @@ TDA_update_state_827_names = {
 	}
 }
 
-#Helgeland
+#Chubut
 TDA_update_state_828_names = {
 }
 
-#Västerbotten
+#Penghu Islands
 TDA_update_state_829_names = {
+	829 = {
+		#Pénghú Qúndǎo
+		if = {
+			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
+			set_state_name = STATE_829_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Bukhara
@@ -13656,158 +13824,6 @@ TDA_update_state_890_names = {
 
 #Atacama
 TDA_update_state_891_names = {
-}
-
-#Tierra del Fuego
-TDA_update_state_892_names = {
-}
-
-#Santa Fe
-TDA_update_state_893_names = {
-}
-
-#Chubut
-TDA_update_state_894_names = {
-}
-
-#Santa Cruz
-TDA_update_state_895_names = {
-}
-
-#Manica e Sofala
-TDA_update_state_896_names = {
-}
-
-#Zhangjiakou
-TDA_update_state_897_names = {
-	897 = {
-		#Zhāngjiākŏu
-		if = {
-			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
-			set_state_name = STATE_897_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-	#Píngquán
-	if = {
-		limit = { any_country = { controls_province = 814 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 814 name = VICTORY_POINTS_814_0 }
-	}
-	#Pingquan
-	else = {
-		reset_province_name = 814
-	}
-	#Luánpíng
-	if = {
-		limit = { any_country = { controls_province = 881 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 881 name = VICTORY_POINTS_881_0 }
-	}
-	#Luanping
-	else = {
-		reset_province_name = 881
-	}
-	#Yùxiàn
-	if = {
-		limit = { any_country = { controls_province = 1137 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 1137 name = VICTORY_POINTS_1137_0 }
-	}
-	#Yuxian
-	else = {
-		reset_province_name = 1137
-	}
-	#Zhāngbĕi
-	if = {
-		limit = { any_country = { controls_province = 1489 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 1489 name = VICTORY_POINTS_1489_0 }
-	}
-	#Zhangbei
-	else = {
-		reset_province_name = 1489
-	}
-	#Wéichăng
-	if = {
-		limit = { any_country = { controls_province = 6937 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 6937 name = VICTORY_POINTS_6937_0 }
-	}
-	#Weichang
-	else = {
-		reset_province_name = 6937
-	}
-	#Xīnglóng
-	if = {
-		limit = { any_country = { controls_province = 6969 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 6969 name = VICTORY_POINTS_6969_0 }
-	}
-	#Xinglong
-	else = {
-		reset_province_name = 6969
-	}
-	#Fēngníng
-	if = {
-		limit = { any_country = { controls_province = 9768 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 9768 name = VICTORY_POINTS_9768_0 }
-	}
-	#Fengning
-	else = {
-		reset_province_name = 9768
-	}
-	#Chìchéng
-	if = {
-		limit = { any_country = { controls_province = 10397 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 10397 name = VICTORY_POINTS_10397_0 }
-	}
-	#Chicheng
-	else = {
-		reset_province_name = 10397
-	}
-	#Chéngdé
-	if = {
-		limit = { any_country = { controls_province = 11801 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 11801 name = VICTORY_POINTS_11801_0 }
-	}
-	#Chengde
-	else = {
-		reset_province_name = 11801
-	}
-	#Zhāngjiākŏu
-	if = {
-		limit = { any_country = { controls_province = 14913 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 14913 name = VICTORY_POINTS_14913_0 }
-	}
-	#Zhangjiakou
-	else = {
-		reset_province_name = 14913
-	}
-}
-
-#Matsu Islands
-TDA_update_state_898_names = {
-	898 = {
-		#Mǎzǔ Qúndǎo
-		if = {
-			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
-			set_state_name = STATE_898_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-}
-
-#Penghu Islands
-TDA_update_state_899_names = {
-	899 = {
-		#Pénghú Qúndǎo
-		if = {
-			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
-			set_state_name = STATE_899_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
 }
 
 
@@ -14704,14 +14720,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_889_names = yes
 	TDA_update_state_890_names = yes
 	TDA_update_state_891_names = yes
-	TDA_update_state_892_names = yes
-	TDA_update_state_893_names = yes
-	TDA_update_state_894_names = yes
-	TDA_update_state_895_names = yes
-	TDA_update_state_896_names = yes
-	TDA_update_state_897_names = yes
-	TDA_update_state_898_names = yes
-	TDA_update_state_899_names = yes
 }
 
 TDA_toggle_change_city_names = {
