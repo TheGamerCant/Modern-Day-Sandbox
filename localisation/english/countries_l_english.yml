@@ -298,3 +298,15 @@
  LGK:0 "Lugansk"                                  
  LGK_DEF:0 "the Lugansk People's Republic"                                  
  LGK_ADJ:0 "Lugansk"
+
+ ROM:0 "Romania"                                  
+ ROM_DEF:0 "Romania"                                  
+ ROM_ADJ:0 "Romanian"
+
+ MLD:0 "Moldova"                                  
+ MLD_DEF:0 "the Republic of Moldova"                                  
+ MLD_ADJ:0 "Moldovan"
+
+ BUL:0 "Bulgaria"                                  
+ BUL_DEF:0 "the Republic of Bulgaria"                                  
+ BUL_ADJ:0 "Bulgarian"

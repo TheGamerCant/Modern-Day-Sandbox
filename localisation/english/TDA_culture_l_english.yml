@@ -132,3 +132,12 @@
  
  TDA_culture_scottish_token_idea:0 "§AScottish§!"
  TDA_culture_scottish_desc_token_idea:0 ""
+ 
+ TDA_culture_israeli_token_idea:0 "§4Israeli§!"
+ TDA_culture_israeli_desc_token_idea:0 ""
+ 
+ TDA_culture_palestinian_token_idea:0 "§FPalestinian§!"
+ TDA_culture_palestinian_desc_token_idea:0 ""
+ 
+ TDA_culture_druze_token_idea:0 "§WDruze§!"
+ TDA_culture_druze_desc_token_idea:0 ""

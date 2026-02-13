@@ -4,6 +4,7 @@ state={
 	history = {
 		owner = PRC
 		add_core_of = PRC
+		add_claim_by = ROC
 		add_claim_by = UYG
 		
 		set_variable = { sq_km = 38000 }		#34k Xinjiang, 4k Tibet

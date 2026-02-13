@@ -8,6 +8,18 @@ state={
 		
 		victory_points = { 1086 1 }
 		
+		resize_array = { array = culture_index_array size = 3 value = 0 }
+		resize_array = { array = culture_value_array size = 3 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 35 }
+		set_variable = { culture_value_array^0 = 59.1 }
+
+		set_variable = { culture_index_array^1 = 36 }
+		set_variable = { culture_value_array^1 = 40.7 }
+
+		set_variable = { culture_index_array^2 = 0 }
+		set_variable = { culture_value_array^2 = 0.2 }
+		
 		# ~59% Israeli, 41% Palestinian
 		
 		set_variable = { sq_km = 3380 }

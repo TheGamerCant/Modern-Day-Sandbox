@@ -4,6 +4,7 @@ state={
 	history={
 		owner = ROC
 		add_core_of = ROC
+		add_claim_by = PRC
 		
 		set_variable = { sq_km = 28.8 }
 	}

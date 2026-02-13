@@ -400,3 +400,15 @@ LGK = {
 	color = rgb { 26 186 222 }
 	color_ui = rgb { 26 186 222 }
 }
+ROM = {
+	color = rgb { 225 194 47 }
+	color_ui = rgb { 225 194 47 }
+}
+MLD = {
+	color = rgb { 229 200 151 }
+	color_ui = rgb { 229 200 151 }
+}
+BUL = {
+	color = rgb { 20 168 101 }
+	color_ui = rgb { 20 168 101 }
+}

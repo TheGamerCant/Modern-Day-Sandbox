@@ -233,12 +233,16 @@ TAG_using_chinese_names = {
 			OR = {
 				original_tag = PRC
 				original_tag = ROC
+				original_tag = HGK
+				original_tag = MCU
 			}
 			is_subject = no
 		}
 		
 		is_puppet_of = PRC
 		is_puppet_of = ROC
+		is_puppet_of = HGK
+		is_puppet_of = MCU
 	}
 }
 

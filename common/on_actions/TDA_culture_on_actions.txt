@@ -1,10 +1,12 @@
 on_actions = {
 	on_startup = {
         effect = {
+			@culture_count = 38
+			
 			#Set up the culture colours and names array
-			resize_array = { array = global.culture_colour_array size = 35 value = 0 }
-			resize_array = { array = global.culture_names_array  size = 35 value = 0 }
-			resize_array = { array = global.culture_desc_array   size = 35 value = 0 }
+			resize_array = { array = global.culture_colour_array size = @culture_count value = 0 }
+			resize_array = { array = global.culture_names_array  size = @culture_count value = 0 }
+			resize_array = { array = global.culture_desc_array   size = @culture_count value = 0 }
 			
 			set_variable = {  global.culture_names_array^0 = token:TDA_culture_other_token_idea }
 			set_variable = {   global.culture_desc_array^0 = token:TDA_culture_other_desc_token_idea }
@@ -180,6 +182,21 @@ on_actions = {
 			set_variable = {   global.culture_desc_array^34 = token:TDA_culture_scottish_desc_token_idea }
 			#0, 36, 148
 			set_variable = { global.culture_colour_array^34 = 9364 }
+			
+			set_variable = {  global.culture_names_array^35 = token:TDA_culture_israeli_token_idea }
+			set_variable = {   global.culture_desc_array^35 = token:TDA_culture_israeli_desc_token_idea }
+			#127, 198, 230
+			set_variable = { global.culture_colour_array^35 = 8373990 }
+			
+			set_variable = {  global.culture_names_array^36 = token:TDA_culture_palestinian_token_idea }
+			set_variable = {   global.culture_desc_array^36 = token:TDA_culture_palestinian_desc_token_idea }
+			#186, 63, 10
+			set_variable = { global.culture_colour_array^36 = 12205834 }
+			
+			set_variable = {  global.culture_names_array^37 = token:TDA_culture_druze_token_idea }
+			set_variable = {   global.culture_desc_array^37 = token:TDA_culture_druze_desc_token_idea }
+			#221, 253, 232
+			set_variable = { global.culture_colour_array^37 = 14548456 }
 
 			
 			#Do this after setting up the colours

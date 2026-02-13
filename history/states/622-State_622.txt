@@ -4,6 +4,7 @@ state={
 	history = { 
 		owner = PRC
 		add_core_of = PRC
+		add_claim_by = ROC
 		
 		victory_points = { 14831 60 }
 		victory_points = { 14835 2 }
