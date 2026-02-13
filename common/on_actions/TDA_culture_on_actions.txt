@@ -2,9 +2,9 @@ on_actions = {
 	on_startup = {
         effect = {
 			#Set up the culture colours and names array
-			resize_array = { array = global.culture_colour_array size = 28 value = 0 }
-			resize_array = { array = global.culture_names_array  size = 28 value = 0 }
-			resize_array = { array = global.culture_desc_array   size = 28 value = 0 }
+			resize_array = { array = global.culture_colour_array size = 35 value = 0 }
+			resize_array = { array = global.culture_names_array  size = 35 value = 0 }
+			resize_array = { array = global.culture_desc_array   size = 35 value = 0 }
 			
 			set_variable = {  global.culture_names_array^0 = token:TDA_culture_other_token_idea }
 			set_variable = {   global.culture_desc_array^0 = token:TDA_culture_other_desc_token_idea }

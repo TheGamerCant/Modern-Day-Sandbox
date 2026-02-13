@@ -4,6 +4,7 @@ state={
 	history={
 		owner = BLG
 		add_core_of = BLG
+		add_core_of = WAL
 		
 		victory_points = { 14057 2 }
 		victory_points = { 14064 5 }

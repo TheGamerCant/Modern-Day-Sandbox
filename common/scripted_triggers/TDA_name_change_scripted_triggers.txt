@@ -4,11 +4,19 @@ TAG_using_russian_names = {
 		AND = {
 			OR = {
 				original_tag = SOV
+				original_tag = DSK
+				original_tag = LGK
+				original_tag = CRM
+				original_tag = TRZ
 			}
 			is_subject = no
 		}
 		
 		is_puppet_of = SOV
+		is_puppet_of = DSK
+		is_puppet_of = LGK
+		is_puppet_of = CRM
+		is_puppet_of = TRZ
 	}
 }
 
@@ -96,11 +104,14 @@ TAG_using_french_names = {
 		AND = {
 			OR = {
 				original_tag = FRA
+				original_tag = WAL
+				original_tag = COR
 			}
 			is_subject = no
 		}
 		
 		is_puppet_of = FRA
+		is_puppet_of = WAL
 	}
 }
 
@@ -110,11 +121,13 @@ TAG_using_dutch_names = {
 		AND = {
 			OR = {
 				original_tag = NRD
+				original_tag = VLA
 			}
 			is_subject = no
 		}
 		
 		is_puppet_of = NRD
+		is_puppet_of = VLA
 	}
 }
 

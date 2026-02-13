@@ -376,3 +376,27 @@ FOE = {
 	color = rgb { 72 137 197 }
 	color_ui = rgb { 72 137 197 }
 }
+VLA = {
+	color = rgb { 216 137 42 }
+	color_ui = rgb { 216 137 42 }
+}
+WAL = {
+	color = rgb { 159 18 18 }
+	color_ui = rgb { 159 18 18 }
+}
+COR = {
+	color = rgb { 37 147 182 }
+	color_ui = rgb { 37 147 182 }
+}
+CHC = {
+	color = rgb { 84 118 36 }
+	color_ui = rgb { 84 118 36 }
+}
+DSK = {
+	color = rgb { 8 31 104 }
+	color_ui = rgb { 8 31 104 }
+}
+LGK = {
+	color = rgb { 26 186 222 }
+	color_ui = rgb { 26 186 222 }
+}

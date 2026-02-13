@@ -274,3 +274,27 @@
  FOE:0 "Faroe Islands"                                  
  FOE_DEF:0 "the Faroe Islands"                                  
  FOE_ADJ:0 "Faroese"
+
+ VLA:0 "Flanders"                                  
+ VLA_DEF:0 "the Republic of Flanders"                                  
+ VLA_ADJ:0 "Flemish"
+
+ WAL:0 "Wallonia"                                  
+ WAL_DEF:0 "the Republic of Wallonia"                                  
+ WAL_ADJ:0 "Walloon"
+
+ COR:0 "Corsica"                                  
+ COR_DEF:0 "the Republic of Corsica"                                  
+ COR_ADJ:0 "Corsican"
+
+ CHC:0 "Chechnya"                                  
+ CHC_DEF:0 "the Chechen Republic"                                  
+ CHC_ADJ:0 "Chechen"
+
+ DSK:0 "Donetsk"                                  
+ DSK_DEF:0 "the Donetsk People's Republic"                                  
+ DSK_ADJ:0 "Donetsk"
+
+ LGK:0 "Lugansk"                                  
+ LGK_DEF:0 "the Lugansk People's Republic"                                  
+ LGK_ADJ:0 "Lugansk"
