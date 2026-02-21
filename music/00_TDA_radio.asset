@@ -1,0 +1,74 @@
+music = {
+	name = "GSN - A Ya Povyshe Zakatyu Rukava"
+	file = "01_mild/and_i_roll_my_sleeves.ogg"
+}
+
+music = {
+	name = "Joy Division - Love Will Tear Us Apart"
+	file = "00_calm/love_will_tear_us_apart.ogg"
+}
+
+music = {
+	name = "Kino - Gruppa Krovi"
+	file = "02_high/Kino_Gruppa_Krovi.ogg"
+}
+music = {
+	name = "Kino - Kukushka"
+	file = "00_calm/kukushka.ogg"
+}
+music = {
+	name = "Kino - Spokoynaya Noch"
+	file = "00_calm/good_night.ogg"
+}
+music = {
+	name = "Kino - Svezda Po Imeni Solnze"
+	file = "00_calm/svezda_po_imeni_solnze.ogg"
+}
+music = {
+	name = "Kino - Zakroy Za Mnoy Dver, Ya Uxhozhu"
+	file = "00_calm/zakroy.ogg"
+}
+
+music = {
+	name = "Mitski - Washing Machine Heart"
+	file = "01_mild/washing_machine_heart.ogg"
+}
+
+music = {
+	name = "SadSvit - Kazeta"
+	file = "00_calm/SadSvit_Каzeta.ogg"
+}
+music = {
+	name = "SadSvit - Lito"
+	file = "00_calm/Lito.ogg"
+}
+music = {
+	name = "SadSvit - Molodist"
+	file = "00_calm/Molodist.ogg"
+}
+music = {
+	name = "SadSvit - Naoslip"
+	file = "01_mild/Naoslip.ogg"
+}
+music = {
+	name = "SadSvit - Nebo"
+	file = "00_calm/SadSvit_Nebo.ogg"
+}
+music = {
+	name = "SadSvit - Nich"
+	file = "00_calm/Nich.ogg"
+}
+music = {
+	name = "SadSvit - Personazhi"
+	file = "01_mild/SadSvit_Personazhi.ogg"
+}
+
+music = {
+	name = "Soundgarden - Black Hole Sun"
+	file = "00_calm/black_hole_sun.ogg"
+}
+
+music = {
+	name = "Vrata Overtona - Stavaysya"
+	file = "00_calm/give_up.ogg"
+}

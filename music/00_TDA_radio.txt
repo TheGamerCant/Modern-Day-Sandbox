@@ -1,0 +1,156 @@
+music_station = "00_TDA_radio"
+
+
+music = {
+	song = "GSN - A Ya Povyshe Zakatyu Rukava"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Joy Division - Love Will Tear Us Apart"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Kino - Gruppa Krovi"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Kino - Kukushka"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Kino - Spokoynaya Noch"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Kino - Svezda Po Imeni Solnze"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Kino - Zakroy Za Mnoy Dver, Ya Uxhozhu"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Mitski - Washing Machine Heart"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "SadSvit - Kazeta"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "SadSvit - Lito"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "SadSvit - Molodist"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "SadSvit - Naoslip"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "SadSvit - Nebo"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "SadSvit - Nich"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "SadSvit - Personazhi"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Soundgarden - Black Hole Sun"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Vrata Overtona - Stavaysya"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
