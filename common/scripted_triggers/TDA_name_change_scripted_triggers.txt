@@ -376,3 +376,117 @@ TAG_using_norwegian_names = {
 		is_puppet_of = NWY
 	}
 }
+
+TAG_using_romanian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = ROM
+				original_tag = MLD
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = ROM
+		is_puppet_of = MLD
+	}
+}
+
+TAG_using_hungarian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = HUN
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = HUN
+	}
+}
+
+TAG_using_belarusian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = BLR
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = BLR
+	}
+}
+
+TAG_using_lithuanian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = LIT
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = LIT
+	}
+}
+
+TAG_using_latvian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = LAT
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = LAT
+	}
+}
+
+TAG_using_estonian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = EST
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = EST
+	}
+}
+
+TAG_using_czech_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = CZE
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = CZE
+	}
+}
+
+TAG_using_slovakian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = SLO
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = SLO
+	}
+}

@@ -1,0 +1,12 @@
+capital = 83
+
+set_popularities = {
+	IDEOLOGY_authoritarian = 100
+}
+
+set_politics = {                                  
+	ruling_party = IDEOLOGY_authoritarian
+	last_election = "2021.1.1"
+	election_frequency = 48                                  
+	elections_allowed = no
+}

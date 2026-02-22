@@ -3490,6 +3490,26 @@
 	</glyph>
 </collection>
 
+<collection unicode="U+021a" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 3.5,-7.3 L -4.5,-19.8 L -15.8,-19.8 L -6.2,-4.4 L 3.5,-7.3" />
+			<path data="S 16.1,49.8 L -0.1,49.8 L -0.1,0 L -10.6,0 L -10.6,49.8 L -26.8,49.8 L -26.8,59.8 L 16.1,59.8 L 16.1,49.8" />
+		</layer>
+	</glyph>
+</collection>
+
+<collection unicode="U+021b" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S -0.2,-7.3 L -8.2,-19.8 L -19.5,-19.8 L -9.9,-4.4 L -0.2,-7.3" />
+			<path data="S -11.3,33.7 L -11.3,13.4 Q -11.3,13 -11.2,12.8 D -10.6,11.8 -8.2,9.5 -7.3,9.5 L 1,9.5 L 1,0 L -7.4,0 Q -11.6,0 -14.6,2.1 Q -17.1,3.8 -19.4,7 Q -21.3,9.8 -21.3,13.3 L -21.3,33.7 L -28,33.7 L -28,43.2 L -21.3,43.2 L -21.3,59.8 L -11.3,59.8 L -11.3,43.2 L 1.1,43.2 L 1.1,33.7 L -11.3,33.7" />
+		</layer>
+	</glyph>
+</collection>
+
 <collection unicode="U+02c6" svg="false" colr="false" auto_generate="false" meta_name="">
 	<selected id="1"/>
 	<glyph id="1" left="0" right="42.4" zero_width="false">

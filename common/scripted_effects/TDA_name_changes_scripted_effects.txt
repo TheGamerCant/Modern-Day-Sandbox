@@ -262,15 +262,63 @@ TDA_update_state_8_names = {
 
 #Bohemia
 TDA_update_state_9_names = {
+	9 = {
+		#Čechy
+		if = {
+			limit = { CONTROLLER = { TAG_using_czech_names = yes } }
+			set_state_name = STATE_9_0
+		}
+		#Böhmen
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_9_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Praha
+	if = {
+		limit = { any_country = { controls_province = 11542 TAG_using_czech_names = yes } }
+		set_province_name = { id = 11542 name = VICTORY_POINTS_11542_0 }
+	}
+	#Prag
+	else_if = {
+		limit = { any_country = { controls_province = 11542 TAG_using_german_names = yes } }
+		set_province_name = { id = 11542 name = VICTORY_POINTS_11542_1 }
+	}
+	#Prague
+	else = {
+		reset_province_name = 11542
+	}
+	#Letiště Václava Havla
+	if = {
+		limit = { any_country = { controls_province = 14084 TAG_using_czech_names = yes } }
+		set_province_name = { id = 14084 name = VICTORY_POINTS_14084_0 }
+	}
+	#Flughafen Prag
+	else_if = {
+		limit = { any_country = { controls_province = 14084 TAG_using_german_names = yes } }
+		set_province_name = { id = 14084 name = VICTORY_POINTS_14084_1 }
+	}
+	#Václav Havel Airport
+	else = {
+		reset_province_name = 14084
+	}
 }
 
-#South Masovia
+#Southern Masovia
 TDA_update_state_10_names = {
 	10 = {
-		#Mazowieckie Południowe
+		#Południowe Mazowsze
 		if = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_10_0
+		}
+		#Südmasowien
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_10_1
 		}
 		else = {
 			reset_state_name = yes
@@ -298,10 +346,42 @@ TDA_update_state_10_names = {
 
 #Dzūkija
 TDA_update_state_11_names = {
+	#Wilno
+	if = {
+		limit = { any_country = { controls_province = 13820 TAG_using_polish_names = yes } }
+		set_province_name = { id = 13820 name = VICTORY_POINTS_13820_0 }
+	}
+	#Vilnius
+	else = {
+		reset_province_name = 13820
+	}
+	#Tarptautinis Vilniaus oro Uostas
+	if = {
+		limit = { any_country = { controls_province = 13822 TAG_using_lithuanian_names = yes } }
+		set_province_name = { id = 13822 name = VICTORY_POINTS_13822_0 }
+	}
+	#Lotnisko Wilno
+	else_if = {
+		limit = { any_country = { controls_province = 13822 TAG_using_polish_names = yes } }
+		set_province_name = { id = 13822 name = VICTORY_POINTS_13822_1 }
+	}
+	#Vilnius International Airport
+	else = {
+		reset_province_name = 13822
+	}
 }
 
 #Vidzeme
 TDA_update_state_12_names = {
+	#Rīga
+	if = {
+		limit = { any_country = { controls_province = 13827 TAG_using_latvian_names = yes } }
+		set_province_name = { id = 13827 name = VICTORY_POINTS_13827_0 }
+	}
+	#Riga
+	else = {
+		reset_province_name = 13827
+	}
 }
 
 #Pärnu
@@ -692,8 +772,27 @@ TDA_update_state_41_names = {
 TDA_update_state_42_names = {
 }
 
-#Northern Hungary
+#Central Hungary
 TDA_update_state_43_names = {
+	43 = {
+		#Közép-Magyarország
+		if = {
+			limit = { CONTROLLER = { TAG_using_hungarian_names = yes } }
+			set_state_name = STATE_43_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Liszt Ferenc Nemzetközi Repülőtér
+	if = {
+		limit = { any_country = { controls_province = 9660 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 9660 name = VICTORY_POINTS_9660_0 }
+	}
+	#Ferenc Liszt International Airport
+	else = {
+		reset_province_name = 9660
+	}
 }
 
 #Albania
@@ -885,9 +984,59 @@ TDA_update_state_63_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_63_0
 		}
+		#Westpommern
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_63_1
+		}
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Arnswalde
+	if = {
+		limit = { any_country = { controls_province = 6236 TAG_using_german_names = yes } }
+		set_province_name = { id = 6236 name = VICTORY_POINTS_6236_0 }
+	}
+	#Choszczno
+	else = {
+		reset_province_name = 6236
+	}
+	#Stetten
+	if = {
+		limit = { any_country = { controls_province = 6282 TAG_using_german_names = yes } }
+		set_province_name = { id = 6282 name = VICTORY_POINTS_6282_0 }
+	}
+	#Szczecin
+	else = {
+		reset_province_name = 6282
+	}
+	#Stargard an der Ihna
+	if = {
+		limit = { any_country = { controls_province = 6390 TAG_using_german_names = yes } }
+		set_province_name = { id = 6390 name = VICTORY_POINTS_6390_0 }
+	}
+	#Stargard
+	else = {
+		reset_province_name = 6390
+	}
+	#Neustettin
+	if = {
+		limit = { any_country = { controls_province = 9306 TAG_using_german_names = yes } }
+		set_province_name = { id = 9306 name = VICTORY_POINTS_9306_0 }
+	}
+	#Szczecinek
+	else = {
+		reset_province_name = 9306
+	}
+	#Köslin
+	if = {
+		limit = { any_country = { controls_province = 9361 TAG_using_german_names = yes } }
+		set_province_name = { id = 9361 name = VICTORY_POINTS_9361_0 }
+	}
+	#Koszalin
+	else = {
+		reset_province_name = 9361
 	}
 }
 
@@ -917,9 +1066,50 @@ TDA_update_state_66_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_66_0
 		}
+		#Niederschlesien
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_66_1
+		}
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Glogau
+	if = {
+		limit = { any_country = { controls_province = 552 TAG_using_german_names = yes } }
+		set_province_name = { id = 552 name = VICTORY_POINTS_552_0 }
+	}
+	#Głogów
+	else = {
+		reset_province_name = 552
+	}
+	#Liegnitz
+	if = {
+		limit = { any_country = { controls_province = 3545 TAG_using_german_names = yes } }
+		set_province_name = { id = 3545 name = VICTORY_POINTS_3545_0 }
+	}
+	#Legnica
+	else = {
+		reset_province_name = 3545
+	}
+	#Breslau
+	if = {
+		limit = { any_country = { controls_province = 9570 TAG_using_german_names = yes } }
+		set_province_name = { id = 9570 name = VICTORY_POINTS_9570_0 }
+	}
+	#Wrocław
+	else = {
+		reset_province_name = 9570
+	}
+	#Waldenburg
+	if = {
+		limit = { any_country = { controls_province = 11414 TAG_using_german_names = yes } }
+		set_province_name = { id = 11414 name = VICTORY_POINTS_11414_0 }
+	}
+	#Wałbrzych
+	else = {
+		reset_province_name = 11414
 	}
 }
 
@@ -931,9 +1121,41 @@ TDA_update_state_67_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_67_0
 		}
+		#Oppeln
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_67_1
+		}
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Kandrzin-Cosel
+	if = {
+		limit = { any_country = { controls_province = 479 TAG_using_german_names = yes } }
+		set_province_name = { id = 479 name = VICTORY_POINTS_479_0 }
+	}
+	#Kędzierzyn-Koźle
+	else = {
+		reset_province_name = 479
+	}
+	#Neisse
+	if = {
+		limit = { any_country = { controls_province = 6485 TAG_using_german_names = yes } }
+		set_province_name = { id = 6485 name = VICTORY_POINTS_6485_0 }
+	}
+	#Nysa
+	else = {
+		reset_province_name = 6485
+	}
+	#Oppeln
+	if = {
+		limit = { any_country = { controls_province = 9511 TAG_using_german_names = yes } }
+		set_province_name = { id = 9511 name = VICTORY_POINTS_9511_0 }
+	}
+	#Opole
+	else = {
+		reset_province_name = 9511
 	}
 }
 
@@ -945,9 +1167,50 @@ TDA_update_state_68_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_68_0
 		}
+		#Lubus
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_68_1
+		}
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Schwiebus
+	if = {
+		limit = { any_country = { controls_province = 444 TAG_using_german_names = yes } }
+		set_province_name = { id = 444 name = VICTORY_POINTS_444_0 }
+	}
+	#Świebodzin
+	else = {
+		reset_province_name = 444
+	}
+	#Grünberg
+	if = {
+		limit = { any_country = { controls_province = 3438 TAG_using_german_names = yes } }
+		set_province_name = { id = 3438 name = VICTORY_POINTS_3438_0 }
+	}
+	#Zielona Góra
+	else = {
+		reset_province_name = 3438
+	}
+	#Neusalz
+	if = {
+		limit = { any_country = { controls_province = 6595 TAG_using_german_names = yes } }
+		set_province_name = { id = 6595 name = VICTORY_POINTS_6595_0 }
+	}
+	#Nowa Sól
+	else = {
+		reset_province_name = 6595
+	}
+	#Landsberg
+	if = {
+		limit = { any_country = { controls_province = 11478 TAG_using_german_names = yes } }
+		set_province_name = { id = 11478 name = VICTORY_POINTS_11478_0 }
+	}
+	#Gorzów Wielkopolski
+	else = {
+		reset_province_name = 11478
 	}
 }
 
@@ -970,6 +1233,11 @@ TDA_update_state_72_names = {
 		if = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_72_0
+		}
+		#Karpatenvorland
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_72_1
 		}
 		else = {
 			reset_state_name = yes
@@ -1006,6 +1274,21 @@ TDA_update_state_74_names = {
 
 #Moravia
 TDA_update_state_75_names = {
+	75 = {
+		#Morava
+		if = {
+			limit = { CONTROLLER = { TAG_using_czech_names = yes } }
+			set_state_name = STATE_75_0
+		}
+		#Mähren
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_75_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #North Transylvania
@@ -1016,8 +1299,85 @@ TDA_update_state_76_names = {
 TDA_update_state_77_names = {
 }
 
-#Bessarabia
+#Moldova
 TDA_update_state_78_names = {
+	#Soroki
+	if = {
+		limit = { any_country = { controls_province = 414 TAG_using_russian_names = yes } }
+		set_province_name = { id = 414 name = VICTORY_POINTS_414_0 }
+	}
+	#Soroca
+	else = {
+		reset_province_name = 414
+	}
+	#Ungen'
+	if = {
+		limit = { any_country = { controls_province = 565 TAG_using_russian_names = yes } }
+		set_province_name = { id = 565 name = VICTORY_POINTS_565_0 }
+	}
+	#Ungheni
+	else = {
+		reset_province_name = 565
+	}
+	#Bel'tsy
+	if = {
+		limit = { any_country = { controls_province = 6600 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6600 name = VICTORY_POINTS_6600_0 }
+	}
+	#Bălți
+	else = {
+		reset_province_name = 6600
+	}
+	#Kaushany
+	if = {
+		limit = { any_country = { controls_province = 11686 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11686 name = VICTORY_POINTS_11686_0 }
+	}
+	#Căușeni
+	else = {
+		reset_province_name = 11686
+	}
+	#Orkhey
+	if = {
+		limit = { any_country = { controls_province = 11705 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11705 name = VICTORY_POINTS_11705_0 }
+	}
+	#Orhei
+	else = {
+		reset_province_name = 11705
+	}
+	#Kagul
+	if = {
+		limit = { any_country = { controls_province = 15123 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15123 name = VICTORY_POINTS_15123_0 }
+	}
+	#Cahul
+	else = {
+		reset_province_name = 15123
+	}
+	#Kishinyov
+	if = {
+		limit = { any_country = { controls_province = 15124 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15124 name = VICTORY_POINTS_15124_0 }
+	}
+	#Chișinău
+	else = {
+		reset_province_name = 15124
+	}
+	#Aeroportul Internațional Chișinău
+	if = {
+		limit = { any_country = { controls_province = 15126 TAG_using_romanian_names = yes } }
+		set_province_name = { id = 15126 name = VICTORY_POINTS_15126_0 }
+	}
+	#Kishinyov Mezhdunarodnyy Aeroport
+	else_if = {
+		limit = { any_country = { controls_province = 15126 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15126 name = VICTORY_POINTS_15126_1 }
+	}
+	#Chișinău International Airport
+	else = {
+		reset_province_name = 15126
+	}
 }
 
 #Moldova
@@ -1061,16 +1421,41 @@ TDA_update_state_80_names = {
 	}
 }
 
-#Oltenia
+#Atacama
 TDA_update_state_81_names = {
 }
 
-#Banat
+#Szeklerland
 TDA_update_state_82_names = {
+	82 = {
+		#Székelyföld
+		if = {
+			limit = { CONTROLLER = { TAG_using_romanian_names = yes } }
+			set_state_name = STATE_82_0
+		}
+		#Ținutul Secuiesc
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_hungarian_names = yes } }
+			set_state_name = STATE_82_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Crisana
+#Gagauzia
 TDA_update_state_83_names = {
+	83 = {
+		#Găgăuzia
+		if = {
+			limit = { CONTROLLER = { TAG_using_romanian_names = yes } }
+			set_state_name = STATE_83_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Transylvania
@@ -1084,6 +1469,11 @@ TDA_update_state_85_names = {
 		if = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_85_0
+		}
+		#Pommern
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_85_1
 		}
 		else = {
 			reset_state_name = yes
@@ -1108,9 +1498,59 @@ TDA_update_state_86_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_86_0
 		}
+		#Großpolen
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_86_1
+		}
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Gnesen
+	if = {
+		limit = { any_country = { controls_province = 17 TAG_using_german_names = yes } }
+		set_province_name = { id = 17 name = VICTORY_POINTS_17_0 }
+	}
+	#Gniezno
+	else = {
+		reset_province_name = 17
+	}
+	#Schneidemühl
+	if = {
+		limit = { any_country = { controls_province = 388 TAG_using_german_names = yes } }
+		set_province_name = { id = 388 name = VICTORY_POINTS_388_0 }
+	}
+	#Piła
+	else = {
+		reset_province_name = 388
+	}
+	#Posen
+	if = {
+		limit = { any_country = { controls_province = 6558 TAG_using_german_names = yes } }
+		set_province_name = { id = 6558 name = VICTORY_POINTS_6558_0 }
+	}
+	#Poznań
+	else = {
+		reset_province_name = 6558
+	}
+	#Kalisch
+	if = {
+		limit = { any_country = { controls_province = 11558 TAG_using_german_names = yes } }
+		set_province_name = { id = 11558 name = VICTORY_POINTS_11558_0 }
+	}
+	#Kalisz
+	else = {
+		reset_province_name = 11558
+	}
+	#Lissa
+	if = {
+		limit = { any_country = { controls_province = 13974 TAG_using_german_names = yes } }
+		set_province_name = { id = 13974 name = VICTORY_POINTS_13974_0 }
+	}
+	#Leszno
+	else = {
+		reset_province_name = 13974
 	}
 }
 
@@ -1121,6 +1561,11 @@ TDA_update_state_87_names = {
 		if = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_87_0
+		}
+		#Lodsch
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_87_1
 		}
 		else = {
 			reset_state_name = yes
@@ -1135,6 +1580,11 @@ TDA_update_state_88_names = {
 		if = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_88_0
+		}
+		#Kleinpolen
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_88_1
 		}
 		else = {
 			reset_state_name = yes
@@ -1287,6 +1737,11 @@ TDA_update_state_90_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_90_0
 		}
+		#Heiligkreuz
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_90_1
+		}
 		else = {
 			reset_state_name = yes
 		}
@@ -1379,10 +1834,74 @@ TDA_update_state_93_names = {
 
 #Brest
 TDA_update_state_94_names = {
+	#Ivatsevichi
+	if = {
+		limit = { any_country = { controls_province = 6306 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6306 name = VICTORY_POINTS_6306_0 }
+	}
+	#Ivatsevichy
+	else = {
+		reset_province_name = 6306
+	}
+	#Baranovichi
+	if = {
+		limit = { any_country = { controls_province = 9304 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9304 name = VICTORY_POINTS_9304_0 }
+	}
+	#Baranavichy
+	else = {
+		reset_province_name = 9304
+	}
 }
 
 #Hrodna
 TDA_update_state_95_names = {
+	95 = {
+		#Grodno
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_95_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Volkovytsk
+	if = {
+		limit = { any_country = { controls_province = 318 TAG_using_russian_names = yes } }
+		set_province_name = { id = 318 name = VICTORY_POINTS_318_0 }
+	}
+	#Vawkavysk
+	else = {
+		reset_province_name = 318
+	}
+	#Novogrudok
+	if = {
+		limit = { any_country = { controls_province = 9359 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9359 name = VICTORY_POINTS_9359_0 }
+	}
+	#Navahrudak
+	else = {
+		reset_province_name = 9359
+	}
+	#Smorgon'
+	if = {
+		limit = { any_country = { controls_province = 11391 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11391 name = VICTORY_POINTS_11391_0 }
+	}
+	#Smarhoń
+	else = {
+		reset_province_name = 11391
+	}
+	#Grodno
+	if = {
+		limit = { any_country = { controls_province = 13206 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13206 name = VICTORY_POINTS_13206_0 }
+	}
+	#Hrodna
+	else = {
+		reset_province_name = 13206
+	}
 }
 
 #Vatican City
@@ -1412,13 +1931,18 @@ TDA_update_state_96_names = {
 TDA_update_state_97_names = {
 }
 
-#North Masovia
+#Northern Masovia
 TDA_update_state_98_names = {
 	98 = {
-		#Mazowieckie Północne
+		#Północne Mazowsze
 		if = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_98_0
+		}
+		#Nordasowien
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_98_1
 		}
 		else = {
 			reset_state_name = yes
@@ -1870,12 +2394,32 @@ TDA_update_state_152_names = {
 TDA_update_state_153_names = {
 }
 
-#Transtisza
+#Eastern Hungary
 TDA_update_state_154_names = {
+	154 = {
+		#Kelet-Magyarország
+		if = {
+			limit = { CONTROLLER = { TAG_using_hungarian_names = yes } }
+			set_state_name = STATE_154_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Transdanubia
+#Western Hungary
 TDA_update_state_155_names = {
+	155 = {
+		#Nyugat-Magyarország
+		if = {
+			limit = { CONTROLLER = { TAG_using_hungarian_names = yes } }
+			set_state_name = STATE_155_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Calabria
@@ -2115,16 +2659,69 @@ TDA_update_state_186_names = {
 TDA_update_state_187_names = {
 }
 
-#Mažoji Lietuva
+#Lithuania Minor
 TDA_update_state_188_names = {
+	188 = {
+		#Mažoji Lietuva
+		if = {
+			limit = { CONTROLLER = { TAG_using_lithuanian_names = yes } }
+			set_state_name = STATE_188_0
+		}
+		#Memelland
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_188_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Memel
+	if = {
+		limit = { any_country = { controls_province = 3288 TAG_using_german_names = yes } }
+		set_province_name = { id = 3288 name = VICTORY_POINTS_3288_0 }
+	}
+	#Klaipėda
+	else = {
+		reset_province_name = 3288
+	}
 }
 
-#Žemaitija
+#Samogita
 TDA_update_state_189_names = {
+	189 = {
+		#Žemaitija
+		if = {
+			limit = { CONTROLLER = { TAG_using_lithuanian_names = yes } }
+			set_state_name = STATE_189_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Courland
 TDA_update_state_190_names = {
+	190 = {
+		#Kurzeme
+		if = {
+			limit = { CONTROLLER = { TAG_using_latvian_names = yes } }
+			set_state_name = STATE_190_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Rīgas Lidosta
+	if = {
+		limit = { any_country = { controls_province = 13831 TAG_using_latvian_names = yes } }
+		set_province_name = { id = 13831 name = VICTORY_POINTS_13831_0 }
+	}
+	#Riga Airport
+	else = {
+		reset_province_name = 13831
+	}
 }
 
 #Tartu
@@ -2238,8 +2835,63 @@ TDA_update_state_193_names = {
 	}
 }
 
-#Homel
+#Homieĺ
 TDA_update_state_194_names = {
+	194 = {
+		#Gomel'
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_194_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Svetlogorsk
+	if = {
+		limit = { any_country = { controls_province = 3293 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3293 name = VICTORY_POINTS_3293_0 }
+	}
+	#Svietlahorsk
+	else = {
+		reset_province_name = 3293
+	}
+	#Mozyr'
+	if = {
+		limit = { any_country = { controls_province = 6232 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6232 name = VICTORY_POINTS_6232_0 }
+	}
+	#Mazyr
+	else = {
+		reset_province_name = 6232
+	}
+	#Rechitsa
+	if = {
+		limit = { any_country = { controls_province = 6319 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6319 name = VICTORY_POINTS_6319_0 }
+	}
+	#Rečyca
+	else = {
+		reset_province_name = 6319
+	}
+	#Zhlobin
+	if = {
+		limit = { any_country = { controls_province = 6373 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6373 name = VICTORY_POINTS_6373_0 }
+	}
+	#Žlobin
+	else = {
+		reset_province_name = 6373
+	}
+	#Gomel'
+	if = {
+		limit = { any_country = { controls_province = 9288 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9288 name = VICTORY_POINTS_9288_0 }
+	}
+	#Homieĺ
+	else = {
+		reset_province_name = 9288
+	}
 }
 
 #St. Petersburg City
@@ -2634,10 +3286,105 @@ TDA_update_state_205_names = {
 
 #Minsk
 TDA_update_state_206_names = {
+	#Molodechno
+	if = {
+		limit = { any_country = { controls_province = 277 TAG_using_russian_names = yes } }
+		set_province_name = { id = 277 name = VICTORY_POINTS_277_0 }
+	}
+	#Maladzyechna
+	else = {
+		reset_province_name = 277
+	}
+	#Borisov
+	if = {
+		limit = { any_country = { controls_province = 294 TAG_using_russian_names = yes } }
+		set_province_name = { id = 294 name = VICTORY_POINTS_294_0 }
+	}
+	#Barysaw
+	else = {
+		reset_province_name = 294
+	}
+	#Mar'ina Gorka
+	if = {
+		limit = { any_country = { controls_province = 360 TAG_using_russian_names = yes } }
+		set_province_name = { id = 360 name = VICTORY_POINTS_360_0 }
+	}
+	#Maryina Horka
+	else = {
+		reset_province_name = 360
+	}
+	#Dzerzhinsk
+	if = {
+		limit = { any_country = { controls_province = 11216 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11216 name = VICTORY_POINTS_11216_0 }
+	}
+	#Dzyarzhynsk
+	else = {
+		reset_province_name = 11216
+	}
+	#Soligorsk
+	if = {
+		limit = { any_country = { controls_province = 11313 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11313 name = VICTORY_POINTS_11313_0 }
+	}
+	#Salihorsk
+	else = {
+		reset_province_name = 11313
+	}
+	#Nacyjanaĺny Aeraport Minsk
+	if = {
+		limit = { any_country = { controls_province = 14147 TAG_using_belarusian_names = yes } }
+		set_province_name = { id = 14147 name = VICTORY_POINTS_14147_0 }
+	}
+	#Natsional'nyy Aeroport Minsk
+	else_if = {
+		limit = { any_country = { controls_province = 14147 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14147 name = VICTORY_POINTS_14147_1 }
+	}
+	#National Airport Minsk
+	else = {
+		reset_province_name = 14147
+	}
 }
 
 #Vitebsk
 TDA_update_state_207_names = {
+	#Postavy
+	if = {
+		limit = { any_country = { controls_province = 233 TAG_using_russian_names = yes } }
+		set_province_name = { id = 233 name = VICTORY_POINTS_233_0 }
+	}
+	#Pastavy
+	else = {
+		reset_province_name = 233
+	}
+	#Polotsk
+	if = {
+		limit = { any_country = { controls_province = 6249 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6249 name = VICTORY_POINTS_6249_0 }
+	}
+	#Polatsk
+	else = {
+		reset_province_name = 6249
+	}
+	#Novopolotsk
+	if = {
+		limit = { any_country = { controls_province = 6326 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6326 name = VICTORY_POINTS_6326_0 }
+	}
+	#Navapolatsk
+	else = {
+		reset_province_name = 6326
+	}
+	#Glybokoye
+	if = {
+		limit = { any_country = { controls_province = 9341 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9341 name = VICTORY_POINTS_9341_0 }
+	}
+	#Hlybokaye
+	else = {
+		reset_province_name = 9341
+	}
 }
 
 #Leningrad
@@ -3280,6 +4027,79 @@ TDA_update_state_240_names = {
 
 #Mogilev
 TDA_update_state_241_names = {
+	241 = {
+		#Mogilyov
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_241_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Krichev
+	if = {
+		limit = { any_country = { controls_province = 289 TAG_using_russian_names = yes } }
+		set_province_name = { id = 289 name = VICTORY_POINTS_289_0 }
+	}
+	#Krychaw
+	else = {
+		reset_province_name = 289
+	}
+	#Osipovichi
+	if = {
+		limit = { any_country = { controls_province = 386 TAG_using_russian_names = yes } }
+		set_province_name = { id = 386 name = VICTORY_POINTS_386_0 }
+	}
+	#Asipovichy
+	else = {
+		reset_province_name = 386
+	}
+	#Bobruysk
+	if = {
+		limit = { any_country = { controls_province = 3350 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3350 name = VICTORY_POINTS_3350_0 }
+	}
+	#Babruysk
+	else = {
+		reset_province_name = 3350
+	}
+	#Bykhov
+	if = {
+		limit = { any_country = { controls_province = 3378 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3378 name = VICTORY_POINTS_3378_0 }
+	}
+	#Bychaŭ
+	else = {
+		reset_province_name = 3378
+	}
+	#Gorki
+	if = {
+		limit = { any_country = { controls_province = 6354 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6354 name = VICTORY_POINTS_6354_0 }
+	}
+	#Horki
+	else = {
+		reset_province_name = 6354
+	}
+	#Kostyukovichi
+	if = {
+		limit = { any_country = { controls_province = 11230 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11230 name = VICTORY_POINTS_11230_0 }
+	}
+	#Kastsyukovichy
+	else = {
+		reset_province_name = 11230
+	}
+	#Mogilyov
+	if = {
+		limit = { any_country = { controls_province = 14153 TAG_using_russian_names = yes } }
+		set_province_name = { id = 14153 name = VICTORY_POINTS_14153_0 }
+	}
+	#Mogilev
+	else = {
+		reset_province_name = 14153
+	}
 }
 
 #Smolensk
@@ -12869,9 +13689,33 @@ TDA_update_state_763_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_763_1
 		}
+		#Karaliaučius
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_lithuanian_names = yes } }
+			set_state_name = STATE_763_2
+		}
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Tilsit
+	if = {
+		limit = { any_country = { controls_province = 348 TAG_using_german_names = yes } }
+		set_province_name = { id = 348 name = VICTORY_POINTS_348_0 }
+	}
+	#Tylża
+	else_if = {
+		limit = { any_country = { controls_province = 348 TAG_using_polish_names = yes } }
+		set_province_name = { id = 348 name = VICTORY_POINTS_348_1 }
+	}
+	#Tilžė
+	else_if = {
+		limit = { any_country = { controls_province = 348 TAG_using_lithuanian_names = yes } }
+		set_province_name = { id = 348 name = VICTORY_POINTS_348_2 }
+	}
+	#Sovetsk
+	else = {
+		reset_province_name = 348
 	}
 	#Königsberg
 	if = {
@@ -12883,14 +13727,34 @@ TDA_update_state_763_names = {
 		limit = { any_country = { controls_province = 14193 TAG_using_polish_names = yes } }
 		set_province_name = { id = 14193 name = VICTORY_POINTS_14193_1 }
 	}
+	#Karaliaučius
+	else_if = {
+		limit = { any_country = { controls_province = 14193 TAG_using_lithuanian_names = yes } }
+		set_province_name = { id = 14193 name = VICTORY_POINTS_14193_2 }
+	}
 	#Kaliningrad
 	else = {
 		reset_province_name = 14193
 	}
-	#Mezhdunarodnyy Aeroport Khrabrovo
+	#Aeroport Khrabrovo
 	if = {
 		limit = { any_country = { controls_province = 14194 TAG_using_russian_names = yes } }
 		set_province_name = { id = 14194 name = VICTORY_POINTS_14194_0 }
+	}
+	#Flughafen Königsberg
+	else_if = {
+		limit = { any_country = { controls_province = 14194 TAG_using_german_names = yes } }
+		set_province_name = { id = 14194 name = VICTORY_POINTS_14194_1 }
+	}
+	#Lotnisko Królewiec
+	else_if = {
+		limit = { any_country = { controls_province = 14194 TAG_using_polish_names = yes } }
+		set_province_name = { id = 14194 name = VICTORY_POINTS_14194_2 }
+	}
+	#Kaliningrado oro Uostas
+	else_if = {
+		limit = { any_country = { controls_province = 14194 TAG_using_lithuanian_names = yes } }
+		set_province_name = { id = 14194 name = VICTORY_POINTS_14194_3 }
 	}
 	#Airport Khrabrovo
 	else = {
@@ -13221,6 +14085,11 @@ TDA_update_state_807_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_807_0
 		}
+		#Ermland-Masuren
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_807_1
+		}
 		else = {
 			reset_state_name = yes
 		}
@@ -13256,18 +14125,47 @@ TDA_update_state_810_names = {
 
 #Saare and Hiiu
 TDA_update_state_811_names = {
+	811 = {
+		#Saree ja Hiiu
+		if = {
+			limit = { CONTROLLER = { TAG_using_estonian_names = yes } }
+			set_state_name = STATE_811_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Harju
 TDA_update_state_812_names = {
+	#Tallinna Lennujaam
+	if = {
+		limit = { any_country = { controls_province = 13834 TAG_using_estonian_names = yes } }
+		set_province_name = { id = 13834 name = VICTORY_POINTS_13834_0 }
+	}
+	#Tallinn Airport
+	else = {
+		reset_province_name = 13834
+	}
 }
 
 #Ida-Viru
 TDA_update_state_813_names = {
 }
 
-#Sūduva
+#Sudovia
 TDA_update_state_814_names = {
+	814 = {
+		#Sūduva
+		if = {
+			limit = { CONTROLLER = { TAG_using_lithuanian_names = yes } }
+			set_state_name = STATE_814_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Aukštaitija
@@ -13820,10 +14718,6 @@ TDA_update_state_889_names = {
 
 #Costermansville
 TDA_update_state_890_names = {
-}
-
-#Atacama
-TDA_update_state_891_names = {
 }
 
 
@@ -14719,7 +15613,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_888_names = yes
 	TDA_update_state_889_names = yes
 	TDA_update_state_890_names = yes
-	TDA_update_state_891_names = yes
 }
 
 TDA_toggle_change_city_names = {

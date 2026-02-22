@@ -74,6 +74,24 @@ music = {
 	}	
 }
 music = {
+	song = "Radiohead - Daydreaming"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
+	song = "Radiohead - Pearly*"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
 	song = "SadSvit - Kazeta"
 	
 	chance = {

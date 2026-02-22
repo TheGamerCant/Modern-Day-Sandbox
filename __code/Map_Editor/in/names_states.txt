@@ -63,13 +63,31 @@
 }
 9 = {
 	default = "Bohemia"
+	entry = {
+        name = "Čechy"
+        requirements = {
+            "TAG_using_czech_names = yes"
+        }
+    }
+	entry = {
+        name = "Böhmen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 10 = {
-	default = "South Masovia"
+	default = "Southern Masovia"
 	entry = {
-        name = "Mazowieckie Południowe"
+        name = "Południowe Mazowsze"
         requirements = {
             "TAG_using_polish_names = yes"
+        }
+    }
+	entry = {
+        name = "Südmasowien"
+        requirements = {
+            "TAG_using_german_names = yes"
         }
     }
 }
@@ -242,7 +260,13 @@
 	default = "Rheinland-Pfalz"
 }
 43 = {
-	default = "Northern Hungary"
+	default = "Central Hungary"
+	entry = {
+        name = "Közép-Magyarország"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
 }
 44 = {
 	default = "Albania"
@@ -345,6 +369,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+	    name = "Westpommern"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 64 = {
 	default = "Brandenburg"
@@ -366,6 +396,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+	    name = "Niederschlesien"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 67 = {
 	default = "Opole"
@@ -375,6 +411,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+	    name = "Oppeln"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 68 = {
 	default = "Lubusz"
@@ -382,6 +424,12 @@
         name = "Lubuskie"
         requirements = {
             "TAG_using_polish_names = yes"
+        }
+    }
+	entry = {
+	    name = "Lubus"
+        requirements = {
+            "TAG_using_german_names = yes"
         }
     }
 }
@@ -402,6 +450,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+	    name = "Karpatenvorland"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 73 = {
 	default = "Zakarpattia"
@@ -417,6 +471,18 @@
 }
 75 = {
 	default = "Moravia"
+	entry = {
+        name = "Morava"
+        requirements = {
+            "TAG_using_czech_names = yes"
+        }
+    }
+	entry = {
+        name = "Mähren"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 76 = {
 	default = "North Transylvania"
@@ -425,7 +491,7 @@
 	default = "Dobrudja"
 }
 78 = {
-	default = "Bessarabia"
+	default = "Moldova"
 }
 79 = {
 	default = "Moldova"
@@ -440,13 +506,31 @@
     }
 }
 81 = {
-	default = "Oltenia"
+	default = "Atacama"
 }
 82 = {
-	default = "Banat"
+	default = "Szeklerland"
+	entry = { 
+        name = "Székelyföld"
+        requirements = {
+            "TAG_using_romanian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Ținutul Secuiesc"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
 }
 83 = {
-	default = "Crisana"
+	default = "Gagauzia"
+	entry = {
+		name = "Găgăuzia"
+		requirements = {
+			"TAG_using_romanian_names = yes"
+		}
+	}
 }
 84 = {
 	default = "Transylvania"
@@ -459,6 +543,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+        name = "Pommern"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 86 = {
 	default = "Greater Poland"
@@ -466,6 +556,12 @@
         name = "Wielkopolskie"
         requirements = {
             "TAG_using_polish_names = yes"
+        }
+    }
+	entry = {
+	    name = "Großpolen"
+        requirements = {
+            "TAG_using_german_names = yes"
         }
     }
 }
@@ -477,6 +573,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+	    name = "Lodsch"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 88 = {
 	default = "Lesser Poland"
@@ -484,6 +586,12 @@
         name = "Małopolskie"
         requirements = {
             "TAG_using_polish_names = yes"
+        }
+    }
+	entry = {
+	    name = "Kleinpolen"
+        requirements = {
+            "TAG_using_german_names = yes"
         }
     }
 }
@@ -514,6 +622,12 @@
         name = "Świętokrzyskie"
         requirements = {
             "TAG_using_polish_names = yes"
+        }
+    }
+	entry = {
+	    name = "Heiligkreuz"
+        requirements = {
+            "TAG_using_german_names = yes"
         }
     }
 }
@@ -549,6 +663,12 @@
 }
 95 = {
 	default = "Hrodna"
+	entry = {
+        name = "Grodno"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 96 = {
 	default = "Vatican City"
@@ -563,11 +683,17 @@
 	default = "Podlaskie"
 }
 98 = {
-	default = "North Masovia"
+	default = "Northern Masovia"
 	entry = {
-        name = "Mazowieckie Północne"
+        name = "Północne Mazowsze"
         requirements = {
             "TAG_using_polish_names = yes"
+        }
+    }
+	entry = {
+        name = "Nordasowien"
+        requirements = {
+            "TAG_using_german_names = yes"
         }
     }
 }
@@ -817,10 +943,22 @@
 	default = "Vladimir"
 }
 154 = {
-	default = "Transtisza"
+	default = "Eastern Hungary"
+	entry = {
+        name = "Kelet-Magyarország"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
 }
 155 = {
-	default = "Transdanubia"
+	default = "Western Hungary"
+	entry = {
+        name = "Nyugat-Magyarország"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
 }
 156 = {
 	default = "Calabria"
@@ -956,13 +1094,37 @@
 	default = "Aegean Islands"
 }
 188 = {
-	default = "Mažoji Lietuva"
+	default = "Lithuania Minor"
+	entry = { 
+        name = "Mažoji Lietuva"
+        requirements = {
+            "TAG_using_lithuanian_names = yes"
+        }
+    }
+	entry = {
+        name = "Memelland"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 189 = {
-	default = "Žemaitija"
+	default = "Samogita"
+	entry = { 
+        name = "Žemaitija"
+        requirements = {
+            "TAG_using_lithuanian_names = yes"
+        }
+    }
 }
 190 = {
 	default = "Courland"
+	entry = { 
+        name = "Kurzeme"
+        requirements = {
+            "TAG_using_latvian_names = yes"
+        }
+    }
 }
 191 = {
 	default = "Tartu"
@@ -986,7 +1148,13 @@
     }
 }
 194 = {
-	default = "Homel"
+	default = "Homieĺ"
+	entry = {
+        name = "Gomel'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 195 = {
 	default = "St. Petersburg City"
@@ -1248,6 +1416,12 @@
 }
 241 = {
 	default = "Mogilev"
+	entry = {
+        name = "Mogilyov"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 242 = {
 	default = "Smolensk"
@@ -3475,6 +3649,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+        name = "Karaliaučius"
+        requirements = {
+            "TAG_using_lithuanian_names = yes"
+        }
+    }
 }
 764 = {
 	default = "West Banat"
@@ -3655,6 +3835,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+	    name = "Ermland-Masuren"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 808 = {
 	default = "Vermont"
@@ -3679,6 +3865,12 @@
 }
 811 = {
 	default = "Saare and Hiiu"
+	entry = { 
+        name = "Saree ja Hiiu"
+        requirements = {
+            "TAG_using_estonian_names = yes"
+        }
+    }
 }
 812 = {
 	default = "Harju"
@@ -3687,7 +3879,13 @@
 	default = "Ida-Viru"
 }
 814 = {
-	default = "Sūduva"
+	default = "Sudovia"
+	entry = { 
+        name = "Sūduva"
+        requirements = {
+            "TAG_using_lithuanian_names = yes"
+        }
+    }
 }
 815 = {
 	default = "Aukštaitija"
@@ -4000,7 +4198,4 @@
 }
 890 = {
 	default = "Costermansville"
-}
-891 = {
-	default = "Atacama"
 }

@@ -35,6 +35,15 @@ music = {
 }
 
 music = {
+	name = "Radiohead - Daydreaming"
+	file = "00_calm/daydreaming.ogg"
+}
+music = {
+	name = "Radiohead - Pearly*"
+	file = "01_mild/pearly.ogg"
+}
+
+music = {
 	name = "SadSvit - Kazeta"
 	file = "00_calm/SadSvit_Каzeta.ogg"
 }

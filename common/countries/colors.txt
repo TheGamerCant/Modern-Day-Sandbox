@@ -412,3 +412,7 @@ BUL = {
 	color = rgb { 20 168 101 }
 	color_ui = rgb { 20 168 101 }
 }
+GGZ = {
+	color = rgb { 7 63 125 }
+	color_ui = rgb { 7 63 125 }
+}
