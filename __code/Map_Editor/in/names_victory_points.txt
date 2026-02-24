@@ -852,9 +852,21 @@
 }
 13615 = {
 	default = "Montreal"
+	entry = {
+        name = "Montréal"
+        requirements = {
+            "OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes }"
+        }
+    }
 }
 13619 = {
 	default = "Quebec City"
+	entry = {
+        name = "Ville de Québec"
+        requirements = {
+            "OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes }"
+        }
+    }
 }
 9601 = {
 	default = "Trois-Rivières"
@@ -2400,6 +2412,12 @@
 }
 13841 = {
 	default = "Tirana"
+	entry = {
+	    name = "Tirona"
+        requirements = {
+            "TAG_using_albanian_names = yes"
+        }
+    }
 }
 6900 = {
 	default = "Durrës"
@@ -2430,6 +2448,12 @@
 }
 13848 = {
 	default = "Franjo Tuđman International Airport"
+	entry = { 
+        name = "Zračna luka Franjo Tuđman Zagreb"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 11564 = {
 	default = "Rijelka"
@@ -2523,12 +2547,24 @@
 }
 13867 = {
 	default = "Nikola Tesla Airport"
+	entry = { 
+        name = "Aerodrom Nikola Tesla Beograd"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 3623 = {
 	default = "Sombor"
 }
 13864 = {
 	default = "Belgrade"
+	entry = { 
+        name = "Beograd"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 3609 = {
 	default = "Šabac"
@@ -2826,42 +2862,108 @@
 }
 6375 = {
 	default = "Olsztyn"
+	entry = {
+        name = "Allenstein"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 6402 = {
 	default = "Elbląg"
+	entry = {
+        name = "Elbing"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 11386 = {
 	default = "Ełk"
+	entry = {
+        name = "Lyck"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 266 = {
 	default = "Giżycko"
+	entry = {
+        name = "Lötzen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 9346 = {
 	default = "Ostróda"
+	entry = {
+        name = "Osterode"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 362 = {
 	default = "Gdańsk"
+	entry = {
+        name = "Danzig"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13942 = {
 	default = "Gdynia"
+	entry = {
+        name = "Gdingen"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13939 = {
 	default = "Lech Wałęsa Airport"
-	entry = { 
+	entry = {
         name = "Lotnisko im. Lecha Wałęsy"
         requirements = {
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+        name = "Flughafen Danzig"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13944 = {
 	default = "Słupsk"
+	entry = {
+        name = "Stolp"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13943 = {
 	default = "Tczew"
+	entry = {
+        name = "Dirschau"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 334 = {
 	default = "Chojnice"
+	entry = {
+        name = "Konitz"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 6282 = {
 	default = "Szczecin"
@@ -2910,15 +3012,39 @@
 }
 13949 = {
 	default = "Bydgoszcz"
+	entry = {
+        name = "Bromberg"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 243 = {
 	default = "Inowrocław"
+	entry = {
+        name = "Hohensalza"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13948 = {
 	default = "Toruń"
+	entry = {
+        name = "Thorn"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13947 = {
 	default = "Włocławek"
+	entry = {
+        name = "Leslau"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13951 = {
 	default = "Białystok"
@@ -2943,6 +3069,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+        name = "Warschau"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13955 = {
 	default = "Warsaw Chopin Airport"
@@ -2950,6 +3082,12 @@
         name = "Lotnisko Chopina Warszawa"
         requirements = {
             "TAG_using_polish_names = yes"
+        }
+    }
+	entry = {
+        name = "Flughafen Warschau"
+        requirements = {
+            "TAG_using_german_names = yes"
         }
     }
 }
@@ -3036,6 +3174,12 @@
 }
 6464 = {
 	default = "Gliwice"
+	entry = {
+        name = "Gleiwitz"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 3545 = {
 	default = "Legnica"
@@ -3105,15 +3249,27 @@
 }
 9508 = {
 	default = "Łódź"
+	entry = {
+        name = "Lodsch"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 3482 = {
 	default = "Piotrków Trybunalski"
+	entry = {
+        name = "Petrikau"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 584 = {
 	default = "Wieluń"
 }
 9400 = {
-	default = "Łowicz"
+	default = "Skierniewice"
 }
 6416 = {
 	default = "Kielce"
@@ -3150,18 +3306,48 @@
 }
 11467 = {
 	default = "Częstochowa"
+	entry = {
+        name = "Tschenstochau"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13205 = {
 	default = "Katowice"
+	entry = {
+        name = "Kattowitz"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13982 = {
 	default = "Dąbrowa Górnicza"
+	entry = {
+        name = "Dombrowa"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 9412 = {
 	default = "Bielsko-Biała"
+	entry = {
+        name = "Bielitz-Biala"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 9427 = {
 	default = "Kraków"
+	entry = {
+        name = "Krakau"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13986 = {
 	default = "John Paul II Airport"
@@ -3171,15 +3357,33 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+        name = "Flughafen Krakau"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13988 = {
 	default = "Zakopane"
 }
 442 = {
 	default = "Tarnów"
+	entry = {
+        name = "Tarnau"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 417 = {
 	default = "Nowy Sącz"
+	entry = {
+        name = "Neusandez"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 13989 = {
 	default = "Rzeszów"
@@ -3759,6 +3963,12 @@
 }
 14082 = {
 	default = "M. R. Štefánik Airport"
+	entry = {
+	    name = "Letisko M. R. Štefánika"
+        requirements = {
+            "TAG_using_slovakian_names = yes"
+        }
+    }
 }
 6573 = {
 	default = "Košice"
@@ -6711,9 +6921,21 @@
 }
 11805 = {
 	default = "Lisbon"
+	entry = {
+	    name = "Lisboa"
+        requirements = {
+            "TAG_using_portugese_names = yes"
+        }
+    }
 }
 14493 = {
 	default = "Humberto Delgado Airport"
+	entry = {
+	    name = "Aeroporto Humberto Delgado"
+        requirements = {
+            "TAG_using_portugese_names = yes"
+        }
+    }
 }
 14495 = {
 	default = "Setúbal"
@@ -6813,6 +7035,12 @@
 }
 14502 = {
 	default = "Bilbao Airport"
+	entry = {
+	    name = "Aeropuerto de Bilbao"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 13233 = {
 	default = "Vitoria-Gasteiz"
@@ -6825,6 +7053,12 @@
 }
 14504 = {
 	default = "Adolfo Suárez Madrid-Barajas Airport"
+	entry = {
+	    name = "Aeropuerto Adolfo Suárez Madrid–Barajas"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 14506 = {
 	default = "Getafe"
@@ -6855,18 +7089,48 @@
 }
 14510 = {
 	default = "Josep Tarradellas Airport"
+	entry = {
+	    name = "Aeropuerto Josep Tarradellas"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+	entry = {
+	    name = "Aeroport Josep Tarradellas"
+        requirements = {
+            "TAG_using_catalan_names = yes"
+        }
+    }
 }
 14512 = {
 	default = "Terrassa"
+	entry = {
+	    name = "Tarrasa"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 854 = {
 	default = "Girona"
+	entry = {
+	    name = "Gerona"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 14514 = {
 	default = "Tarragona"
 }
 872 = {
 	default = "Lleida"
+	entry = {
+	    name = "Lérida"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 9797 = {
 	default = "Manresa"
@@ -6879,9 +7143,21 @@
 }
 7114 = {
 	default = "Ibiza"
+	entry = {
+	    name = "Eivissa"
+        requirements = {
+            "TAG_using_catalan_names = yes"
+        }
+    }
 }
 9845 = {
 	default = "Mahón"
+	entry = {
+	    name = "Maó"
+        requirements = {
+            "TAG_using_catalan_names = yes"
+        }
+    }
 }
 6906 = {
 	default = "Valencia"
@@ -6938,10 +7214,22 @@
 	default = "Mérida"
 }
 14522 = {
-	default = "Sevilla"
+	default = "Seville"
+	entry = {
+	    name = "Sevilla"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 14523 = {
-	default = "Sevilla Airport"
+	default = "Seville Airport"
+	entry = {
+	    name = "Aeropuerto de Sevilla"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 14525 = {
 	default = "Málaga"
@@ -13831,6 +14119,12 @@
 }
 3724 = {
 	default = "Comrat"
+	entry = { 
+        name = "Komrat"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 15124 = {
 	default = "Chișinău"
@@ -13909,4 +14203,340 @@
             "TAG_using_russian_names = yes"
         }
     }
+}
+15127 = {
+	default = "Constanța"
+}
+687 = {
+	default = "Tulcea"
+}
+657 = {
+	default = "Mangalia"
+}
+9668 = {
+	default = "Sfântu Gheorghe"
+	entry = { 
+        name = "Sepsiszentgyörgy"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+9670 = {
+	default = "Târgu Mureș"
+	entry = { 
+        name = "Marosvásárhely"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+3689 = {
+	default = "Miercurea Ciuc"
+	entry = { 
+        name = "Csíkszereda"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+9617 = {
+	default = "Bucharest"
+	entry = { 
+        name = "București"
+        requirements = {
+            "TAG_using_romanian_names = yes"
+        }
+    }
+}
+15132 = {
+	default = "Henri Coandă International Airport"
+	entry = { 
+        name = "Aeroportul Internațional Henri Coandă"
+        requirements = {
+            "TAG_using_romanian_names = yes"
+        }
+    }
+}
+15133 = {
+	default = "Craiova"
+}
+3663 = {
+	default = "Ploiești"
+}
+3639 = {
+	default = "Pitești"
+}
+11657 = {
+	default = "Drobeta-Turnu Severin"
+}
+3645 = {
+	default = "Târgu Jiu"
+}
+3630 = {
+	default = "Băilești"
+}
+6658 = {
+	default = "Giurgiu"
+}
+11636 = {
+	default = "Brăila"
+}
+9651 = {
+	default = "Buzău"
+}
+6677 = {
+	default = "Călărași"
+}
+11603 = {
+	default = "Oltenița"
+}
+818 = {
+	default = "Slatina"
+}
+15134 = {
+	default = "Galați"
+}
+15135 = {
+	default = "Iași"
+}
+11534 = {
+	default = "Botoșani"
+}
+744 = {
+	default = "Suceava"
+}
+3728 = {
+	default = "Piatra Neamț"
+}
+6747 = {
+	default = "Bacău"
+}
+9701 = {
+	default = "Focșani"
+}
+723 = {
+	default = "Vaslui"
+}
+6729 = {
+	default = "Bârlad"
+}
+11652 = {
+	default = "Râmnicu Sărat"
+}
+11655 = {
+	default = "Onești"
+}
+6761 = {
+	default = "Rădăuți"
+}
+15136 = {
+	default = "Timișoara"
+	entry = { 
+        name = "Temesvár"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+6682 = {
+	default = "Arad"
+}
+11592 = {
+	default = "Reșița"
+	entry = { 
+        name = "Resicabánya"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+3676 = {
+	default = "Brașov"
+	entry = { 
+        name = "Brassó"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+6679 = {
+	default = "Sibiu"
+	entry = { 
+        name = "Nagyszeben"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+9619 = {
+	default = "Deva"
+	entry = { 
+        name = "Déva"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+11622 = {
+	default = "Alba Iulia"
+}
+662 = {
+	default = "Lugoj"
+}
+11639 = {
+	default = "Mediaș"
+	entry = { 
+        name = "Medgyes"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+14457 = {
+	default = "Cluj-Napoca"
+	entry = { 
+        name = "Kolozsvár"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+3696 = {
+	default = "Oradea"
+	entry = { 
+        name = "Nagyvárad"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+746 = {
+	default = "Satu Mare"
+	entry = { 
+        name = "Szatmárnémeti"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+11676 = {
+	default = "Baia Mare"
+	entry = { 
+        name = "Nagybánya"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+9685 = {
+	default = "Bistrița"
+	entry = { 
+        name = "Beszterce"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+9687 = {
+	default = "Zalău"
+	entry = { 
+        name = "Zilah"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
+}
+11597 = {
+	default = "Dobrich"
+	entry = { 
+        name = "Bazargic"
+        requirements = {
+            "TAG_using_romanian_names = yes"
+        }
+    }
+}
+9614 = {
+	default = "Silistra"
+}
+15139 = {
+	default = "Sofia"
+	entry = { 
+        name = "Sofiya"
+        requirements = {
+            "TAG_using_bulgarian_names = yes"
+        }
+    }
+}
+15140 = {
+	default = "Sofia International Airport"
+	entry = { 
+        name = "Mezhdunarodno Letishche Sofiya"
+        requirements = {
+            "TAG_using_bulgarian_names = yes"
+        }
+    }
+}
+15138 = {
+	default = "Plovdiv"
+}
+935 = {
+	default = "Pernik"
+}
+6857 = {
+	default = "Blagoevgrad"
+}
+6982 = {
+	default = "Pazardzhik"
+}
+3796 = {
+	default = "Pleven"
+}
+965 = {
+	default = "Vratsa"
+}
+9771 = {
+	default = "Vidin"
+}
+893 = {
+	default = "Smolyan"
+}
+793 = {
+	default = "Knezha"
+}
+3937 = {
+	default = "Velingrad"
+}
+15137 = {
+	default = "Varna"
+}
+9919 = {
+	default = "Burgas"
+}
+6814 = {
+	default = "Stara Zagora"
+}
+9610 = {
+	default = "Ruse"
+}
+6842 = {
+	default = "Veliko Tǎrnovo"
+}
+6967 = {
+	default = "Sliven"
+}
+878 = {
+	default = "Kǎrdzhali"
+}
+9862 = {
+	default = "Khaskovo"
+}
+9783 = {
+	default = "Shumen"
+}
+9888 = {
+	default = "Yambol"
+}
+3819 = {
+	default = "Gabrovo"
 }

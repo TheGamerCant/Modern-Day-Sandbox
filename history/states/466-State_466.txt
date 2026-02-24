@@ -4,6 +4,7 @@ state={
 	history={
 		owner = CAN
 		add_core_of = CAN
+		add_core_of = QUE
 		
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }

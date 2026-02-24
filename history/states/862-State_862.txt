@@ -4,6 +4,7 @@ state={
 	history={
 		owner = CAN
 		add_core_of = CAN
+		add_core_of = QUE
 		
 		victory_points = { 7893 2 }
 		victory_points = { 11902 1 }

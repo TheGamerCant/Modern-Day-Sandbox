@@ -1,14 +1,34 @@
 state={
 	id=48
 	name="STATE_48"
-	history={
-		owner = ZZZ
+	history = {
+		owner = BUL
+		add_core_of = BUL
+		
+		victory_points = { 15139 20 }
+		victory_points = { 15140 2 }
+		victory_points = { 15138 6 }
+		victory_points = { 935 2 }
+		victory_points = { 6857 2 }
+		victory_points = { 6982 2 }
+		victory_points = { 3796 2 }
+		victory_points = { 965 2 }
+		victory_points = { 9771 2 }
+		victory_points = { 893 1 }
+		victory_points = { 793 1 }
+		victory_points = { 3937 1 }
+		
+		set_variable = { sq_km = 42882.66 }
+		
+		buildings = {
+			air_base = 3
+		}
 	}
 	provinces={
-		793 935 949 965 3908 3971 9771 11754 
+		793 893 935 949 965 3796 3908 3937 3952 3971 6857 6923 6982 9771 9818 11754 11813 15138 15139 15140 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=4060313
+	buildings_max_level_factor=1
 	state_category=city
+	local_supplies=0.5
 }

@@ -144,9 +144,59 @@ TDA_update_state_5_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_5_0
 		}
+		#Ermland-Masuren
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_5_1
+		}
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Lötzen
+	if = {
+		limit = { any_country = { controls_province = 266 TAG_using_german_names = yes } }
+		set_province_name = { id = 266 name = VICTORY_POINTS_266_0 }
+	}
+	#Giżycko
+	else = {
+		reset_province_name = 266
+	}
+	#Allenstein
+	if = {
+		limit = { any_country = { controls_province = 6375 TAG_using_german_names = yes } }
+		set_province_name = { id = 6375 name = VICTORY_POINTS_6375_0 }
+	}
+	#Olsztyn
+	else = {
+		reset_province_name = 6375
+	}
+	#Elbing
+	if = {
+		limit = { any_country = { controls_province = 6402 TAG_using_german_names = yes } }
+		set_province_name = { id = 6402 name = VICTORY_POINTS_6402_0 }
+	}
+	#Elbląg
+	else = {
+		reset_province_name = 6402
+	}
+	#Osterode
+	if = {
+		limit = { any_country = { controls_province = 9346 TAG_using_german_names = yes } }
+		set_province_name = { id = 9346 name = VICTORY_POINTS_9346_0 }
+	}
+	#Ostróda
+	else = {
+		reset_province_name = 9346
+	}
+	#Lyck
+	if = {
+		limit = { any_country = { controls_province = 11386 TAG_using_german_names = yes } }
+		set_province_name = { id = 11386 name = VICTORY_POINTS_11386_0 }
+	}
+	#Ełk
+	else = {
+		reset_province_name = 11386
 	}
 }
 
@@ -329,6 +379,11 @@ TDA_update_state_10_names = {
 		limit = { any_country = { controls_province = 3544 TAG_using_polish_names = yes } }
 		set_province_name = { id = 3544 name = VICTORY_POINTS_3544_0 }
 	}
+	#Warschau
+	else_if = {
+		limit = { any_country = { controls_province = 3544 TAG_using_german_names = yes } }
+		set_province_name = { id = 3544 name = VICTORY_POINTS_3544_1 }
+	}
 	#Warsaw
 	else = {
 		reset_province_name = 3544
@@ -337,6 +392,11 @@ TDA_update_state_10_names = {
 	if = {
 		limit = { any_country = { controls_province = 13955 TAG_using_polish_names = yes } }
 		set_province_name = { id = 13955 name = VICTORY_POINTS_13955_0 }
+	}
+	#Flughafen Warschau
+	else_if = {
+		limit = { any_country = { controls_province = 13955 TAG_using_german_names = yes } }
+		set_province_name = { id = 13955 name = VICTORY_POINTS_13955_1 }
 	}
 	#Warsaw Chopin Airport
 	else = {
@@ -766,6 +826,15 @@ TDA_update_state_40_names = {
 
 #Madrid
 TDA_update_state_41_names = {
+	#Aeropuerto Adolfo Suárez Madrid–Barajas
+	if = {
+		limit = { any_country = { controls_province = 14504 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 14504 name = VICTORY_POINTS_14504_0 }
+	}
+	#Adolfo Suárez Madrid-Barajas Airport
+	else = {
+		reset_province_name = 14504
+	}
 }
 
 #Rheinland-Pfalz
@@ -797,22 +866,96 @@ TDA_update_state_43_names = {
 
 #Albania
 TDA_update_state_44_names = {
+	44 = {
+		#Shqipërisë
+		if = {
+			limit = { CONTROLLER = { TAG_using_albanian_names = yes } }
+			set_state_name = STATE_44_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Tirona
+	if = {
+		limit = { any_country = { controls_province = 13841 TAG_using_albanian_names = yes } }
+		set_province_name = { id = 13841 name = VICTORY_POINTS_13841_0 }
+	}
+	#Tirana
+	else = {
+		reset_province_name = 13841
+	}
 }
 
 #Vojvodina
 TDA_update_state_45_names = {
+	#Aerodrom Nikola Tesla Beograd
+	if = {
+		limit = { any_country = { controls_province = 13867 TAG_using_serbo_croatian_names = yes } }
+		set_province_name = { id = 13867 name = VICTORY_POINTS_13867_0 }
+	}
+	#Nikola Tesla Airport
+	else = {
+		reset_province_name = 13867
+	}
 }
 
-#Muntenia
+#Wallachia
 TDA_update_state_46_names = {
+	#București
+	if = {
+		limit = { any_country = { controls_province = 9617 TAG_using_romanian_names = yes } }
+		set_province_name = { id = 9617 name = VICTORY_POINTS_9617_0 }
+	}
+	#Bucharest
+	else = {
+		reset_province_name = 9617
+	}
+	#Aeroportul Internațional Henri Coandă
+	if = {
+		limit = { any_country = { controls_province = 15132 TAG_using_romanian_names = yes } }
+		set_province_name = { id = 15132 name = VICTORY_POINTS_15132_0 }
+	}
+	#Henri Coandă International Airport
+	else = {
+		reset_province_name = 15132
+	}
 }
 
 #Attica
 TDA_update_state_47_names = {
 }
 
-#Sofia
+#Western Bulgaria
 TDA_update_state_48_names = {
+	48 = {
+		#Zapadna Bŭlgariya
+		if = {
+			limit = { CONTROLLER = { TAG_using_bulgarian_names = yes } }
+			set_state_name = STATE_48_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Sofiya
+	if = {
+		limit = { any_country = { controls_province = 15139 TAG_using_bulgarian_names = yes } }
+		set_province_name = { id = 15139 name = VICTORY_POINTS_15139_0 }
+	}
+	#Sofia
+	else = {
+		reset_province_name = 15139
+	}
+	#Mezhdunarodno Letishche Sofiya
+	if = {
+		limit = { any_country = { controls_province = 15140 TAG_using_bulgarian_names = yes } }
+		set_province_name = { id = 15140 name = VICTORY_POINTS_15140_0 }
+	}
+	#Sofia International Airport
+	else = {
+		reset_province_name = 15140
+	}
 }
 
 #Ankara
@@ -974,6 +1117,16 @@ TDA_update_state_61_names = {
 
 #Eastern Srpska
 TDA_update_state_62_names = {
+	62 = {
+		#Istočna Srpska
+		if = {
+			limit = { CONTROLLER = { TAG_using_serbo_croatian_names = yes } }
+			set_state_name = STATE_62_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #West Pomerania
@@ -1220,10 +1373,39 @@ TDA_update_state_69_names = {
 
 #Western Slovakia
 TDA_update_state_70_names = {
+	70 = {
+		#Západné Slovensko
+		if = {
+			limit = { CONTROLLER = { TAG_using_slovakian_names = yes } }
+			set_state_name = STATE_70_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Letisko M. R. Štefánika
+	if = {
+		limit = { any_country = { controls_province = 14082 TAG_using_slovakian_names = yes } }
+		set_province_name = { id = 14082 name = VICTORY_POINTS_14082_0 }
+	}
+	#M. R. Štefánik Airport
+	else = {
+		reset_province_name = 14082
+	}
 }
 
 #Eastern Slovakia
 TDA_update_state_71_names = {
+	71 = {
+		#Východné Slovensko
+		if = {
+			limit = { CONTROLLER = { TAG_using_slovakian_names = yes } }
+			set_state_name = STATE_71_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Subcarpathia
@@ -1291,12 +1473,105 @@ TDA_update_state_75_names = {
 	}
 }
 
-#North Transylvania
+#Northern Transylvania
 TDA_update_state_76_names = {
+	76 = {
+		#Nordul Transilvaniei
+		if = {
+			limit = { CONTROLLER = { TAG_using_romanian_names = yes } }
+			set_state_name = STATE_76_0
+		}
+		#Észak-Erdély
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_hungarian_names = yes } }
+			set_state_name = STATE_76_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Szatmárnémeti
+	if = {
+		limit = { any_country = { controls_province = 746 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 746 name = VICTORY_POINTS_746_0 }
+	}
+	#Satu Mare
+	else = {
+		reset_province_name = 746
+	}
+	#Nagyvárad
+	if = {
+		limit = { any_country = { controls_province = 3696 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 3696 name = VICTORY_POINTS_3696_0 }
+	}
+	#Oradea
+	else = {
+		reset_province_name = 3696
+	}
+	#Beszterce
+	if = {
+		limit = { any_country = { controls_province = 9685 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 9685 name = VICTORY_POINTS_9685_0 }
+	}
+	#Bistrița
+	else = {
+		reset_province_name = 9685
+	}
+	#Zilah
+	if = {
+		limit = { any_country = { controls_province = 9687 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 9687 name = VICTORY_POINTS_9687_0 }
+	}
+	#Zalău
+	else = {
+		reset_province_name = 9687
+	}
+	#Nagybánya
+	if = {
+		limit = { any_country = { controls_province = 11676 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 11676 name = VICTORY_POINTS_11676_0 }
+	}
+	#Baia Mare
+	else = {
+		reset_province_name = 11676
+	}
+	#Kolozsvár
+	if = {
+		limit = { any_country = { controls_province = 14457 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 14457 name = VICTORY_POINTS_14457_0 }
+	}
+	#Cluj-Napoca
+	else = {
+		reset_province_name = 14457
+	}
 }
 
-#Dobrudja
+#Dobruja
 TDA_update_state_77_names = {
+	77 = {
+		#Yuzhna Dobrudzha
+		if = {
+			limit = { CONTROLLER = { TAG_using_bulgarian_names = yes } }
+			set_state_name = STATE_77_0
+		}
+		#Dobrogea de Sud
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_romanian_names = yes } }
+			set_state_name = STATE_77_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Bazargic
+	if = {
+		limit = { any_country = { controls_province = 11597 TAG_using_romanian_names = yes } }
+		set_province_name = { id = 11597 name = VICTORY_POINTS_11597_0 }
+	}
+	#Dobrich
+	else = {
+		reset_province_name = 11597
+	}
 }
 
 #Moldova
@@ -1380,8 +1655,18 @@ TDA_update_state_78_names = {
 	}
 }
 
-#Moldova
+#Moldavia
 TDA_update_state_79_names = {
+	79 = {
+		#Moldova
+		if = {
+			limit = { CONTROLLER = { TAG_using_romanian_names = yes } }
+			set_state_name = STATE_79_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Chernivtsi
@@ -1428,12 +1713,12 @@ TDA_update_state_81_names = {
 #Szeklerland
 TDA_update_state_82_names = {
 	82 = {
-		#Székelyföld
+		#Ținutul Secuiesc
 		if = {
 			limit = { CONTROLLER = { TAG_using_romanian_names = yes } }
 			set_state_name = STATE_82_0
 		}
-		#Ținutul Secuiesc
+		#Székelyföld
 		else_if = {
 			limit = { CONTROLLER = { TAG_using_hungarian_names = yes } }
 			set_state_name = STATE_82_1
@@ -1441,6 +1726,33 @@ TDA_update_state_82_names = {
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Csíkszereda
+	if = {
+		limit = { any_country = { controls_province = 3689 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 3689 name = VICTORY_POINTS_3689_0 }
+	}
+	#Miercurea Ciuc
+	else = {
+		reset_province_name = 3689
+	}
+	#Sepsiszentgyörgy
+	if = {
+		limit = { any_country = { controls_province = 9668 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 9668 name = VICTORY_POINTS_9668_0 }
+	}
+	#Sfântu Gheorghe
+	else = {
+		reset_province_name = 9668
+	}
+	#Marosvásárhely
+	if = {
+		limit = { any_country = { controls_province = 9670 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 9670 name = VICTORY_POINTS_9670_0 }
+	}
+	#Târgu Mureș
+	else = {
+		reset_province_name = 9670
 	}
 }
 
@@ -1456,10 +1768,88 @@ TDA_update_state_83_names = {
 			reset_state_name = yes
 		}
 	}
+	#Komrat
+	if = {
+		limit = { any_country = { controls_province = 3724 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3724 name = VICTORY_POINTS_3724_0 }
+	}
+	#Comrat
+	else = {
+		reset_province_name = 3724
+	}
 }
 
-#Transylvania
+#Southern Transylvania
 TDA_update_state_84_names = {
+	84 = {
+		#Sudul Transilvaniei
+		if = {
+			limit = { CONTROLLER = { TAG_using_romanian_names = yes } }
+			set_state_name = STATE_84_0
+		}
+		#Dél-Erdély
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_hungarian_names = yes } }
+			set_state_name = STATE_84_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Brassó
+	if = {
+		limit = { any_country = { controls_province = 3676 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 3676 name = VICTORY_POINTS_3676_0 }
+	}
+	#Brașov
+	else = {
+		reset_province_name = 3676
+	}
+	#Nagyszeben
+	if = {
+		limit = { any_country = { controls_province = 6679 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 6679 name = VICTORY_POINTS_6679_0 }
+	}
+	#Sibiu
+	else = {
+		reset_province_name = 6679
+	}
+	#Déva
+	if = {
+		limit = { any_country = { controls_province = 9619 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 9619 name = VICTORY_POINTS_9619_0 }
+	}
+	#Deva
+	else = {
+		reset_province_name = 9619
+	}
+	#Resicabánya
+	if = {
+		limit = { any_country = { controls_province = 11592 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 11592 name = VICTORY_POINTS_11592_0 }
+	}
+	#Reșița
+	else = {
+		reset_province_name = 11592
+	}
+	#Medgyes
+	if = {
+		limit = { any_country = { controls_province = 11639 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 11639 name = VICTORY_POINTS_11639_0 }
+	}
+	#Mediaș
+	else = {
+		reset_province_name = 11639
+	}
+	#Temesvár
+	if = {
+		limit = { any_country = { controls_province = 15136 TAG_using_hungarian_names = yes } }
+		set_province_name = { id = 15136 name = VICTORY_POINTS_15136_0 }
+	}
+	#Timișoara
+	else = {
+		reset_province_name = 15136
+	}
 }
 
 #Pomerania
@@ -1479,14 +1869,64 @@ TDA_update_state_85_names = {
 			reset_state_name = yes
 		}
 	}
+	#Konitz
+	if = {
+		limit = { any_country = { controls_province = 334 TAG_using_german_names = yes } }
+		set_province_name = { id = 334 name = VICTORY_POINTS_334_0 }
+	}
+	#Chojnice
+	else = {
+		reset_province_name = 334
+	}
+	#Danzig
+	if = {
+		limit = { any_country = { controls_province = 362 TAG_using_german_names = yes } }
+		set_province_name = { id = 362 name = VICTORY_POINTS_362_0 }
+	}
+	#Gdańsk
+	else = {
+		reset_province_name = 362
+	}
 	#Lotnisko im. Lecha Wałęsy
 	if = {
 		limit = { any_country = { controls_province = 13939 TAG_using_polish_names = yes } }
 		set_province_name = { id = 13939 name = VICTORY_POINTS_13939_0 }
 	}
+	#Flughafen Danzig
+	else_if = {
+		limit = { any_country = { controls_province = 13939 TAG_using_german_names = yes } }
+		set_province_name = { id = 13939 name = VICTORY_POINTS_13939_1 }
+	}
 	#Lech Wałęsa Airport
 	else = {
 		reset_province_name = 13939
+	}
+	#Gdingen
+	if = {
+		limit = { any_country = { controls_province = 13942 TAG_using_german_names = yes } }
+		set_province_name = { id = 13942 name = VICTORY_POINTS_13942_0 }
+	}
+	#Gdynia
+	else = {
+		reset_province_name = 13942
+	}
+	#Dirschau
+	if = {
+		limit = { any_country = { controls_province = 13943 TAG_using_german_names = yes } }
+		set_province_name = { id = 13943 name = VICTORY_POINTS_13943_0 }
+	}
+	#Tczew
+	else = {
+		reset_province_name = 13943
+	}
+	#Stolp
+	if = {
+		limit = { any_country = { controls_province = 13944 TAG_using_german_names = yes } }
+		set_province_name = { id = 13944 name = VICTORY_POINTS_13944_0 }
+	}
+	#Słupsk
+	else = {
+		reset_province_name = 13944
 	}
 }
 
@@ -1571,6 +2011,24 @@ TDA_update_state_87_names = {
 			reset_state_name = yes
 		}
 	}
+	#Petrikau
+	if = {
+		limit = { any_country = { controls_province = 3482 TAG_using_german_names = yes } }
+		set_province_name = { id = 3482 name = VICTORY_POINTS_3482_0 }
+	}
+	#Piotrków Trybunalski
+	else = {
+		reset_province_name = 3482
+	}
+	#Lodsch
+	if = {
+		limit = { any_country = { controls_province = 9508 TAG_using_german_names = yes } }
+		set_province_name = { id = 9508 name = VICTORY_POINTS_9508_0 }
+	}
+	#Łódź
+	else = {
+		reset_province_name = 9508
+	}
 }
 
 #Lesser Poland
@@ -1590,10 +2048,42 @@ TDA_update_state_88_names = {
 			reset_state_name = yes
 		}
 	}
+	#Neusandez
+	if = {
+		limit = { any_country = { controls_province = 417 TAG_using_german_names = yes } }
+		set_province_name = { id = 417 name = VICTORY_POINTS_417_0 }
+	}
+	#Nowy Sącz
+	else = {
+		reset_province_name = 417
+	}
+	#Tarnau
+	if = {
+		limit = { any_country = { controls_province = 442 TAG_using_german_names = yes } }
+		set_province_name = { id = 442 name = VICTORY_POINTS_442_0 }
+	}
+	#Tarnów
+	else = {
+		reset_province_name = 442
+	}
+	#Krakau
+	if = {
+		limit = { any_country = { controls_province = 9427 TAG_using_german_names = yes } }
+		set_province_name = { id = 9427 name = VICTORY_POINTS_9427_0 }
+	}
+	#Kraków
+	else = {
+		reset_province_name = 9427
+	}
 	#Lotnisko Jana Pawła II
 	if = {
 		limit = { any_country = { controls_province = 13986 TAG_using_polish_names = yes } }
 		set_province_name = { id = 13986 name = VICTORY_POINTS_13986_0 }
+	}
+	#Flughafen Krakau
+	else_if = {
+		limit = { any_country = { controls_province = 13986 TAG_using_german_names = yes } }
+		set_province_name = { id = 13986 name = VICTORY_POINTS_13986_1 }
 	}
 	#John Paul II Airport
 	else = {
@@ -1929,6 +2419,16 @@ TDA_update_state_96_names = {
 
 #Podlaskie
 TDA_update_state_97_names = {
+	97 = {
+		#Podlachien
+		if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_97_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Northern Masovia
@@ -2034,6 +2534,16 @@ TDA_update_state_103_names = {
 
 #Bosnia and Herzegovina
 TDA_update_state_104_names = {
+	104 = {
+		#Bosna i Hercegovina
+		if = {
+			limit = { CONTROLLER = { TAG_using_serbo_croatian_names = yes } }
+			set_state_name = STATE_104_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Montenegro
@@ -2046,14 +2556,62 @@ TDA_update_state_106_names = {
 
 #Central Serbia
 TDA_update_state_107_names = {
+	107 = {
+		#Centralna Srbija
+		if = {
+			limit = { CONTROLLER = { TAG_using_serbo_croatian_names = yes } }
+			set_state_name = STATE_107_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Beograd
+	if = {
+		limit = { any_country = { controls_province = 13864 TAG_using_serbo_croatian_names = yes } }
+		set_province_name = { id = 13864 name = VICTORY_POINTS_13864_0 }
+	}
+	#Belgrade
+	else = {
+		reset_province_name = 13864
+	}
 }
 
 #Eastern Serbia
 TDA_update_state_108_names = {
+	108 = {
+		#Istočna Srbija
+		if = {
+			limit = { CONTROLLER = { TAG_using_serbo_croatian_names = yes } }
+			set_state_name = STATE_108_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Croatia Proper
 TDA_update_state_109_names = {
+	109 = {
+		#Uža Hrvatska
+		if = {
+			limit = { CONTROLLER = { TAG_using_serbo_croatian_names = yes } }
+			set_state_name = STATE_109_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Zračna luka Franjo Tuđman Zagreb
+	if = {
+		limit = { any_country = { controls_province = 13848 TAG_using_serbo_croatian_names = yes } }
+		set_province_name = { id = 13848 name = VICTORY_POINTS_13848_0 }
+	}
+	#Franjo Tuđman International Airport
+	else = {
+		reset_province_name = 13848
+	}
 }
 
 #Oslofjord
@@ -2084,6 +2642,34 @@ TDA_update_state_111_names = {
 
 #Lisbon
 TDA_update_state_112_names = {
+	112 = {
+		#Lisboa
+		if = {
+			limit = { CONTROLLER = { TAG_using_portugese_names = yes } }
+			set_state_name = STATE_112_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Lisboa
+	if = {
+		limit = { any_country = { controls_province = 11805 TAG_using_portugese_names = yes } }
+		set_province_name = { id = 11805 name = VICTORY_POINTS_11805_0 }
+	}
+	#Lisbon
+	else = {
+		reset_province_name = 11805
+	}
+	#Aeroporto Humberto Delgado
+	if = {
+		limit = { any_country = { controls_province = 14493 TAG_using_portugese_names = yes } }
+		set_province_name = { id = 14493 name = VICTORY_POINTS_14493_0 }
+	}
+	#Humberto Delgado Airport
+	else = {
+		reset_province_name = 14493
+	}
 }
 
 #Leinster
@@ -2552,8 +3138,64 @@ TDA_update_state_163_names = {
 TDA_update_state_164_names = {
 }
 
-#Cataluña
+#Catalonia
 TDA_update_state_165_names = {
+	165 = {
+		#Cataluña
+		if = {
+			limit = { CONTROLLER = { TAG_using_spanish_names = yes } }
+			set_state_name = STATE_165_0
+		}
+		#Catalunya
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_catalan_names = yes } }
+			set_state_name = STATE_165_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Gerona
+	if = {
+		limit = { any_country = { controls_province = 854 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 854 name = VICTORY_POINTS_854_0 }
+	}
+	#Girona
+	else = {
+		reset_province_name = 854
+	}
+	#Lérida
+	if = {
+		limit = { any_country = { controls_province = 872 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 872 name = VICTORY_POINTS_872_0 }
+	}
+	#Lleida
+	else = {
+		reset_province_name = 872
+	}
+	#Aeropuerto Josep Tarradellas
+	if = {
+		limit = { any_country = { controls_province = 14510 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 14510 name = VICTORY_POINTS_14510_0 }
+	}
+	#Aeroport Josep Tarradellas
+	else_if = {
+		limit = { any_country = { controls_province = 14510 TAG_using_catalan_names = yes } }
+		set_province_name = { id = 14510 name = VICTORY_POINTS_14510_1 }
+	}
+	#Josep Tarradellas Airport
+	else = {
+		reset_province_name = 14510
+	}
+	#Tarrasa
+	if = {
+		limit = { any_country = { controls_province = 14512 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 14512 name = VICTORY_POINTS_14512_0 }
+	}
+	#Terrassa
+	else = {
+		reset_province_name = 14512
+	}
 }
 
 #Aragón
@@ -2568,8 +3210,36 @@ TDA_update_state_167_names = {
 TDA_update_state_168_names = {
 }
 
-#Andalucía
+#Andalusia
 TDA_update_state_169_names = {
+	169 = {
+		#Andalucía
+		if = {
+			limit = { CONTROLLER = { TAG_using_spanish_names = yes } }
+			set_state_name = STATE_169_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Sevilla
+	if = {
+		limit = { any_country = { controls_province = 14522 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 14522 name = VICTORY_POINTS_14522_0 }
+	}
+	#Seville
+	else = {
+		reset_province_name = 14522
+	}
+	#Aeropuerto de Sevilla
+	if = {
+		limit = { any_country = { controls_province = 14523 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 14523 name = VICTORY_POINTS_14523_0 }
+	}
+	#Seville Airport
+	else = {
+		reset_province_name = 14523
+	}
 }
 
 #Extremadura
@@ -2580,8 +3250,18 @@ TDA_update_state_170_names = {
 TDA_update_state_171_names = {
 }
 
-#Navarra
+#Navarre
 TDA_update_state_172_names = {
+	172 = {
+		#Navarra
+		if = {
+			limit = { CONTROLLER = { TAG_using_spanish_names = yes } }
+			set_state_name = STATE_172_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Negev
@@ -2605,18 +3285,71 @@ TDA_update_state_173_names = {
 
 #Castilla y León
 TDA_update_state_174_names = {
+	174 = {
+		#Castille and León
+		if = {
+			limit = { CONTROLLER = { TAG_using_spanish_names = yes } }
+			set_state_name = STATE_174_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Castilla-La Mancha
+#Castille-La Mancha
 TDA_update_state_175_names = {
+	175 = {
+		#Castilla-La Mancha
+		if = {
+			limit = { CONTROLLER = { TAG_using_spanish_names = yes } }
+			set_state_name = STATE_175_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #La Rioja
 TDA_update_state_176_names = {
 }
 
-#Islas Baleares
+#Balearic Islands
 TDA_update_state_177_names = {
+	177 = {
+		#Islas Baleares
+		if = {
+			limit = { CONTROLLER = { TAG_using_spanish_names = yes } }
+			set_state_name = STATE_177_0
+		}
+		#Illes Balears
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_catalan_names = yes } }
+			set_state_name = STATE_177_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Eivissa
+	if = {
+		limit = { any_country = { controls_province = 7114 TAG_using_catalan_names = yes } }
+		set_province_name = { id = 7114 name = VICTORY_POINTS_7114_0 }
+	}
+	#Ibiza
+	else = {
+		reset_province_name = 7114
+	}
+	#Maó
+	if = {
+		limit = { any_country = { controls_province = 9845 TAG_using_catalan_names = yes } }
+		set_province_name = { id = 9845 name = VICTORY_POINTS_9845_0 }
+	}
+	#Mahón
+	else = {
+		reset_province_name = 9845
+	}
 }
 
 #Islas Canarias
@@ -3409,11 +4142,21 @@ TDA_update_state_210_names = {
 	}
 }
 
-#Burgas
+#Eastern Bulgaria
 TDA_update_state_211_names = {
+	211 = {
+		#Iztochna Bŭlgariya
+		if = {
+			limit = { CONTROLLER = { TAG_using_bulgarian_names = yes } }
+			set_state_name = STATE_211_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Plovdiv
+#Costermansville
 TDA_update_state_212_names = {
 }
 
@@ -6479,16 +7222,54 @@ TDA_update_state_464_names = {
 TDA_update_state_465_names = {
 }
 
-#Nord du Quebec
+#Northern Quebec
 TDA_update_state_466_names = {
+	466 = {
+		#Nord du Québec
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes } } }
+			set_state_name = STATE_466_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Manitoba
 TDA_update_state_467_names = {
 }
 
-#Saint Lawrence
+#Southern Quebec
 TDA_update_state_468_names = {
+	468 = {
+		#Sud du Québec
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes } } }
+			set_state_name = STATE_468_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Montréal
+	if = {
+		limit = { any_country = { controls_province = 13615 OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes } } }
+		set_province_name = { id = 13615 name = VICTORY_POINTS_13615_0 }
+	}
+	#Montreal
+	else = {
+		reset_province_name = 13615
+	}
+	#Ville de Québec
+	if = {
+		limit = { any_country = { controls_province = 13619 OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes } } }
+		set_province_name = { id = 13619 name = VICTORY_POINTS_13619_0 }
+	}
+	#Quebec City
+	else = {
+		reset_province_name = 13619
+	}
 }
 
 #Saskatchewan
@@ -12264,6 +13045,16 @@ TDA_update_state_663_names = {
 
 #Southern Slovakia
 TDA_update_state_664_names = {
+	664 = {
+		#Južné Slovensko
+		if = {
+			limit = { CONTROLLER = { TAG_using_slovakian_names = yes } }
+			set_state_name = STATE_664_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Gabès
@@ -13027,8 +13818,18 @@ TDA_update_state_729_names = {
 	}
 }
 
-#St Pierre and Miquelon
+#St. Pierre and Miquelon
 TDA_update_state_730_names = {
+	730 = {
+		#St. Pierre et Miquelon
+		if = {
+			limit = { CONTROLLER = { TAG_using_french_names = yes } }
+			set_state_name = STATE_730_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Central Macedonia
@@ -13079,8 +13880,23 @@ TDA_update_state_741_names = {
 TDA_update_state_742_names = {
 }
 
-#North Kosovo
+#Northern Kosovo
 TDA_update_state_743_names = {
+	743 = {
+		#Kosova Veriore
+		if = {
+			limit = { CONTROLLER = { TAG_using_albanian_names = yes } }
+			set_state_name = STATE_743_0
+		}
+		#Severno Kosovo
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_serbo_croatian_names = yes } }
+			set_state_name = STATE_743_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Borno
@@ -13670,9 +14486,59 @@ TDA_update_state_762_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_762_0
 		}
+		#Schlesien
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_762_1
+		}
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Gleiwitz
+	if = {
+		limit = { any_country = { controls_province = 6464 TAG_using_german_names = yes } }
+		set_province_name = { id = 6464 name = VICTORY_POINTS_6464_0 }
+	}
+	#Gliwice
+	else = {
+		reset_province_name = 6464
+	}
+	#Bielitz-Biala
+	if = {
+		limit = { any_country = { controls_province = 9412 TAG_using_german_names = yes } }
+		set_province_name = { id = 9412 name = VICTORY_POINTS_9412_0 }
+	}
+	#Bielsko-Biała
+	else = {
+		reset_province_name = 9412
+	}
+	#Tschenstochau
+	if = {
+		limit = { any_country = { controls_province = 11467 TAG_using_german_names = yes } }
+		set_province_name = { id = 11467 name = VICTORY_POINTS_11467_0 }
+	}
+	#Częstochowa
+	else = {
+		reset_province_name = 11467
+	}
+	#Kattowitz
+	if = {
+		limit = { any_country = { controls_province = 13205 TAG_using_german_names = yes } }
+		set_province_name = { id = 13205 name = VICTORY_POINTS_13205_0 }
+	}
+	#Katowice
+	else = {
+		reset_province_name = 13205
+	}
+	#Dombrowa
+	if = {
+		limit = { any_country = { controls_province = 13982 TAG_using_german_names = yes } }
+		set_province_name = { id = 13982 name = VICTORY_POINTS_13982_0 }
+	}
+	#Dąbrowa Górnicza
+	else = {
+		reset_province_name = 13982
 	}
 }
 
@@ -13762,7 +14628,7 @@ TDA_update_state_763_names = {
 	}
 }
 
-#West Banat
+#Banat
 TDA_update_state_764_names = {
 }
 
@@ -13988,8 +14854,27 @@ TDA_update_state_790_names = {
 TDA_update_state_791_names = {
 }
 
-#País Vasco
+#Basque Country
 TDA_update_state_792_names = {
+	792 = {
+		#País Vasco
+		if = {
+			limit = { CONTROLLER = { TAG_using_spanish_names = yes } }
+			set_state_name = STATE_792_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Aeropuerto de Bilbao
+	if = {
+		limit = { any_country = { controls_province = 14502 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 14502 name = VICTORY_POINTS_14502_0 }
+	}
+	#Bilbao Airport
+	else = {
+		reset_province_name = 14502
+	}
 }
 
 #West Bank Zone C
@@ -14053,19 +14938,29 @@ TDA_update_state_799_names = {
 TDA_update_state_800_names = {
 }
 
-#Moesia
+#Elisabethville
 TDA_update_state_801_names = {
 }
 
 #Kosovo
 TDA_update_state_802_names = {
+	802 = {
+		#Kosova
+		if = {
+			limit = { CONTROLLER = { TAG_using_albanian_names = yes } }
+			set_state_name = STATE_802_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Slavonia
 TDA_update_state_803_names = {
 }
 
-#Brčko District
+#Brčko
 TDA_update_state_804_names = {
 }
 
@@ -14085,7 +14980,7 @@ TDA_update_state_807_names = {
 			limit = { CONTROLLER = { TAG_using_polish_names = yes } }
 			set_state_name = STATE_807_0
 		}
-		#Ermland-Masuren
+		#Kujawien-Pommern
 		else_if = {
 			limit = { CONTROLLER = { TAG_using_german_names = yes } }
 			set_state_name = STATE_807_1
@@ -14093,6 +14988,42 @@ TDA_update_state_807_names = {
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Hohensalza
+	if = {
+		limit = { any_country = { controls_province = 243 TAG_using_german_names = yes } }
+		set_province_name = { id = 243 name = VICTORY_POINTS_243_0 }
+	}
+	#Inowrocław
+	else = {
+		reset_province_name = 243
+	}
+	#Leslau
+	if = {
+		limit = { any_country = { controls_province = 13947 TAG_using_german_names = yes } }
+		set_province_name = { id = 13947 name = VICTORY_POINTS_13947_0 }
+	}
+	#Włocławek
+	else = {
+		reset_province_name = 13947
+	}
+	#Thorn
+	if = {
+		limit = { any_country = { controls_province = 13948 TAG_using_german_names = yes } }
+		set_province_name = { id = 13948 name = VICTORY_POINTS_13948_0 }
+	}
+	#Toruń
+	else = {
+		reset_province_name = 13948
+	}
+	#Bromberg
+	if = {
+		limit = { any_country = { controls_province = 13949 TAG_using_german_names = yes } }
+		set_province_name = { id = 13949 name = VICTORY_POINTS_13949_0 }
+	}
+	#Bydgoszcz
+	else = {
+		reset_province_name = 13949
 	}
 }
 
@@ -14365,10 +15296,35 @@ TDA_update_state_839_names = {
 
 #Northern Srpska
 TDA_update_state_840_names = {
+	840 = {
+		#Sjeverna Srpska
+		if = {
+			limit = { CONTROLLER = { TAG_using_serbo_croatian_names = yes } }
+			set_state_name = STATE_840_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Northern Dobruja
 TDA_update_state_841_names = {
+	841 = {
+		#Dobrogea de Nord
+		if = {
+			limit = { CONTROLLER = { TAG_using_romanian_names = yes } }
+			set_state_name = STATE_841_0
+		}
+		#Severna Dobrudzha
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_bulgarian_names = yes } }
+			set_state_name = STATE_841_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Northern California
@@ -14585,8 +15541,18 @@ TDA_update_state_860_names = {
 TDA_update_state_861_names = {
 }
 
-#Ouest du Quebec
+#Central Quebec
 TDA_update_state_862_names = {
+	862 = {
+		#Centre du Québec
+		if = {
+			limit = { CONTROLLER = { OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes } } }
+			set_state_name = STATE_862_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Delaware
@@ -14710,14 +15676,6 @@ TDA_update_state_887_names = {
 
 #Lusambo
 TDA_update_state_888_names = {
-}
-
-#Elisabethville
-TDA_update_state_889_names = {
-}
-
-#Costermansville
-TDA_update_state_890_names = {
 }
 
 
@@ -15611,8 +16569,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_886_names = yes
 	TDA_update_state_887_names = yes
 	TDA_update_state_888_names = yes
-	TDA_update_state_889_names = yes
-	TDA_update_state_890_names = yes
 }
 
 TDA_toggle_change_city_names = {

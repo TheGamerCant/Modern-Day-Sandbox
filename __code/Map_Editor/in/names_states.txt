@@ -33,6 +33,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+	    name = "Ermland-Masuren"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 6 = {
 	default = "Flanders"
@@ -270,18 +276,30 @@
 }
 44 = {
 	default = "Albania"
+	entry = {
+	    name = "Shqipërisë"
+        requirements = {
+            "TAG_using_albanian_names = yes"
+        }
+    }
 }
 45 = {
 	default = "Vojvodina"
 } 
 46 = {
-	default = "Muntenia"
+	default = "Wallachia"
 }
 47 = {
 	default = "Attica"
 }
 48 = {
-	default = "Sofia"
+	default = "Western Bulgaria"
+	entry = {
+	    name = "Zapadna Bŭlgariya"
+        requirements = {
+            "TAG_using_bulgarian_names = yes"
+        }
+    }
 }
 49 = {
 	default = "Ankara"
@@ -360,6 +378,12 @@
 }
 62 = {
 	default = "Eastern Srpska"
+	entry = { 
+        name = "Istočna Srpska"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 63 = {
 	default = "West Pomerania"
@@ -438,9 +462,21 @@
 }
 70 = {
 	default = "Western Slovakia"
+	entry = {
+	    name = "Západné Slovensko"
+        requirements = {
+            "TAG_using_slovakian_names = yes"
+        }
+    }
 }
 71 = {
 	default = "Eastern Slovakia"
+	entry = {
+	    name = "Východné Slovensko"
+        requirements = {
+            "TAG_using_slovakian_names = yes"
+        }
+    }
 }
 72 = {
 	default = "Subcarpathia"
@@ -485,16 +521,46 @@
     }
 }
 76 = {
-	default = "North Transylvania"
+	default = "Northern Transylvania"
+	entry = {
+        name = "Nordul Transilvaniei"
+        requirements = {
+            "TAG_using_romanian_names = yes"
+        }
+    }
+	entry = {
+        name = "Észak-Erdély"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
 }
 77 = {
-	default = "Dobrudja"
+	default = "Dobruja"
+	entry = {
+        name = "Yuzhna Dobrudzha"
+        requirements = {
+            "TAG_using_bulgarian_names = yes"
+        }
+    }
+	entry = {
+        name = "Dobrogea de Sud"
+        requirements = {
+            "TAG_using_romanian_names = yes"
+        }
+    }
 }
 78 = {
 	default = "Moldova"
 }
 79 = {
-	default = "Moldova"
+	default = "Moldavia"
+	entry = {
+        name = "Moldova"
+        requirements = {
+            "TAG_using_romanian_names = yes"
+        }
+    }
 }
 80 = {
 	default = "Chernivtsi"
@@ -511,13 +577,13 @@
 82 = {
 	default = "Szeklerland"
 	entry = { 
-        name = "Székelyföld"
+        name = "Ținutul Secuiesc"
         requirements = {
             "TAG_using_romanian_names = yes"
         }
     }
 	entry = { 
-        name = "Ținutul Secuiesc"
+        name = "Székelyföld"
         requirements = {
             "TAG_using_hungarian_names = yes"
         }
@@ -533,7 +599,19 @@
 	}
 }
 84 = {
-	default = "Transylvania"
+	default = "Southern Transylvania"
+	entry = {
+        name = "Sudul Transilvaniei"
+        requirements = {
+            "TAG_using_romanian_names = yes"
+        }
+    }
+	entry = {
+        name = "Dél-Erdély"
+        requirements = {
+            "TAG_using_hungarian_names = yes"
+        }
+    }
 }
 85 = {
 	default = "Pomerania"
@@ -681,6 +759,12 @@
 }
 97 = {
 	default = "Podlaskie"
+	entry = {
+	    name = "Podlachien"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 98 = {
 	default = "Northern Masovia"
@@ -738,6 +822,12 @@
 }
 104 = {
 	default = "Bosnia and Herzegovina"
+	entry = { 
+        name = "Bosna i Hercegovina"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 105 = {
 	default = "Montenegro"
@@ -747,12 +837,30 @@
 }
 107 = {
 	default = "Central Serbia"
+	entry = { 
+        name = "Centralna Srbija"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 108 = {
 	default = "Eastern Serbia"
+	entry = { 
+        name = "Istočna Srbija"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 109 = {
 	default = "Croatia Proper"
+	entry = { 
+        name = "Uža Hrvatska"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 110 = {
 	default = "Oslofjord"
@@ -762,6 +870,12 @@
 }
 112 = {
 	default = "Lisbon"
+	entry = {
+	    name = "Lisboa"
+        requirements = {
+            "TAG_using_portugese_names = yes"
+        }
+    }
 }
 113 = {
 	default = "Leinster"
@@ -1012,7 +1126,19 @@
 	default = "Dodecanese"
 }
 165 = {
-	default = "Cataluña"
+	default = "Catalonia"
+	entry = {
+	    name = "Cataluña"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+	entry = {
+	    name = "Catalunya"
+        requirements = {
+            "TAG_using_catalan_names = yes"
+        }
+    }
 }
 166 = {
 	default = "Aragón"
@@ -1024,7 +1150,13 @@
 	default = "Murcia"
 }
 169 = {
-	default = "Andalucía"
+	default = "Andalusia"
+	entry = {
+	    name = "Andalucía"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 170 = {
 	default = "Extremadura"
@@ -1033,7 +1165,13 @@
 	default = "Galicia"
 }
 172 = {
-	default = "Navarra"
+	default = "Navarre"
+	entry = {
+	    name = "Navarra"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 173 = {
 	default = "Negev"
@@ -1053,15 +1191,39 @@
 }
 174 = {
 	default = "Castilla y León"
+	entry = {
+	    name = "Castille and León"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 175 = {
-	default = "Castilla-La Mancha"
+	default = "Castille-La Mancha"
+	entry = {
+	    name = "Castilla-La Mancha"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 176 = {
 	default = "La Rioja"
 }
 177 = {
-	default = "Islas Baleares"
+	default = "Balearic Islands"
+	entry = {
+	    name = "Islas Baleares"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+	entry = {
+	    name = "Illes Balears"
+        requirements = {
+            "TAG_using_catalan_names = yes"
+        }
+    }
 }
 178 = {
 	default = "Islas Canarias"
@@ -1277,10 +1439,16 @@
     }
 }
 211 = {
-	default = "Burgas"
+	default = "Eastern Bulgaria"
+	entry = {
+	    name = "Iztochna Bŭlgariya"
+        requirements = {
+            "TAG_using_bulgarian_names = yes"
+        }
+    }
 }
 212 = {
-	default = "Plovdiv"
+	default = "Costermansville"
 }
 213 = {
 	default = "Murmansk"
@@ -2294,13 +2462,25 @@
 	default = "New Brunswick"
 }
 466 = {
-	default = "Nord du Quebec"
+	default = "Northern Quebec"
+	entry = {
+        name = "Nord du Québec"
+        requirements = {
+            "OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes }"
+        }
+    }
 }
 467 = {
 	default = "Manitoba"
 }
 468 = {
-	default = "Saint Lawrence"
+	default = "Southern Quebec"
+	entry = {
+        name = "Sud du Québec"
+        requirements = {
+            "OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes }"
+        }
+    }
 }
 469 = {
 	default = "Saskatchewan"
@@ -3190,6 +3370,12 @@
 }
 664 = {
 	default = "Southern Slovakia"
+	entry = {
+	    name = "Južné Slovensko"
+        requirements = {
+            "TAG_using_slovakian_names = yes"
+        }
+    }
 }
 665 = {
 	default = "Gabès"
@@ -3423,7 +3609,13 @@
     }
 }
 730 = {
-	default = "St Pierre and Miquelon"
+	default = "St. Pierre and Miquelon"
+	entry = {
+        name = "St. Pierre et Miquelon"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 731 = {
 	default = "Central Macedonia"
@@ -3462,7 +3654,19 @@
 	default = "Stalinabad"
 }
 743 = {
-	default = "North Kosovo"
+	default = "Northern Kosovo"
+	entry = {
+	    name = "Kosova Veriore"
+        requirements = {
+            "TAG_using_albanian_names = yes"
+        }
+    }
+	entry = {
+	    name = "Severno Kosovo"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 744 = {
 	default = "Borno"
@@ -3634,6 +3838,12 @@
             "TAG_using_polish_names = yes"
         }
     }
+	entry = {
+	    name = "Schlesien"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 763 = {
 	default = "Kaliningrad"
@@ -3657,7 +3867,7 @@
     }
 }
 764 = {
-	default = "West Banat"
+	default = "Banat"
 }
 765 = {
 	default = "Qatar"
@@ -3771,7 +3981,13 @@
 	default = "Cantabria"
 }
 792 = {
-	default = "País Vasco"
+	default = "Basque Country"
+	entry = {
+	    name = "País Vasco"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 793 = {
 	default = "West Bank Zone C"
@@ -3810,16 +4026,22 @@
 	default = "Van"
 }
 801 = {
-	default = "Moesia"
+	default = "Elisabethville"
 }
 802 = {
 	default = "Kosovo"
+	entry = {
+	    name = "Kosova"
+        requirements = {
+            "TAG_using_albanian_names = yes"
+        }
+    }
 }
 803 = {
 	default = "Slavonia"
 }
 804 = {
-	default = "Brčko District"
+	default = "Brčko"
 }
 805 = {
 	default = "Arica y Tarapacá"
@@ -3836,7 +4058,7 @@
         }
     }
 	entry = {
-	    name = "Ermland-Masuren"
+	    name = "Kujawien-Pommern"
         requirements = {
             "TAG_using_german_names = yes"
         }
@@ -3994,9 +4216,27 @@
 }
 840 = {
 	default = "Northern Srpska"
+	entry = { 
+        name = "Sjeverna Srpska"
+        requirements = {
+            "TAG_using_serbo_croatian_names = yes"
+        }
+    }
 }
 841 = {
 	default = "Northern Dobruja"
+	entry = {
+        name = "Dobrogea de Nord"
+        requirements = {
+            "TAG_using_romanian_names = yes"
+        }
+    }
+	entry = {
+        name = "Severna Dobrudzha"
+        requirements = {
+            "TAG_using_bulgarian_names = yes"
+        }
+    }
 }
 842 = {
 	default = "Northern California"
@@ -4107,7 +4347,13 @@
 	default = "Prince Edward Island"
 }
 862 = {
-	default = "Ouest du Quebec"
+	default = "Central Quebec"
+	entry = {
+        name = "Centre du Québec"
+        requirements = {
+           "OR = { TAG_using_canadian_names = yes TAG_using_french_names = yes }"
+        }
+    }
 }
 863 = {
 	default = "Delaware"
@@ -4192,10 +4438,4 @@
 }
 888 = {
 	default = "Lusambo"
-}
-889 = {
-	default = "Elisabethville"
-}
-890 = {
-	default = "Costermansville"
 }

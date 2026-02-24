@@ -6,12 +6,12 @@ state={
 		add_core_of = UKR
 		add_core_of = CRM
 		
-		set_variable = { sq_km = 2 }
+		set_variable = { sq_km = 5 }
 	}
 	provinces={
 		13728 
 	}
-	manpower= 20
+	manpower= 141
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=town

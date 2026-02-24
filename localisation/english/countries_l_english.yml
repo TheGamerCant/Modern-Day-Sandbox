@@ -314,3 +314,15 @@
  GGZ:0 "Gagauzia"                                  
  GGZ_DEF:0 "the Gagauz Republic"                                  
  GGZ_ADJ:0 "Gagauz"
+
+ QUE:0 "Quebec"                                  
+ QUE_DEF:0 "the Republic of Quebec"                                  
+ QUE_ADJ:0 "Quebecois"
+
+ PUE:0 "Puerto Rico"                                  
+ PUE_DEF:0 "the Commonwealth of Puerto Rico"                                  
+ PUE_ADJ:0 "Puerto Rican"
+
+ BRT:0 "Brittany"                                  
+ BRT_DEF:0 "the Bretange Republic"                                  
+ BRT_ADJ:0 "Breton"

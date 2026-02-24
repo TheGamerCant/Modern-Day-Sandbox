@@ -4,6 +4,7 @@ state={
 	history={
 		owner = USA
 		add_core_of = USA
+		add_core_of = PUE
 		
 		victory_points = { 14472 18 }
 		

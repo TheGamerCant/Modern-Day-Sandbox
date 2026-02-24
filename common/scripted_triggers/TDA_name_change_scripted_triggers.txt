@@ -106,12 +106,33 @@ TAG_using_french_names = {
 				original_tag = FRA
 				original_tag = WAL
 				original_tag = COR
+				original_tag = MCO
+				original_tag = QUE
+				original_tag = BRT
 			}
 			is_subject = no
 		}
 		
 		is_puppet_of = FRA
 		is_puppet_of = WAL
+		is_puppet_of = COR
+		is_puppet_of = MCO
+		is_puppet_of = QUE
+		is_puppet_of = BRT
+	}
+}
+
+TAG_using_canadian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = CAN
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = CAN
 	}
 }
 
@@ -407,6 +428,20 @@ TAG_using_hungarian_names = {
 	}
 }
 
+TAG_using_bulgarian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = BUL
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = BUL
+	}
+}
+
 TAG_using_belarusian_names = {
 	has_global_flag = TDA_city_name_changes_active_flag
 	OR = {
@@ -488,5 +523,91 @@ TAG_using_slovakian_names = {
 		}
 		
 		is_puppet_of = SLO
+	}
+}
+
+TAG_using_spanish_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = SPA
+				original_tag = BSQ
+				original_tag = GLC
+				original_tag = PUE
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = SPA
+		is_puppet_of = BSQ
+		is_puppet_of = GLC
+		is_puppet_of = PUE
+	}
+}
+
+TAG_using_catalan_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = CAT
+				original_tag = ADR
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = CAT
+		is_puppet_of = ADR
+	}
+}
+
+TAG_using_portugese_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = POR
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = POR
+	}
+}
+
+TAG_using_serbo_croatian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = SRB
+				original_tag = SRP
+				original_tag = CRO
+				original_tag = BSH
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = SRB
+		is_puppet_of = SRP
+		is_puppet_of = CRO
+		is_puppet_of = BSH
+	}
+}
+
+TAG_using_albanian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = ALB
+				original_tag = KOS
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = ALB
+		is_puppet_of = KOS
 	}
 }

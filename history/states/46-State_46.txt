@@ -2,12 +2,34 @@ state={
 	id=46
 	name="STATE_46"
 	history={
-		owner = ZZZ
+		owner = ROM
+		add_core_of = ROM
+		
+		victory_points = { 9617 40 }
+		victory_points = { 15132 2 }
+		victory_points = { 15133 4 }
+		victory_points = { 3663 3 }
+		victory_points = { 3639 3 }
+		victory_points = { 11657 2 }
+		victory_points = { 3645 2 }
+		victory_points = { 3630 1 }
+		victory_points = { 6658 2 }
+		victory_points = { 11636 3 }
+		victory_points = { 9651 3 }
+		victory_points = { 6677 2 }
+		victory_points = { 11603 1 }
+		victory_points = { 818 2 }
+		
+		set_variable = { sq_km = 67019.47 }
+		
+		buildings = {
+			air_base = 5
+		}
 	}
 	provinces={
-		660 674 818 3636 3639 3663 6658 6677 6695 9617 9651 11603 11619 11636 637 3630 3645 6652 6667 11588 11605 11657 
+		660 674 818 3636 3639 3663 6658 6677 6695 9617 9651 11603 11619 11636 637 3630 3645 6652 6667 11588 11605 11657 15129 15130 15131 15132 15133 
 	}
-	manpower= 100000
+	manpower= 8216021
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=city
