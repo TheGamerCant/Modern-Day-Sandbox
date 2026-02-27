@@ -43,8 +43,6 @@ spriteTypes = {
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_logistics_icon_medium" 										textureFile = "gfx/interface/counters/divisions_large/SUPPORT_UNIT_logistics.dds" noOfFrames = 2 }
 
 
-	
-
 	####################################################
 	### Small images for DIVISIONS (On-map-counters) ###
 
@@ -79,7 +77,38 @@ spriteTypes = {
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_logistics_icon_medium_white" 									textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_logistics.dds" noOfFrames = 2 }
 
 
+	#################
+	### interface/counters/divisions_small ###	
+	
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_militia_icon_small" 											textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_militia.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_basic_infantry_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_basic_infantry.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_advanced_infantry_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_advanced_infantry.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_mountaineers_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_mountaineers.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_paratroopers_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_paratroopers.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_amphibious_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_amphibious.dds" noOfFrames = 2 }
 
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_artillery_icon_small" 											textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_artillery.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_mobile_basic_infantry_icon_small" 								textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_mobile_basic_infantry.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_mobile_advanced_infantry_icon_small" 							textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_mobile_advanced_infantry.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_mobile_artillery_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_mobile_artillery.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_mobile_anti_air_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_mobile_anti_air.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_mobile_tank_destroyer_icon_small" 								textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_mobile_tank_destroyer.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_COMBAT_UNIT_armour_icon_small" 											textureFile = "gfx/interface/counters/divisions_small/COMBAT_UNIT_armour.dds" noOfFrames = 2 }
+
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_engineers_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_engineers.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_fpv_recon_drone_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_fpv_recon_drone.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_fpv_combat_drone_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_fpv_combat_drone.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_light_recon_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_light_recon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_heavy_recon_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_heavy_recon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_helicopter_recon_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_helicopter_recon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_electronic_warfare_icon_small" 								textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_electronic_warfare.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_medical_icon_small" 											textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_medical.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_maintainance_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_maintainance.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_military_police_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_military_police.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_SUPPORT_UNIT_logistics_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_logistics.dds" noOfFrames = 2 }
 
 	#################################
 	### On-map-counters for SHIPS ###

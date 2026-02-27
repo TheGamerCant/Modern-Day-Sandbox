@@ -242,7 +242,7 @@ spriteTypes = {
 	
 	spriteType = {
 		name = "GFX_research_line_bg"
-		textureFile = "gfx//interface//research_line_bg.dds"
+		textureFile = "gfx//interface//research_slot_outline.dds"
 	}
 	
 	frameAnimatedSpriteType = {
