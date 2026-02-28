@@ -17,7 +17,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "unit_counter"
 		position = { x=0 y=0 }
-		size = { width = 100 height = 41 }
+		size = { width = 96 height = 35 }
 		clipping = no
 
 		buttonType = {
@@ -85,22 +85,22 @@ guiTypes = {
 		iconType = {
 			name = "bar_org"
 			spriteType = "GFX_mapicon_unit_bar_org"
-			position = { x=34 y=22 }
+			position = { x=34  y=14 }
 			alwaystransparent = yes
-			rotation = 1.5708
+			rotation = 4.7124
 		}
 		iconType = {
 			name = "bar_str"
 			spriteType = "GFX_mapicon_unit_bar_str"
-			position = { x=34 y=26 }
+			position = { x=34  y=18 }
 			alwaystransparent = yes
-			rotation = 1.5708
+			rotation = 4.7124
 		}
 
 		iconType = {
 			name = "flag"
 			spriteType = "GFX_mapicon_unit_flag_stripe"
-			position = { x=36 y=21 }
+			position = { x=74 y=21 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -108,7 +108,7 @@ guiTypes = {
 		iconType = {
 			name = "large_flag"
 			spriteType = "GFX_mapicon_unit_large_flag_stripe"
-			position = { x = 3 y = 10 }
+			position = { x = 3 y = 8 }
 			alwaystransparent = yes
 			scale = 0.7
 		}

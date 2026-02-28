@@ -1,0 +1,9 @@
+﻿  BitmapFontGenerator.cpp
+C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\BitmapFontEditor\src\BitmapFontGenerator.cpp(233,64): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Generating code
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 2373 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  BitmapFontEditor.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\BitmapFontEditor\x64\Release\BitmapFontEditor.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
