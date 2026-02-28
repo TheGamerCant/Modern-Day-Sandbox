@@ -17,7 +17,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "unit_counter"
 		position = { x=0 y=0 }
-		size = { width = 96 height = 35 }
+		size = { width = 93 height = 32 }
 		clipping = no
 
 		buttonType = {
@@ -29,7 +29,7 @@ guiTypes = {
 		iconType ={
 			name ="group_marker"
 			spriteType = "GFX_UV_group_marker"
-			position = { x=87 y=2 }
+			position = { x=84 y=2 }
 			alwaystransparent = yes
 			orientation = right
 		}
@@ -46,6 +46,7 @@ guiTypes = {
 			spriteType = "GFX_onmap_unit_counter_overlay"
 			position = { x=999 y=999 }
 			alwaystransparent = yes
+			hide = yes
 		}
 
 
@@ -68,39 +69,41 @@ guiTypes = {
 		iconType ={
 			name ="type"
 			spriteType = "GFX_tiled_window_transparent"
-			position = { x=-7 y=6 }
+			#position = { x=2 y=11 }
+			position = { x=16 y=16 }
 			alwaystransparent = yes
-			scale = 0.65
+			centerposition = yes
 		}
 
 		instantTextboxType = {
 			name = "count_txt"
-			position = { x=37 y=4 }
+			position = { x=34 y=4 }
 			font = "Main_14"
-			maxWidth = 20
+			maxWidth = 23
 			maxHeight = 14
 			format = center
 			alwaystransparent = yes
 		}
+		
 		iconType = {
 			name = "bar_org"
 			spriteType = "GFX_mapicon_unit_bar_org"
-			position = { x=34  y=14 }
+			position = { x=32  y=14 }
 			alwaystransparent = yes
-			rotation = 4.7124
+			rotation = 1.5708
 		}
 		iconType = {
 			name = "bar_str"
 			spriteType = "GFX_mapicon_unit_bar_str"
-			position = { x=34  y=18 }
+			position = { x=32  y=18 }
 			alwaystransparent = yes
-			rotation = 4.7124
+			rotation = 1.5708
 		}
 
 		iconType = {
 			name = "flag"
 			spriteType = "GFX_mapicon_unit_flag_stripe"
-			position = { x=74 y=21 }
+			position = { x=71 y=21 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}
@@ -110,7 +113,8 @@ guiTypes = {
 			spriteType = "GFX_mapicon_unit_large_flag_stripe"
 			position = { x = 3 y = 8 }
 			alwaystransparent = yes
-			scale = 0.7
+			#26/41
+			scale = 0.63415
 		}
 
 		iconType = {
@@ -122,7 +126,7 @@ guiTypes = {
 		iconType = {
 			name = "no_orders"
 			spriteType = "GFX_mapicon_unit_no_orders"
-			position = { x=-10 y=13 }
+			position = { x=-10 y=9 }
 		}
 
 		iconType = {
@@ -134,7 +138,7 @@ guiTypes = {
 		iconType = {
 			name = "invalid_orders"
 			spriteType = "GFX_mapicon_unit_invalid_orders"
-			position = { x=-10 y=13 }
+			position = { x=-10 y=9 }
 		}
 
 		iconType = {
@@ -148,19 +152,19 @@ guiTypes = {
 		iconType ={
 			name ="onmap_digin_icon"
 			spriteType = "GFX_onmap_digin_icon"
-			position = { x=75 y=6 }
+			position = { x=74 y=3 }
 		}
 
 		iconType ={
 			name ="onmap_training_icon"
 			spriteType = "GFX_onmap_training_icon"
-			position = { x=73 y=6 }
+			position = { x=72 y=3 }
 		}
 
 		iconType ={
 			name ="onmap_action_icon"
 			spriteType = "GFX_onmap_action_icon"
-			position = { x=62 y=21 }
+			position = { x=61 y=18 }
 			scale = 0.9
 		}
 	}

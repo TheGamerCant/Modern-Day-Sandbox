@@ -1,2 +1,0 @@
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\BitmapFontEditor\x64\Release\raylib.dll
-C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox\__code\BitmapFontEditor\BitmapFontEditor\x64\Release\BitmapFo.58F5F7CC.Up2Date

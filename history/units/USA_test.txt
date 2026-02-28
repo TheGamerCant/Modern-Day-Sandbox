@@ -24,7 +24,21 @@ division_template = {
 
 units = {
 	division = {
-		name = "Advanced Infantry"
+		name = "Advanced Infantry I"
+		location = 3957
+		division_template = "Advanced Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Advanced Infantry II"
+		location = 3957
+		division_template = "Advanced Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Advanced Infantry III"
 		location = 3957
 		division_template = "Advanced Infantry Division"
 		start_experience_factor = 0.2
