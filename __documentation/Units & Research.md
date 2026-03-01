@@ -29,7 +29,6 @@ Units:
 		- SUPPORT_UNIT_fpv_combat_drone
 		- SUPPORT_UNIT_light_recon
 		- SUPPORT_UNIT_heavy_recon
-		- SUPPORT_UNIT_helicopter_recon
 		- SUPPORT_UNIT_electronic_warfare
 		- SUPPORT_UNIT_medical
 		- SUPPORT_UNIT_maintainance

@@ -35,7 +35,6 @@ spriteTypes = {
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_fpv_combat_drone_icon_medium" 									textureFile = "gfx/interface/counters/divisions_large/SUPPORT_UNIT_fpv_combat_drone.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_light_recon_icon_medium" 										textureFile = "gfx/interface/counters/divisions_large/SUPPORT_UNIT_light_recon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_heavy_recon_icon_medium" 										textureFile = "gfx/interface/counters/divisions_large/SUPPORT_UNIT_heavy_recon.dds" noOfFrames = 2 }
-	spriteType = { name = "GFX_unit_SUPPORT_UNIT_helicopter_recon_icon_medium" 									textureFile = "gfx/interface/counters/divisions_large/SUPPORT_UNIT_helicopter_recon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_electronic_warfare_icon_medium" 								textureFile = "gfx/interface/counters/divisions_large/SUPPORT_UNIT_electronic_warfare.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_medical_icon_medium" 											textureFile = "gfx/interface/counters/divisions_large/SUPPORT_UNIT_medical.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_maintainance_icon_medium" 										textureFile = "gfx/interface/counters/divisions_large/SUPPORT_UNIT_maintainance.dds" noOfFrames = 2 }
@@ -69,7 +68,6 @@ spriteTypes = {
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_fpv_combat_drone_icon_medium_white" 							textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_fpv_combat_drone.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_light_recon_icon_medium_white" 								textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_light_recon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_heavy_recon_icon_medium_white" 								textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_heavy_recon.dds" noOfFrames = 2 }
-	spriteType = { name = "GFX_unit_SUPPORT_UNIT_helicopter_recon_icon_medium_white" 							textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_helicopter_recon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_electronic_warfare_icon_medium_white" 							textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_electronic_warfare.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_medical_icon_medium_white" 									textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_medical.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_maintainance_icon_medium_white" 								textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_maintainance.dds" noOfFrames = 2 }
@@ -103,7 +101,6 @@ spriteTypes = {
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_fpv_combat_drone_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_fpv_combat_drone.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_light_recon_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_light_recon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_heavy_recon_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_heavy_recon.dds" noOfFrames = 2 }
-	spriteType = { name = "GFX_unit_SUPPORT_UNIT_helicopter_recon_icon_small" 									textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_helicopter_recon.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_electronic_warfare_icon_small" 								textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_electronic_warfare.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_medical_icon_small" 											textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_medical.dds" noOfFrames = 2 }
 	spriteType = { name = "GFX_unit_SUPPORT_UNIT_maintainance_icon_small" 										textureFile = "gfx/interface/counters/divisions_small/SUPPORT_UNIT_maintainance.dds" noOfFrames = 2 }
