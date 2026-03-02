@@ -1,5 +1,30 @@
 scripted_map_modes = {
 	TDA_culture_map_mode = {
+		top = {
+			type = state
+			color = {
+				set_temp_variable = { red = FROM.culture_r }
+				set_temp_variable = { green = FROM.culture_g }
+				set_temp_variable = { blue = FROM.culture_b }
+
+				set_temp_variable = { alpha = 1.0 }
+				set_temp_variable = { thickness = 0.0 } 
+				
+				if = {
+					limit = { 
+						FROM = { has_state_flag = state_has_large_minority_culture_flag }
+					}
+					
+					set_temp_variable = { red = FROM.culture_r_2 }
+					set_temp_variable = { green = FROM.culture_g_2 }
+					set_temp_variable = { blue = FROM.culture_b_2 }
+					
+					set_temp_variable = { thickness = 2.0 } 
+				}
+			}
+			
+			thickness = yes
+		}
 		bottom = {
 			type = state
 			color = {
@@ -8,18 +33,7 @@ scripted_map_modes = {
 				set_temp_variable = { blue = FROM.culture_b }
 
 				set_temp_variable = { alpha = 1.0 }
-				
-				if = {
-					limit = { 
-						FROM = { has_state_flag = state_has_large_minority_culture_flag }
-					}
-					
-					set_temp_variable = { highlighted = 1.0 } 
-				}
 			}
-		}
-		top = {
-			type = none
 		}
 		far_text = none
 		near_text = state

@@ -78,6 +78,11 @@ music = {
 }
 
 music = {
+	name = "Slowdive - When the Sun Hits"
+	file = "00_calm/when_the_sun_hits.ogg"
+}
+
+music = {
 	name = "Vrata Overtona - Stavaysya"
 	file = "00_calm/give_up.ogg"
 }

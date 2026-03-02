@@ -1,6 +1,6 @@
 defined_text = {
 	name = GetCultureMapModeTT
-	#Over 95% one culture
+	#100% one culture
 	text = {
 		trigger = {
 			check_variable = { var = FROM.culture_value_array^0 value = 95 compare = greater_than_or_equals }
@@ -9,6 +9,16 @@ defined_text = {
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
 		}
 		localization_key = "TDA_culture_state_is_homogenous"
+	}
+	#Over 95% one culture
+	text = {
+		trigger = {
+			check_variable = { var = FROM.culture_value_array^0 value = 95 compare = greater_than_or_equals }
+			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
+			
+			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+		}
+		localization_key = "TDA_culture_state_is_nearly_homogenous"
 	}
 	#Over 80% one culture
 	text = {

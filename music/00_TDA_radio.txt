@@ -155,6 +155,15 @@ music = {
 	}	
 }
 music = {
+	song = "Slowdive - When the Sun Hits"
+	
+	chance = {
+		modifier = {
+			factor = 5
+		}		
+	}	
+}
+music = {
 	song = "Soundgarden - Black Hole Sun"
 	
 	chance = {

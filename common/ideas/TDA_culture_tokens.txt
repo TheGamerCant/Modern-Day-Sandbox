@@ -113,5 +113,26 @@ ideas ={
 		
 		TDA_culture_druze_token_idea = {}
 		TDA_culture_druze_desc_token_idea = {}
+		
+		TDA_culture_northern_italian_token_idea = {}
+		TDA_culture_northern_italian_desc_token_idea = {}
+		
+		TDA_culture_central_italian_token_idea = {}
+		TDA_culture_central_italian_desc_token_idea = {}
+		
+		TDA_culture_southern_italian_token_idea = {}
+		TDA_culture_southern_italian_desc_token_idea = {}
+		
+		TDA_culture_tyrolean_token_idea = {}
+		TDA_culture_tyrolean_desc_token_idea = {}
+		
+		TDA_culture_swiss_german_token_idea = {}
+		TDA_culture_swiss_german_desc_token_idea = {}
+		
+		TDA_culture_swiss_french_token_idea = {}
+		TDA_culture_swiss_french_desc_token_idea = {}
+		
+		TDA_culture_swiss_italian_token_idea = {}
+		TDA_culture_swiss_italian_desc_token_idea = {}
 	}
 }

@@ -6,7 +6,8 @@
  TDA_culture_map_mode_tooltip:0 "[GetCultureMapModeTT]"
  TDA_culture_map_mode_tooltip_delayed:0 "[GetCultureMapModeTTDelayed]"
  
- TDA_culture_state_is_homogenous:0 "The culture of §Y[FROM.GetName]§! is almost entirely [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
+ TDA_culture_state_is_homogenous:0 "The culture of §Y[FROM.GetName]§! is [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
+ TDA_culture_state_is_nearly_homogenous:0 "The culture of §Y[FROM.GetName]§! is almost entirely [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
  TDA_culture_state_has_large_majority_no_minority:0 "The culture of §Y[FROM.GetName]§! is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
  TDA_culture_state_has_large_majority_one_minority:0 "The culture of §Y[FROM.GetName]§! is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey], with a large [?global.culture_names_array^dem2.GetTokenLocalizedKey] minority."
  TDA_culture_state_has_large_majority_two_minorities:0 "The culture of §Y[FROM.GetName]§! is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey] and [?global.culture_names_array^dem3.GetTokenLocalizedKey] minorities."
@@ -112,10 +113,10 @@
  TDA_culture_ulster_protestant_token_idea:0 "§tUlster Protestant§!"
  TDA_culture_ulster_protestant_desc_token_idea:0 ""
  
- TDA_culture_southern_english_token_idea:0 "§RSouthern Eglish§!"
+ TDA_culture_southern_english_token_idea:0 "§RSouthern English§!"
  TDA_culture_southern_english_desc_token_idea:0 ""
  
- TDA_culture_midland_english_token_idea:0 "§mMidlander§!"
+ TDA_culture_midland_english_token_idea:0 "§mMidlander English§!"
  TDA_culture_midland_english_desc_token_idea:0 ""
  
  TDA_culture_northern_english_token_idea:0 "§rNorthern English§!"
@@ -130,7 +131,7 @@
  TDA_culture_northern_welsh_token_idea:0 "§9Northern Welsh§!"
  TDA_culture_northern_welsh_desc_token_idea:0 ""
  
- TDA_culture_scottish_token_idea:0 "§AScottish§!"
+ TDA_culture_scottish_token_idea:0 "§BScottish§!"
  TDA_culture_scottish_desc_token_idea:0 ""
  
  TDA_culture_israeli_token_idea:0 "§4Israeli§!"
@@ -141,3 +142,24 @@
  
  TDA_culture_druze_token_idea:0 "§WDruze§!"
  TDA_culture_druze_desc_token_idea:0 ""
+ 
+ TDA_culture_northern_italian_token_idea:0 "§GNorthern Italian§!"
+ TDA_culture_northern_italian_desc_token_idea:0 ""
+ 
+ TDA_culture_central_italian_token_idea:0 "§cCentral Italian§!"
+ TDA_culture_central_italian_desc_token_idea:0 ""
+ 
+ TDA_culture_southern_italian_token_idea:0 "§ISouthern Italian§!"
+ TDA_culture_southern_italian_desc_token_idea:0 ""
+ 
+ TDA_culture_tyrolean_token_idea:0 "§WTyrolean§!"
+ TDA_culture_tyrolean_desc_token_idea:0 ""
+ 
+ TDA_culture_swiss_german_token_idea:0 "§rSwiss German§!"
+ TDA_culture_swiss_german_desc_token_idea:0 ""
+ 
+ TDA_culture_swiss_french_token_idea:0 "§fSwiss French§!"
+ TDA_culture_swiss_french_desc_token_idea:0 ""
+ 
+ TDA_culture_swiss_italian_token_idea:0 "§rSwiss Italian§!"
+ TDA_culture_swiss_italian_desc_token_idea:0 "!"

@@ -11,14 +11,11 @@ state={
 		victory_points = { 10370 4 }
 		victory_points = { 4540 1 }
 		
-		resize_array = { array = culture_index_array size = 2 value = 0 }
-		resize_array = { array = culture_value_array size = 2 value = 0 }
+		resize_array = { array = culture_index_array size = 1 value = 0 }
+		resize_array = { array = culture_value_array size = 1 value = 0 }
 		
 		set_variable = { culture_index_array^0 = 23 }
-		set_variable = { culture_value_array^0 = 99.5 }
-		
-		set_variable = { culture_index_array^1 = 0 }
-		set_variable = { culture_value_array^1 = 0.5 }
+		set_variable = { culture_value_array^0 = 100.0 }
 		
 		set_variable = { sq_km = 178040 }
 	}

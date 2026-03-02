@@ -5,17 +5,14 @@ state={
 		owner = CAN
 		add_core_of = CAN
 		
-		resize_array = { array = culture_index_array size = 3 value = 0 }
-		resize_array = { array = culture_value_array size = 3 value = 0 }
+		resize_array = { array = culture_index_array size = 2 value = 0 }
+		resize_array = { array = culture_value_array size = 2 value = 0 }
 		
 		set_variable = { culture_index_array^0 = 1 }
-		set_variable = { culture_value_array^0 = 52.6 }
+		set_variable = { culture_value_array^0 = 53.8 }
 		
 		set_variable = { culture_index_array^1 = 2 }
-		set_variable = { culture_value_array^1 = 45.3 }
-		
-		set_variable = { culture_index_array^2 = 0 }
-		set_variable = { culture_value_array^2 = 2.1 }
+		set_variable = { culture_value_array^1 = 46.2 }
 		
 		set_variable = { sq_km = 1183085 }
 	}

@@ -131,6 +131,8 @@ bitmapfonts = {
 		I = { 3 76 19 }				# Ruby Green / Irish
 		l = { 255 86 173 }			# Pink / Londoner
 		m = { 187 63 63 }			# Dark Pink / Midlander
+		c = { 37 153 66 }			# Soft Green / Central Italian
+		f = { 117 5 28 }			# Burgundy / Swiss French
 	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac

@@ -5,17 +5,14 @@ state={
 		owner = ISR
 		add_core_of = ISR
 		
-		resize_array = { array = culture_index_array size = 3 value = 0 }
-		resize_array = { array = culture_value_array size = 3 value = 0 }
+		resize_array = { array = culture_index_array size = 2 value = 0 }
+		resize_array = { array = culture_value_array size = 2 value = 0 }
 		
 		set_variable = { culture_index_array^0 = 35 }
-		set_variable = { culture_value_array^0 = 58.9 }
+		set_variable = { culture_value_array^0 = 59.2 }
 
 		set_variable = { culture_index_array^1 = 37 }
-		set_variable = { culture_value_array^1 = 40.7 }
-
-		set_variable = { culture_index_array^2 = 0 }
-		set_variable = { culture_value_array^2 = 0.4 }
+		set_variable = { culture_value_array^1 = 40.8 }
 		
 		set_variable = { sq_km = 1800 }
 	}
