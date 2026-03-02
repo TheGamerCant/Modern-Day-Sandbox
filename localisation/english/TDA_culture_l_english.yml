@@ -162,4 +162,19 @@
  TDA_culture_swiss_french_desc_token_idea:0 ""
  
  TDA_culture_swiss_italian_token_idea:0 "§rSwiss Italian§!"
- TDA_culture_swiss_italian_desc_token_idea:0 "!"
+ TDA_culture_swiss_italian_desc_token_idea:0 ""
+ 
+ TDA_culture_austrian_token_idea:0 "§WAustrian§!"
+ TDA_culture_austrian_desc_token_idea:0 ""
+ 
+ TDA_culture_east_german_token_idea:0 "§EEastern German§!"
+ TDA_culture_east_german_desc_token_idea:0 ""
+ 
+ TDA_culture_west_german_token_idea:0 "§gWestern German§!"
+ TDA_culture_west_german_desc_token_idea:0 ""
+ 
+ TDA_culture_bavarian_token_idea:0 "§ABavarian§!"
+ TDA_culture_bavarian_desc_token_idea:0 ""
+ 
+ TDA_culture_berlinner_token_idea:0 "§1Berlinner§!"
+ TDA_culture_berlinner_desc_token_idea:0 ""

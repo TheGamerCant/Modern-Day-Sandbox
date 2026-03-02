@@ -133,6 +133,7 @@ bitmapfonts = {
 		m = { 187 63 63 }			# Dark Pink / Midlander
 		c = { 37 153 66 }			# Soft Green / Central Italian
 		f = { 117 5 28 }			# Burgundy / Swiss French
+		E = { 112 56 78 }			# Light Burgundy / East German
 	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac

@@ -134,5 +134,20 @@ ideas ={
 		
 		TDA_culture_swiss_italian_token_idea = {}
 		TDA_culture_swiss_italian_desc_token_idea = {}
+		
+		TDA_culture_austrian_token_idea = {}
+		TDA_culture_austrian_desc_token_idea = {}
+		
+		TDA_culture_east_german_token_idea = {}
+		TDA_culture_east_german_desc_token_idea = {}
+		
+		TDA_culture_west_german_token_idea = {}
+		TDA_culture_west_german_desc_token_idea = {}
+		
+		TDA_culture_bavarian_token_idea = {}
+		TDA_culture_bavarian_desc_token_idea = {}
+		
+		TDA_culture_berlinner_token_idea = {}
+		TDA_culture_berlinner_desc_token_idea = {}
 	}
 }

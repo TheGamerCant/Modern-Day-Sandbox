@@ -1,7 +1,7 @@
 on_actions = {
 	on_startup = {
         effect = {
-			@culture_count = 45
+			@culture_count = 50
 			
 			#Set up the culture colours and names array
 			resize_array = { array = global.culture_colour_array size = @culture_count value = 0 }
@@ -232,6 +232,31 @@ on_actions = {
 			set_variable = {   global.culture_desc_array^44 = token:TDA_culture_swiss_italian_desc_token_idea }
 			#136, 25, 4
 			set_variable = { global.culture_colour_array^44 = 8919300 }
+			
+			set_variable = {  global.culture_names_array^45 = token:TDA_culture_austrian_token_idea }
+			set_variable = {   global.culture_desc_array^45 = token:TDA_culture_austrian_desc_token_idea }
+			#210, 210, 210
+			set_variable = { global.culture_colour_array^45 = 13816530 }
+			
+			set_variable = {  global.culture_names_array^46 = token:TDA_culture_east_german_token_idea }
+			set_variable = {   global.culture_desc_array^46 = token:TDA_culture_east_german_desc_token_idea }
+			#112, 56, 78
+			set_variable = { global.culture_colour_array^46 = 7354956 }
+			
+			set_variable = {  global.culture_names_array^47 = token:TDA_culture_west_german_token_idea }
+			set_variable = {   global.culture_desc_array^47 = token:TDA_culture_west_german_desc_token_idea }
+			#125, 125, 142
+			set_variable = { global.culture_colour_array^47 = 8224142 }
+			
+			set_variable = {  global.culture_names_array^48 = token:TDA_culture_bavarian_token_idea }
+			set_variable = {   global.culture_desc_array^48 = token:TDA_culture_bavarian_desc_token_idea }
+			#11, 37, 70
+			set_variable = { global.culture_colour_array^48 = 730438 }
+			
+			set_variable = {  global.culture_names_array^49 = token:TDA_culture_berlinner_token_idea }
+			set_variable = {   global.culture_desc_array^49 = token:TDA_culture_berlinner_desc_token_idea }
+			#101, 39, 105
+			set_variable = { global.culture_colour_array^49 = 6629225 }
 
 			
 			#Do this after setting up the colours
