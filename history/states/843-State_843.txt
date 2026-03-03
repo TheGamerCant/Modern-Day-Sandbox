@@ -7,6 +7,12 @@ state={
 		add_core_of = VLA
 		
 		victory_points = { 516 50 }
+
+		resize_array = { array = culture_index_array size = 1 value = 0 }
+		resize_array = { array = culture_value_array size = 1 value = 0 }
+
+		set_variable = { culture_index_array^0 = 61 }
+		set_variable = { culture_value_array^0 = 100.0 }
 		
 		set_variable = { sq_km = 162.4 }
 	}

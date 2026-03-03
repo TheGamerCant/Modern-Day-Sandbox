@@ -1,7 +1,7 @@
 on_actions = {
 	on_startup = {
         effect = {
-			@culture_count = 50
+			@culture_count = 66
 			
 			#Set up the culture colours and names array
 			resize_array = { array = global.culture_colour_array size = @culture_count value = 0 }
@@ -257,6 +257,86 @@ on_actions = {
 			set_variable = {   global.culture_desc_array^49 = token:TDA_culture_berlinner_desc_token_idea }
 			#101, 39, 105
 			set_variable = { global.culture_colour_array^49 = 6629225 }
+
+			set_variable = {  global.culture_names_array^50 = token:TDA_culture_hungarian_token_idea }
+			set_variable = {   global.culture_desc_array^50 = token:TDA_culture_hungarian_desc_token_idea }
+			#224, 133, 75
+			set_variable = { global.culture_colour_array^50 = 14714187 }
+
+			set_variable = {  global.culture_names_array^51 = token:TDA_culture_romanian_token_idea }
+			set_variable = {   global.culture_desc_array^51 = token:TDA_culture_romanian_desc_token_idea }
+			#225, 194, 47
+			set_variable = { global.culture_colour_array^51 = 14795311 }
+
+			set_variable = {  global.culture_names_array^52 = token:TDA_culture_szekely_token_idea }
+			set_variable = {   global.culture_desc_array^52 = token:TDA_culture_szekely_desc_token_idea }
+			#218, 152, 64
+			set_variable = { global.culture_colour_array^52 = 14325824 }
+
+			set_variable = {  global.culture_names_array^53 = token:TDA_culture_slovak_token_idea }
+			set_variable = {   global.culture_desc_array^53 = token:TDA_culture_slovak_desc_token_idea }
+			#113, 113, 125
+			set_variable = { global.culture_colour_array^53 = 7434621 }
+
+			set_variable = {  global.culture_names_array^54 = token:TDA_culture_slovak_hungarian_token_idea }
+			set_variable = {   global.culture_desc_array^54 = token:TDA_culture_slovak_hungarian_desc_token_idea }
+			#189, 112, 80
+			set_variable = { global.culture_colour_array^54 = 12415056 }
+
+			set_variable = {  global.culture_names_array^55 = token:TDA_culture_czech_token_idea }
+			set_variable = {   global.culture_desc_array^55 = token:TDA_culture_czech_desc_token_idea }
+			#65, 62, 222
+			set_variable = { global.culture_colour_array^55 = 4275934 }
+
+			set_variable = {  global.culture_names_array^56 = token:TDA_culture_lithuanian_token_idea }
+			set_variable = {   global.culture_desc_array^56 = token:TDA_culture_lithuanian_desc_token_idea }
+			#177, 168, 6
+			set_variable = { global.culture_colour_array^56 = 11642886 }
+
+			set_variable = {  global.culture_names_array^57 = token:TDA_culture_latvian_token_idea }
+			set_variable = {   global.culture_desc_array^57 = token:TDA_culture_latvian_desc_token_idea }
+			#126, 4, 58
+			set_variable = { global.culture_colour_array^57 = 8258618 }
+
+			set_variable = {  global.culture_names_array^58 = token:TDA_culture_estonian_token_idea }
+			set_variable = {   global.culture_desc_array^58 = token:TDA_culture_estonian_desc_token_idea }
+			#6, 139, 179
+			set_variable = { global.culture_colour_array^58 = 428979 }
+
+			set_variable = {  global.culture_names_array^59 = token:TDA_culture_baltic_russian_token_idea }
+			set_variable = {   global.culture_desc_array^59 = token:TDA_culture_baltic_russian_desc_token_idea }
+			#22, 170, 39
+			set_variable = { global.culture_colour_array^59 = 1485351 }
+
+			set_variable = {  global.culture_names_array^60 = token:TDA_culture_dutch_token_idea }
+			set_variable = {   global.culture_desc_array^60 = token:TDA_culture_dutch_desc_token_idea }
+			#198, 135, 87
+			set_variable = { global.culture_colour_array^60 = 13010775 }
+
+			set_variable = {  global.culture_names_array^61 = token:TDA_culture_flemish_token_idea }
+			set_variable = {   global.culture_desc_array^61 = token:TDA_culture_flemish_desc_token_idea }
+			#216, 137, 42
+			set_variable = { global.culture_colour_array^61 = 14190890 }
+
+			set_variable = {  global.culture_names_array^62 = token:TDA_culture_walloon_token_idea }
+			set_variable = {   global.culture_desc_array^62 = token:TDA_culture_walloon_desc_token_idea }
+			#159, 18, 18
+			set_variable = { global.culture_colour_array^62 = 10424850 }
+
+			set_variable = {  global.culture_names_array^63 = token:TDA_culture_ostbelgisch_token_idea }
+			set_variable = {   global.culture_desc_array^63 = token:TDA_culture_ostbelgisch_desc_token_idea }
+			#132, 105, 105
+			set_variable = { global.culture_colour_array^63 = 8677737 }
+
+			set_variable = {  global.culture_names_array^64 = token:TDA_culture_luxembourgish_token_idea }
+			set_variable = {   global.culture_desc_array^64 = token:TDA_culture_luxembourgish_desc_token_idea }
+			#117, 196, 188
+			set_variable = { global.culture_colour_array^64 = 7718076 }
+
+			set_variable = {  global.culture_names_array^65 = token:TDA_culture_bulgarian_token_idea }
+			set_variable = {   global.culture_desc_array^65 = token:TDA_culture_bulgarian_desc_token_idea }
+			#20, 168, 101
+			set_variable = { global.culture_colour_array^65 = 1353829 }
 
 			
 			#Do this after setting up the colours
