@@ -1,7 +1,7 @@
 on_actions = {
 	on_startup = {
         effect = {
-			@culture_count = 66
+			@culture_count = 84
 			
 			#Set up the culture colours and names array
 			resize_array = { array = global.culture_colour_array size = @culture_count value = 0 }
@@ -337,6 +337,96 @@ on_actions = {
 			set_variable = {   global.culture_desc_array^65 = token:TDA_culture_bulgarian_desc_token_idea }
 			#20, 168, 101
 			set_variable = { global.culture_colour_array^65 = 1353829 }
+
+			set_variable = {  global.culture_names_array^66 = token:TDA_culture_western_polish_token_idea }
+			set_variable = {   global.culture_desc_array^66 = token:TDA_culture_western_polish_desc_token_idea }
+			#186, 39, 28
+			set_variable = { global.culture_colour_array^66 = 12199708 }
+
+			set_variable = {  global.culture_names_array^67 = token:TDA_culture_eastern_polish_token_idea }
+			set_variable = {   global.culture_desc_array^67 = token:TDA_culture_eastern_polish_desc_token_idea }
+			#193, 128, 128
+			set_variable = { global.culture_colour_array^67 = 12681344 }
+
+			set_variable = {  global.culture_names_array^68 = token:TDA_culture_moldovan_token_idea }
+			set_variable = {   global.culture_desc_array^68 = token:TDA_culture_moldovan_desc_token_idea }
+			#228, 206, 138
+			set_variable = { global.culture_colour_array^68 = 14995082 }
+
+			set_variable = {  global.culture_names_array^69 = token:TDA_culture_gagauz_token_idea }
+			set_variable = {   global.culture_desc_array^69 = token:TDA_culture_gagauz_desc_token_idea }
+			#7, 63, 125
+			set_variable = { global.culture_colour_array^69 = 475005 }
+
+			set_variable = {  global.culture_names_array^70 = token:TDA_culture_transnistrian_token_idea }
+			set_variable = {   global.culture_desc_array^70 = token:TDA_culture_transnistrian_desc_token_idea }
+			#203, 8, 12
+			set_variable = { global.culture_colour_array^70 = 13305868 }
+
+			set_variable = {  global.culture_names_array^71 = token:TDA_culture_outer_mongolian_token_idea }
+			set_variable = {   global.culture_desc_array^71 = token:TDA_culture_outer_mongolian_desc_token_idea }
+			#168, 39, 119
+			set_variable = { global.culture_colour_array^71 = 11020151 }
+
+			set_variable = {  global.culture_names_array^72 = token:TDA_culture_taiwanese_token_idea }
+			set_variable = {   global.culture_desc_array^72 = token:TDA_culture_taiwanese_desc_token_idea }
+			#31, 66, 177
+			set_variable = { global.culture_colour_array^72 = 2048689 }
+
+			set_variable = {  global.culture_names_array^73 = token:TDA_culture_tibetean_token_idea }
+			set_variable = {   global.culture_desc_array^73 = token:TDA_culture_tibetean_desc_token_idea }
+			#78, 31, 138
+			set_variable = { global.culture_colour_array^73 = 5119882 }
+
+			set_variable = {  global.culture_names_array^74 = token:TDA_culture_uyghur_token_idea }
+			set_variable = {   global.culture_desc_array^74 = token:TDA_culture_uyghur_desc_token_idea }
+			#76, 141, 199
+			set_variable = { global.culture_colour_array^74 = 5017031 }
+
+			set_variable = {  global.culture_names_array^75 = token:TDA_culture_hui_chinese_token_idea }
+			set_variable = {   global.culture_desc_array^75 = token:TDA_culture_hui_chinese_desc_token_idea }
+			#58, 32, 98
+			set_variable = { global.culture_colour_array^75 = 3809378 }
+
+			set_variable = {  global.culture_names_array^76 = token:TDA_culture_inner_mongolian_token_idea }
+			set_variable = {   global.culture_desc_array^76 = token:TDA_culture_inner_mongolian_desc_token_idea }
+			#135, 19, 65
+			set_variable = { global.culture_colour_array^76 = 8852289 }
+
+			set_variable = {  global.culture_names_array^77 = token:TDA_culture_dongbei_token_idea }
+			set_variable = {   global.culture_desc_array^77 = token:TDA_culture_dongbei_desc_token_idea }
+			#200, 48, 11
+			set_variable = { global.culture_colour_array^77 = 13119499 }
+
+			set_variable = {  global.culture_names_array^78 = token:TDA_culture_xibei_token_idea }
+			set_variable = {   global.culture_desc_array^78 = token:TDA_culture_xibei_desc_token_idea }
+			#168, 13, 37
+			set_variable = { global.culture_colour_array^78 = 11013413 }
+
+			set_variable = {  global.culture_names_array^79 = token:TDA_culture_huabei_token_idea }
+			set_variable = {   global.culture_desc_array^79 = token:TDA_culture_huabei_desc_token_idea }
+			#194, 21, 28
+			set_variable = { global.culture_colour_array^79 = 12719388 }
+
+			set_variable = {  global.culture_names_array^80 = token:TDA_culture_xinan_token_idea }
+			set_variable = {   global.culture_desc_array^80 = token:TDA_culture_xinan_desc_token_idea }
+			#175, 13, 0
+			set_variable = { global.culture_colour_array^80 = 11472128 }
+
+			set_variable = {  global.culture_names_array^81 = token:TDA_culture_yizu_token_idea }
+			set_variable = {   global.culture_desc_array^81 = token:TDA_culture_yizu_desc_token_idea }
+			#126, 196, 100
+			set_variable = { global.culture_colour_array^81 = 8307812 }
+
+			set_variable = {  global.culture_names_array^82 = token:TDA_culture_hmong_token_idea }
+			set_variable = {   global.culture_desc_array^82 = token:TDA_culture_hmong_desc_token_idea }
+			#115, 81, 20
+			set_variable = { global.culture_colour_array^82 = 10178836 }
+
+			set_variable = {  global.culture_names_array^83 = token:TDA_culture_zhuang_token_idea }
+			set_variable = {   global.culture_desc_array^83 = token:TDA_culture_zhuang_desc_token_idea }
+			#255, 183, 30
+			set_variable = { global.culture_colour_array^83 = 16758558 }
 
 			
 			#Do this after setting up the colours

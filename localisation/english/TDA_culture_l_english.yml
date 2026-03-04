@@ -226,3 +226,64 @@
  
  TDA_culture_bulgarian_token_idea:0 "§cBulgarian§!"
  TDA_culture_bulgarian_desc_token_idea:0 ""
+ 
+ TDA_culture_western_polish_token_idea:0 "§rWestern Polish§!"
+ TDA_culture_western_polish_desc_token_idea:0 ""
+ 
+ TDA_culture_eastern_polish_token_idea:0 "§mEastern Polish§!"
+ TDA_culture_eastern_polish_desc_token_idea:0 ""
+ 
+ TDA_culture_moldovan_token_idea:0 "§YMoldovan§!"
+ TDA_culture_moldovan_desc_token_idea:0 ""
+ 
+ TDA_culture_gagauz_token_idea:0 "§AGagauz§!"
+ TDA_culture_gagauz_desc_token_idea:0 ""
+ 
+ TDA_culture_transnistrian_token_idea:0 "§RTransnistrian§!"
+ TDA_culture_transnistrian_desc_token_idea:0 ""
+ 
+ TDA_culture_outer_mongolian_token_idea:0 "§0Mongolian§!"
+ TDA_culture_outer_mongolian_desc_token_idea:0 ""
+ 
+ TDA_culture_taiwanese_token_idea:0 "§PTaiwanese§!"
+ TDA_culture_taiwanese_desc_token_idea:0 ""
+ 
+ TDA_culture_tibetean_token_idea:0 "§0Tibetean§!"
+ TDA_culture_tibetean_desc_token_idea:0 ""
+ 
+ TDA_culture_uyghur_token_idea:0 "§3Uyghur§!"
+ TDA_culture_uyghur_desc_token_idea:0 ""
+ 
+ TDA_culture_hui_chinese_token_idea:0 "§EHui§!"
+ TDA_culture_hui_chinese_desc_token_idea:0 ""
+ 
+ TDA_culture_inner_mongolian_token_idea:0 "§EInner Mongolian§!"
+ TDA_culture_inner_mongolian_desc_token_idea:0 ""
+ 
+ #Dōngběi / North East China
+ TDA_culture_dongbei_token_idea:0 "§hDongbei§!"
+ TDA_culture_dongbei_desc_token_idea:0 ""
+ 
+ #Xīběi / North West China
+ TDA_culture_xibei_token_idea:0 "§fXibei§!"
+ TDA_culture_xibei_desc_token_idea:0 ""
+ 
+ #Huáběi / North China
+ TDA_culture_huabei_token_idea:0 "§mHuabei§!"
+ TDA_culture_huabei_desc_token_idea:0 ""
+ 
+ #Xīnán / South West China
+ TDA_culture_xinan_token_idea:0 "§rXinan§!"
+ TDA_culture_xinan_desc_token_idea:0 ""
+ 
+ #Yi / Yízú
+ TDA_culture_yizu_token_idea:0 "§7Yi§!"
+ TDA_culture_yizu_desc_token_idea:0 ""
+ 
+ #Miao / Hmong / Miáozú
+ TDA_culture_hmong_token_idea:0 "§FHmong§!"
+ TDA_culture_hmong_desc_token_idea:0 ""
+ 
+ #Zhuang / Zhuàng
+ TDA_culture_zhuang_token_idea:0 "§YZhuang§!"
+ TDA_culture_zhuang_desc_token_idea:0 ""
