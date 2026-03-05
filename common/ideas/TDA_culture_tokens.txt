@@ -1,152 +1,152 @@
-ideas ={
+ideas = {
 	country = {
 		TDA_culture_other_token_idea = {}
 		TDA_culture_other_desc_token_idea = {}
-		
+
 		TDA_culture_native_north_american_token_idea = {}
 		TDA_culture_native_north_american_desc_token_idea = {}
-		
+
 		TDA_culture_anglo_canadian_token_idea = {}
 		TDA_culture_anglo_canadian_desc_token_idea = {}
-		
+
 		TDA_culture_french_canadian_token_idea = {}
 		TDA_culture_french_canadian_desc_token_idea = {}
-		
+
 		TDA_culture_atlantic_canadian_token_idea = {}
 		TDA_culture_atlantic_canadian_desc_token_idea = {}
-		
+
 		TDA_culture_prairie_canadian_token_idea = {}
 		TDA_culture_prairie_canadian_desc_token_idea = {}
-		
+
 		TDA_culture_british_columbian_token_idea = {}
 		TDA_culture_british_columbian_desc_token_idea = {}
-		
+
 		TDA_culture_new_englander_token_idea = {}
 		TDA_culture_new_englander_desc_token_idea = {}
-		
+
 		TDA_culture_alaskan_token_idea = {}
 		TDA_culture_alaskan_desc_token_idea = {}
-		
+
 		TDA_culture_pacific_northwest_token_idea = {}
 		TDA_culture_pacific_northwest_desc_token_idea = {}
-		
+
 		TDA_culture_utahan_token_idea = {}
 		TDA_culture_utahan_desc_token_idea = {}
-		
+
 		TDA_culture_new_yorker_token_idea = {}
 		TDA_culture_new_yorker_desc_token_idea = {}
-		
+
 		TDA_culture_usa_south_west_token_idea = {}
 		TDA_culture_usa_south_west_desc_token_idea = {}
-		
+
 		TDA_culture_californian_token_idea = {}
 		TDA_culture_californian_desc_token_idea = {}
-		
+
 		TDA_culture_texan_token_idea = {}
 		TDA_culture_texan_desc_token_idea = {}
-		
+
 		TDA_culture_usa_deep_south_token_idea = {}
 		TDA_culture_usa_deep_south_desc_token_idea = {}
-		
+
 		TDA_culture_floridan_token_idea = {}
 		TDA_culture_floridan_desc_token_idea = {}
-		
+
 		TDA_culture_northern_rockies_token_idea = {}
 		TDA_culture_northern_rockies_desc_token_idea = {}
-		
+
 		TDA_culture_atlantic_south_token_idea = {}
 		TDA_culture_atlantic_south_desc_token_idea = {}
-		
+
 		TDA_culture_great_plains_token_idea = {}
 		TDA_culture_great_plains_desc_token_idea = {}
-		
+
 		TDA_culture_midwestern_token_idea = {}
 		TDA_culture_midwestern_desc_token_idea = {}
-		
+
 		TDA_culture_rustbelt_token_idea = {}
 		TDA_culture_rustbelt_desc_token_idea = {}
-		
+
 		TDA_culture_usa_east_coast_token_idea = {}
 		TDA_culture_usa_east_coast_desc_token_idea = {}
-		
+
 		TDA_culture_usa_southern_token_idea = {}
 		TDA_culture_usa_southern_desc_token_idea = {}
-		
+
 		TDA_culture_puerto_rican_token_idea = {}
 		TDA_culture_puerto_rican_desc_token_idea = {}
-		
+
 		TDA_culture_irish_token_idea = {}
 		TDA_culture_irish_desc_token_idea = {}
-		
+
 		TDA_culture_northern_irish_catholic_token_idea = {}
 		TDA_culture_northern_irish_catholic_desc_token_idea = {}
-		
+
 		TDA_culture_ulster_protestant_token_idea = {}
 		TDA_culture_ulster_protestant_desc_token_idea = {}
-		
+
 		TDA_culture_southern_english_token_idea = {}
 		TDA_culture_southern_english_desc_token_idea = {}
-		
+
 		TDA_culture_midland_english_token_idea = {}
 		TDA_culture_midland_english_desc_token_idea = {}
-		
+
 		TDA_culture_northern_english_token_idea = {}
 		TDA_culture_northern_english_desc_token_idea = {}
-		
+
 		TDA_culture_londoner_token_idea = {}
 		TDA_culture_londoner_desc_token_idea = {}
-		
+
 		TDA_culture_southern_welsh_token_idea = {}
 		TDA_culture_southern_welsh_desc_token_idea = {}
-		
+
 		TDA_culture_northern_welsh_token_idea = {}
 		TDA_culture_northern_welsh_desc_token_idea = {}
-		
+
 		TDA_culture_scottish_token_idea = {}
 		TDA_culture_scottish_desc_token_idea = {}
-		
+
 		TDA_culture_israeli_token_idea = {}
 		TDA_culture_israeli_desc_token_idea = {}
-		
+
 		TDA_culture_palestinian_token_idea = {}
 		TDA_culture_palestinian_desc_token_idea = {}
-		
+
 		TDA_culture_druze_token_idea = {}
 		TDA_culture_druze_desc_token_idea = {}
-		
+
 		TDA_culture_northern_italian_token_idea = {}
 		TDA_culture_northern_italian_desc_token_idea = {}
-		
+
 		TDA_culture_central_italian_token_idea = {}
 		TDA_culture_central_italian_desc_token_idea = {}
-		
+
 		TDA_culture_southern_italian_token_idea = {}
 		TDA_culture_southern_italian_desc_token_idea = {}
-		
+
 		TDA_culture_tyrolean_token_idea = {}
 		TDA_culture_tyrolean_desc_token_idea = {}
-		
+
 		TDA_culture_swiss_german_token_idea = {}
 		TDA_culture_swiss_german_desc_token_idea = {}
-		
+
 		TDA_culture_swiss_french_token_idea = {}
 		TDA_culture_swiss_french_desc_token_idea = {}
-		
+
 		TDA_culture_swiss_italian_token_idea = {}
 		TDA_culture_swiss_italian_desc_token_idea = {}
-		
+
 		TDA_culture_austrian_token_idea = {}
 		TDA_culture_austrian_desc_token_idea = {}
-		
+
 		TDA_culture_east_german_token_idea = {}
 		TDA_culture_east_german_desc_token_idea = {}
-		
+
 		TDA_culture_west_german_token_idea = {}
 		TDA_culture_west_german_desc_token_idea = {}
-		
+
 		TDA_culture_bavarian_token_idea = {}
 		TDA_culture_bavarian_desc_token_idea = {}
-		
+
 		TDA_culture_berlinner_token_idea = {}
 		TDA_culture_berlinner_desc_token_idea = {}
 

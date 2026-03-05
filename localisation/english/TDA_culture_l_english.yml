@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
  MAPMODE_TDA_CULTURE_MAP_MODE:0 "§YCulture§! map mode"
  MAPMODE_TDA_CULTURE_MAP_MODE_NAME:0 "Culture"
  MAPMODE_TDA_CULTURE_MAP_MODE_DESCRIPTION:0 ""
@@ -31,259 +31,252 @@
 
  TDA_culture_other_token_idea:0 "§gOther§!"
  TDA_culture_other_desc_token_idea:0 ""
- 
+
  TDA_culture_native_north_american_token_idea:0 "§FNative North American§!"
  TDA_culture_native_north_american_desc_token_idea:0 ""
- 
+
  TDA_culture_anglo_canadian_token_idea:0 "§RAnglo-Canadian§!"
  TDA_culture_anglo_canadian_desc_token_idea:0 ""
- 
+
  TDA_culture_french_canadian_token_idea:0 "§BFrench-Canadian§!"
  TDA_culture_french_canadian_desc_token_idea:0 ""
- 
+
  TDA_culture_atlantic_canadian_token_idea:0 "§tAtlantic Canadian§!"
  TDA_culture_atlantic_canadian_desc_token_idea:0 ""
- 
+
  TDA_culture_prairie_canadian_token_idea:0 "§rPrairie Canadian§!"
  TDA_culture_prairie_canadian_desc_token_idea:0 ""
- 
+
  TDA_culture_british_columbian_token_idea:0 "§tBritish Columbian§!"
  TDA_culture_british_columbian_desc_token_idea:0 ""
- 
+
  TDA_culture_new_englander_token_idea:0 "§2New Englander§!"
  TDA_culture_new_englander_desc_token_idea:0 ""
- 
+
  TDA_culture_alaskan_token_idea:0 "§AAlaskan§!"
  TDA_culture_alaskan_desc_token_idea:0 ""
- 
+
  TDA_culture_pacific_northwest_token_idea:0 "§PPacific North-Western§!"
  TDA_culture_pacific_northwest_desc_token_idea:0 ""
- 
+
  TDA_culture_utahan_token_idea:0 "§AUtahan§!"
  TDA_culture_utahan_desc_token_idea:0 ""
- 
+
  TDA_culture_new_yorker_token_idea:0 "§BNew Yorker§!"
  TDA_culture_new_yorker_desc_token_idea:0 ""
- 
+
  TDA_culture_usa_south_west_token_idea:0 "§4South-Western§!"
  TDA_culture_usa_south_west_desc_token_idea:0 ""
- 
+
  TDA_culture_californian_token_idea:0 "§4Californian§!"
  TDA_culture_californian_desc_token_idea:0 ""
- 
+
  TDA_culture_texan_token_idea:0 "§1Texan§!"
  TDA_culture_texan_desc_token_idea:0 ""
- 
+
  TDA_culture_usa_deep_south_token_idea:0 "§dDeep Southern§!"
  TDA_culture_usa_deep_south_desc_token_idea:0 ""
- 
+
  TDA_culture_floridan_token_idea:0 "§CFloridan§!"
  TDA_culture_floridan_desc_token_idea:0 ""
- 
+
  TDA_culture_northern_rockies_token_idea:0 "§ANorthern Rockies§!"
  TDA_culture_northern_rockies_desc_token_idea:0 ""
- 
+
  TDA_culture_atlantic_south_token_idea:0 "§2Atlantic Southern§!"
  TDA_culture_atlantic_south_desc_token_idea:0 ""
- 
+
  TDA_culture_great_plains_token_idea:0 "§4Great Plains§!"
  TDA_culture_great_plains_desc_token_idea:0 ""
- 
+
  TDA_culture_midwestern_token_idea:0 "§2Midwestern§!"
  TDA_culture_midwestern_desc_token_idea:0 ""
- 
+
  TDA_culture_rustbelt_token_idea:0 "§ARustbelt§!"
  TDA_culture_rustbelt_desc_token_idea:0 ""
- 
+
  TDA_culture_usa_east_coast_token_idea:0 "§eEast Coast§!"
  TDA_culture_usa_east_coast_desc_token_idea:0 ""
- 
+
  TDA_culture_usa_southern_token_idea:0 "§dSouthern§!"
  TDA_culture_usa_southern_desc_token_idea:0 ""
- 
+
  TDA_culture_puerto_rican_token_idea:0 "§FPuerto Rican§!"
  TDA_culture_puerto_rican_desc_token_idea:0 ""
- 
+
  TDA_culture_irish_token_idea:0 "§IIrish§!"
  TDA_culture_irish_desc_token_idea:0 ""
- 
+
  TDA_culture_northern_irish_catholic_token_idea:0 "§GNorthern Irish Catholic§!"
  TDA_culture_northern_irish_catholic_desc_token_idea:0 ""
- 
+
  TDA_culture_ulster_protestant_token_idea:0 "§tUlster Protestant§!"
  TDA_culture_ulster_protestant_desc_token_idea:0 ""
- 
+
  TDA_culture_southern_english_token_idea:0 "§RSouthern English§!"
  TDA_culture_southern_english_desc_token_idea:0 ""
- 
+
  TDA_culture_midland_english_token_idea:0 "§mMidlander English§!"
  TDA_culture_midland_english_desc_token_idea:0 ""
- 
+
  TDA_culture_northern_english_token_idea:0 "§rNorthern English§!"
  TDA_culture_northern_english_desc_token_idea:0 ""
- 
+
  TDA_culture_londoner_token_idea:0 "§lLondoner§!"
  TDA_culture_londoner_desc_token_idea:0 ""
- 
+
  TDA_culture_southern_welsh_token_idea:0 "§tSouthern Welsh§!"
  TDA_culture_southern_welsh_desc_token_idea:0 ""
- 
+
  TDA_culture_northern_welsh_token_idea:0 "§9Northern Welsh§!"
  TDA_culture_northern_welsh_desc_token_idea:0 ""
- 
+
  TDA_culture_scottish_token_idea:0 "§BScottish§!"
  TDA_culture_scottish_desc_token_idea:0 ""
- 
+
  TDA_culture_israeli_token_idea:0 "§4Israeli§!"
  TDA_culture_israeli_desc_token_idea:0 ""
- 
+
  TDA_culture_palestinian_token_idea:0 "§FPalestinian§!"
  TDA_culture_palestinian_desc_token_idea:0 ""
- 
+
  TDA_culture_druze_token_idea:0 "§WDruze§!"
  TDA_culture_druze_desc_token_idea:0 ""
- 
+
  TDA_culture_northern_italian_token_idea:0 "§GNorthern Italian§!"
  TDA_culture_northern_italian_desc_token_idea:0 ""
- 
+
  TDA_culture_central_italian_token_idea:0 "§cCentral Italian§!"
  TDA_culture_central_italian_desc_token_idea:0 ""
- 
+
  TDA_culture_southern_italian_token_idea:0 "§ISouthern Italian§!"
  TDA_culture_southern_italian_desc_token_idea:0 ""
- 
+
  TDA_culture_tyrolean_token_idea:0 "§WTyrolean§!"
  TDA_culture_tyrolean_desc_token_idea:0 ""
- 
+
  TDA_culture_swiss_german_token_idea:0 "§rSwiss German§!"
  TDA_culture_swiss_german_desc_token_idea:0 ""
- 
+
  TDA_culture_swiss_french_token_idea:0 "§fSwiss French§!"
  TDA_culture_swiss_french_desc_token_idea:0 ""
- 
+
  TDA_culture_swiss_italian_token_idea:0 "§rSwiss Italian§!"
  TDA_culture_swiss_italian_desc_token_idea:0 ""
- 
+
  TDA_culture_austrian_token_idea:0 "§WAustrian§!"
  TDA_culture_austrian_desc_token_idea:0 ""
- 
+
  TDA_culture_east_german_token_idea:0 "§EEastern German§!"
  TDA_culture_east_german_desc_token_idea:0 ""
- 
+
  TDA_culture_west_german_token_idea:0 "§gWestern German§!"
  TDA_culture_west_german_desc_token_idea:0 ""
- 
+
  TDA_culture_bavarian_token_idea:0 "§ABavarian§!"
  TDA_culture_bavarian_desc_token_idea:0 ""
- 
+
  TDA_culture_berlinner_token_idea:0 "§1Berlinner§!"
  TDA_culture_berlinner_desc_token_idea:0 ""
- 
+
  TDA_culture_hungarian_token_idea:0 "§hHungarian§!"
  TDA_culture_hungarian_desc_token_idea:0 ""
- 
+
  TDA_culture_romanian_token_idea:0 "§8Romanian§!"
  TDA_culture_romanian_desc_token_idea:0 ""
- 
+
  TDA_culture_szekely_token_idea:0 "§hSzekely§!"
  TDA_culture_szekely_desc_token_idea:0 ""
- 
+
  TDA_culture_slovak_token_idea:0 "§gSlovak§!"
  TDA_culture_slovak_desc_token_idea:0 ""
- 
+
  TDA_culture_slovak_hungarian_token_idea:0 "§hSlovak-Hungarian§!"
  TDA_culture_slovak_hungarian_desc_token_idea:0 ""
- 
+
  TDA_culture_czech_token_idea:0 "§PCzech§!"
  TDA_culture_czech_desc_token_idea:0 ""
- 
+
  TDA_culture_lithuanian_token_idea:0 "§8Lithuanian§!"
  TDA_culture_lithuanian_desc_token_idea:0 ""
- 
+
  TDA_culture_latvian_token_idea:0 "§fLatvian§!"
  TDA_culture_latvian_desc_token_idea:0 ""
- 
+
  TDA_culture_estonian_token_idea:0 "§4Estonian§!"
  TDA_culture_estonian_desc_token_idea:0 ""
- 
+
  TDA_culture_baltic_russian_token_idea:0 "§GBaltic Russian§!"
  TDA_culture_baltic_russian_desc_token_idea:0 ""
- 
+
  TDA_culture_dutch_token_idea:0 "§hDutch§!"
  TDA_culture_dutch_desc_token_idea:0 ""
- 
+
  TDA_culture_flemish_token_idea:0 "§hFlemish§!"
  TDA_culture_flemish_desc_token_idea:0 ""
- 
+
  TDA_culture_walloon_token_idea:0 "§rWalloon§!"
  TDA_culture_walloon_desc_token_idea:0 ""
- 
+
  TDA_culture_ostbelgisch_token_idea:0 "§gOstbelgisch§!"
  TDA_culture_ostbelgisch_desc_token_idea:0 ""
- 
+
  TDA_culture_luxembourgish_token_idea:0 "§6Luxembourgish§!"
  TDA_culture_luxembourgish_desc_token_idea:0 ""
- 
+
  TDA_culture_bulgarian_token_idea:0 "§cBulgarian§!"
  TDA_culture_bulgarian_desc_token_idea:0 ""
- 
+
  TDA_culture_western_polish_token_idea:0 "§rWestern Polish§!"
  TDA_culture_western_polish_desc_token_idea:0 ""
- 
+
  TDA_culture_eastern_polish_token_idea:0 "§mEastern Polish§!"
  TDA_culture_eastern_polish_desc_token_idea:0 ""
- 
+
  TDA_culture_moldovan_token_idea:0 "§YMoldovan§!"
  TDA_culture_moldovan_desc_token_idea:0 ""
- 
+
  TDA_culture_gagauz_token_idea:0 "§AGagauz§!"
  TDA_culture_gagauz_desc_token_idea:0 ""
- 
+
  TDA_culture_transnistrian_token_idea:0 "§RTransnistrian§!"
  TDA_culture_transnistrian_desc_token_idea:0 ""
- 
+
  TDA_culture_outer_mongolian_token_idea:0 "§0Mongolian§!"
  TDA_culture_outer_mongolian_desc_token_idea:0 ""
- 
+
  TDA_culture_taiwanese_token_idea:0 "§PTaiwanese§!"
  TDA_culture_taiwanese_desc_token_idea:0 ""
- 
+
  TDA_culture_tibetean_token_idea:0 "§0Tibetean§!"
  TDA_culture_tibetean_desc_token_idea:0 ""
- 
+
  TDA_culture_uyghur_token_idea:0 "§3Uyghur§!"
  TDA_culture_uyghur_desc_token_idea:0 ""
- 
+
  TDA_culture_hui_chinese_token_idea:0 "§EHui§!"
  TDA_culture_hui_chinese_desc_token_idea:0 ""
- 
+
  TDA_culture_inner_mongolian_token_idea:0 "§EInner Mongolian§!"
  TDA_culture_inner_mongolian_desc_token_idea:0 ""
- 
- #Dōngběi / North East China
+
  TDA_culture_dongbei_token_idea:0 "§hDongbei§!"
  TDA_culture_dongbei_desc_token_idea:0 ""
- 
- #Xīběi / North West China
+
  TDA_culture_xibei_token_idea:0 "§fXibei§!"
  TDA_culture_xibei_desc_token_idea:0 ""
- 
- #Huáběi / North China
+
  TDA_culture_huabei_token_idea:0 "§mHuabei§!"
  TDA_culture_huabei_desc_token_idea:0 ""
- 
- #Xīnán / South West China
+
  TDA_culture_xinan_token_idea:0 "§rXinan§!"
  TDA_culture_xinan_desc_token_idea:0 ""
- 
- #Yi / Yízú
+
  TDA_culture_yizu_token_idea:0 "§7Yi§!"
  TDA_culture_yizu_desc_token_idea:0 ""
- 
- #Miao / Hmong / Miáozú
+
  TDA_culture_hmong_token_idea:0 "§FHmong§!"
  TDA_culture_hmong_desc_token_idea:0 ""
- 
- #Zhuang / Zhuàng
+
  TDA_culture_zhuang_token_idea:0 "§YZhuang§!"
  TDA_culture_zhuang_desc_token_idea:0 ""
