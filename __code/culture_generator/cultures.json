@@ -1,0 +1,739 @@
+{
+    "cultures": [
+        {
+          "token" : "other",
+          "red" : 100,
+          "green" : 100,
+          "blue" : 100,
+          "name" : "§gOther§!",
+          "desc" : ""
+        },
+        {
+          "token" : "native_north_american",
+          "red" : 150,
+          "green" : 97,
+          "blue" : 150,
+          "name" : "§FNative North American§!",
+          "desc" : ""
+        },
+        {
+          "token" : "anglo_canadian",
+          "red" : 225,
+          "green" : 0,
+          "blue" : 225,
+          "name" : "§RAnglo-Canadian§!",
+          "desc" : "",
+          "super_culture" : "canadian"
+        },
+        {
+          "token" : "french_canadian",
+          "red" : 0,
+          "green" : 0,
+          "blue" : 0,
+          "name" : "§BFrench-Canadian§!",
+          "desc" : "",
+          "super_culture" : "canadian"
+        },
+        {
+          "token" : "atlantic_canadian",
+          "red" : 242,
+          "green" : 50,
+          "blue" : 242,
+          "name" : "§tAtlantic Canadian§!",
+          "desc" : "",
+          "super_culture" : "canadian"
+        },
+        {
+          "token" : "prairie_canadian",
+          "red" : 194,
+          "green" : 39,
+          "blue" : 194,
+          "name" : "§rPrairie Canadian§!",
+          "desc" : "",
+          "super_culture" : "canadian"
+        },
+        {
+          "token" : "british_columbian",
+          "red" : 228,
+          "green" : 33,
+          "blue" : 228,
+          "name" : "§tBritish Columbian§!",
+          "desc" : "",
+          "super_culture" : "canadian"
+        },
+        {
+          "token" : "new_englander",
+          "red" : 17,
+          "green" : 105,
+          "blue" : 17,
+          "name" : "§2New Englander§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "alaskan",
+          "red" : 8,
+          "green" : 62,
+          "blue" : 8,
+          "name" : "§AAlaskan§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "pacific_northwest",
+          "red" : 63,
+          "green" : 51,
+          "blue" : 63,
+          "name" : "§PPacific North-Western§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "utahan",
+          "red" : 0,
+          "green" : 101,
+          "blue" : 0,
+          "name" : "§AUtahan§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "new_yorker",
+          "red" : 0,
+          "green" : 24,
+          "blue" : 0,
+          "name" : "§BNew Yorker§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "usa_south_west",
+          "red" : 35,
+          "green" : 62,
+          "blue" : 35,
+          "name" : "§4South-Western§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "californian",
+          "red" : 0,
+          "green" : 163,
+          "blue" : 0,
+          "name" : "§4Californian§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "texan",
+          "red" : 62,
+          "green" : 41,
+          "blue" : 62,
+          "name" : "§1Texan§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "usa_deep_south",
+          "red" : 45,
+          "green" : 85,
+          "blue" : 45,
+          "name" : "§dDeep Southern§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "floridan",
+          "red" : 62,
+          "green" : 145,
+          "blue" : 62,
+          "name" : "§CFloridan§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "northern_rockies",
+          "red" : 0,
+          "green" : 47,
+          "blue" : 0,
+          "name" : "§ANorthern Rockies§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "atlantic_south",
+          "red" : 59,
+          "green" : 113,
+          "blue" : 59,
+          "name" : "§2Atlantic Southern§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "great_plains",
+          "red" : 136,
+          "green" : 167,
+          "blue" : 136,
+          "name" : "§4Great Plains§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "midwestern",
+          "red" : 62,
+          "green" : 128,
+          "blue" : 62,
+          "name" : "§2Midwestern§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "rustbelt",
+          "red" : 24,
+          "green" : 41,
+          "blue" : 24,
+          "name" : "§ARustbelt§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "usa_east_coast",
+          "red" : 16,
+          "green" : 89,
+          "blue" : 16,
+          "name" : "§eEast Coast§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "usa_southern",
+          "red" : 64,
+          "green" : 90,
+          "blue" : 64,
+          "name" : "§dSouthern§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "puerto_rican",
+          "red" : 138,
+          "green" : 21,
+          "blue" : 138,
+          "name" : "§FPuerto Rican§!",
+          "desc" : "",
+          "super_culture" : "american"
+        },
+        {
+          "token" : "irish",
+          "red" : 3,
+          "green" : 76,
+          "blue" : 3,
+          "name" : "§IIrish§!",
+          "desc" : "",
+          "super_culture" : "irish"
+        },
+        {
+          "token" : "northern_irish_catholic",
+          "red" : 30,
+          "green" : 133,
+          "blue" : 30,
+          "name" : "§GNorthern Irish Catholic§!",
+          "desc" : "",
+          "super_culture" : "irish"
+        },
+        {
+          "token" : "ulster_protestant",
+          "red" : 239,
+          "green" : 66,
+          "blue" : 239,
+          "name" : "§tUlster Protestant§!",
+          "desc" : ""
+        },
+        {
+          "token" : "southern_english",
+          "red" : 218,
+          "green" : 32,
+          "blue" : 218,
+          "name" : "§RSouthern English§!",
+          "desc" : "",
+          "super_culture" : "english"
+        },
+        {
+          "token" : "midland_english",
+          "red" : 187,
+          "green" : 63,
+          "blue" : 187,
+          "name" : "§mMidlander English§!",
+          "desc" : "",
+          "super_culture" : "english"
+        },
+        {
+          "token" : "northern_english",
+          "red" : 196,
+          "green" : 6,
+          "blue" : 196,
+          "name" : "§rNorthern English§!",
+          "desc" : "",
+          "super_culture" : "english"
+        },
+        {
+          "token" : "londoner",
+          "red" : 255,
+          "green" : 86,
+          "blue" : 255,
+          "name" : "§lLondoner§!",
+          "desc" : "",
+          "super_culture" : "english"
+        },
+        {
+          "token" : "southern_welsh",
+          "red" : 219,
+          "green" : 83,
+          "blue" : 219,
+          "name" : "§tSouthern Welsh§!",
+          "desc" : "",
+          "super_culture" : "welsh"
+        },
+        {
+          "token" : "northern_welsh",
+          "red" : 226,
+          "green" : 160,
+          "blue" : 226,
+          "name" : "§9Northern Welsh§!",
+          "desc" : "",
+          "super_culture" : "welsh"
+        },
+        {
+          "token" : "scottish",
+          "red" : 0,
+          "green" : 36,
+          "blue" : 0,
+          "name" : "§BScottish§!",
+          "desc" : ""
+        },
+        {
+          "token" : "israeli",
+          "red" : 127,
+          "green" : 198,
+          "blue" : 127,
+          "name" : "§4Israeli§!",
+          "desc" : ""
+        },
+        {
+          "token" : "palestinian",
+          "red" : 186,
+          "green" : 63,
+          "blue" : 186,
+          "name" : "§FPalestinian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "druze",
+          "red" : 221,
+          "green" : 253,
+          "blue" : 221,
+          "name" : "§WDruze§!",
+          "desc" : ""
+        },
+        {
+          "token" : "northern_italian",
+          "red" : 66,
+          "green" : 203,
+          "blue" : 66,
+          "name" : "§GNorthern Italian§!",
+          "desc" : "",
+          "super_culture" : "italian"
+        },
+        {
+          "token" : "central_italian",
+          "red" : 37,
+          "green" : 153,
+          "blue" : 37,
+          "name" : "§cCentral Italian§!",
+          "desc" : "",
+          "super_culture" : "italian"
+        },
+        {
+          "token" : "southern_italian",
+          "red" : 23,
+          "green" : 96,
+          "blue" : 23,
+          "name" : "§ISouthern Italian§!",
+          "desc" : "",
+          "super_culture" : "italian"
+        },
+        {
+          "token" : "tyrolean",
+          "red" : 205,
+          "green" : 255,
+          "blue" : 205,
+          "name" : "§WTyrolean§!",
+          "desc" : "",
+          "super_culture" : "italian"
+        },
+        {
+          "token" : "swiss_german",
+          "red" : 168,
+          "green" : 16,
+          "blue" : 168,
+          "name" : "§rSwiss German§!",
+          "desc" : "",
+          "super_culture" : "swiss"
+        },
+        {
+          "token" : "swiss_french",
+          "red" : 117,
+          "green" : 5,
+          "blue" : 117,
+          "name" : "§fSwiss French§!",
+          "desc" : "",
+          "super_culture" : "swiss"
+        },
+        {
+          "token" : "swiss_italian",
+          "red" : 136,
+          "green" : 25,
+          "blue" : 136,
+          "name" : "§rSwiss Italian§!",
+          "desc" : "",
+          "super_culture" : "swiss"
+        },
+        {
+          "token" : "austrian",
+          "red" : 210,
+          "green" : 210,
+          "blue" : 210,
+          "name" : "§WAustrian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "east_german",
+          "red" : 112,
+          "green" : 56,
+          "blue" : 112,
+          "name" : "§EEastern German§!",
+          "desc" : "",
+          "super_culture" : "german"
+        },
+        {
+          "token" : "west_german",
+          "red" : 125,
+          "green" : 125,
+          "blue" : 125,
+          "name" : "§gWestern German§!",
+          "desc" : "",
+          "super_culture" : "german"
+        },
+        {
+          "token" : "bavarian",
+          "red" : 11,
+          "green" : 37,
+          "blue" : 11,
+          "name" : "§ABavarian§!",
+          "desc" : "",
+          "super_culture" : "german"
+        },
+        {
+          "token" : "berlinner",
+          "red" : 101,
+          "green" : 39,
+          "blue" : 101,
+          "name" : "§1Berlinner§!",
+          "desc" : "",
+          "super_culture" : "german"
+        },
+        {
+          "token" : "hungarian",
+          "red" : 224,
+          "green" : 133,
+          "blue" : 224,
+          "name" : "§hHungarian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "romanian",
+          "red" : 225,
+          "green" : 194,
+          "blue" : 225,
+          "name" : "§8Romanian§!",
+          "desc" : "",
+          "super_culture" : "romanian"
+        },
+        {
+          "token" : "szekely",
+          "red" : 218,
+          "green" : 152,
+          "blue" : 218,
+          "name" : "§hSzekely§!",
+          "desc" : "",
+          "super_culture" : "romanian"
+        },
+        {
+          "token" : "slovak",
+          "red" : 113,
+          "green" : 113,
+          "blue" : 113,
+          "name" : "§gSlovak§!",
+          "desc" : "",
+          "super_culture" : "slovak"
+        },
+        {
+          "token" : "slovak_hungarian",
+          "red" : 189,
+          "green" : 112,
+          "blue" : 189,
+          "name" : "§hSlovak-Hungarian§!",
+          "desc" : "",
+          "super_culture" : "slovak"
+        },
+        {
+          "token" : "czech",
+          "red" : 65,
+          "green" : 62,
+          "blue" : 65,
+          "name" : "§PCzech§!",
+          "desc" : ""
+        },
+        {
+          "token" : "lithuanian",
+          "red" : 177,
+          "green" : 168,
+          "blue" : 177,
+          "name" : "§8Lithuanian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "latvian",
+          "red" : 126,
+          "green" : 4,
+          "blue" : 126,
+          "name" : "§fLatvian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "estonian",
+          "red" : 6,
+          "green" : 139,
+          "blue" : 6,
+          "name" : "§4Estonian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "baltic_russian",
+          "red" : 22,
+          "green" : 170,
+          "blue" : 22,
+          "name" : "§GBaltic Russian§!",
+          "desc" : "",
+          "super_culture" : "russian"
+        },
+        {
+          "token" : "dutch",
+          "red" : 198,
+          "green" : 135,
+          "blue" : 198,
+          "name" : "§hDutch§!",
+          "desc" : ""
+        },
+        {
+          "token" : "flemish",
+          "red" : 216,
+          "green" : 137,
+          "blue" : 216,
+          "name" : "§hFlemish§!",
+          "desc" : "",
+          "super_culture" : "belgian"
+        },
+        {
+          "token" : "walloon",
+          "red" : 159,
+          "green" : 18,
+          "blue" : 159,
+          "name" : "§rWalloon§!",
+          "desc" : "",
+          "super_culture" : "belgian"
+        },
+        {
+          "token" : "ostbelgisch",
+          "red" : 132,
+          "green" : 105,
+          "blue" : 132,
+          "name" : "§gOstbelgisch§!",
+          "desc" : "",
+          "super_culture" : "belgian"
+        },
+        {
+          "token" : "luxembourgish",
+          "red" : 117,
+          "green" : 196,
+          "blue" : 117,
+          "name" : "§6Luxembourgish§!",
+          "desc" : ""
+        },
+        {
+          "token" : "bulgarian",
+          "red" : 20,
+          "green" : 168,
+          "blue" : 20,
+          "name" : "§cBulgarian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "western_polish",
+          "red" : 186,
+          "green" : 39,
+          "blue" : 186,
+          "name" : "§rWestern Polish§!",
+          "desc" : "",
+          "super_culture" : "polish"
+        },
+        {
+          "token" : "eastern_polish",
+          "red" : 193,
+          "green" : 128,
+          "blue" : 193,
+          "name" : "§mEastern Polish§!",
+          "desc" : "",
+          "super_culture" : "polish"
+        },
+        {
+          "token" : "moldovan",
+          "red" : 228,
+          "green" : 206,
+          "blue" : 228,
+          "name" : "§YMoldovan§!",
+          "desc" : "",
+          "super_culture" : "romanian"
+        },
+        {
+          "token" : "gagauz",
+          "red" : 7,
+          "green" : 63,
+          "blue" : 7,
+          "name" : "§AGagauz§!",
+          "desc" : ""
+        },
+        {
+          "token" : "transnistrian",
+          "red" : 203,
+          "green" : 8,
+          "blue" : 203,
+          "name" : "§RTransnistrian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "outer_mongolian",
+          "red" : 168,
+          "green" : 39,
+          "blue" : 168,
+          "name" : "§0Mongolian§!",
+          "desc" : "",
+          "super_culture" : "mongolian"
+        },
+        {
+          "token" : "taiwanese",
+          "red" : 31,
+          "green" : 66,
+          "blue" : 31,
+          "name" : "§PTaiwanese§!",
+          "desc" : ""
+        },
+        {
+          "token" : "tibetean",
+          "red" : 78,
+          "green" : 31,
+          "blue" : 78,
+          "name" : "§0Tibetean§!",
+          "desc" : ""
+        },
+        {
+          "token" : "uyghur",
+          "red" : 76,
+          "green" : 141,
+          "blue" : 76,
+          "name" : "§3Uyghur§!",
+          "desc" : ""
+        },
+        {
+          "token" : "hui_chinese",
+          "red" : 58,
+          "green" : 32,
+          "blue" : 58,
+          "name" : "§EHui§!",
+          "desc" : "",
+          "super_culture" : "chinese"
+        },
+        {
+          "token" : "inner_mongolian",
+          "red" : 135,
+          "green" : 19,
+          "blue" : 135,
+          "name" : "§EInner Mongolian§!",
+          "desc" : "",
+          "super_culture" : "mongolian"
+        },
+        {
+          "token" : "dongbei",
+          "red" : 200,
+          "green" : 48,
+          "blue" : 200,
+          "name" : "§hDongbei§!",
+          "desc" : "",
+          "super_culture" : "chinese"
+        },
+        {
+          "token" : "xibei",
+          "red" : 168,
+          "green" : 13,
+          "blue" : 168,
+          "name" : "§fXibei§!",
+          "desc" : "",
+          "super_culture" : "chinese"
+        },
+        {
+          "token" : "huabei",
+          "red" : 194,
+          "green" : 21,
+          "blue" : 194,
+          "name" : "§mHuabei§!",
+          "desc" : "",
+          "super_culture" : "chinese"
+        },
+        {
+          "token" : "xinan",
+          "red" : 175,
+          "green" : 13,
+          "blue" : 175,
+          "name" : "§rXinan§!",
+          "desc" : "",
+          "super_culture" : "chinese"
+        },
+        {
+          "token" : "yizu",
+          "red" : 126,
+          "green" : 196,
+          "blue" : 126,
+          "name" : "§7Yi§!",
+          "desc" : "",
+          "super_culture" : "chinese"
+        },
+        {
+          "token" : "hmong",
+          "red" : 115,
+          "green" : 81,
+          "blue" : 115,
+          "name" : "§FHmong§!",
+          "desc" : "",
+          "super_culture" : "chinese"
+        },
+        {
+          "token" : "zhuang",
+          "red" : 255,
+          "green" : 183,
+          "blue" : 255,
+          "name" : "§YZhuang§!",
+          "desc" : "",
+          "super_culture" : "chinese"
+        }
+    ]
+}
