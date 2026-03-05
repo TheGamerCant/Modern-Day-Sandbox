@@ -26,6 +26,25 @@ class Culture:
             f"Green: {self.green}\nBlue: {self.blue}\nSuper Culture: {self.super_culture}\n"
         )
 
+class SuperCulture:
+    def __init__(
+            self,
+            token: str,
+            name: str = "",
+            desc: str = "",
+            red: int = 0,
+            green: int = 0,
+            blue: int = 0,
+            subcultures: list[str] | None = None
+        ):
+        self.token: str = token
+        self.name: str = name
+        self.desc: str = desc
+        self.red: int = red
+        self.green: int = green
+        self.blue: int = blue
+        self.subcultures: list[str] | None = subcultures
+
 def RgbToInteger(red: int, green: int, blue: int) -> int:
     return (red * 256 * 256) + (green * 256) + blue
 
@@ -126,6 +145,52 @@ def LoadCulturesFromJson() -> list[Culture]:
 
     return culture_list
 
+def LoadCulturesFromJson() -> list[Culture]:
+    culture_list: list[Culture] = []
+
+    with open("cultures.json", "r", encoding="utf-8") as json_file:
+        json_data = json.load(json_file)
+
+        for culture in json_data.get("cultures"):
+            culture_list.append(Culture(
+                token = culture.get("token"),
+                red = culture.get("red", 0),
+                green = culture.get("green", 0),
+                blue = culture.get("blue", 0),
+                name = culture.get("name", ""),
+                desc = culture.get("desc", ""),
+                super_culture = culture.get("super_culture", None)
+            ))
+
+    return culture_list
+
+def LoadSuperCulturesFromJson(cultures_list: list[Culture]) -> list[SuperCulture]:
+    super_culture_list: list[SuperCulture] = []
+
+    super_to_sub_dict: dict[str, list[str]] = {}
+    for culture in cultures_list:
+        if culture.super_culture and culture.super_culture != "":
+            if culture.super_culture in super_to_sub_dict:
+                super_to_sub_dict[culture.super_culture].append(culture.token)
+            else:
+                super_to_sub_dict[culture.super_culture] = [culture.token]
+
+    with open("cultures.json", "r", encoding="utf-8") as json_file:
+        json_data = json.load(json_file)
+
+        for super_culture in json_data.get("super_cultures"):
+            super_culture_list.append(SuperCulture(
+                token = super_culture.get("token"),
+                red = super_culture.get("red", 0),
+                green = super_culture.get("green", 0),
+                blue = super_culture.get("blue", 0),
+                name = super_culture.get("name", ""),
+                desc = super_culture.get("desc", ""),
+                subcultures=super_to_sub_dict.get(super_culture.get("token"), None)
+            ))
+
+    return super_culture_list
+
 def main():
     mod_directory: Path = Path.cwd()
     mod_directory = mod_directory.parents[1]
@@ -136,10 +201,18 @@ def main():
     states_folder: Path = mod_directory / "history/states"
 
     cultures_list: list[Culture] = LoadCulturesFromJson()
+    super_cultures_list: list[SuperCulture] = LoadSuperCulturesFromJson(cultures_list)
 
     WriteOnActionsFile(cultures_list, on_actions_file)
     WriteIdeasFile(cultures_list, idea_tokens_file)
     WriteLocalisationFile(cultures_list, localisation_file)
+
+    super_culture_count: int = len(super_cultures_list)
+    super_culture_max_subculture_count: int = max(
+        [len(culture.subcultures) for culture in super_cultures_list]
+    )
+
+    print(super_culture_count, super_culture_max_subculture_count)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,110 @@
 {
+    "super_cultures" : [
+        {
+          "token" : "canadian",
+          "red" : 202,
+          "green" : 60,
+          "blue" : 31,
+          "name" : "§tCanadian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "american",
+          "red" : 51,
+          "green" : 160,
+          "blue" : 255,
+          "name" : "§CAmerican§!",
+          "desc" : ""
+        },
+        {
+          "token" : "irish",
+          "red" : 10,
+          "green" : 137,
+          "blue" : 15,
+          "name" : "§IIrish§!",
+          "desc" : ""
+        },
+        {
+          "token" : "english",
+          "red" : 176,
+          "green" : 46,
+          "blue" : 54,
+          "name" : "§mEnglish§!",
+          "desc" : ""
+        },
+        {
+          "token" : "welsh",
+          "red" : 226,
+          "green" : 160,
+          "blue" : 146,
+          "name" : "§9Welsh§!",
+          "desc" : ""
+        },
+        {
+          "token" : "italian",
+          "red" : 8,
+          "green" : 145,
+          "blue" : 100,
+          "name" : "§cItalian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "swiss",
+          "red" : 178,
+          "green" : 5,
+          "blue" : 5,
+          "name" : "§rSwiss§!",
+          "desc" : ""
+        },
+        {
+          "token" : "german",
+          "red" : 100,
+          "green" : 100,
+          "blue" : 100,
+          "name" : "§gGerman§!",
+          "desc" : ""
+        },
+        {
+          "token" : "hungarian",
+          "red" : 224,
+          "green" : 133,
+          "blue" : 75,
+          "name" : "§hHungarian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "belgian",
+          "red" : 219,
+          "green" : 162,
+          "blue" : 8,
+          "name" : "§YBelgian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "polish",
+          "red" : 194,
+          "green" : 85,
+          "blue" : 85,
+          "name" : "§mPolish§!",
+          "desc" : ""
+        },
+        {
+          "token" : "mongolian",
+          "red" : 151,
+          "green" : 36,
+          "blue" : 104,
+          "name" : "§EMongolian§!",
+          "desc" : ""
+        },
+        {
+          "token" : "mainland_chinese",
+          "red" : 194,
+          "green" : 21,
+          "blue" : 28,
+          "name" : "§rMainland Chinese§!",
+          "desc" : ""
+        }
+    ],
     "cultures": [
         {
           "token" : "other",
@@ -448,7 +554,8 @@
           "green" : 133,
           "blue" : 75,
           "name" : "§hHungarian§!",
-          "desc" : ""
+          "desc" : "",
+          "super_culture" : "hungarian"
         },
         {
           "token" : "romanian",
@@ -456,8 +563,7 @@
           "green" : 194,
           "blue" : 47,
           "name" : "§8Romanian§!",
-          "desc" : "",
-          "super_culture" : "romanian"
+          "desc" : ""
         },
         {
           "token" : "szekely",
@@ -466,7 +572,7 @@
           "blue" : 64,
           "name" : "§hSzekely§!",
           "desc" : "",
-          "super_culture" : "romanian"
+          "super_culture" : "hungarian"
         },
         {
           "token" : "slovak",
@@ -474,8 +580,7 @@
           "green" : 113,
           "blue" : 125,
           "name" : "§gSlovak§!",
-          "desc" : "",
-          "super_culture" : "slovak"
+          "desc" : ""
         },
         {
           "token" : "slovak_hungarian",
@@ -484,7 +589,7 @@
           "blue" : 80,
           "name" : "§hSlovak-Hungarian§!",
           "desc" : "",
-          "super_culture" : "slovak"
+          "super_culture" : "hungarian"
         },
         {
           "token" : "czech",
@@ -524,8 +629,7 @@
           "green" : 170,
           "blue" : 39,
           "name" : "§GBaltic Russian§!",
-          "desc" : "",
-          "super_culture" : "russian"
+          "desc" : ""
         },
         {
           "token" : "dutch",
@@ -602,8 +706,7 @@
           "green" : 206,
           "blue" : 138,
           "name" : "§YMoldovan§!",
-          "desc" : "",
-          "super_culture" : "romanian"
+          "desc" : ""
         },
         {
           "token" : "gagauz",
@@ -660,8 +763,7 @@
           "green" : 32,
           "blue" : 98,
           "name" : "§EHui§!",
-          "desc" : "",
-          "super_culture" : "chinese"
+          "desc" : ""
         },
         {
           "token" : "inner_mongolian",
@@ -679,7 +781,7 @@
           "blue" : 11,
           "name" : "§hDongbei§!",
           "desc" : "",
-          "super_culture" : "chinese"
+          "super_culture" : "mainland_chinese"
         },
         {
           "token" : "xibei",
@@ -688,7 +790,7 @@
           "blue" : 37,
           "name" : "§fXibei§!",
           "desc" : "",
-          "super_culture" : "chinese"
+          "super_culture" : "mainland_chinese"
         },
         {
           "token" : "huabei",
@@ -697,7 +799,7 @@
           "blue" : 28,
           "name" : "§mHuabei§!",
           "desc" : "",
-          "super_culture" : "chinese"
+          "super_culture" : "mainland_chinese"
         },
         {
           "token" : "xinan",
@@ -706,7 +808,7 @@
           "blue" : 0,
           "name" : "§rXinan§!",
           "desc" : "",
-          "super_culture" : "chinese"
+          "super_culture" : "mainland_chinese"
         },
         {
           "token" : "yizu",
@@ -714,8 +816,7 @@
           "green" : 196,
           "blue" : 100,
           "name" : "§7Yi§!",
-          "desc" : "",
-          "super_culture" : "chinese"
+          "desc" : ""
         },
         {
           "token" : "hmong",
@@ -723,8 +824,7 @@
           "green" : 81,
           "blue" : 20,
           "name" : "§FHmong§!",
-          "desc" : "",
-          "super_culture" : "chinese"
+          "desc" : ""
         },
         {
           "token" : "zhuang",
@@ -732,8 +832,7 @@
           "green" : 183,
           "blue" : 30,
           "name" : "§YZhuang§!",
-          "desc" : "",
-          "super_culture" : "chinese"
+          "desc" : ""
         }
     ]
 }
