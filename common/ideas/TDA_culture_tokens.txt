@@ -90,18 +90,6 @@ ideas = {
 		TDA_culture_berlinner_token_idea = {}
 		TDA_culture_berlinner_desc_token_idea = {}
 
-		TDA_culture_dongbei_token_idea = {}
-		TDA_culture_dongbei_desc_token_idea = {}
-
-		TDA_culture_xibei_token_idea = {}
-		TDA_culture_xibei_desc_token_idea = {}
-
-		TDA_culture_huabei_token_idea = {}
-		TDA_culture_huabei_desc_token_idea = {}
-
-		TDA_culture_xinan_token_idea = {}
-		TDA_culture_xinan_desc_token_idea = {}
-
 		TDA_culture_anglo_canadian_token_idea = {}
 		TDA_culture_anglo_canadian_desc_token_idea = {}
 
@@ -116,6 +104,42 @@ ideas = {
 
 		TDA_culture_british_columbian_token_idea = {}
 		TDA_culture_british_columbian_desc_token_idea = {}
+
+		TDA_culture_dongbei_token_idea = {}
+		TDA_culture_dongbei_desc_token_idea = {}
+
+		TDA_culture_xibei_token_idea = {}
+		TDA_culture_xibei_desc_token_idea = {}
+
+		TDA_culture_huabei_token_idea = {}
+		TDA_culture_huabei_desc_token_idea = {}
+
+		TDA_culture_xinan_token_idea = {}
+		TDA_culture_xinan_desc_token_idea = {}
+
+		TDA_culture_yue_token_idea = {}
+		TDA_culture_yue_desc_token_idea = {}
+
+		TDA_culture_min_token_idea = {}
+		TDA_culture_min_desc_token_idea = {}
+
+		TDA_culture_hakka_token_idea = {}
+		TDA_culture_hakka_desc_token_idea = {}
+
+		TDA_culture_wu_token_idea = {}
+		TDA_culture_wu_desc_token_idea = {}
+
+		TDA_culture_xiang_token_idea = {}
+		TDA_culture_xiang_desc_token_idea = {}
+
+		TDA_culture_gan_token_idea = {}
+		TDA_culture_gan_desc_token_idea = {}
+
+		TDA_culture_zhongnan_token_idea = {}
+		TDA_culture_zhongnan_desc_token_idea = {}
+
+		TDA_culture_huadong_token_idea = {}
+		TDA_culture_huadong_desc_token_idea = {}
 
 		TDA_culture_new_englander_token_idea = {}
 		TDA_culture_new_englander_desc_token_idea = {}
@@ -261,6 +285,9 @@ ideas = {
 		TDA_culture_bouyei_token_idea = {}
 		TDA_culture_bouyei_desc_token_idea = {}
 
+		TDA_culture_hlai_token_idea = {}
+		TDA_culture_hlai_desc_token_idea = {}
+
 		TDA_super_culture_irish_token_idea = {}
 		TDA_super_culture_irish_desc_token_idea = {}
 
@@ -291,11 +318,11 @@ ideas = {
 		TDA_super_culture_german_token_idea = {}
 		TDA_super_culture_german_desc_token_idea = {}
 
-		TDA_super_culture_mainland_chinese_token_idea = {}
-		TDA_super_culture_mainland_chinese_desc_token_idea = {}
-
 		TDA_super_culture_canadian_token_idea = {}
 		TDA_super_culture_canadian_desc_token_idea = {}
+
+		TDA_super_culture_mainland_chinese_token_idea = {}
+		TDA_super_culture_mainland_chinese_desc_token_idea = {}
 
 		TDA_super_culture_american_token_idea = {}
 		TDA_super_culture_american_desc_token_idea = {}

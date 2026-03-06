@@ -776,9 +776,9 @@
         },
         {
           "token" : "dongbei",
-          "red" : 200,
-          "green" : 48,
-          "blue" : 11,
+          "red" : 211,
+          "green" : 52,
+          "blue" : 13,
           "name" : "§hDongbei§!",
           "desc" : "",
           "super_culture" : "mainland_chinese"
@@ -866,6 +866,77 @@
           "name" : "§5Yue§!",
           "desc" : "",
 		  "super_culture" : "mainland_chinese"
+        },
+        {
+          "token" : "min",
+          "red" : 74,
+          "green" : 11,
+          "blue" : 83,
+          "name" : "§MMinnan§!",
+          "desc" : "",
+		  "super_culture" : "mainland_chinese"
+        },
+        {
+          "token" : "hakka",
+          "red" : 216,
+          "green" : 52,
+          "blue" : 52,
+          "name" : "§tHakka§!",
+          "desc" : "",
+		  "super_culture" : "mainland_chinese"
+        },
+        {
+          "token" : "wu",
+          "red" : 155,
+          "green" : 20,
+          "blue" : 56,
+          "name" : "§fWu§!",
+          "desc" : "",
+		  "super_culture" : "mainland_chinese"
+        },
+        {
+          "token" : "xiang",
+          "red" : 165,
+          "green" : 75,
+          "blue" : 30,
+          "name" : "§FXiang§!",
+          "desc" : "",
+		  "super_culture" : "mainland_chinese"
+        },
+        {
+          "token" : "gan",
+          "red" : 190,
+          "green" : 51,
+          "blue" : 144,
+          "name" : "§lGan§!",
+          "desc" : "",
+		  "super_culture" : "mainland_chinese"
+        },
+        {
+          "token" : "zhongnan",
+          "red" : 180,
+          "green" : 51,
+          "blue" : 97,
+          "name" : "§mZhongnan§!",
+          "desc" : "",
+		  "super_culture" : "mainland_chinese"
+        },
+        {
+          "token" : "huadong",
+          "red" : 143,
+          "green" : 8,
+          "blue" : 2,
+          "name" : "§rHuadong§!",
+          "desc" : "",
+		  "super_culture" : "mainland_chinese"
+        },
+        {
+          "token" : "hlai",
+          "red" : 130,
+          "green" : 232,
+          "blue" : 81,
+          "name" : "§7Hlai§!",
+          "desc" : ""
         }
     ]
 }

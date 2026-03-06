@@ -135,6 +135,7 @@ bitmapfonts = {
 		f = { 117 5 28 }			# Burgundy / Swiss French
 		E = { 112 56 78 }			# Light Burgundy / East German
 		h = { 224 133 75 }			# Pinky-Orange / Hungarian
+		M = { 74 11 33 }			# Dark Purple / Min
 	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac
