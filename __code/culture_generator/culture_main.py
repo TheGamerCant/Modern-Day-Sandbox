@@ -3,6 +3,7 @@ import math
 from pathlib import Path
 from typing import Any
 import re
+from time import perf_counter
 
 class Culture:
     def __init__(
@@ -91,8 +92,8 @@ def WriteOnActionsFile(
 
         for super_culture in super_cultures_list:
             f.write(
-                f"set_variable = {{  global.super_culture_names_array^{super_culture.index} = token:TDA_culture_{super_culture.token}_token_idea }}\n\t\t\t"
-                f"set_variable = {{   global.super_culture_desc_array^{super_culture.index} = token:TDA_culture_{super_culture.token}_desc_token_idea }}\n\t\t\t"
+                f"set_variable = {{  global.super_culture_names_array^{super_culture.index} = token:TDA_super_culture_{super_culture.token}_token_idea }}\n\t\t\t"
+                f"set_variable = {{   global.super_culture_desc_array^{super_culture.index} = token:TDA_super_culture_{super_culture.token}_desc_token_idea }}\n\t\t\t"
                 f"#{super_culture.red}, {super_culture.green}, {super_culture.blue}\n\t\t\t"
                 f"set_variable = {{ global.super_culture_colour_array^{super_culture.index} = {RgbToInteger(super_culture.red, super_culture.green, super_culture.blue)} }}\n\n\t\t\t"
             )
@@ -347,6 +348,8 @@ def UpdateStateFiles(cultures_list: list[Culture], states_folder: Path) -> None:
             f.write(text)
 
 def main():
+    time_start: float = perf_counter()
+
     mod_directory: Path = Path.cwd()
     mod_directory = mod_directory.parents[1]
 
@@ -372,6 +375,9 @@ def main():
     WriteLocalisationFile(cultures_list, super_cultures_list, localisation_file)
 
     UpdateStateFiles(cultures_list, states_folder)
+
+    time_taken: float = perf_counter()- time_start
+    print(f"Time taken: {time_taken:.3}s")
 
 
 if __name__ == "__main__":
