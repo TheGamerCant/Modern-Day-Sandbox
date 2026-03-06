@@ -833,6 +833,39 @@
           "blue" : 30,
           "name" : "§YZhuang§!",
           "desc" : ""
+        },
+        {
+          "token" : "hong_konger",
+          "red" : 192,
+          "green" : 23,
+          "blue" : 21,
+          "name" : "§rHong Konger§!",
+          "desc" : ""
+        },
+        {
+          "token" : "tujia",
+          "red" : 22,
+          "green" : 153,
+          "blue" : 70,
+          "name" : "§cTujia§!",
+          "desc" : ""
+        },
+        {
+          "token" : "bouyei",
+          "red" : 18,
+          "green" : 105,
+          "blue" : 181,
+          "name" : "§eBouyei§!",
+          "desc" : ""
+        },
+        {
+          "token" : "yue",
+          "red" : 22,
+          "green" : 162,
+          "blue" : 173,
+          "name" : "§5Yue§!",
+          "desc" : "",
+		  "super_culture" : "mainland_chinese"
         }
     ]
 }

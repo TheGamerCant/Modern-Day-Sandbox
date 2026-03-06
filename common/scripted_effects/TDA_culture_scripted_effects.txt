@@ -400,3 +400,83 @@ STATE_sort_culture_quicksort = {
 	clear_variable = qs_partition_return
 	clear_variable = random_pivot
 }
+
+#Accept the variable "culture_index", return the variable "super_culture_index"
+ANY_get_super_culture_from_culture = {
+	set_variable = { tmp = culture_index }
+	subtract_from_variable = { tmp = 1 }
+	divide_variable = { tmp = global.culture_bucket_size }
+	divide_variable = { tmp = 100000 }
+	multiply_variable = { tmp = 100000 }
+	
+	#Work out what rank of the triangle number the divisor is on
+	set_variable = { triangle = tmp }
+	divide_variable = { triangle = global.culture_largest_bucket }
+	divide_variable = { triangle = 100000 }
+	multiply_variable = { triangle = 100000 }
+	
+	set_variable = { end = 1 }
+	set_variable = { level = 1 }
+	
+	while_loop_effect = {
+		limit = {
+			check_variable = { end < triangle }
+		}
+		
+		add_to_variable = { level = 1 }
+		add_to_variable = { end = level }
+	}
+	
+	if = {
+		limit = { check_variable = { level = 1 } }
+		set_variable = { super_culture_index = tmp }
+	}
+	else = {
+		set_variable = { super_culture_index = 0 }
+		for_loop_effect = {
+			start = 1
+			end = level
+			value = v
+			
+			set_temp_variable = { t = global.culture_largest_bucket }
+			multiply_temp_variable = { t = v }
+			
+			add_to_variable = { super_culture_index = t }
+		}
+		#log="[?sub] - [?tmp] - [?triangle]"
+		
+		set_temp_variable = { sub = tmp }
+		subtract_from_temp_variable = { sub = super_culture_index }
+		divide_temp_variable = { sub = triangle }
+		divide_temp_variable = { sub = 100000 }
+		multiply_temp_variable = { sub = 100000 }
+		add_to_variable = { super_culture_index = sub }
+	}
+	
+	clear_variable = tmp
+	clear_variable = triangle
+	clear_variable = end
+	clear_variable = level
+}
+
+#Get first index of a super culture, take in variable "super_culture_index" and return "culture_index"
+ANY_get_culture_from_super_culture = {	
+	set_variable = { culture_index = 1 }
+	if = {
+		limit = { check_variable = { super_culture_index > 0 } }
+		
+		for_loop_effect = {
+			value = v
+			end = super_culture_index
+			
+			set_temp_variable = { t = v }
+			divide_temp_variable = { t = global.culture_largest_bucket }
+			divide_temp_variable = { t = 100000 }
+			multiply_temp_variable = { t = 100000 }
+			add_to_temp_variable = { t = 1 }
+			multiply_temp_variable = { t = global.culture_bucket_size }
+				
+			add_to_variable = { culture_index = t }
+		}
+	}
+}

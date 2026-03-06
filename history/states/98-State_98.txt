@@ -13,10 +13,10 @@ state={
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }
 		
-		set_variable = { culture_index_array^0 = 67 }
+		set_variable = { culture_index_array^0 = 20 }
 		set_variable = { culture_value_array^0 = 62.0 }
 		
-		set_variable = { culture_index_array^1 = 66 }
+		set_variable = { culture_index_array^1 = 19 }
 		set_variable = { culture_value_array^1 = 38.0 }
 		
 		set_variable = { sq_km = 22143.48 }

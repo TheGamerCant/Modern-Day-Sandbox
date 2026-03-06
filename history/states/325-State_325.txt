@@ -24,17 +24,20 @@ state={
 		resize_array = { array = culture_index_array size = 4 value = 0 }
 		resize_array = { array = culture_value_array size = 4 value = 0 }
 		
-		set_variable = { culture_index_array^0 = 80 }
-		set_variable = { culture_value_array^0 = 72.2 }
+		set_variable = { culture_index_array^0 = 94 }
+		set_variable = { culture_value_array^0 = 66.9 }
 		
 		set_variable = { culture_index_array^1 = 0 }
-		set_variable = { culture_value_array^1 = 14.5 }
+		set_variable = { culture_value_array^1 = 17.1 }
 		
-		set_variable = { culture_index_array^2 = 81 }
+		set_variable = { culture_index_array^2 = 151 }
 		set_variable = { culture_value_array^2 = 10.7 }
 		
-		set_variable = { culture_index_array^3 = 83 }
-		set_variable = { culture_value_array^3 = 2.6 }
+		set_variable = { culture_index_array^3 = 152 }
+		set_variable = { culture_value_array^3 = 2.7 }
+		
+		set_variable = { culture_index_array^4 = 153 }
+		set_variable = { culture_value_array^4 = 2.6 }
 		
 		set_variable = { sq_km = 383195 }
 		
