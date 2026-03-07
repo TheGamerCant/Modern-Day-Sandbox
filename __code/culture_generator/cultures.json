@@ -5,7 +5,8 @@
           "red" : 202,
           "green" : 60,
           "blue" : 31,
-          "name" : "§tCanadian§!",
+          "colour" : "t",
+		  "name" : "Canadian",
           "desc" : ""
         },
         {
@@ -13,7 +14,8 @@
           "red" : 51,
           "green" : 160,
           "blue" : 255,
-          "name" : "§CAmerican§!",
+          "colour" : "C",
+		  "name" : "American",
           "desc" : ""
         },
         {
@@ -21,7 +23,8 @@
           "red" : 10,
           "green" : 137,
           "blue" : 15,
-          "name" : "§IIrish§!",
+          "colour" : "I",
+		  "name" : "Irish",
           "desc" : ""
         },
         {
@@ -29,7 +32,8 @@
           "red" : 176,
           "green" : 46,
           "blue" : 54,
-          "name" : "§mEnglish§!",
+          "colour" : "m",
+		  "name" : "English",
           "desc" : ""
         },
         {
@@ -37,7 +41,8 @@
           "red" : 226,
           "green" : 160,
           "blue" : 146,
-          "name" : "§9Welsh§!",
+          "colour" : "9",
+		  "name" : "Welsh",
           "desc" : ""
         },
         {
@@ -45,7 +50,8 @@
           "red" : 8,
           "green" : 145,
           "blue" : 100,
-          "name" : "§cItalian§!",
+          "colour" : "c",
+		  "name" : "Italian",
           "desc" : ""
         },
         {
@@ -53,7 +59,8 @@
           "red" : 178,
           "green" : 5,
           "blue" : 5,
-          "name" : "§rSwiss§!",
+          "colour" : "r",
+		  "name" : "Swiss",
           "desc" : ""
         },
         {
@@ -61,7 +68,8 @@
           "red" : 100,
           "green" : 100,
           "blue" : 100,
-          "name" : "§gGerman§!",
+          "colour" : "g",
+		  "name" : "German",
           "desc" : ""
         },
         {
@@ -69,7 +77,8 @@
           "red" : 224,
           "green" : 133,
           "blue" : 75,
-          "name" : "§hHungarian§!",
+          "colour" : "h",
+		  "name" : "Hungarian",
           "desc" : ""
         },
         {
@@ -77,7 +86,8 @@
           "red" : 219,
           "green" : 162,
           "blue" : 8,
-          "name" : "§YBelgian§!",
+          "colour" : "Y",
+		  "name" : "Belgian",
           "desc" : ""
         },
         {
@@ -85,7 +95,8 @@
           "red" : 194,
           "green" : 85,
           "blue" : 85,
-          "name" : "§mPolish§!",
+          "colour" : "m",
+		  "name" : "Polish",
           "desc" : ""
         },
         {
@@ -93,7 +104,8 @@
           "red" : 151,
           "green" : 36,
           "blue" : 104,
-          "name" : "§EMongolian§!",
+          "colour" : "E",
+		  "name" : "Mongolian",
           "desc" : ""
         },
         {
@@ -101,7 +113,8 @@
           "red" : 194,
           "green" : 21,
           "blue" : 28,
-          "name" : "§rMainland Chinese§!",
+          "colour" : "r",
+		  "name" : "Mainland Chinese",
           "desc" : ""
         }
     ],
@@ -111,7 +124,8 @@
           "red" : 100,
           "green" : 100,
           "blue" : 100,
-          "name" : "§gOther§!",
+          "colour" : "g",
+		  "name" : "Other",
           "desc" : ""
         },
         {
@@ -119,7 +133,8 @@
           "red" : 150,
           "green" : 97,
           "blue" : 55,
-          "name" : "§FNative North American§!",
+          "colour" : "F",
+		  "name" : "Native North American",
           "desc" : ""
         },
         {
@@ -127,7 +142,8 @@
           "red" : 225,
           "green" : 0,
           "blue" : 0,
-          "name" : "§RAnglo-Canadian§!",
+          "colour" : "R",
+		  "name" : "Anglo-Canadian",
           "desc" : "",
           "super_culture" : "canadian"
         },
@@ -136,7 +152,8 @@
           "red" : 0,
           "green" : 0,
           "blue" : 180,
-          "name" : "§BFrench-Canadian§!",
+          "colour" : "B",
+		  "name" : "French-Canadian",
           "desc" : "",
           "super_culture" : "canadian"
         },
@@ -145,7 +162,8 @@
           "red" : 242,
           "green" : 50,
           "blue" : 52,
-          "name" : "§tAtlantic Canadian§!",
+          "colour" : "t",
+		  "name" : "Atlantic Canadian",
           "desc" : "",
           "super_culture" : "canadian"
         },
@@ -154,7 +172,8 @@
           "red" : 194,
           "green" : 39,
           "blue" : 4,
-          "name" : "§rPrairie Canadian§!",
+          "colour" : "r",
+		  "name" : "Prairie Canadian",
           "desc" : "",
           "super_culture" : "canadian"
         },
@@ -163,7 +182,8 @@
           "red" : 228,
           "green" : 33,
           "blue" : 0,
-          "name" : "§tBritish Columbian§!",
+          "colour" : "t",
+		  "name" : "British Columbian",
           "desc" : "",
           "super_culture" : "canadian"
         },
@@ -172,7 +192,8 @@
           "red" : 17,
           "green" : 105,
           "blue" : 184,
-          "name" : "§2New Englander§!",
+          "colour" : "2",
+		  "name" : "New Englander",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -181,7 +202,8 @@
           "red" : 8,
           "green" : 62,
           "blue" : 119,
-          "name" : "§AAlaskan§!",
+          "colour" : "A",
+		  "name" : "Alaskan",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -190,7 +212,8 @@
           "red" : 63,
           "green" : 51,
           "blue" : 205,
-          "name" : "§PPacific North-Western§!",
+          "colour" : "P",
+		  "name" : "Pacific North-Western",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -199,7 +222,8 @@
           "red" : 0,
           "green" : 101,
           "blue" : 163,
-          "name" : "§AUtahan§!",
+          "colour" : "A",
+		  "name" : "Utahan",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -208,7 +232,8 @@
           "red" : 0,
           "green" : 24,
           "blue" : 225,
-          "name" : "§BNew Yorker§!",
+          "colour" : "B",
+		  "name" : "New Yorker",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -217,7 +242,8 @@
           "red" : 35,
           "green" : 62,
           "blue" : 211,
-          "name" : "§4South-Western§!",
+          "colour" : "4",
+		  "name" : "South-Western",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -226,7 +252,8 @@
           "red" : 0,
           "green" : 163,
           "blue" : 255,
-          "name" : "§4Californian§!",
+          "colour" : "4",
+		  "name" : "Californian",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -235,7 +262,8 @@
           "red" : 62,
           "green" : 41,
           "blue" : 174,
-          "name" : "§1Texan§!",
+          "colour" : "1",
+		  "name" : "Texan",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -244,7 +272,8 @@
           "red" : 45,
           "green" : 85,
           "blue" : 112,
-          "name" : "§dDeep Southern§!",
+          "colour" : "d",
+		  "name" : "Deep Southern",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -253,7 +282,8 @@
           "red" : 62,
           "green" : 145,
           "blue" : 190,
-          "name" : "§CFloridan§!",
+          "colour" : "C",
+		  "name" : "Floridan",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -262,7 +292,8 @@
           "red" : 0,
           "green" : 47,
           "blue" : 159,
-          "name" : "§ANorthern Rockies§!",
+          "colour" : "A",
+		  "name" : "Northern Rockies",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -271,7 +302,8 @@
           "red" : 59,
           "green" : 113,
           "blue" : 220,
-          "name" : "§2Atlantic Southern§!",
+          "colour" : "2",
+		  "name" : "Atlantic Southern",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -280,7 +312,8 @@
           "red" : 136,
           "green" : 167,
           "blue" : 223,
-          "name" : "§4Great Plains§!",
+          "colour" : "4",
+		  "name" : "Great Plains",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -289,7 +322,8 @@
           "red" : 62,
           "green" : 128,
           "blue" : 213,
-          "name" : "§2Midwestern§!",
+          "colour" : "2",
+		  "name" : "Midwestern",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -298,7 +332,8 @@
           "red" : 24,
           "green" : 41,
           "blue" : 140,
-          "name" : "§ARustbelt§!",
+          "colour" : "A",
+		  "name" : "Rustbelt",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -307,7 +342,8 @@
           "red" : 16,
           "green" : 89,
           "blue" : 220,
-          "name" : "§eEast Coast§!",
+          "colour" : "e",
+		  "name" : "East Coast",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -316,7 +352,8 @@
           "red" : 64,
           "green" : 90,
           "blue" : 140,
-          "name" : "§dSouthern§!",
+          "colour" : "d",
+		  "name" : "Southern",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -325,7 +362,8 @@
           "red" : 138,
           "green" : 21,
           "blue" : 21,
-          "name" : "§FPuerto Rican§!",
+          "colour" : "F",
+		  "name" : "Puerto Rican",
           "desc" : "",
           "super_culture" : "american"
         },
@@ -334,7 +372,8 @@
           "red" : 3,
           "green" : 76,
           "blue" : 19,
-          "name" : "§IIrish§!",
+          "colour" : "I",
+		  "name" : "Irish",
           "desc" : "",
           "super_culture" : "irish"
         },
@@ -343,7 +382,8 @@
           "red" : 30,
           "green" : 133,
           "blue" : 7,
-          "name" : "§GNorthern Irish Catholic§!",
+          "colour" : "G",
+		  "name" : "Northern Irish Catholic",
           "desc" : "",
           "super_culture" : "irish"
         },
@@ -352,7 +392,8 @@
           "red" : 239,
           "green" : 66,
           "blue" : 68,
-          "name" : "§tUlster Protestant§!",
+          "colour" : "t",
+		  "name" : "Ulster Protestant",
           "desc" : ""
         },
         {
@@ -360,7 +401,8 @@
           "red" : 218,
           "green" : 32,
           "blue" : 32,
-          "name" : "§RSouthern English§!",
+          "colour" : "R",
+		  "name" : "Southern English",
           "desc" : "",
           "super_culture" : "english"
         },
@@ -369,7 +411,8 @@
           "red" : 187,
           "green" : 63,
           "blue" : 63,
-          "name" : "§mMidlander English§!",
+          "colour" : "m",
+		  "name" : "Midlander English",
           "desc" : "",
           "super_culture" : "english"
         },
@@ -378,7 +421,8 @@
           "red" : 196,
           "green" : 6,
           "blue" : 17,
-          "name" : "§rNorthern English§!",
+          "colour" : "r",
+		  "name" : "Northern English",
           "desc" : "",
           "super_culture" : "english"
         },
@@ -387,7 +431,8 @@
           "red" : 255,
           "green" : 86,
           "blue" : 137,
-          "name" : "§lLondoner§!",
+          "colour" : "l",
+		  "name" : "Londoner",
           "desc" : "",
           "super_culture" : "english"
         },
@@ -396,7 +441,8 @@
           "red" : 219,
           "green" : 83,
           "blue" : 53,
-          "name" : "§tSouthern Welsh§!",
+          "colour" : "t",
+		  "name" : "Southern Welsh",
           "desc" : "",
           "super_culture" : "welsh"
         },
@@ -405,7 +451,8 @@
           "red" : 226,
           "green" : 160,
           "blue" : 146,
-          "name" : "§9Northern Welsh§!",
+          "colour" : "9",
+		  "name" : "Northern Welsh",
           "desc" : "",
           "super_culture" : "welsh"
         },
@@ -414,7 +461,8 @@
           "red" : 0,
           "green" : 36,
           "blue" : 148,
-          "name" : "§BScottish§!",
+          "colour" : "B",
+		  "name" : "Scottish",
           "desc" : ""
         },
         {
@@ -422,7 +470,8 @@
           "red" : 127,
           "green" : 198,
           "blue" : 230,
-          "name" : "§4Israeli§!",
+          "colour" : "4",
+		  "name" : "Israeli",
           "desc" : ""
         },
         {
@@ -430,7 +479,8 @@
           "red" : 186,
           "green" : 63,
           "blue" : 10,
-          "name" : "§FPalestinian§!",
+          "colour" : "F",
+		  "name" : "Palestinian",
           "desc" : ""
         },
         {
@@ -438,7 +488,8 @@
           "red" : 221,
           "green" : 253,
           "blue" : 232,
-          "name" : "§WDruze§!",
+          "colour" : "W",
+		  "name" : "Druze",
           "desc" : ""
         },
         {
@@ -446,7 +497,8 @@
           "red" : 66,
           "green" : 203,
           "blue" : 42,
-          "name" : "§GNorthern Italian§!",
+          "colour" : "G",
+		  "name" : "Northern Italian",
           "desc" : "",
           "super_culture" : "italian"
         },
@@ -455,7 +507,8 @@
           "red" : 37,
           "green" : 153,
           "blue" : 66,
-          "name" : "§cCentral Italian§!",
+          "colour" : "c",
+		  "name" : "Central Italian",
           "desc" : "",
           "super_culture" : "italian"
         },
@@ -464,7 +517,8 @@
           "red" : 23,
           "green" : 96,
           "blue" : 20,
-          "name" : "§ISouthern Italian§!",
+          "colour" : "I",
+		  "name" : "Southern Italian",
           "desc" : "",
           "super_culture" : "italian"
         },
@@ -473,7 +527,8 @@
           "red" : 205,
           "green" : 255,
           "blue" : 234,
-          "name" : "§WTyrolean§!",
+          "colour" : "W",
+		  "name" : "Tyrolean",
           "desc" : "",
           "super_culture" : "italian"
         },
@@ -482,7 +537,8 @@
           "red" : 168,
           "green" : 16,
           "blue" : 16,
-          "name" : "§rSwiss German§!",
+          "colour" : "r",
+		  "name" : "Swiss German",
           "desc" : "",
           "super_culture" : "swiss"
         },
@@ -491,16 +547,18 @@
           "red" : 117,
           "green" : 5,
           "blue" : 28,
-          "name" : "§fSwiss French§!",
+          "colour" : "f",
+		  "name" : "Swiss French",
           "desc" : "",
           "super_culture" : "swiss"
         },
         {
           "token" : "swiss_italian",
           "red" : 136,
-          "green" : 25,
+          "green" : 28,
           "blue" : 4,
-          "name" : "§rSwiss Italian§!",
+          "colour" : "r",
+		  "name" : "Swiss Italian",
           "desc" : "",
           "super_culture" : "swiss"
         },
@@ -509,7 +567,8 @@
           "red" : 210,
           "green" : 210,
           "blue" : 210,
-          "name" : "§WAustrian§!",
+          "colour" : "W",
+		  "name" : "Austrian",
           "desc" : ""
         },
         {
@@ -517,7 +576,8 @@
           "red" : 112,
           "green" : 56,
           "blue" : 78,
-          "name" : "§EEastern German§!",
+          "colour" : "E",
+		  "name" : "Eastern German",
           "desc" : "",
           "super_culture" : "german"
         },
@@ -526,7 +586,8 @@
           "red" : 125,
           "green" : 125,
           "blue" : 142,
-          "name" : "§gWestern German§!",
+          "colour" : "g",
+		  "name" : "Western German",
           "desc" : "",
           "super_culture" : "german"
         },
@@ -535,7 +596,8 @@
           "red" : 11,
           "green" : 37,
           "blue" : 70,
-          "name" : "§ABavarian§!",
+          "colour" : "A",
+		  "name" : "Bavarian",
           "desc" : "",
           "super_culture" : "german"
         },
@@ -544,7 +606,8 @@
           "red" : 101,
           "green" : 39,
           "blue" : 105,
-          "name" : "§1Berlinner§!",
+          "colour" : "1",
+		  "name" : "Berlinner",
           "desc" : "",
           "super_culture" : "german"
         },
@@ -553,7 +616,8 @@
           "red" : 224,
           "green" : 133,
           "blue" : 75,
-          "name" : "§hHungarian§!",
+          "colour" : "h",
+		  "name" : "Hungarian",
           "desc" : "",
           "super_culture" : "hungarian"
         },
@@ -562,7 +626,8 @@
           "red" : 225,
           "green" : 194,
           "blue" : 47,
-          "name" : "§8Romanian§!",
+          "colour" : "8",
+		  "name" : "Romanian",
           "desc" : ""
         },
         {
@@ -570,7 +635,8 @@
           "red" : 218,
           "green" : 152,
           "blue" : 64,
-          "name" : "§hSzekely§!",
+          "colour" : "h",
+		  "name" : "Szekely",
           "desc" : "",
           "super_culture" : "hungarian"
         },
@@ -579,7 +645,8 @@
           "red" : 113,
           "green" : 113,
           "blue" : 125,
-          "name" : "§gSlovak§!",
+          "colour" : "g",
+		  "name" : "Slovak",
           "desc" : ""
         },
         {
@@ -587,7 +654,8 @@
           "red" : 189,
           "green" : 112,
           "blue" : 80,
-          "name" : "§hSlovak-Hungarian§!",
+          "colour" : "h",
+		  "name" : "Slovak-Hungarian",
           "desc" : "",
           "super_culture" : "hungarian"
         },
@@ -596,7 +664,8 @@
           "red" : 65,
           "green" : 62,
           "blue" : 222,
-          "name" : "§PCzech§!",
+          "colour" : "P",
+		  "name" : "Czech",
           "desc" : ""
         },
         {
@@ -604,7 +673,8 @@
           "red" : 177,
           "green" : 168,
           "blue" : 6,
-          "name" : "§8Lithuanian§!",
+          "colour" : "8",
+		  "name" : "Lithuanian",
           "desc" : ""
         },
         {
@@ -612,7 +682,8 @@
           "red" : 126,
           "green" : 4,
           "blue" : 58,
-          "name" : "§fLatvian§!",
+          "colour" : "f",
+		  "name" : "Latvian",
           "desc" : ""
         },
         {
@@ -620,7 +691,8 @@
           "red" : 6,
           "green" : 139,
           "blue" : 179,
-          "name" : "§4Estonian§!",
+          "colour" : "4",
+		  "name" : "Estonian",
           "desc" : ""
         },
         {
@@ -628,7 +700,8 @@
           "red" : 22,
           "green" : 170,
           "blue" : 39,
-          "name" : "§GBaltic Russian§!",
+          "colour" : "G",
+		  "name" : "Baltic Russian",
           "desc" : ""
         },
         {
@@ -636,7 +709,8 @@
           "red" : 198,
           "green" : 135,
           "blue" : 87,
-          "name" : "§hDutch§!",
+          "colour" : "h",
+		  "name" : "Dutch",
           "desc" : ""
         },
         {
@@ -644,7 +718,8 @@
           "red" : 216,
           "green" : 137,
           "blue" : 42,
-          "name" : "§hFlemish§!",
+          "colour" : "h",
+		  "name" : "Flemish",
           "desc" : "",
           "super_culture" : "belgian"
         },
@@ -653,7 +728,8 @@
           "red" : 159,
           "green" : 18,
           "blue" : 18,
-          "name" : "§rWalloon§!",
+          "colour" : "r",
+		  "name" : "Walloon",
           "desc" : "",
           "super_culture" : "belgian"
         },
@@ -662,7 +738,8 @@
           "red" : 132,
           "green" : 105,
           "blue" : 105,
-          "name" : "§gOstbelgisch§!",
+          "colour" : "g",
+		  "name" : "Ostbelgisch",
           "desc" : "",
           "super_culture" : "belgian"
         },
@@ -671,7 +748,8 @@
           "red" : 117,
           "green" : 196,
           "blue" : 188,
-          "name" : "§6Luxembourgish§!",
+          "colour" : "6",
+		  "name" : "Luxembourgish",
           "desc" : ""
         },
         {
@@ -679,7 +757,8 @@
           "red" : 20,
           "green" : 168,
           "blue" : 101,
-          "name" : "§cBulgarian§!",
+          "colour" : "c",
+		  "name" : "Bulgarian",
           "desc" : ""
         },
         {
@@ -687,7 +766,8 @@
           "red" : 186,
           "green" : 39,
           "blue" : 28,
-          "name" : "§rWestern Polish§!",
+          "colour" : "r",
+		  "name" : "Western Polish",
           "desc" : "",
           "super_culture" : "polish"
         },
@@ -696,7 +776,8 @@
           "red" : 193,
           "green" : 128,
           "blue" : 128,
-          "name" : "§mEastern Polish§!",
+          "colour" : "m",
+		  "name" : "Eastern Polish",
           "desc" : "",
           "super_culture" : "polish"
         },
@@ -705,7 +786,8 @@
           "red" : 228,
           "green" : 206,
           "blue" : 138,
-          "name" : "§YMoldovan§!",
+          "colour" : "Y",
+		  "name" : "Moldovan",
           "desc" : ""
         },
         {
@@ -713,7 +795,8 @@
           "red" : 7,
           "green" : 63,
           "blue" : 125,
-          "name" : "§AGagauz§!",
+          "colour" : "A",
+		  "name" : "Gagauz",
           "desc" : ""
         },
         {
@@ -721,7 +804,8 @@
           "red" : 203,
           "green" : 8,
           "blue" : 12,
-          "name" : "§RTransnistrian§!",
+          "colour" : "R",
+		  "name" : "Transnistrian",
           "desc" : ""
         },
         {
@@ -729,7 +813,8 @@
           "red" : 168,
           "green" : 39,
           "blue" : 119,
-          "name" : "§0Mongolian§!",
+          "colour" : "0",
+		  "name" : "Mongolian",
           "desc" : "",
           "super_culture" : "mongolian"
         },
@@ -738,7 +823,8 @@
           "red" : 31,
           "green" : 66,
           "blue" : 177,
-          "name" : "§PTaiwanese§!",
+          "colour" : "P",
+		  "name" : "Taiwanese",
           "desc" : ""
         },
         {
@@ -746,7 +832,8 @@
           "red" : 78,
           "green" : 31,
           "blue" : 138,
-          "name" : "§0Tibetean§!",
+          "colour" : "0",
+		  "name" : "Tibetean",
           "desc" : ""
         },
         {
@@ -754,7 +841,8 @@
           "red" : 76,
           "green" : 141,
           "blue" : 199,
-          "name" : "§3Uyghur§!",
+          "colour" : "3",
+		  "name" : "Uyghur",
           "desc" : ""
         },
         {
@@ -762,7 +850,8 @@
           "red" : 58,
           "green" : 32,
           "blue" : 98,
-          "name" : "§EHui§!",
+          "colour" : "E",
+		  "name" : "Hui",
           "desc" : ""
         },
         {
@@ -770,7 +859,8 @@
           "red" : 135,
           "green" : 19,
           "blue" : 65,
-          "name" : "§EInner Mongolian§!",
+          "colour" : "E",
+		  "name" : "Inner Mongolian",
           "desc" : "",
           "super_culture" : "mongolian"
         },
@@ -779,7 +869,8 @@
           "red" : 211,
           "green" : 52,
           "blue" : 13,
-          "name" : "§hDongbei§!",
+          "colour" : "h",
+		  "name" : "Dongbei",
           "desc" : "",
           "super_culture" : "mainland_chinese"
         },
@@ -788,7 +879,8 @@
           "red" : 168,
           "green" : 13,
           "blue" : 37,
-          "name" : "§fXibei§!",
+          "colour" : "f",
+		  "name" : "Xibei",
           "desc" : "",
           "super_culture" : "mainland_chinese"
         },
@@ -797,7 +889,8 @@
           "red" : 194,
           "green" : 21,
           "blue" : 28,
-          "name" : "§mHuabei§!",
+          "colour" : "m",
+		  "name" : "Huabei",
           "desc" : "",
           "super_culture" : "mainland_chinese"
         },
@@ -806,7 +899,8 @@
           "red" : 175,
           "green" : 13,
           "blue" : 0,
-          "name" : "§rXinan§!",
+          "colour" : "r",
+		  "name" : "Xinan",
           "desc" : "",
           "super_culture" : "mainland_chinese"
         },
@@ -815,7 +909,8 @@
           "red" : 126,
           "green" : 196,
           "blue" : 100,
-          "name" : "§7Yi§!",
+          "colour" : "7",
+		  "name" : "Yi",
           "desc" : ""
         },
         {
@@ -823,7 +918,8 @@
           "red" : 115,
           "green" : 81,
           "blue" : 20,
-          "name" : "§FHmong§!",
+          "colour" : "F",
+		  "name" : "Hmong",
           "desc" : ""
         },
         {
@@ -831,7 +927,8 @@
           "red" : 255,
           "green" : 183,
           "blue" : 30,
-          "name" : "§YZhuang§!",
+          "colour" : "Y",
+		  "name" : "Zhuang",
           "desc" : ""
         },
         {
@@ -839,7 +936,8 @@
           "red" : 192,
           "green" : 23,
           "blue" : 21,
-          "name" : "§rHong Konger§!",
+          "colour" : "r",
+		  "name" : "Hong Konger",
           "desc" : ""
         },
         {
@@ -847,7 +945,8 @@
           "red" : 22,
           "green" : 153,
           "blue" : 70,
-          "name" : "§cTujia§!",
+          "colour" : "c",
+		  "name" : "Tujia",
           "desc" : ""
         },
         {
@@ -855,7 +954,8 @@
           "red" : 18,
           "green" : 105,
           "blue" : 181,
-          "name" : "§eBouyei§!",
+          "colour" : "e",
+		  "name" : "Bouyei",
           "desc" : ""
         },
         {
@@ -863,7 +963,8 @@
           "red" : 22,
           "green" : 162,
           "blue" : 173,
-          "name" : "§5Yue§!",
+          "colour" : "5",
+		  "name" : "Yue",
           "desc" : "",
 		  "super_culture" : "mainland_chinese"
         },
@@ -872,7 +973,8 @@
           "red" : 74,
           "green" : 11,
           "blue" : 83,
-          "name" : "§MMinnan§!",
+          "colour" : "M",
+		  "name" : "Minnan",
           "desc" : "",
 		  "super_culture" : "mainland_chinese"
         },
@@ -881,7 +983,8 @@
           "red" : 216,
           "green" : 52,
           "blue" : 52,
-          "name" : "§tHakka§!",
+          "colour" : "t",
+		  "name" : "Hakka",
           "desc" : "",
 		  "super_culture" : "mainland_chinese"
         },
@@ -890,7 +993,8 @@
           "red" : 155,
           "green" : 20,
           "blue" : 56,
-          "name" : "§fWu§!",
+          "colour" : "f",
+		  "name" : "Wu",
           "desc" : "",
 		  "super_culture" : "mainland_chinese"
         },
@@ -899,7 +1003,8 @@
           "red" : 165,
           "green" : 75,
           "blue" : 30,
-          "name" : "§FXiang§!",
+          "colour" : "F",
+		  "name" : "Xiang",
           "desc" : "",
 		  "super_culture" : "mainland_chinese"
         },
@@ -908,7 +1013,8 @@
           "red" : 190,
           "green" : 51,
           "blue" : 144,
-          "name" : "§lGan§!",
+          "colour" : "l",
+		  "name" : "Gan",
           "desc" : "",
 		  "super_culture" : "mainland_chinese"
         },
@@ -917,7 +1023,8 @@
           "red" : 180,
           "green" : 51,
           "blue" : 97,
-          "name" : "§mZhongnan§!",
+          "colour" : "m",
+		  "name" : "Zhongnan",
           "desc" : "",
 		  "super_culture" : "mainland_chinese"
         },
@@ -926,7 +1033,8 @@
           "red" : 143,
           "green" : 8,
           "blue" : 2,
-          "name" : "§rHuadong§!",
+          "colour" : "r",
+		  "name" : "Huadong",
           "desc" : "",
 		  "super_culture" : "mainland_chinese"
         },
@@ -935,7 +1043,8 @@
           "red" : 130,
           "green" : 232,
           "blue" : 81,
-          "name" : "§7Hlai§!",
+          "colour" : "7",
+		  "name" : "Hlai",
           "desc" : ""
         }
     ]

@@ -9,6 +9,7 @@ class Culture:
     def __init__(
             self,
             token: str,
+            colour: str = "",
             name: str = "",
             desc: str = "",
             red: int = 0,
@@ -17,6 +18,7 @@ class Culture:
             super_culture: str | None = None
         ):
         self.token: str = token
+        self.colour: str = colour
         self.name: str = name
         self.desc: str = desc
         self.red: int = red
@@ -37,6 +39,7 @@ class SuperCulture:
     def __init__(
             self,
             token: str,
+            colour: str = "",
             name: str = "",
             desc: str = "",
             red: int = 0,
@@ -45,6 +48,7 @@ class SuperCulture:
             subcultures: list[str] | None = None
         ):
         self.token: str = token
+        self.colour: str = colour
         self.name: str = name
         self.desc: str = desc
         self.red: int = red
@@ -162,13 +166,13 @@ def WriteLocalisationFile(cultures_list: list[Culture], super_cultures_list: lis
 )
         for culture in cultures_list:
             f.write(
-                f"\n\n TDA_culture_{culture.token}_token_idea:0 \"{culture.name}\""
+                f"\n\n TDA_culture_{culture.token}_token_idea:0 \"§{super_culture.colour}{culture.name}§!\""
                 f"\n TDA_culture_{culture.token}_desc_token_idea:0 \"{culture.desc}\""
             )
 
         for super_culture in super_cultures_list:
             f.write(
-                f"\n\n TDA_super_culture_{super_culture.token}_token_idea:0 \"{super_culture.name}\""
+                f"\n\n TDA_super_culture_{super_culture.token}_token_idea:0 \"§{super_culture.colour}{super_culture.name}§!\""
                 f"\n TDA_super_culture_{super_culture.token}_desc_token_idea:0 \"{super_culture.desc}\""
             )
 
@@ -184,25 +188,7 @@ def LoadCulturesFromJson() -> list[Culture]:
                 red = culture.get("red", 0),
                 green = culture.get("green", 0),
                 blue = culture.get("blue", 0),
-                name = culture.get("name", ""),
-                desc = culture.get("desc", ""),
-                super_culture = culture.get("super_culture", None)
-            ))
-
-    return culture_list
-
-def LoadCulturesFromJson() -> list[Culture]:
-    culture_list: list[Culture] = []
-
-    with open("cultures.json", "r", encoding="utf-8") as json_file:
-        json_data = json.load(json_file)
-
-        for culture in json_data.get("cultures"):
-            culture_list.append(Culture(
-                token = culture.get("token"),
-                red = culture.get("red", 0),
-                green = culture.get("green", 0),
-                blue = culture.get("blue", 0),
+                colour = culture.get("colour", ""),
                 name = culture.get("name", ""),
                 desc = culture.get("desc", ""),
                 super_culture = culture.get("super_culture", None)
