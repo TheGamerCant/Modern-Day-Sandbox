@@ -10,6 +10,13 @@ defined_text = {
 		}
 		localization_key = "TDA_culture_state_is_homogenous"
 	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 100 compare = greater_than_or_equals }
+		}
+		localization_key = [TDA_super_culture_get_state_is_homogenous_TT]
+	}
 	#Over 95% one culture
 	text = {
 		trigger = {
@@ -20,6 +27,14 @@ defined_text = {
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
 		}
 		localization_key = "TDA_culture_state_is_nearly_homogenous"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 95 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+		}
+		localization_key = [TDA_super_culture_get_state_is_nearly_homogenous_TT]
 	}
 	#Over 80% one culture
 	text = {
@@ -95,6 +110,68 @@ defined_text = {
 			set_temp_variable = { dem3 = FROM.culture_index_array^2 }
 		}
 		localization_key = "TDA_culture_state_has_large_majority_two_minorities"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 80 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+			}
+		}
+		localization_key = [TDA_super_culture_get_state_has_large_majority_no_minority]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 75 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+			}
+		}
+		localization_key = [TDA_super_culture_get_state_has_large_majority_one_minority_0_1]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 75 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
+				}
+			}
+		}
+		localization_key = [TDA_super_culture_get_state_has_large_majority_one_minority_0_2]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 75 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+		}
+		localization_key = [TDA_super_culture_get_state_has_large_majority_two_minorities]
 	}
 	#State has simple majority
 	text = {
@@ -289,6 +366,183 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_simple_majority_no_minority]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
+				}
+			}
+		}
+		localization_key = [TDA_super_culture_get_state_has_simple_majority_one_minority_0_1]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
+				}
+			}
+		}
+		localization_key = [TDA_super_culture_get_state_has_simple_majority_one_minority_0_2]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+				}
+			}
+		}
+		localization_key = [TDA_super_culture_get_state_has_simple_majority_one_minority_0_3]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^2 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_simple_majority_two_minorities_0_1_2]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_simple_majority_two_minorities_0_1_3]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^2 }
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_simple_majority_two_minorities_0_2_3]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+		}
+		localization_key = [TDA_super_culture_get_state_has_simple_majority_three_minorities]
+	}
+	#State has plurality
+	text = {
+		trigger = {
 			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -468,6 +722,188 @@ defined_text = {
 			set_temp_variable = { dem4 = FROM.culture_index_array^3 }
 		}
 		localization_key = "TDA_culture_state_has_plurality_three_minorities"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_plurality_no_minority]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_plurality_one_minority_0_1]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^2 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_plurality_one_minority_0_2]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^3 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_plurality_one_minority_0_3]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^2 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_plurality_two_minorities_0_1_2]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_plurality_two_minorities_0_1_3]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^2 }
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_plurality_two_minorities_0_2_3]
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^2 }
+			set_temp_variable = { dem4 = FROM.super_culture_index_array^3 }
+		}
+		localization_key = [TDA_super_culture_get_state_has_plurality_three_minorities]
 	}
 	text = {
 		localization_key = "TDA_culture_state_mostly_other"

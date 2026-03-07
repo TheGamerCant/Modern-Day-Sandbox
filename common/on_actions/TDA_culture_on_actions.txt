@@ -4,6 +4,10 @@ on_actions = {
 			set_variable = { global.culture_bucket_size = 9 }
 			set_variable = { global.culture_bucket_width = 11 }
 
+			
+
+			set_global_flag = TDA_using_super_cultures_flag
+
 			resize_array = { array = global.culture_colour_array size = 167 value = 0 }
 			resize_array = { array = global.culture_names_array  size = 167 value = 0 }
 			resize_array = { array = global.culture_desc_array   size = 167 value = 0 }
