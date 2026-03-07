@@ -7,6 +7,7 @@ defined_text = {
 			check_variable = { var = FROM.culture_value_array^0 value = 100 compare = greater_than_or_equals }
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
 		}
 		localization_key = "TDA_culture_state_is_homogenous"
 	}
@@ -14,8 +15,18 @@ defined_text = {
 		trigger = {
 			has_global_flag = TDA_using_super_cultures_flag
 			check_variable = { var = FROM.super_culture_value_array^0 value = 100 compare = greater_than_or_equals }
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_is_homogenous_TT]
+		localization_key = "TDA_culture_state_is_homogenous"
 	}
 	#Over 95% one culture
 	text = {
@@ -25,6 +36,7 @@ defined_text = {
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
 		}
 		localization_key = "TDA_culture_state_is_nearly_homogenous"
 	}
@@ -33,8 +45,18 @@ defined_text = {
 			has_global_flag = TDA_using_super_cultures_flag
 			check_variable = { var = FROM.super_culture_value_array^0 value = 95 compare = greater_than_or_equals }
 			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_is_nearly_homogenous_TT]
+		localization_key = "TDA_culture_state_is_nearly_homogenous"
 	}
 	#Over 80% one culture
 	text = {
@@ -54,6 +76,7 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
 		}
 		localization_key = "TDA_culture_state_has_large_majority_no_minority"
 	}
@@ -74,7 +97,10 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
 		}
 		localization_key = "TDA_culture_state_has_large_majority_one_minority"
 	}
@@ -95,7 +121,10 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
 		}
 		localization_key = "TDA_culture_state_has_large_majority_one_minority"
 	}
@@ -106,8 +135,13 @@ defined_text = {
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			
 			set_temp_variable = { dem3 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem3 }
 		}
 		localization_key = "TDA_culture_state_has_large_majority_two_minorities"
 	}
@@ -126,8 +160,18 @@ defined_text = {
 					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
 				}
 			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_large_majority_no_minority]
+		localization_key = "TDA_culture_state_has_large_majority_no_minority"
 	}
 	text = {
 		trigger = {
@@ -144,8 +188,28 @@ defined_text = {
 					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
 				}
 			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_large_majority_one_minority_0_1]
+		localization_key = "TDA_culture_state_has_large_majority_one_minority"
 	}
 	text = {
 		trigger = {
@@ -162,16 +226,66 @@ defined_text = {
 					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
 				}
 			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_large_majority_one_minority_0_2]
+		localization_key = "TDA_culture_state_has_large_majority_one_minority"
 	}
 	text = {
 		trigger = {
 			has_global_flag = TDA_using_super_cultures_flag
 			check_variable = { var = FROM.super_culture_value_array^0 value = 75 compare = greater_than_or_equals }
 			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			
+			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
+			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
+			
+			set_temp_variable = { dem3 = FROM.culture_index_array^2 }
+			if = {
+				limit = { check_variable = { dem3 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem3 = global.super_culture_names_array^dem3 }
+			}
+			else = {
+				set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_large_majority_two_minorities]
+		localization_key = "TDA_culture_state_has_large_majority_two_minorities"
 	}
 	#State has simple majority
 	text = {
@@ -195,6 +309,7 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
 		}
 		localization_key = "TDA_culture_state_has_simple_majority_no_minority"
 	}
@@ -219,7 +334,10 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
 		}
 		localization_key = "TDA_culture_state_has_simple_majority_one_minority"
 	}
@@ -244,7 +362,10 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
 		}
 		localization_key = "TDA_culture_state_has_simple_majority_one_minority"
 	}
@@ -269,7 +390,10 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^3 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
 		}
 		localization_key = "TDA_culture_state_has_simple_majority_one_minority"
 	}
@@ -294,8 +418,13 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			
 			set_temp_variable = { dem3 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem3 = global.culture_names_array^dem3 }
 		}
 		localization_key = "TDA_culture_state_has_simple_majority_two_minorities"
 	}
@@ -320,8 +449,13 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			
 			set_temp_variable = { dem3 = FROM.culture_index_array^3 }
+			set_temp_variable = { dem3 = global.culture_names_array^dem3 }
 		}
 		localization_key = "TDA_culture_state_has_simple_majority_two_minorities"
 	}
@@ -346,8 +480,13 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			
 			set_temp_variable = { dem3 = FROM.culture_index_array^3 }
+			set_temp_variable = { dem3 = global.culture_names_array^dem3 }
 		}
 		localization_key = "TDA_culture_state_has_simple_majority_two_minorities"
 	}
@@ -358,9 +497,16 @@ defined_text = {
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			
 			set_temp_variable = { dem3 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			
 			set_temp_variable = { dem4 = FROM.culture_index_array^3 }
+			set_temp_variable = { dem4 = global.culture_names_array^dem4 }
 		}
 		localization_key = "TDA_culture_state_has_simple_majority_three_minorities"
 	}
@@ -385,8 +531,16 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_simple_majority_no_minority]
+		localization_key = "TDA_culture_state_has_simple_majority_no_minority"
 	}
 	text = {
 		trigger = {
@@ -401,72 +555,6 @@ defined_text = {
 				OR = {
 					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
 					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
-				}
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
-					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
-				}
-			}
-		}
-		localization_key = [TDA_super_culture_get_state_has_simple_majority_one_minority_0_1]
-	}
-	text = {
-		trigger = {
-			has_global_flag = TDA_using_super_cultures_flag
-			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
-			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
-			AND = {
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
-					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
-				}
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
-					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
-				}
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
-					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
-				}
-			}
-		}
-		localization_key = [TDA_super_culture_get_state_has_simple_majority_one_minority_0_2]
-	}
-	text = {
-		trigger = {
-			has_global_flag = TDA_using_super_cultures_flag
-			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
-			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
-			AND = {
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
-					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
-				}
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
-					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
-				}
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
-					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
-				}
-			}
-		}
-		localization_key = [TDA_super_culture_get_state_has_simple_majority_one_minority_0_3]
-	}
-	text = {
-		trigger = {
-			has_global_flag = TDA_using_super_cultures_flag
-			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
-			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
-			AND = {
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
-					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
-				}
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
-					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
 				}
 				OR = {
 					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
@@ -475,36 +563,26 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
 			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
-			set_temp_variable = { dem3 = FROM.super_culture_index_array^2 }
-		}
-		localization_key = [TDA_super_culture_get_state_has_simple_majority_two_minorities_0_1_2]
-	}
-	text = {
-		trigger = {
-			has_global_flag = TDA_using_super_cultures_flag
-			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
-			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
-			AND = {
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
-					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
-				}
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
-					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
-				}
-				OR = {
-					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
-					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
-				}
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
 			}
-			
-			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
-			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
-			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_simple_majority_two_minorities_0_1_3]
+		localization_key = "TDA_culture_state_has_simple_majority_one_minority"
 	}
 	text = {
 		trigger = {
@@ -521,26 +599,280 @@ defined_text = {
 					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
 				}
 				OR = {
-					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
-					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
 				}
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
 			set_temp_variable = { dem2 = FROM.super_culture_index_array^2 }
-			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_simple_majority_two_minorities_0_2_3]
+		localization_key = "TDA_culture_state_has_simple_majority_one_minority"
 	}
 	text = {
 		trigger = {
 			has_global_flag = TDA_using_super_cultures_flag
 			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
 			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_simple_majority_three_minorities]
+		localization_key = "TDA_culture_state_has_simple_majority_one_minority"
 	}
-	#State has plurality
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
+			
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { dem3 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem3 = global.super_culture_names_array^dem3 }
+			}
+			else = {
+				set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			}
+		}
+		localization_key = "TDA_culture_state_has_simple_majority_two_minorities"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
+			
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { dem3 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem3 = global.super_culture_names_array^dem3 }
+			}
+			else = {
+				set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			}
+		}
+		localization_key = "TDA_culture_state_has_simple_majority_two_minorities"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+			AND = {
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^1 value = 7.0 compare = less_than }
+					check_variable = { var = FROM.super_culture_index_array^1 value = 0 compare = equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^2 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^2 value = 0 compare = not_equals }
+				}
+				OR = {
+					check_variable = { var = FROM.super_culture_value_array^3 value = 7.0 compare = greater_than_or_equals }
+					check_variable = { var = FROM.super_culture_index_array^3 value = 0 compare = not_equals }
+				}
+			}
+			
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
+			
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { dem3 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem3 = global.super_culture_names_array^dem3 }
+			}
+			else = {
+				set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			}
+		}
+		localization_key = "TDA_culture_state_has_simple_majority_two_minorities"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^0 value = 50 compare = greater_than_or_equals }
+			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
+
+			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
+			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
+			
+			set_temp_variable = { dem3 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { dem3 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem3 = global.super_culture_names_array^dem3 }
+			}
+			else = {
+				set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			}
+			
+			set_temp_variable = { dem4 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { dem4 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem4 = global.super_culture_names_array^dem4 }
+			}
+			else = {
+				set_temp_variable = { dem4 = global.culture_names_array^dem4 }
+			}
+		}
+		localization_key = "TDA_culture_state_has_simple_majority_three_minorities"
+	}
+	#State has a plurality
 	text = {
 		trigger = {
 			NOT = { has_global_flag = TDA_using_super_cultures_flag }
@@ -561,6 +893,7 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
 		}
 		localization_key = "TDA_culture_state_has_plurality_no_minority"
 	}
@@ -584,7 +917,10 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
 		}
 		localization_key = "TDA_culture_state_has_plurality_one_minority"
 	}
@@ -608,7 +944,10 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
 		}
 		localization_key = "TDA_culture_state_has_plurality_one_minority"
 	}
@@ -632,7 +971,10 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^3 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
 		}
 		localization_key = "TDA_culture_state_has_plurality_one_minority"
 	}
@@ -656,8 +998,13 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			
 			set_temp_variable = { dem3 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem3 = global.culture_names_array^dem3 }
 		}
 		localization_key = "TDA_culture_state_has_plurality_two_minorities"
 	}
@@ -681,8 +1028,13 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			
 			set_temp_variable = { dem3 = FROM.culture_index_array^3 }
+			set_temp_variable = { dem3 = global.culture_names_array^dem3 }
 		}
 		localization_key = "TDA_culture_state_has_plurality_two_minorities"
 	}
@@ -706,8 +1058,13 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			
 			set_temp_variable = { dem3 = FROM.culture_index_array^3 }
+			set_temp_variable = { dem3 = global.culture_names_array^dem3 }
 		}
 		localization_key = "TDA_culture_state_has_plurality_two_minorities"
 	}
@@ -717,9 +1074,16 @@ defined_text = {
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
+			set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			
 			set_temp_variable = { dem2 = FROM.culture_index_array^1 }
+			set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			
 			set_temp_variable = { dem3 = FROM.culture_index_array^2 }
+			set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			
 			set_temp_variable = { dem4 = FROM.culture_index_array^3 }
+			set_temp_variable = { dem4 = global.culture_names_array^dem4 }
 		}
 		localization_key = "TDA_culture_state_has_plurality_three_minorities"
 	}
@@ -743,8 +1107,16 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_plurality_no_minority]
+		localization_key = "TDA_culture_state_has_plurality_no_minority"
 	}
 	text = {
 		trigger = {
@@ -766,9 +1138,26 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
 			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_plurality_one_minority_0_1]
+		localization_key = "TDA_culture_state_has_plurality_one_minority"
 	}
 	text = {
 		trigger = {
@@ -790,9 +1179,26 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
 			set_temp_variable = { dem2 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_plurality_one_minority_0_2]
+		localization_key = "TDA_culture_state_has_plurality_one_minority"
 	}
 	text = {
 		trigger = {
@@ -814,9 +1220,26 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
 			set_temp_variable = { dem2 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_plurality_one_minority_0_3]
+		localization_key = "TDA_culture_state_has_plurality_one_minority"
 	}
 	text = {
 		trigger = {
@@ -838,10 +1261,36 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
 			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
+			
 			set_temp_variable = { dem3 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { dem3 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem3 = global.super_culture_names_array^dem3 }
+			}
+			else = {
+				set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_plurality_two_minorities_0_1_2]
+		localization_key = "TDA_culture_state_has_plurality_two_minorities"
 	}
 	text = {
 		trigger = {
@@ -863,10 +1312,36 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
 			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
+			
 			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { dem3 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem3 = global.super_culture_names_array^dem3 }
+			}
+			else = {
+				set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_plurality_two_minorities_0_1_3]
+		localization_key = "TDA_culture_state_has_plurality_two_minorities"
 	}
 	text = {
 		trigger = {
@@ -888,10 +1363,36 @@ defined_text = {
 			}
 			
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
 			set_temp_variable = { dem2 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
+			
 			set_temp_variable = { dem3 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { dem3 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem3 = global.super_culture_names_array^dem3 }
+			}
+			else = {
+				set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_plurality_two_minorities_0_2_3]
+		localization_key = "TDA_culture_state_has_plurality_two_minorities"
 	}
 	text = {
 		trigger = {
@@ -899,11 +1400,46 @@ defined_text = {
 			check_variable = { var = FROM.super_culture_index_array^0 value = 0 compare = not_equals }
 
 			set_temp_variable = { dem1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { dem1 < 0 } }
+				multiply_temp_variable = { dem1 = -1 }
+				set_temp_variable = { dem1 = global.super_culture_names_array^dem1 }
+			}
+			else = {
+				set_temp_variable = { dem1 = global.culture_names_array^dem1 }
+			}
+			
 			set_temp_variable = { dem2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { dem2 < 0 } }
+				multiply_temp_variable = { dem2 = -1 }
+				set_temp_variable = { dem2 = global.super_culture_names_array^dem2 }
+			}
+			else = {
+				set_temp_variable = { dem2 = global.culture_names_array^dem2 }
+			}
+			
 			set_temp_variable = { dem3 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { dem3 < 0 } }
+				multiply_temp_variable = { dem3 = -1 }
+				set_temp_variable = { dem3 = global.super_culture_names_array^dem3 }
+			}
+			else = {
+				set_temp_variable = { dem3 = global.culture_names_array^dem3 }
+			}
+			
 			set_temp_variable = { dem4 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { dem4 < 0 } }
+				multiply_temp_variable = { dem4 = -1 }
+				set_temp_variable = { dem4 = global.super_culture_names_array^dem4 }
+			}
+			else = {
+				set_temp_variable = { dem4 = global.culture_names_array^dem4 }
+			}
 		}
-		localization_key = [TDA_super_culture_get_state_has_plurality_three_minorities]
+		localization_key = "TDA_culture_state_has_plurality_three_minorities"
 	}
 	text = {
 		localization_key = "TDA_culture_state_mostly_other"
@@ -918,7 +1454,26 @@ defined_text = {
 			check_variable = { var = FROM.culture_value_array^num value = 1 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
+			set_temp_variable = { loc_row_1 =  global.culture_names_array^loc_row_1 }
 			set_temp_variable = { value_row_1 = FROM.culture_value_array^0 }
+		}
+		localization_key = "TDA_culture_map_mode_1_row"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^num value = 1 compare = equals }
+			
+			set_temp_variable = { loc_row_1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { loc_row_1 < 0 } }
+				multiply_temp_variable = { loc_row_1 = -1 }
+				set_temp_variable = { loc_row_1 = global.super_culture_names_array^loc_row_1 }
+			}
+			else = {
+				set_temp_variable = { loc_row_1 = global.culture_names_array^loc_row_1 }
+			}
+			set_temp_variable = { value_row_1 = FROM.super_culture_value_array^0 }
 		}
 		localization_key = "TDA_culture_map_mode_1_row"
 	}
@@ -928,9 +1483,41 @@ defined_text = {
 			check_variable = { var = FROM.culture_value_array^num value = 2 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
+			set_temp_variable = { loc_row_1 =  global.culture_names_array^loc_row_1 }
 			set_temp_variable = { value_row_1 = FROM.culture_value_array^0 }
+			
 			set_temp_variable = { loc_row_2 = FROM.culture_index_array^1 }
+			set_temp_variable = { loc_row_2 =  global.culture_names_array^loc_row_2 }
 			set_temp_variable = { value_row_2 = FROM.culture_value_array^1 }
+		}
+		localization_key = "TDA_culture_map_mode_2_row"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^num value = 2 compare = equals }
+			
+			set_temp_variable = { loc_row_1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { loc_row_1 < 0 } }
+				multiply_temp_variable = { loc_row_1 = -1 }
+				set_temp_variable = { loc_row_1 = global.super_culture_names_array^loc_row_1 }
+			}
+			else = {
+				set_temp_variable = { loc_row_1 = global.culture_names_array^loc_row_1 }
+			}
+			set_temp_variable = { value_row_1 = FROM.super_culture_value_array^0 }
+			
+			set_temp_variable = { loc_row_2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { loc_row_2 < 0 } }
+				multiply_temp_variable = { loc_row_2 = -1 }
+				set_temp_variable = { loc_row_2 = global.super_culture_names_array^loc_row_2 }
+			}
+			else = {
+				set_temp_variable = { loc_row_2 = global.culture_names_array^loc_row_2 }
+			}
+			set_temp_variable = { value_row_2 = FROM.super_culture_value_array^1 }
 		}
 		localization_key = "TDA_culture_map_mode_2_row"
 	}
@@ -940,11 +1527,56 @@ defined_text = {
 			check_variable = { var = FROM.culture_value_array^num value = 3 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
+			set_temp_variable = { loc_row_1 =  global.culture_names_array^loc_row_1 }
 			set_temp_variable = { value_row_1 = FROM.culture_value_array^0 }
+			
 			set_temp_variable = { loc_row_2 = FROM.culture_index_array^1 }
+			set_temp_variable = { loc_row_2 =  global.culture_names_array^loc_row_2 }
 			set_temp_variable = { value_row_2 = FROM.culture_value_array^1 }
+			
 			set_temp_variable = { loc_row_3 = FROM.culture_index_array^2 }
+			set_temp_variable = { loc_row_3 =  global.culture_names_array^loc_row_3 }
 			set_temp_variable = { value_row_3 = FROM.culture_value_array^2 }
+		}
+		localization_key = "TDA_culture_map_mode_3_row"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^num value = 3 compare = equals }
+			
+			set_temp_variable = { loc_row_1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { loc_row_1 < 0 } }
+				multiply_temp_variable = { loc_row_1 = -1 }
+				set_temp_variable = { loc_row_1 = global.super_culture_names_array^loc_row_1 }
+			}
+			else = {
+				set_temp_variable = { loc_row_1 = global.culture_names_array^loc_row_1 }
+			}
+			set_temp_variable = { value_row_1 = FROM.super_culture_value_array^0 }
+			
+			set_temp_variable = { loc_row_2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { loc_row_2 < 0 } }
+				multiply_temp_variable = { loc_row_2 = -1 }
+				set_temp_variable = { loc_row_2 = global.super_culture_names_array^loc_row_2 }
+			}
+			else = {
+				set_temp_variable = { loc_row_2 = global.culture_names_array^loc_row_2 }
+			}
+			set_temp_variable = { value_row_2 = FROM.super_culture_value_array^1 }
+			
+			set_temp_variable = { loc_row_3 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { loc_row_3 < 0 } }
+				multiply_temp_variable = { loc_row_3 = -1 }
+				set_temp_variable = { loc_row_3 = global.super_culture_names_array^loc_row_3 }
+			}
+			else = {
+				set_temp_variable = { loc_row_3 = global.culture_names_array^loc_row_3 }
+			}
+			set_temp_variable = { value_row_3 = FROM.super_culture_value_array^2 }
 		}
 		localization_key = "TDA_culture_map_mode_3_row"
 	}
@@ -954,13 +1586,71 @@ defined_text = {
 			check_variable = { var = FROM.culture_value_array^num value = 4 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
+			set_temp_variable = { loc_row_1 =  global.culture_names_array^loc_row_1 }
 			set_temp_variable = { value_row_1 = FROM.culture_value_array^0 }
+			
 			set_temp_variable = { loc_row_2 = FROM.culture_index_array^1 }
+			set_temp_variable = { loc_row_2 =  global.culture_names_array^loc_row_2 }
 			set_temp_variable = { value_row_2 = FROM.culture_value_array^1 }
+			
 			set_temp_variable = { loc_row_3 = FROM.culture_index_array^2 }
+			set_temp_variable = { loc_row_3 =  global.culture_names_array^loc_row_3 }
 			set_temp_variable = { value_row_3 = FROM.culture_value_array^2 }
+			
 			set_temp_variable = { loc_row_4 = FROM.culture_index_array^3 }
+			set_temp_variable = { loc_row_4 =  global.culture_names_array^loc_row_4 }
 			set_temp_variable = { value_row_4 = FROM.culture_value_array^3 }
+		}
+		localization_key = "TDA_culture_map_mode_4_row"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^num value = 4 compare = equals }
+			
+			set_temp_variable = { loc_row_1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { loc_row_1 < 0 } }
+				multiply_temp_variable = { loc_row_1 = -1 }
+				set_temp_variable = { loc_row_1 = global.super_culture_names_array^loc_row_1 }
+			}
+			else = {
+				set_temp_variable = { loc_row_1 = global.culture_names_array^loc_row_1 }
+			}
+			set_temp_variable = { value_row_1 = FROM.super_culture_value_array^0 }
+			
+			set_temp_variable = { loc_row_2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { loc_row_2 < 0 } }
+				multiply_temp_variable = { loc_row_2 = -1 }
+				set_temp_variable = { loc_row_2 = global.super_culture_names_array^loc_row_2 }
+			}
+			else = {
+				set_temp_variable = { loc_row_2 = global.culture_names_array^loc_row_2 }
+			}
+			set_temp_variable = { value_row_2 = FROM.super_culture_value_array^1 }
+			
+			set_temp_variable = { loc_row_3 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { loc_row_3 < 0 } }
+				multiply_temp_variable = { loc_row_3 = -1 }
+				set_temp_variable = { loc_row_3 = global.super_culture_names_array^loc_row_3 }
+			}
+			else = {
+				set_temp_variable = { loc_row_3 = global.culture_names_array^loc_row_3 }
+			}
+			set_temp_variable = { value_row_3 = FROM.super_culture_value_array^2 }
+			
+			set_temp_variable = { loc_row_4 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { loc_row_4 < 0 } }
+				multiply_temp_variable = { loc_row_4 = -1 }
+				set_temp_variable = { loc_row_4 = global.super_culture_names_array^loc_row_4 }
+			}
+			else = {
+				set_temp_variable = { loc_row_4 = global.culture_names_array^loc_row_4 }
+			}
+			set_temp_variable = { value_row_4 = FROM.super_culture_value_array^3 }
 		}
 		localization_key = "TDA_culture_map_mode_4_row"
 	}
@@ -970,15 +1660,86 @@ defined_text = {
 			check_variable = { var = FROM.culture_value_array^num value = 5 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
+			set_temp_variable = { loc_row_1 =  global.culture_names_array^loc_row_1 }
 			set_temp_variable = { value_row_1 = FROM.culture_value_array^0 }
+			
 			set_temp_variable = { loc_row_2 = FROM.culture_index_array^1 }
+			set_temp_variable = { loc_row_2 =  global.culture_names_array^loc_row_2 }
 			set_temp_variable = { value_row_2 = FROM.culture_value_array^1 }
+			
 			set_temp_variable = { loc_row_3 = FROM.culture_index_array^2 }
+			set_temp_variable = { loc_row_3 =  global.culture_names_array^loc_row_3 }
 			set_temp_variable = { value_row_3 = FROM.culture_value_array^2 }
+			
 			set_temp_variable = { loc_row_4 = FROM.culture_index_array^3 }
+			set_temp_variable = { loc_row_4 =  global.culture_names_array^loc_row_4 }
 			set_temp_variable = { value_row_4 = FROM.culture_value_array^3 }
+			
 			set_temp_variable = { loc_row_5 = FROM.culture_index_array^4 }
+			set_temp_variable = { loc_row_5 =  global.culture_names_array^loc_row_5 }
 			set_temp_variable = { value_row_5 = FROM.culture_value_array^4 }
+		}
+		localization_key = "TDA_culture_map_mode_5_row"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^num value = 5 compare = equals }
+			
+			set_temp_variable = { loc_row_1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { loc_row_1 < 0 } }
+				multiply_temp_variable = { loc_row_1 = -1 }
+				set_temp_variable = { loc_row_1 = global.super_culture_names_array^loc_row_1 }
+			}
+			else = {
+				set_temp_variable = { loc_row_1 = global.culture_names_array^loc_row_1 }
+			}
+			set_temp_variable = { value_row_1 = FROM.super_culture_value_array^0 }
+			
+			set_temp_variable = { loc_row_2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { loc_row_2 < 0 } }
+				multiply_temp_variable = { loc_row_2 = -1 }
+				set_temp_variable = { loc_row_2 = global.super_culture_names_array^loc_row_2 }
+			}
+			else = {
+				set_temp_variable = { loc_row_2 = global.culture_names_array^loc_row_2 }
+			}
+			set_temp_variable = { value_row_2 = FROM.super_culture_value_array^1 }
+			
+			set_temp_variable = { loc_row_3 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { loc_row_3 < 0 } }
+				multiply_temp_variable = { loc_row_3 = -1 }
+				set_temp_variable = { loc_row_3 = global.super_culture_names_array^loc_row_3 }
+			}
+			else = {
+				set_temp_variable = { loc_row_3 = global.culture_names_array^loc_row_3 }
+			}
+			set_temp_variable = { value_row_3 = FROM.super_culture_value_array^2 }
+			
+			set_temp_variable = { loc_row_4 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { loc_row_4 < 0 } }
+				multiply_temp_variable = { loc_row_4 = -1 }
+				set_temp_variable = { loc_row_4 = global.super_culture_names_array^loc_row_4 }
+			}
+			else = {
+				set_temp_variable = { loc_row_4 = global.culture_names_array^loc_row_4 }
+			}
+			set_temp_variable = { value_row_4 = FROM.super_culture_value_array^3 }
+			
+			set_temp_variable = { loc_row_5 = FROM.super_culture_index_array^4 }
+			if = {
+				limit = { check_variable = { loc_row_5 < 0 } }
+				multiply_temp_variable = { loc_row_5 = -1 }
+				set_temp_variable = { loc_row_5 = global.super_culture_names_array^loc_row_5 }
+			}
+			else = {
+				set_temp_variable = { loc_row_5 = global.culture_names_array^loc_row_5 }
+			}
+			set_temp_variable = { value_row_5 = FROM.super_culture_value_array^4 }
 		}
 		localization_key = "TDA_culture_map_mode_5_row"
 	}
@@ -988,17 +1749,103 @@ defined_text = {
 			check_variable = { var = FROM.culture_value_array^num value = 6 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
+			set_temp_variable = { loc_row_1 =  global.culture_names_array^loc_row_1 }
 			set_temp_variable = { value_row_1 = FROM.culture_value_array^0 }
+			
 			set_temp_variable = { loc_row_2 = FROM.culture_index_array^1 }
+			set_temp_variable = { loc_row_2 =  global.culture_names_array^loc_row_2 }
 			set_temp_variable = { value_row_2 = FROM.culture_value_array^1 }
+			
 			set_temp_variable = { loc_row_3 = FROM.culture_index_array^2 }
+			set_temp_variable = { loc_row_3 =  global.culture_names_array^loc_row_3 }
 			set_temp_variable = { value_row_3 = FROM.culture_value_array^2 }
+			
 			set_temp_variable = { loc_row_4 = FROM.culture_index_array^3 }
+			set_temp_variable = { loc_row_4 =  global.culture_names_array^loc_row_4 }
 			set_temp_variable = { value_row_4 = FROM.culture_value_array^3 }
+			
 			set_temp_variable = { loc_row_5 = FROM.culture_index_array^4 }
+			set_temp_variable = { loc_row_5 =  global.culture_names_array^loc_row_5 }
 			set_temp_variable = { value_row_5 = FROM.culture_value_array^4 }
+			
 			set_temp_variable = { loc_row_6 = FROM.culture_index_array^5 }
+			set_temp_variable = { loc_row_6 =  global.culture_names_array^loc_row_6 }
 			set_temp_variable = { value_row_6 = FROM.culture_value_array^5 }
+			
+		}
+		localization_key = "TDA_culture_map_mode_6_row"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^num value = 6 compare = equals }
+			
+			set_temp_variable = { loc_row_1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { loc_row_1 < 0 } }
+				multiply_temp_variable = { loc_row_1 = -1 }
+				set_temp_variable = { loc_row_1 = global.super_culture_names_array^loc_row_1 }
+			}
+			else = {
+				set_temp_variable = { loc_row_1 = global.culture_names_array^loc_row_1 }
+			}
+			set_temp_variable = { value_row_1 = FROM.super_culture_value_array^0 }
+			
+			set_temp_variable = { loc_row_2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { loc_row_2 < 0 } }
+				multiply_temp_variable = { loc_row_2 = -1 }
+				set_temp_variable = { loc_row_2 = global.super_culture_names_array^loc_row_2 }
+			}
+			else = {
+				set_temp_variable = { loc_row_2 = global.culture_names_array^loc_row_2 }
+			}
+			set_temp_variable = { value_row_2 = FROM.super_culture_value_array^1 }
+			
+			set_temp_variable = { loc_row_3 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { loc_row_3 < 0 } }
+				multiply_temp_variable = { loc_row_3 = -1 }
+				set_temp_variable = { loc_row_3 = global.super_culture_names_array^loc_row_3 }
+			}
+			else = {
+				set_temp_variable = { loc_row_3 = global.culture_names_array^loc_row_3 }
+			}
+			set_temp_variable = { value_row_3 = FROM.super_culture_value_array^2 }
+			
+			set_temp_variable = { loc_row_4 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { loc_row_4 < 0 } }
+				multiply_temp_variable = { loc_row_4 = -1 }
+				set_temp_variable = { loc_row_4 = global.super_culture_names_array^loc_row_4 }
+			}
+			else = {
+				set_temp_variable = { loc_row_4 = global.culture_names_array^loc_row_4 }
+			}
+			set_temp_variable = { value_row_4 = FROM.super_culture_value_array^3 }
+			
+			set_temp_variable = { loc_row_5 = FROM.super_culture_index_array^4 }
+			if = {
+				limit = { check_variable = { loc_row_5 < 0 } }
+				multiply_temp_variable = { loc_row_5 = -1 }
+				set_temp_variable = { loc_row_5 = global.super_culture_names_array^loc_row_5 }
+			}
+			else = {
+				set_temp_variable = { loc_row_5 = global.culture_names_array^loc_row_5 }
+			}
+			set_temp_variable = { value_row_5 = FROM.super_culture_value_array^4 }
+			
+			set_temp_variable = { loc_row_6 = FROM.super_culture_index_array^5 }
+			if = {
+				limit = { check_variable = { loc_row_6 < 0 } }
+				multiply_temp_variable = { loc_row_6 = -1 }
+				set_temp_variable = { loc_row_6 = global.super_culture_names_array^loc_row_6 }
+			}
+			else = {
+				set_temp_variable = { loc_row_6 = global.culture_names_array^loc_row_6 }
+			}
+			set_temp_variable = { value_row_6 = FROM.super_culture_value_array^5 }
+			
 		}
 		localization_key = "TDA_culture_map_mode_6_row"
 	}
@@ -1008,19 +1855,116 @@ defined_text = {
 			check_variable = { var = FROM.culture_value_array^num value = 7 compare = greater_than_or_equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
+			set_temp_variable = { loc_row_1 =  global.culture_names_array^loc_row_1 }
 			set_temp_variable = { value_row_1 = FROM.culture_value_array^0 }
+			
 			set_temp_variable = { loc_row_2 = FROM.culture_index_array^1 }
+			set_temp_variable = { loc_row_2 =  global.culture_names_array^loc_row_2 }
 			set_temp_variable = { value_row_2 = FROM.culture_value_array^1 }
+			
 			set_temp_variable = { loc_row_3 = FROM.culture_index_array^2 }
+			set_temp_variable = { loc_row_3 =  global.culture_names_array^loc_row_3 }
 			set_temp_variable = { value_row_3 = FROM.culture_value_array^2 }
+			
 			set_temp_variable = { loc_row_4 = FROM.culture_index_array^3 }
+			set_temp_variable = { loc_row_4 =  global.culture_names_array^loc_row_4 }
 			set_temp_variable = { value_row_4 = FROM.culture_value_array^3 }
+			
 			set_temp_variable = { loc_row_5 = FROM.culture_index_array^4 }
+			set_temp_variable = { loc_row_5 =  global.culture_names_array^loc_row_5 }
 			set_temp_variable = { value_row_5 = FROM.culture_value_array^4 }
+			
 			set_temp_variable = { loc_row_6 = FROM.culture_index_array^5 }
+			set_temp_variable = { loc_row_6 =  global.culture_names_array^loc_row_6 }
 			set_temp_variable = { value_row_6 = FROM.culture_value_array^5 }
+			
 			set_temp_variable = { loc_row_7 = FROM.culture_index_array^6 }
+			set_temp_variable = { loc_row_7 =  global.culture_names_array^loc_row_7 }
 			set_temp_variable = { value_row_7 = FROM.culture_value_array^6 }
+		}
+		localization_key = "TDA_culture_map_mode_7_row"
+	}
+	text = {
+		trigger = {
+			has_global_flag = TDA_using_super_cultures_flag
+			check_variable = { var = FROM.super_culture_value_array^num value = 7 compare = greater_than_or_equals }
+			
+			set_temp_variable = { loc_row_1 = FROM.super_culture_index_array^0 }
+			if = {
+				limit = { check_variable = { loc_row_1 < 0 } }
+				multiply_temp_variable = { loc_row_1 = -1 }
+				set_temp_variable = { loc_row_1 = global.super_culture_names_array^loc_row_1 }
+			}
+			else = {
+				set_temp_variable = { loc_row_1 = global.culture_names_array^loc_row_1 }
+			}
+			set_temp_variable = { value_row_1 = FROM.super_culture_value_array^0 }
+			
+			set_temp_variable = { loc_row_2 = FROM.super_culture_index_array^1 }
+			if = {
+				limit = { check_variable = { loc_row_2 < 0 } }
+				multiply_temp_variable = { loc_row_2 = -1 }
+				set_temp_variable = { loc_row_2 = global.super_culture_names_array^loc_row_2 }
+			}
+			else = {
+				set_temp_variable = { loc_row_2 = global.culture_names_array^loc_row_2 }
+			}
+			set_temp_variable = { value_row_2 = FROM.super_culture_value_array^1 }
+			
+			set_temp_variable = { loc_row_3 = FROM.super_culture_index_array^2 }
+			if = {
+				limit = { check_variable = { loc_row_3 < 0 } }
+				multiply_temp_variable = { loc_row_3 = -1 }
+				set_temp_variable = { loc_row_3 = global.super_culture_names_array^loc_row_3 }
+			}
+			else = {
+				set_temp_variable = { loc_row_3 = global.culture_names_array^loc_row_3 }
+			}
+			set_temp_variable = { value_row_3 = FROM.super_culture_value_array^2 }
+			
+			set_temp_variable = { loc_row_4 = FROM.super_culture_index_array^3 }
+			if = {
+				limit = { check_variable = { loc_row_4 < 0 } }
+				multiply_temp_variable = { loc_row_4 = -1 }
+				set_temp_variable = { loc_row_4 = global.super_culture_names_array^loc_row_4 }
+			}
+			else = {
+				set_temp_variable = { loc_row_4 = global.culture_names_array^loc_row_4 }
+			}
+			set_temp_variable = { value_row_4 = FROM.super_culture_value_array^3 }
+			
+			set_temp_variable = { loc_row_5 = FROM.super_culture_index_array^4 }
+			if = {
+				limit = { check_variable = { loc_row_5 < 0 } }
+				multiply_temp_variable = { loc_row_5 = -1 }
+				set_temp_variable = { loc_row_5 = global.super_culture_names_array^loc_row_5 }
+			}
+			else = {
+				set_temp_variable = { loc_row_5 = global.culture_names_array^loc_row_5 }
+			}
+			set_temp_variable = { value_row_5 = FROM.super_culture_value_array^4 }
+			
+			set_temp_variable = { loc_row_6 = FROM.super_culture_index_array^5 }
+			if = {
+				limit = { check_variable = { loc_row_6 < 0 } }
+				multiply_temp_variable = { loc_row_6 = -1 }
+				set_temp_variable = { loc_row_6 = global.super_culture_names_array^loc_row_6 }
+			}
+			else = {
+				set_temp_variable = { loc_row_6 = global.culture_names_array^loc_row_6 }
+			}
+			set_temp_variable = { value_row_6 = FROM.super_culture_value_array^5 }
+			
+			set_temp_variable = { loc_row_7 = FROM.super_culture_index_array^6 }
+			if = {
+				limit = { check_variable = { loc_row_7 < 0 } }
+				multiply_temp_variable = { loc_row_7 = -1 }
+				set_temp_variable = { loc_row_7 = global.super_culture_names_array^loc_row_7 }
+			}
+			else = {
+				set_temp_variable = { loc_row_7 = global.culture_names_array^loc_row_7 }
+			}
+			set_temp_variable = { value_row_7 = FROM.super_culture_value_array^6 }
 		}
 		localization_key = "TDA_culture_map_mode_7_row"
 	}
