@@ -51,7 +51,7 @@ STATE_sort_culture_array = {
 				add_to_array = { culture_value_array_HOLD = culture_value_array^v1 }
 			}
 		}
-			
+		
 		#Get the sum of the array
 		set_variable = { total_count = 0 }
 		for_each_loop = {
@@ -167,106 +167,85 @@ STATE_sort_culture_array = {
 }
 
 STATE_get_culture_colours = {	
-	#We now have our sorted arrays 'culture_value_array' and 'culture_index_array' -> Now get colours
-	set_temp_variable = { largest_ethnicity = culture_index_array^0 }
+	if = {
+		limit = { NOT = { has_global_flag = TDA_using_super_cultures_flag } }
+		set_variable = { largest_ethnicity = culture_index_array^0 }
 
-	set_variable = { culture_r = global.culture_colour_array^largest_ethnicity }
+		set_variable = { culture_r = global.culture_colour_array^largest_ethnicity }
+		set_variable = { culture_g = global.culture_colour_array^largest_ethnicity }
+		set_variable = { culture_b = global.culture_colour_array^largest_ethnicity }
+	}
+	else = {
+		set_variable = { largest_ethnicity = super_culture_index_array^0 }
+		
+		if = {
+			limit = { check_variable = { largest_ethnicity < 0 } }
+			multiply_variable = { largest_ethnicity = -1 }
+			
+			set_variable = { culture_r = global.super_culture_colour_array^largest_ethnicity }
+			set_variable = { culture_g = global.super_culture_colour_array^largest_ethnicity }
+			set_variable = { culture_b = global.super_culture_colour_array^largest_ethnicity }
+		}
+		else = {
+			set_variable = { culture_r = global.culture_colour_array^largest_ethnicity }
+			set_variable = { culture_g = global.culture_colour_array^largest_ethnicity }
+			set_variable = { culture_b = global.culture_colour_array^largest_ethnicity }
+		}
+	}
+	
+	clear_variable = largest_ethnicity
+	
 	divide_variable = { culture_r = 65536 }
 	
-	set_variable = { culture_g = global.culture_colour_array^largest_ethnicity }
 	modulo_variable = { culture_g = 65536 }
 	divide_variable = { culture_g = 256 }
 	
-	set_variable = { culture_b = global.culture_colour_array^largest_ethnicity }
 	modulo_variable = { culture_b = 256 }
 	
 	divide_variable = { culture_r = 255 }
 	divide_variable = { culture_g = 255 }
 	divide_variable = { culture_b = 255 }
 	
-#	if = {
-#		limit = { check_variable = { culture_index_array^num > 1 } }
-#
-#		#Get float strength between 0-1, equal to how strong we want the colour to be.
-#		#For this, I have % of majority culture + difference between the first and second most common ethnicities divided by 190
-#		set_temp_variable = { strength = culture_value_array^0 }
-#		multiply_temp_variable = { strength = 2 }
-#		subtract_from_temp_variable = { strength = culture_value_array^1 }
-#		divide_temp_variable = { strength = 190 }
-#		
-#		clamp_temp_variable = { var = strength min = 0 max = 1 }
-#		
-#		#Create greyscale value luminance
-#		set_temp_variable = { luminance = culture_r }
-#		add_to_temp_variable = { luminance = culture_g }
-#		add_to_temp_variable = { luminance = culture_b }
-#		multiply_temp_variable = { luminance = 0.3 }
-#		
-#		#Create 'mutedColours', which makes the colour duller by default
-#		#Using 0.8 for the luminance greyscale and 0.2 for the colour
-#		#More luminance = a bigger on-map difference between strengths
-#		set_temp_variable = { mutedColour_r = luminance }
-#		multiply_temp_variable = { mutedColour_r = 0.8 }
-#		set_temp_variable = { mutedColour_r2 = culture_r }
-#		multiply_temp_variable = { mutedColour_r2 = 0.2 }
-#		add_to_temp_variable = { mutedColour_r = mutedColour_r2 }
-#		
-#		set_temp_variable = { mutedColour_g = luminance }
-#		multiply_temp_variable = { mutedColour_g = 0.8 }
-#		set_temp_variable = { mutedColour_g2 = culture_g }
-#		multiply_temp_variable = { mutedColour_g2 = 0.2 }
-#		add_to_temp_variable = { mutedColour_g = mutedColour_g2 }
-#		
-#		set_temp_variable = { mutedColour_b = luminance }
-#		multiply_temp_variable = { mutedColour_b = 0.8 }
-#		set_temp_variable = { mutedColour_b2 = culture_b }
-#		multiply_temp_variable = { mutedColour_b2 = 0.2 }
-#		add_to_temp_variable = { mutedColour_b = mutedColour_b2 }
-#		
-#		#Now blend it with the equation 'mutedColour * (1 - strength) + culture * strength'
-#		set_temp_variable = { r_HOLD = 1 }
-#		subtract_from_temp_variable = { r_HOLD = strength }
-#		multiply_temp_variable = { r_HOLD = mutedColour_r }
-#		set_temp_variable = { r_HOLD2 = culture_r }
-#		multiply_temp_variable = { r_HOLD2 = strength }
-#		add_to_temp_variable = { r_HOLD = r_HOLD2 }
-#		set_variable = { culture_r = r_HOLD }
-#		
-#		set_temp_variable = { g_HOLD = 1 }
-#		subtract_from_temp_variable = { g_HOLD = strength }
-#		multiply_temp_variable = { g_HOLD = mutedColour_g }
-#		set_temp_variable = { g_HOLD2 = culture_g }
-#		multiply_temp_variable = { g_HOLD2 = strength }
-#		add_to_temp_variable = { g_HOLD = g_HOLD2 }
-#		set_variable = { culture_g = g_HOLD }
-#		
-#		set_temp_variable = { b_HOLD = 1 }
-#		subtract_from_temp_variable = { b_HOLD = strength }
-#		multiply_temp_variable = { b_HOLD = mutedColour_b }
-#		set_temp_variable = { b_HOLD2 = culture_b }
-#		multiply_temp_variable = { b_HOLD2 = strength }
-#		add_to_temp_variable = { b_HOLD = b_HOLD2 }
-#		set_variable = { culture_b = b_HOLD }
-#	}
-	
-	clr_state_flag = state_has_large_minority_culture_flag
-	
-	for_loop_effect = {
-		start = 1
-		end = culture_value_array^num
-		add = 1
+	if = {
+		limit = { NOT = { has_global_flag = TDA_using_super_cultures_flag } }
 		
-		value = v
-		break = break
-		
-		if = {
-			limit = { 
-				check_variable = { var = culture_index_array^v value = 0.0 compare = greater_than }				#Make sure it's not OTHER culture
-				check_variable = { var = culture_value_array^v value = 7.0 compare = greater_than_or_equals }
-			}
+		for_loop_effect = {
+			start = 1
+			end = culture_value_array^num
+			add = 1
 			
-			set_state_flag = state_has_large_minority_culture_flag
-			set_temp_variable = { break = 1 }
+			value = v
+			break = break
+			
+			if = {
+				limit = { 
+					check_variable = { var = culture_index_array^v value = 0.0 compare = not_equals }				#Make sure it's not OTHER culture
+					check_variable = { var = culture_value_array^v value = 7.0 compare = greater_than_or_equals }
+				}
+				
+				set_state_flag = state_has_large_minority_culture_flag
+				set_temp_variable = { break = 1 }
+			}
+		}
+	}
+	else = {
+		for_loop_effect = {
+			start = 1
+			end = super_culture_value_array^num
+			add = 1
+			
+			value = v
+			break = break
+			
+			if = {
+				limit = { 
+					check_variable = { var = super_culture_index_array^v value = 0.0 compare = not_equals }				#Make sure it's not OTHER culture
+					check_variable = { var = super_culture_value_array^v value = 7.0 compare = greater_than_or_equals }
+				}
+				
+				set_variable = { second_largest_ethnicity = super_culture_index_array^v }
+				set_temp_variable = { break = 1 }
+			}
 		}
 	}
 	
@@ -275,20 +254,38 @@ STATE_get_culture_colours = {
 	clear_variable = culture_g_2
 	clear_variable = culture_b_2	
 	if = {
-		limit = { 
-			has_state_flag = state_has_large_minority_culture_flag
+		limit = { has_variable = second_largest_ethnicity }
+		
+		if = {
+			limit = { NOT = { has_global_flag = TDA_using_super_cultures_flag } }
+
+			set_variable = { culture_r_2 = global.culture_colour_array^second_largest_ethnicity }
+			set_variable = { culture_g_2 = global.culture_colour_array^second_largest_ethnicity }
+			set_variable = { culture_b_2 = global.culture_colour_array^second_largest_ethnicity }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { second_largest_ethnicity < 0 } }
+				multiply_variable = { second_largest_ethnicity = -1 }
+				
+				set_variable = { culture_r_2 = global.super_culture_colour_array^second_largest_ethnicity }
+				set_variable = { culture_g_2 = global.super_culture_colour_array^second_largest_ethnicity }
+				set_variable = { culture_b_2 = global.super_culture_colour_array^second_largest_ethnicity }
+			}
+			else = {
+				set_variable = { culture_r_2 = global.culture_colour_array^second_largest_ethnicity }
+				set_variable = { culture_g_2 = global.culture_colour_array^second_largest_ethnicity }
+				set_variable = { culture_b_2 = global.culture_colour_array^second_largest_ethnicity }
+			}
 		}
 		
-		set_temp_variable = { second_largest_ethnicity = culture_index_array^1 }
-
-		set_variable = { culture_r_2 = global.culture_colour_array^second_largest_ethnicity }
+		clear_variable = second_largest_ethnicity
+		
 		divide_variable = { culture_r_2 = 65536 }
 		
-		set_variable = { culture_g_2 = global.culture_colour_array^second_largest_ethnicity }
 		modulo_variable = { culture_g_2 = 65536 }
 		divide_variable = { culture_g_2 = 256 }
 		
-		set_variable = { culture_b_2 = global.culture_colour_array^second_largest_ethnicity }
 		modulo_variable = { culture_b_2 = 256 }
 		
 		divide_variable = { culture_r_2 = 255 }
@@ -297,7 +294,19 @@ STATE_get_culture_colours = {
 	}
 }
 
-update_every_state_culture = { every_state = { STATE_sort_culture_array = yes STATE_get_culture_colours = yes } }
+STATE_fully_update_culture_arrays = {
+	#log= "THIS: [THIS.GetName], ROOT: [ROOT.GetName], FROM: [ROOT.GetName], PREV: [PREV.GetName]"
+	
+	STATE_sort_culture_array = yes 
+	STATE_get_super_culture_array = yes 
+	STATE_get_culture_colours = yes 
+}
+
+TDA_update_every_state_culture = { 
+	every_state = { 
+		STATE_fully_update_culture_arrays = yes
+	} 
+}
 
 #Code taken from Yard1
 STATE_sort_culture_quicksort = {
@@ -403,80 +412,228 @@ STATE_sort_culture_quicksort = {
 
 #Accept the variable "culture_index", return the variable "super_culture_index"
 ANY_get_super_culture_from_culture = {
-	set_variable = { tmp = culture_index }
-	subtract_from_variable = { tmp = 1 }
-	divide_variable = { tmp = global.culture_bucket_size }
-	divide_variable = { tmp = 100000 }
-	multiply_variable = { tmp = 100000 }
-	
-	#Work out what rank of the triangle number the divisor is on
-	set_variable = { triangle = tmp }
-	divide_variable = { triangle = global.culture_largest_bucket }
-	divide_variable = { triangle = 100000 }
-	multiply_variable = { triangle = 100000 }
-	
-	set_variable = { end = 1 }
-	set_variable = { level = 1 }
-	
-	while_loop_effect = {
-		limit = {
-			check_variable = { end < triangle }
+	if = {
+		limit = { check_variable = { var = culture_index value = 0 compare = not_equals } }
+		set_variable = { array_start = 1 }
+		set_variable = { super_culture_index = 1 }
+		set_variable = { increment_multiplier = 1 }
+		set_variable = { increment_count = 0 }
+		
+		set_variable = { check_idx = global.culture_bucket_size }
+		add_to_variable = { check_idx = 1 }
+		
+		while_loop_effect = {
+			limit = {
+				check_variable = { var = culture_index value = check_idx compare = greater_than_or_equals }
+			}
+			
+			set_temp_variable = { t1 = global.culture_bucket_size }
+			multiply_temp_variable = { t1 = increment_multiplier }
+			add_to_variable = { array_start = t1 }
+			
+			add_to_variable = { super_culture_index = 1 }
+			add_to_variable = { increment_count = 1 }
+			
+			if = {
+				limit = { check_variable = { increment_count = global.culture_bucket_width } }
+				
+				add_to_variable = { increment_multiplier = 1 }
+				set_variable = { increment_count = 0 }
+			}
+			
+			set_variable = { check_idx = global.culture_bucket_size }
+			multiply_variable = { check_idx = increment_multiplier }
+			add_to_variable = { check_idx = array_start }
 		}
 		
-		add_to_variable = { level = 1 }
-		add_to_variable = { end = level }
-	}
-	
-	if = {
-		limit = { check_variable = { level = 1 } }
-		set_variable = { super_culture_index = tmp }
+		clear_variable = array_start
+		clear_variable = increment_multiplier
+		clear_variable = increment_count
+		clear_variable = check_idx
 	}
 	else = {
 		set_variable = { super_culture_index = 0 }
-		for_loop_effect = {
-			start = 1
-			end = level
-			value = v
-			
-			set_temp_variable = { t = global.culture_largest_bucket }
-			multiply_temp_variable = { t = v }
-			
-			add_to_variable = { super_culture_index = t }
-		}
-		#log="[?sub] - [?tmp] - [?triangle]"
-		
-		set_temp_variable = { sub = tmp }
-		subtract_from_temp_variable = { sub = super_culture_index }
-		divide_temp_variable = { sub = triangle }
-		divide_temp_variable = { sub = 100000 }
-		multiply_temp_variable = { sub = 100000 }
-		add_to_variable = { super_culture_index = sub }
 	}
-	
-	clear_variable = tmp
-	clear_variable = triangle
-	clear_variable = end
-	clear_variable = level
 }
 
 #Get first index of a super culture, take in variable "super_culture_index" and return "culture_index"
 ANY_get_culture_from_super_culture = {	
-	set_variable = { culture_index = 1 }
 	if = {
-		limit = { check_variable = { super_culture_index > 0 } }
+		limit = { check_variable = { var = super_culture_index value = 0 compare = not_equals } }
 		
+		set_variable = { local_sci = super_culture_index }
+		if = {
+			limit = { check_variable = { local_sci < 0 } }
+			multiply_variable = { local_sci = -1 }
+		}
+
+		set_variable = { culture_index = 1 }
+		set_variable = { increment_multiplier = 1 }
+		set_variable = { increment_count = 0 }
+
 		for_loop_effect = {
-			value = v
-			end = super_culture_index
+			start = 1
+			end = local_sci
+			value = v2
 			
-			set_temp_variable = { t = v }
-			divide_temp_variable = { t = global.culture_largest_bucket }
-			divide_temp_variable = { t = 100000 }
-			multiply_temp_variable = { t = 100000 }
-			add_to_temp_variable = { t = 1 }
-			multiply_temp_variable = { t = global.culture_bucket_size }
-				
+			set_temp_variable = { t = global.culture_bucket_size }
+			multiply_temp_variable = { t = increment_multiplier }
+			
 			add_to_variable = { culture_index = t }
+			
+			add_to_variable = { increment_count = 1 }
+			
+			if = {
+				limit = { check_variable = { increment_count = global.culture_bucket_width } }
+				
+				add_to_variable = { increment_multiplier = 1 }
+				set_variable = { increment_count = 0 }
+			}
+		}
+		
+		clear_variable = local_sci
+		clear_variable = increment_multiplier
+		clear_variable = increment_count
+	}
+	else = {
+		set_variable = { culture_index = 0 }
+	}
+}
+
+DEBUG_test_cultures = {
+	for_loop_effect = {
+		value = v
+		start = 110
+		end = 145
+		
+		set_variable = { culture_index = v }
+		ANY_get_super_culture_from_culture = yes
+		log = "[?v] - [?super_culture_index]"
+	}
+}
+
+STATE_get_super_culture_array = {
+	clear_array = super_culture_index_array
+	clear_array = super_culture_value_array
+	
+	resize_array = { array = super_culture_index_array size = culture_index_array^num value = 0 }
+	resize_array = { array = super_culture_value_array size = culture_index_array^num value = 0 }
+	
+	for_loop_effect = {
+		end = culture_index_array^num
+		value = v
+		
+		set_variable = { super_culture_value_array^v = culture_value_array^v }
+		
+		set_variable = { culture_index = culture_index_array^v }
+		ANY_get_super_culture_from_culture = yes
+
+		if = {
+			limit = { check_variable = { var = global.super_culture_names_array^super_culture_index value = 0 compare = not_equals } }
+			set_variable = { super_culture_index_array^v = super_culture_index }
+			multiply_variable = { super_culture_index_array^v = -1 }
+		}
+		else = {
+			set_variable = { super_culture_index_array^v = culture_index_array^v }
+		}
+		
+		clear_variable = culture_index
+		clear_variable = super_culture_index
+	}
+	
+	#Merge two subcultures into one super culture
+	
+	clear_array = super_culture_index_array_HOLD
+	clear_array = super_culture_value_array_HOLD
+	
+	for_loop_effect = {
+		end = super_culture_index_array^num
+		break = break1
+		value = v1
+		
+		if = {
+			limit = { is_in_array = { array = super_culture_index_array_HOLD value = super_culture_index_array^v1 } }
+			
+			for_loop_effect = {
+				end = super_culture_index_array_HOLD^num
+				break = break2
+				value = v2
+				
+				if = {
+					limit = { check_variable = { super_culture_index_array_HOLD^v2 = super_culture_index_array^v1 } }
+					add_to_variable = { super_culture_value_array_HOLD^v2 = super_culture_value_array^v1 }
+					set_temp_variable = { break2 = 1 }
+				}
+			}
+		}
+		else = {
+			add_to_array = { super_culture_index_array_HOLD = super_culture_index_array^v1 }
+			add_to_array = { super_culture_value_array_HOLD = super_culture_value_array^v1 }
 		}
 	}
+
+	#Sort HOLD array
+	
+	resize_array = { array = arr size = super_culture_value_array_HOLD^num value = 0 }
+	for_each_loop = {
+		array = super_culture_value_array_HOLD
+		value = v
+		index = i
+		
+		set_variable = { arr^i = v }
+	}
+	
+	#Sort array 'arr'
+	set_variable = { high = arr^num }
+	subtract_from_variable = { high = 1 }
+	set_variable = { low = 0 }
+	
+	STATE_sort_culture_quicksort = yes
+	
+	clear_variable = high
+	clear_variable = low
+
+	#Merge HOLD array back into original array
+	
+	clear_array = super_culture_index_array
+	clear_array = super_culture_value_array
+	
+	resize_array = { array = super_culture_index_array value = 0 size = super_culture_index_array_HOLD^num }
+	resize_array = { array = super_culture_value_array value = 0 size = super_culture_value_array_HOLD^num }
+
+	for_each_loop = {
+		array = arr
+		value = v
+		index = i
+		break = break
+		
+		for_loop_effect = {
+			end = super_culture_value_array_HOLD^num
+			value = i2
+			break = break2
+
+			if = {
+				limit = { check_variable = { super_culture_value_array_HOLD^i2 = v } }
+				set_variable = { super_culture_index_array^i = super_culture_index_array_HOLD^i2 }
+				set_variable = { super_culture_value_array^i = super_culture_value_array_HOLD^i2 }
+				set_temp_variable = { break2 = 1 }
+			}
+		}
+	}
+	
+	clear_array = arr
+	clear_array = super_culture_index_array_HOLD
+	clear_array = super_culture_value_array_HOLD
+}
+
+TDA_toggle_super_cultures_view = {
+	if = {
+		limit = { has_global_flag = TDA_using_super_cultures_flag }
+		clr_global_flag = TDA_using_super_cultures_flag
+	}
+	else = {
+		set_global_flag = TDA_using_super_cultures_flag
+	}
+
+	every_state = { STATE_get_culture_colours = yes }
 }

@@ -12,7 +12,7 @@ scripted_map_modes = {
 				
 				if = {
 					limit = { 
-						FROM = { has_state_flag = state_has_large_minority_culture_flag }
+						FROM = { has_variable = culture_r_2 }
 					}
 					
 					set_temp_variable = { red = FROM.culture_r_2 }

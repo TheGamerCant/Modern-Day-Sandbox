@@ -3,8 +3,8 @@ defined_text = {
 	#100% one culture
 	text = {
 		trigger = {
-			check_variable = { var = FROM.culture_value_array^0 value = 95 compare = greater_than_or_equals }
-			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
+			check_variable = { var = FROM.culture_value_array^0 value = 100 compare = greater_than_or_equals }
 			
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
 		}
@@ -13,6 +13,7 @@ defined_text = {
 	#Over 95% one culture
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 95 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			
@@ -23,6 +24,7 @@ defined_text = {
 	#Over 80% one culture
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 80 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -42,6 +44,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 75 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -62,6 +65,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 75 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -82,6 +86,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 75 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			
@@ -94,6 +99,7 @@ defined_text = {
 	#State has simple majority
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 50 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -117,6 +123,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 50 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -141,6 +148,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 50 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -165,6 +173,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 50 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -189,6 +198,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 50 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -214,6 +224,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 50 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -239,6 +250,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 50 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
@@ -264,6 +276,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^0 value = 50 compare = greater_than_or_equals }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 
@@ -276,6 +289,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
 				OR = {
@@ -298,6 +312,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
 				OR = {
@@ -321,6 +336,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
 				OR = {
@@ -344,6 +360,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
 				OR = {
@@ -367,6 +384,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
 				OR = {
@@ -391,6 +409,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
 				OR = {
@@ -415,6 +434,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 			AND = {
 				OR = {
@@ -439,6 +459,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_index_array^0 value = 0 compare = not_equals }
 
 			set_temp_variable = { dem1 = FROM.culture_index_array^0 }
@@ -457,6 +478,7 @@ defined_text = {
 	name = GetCultureMapModeTTDelayed
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^num value = 1 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
@@ -466,6 +488,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^num value = 2 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
@@ -477,6 +500,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^num value = 3 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
@@ -490,6 +514,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^num value = 4 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
@@ -505,6 +530,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^num value = 5 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
@@ -522,6 +548,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^num value = 6 compare = equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }
@@ -541,6 +568,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = { has_global_flag = TDA_using_super_cultures_flag }
 			check_variable = { var = FROM.culture_value_array^num value = 7 compare = greater_than_or_equals }
 			
 			set_temp_variable = { loc_row_1 = FROM.culture_index_array^0 }

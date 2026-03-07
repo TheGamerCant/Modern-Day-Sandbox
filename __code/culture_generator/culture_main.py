@@ -74,7 +74,7 @@ def WriteOnActionsFile(
         f.write(
             "on_actions = {\n\ton_startup = {\n\t\teffect = {\n\t\t\t"
             f"set_variable = {{ global.culture_bucket_size = {bucket_size} }}\n\t\t\t"
-            f"set_variable = {{ global.culture_largest_bucket = {largest_bucket} }}\n\n\t\t\t"
+            f"set_variable = {{ global.culture_bucket_width = {largest_bucket} }}\n\n\t\t\t"
             f"resize_array = {{ array = global.culture_colour_array size = {max_culture_index + 1} value = 0 }}\n\t\t\t"
 			f"resize_array = {{ array = global.culture_names_array  size = {max_culture_index + 1} value = 0 }}\n\t\t\t"
 			f"resize_array = {{ array = global.culture_desc_array   size = {max_culture_index + 1} value = 0 }}\n\n\t\t\t"
@@ -103,8 +103,7 @@ def WriteOnActionsFile(
             )
 
         f.write(
-            "#Do this after setting up the colours\n\t\t\tZZZ = { update_every_state_culture = yes }"
-            "\n\t\t}\n\t}\n}"
+            "ZZZ = { TDA_update_every_state_culture = yes }\n\t\t}\n\t}\n}"
         )
 
 def WriteIdeasFile(cultures_list: list[Culture], super_cultures_list: list[SuperCulture], ideas_file: Path) -> None:
@@ -129,6 +128,27 @@ def WriteIdeasFile(cultures_list: list[Culture], super_cultures_list: list[Super
             "\t}\n}"
         )
 
+def WriteScriptedEffectsFile(cultures_list: list[Culture], super_cultures_list: list[SuperCulture], scripted_effects_file: Path):
+    culture_token_to_index_dict: dict[str, int] = {culture.token : i for i, culture in enumerate(cultures_list)}
+    super_culture_token_to_index_dict: dict[str, int] = {super_culture.token : i for i, super_culture in enumerate(super_cultures_list)}
+
+    with open(str(scripted_effects_file), "w", encoding="utf-8") as f:
+        f.write(
+            "TDA_toggle_super_cultures_view = {\n\tif = {\n\t\tlimit = { has_global_flag = TDA_using_super_cultures_flag }\n\t\tclr_global_flag = "
+		    "TDA_using_super_cultures_flag\n\t\tTDA_reset_culture_data = yes\n\t}\n\telse = {\n\t\tset_global_flag = TDA_using_super_cultures_flag"
+            "\n\t\tTDA_culture_data_to_super = yes\n\t}\n\n\tevery_state = { STATE_get_culture_colours = yes }\n}\n\nTDA_culture_data_to_super = {"
+        )
+
+        for culture in cultures_list:
+            if culture.super_culture:
+                super_culture_index: int = super_culture_token_to_index_dict.get(culture.super_culture)
+                f.write(
+                    f"\n\n\tset_variable = {{  global.culture_names_array^{culture.new_index} = token:TDA_super_culture_{super_cultures_list[super_culture_index].token}_token_idea }}"
+                    f"\n\tset_variable = {{   global.culture_desc_array^{culture.new_index} = token:TDA_super_culture_{super_cultures_list[super_culture_index].token}_desc_token_idea }}"
+                    f"\n\tset_variable = {{ global.culture_colour_array^{culture.new_index} = {RgbToInteger(super_cultures_list[super_culture_index].red, super_cultures_list[super_culture_index].green, super_cultures_list[super_culture_index].blue)} }}"
+                )
+
+
 def WriteLocalisationFile(cultures_list: list[Culture], super_cultures_list: list[SuperCulture], localisation_file: Path) -> None:
     with open(str(localisation_file), "w", encoding="utf-8") as f:
         f.write('\ufeff')
@@ -142,7 +162,9 @@ def WriteLocalisationFile(cultures_list: list[Culture], super_cultures_list: lis
  TDA_culture_map_mode_tooltip_delayed:0 "[GetCultureMapModeTTDelayed]"
  
  TDA_culture_state_is_homogenous:0 "The culture of §Y[FROM.GetName]§! is [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
+ TDA_culture_state_is_homogenous_super:0 "The culture of §Y[FROM.GetName]§! is [?global.super_culture_names_array^dem1.GetTokenLocalizedKey]."
  TDA_culture_state_is_nearly_homogenous:0 "The culture of §Y[FROM.GetName]§! is almost entirely [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
+ TDA_culture_state_is_nearly_homogenous_super:0 "The culture of §Y[FROM.GetName]§! is almost entirely [?global.super_culture_names_array^dem1.GetTokenLocalizedKey]."
  TDA_culture_state_has_large_majority_no_minority:0 "The culture of §Y[FROM.GetName]§! is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey]."
  TDA_culture_state_has_large_majority_one_minority:0 "The culture of §Y[FROM.GetName]§! is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey], with a large [?global.culture_names_array^dem2.GetTokenLocalizedKey] minority."
  TDA_culture_state_has_large_majority_two_minorities:0 "The culture of §Y[FROM.GetName]§! is overwhelmingly [?global.culture_names_array^dem1.GetTokenLocalizedKey], with large [?global.culture_names_array^dem2.GetTokenLocalizedKey] and [?global.culture_names_array^dem3.GetTokenLocalizedKey] minorities."
@@ -166,7 +188,7 @@ def WriteLocalisationFile(cultures_list: list[Culture], super_cultures_list: lis
 )
         for culture in cultures_list:
             f.write(
-                f"\n\n TDA_culture_{culture.token}_token_idea:0 \"§{super_culture.colour}{culture.name}§!\""
+                f"\n\n TDA_culture_{culture.token}_token_idea:0 \"§{culture.colour}{culture.name}§!\""
                 f"\n TDA_culture_{culture.token}_desc_token_idea:0 \"{culture.desc}\""
             )
 
@@ -225,6 +247,7 @@ def LoadSuperCulturesFromJson(cultures_list: list[Culture]) -> list[SuperCulture
                 red = super_culture.get("red", 0),
                 green = super_culture.get("green", 0),
                 blue = super_culture.get("blue", 0),
+                colour = super_culture.get("colour", ""),
                 name = super_culture.get("name", ""),
                 desc = super_culture.get("desc", ""),
                 subcultures=super_to_sub_dict.get(super_culture.get("token"), None)
@@ -282,7 +305,7 @@ def ComputeNewIndexes(
     culture_token_to_list_index_dict.pop("other")
 
     current_culture_index: int = 1
-    current_super_culture_index: int = 0
+    current_super_culture_index: int = 1
     max_culture_index: int = 1
     max_super_culture_index: int = 0
 
@@ -341,6 +364,7 @@ def main():
 
     on_actions_file: Path = mod_directory / "common/on_actions/TDA_culture_on_actions.txt"
     idea_tokens_file: Path = mod_directory / "common/ideas/TDA_culture_tokens.txt"
+    scripted_effects_file: Path = mod_directory / "common/scripted_effects/TDA_culture_toggle_scripted_effects.txt"
     localisation_file: Path = mod_directory / "localisation/english/TDA_culture_l_english.yml"
     states_folder: Path = mod_directory / "history/states"
 
@@ -358,6 +382,7 @@ def main():
 
     WriteOnActionsFile(cultures_list, super_cultures_list, on_actions_file, bucket_size, largest_bucket, max_culture_index, max_super_culture_index)
     WriteIdeasFile(cultures_list, super_cultures_list, idea_tokens_file)
+    #WriteScriptedEffectsFile(cultures_list, super_cultures_list, scripted_effects_file)
     WriteLocalisationFile(cultures_list, super_cultures_list, localisation_file)
 
     UpdateStateFiles(cultures_list, states_folder)
