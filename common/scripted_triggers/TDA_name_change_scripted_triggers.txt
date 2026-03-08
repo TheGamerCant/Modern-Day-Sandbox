@@ -52,6 +52,20 @@ TAG_using_german_names = {
 	}
 }
 
+TAG_using_luxembourgish_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = LUX
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = LUX
+	}
+}
+
 TAG_using_polish_names = {
 	has_global_flag = TDA_city_name_changes_active_flag
 	OR = {

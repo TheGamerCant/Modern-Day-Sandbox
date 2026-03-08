@@ -223,7 +223,7 @@ STATE_get_culture_colours = {
 					check_variable = { var = culture_value_array^v value = 7.0 compare = greater_than_or_equals }
 				}
 				
-				set_state_flag = state_has_large_minority_culture_flag
+				set_variable = { second_largest_ethnicity = culture_index_array^v }
 				set_temp_variable = { break = 1 }
 			}
 		}

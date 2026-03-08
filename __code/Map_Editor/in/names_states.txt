@@ -66,6 +66,18 @@
 }
 8 = {
 	default = "Luxembourg"
+	entry = {
+        name = "Lëtzebuerg"
+        requirements = {
+            "TAG_using_luxembourgish_names = yes"
+        }
+    }
+	entry = {
+        name = "Luxemburg"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
 }
 9 = {
 	default = "Bohemia"

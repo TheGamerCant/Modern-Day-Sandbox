@@ -5,6 +5,12 @@ state={
 		owner = SOV
 		add_core_of = SOV
 		
+		resize_array = { array = culture_index_array size = 1 value = 0 }
+		resize_array = { array = culture_value_array size = 1 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 113 }
+		set_variable = { culture_value_array^0 = 100.0 }
+		
 		#Nova Zemlya = 79964
 		#Franz Josef Land = 16134
 		set_variable = { sq_km = 96098 }

@@ -116,6 +116,24 @@
           "colour" : "r",
 		  "name" : "Mainland Chinese",
           "desc" : ""
+        },
+		{
+          "token" : "finnish",
+          "red" : 206,
+          "green" : 221,
+          "blue" : 231,
+          "colour" : "W",
+		  "name" : "Finnish",
+          "desc" : ""
+        },
+        {
+          "token" : "russian",
+          "red" : 6,
+          "green" : 89,
+          "blue" : 14,
+          "colour" : "I",
+		  "name" : "Russian",
+          "desc" : ""
         }
     ],
     "cultures": [
@@ -360,8 +378,8 @@
         {
           "token" : "puerto_rican",
           "red" : 138,
-          "green" : 21,
-          "blue" : 21,
+          "green" : 101,
+          "blue" : 47,
           "colour" : "F",
 		  "name" : "Puerto Rican",
           "desc" : "",
@@ -702,7 +720,8 @@
           "blue" : 39,
           "colour" : "G",
 		  "name" : "Baltic Russian",
-          "desc" : ""
+          "desc" : "",
+		  "super_culture" : "russian"
         },
         {
           "token" : "dutch",
@@ -876,9 +895,9 @@
         },
         {
           "token" : "xibei",
-          "red" : 168,
-          "green" : 13,
-          "blue" : 37,
+          "red" : 174,
+          "green" : 16,
+          "blue" : 63,
           "colour" : "f",
 		  "name" : "Xibei",
           "desc" : "",
@@ -1045,6 +1064,243 @@
           "blue" : 81,
           "colour" : "7",
 		  "name" : "Hlai",
+          "desc" : ""
+        },
+        {
+          "token" : "greenlandic",
+          "red" : 222,
+          "green" : 222,
+          "blue" : 251,
+          "colour" : "W",
+		  "name" : "Greenlandic",
+          "desc" : ""
+        },
+        {
+          "token" : "faroese",
+          "red" : 72,
+          "green" : 137,
+          "blue" : 197,
+          "colour" : "3",
+		  "name" : "Faroese",
+          "desc" : ""
+        },
+        {
+          "token" : "danish",
+          "red" : 154,
+          "green" : 116,
+          "blue" : 93,
+          "colour" : "F",
+		  "name" : "Danish",
+          "desc" : ""
+        },
+        {
+          "token" : "norwegian",
+          "red" : 124,
+          "green" : 56,
+          "blue" : 56,
+          "colour" : "E",
+		  "name" : "Norwegian",
+          "desc" : ""
+        },
+        {
+          "token" : "swedish",
+          "red" : 23,
+          "green" : 78,
+          "blue" : 171,
+          "colour" : "e",
+		  "name" : "Swedish",
+          "desc" : ""
+        },
+        {
+          "token" : "finnish_proper",
+          "red" : 206,
+          "green" : 221,
+          "blue" : 231,
+          "colour" : "W",
+		  "name" : "Finnish",
+          "desc" : "",
+		  "super_culture": "finnish"
+        },
+        {
+          "token" : "finno_swedish",
+          "red" : 142,
+          "green" : 177,
+          "blue" : 238,
+          "colour" : "4",
+		  "name" : "Finno-Swedish",
+          "desc" : "",
+		  "super_culture": "finnish"
+        },
+        {
+          "token" : "muscovite",
+          "red" : 74,
+          "green" : 145,
+          "blue" : 29,
+          "colour" : "c",
+		  "name" : "Muscovite",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "petersburgian",
+          "red" : 140,
+          "green" : 178,
+          "blue" : 118,
+          "colour" : "7",
+		  "name" : "Petersburgian",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "central_russian",
+          "red" : 24,
+          "green" : 97,
+          "blue" : 24,
+          "colour" : "I",
+		  "name" : "Central Russian",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "northern_russian",
+          "red" : 11,
+          "green" : 79,
+          "blue" : 41,
+          "colour" : "N",
+		  "name" : "Northern Russian",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "far_eastern_russian",
+          "red" : 20,
+          "green" : 124,
+          "blue" : 41,
+          "colour" : "c",
+		  "name" : "Far Eastern",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "ural_russian",
+          "red" : 8,
+          "green" : 56,
+          "blue" : 8,
+          "colour" : "I",
+		  "name" : "Uralic",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "siberian",
+          "red" : 8,
+          "green" : 143,
+          "blue" : 55,
+          "colour" : "c",
+		  "name" : "Siberian",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "volga_russian",
+          "red" : 10,
+          "green" : 146,
+          "blue" : 85,
+          "colour" : "6",
+		  "name" : "Volga Russian",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "southern_russian",
+          "red" : 54,
+          "green" : 80,
+          "blue" : 16,
+          "colour" : "6",
+		  "name" : "Southern Russian",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "kaliningrader",
+          "red" : 64,
+          "green" : 167,
+          "blue" : 16,
+          "colour" : "K",
+		  "name" : "Kaliningrader",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "nenets",
+          "red" : 211,
+          "green" : 211,
+          "blue" : 67,
+          "colour" : "Y",
+		  "name" : "Nenets",
+          "desc" : ""
+        },
+        {
+          "token" : "komi",
+          "red" : 107,
+          "green" : 206,
+          "blue" : 188,
+          "colour" : "6",
+		  "name" : "Komi",
+          "desc" : ""
+        },
+        {
+          "token" : "tatar",
+          "red" : 182,
+          "green" : 57,
+          "blue" : 0,
+          "colour" : "r",
+		  "name" : "Tatar",
+          "desc" : ""
+        },
+        {
+          "token" : "bashkir",
+          "red" : 23,
+          "green" : 174,
+          "blue" : 159,
+          "colour" : "5",
+		  "name" : "Bashkir",
+          "desc" : ""
+        },
+        {
+          "token" : "mari",
+          "red" : 255,
+          "green" : 214,
+          "blue" : 229,
+          "colour" : "p",
+		  "name" : "Mari",
+          "desc" : ""
+        },
+        {
+          "token" : "chuvash",
+          "red" : 200,
+          "green" : 105,
+          "blue" : 14,
+          "colour" : "F",
+		  "name" : "Chuvash",
+          "desc" : ""
+        },
+        {
+          "token" : "mordvin",
+          "red" : 52,
+          "green" : 15,
+          "blue" : 112,
+          "colour" : "V",
+		  "name" : "Mordvin",
+          "desc" : ""
+        },
+        {
+          "token" : "udmurt",
+          "red" : 25,
+          "green" : 0,
+          "blue" : 0,
+          "colour" : "f",
+		  "name" : "Udmurt",
           "desc" : ""
         }
     ]

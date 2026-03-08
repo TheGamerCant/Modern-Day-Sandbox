@@ -56,6 +56,12 @@
  TDA_culture_inner_mongolian_token_idea:0 "§EInner Mongolian§!"
  TDA_culture_inner_mongolian_desc_token_idea:0 ""
 
+ TDA_culture_finnish_proper_token_idea:0 "§WFinnish§!"
+ TDA_culture_finnish_proper_desc_token_idea:0 ""
+
+ TDA_culture_finno_swedish_token_idea:0 "§4Finno-Swedish§!"
+ TDA_culture_finno_swedish_desc_token_idea:0 ""
+
  TDA_culture_swiss_german_token_idea:0 "§rSwiss German§!"
  TDA_culture_swiss_german_desc_token_idea:0 ""
 
@@ -133,6 +139,39 @@
 
  TDA_culture_british_columbian_token_idea:0 "§tBritish Columbian§!"
  TDA_culture_british_columbian_desc_token_idea:0 ""
+
+ TDA_culture_baltic_russian_token_idea:0 "§GBaltic Russian§!"
+ TDA_culture_baltic_russian_desc_token_idea:0 ""
+
+ TDA_culture_muscovite_token_idea:0 "§cMuscovite§!"
+ TDA_culture_muscovite_desc_token_idea:0 ""
+
+ TDA_culture_petersburgian_token_idea:0 "§7Petersburgian§!"
+ TDA_culture_petersburgian_desc_token_idea:0 ""
+
+ TDA_culture_central_russian_token_idea:0 "§ICentral Russian§!"
+ TDA_culture_central_russian_desc_token_idea:0 ""
+
+ TDA_culture_northern_russian_token_idea:0 "§NNorthern Russian§!"
+ TDA_culture_northern_russian_desc_token_idea:0 ""
+
+ TDA_culture_far_eastern_russian_token_idea:0 "§cFar Eastern§!"
+ TDA_culture_far_eastern_russian_desc_token_idea:0 ""
+
+ TDA_culture_ural_russian_token_idea:0 "§IUralic§!"
+ TDA_culture_ural_russian_desc_token_idea:0 ""
+
+ TDA_culture_siberian_token_idea:0 "§cSiberian§!"
+ TDA_culture_siberian_desc_token_idea:0 ""
+
+ TDA_culture_volga_russian_token_idea:0 "§6Volga Russian§!"
+ TDA_culture_volga_russian_desc_token_idea:0 ""
+
+ TDA_culture_southern_russian_token_idea:0 "§6Southern Russian§!"
+ TDA_culture_southern_russian_desc_token_idea:0 ""
+
+ TDA_culture_kaliningrader_token_idea:0 "§KKaliningrader§!"
+ TDA_culture_kaliningrader_desc_token_idea:0 ""
 
  TDA_culture_dongbei_token_idea:0 "§hDongbei§!"
  TDA_culture_dongbei_desc_token_idea:0 ""
@@ -263,9 +302,6 @@
  TDA_culture_estonian_token_idea:0 "§4Estonian§!"
  TDA_culture_estonian_desc_token_idea:0 ""
 
- TDA_culture_baltic_russian_token_idea:0 "§GBaltic Russian§!"
- TDA_culture_baltic_russian_desc_token_idea:0 ""
-
  TDA_culture_dutch_token_idea:0 "§hDutch§!"
  TDA_culture_dutch_desc_token_idea:0 ""
 
@@ -317,6 +353,45 @@
  TDA_culture_hlai_token_idea:0 "§7Hlai§!"
  TDA_culture_hlai_desc_token_idea:0 ""
 
+ TDA_culture_greenlandic_token_idea:0 "§WGreenlandic§!"
+ TDA_culture_greenlandic_desc_token_idea:0 ""
+
+ TDA_culture_faroese_token_idea:0 "§3Faroese§!"
+ TDA_culture_faroese_desc_token_idea:0 ""
+
+ TDA_culture_danish_token_idea:0 "§FDanish§!"
+ TDA_culture_danish_desc_token_idea:0 ""
+
+ TDA_culture_norwegian_token_idea:0 "§ENorwegian§!"
+ TDA_culture_norwegian_desc_token_idea:0 ""
+
+ TDA_culture_swedish_token_idea:0 "§eSwedish§!"
+ TDA_culture_swedish_desc_token_idea:0 ""
+
+ TDA_culture_nenets_token_idea:0 "§YNenets§!"
+ TDA_culture_nenets_desc_token_idea:0 ""
+
+ TDA_culture_komi_token_idea:0 "§6Komi§!"
+ TDA_culture_komi_desc_token_idea:0 ""
+
+ TDA_culture_tatar_token_idea:0 "§rTatar§!"
+ TDA_culture_tatar_desc_token_idea:0 ""
+
+ TDA_culture_bashkir_token_idea:0 "§5Bashkir§!"
+ TDA_culture_bashkir_desc_token_idea:0 ""
+
+ TDA_culture_mari_token_idea:0 "§pMari§!"
+ TDA_culture_mari_desc_token_idea:0 ""
+
+ TDA_culture_chuvash_token_idea:0 "§FChuvash§!"
+ TDA_culture_chuvash_desc_token_idea:0 ""
+
+ TDA_culture_mordvin_token_idea:0 "§VMordvin§!"
+ TDA_culture_mordvin_desc_token_idea:0 ""
+
+ TDA_culture_udmurt_token_idea:0 "§fUdmurt§!"
+ TDA_culture_udmurt_desc_token_idea:0 ""
+
  TDA_super_culture_irish_token_idea:0 "§IIrish§!"
  TDA_super_culture_irish_desc_token_idea:0 ""
 
@@ -328,6 +403,9 @@
 
  TDA_super_culture_mongolian_token_idea:0 "§EMongolian§!"
  TDA_super_culture_mongolian_desc_token_idea:0 ""
+
+ TDA_super_culture_finnish_token_idea:0 "§WFinnish§!"
+ TDA_super_culture_finnish_desc_token_idea:0 ""
 
  TDA_super_culture_swiss_token_idea:0 "§rSwiss§!"
  TDA_super_culture_swiss_desc_token_idea:0 ""
@@ -349,6 +427,9 @@
 
  TDA_super_culture_canadian_token_idea:0 "§tCanadian§!"
  TDA_super_culture_canadian_desc_token_idea:0 ""
+
+ TDA_super_culture_russian_token_idea:0 "§IRussian§!"
+ TDA_super_culture_russian_desc_token_idea:0 ""
 
  TDA_super_culture_mainland_chinese_token_idea:0 "§rMainland Chinese§!"
  TDA_super_culture_mainland_chinese_desc_token_idea:0 ""

@@ -4,6 +4,7 @@ state={
 	history={
 		owner = SOV
 		add_core_of = SOV
+		add_core_of = YAK
 		
 		set_variable = { sq_km = 2037327.12 }
 	}

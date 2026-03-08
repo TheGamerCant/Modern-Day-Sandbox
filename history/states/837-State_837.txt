@@ -4,11 +4,24 @@ state={
 	history = {
 		owner = SOV
 		add_core_of = SOV
+		add_core_of = MDV
 		
 		victory_points = { 324 6 }
 		victory_points = { 6391 2 }
 		victory_points = { 3371 1 }
 		victory_points = { 376 1 }
+		
+		resize_array = { array = culture_index_array size = 3 value = 0 }
+		resize_array = { array = culture_value_array size = 3 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 112 }
+		set_variable = { culture_value_array^0 = 55.1 }
+		
+		set_variable = { culture_index_array^1 = 204 }
+		set_variable = { culture_value_array^1 = 39.6 }
+		
+		set_variable = { culture_index_array^2 = 200 }
+		set_variable = { culture_value_array^2 = 5.3 }
 		
 		set_variable = { sq_km = 25920 }
 	}

@@ -326,3 +326,55 @@
  BRT:0 "Brittany"                                  
  BRT_DEF:0 "the Bretange Republic"                                  
  BRT_ADJ:0 "Breton"
+
+ TTR:0 "Tatarstan"                                  
+ TTR_DEF:0 "the Republic of Tatarstan"                                  
+ TTR_ADJ:0 "Tatar"
+
+ BKT:0 "Baskhortostan"                                  
+ BKT_DEF:0 "the Republic of Bashkortostan"                                  
+ BKT_ADJ:0 "Bashkir"
+
+ MRL:0 "Mari El"                                  
+ MRL_DEF:0 "the Mari El Republic"                                  
+ MRL_ADJ:0 "Mari"
+
+ CHV:0 "Chuvashia"                                  
+ CHV_DEF:0 "the Chuvash Republic"                                  
+ CHV_ADJ:0 "Chuvash"
+
+ MDV:0 "Mordovia"                                  
+ MDV_DEF:0 "the Republic of Mordovia"                                  
+ MDV_ADJ:0 "Mordvin"
+
+ UDM:0 "Udmurtia"                                  
+ UDM_DEF:0 "the Udmurt Republic"                                  
+ UDM_ADJ:0 "Udmurt"
+
+ KLK:0 "Kalmykia"                                  
+ KLK_DEF:0 "the Republic of Kalmykia"                                  
+ KLK_ADJ:0 "Kalmyk"
+
+ DAG:0 "Dagestan"                                  
+ DAG_DEF:0 "the Republic of Dagestan"                                  
+ DAG_ADJ:0 "Dagestani"
+
+ YAK:0 "Yakutia"                                  
+ YAK_DEF:0 "the Sakha Republic"                                  
+ YAK_ADJ:0 "Yakut"
+
+ BYA:0 "Buryatia"                                  
+ BYA_DEF:0 "the Republic of Buryatia"                                  
+ BYA_ADJ:0 "Buryat"
+
+ TVA:0 "Tuva"                                  
+ TVA_DEF:0 "the Republic of Tuva"                                  
+ TVA_ADJ:0 "Tuvan"
+
+ KHS:0 "Khakassia"                                  
+ KHS_DEF:0 "the Republic of Khakassia"                                  
+ KHS_ADJ:0 "Khakas"
+
+ ATY:0 "Altai"                                  
+ ATY_DEF:0 "the Gorno-Altai Republic"                                  
+ ATY_ADJ:0 "Altai"

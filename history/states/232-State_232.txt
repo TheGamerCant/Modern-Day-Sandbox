@@ -4,6 +4,7 @@ state={
 	history={
 		owner = SOV
 		add_core_of = SOV
+		add_core_of = DAG
 		
 		victory_points = { 14177 12 }
 		victory_points = { 14180 2 }

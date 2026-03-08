@@ -27,6 +27,12 @@ ideas = {
 		TDA_culture_inner_mongolian_token_idea = {}
 		TDA_culture_inner_mongolian_desc_token_idea = {}
 
+		TDA_culture_finnish_proper_token_idea = {}
+		TDA_culture_finnish_proper_desc_token_idea = {}
+
+		TDA_culture_finno_swedish_token_idea = {}
+		TDA_culture_finno_swedish_desc_token_idea = {}
+
 		TDA_culture_swiss_german_token_idea = {}
 		TDA_culture_swiss_german_desc_token_idea = {}
 
@@ -104,6 +110,39 @@ ideas = {
 
 		TDA_culture_british_columbian_token_idea = {}
 		TDA_culture_british_columbian_desc_token_idea = {}
+
+		TDA_culture_baltic_russian_token_idea = {}
+		TDA_culture_baltic_russian_desc_token_idea = {}
+
+		TDA_culture_muscovite_token_idea = {}
+		TDA_culture_muscovite_desc_token_idea = {}
+
+		TDA_culture_petersburgian_token_idea = {}
+		TDA_culture_petersburgian_desc_token_idea = {}
+
+		TDA_culture_central_russian_token_idea = {}
+		TDA_culture_central_russian_desc_token_idea = {}
+
+		TDA_culture_northern_russian_token_idea = {}
+		TDA_culture_northern_russian_desc_token_idea = {}
+
+		TDA_culture_far_eastern_russian_token_idea = {}
+		TDA_culture_far_eastern_russian_desc_token_idea = {}
+
+		TDA_culture_ural_russian_token_idea = {}
+		TDA_culture_ural_russian_desc_token_idea = {}
+
+		TDA_culture_siberian_token_idea = {}
+		TDA_culture_siberian_desc_token_idea = {}
+
+		TDA_culture_volga_russian_token_idea = {}
+		TDA_culture_volga_russian_desc_token_idea = {}
+
+		TDA_culture_southern_russian_token_idea = {}
+		TDA_culture_southern_russian_desc_token_idea = {}
+
+		TDA_culture_kaliningrader_token_idea = {}
+		TDA_culture_kaliningrader_desc_token_idea = {}
 
 		TDA_culture_dongbei_token_idea = {}
 		TDA_culture_dongbei_desc_token_idea = {}
@@ -234,9 +273,6 @@ ideas = {
 		TDA_culture_estonian_token_idea = {}
 		TDA_culture_estonian_desc_token_idea = {}
 
-		TDA_culture_baltic_russian_token_idea = {}
-		TDA_culture_baltic_russian_desc_token_idea = {}
-
 		TDA_culture_dutch_token_idea = {}
 		TDA_culture_dutch_desc_token_idea = {}
 
@@ -288,6 +324,45 @@ ideas = {
 		TDA_culture_hlai_token_idea = {}
 		TDA_culture_hlai_desc_token_idea = {}
 
+		TDA_culture_greenlandic_token_idea = {}
+		TDA_culture_greenlandic_desc_token_idea = {}
+
+		TDA_culture_faroese_token_idea = {}
+		TDA_culture_faroese_desc_token_idea = {}
+
+		TDA_culture_danish_token_idea = {}
+		TDA_culture_danish_desc_token_idea = {}
+
+		TDA_culture_norwegian_token_idea = {}
+		TDA_culture_norwegian_desc_token_idea = {}
+
+		TDA_culture_swedish_token_idea = {}
+		TDA_culture_swedish_desc_token_idea = {}
+
+		TDA_culture_nenets_token_idea = {}
+		TDA_culture_nenets_desc_token_idea = {}
+
+		TDA_culture_komi_token_idea = {}
+		TDA_culture_komi_desc_token_idea = {}
+
+		TDA_culture_tatar_token_idea = {}
+		TDA_culture_tatar_desc_token_idea = {}
+
+		TDA_culture_bashkir_token_idea = {}
+		TDA_culture_bashkir_desc_token_idea = {}
+
+		TDA_culture_mari_token_idea = {}
+		TDA_culture_mari_desc_token_idea = {}
+
+		TDA_culture_chuvash_token_idea = {}
+		TDA_culture_chuvash_desc_token_idea = {}
+
+		TDA_culture_mordvin_token_idea = {}
+		TDA_culture_mordvin_desc_token_idea = {}
+
+		TDA_culture_udmurt_token_idea = {}
+		TDA_culture_udmurt_desc_token_idea = {}
+
 		TDA_super_culture_irish_token_idea = {}
 		TDA_super_culture_irish_desc_token_idea = {}
 
@@ -299,6 +374,9 @@ ideas = {
 
 		TDA_super_culture_mongolian_token_idea = {}
 		TDA_super_culture_mongolian_desc_token_idea = {}
+
+		TDA_super_culture_finnish_token_idea = {}
+		TDA_super_culture_finnish_desc_token_idea = {}
 
 		TDA_super_culture_swiss_token_idea = {}
 		TDA_super_culture_swiss_desc_token_idea = {}
@@ -320,6 +398,9 @@ ideas = {
 
 		TDA_super_culture_canadian_token_idea = {}
 		TDA_super_culture_canadian_desc_token_idea = {}
+
+		TDA_super_culture_russian_token_idea = {}
+		TDA_super_culture_russian_desc_token_idea = {}
 
 		TDA_super_culture_mainland_chinese_token_idea = {}
 		TDA_super_culture_mainland_chinese_desc_token_idea = {}

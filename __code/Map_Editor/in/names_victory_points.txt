@@ -3705,6 +3705,24 @@
 }
 6583 = {
 	default = "Luxembourg City"
+	entry = {
+        name = "Stad Lëtzebuerg"
+        requirements = {
+            "TAG_using_luxembourgish_names = yes"
+        }
+    }
+	entry = {
+        name = "Stadt Luxemburg"
+        requirements = {
+            "TAG_using_german_names = yes"
+        }
+    }
+	entry = {
+        name = "Ville de Luxembourg"
+        requirements = {
+            "TAG_using_french_names = yes"
+        }
+    }
 }
 9607 = {
 	default = "Vichy"
