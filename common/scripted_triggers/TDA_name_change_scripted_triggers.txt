@@ -625,3 +625,17 @@ TAG_using_albanian_names = {
 		is_puppet_of = KOS
 	}
 }
+
+TAG_using_kazakh_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = KAZ
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = KAZ
+	}
+}

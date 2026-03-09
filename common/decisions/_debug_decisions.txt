@@ -1,0 +1,29 @@
+debug_decisions = {
+	debug_toggle_super_cultures = {
+		allowed = {
+			always = yes
+		}
+
+		complete_effect = {
+			hidden_effect = { TDA_toggle_super_cultures_view = yes }
+		}
+	}
+	debug_toggle_city_name_changes = {
+		allowed = {
+			always = yes
+		}
+
+		complete_effect = {
+			hidden_effect = { TDA_toggle_change_city_names = yes }
+		}
+	}
+	debug_update_city_names = {
+		allowed = {
+			always = yes
+		}
+
+		complete_effect = {
+			hidden_effect = { TDA_change_all_city_names = yes }
+		}
+	}
+}

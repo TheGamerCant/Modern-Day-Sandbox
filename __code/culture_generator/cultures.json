@@ -1177,7 +1177,7 @@
           "green" : 124,
           "blue" : 41,
           "colour" : "c",
-		  "name" : "Far Eastern",
+		  "name" : "Far Eastern Russian",
           "desc" : "",
 		  "super_culture": "russian"
         },
@@ -1187,7 +1187,7 @@
           "green" : 56,
           "blue" : 8,
           "colour" : "I",
-		  "name" : "Uralic",
+		  "name" : "Uralic Russian",
           "desc" : "",
 		  "super_culture": "russian"
         },
@@ -1197,7 +1197,7 @@
           "green" : 143,
           "blue" : 55,
           "colour" : "c",
-		  "name" : "Siberian",
+		  "name" : "Siberian Russian",
           "desc" : "",
 		  "super_culture": "russian"
         },
@@ -1216,7 +1216,7 @@
           "red" : 54,
           "green" : 80,
           "blue" : 16,
-          "colour" : "6",
+          "colour" : "o",
 		  "name" : "Southern Russian",
           "desc" : "",
 		  "super_culture": "russian"
@@ -1292,15 +1292,6 @@
           "blue" : 112,
           "colour" : "V",
 		  "name" : "Mordvin",
-          "desc" : ""
-        },
-        {
-          "token" : "udmurt",
-          "red" : 25,
-          "green" : 0,
-          "blue" : 0,
-          "colour" : "f",
-		  "name" : "Udmurt",
           "desc" : ""
         }
     ]

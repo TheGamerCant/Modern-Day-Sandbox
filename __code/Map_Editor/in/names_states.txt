@@ -2204,7 +2204,7 @@
     }
 }
 402 = {
-	default = "Akhtubinsk"
+	default = "Aktobe"
 }
 403 = {
 	default = "Tyumen"
@@ -2216,16 +2216,16 @@
     } 
 }
 404 = {
-	default = "Kyzyl Orda"
+	default = "Kyzylorda"
 }
 405 = {
 	default = "Tashkent"
 }
 406 = {
-	default = "Guryev"
+	default = "Atyrau"
 }
 407 = {
-	default = "Ural'sk"
+	default = "West Kazakhstan"
 }
 408 = {
 	default = "Primorskiy"
@@ -2895,19 +2895,19 @@
 	default = "Navoi"
 }
 586 = {
-	default = "Alma-Ata"
+	default = "Jambyl"
 }
 587 = {
-	default = "Ust Urt"
+	default = "Mangystau"
 }
 588 = {
-	default = "Semipalatinsk"
+	default = "East Kazakhstan"
 }
 589 = {
-	default = "Ayaguz"
+	default = "Almaty"
 }
 590 = {
-	default = "Akmolinsk"
+	default = "Akmola"
 }
 591 = {
 	default = "Hainan"
@@ -4176,9 +4176,9 @@
 	default = "Abkhazia"
 }
 827 = {
-	default = "North Caucuses"
+	default = "Kabardino-Balkaria"
 	entry = {
-        name = "Severnyy Kavkaz"
+        name = "Kabardino-Balkariya"
         requirements = {
             "TAG_using_russian_names = yes"
         }
@@ -4428,7 +4428,7 @@
 	default = "Schleswig"
 }
 881 = {
-	default = "Karagandy"
+	default = "Karaganda"
 }
 882 = {
 	default = "Pavlodar"
@@ -4450,4 +4450,37 @@
 }
 888 = {
 	default = "Lusambo"
+}
+889 = {
+	default = "Karachay-Cherkessia"
+	entry = {
+        name = "Karachevo-Cherkesiya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+890 = {
+	default = "Ingushetia"
+	entry = {
+        name = "Ingushetiya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+891 = {
+	default = "North Ossetia"
+	entry = {
+        name = "Severnaya Osetiya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+892 = {
+	default = "North Kazakhstan"
+}
+893 = {
+	default = "Turkistan"
 }

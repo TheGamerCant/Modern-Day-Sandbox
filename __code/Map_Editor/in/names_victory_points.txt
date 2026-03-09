@@ -5131,10 +5131,13 @@
 735 = {
 	default = "Armavir"
 }
-9628 = {
-	default = "Vladikavkaz"
+714 = {
+	default = "Cherkessk"
 }
-685 = {
+9649 = {
+	default = "Karachayevsk"
+}
+11614 = {
 	default = "Nalchik"
 	entry = {
         name = "Nal'chik"
@@ -5143,14 +5146,20 @@
         }
     }
 }
-714 = {
-	default = "Cherkessk"
-}
 9647 = {
 	default = "Prokhladny"
 }
-6692 = {
-	default = "Zelenchukskaya"
+15143 = {
+	default = "Vladikavkaz"
+}
+9628 = {
+	default = "Nazran"
+	entry = {
+        name = "Nazran'"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 6794 = {
 	default = "Elista"

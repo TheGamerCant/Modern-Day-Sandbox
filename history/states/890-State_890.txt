@@ -1,0 +1,20 @@
+state={
+	id=890
+	name="STATE_890"
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = ING
+		
+		victory_points = { 9628 3 }
+		
+		set_variable = { sq_km = 3611 }
+	}
+	provinces={
+		9628 
+	}
+	manpower= 412529
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=pastoral
+}

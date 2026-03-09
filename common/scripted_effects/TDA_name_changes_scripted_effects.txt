@@ -308,6 +308,40 @@ TDA_update_state_7_names = {
 
 #Luxembourg
 TDA_update_state_8_names = {
+	8 = {
+		#Lëtzebuerg
+		if = {
+			limit = { CONTROLLER = { TAG_using_luxembourgish_names = yes } }
+			set_state_name = STATE_8_0
+		}
+		#Luxemburg
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_german_names = yes } }
+			set_state_name = STATE_8_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Stad Lëtzebuerg
+	if = {
+		limit = { any_country = { controls_province = 6583 TAG_using_luxembourgish_names = yes } }
+		set_province_name = { id = 6583 name = VICTORY_POINTS_6583_0 }
+	}
+	#Stadt Luxemburg
+	else_if = {
+		limit = { any_country = { controls_province = 6583 TAG_using_german_names = yes } }
+		set_province_name = { id = 6583 name = VICTORY_POINTS_6583_1 }
+	}
+	#Ville de Luxembourg
+	else_if = {
+		limit = { any_country = { controls_province = 6583 TAG_using_french_names = yes } }
+		set_province_name = { id = 6583 name = VICTORY_POINTS_6583_2 }
+	}
+	#Luxembourg City
+	else = {
+		reset_province_name = 6583
+	}
 }
 
 #Bohemia
@@ -6462,7 +6496,7 @@ TDA_update_state_401_names = {
 	}
 }
 
-#Akhtubinsk
+#Aktobe
 TDA_update_state_402_names = {
 }
 
@@ -6498,7 +6532,7 @@ TDA_update_state_403_names = {
 	}
 }
 
-#Kyzyl Orda
+#Kyzylorda
 TDA_update_state_404_names = {
 }
 
@@ -6506,11 +6540,11 @@ TDA_update_state_404_names = {
 TDA_update_state_405_names = {
 }
 
-#Guryev
+#Atyrau
 TDA_update_state_406_names = {
 }
 
-#Ural'sk
+#West Kazakhstan
 TDA_update_state_407_names = {
 }
 
@@ -8158,23 +8192,23 @@ TDA_update_state_584_names = {
 TDA_update_state_585_names = {
 }
 
-#Alma-Ata
+#Jambyl
 TDA_update_state_586_names = {
 }
 
-#Ust Urt
+#Mangystau
 TDA_update_state_587_names = {
 }
 
-#Semipalatinsk
+#East Kazakhstan
 TDA_update_state_588_names = {
 }
 
-#Ayaguz
+#Almaty
 TDA_update_state_589_names = {
 }
 
-#Akmolinsk
+#Akmola
 TDA_update_state_590_names = {
 }
 
@@ -15204,10 +15238,10 @@ TDA_update_state_825_names = {
 TDA_update_state_826_names = {
 }
 
-#North Caucuses
+#Kabardino-Balkaria
 TDA_update_state_827_names = {
 	827 = {
-		#Severnyy Kavkaz
+		#Kabardino-Balkariya
 		if = {
 			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
 			set_state_name = STATE_827_0
@@ -15218,12 +15252,12 @@ TDA_update_state_827_names = {
 	}
 	#Nal'chik
 	if = {
-		limit = { any_country = { controls_province = 685 TAG_using_russian_names = yes } }
-		set_province_name = { id = 685 name = VICTORY_POINTS_685_0 }
+		limit = { any_country = { controls_province = 11614 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11614 name = VICTORY_POINTS_11614_0 }
 	}
 	#Nalchik
 	else = {
-		reset_province_name = 685
+		reset_province_name = 11614
 	}
 }
 
@@ -15646,7 +15680,7 @@ TDA_update_state_879_names = {
 TDA_update_state_880_names = {
 }
 
-#Karagandy
+#Karaganda
 TDA_update_state_881_names = {
 }
 
@@ -15676,6 +15710,65 @@ TDA_update_state_887_names = {
 
 #Lusambo
 TDA_update_state_888_names = {
+}
+
+#Karachay-Cherkessia
+TDA_update_state_889_names = {
+	889 = {
+		#Karachevo-Cherkesiya
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_889_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Ingushetia
+TDA_update_state_890_names = {
+	890 = {
+		#Ingushetiya
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_890_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Nazran'
+	if = {
+		limit = { any_country = { controls_province = 9628 TAG_using_russian_names = yes } }
+		set_province_name = { id = 9628 name = VICTORY_POINTS_9628_0 }
+	}
+	#Nazran
+	else = {
+		reset_province_name = 9628
+	}
+}
+
+#North Ossetia
+TDA_update_state_891_names = {
+	891 = {
+		#Severnaya Osetiya
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_891_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#North Kazakhstan
+TDA_update_state_892_names = {
+}
+
+#Turkistan
+TDA_update_state_893_names = {
 }
 
 
@@ -16569,6 +16662,11 @@ TDA_change_all_city_names = {
 	TDA_update_state_886_names = yes
 	TDA_update_state_887_names = yes
 	TDA_update_state_888_names = yes
+	TDA_update_state_889_names = yes
+	TDA_update_state_890_names = yes
+	TDA_update_state_891_names = yes
+	TDA_update_state_892_names = yes
+	TDA_update_state_893_names = yes
 }
 
 TDA_toggle_change_city_names = {

@@ -331,7 +331,7 @@
  TTR_DEF:0 "the Republic of Tatarstan"                                  
  TTR_ADJ:0 "Tatar"
 
- BKT:0 "Baskhortostan"                                  
+ BKT:0 "Bashkortostan"                                  
  BKT_DEF:0 "the Republic of Bashkortostan"                                  
  BKT_ADJ:0 "Bashkir"
 
@@ -378,3 +378,23 @@
  ATY:0 "Altai"                                  
  ATY_DEF:0 "the Gorno-Altai Republic"                                  
  ATY_ADJ:0 "Altai"
+
+ ING:0 "Ingushetia"                                  
+ ING_DEF:0 "the Republic of Ingushetia"                                  
+ ING_ADJ:0 "Ingush"
+
+ NOS:0 "North Ossetia"                                  
+ NOS_DEF:0 "the Republic of North Ossetia-Alania"                                  
+ NOS_ADJ:0 "North Ossetian"
+
+ KBB:0 "Kabardino-Balkaria"                                  
+ KBB_DEF:0 "the Kabardino-Balkarian Republic"                                  
+ KBB_ADJ:0 "Kabardian"
+
+ KCH:0 "Karachay-Cherkessia"                                  
+ KCH_DEF:0 "the Karachay-Cherkess Republic"                                  
+ KCH_ADJ:0 "Karachay"
+
+ KAZ:0 "Kazakhstan"                                  
+ KAZ_DEF:0 "the Republic of Kazakhstan"                                  
+ KAZ_ADJ:0 "Kazakh"

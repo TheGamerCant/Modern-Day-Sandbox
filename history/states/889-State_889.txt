@@ -1,0 +1,21 @@
+state={
+	id=889
+	name="STATE_889"
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = KCH
+		
+		victory_points = { 714 3 }
+		victory_points = { 9649 1 }
+		
+		set_variable = { sq_km = 14052 }
+	}
+	provinces={
+		714 6692 9649 9674 9691 11664 
+	}
+	manpower= 477859
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=pastoral
+}
