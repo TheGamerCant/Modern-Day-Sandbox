@@ -4,6 +4,16 @@
 @countries_lower_bound = 0.08
 @countries_upper_bound = 0.975
 
+TDA_toggle_pop_dens_state_country_view = {
+	if = {
+		limit = { has_global_flag = TDA_pop_dens_country_view_flag }
+		clr_global_flag = TDA_pop_dens_country_view_flag
+	}
+	else = {
+		set_global_flag = TDA_pop_dens_country_view_flag
+	}
+}
+
 TDA_update_every_state_population_density = {
 	clear_array = ZZZ.arr
 	clear_array = ZZZ.pop_dens_ranked
@@ -132,7 +142,7 @@ TDA_update_every_state_population_density = {
 		set_variable = { ZZZ.range_log = ZZZ.value_high_log }
 		subtract_from_variable = { ZZZ.range_log = ZZZ.value_low_log }
 		
-		#Get RGB values for each state
+		#Get RGB values for each country -> maybe change to for scope loop on index
 		for_each_loop = {
 			array = ZZZ.pop_dens_ranked
 			value = v
@@ -197,6 +207,218 @@ TDA_update_every_state_population_density = {
 	clear_variable = ZZZ.value_high_log
 	clear_variable = ZZZ.range_log
 	
+	clear_array = ZZZ.pop_dens_indexes
+	clear_array = ZZZ.pop_dens_ranked
+}
+
+TDA_update_every_country_population_density = {
+	clear_array = ZZZ.arr
+	clear_array = ZZZ.pop_dens_ranked
+	clear_array = ZZZ.pop_dens_indexes
+
+	every_country = {
+		set_variable = { pop_dens_r = 0 }
+		set_variable = { pop_dens_g = 0 }
+		set_variable = { pop_dens_b = 0 }
+		set_variable = { pop_per_sq_km = 0 }
+
+		set_variable = { sq_km = 0 }
+		set_variable = { total_pop = 0 }
+		set_variable = { pop_per_sq_km = 0 }
+
+		#Get the population per square km of every country
+		every_owned_state = {
+            if = {
+                limit = { check_variable = { var = sq_km value = 0 compare = greater_than } }
+
+                add_to_variable = { PREV.total_pop = THIS.state_population_k }
+                add_to_variable = { PREV.sq_km = THIS.sq_km }
+            }
+		}
+
+        #Try to avoid integer overflows while being as accurate as possible
+        #Max population is ~13 billion before overflow
+
+		multiply_variable = { total_pop = 166.66666 }
+		divide_variable = { pop_per_sq_km = total_pop }
+		divide_variable = { pop_per_sq_km = 6 }
+
+		add_to_array = { ZZZ.arr = pop_per_sq_km }
+		clear_variable = total_pop
+	}
+
+	ZZZ = {
+		#Get the list of every pop density variable in order
+		set_variable = { low = 0 }
+		set_variable = { high = ZZZ.arr^num }
+		subtract_from_variable = { high = 1 }
+		quicksort = yes
+
+		#Create a second array of all the indexes in order of pop density, as well as renaming the original array
+		resize_array = {
+			array = ZZZ.pop_dens_ranked
+			value = 0
+			size = ZZZ.arr^num
+		}
+		resize_array = {
+			array = ZZZ.pop_dens_indexes
+			value = 0
+			size = ZZZ.arr^num
+		}
+
+		for_each_loop = {
+			array = ZZZ.arr
+			value = v
+			index = i
+			break = break
+
+			set_variable = { ZZZ.pop_dens_ranked^i = v }
+		}
+
+		clear_array = ZZZ.arr
+
+		clear_variable = high
+		clear_variable = low
+	}
+
+	every_country = {
+		if = {
+			limit = { check_variable = { var = THIS.sq_km value = 0 compare = greater_than } }
+
+			#Get a sq_km value for the owner
+
+			set_variable = { upper_bound = ZZZ.pop_dens_ranked^num }
+			subtract_from_variable = { upper_bound = 1 }
+			set_variable = { lower_bound = 0 }
+
+			while_loop_effect = {
+				limit = { always = yes }
+				break = break
+
+				set_variable = { middle = upper_bound }
+				subtract_from_variable = { middle = lower_bound }
+				divide_variable = { middle = 2 }
+				round_variable = middle
+				add_to_variable = { middle = lower_bound }
+
+				if = {
+					limit = { check_variable = { pop_per_sq_km = ZZZ.pop_dens_ranked^middle } }
+
+					meta_effect = {
+						text = { set_variable = { ZZZ.pop_dens_indexes^middle = [THIS_TAG] } }
+						THIS_TAG = "[THIS.GetTag]"
+						debug = yes
+					}
+					set_temp_variable = { break = 1 }
+				}
+				#This country has higher pop -> Look higher in array
+				else_if = {
+					limit = { check_variable = { pop_per_sq_km > ZZZ.pop_dens_ranked^middle } }
+
+					set_variable = { lower_bound = middle }
+					add_to_variable = { lower_bound = 1 }
+				}
+				#This state has lower pop -> Look lower in array
+				else= {
+					set_variable = { upper_bound = middle }
+					subtract_from_variable = { upper_bound = 1 }
+				}
+			}
+
+			clear_variable = upper_bound
+			clear_variable = middle
+			clear_variable = lower_bound
+		}
+	}
+
+    #Now have an array of country tags in order of pop dens
+	ZZZ = {
+		set_variable = { ZZZ.index_low = ZZZ.pop_dens_ranked^num }
+		subtract_from_variable = { ZZZ.index_low = 1 }
+		set_variable = { ZZZ.index_high = ZZZ.index_low }
+		multiply_variable = { ZZZ.index_low = @countries_lower_bound }
+		round_variable = ZZZ.index_low
+		set_variable = { ZZZ.value_low = ZZZ.pop_dens_ranked^index_low }
+
+		multiply_variable = { ZZZ.index_high = @countries_upper_bound }
+		round_variable = ZZZ.index_high
+		set_variable = { ZZZ.value_high = ZZZ.pop_dens_ranked^index_high }
+
+		set_variable = { x = ZZZ.value_low }
+		approximate_log = yes
+		set_variable = { ZZZ.value_low_log = x }
+
+		set_variable = { x = ZZZ.value_high }
+		approximate_log = yes
+		set_variable = { ZZZ.value_high_log = x }
+
+		set_variable = { ZZZ.range_log = ZZZ.value_high_log }
+		subtract_from_variable = { ZZZ.range_log = ZZZ.value_low_log }
+
+		#Get RGB values for each country
+		for_each_loop = {
+			array = ZZZ.pop_dens_ranked
+			value = v
+			index = i
+			break = break
+
+			set_variable = { x = v }
+			approximate_log = yes
+			subtract_from_variable = { x = ZZZ.value_low_log }
+			divide_variable = { x = ZZZ.range_log }
+
+			if = {
+				limit = { check_variable = { x > 1 } }
+				set_variable = { x = 1 }
+			}
+			else_if = {
+				limit = { check_variable = { x < 0 } }
+				set_variable = { x = 0 }
+			}
+
+			#Create a new variable in each state to use to interpolate the rgb colour to
+			meta_effect = {
+				text = {
+					set_variable = { [THIS_TAG].pop_dens_prcnt = x }
+				}
+				THIS_TAG = "[?ZZZ.pop_dens_indexes^i]"
+			}
+		}
+	}
+
+	for_each_scope_loop = {
+		array = ZZZ.pop_dens_indexes
+
+		if = {
+			limit = { check_variable = { pop_dens_prcnt < 0.5 } }
+
+			set_variable = { pop_dens_r = pop_dens_prcnt }
+			multiply_variable = { pop_dens_r = 2 }
+			set_variable = { pop_dens_g = 1 }
+			set_variable = { pop_dens_b = 0 }
+		}
+		else = {
+			set_variable = { pop_dens_r = 1 }
+			set_temp_variable = { t = pop_dens_prcnt }
+			subtract_from_temp_variable = { t = 0.5 }
+			multiply_temp_variable = { t = 2 }
+			set_variable = { pop_dens_g = 1 }
+			subtract_from_variable = { pop_dens_g = t }
+			set_variable = { pop_dens_b = 0 }
+		}
+
+		clear_variable = pop_dens_prcnt
+	}
+
+	clear_variable = ZZZ.x
+	clear_variable = ZZZ.index_low
+	clear_variable = ZZZ.value_low
+	clear_variable = ZZZ.index_high
+	clear_variable = ZZZ.value_high
+	clear_variable = ZZZ.value_low_log
+	clear_variable = ZZZ.value_high_log
+	clear_variable = ZZZ.range_log
+
 	clear_array = ZZZ.pop_dens_indexes
 	clear_array = ZZZ.pop_dens_ranked
 }

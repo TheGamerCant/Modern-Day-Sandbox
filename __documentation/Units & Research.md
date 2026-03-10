@@ -1,4 +1,5 @@
 Units:
+
 	infantry:
 		- COMBAT_UNIT_militia
 		- COMBAT_UNIT_basic_infantry
@@ -36,6 +37,7 @@ Units:
 		- SUPPORT_UNIT_logistics
 		
 Equipment:
+
 	- infantry_equipment
 	- infantry_anti_air_equipment
 	- infantry_anti_tank_equipment

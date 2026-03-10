@@ -2205,6 +2205,18 @@
 }
 402 = {
 	default = "Aktobe"
+	entry = {
+        name = "Aqtöbe"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Aktyubinsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 403 = {
 	default = "Tyumen"
@@ -2217,6 +2229,12 @@
 }
 404 = {
 	default = "Kyzylorda"
+	entry = {
+        name = "Qyzylorda"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
 }
 405 = {
 	default = "Tashkent"
@@ -2226,6 +2244,18 @@
 }
 407 = {
 	default = "West Kazakhstan"
+	entry = {
+        name = "Batys Qazaqstan"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Zapadno-Kazakhstan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 408 = {
 	default = "Primorskiy"
@@ -2887,6 +2917,12 @@
 }
 583 = {
 	default = "Kostanay"
+	entry = {
+        name = "Qostanai"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
 }
 584 = {
 	default = "Ashkhabad"
@@ -2896,18 +2932,60 @@
 }
 586 = {
 	default = "Jambyl"
+    entry = {
+        name = "Zhambyl"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 587 = {
 	default = "Mangystau"
+	entry = {
+        name = "Mañğystau"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Mangystau"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 588 = {
 	default = "East Kazakhstan"
+	entry = {
+        name = "Şyğys Qazaqstan"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Vostochno-Kazakhstan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 589 = {
 	default = "Almaty"
 }
 590 = {
 	default = "Akmola"
+	entry = {
+        name = "Aqmola"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Akmolinsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 591 = {
 	default = "Hainan"
@@ -4429,6 +4507,12 @@
 }
 881 = {
 	default = "Karaganda"
+	entry = {
+        name = "Qarağandy"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
 }
 882 = {
 	default = "Pavlodar"
@@ -4480,7 +4564,31 @@
 }
 892 = {
 	default = "North Kazakhstan"
+	entry = {
+        name = "Soltüstık Qazaqstan"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Severo-Kazakhstan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 893 = {
 	default = "Turkistan"
+	entry = {
+        name = "Türkıstan"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Turkestan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }

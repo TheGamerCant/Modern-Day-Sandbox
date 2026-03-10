@@ -26,4 +26,13 @@ debug_decisions = {
 			hidden_effect = { TDA_change_all_city_names = yes }
 		}
 	}
+	debug_toggle_state_country_pop_dens = {
+		allowed = {
+			always = yes
+		}
+
+		complete_effect = {
+			TDA_toggle_pop_dens_state_country_view = yes
+		}
+	}
 }

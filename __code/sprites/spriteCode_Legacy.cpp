@@ -24,10 +24,6 @@ void stdSpriteFunction(const std::filesystem::path &modDirectory, const std::str
 	
 	std::vector<std::string> spritesVector;				//File directory
 	std::vector<std::string> spritesNamesVector;		//File name
-
-	spritesVector.reserve(1500);
-	spritesNamesVector.reserve(1500);
-
     for (const auto& entry : std::filesystem::recursive_directory_iterator(searchDirectory)) {		//Go through folders and subfolders
         if (entry.is_regular_file()) {
             std::string extension = entry.path().extension().string();
@@ -106,10 +102,6 @@ void technologiesFunction(const std::filesystem::path &modDirectory, const std::
 	
 	std::vector<std::string> spritesVector;				//File directory
 	std::vector<std::string> spritesNamesVector;		//File name
-
-	spritesVector.reserve(1500);
-	spritesNamesVector.reserve(1500);
-
     for (const auto& entry : std::filesystem::recursive_directory_iterator(searchDirectory)) {		//Go through folders and subfolders
         if (entry.is_regular_file()) {
             std::string extension = entry.path().extension().string();
@@ -172,10 +164,6 @@ void ideasFunction(const std::filesystem::path &modDirectory, const std::string&
 	
 	std::vector<std::string> spritesVector;
 	std::vector<std::string> spritesNamesVector;
-
-	spritesVector.reserve(1500);
-	spritesNamesVector.reserve(1500);
-
     for (const auto& entry : std::filesystem::recursive_directory_iterator(searchDirectory)) {
         if (entry.is_regular_file()) {
             std::string extension = entry.path().extension().string();
@@ -221,10 +209,6 @@ void goalsFunction(const std::filesystem::path &modDirectory, const std::string&
 	
 	std::vector<std::string> spritesVector;
 	std::vector<std::string> spritesNamesVector;
-
-	spritesVector.reserve(1500);
-	spritesNamesVector.reserve(1500);
-
     for (const auto& entry : std::filesystem::recursive_directory_iterator(searchDirectory)) {
         if (entry.is_regular_file()) {
             std::string extension = entry.path().extension().string();
@@ -271,12 +255,18 @@ int main() {
 	modDirectory = modDirectory.parent_path();
 	modDirectory = modDirectory.parent_path();
 	
-	goalsFunction(modDirectory, "gfx\\interface\\goals", "interface\\MOD_goals.gfx");
-	stdSpriteFunction(modDirectory, "gfx\\interface\\decisions", "interface\\MOD_decisions.gfx");
-	stdSpriteFunction(modDirectory, "gfx\\leaders", "interface\\MOD_leaders.gfx");
-	ideasFunction(modDirectory, "gfx\\interface\\ideas", "interface\\MOD_ideas.gfx");
-	stdSpriteFunction(modDirectory, "gfx\\event_pictures", "interface\\MOD_eventpictures.gfx");
-	technologiesFunction(modDirectory, "gfx\\interface\\technologies", "interface\\MOD_technologies.gfx", "Technologies.txt");
-
+	std::thread t1(goalsFunction, modDirectory, "gfx\\interface\\goals", "interface\\MOD_goals.gfx");
+	std::thread t2(stdSpriteFunction, modDirectory, "gfx\\interface\\decisions", "interface\\MOD_decisions.gfx");
+	std::thread t3(stdSpriteFunction, modDirectory, "gfx\\leaders", "interface\\MOD_leaders.gfx");
+	std::thread t4(ideasFunction, modDirectory, "gfx\\interface\\ideas", "interface\\MOD_ideas.gfx");
+	std::thread t5(stdSpriteFunction, modDirectory, "gfx\\event_pictures", "interface\\MOD_eventpictures.gfx");
+	std::thread t6(technologiesFunction, modDirectory, "gfx\\interface\\technologies", "interface\\MOD_technologies.gfx", "Technologies.txt");
+	
+	t1.join();
+	t2.join();
+	t3.join();
+	t4.join();
+	t5.join();
+	t6.join();
 	return 0;
 }
