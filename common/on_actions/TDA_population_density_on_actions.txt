@@ -1,7 +1,7 @@
 on_actions = {
 	on_startup = {
         effect = {
-			ZZZ = { TDA_update_every_state_population_density = yes }
+			ZZZ = { TDA_update_every_state_population_density = yes TDA_update_every_country_population_density = yes }
 		}
 	}
 }

@@ -1,8 +1,8 @@
 @states_lower_bound = 0.08
 @states_upper_bound = 0.975
 
-@countries_lower_bound = 0.08
-@countries_upper_bound = 0.975
+@countries_lower_bound = 0.05
+@countries_upper_bound = 0.96
 
 TDA_toggle_pop_dens_state_country_view = {
 	if = {
@@ -220,11 +220,11 @@ TDA_update_every_country_population_density = {
 		set_variable = { pop_dens_r = 0 }
 		set_variable = { pop_dens_g = 0 }
 		set_variable = { pop_dens_b = 0 }
-		set_variable = { pop_per_sq_km = 0 }
 
-		set_variable = { sq_km = 0 }
-		set_variable = { total_pop = 0 }
-		set_variable = { pop_per_sq_km = 0 }
+
+		clear_variable = sq_km
+		clear_variable = total_pop
+		clear_variable = pop_per_sq_km
 
 		#Get the population per square km of every country
 		every_owned_state = {
@@ -236,15 +236,20 @@ TDA_update_every_country_population_density = {
             }
 		}
 
-        #Try to avoid integer overflows while being as accurate as possible
-        #Max population is ~13 billion before overflow
+		if = {
+			limit = { has_variable = sq_km }
 
-		multiply_variable = { total_pop = 166.66666 }
-		divide_variable = { pop_per_sq_km = total_pop }
-		divide_variable = { pop_per_sq_km = 6 }
+			#Try to avoid integer overflows while being as accurate as possible
+			#Max population is ~13 billion before overflow
 
-		add_to_array = { ZZZ.arr = pop_per_sq_km }
-		clear_variable = total_pop
+			multiply_variable = { total_pop = 166.66666 }
+			set_variable = { pop_per_sq_km = total_pop }
+			divide_variable = { pop_per_sq_km = sq_km }
+			multiply_variable = { pop_per_sq_km = 6 }
+
+			add_to_array = { ZZZ.arr = pop_per_sq_km }
+			clear_variable = total_pop
+		}
 	}
 
 	ZZZ = {
@@ -273,6 +278,7 @@ TDA_update_every_country_population_density = {
 			break = break
 
 			set_variable = { ZZZ.pop_dens_ranked^i = v }
+			log= "[?v]"
 		}
 
 		clear_array = ZZZ.arr
@@ -307,7 +313,6 @@ TDA_update_every_country_population_density = {
 					meta_effect = {
 						text = { set_variable = { ZZZ.pop_dens_indexes^middle = [THIS_TAG] } }
 						THIS_TAG = "[THIS.GetTag]"
-						debug = yes
 					}
 					set_temp_variable = { break = 1 }
 				}
@@ -329,6 +334,14 @@ TDA_update_every_country_population_density = {
 			clear_variable = middle
 			clear_variable = lower_bound
 		}
+	}
+	
+	for_each_loop = {
+		array = ZZZ.pop_dens_indexes
+		value = v
+		index = i
+		
+		log = "Index: [?i], Value: [?v.GetTag]"
 	}
 
     #Now have an array of country tags in order of pop dens
@@ -381,7 +394,7 @@ TDA_update_every_country_population_density = {
 				text = {
 					set_variable = { [THIS_TAG].pop_dens_prcnt = x }
 				}
-				THIS_TAG = "[?ZZZ.pop_dens_indexes^i]"
+				THIS_TAG = "[?ZZZ.pop_dens_indexes^i.GetTag]"
 			}
 		}
 	}

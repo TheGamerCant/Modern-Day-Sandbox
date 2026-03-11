@@ -3,6 +3,12 @@
  MAPMODE_TDA_POPULATION_DENSITY_MAP_MODE_NAME:0 "Population Density"
  MAPMODE_TDA_POPULATION_DENSITY_MAP_MODE_DESCRIPTION:0 ""
 
- TDA_population_density_map_mode_tooltip:0 "§Y[FROM.GetName]§! has a population density of §Y[?FROM.pop_per_sq_km|.2]§!/km²"
- TDA_population_density_map_mode_tooltip_delayed:0 "§Y[FROM.GetName]§!\nPopulation: §Y[?FROM.state_population|*]§!\nArea: §Y[?FROM.sq_km|0]km²§!"
+ TDA_population_density_map_mode_tooltip:0 "[FROM.GetPopulationDensityToolTip]"
+ TDA_population_density_map_mode_tooltip_delayed:0 "[FROM.GetPopulationDensityToolTipDelayed]"
+
+ TDA_population_density_map_mode_state_tooltip:0 "§Y[FROM.GetName]§! has a population density of §Y[?FROM.pop_per_sq_km|.2]§!/km²"
+ TDA_population_density_map_mode_owner_tooltip:0 "§Y[?ownr.GetName]§! has a population density of §Y[?ownr:pop_per_sq_km|.2]§!/km²"
+ 
+ TDA_population_density_map_mode_state_tooltip_delayed:0 "§Y[FROM.GetName]§!\nPopulation: §Y[?FROM.state_population|*]§!\nArea: §Y[?FROM.sq_km|0]km²§!"
+ TDA_population_density_map_mode_owner_tooltip_delayed:0 "§Y[?ownr.GetName]§!\nPopulation: §Y[?ownr:max_manpower|*]§!\nArea: §Y[?ownr:sq_km|0]km²§!"
  

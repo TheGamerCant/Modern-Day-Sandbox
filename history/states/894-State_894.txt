@@ -1,0 +1,20 @@
+state={
+	id=894
+	name="STATE_894"
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = KAZ
+		
+		victory_points = { 15146 2 }
+		
+		set_variable = { sq_km = 57 }
+	}
+	provinces={
+		15146 
+	}
+	manpower=39341
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

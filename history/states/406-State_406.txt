@@ -1,10 +1,20 @@
 state={
 	id=406
 	name="STATE_406"
-	provinces={
-		464 468 477 554 615 642 3459 3618 3622 6498 6514 6523 6615 7322 9453 9469 11442 11455 11469 11578 11591 
+	history = {
+		owner = KAZ
+		add_core_of = KAZ
+		
+		victory_points = { 15150 3 }
+		victory_points = { 642 1 }
+		victory_points = { 554 1 }
+		
+		set_variable = { sq_km = 117501 }
 	}
-	manpower=100000
+	provinces={
+		464 468 477 554 615 642 3459 3618 3622 6498 6514 6523 6615 7322 9453 9469 11442 11455 11469 11578 11591 15150 15151 
+	}
+	manpower=510377
 	buildings_max_level_factor=1
 	state_category=wasteland
 	local_supplies=0.5

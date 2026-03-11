@@ -4592,3 +4592,18 @@
         }
     }
 }
+894 = {
+	default = "Baikonur"
+    entry = {
+        name = "Baykonur"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+	entry = {
+        name = "Bayqoŋır"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}

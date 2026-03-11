@@ -6498,6 +6498,71 @@ TDA_update_state_401_names = {
 
 #Aktobe
 TDA_update_state_402_names = {
+	402 = {
+		#Aqtöbe
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_402_0
+		}
+		#Aktyubinsk
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_402_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Şalqar
+	if = {
+		limit = { any_country = { controls_province = 1371 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 1371 name = VICTORY_POINTS_1371_0 }
+	}
+	#Shalkar
+	else = {
+		reset_province_name = 1371
+	}
+	#Hromtau
+	if = {
+		limit = { any_country = { controls_province = 7341 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 7341 name = VICTORY_POINTS_7341_0 }
+	}
+	#Khromtau
+	else = {
+		reset_province_name = 7341
+	}
+	#Qandıağaş
+	if = {
+		limit = { any_country = { controls_province = 10253 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 10253 name = VICTORY_POINTS_10253_0 }
+	}
+	#Kandyagash
+	else = {
+		reset_province_name = 10253
+	}
+	#Aqtöbe
+	if = {
+		limit = { any_country = { controls_province = 15156 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 15156 name = VICTORY_POINTS_15156_0 }
+	}
+	#Aktobe
+	else = {
+		reset_province_name = 15156
+	}
+	#Aqtöbe Xalıqaralıq Äwejayı
+	if = {
+		limit = { any_country = { controls_province = 15157 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 15157 name = VICTORY_POINTS_15157_0 }
+	}
+	#Mezhdunarodnyy Aeroport Aktobe
+	else_if = {
+		limit = { any_country = { controls_province = 15157 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15157 name = VICTORY_POINTS_15157_1 }
+	}
+	#Aktobe International Airport
+	else = {
+		reset_province_name = 15157
+	}
 }
 
 #Tyumen
@@ -6534,6 +6599,57 @@ TDA_update_state_403_names = {
 
 #Kyzylorda
 TDA_update_state_404_names = {
+	404 = {
+		#Qyzylorda
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_404_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Äyteke Bï
+	if = {
+		limit = { any_country = { controls_province = 4300 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 4300 name = VICTORY_POINTS_4300_0 }
+	}
+	#Ayteke-Bi
+	else_if = {
+		limit = { any_country = { controls_province = 4300 TAG_using_russian_names = yes } }
+		set_province_name = { id = 4300 name = VICTORY_POINTS_4300_1 }
+	}
+	#Ayteke Bi
+	else = {
+		reset_province_name = 4300
+	}
+	#Aral'sk
+	if = {
+		limit = { any_country = { controls_province = 4374 TAG_using_russian_names = yes } }
+		set_province_name = { id = 4374 name = VICTORY_POINTS_4374_0 }
+	}
+	#Aral
+	else = {
+		reset_province_name = 4374
+	}
+	#Qyzylorda
+	if = {
+		limit = { any_country = { controls_province = 15160 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 15160 name = VICTORY_POINTS_15160_0 }
+	}
+	#Kyzylorda
+	else = {
+		reset_province_name = 15160
+	}
+	#Şïeli
+	if = {
+		limit = { any_country = { controls_province = 15163 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 15163 name = VICTORY_POINTS_15163_0 }
+	}
+	#Shieli
+	else = {
+		reset_province_name = 15163
+	}
 }
 
 #Tashkent
@@ -6542,10 +6658,84 @@ TDA_update_state_405_names = {
 
 #Atyrau
 TDA_update_state_406_names = {
+	#Mïyalı
+	if = {
+		limit = { any_country = { controls_province = 554 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 554 name = VICTORY_POINTS_554_0 }
+	}
+	#Miyaly
+	else = {
+		reset_province_name = 554
+	}
+	#Qūlsary
+	if = {
+		limit = { any_country = { controls_province = 642 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 642 name = VICTORY_POINTS_642_0 }
+	}
+	#Kul'sary
+	else_if = {
+		limit = { any_country = { controls_province = 642 TAG_using_russian_names = yes } }
+		set_province_name = { id = 642 name = VICTORY_POINTS_642_1 }
+	}
+	#Kulsary
+	else = {
+		reset_province_name = 642
+	}
+	#Atyraý
+	if = {
+		limit = { any_country = { controls_province = 15150 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 15150 name = VICTORY_POINTS_15150_0 }
+	}
+	#Atyrau
+	else = {
+		reset_province_name = 15150
+	}
 }
 
 #West Kazakhstan
 TDA_update_state_407_names = {
+	407 = {
+		#Batys Qazaqstan
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_407_0
+		}
+		#Zapadno-Kazakhstan
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_407_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Jımpïtı
+	if = {
+		limit = { any_country = { controls_province = 9462 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 9462 name = VICTORY_POINTS_9462_0 }
+	}
+	#Zhympity
+	else = {
+		reset_province_name = 9462
+	}
+	#Aqsay
+	if = {
+		limit = { any_country = { controls_province = 11510 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 11510 name = VICTORY_POINTS_11510_0 }
+	}
+	#Aksay
+	else = {
+		reset_province_name = 11510
+	}
+	#Ural'sk
+	if = {
+		limit = { any_country = { controls_province = 15152 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15152 name = VICTORY_POINTS_15152_0 }
+	}
+	#Oral
+	else = {
+		reset_province_name = 15152
+	}
 }
 
 #Primorskiy
@@ -8182,6 +8372,16 @@ TDA_update_state_582_names = {
 
 #Kostanay
 TDA_update_state_583_names = {
+	583 = {
+		#Qostanai
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_583_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Ashkhabad
@@ -8194,14 +8394,108 @@ TDA_update_state_585_names = {
 
 #Jambyl
 TDA_update_state_586_names = {
+	586 = {
+		#Zhambyl
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_586_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Qulan
+	if = {
+		limit = { any_country = { controls_province = 10603 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 10603 name = VICTORY_POINTS_10603_0 }
+	}
+	#Kulan
+	else = {
+		reset_province_name = 10603
+	}
+	#Jaŋatas
+	if = {
+		limit = { any_country = { controls_province = 12340 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 12340 name = VICTORY_POINTS_12340_0 }
+	}
+	#Zhanatas
+	else = {
+		reset_province_name = 12340
+	}
+	#Şu
+	if = {
+		limit = { any_country = { controls_province = 15170 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 15170 name = VICTORY_POINTS_15170_0 }
+	}
+	#Shu
+	else = {
+		reset_province_name = 15170
+	}
 }
 
 #Mangystau
 TDA_update_state_587_names = {
+	587 = {
+		#Mañğystau
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_587_0
+		}
+		#Mangystau
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_587_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Jañaözen
+	if = {
+		limit = { any_country = { controls_province = 1517 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 1517 name = VICTORY_POINTS_1517_0 }
+	}
+	#Zhanaozen
+	else = {
+		reset_province_name = 1517
+	}
+	#Beıneý
+	if = {
+		limit = { any_country = { controls_province = 10262 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 10262 name = VICTORY_POINTS_10262_0 }
+	}
+	#Beyneu
+	else = {
+		reset_province_name = 10262
+	}
+	#Aqtau
+	if = {
+		limit = { any_country = { controls_province = 15149 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 15149 name = VICTORY_POINTS_15149_0 }
+	}
+	#Aktau
+	else = {
+		reset_province_name = 15149
+	}
 }
 
 #East Kazakhstan
 TDA_update_state_588_names = {
+	588 = {
+		#Şyğys Qazaqstan
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_588_0
+		}
+		#Vostochno-Kazakhstan
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_588_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Almaty
@@ -8210,6 +8504,21 @@ TDA_update_state_589_names = {
 
 #Akmola
 TDA_update_state_590_names = {
+	590 = {
+		#Aqmola
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_590_0
+		}
+		#Akmolinsk
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_590_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Hainan
@@ -15682,6 +15991,16 @@ TDA_update_state_880_names = {
 
 #Karaganda
 TDA_update_state_881_names = {
+	881 = {
+		#Qarağandy
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_881_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Pavlodar
@@ -15765,10 +16084,114 @@ TDA_update_state_891_names = {
 
 #North Kazakhstan
 TDA_update_state_892_names = {
+	892 = {
+		#Soltüstık Qazaqstan
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_892_0
+		}
+		#Severo-Kazakhstan
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_892_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Turkistan
 TDA_update_state_893_names = {
+	893 = {
+		#Türkıstan
+		if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_893_0
+		}
+		#Turkestan
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_893_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Jetısai
+	if = {
+		limit = { any_country = { controls_province = 7777 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 7777 name = VICTORY_POINTS_7777_0 }
+	}
+	#Zhetisay
+	else = {
+		reset_province_name = 7777
+	}
+	#Saryağaş
+	if = {
+		limit = { any_country = { controls_province = 10601 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 10601 name = VICTORY_POINTS_10601_0 }
+	}
+	#Saryagash
+	else = {
+		reset_province_name = 10601
+	}
+	#Türkıstan
+	if = {
+		limit = { any_country = { controls_province = 12397 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 12397 name = VICTORY_POINTS_12397_0 }
+	}
+	#Turkestan
+	else_if = {
+		limit = { any_country = { controls_province = 12397 TAG_using_russian_names = yes } }
+		set_province_name = { id = 12397 name = VICTORY_POINTS_12397_1 }
+	}
+	#Turkistan
+	else = {
+		reset_province_name = 12397
+	}
+	#Şymkent
+	if = {
+		limit = { any_country = { controls_province = 15164 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 15164 name = VICTORY_POINTS_15164_0 }
+	}
+	#Shymkent
+	else = {
+		reset_province_name = 15164
+	}
+}
+
+#Baikonur
+TDA_update_state_894_names = {
+	894 = {
+		#Baykonur
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_894_0
+		}
+		#Bayqoŋır
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_kazakh_names = yes } }
+			set_state_name = STATE_894_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Baykonur
+	if = {
+		limit = { any_country = { controls_province = 15146 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15146 name = VICTORY_POINTS_15146_0 }
+	}
+	#Bayqoŋır
+	else_if = {
+		limit = { any_country = { controls_province = 15146 TAG_using_kazakh_names = yes } }
+		set_province_name = { id = 15146 name = VICTORY_POINTS_15146_1 }
+	}
+	#Baikonur
+	else = {
+		reset_province_name = 15146
+	}
 }
 
 
@@ -16667,6 +17090,7 @@ TDA_change_all_city_names = {
 	TDA_update_state_891_names = yes
 	TDA_update_state_892_names = yes
 	TDA_update_state_893_names = yes
+	TDA_update_state_894_names = yes
 }
 
 TDA_toggle_change_city_names = {

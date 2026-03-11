@@ -1,10 +1,21 @@
 state={
 	id=404
 	name="STATE_404"
-	provinces={
-		2436 4300 4303 4374 4488 4578 4581 4636 4638 5514 7243 7486 7600 7657 10131 10353 12329 12471 13366 
+	history = {
+		owner = KAZ
+		add_core_of = KAZ
+		
+		victory_points = { 15160 3 }
+		victory_points = { 15163 1 }
+		victory_points = { 4300 1 }
+		victory_points = { 4374 1 }
+		
+		set_variable = { sq_km = 223866 }
 	}
-	manpower=100000
+	provinces={
+		2436 4300 4303 4374 4488 4578 4581 4636 4638 5514 7243 7486 7600 7657 10131 10353 12329 12471 13366 15160 15161 15162 15163 
+	}
+	manpower=678794
 	buildings_max_level_factor=1
 	state_category=pastoral
 	local_supplies=0.5

@@ -1,0 +1,27 @@
+defined_text = {
+	name = GetPopulationDensityToolTip
+	text = {
+		trigger = {
+			has_global_flag = TDA_pop_dens_country_view_flag
+			set_temp_variable = { ownr = FROM.OWNER }
+		}
+		localization_key = "TDA_population_density_map_mode_owner_tooltip"
+	}
+	text = {
+		localization_key = "TDA_population_density_map_mode_state_tooltip"
+	}
+}
+
+defined_text = {
+	name = GetPopulationDensityToolTipDelayed
+	text = {
+		trigger = {
+			has_global_flag = TDA_pop_dens_country_view_flag
+			set_temp_variable = { ownr = FROM.OWNER }
+		}
+		localization_key = "TDA_population_density_map_mode_owner_tooltip_delayed"
+	}
+	text = {
+		localization_key = "TDA_population_density_map_mode_state_tooltip_delayed"
+	}
+}

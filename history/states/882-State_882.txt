@@ -1,13 +1,16 @@
 state={
 	id=882
 	name="STATE_882"
-	history={
-		owner = ZZZ
+	history = {
+		owner = KAZ
+		add_core_of = KAZ
+		
+		set_variable = { sq_km = 123567 }
 	}
 	provinces={
 		1879 4670 4685 7317 7708 10202 10235 10630 12616 
 	}
-	manpower= 100000
+	manpower= 742475
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=rural

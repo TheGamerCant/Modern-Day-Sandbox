@@ -1,10 +1,21 @@
 state={
 	id=586
 	name="STATE_586"
-	provinces={
-		4492 4773 10506 10603 12340 12385 12487 12640 12658 
+	history = {
+		owner = KAZ
+		add_core_of = KAZ
+		
+		victory_points = { 15169 5 }
+		victory_points = { 15170 1 }
+		victory_points = { 12340 1 }
+		victory_points = { 10603 1 }
+		
+		set_variable = { sq_km = 142889 }
 	}
-	manpower=100000
+	provinces={
+		4492 4773 10506 10603 12340 12385 12487 12640 12658 15169 15170 15171 15172 15173 
+	}
+	manpower=1022129
 	buildings_max_level_factor=1
 	state_category=city
 	local_supplies=0.5

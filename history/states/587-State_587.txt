@@ -1,10 +1,20 @@
 state={
 	id=587
 	name="STATE_587"
-	provinces={
-		475 1517 3593 4523 4620 7641 10262 11701 12383 13008 
+	history = {
+		owner = KAZ
+		add_core_of = KAZ
+		
+		victory_points = { 15149 3 }
+		victory_points = { 1517 1 }
+		victory_points = { 10262 1 }
+		
+		set_variable = { sq_km = 164064 }
 	}
-	manpower=100000
+	provinces={
+		475 1517 3593 4523 4620 7641 10262 11701 12383 13008 15147 15148 15149 
+	}
+	manpower=485392
 	buildings_max_level_factor=1
 	state_category=rural
 	local_supplies=0.5
