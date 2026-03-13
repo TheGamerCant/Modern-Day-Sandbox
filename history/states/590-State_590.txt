@@ -5,10 +5,22 @@ state={
 		owner = KAZ
 		add_core_of = KAZ
 		
+		victory_points = { 15180 10 }
+		victory_points = { 15183 2 }
+		victory_points = { 1418 2 }
+		victory_points = { 4238 1 }
+		victory_points = { 15184 1 }
+		victory_points = { 10239 1 }
+		victory_points = { 1680 1 }
+		
 		set_variable = { sq_km = 145616 }
+		
+		buildings = { 
+			air_base = 3 
+		}
 	}
 	provinces={
-		1223 1276 1375 1418 1662 1680 4238 4281 4309 7298 7326 7383 10211 10239 10308 10633 
+		1223 1276 1375 1418 1662 1680 4238 4281 4309 7298 7326 7383 10211 10239 10308 10633 15180 15181 15182 15183 15184 
 	}
 	manpower=1350531
 	buildings_max_level_factor=1

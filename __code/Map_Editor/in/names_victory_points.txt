@@ -14837,3 +14837,345 @@
         }
     }
 }
+15174 = {
+	default = "Kulan"
+	entry = {
+        name = "Qostanai"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+10284 = {
+	default = "Rudny"
+	entry = {
+        name = "Rudny"
+        requirements = {
+            "OR = { TAG_using_kazakh_names = yes TAG_using_russian_names = yes }"
+        }
+    }
+}
+10168 = {
+	default = "Lisakovsk"
+}
+7429 = {
+	default = "Zhitikhara"
+	entry = {
+        name = "Jitiqara"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+15175 = {
+	default = "Arkalyk"
+	entry = {
+        name = "Arqalyq"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+15177 = {
+	default = "Petropavl"
+	entry = {
+        name = "Petropavlosk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+#	entry = {
+#        name = "Qyzyljar"
+#        requirements = {
+#            "TAG_using_kazakh_names = yes"
+#        }
+#    }
+}
+12285 = {
+	default = "Novoishim"
+	entry = {
+        name = "Novoishimkoye"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+15180 = {
+	default = "Astana"
+}
+15183 = {
+	default = "Astana International Airport"
+    entry = {
+        name = "Astana Xalıqaralıq Äwejayı"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Mezhdunarodnyy Aeroport Astana"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+1418 = {
+	default = "Kokshetau"
+    entry = {
+        name = "Kökşetau"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+4238 = {
+	default = "Atbasar"
+}
+15184 = {
+	default = "Shchuchinsk"
+	entry = {
+        name = "Şuçinsk"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+10239 = {
+	default = "Koshi"
+	entry = {
+        name = "Qosshy"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+	entry = {
+        name = "Koshy"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+1680 = {
+	default = "Stepnogorsk"
+}
+15185 = {
+	default = "Karaganda"
+	entry = {
+        name = "Qarağandy"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+15186 = {
+	default = "Temirtau"
+	entry = {
+        name = "Temırtau"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+15190 = {
+	default = "Zhezkazgan"
+	entry = {
+        name = "Jezqazğan"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+10220 = {
+	default = "Satbayev"
+	entry = {
+        name = "Sätbaev"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+1239 = {
+	default = "Balkhash"
+	entry = {
+        name = "Balqaş"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+7425 = {
+	default = "Shakhtinsk"
+	entry = {
+        name = "Şahtinsk"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+15192 = {
+	default = "Pavlodar"
+}
+7317 = {
+	default = "Ekibastuz"
+	entry = {
+        name = "Ekıbastūz"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+10630 = {
+	default = "Aksu"
+	entry = {
+        name = "Aqsu"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+15193 = {
+	default = "Bayanaul"
+}
+15197 = {
+	default = "Semey"
+}
+15198 = {
+	default = "Oskemen"
+	entry = {
+        name = "Öskemen"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+	entry = {
+        name = "Ust'-Kamenogorsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+10610 = {
+	default = "Zaisan"
+}
+1864 = {
+	default = "Ridder"
+}
+12427 = {
+	default = "Zyrian"
+	entry = {
+        name = "Zyryanovsk"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+12594 = {
+	default = "Shemonaikha"
+	entry = {
+        name = "Şemonaiha"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+1668 = {
+	default = "Ayagoz"
+	entry = {
+        name = "Aiagöz"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+15206 = {
+	default = "Almaty"
+}
+15208 = {
+	default = "Almaty International Airport"
+    entry = {
+        name = "Almaty Xalıqaralıq Äwejayı"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Mezhdunarodnyy Aeroport Almaty"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+15207 = {
+	default = "Kaskelen"
+    entry = {
+        name = "Qaskeleŋ"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+10146 = {
+	default = "Konaev"
+    entry = {
+        name = "Qonaev"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Konayev"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+1840 = {
+	default = "Shelek"
+    entry = {
+        name = "Şelek"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+4845 = {
+	default = "Zharkent"
+    entry = {
+        name = "Jarkent"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    }
+    entry = {
+        name = "Dzharkent"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+10547 = {
+	default = "Taldykorgan"
+    entry = {
+        name = "Taldyqorğan"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    } 	
+}
+12529 = {
+	default = "Usharal"
+    entry = {
+        name = "Üşaral"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    } 	
+}
+10550 = {
+	default = "Sarkand"
+    entry = {
+        name = "Sarqan"
+        requirements = {
+            "TAG_using_kazakh_names = yes"
+        }
+    } 	
+}

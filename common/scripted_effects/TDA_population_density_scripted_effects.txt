@@ -1,8 +1,8 @@
-@states_lower_bound = 0.08
-@states_upper_bound = 0.975
+@states_lower_bound = 0.06
+@states_upper_bound = 0.985
 
-@countries_lower_bound = 0.05
-@countries_upper_bound = 0.96
+@countries_lower_bound = 0.03
+@countries_upper_bound = 0.95
 
 TDA_toggle_pop_dens_state_country_view = {
 	if = {
@@ -174,18 +174,50 @@ TDA_update_every_state_population_density = {
 		}
 	}	
 	
+#	for_each_scope_loop = {
+#		array = ZZZ.pop_dens_indexes
+#		
+#		if = { 
+#			limit = { check_variable = { pop_dens_prcnt < 0.5 } }
+#			
+#			set_variable = { pop_dens_r = pop_dens_prcnt }
+#			multiply_variable = { pop_dens_r = 2 }
+#			set_variable = { pop_dens_g = 1 }
+#			set_variable = { pop_dens_b = 0 }
+#		}
+#		else = {
+#			set_variable = { pop_dens_r = 1 }
+#			set_temp_variable = { t = pop_dens_prcnt }
+#			subtract_from_temp_variable = { t = 0.5 }
+#			multiply_temp_variable = { t = 2 }
+#			set_variable = { pop_dens_g = 1 }
+#			subtract_from_variable = { pop_dens_g = t }
+#			set_variable = { pop_dens_b = 0 }
+#		}
+#		
+#		clear_variable = pop_dens_prcnt
+#	}
+	
 	for_each_scope_loop = {
 		array = ZZZ.pop_dens_indexes
 		
 		if = { 
-			limit = { check_variable = { pop_dens_prcnt < 0.5 } }
+			limit = { 
+				check_variable = { var = pop_dens_prcnt value = 0.5 compare = less_than_or_equals } 
+				check_variable = { var = pop_dens_prcnt value = 0.1 compare = greater_than } 
+			}
 			
 			set_variable = { pop_dens_r = pop_dens_prcnt }
 			multiply_variable = { pop_dens_r = 2 }
 			set_variable = { pop_dens_g = 1 }
 			set_variable = { pop_dens_b = 0 }
 		}
-		else = {
+		else_if = {
+			limit = { 
+				check_variable = { var = pop_dens_prcnt value = 0.5 compare = greater_than } 
+				check_variable = { var = pop_dens_prcnt value = 0.9 compare = less_than } 
+			}
+			
 			set_variable = { pop_dens_r = 1 }
 			set_temp_variable = { t = pop_dens_prcnt }
 			subtract_from_temp_variable = { t = 0.5 }
@@ -193,6 +225,21 @@ TDA_update_every_state_population_density = {
 			set_variable = { pop_dens_g = 1 }
 			subtract_from_variable = { pop_dens_g = t }
 			set_variable = { pop_dens_b = 0 }
+		}
+		else_if = {
+			limit = { 
+				check_variable = { var = pop_dens_prcnt value = 0.1 compare = less_than_or_equals } 
+			}
+			
+			set_variable = { pop_dens_g = pop_dens_prcnt }
+			multiply_variable = { pop_dens_g = 5 }
+			add_to_variable = { pop_dens_g = 0.5 }
+		}
+		else = {
+			set_variable = { pop_dens_r = 1 }
+			subtract_from_variable = { pop_dens_r = pop_dens_prcnt }
+			multiply_variable = { pop_dens_r = 5 }
+			add_to_variable = { pop_dens_r = 0.5 }
 		}
 		
 		clear_variable = pop_dens_prcnt
@@ -399,18 +446,50 @@ TDA_update_every_country_population_density = {
 		}
 	}
 
+#	for_each_scope_loop = {
+#		array = ZZZ.pop_dens_indexes
+#		
+#		if = { 
+#			limit = { check_variable = { pop_dens_prcnt < 0.5 } }
+#			
+#			set_variable = { pop_dens_r = pop_dens_prcnt }
+#			multiply_variable = { pop_dens_r = 2 }
+#			set_variable = { pop_dens_g = 1 }
+#			set_variable = { pop_dens_b = 0 }
+#		}
+#		else = {
+#			set_variable = { pop_dens_r = 1 }
+#			set_temp_variable = { t = pop_dens_prcnt }
+#			subtract_from_temp_variable = { t = 0.5 }
+#			multiply_temp_variable = { t = 2 }
+#			set_variable = { pop_dens_g = 1 }
+#			subtract_from_variable = { pop_dens_g = t }
+#			set_variable = { pop_dens_b = 0 }
+#		}
+#		
+#		clear_variable = pop_dens_prcnt
+#	}
+	
 	for_each_scope_loop = {
 		array = ZZZ.pop_dens_indexes
-
-		if = {
-			limit = { check_variable = { pop_dens_prcnt < 0.5 } }
-
+		
+		if = { 
+			limit = { 
+				check_variable = { var = pop_dens_prcnt value = 0.5 compare = less_than_or_equals } 
+				check_variable = { var = pop_dens_prcnt value = 0.1 compare = greater_than } 
+			}
+			
 			set_variable = { pop_dens_r = pop_dens_prcnt }
 			multiply_variable = { pop_dens_r = 2 }
 			set_variable = { pop_dens_g = 1 }
 			set_variable = { pop_dens_b = 0 }
 		}
-		else = {
+		else_if = {
+			limit = { 
+				check_variable = { var = pop_dens_prcnt value = 0.5 compare = greater_than } 
+				check_variable = { var = pop_dens_prcnt value = 0.9 compare = less_than } 
+			}
+			
 			set_variable = { pop_dens_r = 1 }
 			set_temp_variable = { t = pop_dens_prcnt }
 			subtract_from_temp_variable = { t = 0.5 }
@@ -419,7 +498,22 @@ TDA_update_every_country_population_density = {
 			subtract_from_variable = { pop_dens_g = t }
 			set_variable = { pop_dens_b = 0 }
 		}
-
+		else_if = {
+			limit = { 
+				check_variable = { var = pop_dens_prcnt value = 0.1 compare = less_than_or_equals } 
+			}
+			
+			set_variable = { pop_dens_g = pop_dens_prcnt }
+			multiply_variable = { pop_dens_g = 5 }
+			add_to_variable = { pop_dens_g = 0.5 }
+		}
+		else = {
+			set_variable = { pop_dens_r = 1 }
+			subtract_from_variable = { pop_dens_r = pop_dens_prcnt }
+			multiply_variable = { pop_dens_r = 5 }
+			add_to_variable = { pop_dens_r = 0.5 }
+		}
+		
 		clear_variable = pop_dens_prcnt
 	}
 

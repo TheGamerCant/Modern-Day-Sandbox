@@ -195,10 +195,12 @@ STATE_get_culture_colours = {
 	
 	clear_variable = largest_ethnicity
 	
-	divide_variable = { culture_r = 65536 }
+	divide_variable = { culture_r = 6553600000 }
+	multiply_variable = { culture_r = 100000 }
 	
 	modulo_variable = { culture_g = 65536 }
-	divide_variable = { culture_g = 256 }
+	divide_variable = { culture_g = 25600000 }
+	multiply_variable = { culture_g = 100000 }
 	
 	modulo_variable = { culture_b = 256 }
 	
@@ -281,10 +283,12 @@ STATE_get_culture_colours = {
 		
 		clear_variable = second_largest_ethnicity
 		
-		divide_variable = { culture_r_2 = 65536 }
+		divide_variable = { culture_r_2 = 6553600000 }
+		multiply_variable = { culture_r_2 = 100000 }
 		
 		modulo_variable = { culture_g_2 = 65536 }
-		divide_variable = { culture_g_2 = 256 }
+		divide_variable = { culture_g_2 = 25600000 }
+		multiply_variable = { culture_g_2 = 100000 }
 		
 		modulo_variable = { culture_b_2 = 256 }
 		
