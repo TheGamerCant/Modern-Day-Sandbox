@@ -2419,7 +2419,7 @@
 451 = {
 	default = "Rebiana Sand Sea"
 	entry = {
-        name = "Baḥr Al-'rimāl Rībīānā"
+        name = "Baḥr Al-Rimāl Rībīānā"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -2481,6 +2481,12 @@
 }
 458 = {
 	default = "Tunisia"
+	entry = {
+        name = "Tūnis"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 459 = {
 	default = "Algiers"
@@ -3434,7 +3440,7 @@
 661 = {
 	default = "Libyan Great Sand Sea"
 	entry = {
-        name = "Baḥr Al-'rimāl Al-Lībī Al-'kabīr"
+        name = "Baḥr Al-Rimāl Al-Lībī Al-Kabīr"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -3468,7 +3474,13 @@
     }
 }
 665 = {
-	default = "Gabès"
+	default = "Tunisian Great Eastern Sand Sea"
+	entry = {
+        name = "Baḥr Al-Rimāl Al-Šarqy Al-Kabīr Fy Tūnis"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 666 = {
 	default = "Upper Norrland"
@@ -4160,13 +4172,13 @@
 809 = {
 	default = "Port of Sevastopol"
 	entry = { 
-        name = "Sevastopolʹsʹkyy port"
+        name = "Sevastopolʹsʹkyy Port"
         requirements = {
             "TAG_using_ukrainian_names = yes"
         }
     }
 	entry = { 
-        name = "Sevastopol'skiy port"
+        name = "Sevastopol'skiy Port"
         requirements = {
             "TAG_using_russian_names = yes"
         }
@@ -4220,7 +4232,7 @@
 819 = {
 	default = "Egyptian Great Sand Sea"
 	entry = {
-        name = "Baḥr Al-'rimāl Al-'miṣrī Al-'kabīr"
+        name = "Baḥr Al-Rimāl Al-'miṣrī Al-'kabīr"
         requirements = {
             "TAG_using_arab_names = yes"
         }

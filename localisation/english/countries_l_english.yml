@@ -398,3 +398,15 @@
  KAZ:0 "Kazakhstan"                                  
  KAZ_DEF:0 "the Republic of Kazakhstan"                                  
  KAZ_ADJ:0 "Kazakh"
+
+ TUN:0 "Tunisia"                                  
+ TUN_DEF:0 "the Republic of Tunisia"                                  
+ TUN_ADJ:0 "Tunisian"
+
+ ALG:0 "Algeria"                                  
+ ALG_DEF:0 "the People's Democratic Republic of Algeria"                                  
+ ALG_ADJ:0 "Algerian"
+
+ MRC:0 "Morocco"                                  
+ MRC_DEF:0 "the Kingdom of Morocco"                                  
+ MRC_ADJ:0 "Moroccan"

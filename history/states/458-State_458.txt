@@ -2,12 +2,36 @@ state={
 	id=458
 	name="STATE_458"
 	history={
-		owner = ZZZ
+		owner = TUN
+		add_core_of = TUN
+		
+		victory_points = { 11969 20 }
+		victory_points = { 15215 2 }
+		victory_points = { 9994 3 }
+		victory_points = { 10091 3 }
+		victory_points = { 15213 5 }
+		victory_points = { 15214 5 }
+		victory_points = { 7162 3 }
+		victory_points = { 1046 2 }
+		victory_points = { 4061 2 }
+		victory_points = { 11935 3 }
+		victory_points = { 7005 3 }
+		victory_points = { 15217 2 }
+		victory_points = { 12000 2 }
+		victory_points = { 11957 2 }
+		victory_points = { 11921 2 }
+		victory_points = { 10082 2 }
+		victory_points = { 1037 2 }
+		victory_points = { 7180 1 }
+		
+		set_variable = { sq_km = 92722.15 }
+		
+		buildings = { air_base = 6 }
 	}
 	provinces={
-		1037 1046 4061 4129 4163 7077 7162 7180 9994 10091 11921 11969 
+		1037 1046 1105 3987 4061 4129 4163 7005 7077 7162 7180 9983 9994 10026 10082 10091 11921 11935 11957 11969 12000 13145 13179 15213 15214 15215 15216 15217 
 	}
-	manpower= 100000
+	manpower= 10431870
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=town

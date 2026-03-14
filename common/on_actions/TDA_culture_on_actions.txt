@@ -6,8 +6,8 @@ on_actions = {
 
 			set_global_flag = TDA_using_super_cultures_flag
 
-			resize_array = { array = global.culture_colour_array size = 294 value = 0 }
-			resize_array = { array = global.culture_names_array  size = 294 value = 0 }
+			resize_array = { array = global.culture_colour_array size = 296 value = 0 }
+			resize_array = { array = global.culture_names_array  size = 296 value = 0 }
 
 			set_variable = {  global.culture_names_array^0 = token:TDA_culture_other_token_idea }
 			#100, 100, 100
@@ -704,6 +704,14 @@ on_actions = {
 			set_variable = {  global.culture_names_array^293 = token:TDA_culture_crimean_tatar_token_idea }
 			#37, 221, 186
 			set_variable = { global.culture_colour_array^293 = 2481594 }
+
+			set_variable = {  global.culture_names_array^294 = token:TDA_culture_egyptian_token_idea }
+			#235, 223, 63
+			set_variable = { global.culture_colour_array^294 = 15458111 }
+
+			set_variable = {  global.culture_names_array^295 = token:TDA_culture_libyan_token_idea }
+			#0, 133, 66
+			set_variable = { global.culture_colour_array^295 = 34114 }
 
 			resize_array = { array = global.super_culture_colour_array size = 23 value = 0 }
 			resize_array = { array = global.super_culture_names_array  size = 23 value = 0 }

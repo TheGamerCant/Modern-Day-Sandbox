@@ -22,7 +22,7 @@ def isValidTag(tag: str) -> bool:
 class countryMakerWindow:
     def __init__(self, root, modDirectory, countryTagsArray):
         self.root = root
-        self.root.title("It's MY code shitass, and you're a FAGGOT!")
+        self.root.title("Country Maker")
 
         self.modDirectory = modDirectory
         self.countryTagsArray = countryTagsArray

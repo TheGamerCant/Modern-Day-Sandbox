@@ -1870,6 +1870,24 @@
 		  "name" : "Crimean Russian",
           "desc" : "",
 		  "super_culture": "russian"
+        },
+		{
+          "token" : "egyptian",
+          "red" : 235,
+          "green" : 223,
+          "blue" : 63,
+          "colour" : "Y",
+		  "name" : "Egyptian",
+          "desc" : ""
+        },
+		{
+          "token" : "libyan",
+          "red" : 0,
+          "green" : 133,
+          "blue" : 66,
+          "colour" : "c",
+		  "name" : "Libyan",
+          "desc" : ""
         }
     ]
 }

@@ -15179,3 +15179,165 @@
         }
     } 	
 }
+11969 = {
+	default = "Tunis"
+	entry = {
+        name = "Tūnis"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15215 = {
+	default = "Tunis International Airport"
+	entry = {
+        name = "Maṭār Tūnis El-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+9994 = {
+	default = "Bizerte"
+	entry = {
+        name = "Banzart"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10091 = {
+	default = "Nabeul"
+	entry = {
+        name = "Nābul"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15213 = {
+	default = "Sousse"
+	entry = {
+        name = "Sūsah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15214 = {
+	default = "Sfax"
+	entry = {
+        name = "Ṣafāqis"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+7162 = {
+	default = "Kairouan"
+	entry = {
+        name = "Al-Qayrawān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1046 = {
+	default = "Le Kef"
+	entry = {
+        name = "Al-Kāf"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+4061 = {
+	default = "Kasserine"
+	entry = {
+        name = "Al-Qaṣrayn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+11935 = {
+	default = "Gafsa"
+	entry = {
+        name = "Qafṣah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+7005 = {
+	default = "Gabès"
+	entry = {
+        name = "Qābis"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15217 = {
+	default = "Djerba Houmt Souk"
+	entry = {
+        name = "Jarbah Ḥawmat as-Sūq"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+12000 = {
+	default = "Tataouine"
+	entry = {
+        name = "Taṭāwīn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+11957 = {
+	default = "Zarzis"
+	entry = {
+        name = "Jarjīs"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+11921 = {
+	default = "Mahdia"
+	entry = {
+        name = "Al-Mahdiyah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10082 = {
+	default = "Douz"
+	entry = {
+        name = "Dūz"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1037 = {
+	default = "Sidi Bouzid"
+	entry = {
+        name = "Sīdī Bū Zayd"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+7180 = {
+	default = "Zaghouan"
+	entry = {
+        name = "Zaghwān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}

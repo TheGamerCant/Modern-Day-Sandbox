@@ -500,3 +500,15 @@ KAZ = {
 	color = rgb { 16 179 201 }
 	color_ui = rgb { 16 179 201 }
 }
+TUN = {
+	color = rgb { 151 0 8 }
+	color_ui = rgb { 151 0 8 }
+}
+ALG = {
+	color = rgb { 97 182 82 }
+	color_ui = rgb { 97 182 82 }
+}
+MRC = {
+	color = rgb { 96 29 16 }
+	color_ui = rgb { 96 29 16 }
+}
