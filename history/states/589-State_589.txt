@@ -13,6 +13,15 @@ state={
 		victory_points = { 4845 1 }
 		victory_points = { 10547 2 }
 		victory_points = { 12529 1 }
+		
+		resize_array = { array = culture_index_array size = 2 value = 0 }
+		resize_array = { array = culture_value_array size = 2 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 46 }
+		set_variable = { culture_value_array^0 = 76.0 }
+		
+		set_variable = { culture_index_array^1 = 201 }
+		set_variable = { culture_value_array^1 = 24.0 }
 		victory_points = { 10550 1 }
 		
 		set_variable = { sq_km = 222453.65 }
@@ -24,7 +33,7 @@ state={
 	provinces={
 		1591 1840 4651 4845 7711 7795 7856 10146 10547 10550 10619 12529 13148 13149 13197 15145 15205 15206 15207 15208 15209 15210 15211 15212 
 	}
-	manpower=2180612
+	manpower=3193526
 	buildings_max_level_factor=1
 	state_category=pastoral
 	local_supplies=0.5

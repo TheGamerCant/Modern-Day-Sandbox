@@ -19,6 +19,15 @@ state={
 		victory_points = { 3621 1 }
 		victory_points = { 9751 2 }
 		
+		resize_array = { array = culture_index_array size = 2 value = 0 }
+		resize_array = { array = culture_value_array size = 2 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 159 }
+		set_variable = { culture_value_array^0 = 68.0 }
+		
+		set_variable = { culture_index_array^1 = 158 }
+		set_variable = { culture_value_array^1 = 32.0 }
+		
 		set_variable = { sq_km = 84036 }
 	}
 	provinces={

@@ -2,699 +2,798 @@ on_actions = {
 	on_startup = {
 		effect = {
 			set_variable = { global.culture_bucket_size = 9 }
-			set_variable = { global.culture_bucket_width = 12 }
-
-			
+			set_variable = { global.culture_bucket_width = 19 }
 
 			set_global_flag = TDA_using_super_cultures_flag
 
-			resize_array = { array = global.culture_colour_array size = 206 value = 0 }
-			resize_array = { array = global.culture_names_array  size = 206 value = 0 }
-			resize_array = { array = global.culture_desc_array   size = 206 value = 0 }
+			resize_array = { array = global.culture_colour_array size = 294 value = 0 }
+			resize_array = { array = global.culture_names_array  size = 294 value = 0 }
 
 			set_variable = {  global.culture_names_array^0 = token:TDA_culture_other_token_idea }
-			set_variable = {   global.culture_desc_array^0 = token:TDA_culture_other_desc_token_idea }
 			#100, 100, 100
 			set_variable = { global.culture_colour_array^0 = 6579300 }
 
 			set_variable = {  global.culture_names_array^1 = token:TDA_culture_irish_token_idea }
-			set_variable = {   global.culture_desc_array^1 = token:TDA_culture_irish_desc_token_idea }
 			#3, 76, 19
 			set_variable = { global.culture_colour_array^1 = 216083 }
 
 			set_variable = {  global.culture_names_array^2 = token:TDA_culture_northern_irish_catholic_token_idea }
-			set_variable = {   global.culture_desc_array^2 = token:TDA_culture_northern_irish_catholic_desc_token_idea }
 			#30, 133, 7
 			set_variable = { global.culture_colour_array^2 = 2000135 }
 
 			set_variable = {  global.culture_names_array^10 = token:TDA_culture_southern_welsh_token_idea }
-			set_variable = {   global.culture_desc_array^10 = token:TDA_culture_southern_welsh_desc_token_idea }
 			#219, 83, 53
 			set_variable = { global.culture_colour_array^10 = 14373685 }
 
 			set_variable = {  global.culture_names_array^11 = token:TDA_culture_northern_welsh_token_idea }
-			set_variable = {   global.culture_desc_array^11 = token:TDA_culture_northern_welsh_desc_token_idea }
 			#226, 160, 146
 			set_variable = { global.culture_colour_array^11 = 14852242 }
 
 			set_variable = {  global.culture_names_array^19 = token:TDA_culture_western_polish_token_idea }
-			set_variable = {   global.culture_desc_array^19 = token:TDA_culture_western_polish_desc_token_idea }
 			#186, 39, 28
 			set_variable = { global.culture_colour_array^19 = 12199708 }
 
 			set_variable = {  global.culture_names_array^20 = token:TDA_culture_eastern_polish_token_idea }
-			set_variable = {   global.culture_desc_array^20 = token:TDA_culture_eastern_polish_desc_token_idea }
 			#193, 128, 128
 			set_variable = { global.culture_colour_array^20 = 12681344 }
 
 			set_variable = {  global.culture_names_array^28 = token:TDA_culture_outer_mongolian_token_idea }
-			set_variable = {   global.culture_desc_array^28 = token:TDA_culture_outer_mongolian_desc_token_idea }
 			#168, 39, 119
 			set_variable = { global.culture_colour_array^28 = 11020151 }
 
 			set_variable = {  global.culture_names_array^29 = token:TDA_culture_inner_mongolian_token_idea }
-			set_variable = {   global.culture_desc_array^29 = token:TDA_culture_inner_mongolian_desc_token_idea }
 			#135, 19, 65
 			set_variable = { global.culture_colour_array^29 = 8852289 }
 
 			set_variable = {  global.culture_names_array^37 = token:TDA_culture_finnish_proper_token_idea }
-			set_variable = {   global.culture_desc_array^37 = token:TDA_culture_finnish_proper_desc_token_idea }
 			#206, 221, 231
 			set_variable = { global.culture_colour_array^37 = 13557223 }
 
 			set_variable = {  global.culture_names_array^38 = token:TDA_culture_finno_swedish_token_idea }
-			set_variable = {   global.culture_desc_array^38 = token:TDA_culture_finno_swedish_desc_token_idea }
 			#142, 177, 238
 			set_variable = { global.culture_colour_array^38 = 9351662 }
 
-			set_variable = {  global.culture_names_array^46 = token:TDA_culture_swiss_german_token_idea }
-			set_variable = {   global.culture_desc_array^46 = token:TDA_culture_swiss_german_desc_token_idea }
+			set_variable = {  global.culture_names_array^46 = token:TDA_culture_kazakh_token_idea }
+			#16, 179, 201
+			set_variable = { global.culture_colour_array^46 = 1094601 }
+
+			set_variable = {  global.culture_names_array^47 = token:TDA_culture_russian_kazakh_token_idea }
+			#16, 179, 144
+			set_variable = { global.culture_colour_array^47 = 1094544 }
+
+			set_variable = {  global.culture_names_array^55 = token:TDA_culture_bosniak_croat_token_idea }
+			#110, 39, 116
+			set_variable = { global.culture_colour_array^55 = 7219060 }
+
+			set_variable = {  global.culture_names_array^56 = token:TDA_culture_croatian_token_idea }
+			#173, 54, 162
+			set_variable = { global.culture_colour_array^56 = 11351714 }
+
+			set_variable = {  global.culture_names_array^64 = token:TDA_culture_bosniak_token_idea }
+			#180, 121, 26
+			set_variable = { global.culture_colour_array^64 = 11827482 }
+
+			set_variable = {  global.culture_names_array^65 = token:TDA_culture_montenegrin_bosniak_token_idea }
+			#113, 145, 47
+			set_variable = { global.culture_colour_array^65 = 7442735 }
+
+			set_variable = {  global.culture_names_array^73 = token:TDA_culture_swiss_german_token_idea }
 			#168, 16, 16
-			set_variable = { global.culture_colour_array^46 = 11014160 }
+			set_variable = { global.culture_colour_array^73 = 11014160 }
 
-			set_variable = {  global.culture_names_array^47 = token:TDA_culture_swiss_french_token_idea }
-			set_variable = {   global.culture_desc_array^47 = token:TDA_culture_swiss_french_desc_token_idea }
+			set_variable = {  global.culture_names_array^74 = token:TDA_culture_swiss_french_token_idea }
 			#117, 5, 28
-			set_variable = { global.culture_colour_array^47 = 7669020 }
+			set_variable = { global.culture_colour_array^74 = 7669020 }
 
-			set_variable = {  global.culture_names_array^48 = token:TDA_culture_swiss_italian_token_idea }
-			set_variable = {   global.culture_desc_array^48 = token:TDA_culture_swiss_italian_desc_token_idea }
+			set_variable = {  global.culture_names_array^75 = token:TDA_culture_swiss_italian_token_idea }
 			#136, 28, 4
-			set_variable = { global.culture_colour_array^48 = 8920068 }
+			set_variable = { global.culture_colour_array^75 = 8920068 }
 
-			set_variable = {  global.culture_names_array^55 = token:TDA_culture_hungarian_token_idea }
-			set_variable = {   global.culture_desc_array^55 = token:TDA_culture_hungarian_desc_token_idea }
+			set_variable = {  global.culture_names_array^82 = token:TDA_culture_hungarian_token_idea }
 			#224, 133, 75
-			set_variable = { global.culture_colour_array^55 = 14714187 }
+			set_variable = { global.culture_colour_array^82 = 14714187 }
 
-			set_variable = {  global.culture_names_array^56 = token:TDA_culture_szekely_token_idea }
-			set_variable = {   global.culture_desc_array^56 = token:TDA_culture_szekely_desc_token_idea }
+			set_variable = {  global.culture_names_array^83 = token:TDA_culture_szekely_token_idea }
 			#218, 152, 64
-			set_variable = { global.culture_colour_array^56 = 14325824 }
+			set_variable = { global.culture_colour_array^83 = 14325824 }
 
-			set_variable = {  global.culture_names_array^57 = token:TDA_culture_slovak_hungarian_token_idea }
-			set_variable = {   global.culture_desc_array^57 = token:TDA_culture_slovak_hungarian_desc_token_idea }
+			set_variable = {  global.culture_names_array^84 = token:TDA_culture_slovak_hungarian_token_idea }
 			#189, 112, 80
-			set_variable = { global.culture_colour_array^57 = 12415056 }
+			set_variable = { global.culture_colour_array^84 = 12415056 }
 
-			set_variable = {  global.culture_names_array^64 = token:TDA_culture_flemish_token_idea }
-			set_variable = {   global.culture_desc_array^64 = token:TDA_culture_flemish_desc_token_idea }
+			set_variable = {  global.culture_names_array^91 = token:TDA_culture_flemish_token_idea }
 			#216, 137, 42
-			set_variable = { global.culture_colour_array^64 = 14190890 }
+			set_variable = { global.culture_colour_array^91 = 14190890 }
 
-			set_variable = {  global.culture_names_array^65 = token:TDA_culture_walloon_token_idea }
-			set_variable = {   global.culture_desc_array^65 = token:TDA_culture_walloon_desc_token_idea }
+			set_variable = {  global.culture_names_array^92 = token:TDA_culture_walloon_token_idea }
 			#159, 18, 18
-			set_variable = { global.culture_colour_array^65 = 10424850 }
+			set_variable = { global.culture_colour_array^92 = 10424850 }
 
-			set_variable = {  global.culture_names_array^66 = token:TDA_culture_ostbelgisch_token_idea }
-			set_variable = {   global.culture_desc_array^66 = token:TDA_culture_ostbelgisch_desc_token_idea }
+			set_variable = {  global.culture_names_array^93 = token:TDA_culture_ostbelgisch_token_idea }
 			#132, 105, 105
-			set_variable = { global.culture_colour_array^66 = 8677737 }
+			set_variable = { global.culture_colour_array^93 = 8677737 }
 
-			set_variable = {  global.culture_names_array^73 = token:TDA_culture_southern_english_token_idea }
-			set_variable = {   global.culture_desc_array^73 = token:TDA_culture_southern_english_desc_token_idea }
-			#218, 32, 32
-			set_variable = { global.culture_colour_array^73 = 14295072 }
+			set_variable = {  global.culture_names_array^100 = token:TDA_culture_albanian_token_idea }
+			#138, 26, 26
+			set_variable = { global.culture_colour_array^100 = 9050650 }
 
-			set_variable = {  global.culture_names_array^74 = token:TDA_culture_midland_english_token_idea }
-			set_variable = {   global.culture_desc_array^74 = token:TDA_culture_midland_english_desc_token_idea }
-			#187, 63, 63
-			set_variable = { global.culture_colour_array^74 = 12271423 }
+			set_variable = {  global.culture_names_array^101 = token:TDA_culture_kosovar_albanian_token_idea }
+			#200, 25, 22
+			set_variable = { global.culture_colour_array^101 = 13113622 }
 
-			set_variable = {  global.culture_names_array^75 = token:TDA_culture_northern_english_token_idea }
-			set_variable = {   global.culture_desc_array^75 = token:TDA_culture_northern_english_desc_token_idea }
-			#196, 6, 17
-			set_variable = { global.culture_colour_array^75 = 12846609 }
+			set_variable = {  global.culture_names_array^102 = token:TDA_culture_macedonian_albanian_token_idea }
+			#172, 21, 55
+			set_variable = { global.culture_colour_array^102 = 11277623 }
 
-			set_variable = {  global.culture_names_array^76 = token:TDA_culture_londoner_token_idea }
-			set_variable = {   global.culture_desc_array^76 = token:TDA_culture_londoner_desc_token_idea }
-			#255, 86, 137
-			set_variable = { global.culture_colour_array^76 = 16733833 }
-
-			set_variable = {  global.culture_names_array^82 = token:TDA_culture_northern_italian_token_idea }
-			set_variable = {   global.culture_desc_array^82 = token:TDA_culture_northern_italian_desc_token_idea }
-			#66, 203, 42
-			set_variable = { global.culture_colour_array^82 = 4377386 }
-
-			set_variable = {  global.culture_names_array^83 = token:TDA_culture_central_italian_token_idea }
-			set_variable = {   global.culture_desc_array^83 = token:TDA_culture_central_italian_desc_token_idea }
-			#37, 153, 66
-			set_variable = { global.culture_colour_array^83 = 2464066 }
-
-			set_variable = {  global.culture_names_array^84 = token:TDA_culture_southern_italian_token_idea }
-			set_variable = {   global.culture_desc_array^84 = token:TDA_culture_southern_italian_desc_token_idea }
-			#23, 96, 20
-			set_variable = { global.culture_colour_array^84 = 1531924 }
-
-			set_variable = {  global.culture_names_array^85 = token:TDA_culture_tyrolean_token_idea }
-			set_variable = {   global.culture_desc_array^85 = token:TDA_culture_tyrolean_desc_token_idea }
-			#205, 255, 234
-			set_variable = { global.culture_colour_array^85 = 13500394 }
-
-			set_variable = {  global.culture_names_array^91 = token:TDA_culture_east_german_token_idea }
-			set_variable = {   global.culture_desc_array^91 = token:TDA_culture_east_german_desc_token_idea }
-			#112, 56, 78
-			set_variable = { global.culture_colour_array^91 = 7354446 }
-
-			set_variable = {  global.culture_names_array^92 = token:TDA_culture_west_german_token_idea }
-			set_variable = {   global.culture_desc_array^92 = token:TDA_culture_west_german_desc_token_idea }
-			#125, 125, 142
-			set_variable = { global.culture_colour_array^92 = 8224142 }
-
-			set_variable = {  global.culture_names_array^93 = token:TDA_culture_bavarian_token_idea }
-			set_variable = {   global.culture_desc_array^93 = token:TDA_culture_bavarian_desc_token_idea }
-			#11, 37, 70
-			set_variable = { global.culture_colour_array^93 = 730438 }
-
-			set_variable = {  global.culture_names_array^94 = token:TDA_culture_berlinner_token_idea }
-			set_variable = {   global.culture_desc_array^94 = token:TDA_culture_berlinner_desc_token_idea }
-			#101, 39, 105
-			set_variable = { global.culture_colour_array^94 = 6629225 }
-
-			set_variable = {  global.culture_names_array^100 = token:TDA_culture_anglo_canadian_token_idea }
-			set_variable = {   global.culture_desc_array^100 = token:TDA_culture_anglo_canadian_desc_token_idea }
+			set_variable = {  global.culture_names_array^109 = token:TDA_culture_anglo_canadian_token_idea }
 			#225, 0, 0
-			set_variable = { global.culture_colour_array^100 = 14745600 }
+			set_variable = { global.culture_colour_array^109 = 14745600 }
 
-			set_variable = {  global.culture_names_array^101 = token:TDA_culture_french_canadian_token_idea }
-			set_variable = {   global.culture_desc_array^101 = token:TDA_culture_french_canadian_desc_token_idea }
-			#0, 0, 180
-			set_variable = { global.culture_colour_array^101 = 180 }
-
-			set_variable = {  global.culture_names_array^102 = token:TDA_culture_atlantic_canadian_token_idea }
-			set_variable = {   global.culture_desc_array^102 = token:TDA_culture_atlantic_canadian_desc_token_idea }
+			set_variable = {  global.culture_names_array^110 = token:TDA_culture_atlantic_canadian_token_idea }
 			#242, 50, 52
-			set_variable = { global.culture_colour_array^102 = 15872564 }
+			set_variable = { global.culture_colour_array^110 = 15872564 }
 
-			set_variable = {  global.culture_names_array^103 = token:TDA_culture_prairie_canadian_token_idea }
-			set_variable = {   global.culture_desc_array^103 = token:TDA_culture_prairie_canadian_desc_token_idea }
+			set_variable = {  global.culture_names_array^111 = token:TDA_culture_prairie_canadian_token_idea }
 			#194, 39, 4
-			set_variable = { global.culture_colour_array^103 = 12723972 }
+			set_variable = { global.culture_colour_array^111 = 12723972 }
 
-			set_variable = {  global.culture_names_array^104 = token:TDA_culture_british_columbian_token_idea }
-			set_variable = {   global.culture_desc_array^104 = token:TDA_culture_british_columbian_desc_token_idea }
+			set_variable = {  global.culture_names_array^112 = token:TDA_culture_british_columbian_token_idea }
 			#228, 33, 0
-			set_variable = { global.culture_colour_array^104 = 14950656 }
+			set_variable = { global.culture_colour_array^112 = 14950656 }
 
-			set_variable = {  global.culture_names_array^109 = token:TDA_culture_baltic_russian_token_idea }
-			set_variable = {   global.culture_desc_array^109 = token:TDA_culture_baltic_russian_desc_token_idea }
-			#22, 170, 39
-			set_variable = { global.culture_colour_array^109 = 1485351 }
+			set_variable = {  global.culture_names_array^118 = token:TDA_culture_northern_italian_token_idea }
+			#66, 203, 42
+			set_variable = { global.culture_colour_array^118 = 4377386 }
 
-			set_variable = {  global.culture_names_array^110 = token:TDA_culture_muscovite_token_idea }
-			set_variable = {   global.culture_desc_array^110 = token:TDA_culture_muscovite_desc_token_idea }
-			#74, 145, 29
-			set_variable = { global.culture_colour_array^110 = 4886813 }
+			set_variable = {  global.culture_names_array^119 = token:TDA_culture_central_italian_token_idea }
+			#37, 153, 66
+			set_variable = { global.culture_colour_array^119 = 2464066 }
 
-			set_variable = {  global.culture_names_array^111 = token:TDA_culture_petersburgian_token_idea }
-			set_variable = {   global.culture_desc_array^111 = token:TDA_culture_petersburgian_desc_token_idea }
-			#140, 178, 118
-			set_variable = { global.culture_colour_array^111 = 9220726 }
+			set_variable = {  global.culture_names_array^120 = token:TDA_culture_southern_italian_token_idea }
+			#23, 96, 20
+			set_variable = { global.culture_colour_array^120 = 1531924 }
 
-			set_variable = {  global.culture_names_array^112 = token:TDA_culture_central_russian_token_idea }
-			set_variable = {   global.culture_desc_array^112 = token:TDA_culture_central_russian_desc_token_idea }
-			#24, 97, 24
-			set_variable = { global.culture_colour_array^112 = 1597720 }
+			set_variable = {  global.culture_names_array^121 = token:TDA_culture_tyrolean_token_idea }
+			#205, 255, 234
+			set_variable = { global.culture_colour_array^121 = 13500394 }
 
-			set_variable = {  global.culture_names_array^113 = token:TDA_culture_northern_russian_token_idea }
-			set_variable = {   global.culture_desc_array^113 = token:TDA_culture_northern_russian_desc_token_idea }
-			#11, 79, 41
-			set_variable = { global.culture_colour_array^113 = 741161 }
+			set_variable = {  global.culture_names_array^127 = token:TDA_culture_east_german_token_idea }
+			#112, 56, 78
+			set_variable = { global.culture_colour_array^127 = 7354446 }
 
-			set_variable = {  global.culture_names_array^114 = token:TDA_culture_far_eastern_russian_token_idea }
-			set_variable = {   global.culture_desc_array^114 = token:TDA_culture_far_eastern_russian_desc_token_idea }
-			#20, 124, 41
-			set_variable = { global.culture_colour_array^114 = 1342505 }
+			set_variable = {  global.culture_names_array^128 = token:TDA_culture_west_german_token_idea }
+			#125, 125, 142
+			set_variable = { global.culture_colour_array^128 = 8224142 }
 
-			set_variable = {  global.culture_names_array^115 = token:TDA_culture_ural_russian_token_idea }
-			set_variable = {   global.culture_desc_array^115 = token:TDA_culture_ural_russian_desc_token_idea }
-			#8, 56, 8
-			set_variable = { global.culture_colour_array^115 = 538632 }
+			set_variable = {  global.culture_names_array^129 = token:TDA_culture_bavarian_token_idea }
+			#11, 37, 70
+			set_variable = { global.culture_colour_array^129 = 730438 }
 
-			set_variable = {  global.culture_names_array^116 = token:TDA_culture_siberian_token_idea }
-			set_variable = {   global.culture_desc_array^116 = token:TDA_culture_siberian_desc_token_idea }
-			#8, 143, 55
-			set_variable = { global.culture_colour_array^116 = 560951 }
+			set_variable = {  global.culture_names_array^130 = token:TDA_culture_berlinner_token_idea }
+			#101, 39, 105
+			set_variable = { global.culture_colour_array^130 = 6629225 }
 
-			set_variable = {  global.culture_names_array^117 = token:TDA_culture_volga_russian_token_idea }
-			set_variable = {   global.culture_desc_array^117 = token:TDA_culture_volga_russian_desc_token_idea }
-			#10, 146, 85
-			set_variable = { global.culture_colour_array^117 = 692821 }
+			set_variable = {  global.culture_names_array^136 = token:TDA_culture_southern_english_token_idea }
+			#218, 32, 32
+			set_variable = { global.culture_colour_array^136 = 14295072 }
 
-			set_variable = {  global.culture_names_array^118 = token:TDA_culture_southern_russian_token_idea }
-			set_variable = {   global.culture_desc_array^118 = token:TDA_culture_southern_russian_desc_token_idea }
-			#54, 80, 16
-			set_variable = { global.culture_colour_array^118 = 3559440 }
+			set_variable = {  global.culture_names_array^137 = token:TDA_culture_midland_english_token_idea }
+			#187, 63, 63
+			set_variable = { global.culture_colour_array^137 = 12271423 }
 
-			set_variable = {  global.culture_names_array^119 = token:TDA_culture_kaliningrader_token_idea }
-			set_variable = {   global.culture_desc_array^119 = token:TDA_culture_kaliningrader_desc_token_idea }
-			#64, 167, 16
-			set_variable = { global.culture_colour_array^119 = 4237072 }
+			set_variable = {  global.culture_names_array^138 = token:TDA_culture_northern_english_token_idea }
+			#196, 6, 17
+			set_variable = { global.culture_colour_array^138 = 12846609 }
 
-			set_variable = {  global.culture_names_array^127 = token:TDA_culture_dongbei_token_idea }
-			set_variable = {   global.culture_desc_array^127 = token:TDA_culture_dongbei_desc_token_idea }
+			set_variable = {  global.culture_names_array^139 = token:TDA_culture_londoner_token_idea }
+			#255, 86, 137
+			set_variable = { global.culture_colour_array^139 = 16733833 }
+
+			set_variable = {  global.culture_names_array^140 = token:TDA_culture_gibraltarian_token_idea }
+			#217, 19, 29
+			set_variable = { global.culture_colour_array^140 = 14226205 }
+
+			set_variable = {  global.culture_names_array^145 = token:TDA_culture_bosniak_serb_token_idea }
+			#39, 57, 132
+			set_variable = { global.culture_colour_array^145 = 2570628 }
+
+			set_variable = {  global.culture_names_array^146 = token:TDA_culture_croat_serb_token_idea }
+			#194, 28, 88
+			set_variable = { global.culture_colour_array^146 = 12721240 }
+
+			set_variable = {  global.culture_names_array^147 = token:TDA_culture_serbian_token_idea }
+			#54, 57, 88
+			set_variable = { global.culture_colour_array^147 = 3553624 }
+
+			set_variable = {  global.culture_names_array^148 = token:TDA_culture_kosovar_serb_token_idea }
+			#23, 43, 178
+			set_variable = { global.culture_colour_array^148 = 1518514 }
+
+			set_variable = {  global.culture_names_array^149 = token:TDA_culture_montenegrin_serb_token_idea }
+			#73, 110, 180
+			set_variable = { global.culture_colour_array^149 = 4812468 }
+
+			set_variable = {  global.culture_names_array^154 = token:TDA_culture_corsican_token_idea }
+			#37, 147, 182
+			set_variable = { global.culture_colour_array^154 = 2462646 }
+
+			set_variable = {  global.culture_names_array^155 = token:TDA_culture_parisian_token_idea }
+			#8, 151, 201
+			set_variable = { global.culture_colour_array^155 = 563145 }
+
+			set_variable = {  global.culture_names_array^156 = token:TDA_culture_breton_token_idea }
+			#217, 255, 236
+			set_variable = { global.culture_colour_array^156 = 14286828 }
+
+			set_variable = {  global.culture_names_array^157 = token:TDA_culture_northern_french_token_idea }
+			#35, 97, 240
+			set_variable = { global.culture_colour_array^157 = 2318832 }
+
+			set_variable = {  global.culture_names_array^158 = token:TDA_culture_central_french_token_idea }
+			#113, 113, 156
+			set_variable = { global.culture_colour_array^158 = 7434652 }
+
+			set_variable = {  global.culture_names_array^159 = token:TDA_culture_southern_french_token_idea }
+			#0, 62, 180
+			set_variable = { global.culture_colour_array^159 = 16052 }
+
+			set_variable = {  global.culture_names_array^163 = token:TDA_culture_western_ukrainian_token_idea }
+			#128, 140, 234
+			set_variable = { global.culture_colour_array^163 = 8424682 }
+
+			set_variable = {  global.culture_names_array^164 = token:TDA_culture_central_ukrainian_token_idea }
+			#20, 20, 230
+			set_variable = { global.culture_colour_array^164 = 1316070 }
+
+			set_variable = {  global.culture_names_array^165 = token:TDA_culture_eastern_ukrainian_token_idea }
+			#28, 43, 116
+			set_variable = { global.culture_colour_array^165 = 1846132 }
+
+			set_variable = {  global.culture_names_array^166 = token:TDA_culture_southern_ukrainian_token_idea }
+			#32, 116, 112
+			set_variable = { global.culture_colour_array^166 = 2126960 }
+
+			set_variable = {  global.culture_names_array^167 = token:TDA_culture_donbas_token_idea }
+			#4, 47, 102
+			set_variable = { global.culture_colour_array^167 = 274278 }
+
+			set_variable = {  global.culture_names_array^168 = token:TDA_culture_crimean_ukrainian_token_idea }
+			#51, 120, 213
+			set_variable = { global.culture_colour_array^168 = 3373269 }
+
+			set_variable = {  global.culture_names_array^172 = token:TDA_culture_dongbei_token_idea }
 			#211, 52, 13
-			set_variable = { global.culture_colour_array^127 = 13841421 }
+			set_variable = { global.culture_colour_array^172 = 13841421 }
 
-			set_variable = {  global.culture_names_array^128 = token:TDA_culture_xibei_token_idea }
-			set_variable = {   global.culture_desc_array^128 = token:TDA_culture_xibei_desc_token_idea }
+			set_variable = {  global.culture_names_array^173 = token:TDA_culture_xibei_token_idea }
 			#174, 16, 63
-			set_variable = { global.culture_colour_array^128 = 11407423 }
+			set_variable = { global.culture_colour_array^173 = 11407423 }
 
-			set_variable = {  global.culture_names_array^129 = token:TDA_culture_huabei_token_idea }
-			set_variable = {   global.culture_desc_array^129 = token:TDA_culture_huabei_desc_token_idea }
+			set_variable = {  global.culture_names_array^174 = token:TDA_culture_huabei_token_idea }
 			#194, 21, 28
-			set_variable = { global.culture_colour_array^129 = 12719388 }
+			set_variable = { global.culture_colour_array^174 = 12719388 }
 
-			set_variable = {  global.culture_names_array^130 = token:TDA_culture_xinan_token_idea }
-			set_variable = {   global.culture_desc_array^130 = token:TDA_culture_xinan_desc_token_idea }
+			set_variable = {  global.culture_names_array^175 = token:TDA_culture_xinan_token_idea }
 			#175, 13, 0
-			set_variable = { global.culture_colour_array^130 = 11472128 }
+			set_variable = { global.culture_colour_array^175 = 11472128 }
 
-			set_variable = {  global.culture_names_array^131 = token:TDA_culture_yue_token_idea }
-			set_variable = {   global.culture_desc_array^131 = token:TDA_culture_yue_desc_token_idea }
+			set_variable = {  global.culture_names_array^176 = token:TDA_culture_yue_token_idea }
 			#22, 162, 173
-			set_variable = { global.culture_colour_array^131 = 1483437 }
+			set_variable = { global.culture_colour_array^176 = 1483437 }
 
-			set_variable = {  global.culture_names_array^132 = token:TDA_culture_min_token_idea }
-			set_variable = {   global.culture_desc_array^132 = token:TDA_culture_min_desc_token_idea }
+			set_variable = {  global.culture_names_array^177 = token:TDA_culture_min_token_idea }
 			#74, 11, 83
-			set_variable = { global.culture_colour_array^132 = 4852563 }
+			set_variable = { global.culture_colour_array^177 = 4852563 }
 
-			set_variable = {  global.culture_names_array^133 = token:TDA_culture_hakka_token_idea }
-			set_variable = {   global.culture_desc_array^133 = token:TDA_culture_hakka_desc_token_idea }
+			set_variable = {  global.culture_names_array^178 = token:TDA_culture_hakka_token_idea }
 			#216, 52, 52
-			set_variable = { global.culture_colour_array^133 = 14169140 }
+			set_variable = { global.culture_colour_array^178 = 14169140 }
 
-			set_variable = {  global.culture_names_array^134 = token:TDA_culture_wu_token_idea }
-			set_variable = {   global.culture_desc_array^134 = token:TDA_culture_wu_desc_token_idea }
+			set_variable = {  global.culture_names_array^179 = token:TDA_culture_wu_token_idea }
 			#155, 20, 56
-			set_variable = { global.culture_colour_array^134 = 10163256 }
+			set_variable = { global.culture_colour_array^179 = 10163256 }
 
-			set_variable = {  global.culture_names_array^135 = token:TDA_culture_xiang_token_idea }
-			set_variable = {   global.culture_desc_array^135 = token:TDA_culture_xiang_desc_token_idea }
+			set_variable = {  global.culture_names_array^180 = token:TDA_culture_xiang_token_idea }
 			#165, 75, 30
-			set_variable = { global.culture_colour_array^135 = 10832670 }
+			set_variable = { global.culture_colour_array^180 = 10832670 }
 
-			set_variable = {  global.culture_names_array^136 = token:TDA_culture_gan_token_idea }
-			set_variable = {   global.culture_desc_array^136 = token:TDA_culture_gan_desc_token_idea }
+			set_variable = {  global.culture_names_array^181 = token:TDA_culture_gan_token_idea }
 			#190, 51, 144
-			set_variable = { global.culture_colour_array^136 = 12465040 }
+			set_variable = { global.culture_colour_array^181 = 12465040 }
 
-			set_variable = {  global.culture_names_array^137 = token:TDA_culture_zhongnan_token_idea }
-			set_variable = {   global.culture_desc_array^137 = token:TDA_culture_zhongnan_desc_token_idea }
+			set_variable = {  global.culture_names_array^182 = token:TDA_culture_zhongnan_token_idea }
 			#180, 51, 97
-			set_variable = { global.culture_colour_array^137 = 11809633 }
+			set_variable = { global.culture_colour_array^182 = 11809633 }
 
-			set_variable = {  global.culture_names_array^138 = token:TDA_culture_huadong_token_idea }
-			set_variable = {   global.culture_desc_array^138 = token:TDA_culture_huadong_desc_token_idea }
+			set_variable = {  global.culture_names_array^183 = token:TDA_culture_huadong_token_idea }
 			#143, 8, 2
-			set_variable = { global.culture_colour_array^138 = 9373698 }
+			set_variable = { global.culture_colour_array^183 = 9373698 }
 
-			set_variable = {  global.culture_names_array^145 = token:TDA_culture_new_englander_token_idea }
-			set_variable = {   global.culture_desc_array^145 = token:TDA_culture_new_englander_desc_token_idea }
+			set_variable = {  global.culture_names_array^190 = token:TDA_culture_baltic_russian_token_idea }
+			#22, 170, 39
+			set_variable = { global.culture_colour_array^190 = 1485351 }
+
+			set_variable = {  global.culture_names_array^191 = token:TDA_culture_muscovite_token_idea }
+			#74, 145, 29
+			set_variable = { global.culture_colour_array^191 = 4886813 }
+
+			set_variable = {  global.culture_names_array^192 = token:TDA_culture_petersburgian_token_idea }
+			#140, 178, 118
+			set_variable = { global.culture_colour_array^192 = 9220726 }
+
+			set_variable = {  global.culture_names_array^193 = token:TDA_culture_central_russian_token_idea }
+			#24, 97, 24
+			set_variable = { global.culture_colour_array^193 = 1597720 }
+
+			set_variable = {  global.culture_names_array^194 = token:TDA_culture_northern_russian_token_idea }
+			#11, 79, 41
+			set_variable = { global.culture_colour_array^194 = 741161 }
+
+			set_variable = {  global.culture_names_array^195 = token:TDA_culture_far_eastern_russian_token_idea }
+			#20, 124, 41
+			set_variable = { global.culture_colour_array^195 = 1342505 }
+
+			set_variable = {  global.culture_names_array^196 = token:TDA_culture_ural_russian_token_idea }
+			#8, 56, 8
+			set_variable = { global.culture_colour_array^196 = 538632 }
+
+			set_variable = {  global.culture_names_array^197 = token:TDA_culture_siberian_token_idea }
+			#8, 143, 55
+			set_variable = { global.culture_colour_array^197 = 560951 }
+
+			set_variable = {  global.culture_names_array^198 = token:TDA_culture_volga_russian_token_idea }
+			#10, 146, 85
+			set_variable = { global.culture_colour_array^198 = 692821 }
+
+			set_variable = {  global.culture_names_array^199 = token:TDA_culture_southern_russian_token_idea }
+			#54, 80, 16
+			set_variable = { global.culture_colour_array^199 = 3559440 }
+
+			set_variable = {  global.culture_names_array^200 = token:TDA_culture_kaliningrader_token_idea }
+			#64, 167, 16
+			set_variable = { global.culture_colour_array^200 = 4237072 }
+
+			set_variable = {  global.culture_names_array^201 = token:TDA_culture_kazakh_russian_token_idea }
+			#0, 128, 62
+			set_variable = { global.culture_colour_array^201 = 32830 }
+
+			set_variable = {  global.culture_names_array^202 = token:TDA_culture_crimean_russian_token_idea }
+			#31, 170, 74
+			set_variable = { global.culture_colour_array^202 = 2075210 }
+
+			set_variable = {  global.culture_names_array^208 = token:TDA_culture_new_englander_token_idea }
 			#17, 105, 184
-			set_variable = { global.culture_colour_array^145 = 1141176 }
+			set_variable = { global.culture_colour_array^208 = 1141176 }
 
-			set_variable = {  global.culture_names_array^146 = token:TDA_culture_alaskan_token_idea }
-			set_variable = {   global.culture_desc_array^146 = token:TDA_culture_alaskan_desc_token_idea }
+			set_variable = {  global.culture_names_array^209 = token:TDA_culture_alaskan_token_idea }
 			#8, 62, 119
-			set_variable = { global.culture_colour_array^146 = 540279 }
+			set_variable = { global.culture_colour_array^209 = 540279 }
 
-			set_variable = {  global.culture_names_array^147 = token:TDA_culture_pacific_northwest_token_idea }
-			set_variable = {   global.culture_desc_array^147 = token:TDA_culture_pacific_northwest_desc_token_idea }
+			set_variable = {  global.culture_names_array^210 = token:TDA_culture_pacific_northwest_token_idea }
 			#63, 51, 205
-			set_variable = { global.culture_colour_array^147 = 4142029 }
+			set_variable = { global.culture_colour_array^210 = 4142029 }
 
-			set_variable = {  global.culture_names_array^148 = token:TDA_culture_utahan_token_idea }
-			set_variable = {   global.culture_desc_array^148 = token:TDA_culture_utahan_desc_token_idea }
+			set_variable = {  global.culture_names_array^211 = token:TDA_culture_utahan_token_idea }
 			#0, 101, 163
-			set_variable = { global.culture_colour_array^148 = 26019 }
+			set_variable = { global.culture_colour_array^211 = 26019 }
 
-			set_variable = {  global.culture_names_array^149 = token:TDA_culture_new_yorker_token_idea }
-			set_variable = {   global.culture_desc_array^149 = token:TDA_culture_new_yorker_desc_token_idea }
+			set_variable = {  global.culture_names_array^212 = token:TDA_culture_new_yorker_token_idea }
 			#0, 24, 225
-			set_variable = { global.culture_colour_array^149 = 6369 }
+			set_variable = { global.culture_colour_array^212 = 6369 }
 
-			set_variable = {  global.culture_names_array^150 = token:TDA_culture_usa_south_west_token_idea }
-			set_variable = {   global.culture_desc_array^150 = token:TDA_culture_usa_south_west_desc_token_idea }
+			set_variable = {  global.culture_names_array^213 = token:TDA_culture_usa_south_west_token_idea }
 			#35, 62, 211
-			set_variable = { global.culture_colour_array^150 = 2309843 }
+			set_variable = { global.culture_colour_array^213 = 2309843 }
 
-			set_variable = {  global.culture_names_array^151 = token:TDA_culture_californian_token_idea }
-			set_variable = {   global.culture_desc_array^151 = token:TDA_culture_californian_desc_token_idea }
+			set_variable = {  global.culture_names_array^214 = token:TDA_culture_californian_token_idea }
 			#0, 163, 255
-			set_variable = { global.culture_colour_array^151 = 41983 }
+			set_variable = { global.culture_colour_array^214 = 41983 }
 
-			set_variable = {  global.culture_names_array^152 = token:TDA_culture_texan_token_idea }
-			set_variable = {   global.culture_desc_array^152 = token:TDA_culture_texan_desc_token_idea }
+			set_variable = {  global.culture_names_array^215 = token:TDA_culture_texan_token_idea }
 			#62, 41, 174
-			set_variable = { global.culture_colour_array^152 = 4073902 }
+			set_variable = { global.culture_colour_array^215 = 4073902 }
 
-			set_variable = {  global.culture_names_array^153 = token:TDA_culture_usa_deep_south_token_idea }
-			set_variable = {   global.culture_desc_array^153 = token:TDA_culture_usa_deep_south_desc_token_idea }
+			set_variable = {  global.culture_names_array^216 = token:TDA_culture_usa_deep_south_token_idea }
 			#45, 85, 112
-			set_variable = { global.culture_colour_array^153 = 2970992 }
+			set_variable = { global.culture_colour_array^216 = 2970992 }
 
-			set_variable = {  global.culture_names_array^154 = token:TDA_culture_floridan_token_idea }
-			set_variable = {   global.culture_desc_array^154 = token:TDA_culture_floridan_desc_token_idea }
+			set_variable = {  global.culture_names_array^217 = token:TDA_culture_floridan_token_idea }
 			#62, 145, 190
-			set_variable = { global.culture_colour_array^154 = 4100542 }
+			set_variable = { global.culture_colour_array^217 = 4100542 }
 
-			set_variable = {  global.culture_names_array^155 = token:TDA_culture_northern_rockies_token_idea }
-			set_variable = {   global.culture_desc_array^155 = token:TDA_culture_northern_rockies_desc_token_idea }
+			set_variable = {  global.culture_names_array^218 = token:TDA_culture_northern_rockies_token_idea }
 			#0, 47, 159
-			set_variable = { global.culture_colour_array^155 = 12191 }
+			set_variable = { global.culture_colour_array^218 = 12191 }
 
-			set_variable = {  global.culture_names_array^156 = token:TDA_culture_atlantic_south_token_idea }
-			set_variable = {   global.culture_desc_array^156 = token:TDA_culture_atlantic_south_desc_token_idea }
+			set_variable = {  global.culture_names_array^219 = token:TDA_culture_atlantic_south_token_idea }
 			#59, 113, 220
-			set_variable = { global.culture_colour_array^156 = 3895772 }
+			set_variable = { global.culture_colour_array^219 = 3895772 }
 
-			set_variable = {  global.culture_names_array^157 = token:TDA_culture_great_plains_token_idea }
-			set_variable = {   global.culture_desc_array^157 = token:TDA_culture_great_plains_desc_token_idea }
+			set_variable = {  global.culture_names_array^220 = token:TDA_culture_great_plains_token_idea }
 			#136, 167, 223
-			set_variable = { global.culture_colour_array^157 = 8955871 }
+			set_variable = { global.culture_colour_array^220 = 8955871 }
 
-			set_variable = {  global.culture_names_array^158 = token:TDA_culture_midwestern_token_idea }
-			set_variable = {   global.culture_desc_array^158 = token:TDA_culture_midwestern_desc_token_idea }
+			set_variable = {  global.culture_names_array^221 = token:TDA_culture_midwestern_token_idea }
 			#62, 128, 213
-			set_variable = { global.culture_colour_array^158 = 4096213 }
+			set_variable = { global.culture_colour_array^221 = 4096213 }
 
-			set_variable = {  global.culture_names_array^159 = token:TDA_culture_rustbelt_token_idea }
-			set_variable = {   global.culture_desc_array^159 = token:TDA_culture_rustbelt_desc_token_idea }
+			set_variable = {  global.culture_names_array^222 = token:TDA_culture_rustbelt_token_idea }
 			#24, 41, 140
-			set_variable = { global.culture_colour_array^159 = 1583500 }
+			set_variable = { global.culture_colour_array^222 = 1583500 }
 
-			set_variable = {  global.culture_names_array^160 = token:TDA_culture_usa_east_coast_token_idea }
-			set_variable = {   global.culture_desc_array^160 = token:TDA_culture_usa_east_coast_desc_token_idea }
+			set_variable = {  global.culture_names_array^223 = token:TDA_culture_usa_east_coast_token_idea }
 			#16, 89, 220
-			set_variable = { global.culture_colour_array^160 = 1071580 }
+			set_variable = { global.culture_colour_array^223 = 1071580 }
 
-			set_variable = {  global.culture_names_array^161 = token:TDA_culture_usa_southern_token_idea }
-			set_variable = {   global.culture_desc_array^161 = token:TDA_culture_usa_southern_desc_token_idea }
+			set_variable = {  global.culture_names_array^224 = token:TDA_culture_usa_southern_token_idea }
 			#64, 90, 140
-			set_variable = { global.culture_colour_array^161 = 4217484 }
+			set_variable = { global.culture_colour_array^224 = 4217484 }
 
-			set_variable = {  global.culture_names_array^162 = token:TDA_culture_puerto_rican_token_idea }
-			set_variable = {   global.culture_desc_array^162 = token:TDA_culture_puerto_rican_desc_token_idea }
+			set_variable = {  global.culture_names_array^225 = token:TDA_culture_puerto_rican_token_idea }
 			#138, 101, 47
-			set_variable = { global.culture_colour_array^162 = 9069871 }
+			set_variable = { global.culture_colour_array^225 = 9069871 }
 
-			set_variable = {  global.culture_names_array^163 = token:TDA_culture_native_north_american_token_idea }
-			set_variable = {   global.culture_desc_array^163 = token:TDA_culture_native_north_american_desc_token_idea }
+			set_variable = {  global.culture_names_array^226 = token:TDA_culture_native_north_american_token_idea }
 			#150, 97, 55
-			set_variable = { global.culture_colour_array^163 = 9855287 }
+			set_variable = { global.culture_colour_array^226 = 9855287 }
 
-			set_variable = {  global.culture_names_array^164 = token:TDA_culture_ulster_protestant_token_idea }
-			set_variable = {   global.culture_desc_array^164 = token:TDA_culture_ulster_protestant_desc_token_idea }
+			set_variable = {  global.culture_names_array^227 = token:TDA_culture_french_canadian_token_idea }
+			#0, 0, 180
+			set_variable = { global.culture_colour_array^227 = 180 }
+
+			set_variable = {  global.culture_names_array^228 = token:TDA_culture_ulster_protestant_token_idea }
 			#239, 66, 68
-			set_variable = { global.culture_colour_array^164 = 15680068 }
+			set_variable = { global.culture_colour_array^228 = 15680068 }
 
-			set_variable = {  global.culture_names_array^165 = token:TDA_culture_scottish_token_idea }
-			set_variable = {   global.culture_desc_array^165 = token:TDA_culture_scottish_desc_token_idea }
+			set_variable = {  global.culture_names_array^229 = token:TDA_culture_scottish_token_idea }
 			#0, 36, 148
-			set_variable = { global.culture_colour_array^165 = 9364 }
+			set_variable = { global.culture_colour_array^229 = 9364 }
 
-			set_variable = {  global.culture_names_array^166 = token:TDA_culture_israeli_token_idea }
-			set_variable = {   global.culture_desc_array^166 = token:TDA_culture_israeli_desc_token_idea }
+			set_variable = {  global.culture_names_array^230 = token:TDA_culture_israeli_token_idea }
 			#127, 198, 230
-			set_variable = { global.culture_colour_array^166 = 8373990 }
+			set_variable = { global.culture_colour_array^230 = 8373990 }
 
-			set_variable = {  global.culture_names_array^167 = token:TDA_culture_palestinian_token_idea }
-			set_variable = {   global.culture_desc_array^167 = token:TDA_culture_palestinian_desc_token_idea }
+			set_variable = {  global.culture_names_array^231 = token:TDA_culture_palestinian_token_idea }
 			#186, 63, 10
-			set_variable = { global.culture_colour_array^167 = 12205834 }
+			set_variable = { global.culture_colour_array^231 = 12205834 }
 
-			set_variable = {  global.culture_names_array^168 = token:TDA_culture_druze_token_idea }
-			set_variable = {   global.culture_desc_array^168 = token:TDA_culture_druze_desc_token_idea }
+			set_variable = {  global.culture_names_array^232 = token:TDA_culture_druze_token_idea }
 			#221, 253, 232
-			set_variable = { global.culture_colour_array^168 = 14548456 }
+			set_variable = { global.culture_colour_array^232 = 14548456 }
 
-			set_variable = {  global.culture_names_array^169 = token:TDA_culture_austrian_token_idea }
-			set_variable = {   global.culture_desc_array^169 = token:TDA_culture_austrian_desc_token_idea }
+			set_variable = {  global.culture_names_array^233 = token:TDA_culture_austrian_token_idea }
 			#210, 210, 210
-			set_variable = { global.culture_colour_array^169 = 13816530 }
+			set_variable = { global.culture_colour_array^233 = 13816530 }
 
-			set_variable = {  global.culture_names_array^170 = token:TDA_culture_romanian_token_idea }
-			set_variable = {   global.culture_desc_array^170 = token:TDA_culture_romanian_desc_token_idea }
+			set_variable = {  global.culture_names_array^234 = token:TDA_culture_romanian_token_idea }
 			#225, 194, 47
-			set_variable = { global.culture_colour_array^170 = 14795311 }
+			set_variable = { global.culture_colour_array^234 = 14795311 }
 
-			set_variable = {  global.culture_names_array^171 = token:TDA_culture_slovak_token_idea }
-			set_variable = {   global.culture_desc_array^171 = token:TDA_culture_slovak_desc_token_idea }
+			set_variable = {  global.culture_names_array^235 = token:TDA_culture_slovak_token_idea }
 			#113, 113, 125
-			set_variable = { global.culture_colour_array^171 = 7434621 }
+			set_variable = { global.culture_colour_array^235 = 7434621 }
 
-			set_variable = {  global.culture_names_array^172 = token:TDA_culture_czech_token_idea }
-			set_variable = {   global.culture_desc_array^172 = token:TDA_culture_czech_desc_token_idea }
+			set_variable = {  global.culture_names_array^236 = token:TDA_culture_czech_token_idea }
 			#65, 62, 222
-			set_variable = { global.culture_colour_array^172 = 4275934 }
+			set_variable = { global.culture_colour_array^236 = 4275934 }
 
-			set_variable = {  global.culture_names_array^173 = token:TDA_culture_lithuanian_token_idea }
-			set_variable = {   global.culture_desc_array^173 = token:TDA_culture_lithuanian_desc_token_idea }
+			set_variable = {  global.culture_names_array^237 = token:TDA_culture_lithuanian_token_idea }
 			#177, 168, 6
-			set_variable = { global.culture_colour_array^173 = 11642886 }
+			set_variable = { global.culture_colour_array^237 = 11642886 }
 
-			set_variable = {  global.culture_names_array^174 = token:TDA_culture_latvian_token_idea }
-			set_variable = {   global.culture_desc_array^174 = token:TDA_culture_latvian_desc_token_idea }
+			set_variable = {  global.culture_names_array^238 = token:TDA_culture_latvian_token_idea }
 			#126, 4, 58
-			set_variable = { global.culture_colour_array^174 = 8258618 }
+			set_variable = { global.culture_colour_array^238 = 8258618 }
 
-			set_variable = {  global.culture_names_array^175 = token:TDA_culture_estonian_token_idea }
-			set_variable = {   global.culture_desc_array^175 = token:TDA_culture_estonian_desc_token_idea }
+			set_variable = {  global.culture_names_array^239 = token:TDA_culture_estonian_token_idea }
 			#6, 139, 179
-			set_variable = { global.culture_colour_array^175 = 428979 }
+			set_variable = { global.culture_colour_array^239 = 428979 }
 
-			set_variable = {  global.culture_names_array^176 = token:TDA_culture_dutch_token_idea }
-			set_variable = {   global.culture_desc_array^176 = token:TDA_culture_dutch_desc_token_idea }
+			set_variable = {  global.culture_names_array^240 = token:TDA_culture_dutch_token_idea }
 			#198, 135, 87
-			set_variable = { global.culture_colour_array^176 = 13010775 }
+			set_variable = { global.culture_colour_array^240 = 13010775 }
 
-			set_variable = {  global.culture_names_array^177 = token:TDA_culture_luxembourgish_token_idea }
-			set_variable = {   global.culture_desc_array^177 = token:TDA_culture_luxembourgish_desc_token_idea }
+			set_variable = {  global.culture_names_array^241 = token:TDA_culture_luxembourgish_token_idea }
 			#117, 196, 188
-			set_variable = { global.culture_colour_array^177 = 7718076 }
+			set_variable = { global.culture_colour_array^241 = 7718076 }
 
-			set_variable = {  global.culture_names_array^178 = token:TDA_culture_bulgarian_token_idea }
-			set_variable = {   global.culture_desc_array^178 = token:TDA_culture_bulgarian_desc_token_idea }
+			set_variable = {  global.culture_names_array^242 = token:TDA_culture_bulgarian_token_idea }
 			#20, 168, 101
-			set_variable = { global.culture_colour_array^178 = 1353829 }
+			set_variable = { global.culture_colour_array^242 = 1353829 }
 
-			set_variable = {  global.culture_names_array^179 = token:TDA_culture_moldovan_token_idea }
-			set_variable = {   global.culture_desc_array^179 = token:TDA_culture_moldovan_desc_token_idea }
+			set_variable = {  global.culture_names_array^243 = token:TDA_culture_moldovan_token_idea }
 			#228, 206, 138
-			set_variable = { global.culture_colour_array^179 = 14995082 }
+			set_variable = { global.culture_colour_array^243 = 14995082 }
 
-			set_variable = {  global.culture_names_array^180 = token:TDA_culture_gagauz_token_idea }
-			set_variable = {   global.culture_desc_array^180 = token:TDA_culture_gagauz_desc_token_idea }
+			set_variable = {  global.culture_names_array^244 = token:TDA_culture_gagauz_token_idea }
 			#7, 63, 125
-			set_variable = { global.culture_colour_array^180 = 475005 }
+			set_variable = { global.culture_colour_array^244 = 475005 }
 
-			set_variable = {  global.culture_names_array^181 = token:TDA_culture_transnistrian_token_idea }
-			set_variable = {   global.culture_desc_array^181 = token:TDA_culture_transnistrian_desc_token_idea }
+			set_variable = {  global.culture_names_array^245 = token:TDA_culture_transnistrian_token_idea }
 			#203, 8, 12
-			set_variable = { global.culture_colour_array^181 = 13305868 }
+			set_variable = { global.culture_colour_array^245 = 13305868 }
 
-			set_variable = {  global.culture_names_array^182 = token:TDA_culture_taiwanese_token_idea }
-			set_variable = {   global.culture_desc_array^182 = token:TDA_culture_taiwanese_desc_token_idea }
+			set_variable = {  global.culture_names_array^246 = token:TDA_culture_taiwanese_token_idea }
 			#31, 66, 177
-			set_variable = { global.culture_colour_array^182 = 2048689 }
+			set_variable = { global.culture_colour_array^246 = 2048689 }
 
-			set_variable = {  global.culture_names_array^183 = token:TDA_culture_tibetean_token_idea }
-			set_variable = {   global.culture_desc_array^183 = token:TDA_culture_tibetean_desc_token_idea }
+			set_variable = {  global.culture_names_array^247 = token:TDA_culture_tibetean_token_idea }
 			#78, 31, 138
-			set_variable = { global.culture_colour_array^183 = 5119882 }
+			set_variable = { global.culture_colour_array^247 = 5119882 }
 
-			set_variable = {  global.culture_names_array^184 = token:TDA_culture_uyghur_token_idea }
-			set_variable = {   global.culture_desc_array^184 = token:TDA_culture_uyghur_desc_token_idea }
+			set_variable = {  global.culture_names_array^248 = token:TDA_culture_uyghur_token_idea }
 			#76, 141, 199
-			set_variable = { global.culture_colour_array^184 = 5017031 }
+			set_variable = { global.culture_colour_array^248 = 5017031 }
 
-			set_variable = {  global.culture_names_array^185 = token:TDA_culture_hui_chinese_token_idea }
-			set_variable = {   global.culture_desc_array^185 = token:TDA_culture_hui_chinese_desc_token_idea }
+			set_variable = {  global.culture_names_array^249 = token:TDA_culture_hui_chinese_token_idea }
 			#58, 32, 98
-			set_variable = { global.culture_colour_array^185 = 3809378 }
+			set_variable = { global.culture_colour_array^249 = 3809378 }
 
-			set_variable = {  global.culture_names_array^186 = token:TDA_culture_yizu_token_idea }
-			set_variable = {   global.culture_desc_array^186 = token:TDA_culture_yizu_desc_token_idea }
+			set_variable = {  global.culture_names_array^250 = token:TDA_culture_yizu_token_idea }
 			#126, 196, 100
-			set_variable = { global.culture_colour_array^186 = 8307812 }
+			set_variable = { global.culture_colour_array^250 = 8307812 }
 
-			set_variable = {  global.culture_names_array^187 = token:TDA_culture_hmong_token_idea }
-			set_variable = {   global.culture_desc_array^187 = token:TDA_culture_hmong_desc_token_idea }
+			set_variable = {  global.culture_names_array^251 = token:TDA_culture_hmong_token_idea }
 			#115, 81, 20
-			set_variable = { global.culture_colour_array^187 = 7557396 }
+			set_variable = { global.culture_colour_array^251 = 7557396 }
 
-			set_variable = {  global.culture_names_array^188 = token:TDA_culture_zhuang_token_idea }
-			set_variable = {   global.culture_desc_array^188 = token:TDA_culture_zhuang_desc_token_idea }
+			set_variable = {  global.culture_names_array^252 = token:TDA_culture_zhuang_token_idea }
 			#255, 183, 30
-			set_variable = { global.culture_colour_array^188 = 16758558 }
+			set_variable = { global.culture_colour_array^252 = 16758558 }
 
-			set_variable = {  global.culture_names_array^189 = token:TDA_culture_hong_konger_token_idea }
-			set_variable = {   global.culture_desc_array^189 = token:TDA_culture_hong_konger_desc_token_idea }
+			set_variable = {  global.culture_names_array^253 = token:TDA_culture_hong_konger_token_idea }
 			#192, 23, 21
-			set_variable = { global.culture_colour_array^189 = 12588821 }
+			set_variable = { global.culture_colour_array^253 = 12588821 }
 
-			set_variable = {  global.culture_names_array^190 = token:TDA_culture_tujia_token_idea }
-			set_variable = {   global.culture_desc_array^190 = token:TDA_culture_tujia_desc_token_idea }
+			set_variable = {  global.culture_names_array^254 = token:TDA_culture_tujia_token_idea }
 			#22, 153, 70
-			set_variable = { global.culture_colour_array^190 = 1481030 }
+			set_variable = { global.culture_colour_array^254 = 1481030 }
 
-			set_variable = {  global.culture_names_array^191 = token:TDA_culture_bouyei_token_idea }
-			set_variable = {   global.culture_desc_array^191 = token:TDA_culture_bouyei_desc_token_idea }
+			set_variable = {  global.culture_names_array^255 = token:TDA_culture_bouyei_token_idea }
 			#18, 105, 181
-			set_variable = { global.culture_colour_array^191 = 1206709 }
+			set_variable = { global.culture_colour_array^255 = 1206709 }
 
-			set_variable = {  global.culture_names_array^192 = token:TDA_culture_hlai_token_idea }
-			set_variable = {   global.culture_desc_array^192 = token:TDA_culture_hlai_desc_token_idea }
+			set_variable = {  global.culture_names_array^256 = token:TDA_culture_hlai_token_idea }
 			#130, 232, 81
-			set_variable = { global.culture_colour_array^192 = 8579153 }
+			set_variable = { global.culture_colour_array^256 = 8579153 }
 
-			set_variable = {  global.culture_names_array^193 = token:TDA_culture_greenlandic_token_idea }
-			set_variable = {   global.culture_desc_array^193 = token:TDA_culture_greenlandic_desc_token_idea }
+			set_variable = {  global.culture_names_array^257 = token:TDA_culture_greenlandic_token_idea }
 			#222, 222, 251
-			set_variable = { global.culture_colour_array^193 = 14606075 }
+			set_variable = { global.culture_colour_array^257 = 14606075 }
 
-			set_variable = {  global.culture_names_array^194 = token:TDA_culture_faroese_token_idea }
-			set_variable = {   global.culture_desc_array^194 = token:TDA_culture_faroese_desc_token_idea }
+			set_variable = {  global.culture_names_array^258 = token:TDA_culture_faroese_token_idea }
 			#72, 137, 197
-			set_variable = { global.culture_colour_array^194 = 4753861 }
+			set_variable = { global.culture_colour_array^258 = 4753861 }
 
-			set_variable = {  global.culture_names_array^195 = token:TDA_culture_danish_token_idea }
-			set_variable = {   global.culture_desc_array^195 = token:TDA_culture_danish_desc_token_idea }
+			set_variable = {  global.culture_names_array^259 = token:TDA_culture_danish_token_idea }
 			#154, 116, 93
-			set_variable = { global.culture_colour_array^195 = 10122333 }
+			set_variable = { global.culture_colour_array^259 = 10122333 }
 
-			set_variable = {  global.culture_names_array^196 = token:TDA_culture_norwegian_token_idea }
-			set_variable = {   global.culture_desc_array^196 = token:TDA_culture_norwegian_desc_token_idea }
+			set_variable = {  global.culture_names_array^260 = token:TDA_culture_norwegian_token_idea }
 			#124, 56, 56
-			set_variable = { global.culture_colour_array^196 = 8140856 }
+			set_variable = { global.culture_colour_array^260 = 8140856 }
 
-			set_variable = {  global.culture_names_array^197 = token:TDA_culture_swedish_token_idea }
-			set_variable = {   global.culture_desc_array^197 = token:TDA_culture_swedish_desc_token_idea }
+			set_variable = {  global.culture_names_array^261 = token:TDA_culture_swedish_token_idea }
 			#23, 78, 171
-			set_variable = { global.culture_colour_array^197 = 1527467 }
+			set_variable = { global.culture_colour_array^261 = 1527467 }
 
-			set_variable = {  global.culture_names_array^198 = token:TDA_culture_nenets_token_idea }
-			set_variable = {   global.culture_desc_array^198 = token:TDA_culture_nenets_desc_token_idea }
+			set_variable = {  global.culture_names_array^262 = token:TDA_culture_nenets_token_idea }
 			#211, 211, 67
-			set_variable = { global.culture_colour_array^198 = 13882179 }
+			set_variable = { global.culture_colour_array^262 = 13882179 }
 
-			set_variable = {  global.culture_names_array^199 = token:TDA_culture_komi_token_idea }
-			set_variable = {   global.culture_desc_array^199 = token:TDA_culture_komi_desc_token_idea }
+			set_variable = {  global.culture_names_array^263 = token:TDA_culture_komi_token_idea }
 			#107, 206, 188
-			set_variable = { global.culture_colour_array^199 = 7065276 }
+			set_variable = { global.culture_colour_array^263 = 7065276 }
 
-			set_variable = {  global.culture_names_array^200 = token:TDA_culture_tatar_token_idea }
-			set_variable = {   global.culture_desc_array^200 = token:TDA_culture_tatar_desc_token_idea }
+			set_variable = {  global.culture_names_array^264 = token:TDA_culture_tatar_token_idea }
 			#182, 57, 0
-			set_variable = { global.culture_colour_array^200 = 11942144 }
+			set_variable = { global.culture_colour_array^264 = 11942144 }
 
-			set_variable = {  global.culture_names_array^201 = token:TDA_culture_bashkir_token_idea }
-			set_variable = {   global.culture_desc_array^201 = token:TDA_culture_bashkir_desc_token_idea }
+			set_variable = {  global.culture_names_array^265 = token:TDA_culture_bashkir_token_idea }
 			#23, 174, 159
-			set_variable = { global.culture_colour_array^201 = 1552031 }
+			set_variable = { global.culture_colour_array^265 = 1552031 }
 
-			set_variable = {  global.culture_names_array^202 = token:TDA_culture_mari_token_idea }
-			set_variable = {   global.culture_desc_array^202 = token:TDA_culture_mari_desc_token_idea }
+			set_variable = {  global.culture_names_array^266 = token:TDA_culture_mari_token_idea }
 			#255, 214, 229
-			set_variable = { global.culture_colour_array^202 = 16766693 }
+			set_variable = { global.culture_colour_array^266 = 16766693 }
 
-			set_variable = {  global.culture_names_array^203 = token:TDA_culture_chuvash_token_idea }
-			set_variable = {   global.culture_desc_array^203 = token:TDA_culture_chuvash_desc_token_idea }
+			set_variable = {  global.culture_names_array^267 = token:TDA_culture_chuvash_token_idea }
 			#200, 105, 14
-			set_variable = { global.culture_colour_array^203 = 13134094 }
+			set_variable = { global.culture_colour_array^267 = 13134094 }
 
-			set_variable = {  global.culture_names_array^204 = token:TDA_culture_mordvin_token_idea }
-			set_variable = {   global.culture_desc_array^204 = token:TDA_culture_mordvin_desc_token_idea }
+			set_variable = {  global.culture_names_array^268 = token:TDA_culture_mordvin_token_idea }
 			#52, 15, 112
-			set_variable = { global.culture_colour_array^204 = 3411824 }
+			set_variable = { global.culture_colour_array^268 = 3411824 }
 
-			set_variable = {  global.culture_names_array^205 = token:TDA_culture_udmurt_token_idea }
-			set_variable = {   global.culture_desc_array^205 = token:TDA_culture_udmurt_desc_token_idea }
-			#25, 0, 0
-			set_variable = { global.culture_colour_array^205 = 1638400 }
+			set_variable = {  global.culture_names_array^269 = token:TDA_culture_dagestani_token_idea }
+			#0, 22, 58
+			set_variable = { global.culture_colour_array^269 = 5690 }
 
-			resize_array = { array = global.super_culture_colour_array size = 16 value = 0 }
-			resize_array = { array = global.super_culture_names_array  size = 16 value = 0 }
-			resize_array = { array = global.super_culture_desc_array   size = 16 value = 0 }
+			set_variable = {  global.culture_names_array^270 = token:TDA_culture_kalmyk_token_idea }
+			#244, 183, 26
+			set_variable = { global.culture_colour_array^270 = 16037658 }
 
+			set_variable = {  global.culture_names_array^271 = token:TDA_culture_chechen_token_idea }
+			#84, 118, 36
+			set_variable = { global.culture_colour_array^271 = 5535268 }
+
+			set_variable = {  global.culture_names_array^272 = token:TDA_culture_ingush_token_idea }
+			#0, 178, 64
+			set_variable = { global.culture_colour_array^272 = 45632 }
+
+			set_variable = {  global.culture_names_array^273 = token:TDA_culture_ossetian_token_idea }
+			#224, 170, 20
+			set_variable = { global.culture_colour_array^273 = 14723604 }
+
+			set_variable = {  global.culture_names_array^274 = token:TDA_culture_kabardin_token_idea }
+			#62, 186, 124
+			set_variable = { global.culture_colour_array^274 = 4110972 }
+
+			set_variable = {  global.culture_names_array^275 = token:TDA_culture_karachay_token_idea }
+			#225, 78, 56
+			set_variable = { global.culture_colour_array^275 = 14765624 }
+
+			set_variable = {  global.culture_names_array^276 = token:TDA_culture_balkar_token_idea }
+			#61, 65, 221
+			set_variable = { global.culture_colour_array^276 = 4014557 }
+
+			set_variable = {  global.culture_names_array^277 = token:TDA_culture_circassian_token_idea }
+			#41, 105, 18
+			set_variable = { global.culture_colour_array^277 = 2713874 }
+
+			set_variable = {  global.culture_names_array^278 = token:TDA_culture_altay_token_idea }
+			#199, 218, 255
+			set_variable = { global.culture_colour_array^278 = 13097727 }
+
+			set_variable = {  global.culture_names_array^279 = token:TDA_culture_tuvan_token_idea }
+			#150, 135, 200
+			set_variable = { global.culture_colour_array^279 = 9865160 }
+
+			set_variable = {  global.culture_names_array^280 = token:TDA_culture_khakas_token_idea }
+			#236, 193, 28
+			set_variable = { global.culture_colour_array^280 = 15515932 }
+
+			set_variable = {  global.culture_names_array^281 = token:TDA_culture_buryat_token_idea }
+			#47, 31, 128
+			set_variable = { global.culture_colour_array^281 = 3088256 }
+
+			set_variable = {  global.culture_names_array^282 = token:TDA_culture_yakut_token_idea }
+			#133, 189, 229
+			set_variable = { global.culture_colour_array^282 = 8764901 }
+
+			set_variable = {  global.culture_names_array^283 = token:TDA_culture_belarusian_token_idea }
+			#176, 216, 189
+			set_variable = { global.culture_colour_array^283 = 11589821 }
+
+			set_variable = {  global.culture_names_array^284 = token:TDA_culture_slovenian_token_idea }
+			#56, 92, 122
+			set_variable = { global.culture_colour_array^284 = 3693690 }
+
+			set_variable = {  global.culture_names_array^285 = token:TDA_culture_montenegrin_token_idea }
+			#39, 154, 147
+			set_variable = { global.culture_colour_array^285 = 2595475 }
+
+			set_variable = {  global.culture_names_array^286 = token:TDA_culture_macedonian_token_idea }
+			#193, 92, 92
+			set_variable = { global.culture_colour_array^286 = 12672092 }
+
+			set_variable = {  global.culture_names_array^287 = token:TDA_culture_portugese_token_idea }
+			#0, 104, 56
+			set_variable = { global.culture_colour_array^287 = 26680 }
+
+			set_variable = {  global.culture_names_array^288 = token:TDA_culture_icelandic_token_idea }
+			#139, 154, 184
+			set_variable = { global.culture_colour_array^288 = 9149112 }
+
+			set_variable = {  global.culture_names_array^289 = token:TDA_culture_catalan_token_idea }
+			#204, 89, 41
+			set_variable = { global.culture_colour_array^289 = 13392169 }
+
+			set_variable = {  global.culture_names_array^290 = token:TDA_culture_basque_token_idea }
+			#129, 19, 28
+			set_variable = { global.culture_colour_array^290 = 8459036 }
+
+			set_variable = {  global.culture_names_array^291 = token:TDA_culture_spanish_token_idea }
+			#233, 190, 56
+			set_variable = { global.culture_colour_array^291 = 15318584 }
+
+			set_variable = {  global.culture_names_array^292 = token:TDA_culture_galician_token_idea }
+			#128, 220, 219
+			set_variable = { global.culture_colour_array^292 = 8445147 }
+
+			set_variable = {  global.culture_names_array^293 = token:TDA_culture_crimean_tatar_token_idea }
+			#37, 221, 186
+			set_variable = { global.culture_colour_array^293 = 2481594 }
+
+			resize_array = { array = global.super_culture_colour_array size = 23 value = 0 }
+			resize_array = { array = global.super_culture_names_array  size = 23 value = 0 }
 			set_variable = {  global.super_culture_names_array^1 = token:TDA_super_culture_irish_token_idea }
-			set_variable = {   global.super_culture_desc_array^1 = token:TDA_super_culture_irish_desc_token_idea }
 			#10, 137, 15
 			set_variable = { global.super_culture_colour_array^1 = 690447 }
 
 			set_variable = {  global.super_culture_names_array^2 = token:TDA_super_culture_welsh_token_idea }
-			set_variable = {   global.super_culture_desc_array^2 = token:TDA_super_culture_welsh_desc_token_idea }
 			#226, 160, 146
 			set_variable = { global.super_culture_colour_array^2 = 14852242 }
 
 			set_variable = {  global.super_culture_names_array^3 = token:TDA_super_culture_polish_token_idea }
-			set_variable = {   global.super_culture_desc_array^3 = token:TDA_super_culture_polish_desc_token_idea }
 			#194, 85, 85
 			set_variable = { global.super_culture_colour_array^3 = 12735829 }
 
 			set_variable = {  global.super_culture_names_array^4 = token:TDA_super_culture_mongolian_token_idea }
-			set_variable = {   global.super_culture_desc_array^4 = token:TDA_super_culture_mongolian_desc_token_idea }
 			#151, 36, 104
 			set_variable = { global.super_culture_colour_array^4 = 9905256 }
 
 			set_variable = {  global.super_culture_names_array^5 = token:TDA_super_culture_finnish_token_idea }
-			set_variable = {   global.super_culture_desc_array^5 = token:TDA_super_culture_finnish_desc_token_idea }
 			#206, 221, 231
 			set_variable = { global.super_culture_colour_array^5 = 13557223 }
 
-			set_variable = {  global.super_culture_names_array^6 = token:TDA_super_culture_swiss_token_idea }
-			set_variable = {   global.super_culture_desc_array^6 = token:TDA_super_culture_swiss_desc_token_idea }
+			set_variable = {  global.super_culture_names_array^6 = token:TDA_super_culture_kazakh_token_idea }
+			#16, 179, 201
+			set_variable = { global.super_culture_colour_array^6 = 1094601 }
+
+			set_variable = {  global.super_culture_names_array^7 = token:TDA_super_culture_croatian_token_idea }
+			#173, 54, 162
+			set_variable = { global.super_culture_colour_array^7 = 11351714 }
+
+			set_variable = {  global.super_culture_names_array^8 = token:TDA_super_culture_bosniak_token_idea }
+			#180, 121, 26
+			set_variable = { global.super_culture_colour_array^8 = 11827482 }
+
+			set_variable = {  global.super_culture_names_array^9 = token:TDA_super_culture_swiss_token_idea }
 			#178, 5, 5
-			set_variable = { global.super_culture_colour_array^6 = 11666693 }
+			set_variable = { global.super_culture_colour_array^9 = 11666693 }
 
-			set_variable = {  global.super_culture_names_array^7 = token:TDA_super_culture_hungarian_token_idea }
-			set_variable = {   global.super_culture_desc_array^7 = token:TDA_super_culture_hungarian_desc_token_idea }
+			set_variable = {  global.super_culture_names_array^10 = token:TDA_super_culture_hungarian_token_idea }
 			#224, 133, 75
-			set_variable = { global.super_culture_colour_array^7 = 14714187 }
+			set_variable = { global.super_culture_colour_array^10 = 14714187 }
 
-			set_variable = {  global.super_culture_names_array^8 = token:TDA_super_culture_belgian_token_idea }
-			set_variable = {   global.super_culture_desc_array^8 = token:TDA_super_culture_belgian_desc_token_idea }
+			set_variable = {  global.super_culture_names_array^11 = token:TDA_super_culture_belgian_token_idea }
 			#219, 162, 8
-			set_variable = { global.super_culture_colour_array^8 = 14393864 }
+			set_variable = { global.super_culture_colour_array^11 = 14393864 }
 
-			set_variable = {  global.super_culture_names_array^9 = token:TDA_super_culture_english_token_idea }
-			set_variable = {   global.super_culture_desc_array^9 = token:TDA_super_culture_english_desc_token_idea }
-			#176, 46, 54
-			set_variable = { global.super_culture_colour_array^9 = 11546166 }
+			set_variable = {  global.super_culture_names_array^12 = token:TDA_super_culture_albanian_token_idea }
+			#138, 26, 26
+			set_variable = { global.super_culture_colour_array^12 = 9050650 }
 
-			set_variable = {  global.super_culture_names_array^10 = token:TDA_super_culture_italian_token_idea }
-			set_variable = {   global.super_culture_desc_array^10 = token:TDA_super_culture_italian_desc_token_idea }
-			#8, 145, 100
-			set_variable = { global.super_culture_colour_array^10 = 561508 }
-
-			set_variable = {  global.super_culture_names_array^11 = token:TDA_super_culture_german_token_idea }
-			set_variable = {   global.super_culture_desc_array^11 = token:TDA_super_culture_german_desc_token_idea }
-			#100, 100, 100
-			set_variable = { global.super_culture_colour_array^11 = 6579300 }
-
-			set_variable = {  global.super_culture_names_array^12 = token:TDA_super_culture_canadian_token_idea }
-			set_variable = {   global.super_culture_desc_array^12 = token:TDA_super_culture_canadian_desc_token_idea }
+			set_variable = {  global.super_culture_names_array^13 = token:TDA_super_culture_canadian_token_idea }
 			#202, 60, 31
-			set_variable = { global.super_culture_colour_array^12 = 13253663 }
+			set_variable = { global.super_culture_colour_array^13 = 13253663 }
 
-			set_variable = {  global.super_culture_names_array^13 = token:TDA_super_culture_russian_token_idea }
-			set_variable = {   global.super_culture_desc_array^13 = token:TDA_super_culture_russian_desc_token_idea }
-			#6, 89, 14
-			set_variable = { global.super_culture_colour_array^13 = 416014 }
+			set_variable = {  global.super_culture_names_array^14 = token:TDA_super_culture_italian_token_idea }
+			#8, 145, 100
+			set_variable = { global.super_culture_colour_array^14 = 561508 }
 
-			set_variable = {  global.super_culture_names_array^14 = token:TDA_super_culture_mainland_chinese_token_idea }
-			set_variable = {   global.super_culture_desc_array^14 = token:TDA_super_culture_mainland_chinese_desc_token_idea }
+			set_variable = {  global.super_culture_names_array^15 = token:TDA_super_culture_german_token_idea }
+			#100, 100, 100
+			set_variable = { global.super_culture_colour_array^15 = 6579300 }
+
+			set_variable = {  global.super_culture_names_array^16 = token:TDA_super_culture_english_token_idea }
+			#176, 46, 54
+			set_variable = { global.super_culture_colour_array^16 = 11546166 }
+
+			set_variable = {  global.super_culture_names_array^17 = token:TDA_super_culture_serbian_token_idea }
+			#54, 57, 88
+			set_variable = { global.super_culture_colour_array^17 = 3553624 }
+
+			set_variable = {  global.super_culture_names_array^18 = token:TDA_super_culture_french_token_idea }
+			#27, 35, 167
+			set_variable = { global.super_culture_colour_array^18 = 1778599 }
+
+			set_variable = {  global.super_culture_names_array^19 = token:TDA_super_culture_ukrainian_token_idea }
+			#15, 46, 182
+			set_variable = { global.super_culture_colour_array^19 = 994998 }
+
+			set_variable = {  global.super_culture_names_array^20 = token:TDA_super_culture_mainland_chinese_token_idea }
 			#194, 21, 28
-			set_variable = { global.super_culture_colour_array^14 = 12719388 }
+			set_variable = { global.super_culture_colour_array^20 = 12719388 }
 
-			set_variable = {  global.super_culture_names_array^15 = token:TDA_super_culture_american_token_idea }
-			set_variable = {   global.super_culture_desc_array^15 = token:TDA_super_culture_american_desc_token_idea }
+			set_variable = {  global.super_culture_names_array^21 = token:TDA_super_culture_russian_token_idea }
+			#6, 89, 14
+			set_variable = { global.super_culture_colour_array^21 = 416014 }
+
+			set_variable = {  global.super_culture_names_array^22 = token:TDA_super_culture_american_token_idea }
 			#51, 160, 255
-			set_variable = { global.super_culture_colour_array^15 = 3383551 }
+			set_variable = { global.super_culture_colour_array^22 = 3383551 }
 
 			ZZZ = { TDA_update_every_state_culture = yes }
 		}

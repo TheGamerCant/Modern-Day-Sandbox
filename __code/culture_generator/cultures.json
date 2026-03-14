@@ -6,7 +6,7 @@
           "green" : 60,
           "blue" : 31,
           "colour" : "t",
-		  "name" : "Canadian",
+		  "name" : "Anglo-Canadian",
           "desc" : ""
         },
         {
@@ -86,7 +86,7 @@
           "red" : 219,
           "green" : 162,
           "blue" : 8,
-          "colour" : "Y",
+          "colour" : "8",
 		  "name" : "Belgian",
           "desc" : ""
         },
@@ -134,6 +134,69 @@
           "colour" : "I",
 		  "name" : "Russian",
           "desc" : ""
+        },
+		{
+          "token" : "kazakh",
+          "red" : 16,
+          "green" : 179,
+          "blue" : 201,
+          "colour" : "4",
+		  "name" : "Kazakh",
+          "desc" : ""
+        },
+		{
+          "token" : "croatian",
+          "red" : 173,
+          "green" : 54,
+          "blue" : 162,
+          "colour" : "0",
+		  "name" : "Croatian",
+          "desc" : ""
+        },
+		{
+          "token" : "bosniak",
+          "red" : 180,
+          "green" : 121,
+          "blue" : 26,
+          "colour" : "F",
+		  "name" : "Bosniak",
+          "desc" : ""
+        },
+		{
+          "token" : "serbian",
+          "red" : 54,
+          "green" : 57,
+          "blue" : 88,
+          "colour" : "d",
+		  "name" : "Serbian",
+          "desc" : ""
+        },
+		{
+          "token" : "albanian",
+          "red" : 138,
+          "green" : 26,
+          "blue" : 26,
+          "colour" : "r",
+		  "name" : "Albanian",
+          "desc" : ""
+        },
+		{
+          "token" : "french",
+          "red" : 27,
+          "green" : 35,
+          "blue" : 167,
+          "colour" : "A",
+		  "name" : "French",
+          "desc" : ""
+        },
+		{
+          "token" : "ukrainian",
+          "red" : 15,
+          "green" : 46,
+          "blue" : 182,
+          "colour" : "e",
+		  "name" : "Ukrainian",
+          "desc" : ""
         }
     ],
     "cultures": [
@@ -172,8 +235,7 @@
           "blue" : 180,
           "colour" : "B",
 		  "name" : "French-Canadian",
-          "desc" : "",
-          "super_culture" : "canadian"
+          "desc" : ""
         },
         {
           "token" : "atlantic_canadian",
@@ -851,7 +913,7 @@
           "red" : 78,
           "green" : 31,
           "blue" : 138,
-          "colour" : "0",
+          "colour" : "D",
 		  "name" : "Tibetean",
           "desc" : ""
         },
@@ -1293,6 +1355,521 @@
           "colour" : "V",
 		  "name" : "Mordvin",
           "desc" : ""
+        },
+        {
+          "token" : "kazakh",
+          "red" : 16,
+          "green" : 179,
+          "blue" : 201,
+          "colour" : "4",
+		  "name" : "Kazakh",
+          "desc" : "",
+		  "super_culture": "kazakh"
+        },
+        {
+          "token" : "russian_kazakh",
+          "red" : 16,
+          "green" : 179,
+          "blue" : 144,
+          "colour" : "6",
+		  "name" : "Russian Kazakh",
+          "desc" : "",
+		  "super_culture": "kazakh"
+        },
+        {
+          "token" : "kazakh_russian",
+          "red" : 0,
+          "green" : 128,
+          "blue" : 62,
+          "colour" : "c",
+		  "name" : "Kazakh Russian",
+          "desc" : "",
+		  "super_culture": "russian"
+        },
+        {
+          "token" : "dagestani",
+          "red" : 0,
+          "green" : 22,
+          "blue" : 58,
+          "colour" : "A",
+		  "name" : "Dagestani",
+          "desc" : ""
+        },
+        {
+          "token" : "kalmyk",
+          "red" : 244,
+          "green" : 183,
+          "blue" : 26,
+          "colour" : "Y",
+		  "name" : "Kalmyk",
+          "desc" : ""
+        },
+        {
+          "token" : "chechen",
+          "red" : 84,
+          "green" : 118,
+          "blue" : 36,
+          "colour" : "v",
+		  "name" : "Chechen",
+          "desc" : ""
+        },
+        {
+          "token" : "ingush",
+          "red" : 0,
+          "green" : 178,
+          "blue" : 64,
+          "colour" : "G",
+		  "name" : "Ingush",
+          "desc" : ""
+        },
+        {
+          "token" : "ossetian",
+          "red" : 224,
+          "green" : 170,
+          "blue" : 20,
+          "colour" : "Y",
+		  "name" : "Ossetian",
+          "desc" : ""
+        },
+        {
+          "token" : "kabardin",
+          "red" : 62,
+          "green" : 186,
+          "blue" : 124,
+          "colour" : "c",
+		  "name" : "Kabardin",
+          "desc" : ""
+        },
+        {
+          "token" : "karachay",
+          "red" : 225,
+          "green" : 78,
+          "blue" : 56,
+          "colour" : "m",
+		  "name" : "Karachay",
+          "desc" : ""
+        },
+        {
+          "token" : "balkar",
+          "red" : 61,
+          "green" : 65,
+          "blue" : 221,
+          "colour" : "P",
+		  "name" : "Balkar",
+          "desc" : ""
+        },
+        {
+          "token" : "circassian",
+          "red" : 41,
+          "green" : 105,
+          "blue" : 18,
+          "colour" : "I",
+		  "name" : "Circassian",
+          "desc" : ""
+        },
+        {
+          "token" : "altay",
+          "red" : 199,
+          "green" : 218,
+          "blue" : 255,
+          "colour" : "W",
+		  "name" : "Altay",
+          "desc" : ""
+        },
+        {
+          "token" : "tuvan",
+          "red" : 150,
+          "green" : 135,
+          "blue" : 200,
+          "colour" : "0",
+		  "name" : "Tuvan",
+          "desc" : ""
+        },
+        {
+          "token" : "khakas",
+          "red" : 236,
+          "green" : 193,
+          "blue" : 28,
+          "colour" : "Y",
+		  "name" : "Khakhas",
+          "desc" : ""
+        },
+        {
+          "token" : "buryat",
+          "red" : 47,
+          "green" : 31,
+          "blue" : 128,
+          "colour" : "V",
+		  "name" : "Buryat",
+          "desc" : ""
+        },
+        {
+          "token" : "yakut",
+          "red" : 133,
+          "green" : 189,
+          "blue" : 229,
+          "colour" : "4",
+		  "name" : "Yakut",
+          "desc" : ""
+        },
+        {
+          "token" : "belarusian",
+          "red" : 176,
+          "green" : 216,
+          "blue" : 189,
+          "colour" : "W",
+		  "name" : "Belarusian",
+          "desc" : ""
+        },
+        {
+          "token" : "slovenian",
+          "red" : 56,
+          "green" : 92,
+          "blue" : 122,
+          "colour" : "d",
+		  "name" : "Slovenian",
+          "desc" : ""
+        },
+		{
+          "token" : "bosniak",
+          "red" : 180,
+          "green" : 121,
+          "blue" : 26,
+          "colour" : "F",
+		  "name" : "Bosniak",
+          "desc" : "",
+		  "super_culture" : "bosniak"
+        },
+		{
+          "token" : "bosniak_croat",
+          "red" : 110,
+          "green" : 39,
+          "blue" : 116,
+          "colour" : "D",
+		  "name" : "Bosniak-Croat",
+          "desc" : "",
+		  "super_culture": "croatian"
+        },
+		{
+          "token" : "bosniak_serb",
+          "red" : 39,
+          "green" : 57,
+          "blue" : 132,
+          "colour" : "d",
+		  "name" : "Bosniak-Serb",
+          "desc" : "",
+		  "super_culture": "serbian"
+        },
+		{
+          "token" : "croatian",
+          "red" : 173,
+          "green" : 54,
+          "blue" : 162,
+          "colour" : "0",
+		  "name" : "Croatian",
+          "desc" : "",
+		  "super_culture": "croatian"
+        },
+		{
+          "token" : "croat_serb",
+          "red" : 194,
+          "green" : 28,
+          "blue" : 88,
+		  "colour": "m",
+		  "name" : "Croat-Serb",
+          "desc" : "",
+		  "super_culture": "serbian"
+        },
+		{
+          "token" : "serbian",
+          "red" : 54,
+          "green" : 57,
+          "blue" : 88,
+          "colour" : "d",
+		  "name" : "Serbian",
+          "desc" : "",
+		  "super_culture": "serbian"
+        },
+		{
+          "token" : "albanian",
+          "red" : 138,
+          "green" : 26,
+          "blue" : 26,
+          "colour" : "r",
+		  "name" : "Albanian",
+          "desc" : "",
+		  "super_culture": "albanian"
+        },
+		{
+          "token" : "kosovar_albanian",
+          "red" : 200,
+          "green" : 25,
+          "blue" : 22,
+          "colour" : "R",
+		  "name" : "Kosovar-Albanian",
+          "desc" : "",
+		  "super_culture": "albanian"
+        },
+		{
+          "token" : "kosovar_serb",
+          "red" : 23,
+          "green" : 43,
+          "blue" : 178,
+          "colour" : "e",
+		  "name" : "Kosovar-Serb",
+          "desc" : "",
+		  "super_culture": "serbian"
+        },
+		{
+          "token" : "montenegrin",
+          "red" : 39,
+          "green" : 154,
+          "blue" : 147,
+          "colour" : "6",
+		  "name" : "Montenegrin",
+          "desc" : ""
+        },
+		{
+          "token" : "montenegrin_serb",
+          "red" : 73,
+          "green" : 110,
+          "blue" : 180,
+          "colour" : "3",
+		  "name" : "Montenegrin-Serb",
+          "desc" : "",
+		  "super_culture": "serbian"
+        },
+		{
+          "token" : "montenegrin_bosniak",
+          "red" : 113,
+          "green" : 145,
+          "blue" : 47,
+          "colour" : "v",
+		  "name" : "Montenegrin-Bosniak",
+          "desc" : "",
+		  "super_culture": "bosniak"
+        },
+		{
+          "token" : "macedonian",
+          "red" : 193,
+          "green" : 92,
+          "blue" : 92,
+          "colour" : "t",
+		  "name" : "Macedonian",
+          "desc" : ""
+        },
+		{
+          "token" : "macedonian_albanian",
+          "red" : 172,
+          "green" : 21,
+          "blue" : 55,
+          "colour" : "m",
+		  "name" : "Macedonian-Albanian",
+          "desc" : "",
+		  "super_culture": "albanian"
+        },
+		{
+          "token" : "portugese",
+          "red" : 0,
+          "green" : 104,
+          "blue" : 56,
+          "colour" : "I",
+		  "name" : "Portugese",
+          "desc" : ""
+        },
+		{
+          "token" : "icelandic",
+          "red" : 139,
+          "green" : 154,
+          "blue" : 184,
+          "colour" : "4",
+		  "name" : "Icelandic",
+          "desc" : ""
+        },
+		{
+          "token" : "catalan",
+          "red" : 204,
+          "green" : 89,
+          "blue" : 41,
+          "colour" : "h",
+		  "name" : "Catalan",
+          "desc" : ""
+        },
+		{
+          "token" : "basque",
+          "red" : 129,
+          "green" : 19,
+          "blue" : 28,
+          "colour" : "r",
+		  "name" : "Basque",
+          "desc" : ""
+        },
+		{
+          "token" : "spanish",
+          "red" : 233,
+          "green" : 190,
+          "blue" : 56,
+          "colour" : "Y",
+		  "name" : "Spanish",
+          "desc" : ""
+        },
+		{
+          "token" : "galician",
+          "red" : 128,
+          "green" : 220,
+          "blue" : 219,
+          "colour" : "4",
+		  "name" : "Galician",
+          "desc" : ""
+        },
+		{
+          "token" : "gibraltarian",
+          "red" : 217,
+          "green" : 19,
+          "blue" : 29,
+          "colour" : "R",
+		  "name" : "Gibraltarian",
+          "desc" : "",
+		  "super_culture": "english"
+        },
+		{
+          "token" : "corsican",
+          "red" : 37,
+          "green" : 147,
+          "blue" : 182,
+          "colour" : "5",
+		  "name" : "Corsican",
+          "desc" : "",
+		  "super_culture": "french"
+        },
+		{
+          "token" : "parisian",
+          "red" : 8,
+          "green" : 151,
+          "blue" : 201,
+          "colour" : "3",
+		  "name" : "Parisian",
+          "desc" : "",
+		  "super_culture": "french"
+        },
+		{
+          "token" : "breton",
+          "red" : 217,
+          "green" : 255,
+          "blue" : 236,
+          "colour" : "W",
+		  "name" : "Breton",
+          "desc" : "",
+		  "super_culture": "french"
+        },
+		{
+          "token" : "northern_french",
+          "red" : 35,
+          "green" : 97,
+          "blue" : 240,
+          "colour" : "e",
+		  "name" : "Northern French",
+          "desc" : "",
+		  "super_culture": "french"
+        },
+		{
+          "token" : "central_french",
+          "red" : 113,
+          "green" : 113,
+          "blue" : 156,
+          "colour" : "g",
+		  "name" : "Central French",
+          "desc" : "",
+		  "super_culture": "french"
+        },
+		{
+          "token" : "southern_french",
+          "red" : 0,
+          "green" : 62,
+          "blue" : 180,
+          "colour" : "e",
+		  "name" : "Southern French",
+          "desc" : "",
+		  "super_culture": "french"
+        },
+		{
+          "token" : "western_ukrainian",
+          "red" : 128,
+          "green" : 140,
+          "blue" : 234,
+          "colour" : "3",
+		  "name" : "Western Ukrainian",
+          "desc" : "",
+		  "super_culture": "ukrainian"
+        },
+		{
+          "token" : "central_ukrainian",
+          "red" : 20,
+          "green" : 20,
+          "blue" : 230,
+          "colour" : "e",
+		  "name" : "Central Ukrainian",
+          "desc" : "",
+		  "super_culture": "ukrainian"
+        },
+		{
+          "token" : "eastern_ukrainian",
+          "red" : 28,
+          "green" : 43,
+          "blue" : 116,
+          "colour" : "d",
+		  "name" : "Eastern Ukrainian",
+          "desc" : "",
+		  "super_culture": "ukrainian"
+        },
+		{
+          "token" : "southern_ukrainian",
+          "red" : 32,
+          "green" : 116,
+          "blue" : 112,
+          "colour" : "n",
+		  "name" : "Southern Ukrainian",
+          "desc" : "",
+		  "super_culture": "ukrainian"
+        },
+		{
+          "token" : "donbas",
+          "red" : 4,
+          "green" : 47,
+          "blue" : 102,
+          "colour" : "A",
+		  "name" : "Donbas",
+          "desc" : "",
+		  "super_culture": "ukrainian"
+        },
+		{
+          "token" : "crimean_ukrainian",
+          "red" : 51,
+          "green" : 120,
+          "blue" : 213,
+          "colour" : "2",
+		  "name" : "Crimean Ukrainian",
+          "desc" : "",
+		  "super_culture": "ukrainian"
+        },
+		{
+          "token" : "crimean_tatar",
+          "red" : 37,
+          "green" : 221,
+          "blue" : 186,
+          "colour" : "5",
+		  "name" : "Crimean Tatar",
+          "desc" : ""
+        },
+		{
+          "token" : "crimean_russian",
+          "red" : 31,
+          "green" : 170,
+          "blue" : 74,
+          "colour" : "c",
+		  "name" : "Crimean Russian",
+          "desc" : "",
+		  "super_culture": "russian"
         }
     ]
 }

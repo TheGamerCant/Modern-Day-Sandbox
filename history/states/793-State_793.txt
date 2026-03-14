@@ -11,10 +11,10 @@ state={
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }
 		
-		set_variable = { culture_index_array^0 = 166 }
+		set_variable = { culture_index_array^0 = 230 }
 		set_variable = { culture_value_array^0 = 59.2 }
 
-		set_variable = { culture_index_array^1 = 167 }
+		set_variable = { culture_index_array^1 = 231 }
 		set_variable = { culture_value_array^1 = 40.8 }
 		
 		# ~59% Israeli, 41% Palestinian

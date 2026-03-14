@@ -19,19 +19,19 @@ state={
 		resize_array = { array = culture_index_array size = 5 value = 0 }
 		resize_array = { array = culture_value_array size = 5 value = 0 }
 		
-		set_variable = { culture_index_array^0 = 130 }
+		set_variable = { culture_index_array^0 = 175 }
 		set_variable = { culture_value_array^0 = 63.6 }
 		
 		set_variable = { culture_index_array^1 = 0 }
 		set_variable = { culture_value_array^1 = 13.3 }
 		
-		set_variable = { culture_index_array^2 = 187 }
+		set_variable = { culture_index_array^2 = 251 }
 		set_variable = { culture_value_array^2 = 11.7 }
 		
-		set_variable = { culture_index_array^3 = 191 }
+		set_variable = { culture_index_array^3 = 255 }
 		set_variable = { culture_value_array^3 = 7.0 }
 		
-		set_variable = { culture_index_array^4 = 190 }
+		set_variable = { culture_index_array^4 = 254 }
 		set_variable = { culture_value_array^4 = 4.4 }
 		
 		set_variable = { sq_km = 176140 }

@@ -1,411 +1,199 @@
 ideas = {
 	country = {
 		TDA_culture_other_token_idea = {}
-		TDA_culture_other_desc_token_idea = {}
-
 		TDA_culture_irish_token_idea = {}
-		TDA_culture_irish_desc_token_idea = {}
-
 		TDA_culture_northern_irish_catholic_token_idea = {}
-		TDA_culture_northern_irish_catholic_desc_token_idea = {}
-
 		TDA_culture_southern_welsh_token_idea = {}
-		TDA_culture_southern_welsh_desc_token_idea = {}
-
 		TDA_culture_northern_welsh_token_idea = {}
-		TDA_culture_northern_welsh_desc_token_idea = {}
-
 		TDA_culture_western_polish_token_idea = {}
-		TDA_culture_western_polish_desc_token_idea = {}
-
 		TDA_culture_eastern_polish_token_idea = {}
-		TDA_culture_eastern_polish_desc_token_idea = {}
-
 		TDA_culture_outer_mongolian_token_idea = {}
-		TDA_culture_outer_mongolian_desc_token_idea = {}
-
 		TDA_culture_inner_mongolian_token_idea = {}
-		TDA_culture_inner_mongolian_desc_token_idea = {}
-
 		TDA_culture_finnish_proper_token_idea = {}
-		TDA_culture_finnish_proper_desc_token_idea = {}
-
 		TDA_culture_finno_swedish_token_idea = {}
-		TDA_culture_finno_swedish_desc_token_idea = {}
-
+		TDA_culture_kazakh_token_idea = {}
+		TDA_culture_russian_kazakh_token_idea = {}
+		TDA_culture_bosniak_croat_token_idea = {}
+		TDA_culture_croatian_token_idea = {}
+		TDA_culture_bosniak_token_idea = {}
+		TDA_culture_montenegrin_bosniak_token_idea = {}
 		TDA_culture_swiss_german_token_idea = {}
-		TDA_culture_swiss_german_desc_token_idea = {}
-
 		TDA_culture_swiss_french_token_idea = {}
-		TDA_culture_swiss_french_desc_token_idea = {}
-
 		TDA_culture_swiss_italian_token_idea = {}
-		TDA_culture_swiss_italian_desc_token_idea = {}
-
 		TDA_culture_hungarian_token_idea = {}
-		TDA_culture_hungarian_desc_token_idea = {}
-
 		TDA_culture_szekely_token_idea = {}
-		TDA_culture_szekely_desc_token_idea = {}
-
 		TDA_culture_slovak_hungarian_token_idea = {}
-		TDA_culture_slovak_hungarian_desc_token_idea = {}
-
 		TDA_culture_flemish_token_idea = {}
-		TDA_culture_flemish_desc_token_idea = {}
-
 		TDA_culture_walloon_token_idea = {}
-		TDA_culture_walloon_desc_token_idea = {}
-
 		TDA_culture_ostbelgisch_token_idea = {}
-		TDA_culture_ostbelgisch_desc_token_idea = {}
-
-		TDA_culture_southern_english_token_idea = {}
-		TDA_culture_southern_english_desc_token_idea = {}
-
-		TDA_culture_midland_english_token_idea = {}
-		TDA_culture_midland_english_desc_token_idea = {}
-
-		TDA_culture_northern_english_token_idea = {}
-		TDA_culture_northern_english_desc_token_idea = {}
-
-		TDA_culture_londoner_token_idea = {}
-		TDA_culture_londoner_desc_token_idea = {}
-
-		TDA_culture_northern_italian_token_idea = {}
-		TDA_culture_northern_italian_desc_token_idea = {}
-
-		TDA_culture_central_italian_token_idea = {}
-		TDA_culture_central_italian_desc_token_idea = {}
-
-		TDA_culture_southern_italian_token_idea = {}
-		TDA_culture_southern_italian_desc_token_idea = {}
-
-		TDA_culture_tyrolean_token_idea = {}
-		TDA_culture_tyrolean_desc_token_idea = {}
-
-		TDA_culture_east_german_token_idea = {}
-		TDA_culture_east_german_desc_token_idea = {}
-
-		TDA_culture_west_german_token_idea = {}
-		TDA_culture_west_german_desc_token_idea = {}
-
-		TDA_culture_bavarian_token_idea = {}
-		TDA_culture_bavarian_desc_token_idea = {}
-
-		TDA_culture_berlinner_token_idea = {}
-		TDA_culture_berlinner_desc_token_idea = {}
-
+		TDA_culture_albanian_token_idea = {}
+		TDA_culture_kosovar_albanian_token_idea = {}
+		TDA_culture_macedonian_albanian_token_idea = {}
 		TDA_culture_anglo_canadian_token_idea = {}
-		TDA_culture_anglo_canadian_desc_token_idea = {}
-
-		TDA_culture_french_canadian_token_idea = {}
-		TDA_culture_french_canadian_desc_token_idea = {}
-
 		TDA_culture_atlantic_canadian_token_idea = {}
-		TDA_culture_atlantic_canadian_desc_token_idea = {}
-
 		TDA_culture_prairie_canadian_token_idea = {}
-		TDA_culture_prairie_canadian_desc_token_idea = {}
-
 		TDA_culture_british_columbian_token_idea = {}
-		TDA_culture_british_columbian_desc_token_idea = {}
-
-		TDA_culture_baltic_russian_token_idea = {}
-		TDA_culture_baltic_russian_desc_token_idea = {}
-
-		TDA_culture_muscovite_token_idea = {}
-		TDA_culture_muscovite_desc_token_idea = {}
-
-		TDA_culture_petersburgian_token_idea = {}
-		TDA_culture_petersburgian_desc_token_idea = {}
-
-		TDA_culture_central_russian_token_idea = {}
-		TDA_culture_central_russian_desc_token_idea = {}
-
-		TDA_culture_northern_russian_token_idea = {}
-		TDA_culture_northern_russian_desc_token_idea = {}
-
-		TDA_culture_far_eastern_russian_token_idea = {}
-		TDA_culture_far_eastern_russian_desc_token_idea = {}
-
-		TDA_culture_ural_russian_token_idea = {}
-		TDA_culture_ural_russian_desc_token_idea = {}
-
-		TDA_culture_siberian_token_idea = {}
-		TDA_culture_siberian_desc_token_idea = {}
-
-		TDA_culture_volga_russian_token_idea = {}
-		TDA_culture_volga_russian_desc_token_idea = {}
-
-		TDA_culture_southern_russian_token_idea = {}
-		TDA_culture_southern_russian_desc_token_idea = {}
-
-		TDA_culture_kaliningrader_token_idea = {}
-		TDA_culture_kaliningrader_desc_token_idea = {}
-
+		TDA_culture_northern_italian_token_idea = {}
+		TDA_culture_central_italian_token_idea = {}
+		TDA_culture_southern_italian_token_idea = {}
+		TDA_culture_tyrolean_token_idea = {}
+		TDA_culture_east_german_token_idea = {}
+		TDA_culture_west_german_token_idea = {}
+		TDA_culture_bavarian_token_idea = {}
+		TDA_culture_berlinner_token_idea = {}
+		TDA_culture_southern_english_token_idea = {}
+		TDA_culture_midland_english_token_idea = {}
+		TDA_culture_northern_english_token_idea = {}
+		TDA_culture_londoner_token_idea = {}
+		TDA_culture_gibraltarian_token_idea = {}
+		TDA_culture_bosniak_serb_token_idea = {}
+		TDA_culture_croat_serb_token_idea = {}
+		TDA_culture_serbian_token_idea = {}
+		TDA_culture_kosovar_serb_token_idea = {}
+		TDA_culture_montenegrin_serb_token_idea = {}
+		TDA_culture_corsican_token_idea = {}
+		TDA_culture_parisian_token_idea = {}
+		TDA_culture_breton_token_idea = {}
+		TDA_culture_northern_french_token_idea = {}
+		TDA_culture_central_french_token_idea = {}
+		TDA_culture_southern_french_token_idea = {}
+		TDA_culture_western_ukrainian_token_idea = {}
+		TDA_culture_central_ukrainian_token_idea = {}
+		TDA_culture_eastern_ukrainian_token_idea = {}
+		TDA_culture_southern_ukrainian_token_idea = {}
+		TDA_culture_donbas_token_idea = {}
+		TDA_culture_crimean_ukrainian_token_idea = {}
 		TDA_culture_dongbei_token_idea = {}
-		TDA_culture_dongbei_desc_token_idea = {}
-
 		TDA_culture_xibei_token_idea = {}
-		TDA_culture_xibei_desc_token_idea = {}
-
 		TDA_culture_huabei_token_idea = {}
-		TDA_culture_huabei_desc_token_idea = {}
-
 		TDA_culture_xinan_token_idea = {}
-		TDA_culture_xinan_desc_token_idea = {}
-
 		TDA_culture_yue_token_idea = {}
-		TDA_culture_yue_desc_token_idea = {}
-
 		TDA_culture_min_token_idea = {}
-		TDA_culture_min_desc_token_idea = {}
-
 		TDA_culture_hakka_token_idea = {}
-		TDA_culture_hakka_desc_token_idea = {}
-
 		TDA_culture_wu_token_idea = {}
-		TDA_culture_wu_desc_token_idea = {}
-
 		TDA_culture_xiang_token_idea = {}
-		TDA_culture_xiang_desc_token_idea = {}
-
 		TDA_culture_gan_token_idea = {}
-		TDA_culture_gan_desc_token_idea = {}
-
 		TDA_culture_zhongnan_token_idea = {}
-		TDA_culture_zhongnan_desc_token_idea = {}
-
 		TDA_culture_huadong_token_idea = {}
-		TDA_culture_huadong_desc_token_idea = {}
-
+		TDA_culture_baltic_russian_token_idea = {}
+		TDA_culture_muscovite_token_idea = {}
+		TDA_culture_petersburgian_token_idea = {}
+		TDA_culture_central_russian_token_idea = {}
+		TDA_culture_northern_russian_token_idea = {}
+		TDA_culture_far_eastern_russian_token_idea = {}
+		TDA_culture_ural_russian_token_idea = {}
+		TDA_culture_siberian_token_idea = {}
+		TDA_culture_volga_russian_token_idea = {}
+		TDA_culture_southern_russian_token_idea = {}
+		TDA_culture_kaliningrader_token_idea = {}
+		TDA_culture_kazakh_russian_token_idea = {}
+		TDA_culture_crimean_russian_token_idea = {}
 		TDA_culture_new_englander_token_idea = {}
-		TDA_culture_new_englander_desc_token_idea = {}
-
 		TDA_culture_alaskan_token_idea = {}
-		TDA_culture_alaskan_desc_token_idea = {}
-
 		TDA_culture_pacific_northwest_token_idea = {}
-		TDA_culture_pacific_northwest_desc_token_idea = {}
-
 		TDA_culture_utahan_token_idea = {}
-		TDA_culture_utahan_desc_token_idea = {}
-
 		TDA_culture_new_yorker_token_idea = {}
-		TDA_culture_new_yorker_desc_token_idea = {}
-
 		TDA_culture_usa_south_west_token_idea = {}
-		TDA_culture_usa_south_west_desc_token_idea = {}
-
 		TDA_culture_californian_token_idea = {}
-		TDA_culture_californian_desc_token_idea = {}
-
 		TDA_culture_texan_token_idea = {}
-		TDA_culture_texan_desc_token_idea = {}
-
 		TDA_culture_usa_deep_south_token_idea = {}
-		TDA_culture_usa_deep_south_desc_token_idea = {}
-
 		TDA_culture_floridan_token_idea = {}
-		TDA_culture_floridan_desc_token_idea = {}
-
 		TDA_culture_northern_rockies_token_idea = {}
-		TDA_culture_northern_rockies_desc_token_idea = {}
-
 		TDA_culture_atlantic_south_token_idea = {}
-		TDA_culture_atlantic_south_desc_token_idea = {}
-
 		TDA_culture_great_plains_token_idea = {}
-		TDA_culture_great_plains_desc_token_idea = {}
-
 		TDA_culture_midwestern_token_idea = {}
-		TDA_culture_midwestern_desc_token_idea = {}
-
 		TDA_culture_rustbelt_token_idea = {}
-		TDA_culture_rustbelt_desc_token_idea = {}
-
 		TDA_culture_usa_east_coast_token_idea = {}
-		TDA_culture_usa_east_coast_desc_token_idea = {}
-
 		TDA_culture_usa_southern_token_idea = {}
-		TDA_culture_usa_southern_desc_token_idea = {}
-
 		TDA_culture_puerto_rican_token_idea = {}
-		TDA_culture_puerto_rican_desc_token_idea = {}
-
 		TDA_culture_native_north_american_token_idea = {}
-		TDA_culture_native_north_american_desc_token_idea = {}
-
+		TDA_culture_french_canadian_token_idea = {}
 		TDA_culture_ulster_protestant_token_idea = {}
-		TDA_culture_ulster_protestant_desc_token_idea = {}
-
 		TDA_culture_scottish_token_idea = {}
-		TDA_culture_scottish_desc_token_idea = {}
-
 		TDA_culture_israeli_token_idea = {}
-		TDA_culture_israeli_desc_token_idea = {}
-
 		TDA_culture_palestinian_token_idea = {}
-		TDA_culture_palestinian_desc_token_idea = {}
-
 		TDA_culture_druze_token_idea = {}
-		TDA_culture_druze_desc_token_idea = {}
-
 		TDA_culture_austrian_token_idea = {}
-		TDA_culture_austrian_desc_token_idea = {}
-
 		TDA_culture_romanian_token_idea = {}
-		TDA_culture_romanian_desc_token_idea = {}
-
 		TDA_culture_slovak_token_idea = {}
-		TDA_culture_slovak_desc_token_idea = {}
-
 		TDA_culture_czech_token_idea = {}
-		TDA_culture_czech_desc_token_idea = {}
-
 		TDA_culture_lithuanian_token_idea = {}
-		TDA_culture_lithuanian_desc_token_idea = {}
-
 		TDA_culture_latvian_token_idea = {}
-		TDA_culture_latvian_desc_token_idea = {}
-
 		TDA_culture_estonian_token_idea = {}
-		TDA_culture_estonian_desc_token_idea = {}
-
 		TDA_culture_dutch_token_idea = {}
-		TDA_culture_dutch_desc_token_idea = {}
-
 		TDA_culture_luxembourgish_token_idea = {}
-		TDA_culture_luxembourgish_desc_token_idea = {}
-
 		TDA_culture_bulgarian_token_idea = {}
-		TDA_culture_bulgarian_desc_token_idea = {}
-
 		TDA_culture_moldovan_token_idea = {}
-		TDA_culture_moldovan_desc_token_idea = {}
-
 		TDA_culture_gagauz_token_idea = {}
-		TDA_culture_gagauz_desc_token_idea = {}
-
 		TDA_culture_transnistrian_token_idea = {}
-		TDA_culture_transnistrian_desc_token_idea = {}
-
 		TDA_culture_taiwanese_token_idea = {}
-		TDA_culture_taiwanese_desc_token_idea = {}
-
 		TDA_culture_tibetean_token_idea = {}
-		TDA_culture_tibetean_desc_token_idea = {}
-
 		TDA_culture_uyghur_token_idea = {}
-		TDA_culture_uyghur_desc_token_idea = {}
-
 		TDA_culture_hui_chinese_token_idea = {}
-		TDA_culture_hui_chinese_desc_token_idea = {}
-
 		TDA_culture_yizu_token_idea = {}
-		TDA_culture_yizu_desc_token_idea = {}
-
 		TDA_culture_hmong_token_idea = {}
-		TDA_culture_hmong_desc_token_idea = {}
-
 		TDA_culture_zhuang_token_idea = {}
-		TDA_culture_zhuang_desc_token_idea = {}
-
 		TDA_culture_hong_konger_token_idea = {}
-		TDA_culture_hong_konger_desc_token_idea = {}
-
 		TDA_culture_tujia_token_idea = {}
-		TDA_culture_tujia_desc_token_idea = {}
-
 		TDA_culture_bouyei_token_idea = {}
-		TDA_culture_bouyei_desc_token_idea = {}
-
 		TDA_culture_hlai_token_idea = {}
-		TDA_culture_hlai_desc_token_idea = {}
-
 		TDA_culture_greenlandic_token_idea = {}
-		TDA_culture_greenlandic_desc_token_idea = {}
-
 		TDA_culture_faroese_token_idea = {}
-		TDA_culture_faroese_desc_token_idea = {}
-
 		TDA_culture_danish_token_idea = {}
-		TDA_culture_danish_desc_token_idea = {}
-
 		TDA_culture_norwegian_token_idea = {}
-		TDA_culture_norwegian_desc_token_idea = {}
-
 		TDA_culture_swedish_token_idea = {}
-		TDA_culture_swedish_desc_token_idea = {}
-
 		TDA_culture_nenets_token_idea = {}
-		TDA_culture_nenets_desc_token_idea = {}
-
 		TDA_culture_komi_token_idea = {}
-		TDA_culture_komi_desc_token_idea = {}
-
 		TDA_culture_tatar_token_idea = {}
-		TDA_culture_tatar_desc_token_idea = {}
-
 		TDA_culture_bashkir_token_idea = {}
-		TDA_culture_bashkir_desc_token_idea = {}
-
 		TDA_culture_mari_token_idea = {}
-		TDA_culture_mari_desc_token_idea = {}
-
 		TDA_culture_chuvash_token_idea = {}
-		TDA_culture_chuvash_desc_token_idea = {}
-
 		TDA_culture_mordvin_token_idea = {}
-		TDA_culture_mordvin_desc_token_idea = {}
-
-		TDA_culture_udmurt_token_idea = {}
-		TDA_culture_udmurt_desc_token_idea = {}
-
+		TDA_culture_dagestani_token_idea = {}
+		TDA_culture_kalmyk_token_idea = {}
+		TDA_culture_chechen_token_idea = {}
+		TDA_culture_ingush_token_idea = {}
+		TDA_culture_ossetian_token_idea = {}
+		TDA_culture_kabardin_token_idea = {}
+		TDA_culture_karachay_token_idea = {}
+		TDA_culture_balkar_token_idea = {}
+		TDA_culture_circassian_token_idea = {}
+		TDA_culture_altay_token_idea = {}
+		TDA_culture_tuvan_token_idea = {}
+		TDA_culture_khakas_token_idea = {}
+		TDA_culture_buryat_token_idea = {}
+		TDA_culture_yakut_token_idea = {}
+		TDA_culture_belarusian_token_idea = {}
+		TDA_culture_slovenian_token_idea = {}
+		TDA_culture_montenegrin_token_idea = {}
+		TDA_culture_macedonian_token_idea = {}
+		TDA_culture_portugese_token_idea = {}
+		TDA_culture_icelandic_token_idea = {}
+		TDA_culture_catalan_token_idea = {}
+		TDA_culture_basque_token_idea = {}
+		TDA_culture_spanish_token_idea = {}
+		TDA_culture_galician_token_idea = {}
+		TDA_culture_crimean_tatar_token_idea = {}
 		TDA_super_culture_irish_token_idea = {}
-		TDA_super_culture_irish_desc_token_idea = {}
-
 		TDA_super_culture_welsh_token_idea = {}
-		TDA_super_culture_welsh_desc_token_idea = {}
-
 		TDA_super_culture_polish_token_idea = {}
-		TDA_super_culture_polish_desc_token_idea = {}
-
 		TDA_super_culture_mongolian_token_idea = {}
-		TDA_super_culture_mongolian_desc_token_idea = {}
-
 		TDA_super_culture_finnish_token_idea = {}
-		TDA_super_culture_finnish_desc_token_idea = {}
-
+		TDA_super_culture_kazakh_token_idea = {}
+		TDA_super_culture_croatian_token_idea = {}
+		TDA_super_culture_bosniak_token_idea = {}
 		TDA_super_culture_swiss_token_idea = {}
-		TDA_super_culture_swiss_desc_token_idea = {}
-
 		TDA_super_culture_hungarian_token_idea = {}
-		TDA_super_culture_hungarian_desc_token_idea = {}
-
 		TDA_super_culture_belgian_token_idea = {}
-		TDA_super_culture_belgian_desc_token_idea = {}
-
-		TDA_super_culture_english_token_idea = {}
-		TDA_super_culture_english_desc_token_idea = {}
-
-		TDA_super_culture_italian_token_idea = {}
-		TDA_super_culture_italian_desc_token_idea = {}
-
-		TDA_super_culture_german_token_idea = {}
-		TDA_super_culture_german_desc_token_idea = {}
-
+		TDA_super_culture_albanian_token_idea = {}
 		TDA_super_culture_canadian_token_idea = {}
-		TDA_super_culture_canadian_desc_token_idea = {}
-
-		TDA_super_culture_russian_token_idea = {}
-		TDA_super_culture_russian_desc_token_idea = {}
-
+		TDA_super_culture_italian_token_idea = {}
+		TDA_super_culture_german_token_idea = {}
+		TDA_super_culture_english_token_idea = {}
+		TDA_super_culture_serbian_token_idea = {}
+		TDA_super_culture_french_token_idea = {}
+		TDA_super_culture_ukrainian_token_idea = {}
 		TDA_super_culture_mainland_chinese_token_idea = {}
-		TDA_super_culture_mainland_chinese_desc_token_idea = {}
-
-		TDA_super_culture_american_token_idea = {}
-		TDA_super_culture_american_desc_token_idea = {}
-	}
+		TDA_super_culture_russian_token_idea = {}
+		TDA_super_culture_american_token_idea = {}	}
 }

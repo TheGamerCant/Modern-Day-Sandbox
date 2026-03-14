@@ -135,12 +135,15 @@ bitmapfonts = {
 		f = { 117 5 28 }			# Burgundy / Swiss French
 		E = { 112 56 78 }			# Light Burgundy / East German
 		h = { 224 133 75 }			# Pinky-Orange / Hungarian
-		M = { 74 11 33 }			# Dark Purple / Min
+		M = { 74 11 33 }			# Dark Purple 1 / Min
 		N = { 11 79 41 }			# Dark Turquoise / Northern Russian
 		p = { 255 214 229 }			# Light Pink / Mari
 		V = { 52 15 112 }			# Violet / Mordvin
 		K = { 64 167 16 }			# Light Green / Kaliningrader
 		o = { 54 80 16 }			# Olive / Southern Russian
+		v = { 113 145 47 }			# Light Olive / Montenegrin-Bosniak
+		D = { 100 31 138 }			# Dark Purple 2 / Tibetean
+		n = { 32 116 112 }			# Light Turquoise / Southern Ukrainian
 	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac

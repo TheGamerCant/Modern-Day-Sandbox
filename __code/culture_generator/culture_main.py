@@ -75,16 +75,16 @@ def WriteOnActionsFile(
             "on_actions = {\n\ton_startup = {\n\t\teffect = {\n\t\t\t"
             f"set_variable = {{ global.culture_bucket_size = {bucket_size} }}\n\t\t\t"
             f"set_variable = {{ global.culture_bucket_width = {largest_bucket} }}\n\n\t\t\t"
-            "\n\n\t\t\tset_global_flag = TDA_using_super_cultures_flag\n\n\t\t\t"
+            "set_global_flag = TDA_using_super_cultures_flag\n\n\t\t\t"
             f"resize_array = {{ array = global.culture_colour_array size = {max_culture_index + 1} value = 0 }}\n\t\t\t"
-			f"resize_array = {{ array = global.culture_names_array  size = {max_culture_index + 1} value = 0 }}\n\t\t\t"
-			f"resize_array = {{ array = global.culture_desc_array   size = {max_culture_index + 1} value = 0 }}\n\n\t\t\t"
+			f"resize_array = {{ array = global.culture_names_array  size = {max_culture_index + 1} value = 0 }}\n\n\t\t\t"
+#			f"resize_array = {{ array = global.culture_desc_array   size = {max_culture_index + 1} value = 0 }}\n\n\t\t\t"
         )
 
         for culture in cultures_list:
             f.write(
                 f"set_variable = {{  global.culture_names_array^{culture.new_index} = token:TDA_culture_{culture.token}_token_idea }}\n\t\t\t"
-                f"set_variable = {{   global.culture_desc_array^{culture.new_index} = token:TDA_culture_{culture.token}_desc_token_idea }}\n\t\t\t"
+#                f"set_variable = {{   global.culture_desc_array^{culture.new_index} = token:TDA_culture_{culture.token}_desc_token_idea }}\n\t\t\t"
                 f"#{culture.red}, {culture.green}, {culture.blue}\n\t\t\t"
                 f"set_variable = {{ global.culture_colour_array^{culture.new_index} = {RgbToInteger(culture.red, culture.green, culture.blue)} }}\n\n\t\t\t"
             )
@@ -92,13 +92,13 @@ def WriteOnActionsFile(
         f.write(
             f"resize_array = {{ array = global.super_culture_colour_array size = {max_super_culture_index + 1} value = 0 }}\n\t\t\t"
 			f"resize_array = {{ array = global.super_culture_names_array  size = {max_super_culture_index + 1} value = 0 }}\n\t\t\t"
-			f"resize_array = {{ array = global.super_culture_desc_array   size = {max_super_culture_index + 1} value = 0 }}\n\n\t\t\t"
+#			f"resize_array = {{ array = global.super_culture_desc_array   size = {max_super_culture_index + 1} value = 0 }}\n\n\t\t\t"
         )
 
         for super_culture in super_cultures_list:
             f.write(
                 f"set_variable = {{  global.super_culture_names_array^{super_culture.index} = token:TDA_super_culture_{super_culture.token}_token_idea }}\n\t\t\t"
-                f"set_variable = {{   global.super_culture_desc_array^{super_culture.index} = token:TDA_super_culture_{super_culture.token}_desc_token_idea }}\n\t\t\t"
+#                f"set_variable = {{   global.super_culture_desc_array^{super_culture.index} = token:TDA_super_culture_{super_culture.token}_desc_token_idea }}\n\t\t\t"
                 f"#{super_culture.red}, {super_culture.green}, {super_culture.blue}\n\t\t\t"
                 f"set_variable = {{ global.super_culture_colour_array^{super_culture.index} = {RgbToInteger(super_culture.red, super_culture.green, super_culture.blue)} }}\n\n\t\t\t"
             )
@@ -116,13 +116,13 @@ def WriteIdeasFile(cultures_list: list[Culture], super_cultures_list: list[Super
         for culture in cultures_list:
             f.write(
                 f"\n\t\tTDA_culture_{culture.token}_token_idea = {{}}"
-                f"\n\t\tTDA_culture_{culture.token}_desc_token_idea = {{}}\n"
+#                f"\n\t\tTDA_culture_{culture.token}_desc_token_idea = {{}}\n"
             )
 
         for super_culture in super_cultures_list:
             f.write(
                 f"\n\t\tTDA_super_culture_{super_culture.token}_token_idea = {{}}"
-                f"\n\t\tTDA_super_culture_{super_culture.token}_desc_token_idea = {{}}\n"
+#                f"\n\t\tTDA_super_culture_{super_culture.token}_desc_token_idea = {{}}\n"
             )
 
         f.write(
@@ -188,13 +188,13 @@ def WriteLocalisationFile(cultures_list: list[Culture], super_cultures_list: lis
         for culture in cultures_list:
             f.write(
                 f"\n\n TDA_culture_{culture.token}_token_idea:0 \"§{culture.colour}{culture.name}§!\""
-                f"\n TDA_culture_{culture.token}_desc_token_idea:0 \"{culture.desc}\""
+#                f"\n TDA_culture_{culture.token}_desc_token_idea:0 \"{culture.desc}\""
             )
 
         for super_culture in super_cultures_list:
             f.write(
                 f"\n\n TDA_super_culture_{super_culture.token}_token_idea:0 \"§{super_culture.colour}{super_culture.name}§!\""
-                f"\n TDA_super_culture_{super_culture.token}_desc_token_idea:0 \"{super_culture.desc}\""
+#                f"\n TDA_super_culture_{super_culture.token}_desc_token_idea:0 \"{super_culture.desc}\""
             )
 
 def LoadCulturesFromJson() -> list[Culture]:

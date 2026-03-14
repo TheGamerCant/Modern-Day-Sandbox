@@ -13,13 +13,13 @@ state={
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }
 		
-		set_variable = { culture_index_array^0 = 173 }
+		set_variable = { culture_index_array^0 = 237 }
 		set_variable = { culture_value_array^0 = 85.2 }
 		
 		set_variable = { culture_index_array^1 = 0 }		#Polish Lithuanians
 		set_variable = { culture_value_array^1 = 8.0 }
 		
-		set_variable = { culture_index_array^2 = 109 }
+		set_variable = { culture_index_array^2 = 190 }
 		set_variable = { culture_value_array^2 = 6.8 }
 		
 		set_variable = { sq_km = 12114 }
