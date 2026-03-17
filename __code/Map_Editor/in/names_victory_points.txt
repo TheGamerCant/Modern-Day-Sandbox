@@ -15341,3 +15341,165 @@
         }
     }
 }
+1958 = {
+	default = "Tindouf"
+	entry = {
+        name = "Tindūf"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10731 = {
+	default = "Béchar"
+	entry = {
+        name = "Bešār"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1095 = {
+	default = "Adrar"
+	entry = {
+        name = "Adrār"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+8077 = {
+	default = "Aïn Salah"
+	entry = {
+        name = "'Īn Ṣalāḥ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15219 = {
+	default = "Tamanrasset"
+	entry = {
+        name = "Tāmanrāssit"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15224 = {
+	default = "Bordj Badji Mokhtar"
+	entry = {
+        name = "Borǧ Bāǧy Moẖtār"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10749 = {
+	default = "Illizi"
+	entry = {
+        name = "Ilyzy"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+4970 = {
+	default = "El Oued"
+	entry = {
+        name = "Al-Wādī"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+5035 = {
+	default = "Ouargla"
+	entry = {
+        name = "Warqalah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+2049 = {
+	default = "Ghardaïa"
+	entry = {
+        name = "Ġardāya"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+12034 = {
+	default = "Djelfa"
+	entry = {
+        name = "Al-Ǧilfah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+12018 = {
+	default = "Mécheria"
+	entry = {
+        name = "Al-Mašrya"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1967 = {
+	default = "Laghouat"
+	entry = {
+        name = "Al-Aghwāṭ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+13074 = {
+	default = "El Bayadh"
+	entry = {
+        name = "Al-Bayaḍ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15223 = {
+	default = "In Amenas"
+	entry = {
+        name = "'In 'Amanās"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1128 = {
+	default = "Aïn Oussera"
+	entry = {
+        name = "'Īn Wusāra"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1058 = {
+	default = "Tébessa"
+	entry = {
+        name = "Tibissa"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1141 = {
+	default = "Khenchela"
+	entry = {
+        name = "Henšela"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}

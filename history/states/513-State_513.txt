@@ -1,14 +1,17 @@
 state={
 	id=513
 	name="STATE_513"
-	history={
-		owner = ZZZ
+	history = {
+		owner = ALG
+		add_core_of = ALG
+		
+		set_variable = { sq_km = 60545.7 }
 	}
 	provinces={
-		1126 1128 1141 1967 3991 4018 4150 4970 5053 7008 7033 7040 7149 9943 9960 10045 10059 12018 12020 12034 12888 13074 
+		1013 3991 4116 4150 7008 7132 10045 11923 12760 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=7960959
+	buildings_max_level_factor=1
 	state_category=wasteland
+	local_supplies=0.5
 }

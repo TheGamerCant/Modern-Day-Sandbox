@@ -1,0 +1,19 @@
+state={
+	id=898
+	name="STATE_898"
+	history = {
+		owner = ALG
+		add_core_of = ALG
+		
+		set_variable = { sq_km = 43483.6 }
+	}
+	provinces={
+		4903 
+	}
+	manpower=412
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+	impassable = yes
+	force_link_ownership_to = 514
+}

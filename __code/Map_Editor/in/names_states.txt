@@ -2419,7 +2419,7 @@
 451 = {
 	default = "Rebiana Sand Sea"
 	entry = {
-        name = "Baḥr Al-Rimāl Rībīānā"
+        name = "Baḥr Al-'Rimāl Rībīānā"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -2490,9 +2490,21 @@
 }
 459 = {
 	default = "Algiers"
+	entry = {
+        name = "Al-Jazā'ir"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 460 = {
 	default = "Constantine"
+	entry = {
+        name = "Qusanṭīnah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 461 = {
 	default = "Casablanca"
@@ -2663,10 +2675,22 @@
 	default = "Río Negro"
 }
 513 = {
-	default = "Tlemcen"
+	default = "Oran"
+	entry = {
+        name = "Wahrān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 514 = {
-	default = "Algerian Desert"
+	default = "Algerian Interior"
+	entry = {
+        name = "Al-Dāẖliat Al-Jazā'iriyyah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 515 = {
 	default = "Southern Sahara"
@@ -3440,7 +3464,7 @@
 661 = {
 	default = "Libyan Great Sand Sea"
 	entry = {
-        name = "Baḥr Al-Rimāl Al-Lībī Al-Kabīr"
+        name = "Baḥr Al-'Rimāl Al-Lībī Al-'Kabīr"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -3476,7 +3500,7 @@
 665 = {
 	default = "Tunisian Great Eastern Sand Sea"
 	entry = {
-        name = "Baḥr Al-Rimāl Al-Šarqy Al-Kabīr Fy Tūnis"
+        name = "Baḥr Al-'Rimāl Al-Šarqy Al-'Kabīr Fy Tūnis"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -4232,7 +4256,7 @@
 819 = {
 	default = "Egyptian Great Sand Sea"
 	entry = {
-        name = "Baḥr Al-Rimāl Al-'miṣrī Al-'kabīr"
+        name = "Baḥr Al-'Rimāl Al-'miṣrī Al-'kabīr"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -4616,6 +4640,42 @@
         name = "Bayqoŋır"
         requirements = {
             "TAG_using_kazakh_names = yes"
+        }
+    }
+}
+895 = {
+	default = "El Eglab Massif/Erg Iguidi/Erg Chech"
+	entry = {
+        name = "Katlat Īghlāb/'Irq Iqīdī/'Irq Shāsh"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+896 = {
+	default = "Great Western Sand Sea"
+	entry = {
+        name = "Baḥr Al-'Rimāl Al-Ġarby Al-'Eaẓym"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+897 = {
+	default = "Great Eastern Sand Sea"
+	entry = {
+        name = "Baḥr Al-'Rimāl Al-Šarqy Al-'Eaẓym"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+898 = {
+	default = "Issaouane Erg"
+	entry = {
+        name = "'Irq 'Īsāwān"
+        requirements = {
+            "TAG_using_arab_names = yes"
         }
     }
 }

@@ -7161,7 +7161,7 @@ TDA_update_state_450_names = {
 #Rebiana Sand Sea
 TDA_update_state_451_names = {
 	451 = {
-		#Baḥr Al-Rimāl Rībīānā
+		#Baḥr Al-'Rimāl Rībīānā
 		if = {
 			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
 			set_state_name = STATE_451_0
@@ -7592,10 +7592,30 @@ TDA_update_state_458_names = {
 
 #Algiers
 TDA_update_state_459_names = {
+	459 = {
+		#Al-Jazā'ir
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_459_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Constantine
 TDA_update_state_460_names = {
+	460 = {
+		#Qusanṭīnah
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_460_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Casablanca
@@ -7844,12 +7864,194 @@ TDA_update_state_511_names = {
 TDA_update_state_512_names = {
 }
 
-#Tlemcen
+#Oran
 TDA_update_state_513_names = {
+	513 = {
+		#Wahrān
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_513_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
-#Algerian Desert
+#Algerian Interior
 TDA_update_state_514_names = {
+	514 = {
+		#Al-Dāẖliat Al-Jazā'iriyyah
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_514_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Tibissa
+	if = {
+		limit = { any_country = { controls_province = 1058 TAG_using_arab_names = yes } }
+		set_province_name = { id = 1058 name = VICTORY_POINTS_1058_0 }
+	}
+	#Tébessa
+	else = {
+		reset_province_name = 1058
+	}
+	#Adrār
+	if = {
+		limit = { any_country = { controls_province = 1095 TAG_using_arab_names = yes } }
+		set_province_name = { id = 1095 name = VICTORY_POINTS_1095_0 }
+	}
+	#Adrar
+	else = {
+		reset_province_name = 1095
+	}
+	#'Īn Wusāra
+	if = {
+		limit = { any_country = { controls_province = 1128 TAG_using_arab_names = yes } }
+		set_province_name = { id = 1128 name = VICTORY_POINTS_1128_0 }
+	}
+	#Aïn Oussera
+	else = {
+		reset_province_name = 1128
+	}
+	#Henšela
+	if = {
+		limit = { any_country = { controls_province = 1141 TAG_using_arab_names = yes } }
+		set_province_name = { id = 1141 name = VICTORY_POINTS_1141_0 }
+	}
+	#Khenchela
+	else = {
+		reset_province_name = 1141
+	}
+	#Tindūf
+	if = {
+		limit = { any_country = { controls_province = 1958 TAG_using_arab_names = yes } }
+		set_province_name = { id = 1958 name = VICTORY_POINTS_1958_0 }
+	}
+	#Tindouf
+	else = {
+		reset_province_name = 1958
+	}
+	#Al-Aghwāṭ
+	if = {
+		limit = { any_country = { controls_province = 1967 TAG_using_arab_names = yes } }
+		set_province_name = { id = 1967 name = VICTORY_POINTS_1967_0 }
+	}
+	#Laghouat
+	else = {
+		reset_province_name = 1967
+	}
+	#Ġardāya
+	if = {
+		limit = { any_country = { controls_province = 2049 TAG_using_arab_names = yes } }
+		set_province_name = { id = 2049 name = VICTORY_POINTS_2049_0 }
+	}
+	#Ghardaïa
+	else = {
+		reset_province_name = 2049
+	}
+	#Al-Wādī
+	if = {
+		limit = { any_country = { controls_province = 4970 TAG_using_arab_names = yes } }
+		set_province_name = { id = 4970 name = VICTORY_POINTS_4970_0 }
+	}
+	#El Oued
+	else = {
+		reset_province_name = 4970
+	}
+	#Warqalah
+	if = {
+		limit = { any_country = { controls_province = 5035 TAG_using_arab_names = yes } }
+		set_province_name = { id = 5035 name = VICTORY_POINTS_5035_0 }
+	}
+	#Ouargla
+	else = {
+		reset_province_name = 5035
+	}
+	#'Īn Ṣalāḥ
+	if = {
+		limit = { any_country = { controls_province = 8077 TAG_using_arab_names = yes } }
+		set_province_name = { id = 8077 name = VICTORY_POINTS_8077_0 }
+	}
+	#Aïn Salah
+	else = {
+		reset_province_name = 8077
+	}
+	#Bešār
+	if = {
+		limit = { any_country = { controls_province = 10731 TAG_using_arab_names = yes } }
+		set_province_name = { id = 10731 name = VICTORY_POINTS_10731_0 }
+	}
+	#Béchar
+	else = {
+		reset_province_name = 10731
+	}
+	#Ilyzy
+	if = {
+		limit = { any_country = { controls_province = 10749 TAG_using_arab_names = yes } }
+		set_province_name = { id = 10749 name = VICTORY_POINTS_10749_0 }
+	}
+	#Illizi
+	else = {
+		reset_province_name = 10749
+	}
+	#Al-Mašrya
+	if = {
+		limit = { any_country = { controls_province = 12018 TAG_using_arab_names = yes } }
+		set_province_name = { id = 12018 name = VICTORY_POINTS_12018_0 }
+	}
+	#Mécheria
+	else = {
+		reset_province_name = 12018
+	}
+	#Al-Ǧilfah
+	if = {
+		limit = { any_country = { controls_province = 12034 TAG_using_arab_names = yes } }
+		set_province_name = { id = 12034 name = VICTORY_POINTS_12034_0 }
+	}
+	#Djelfa
+	else = {
+		reset_province_name = 12034
+	}
+	#Al-Bayaḍ
+	if = {
+		limit = { any_country = { controls_province = 13074 TAG_using_arab_names = yes } }
+		set_province_name = { id = 13074 name = VICTORY_POINTS_13074_0 }
+	}
+	#El Bayadh
+	else = {
+		reset_province_name = 13074
+	}
+	#Tāmanrāssit
+	if = {
+		limit = { any_country = { controls_province = 15219 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15219 name = VICTORY_POINTS_15219_0 }
+	}
+	#Tamanrasset
+	else = {
+		reset_province_name = 15219
+	}
+	#'In 'Amanās
+	if = {
+		limit = { any_country = { controls_province = 15223 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15223 name = VICTORY_POINTS_15223_0 }
+	}
+	#In Amenas
+	else = {
+		reset_province_name = 15223
+	}
+	#Borǧ Bāǧy Moẖtār
+	if = {
+		limit = { any_country = { controls_province = 15224 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15224 name = VICTORY_POINTS_15224_0 }
+	}
+	#Bordj Badji Mokhtar
+	else = {
+		reset_province_name = 15224
+	}
 }
 
 #Southern Sahara
@@ -13684,7 +13886,7 @@ TDA_update_state_660_names = {
 #Libyan Great Sand Sea
 TDA_update_state_661_names = {
 	661 = {
-		#Baḥr Al-Rimāl Al-Lībī Al-Kabīr
+		#Baḥr Al-'Rimāl Al-Lībī Al-'Kabīr
 		if = {
 			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
 			set_state_name = STATE_661_0
@@ -13785,7 +13987,7 @@ TDA_update_state_664_names = {
 #Tunisian Great Eastern Sand Sea
 TDA_update_state_665_names = {
 	665 = {
-		#Baḥr Al-Rimāl Al-Šarqy Al-Kabīr Fy Tūnis
+		#Baḥr Al-'Rimāl Al-Šarqy Al-'Kabīr Fy Tūnis
 		if = {
 			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
 			set_state_name = STATE_665_0
@@ -15872,7 +16074,7 @@ TDA_update_state_818_names = {
 #Egyptian Great Sand Sea
 TDA_update_state_819_names = {
 	819 = {
-		#Baḥr Al-Rimāl Al-'miṣrī Al-'kabīr
+		#Baḥr Al-'Rimāl Al-'miṣrī Al-'kabīr
 		if = {
 			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
 			set_state_name = STATE_819_0
@@ -16673,6 +16875,62 @@ TDA_update_state_894_names = {
 	#Baikonur
 	else = {
 		reset_province_name = 15146
+	}
+}
+
+#El Eglab Massif/Erg Iguidi/Erg Chech
+TDA_update_state_895_names = {
+	895 = {
+		#Katlat Īghlāb/'Irq Iqīdī/'Irq Shāsh
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_895_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Great Western Sand Sea
+TDA_update_state_896_names = {
+	896 = {
+		#Baḥr Al-'Rimāl Al-Ġarby Al-'Eaẓym
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_896_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Great Eastern Sand Sea
+TDA_update_state_897_names = {
+	897 = {
+		#Baḥr Al-'Rimāl Al-Šarqy Al-'Eaẓym
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_897_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
+#Issaouane Erg
+TDA_update_state_898_names = {
+	898 = {
+		#'Irq 'Īsāwān
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_898_0
+		}
+		else = {
+			reset_state_name = yes
+		}
 	}
 }
 
@@ -17573,6 +17831,10 @@ TDA_change_all_city_names = {
 	TDA_update_state_892_names = yes
 	TDA_update_state_893_names = yes
 	TDA_update_state_894_names = yes
+	TDA_update_state_895_names = yes
+	TDA_update_state_896_names = yes
+	TDA_update_state_897_names = yes
+	TDA_update_state_898_names = yes
 }
 
 TDA_toggle_change_city_names = {

@@ -203,6 +203,9 @@ TAG_using_arab_names = {
 				original_tag = PST
 				original_tag = EGY
 				original_tag = LYB
+				original_tag = TUN
+				original_tag = ALG
+				original_tag = MRC
 			}
 			is_subject = no
 		}
@@ -211,6 +214,9 @@ TAG_using_arab_names = {
 		is_puppet_of = PST
 		is_puppet_of = EGY
 		is_puppet_of = LYB
+		original_tag = TUN
+		original_tag = ALG
+		original_tag = MRC
 	}
 }
 

@@ -1,14 +1,36 @@
 state={
 	id=514
 	name="STATE_514"
-	history={
-		owner = ZZZ
+	history = {
+		owner = ALG
+		add_core_of = ALG
+		
+		victory_points = { 1958 3 }
+		victory_points = { 10731 2 }
+		victory_points = { 1095 2 }
+		victory_points = { 8077 2 }
+		victory_points = { 15219 2 }
+		victory_points = { 15224 1 }
+		victory_points = { 10749 1 }
+		victory_points = { 4970 3 }
+		victory_points = { 5035 3 }
+		victory_points = { 2049 2 }
+		victory_points = { 12034 5 }
+		victory_points = { 12018 2 }
+		victory_points = { 1967 3 }
+		victory_points = { 13074 2 }
+		victory_points = { 15223 1 }
+		victory_points = { 1128 2 }
+		victory_points = { 1058 4 }
+		victory_points = { 1141 3 }
+		
+		set_variable = { sq_km = 1687163.2 }
 	}
 	provinces={
-		1043 1095 1901 1958 2049 4903 5035 5095 7041 8061 8077 8088 10731 10749 12711 12842 12849 
+		1043 1058 1095 1126 1128 1141 1901 1958 1967 2049 4018 4970 5035 5053 5095 7040 7149 8077 8088 9943 9960 10731 10749 12018 12020 12034 12842 12849 12888 13074 15218 15219 15220 15221 15222 15223 15224 15225 15226 15227 15228 15229 15230 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=7892036
+	buildings_max_level_factor=1
 	state_category=wasteland
+	local_supplies=0.5
 }
