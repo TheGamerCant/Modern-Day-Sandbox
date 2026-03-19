@@ -1,0 +1,2 @@
+mod_directory = "C:\Users\charl\OneDrive\Documents\GitHub\Modern-Day-Sandbox"
+vanilla_directory = "D:\SteamLibrary\steamapps\common\Hearts of Iron IV"
