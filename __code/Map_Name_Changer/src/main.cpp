@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories) {
+void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories, String& modPrefix) {
     HashMap<String, String> directoriesMap = ParseStringForPairsMapUnique(LoadFileToString("in\\file_directories.txt"));
 
     //Remove any trailing quotation marks we may have
@@ -13,7 +13,7 @@ void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<Stri
 
     if (directoriesMap.find("mod_directory") == directoriesMap.end()) FatalError("Mod directory is not defined in file_directories.txt");
     if (directoriesMap.find("vanilla_directory") == directoriesMap.end()) FatalError("Base game directory is not defined in file_directories.txt");
-
+    if (directoriesMap.find("mod_prefix") == directoriesMap.end() || directoriesMap.find("mod_prefix") == "") FatalError("No mod prefix defined in file_directories.txt");
 
     if (std::filesystem::exists(directoriesMap.at("mod_directory")) && std::filesystem::is_directory(directoriesMap.at("mod_directory"))) modDirectory = directoriesMap.at("mod_directory");
     else FatalError(directoriesMap.at("mod_directory") + " is not a valid path");
@@ -21,6 +21,7 @@ void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<Stri
     if (std::filesystem::exists(directoriesMap.at("vanilla_directory")) && std::filesystem::is_directory(directoriesMap.at("vanilla_directory"))) vanillaDirectory = directoriesMap.at("vanilla_directory");
     else FatalError(directoriesMap.at("vanilla_directory") + " is not a valid path");
 
+    modPrefix = directoriesMap.at("mod_prefix");
 
     //Now get all replace_path entries in the .mod folder
     UnsignedInteger32 modFileCount = 0;
@@ -206,8 +207,8 @@ void LoadNames(const Path& vanillaDirectory, const Path& modDirectory, const Vec
 }
 
 
-void WriteNames(const String& modDirectory, const Vector<Province>& provincesArray, const Vector<State>& statesArray) {
-	std::ofstream scriptedEffectsOutFile(modDirectory + "\\common\\scripted_effects\\TDA_name_changes_scripted_effects.txt", std::ios::binary);
+void WriteNames(const String& modDirectory, const Vector<Province>& provincesArray, const Vector<State>& statesArray, const String& modPrefix) {
+	std::ofstream scriptedEffectsOutFile(modDirectory + "\\common\\scripted_effects\\" + modPrefix + "_name_changes_scripted_effects.txt", std::ios::binary);
 
 	UnsignedInteger16 stateId{};
 	String stateIdString{};
@@ -221,7 +222,7 @@ void WriteNames(const String& modDirectory, const Vector<Province>& provincesArr
 
 		if (stateId == 0) { continue; }
 
-		stateNameChangesString = "#" + state.GetDefaultName() + "\nFFRF_update_state_" + stateIdString + "_names = {\n";
+		stateNameChangesString = "#" + state.GetDefaultName() + "\n" + modPrefix + "_update_state_" + stateIdString + "_names = {\n";
 
 		if (state.GetChangeableNameCount() != 0) {
 			String prefix = "";
@@ -271,14 +272,14 @@ void WriteNames(const String& modDirectory, const Vector<Province>& provincesArr
 
 		scriptedEffectsOutFile << stateNameChangesString;
 
-		changeAllCityNamesString += "\tFFF_update_state_" + stateIdString + "_names = yes\n";
+		changeAllCityNamesString += "\t" + modPrefix + "_update_state_" + stateIdString + "_names = yes\n";
 	}
 
 
-	scriptedEffectsOutFile << "\n\nTDA_change_all_city_names = {\n" << changeAllCityNamesString +
-		"}\n\nTDA_toggle_change_city_names = {\n\tif = {\n\t\tlimit = { has_global_flag = TDA_city_name_changes_active_flag }\
-		\n\t\tclr_global_flag = TDA_city_name_changes_active_flag\n\t}\n\telse = {\n\t\tset_global_flag = TDA_city_name_changes_active_flag\n\t}\
-		\n\tTDA_change_all_city_names = yes\n}";
+	scriptedEffectsOutFile << "\n\n" + modPrefix + "_change_all_city_names = {\n" << changeAllCityNamesString +
+		"}\n\nTDA_toggle_change_city_names = {\n\tif = {\n\t\tlimit = { has_global_flag = " + modPrefix + "_city_name_changes_active_flag }\
+		\n\t\tclr_global_flag = " + modPrefix + "_city_name_changes_active_flag\n\t}\n\telse = {\n\t\tset_global_flag = " + modPrefix + "_city_name_changes_active_flag\n\t}\
+		\n\t" + modPrefix + "_change_all_city_names = yes\n}";
 	scriptedEffectsOutFile.close();
 
 	stateNameChangesString = "";
@@ -345,8 +346,8 @@ void WriteNames(const String& modDirectory, const Vector<Province>& provincesArr
 int main() {
     Timestamp startTime = std::chrono::high_resolution_clock::now();
 
-    Path vanillaDirectory, modDirectory; Vector<String> modReplaceDirectories;
-    LoadFileDirectories(vanillaDirectory, modDirectory, modReplaceDirectories);
+    Path vanillaDirectory, modDirectory; Vector<String> modReplaceDirectories; String modPrefix;
+    LoadFileDirectories(vanillaDirectory, modDirectory, modReplaceDirectories, modPrefix);
 
     Vector<Province> provincesArray;
     Vector<State>statesArray;
@@ -358,7 +359,7 @@ int main() {
 
     LoadNames(vanillaDirectory, modDirectory, modReplaceDirectories, statesArray, provincesArray);
 
-    WriteNames(modDirectory.string(), provincesArray, statesArray);
+    WriteNames(modDirectory.string(), provincesArray, statesArray, modPrefix);
 
     std::cout << "Program ran for  " << GetTimeElapsedFromStart(startTime);
 
