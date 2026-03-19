@@ -207,7 +207,7 @@ void LoadNames(const Path& vanillaDirectory, const Path& modDirectory, const Vec
 
 
 void WriteNames(const String& modDirectory, const Vector<Province>& provincesArray, const Vector<State>& statesArray) {
-	std::ofstream scriptedEffectsOutFile(modDirectory + "\\common\\scripted_effects\\FFTF_name_changes_scripted_effects.txt", std::ios::binary);
+	std::ofstream scriptedEffectsOutFile(modDirectory + "\\common\\scripted_effects\\TDA_name_changes_scripted_effects.txt", std::ios::binary);
 
 	UnsignedInteger16 stateId{};
 	String stateIdString{};
@@ -275,10 +275,10 @@ void WriteNames(const String& modDirectory, const Vector<Province>& provincesArr
 	}
 
 
-	scriptedEffectsOutFile << "\n\nFFTF_change_all_city_names = {\n" << changeAllCityNamesString +
-		"}\n\nFFTF_toggle_change_city_names = {\n\tif = {\n\t\tlimit = { has_global_flag = FFTF_city_name_changes_active_flag }\
-		\n\t\tclr_global_flag = FFTF_city_name_changes_active_flag\n\t}\n\telse = {\n\t\tset_global_flag = FFTF_city_name_changes_active_flag\n\t}\
-		\n\tFFTF_change_all_city_names = yes\n}";
+	scriptedEffectsOutFile << "\n\nTDA_change_all_city_names = {\n" << changeAllCityNamesString +
+		"}\n\nTDA_toggle_change_city_names = {\n\tif = {\n\t\tlimit = { has_global_flag = TDA_city_name_changes_active_flag }\
+		\n\t\tclr_global_flag = TDA_city_name_changes_active_flag\n\t}\n\telse = {\n\t\tset_global_flag = TDA_city_name_changes_active_flag\n\t}\
+		\n\tTDA_change_all_city_names = yes\n}";
 	scriptedEffectsOutFile.close();
 
 	stateNameChangesString = "";
