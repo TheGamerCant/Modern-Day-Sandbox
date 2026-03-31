@@ -1,6 +1,8 @@
 #include "functions.hpp"
 #include "data_types.hpp"
 
+
+#include <fstream>
 #include <iostream>
 
 void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories, String& modPrefix) {
@@ -13,7 +15,7 @@ void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<Stri
 
     if (directoriesMap.find("mod_directory") == directoriesMap.end()) FatalError("Mod directory is not defined in file_directories.txt");
     if (directoriesMap.find("vanilla_directory") == directoriesMap.end()) FatalError("Base game directory is not defined in file_directories.txt");
-    if (directoriesMap.find("mod_prefix") == directoriesMap.end() || directoriesMap.find("mod_prefix") == "") FatalError("No mod prefix defined in file_directories.txt");
+    if (directoriesMap.find("mod_prefix") == directoriesMap.end() || directoriesMap.find("mod_prefix")->second.length() == 0) FatalError("No mod prefix defined in file_directories.txt");
 
     if (std::filesystem::exists(directoriesMap.at("mod_directory")) && std::filesystem::is_directory(directoriesMap.at("mod_directory"))) modDirectory = directoriesMap.at("mod_directory");
     else FatalError(directoriesMap.at("mod_directory") + " is not a valid path");
@@ -76,7 +78,7 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
                 String stringId = std::to_string(id);
 
                 if (stateData.find("provinces") == stateData.end() || stateData.at("provinces").size() != 1) { FatalError("No provinces defined for state " + stringId); }
-                Vector<UnsignedInteger16> provinces = ParseStringAsUnsignedInteger16Array(stateData.at("provinces")[0]);
+                Vector<UnsignedInteger32> provinces = ParseStringAsUnsignedInteger32Array(stateData.at("provinces")[0]);
 
                 statesArray.emplace_back(id, provinces);
                 provinceCount += provinces.size();
@@ -84,9 +86,9 @@ void LoadStateFiles(const Path& vanillaDirectory, const Path& modDirectory, cons
         }
     }
 
-    provinces.reserve(provinceCount);
-    for (Size_T i = 0; i < provinceCount; i++) {
-        provinces.emplace_back(i);
+    provincesArray.reserve(provinceCount);
+    for (SizeT i = 0; i < provinceCount; i++) {
+        provincesArray.emplace_back(i);
     }
 }
 
@@ -234,7 +236,7 @@ void WriteNames(const String& modDirectory, const Vector<Province>& provincesArr
 				for (const auto& requirement : nameChange.nameRequirements) {
 					stateNameChangesString += " " + requirement;
 				}
-				stateNameChangesString += " } }\n\t\t\tset_state_name = " + state.GetName() + "_" + std::to_string(i) + "\n\t\t}\n";
+				stateNameChangesString += " } }\n\t\t\tset_state_name = STATE_" + stateIdString + "_" + std::to_string(i) + "\n\t\t}\n";
 
 				prefix = "else_";
 				++i;
@@ -310,11 +312,12 @@ void WriteNames(const String& modDirectory, const Vector<Province>& provincesArr
 		id = state.GetId();
 		if (id == 0) { continue; }
 
+		idString = std::to_string(id);
 
-		ymlOutString += "\n " + state.GetName() + ": \"" + state.GetDefaultName() + "\"";
+		ymlOutString += "\n STATE_" + idString + ": \"" + state.GetDefaultName() + "\"";
 		customNameIndex = 0;
 		for (const auto& nameChange : state.GetNameEntries()) {
-			ymlOutString += "\n " + state.GetName() + "_" + std::to_string(customNameIndex) + ": \"" + nameChange.name + "\"";
+			ymlOutString += "\n STATE_" + idString+ "_" + std::to_string(customNameIndex) + ": \"" + nameChange.name + "\"";
 			++customNameIndex;
 		}
 	}
@@ -325,8 +328,7 @@ void WriteNames(const String& modDirectory, const Vector<Province>& provincesArr
 	ymlOutString = "";
 	for (const auto& province : provincesArray) {
 		if (province.GetDefaultName() != "") {
-			id = province.GetId();
-			idString = std::to_string(id);
+			idString = std::to_string(province.GetId());
 
 
 			ymlOutString += "\n VICTORY_POINTS_" + idString + ": \"" + province.GetDefaultName() + "\"";
@@ -355,7 +357,7 @@ int main() {
     LoadStateFiles(vanillaDirectory, modDirectory, modReplaceDirectories, statesArray, provincesArray);
 
     provincesArray.shrink_to_fit();
-    std::sort(provincesArray.begin(), provincesArray.end(), [](const Province& a, const Province& b) { return a.id) < b.id(); });
+    std::sort(provincesArray.begin(), provincesArray.end(), [](const Province& a, const Province& b) { return a.GetId() < b.GetId(); });
 
     LoadNames(vanillaDirectory, modDirectory, modReplaceDirectories, statesArray, provincesArray);
 

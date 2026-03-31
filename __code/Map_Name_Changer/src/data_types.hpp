@@ -154,7 +154,7 @@ private:
 
 public:
     State(const UnsignedInteger32 id) : id(id), provinces(), defaultName(""), nameEntries() {}
-    State(const UnsignedInteger32 id, const Vector<UnsignedInteger16>& provinces) : id(id), provinces(provinces), defaultName(""), nameEntries() {}
+    State(const UnsignedInteger32 id, const Vector<UnsignedInteger32>& provinces) : id(id), provinces(provinces), defaultName(""), nameEntries() {}
 
     void SetId(const UnsignedInteger32 idIn);
     UnsignedInteger32 GetId();

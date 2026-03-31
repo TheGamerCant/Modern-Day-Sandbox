@@ -22,7 +22,6 @@ tr:nth-child(even) {
 <h2>Natural Resources</h2>
 <p>Natural Resources are split into three types of resource: Energy, Metals and Miscellaneous.<br>
     Energy resources require buildings to be turned into energy.<br>
-    Metal resources require buildings to be refined into usable metals for production</p>
 
 <table>
   <tr>
@@ -33,32 +32,22 @@ tr:nth-child(even) {
   <tr>
   <td>RESOURCE_light_crude_oil</td>
   <td>Energy</td>
-  <td></td>
+  <td>Used as fuel.</td>
   </tr>
   <tr>
   <td>RESOURCE_heavy_crude_oil</td>
   <td>Energy</td>
-  <td>Requires refining into light crude oil</td>
+  <td>Requires refining into light crude oil to be used as fuel.</td>
   </tr>
   <tr>
   <td>RESOURCE_nuclear_materials</td>
   <td>Energy</td>
-  <td>Can be used for both energy and nuclear weapons</td>
-  </tr>
-  <tr>
-  <td>RESOURCE_rare_earth_ores</td>
-  <td>Metal</td>
-  <td></td>
+  <td>Can be used for both energy and nuclear weapons.</td>
   </tr>
   <tr>
   <td>RESOURCE_rare_earth_metals</td>
   <td>Metal</td>
-  <td>Used for the production of advanced technology</td>
-  </tr>
-  <tr>
-  <td>RESOURCE_steel_ore</td>
-  <td>Metal</td>
-  <td></td>
+  <td>Used for the production of advanced technology.</td>
   </tr>
   <tr>
   <td>RESOURCE_steel</td>
@@ -66,19 +55,14 @@ tr:nth-child(even) {
   <td>Used for basically everything</td>
   </tr>
   <tr>
-  <td>RESOURCE_special_metals_ore</td>
-  <td>Metal</td>
-  <td></td>
-  </tr>
-  <tr>
   <td>RESOURCE_special_metals</td>
   <td>Metal</td>
-  <td>Used for the production of heavy equipment, e.g tanks, airplanes, etc</td>
+  <td>Used for the production of heavy equipment, e.g tanks, airplanes, etc.</td>
   </tr>
   <tr>
   <td>RESOURCE_agricultural_produce</td>
   <td>Miscellaneous</td>
-  <td>Produced by farm buildings</td>
+  <td>Produced by farm buildings.</td>
   </tr>
 </table>
 
@@ -88,74 +72,120 @@ tr:nth-child(even) {
     the state may have.</p>
 
 <h2>Buildings</h2>
-<p>On this page, we only care about buildings related to the economy. All buildings require energy to function.</p>
+<p>On this page, we only care about economic and civilian buildings.</p>
 
 <table>
   <tr>
   <th>Building Name</th>
   <th>Building Category</th>
   <th>State Type</th>
+  <th>Energy Requirements</th>
+  <th>Cost</th>
   <th>Notes</th>
   </tr>
   <tr>
   <td>BUILDING_industrial_factory</td>
   <td>Production</td>
   <td>Shared Slots</td>
-  <td>Replaces standard civilian factory. Small contribution to GDP and taxes</td>
+  <td>Large</td>
+  <td>14,000</td>
+  <td>Replaces standard civilian factory. Small contribution to GDP and taxes.</td>
   </tr>
   <tr>
   <td>BUILDING_military_factory</td>
   <td>Production</td>
   <td>Shared Slots</td>
-  <td>Replaces standard military factory. Small contribution to GDP and taxes</td>
+  <td>Large</td>
+  <td>9,500</td>
+  <td>Replaces standard military factory. Small contribution to GDP and taxes.</td>
   </tr>
   <tr>
   <td>BUILDING_naval_dockyard</td>
   <td>Production</td>
   <td>Shared Slots</td>
-  <td>Replaces standard dockyard. Small contribution to GDP and taxes</td>
+  <td>Large</td>
+  <td>11,300</td>
+  <td>Replaces standard dockyard. Small contribution to GDP and taxes.</td>
   </tr>
   <tr>
   <td>BUILDING_office_park</td>
   <td>Production</td>
   <td>Shared Slots</td>
-  <td>Boosts local construction speed. Large contribution to GDP and taxes</td>
+  <td>Medium</td>
+  <td>22,000</td>
+  <td>Boosts local construction speed and productivity. More effective the more educated the state is. Large contribution to GDP and taxes.</td>
+  </tr>
+  <tr>
+  <td>BUILDING_school</td>
+  <td>Special</td>
+  <td>Non-Shared Slots</td>
+  <td>Small</td>
+  <td>3,800</td>
+  <td>Slowly increases the states' education over time.</td>
+  </tr>
+  <tr>
+  <td>BUILDING_hospital</td>
+  <td>Special</td>
+  <td>Non-Shared Slots</td>
+  <td>Small</td>
+  <td>11,000</td>
+  <td>Slowly increases the states' productivity over time.</td>
+  </tr>
+  <tr>
+  <td>BUILDING_infrastructure</td>
+  <td>Special</td>
+  <td>Non-Shared Slots</td>
+  <td>Small</td>
+  <td>4,500</td>
+  <td>Replaces standard infrastructure.</td>
   </tr>
   <tr>
   <td>BUILDING_heavy_oil_refinery</td>
   <td>Special</td>
   <td>Shared Slots</td>
-  <td>Converts heavy oil into light oil</td>
+  <td>Large</td>
+  <td>10,000</td>
+  <td>Converts heavy oil into light oil.</td>
   </tr>
   <tr>
   <td>BUILDING_light_oil_refinery</td>
   <td>Energy</td>
   <td>Shared Slots</td>
-  <td>Converts light oil into energy</td>
+  <td>Large</td>
+  <td>7,000</td>
+  <td>Converts light oil into energy.</td>
   </tr>
   <tr>
-  <td>BUILDING_renewable_energy_farm</td>
+  <td>BUILDING_renewable_energy_farm.</td>
   <td>Energy</td>
   <td>Non-Shared Slots</td>
+  <td>None</td>
+  <td>5,000</td>
   <td>Produces energy</td>
   </tr>
   <tr>
-  <td>BUILDING_nuclear_power_plant</td>
+  <td>BUILDING_nuclear_power_plant.</td>
   <td>Energy</td>
   <td>Shared Slots</td>
-  <td>Converts nuclear materials into energy</td>
+  <td>Large</td>
+  <td>17,000</td>
+  <td>Converts nuclear materials into energy.</td>
   </tr>
   <tr>
   <td>BUILDING_nuclear_refinery</td>
   <td>Special</td>
   <td>Shared Slots</td>
-  <td>Converts nuclear materials into nuclear weapons</td>
+  <td>Large</td>
+  <td>25,000</td>
+  <td>Converts nuclear materials into nuclear weapons.</td>
   </tr>
   <tr>
   <td>BUILDING_farm</td>
   <td>Special</td>
   <td>Non-Shared Slots</td>
-  <td>Outputs agricultural produce</td>
+  <td>Medium</td>
+  <td>3,500/td>
+  <td>Outputs agricultural produce.</td>
   </tr>
 </table>
 

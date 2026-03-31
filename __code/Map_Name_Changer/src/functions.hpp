@@ -8,9 +8,6 @@
 //Get time elapsed since beginning of program
 String GetTimeElapsedFromStart(const Timestamp& startTime);
 
-//Convert HSV values to RGB
-void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& blue, Float64 H, Float64 S, Float64 V);
-
 //String manipulations
 Boolean CharIsCapitalOrNumber(const Char c);
 Boolean CharIsCapital(const Char c);
@@ -24,9 +21,6 @@ String ToLower(String str);
 String RemoveStringWhitespace(const String& stringIn);
 Boolean StringCanBecomeInteger(const String& str);
 Boolean StringCanBecomeFloat(const String& str);
-
-Boolean ValidDateMonth(const UnsignedInteger8 month, const UnsignedInteger8 date);
-Boolean StringCanBecomeDate(const String& str);
 
 //Returns a boolean from a string "yes" or "no"
 Boolean GetBoolFromYesNo(String str);
@@ -51,16 +45,8 @@ Vector<String> ParseStringAsStringArray(const String& stringIn, Boolean ignoreQu
 Vector<SignedInteger64> ParseStringAsSignedInteger64Array(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<Float64> ParseStringAsFloat64Array(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<UnsignedInteger16> ParseStringAsUnsignedInteger16Array(const String& stringIn, Boolean ignoreQuotations = false);
+Vector<UnsignedInteger32> ParseStringAsUnsignedInteger32Array(const String& stringIn, Boolean ignoreQuotations = false);
 Vector<Decimal> ParseStringAsDecimalArray(const String& stringIn, Boolean ignoreQuotations = false);
-
-//Checks if a country tag is valid
-Boolean TagIsValid(const String& tag);
-
-//Generate x amount of random colours
-Vector<ColourRGB> GenerateRandomColours(const UnsignedInteger32 colourCount);
-Vector<ColourRGB> GenerateRandomColours(Set<UnsignedInteger32>& usedColours, const UnsignedInteger32 colourCount);
-Vector<ColourRGB> GenerateRandomColoursInRange(Set<UnsignedInteger32>& usedColours, const UnsignedInteger32 newColourCount,
-    const ColourRGB colour, const UnsignedInteger8 range);
 
 //Split a vector into n no. of vectors (original vector becomes empty)
 template<typename VectorType>

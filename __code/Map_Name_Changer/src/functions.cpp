@@ -37,26 +37,6 @@ String GetTimeElapsedFromStart(const Timestamp& startTime) {
     return std::to_string(hours) + "h, " + std::to_string(minutes % 60) + "m, " + std::to_string(seconds % 60) + "s, " + std::to_string(milliseconds % 1000) + "ms, " + std::to_string(microseconds % 1000) + "us";
 }
 
-void HSVToRGB(UnsignedInteger8& red, UnsignedInteger8& green, UnsignedInteger8& blue, Float64 H, Float64 S, Float64 V) {
-    Float64 C = V * S;
-    Float64 X = C * (1 - fabs(fmod(H * 6, 2) - 1));
-    Float64 m = V - C;
-
-    Float64 rPrime, gPrime, bPrime;
-
-    if (0 <= H && H < 1.0f / 6) { rPrime = C; gPrime = X; bPrime = 0; }
-    else if (1.0f / 6 <= H && H < 2.0f / 6) { rPrime = X; gPrime = C; bPrime = 0; }
-    else if (2.0f / 6 <= H && H < 3.0f / 6) { rPrime = 0; gPrime = C; bPrime = X; }
-    else if (3.0f / 6 <= H && H < 4.0f / 6) { rPrime = 0; gPrime = X; bPrime = C; }
-    else if (4.0f / 6 <= H && H < 5.0f / 6) { rPrime = X; gPrime = 0; bPrime = C; }
-    else { rPrime = C; gPrime = 0; bPrime = X; }
-
-    //Convert the normalized [0,1] RGB to [0,255] integer RGB values
-    red = static_cast<UnsignedInteger8>((rPrime + m) * 255);
-    green = static_cast<UnsignedInteger8>((gPrime + m) * 255);
-    blue = static_cast<UnsignedInteger8>((bPrime + m) * 255);
-}
-
 Boolean CharIsCapitalOrNumber(const Char c) { return (c >= 48 && c <= 57) || (c >= 65 && c <= 90); }
 Boolean CharIsCapital(const Char c) { return c >= 65 && c <= 90; }
 Boolean CharIsLower(const Char c) { return c >= 97 && c <= 122; }
@@ -108,137 +88,6 @@ Boolean StringCanBecomeFloat(const String& str) {
         else if (i > 0 && str[i] == 46) { if (dotCount > 0) { return false; } dotCount++; }
         else if (i > 0 && !CharIsNumber(str[i])) return false;
     }
-    return true;
-}
-
-Boolean ValidDateMonth(const UnsignedInteger8 month, const UnsignedInteger8 date) {
-    switch (month) {
-    case 1:
-        if (date < 1 || date > 31) return false;
-        break;
-
-    case 2:
-        if (date < 1 || date > 28) return false;        //Paradox don't do leap years
-        break;
-
-    case 3:
-        if (date < 1 || date > 31) return false;
-        break;
-
-    case 4:
-        if (date < 1 || date > 30) return false;
-        break;
-
-    case 5:
-        if (date < 1 || date > 31) return false;
-        break;
-
-    case 6:
-        if (date < 1 || date > 30) return false;
-        break;
-
-    case 7:
-        if (date < 1 || date > 31) return false;
-        break;
-
-    case 8:
-        if (date < 1 || date > 31) return false;
-        break;
-
-    case 9:
-        if (date < 1 || date > 30) return false;
-        break;
-
-    case 10:
-        if (date < 1 || date > 31) return false;
-        break;
-
-    case 11:
-        if (date < 1 || date > 30) return false;
-        break;
-
-    case 12:
-        if (date < 1 || date > 31) return false;
-        break;
-
-
-    default:
-        return false;
-        break;
-    }
-
-    return true;
-}
-
-Boolean StringCanBecomeDate(const String& str) {
-    Char* charArray = new Char[str.size() + 2];
-    SizeT arraySize = 0;
-    UnsignedInteger64 stringColumn = 0;
-    UnsignedInteger8 dateColumn = 0;
-
-    SignedInteger32 year, month, date, hour;
-
-    for (const auto& c : str) {
-        if (c == '.') {
-            charArray[arraySize++] = 0;
-            String currentStr = String(charArray);
-
-            if (!StringCanBecomeInteger(currentStr)) { delete[] charArray; return false; }
-            SignedInteger32 entry = std::stoi(currentStr);
-
-            switch (dateColumn) {
-            case 0:
-                if (entry < -5000) { delete[] charArray; return false; }
-                year = entry;
-                break;
-            case 1:
-                if (entry < 1 || entry > 12) { delete[] charArray; return false; }
-                month = entry;
-                break;
-            case 2:
-                if (!ValidDateMonth(month, entry)) { delete[] charArray; return false; }
-                date = entry;
-                break;
-            case 3:
-                if (entry < 0 || entry > 23) { delete[] charArray; return false; }
-                hour = entry;
-                break;
-            default:
-                break;
-            }
-
-            arraySize = 0; dateColumn++;
-        }
-        else { charArray[arraySize++] = c; }
-    }
-
-    if (dateColumn == 2) {
-        charArray[arraySize++] = 0;
-        String currentStr = String(charArray);
-
-        if (!StringCanBecomeInteger(currentStr)) { delete[] charArray; return false; }
-        SignedInteger32 entry = std::stoi(currentStr);
-
-        if (!ValidDateMonth(month, entry)) { delete[] charArray; return false; }
-        date = entry;
-        hour = 1;
-        arraySize = 0;
-    }
-    else if (dateColumn == 3) {
-        charArray[arraySize++] = 0;
-        String currentStr = String(charArray);
-
-        if (!StringCanBecomeInteger(currentStr)) { delete[] charArray; return false; }
-        SignedInteger32 entry = std::stoi(currentStr);
-
-        if (entry < 1 || entry > 24) { delete[] charArray; return false; }
-        hour = entry;
-        arraySize = 0;
-    }
-
-    if (arraySize != 0) { delete[] charArray; return false; }
-
-    delete[] charArray;
     return true;
 }
 
@@ -630,47 +479,45 @@ HashMap<String, String> ParseStringForPairsMapUnique(const String& stringIn) {
     for (Char c : processingString) {
         if (c == 34) inQuotation = !inQuotation;
 
-        switch(onValue) {
-            case 0:
-                if ((c == 32 || c == 61) && !inQuotation) {
-                    keyArray[currentIndex++] = 0;
-                    onValue = true;
-                    currentIndex = 0; 
+        if (onValue) {
+            if (c == 123 && !inQuotation) {
+                ++bracketCount;
+                if (bracketCount > 1) {
+                    valueArray[currentIndex++] = c;
                 }
-                else {
-                    keyArray[currentIndex++] = c;
-                }
-                break;
-       
-            default:
-                if (c == 123 && !inQuotation) {
-                    ++bracketCount;
-                    if (bracketCount > 1) {
-                        valueArray[currentIndex++] = c;
-                    }
-                }
-                else if (c == 125 && !inQuotation) {
-                    --bracketCount;
-                    
-                    if (bracketCount == 0) {
-                        valueArray[currentIndex++] = 0;
-                        onValue = false;
-                        currentIndex = 0;
-                        returnMap[String(keyArray)] = String(valueArray);
-                    }
-                    else {
-                        valueArray[currentIndex++] = c;
-                    }
-                }
-                else if (c == 32 && !inQuotation && bracketCount == 0) {
+            }
+            else if (c == 125 && !inQuotation) {
+                --bracketCount;
+
+                if (bracketCount == 0) {
                     valueArray[currentIndex++] = 0;
                     onValue = false;
-                    currentIndex = 0; 
+                    currentIndex = 0;
                     returnMap[String(keyArray)] = String(valueArray);
                 }
                 else {
                     valueArray[currentIndex++] = c;
                 }
+            }
+            else if (c == 32 && !inQuotation && bracketCount == 0) {
+                valueArray[currentIndex++] = 0;
+                onValue = false;
+                currentIndex = 0;
+                returnMap[String(keyArray)] = String(valueArray);
+            }
+            else {
+                valueArray[currentIndex++] = c;
+            }
+        }
+        else {
+            if ((c == 32 || c == 61) && !inQuotation) {
+                keyArray[currentIndex++] = 0;
+                onValue = true;
+                currentIndex = 0;
+            }
+            else {
+                keyArray[currentIndex++] = c;
+            }
         }
     }
 
@@ -979,6 +826,45 @@ Vector<UnsignedInteger16> ParseStringAsUnsignedInteger16Array(const String& stri
     return returnVector;
 }
 
+Vector<UnsignedInteger32> ParseStringAsUnsignedInteger32Array(const String& stringIn, Boolean ignoreQuotations) {
+    Vector<UnsignedInteger32> returnVector;
+    SizeT stringLength = stringIn.size();
+
+    Char* currentStringArray = new Char[stringLength + 2];
+    SizeT currentStringSize = 0;
+    Boolean inQuotations = false;
+
+    String currentNumber;
+
+    SizeT entriesCount = 1;
+
+    for (Char c : stringIn) { if (CharIsWhitespace(c)) { ++entriesCount; } }
+    returnVector.reserve(entriesCount);
+
+    for (Char c : stringIn) {
+        if (c == '\"' && !ignoreQuotations) {
+            inQuotations = !inQuotations;
+        }
+        else if (!CharIsWhitespace(c) || inQuotations == true) {
+            currentStringArray[currentStringSize++] = c;
+        }
+        else if (CharIsWhitespace(c) && inQuotations == false) {
+            currentStringArray[currentStringSize++] = 0;
+            currentStringSize = 0;
+            currentNumber = String(currentStringArray);
+            if (StringCanBecomeInteger(currentNumber)) { returnVector.push_back(std::stoi(currentNumber)); }
+        }
+    }
+
+    if (currentStringSize > 0) {
+        currentStringArray[currentStringSize++] = 0;
+        currentNumber = String(currentStringArray);
+        if (StringCanBecomeInteger(currentNumber)) { returnVector.push_back(std::stoi(currentNumber)); }
+    }
+    delete[] currentStringArray;
+    return returnVector;
+}
+
 Vector<Decimal> ParseStringAsDecimalArray(const String& stringIn, Boolean ignoreQuotations) {
     Vector<Decimal> returnVector;
     SizeT stringLength = stringIn.size();
@@ -1016,82 +902,4 @@ Vector<Decimal> ParseStringAsDecimalArray(const String& stringIn, Boolean ignore
     }
     delete[] currentStringArray;
     return returnVector;
-}
-
-Boolean TagIsValid(const String& tag) {
-    if (tag.size() != 3) { return false; }
-    if (!CharIsCapital(tag[0]) || !CharIsCapitalOrNumber(tag[1]) || !CharIsCapitalOrNumber(tag[2])) { return false; }
-
-    //TAG is allowed?
-    //if (tag == "NOT" || tag == "AND" || tag == "TAG" || tag == "OOB" || tag == "LOG" || tag == "NUM" || tag == "RED") { return false; }
-    if (tag == "NOT" || tag == "AND" || tag == "OOB" || tag == "LOG" || tag == "NUM" || tag == "RED") { return false; }
-
-    return true;
-}
-
-Vector<ColourRGB> GenerateRandomColours(const UnsignedInteger32 newColourCount) {
-    std::mt19937 gen(std::random_device{}());
-    std::uniform_int_distribution<SignedInteger32> dist(0, 255);
-
-    Set<UnsignedInteger32> usedColours;
-    Vector<ColourRGB> newColours; newColours.reserve(newColourCount);
-
-    while (newColours.size() < newColourCount) {
-        ColourRGB colour{ static_cast<UnsignedInteger8>(dist(gen)),
-              static_cast<UnsignedInteger8>(dist(gen)),
-              static_cast<UnsignedInteger8>(dist(gen))};
-
-        if (usedColours.insert(colour.ToInteger()).second)
-            newColours.push_back(colour);
-    }
-
-    return newColours;
-}
-
-Vector<ColourRGB> GenerateRandomColours(Set<UnsignedInteger32>& usedColours, const UnsignedInteger32 newColourCount) {
-    std::mt19937 gen(std::random_device{}());
-    std::uniform_int_distribution<SignedInteger32> dist(0, 255);
-
-    Vector<ColourRGB> newColours; newColours.reserve(newColourCount);
-
-    while (newColours.size() < newColourCount) {
-        ColourRGB colour{ static_cast<UnsignedInteger8>(dist(gen)),
-              static_cast<UnsignedInteger8>(dist(gen)),
-              static_cast<UnsignedInteger8>(dist(gen))};
-
-        if (usedColours.insert(colour.ToInteger()).second)
-            newColours.push_back(colour);
-    }
-
-    return newColours;
-}
-
-Vector<ColourRGB> GenerateRandomColoursInRange(Set<UnsignedInteger32>& usedColours, const UnsignedInteger32 newColourCount, 
-    const ColourRGB colour, const UnsignedInteger8 range) {
-    SignedInteger16 r0 = (colour.r > range) ? colour.r - range : 0;
-    SignedInteger16 r1 = (colour.r + range < 255) ? colour.r + range : 255;
-    SignedInteger16 g0 = (colour.g > range) ? colour.g - range : 0;
-    SignedInteger16 g1 = (colour.g + range < 255) ? colour.g + range : 255;
-    SignedInteger16 b0 = (colour.b > range) ? colour.b - range : 0;
-    SignedInteger16 b1 = (colour.b + range < 255) ? colour.b + range : 255;
-
-    std::mt19937 gen(std::random_device{}());
-    std::uniform_int_distribution<SignedInteger16> dist_r(r0, r1);
-    std::uniform_int_distribution<SignedInteger16> dist_g(g0, g1);
-    std::uniform_int_distribution<SignedInteger16> dist_b(b0, b1);
-
-    Vector<ColourRGB> newColours; newColours.reserve(newColourCount);
-
-    while (newColours.size() < newColourCount) {
-        ColourRGB colour{ 
-            static_cast<UnsignedInteger8>(dist_r(gen)), 
-            static_cast<UnsignedInteger8>(dist_g(gen)),
-            static_cast<UnsignedInteger8>(dist_b(gen)) 
-        };
-
-        if (usedColours.insert(colour.ToInteger()).second)
-            newColours.push_back(colour);
-    }
-
-    return newColours;
 }
