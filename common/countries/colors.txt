@@ -512,3 +512,7 @@ MRC = {
 	color = rgb { 96 29 16 }
 	color_ui = rgb { 96 29 16 }
 }
+SHW = {
+	color = rgb { 196 114 51 }
+	color_ui = rgb { 196 114 51 }
+}

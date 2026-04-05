@@ -15503,3 +15503,183 @@
         }
     }
 }
+15231 = {
+	default = "Oran"
+	entry = {
+        name = "Wahrān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+4116 = {
+	default = "Tlemcen"
+	entry = {
+        name = "Tilimsān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+11923 = {
+	default = "Sidi Bel Abbès"
+	entry = {
+        name = "Sīdī Bu Al-'Abbās"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10045 = {
+	default = "Saïda"
+	entry = {
+        name = "Sa'īda"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+12760 = {
+	default = "Tiaret"
+	entry = {
+        name = "Tyāret"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1013 = {
+	default = "Chlef"
+	entry = {
+        name = "Aš-Šalif"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1145 = {
+	default = "Algiers"
+	entry = {
+        name = "Al-Jazā'ir"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15235 = {
+	default = "Algiers International Airport"
+	entry = {
+        name = "Maṭār Al-Jazā'ir El-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15236 = {
+	default = "Blida"
+	entry = {
+        name = "Al-Bulaydah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+4146 = {
+	default = "Médéa"
+	entry = {
+        name = "Al-Madiya"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+11939 = {
+	default = "Tizi Ouzou"
+	entry = {
+        name = "Tizi Wuzu"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15238 = {
+	default = "Batna"
+	entry = {
+        name = "Bātna"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15239 = {
+	default = "Constantine"
+	entry = {
+        name = "Qusanṭīnah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15241 = {
+	default = "Annaba"
+	entry = {
+        name = "Anāba"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15242 = {
+	default = "Sétif"
+	entry = {
+        name = "Siṭīf"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+12051 = {
+	default = "Skikda"
+	entry = {
+        name = "Skykda"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+7033 = {
+	default = "M'Sila"
+	entry = {
+        name = "Āl-Msyla"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1160 = {
+	default = "Souk Ahras"
+	entry = {
+        name = "Sūq Ahrās"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+7166 = {
+	default = "Bordj Bou Arréridj"
+	entry = {
+        name = "Burğ Bū 'Urairīğ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+7065 = {
+	default = "El Eulma"
+	entry = {
+        name = "Al-'Ulma"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}

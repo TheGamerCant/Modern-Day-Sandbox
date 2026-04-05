@@ -1,0 +1,17 @@
+state={
+	id=905
+	name="STATE_905"
+	history = {
+		owner = MRC
+		add_core_of = MRC
+		
+		set_variable = { sq_km = 41944 }
+	}
+	provinces={
+		1102 4108 4139 15246 
+	}
+	manpower=4290903
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

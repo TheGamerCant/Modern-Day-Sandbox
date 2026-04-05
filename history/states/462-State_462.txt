@@ -2,12 +2,15 @@ state={
 	id=462
 	name="STATE_462"
 	history={
-		owner = ZZZ
+		owner = MRC
+		add_core_of = MRC
+		
+		set_variable = { sq_km = 94117.6 }
 	}
 	provinces={
-		1102 1152 1207 1989 4022 4108 4154 4933 5046 7203 7908 7958 8046 10107 12857 
+		1152 1989 4933 7908 8046 10107 
 	}
-	manpower= 100000
+	manpower= 1551942
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=wasteland

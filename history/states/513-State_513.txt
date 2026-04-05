@@ -5,10 +5,17 @@ state={
 		owner = ALG
 		add_core_of = ALG
 		
+		victory_points = { 15231 10 }
+		victory_points = { 4116 3 }
+		victory_points = { 11923 4 }
+		victory_points = { 10045 2 }
+		victory_points = { 12760 2 }
+		victory_points = { 1013 2 }
+		
 		set_variable = { sq_km = 60545.7 }
 	}
 	provinces={
-		1013 3991 4116 4150 7008 7132 10045 11923 12760 
+		1013 3991 4116 4150 7008 7132 10045 11923 12760 15231 15232 
 	}
 	manpower=7960959
 	buildings_max_level_factor=1

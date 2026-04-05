@@ -1,0 +1,18 @@
+state={
+	id=900
+	name="STATE_900"
+	history = {
+		owner = MRC
+		add_core_of = MRC
+		add_claim_by = SHW
+		
+		set_variable = { sq_km = 99103.9 }
+	}
+	provinces={
+		10875 15250 
+	}
+	manpower=135692
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

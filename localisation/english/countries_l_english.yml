@@ -410,3 +410,7 @@
  MRC:0 "Morocco"                                  
  MRC_DEF:0 "the Kingdom of Morocco"                                  
  MRC_ADJ:0 "Moroccan"
+
+ SHW:0 "Western Sahara"                                  
+ SHW_DEF:0 "The Sahrawi Arab Democratic Republic"                                  
+ SHW_ADJ:0 "Saharawi"

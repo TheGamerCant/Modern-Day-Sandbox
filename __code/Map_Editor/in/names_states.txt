@@ -2507,10 +2507,22 @@
     }
 }
 461 = {
-	default = "Casablanca"
+	default = "Casablanca-Settat"
+	entry = {
+        name = "Ad-Dār Al-Bayḍā'/Siṭṭāt"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 462 = {
-	default = "Marrakech"
+	default = "Drâa-Tafilalet"
+	entry = {
+        name = "Dar'a/Tāfīlālt"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 463 = {
 	default = "Alaska"
@@ -3612,7 +3624,13 @@
 	default = "Azores"
 }
 699 = {
-	default = "Rio de Oro"
+	default = "Laâyoune-Sakia El Hamra"
+	entry = {
+        name = "Al-'Uyūn/As-Sāqiya Al-Ḥamrā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 700 = {
 	default = "Sierra Leone"
@@ -3860,7 +3878,7 @@
         }
     }
 	entry = {
-        name = "Haḍbatu Al-Jawlān"
+        name = "Haḍbat al-Ǧawlān"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -4256,7 +4274,7 @@
 819 = {
 	default = "Egyptian Great Sand Sea"
 	entry = {
-        name = "Baḥr Al-'Rimāl Al-'miṣrī Al-'kabīr"
+        name = "Baḥr Al-'Rimāl Al-'Miṣrī Al-'Kabīr"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -4644,9 +4662,16 @@
     }
 }
 895 = {
-	default = "El Eglab Massif/Erg Iguidi/Erg Chech"
+#	default = "El Eglab Massif/Erg Iguidi/Erg Chech"
+#	entry = {
+#        name = "Katlat Īghlāb/'Irq Iqīdī/'Irq Shāsh"
+#        requirements = {
+#            "TAG_using_arab_names = yes"
+#        }
+#    }
+	default = "El Eglab Massif"
 	entry = {
-        name = "Katlat Īghlāb/'Irq Iqīdī/'Irq Shāsh"
+        name = "Katlat Īghlāb"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -4674,6 +4699,96 @@
 	default = "Issaouane Erg"
 	entry = {
         name = "'Irq 'Īsāwān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+899 = {
+	default = "Western Sahara Free Zone"
+	entry = {
+        name = "Al-Minṭaqa Al-Ḥurra Bāl-Ṣaḥrā' Al-Ghahrbia"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+900 = {
+	default = "Dakhla-Oued Ed-Dahab"
+	entry = {
+        name = "Ad-Dāḵla/Wādī Ḏ-Ḏahab"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+901 = {
+	default = "Tanger-Tétouan-Al Hoceima"
+	entry = {
+        name = "Ṭanjah/Tiṭwan/Al-Ḥusima"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+902 = {
+	default = "Oriental"
+	entry = {
+        name = "Al-Šarq"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+903 = {
+	default = "Fez-Meknes"
+	entry = {
+        name = "Fās/Maknās"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+904 = {
+	default = "Rabat-Salé-Kénitra"
+	entry = {
+        name = "Ar-Ribāṭ/Salā/Al-Qunayṭira"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+905 = {
+	default = "Marrakesh-Safi"
+	entry = {
+        name = "Murrākuš/Āsafi"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+906 = {
+	default = "Souss-Massa"
+	entry = {
+        name = "Sūs/Māssa"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+907 = {
+	default = "Béni Mellal-Khénifra"
+	entry = {
+        name = "Banī Mallāl/Ḵunayfira"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+908 = {
+	default = "Guelmim-Oued Noun"
+	entry = {
+        name = "Gulmīm/Wādī Nūn"
         requirements = {
             "TAG_using_arab_names = yes"
         }
