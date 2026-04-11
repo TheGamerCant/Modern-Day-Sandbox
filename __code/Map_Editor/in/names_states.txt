@@ -4761,7 +4761,7 @@
 905 = {
 	default = "Marrakesh-Safi"
 	entry = {
-        name = "Murrākuš/Āsafi"
+        name = "Murrākuš/'Āsafi"
         requirements = {
             "TAG_using_arab_names = yes"
         }

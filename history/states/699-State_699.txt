@@ -6,10 +6,17 @@ state={
 		add_core_of = MRC
 		add_claim_by = SHW
 		
+		victory_points = { 15254 3 }
+		victory_points = { 15255 1 }
+		victory_points = { 4920 2 }
+		victory_points = { 5012 1 }
+		
 		set_variable = { sq_km = 137896.1 }
+		
+		buildings = { air_base = 1 }
 	}
 	provinces={
-		4920 5012 8038 8111 15253 
+		4920 5012 8038 8111 15253 15254 15255 
 	}
 	manpower= 349074
 	buildings_max_level_factor=1.000

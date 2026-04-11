@@ -6,6 +6,8 @@ state={
 		add_core_of = MRC
 		add_claim_by = SHW
 		
+		victory_points = { 15250 2 }
+		
 		set_variable = { sq_km = 99103.9 }
 	}
 	provinces={

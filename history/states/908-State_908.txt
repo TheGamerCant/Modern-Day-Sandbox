@@ -5,6 +5,9 @@ state={
 		owner = MRC
 		add_core_of = MRC
 		
+		victory_points = { 15243 2 }
+		victory_points = { 5046 2 }
+		
 		set_variable = { sq_km = 52681.6 }
 	}
 	provinces={

@@ -6,12 +6,14 @@ state={
 		add_core_of = SHW
 		add_claim_by = MRC
 		
+		victory_points = { 15251 1 }
+		
 		set_variable = { sq_km = 35000 }
 	}
 	provinces={
 		7979 15251 15252 
 	}
-	manpower=40000
+	manpower=38400
 	buildings_max_level_factor=1
 	state_category=pastoral
 	local_supplies=0.5
