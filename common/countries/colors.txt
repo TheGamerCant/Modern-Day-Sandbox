@@ -516,3 +516,31 @@ SHW = {
 	color = rgb { 196 114 51 }
 	color_ui = rgb { 196 114 51 }
 }
+MEX = {
+	color = rgb { 3 66 14 }
+	color_ui = rgb { 3 66 14 }
+}
+CUB = {
+	color = rgb { 218 21 58 }
+	color_ui = rgb { 218 21 58 }
+}
+GTM = {
+	color = rgb { 51 190 229 }
+	color_ui = rgb { 51 190 229 }
+}
+ESV = {
+	color = rgb { 0 47 164 }
+	color_ui = rgb { 0 47 164 }
+}
+BLZ = {
+	color = rgb { 59 22 150 }
+	color_ui = rgb { 59 22 150 }
+}
+HDU = {
+	color = rgb { 17 90 195 }
+	color_ui = rgb { 17 90 195 }
+}
+NCG = {
+	color = rgb { 143 190 172 }
+	color_ui = rgb { 143 190 172 }
+}

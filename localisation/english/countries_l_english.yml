@@ -414,3 +414,31 @@
  SHW:0 "Western Sahara"                                  
  SHW_DEF:0 "The Sahrawi Arab Democratic Republic"                                  
  SHW_ADJ:0 "Saharawi"
+
+ MEX:0 "Mexico"                                  
+ MEX_DEF:0 "the United Mexican States"                                  
+ MEX_ADJ:0 "Mexican"
+
+ CUB:0 "Cuba"                                  
+ CUB_DEF:0 "the Republic of Cuba"                                  
+ CUB_ADJ:0 "Cuban"
+
+ GTM:0 "Guatemala"                                  
+ GTM_DEF:0 "the Republic of Guatemala"                                  
+ GTM_ADJ:0 "Guatemalan"
+
+ ESV:0 "El Salvador"                                  
+ ESV_DEF:0 "the Republic of El Salvador"                                  
+ ESV_ADJ:0 "Salvadoran"
+
+ BLZ:0 "Belize"                                  
+ BLZ_DEF:0 "Belize"                                  
+ BLZ_ADJ:0 "Belizean"
+
+ HDU:0 "Honduras"                                  
+ HDU_DEF:0 "the Republic of Honduras"                                  
+ HDU_ADJ:0 "Honduran"
+
+ NCG:0 "Nicaragua"                                  
+ NCG_DEF:0 "the Republic of Nicaragua"                                  
+ NCG_ADJ:0 "Nicaraguan"

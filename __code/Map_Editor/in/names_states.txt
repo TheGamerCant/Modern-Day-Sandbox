@@ -1877,7 +1877,7 @@
 	default = "French Guiana"
 }
 311 = {
-	default = "British Honduras"
+	default = "Belize"
 }
 312 = {
 	default = "Honduras"

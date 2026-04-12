@@ -13083,7 +13083,7 @@
 13082;0;225;255;land;false;mountain;7
 13083;0;255;0;land;false;jungle;3
 13084;0;0;100;land;true;plains;3
-13085;255;252;0;land;true;plains;3
+13085;255;252;0;land;true;hills;3
 13086;98;197;150;land;true;mountain;3
 13087;98;197;149;land;true;plains;3
 13088;97;197;149;land;true;jungle;2
@@ -15274,3 +15274,9 @@
 15273;11;51;169;land;true;dense_urban;5
 15274;56;203;255;land;true;dense_urban;5
 15275;31;185;217;land;false;hills;5
+15276;54;140;50;land;false;dense_urban;3
+15277;97;182;235;land;false;urban;3
+15278;160;165;153;land;false;dense_urban;3
+15279;30;180;167;land;false;jungle;3
+15280;50;102;195;land;true;plains;3
+15281;217;56;11;land;false;mountain;3

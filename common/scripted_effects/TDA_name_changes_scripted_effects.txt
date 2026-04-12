@@ -5547,7 +5547,7 @@ TDA_update_state_309_names = {
 TDA_update_state_310_names = {
 }
 
-#British Honduras
+#Belize
 TDA_update_state_311_names = {
 }
 
@@ -5557,6 +5557,24 @@ TDA_update_state_312_names = {
 
 #Guatemala
 TDA_update_state_313_names = {
+	#Ciudad de Guatemala
+	if = {
+		limit = { any_country = { controls_province = 15276 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 15276 name = VICTORY_POINTS_15276_0 }
+	}
+	#Guatemala City
+	else = {
+		reset_province_name = 15276
+	}
+	#Aeropuerto Internacional La Aurora
+	if = {
+		limit = { any_country = { controls_province = 15277 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 15277 name = VICTORY_POINTS_15277_0 }
+	}
+	#La Aurora International Airport
+	else = {
+		reset_province_name = 15277
+	}
 }
 
 #El Salvador

@@ -381,23 +381,24 @@ PixelShader =
 			float vNightFactor = DayNightFactor( vGlobeNormal );
 			
 		#ifndef LOW_END_GFX
-			if (TerrainColor.r > 0.30f && TerrainColor.g < 0.2f && TerrainColor.b < 0.2f) {
-				if (TerrainColor.a > 0.50f) {
+			if (TerrainColor.r > 0.40f && TerrainColor.g < 0.2f && TerrainColor.b < 0.20f) {
+				//vBloomAlpha is 1 when on player-defined mapmodes
+				if (TerrainColor.a > 0.60f && vBloomAlpha) {
 					//Pixel co-ords
-					float r_x = Input.uv2.x * 5632.0;
-					float r_y = Input.uv2.y * 2816.0;
+					float r_x = Input.uv2.x * MAP_SIZE_X;
+					float r_y = Input.uv2.y * MAP_SIZE_Y;
 
 					//Constants
 					float pixels_until_new_diagonal = 10.0f;
 					float line_width = 4.0f;
-					float line_speed = 2.2f;
+					float line_speed = 0.7f;
 
 					float pattern = fmod(
 						r_x + r_y - fmod(vGlobalTime * line_speed, pixels_until_new_diagonal), 
 						pixels_until_new_diagonal
 					);
 					
-					vOut.r += step(pattern, line_width) * 0.6f;
+					vOut.r += step(pattern, line_width) * 0.66f;
 				}
 			}
 			else {
@@ -419,7 +420,7 @@ PixelShader =
 
 		#ifdef LOW_END_GFX
 			return float4( vOut, vNightFactor * CITY_LIGHTS_BLOOM_FACTOR );
-		#else
+		#else		
 			return float4( vOut, saturate(CityLightsMask * vNightFactor * CITY_LIGHTS_BLOOM_FACTOR) );
 		#endif
 		}		

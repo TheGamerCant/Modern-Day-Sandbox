@@ -16007,3 +16007,39 @@
         }
     }
 }
+2077 = {
+	default = "Belize City"
+}
+15276 = {
+	default = "Guatemala City"
+	entry = {
+        name = "Ciudad de Guatemala"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15277 = {
+	default = "La Aurora International Airport"
+	entry = {
+        name = "Aeropuerto Internacional La Aurora"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15278 = {
+	default = "Villa Nueva"
+}
+13085 = {
+	default = "Puerto Barrios"
+}
+15279 = {
+	default = "Cobán"
+}
+10842 = {
+	default = "Quetzaltenango"
+}
+15281 = {
+	default = "Huehuetenango"
+}
