@@ -1,9 +1,9 @@
 TDA_toggle_impassable_lines = {
 	if = {
-		limit = { ZZZ = { has_cosmetic_tag = ZZZ_0x000019 } }
+		limit = { ZZZ = { has_cosmetic_tag = ZZZ_0x0D0000 } }
 		ZZZ = { drop_cosmetic_tag = yes }
 	}
 	else = {
-		ZZZ = { set_cosmetic_tag = ZZZ_0x000019 }
+		ZZZ = { set_cosmetic_tag = ZZZ_0x0D0000 }
 	}
 }

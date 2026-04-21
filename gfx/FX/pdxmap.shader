@@ -234,6 +234,17 @@ PixelShader =
 			//Full formula to find colour of pixel (x, y) on map, assuming (0,0) is top left
 			//tex2D(GradientBorderChannel1, float2(x / MAP_SIZE_X, 1-((1-(y / MAP_SIZE_Y))* 0.5)))
 		
+			//Cosmetic colours -> rgb is also kinda weird, here's the found formula thus far:
+			/*
+			0-12 = 0x00
+			13-28 = 0x01
+			29-38 = 0x02
+			39-46 = 0x03
+			47-52 = 0x04
+			53-58 = 0x05
+			59-63 = 0x06
+			*/
+		
 			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.037464489f, 0.9995117)).rgb;
 			uint r = round(checkColour.r * 255.0f);
 			uint g = round(checkColour.g * 255.0f);
@@ -391,7 +402,7 @@ PixelShader =
 			float vNightFactor = DayNightFactor( vGlobeNormal );
 			
 		#ifndef LOW_END_GFX
-			if (checkColourInt == 0x000000 && terrainIsImpassable) {
+			if (r == 0x00 && terrainIsImpassable) {
 				//Pixel co-ords
 				float r_x = Input.uv2.x * MAP_SIZE_X;
 				float r_y = Input.uv2.y * MAP_SIZE_Y;

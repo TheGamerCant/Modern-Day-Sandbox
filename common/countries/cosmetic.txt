@@ -1,4 +1,4 @@
-ZZZ_0x000019 = {
-    color = rgb { 00 00 25 }
-    color_ui = rgb { 00 00 25 }
+ZZZ_0x0D0000 = {
+    color = rgb { 13 00 00 }
+    color_ui = rgb { 13 00 00 }
 }
