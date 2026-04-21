@@ -16043,3 +16043,123 @@
 15281 = {
 	default = "Huehuetenango"
 }
+15285 = {
+	default = "La Paz"
+}
+15282 = {
+	default = "Tijuana"
+}
+15283 = {
+	default = "Tijuana International Airport"
+	entry = {
+        name = "Aeropuerto Internacional de Tijuana"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15288 = {
+	default = "Ensenada"
+}
+15284 = {
+	default = "Rosarito"
+}
+15286 = {
+	default = "Mexicali"
+}
+15287 = {
+	default = "Cabo San Lucas"
+}
+12736 = {
+	default = "Ciudad Constitución"
+}
+15289 = {
+	default = "Hermosillo"
+}
+8012 = {
+	default = "Nogales"
+}
+15291 = {
+	default = "Ciudad Obregón"
+}
+4977 = {
+	default = "Navojoa"
+}
+4908 = {
+	default = "Guaymas"
+}
+12833 = {
+	default = "San Luis Río Colorado"
+}
+15293 = {
+	default = "Ciudad Juárez"
+}
+15295 = {
+	default = "Chihuahua"
+}
+10916 = {
+	default = "Hidalgo del Parral"
+}
+7935 = {
+	default = "Cuauhtémoc"
+}
+10830 = {
+	default = "Delicias"
+}
+12827 = {
+	default = "Nuevo Casas Grandes"
+}
+12897 = {
+	default = "Ojinaga"
+}
+15301 = {
+	default = "Agua Prieta"
+}
+2069 = {
+	default = "Heroica Caborca"
+}
+15300 = {
+	default = "Puerto Peñasco"
+}
+15303 = {
+	default = "Cancún"
+}
+15304 = {
+	default = "Cancún International Airport"
+	entry = {
+        name = "Aeropuerto Internacional de Cancún"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15306 = {
+	default = "Mérida"
+}
+4904 = {
+	default = "Ciudad del Carmen"
+}
+15307 = {
+	default = "Campeche"
+}
+4965 = {
+	default = "Playa del Carmen"
+}
+15310 = {
+	default = "Villahermosa"
+}
+15309 = {
+	default = "Cárdenas"
+}
+15311 = {
+	default = "Tuxtla Gutiérrez"
+}
+15313 = {
+	default = "San Cristóbal de las Casas"
+}
+1900 = {
+	default = "Comitán de Domínguez"
+}
+12753 = {
+	default = "Tapachula de Córdova y Ordóñez"
+}

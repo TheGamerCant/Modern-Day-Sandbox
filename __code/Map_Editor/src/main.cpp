@@ -66,8 +66,8 @@ int main()
 {
     Timestamp startTime = std::chrono::high_resolution_clock::now();
 
-    Path vanillaDirectory, modDirectory; Vector<String> modReplaceDirectories;
-    LoadFileDirectories(vanillaDirectory, modDirectory, modReplaceDirectories);
+    Path vanillaDirectory, modDirectory; Vector<String> modReplaceDirectories; Boolean writeToModFiles = false;
+    LoadFileDirectories(vanillaDirectory, modDirectory, modReplaceDirectories, writeToModFiles);
 
     VectorMap<GraphicalCulture> graphicalCulturesArray;
     VectorMap<Country> countriesArray;
@@ -432,7 +432,7 @@ int main()
     }
 
     WriteStateAndStrategicRegionColours(statesArray, strategicRegionsArray);
-    WriteNames(provincesArray, statesArray);
+    WriteNames(modDirectory, provincesArray, statesArray, writeToModFiles);
 
     if (writeDefinitions) {
         WriteProvinceDefinitions(provincesArray, landTerrainsArray, seaTerrainsArray, lakeTerrainsArray);

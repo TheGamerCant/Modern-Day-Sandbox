@@ -230,6 +230,15 @@ PixelShader =
 		{
 			//return float4( 0, 1.0f, 0, 1.0f );
 			//clip( Input.prepos.y + TERRAIN_WATER_CLIP_HEIGHT - WATER_HEIGHT );
+			
+			//Full formula to find colour of pixel (x, y) on map, assuming (0,0) is top left
+			//tex2D(GradientBorderChannel1, float2(x / MAP_SIZE_X, 1-((1-(y / MAP_SIZE_Y))* 0.5)))
+		
+			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.037464489f, 0.9995117)).rgb;
+			uint r = round(checkColour.r * 255.0f);
+			uint g = round(checkColour.g * 255.0f);
+			uint b = round(checkColour.b * 255.0f);
+			uint checkColourInt = r << 16 | g << 8 | b;
 		
 			float2 vOffsets = float2( -0.5f / MAP_SIZE_X, -0.5f / MAP_SIZE_Y );
 			
@@ -314,7 +323,8 @@ PixelShader =
 		#endif
 	
 			float vSnowAlpha = 1-vSpec;
-			diffuse.rgb = GetOverlay( diffuse.rgb, TerrainColor.rgb, COLORMAP_OVERLAY_STRENGTH );
+			bool terrainIsImpassable = (TerrainColor.r >= 0.45f && TerrainColor.g <= 0.05f && TerrainColor.b <= 0.05f);
+			if (!terrainIsImpassable) diffuse.rgb = GetOverlay( diffuse.rgb, TerrainColor.rgb, COLORMAP_OVERLAY_STRENGTH );
 
 			float4 vMudSnow = GetMudSnowColor( Input.prepos, SnowMudData );	
 			diffuse.rgb = ApplySnow( diffuse.rgb, Input.prepos, normal, vMudSnow, SnowTexture, CityLightsAndSnowNoise, vGlossiness, vSnowAlpha );
@@ -381,25 +391,22 @@ PixelShader =
 			float vNightFactor = DayNightFactor( vGlobeNormal );
 			
 		#ifndef LOW_END_GFX
-			if (TerrainColor.r > 0.40f && TerrainColor.g < 0.2f && TerrainColor.b < 0.20f) {
-				//vBloomAlpha is 1 when on player-defined mapmodes
-				if (TerrainColor.a > 0.60f && vBloomAlpha) {
-					//Pixel co-ords
-					float r_x = Input.uv2.x * MAP_SIZE_X;
-					float r_y = Input.uv2.y * MAP_SIZE_Y;
+			if (checkColourInt == 0x000000 && terrainIsImpassable) {
+				//Pixel co-ords
+				float r_x = Input.uv2.x * MAP_SIZE_X;
+				float r_y = Input.uv2.y * MAP_SIZE_Y;
+				
+				//Constants
+				float pixels_until_new_diagonal = 10.0f;
+				float line_width = 4.0f;
+				float line_speed = 0.7f;
 
-					//Constants
-					float pixels_until_new_diagonal = 10.0f;
-					float line_width = 4.0f;
-					float line_speed = 0.7f;
-
-					float pattern = fmod(
-						r_x + r_y - fmod(vGlobalTime * line_speed, pixels_until_new_diagonal), 
-						pixels_until_new_diagonal
-					);
+				float pattern = fmod(
+					r_x + r_y - fmod(vGlobalTime * line_speed, pixels_until_new_diagonal), 
+					pixels_until_new_diagonal
+				);
 					
-					vOut.r += step(pattern, line_width) * 0.66f;
-				}
+				vOut.r += step(pattern, line_width) * 0.667f;
 			}
 			else {
 				float3 CityLights = tex2D( CityLightsAndSnowNoise, Input.prepos.xz * CITY_LIGHTS_TILING ).rgb;
@@ -422,6 +429,9 @@ PixelShader =
 			return float4( vOut, vNightFactor * CITY_LIGHTS_BLOOM_FACTOR );
 		#else		
 			return float4( vOut, saturate(CityLightsMask * vNightFactor * CITY_LIGHTS_BLOOM_FACTOR) );
+			//return TerrainColor;
+			//return tex2D(GradientBorderChannel1, float2(Input.uv.x, 1.0-(Input.uv.y * 0.5)));
+			//return float4(checkColour, 1.0f);
 		#endif
 		}		
 	]]

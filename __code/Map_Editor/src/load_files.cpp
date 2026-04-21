@@ -8,8 +8,8 @@
 #include <omp.h>
 
 
-void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories) {
-    HashMap<String, String> directoriesMap = ParseStringForPairsMapUnique(LoadFileToString("in\\file_directories.txt"));
+void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories, Boolean& writeToModFiles) {
+    HashMap<String, String> directoriesMap = ParseStringForPairsMapUnique(LoadFileToString("in\\settings.txt"));
 
     //Remove any trailing quotation marks we may have
     for (auto& [key, value] : directoriesMap) {
@@ -26,6 +26,7 @@ void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<Stri
     if (std::filesystem::exists(directoriesMap.at("vanilla_directory")) && std::filesystem::is_directory(directoriesMap.at("vanilla_directory"))) vanillaDirectory = directoriesMap.at("vanilla_directory");
     else FatalError(directoriesMap.at("vanilla_directory") + " is not a valid path");
 
+    if (directoriesMap.find("mod_directory") != directoriesMap.end()) writeToModFiles = GetBoolFromYesNo(directoriesMap.at("write_to_mod_files"));
 
     //Now get all replace_path entries in the .mod folder
     UnsignedInteger32 modFileCount = 0; 

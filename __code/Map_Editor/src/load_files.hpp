@@ -3,7 +3,7 @@
 #include "data_types.hpp"
 #include "bmp.hpp"
 
-void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories);
+void LoadFileDirectories(Path& vanillaDirectory, Path& modDirectory, Vector<String>& modReplaceDirectories, Boolean& writeToModFiles);
 
 void LoadGraphicalCultureFiles(const Path& vanillaDirectory, const Path& modDirectory, const Vector<String>& modReplaceDirectories, VectorMap<GraphicalCulture>& graphicalCulturesArray);
 

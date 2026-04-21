@@ -7928,6 +7928,15 @@ TDA_update_state_473_names = {
 
 #Yucatan
 TDA_update_state_474_names = {
+	#Aeropuerto Internacional de Cancún
+	if = {
+		limit = { any_country = { controls_province = 15304 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 15304 name = VICTORY_POINTS_15304_0 }
+	}
+	#Cancún International Airport
+	else = {
+		reset_province_name = 15304
+	}
 }
 
 #Chiapas
@@ -7968,6 +7977,15 @@ TDA_update_state_483_names = {
 
 #Baja California
 TDA_update_state_484_names = {
+	#Aeropuerto Internacional de Tijuana
+	if = {
+		limit = { any_country = { controls_province = 15283 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 15283 name = VICTORY_POINTS_15283_0 }
+	}
+	#Tijuana International Airport
+	else = {
+		reset_province_name = 15283
+	}
 }
 
 #Guerrero
@@ -17622,6 +17640,10 @@ TDA_update_state_908_names = {
 	}
 }
 
+#Tabasco
+TDA_update_state_909_names = {
+}
+
 
 
 TDA_change_all_city_names = {
@@ -18533,6 +18555,7 @@ TDA_change_all_city_names = {
 	TDA_update_state_906_names = yes
 	TDA_update_state_907_names = yes
 	TDA_update_state_908_names = yes
+	TDA_update_state_909_names = yes
 }
 
 TDA_toggle_change_city_names = {

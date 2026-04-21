@@ -36,8 +36,9 @@ void WriteProvinceDefinitions(const Vector<Province>& provincesArray, const Vect
 	provinceDefinitionsOutFile.close();
 }
 
-void WriteNames(const Vector<Province>& provincesArray, const Vector<State>& statesArray) {
-	std::ofstream scriptedEffectsOutFile("out\\common\\scripted_effects\\TDA_name_changes_scripted_effects.txt", std::ios::binary);
+void WriteNames(const Path& modDirectory, const Vector<Province>& provincesArray, const Vector<State>& statesArray, const Boolean writeToModFiles) {
+	String scriptedEffectsOutFilePath = (writeToModFiles) ? modDirectory.string() + "\\common\\scripted_effects\\TDA_name_changes_scripted_effects.txt" : "out\\common\\scripted_effects\\TDA_name_changes_scripted_effects.txt";
+	std::ofstream scriptedEffectsOutFile(scriptedEffectsOutFilePath, std::ios::binary);
 
 	UnsignedInteger16 stateId{};
 	String stateIdString{};
@@ -114,8 +115,11 @@ void WriteNames(const Vector<Province>& provincesArray, const Vector<State>& sta
 	stateNameChangesString = "";
 	changeAllCityNamesString = "";
 
-	std::ofstream stateNamesYmlOutFile("out\\localisation\\english\\state_names_l_english.yml", std::ios::binary);
-	std::ofstream victoryPointNamesYmlOutFile("out\\localisation\\english\\victory_points_l_english.yml", std::ios::binary);
+	String StatesOutFilePath = (writeToModFiles) ? modDirectory.string() + "\\localisation\\english\\state_names_l_english.yml" : "out\\localisation\\english\\state_names_l_english.yml";
+	String VictoryPointsOutFilePath = (writeToModFiles) ? modDirectory.string() + "\\localisation\\english\\victory_points_l_english.yml" : "out\\localisation\\english\\victory_points_l_english.yml";
+
+	std::ofstream stateNamesYmlOutFile(StatesOutFilePath, std::ios::binary);
+	std::ofstream victoryPointNamesYmlOutFile(VictoryPointsOutFilePath, std::ios::binary);
 
 	const UnsignedChar bom_l_english[13] = { 
 		0xEF, 0xBB, 0xBF, 0x6C, 0x5F, 0x65, 0x6E, 0x67, 0x6C, 0x69, 0x73, 0x68, 0x3A 

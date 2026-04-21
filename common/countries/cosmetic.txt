@@ -1,0 +1,4 @@
+ZZZ_0x000019 = {
+    color = rgb { 00 00 25 }
+    color_ui = rgb { 00 00 25 }
+}

@@ -517,8 +517,8 @@ SHW = {
 	color_ui = rgb { 196 114 51 }
 }
 MEX = {
-	color = rgb { 3 66 14 }
-	color_ui = rgb { 3 66 14 }
+	color = rgb { 5 79 16 }
+	color_ui = rgb { 5 79 16 }
 }
 CUB = {
 	color = rgb { 218 21 58 }

@@ -3,68 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\write_files.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\write_files.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\load_files.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\load_files.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\data_types.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\data_types.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\vcruntime\\delete_scalar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\functions.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\functions.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\functions.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\functions.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\write_files.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\write_files.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\bmp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\bmp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\unordered_map||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\x64\\gshandlereh4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\gui.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\gui.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\write_files.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\write_files.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\bmp.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\bmp.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\load_files.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\load_files.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\data_types.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\data_types.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\load_files.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\load_files.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\data_types.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\data_types.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\write_files.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2C1DB860-A08A-4909-8553-35A32191F7CD}|Map_Editor.vcxproj|solutionrelative:src\\write_files.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,145 +46,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "delete_scalar.cpp",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\vcruntime\\delete_scalar.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\vcruntime\\delete_scalar.cpp",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\vcruntime\\delete_scalar.cpp",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\vcruntime\\delete_scalar.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-11T11:27:30.929Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "string",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\string",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAEwF8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-02-11T11:08:04.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "unordered_map",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\unordered_map",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\unordered_map",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\unordered_map",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\unordered_map",
-              "ViewState": "AgIAAJcBAAAAAAAAAAAhwLkBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-02-11T10:34:49.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "gshandlereh4.cpp",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\x64\\gshandlereh4.cpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\x64\\gshandlereh4.cpp",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\x64\\gshandlereh4.cpp",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\crt\\src\\x64\\gshandlereh4.cpp",
-              "ViewState": "AgIAADIAAAAAAAAAAAAqwFUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-02-11T09:36:47.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "gui.hpp",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\gui.hpp",
-              "RelativeDocumentMoniker": "src\\gui.hpp",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\gui.hpp",
-              "RelativeToolTip": "src\\gui.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-24T20:29:34.84Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "gui.cpp",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\gui.cpp",
-              "RelativeDocumentMoniker": "src\\gui.cpp",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\gui.cpp",
-              "RelativeToolTip": "src\\gui.cpp",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADwAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-24T20:29:28.25Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
               "Title": "write_files.hpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\write_files.hpp",
               "RelativeDocumentMoniker": "src\\write_files.hpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\write_files.hpp",
               "RelativeToolTip": "src\\write_files.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAACTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-23T20:08:39.771Z"
+              "WhenOpened": "2025-11-23T20:08:39.771Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "write_files.cpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\write_files.cpp",
               "RelativeDocumentMoniker": "src\\write_files.cpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\write_files.cpp",
               "RelativeToolTip": "src\\write_files.cpp",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAEwH8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-23T20:08:30.212Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "bmp.hpp",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\bmp.hpp",
-              "RelativeDocumentMoniker": "src\\bmp.hpp",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\bmp.hpp",
-              "RelativeToolTip": "src\\bmp.hpp",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAGUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-14T10:25:09.36Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "bmp.cpp",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\bmp.cpp",
-              "RelativeDocumentMoniker": "src\\bmp.cpp",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\bmp.cpp",
-              "RelativeToolTip": "src\\bmp.cpp",
-              "ViewState": "AgIAACUAAAAAAAAAAAAEwDsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-15T20:28:56.505Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 4,
               "Title": "load_files.hpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\load_files.hpp",
               "RelativeDocumentMoniker": "src\\load_files.hpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\load_files.hpp",
               "RelativeToolTip": "src\\load_files.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-24T12:54:25.165Z"
+              "WhenOpened": "2025-10-24T12:54:25.165Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -222,40 +95,40 @@
               "RelativeDocumentMoniker": "src\\load_files.cpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\load_files.cpp",
               "RelativeToolTip": "src\\load_files.cpp",
-              "ViewState": "AgIAAGEFAAAAAAAAAADgv3sFAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-24T12:54:34.866Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "functions.hpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\functions.hpp",
               "RelativeDocumentMoniker": "src\\functions.hpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\functions.hpp",
               "RelativeToolTip": "src\\functions.hpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACcAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-24T13:05:02.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "functions.cpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\functions.cpp",
               "RelativeDocumentMoniker": "src\\functions.cpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\functions.cpp",
               "RelativeToolTip": "src\\functions.cpp",
-              "ViewState": "AgIAAN8DAAAAAAAAAADgvwcEAABRAAAAAAAAAA==",
+              "ViewState": "AgIAANsAAAAAAAAAAAAAAPUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-24T08:39:39.848Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "data_types.hpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\data_types.hpp",
               "RelativeDocumentMoniker": "src\\data_types.hpp",
@@ -268,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 5,
               "Title": "data_types.cpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\data_types.cpp",
               "RelativeDocumentMoniker": "src\\data_types.cpp",
@@ -276,17 +149,18 @@
               "RelativeToolTip": "src\\data_types.cpp",
               "ViewState": "AgIAAH8CAAAAAAAAAAAQwI4CAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-26T09:55:32.552Z"
+              "WhenOpened": "2025-10-26T09:55:32.552Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Documents\\GitHub\\Modern-Day-Sandbox\\__code\\Map_Editor\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAAHoBAAAAAAAAAAAAAJwBAAASAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEQAAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-31T08:59:42.81Z",
               "EditorCaption": ""
