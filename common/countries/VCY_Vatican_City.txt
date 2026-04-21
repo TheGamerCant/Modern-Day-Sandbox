@@ -4,4 +4,4 @@
 graphical_culture = western_european_gfx
 graphical_culture_2d = western_european_2d
 
-color = rgb { 219 191 0 }
+color = rgb { 175 152 0 }

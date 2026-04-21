@@ -5,6 +5,7 @@ Includes = {
 	"pdxmap.fxh"
 	"shadow.fxh"
 	"fow.fxh"
+	"TDA_functions.fxh"
 }
 
 PixelShader =
@@ -235,21 +236,37 @@ PixelShader =
 			//tex2D(GradientBorderChannel1, float2(x / MAP_SIZE_X, 1-((1-(y / MAP_SIZE_Y))* 0.5)))
 		
 			//Cosmetic colours -> rgb is also kinda weird, here's the found formula thus far:
+			
 			/*
-			0-12 = 0x00
-			13-28 = 0x01
-			29-38 = 0x02
-			39-46 = 0x03
-			47-52 = 0x04
-			53-58 = 0x05
-			59-63 = 0x06
+			
 			*/
 		
-			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.037464489f, 0.9995117)).rgb;
+			
+			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.03739346591, 0.9992675781)).rgb;
+			//float3 checkColour = tex2D(GradientBorderChannel1, float2(0.551846591, 0.811035156)).rgb;
+			
+			/*
+			0-6 = 0x00
+			7-17 = 0x01
+			18-25 = 0x02
+			26-31 = 0x03
+			32-35 = 0x04
+			36-40 = 0x05
+			41-44 = 0x06
+			45-47 = 0x07
+			48-51 = 0x08
+			52-54 = 0x09
+			
+			253 = 0xfb
+			254 = 0xfd
+			255 = 0xff
+			*/
+			
+			//Currently just use r channel
 			uint r = round(checkColour.r * 255.0f);
-			uint g = round(checkColour.g * 255.0f);
-			uint b = round(checkColour.b * 255.0f);
-			uint checkColourInt = r << 16 | g << 8 | b;
+			//uint g = round(checkColour.g * 255.0f);
+			//uint b = round(checkColour.b * 255.0f);
+			//uint checkColourInt = r << 16 | g << 8 | b;
 		
 			float2 vOffsets = float2( -0.5f / MAP_SIZE_X, -0.5f / MAP_SIZE_Y );
 			
@@ -442,7 +459,7 @@ PixelShader =
 			return float4( vOut, saturate(CityLightsMask * vNightFactor * CITY_LIGHTS_BLOOM_FACTOR) );
 			//return TerrainColor;
 			//return tex2D(GradientBorderChannel1, float2(Input.uv.x, 1.0-(Input.uv.y * 0.5)));
-			//return float4(checkColour, 1.0f);
+			//return float4(checkColour * 25, 1.0f);
 		#endif
 		}		
 	]]
