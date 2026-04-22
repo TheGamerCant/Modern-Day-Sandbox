@@ -242,8 +242,8 @@ PixelShader =
 			*/
 		
 			
-			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.03739346591, 0.9992675781)).rgb;
-			//float3 checkColour = tex2D(GradientBorderChannel1, float2(0.551846591, 0.811035156)).rgb;
+			//float3 checkColour = tex2D(GradientBorderChannel1, float2(0.03739346591, 0.9992675781)).rgb;
+			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.551846591, 0.811035156)).rgb;
 			
 			/*
 			0-6 = 0x00
@@ -263,7 +263,7 @@ PixelShader =
 			*/
 			
 			//Currently just use r channel
-			uint r = round(checkColour.r * 255.0f);
+			uint r = round(checkColour.r * 255.0f + 0.5);
 			//uint g = round(checkColour.g * 255.0f);
 			//uint b = round(checkColour.b * 255.0f);
 			//uint checkColourInt = r << 16 | g << 8 | b;
@@ -459,7 +459,8 @@ PixelShader =
 			return float4( vOut, saturate(CityLightsMask * vNightFactor * CITY_LIGHTS_BLOOM_FACTOR) );
 			//return TerrainColor;
 			//return tex2D(GradientBorderChannel1, float2(Input.uv.x, 1.0-(Input.uv.y * 0.5)));
-			//return float4(checkColour * 25, 1.0f);
+			//return float4(checkColour, 1.0f);
+			//return float4(srgb_to_linear(Input.uv.x), 0, 0, 1.0);
 		#endif
 		}		
 	]]
