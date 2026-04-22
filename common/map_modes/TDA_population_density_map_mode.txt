@@ -5,9 +5,9 @@ scripted_map_modes = {
 			color = {
 				if = {
 					limit = { FROM = { state = 910 } }
-					set_temp_variable = { red = 1.0 }
-					set_temp_variable = { green = 1.0 }
-					set_temp_variable = { blue = 1.0 }
+					set_temp_variable = { red = 0.05 }
+					set_temp_variable = { green = 0.0 }
+					set_temp_variable = { blue = 0.0 }
 				}
 				else = {
 					set_temp_variable = { red = FROM.pop_dens_r }

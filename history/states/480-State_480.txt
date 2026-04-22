@@ -2,12 +2,22 @@ state={
 	id=480
 	name="STATE_480"
 	history={
-		owner = ZZZ
+		owner = MEX
+		add_core_of = MEX
+		
+		victory_points = { 15324 9 }
+		victory_points = { 15322 10 }
+		victory_points = { 15323 2 }
+		victory_points = { 10746 4 }
+		victory_points = { 12811 3 }
+		victory_points = { 15320 3 }
+		
+		set_variable = { sq_km = 151563 }
 	}
 	provinces={
-		2060 2104 7973 10738 10746 10769 10800 12811 12835 
+		2104 7973 10746 10800 12811 15319 15320 15321 15322 15323 15324 15325 15326 
 	}
-	manpower= 100000
+	manpower= 2748391
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=large_town

@@ -7959,7 +7959,7 @@ TDA_update_state_478_names = {
 TDA_update_state_479_names = {
 }
 
-#Coahuila
+#Coahuila de Zaragoza
 TDA_update_state_480_names = {
 }
 
@@ -17644,6 +17644,27 @@ TDA_update_state_908_names = {
 TDA_update_state_909_names = {
 }
 
+#Debugistan
+TDA_update_state_910_names = {
+}
+
+#Nuevo León
+TDA_update_state_911_names = {
+	#Aeropuerto Internacional de Monterrey
+	if = {
+		limit = { any_country = { controls_province = 15330 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 15330 name = VICTORY_POINTS_15330_0 }
+	}
+	#Monterrey International Airport
+	else = {
+		reset_province_name = 15330
+	}
+}
+
+#San Luis Potosí
+TDA_update_state_912_names = {
+}
+
 
 
 TDA_change_all_city_names = {
@@ -18556,6 +18577,9 @@ TDA_change_all_city_names = {
 	TDA_update_state_907_names = yes
 	TDA_update_state_908_names = yes
 	TDA_update_state_909_names = yes
+	TDA_update_state_910_names = yes
+	TDA_update_state_911_names = yes
+	TDA_update_state_912_names = yes
 }
 
 TDA_toggle_change_city_names = {

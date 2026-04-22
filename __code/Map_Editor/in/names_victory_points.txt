@@ -16163,3 +16163,75 @@
 12753 = {
 	default = "Tapachula de Córdova y Ordóñez"
 }
+15317 = {
+	default = "Oaxaca"
+}
+15315 = {
+	default = "San Juan Bautista Tuxtepec"
+}
+15315 = {
+	default = "San Juan Bautista Tuxtepec"
+}
+10773 = {
+	default = "Huajuapan de León"
+}
+8236 = {
+	default = "Juchitán de Zaragoza"
+}
+15324 = {
+	default = "Torreón"
+}
+15322 = {
+	default = "Saltillo"
+}
+15323 = {
+	default = "Ramos Arizpe"
+}
+10746 = {
+	default = "Monclova"
+}
+12811 = {
+	default = "Ciudad Acuña"
+}
+15320 = {
+	default = "Piedras Negras"
+}
+15327 = {
+	default = "Monterrey"
+}
+15330 = {
+	default = "Monterrey International Airport"
+	entry = {
+        name = "Aeropuerto Internacional de Monterrey"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15331 = {
+	default = "Guadalupe"
+}
+12835 = {
+	default = "Ciudad Sabinas Hidalgo"
+}
+12721 = {
+	default = "Linares"
+}
+15333 = {
+	default = "Nuevo Laredo"
+}
+15334 = {
+	default = "Reynosa"
+}
+15335 = {
+	default = "Matamoros"
+}
+2083 = {
+	default = "Ciudad Victoria"
+}
+15336 = {
+	default = "Tampico"
+}
+5015 = {
+	default = "San Fernando"
+}

@@ -1,0 +1,14 @@
+state={
+	id=912
+	name="STATE_912"
+	history = {
+		owner = ZZZ
+	}
+	provinces={
+		1952 4956 
+	}
+	manpower=1000
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

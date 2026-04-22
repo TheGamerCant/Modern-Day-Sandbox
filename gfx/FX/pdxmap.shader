@@ -242,8 +242,8 @@ PixelShader =
 			*/
 		
 			
-			//float3 checkColour = tex2D(GradientBorderChannel1, float2(0.03739346591, 0.9992675781)).rgb;
-			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.551846591, 0.811035156)).rgb;
+			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.03739346591, 0.9992675781)).rgb;
+			//float3 checkColour = tex2D(GradientBorderChannel1, float2(0.551846591, 0.811035156)).rgb;
 			
 			/*
 			0-6 = 0x00
@@ -260,6 +260,14 @@ PixelShader =
 			253 = 0xfb
 			254 = 0xfd
 			255 = 0xff
+			*/
+			
+			/*
+			Current mappings:
+			0x00 = Impassable lines on
+			0x01 = Impassable lines off
+			0x02 = Culture map mode
+			
 			*/
 			
 			//Currently just use r channel
@@ -360,8 +368,14 @@ PixelShader =
 							
 			// Gradient Borders
 			float vBloomAlpha = 0.0f;
-			gradient_border_apply( diffuse.rgb, normal, Input.uv2, GradientBorderChannel1, GradientBorderChannel2, 1.0f, vGBCamDistOverride_GBOutlineCutoff.zw, vGBCamDistOverride_GBOutlineCutoff.xy, vBloomAlpha );
-					
+			
+			if (r ==0x02) {
+				gradient_border_apply_culture_map( diffuse.rgb, normal, Input.uv2, GradientBorderChannel1, GradientBorderChannel2, 1.0f, vGBCamDistOverride_GBOutlineCutoff.zw, vGBCamDistOverride_GBOutlineCutoff.xy, vBloomAlpha);
+			}
+			else {
+				gradient_border_apply( diffuse.rgb, normal, Input.uv2, GradientBorderChannel1, GradientBorderChannel2, 1.0f, vGBCamDistOverride_GBOutlineCutoff.zw, vGBCamDistOverride_GBOutlineCutoff.xy, vBloomAlpha);
+			}
+			
 			// Secondary color mask
 			secondary_color_mask( diffuse.rgb, normal, Input.uv2, ProvinceSecondaryColorMap, vBloomAlpha );
 
@@ -457,10 +471,12 @@ PixelShader =
 			return float4( vOut, vNightFactor * CITY_LIGHTS_BLOOM_FACTOR );
 		#else		
 			return float4( vOut, saturate(CityLightsMask * vNightFactor * CITY_LIGHTS_BLOOM_FACTOR) );
-			//return TerrainColor;
-			//return tex2D(GradientBorderChannel1, float2(Input.uv.x, 1.0-(Input.uv.y * 0.5)));
-			//return float4(checkColour, 1.0f);
-			//return float4(srgb_to_linear(Input.uv.x), 0, 0, 1.0);
+			
+			//Culture top layer
+			//return tex2D(GradientBorderChannel1, float2(Input.uv.x, 1.0 - (Input.uv.y * 0.5)));
+			
+			//Culture second layer
+			//return tex2D(GradientBorderChannel1, float2(Input.uv.x, 0.5 - (Input.uv.y * 0.5)));
 		#endif
 		}		
 	]]

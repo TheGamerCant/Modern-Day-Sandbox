@@ -10,7 +10,6 @@ scripted_map_modes = {
 					set_temp_variable = { blue = FROM.culture_b }
 
 					set_temp_variable = { alpha = 1.0 }
-					set_temp_variable = { thickness = 0.0 } 
 					
 					if = {
 						limit = { 
@@ -20,22 +19,18 @@ scripted_map_modes = {
 						set_temp_variable = { red = FROM.culture_r_2 }
 						set_temp_variable = { green = FROM.culture_g_2 }
 						set_temp_variable = { blue = FROM.culture_b_2 }
-						
-						set_temp_variable = { thickness = 2.0 } 
 					}
 				}
 			}
-			
-			thickness = yes
 		}
 		bottom = {
 			type = state
 			color = {
 				if = {
 					limit = { FROM = { state = 910 } }
-					set_temp_variable = { red = 1.0 }
-					set_temp_variable = { green = 1.0 }
-					set_temp_variable = { blue = 1.0 }
+					set_temp_variable = { red = 0.07451 }
+					set_temp_variable = { green = 0.0 }
+					set_temp_variable = { blue = 0.0 }
 				}
 				else = {
 					set_temp_variable = { red = FROM.culture_r }

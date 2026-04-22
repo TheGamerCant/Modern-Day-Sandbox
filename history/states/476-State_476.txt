@@ -2,12 +2,20 @@ state={
 	id=476
 	name="STATE_476"
 	history={
-		owner = ZZZ
+		owner = MEX
+		add_core_of = MEX
+		
+		victory_points = { 15317 5 }
+		victory_points = { 15315 2 }
+		victory_points = { 10773 2 }
+		victory_points = { 8236 2 }
+		
+		set_variable = { sq_km = 93793 }
 	}
 	provinces={
-		8236 10773 12712 
+		8236 10773 12712 15315 15316 15317 15318 
 	}
-	manpower= 100000
+	manpower= 3801962
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=rural

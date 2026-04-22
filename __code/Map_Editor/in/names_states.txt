@@ -2588,7 +2588,7 @@
 	default = "Tamaulipas"
 }
 480 = {
-	default = "Coahuila"
+	default = "Coahuila de Zaragoza"
 }
 481 = {
 	default = "Durango"
@@ -4799,4 +4799,10 @@
 }
 910 = {
 	default = "Debugistan"
+}
+911 = {
+	default = "Nuevo León"
+}
+912 = {
+	default = "San Luis Potosí"
 }
