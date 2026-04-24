@@ -4806,3 +4806,9 @@
 912 = {
 	default = "San Luis Potosí"
 }
+913 = {
+	default = "Sinaloa"
+}
+914 = {
+	default = "Zacatecas-Aguascalientes"
+}

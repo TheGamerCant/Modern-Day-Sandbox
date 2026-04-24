@@ -235,49 +235,42 @@ PixelShader =
 			//Full formula to find colour of pixel (x, y) on map, assuming (0,0) is top left
 			//tex2D(GradientBorderChannel1, float2(x / MAP_SIZE_X, 1-((1-(y / MAP_SIZE_Y))* 0.5)))
 		
-			//Cosmetic colours -> rgb is also kinda weird, here's the found formula thus far:
-			
-			/*
-			
-			*/
-		
 			
 			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.03739346591, 0.9992675781)).rgb;
-			//float3 checkColour = tex2D(GradientBorderChannel1, float2(0.551846591, 0.811035156)).rgb;
+			
+			uint r = round(linear_to_gamma(checkColour.r) * 255.0f);
+			uint g = round(linear_to_gamma(checkColour.r) * 255.0f);
+			uint b = round(linear_to_gamma(checkColour.r) * 255.0f);
+			uint checkColourInt = r << 16 | g << 8 | b;
 			
 			/*
-			0-6 = 0x00
-			7-17 = 0x01
-			18-25 = 0x02
-			26-31 = 0x03
-			32-35 = 0x04
-			36-40 = 0x05
-			41-44 = 0x06
-			45-47 = 0x07
-			48-51 = 0x08
-			52-54 = 0x09
+			Current bit mappings:
 			
-			253 = 0xfb
-			254 = 0xfd
-			255 = 0xff
-			*/
-			
-			/*
-			Current mappings:
-			0x00 = Impassable lines on
-			0x01 = Impassable lines off
-			0x02 = Culture map mode
+			Bit 0 -> Impassable lines
+			Bit 1 -> Culture map
 			
 			*/
 			
-			//Currently just use r channel
-			uint r = round(checkColour.r * 255.0f + 0.5);
-			//uint g = round(checkColour.g * 255.0f);
-			//uint b = round(checkColour.b * 255.0f);
-			//uint checkColourInt = r << 16 | g << 8 | b;
-		
+			bool ImpassableLines = (checkColourInt >> 0) & 1;
+			bool CultureMap = (checkColourInt >> 1) & 1;
+			
+			float4 TerrainColor = tex2D( TerrainColorTint, Input.uv2 );
+			
+			bool terrainIsImpassable = false;
+			float CityLightsAlpha = 0.0f;
+			float ImpassableAlpha = 0.0f;
+			
+			float alphaInValue = round((TerrainColor.a) * 255.0);
+			
+			if (alphaInValue <= 235.0) {
+				CityLightsAlpha = 1.0 - (alphaInValue * (255.0 / 235.0)) / 255.0;
+			}
+			else if (alphaInValue >= 240.0) {
+				ImpassableAlpha = ((alphaInValue - 240.0) * (255.0 / 15.0)) / 255.0;
+				terrainIsImpassable = true;
+			}
+			
 			float2 vOffsets = float2( -0.5f / MAP_SIZE_X, -0.5f / MAP_SIZE_Y );
-			
 			float vAllSame;
 			float4 IndexU;
 			float4 IndexV;
@@ -351,16 +344,9 @@ PixelShader =
 			normal = RotateVectorByVector( normal, terrain_normal );
 			normal = normalize(normal);
 		#endif
-			
-			float4 TerrainColor = tex2D( TerrainColorTint, Input.uv2 );
-
-		#ifndef LOW_END_GFX
-			float CityLightsMask = TerrainColor.a;
-		#endif
 	
 			float vSnowAlpha = 1-vSpec;
-			bool terrainIsImpassable = (TerrainColor.r >= 0.45f && TerrainColor.g <= 0.05f && TerrainColor.b <= 0.05f);
-			if (!terrainIsImpassable) diffuse.rgb = GetOverlay( diffuse.rgb, TerrainColor.rgb, COLORMAP_OVERLAY_STRENGTH );
+			diffuse.rgb = GetOverlay( diffuse.rgb, TerrainColor.rgb, COLORMAP_OVERLAY_STRENGTH );
 
 			float4 vMudSnow = GetMudSnowColor( Input.prepos, SnowMudData );	
 			diffuse.rgb = ApplySnow( diffuse.rgb, Input.prepos, normal, vMudSnow, SnowTexture, CityLightsAndSnowNoise, vGlossiness, vSnowAlpha );
@@ -369,7 +355,7 @@ PixelShader =
 			// Gradient Borders
 			float vBloomAlpha = 0.0f;
 			
-			if (r ==0x02) {
+			if (CultureMap) {
 				gradient_border_apply_culture_map( diffuse.rgb, normal, Input.uv2, GradientBorderChannel1, GradientBorderChannel2, 1.0f, vGBCamDistOverride_GBOutlineCutoff.zw, vGBCamDistOverride_GBOutlineCutoff.xy, vBloomAlpha);
 			}
 			else {
@@ -432,28 +418,33 @@ PixelShader =
 			float3 vGlobeNormal = CalcGlobeNormal( Input.prepos.xz );
 			float vNightFactor = DayNightFactor( vGlobeNormal );
 			
-		#ifndef LOW_END_GFX
-			if (r == 0x00 && terrainIsImpassable) {
-				//Pixel co-ords
-				float r_x = Input.uv2.x * MAP_SIZE_X;
-				float r_y = Input.uv2.y * MAP_SIZE_Y;
-				
-				//Constants
-				float pixels_until_new_diagonal = 10.0f;
-				float line_width = 4.0f;
-				float line_speed = 0.7f;
-
-				float pattern = fmod(
-					r_x + r_y - fmod(vGlobalTime * line_speed, pixels_until_new_diagonal), 
-					pixels_until_new_diagonal
-				);
+			if (ImpassableAlpha < 0.44) { ImpassableAlpha = 0.0; }
+		
+			if (terrainIsImpassable) {
+				if (ImpassableLines) {
+					//Pixel co-ords
+					float r_x = Input.uv2.x * MAP_SIZE_X;
+					float r_y = Input.uv2.y * MAP_SIZE_Y;
 					
-				vOut.r += step(pattern, line_width) * 0.667f;
+					//Constants
+					float pixels_until_new_diagonal = 10.0f;
+					float line_width = 4.0f;
+					float line_speed = 0.7f;
+
+					float pattern = fmod(
+						r_x + r_y - fmod(vGlobalTime * line_speed, pixels_until_new_diagonal), 
+						pixels_until_new_diagonal
+					);
+						
+					vOut.r += step(pattern, line_width) * 0.667f * ImpassableAlpha;
+				}
 			}
-			else {
-				float3 CityLights = tex2D( CityLightsAndSnowNoise, Input.prepos.xz * CITY_LIGHTS_TILING ).rgb;
-				vOut += CityLights * CITY_LIGHTS_INTENSITY * CityLightsMask * vNightFactor;
-			}
+	
+		#ifndef LOW_END_GFX	
+		
+			float3 CityLights = tex2D( CityLightsAndSnowNoise, Input.prepos.xz * CITY_LIGHTS_TILING ).rgb;
+			vOut += CityLights * CITY_LIGHTS_INTENSITY * CityLightsAlpha * vNightFactor;
+			
 		#endif
 
 			float3 vFOW = ApplyFOW( vOut, ShadowMap, Input.vScreenCoord );
@@ -470,13 +461,10 @@ PixelShader =
 		#ifdef LOW_END_GFX
 			return float4( vOut, vNightFactor * CITY_LIGHTS_BLOOM_FACTOR );
 		#else		
-			return float4( vOut, saturate(CityLightsMask * vNightFactor * CITY_LIGHTS_BLOOM_FACTOR) );
+			return float4( vOut, saturate(CityLightsAlpha * vNightFactor * CITY_LIGHTS_BLOOM_FACTOR) );
+		
+			//return float4(ImpassableAlpha, ImpassableAlpha, ImpassableAlpha, 1.0f );
 			
-			//Culture top layer
-			//return tex2D(GradientBorderChannel1, float2(Input.uv.x, 1.0 - (Input.uv.y * 0.5)));
-			
-			//Culture second layer
-			//return tex2D(GradientBorderChannel1, float2(Input.uv.x, 0.5 - (Input.uv.y * 0.5)));
 		#endif
 		}		
 	]]

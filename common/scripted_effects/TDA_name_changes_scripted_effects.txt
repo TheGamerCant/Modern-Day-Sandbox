@@ -17665,6 +17665,14 @@ TDA_update_state_911_names = {
 TDA_update_state_912_names = {
 }
 
+#Sinaloa
+TDA_update_state_913_names = {
+}
+
+#Zacatecas-Aguascalientes
+TDA_update_state_914_names = {
+}
+
 
 
 TDA_change_all_city_names = {
@@ -18580,6 +18588,8 @@ TDA_change_all_city_names = {
 	TDA_update_state_910_names = yes
 	TDA_update_state_911_names = yes
 	TDA_update_state_912_names = yes
+	TDA_update_state_913_names = yes
+	TDA_update_state_914_names = yes
 }
 
 TDA_toggle_change_city_names = {

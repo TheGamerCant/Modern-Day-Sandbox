@@ -1,5 +1,8 @@
 ﻿capital = 910
 
+#Impassable lines on
+set_cosmetic_tag = ZZZ_0b_00000000_00000000_00000001
+
 set_popularities = {
 	IDEOLOGY_democratic = 100
 }

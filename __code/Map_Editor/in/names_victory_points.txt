@@ -16235,3 +16235,15 @@
 5015 = {
 	default = "San Fernando"
 }
+15339 = {
+	default = "San Luis Potosí"
+}
+15337 = {
+	default = "Ciudad Valles"
+}
+15342 = {
+	default = "Rioverde"
+}
+1952 = {
+	default = "Matehuala"
+}
