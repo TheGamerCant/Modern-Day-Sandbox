@@ -16247,3 +16247,42 @@
 1952 = {
 	default = "Matehuala"
 }
+15344 = {
+	default = "Culiacán"
+}
+15346 = {
+	default = "Mazatlán"
+}
+15347 = {
+	default = "Los Mochis"
+}
+1945 = {
+	default = "Guasave"
+}
+15348 = {
+	default = "Durango"
+}
+10869 = {
+	default = "Gómez Palacio"
+}
+4946 = {
+	default = "Santiago Papasquiaro"
+}
+7921 = {
+	default = "El Salto"
+}
+10907 = {
+	default = "Aguascalientes"
+}
+12733 = {
+	default = "Jesús María"
+}
+12804 = {
+	default = "Guadalupe"
+}
+8653 = {
+	default = "Fresnillo"
+}
+10738 = {
+	default = "Río Grande"
+}

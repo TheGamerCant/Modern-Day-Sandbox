@@ -35,4 +35,13 @@ debug_decisions = {
 			TDA_toggle_pop_dens_state_country_view = yes
 		}
 	}
+	debug_toggle_impassable_lines = {
+		allowed = {
+			always = yes
+		}
+
+		complete_effect = {
+			TDA_toggle_impassable_lines = yes
+		}
+	}
 }

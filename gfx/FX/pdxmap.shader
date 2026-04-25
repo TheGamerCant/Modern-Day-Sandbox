@@ -260,13 +260,13 @@ PixelShader =
 			float CityLightsAlpha = 0.0f;
 			float ImpassableAlpha = 0.0f;
 			
-			float alphaInValue = round((TerrainColor.a) * 255.0);
+			float alphaInValue = (TerrainColor.a);
 			
-			if (alphaInValue <= 235.0) {
-				CityLightsAlpha = 1.0 - (alphaInValue * (255.0 / 235.0)) / 255.0;
+			if (alphaInValue < 0.922353) {
+				CityLightsAlpha = 1.0 - (alphaInValue * 1.0851064);
 			}
-			else if (alphaInValue >= 240.0) {
-				ImpassableAlpha = ((alphaInValue - 240.0) * (255.0 / 15.0)) / 255.0;
+			else if (alphaInValue > 0.94039) {
+				ImpassableAlpha = ((alphaInValue - 0.94117647) * 17.0);
 				terrainIsImpassable = true;
 			}
 			
@@ -436,7 +436,7 @@ PixelShader =
 						pixels_until_new_diagonal
 					);
 						
-					vOut.r += step(pattern, line_width) * 0.667f * ImpassableAlpha;
+					vOut.r += step(pattern, line_width) * ImpassableAlpha;
 				}
 			}
 	

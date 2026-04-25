@@ -14,7 +14,7 @@ state={
 		set_variable = { sq_km = 334958.02 }
 	}
 	provinces={
-		2064 10869 10907 12733 12816 
+		12816 
 	}
 	manpower=265
 	buildings_max_level_factor=1.000
