@@ -1,0 +1,20 @@
+state={
+	id=916
+	name="STATE_916"
+	history = {
+		owner = MEX
+		add_core_of = MEX
+		
+		victory_points = { 4831 6 }
+		victory_points = { 12873 1 }
+		
+		set_variable = { sq_km = 27815 }
+	}
+	provinces={
+		1741 4831 7805 12873 
+	}
+	manpower=1084979
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

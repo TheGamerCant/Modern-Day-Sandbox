@@ -4915,7 +4915,7 @@
 12683 = {
 	default = "Magadan"
 }
-10641 = {
+4743 = {
 	default = "Yakutsk"
 }
 10557 = {
@@ -5979,9 +5979,6 @@
 }
 10536 = {
 	default = "Novy Urengoy"
-}
-4859 = {
-	default = "Norilsk"
 }
 4669 = {
 	default = "Labytnangi"
@@ -16285,4 +16282,64 @@
 }
 10738 = {
 	default = "Río Grande"
+}
+15362 = {
+	default = "Norilsk"
+}
+15355 = {
+	default = "Dudinka"
+}
+15361 = {
+	default = "Svetlogorsk"
+}
+4831 = {
+	default = "Tepic"
+}
+12873 = {
+	default = "Tuxpan"
+}
+4229 = {
+	default = "Guadalajara"
+}
+12746 = {
+	default = "Puerto Vallarta"
+}
+12746 = {
+	default = "Guadalajara"
+}
+5052 = {
+	default = "Lagos de Moreno"
+}
+2051 = {
+	default = "Colima"
+}
+2853 = {
+	default = "Manzanillo"
+}
+12634 = {
+	default = "Heroica Veracruz"
+}
+4878 = {
+	default = "Xalapa-Enríquez"
+}
+2021 = {
+	default = "Coatzacoalcos"
+}
+10732 = {
+	default = "Poza Rica de Hidalgo"
+}
+8079 = {
+	default = "Pánuco"
+}
+7869 = {
+	default = "Acapulco"
+}
+3606 = {
+	default = "Chilpancingo de los Bravo"
+}
+10832 = {
+	default = "Iguala de la Independencia"
+}
+5066 = {
+	default = "Zihuatanejo"
 }

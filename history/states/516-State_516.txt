@@ -5,21 +5,21 @@ state={
 		owner = SOV
 		add_core_of = SOV
 		
-		victory_points = { 4859 3 }
-		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }
 		
 		set_variable = { culture_index_array^0 = 197 }
 		set_variable = { culture_value_array^0 = 100.0 }
 		
-		set_variable = { sq_km = 1719515.38 }
+		set_variable = { sq_km = 1815357.17 }
 	}
 	provinces={
-		2923 2972 3336 4692 4733 4859 10607 10635 11261 11328 12643 13064 4812 11122 12687 13065 
+		1828 2923 2972 3336 4692 4733 4812 4859 10607 10631 10635 11122 11261 11328 12643 12687 13064 13065 14170 
 	}
-	manpower= 370000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=20000
+	buildings_max_level_factor=1
 	state_category=pastoral
+	local_supplies=0.5
+	impassable = yes
+	force_link_ownership_to = 915
 }

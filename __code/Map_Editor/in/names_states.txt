@@ -2579,6 +2579,7 @@
 	default = "Oaxaca"
 }
 477 = {
+	#default = "Veracruz de Ignacio de la Llave"
 	default = "Veracruz"
 }
 478 = {
@@ -2600,6 +2601,7 @@
 	default = "Sonora"
 }
 484 = {
+	#default = "Baja California-Baja California Sur"
 	default = "Baja California"
 }
 485 = {
@@ -2708,7 +2710,7 @@
 	default = "Southern Sahara"
 }
 516 = {
-	default = "Norilsk"
+	default = "Evenkiysky"
 }
 517 = {
 	default = "Victoria"
@@ -4810,5 +4812,24 @@
 	default = "Sinaloa"
 }
 914 = {
-	default = "Zacatecas-Aguascalientes"
+	#default = "Zacatecas-Aguascalientes"
+	default = "Zacatecas"
+}
+915 = {
+	default = "Norilsk"
+}
+916 = {
+	default = "Nayarit"
+}
+917 = {
+	default = "Michoacán de Ocampo"
+}
+918 = {
+	default = "Puebla"
+}
+919 = {
+	default = "Guanajuato"
+}
+920 = {
+	default = "Hidalgo"
 }

@@ -1,0 +1,27 @@
+state={
+	id=915
+	name="STATE_915"
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		
+		victory_points = { 15362 3 }
+		victory_points = { 15355 1 }
+		victory_points = { 15361 1 }
+		
+		resize_array = { array = culture_index_array size = 1 value = 0 }
+		resize_array = { array = culture_value_array size = 1 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 197 }
+		set_variable = { culture_value_array^0 = 100.0 }
+		
+		set_variable = { sq_km = 35142.62 }
+	}
+	provinces={
+		15351 15352 15353 15354 15355 15356 15357 15358 15359 15360 15361 15362 15363 15364 
+	}
+	manpower=35000
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

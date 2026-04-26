@@ -238,21 +238,20 @@ PixelShader =
 			
 			float3 checkColour = tex2D(GradientBorderChannel1, float2(0.03739346591, 0.9992675781)).rgb;
 			
-			uint r = round(linear_to_gamma(checkColour.r) * 255.0f);
-			uint g = round(linear_to_gamma(checkColour.r) * 255.0f);
-			uint b = round(linear_to_gamma(checkColour.r) * 255.0f);
-			uint checkColourInt = r << 16 | g << 8 | b;
+			//uint r = round(linear_to_gamma(checkColour.r) * 255.0f);
+			//uint g = round(linear_to_gamma(checkColour.g) * 255.0f);
+			uint b = round(linear_to_gamma(checkColour.b) * 255.0f);
+			//uint checkColourInt = r << 16 | g << 8 | b;
 			
 			/*
 			Current bit mappings:
 			
-			Bit 0 -> Impassable lines
-			Bit 1 -> Culture map
+			Red = 0x01 -> Impassable lines
 			
 			*/
 			
-			bool ImpassableLines = (checkColourInt >> 0) & 1;
-			bool CultureMap = (checkColourInt >> 1) & 1;
+			bool ImpassableLines = (b == 0x01);
+			bool CultureMap = (b == 0x02);
 			
 			float4 TerrainColor = tex2D( TerrainColorTint, Input.uv2 );
 			

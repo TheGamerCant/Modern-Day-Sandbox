@@ -1,0 +1,16 @@
+state={
+	id=917
+	name="STATE_917"
+	history = {
+		owner = ZZZ
+		
+		set_variable = { sq_km = 58643 }
+	}
+	provinces={
+		4887 8032 
+	}
+	manpower=4351037
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

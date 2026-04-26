@@ -28,10 +28,10 @@ scripted_map_modes = {
 			color = {
 				if = {
 					limit = { FROM = { state = 910 } }
-					#3/255 -> Culture map on, impassable lines off
-					set_temp_variable = { red = 0.01176 }
+					set_temp_variable = { red = 0.0 }
 					set_temp_variable = { green = 0.0 }
-					set_temp_variable = { blue = 0.0 }
+					#2/255 -> Culture map on
+					set_temp_variable = { blue = 0.008 }
 				}
 				else = {
 					set_temp_variable = { red = FROM.culture_r }
