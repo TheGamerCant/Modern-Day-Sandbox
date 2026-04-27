@@ -2,12 +2,17 @@ state={
 	id=920
 	name="STATE_920"
 	history = {
-		owner = ZZZ
+		owner = MEX
+		add_core_of = MEX
+		
+		victory_points = { 10715 18 }
+		victory_points = { 7913 4 }
+		victory_points = { 13162 2 }
 		
 		set_variable = { sq_km = 32530 }
 	}
 	provinces={
-		2011 7913 
+		1657 2011 6740 7913 10715 13162 
 	}
 	manpower=4492955
 	buildings_max_level_factor=1

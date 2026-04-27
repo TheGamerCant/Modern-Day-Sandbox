@@ -1752,6 +1752,12 @@
 }
 277 = {
 	default = "Mexico City"
+	entry = {
+        name = "Ciudad de México"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
 }
 278 = {
 	default = "Buenos Aires"

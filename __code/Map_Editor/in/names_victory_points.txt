@@ -16317,7 +16317,7 @@
 	default = "Manzanillo"
 }
 12634 = {
-	default = "Heroica Veracruz"
+	default = "Veracruz"
 }
 4878 = {
 	default = "Xalapa-Enríquez"
@@ -16342,4 +16342,79 @@
 }
 5066 = {
 	default = "Zihuatanejo"
+}
+7830 = {
+	default = "León"
+}
+7364 = {
+	default = "Celaya"
+}
+13186 = {
+	default = "Irapuato"
+}
+13190 = {
+	default = "Valle de Santiago"
+}
+2947 = {
+	default = "San Miguel de Allende"
+}
+13166 = {
+	default = "Puebla"
+}
+8089 = {
+	default = "Tehuacán"
+}
+10534 = {
+	default = "Teziutlán"
+}
+10715 = {
+	default = "Querétaro"
+}
+7913 = {
+	default = "Pachuca de Soto"
+}
+13162 = {
+	default = "Huejutla de Reyes"
+}
+15365 = {
+	default = "Mexico City"
+	entry = {
+        name = "Ciudad de México"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15366 = {
+	default = "Mexico City International Airport"
+	entry = {
+        name = "Aeropuerto Internacional de la Ciudad de México"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15371 = {
+	default = "Toluca"
+}
+15368 = {
+	default = "Cuernavaca"
+}
+13196 = {
+	default = "Tejupilco de Hidalgo"
+}
+13165 = {
+	default = "Morelia"
+}
+4887 = {
+	default = "Zamora de Hidalgo"
+}
+4787 = {
+	default = "Uruapan del Progreso"
+}
+8032 = {
+	default = "Lázaro Cárdenas"
+}
+4720 = {
+	default = "Zitácuaro"
 }
