@@ -101,7 +101,8 @@ def MergeProvinces(
         prov_to_remove: int,
         prov_to_merge_into: int,
         changed_states: set[int],
-        changed_strategic_regions: set[int]
+        changed_strategic_regions: set[int],
+        old_to_new_ids: dict[int, int]
     ):
     #Step 1 - Remove prov_to_remove from it's state and strategic region
     prov_to_remove_state: int = provinces_list[prov_to_remove].state_id
@@ -125,6 +126,8 @@ def MergeProvinces(
     strategic_regions_list[last_prov_strategic_region].provinces.remove(last_prov_id)
     strategic_regions_list[last_prov_strategic_region].provinces.add(prov_to_remove)
     changed_strategic_regions.add(last_prov_strategic_region)
+
+    old_to_new_ids[last_prov_id] = prov_to_remove
 
     #Step 3 - Merge the bitmap colours
     old_color = np.array([provinces_list[prov_to_remove].red, provinces_list[prov_to_remove].green, provinces_list[prov_to_remove].blue])
@@ -163,7 +166,8 @@ def UpdateStateAndStrategicRegionFiles(
         states_list: list[State],
         strategic_regions_list: list[StrategicRegion],
         changed_states: set[int],
-        changed_strategic_regions: set[int]
+        changed_strategic_regions: set[int],
+        old_to_new_ids: dict[int, int]
     ):
 
     changed_states = {state for state in changed_states if state < len(states_list)}
@@ -180,6 +184,12 @@ def UpdateStateAndStrategicRegionFiles(
             f"provinces = {{\n\t\t{provinces_str}\n\t}}",
             text,
             flags=re.IGNORECASE | re.DOTALL
+        )
+
+        text: str = re.sub(
+            r"victory_points\s*=\s*{\s*(\d+)\s+(\d+)\s*}",
+            lambda m: f"victory_points = {{ {old_to_new_ids.get(int(m.group(1)), m.group(1))} {m.group(2)} }}",
+            text
         )
 
         with open(str(states_list[state_id].file_path), "w") as f:
@@ -207,7 +217,7 @@ def main():
     time_start: float = perf_counter()
 
     mod_directory: Path = Path.cwd()
-    #mod_directory = mod_directory.parents[1]
+    mod_directory = mod_directory.parents[1]
 
     provinces_list, states_list, strategic_regions_list = LoadMap(
         mod_dir=mod_directory
@@ -218,6 +228,7 @@ def main():
 
     changed_states: set[int] = set()
     changed_strategic_regions: set[int] = set()
+    old_to_new_ids: dict[int, int] = {}
 
     load_time: float = perf_counter()- time_start
 
@@ -238,11 +249,12 @@ def main():
                 int(user_input_list[1]),
                 int(user_input_list[2]),
                 changed_states,
-                changed_strategic_regions
+                changed_strategic_regions,
+                old_to_new_ids
             )
 
     WriteProvinceDefinitions(mod_directory, provinces_list)
-    UpdateStateAndStrategicRegionFiles(states_list, strategic_regions_list, changed_states, changed_strategic_regions)
+    UpdateStateAndStrategicRegionFiles(states_list, strategic_regions_list, changed_states, changed_strategic_regions, old_to_new_ids)
     Image.fromarray(provinces_bitmap).save(str(mod_directory / "map/provinces.bmp"))
 
     print(f"Changed States:\n{changed_states}\n\nChanged Strategic Regions:\n{changed_strategic_regions}")
