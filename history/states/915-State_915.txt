@@ -5,9 +5,9 @@ state={
 		owner = SOV
 		add_core_of = SOV
 		
-		victory_points = { 15362 3 }
+		victory_points = { 12687 3 }
 		victory_points = { 15355 1 }
-		victory_points = { 15361 1 }
+		victory_points = { 4859 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }
@@ -17,8 +17,8 @@ state={
 		
 		set_variable = { sq_km = 35142.62 }
 	}
-	provinces={
-		15351 15352 15353 15354 15355 15356 15357 15358 15359 15360 15361 15362 15363 15364 
+	provinces = {
+		2923 4812 4859 10607 11328 12687 13064 15351 15352 15353 15354 15355 15356 15357
 	}
 	manpower=35000
 	buildings_max_level_factor=1

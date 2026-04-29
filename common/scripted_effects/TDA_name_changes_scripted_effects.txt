@@ -5253,23 +5253,23 @@ TDA_update_state_277_names = {
 			reset_state_name = yes
 		}
 	}
-	#Ciudad de México
-	if = {
-		limit = { any_country = { controls_province = 15365 TAG_using_spanish_names = yes } }
-		set_province_name = { id = 15365 name = VICTORY_POINTS_15365_0 }
-	}
-	#Mexico City
-	else = {
-		reset_province_name = 15365
-	}
 	#Aeropuerto Internacional de la Ciudad de México
 	if = {
-		limit = { any_country = { controls_province = 15366 TAG_using_spanish_names = yes } }
-		set_province_name = { id = 15366 name = VICTORY_POINTS_15366_0 }
+		limit = { any_country = { controls_province = 1828 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 1828 name = VICTORY_POINTS_1828_0 }
 	}
 	#Mexico City International Airport
 	else = {
-		reset_province_name = 15366
+		reset_province_name = 1828
+	}
+	#Ciudad de México
+	if = {
+		limit = { any_country = { controls_province = 10635 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 10635 name = VICTORY_POINTS_10635_0 }
+	}
+	#Mexico City
+	else = {
+		reset_province_name = 10635
 	}
 }
 

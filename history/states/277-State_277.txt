@@ -5,18 +5,18 @@ state={
 		owner = MEX
 		add_core_of = MEX
 		
-		victory_points = { 15365 100 }
-		victory_points = { 15366 3 }
-		victory_points = { 15371 10 }
-		victory_points = { 15368 8 }
+		victory_points = { 10635 100 }
+		victory_points = { 1828 3 }
+		victory_points = { 13188 10 }
+		victory_points = { 7813 8 }
 		victory_points = { 13196 1 }
 		
 		set_variable = { sq_km = 28735 }
 		
 		buildings = { air_base = 8 }
 	}
-	provinces={
-		1965 12755 15365 15366 15367 15368 15369 15370 15371 13196 4666
+	provinces = {
+		1828 1965 3691 4666 7813 8962 10635 12755 13188 13196 14170
 	}
 	manpower= 25804169
 	buildings_max_level_factor=1.000

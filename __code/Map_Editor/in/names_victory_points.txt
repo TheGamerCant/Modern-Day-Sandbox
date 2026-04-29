@@ -16283,13 +16283,13 @@
 10738 = {
 	default = "Río Grande"
 }
-15362 = {
+12687 = {
 	default = "Norilsk"
 }
 15355 = {
 	default = "Dudinka"
 }
-15361 = {
+4859 = {
 	default = "Svetlogorsk"
 }
 4831 = {
@@ -16376,7 +16376,7 @@
 13162 = {
 	default = "Huejutla de Reyes"
 }
-15365 = {
+10635 = {
 	default = "Mexico City"
 	entry = {
         name = "Ciudad de México"
@@ -16385,7 +16385,7 @@
         }
     }
 }
-15366 = {
+1828 = {
 	default = "Mexico City International Airport"
 	entry = {
         name = "Aeropuerto Internacional de la Ciudad de México"
@@ -16394,10 +16394,10 @@
         }
     }
 }
-15371 = {
+13188 = {
 	default = "Toluca"
 }
-15368 = {
+7813 = {
 	default = "Cuernavaca"
 }
 13196 = {

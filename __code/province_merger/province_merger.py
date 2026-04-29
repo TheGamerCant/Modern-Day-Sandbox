@@ -257,7 +257,9 @@ def main():
     UpdateStateAndStrategicRegionFiles(states_list, strategic_regions_list, changed_states, changed_strategic_regions, old_to_new_ids)
     Image.fromarray(provinces_bitmap).save(str(mod_directory / "map/provinces.bmp"))
 
-    print(f"Changed States:\n{changed_states}\n\nChanged Strategic Regions:\n{changed_strategic_regions}")
+    print(f"Changed States:\n{changed_states}\n\nChanged Strategic Regions:\n{changed_strategic_regions}\nOld ID to new ID map:")
+    for key, value in old_to_new_ids.items():
+        print(f" - {key} - {value}")
 
 if __name__ == "__main__":
     main()
