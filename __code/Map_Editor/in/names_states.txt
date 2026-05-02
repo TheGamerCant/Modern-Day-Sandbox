@@ -2066,13 +2066,25 @@
 	default = "Mersin"
 }
 346 = {
-	default = "Konya"
+	default = "Ionian Islands"
+	entry = {
+        name = "Iónia Nisiá"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 347 = {
 	default = "Izmit"
 }
 348 = {
-	default = "Kayseri"
+	default = "Central Greece"
+	entry = {
+        name = "Stereá Elláda"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
 }
 349 = {
 	default = "Sivas"
@@ -4211,7 +4223,7 @@
 	default = "Istanbul"
 }
 798 = {
-	default = "Amasya"
+	default = "Hidalgo"
 }
 799 = {
 	default = "Hatay"
@@ -4877,26 +4889,4 @@
 }
 919 = {
 	default = "Guanajuato"
-}
-920 = {
-	default = "Hidalgo"
-}
-921 = {
-	default = "Central Greece"
-	
-	entry = {
-        name = "Stereá Elláda"
-        requirements = {
-            "TAG_using_greek_names = yes"
-        }
-    }
-}
-922 = {
-	default = "Ionian Islands"
-	entry = {
-        name = "Iónia Nisiá"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
 }

@@ -103,7 +103,7 @@ def MergeProvinces(
         prov_to_merge_into: int,
         changed_states: set[int],
         changed_strategic_regions: set[int],
-        old_to_new_ids: dict[int, int]
+        old_to_new_prov_ids: dict[int, int]
     ):
     #Step 1 - Remove prov_to_remove from it's state and strategic region
     prov_to_remove_state: int = provinces_list[prov_to_remove].state_id
@@ -128,7 +128,7 @@ def MergeProvinces(
     strategic_regions_list[last_prov_strategic_region].provinces.add(prov_to_remove)
     changed_strategic_regions.add(last_prov_strategic_region)
 
-    old_to_new_ids[last_prov_id] = prov_to_remove
+    old_to_new_prov_ids[last_prov_id] = prov_to_remove
 
     #Step 3 - Merge the bitmap colours
     old_color = np.array([provinces_list[prov_to_remove].red, provinces_list[prov_to_remove].green, provinces_list[prov_to_remove].blue])
@@ -165,7 +165,8 @@ def MergeStates(
         changed_states: set[int],
         changed_strategic_regions: set[int],
         deleted_states: set[int],
-        old_to_new_ids: dict[int, int]
+        old_to_new_state_ids: dict[int, int],
+        mod_dir: Path
     ):
     changed_states.add(state_to_remove)
     changed_states.add(state_to_merge_into)
@@ -179,34 +180,60 @@ def MergeStates(
             strategic_regions_list[state_to_remove_strategic_region].provinces.remove(prov_id)
             strategic_regions_list[state_to_merge_into_strategic_region].provinces.add(prov_id)
 
+            provinces_list[prov_id].strategic_region_id = state_to_merge_into_strategic_region
+
             changed_strategic_regions.add(state_to_remove_strategic_region)
             changed_strategic_regions.add(state_to_merge_into_strategic_region)
 
-    #Step 2 - Merge the two province sets
+    #Step 2 - Update the province data
     last_state_id: int = len(states_list) - 1
+    old_to_new_state_ids[last_state_id] = state_to_remove
+
+    for prov_id in states_list[state_to_remove].provinces:
+        provinces_list[prov_id].state_id = state_to_merge_into
+        
     states_list[state_to_merge_into].provinces.update(states_list[state_to_remove].provinces)
+    states_list[state_to_remove].provinces = states_list[last_state_id].provinces
 
     #Sterp 3 - Overwrite the file to remove with the last state
     with open(str(states_list[last_state_id].file_path)) as f:
         text = f.read()
 
-    text: str = re.sub(
+    text = re.sub(
         r"id\s*=\s*(\d+)",
         lambda m: f"id = {state_to_remove}",
         text
     )
 
-    text= re.sub(
+    text = re.sub(
         r"STATE_(\d+)",
         lambda m: f"STATE_{state_to_remove}",
         text
     )
 
-    with open(str(states_list[state_to_remove].file_path)) as f:
+    with open(str(states_list[state_to_remove].file_path), "w") as f:
         f.write(text)
 
     os.remove(states_list[last_state_id].file_path)
     deleted_states.add(last_state_id)
+    states_list.pop()
+
+    #Step 4 - Update buildings
+    buildings_file: Path = mod_dir / "map/buildings.txt"
+    buildings_out_text: str = ""
+
+    with open(str(buildings_file)) as f:
+        lines: list[str] = f.readlines()
+        
+        for line in lines:
+            if line.startswith(f"{last_state_id};"):
+                building_line_split: list[str] = line.split(";", 1)
+                buildings_out_text += f"{state_to_remove};{building_line_split[1]}"
+            elif not line.startswith(f"{state_to_remove};"):
+                buildings_out_text += f"{line}"
+
+    with open(str(buildings_file), "w") as f:
+        f.write(buildings_out_text) 
     
 
 def WriteProvinceDefinitions(mod_dir: Path, provinces_list: list[Province]):
@@ -222,7 +249,7 @@ def UpdateStateAndStrategicRegionFiles(
         changed_states: set[int],
         changed_strategic_regions: set[int],
         deleted_states: set[int],
-        old_to_new_ids: dict[int, int]
+        old_to_new_prov_ids: dict[int, int]
     ):
 
     changed_states = {state for state in changed_states if state < len(states_list)}
@@ -244,9 +271,9 @@ def UpdateStateAndStrategicRegionFiles(
             flags=re.IGNORECASE | re.DOTALL
         )
 
-        text: str = re.sub(
+        text= re.sub(
             r"victory_points\s*=\s*{\s*(\d+)\s+(\d+)\s*}",
-            lambda m: f"victory_points = {{ {old_to_new_ids.get(int(m.group(1)), m.group(1))} {m.group(2)} }}",
+            lambda m: f"victory_points = {{ {old_to_new_prov_ids.get(int(m.group(1)), m.group(1))} {m.group(2)} }}",
             text
         )
 
@@ -287,20 +314,21 @@ def main():
     changed_states: set[int] = set()
     changed_strategic_regions: set[int] = set()
     deleted_states: set[int] = set()
-    old_to_new_ids: dict[int, int] = {}
+    old_to_new_prov_ids: dict[int, int] = {}
+    old_to_new_state_ids: dict[int, int] = {}
 
     load_time: float = perf_counter()- time_start
 
-    print(f"Load Time: {load_time:.3}s\n\nCommands:\n%p [PROV_TO_REMOVE_ID] [PROV_TO_MERGE_INTO_ID]\n%q to quit\n")
+    print(f"Load Time: {load_time:.3}s\n\nCommands:\np [PROV_TO_REMOVE_ID] [PROV_TO_MERGE_INTO_ID]\ns [STATE_TO_REMOVE_ID] [STATE_TO_MERGE_INTO_ID]\nq to quit\n")
     while True:
         user_input: str = input("").lower()
 
-        if user_input == "%q":
+        if user_input == "q":
             break
 
         user_input_list: list[str] = user_input.split(" ")
         if len(user_input_list) == 3 and str.isnumeric(user_input_list[1]) and str.isnumeric(user_input_list[2]):
-            if user_input_list[0] == "%p":
+            if user_input_list[0] == "p":
                 MergeProvinces(
                     provinces_list,
                     states_list,
@@ -310,10 +338,10 @@ def main():
                     int(user_input_list[2]),
                     changed_states,
                     changed_strategic_regions,
-                    old_to_new_ids
+                    old_to_new_prov_ids
                 )
 
-            elif user_input_list[0] == "%s":
+            elif user_input_list[0] == "s":
                 MergeStates(
                     provinces_list,
                     states_list,
@@ -323,16 +351,20 @@ def main():
                     changed_states,
                     changed_strategic_regions,
                     deleted_states,
-                    old_to_new_ids
+                    old_to_new_state_ids,
+                    mod_directory
                 )
 
     WriteProvinceDefinitions(mod_directory, provinces_list)
-    UpdateStateAndStrategicRegionFiles(states_list, strategic_regions_list, changed_states, changed_strategic_regions, deleted_states, old_to_new_ids)
+    UpdateStateAndStrategicRegionFiles(states_list, strategic_regions_list, changed_states, changed_strategic_regions, deleted_states, old_to_new_prov_ids)
     Image.fromarray(provinces_bitmap).save(str(mod_directory / "map/provinces.bmp"))
 
-    print(f"Changed States:\n{changed_states}\nDeleted States:\n{deleted_states}\nChanged Strategic Regions:\n{changed_strategic_regions}\nOld ID to new ID map:")
-    for key, value in old_to_new_ids.items():
-        print(f" - {key} - {value}")
+    print(f"Changed States:\n{changed_states}\n\nDeleted States:\n{deleted_states}\n\nChanged Strategic Regions:\n\n{changed_strategic_regions}\n\nOld prov ID to new prov ID map:")
+    for key, value in old_to_new_prov_ids.items():
+        print(f" - {key} -> {value}")
+    print(f"\n\nOld prov ID to new state ID map:")
+    for key, value in old_to_new_state_ids.items():
+        print(f" - {key} -> {value}")
 
 if __name__ == "__main__":
     main()

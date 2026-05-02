@@ -6439,16 +6439,72 @@ TDA_update_state_344_names = {
 TDA_update_state_345_names = {
 }
 
-#Konya
+#Ionian Islands
 TDA_update_state_346_names = {
+	346 = {
+		#Iónia Nisiá
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_346_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Kérkyra
+	if = {
+		limit = { any_country = { controls_province = 10203 TAG_using_greek_names = yes } }
+		set_province_name = { id = 10203 name = VICTORY_POINTS_10203_0 }
+	}
+	#Corfu
+	else = {
+		reset_province_name = 10203
+	}
 }
 
 #Izmit
 TDA_update_state_347_names = {
 }
 
-#Kayseri
+#Central Greece
 TDA_update_state_348_names = {
+	348 = {
+		#Stereá Elláda
+		if = {
+			limit = { CONTROLLER = { TAG_using_greek_names = yes } }
+			set_state_name = STATE_348_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Lamía
+	if = {
+		limit = { any_country = { controls_province = 976 TAG_using_greek_names = yes } }
+		set_province_name = { id = 976 name = VICTORY_POINTS_976_0 }
+	}
+	#Lamia
+	else = {
+		reset_province_name = 976
+	}
+	#Chalkís
+	if = {
+		limit = { any_country = { controls_province = 1109 TAG_using_greek_names = yes } }
+		set_province_name = { id = 1109 name = VICTORY_POINTS_1109_0 }
+	}
+	#Chalcis
+	else = {
+		reset_province_name = 1109
+	}
+	#Agrínion
+	if = {
+		limit = { any_country = { controls_province = 1205 TAG_using_greek_names = yes } }
+		set_province_name = { id = 1205 name = VICTORY_POINTS_1205_0 }
+	}
+	#Agrinio
+	else = {
+		reset_province_name = 1205
+	}
 }
 
 #Sivas
@@ -16527,7 +16583,7 @@ TDA_update_state_796_names = {
 TDA_update_state_797_names = {
 }
 
-#Amasya
+#Hidalgo
 TDA_update_state_798_names = {
 }
 
@@ -18016,74 +18072,6 @@ TDA_update_state_918_names = {
 TDA_update_state_919_names = {
 }
 
-#Hidalgo
-TDA_update_state_920_names = {
-}
-
-#Central Greece
-TDA_update_state_921_names = {
-	921 = {
-		#Stereá Elláda
-		if = {
-			limit = { CONTROLLER = { TAG_using_greek_names = yes } }
-			set_state_name = STATE_921_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-	#Lamía
-	if = {
-		limit = { any_country = { controls_province = 976 TAG_using_greek_names = yes } }
-		set_province_name = { id = 976 name = VICTORY_POINTS_976_0 }
-	}
-	#Lamia
-	else = {
-		reset_province_name = 976
-	}
-	#Chalkís
-	if = {
-		limit = { any_country = { controls_province = 1109 TAG_using_greek_names = yes } }
-		set_province_name = { id = 1109 name = VICTORY_POINTS_1109_0 }
-	}
-	#Chalcis
-	else = {
-		reset_province_name = 1109
-	}
-	#Agrínion
-	if = {
-		limit = { any_country = { controls_province = 1205 TAG_using_greek_names = yes } }
-		set_province_name = { id = 1205 name = VICTORY_POINTS_1205_0 }
-	}
-	#Agrinio
-	else = {
-		reset_province_name = 1205
-	}
-}
-
-#Ionian Islands
-TDA_update_state_922_names = {
-	922 = {
-		#Iónia Nisiá
-		if = {
-			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
-			set_state_name = STATE_922_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-	#Kérkyra
-	if = {
-		limit = { any_country = { controls_province = 10203 TAG_using_greek_names = yes } }
-		set_province_name = { id = 10203 name = VICTORY_POINTS_10203_0 }
-	}
-	#Corfu
-	else = {
-		reset_province_name = 10203
-	}
-}
-
 
 
 TDA_change_all_city_names = {
@@ -19006,9 +18994,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_917_names = yes
 	TDA_update_state_918_names = yes
 	TDA_update_state_919_names = yes
-	TDA_update_state_920_names = yes
-	TDA_update_state_921_names = yes
-	TDA_update_state_922_names = yes
 }
 
 TDA_toggle_change_city_names = {
