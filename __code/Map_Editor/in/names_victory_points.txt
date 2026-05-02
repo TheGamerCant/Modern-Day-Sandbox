@@ -16730,3 +16730,117 @@
         }
     }
 }
+9833 = {
+	default = "Istanbul"
+	entry = {
+        name = "İstanbul"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
+}
+15383 = {
+	default = "Istanbul Airport"
+	entry = {
+        name = "İstanbul Havalimanı"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
+}
+15388 = {
+	default = "Bursa"
+}
+11842 = {
+	default = "Edirne"
+}
+6895 = {
+	default = "Çorlu"
+}
+3893 = {
+	default = "Lüleburgaz"
+}
+3879 = {
+	default = "Tekirdağ"
+}
+15387 = {
+	default = "Gebze"
+}
+15386 = {
+	default = "İzmit"
+}
+15390 = {
+	default = "Adapazarı"
+}
+3786 = {
+	default = "İnegöl"
+}
+6871 = {
+	default = "Hendek"
+}
+6864 = {
+	default = "Çanakkale"
+}
+6912 = {
+	default = "Bandırma"
+}
+9799 = {
+	default = "Edremit"
+}
+11778 = {
+	default = "Balıkesir"
+}
+3851 = {
+	default = "Yalova"
+}
+15392 = {
+	default = "Izmir"
+	entry = {
+        name = "İzmir"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
+}
+4112 = {
+	default = "Çeşme"
+}
+7130 = {
+	default = "Torbalı"
+}
+15394 = {
+	default = "Denizli"
+}
+3983 = {
+	default = "Afyonkarahisar"
+}
+11831 = {
+	default = "Kütahya"
+}
+10122 = {
+	default = "Fethiye"
+}
+9941 = {
+	default = "Bodrum"
+}
+10038 = {
+	default = "Aydın"
+}
+11848 = {
+	default = "Bergama"
+}
+928 = {
+	default = "Manisa"
+}
+9921 = {
+	default = "Akhisar"
+}
+981 = {
+	default = "Simav"
+}
+856 = {
+	default = "Tavşanlı"
+}
+11796 = {
+	default = "Uşak"
+}

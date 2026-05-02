@@ -2045,10 +2045,16 @@
 	default = "Ottawa-Gatineau"
 }
 339 = {
-	default = "Izmir"
+	default = "Turkish Aegean"
+	entry = {
+        name = "Ege"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
 }
 340 = {
-	default = "Bursa"
+	default = "Marmara"
 }
 341 = {
 	default = "Guanajuato"

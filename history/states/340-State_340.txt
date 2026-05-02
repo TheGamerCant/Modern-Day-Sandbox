@@ -1,14 +1,37 @@
 state={
 	id=340
 	name="STATE_340"
-	history={
-		owner = ZZZ
+	history = {
+		owner = TUR
+		add_core_of = TUR
+		
+		victory_points = { 9833 100 }
+		victory_points = { 15383 3 }
+		victory_points = { 15388 25 }
+		victory_points = { 11842 3 }
+		victory_points = { 6895 5 }
+		victory_points = { 3893 5 }
+		victory_points = { 3879 3 }
+		victory_points = { 15387 11 }
+		victory_points = { 15386 8 }
+		victory_points = { 15390 8 }
+		victory_points = { 3786 4 }
+		victory_points = { 6871 2 }
+		victory_points = { 6864 3 }
+		victory_points = { 6912 3 }
+		victory_points = { 9799 3 }
+		victory_points = { 11778 5 }
+		victory_points = { 3851 3 }
+		
+		set_variable = { sq_km = 66438.80 }
+		
+		buildings = { air_base = 10 }
 	}
-	provinces = {
-		785 849 890 904 922 947 3786 3851 3879 3893 3905 3919 6864 6871 6895 6912 9799 9833 9887 11778 11811 11829 11842 11866 11867 11883
+	provinces={
+		785 849 890 922 947 3786 3851 3879 3893 6864 6871 6895 6912 9799 9833 9887 11778 11811 11829 11842 11867 15382 15383 15384 15385 15386 15387 15388 15389 15390 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=22794705
+	buildings_max_level_factor=1
 	state_category=town
+	local_supplies=0.5
 }

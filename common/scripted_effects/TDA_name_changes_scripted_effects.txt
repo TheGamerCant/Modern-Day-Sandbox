@@ -6411,12 +6411,49 @@ TDA_update_state_337_names = {
 TDA_update_state_338_names = {
 }
 
-#Izmir
+#Turkish Aegean
 TDA_update_state_339_names = {
+	339 = {
+		#Ege
+		if = {
+			limit = { CONTROLLER = { TAG_using_turkish_names = yes } }
+			set_state_name = STATE_339_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#İzmir
+	if = {
+		limit = { any_country = { controls_province = 15392 TAG_using_turkish_names = yes } }
+		set_province_name = { id = 15392 name = VICTORY_POINTS_15392_0 }
+	}
+	#Izmir
+	else = {
+		reset_province_name = 15392
+	}
 }
 
-#Bursa
+#Marmara
 TDA_update_state_340_names = {
+	#İstanbul
+	if = {
+		limit = { any_country = { controls_province = 9833 TAG_using_turkish_names = yes } }
+		set_province_name = { id = 9833 name = VICTORY_POINTS_9833_0 }
+	}
+	#Istanbul
+	else = {
+		reset_province_name = 9833
+	}
+	#İstanbul Havalimanı
+	if = {
+		limit = { any_country = { controls_province = 15383 TAG_using_turkish_names = yes } }
+		set_province_name = { id = 15383 name = VICTORY_POINTS_15383_0 }
+	}
+	#Istanbul Airport
+	else = {
+		reset_province_name = 15383
+	}
 }
 
 #Guanajuato

@@ -687,3 +687,17 @@ TAG_using_greek_names = {
 		is_puppet_of = GRC
 	}
 }
+
+TAG_using_turkish_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = TUR
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = TUR
+	}
+}
