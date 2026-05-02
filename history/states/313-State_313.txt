@@ -5,7 +5,7 @@ state={
 		owner = GTM
 		add_core_of = GTM
 		
-		victory_points = { 15276 25 }
+		victory_points = { 15276 30 }
 		victory_points = { 15277 2 }
 		victory_points = { 15278 4 }
 		victory_points = { 13085 2 }

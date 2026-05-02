@@ -442,3 +442,15 @@
  NCG:0 "Nicaragua"                                  
  NCG_DEF:0 "the Republic of Nicaragua"                                  
  NCG_ADJ:0 "Nicaraguan"
+
+ GRC:0 "Greece"                                  
+ GRC_DEF:0 "the Hellenic Republic"                                  
+ GRC_ADJ:0 "Greek"
+
+ MLT:0 "Malta"                                  
+ MLT_DEF:0 "the Republic of Malta"                                  
+ MLT_ADJ:0 "Maltese"
+
+ TUR:0 "Turkey"                                  
+ TUR_DEF:0 "the Republic of Türkiye"                                  
+ TUR_ADJ:0 "Turkish"

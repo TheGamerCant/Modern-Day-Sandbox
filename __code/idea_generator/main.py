@@ -109,10 +109,6 @@ class ideaClass:
         if transformation.localised_desc != "" and transformation.localised_desc is not None:
             self.localised_desc = transformation.localised_desc
 
-
-    def append_int_to_idea_route(self, node : int):
-        self.idea_route.append(node)
-
 def boolAreTwoIdeasEqual(idea_one : ideaClass, idea_two : ideaClass):
     if idea_one.modifiers == idea_two.modifiers and idea_one.equipment_modifiers == idea_two.equipment_modifiers \
     and idea_one.research_bonuses == idea_two.research_bonuses \
@@ -360,7 +356,7 @@ def printScriptedEffectsFile(ideasArray : list[ideaClass], transformationsArray 
             #Index variable method has guarenteed complexity of log(N), while without is average of .5N
 
             if USE_INDEX_VARIABLE:
-                swap_init_values : list[int] = [swap[0] for swap in all_idea_swaps]
+                swap_init_values: list = sorted(swap[0] for swap in all_idea_swaps)
                 swap_dictionary : dict[int, int] = {swap[0]: swap[1] for swap in all_idea_swaps}
 
                 tree : str = generateIfBinaryTree(swap_init_values, swap_dictionary, idea_name, f"{idea_name}_idea_index")

@@ -302,7 +302,13 @@
 	default = "Wallachia"
 }
 47 = {
-	default = "Attica"
+	default = "Thessaly"
+	entry = {
+	    name = "Thessalía "
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
 }
 48 = {
 	default = "Western Bulgaria"
@@ -1135,7 +1141,13 @@
 	default = "Kaiser-Wilhelmsland"
 }
 164 = {
-	default = "Dodecanese"
+	default = "Attica"
+	entry = { 
+        name = "Attikí"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
 }
 165 = {
 	default = "Catalonia"
@@ -1251,21 +1263,45 @@
 }
 182 = {
 	default = "Crete"
+	entry = { 
+        name = "Kríti"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
 }
 183 = {
 	default = "Cyprus"
 }
 184 = {
-	default = "Thrace"
+	default = "Eastern Macedonia and Thrace"
+	entry = { 
+        name = "Anatolikí Makedonía kai Thrakí"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
 }
 185 = {
-	default = "Epirus"
+	default = "Guantanamo Bay"
 }
 186 = {
 	default = "Peloponnese"
+	entry = { 
+        name = "Pelopónnisos"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
 }
 187 = {
-	default = "Aegean Islands"
+	default = "Aegean"
+	entry = { 
+        name = "Aigaío"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
 }
 188 = {
 	default = "Lithuania Minor"
@@ -3771,6 +3807,12 @@
 }
 731 = {
 	default = "Central Macedonia"
+	entry = { 
+        name = "Kendrikí Makedonía"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
 }
 732 = {
 	default = "Pamir"
@@ -4838,4 +4880,23 @@
 }
 920 = {
 	default = "Hidalgo"
+}
+921 = {
+	default = "Central Greece"
+	
+	entry = {
+        name = "Stereá Elláda"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+922 = {
+	default = "Ionian Islands"
+	entry = {
+        name = "Iónia Nisiá"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }

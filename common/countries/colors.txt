@@ -544,3 +544,15 @@ NCG = {
 	color = rgb { 100 165 140 }
 	color_ui = rgb { 100 165 140 }
 }
+GRC = {
+	color = rgb { 9 174 206 }
+	color_ui = rgb { 9 174 206 }
+}
+MLT = {
+	color = rgb { 211 37 14 }
+	color_ui = rgb { 211 37 14 }
+}
+TUR = {
+	color = rgb { 143 100 58 }
+	color_ui = rgb { 143 100 58 }
+}

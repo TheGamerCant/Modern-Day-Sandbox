@@ -16418,3 +16418,315 @@
 4720 = {
 	default = "Zitácuaro"
 }
+15358 = {
+	default = "San Salvador"
+}
+13093 = {
+	default = "San Miguel"
+}
+15363 = {
+	default = "Tegucigalpa"
+}
+15364 = {
+	default = "San Pedro Sula"
+}
+15367 = {
+	default = "La Ceiba"
+}
+12865 = {
+	default = "Choluteca"
+}
+15366 = {
+	default = "Comayagua"
+}
+15368 = {
+	default = "Managua"
+}
+15369 = {
+	default = "Augusto C. Sandino International Airport"
+	entry = {
+        name = "Aeropuerto Internacional Augusto C. Sandino"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+12738 = {
+	default = "León"
+}
+10728 = {
+	default = "Matagalpa"
+}
+2075 = {
+	default = "Puerto Cabezas"
+}
+1988 = {
+	default = "Bluefields"
+}
+15372 = {
+	default = "Havana"
+	entry = {
+        name = "La Habana"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15374 = {
+	default = "José Martí international Airport"
+	entry = {
+        name = "Aeropuerto Internacional José Martí"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15375 = {
+	default = "Santiago de Cuba"
+}
+4600 = {
+	default = "Pinar del Río"
+}
+4476 = {
+	default = "Camagüey"
+}
+7451 = {
+	default = "Santa Clara"
+}
+12347 = {
+	default = "Holguín"
+}
+12003 = {
+	default = "Valletta"
+	entry = {
+        name = "Il-Belt Valletta"
+        requirements = {
+            "TAG_using_maltese_names = yes"
+        }
+    }
+}
+10007 = {
+	default = "Rhodes"
+	entry = {
+        name = "Ródos"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+6550 = {
+	default = "Chios"
+	entry = {
+        name = "Chíos"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+9940 = {
+	default = "Heraklion"
+	entry = {
+        name = "Irákleion"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+12058 = {
+	default = "Chania"
+	entry = {
+        name = "Chanía"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+4109 = {
+	default = "Athens"
+	entry = {
+        name = "Athínai"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+15379 = {
+	default = "Athens International Airport Eleftherios Venizelos"
+	entry = {
+        name = "Diethnís Aeroliménas Athinón Elefthérios Venizélos"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+15381 = {
+	default = "Patras"
+	entry = {
+        name = "Pátrai"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+11965 = {
+	default = "Kalmata"
+	entry = {
+        name = "Kalamáta"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+7096 = {
+	default = "Corinth"
+	entry = {
+        name = "Kórinthos"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+4078 = {
+	default = "Tripoli"
+	entry = {
+        name = "Trípolis"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+11905 = {
+	default = "Alexandroupoli"
+	entry = {
+        name = "Alexandroúpolis"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+11774 = {
+	default = "Xanthi"
+	entry = {
+        name = "Xánthi"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+3988 = {
+	default = "Thessaloniki"
+	entry = {
+        name = "Thessaloníki"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+3844 = {
+	default = "Katerini"
+	entry = {
+        name = "Kateríni"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+6990 = {
+	default = "Serres"
+	entry = {
+        name = "Sérrai"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+10163 = {
+	default = "Yannitsa"
+	entry = {
+        name = "Giannitsá"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+10203 = {
+	default = "Corfu"
+	entry = {
+        name = "Kérkyra"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+3973 = {
+	default = "Volos"
+	entry = {
+        name = "Vólos"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+6930 = {
+	default = "Larissa"
+	entry = {
+        name = "Lárisa"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+11786 = {
+	default = "Trikala"
+	entry = {
+        name = "Tríkala"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+3914 = {
+	default = "Ioannina"
+	entry = {
+        name = "Ioánnina"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+966 = {
+	default = "Kozani"
+	entry = {
+        name = "Kozáni"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+1109 = {
+	default = "Chalcis"
+	entry = {
+        name = "Chalkís"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+1205 = {
+	default = "Agrinio"
+	entry = {
+        name = "Agrínion"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+976 = {
+	default = "Lamia"
+	entry = {
+        name = "Lamía"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
