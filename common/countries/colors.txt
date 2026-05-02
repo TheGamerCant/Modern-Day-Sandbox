@@ -545,8 +545,8 @@ NCG = {
 	color_ui = rgb { 100 165 140 }
 }
 GRC = {
-	color = rgb { 9 174 206 }
-	color_ui = rgb { 9 174 206 }
+	color = rgb { 9 145 184 }
+	color_ui = rgb { 9 145 184 }
 }
 MLT = {
 	color = rgb { 211 37 14 }
