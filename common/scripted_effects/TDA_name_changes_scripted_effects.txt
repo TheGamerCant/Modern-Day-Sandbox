@@ -6419,7 +6419,7 @@ TDA_update_state_339_names = {
 TDA_update_state_340_names = {
 }
 
-#Edirne
+#Guanajuato
 TDA_update_state_341_names = {
 }
 
@@ -6427,11 +6427,11 @@ TDA_update_state_341_names = {
 TDA_update_state_342_names = {
 }
 
-#Afyon
+#Norilsk
 TDA_update_state_343_names = {
 }
 
-#Malatya
+#Zacatecas
 TDA_update_state_344_names = {
 }
 
@@ -6462,7 +6462,7 @@ TDA_update_state_346_names = {
 	}
 }
 
-#Izmit
+#Michoacán de Ocampo
 TDA_update_state_347_names = {
 }
 
@@ -6507,8 +6507,36 @@ TDA_update_state_348_names = {
 	}
 }
 
-#Sivas
+#Guelmim-Oued Noun
 TDA_update_state_349_names = {
+	349 = {
+		#Gulmīm/Wādī Nūn
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_349_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Gulmīm
+	if = {
+		limit = { any_country = { controls_province = 5046 TAG_using_arab_names = yes } }
+		set_province_name = { id = 5046 name = VICTORY_POINTS_5046_0 }
+	}
+	#Guelmim
+	else = {
+		reset_province_name = 5046
+	}
+	#Ṭānṭān
+	if = {
+		limit = { any_country = { controls_province = 15243 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15243 name = VICTORY_POINTS_15243_0 }
+	}
+	#Tan-Tan
+	else = {
+		reset_province_name = 15243
+	}
 }
 
 #Diyarbakır
@@ -6523,7 +6551,7 @@ TDA_update_state_351_names = {
 TDA_update_state_352_names = {
 }
 
-#Tunceli
+#Debugistan
 TDA_update_state_353_names = {
 }
 
@@ -6531,11 +6559,20 @@ TDA_update_state_353_names = {
 TDA_update_state_354_names = {
 }
 
-#Samsun
+#Nuevo León
 TDA_update_state_355_names = {
+	#Aeropuerto Internacional de Monterrey
+	if = {
+		limit = { any_country = { controls_province = 15330 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 15330 name = VICTORY_POINTS_15330_0 }
+	}
+	#Monterrey International Airport
+	else = {
+		reset_province_name = 15330
+	}
 }
 
-#Kastamonu
+#San Luis Potosí
 TDA_update_state_356_names = {
 }
 
@@ -16579,7 +16616,7 @@ TDA_update_state_795_names = {
 TDA_update_state_796_names = {
 }
 
-#Istanbul
+#Puebla
 TDA_update_state_797_names = {
 }
 
@@ -16587,11 +16624,11 @@ TDA_update_state_797_names = {
 TDA_update_state_798_names = {
 }
 
-#Hatay
+#Sinaloa
 TDA_update_state_799_names = {
 }
 
-#Van
+#Tabasco
 TDA_update_state_800_names = {
 }
 
@@ -17987,91 +18024,6 @@ TDA_update_state_907_names = {
 	}
 }
 
-#Guelmim-Oued Noun
-TDA_update_state_908_names = {
-	908 = {
-		#Gulmīm/Wādī Nūn
-		if = {
-			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
-			set_state_name = STATE_908_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
-	#Gulmīm
-	if = {
-		limit = { any_country = { controls_province = 5046 TAG_using_arab_names = yes } }
-		set_province_name = { id = 5046 name = VICTORY_POINTS_5046_0 }
-	}
-	#Guelmim
-	else = {
-		reset_province_name = 5046
-	}
-	#Ṭānṭān
-	if = {
-		limit = { any_country = { controls_province = 15243 TAG_using_arab_names = yes } }
-		set_province_name = { id = 15243 name = VICTORY_POINTS_15243_0 }
-	}
-	#Tan-Tan
-	else = {
-		reset_province_name = 15243
-	}
-}
-
-#Tabasco
-TDA_update_state_909_names = {
-}
-
-#Debugistan
-TDA_update_state_910_names = {
-}
-
-#Nuevo León
-TDA_update_state_911_names = {
-	#Aeropuerto Internacional de Monterrey
-	if = {
-		limit = { any_country = { controls_province = 15330 TAG_using_spanish_names = yes } }
-		set_province_name = { id = 15330 name = VICTORY_POINTS_15330_0 }
-	}
-	#Monterrey International Airport
-	else = {
-		reset_province_name = 15330
-	}
-}
-
-#San Luis Potosí
-TDA_update_state_912_names = {
-}
-
-#Sinaloa
-TDA_update_state_913_names = {
-}
-
-#Zacatecas
-TDA_update_state_914_names = {
-}
-
-#Norilsk
-TDA_update_state_915_names = {
-}
-
-#Nayarit
-TDA_update_state_916_names = {
-}
-
-#Michoacán de Ocampo
-TDA_update_state_917_names = {
-}
-
-#Puebla
-TDA_update_state_918_names = {
-}
-
-#Guanajuato
-TDA_update_state_919_names = {
-}
-
 
 
 TDA_change_all_city_names = {
@@ -18982,18 +18934,6 @@ TDA_change_all_city_names = {
 	TDA_update_state_905_names = yes
 	TDA_update_state_906_names = yes
 	TDA_update_state_907_names = yes
-	TDA_update_state_908_names = yes
-	TDA_update_state_909_names = yes
-	TDA_update_state_910_names = yes
-	TDA_update_state_911_names = yes
-	TDA_update_state_912_names = yes
-	TDA_update_state_913_names = yes
-	TDA_update_state_914_names = yes
-	TDA_update_state_915_names = yes
-	TDA_update_state_916_names = yes
-	TDA_update_state_917_names = yes
-	TDA_update_state_918_names = yes
-	TDA_update_state_919_names = yes
 }
 
 TDA_toggle_change_city_names = {

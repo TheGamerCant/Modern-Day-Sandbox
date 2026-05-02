@@ -1,4 +1,4 @@
-﻿capital = 910
+﻿capital = 353
 
 #Impassable lines on
 set_cosmetic_tag = ZZZ_0b_00000000_00000000_00000001

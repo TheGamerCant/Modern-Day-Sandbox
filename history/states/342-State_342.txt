@@ -1,14 +1,27 @@
 state={
-	id=342
+	id = 342
 	name="STATE_342"
-	history={
-		owner = ZZZ
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		
+		victory_points = { 12687 3 }
+		victory_points = { 15355 1 }
+		victory_points = { 4859 1 }
+		
+		resize_array = { array = culture_index_array size = 1 value = 0 }
+		resize_array = { array = culture_value_array size = 1 value = 0 }
+		
+		set_variable = { culture_index_array^0 = 197 }
+		set_variable = { culture_value_array^0 = 100.0 }
+		
+		set_variable = { sq_km = 35142.62 }
 	}
-	provinces={
-		1005 1119 9941 10122 11917 12013 12016 12096 
+	provinces = {
+		2923 4812 4859 10607 11328 12687 13064 15351 15352 15353 15354 15355 15356 15357
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=rural
+	manpower=35000
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
 }

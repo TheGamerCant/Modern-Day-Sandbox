@@ -354,6 +354,9 @@ def main():
                     old_to_new_state_ids,
                     mod_directory
                 )
+        else:
+            if user_input_list[0] not in ["p", "s"]:
+                print("Bad Input")
 
     WriteProvinceDefinitions(mod_directory, provinces_list)
     UpdateStateAndStrategicRegionFiles(states_list, strategic_regions_list, changed_states, changed_strategic_regions, deleted_states, old_to_new_prov_ids)

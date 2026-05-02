@@ -2051,16 +2051,17 @@
 	default = "Bursa"
 }
 341 = {
-	default = "Edirne"
+	default = "Guanajuato"
 }
 342 = {
 	default = "Antalya"
 }
 343 = {
-	default = "Afyon"
+	default = "Norilsk"
 }
 344 = {
-	default = "Malatya"
+	#default = "Zacatecas-Aguascalientes"
+	default = "Zacatecas"
 }
 345 = {
 	default = "Mersin"
@@ -2075,7 +2076,7 @@
     }
 }
 347 = {
-	default = "Izmit"
+	default = "Michoacán de Ocampo"
 }
 348 = {
 	default = "Central Greece"
@@ -2087,7 +2088,13 @@
     }
 }
 349 = {
-	default = "Sivas"
+	default = "Guelmim-Oued Noun"
+	entry = {
+        name = "Gulmīm/Wādī Nūn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 350 = {
 	default = "Diyarbakır"
@@ -2099,16 +2106,16 @@
 	default = "Hakkari"
 }
 353 = {
-	default = "Tunceli"
+	default = "Debugistan"
 }
 354 = {
 	default = "Trabzon"
 }
 355 = {
-	default = "Samsun"
+	default = "Nuevo León"
 }
 356 = {
-	default = "Kastamonu"
+	default = "San Luis Potosí"
 }
 357 = {
 	default = "Maine"
@@ -4220,16 +4227,16 @@
 	default = "Cabinda"
 }
 797 = {
-	default = "Istanbul"
+	default = "Puebla"
 }
 798 = {
 	default = "Hidalgo"
 }
 799 = {
-	default = "Hatay"
+	default = "Sinaloa"
 }
 800 = {
-	default = "Van"
+	default = "Tabasco"
 }
 801 = {
 	default = "Elisabethville"
@@ -4846,47 +4853,4 @@
             "TAG_using_arab_names = yes"
         }
     }
-}
-908 = {
-	default = "Guelmim-Oued Noun"
-	entry = {
-        name = "Gulmīm/Wādī Nūn"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
-}
-909 = {
-	default = "Tabasco"
-}
-910 = {
-	default = "Debugistan"
-}
-911 = {
-	default = "Nuevo León"
-}
-912 = {
-	default = "San Luis Potosí"
-}
-913 = {
-	default = "Sinaloa"
-}
-914 = {
-	#default = "Zacatecas-Aguascalientes"
-	default = "Zacatecas"
-}
-915 = {
-	default = "Norilsk"
-}
-916 = {
-	default = "Nayarit"
-}
-917 = {
-	default = "Michoacán de Ocampo"
-}
-918 = {
-	default = "Puebla"
-}
-919 = {
-	default = "Guanajuato"
 }
