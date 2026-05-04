@@ -320,7 +320,13 @@
     }
 }
 49 = {
-	default = "Ankara"
+	default = "Central Anatolia"
+	entry = {
+        name = "İç Anadolu"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
 }
 50 = {
 	default = "Baden-Württemberg"
@@ -2045,7 +2051,7 @@
 	default = "Ottawa-Gatineau"
 }
 339 = {
-	default = "Turkish Aegean"
+	default = "Aegean Turkey"
 	entry = {
         name = "Ege"
         requirements = {
@@ -2070,7 +2076,13 @@
 	default = "Zacatecas"
 }
 345 = {
-	default = "Mersin"
+	default = "Mediterranean Turkey"
+	entry = {
+        name = "Akdeniz"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
 }
 346 = {
 	default = "Ionian Islands"
@@ -2103,19 +2115,37 @@
     }
 }
 350 = {
-	default = "Diyarbakır"
+	default = "Southeastern Anatolia"
+	entry = {
+        name = "Güneydoğu Anadolu"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
 }
 351 = {
 	default = "Vologda"
 }
 352 = {
-	default = "Hakkari"
+	default = "Eastern Anatolia"
+	entry = {
+        name = "Doğu Anadolu"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
 }
 353 = {
 	default = "Debugistan"
 }
 354 = {
-	default = "Trabzon"
+	default = "Black Sea Turkey"
+	entry = {
+        name = "Karadeniz"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
 }
 355 = {
 	default = "Nuevo León"

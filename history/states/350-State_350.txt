@@ -1,10 +1,36 @@
 state={
 	id=350
 	name="STATE_350"
-	provinces={
-		3889 4512 7530 7620 9823 9893 10497 11739 11759 11871 12387 12416 12476 
+	history = {
+		owner = TUR
+		add_core_of = TUR
+		
+		victory_points = { 15413 20 }
+		victory_points = { 15414 2 }
+		victory_points = { 15417 9 }
+		victory_points = { 15418 4 }
+		victory_points = { 15420 13 }
+		victory_points = { 7530 8 }
+		victory_points = { 9912 4 }
+		victory_points = { 7620 2 }
+		victory_points = { 12387 2 }
+		victory_points = { 15422 2 }
+		victory_points = { 11759 3 }
+		victory_points = { 15423 2 }
+		victory_points = { 12416 2 }
+		victory_points = { 9823 2 }
+		victory_points = { 12476 2 }
+		victory_points = { 10497 2 }
+		victory_points = { 15424 2 }
+		
+		set_variable = { sq_km = 28680.33 }
+		
+		buildings = { air_base = 3 }
 	}
-	manpower=100000
+	provinces={
+		3889 4512 7530 7620 9823 9893 9912 10497 11739 11759 11871 12387 12416 12476 15413 15414 15415 15416 15417 15418 15419 15420 15421 15422 15423 15424 
+	}
+	manpower=7462893
 	buildings_max_level_factor=1
 	state_category=town
 	local_supplies=0.5

@@ -1047,8 +1047,27 @@ TDA_update_state_48_names = {
 	}
 }
 
-#Ankara
+#Central Anatolia
 TDA_update_state_49_names = {
+	49 = {
+		#İç Anadolu
+		if = {
+			limit = { CONTROLLER = { TAG_using_turkish_names = yes } }
+			set_state_name = STATE_49_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Ankara Esenboğa Havalimanı
+	if = {
+		limit = { any_country = { controls_province = 11747 TAG_using_turkish_names = yes } }
+		set_province_name = { id = 11747 name = VICTORY_POINTS_11747_0 }
+	}
+	#Ankara Esenboga Airport
+	else = {
+		reset_province_name = 11747
+	}
 }
 
 #Baden-Württemberg
@@ -6411,7 +6430,7 @@ TDA_update_state_337_names = {
 TDA_update_state_338_names = {
 }
 
-#Turkish Aegean
+#Aegean Turkey
 TDA_update_state_339_names = {
 	339 = {
 		#Ege
@@ -6472,8 +6491,18 @@ TDA_update_state_343_names = {
 TDA_update_state_344_names = {
 }
 
-#Mersin
+#Mediterranean Turkey
 TDA_update_state_345_names = {
+	345 = {
+		#Akdeniz
+		if = {
+			limit = { CONTROLLER = { TAG_using_turkish_names = yes } }
+			set_state_name = STATE_345_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Ionian Islands
@@ -6576,24 +6605,63 @@ TDA_update_state_349_names = {
 	}
 }
 
-#Diyarbakır
+#Southeastern Anatolia
 TDA_update_state_350_names = {
+	350 = {
+		#Güneydoğu Anadolu
+		if = {
+			limit = { CONTROLLER = { TAG_using_turkish_names = yes } }
+			set_state_name = STATE_350_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Gaziantep Havalimanı
+	if = {
+		limit = { any_country = { controls_province = 15414 TAG_using_turkish_names = yes } }
+		set_province_name = { id = 15414 name = VICTORY_POINTS_15414_0 }
+	}
+	#Gaziantep Airport
+	else = {
+		reset_province_name = 15414
+	}
 }
 
 #Vologda
 TDA_update_state_351_names = {
 }
 
-#Hakkari
+#Eastern Anatolia
 TDA_update_state_352_names = {
+	352 = {
+		#Doğu Anadolu
+		if = {
+			limit = { CONTROLLER = { TAG_using_turkish_names = yes } }
+			set_state_name = STATE_352_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Debugistan
 TDA_update_state_353_names = {
 }
 
-#Trabzon
+#Black Sea Turkey
 TDA_update_state_354_names = {
+	354 = {
+		#Karadeniz
+		if = {
+			limit = { CONTROLLER = { TAG_using_turkish_names = yes } }
+			set_state_name = STATE_354_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Nuevo León

@@ -1,10 +1,15 @@
 state={
 	id=352
 	name="STATE_352"
-	provinces={
-		652 864 876 1463 4583 6935 7470 9858 9860 9868 9954 10399 11797 11880 12318 12376 13121 
+	history = {
+		owner = ZZZ
+		
+		set_variable = { sq_km = 164050.28 }
 	}
-	manpower=100000
+	provinces={
+		652 864 876 1463 3890 4583 6919 6935 6965 6976 6991 7470 9858 9860 9868 9954 10399 10403 10472 11797 11853 11880 12318 12376 13121 
+	}
+	manpower=5761752
 	buildings_max_level_factor=1
 	state_category=rural
 	local_supplies=0.5

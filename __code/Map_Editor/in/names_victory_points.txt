@@ -16844,3 +16844,222 @@
 11796 = {
 	default = "Uşak"
 }
+15395 = {
+	default = "Antalya"
+}
+15397 = {
+	default = "Mersin"
+}
+15400 = {
+	default = "Tarsus"
+}
+15399 = {
+	default = "Adana"
+}
+10056 = {
+	default = "Kahramanmaraş"
+}
+12029 = {
+	default = "Antakya"
+}
+806 = {
+	default = "Osmaniye"
+}
+7026 = {
+	default = "Silifke"
+}
+4008 = {
+	default = "Alanya"
+}
+1122 = {
+	default = "Manavgat"
+}
+784 = {
+	default = "Isparta"
+}
+12016 = {
+	default = "Burdur"
+}
+3921 = {
+	default = "Elbistan"
+}
+15403 = {
+	default = "Ankara"
+}
+11747 = {
+	default = "Ankara Esenboga Airport"
+	entry = {
+        name = "Ankara Esenboğa Havalimanı"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
+}
+15406 = {
+	default = "Konya"
+}
+15408 = {
+	default = "Kayseri"
+}
+3870 = {
+	default = "Talas"
+}
+3903 = {
+	default = "Sivas"
+}
+7143 = {
+	default = "Karaman"
+}
+9830 = {
+	default = "Niğde"
+}
+9763 = {
+	default = "Ereğli"
+}
+11860 = {
+	default = "Akşehir"
+}
+9901 = {
+	default = "Polatlı"
+}
+15411 = {
+	default = "Eskişehir"
+}
+3862 = {
+	default = "Yozgat"
+}
+804 = {
+	default = "Kırıkkale"
+}
+869 = {
+	default = "Aksaray"
+}
+9861 = {
+	default = "Nevşehir"
+}
+11844 = {
+	default = "Kırşehir"
+}
+6894 = {
+	default = "Seydişehir"
+}
+3788 = {
+	default = "Beyşehir"
+}
+9844 = {
+	default = "Çankırı"
+}
+9806 = {
+	default = "Beypazarı"
+}
+11881 = {
+	default = "Samsun"
+}
+789 = {
+	default = "Trabzon"
+}
+3714 = {
+	default = "Rize"
+}
+11894 = {
+	default = "Ordu"
+}
+3935 = {
+	default = "Tokat"
+}
+9900 = {
+	default = "Çorum"
+}
+9915 = {
+	default = "Amasya"
+}
+3905 = {
+	default = "Bolu"
+}
+904 = {
+	default = "Ereğli"
+}
+11866 = {
+	default = "Zonguldak"
+}
+3919 = {
+	default = "Karabük"
+}
+6938 = {
+	default = "Kastamonu"
+}
+9871 = {
+	default = "Tosya"
+}
+11839 = {
+	default = "Sungurlu"
+}
+975 = {
+	default = "Giresun"
+}
+9886 = {
+	default = "Bayburt"
+}
+3979 = {
+	default = "Gümüşhane"
+}
+11753 = {
+	default = "Artvin"
+}
+15413 = {
+	default = "Gaziantep"
+}
+15414 = {
+	default = "Gaziantep Airport"
+	entry = {
+        name = "Gaziantep Havalimanı"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
+}
+15417 = {
+	default = "Şanlıurfa"
+}
+15418 = {
+	default = "Karaköprü"
+}
+15420 = {
+	default = "Diyarbakır"
+}
+7530 = {
+	default = "Batman"
+}
+9912 = {
+	default = "Adıyaman"
+}
+7620 = {
+	default = "Kâhta"
+}
+12387 = {
+	default = "Cizre"
+}
+15422 = {
+	default = "Mardin"
+}
+11759 = {
+	default = "Siverek"
+}
+15423 = {
+	default = "Viranşehir"
+}
+12416 = {
+	default = "Ceylanpınar"
+}
+9823 = {
+	default = "Suruç"
+}
+12476 = {
+	default = "Silopi"
+}
+10497 = {
+	default = "Siirt"
+}
+15424 = {
+	default = "Kilis"
+}
