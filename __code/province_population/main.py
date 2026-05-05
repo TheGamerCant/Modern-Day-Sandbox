@@ -1,9 +1,11 @@
 from pathlib import Path
 import re
 from time import perf_counter
+from typing import Any
+
 import pandas as pd
 from pandas import DataFrame
-
+import json
 
 class Province:
     def __init__(self, prov_id: int):
@@ -55,7 +57,7 @@ def LoadMap(mod_dir: Path) -> tuple[list[Province], list[State]]:
 
     states_list.sort(key=lambda x: x.state_id)
 
-    with open(str(victory_point_loc)) as f:
+    with open(str(victory_point_loc), encoding="utf-8") as f:
         lines: list[str] = f.readlines()
         for line in lines:
             match = re.match(r'^VICTORY_POINTS_(\d+)[_:].*?"(.*)"', line.strip(), re.IGNORECASE)
@@ -65,7 +67,7 @@ def LoadMap(mod_dir: Path) -> tuple[list[Province], list[State]]:
 
                 provinces_list[vp_id].names.add(name)
 
-    with open(str(state_name_loc)) as f:
+    with open(str(state_name_loc), encoding="utf-8") as f:
         lines: list[str] = f.readlines()
         for line in lines:
             match = re.match(r'^STATE_(\d+)[_:].*?"(.*)"', line.strip(), re.IGNORECASE)
@@ -85,6 +87,35 @@ def LoadCityData(mod_dir: Path) -> DataFrame:
     df["Population (2025)"] = df["Population (2025)"].round().astype(int)
     return df
 
+def LoadJson(mod_dir: Path) -> Any:
+    json_file: Path = mod_dir / "__code/province_population/additional_data.json"
+    json_data: Any = None
+
+    with open(str(json_file), "r", encoding="utf-8") as f:
+        json_data = json.load(f)
+
+    return json_data
+
+def FindDuplicates(provinces_list: list[Province], states_list: list[State], city_df: DataFrame):
+    all_keys: dict[tuple[str, str], list[int]] = {}
+    duplicate_tuples: set[tuple[str, str]] = set()
+
+    for vp in provinces_list:
+        state_owner = states_list[vp.state_id].owner
+        if state_owner == "ZZZ":
+            continue
+
+        for name in vp.names:
+            key = (state_owner, name)
+
+            if key in all_keys:
+                all_keys[key].append(vp.prov_id)
+                duplicate_tuples.add(key)
+            else:
+                all_keys[key] = [vp.prov_id]
+
+    #print({key: value for key, value in all_keys.items() if key in duplicate_tuples})
+
 def main():
     time_start: float = perf_counter()
 
@@ -94,11 +125,16 @@ def main():
     provinces_list, states_list = LoadMap(mod_directory)
 
     #Load the city data
-    df: DataFrame = LoadCityData(mod_directory)
+    city_df: DataFrame = LoadCityData(mod_directory)
+
+    #Load JSON file
+    json_data = LoadJson(mod_directory)
+
+    #Find duplicates
+    FindDuplicates(provinces_list, states_list, city_df)
 
     load_time: float = perf_counter()- time_start
     print(f"Load Time: {load_time:.3}s\n")
-
 
 
 if __name__ == "__main__":

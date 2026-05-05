@@ -7460,9 +7460,9 @@
     }
 }
 11910 = {
-	default = "Aḍ-Ḍab'ah"
+	default = "El Dabaa"
 	entry = {
-        name = "Al-Quṣayr"
+        name = "Aḍ-Ḍab'ah"
         requirements = {
             "TAG_using_arab_names = yes"
         }
