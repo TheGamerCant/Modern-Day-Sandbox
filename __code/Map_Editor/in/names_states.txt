@@ -1593,9 +1593,33 @@
 }
 230 = {
 	default = "Armenia"
+	entry = {
+        name = "Hayastan"
+        requirements = {
+            "TAG_using_armenian_names = yes"
+        }
+    }
+	entry = {
+        name = "Armeniya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 231 = {
 	default = "Georgia"
+	entry = {
+        name = "Sakartvelo"
+        requirements = {
+            "TAG_using_georgian_names = yes"
+        }
+    }
+	entry = {
+        name = "Gruziya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 232 = {
 	default = "Dagestan"
@@ -4411,6 +4435,24 @@
 }
 826 = {
 	default = "Abkhazia"
+	entry = {
+        name = "Aṕsny"
+        requirements = {
+            "TAG_using_abkhaz_names = yes"
+        }
+    }
+	entry = {
+        name = "Abkhaziya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+	entry = {
+        name = "Apkhazeti"
+        requirements = {
+            "TAG_using_georgian_names = yes"
+        }
+    }
 }
 827 = {
 	default = "Kabardino-Balkaria"
@@ -4889,4 +4931,19 @@
             "TAG_using_arab_names = yes"
         }
     }
+}
+908 = {
+	default = "South Ossetia"
+	entry = {
+        name = "Yuzhnaya Osetiya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+909 = {
+	default = "Nagorno-Karabakh"
+}
+910 = {
+	default = "Nakhchivan"
 }

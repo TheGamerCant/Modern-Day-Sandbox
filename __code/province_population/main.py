@@ -104,7 +104,7 @@ def LoadCityData(mod_dir: Path) -> DataFrame:
     return df
 
 def LoadJson(mod_dir: Path) -> Any:
-    json_file: Path = mod_dir / "__code/province_population/additional_data.json"
+    json_file: Path = mod_dir / "__code/province_population/tag_data.json"
     json_data: Any = None
 
     with open(str(json_file), "r", encoding="utf-8") as f:
@@ -141,13 +141,13 @@ def main():
     provinces_list, states_list = LoadMap(mod_directory)
 
     #Load the city data
-    city_df: DataFrame = LoadCityData(mod_directory)
+    #city_df: DataFrame = LoadCityData(mod_directory)
 
     #Load JSON file
     json_data = LoadJson(mod_directory)
 
     #Find duplicates
-    FindDuplicates(provinces_list, states_list, city_df)
+    #FindDuplicates(provinces_list, states_list, city_df)
 
     load_time: float = perf_counter()- time_start
     print(f"Load Time: {load_time:.3}s\n")

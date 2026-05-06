@@ -1,0 +1,17 @@
+state={
+	id=910
+	name="STATE_910"
+	history={
+		owner = AZJ
+		add_core_of = AZJ
+		
+		set_variable = { sq_km = 5116.80 }
+	}
+	provinces={
+		6997 
+	}
+	manpower=414225
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

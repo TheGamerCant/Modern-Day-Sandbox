@@ -4927,10 +4927,77 @@ TDA_update_state_229_names = {
 
 #Armenia
 TDA_update_state_230_names = {
+	230 = {
+		#Hayastan
+		if = {
+			limit = { CONTROLLER = { TAG_using_armenian_names = yes } }
+			set_state_name = STATE_230_0
+		}
+		#Armeniya
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_230_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Erevan
+	if = {
+		limit = { any_country = { controls_province = 15435 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15435 name = VICTORY_POINTS_15435_0 }
+	}
+	#Yerevan
+	else = {
+		reset_province_name = 15435
+	}
+	#Zvart’nots’ Odanavakayan
+	if = {
+		limit = { any_country = { controls_province = 15437 TAG_using_armenian_names = yes } }
+		set_province_name = { id = 15437 name = VICTORY_POINTS_15437_0 }
+	}
+	#Mezhdunarodnyy Aeroport Erevan
+	else_if = {
+		limit = { any_country = { controls_province = 15437 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15437 name = VICTORY_POINTS_15437_1 }
+	}
+	#Zvartnots International Airport
+	else = {
+		reset_province_name = 15437
+	}
 }
 
 #Georgia
 TDA_update_state_231_names = {
+	231 = {
+		#Sakartvelo
+		if = {
+			limit = { CONTROLLER = { TAG_using_georgian_names = yes } }
+			set_state_name = STATE_231_0
+		}
+		#Gruziya
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_231_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Tbilisis Saertashoriso Aerodromi
+	if = {
+		limit = { any_country = { controls_province = 15434 TAG_using_georgian_names = yes } }
+		set_province_name = { id = 15434 name = VICTORY_POINTS_15434_0 }
+	}
+	#Mezhdunarodnyy Aeroport Tbilisi
+	else_if = {
+		limit = { any_country = { controls_province = 15434 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15434 name = VICTORY_POINTS_15434_1 }
+	}
+	#Tbilisi International Airport
+	else = {
+		reset_province_name = 15434
+	}
 }
 
 #Dagestan
@@ -17001,6 +17068,45 @@ TDA_update_state_825_names = {
 
 #Abkhazia
 TDA_update_state_826_names = {
+	826 = {
+		#Aṕsny
+		if = {
+			limit = { CONTROLLER = { TAG_using_abkhaz_names = yes } }
+			set_state_name = STATE_826_0
+		}
+		#Abkhaziya
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_826_1
+		}
+		#Apkhazeti
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_georgian_names = yes } }
+			set_state_name = STATE_826_2
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Aqwa
+	if = {
+		limit = { any_country = { controls_province = 11599 TAG_using_abkhaz_names = yes } }
+		set_province_name = { id = 11599 name = VICTORY_POINTS_11599_0 }
+	}
+	#Sokhumi
+	else_if = {
+		limit = { any_country = { controls_province = 11599 TAG_using_georgian_names = yes } }
+		set_province_name = { id = 11599 name = VICTORY_POINTS_11599_1 }
+	}
+	#Sukhum
+	else_if = {
+		limit = { any_country = { controls_province = 11599 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11599 name = VICTORY_POINTS_11599_2 }
+	}
+	#Sukhumi
+	else = {
+		reset_province_name = 11599
+	}
 }
 
 #Kabardino-Balkaria
@@ -18129,6 +18235,37 @@ TDA_update_state_907_names = {
 	}
 }
 
+#South Ossetia
+TDA_update_state_908_names = {
+	908 = {
+		#Yuzhnaya Osetiya
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_908_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Tchinval
+	if = {
+		limit = { any_country = { controls_province = 9626 TAG_using_georgian_names = yes } }
+		set_province_name = { id = 9626 name = VICTORY_POINTS_9626_0 }
+	}
+	#Tskhinvali
+	else = {
+		reset_province_name = 9626
+	}
+}
+
+#Nagorno-Karabakh
+TDA_update_state_909_names = {
+}
+
+#Nakhchivan
+TDA_update_state_910_names = {
+}
+
 
 
 TDA_change_all_city_names = {
@@ -19039,6 +19176,9 @@ TDA_change_all_city_names = {
 	TDA_update_state_905_names = yes
 	TDA_update_state_906_names = yes
 	TDA_update_state_907_names = yes
+	TDA_update_state_908_names = yes
+	TDA_update_state_909_names = yes
+	TDA_update_state_910_names = yes
 }
 
 TDA_toggle_change_city_names = {

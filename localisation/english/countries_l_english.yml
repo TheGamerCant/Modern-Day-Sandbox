@@ -454,3 +454,27 @@
  TUR:0 "Turkey"                                  
  TUR_DEF:0 "the Republic of Türkiye"                                  
  TUR_ADJ:0 "Turkish"
+
+ ARM:0 "Armenia"                                  
+ ARM_DEF:0 "the Republic of Armenia"                                  
+ ARM_ADJ:0 "Armenian"
+
+ AZJ:0 "Azerbaijan"                                  
+ AZJ_DEF:0 "the Republic of Azerbaijan"                                  
+ AZJ_ADJ:0 "Azeri"
+
+ GOR:0 "Georgia"                                  
+ GOR_DEF:0 "Georgia"                                  
+ GOR_ADJ:0 "Georgian"
+
+ AKH:0 "Artsakh"                                  
+ AKH_DEF:0 "the Republic of Artsakh"                                  
+ AKH_ADJ:0 "Artsakhi"
+
+ SOS:0 "South Ossetia"                                  
+ SOS_DEF:0 "the Republic of South Ossetia"                                  
+ SOS_ADJ:0 "South Ossetian"
+
+ ABZ:0 "Abkhazia"                                  
+ ABZ_DEF:0 "the Republic of Abkhazia"                                  
+ ABZ_ADJ:0 "Abkhaz"

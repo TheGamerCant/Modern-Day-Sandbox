@@ -2,12 +2,25 @@ state={
 	id=231
 	name="STATE_231"
 	history={
-		owner = ZZZ
+		owner = GOR
+		add_core_of = GOR
+		
+		victory_points = { 15433 18 }
+		victory_points = { 15434 2 }
+		victory_points = { 15431 3 }
+		victory_points = { 12309 4 }
+		victory_points = { 3658 3 }
+		victory_points = { 6671 2 }
+		victory_points = { 772 2 }
+		
+		set_variable = { sq_km = 56925.41 }
+		
+		buildings = { air_base = 5 }
 	}
 	provinces={
-		654 772 1530 1599 3653 3656 3658 3667 4534 4605 6436 6669 6671 6674 9626 9632 9702 12309 
+		654 672 772 1599 3653 3656 3658 3667 4534 4605 6436 6669 6671 6674 9702 12309 15431 15432 15433 15434 
 	}
-	manpower= 100000
+	manpower= 3647818
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=town

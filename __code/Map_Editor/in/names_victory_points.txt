@@ -17111,3 +17111,102 @@
 876 = {
 	default = "Kovancılar"
 }
+11599 = {
+	default = "Sukhumi"
+	entry = {
+        name = "Aqwa"
+        requirements = {
+            "TAG_using_abkhaz_names = yes"
+        }
+    }
+	entry = {
+        name = "Sokhumi"
+        requirements = {
+            "TAG_using_georgian_names = yes"
+        }
+    }
+	entry = {
+        name = "Sukhum"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+11647 = {
+	default = "Gagra"
+}
+9626 = {
+	default = "Tskhinvali"
+	entry = {
+        name = "Tchinval"
+        requirements = {
+            "TAG_using_georgian_names = yes"
+        }
+    }
+}
+15433 = {
+	default = "Tblisi"
+}
+15434 = {
+	default = "Tbilisi International Airport"
+	entry = {
+        name = "Tbilisis Saertashoriso Aerodromi"
+        requirements = {
+            "TAG_using_georgian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Mezhdunarodnyy Aeroport Tbilisi"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+12309 = {
+	default = "Batumi"
+}
+3658 = {
+	default = "Kutaisi"
+}
+6671 = {
+	default = "Gori"
+}
+772 = {
+	default = "Zugdidi"
+}
+15431 = {
+	default = "Rustavi"
+}
+15435 = {
+	default = "Yerevan"
+	entry = { 
+        name = "Erevan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+15437 = {
+	default = "Zvartnots International Airport"
+	entry = {
+        name = "Zvart’nots’ Odanavakayan"
+        requirements = {
+            "TAG_using_armenian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Mezhdunarodnyy Aeroport Erevan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+12441 = {
+	default = "Gyumri"
+}
+4660 = {
+	default = "Kapan"
+}
+12380 = {
+	default = "Vanadzor"
+}

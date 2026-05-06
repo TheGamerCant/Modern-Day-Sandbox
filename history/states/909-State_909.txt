@@ -1,0 +1,18 @@
+state={
+	id=909
+	name="STATE_909"
+	history={
+		owner = AKH
+		add_core_of = AKH
+		add_claim_by = AZJ
+		
+		set_variable = { sq_km = 10198.19 }
+	}
+	provinces={
+		1467 9715 15438 15439 
+	}
+	manpower=141400
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

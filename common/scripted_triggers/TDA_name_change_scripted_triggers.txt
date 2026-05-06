@@ -701,3 +701,61 @@ TAG_using_turkish_names = {
 		is_puppet_of = TUR
 	}
 }
+
+TAG_using_abkhaz_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = ABZ
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = ABZ
+	}
+}
+
+TAG_using_georgian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = GOR
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = GOR
+	}
+}
+
+TAG_using_armenian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = ARM
+				original_tag = AKH
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = ARM
+		is_puppet_of = AKH
+	}
+}
+
+TAG_using_azeri_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = AZJ
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = AZJ
+	}
+}

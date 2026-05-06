@@ -556,3 +556,27 @@ TUR = {
 	color = rgb { 143 100 58 }
 	color_ui = rgb { 143 100 58 }
 }
+ARM = {
+	color = rgb { 200 103 14 }
+	color_ui = rgb { 200 103 14 }
+}
+AZJ = {
+	color = rgb { 18 158 123 }
+	color_ui = rgb { 18 158 123 }
+}
+GOR = {
+	color = rgb { 212 167 167 }
+	color_ui = rgb { 212 167 167 }
+}
+AKH = {
+	color = rgb { 242 178 63 }
+	color_ui = rgb { 242 178 63 }
+}
+SOS = {
+	color = rgb { 219 211 56 }
+	color_ui = rgb { 219 211 56 }
+}
+ABZ = {
+	color = rgb { 74 197 80 }
+	color_ui = rgb { 74 197 80 }
+}
