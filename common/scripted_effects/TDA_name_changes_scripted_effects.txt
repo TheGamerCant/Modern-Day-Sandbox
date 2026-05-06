@@ -7686,12 +7686,12 @@ TDA_update_state_452_names = {
 	else = {
 		reset_province_name = 7079
 	}
-	#Al-Quṣayr
+	#Aḍ-Ḍab'ah
 	if = {
 		limit = { any_country = { controls_province = 11910 TAG_using_arab_names = yes } }
 		set_province_name = { id = 11910 name = VICTORY_POINTS_11910_0 }
 	}
-	#Aḍ-Ḍab'ah
+	#El Dabaa
 	else = {
 		reset_province_name = 11910
 	}

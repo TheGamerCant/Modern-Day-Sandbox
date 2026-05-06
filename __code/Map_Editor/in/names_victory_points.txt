@@ -17063,3 +17063,51 @@
 15424 = {
 	default = "Kilis"
 }
+15425 = {
+	default = "Van"
+}
+15427 = {
+	default = "Erzurum"
+}
+15429 = {
+	default = "Malatya"
+}
+15430 = {
+	default = "Elâzığ"
+}
+9868 = {
+	default = "Erzincan"
+}
+1463 = {
+	default = "Yüksekova"
+}
+4583 = {
+	default = "Iğdır"
+}
+652 = {
+	default = "Ağrı"
+}
+7470 = {
+	default = "Erciş"
+}
+9858 = {
+	default = "Muş"
+}
+10399 = {
+	default = "Bingöl"
+}
+10472 = {
+	default = "Kars"
+}
+10403 = {
+	default = "Ardahan"
+}
+12318 = {
+	default = "Tatvan"
+}
+11797 = {
+	default = "Tunceli"
+}
+876 = {
+	default = "Kovancılar"
+}

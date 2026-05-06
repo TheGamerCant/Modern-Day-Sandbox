@@ -2,12 +2,30 @@ state={
 	id=352
 	name="STATE_352"
 	history = {
-		owner = ZZZ
+		owner = TUR
+		add_core_of = TUR
+		
+		victory_points = { 15425 8 }
+		victory_points = { 15427 6 }
+		victory_points = { 15429 8 }
+		victory_points = { 15430 6 }
+		victory_points = { 9868 2 }
+		victory_points = { 1463 2 }
+		victory_points = { 4583 2 }
+		victory_points = { 652 2 }
+		victory_points = { 7470 2 }
+		victory_points = { 9858 2 }
+		victory_points = { 10399 2 }
+		victory_points = { 10472 2 }
+		victory_points = { 10403 1 }
+		victory_points = { 12318 2 }
+		victory_points = { 11797 1 }
+		victory_points = { 876 1 }
 		
 		set_variable = { sq_km = 164050.28 }
 	}
 	provinces={
-		652 864 876 1463 3890 4583 6919 6935 6965 6976 6991 7470 9858 9860 9868 9954 10399 10403 10472 11797 11853 11880 12318 12376 13121 
+		652 864 876 1463 3890 4583 6919 6935 6965 6976 6991 7470 9858 9860 9868 9954 10399 10403 10472 11797 11853 11880 12318 12376 13121 15425 15426 15427 15428 15429 15430 
 	}
 	manpower=5761752
 	buildings_max_level_factor=1

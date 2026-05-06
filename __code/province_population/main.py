@@ -12,13 +12,16 @@ class Province:
         self.prov_id: int = prov_id
         self.state_id: int = 0
         self.names: set[str] = set()
+        self.prev_victory_points: int = 0
+        self.new_victory_points: int = 0
 
 class State:
-    def __init__(self, state_id: int, provinces: set[int], owner: str = "ZZZ"):
+    def __init__(self, state_id: int, provinces: set[int], file: Path | None = None, owner: str = "ZZZ"):
         self.state_id: int = state_id
         self.provinces: set[int] = provinces
         self.owner: str = owner
         self.names: set[str] = set()
+        self.file: Path | None = file
 
 def LoadMap(mod_dir: Path) -> tuple[list[Province], list[State]]:
     definition_file: Path = mod_dir / "map/definition.csv"
@@ -39,7 +42,10 @@ def LoadMap(mod_dir: Path) -> tuple[list[Province], list[State]]:
                 incr += 1
 
     state_files: list[Path] = list(states_dir.glob("**/*.txt"))
-    states_list: list[State] = [State(0, set())]
+    states_list: list[State] = [State(
+        state_id=0,
+        provinces=set()
+    )]
 
     for state_file in state_files:
         with open(str(state_file)) as f:
@@ -50,10 +56,20 @@ def LoadMap(mod_dir: Path) -> tuple[list[Province], list[State]]:
             provinces_list_string: str = re.search(r"provinces\s*=\s*{(.*?)}", state_text, re.IGNORECASE | re.DOTALL)[1]
             province_ids: set[int] = {int(prov.strip()) for prov in provinces_list_string.split(" ") if prov.strip().isdigit()}
 
+            vps: list[tuple[str, str]] = re.findall(r"victory_points\s*=\s*{\s*(\d+)\s+(\d+)\s*}", state_text, re.IGNORECASE)
+
             for prov_id in province_ids:
                 provinces_list[prov_id].state_id = state_id
 
-            states_list.append(State(state_id, province_ids, owner))
+            for prov_id, value in vps:
+                provinces_list[int(prov_id)].prev_victory_points = int(value)
+
+            states_list.append(State(
+                state_id=state_id, 
+                provinces=province_ids, 
+                owner=owner,
+                file=state_file
+            ))
 
     states_list.sort(key=lambda x: x.state_id)
 
@@ -114,7 +130,7 @@ def FindDuplicates(provinces_list: list[Province], states_list: list[State], cit
             else:
                 all_keys[key] = [vp.prov_id]
 
-    #print({key: value for key, value in all_keys.items() if key in duplicate_tuples})
+    print({key: value for key, value in all_keys.items() if key in duplicate_tuples})
 
 def main():
     time_start: float = perf_counter()
