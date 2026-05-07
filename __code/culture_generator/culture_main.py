@@ -338,9 +338,8 @@ def ComputeNewIndexes(
 
     return [max_culture_index, max_super_culture_index]
 
-def UpdateStateFiles(cultures_list: list[Culture], states_folder: Path) -> None:
-    state_files: list[Path] = list(states_folder.glob("**/*.txt"))
-    old_to_new_index_dict: dict[int, int] = {culture.old_index : culture.new_index for culture in cultures_list}
+def UpdateHistoryStateFiles(old_to_new_index_dict: dict[int, int], history_states_folder: Path) -> None:
+    state_files: list[Path] = list(history_states_folder.glob("**/*.txt"))
 
     for file in state_files:
         with open(str(file)) as f:
@@ -349,6 +348,22 @@ def UpdateStateFiles(cultures_list: list[Culture], states_folder: Path) -> None:
         text: str = re.sub(
             r"set_variable = { culture_index_array\^(\d+) = (\d+) }",
             lambda m: f"set_variable = {{ culture_index_array^{m.group(1)} = {old_to_new_index_dict.get(int(m.group(2)))} }}",
+            text
+        )
+
+        with open(str(file), "w") as f:
+            f.write(text)
+
+def UpdateHistoryCountryFiles(old_to_new_index_dict: dict[int, int], history_countries_folder: Path) -> None:
+    country_files: list[Path] = list(history_countries_folder.glob("**/*.txt"))
+
+    for file in country_files:
+        with open(str(file)) as f:
+            text = f.read()
+
+        text: str = re.sub(
+            r"set_variable = { cored_cultures\^(\d+) = (\d+) }",
+            lambda m: f"set_variable = {{ cored_cultures^{m.group(1)} = {old_to_new_index_dict.get(int(m.group(2)))} }}",
             text
         )
 
@@ -365,7 +380,8 @@ def main():
     idea_tokens_file: Path = mod_directory / "common/ideas/TDA_culture_tokens.txt"
     scripted_effects_file: Path = mod_directory / "common/scripted_effects/TDA_culture_toggle_scripted_effects.txt"
     localisation_file: Path = mod_directory / "localisation/english/TDA_culture_l_english.yml"
-    states_folder: Path = mod_directory / "history/states"
+    history_states_folder: Path = mod_directory / "history/states"
+    history_countries_folder: Path = mod_directory / "history/countries"
 
     cultures_list: list[Culture] = LoadCulturesFromJson()
     super_cultures_list: list[SuperCulture] = LoadSuperCulturesFromJson(cultures_list)
@@ -384,7 +400,9 @@ def main():
     #WriteScriptedEffectsFile(cultures_list, super_cultures_list, scripted_effects_file)
     WriteLocalisationFile(cultures_list, super_cultures_list, localisation_file)
 
-    UpdateStateFiles(cultures_list, states_folder)
+    old_to_new_index_dict: dict[int, int] = {culture.old_index : culture.new_index for culture in cultures_list}
+    UpdateHistoryStateFiles(old_to_new_index_dict, history_states_folder)
+    UpdateHistoryCountryFiles(old_to_new_index_dict, history_countries_folder)
 
     time_taken: float = perf_counter()- time_start
     print(f"Time taken: {time_taken:.3}s")
