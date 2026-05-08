@@ -4680,16 +4680,64 @@
 	default = "Lanna"
 }
 870 = {
-	default = "North West Australia"
+	default = "Nakhchivan"
+	entry = { 
+        name = "Naxçıvan"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Nakhchyvan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Nakhch’yvan"
+        requirements = {
+            "TAG_using_armenian_names = yes"
+        }
+    }
 }
 871 = {
-	default = "South West Australia"
+	default = "Nagorno-Karabakh"
+	entry = {
+        name = "Lerrnayin-Gharabagh"
+        requirements = {
+            "TAG_using_armenian_names = yes"
+        }
+    }
+	entry = {
+        name = "Dağlıq-Qarabağ"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = {
+        name = "Nagornyy-Karabakh"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 872 = {
-	default = "North Queensland"
+	default = "South Ossetia"
+	entry = {
+        name = "Yuzhnaya Osetiya"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 873 = {
-	default = "South West Queensland"
+	default = "Béni Mellal-Khénifra"
+	entry = {
+        name = "Banī Mallāl/Ḵunayfira"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 874 = {
 	default = "Magadan"
@@ -4936,62 +4984,5 @@
     }
 }
 907 = {
-	default = "Béni Mellal-Khénifra"
-	entry = {
-        name = "Banī Mallāl/Ḵunayfira"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
-}
-908 = {
-	default = "South Ossetia"
-	entry = {
-        name = "Yuzhnaya Osetiya"
-        requirements = {
-            "TAG_using_russian_names = yes"
-        }
-    }
-}
-909 = {
-	default = "Nagorno-Karabakh"
-	entry = {
-        name = "Lerrnayin-Gharabagh"
-        requirements = {
-            "TAG_using_armenian_names = yes"
-        }
-    }
-	entry = {
-        name = "Dağlıq-Qarabağ"
-        requirements = {
-            "TAG_using_azeri_names = yes"
-        }
-    }
-	entry = {
-        name = "Nagornyy-Karabakh"
-        requirements = {
-            "TAG_using_russian_names = yes"
-        }
-    }
-}
-910 = {
-	default = "Nakhchivan"
-	entry = { 
-        name = "Naxçıvan"
-        requirements = {
-            "TAG_using_azeri_names = yes"
-        }
-    }
-	entry = { 
-        name = "Nakhchyvan"
-        requirements = {
-            "TAG_using_russian_names = yes"
-        }
-    }
-	entry = { 
-        name = "Nakhch’yvan"
-        requirements = {
-            "TAG_using_armenian_names = yes"
-        }
-    }
+	default = "Australian Capital Territory"
 }

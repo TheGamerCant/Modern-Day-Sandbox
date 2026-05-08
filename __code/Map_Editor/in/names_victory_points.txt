@@ -17218,6 +17218,12 @@
             "TAG_using_armenian_names = yes"
         }
     }
+	entry = { 
+        name = "Xankəndi"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
 }
 6997 = {
 	default = "Nakhchivan"

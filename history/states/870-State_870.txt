@@ -1,14 +1,19 @@
 state={
-	id=870
+	id = 870
 	name="STATE_870"
 	history={
-		owner = ZZZ
+		owner = AZJ
+		add_core_of = AZJ
+		
+		victory_points = { 6997 2 }
+		
+		set_variable = { sq_km = 5116.80 }
 	}
-	provinces={
-		2201 5207 8152 8209 8247 10937 10958 11016 12993 13133 
+	provinces = {
+		6997
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=wasteland
+	manpower=414225
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
 }

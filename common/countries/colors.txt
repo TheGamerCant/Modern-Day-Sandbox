@@ -580,3 +580,7 @@ ABZ = {
 	color = rgb { 74 197 80 }
 	color_ui = rgb { 74 197 80 }
 }
+AUS = {
+	color = rgb { 32 125 105 }
+	color_ui = rgb { 32 125 105 }
+}
