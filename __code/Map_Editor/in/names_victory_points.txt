@@ -17210,3 +17210,174 @@
 12380 = {
 	default = "Vanadzor"
 }
+15438 = {
+	default = "Khankendi"
+	entry = { 
+        name = "Stepanakert"
+        requirements = {
+            "TAG_using_armenian_names = yes"
+        }
+    }
+}
+6997 = {
+	default = "Nakhchivan"
+	entry = { 
+        name = "Naxçıvan"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Nakhchyvan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Nakhch’yvan"
+        requirements = {
+            "TAG_using_armenian_names = yes"
+        }
+    }
+}
+7661 = {
+	default = "Baku"
+	entry = { 
+        name = "Bakı"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+}
+15442 = {
+	default = "Heydar Aliyev International Airport"
+	entry = { 
+        name = "Heydər Əliyev Adına Beynəlxalq Hava Limanı"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Mezhdunarodnyy Aeroport Baku"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+15441 = {
+	default = "Gazakh"
+	entry = { 
+        name = "Qazax"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+}
+11674 = {
+	default = "Ganja"
+	entry = { 
+        name = "Gəncə"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Gandzha"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+15443 = {
+	default = "Sumqayit"
+	entry = { 
+        name = "Sumqayıt"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Sumgayt"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+11645 = {
+	default = "Mingechevir"
+	entry = { 
+        name = "Mingəçevir"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Mingechaur"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+1536 = {
+	default = "Shirvan"
+	entry = { 
+        name = "Şirvan"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+}
+1610 = {
+	default = "Agjabedi"
+	entry = { 
+        name = "Ağcabədi"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Agdzhabedi"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+12434 = {
+	default = "Jalilabad"
+	entry = { 
+        name = "Cəlilabad"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Dzhalil'abad"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}
+4458 = {
+	default = "Khachmaz"
+	entry = { 
+        name = "Xaçmaz"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+}
+4614 = {
+	default = "Shamakhy"
+	entry = { 
+        name = "Şamaxı"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Shemaka"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+}

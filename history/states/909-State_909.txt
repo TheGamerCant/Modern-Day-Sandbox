@@ -6,6 +6,8 @@ state={
 		add_core_of = AKH
 		add_claim_by = AZJ
 		
+		victory_points = { 15438 2 }
+		
 		set_variable = { sq_km = 10198.19 }
 	}
 	provinces={

@@ -4923,6 +4923,155 @@ TDA_update_state_228_names = {
 
 #Azerbaijan
 TDA_update_state_229_names = {
+	229 = {
+		#Azərbaycan
+		if = {
+			limit = { CONTROLLER = { TAG_using_azeri_names = yes } }
+			set_state_name = STATE_229_0
+		}
+		#Azerbaydazhan
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_229_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Şirvan
+	if = {
+		limit = { any_country = { controls_province = 1536 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 1536 name = VICTORY_POINTS_1536_0 }
+	}
+	#Shirvan
+	else = {
+		reset_province_name = 1536
+	}
+	#Ağcabədi
+	if = {
+		limit = { any_country = { controls_province = 1610 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 1610 name = VICTORY_POINTS_1610_0 }
+	}
+	#Agdzhabedi
+	else_if = {
+		limit = { any_country = { controls_province = 1610 TAG_using_russian_names = yes } }
+		set_province_name = { id = 1610 name = VICTORY_POINTS_1610_1 }
+	}
+	#Agjabedi
+	else = {
+		reset_province_name = 1610
+	}
+	#Xaçmaz
+	if = {
+		limit = { any_country = { controls_province = 4458 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 4458 name = VICTORY_POINTS_4458_0 }
+	}
+	#Khachmaz
+	else = {
+		reset_province_name = 4458
+	}
+	#Şamaxı
+	if = {
+		limit = { any_country = { controls_province = 4614 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 4614 name = VICTORY_POINTS_4614_0 }
+	}
+	#Shemaka
+	else_if = {
+		limit = { any_country = { controls_province = 4614 TAG_using_russian_names = yes } }
+		set_province_name = { id = 4614 name = VICTORY_POINTS_4614_1 }
+	}
+	#Shamakhy
+	else = {
+		reset_province_name = 4614
+	}
+	#Bakı
+	if = {
+		limit = { any_country = { controls_province = 7661 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 7661 name = VICTORY_POINTS_7661_0 }
+	}
+	#Baku
+	else = {
+		reset_province_name = 7661
+	}
+	#Mingəçevir
+	if = {
+		limit = { any_country = { controls_province = 11645 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 11645 name = VICTORY_POINTS_11645_0 }
+	}
+	#Mingechaur
+	else_if = {
+		limit = { any_country = { controls_province = 11645 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11645 name = VICTORY_POINTS_11645_1 }
+	}
+	#Mingechevir
+	else = {
+		reset_province_name = 11645
+	}
+	#Gəncə
+	if = {
+		limit = { any_country = { controls_province = 11674 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 11674 name = VICTORY_POINTS_11674_0 }
+	}
+	#Gandzha
+	else_if = {
+		limit = { any_country = { controls_province = 11674 TAG_using_russian_names = yes } }
+		set_province_name = { id = 11674 name = VICTORY_POINTS_11674_1 }
+	}
+	#Ganja
+	else = {
+		reset_province_name = 11674
+	}
+	#Cəlilabad
+	if = {
+		limit = { any_country = { controls_province = 12434 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 12434 name = VICTORY_POINTS_12434_0 }
+	}
+	#Dzhalil'abad
+	else_if = {
+		limit = { any_country = { controls_province = 12434 TAG_using_russian_names = yes } }
+		set_province_name = { id = 12434 name = VICTORY_POINTS_12434_1 }
+	}
+	#Jalilabad
+	else = {
+		reset_province_name = 12434
+	}
+	#Qazax
+	if = {
+		limit = { any_country = { controls_province = 15441 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 15441 name = VICTORY_POINTS_15441_0 }
+	}
+	#Gazakh
+	else = {
+		reset_province_name = 15441
+	}
+	#Heydər Əliyev Adına Beynəlxalq Hava Limanı
+	if = {
+		limit = { any_country = { controls_province = 15442 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 15442 name = VICTORY_POINTS_15442_0 }
+	}
+	#Mezhdunarodnyy Aeroport Baku
+	else_if = {
+		limit = { any_country = { controls_province = 15442 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15442 name = VICTORY_POINTS_15442_1 }
+	}
+	#Heydar Aliyev International Airport
+	else = {
+		reset_province_name = 15442
+	}
+	#Sumqayıt
+	if = {
+		limit = { any_country = { controls_province = 15443 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 15443 name = VICTORY_POINTS_15443_0 }
+	}
+	#Sumgayt
+	else_if = {
+		limit = { any_country = { controls_province = 15443 TAG_using_russian_names = yes } }
+		set_province_name = { id = 15443 name = VICTORY_POINTS_15443_1 }
+	}
+	#Sumqayit
+	else = {
+		reset_province_name = 15443
+	}
 }
 
 #Armenia
@@ -18260,10 +18409,78 @@ TDA_update_state_908_names = {
 
 #Nagorno-Karabakh
 TDA_update_state_909_names = {
+	909 = {
+		#Lerrnayin-Gharabagh
+		if = {
+			limit = { CONTROLLER = { TAG_using_armenian_names = yes } }
+			set_state_name = STATE_909_0
+		}
+		#Dağlıq-Qarabağ
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_azeri_names = yes } }
+			set_state_name = STATE_909_1
+		}
+		#Nagornyy-Karabakh
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_909_2
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Stepanakert
+	if = {
+		limit = { any_country = { controls_province = 15438 TAG_using_armenian_names = yes } }
+		set_province_name = { id = 15438 name = VICTORY_POINTS_15438_0 }
+	}
+	#Khankendi
+	else = {
+		reset_province_name = 15438
+	}
 }
 
 #Nakhchivan
 TDA_update_state_910_names = {
+	910 = {
+		#Naxçıvan
+		if = {
+			limit = { CONTROLLER = { TAG_using_azeri_names = yes } }
+			set_state_name = STATE_910_0
+		}
+		#Nakhchyvan
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_910_1
+		}
+		#Nakhch’yvan
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_armenian_names = yes } }
+			set_state_name = STATE_910_2
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Naxçıvan
+	if = {
+		limit = { any_country = { controls_province = 6997 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 6997 name = VICTORY_POINTS_6997_0 }
+	}
+	#Nakhchyvan
+	else_if = {
+		limit = { any_country = { controls_province = 6997 TAG_using_russian_names = yes } }
+		set_province_name = { id = 6997 name = VICTORY_POINTS_6997_1 }
+	}
+	#Nakhch’yvan
+	else_if = {
+		limit = { any_country = { controls_province = 6997 TAG_using_armenian_names = yes } }
+		set_province_name = { id = 6997 name = VICTORY_POINTS_6997_2 }
+	}
+	#Nakhchivan
+	else = {
+		reset_province_name = 6997
+	}
 }
 
 

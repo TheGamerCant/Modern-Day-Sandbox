@@ -1590,6 +1590,18 @@
 }
 229 = {
 	default = "Azerbaijan"
+	entry = { 
+        name = "Azərbaycan"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Azerbaydazhan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 230 = {
 	default = "Armenia"
@@ -4943,7 +4955,43 @@
 }
 909 = {
 	default = "Nagorno-Karabakh"
+	entry = {
+        name = "Lerrnayin-Gharabagh"
+        requirements = {
+            "TAG_using_armenian_names = yes"
+        }
+    }
+	entry = {
+        name = "Dağlıq-Qarabağ"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = {
+        name = "Nagornyy-Karabakh"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 910 = {
 	default = "Nakhchivan"
+	entry = { 
+        name = "Naxçıvan"
+        requirements = {
+            "TAG_using_azeri_names = yes"
+        }
+    }
+	entry = { 
+        name = "Nakhchyvan"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
+	entry = { 
+        name = "Nakhch’yvan"
+        requirements = {
+            "TAG_using_armenian_names = yes"
+        }
+    }
 }
