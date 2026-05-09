@@ -17462,10 +17462,10 @@
 7564 = {
 	default = "Brisbane"
 }
-15425 = {
+1454 = {
 	default = "Gold Coast"
 }
-15430 = {
+7481 = {
 	default = "Subshine Coast"
 }
 10430 = {
@@ -17480,15 +17480,45 @@
 7535 = {
 	default = "Nambour"
 }
-10475 = {
+7651 = {
 	default = "Rockhampton"
 }
-15426 = {
+4441 = {
 	default = "Cairns"
 }
-15427 = {
+1478 = {
 	default = "Townsville"
 }
-15428 = {
+4462 = {
 	default = "Mackay"
+}
+15423 = {
+	default = "Darwin"
+}
+15424 = {
+	default = "Katherene"
+}
+1410 = {
+	default = "Nhulunbuy"
+}
+12308 = {
+	default = "Gladstone"
+}
+1472 = {
+	default = "Biloela"
+}
+10445 = {
+	default = "Warwick"
+}
+12451 = {
+	default = "Goondiwindi"
+}
+4632 = {
+	default = "Emerald"
+}
+12424 = {
+	default = "Moranbah"
+}
+4487 = {
+	default = "Airlie Beach - Cannonvale"
 }

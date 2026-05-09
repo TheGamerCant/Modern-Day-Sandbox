@@ -5,15 +5,17 @@ state={
 		owner = AUS
 		add_core_of = AUS
 		
-		victory_points = { 10475 2 }
-		victory_points = { 15426 3 }
-		victory_points = { 15427 3 }
-		victory_points = { 15428 2 }
+		victory_points = { 4441 3 }
+		victory_points = { 1478 3 }
+		victory_points = { 4462 2 }
+		victory_points = { 4632 1 }
+		victory_points = { 12424 1 }
+		victory_points = { 4487 1 }
 		
 		set_variable = { sq_km = 407344.79 }
 	}
-	provinces={
-		1501 1514 1644 2166 4505 4520 4560 4632 4648 7506 7525 7566 7610 10338 10350 10365 10378 10460 10475 10487 12367 12382 12411 12424 12957 15426 15427 15428 15429 15431 
+	provinces = {
+		1478 1501 1514 1644 2139 2166 4441 4462 4487 4505 4520 4560 4632 4648 7506 7525 7566 7610 10338 10350 10365 10378 10460 10475 10487 12367 12382 12411 12424 12957
 	}
 	manpower=793352
 	buildings_max_level_factor=1

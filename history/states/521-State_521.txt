@@ -6,17 +6,22 @@ state={
 		add_core_of = AUS
 		
 		victory_points = { 7564 30 }
-		victory_points = { 15425 11 }
-		victory_points = { 15430 5 }
+		victory_points = { 1454 11 }
+		victory_points = { 7481 5 }
 		victory_points = { 10430 3 }
 		victory_points = { 7522 2 }
 		victory_points = { 4481 2 }
 		victory_points = { 7535 1 }
+		victory_points = { 7651 2 }
+		victory_points = { 12308 2 }
+		victory_points = { 1472 1 }
+		victory_points = { 10445 1 }
+		victory_points = { 12451 1 }
 		
 		set_variable = { sq_km = 295232.07 }
 	}
-	provinces={
-		1472 1570 4481 4502 4517 4530 4546 5227 7522 7535 7564 7592 7651 7666 10430 10445 12308 12451 15422 15423 15424 15425 15430 
+	provinces = {
+		1454 1472 1570 4481 4502 4517 4530 4546 5227 7481 7522 7535 7564 7592 7651 7666 10430 10445 12308 12311 12326 12451 15422
 	}
 	manpower=3614202
 	buildings_max_level_factor=1
