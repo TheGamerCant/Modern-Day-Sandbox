@@ -1,0 +1,23 @@
+state={
+	id=909
+	name="STATE_909"
+	history = {
+		owner = AUS
+		add_core_of = AUS
+		
+		victory_points = { 5207 1 }
+		victory_points = { 8209 1 }
+		victory_points = { 8152 1 }
+		victory_points = { 12323 1 }
+		victory_points = { 1540 2 }
+		
+		set_variable = { sq_km = 511452.34 }
+	}
+	provinces={
+		1511 1540 2201 4645 5125 5207 8152 8209 8247 10937 10958 10971 11016 12323 13133 
+	}
+	manpower=136346
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

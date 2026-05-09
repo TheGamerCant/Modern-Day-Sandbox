@@ -17018,10 +17018,10 @@
         }
     }
 }
-15417 = {
+1498 = {
 	default = "Şanlıurfa"
 }
-15418 = {
+5170 = {
 	default = "Karaköprü"
 }
 12992 = {
@@ -17390,7 +17390,7 @@
 7798 = {
 	default = "Melbourne"
 }
-15420 = {
+12993 = {
 	default = "Melbourne Airport"
 }
 12934 = {
@@ -17492,10 +17492,10 @@
 4462 = {
 	default = "Mackay"
 }
-15423 = {
+10969 = {
 	default = "Darwin"
 }
-15424 = {
+1514 = {
 	default = "Katherene"
 }
 1410 = {
@@ -17521,4 +17521,55 @@
 }
 4487 = {
 	default = "Airlie Beach - Cannonvale"
+}
+5207 = {
+	default = "Kununurra"
+}
+8209 = {
+	default = "Broome"
+}
+8152 = {
+	default = "Karratha"
+}
+12323 = {
+	default = "Carnarvon"
+}
+1540 = {
+	default = "Geraldton"
+}
+8165 = {
+	default = "Perth"
+}
+13169 = {
+	default = "Perth International Airport"
+}
+8228 = {
+	default = "Bunbury"
+}
+8243 = {
+	default = "Albany"
+}
+8130 = {
+	default = "Esperance"
+}
+5175 = {
+	default = "Kalgoorlie-Boulder"
+}
+15416 = {
+	default = "Adelaide"
+}
+15419 = {
+	default = "Port Pirie"
+}
+15420 = {
+	default = "Whyalla"
+}
+1773 = {
+	default = "Mount Gambier"
+}
+15422 = {
+	default = "Alice Springs"
+}
+15432 = {
+	default = "Mount Isa"
 }

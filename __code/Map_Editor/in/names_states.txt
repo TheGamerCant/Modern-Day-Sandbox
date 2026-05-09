@@ -2861,7 +2861,7 @@
 	default = "Brisbane"
 }
 522 = {
-	default = "Western Australia"
+	default = "Perth"
 }
 523 = {
 	default = "Papua"
@@ -3684,7 +3684,7 @@
 	default = "Sulawesi"
 }
 674 = {
-	default = "Central Australia"
+	default = "Australian Outback"
 }
 675 = {
 	default = "Al Hajara"
@@ -4988,4 +4988,10 @@
 }
 908 = {
 	default = "Townsville"
+}
+909 = {
+	default = "Geraldton"
+}
+910 = {
+	default = "Stuart & Barkly Highways"
 }

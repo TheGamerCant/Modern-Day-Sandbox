@@ -9063,7 +9063,7 @@ TDA_update_state_520_names = {
 TDA_update_state_521_names = {
 }
 
-#Western Australia
+#Perth
 TDA_update_state_522_names = {
 }
 
@@ -15021,7 +15021,7 @@ TDA_update_state_672_names = {
 TDA_update_state_673_names = {
 }
 
-#Central Australia
+#Australian Outback
 TDA_update_state_674_names = {
 }
 
@@ -18480,6 +18480,14 @@ TDA_update_state_907_names = {
 TDA_update_state_908_names = {
 }
 
+#Geraldton
+TDA_update_state_909_names = {
+}
+
+#Stuart & Barkly Highways
+TDA_update_state_910_names = {
+}
+
 
 
 TDA_change_all_city_names = {
@@ -19391,6 +19399,8 @@ TDA_change_all_city_names = {
 	TDA_update_state_906_names = yes
 	TDA_update_state_907_names = yes
 	TDA_update_state_908_names = yes
+	TDA_update_state_909_names = yes
+	TDA_update_state_910_names = yes
 }
 
 TDA_toggle_change_city_names = {

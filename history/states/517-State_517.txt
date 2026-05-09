@@ -6,7 +6,7 @@ state={
 		add_core_of = AUS
 		
 		victory_points = { 7798 50 }
-		victory_points = { 15420 2 }
+		victory_points = { 12993 2 }
 		victory_points = { 12934 4 }
 		victory_points = { 4776 3 }
 		victory_points = { 2114 3 }
@@ -20,7 +20,7 @@ state={
 		buildings = { air_base = 7 }
 	}
 	provinces = {
-		1759 2114 2130 2155 4776 4791 7755 7798 7811 8249 10553 10581 10622 10637 12354 12576 12932 12934 12958 12968 15420 15421
+		1759 2114 2130 2155 4776 4791 7755 7798 7811 8249 10553 10581 10622 10637 10949 12354 12576 12932 12934 12958 12968 12993
 	}
 	manpower= 5537817
 	buildings_max_level_factor=1.000

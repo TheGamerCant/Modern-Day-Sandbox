@@ -5,14 +5,14 @@ state={
 		owner = AUS
 		add_core_of = AUS
 		
-		victory_points = { 15423 3 }
-		victory_points = { 15424 1 }
+		victory_points = { 10969 3 }
+		victory_points = { 1514 1 }
 		victory_points = { 1410 1 }
 		
 		set_variable = { sq_km = 224786.75 }
 	}
 	provinces = {
-		1217 1410 1422 1431 4415 7457 7669 10276 10288 10316 10518 12104 12246 12290 12339 12499 15423 15424 15425 15426 15427 
+		1217 1410 1422 1431 1501 1514 2166 4415 7457 7669 10276 10288 10316 10518 10969 12104 12246 12290 12339 12499 12957
 	}
 	manpower= 175105
 	buildings_max_level_factor=1.000
