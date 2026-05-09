@@ -17429,16 +17429,16 @@
 12406 = {
 	default = "Sydney"
 }
-15423 = {
+7538 = {
 	default = "Sydney Airport"
 }
-15429 = {
+11006 = {
 	default = "Wollongong"
 }
-15430 = {
+2116 = {
 	default = "Central Coast"
 }
-15431 = {
+10941 = {
 	default = "Newcastle"
 }
 1667 = {
@@ -17458,4 +17458,37 @@
 }
 7471 = {
 	default = "Tamworth"
+}
+7564 = {
+	default = "Brisbane"
+}
+15425 = {
+	default = "Gold Coast"
+}
+15430 = {
+	default = "Subshine Coast"
+}
+10430 = {
+	default = "Toowoomba"
+}
+7522 = {
+	default = "Hervey Bay"
+}
+4481 = {
+	default = "Bundaberg"
+}
+7535 = {
+	default = "Nambour"
+}
+10475 = {
+	default = "Rockhampton"
+}
+15426 = {
+	default = "Cairns"
+}
+15427 = {
+	default = "Townsville"
+}
+15428 = {
+	default = "Mackay"
 }

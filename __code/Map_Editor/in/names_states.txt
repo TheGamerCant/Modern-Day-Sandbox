@@ -2858,7 +2858,7 @@
 	default = "Northern Territory"
 }
 521 = {
-	default = "Queensland"
+	default = "Brisbane"
 }
 522 = {
 	default = "Western Australia"
@@ -4985,4 +4985,7 @@
 }
 907 = {
 	default = "Australian Capital Territory"
+}
+908 = {
+	default = "Townsville"
 }

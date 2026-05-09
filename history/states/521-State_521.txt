@@ -2,13 +2,24 @@ state={
 	id=521
 	name="STATE_521"
 	history={
-		owner = ZZZ
+		owner = AUS
+		add_core_of = AUS
+		
+		victory_points = { 7564 30 }
+		victory_points = { 15425 11 }
+		victory_points = { 15430 5 }
+		victory_points = { 10430 3 }
+		victory_points = { 7522 2 }
+		victory_points = { 4481 2 }
+		victory_points = { 7535 1 }
+		
+		set_variable = { sq_km = 295232.07 }
 	}
-	provinces = {
-		1472 1501 1514 1557 1570 1644 2116 2166 2187 2221 4481 4502 4505 4517 4520 4530 4546 4560 4632 4648 5198 5227 7506 7522 7525 7535 7538 7564 7566 7592 7610 7651 7666 8230 10338 10350 10365 10378 10430 10445 10458 10460 10475 10487 10941 11006 12308 12354 12367 12382 12411 12424 12451 12949 12957
+	provinces={
+		1472 1570 4481 4502 4517 4530 4546 5227 7522 7535 7564 7592 7651 7666 10430 10445 12308 12451 15422 15423 15424 15425 15430 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=3614202
+	buildings_max_level_factor=1
 	state_category=town
+	local_supplies=0.5
 }

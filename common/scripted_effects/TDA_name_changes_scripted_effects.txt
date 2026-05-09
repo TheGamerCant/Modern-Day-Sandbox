@@ -9059,7 +9059,7 @@ TDA_update_state_519_names = {
 TDA_update_state_520_names = {
 }
 
-#Queensland
+#Brisbane
 TDA_update_state_521_names = {
 }
 
@@ -18476,6 +18476,10 @@ TDA_update_state_906_names = {
 TDA_update_state_907_names = {
 }
 
+#Townsville
+TDA_update_state_908_names = {
+}
+
 
 
 TDA_change_all_city_names = {
@@ -19386,6 +19390,7 @@ TDA_change_all_city_names = {
 	TDA_update_state_905_names = yes
 	TDA_update_state_906_names = yes
 	TDA_update_state_907_names = yes
+	TDA_update_state_908_names = yes
 }
 
 TDA_toggle_change_city_names = {

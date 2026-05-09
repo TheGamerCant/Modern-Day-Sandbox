@@ -733,7 +733,7 @@
  STATE_518: "Tasmania"
  STATE_519: "South Australia"
  STATE_520: "Northern Territory"
- STATE_521: "Queensland"
+ STATE_521: "Brisbane"
  STATE_522: "Western Australia"
  STATE_523: "Papua"
  STATE_524: "Taiwan"
@@ -1280,3 +1280,4 @@
  STATE_906: "Souss-Massa"
  STATE_906_0: "Sūs/Māssa"
  STATE_907: "Australian Capital Territory"
+ STATE_908: "Townsville"

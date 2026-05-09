@@ -110,10 +110,11 @@ def MergeProvinces(
     prov_to_merge_into_state: int = provinces_list[prov_to_merge_into].state_id
 
     if prov_to_remove_state != prov_to_merge_into_state:
-        user_input: str = input("These provinces are part of two different states - press 'y' to continue or any other key to cancel.").lower()
+        user_input: str = input(f"These provinces ({prov_to_remove}, {prov_to_merge_into}) are part of two different states - press 'y' to continue or any other key to cancel.\n").lower()
 
         if user_input != "y":
             return None
+
     
     if prov_to_remove_state:
         states_list[prov_to_remove_state].provinces.remove(prov_to_remove)
@@ -315,7 +316,7 @@ def main():
         mod_dir=mod_directory
     )
 
-    #[height][width][r/g/b]
+    #[height][width][r, g, b]
     provinces_bitmap: np.ndarray = LoadProvincesBitmap(mod_dir=mod_directory)
 
     changed_states: set[int] = set()
@@ -326,43 +327,53 @@ def main():
 
     load_time: float = perf_counter()- time_start
 
-    print(f"Load Time: {load_time:.3}s\n\nCommands:\np [PROV_TO_REMOVE_ID] [PROV_TO_MERGE_INTO_ID]\ns [STATE_TO_REMOVE_ID] [STATE_TO_MERGE_INTO_ID]\nq to quit\n")
+    commands_to_execute: list[tuple[str, str, str]] = []
+
+    print(f"Load Time: {load_time:.3}s\n\nCommands:\np [PROV_TO_REMOVE_ID] [PROV_TO_MERGE_INTO_ID]\ns [STATE_TO_REMOVE_ID] [STATE_TO_MERGE_INTO_ID]\nq to quit\nu to undo last command\n")
     while True:
         user_input: str = input("").lower()
 
         if user_input == "q":
+            for command in commands_to_execute:
+                if command[0] == "p":
+                    MergeProvinces(
+                        provinces_list,
+                        states_list,
+                        strategic_regions_list,
+                        provinces_bitmap,
+                        int(command[1]),
+                        int(command[2]),
+                        changed_states,
+                        changed_strategic_regions,
+                        old_to_new_prov_ids
+                    )
+
+                elif user_input_list[0] == "s":
+                    MergeStates(
+                        provinces_list,
+                        states_list,
+                        strategic_regions_list,
+                        int(command[1]),
+                        int(command[2]),
+                        changed_states,
+                        changed_strategic_regions,
+                        deleted_states,
+                        old_to_new_state_ids,
+                        mod_directory
+                    )
+                    
             break
 
-        user_input_list: list[str] = user_input.split(" ")
-        if len(user_input_list) == 3 and str.isnumeric(user_input_list[1]) and str.isnumeric(user_input_list[2]):
-            if user_input_list[0] == "p":
-                MergeProvinces(
-                    provinces_list,
-                    states_list,
-                    strategic_regions_list,
-                    provinces_bitmap,
-                    int(user_input_list[1]),
-                    int(user_input_list[2]),
-                    changed_states,
-                    changed_strategic_regions,
-                    old_to_new_prov_ids
-                )
-
-            elif user_input_list[0] == "s":
-                MergeStates(
-                    provinces_list,
-                    states_list,
-                    strategic_regions_list,
-                    int(user_input_list[1]),
-                    int(user_input_list[2]),
-                    changed_states,
-                    changed_strategic_regions,
-                    deleted_states,
-                    old_to_new_state_ids,
-                    mod_directory
-                )
+        elif user_input == "u":
+            if len(commands_to_execute) > 0:
+                commands_to_execute.pop()
+                
         else:
-            if user_input_list[0] not in ["p", "s"]:
+            user_input_list: list[str] = user_input.split(" ")
+            if len(user_input_list) == 3 and user_input_list[0] in ["p", "s"] and str.isnumeric(user_input_list[1]) and str.isnumeric(user_input_list[2]):
+                commands_to_execute.append(tuple(user_input_list))
+                
+            else:
                 print("Bad Input")
 
     WriteProvinceDefinitions(mod_directory, provinces_list)
