@@ -110,7 +110,7 @@ def MergeProvinces(
     prov_to_merge_into_state: int = provinces_list[prov_to_merge_into].state_id
 
     if prov_to_remove_state != prov_to_merge_into_state:
-        user_input: str = input("These provinces are part of two diffenet states - press 'y' to continue or any other key to cancel.").lower()
+        user_input: str = input("These provinces are part of two different states - press 'y' to continue or any other key to cancel.").lower()
 
         if user_input != "y":
             return None

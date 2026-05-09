@@ -5058,6 +5058,20 @@ TDA_update_state_229_names = {
 	else = {
 		reset_province_name = 12434
 	}
+	#Sumqayıt
+	if = {
+		limit = { any_country = { controls_province = 12926 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 12926 name = VICTORY_POINTS_12926_0 }
+	}
+	#Sumgayt
+	else_if = {
+		limit = { any_country = { controls_province = 12926 TAG_using_russian_names = yes } }
+		set_province_name = { id = 12926 name = VICTORY_POINTS_12926_1 }
+	}
+	#Sumqayit
+	else = {
+		reset_province_name = 12926
+	}
 }
 
 #Armenia
@@ -5132,20 +5146,6 @@ TDA_update_state_231_names = {
 	#Tbilisi International Airport
 	else = {
 		reset_province_name = 13131
-	}
-	#Sumqayıt
-	if = {
-		limit = { any_country = { controls_province = 13172 TAG_using_azeri_names = yes } }
-		set_province_name = { id = 13172 name = VICTORY_POINTS_13172_0 }
-	}
-	#Sumgayt
-	else_if = {
-		limit = { any_country = { controls_province = 13172 TAG_using_russian_names = yes } }
-		set_province_name = { id = 13172 name = VICTORY_POINTS_13172_1 }
-	}
-	#Sumqayit
-	else = {
-		reset_province_name = 13172
 	}
 }
 

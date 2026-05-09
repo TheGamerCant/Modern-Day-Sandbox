@@ -17294,7 +17294,7 @@
         }
     }
 }
-13172 = {
+12926 = {
 	default = "Sumqayit"
 	entry = { 
         name = "Sumqayıt"
@@ -17425,4 +17425,37 @@
 }
 8249 = {
 	default = "Mildura"
+}
+12406 = {
+	default = "Sydney"
+}
+15423 = {
+	default = "Sydney Airport"
+}
+15429 = {
+	default = "Wollongong"
+}
+15430 = {
+	default = "Central Coast"
+}
+15431 = {
+	default = "Newcastle"
+}
+1667 = {
+	default = "Albury"
+}
+10455 = {
+	default = "Wagga Wagga"
+}
+7450 = {
+	default = "Coffs Harbour"
+}
+1611 = {
+	default = "Lismore"
+}
+4478 = {
+	default = "Dubbo"
+}
+7471 = {
+	default = "Tamworth"
 }
