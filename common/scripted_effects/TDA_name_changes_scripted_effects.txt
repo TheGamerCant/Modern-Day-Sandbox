@@ -4961,6 +4961,15 @@ TDA_update_state_229_names = {
 	else = {
 		reset_province_name = 1610
 	}
+	#Qazax
+	if = {
+		limit = { any_country = { controls_province = 2186 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 2186 name = VICTORY_POINTS_2186_0 }
+	}
+	#Gazakh
+	else = {
+		reset_province_name = 2186
+	}
 	#Xaçmaz
 	if = {
 		limit = { any_country = { controls_province = 4458 TAG_using_azeri_names = yes } }
@@ -4992,6 +5001,20 @@ TDA_update_state_229_names = {
 	#Baku
 	else = {
 		reset_province_name = 7661
+	}
+	#Heydər Əliyev Adına Beynəlxalq Hava Limanı
+	if = {
+		limit = { any_country = { controls_province = 10473 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 10473 name = VICTORY_POINTS_10473_0 }
+	}
+	#Mezhdunarodnyy Aeroport Baku
+	else_if = {
+		limit = { any_country = { controls_province = 10473 TAG_using_russian_names = yes } }
+		set_province_name = { id = 10473 name = VICTORY_POINTS_10473_1 }
+	}
+	#Heydar Aliyev International Airport
+	else = {
+		reset_province_name = 10473
 	}
 	#Mingəçevir
 	if = {
@@ -5035,43 +5058,6 @@ TDA_update_state_229_names = {
 	else = {
 		reset_province_name = 12434
 	}
-	#Qazax
-	if = {
-		limit = { any_country = { controls_province = 15441 TAG_using_azeri_names = yes } }
-		set_province_name = { id = 15441 name = VICTORY_POINTS_15441_0 }
-	}
-	#Gazakh
-	else = {
-		reset_province_name = 15441
-	}
-	#Heydər Əliyev Adına Beynəlxalq Hava Limanı
-	if = {
-		limit = { any_country = { controls_province = 15442 TAG_using_azeri_names = yes } }
-		set_province_name = { id = 15442 name = VICTORY_POINTS_15442_0 }
-	}
-	#Mezhdunarodnyy Aeroport Baku
-	else_if = {
-		limit = { any_country = { controls_province = 15442 TAG_using_russian_names = yes } }
-		set_province_name = { id = 15442 name = VICTORY_POINTS_15442_1 }
-	}
-	#Heydar Aliyev International Airport
-	else = {
-		reset_province_name = 15442
-	}
-	#Sumqayıt
-	if = {
-		limit = { any_country = { controls_province = 15443 TAG_using_azeri_names = yes } }
-		set_province_name = { id = 15443 name = VICTORY_POINTS_15443_0 }
-	}
-	#Sumgayt
-	else_if = {
-		limit = { any_country = { controls_province = 15443 TAG_using_russian_names = yes } }
-		set_province_name = { id = 15443 name = VICTORY_POINTS_15443_1 }
-	}
-	#Sumqayit
-	else = {
-		reset_province_name = 15443
-	}
 }
 
 #Armenia
@@ -5091,28 +5077,28 @@ TDA_update_state_230_names = {
 			reset_state_name = yes
 		}
 	}
-	#Erevan
-	if = {
-		limit = { any_country = { controls_province = 15435 TAG_using_russian_names = yes } }
-		set_province_name = { id = 15435 name = VICTORY_POINTS_15435_0 }
-	}
-	#Yerevan
-	else = {
-		reset_province_name = 15435
-	}
 	#Zvart’nots’ Odanavakayan
 	if = {
-		limit = { any_country = { controls_province = 15437 TAG_using_armenian_names = yes } }
-		set_province_name = { id = 15437 name = VICTORY_POINTS_15437_0 }
+		limit = { any_country = { controls_province = 8155 TAG_using_armenian_names = yes } }
+		set_province_name = { id = 8155 name = VICTORY_POINTS_8155_0 }
 	}
 	#Mezhdunarodnyy Aeroport Erevan
 	else_if = {
-		limit = { any_country = { controls_province = 15437 TAG_using_russian_names = yes } }
-		set_province_name = { id = 15437 name = VICTORY_POINTS_15437_1 }
+		limit = { any_country = { controls_province = 8155 TAG_using_russian_names = yes } }
+		set_province_name = { id = 8155 name = VICTORY_POINTS_8155_1 }
 	}
 	#Zvartnots International Airport
 	else = {
-		reset_province_name = 15437
+		reset_province_name = 8155
+	}
+	#Erevan
+	if = {
+		limit = { any_country = { controls_province = 12906 TAG_using_russian_names = yes } }
+		set_province_name = { id = 12906 name = VICTORY_POINTS_12906_0 }
+	}
+	#Yerevan
+	else = {
+		reset_province_name = 12906
 	}
 }
 
@@ -5135,17 +5121,31 @@ TDA_update_state_231_names = {
 	}
 	#Tbilisis Saertashoriso Aerodromi
 	if = {
-		limit = { any_country = { controls_province = 15434 TAG_using_georgian_names = yes } }
-		set_province_name = { id = 15434 name = VICTORY_POINTS_15434_0 }
+		limit = { any_country = { controls_province = 13131 TAG_using_georgian_names = yes } }
+		set_province_name = { id = 13131 name = VICTORY_POINTS_13131_0 }
 	}
 	#Mezhdunarodnyy Aeroport Tbilisi
 	else_if = {
-		limit = { any_country = { controls_province = 15434 TAG_using_russian_names = yes } }
-		set_province_name = { id = 15434 name = VICTORY_POINTS_15434_1 }
+		limit = { any_country = { controls_province = 13131 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13131 name = VICTORY_POINTS_13131_1 }
 	}
 	#Tbilisi International Airport
 	else = {
-		reset_province_name = 15434
+		reset_province_name = 13131
+	}
+	#Sumqayıt
+	if = {
+		limit = { any_country = { controls_province = 13172 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 13172 name = VICTORY_POINTS_13172_0 }
+	}
+	#Sumgayt
+	else_if = {
+		limit = { any_country = { controls_province = 13172 TAG_using_russian_names = yes } }
+		set_province_name = { id = 13172 name = VICTORY_POINTS_13172_1 }
+	}
+	#Sumqayit
+	else = {
+		reset_province_name = 13172
 	}
 }
 
@@ -17704,17 +17704,17 @@ TDA_update_state_871_names = {
 	}
 	#Stepanakert
 	if = {
-		limit = { any_country = { controls_province = 15438 TAG_using_armenian_names = yes } }
-		set_province_name = { id = 15438 name = VICTORY_POINTS_15438_0 }
+		limit = { any_country = { controls_province = 12904 TAG_using_armenian_names = yes } }
+		set_province_name = { id = 12904 name = VICTORY_POINTS_12904_0 }
 	}
 	#Xankəndi
 	else_if = {
-		limit = { any_country = { controls_province = 15438 TAG_using_azeri_names = yes } }
-		set_province_name = { id = 15438 name = VICTORY_POINTS_15438_1 }
+		limit = { any_country = { controls_province = 12904 TAG_using_azeri_names = yes } }
+		set_province_name = { id = 12904 name = VICTORY_POINTS_12904_1 }
 	}
 	#Khankendi
 	else = {
-		reset_province_name = 15438
+		reset_province_name = 12904
 	}
 }
 

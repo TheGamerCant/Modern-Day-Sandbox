@@ -2,12 +2,19 @@ state={
 	id=518
 	name="STATE_518"
 	history={
-		owner = ZZZ
+		owner = AUS
+		add_core_of = AUS
+		
+		victory_points = { 10977 4 }
+		victory_points = { 12645 2 }
+		victory_points = { 5181 1 }
+		
+		set_variable = { sq_km = 68018 }
 	}
-	provinces={
-		2183 2189 5181 5187 10665 12645 
+	provinces = {
+		2183 2189 5181 5187 10665 10977 12645
 	}
-	manpower= 100000
+	manpower=  511483
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=small_island

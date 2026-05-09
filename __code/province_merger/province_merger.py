@@ -107,9 +107,20 @@ def MergeProvinces(
     ):
     #Step 1 - Remove prov_to_remove from it's state and strategic region
     prov_to_remove_state: int = provinces_list[prov_to_remove].state_id
+    prov_to_merge_into_state: int = provinces_list[prov_to_merge_into].state_id
+
+    if prov_to_remove_state != prov_to_merge_into_state:
+        user_input: str = input("These provinces are part of two diffenet states - press 'y' to continue or any other key to cancel.").lower()
+
+        if user_input != "y":
+            return None
+    
     if prov_to_remove_state:
         states_list[prov_to_remove_state].provinces.remove(prov_to_remove)
         changed_states.add(prov_to_remove_state)
+
+    if prov_to_merge_into_state:
+        changed_states.add(prov_to_merge_into_state)
 
     prov_to_remove_strategic_region: int = provinces_list[prov_to_remove].strategic_region_id
     strategic_regions_list[prov_to_remove_strategic_region].provinces.remove(prov_to_remove)
@@ -136,10 +147,6 @@ def MergeProvinces(
 
     mask = np.all(provinces_bitmap == old_color, axis=-1)
     provinces_bitmap[mask] = new_color
-
-    prov_to_merge_into_state: int = provinces_list[prov_to_merge_into].state_id
-    if prov_to_merge_into_state:
-        changed_states.add(prov_to_merge_into_state)
 
     prove_to_merge_into_strategic_region: int = provinces_list[prov_to_merge_into].strategic_region_id
     changed_strategic_regions.add(prove_to_merge_into_strategic_region)
@@ -365,7 +372,7 @@ def main():
     print(f"Changed States:\n{changed_states}\n\nDeleted States:\n{deleted_states}\n\nChanged Strategic Regions:\n\n{changed_strategic_regions}\n\nOld prov ID to new prov ID map:")
     for key, value in old_to_new_prov_ids.items():
         print(f" - {key} -> {value}")
-    print(f"\n\nOld prov ID to new state ID map:")
+    print(f"\n\nOld state ID to new state ID map:")
     for key, value in old_to_new_state_ids.items():
         print(f" - {key} -> {value}")
 

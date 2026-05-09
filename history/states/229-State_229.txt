@@ -6,10 +6,10 @@ state={
 		add_core_of = AZJ
 		
 		victory_points = { 7661 40 }
-		victory_points = { 15442 2 }
-		victory_points = { 15441 1 }
+		victory_points = { 10473 2 }
+		victory_points = { 2186 1 }
 		victory_points = { 11674 4 }
-		victory_points = { 15443 5 }
+		victory_points = { 12926 5 }
 		victory_points = { 11645 2 }
 		victory_points = { 1536 2 }
 		victory_points = { 1610 2 }
@@ -21,8 +21,8 @@ state={
 		
 		buildings = { air_base = 6 }
 	}
-	provinces={
-		1536 1539 1610 4458 4473 4477 4545 4614 6763 7495 7661 11645 11674 11704 12434 15440 15441 15442 15443 15444 
+	provinces = {
+		1536 1539 1610 2133 2177 2186 4458 4473 4477 4545 4614 6763 7495 7661 10473 11645 11674 11704 12434 12926
 	}
 	manpower= 8701952
 	buildings_max_level_factor=1.000

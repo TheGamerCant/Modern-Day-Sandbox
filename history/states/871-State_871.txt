@@ -6,12 +6,12 @@ state={
 		add_core_of = AKH
 		add_claim_by = AZJ
 		
-		victory_points = { 15438 2 }
+		victory_points = { 12904 2 }
 		
 		set_variable = { sq_km = 10198.19 }
 	}
 	provinces = {
-		1467 9715 15438 15439
+		1467 9715 12904 12912
 	}
 	manpower=141400
 	buildings_max_level_factor=1

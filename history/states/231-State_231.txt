@@ -5,9 +5,9 @@ state={
 		owner = GOR
 		add_core_of = GOR
 		
-		victory_points = { 15433 18 }
-		victory_points = { 15434 2 }
-		victory_points = { 15431 3 }
+		victory_points = { 13172 18 }
+		victory_points = { 13131 2 }
+		victory_points = { 13171 3 }
 		victory_points = { 12309 4 }
 		victory_points = { 3658 3 }
 		victory_points = { 6671 2 }
@@ -17,8 +17,8 @@ state={
 		
 		buildings = { air_base = 5 }
 	}
-	provinces={
-		654 672 772 1599 3653 3656 3658 3667 4534 4605 6436 6669 6671 6674 9702 12309 15431 15432 15433 15434 
+	provinces = {
+		654 672 772 1599 2205 3653 3656 3658 3667 4534 4605 6436 6669 6671 6674 9702 12309 13131 13171 13172
 	}
 	manpower= 3647818
 	buildings_max_level_factor=1.000

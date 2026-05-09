@@ -2,12 +2,17 @@ state={
 	id=907
 	name="STATE_907"
 	history = {
-		owner = ZZZ
+		owner = AUS
+		add_core_of = AUS
+		
+		victory_points = { 7859 10 }
+		
+		set_variable = { sq_km = 2358 }
 	}
 	provinces={
 		7859 
 	}
-	manpower=100000
+	manpower=367985
 	buildings_max_level_factor=1
 	state_category=pastoral
 	local_supplies=0.5

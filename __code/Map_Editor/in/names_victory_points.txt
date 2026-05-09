@@ -17024,7 +17024,7 @@
 15418 = {
 	default = "Karaköprü"
 }
-15420 = {
+12992 = {
 	default = "Diyarbakır"
 }
 7530 = {
@@ -17039,13 +17039,13 @@
 12387 = {
 	default = "Cizre"
 }
-15422 = {
+12936 = {
 	default = "Mardin"
 }
 11759 = {
 	default = "Siverek"
 }
-15423 = {
+10979 = {
 	default = "Viranşehir"
 }
 12416 = {
@@ -17060,19 +17060,19 @@
 10497 = {
 	default = "Siirt"
 }
-15424 = {
+12915 = {
 	default = "Kilis"
 }
-15425 = {
+8237 = {
 	default = "Van"
 }
-15427 = {
+10936 = {
 	default = "Erzurum"
 }
-15429 = {
+5206 = {
 	default = "Malatya"
 }
-15430 = {
+8206 = {
 	default = "Elâzığ"
 }
 9868 = {
@@ -17144,10 +17144,10 @@
         }
     }
 }
-15433 = {
+13172 = {
 	default = "Tblisi"
 }
-15434 = {
+13131 = {
 	default = "Tbilisi International Airport"
 	entry = {
         name = "Tbilisis Saertashoriso Aerodromi"
@@ -17174,10 +17174,10 @@
 772 = {
 	default = "Zugdidi"
 }
-15431 = {
+13171 = {
 	default = "Rustavi"
 }
-15435 = {
+12906 = {
 	default = "Yerevan"
 	entry = { 
         name = "Erevan"
@@ -17186,7 +17186,7 @@
         }
     }
 }
-15437 = {
+8155 = {
 	default = "Zvartnots International Airport"
 	entry = {
         name = "Zvart’nots’ Odanavakayan"
@@ -17210,7 +17210,7 @@
 12380 = {
 	default = "Vanadzor"
 }
-15438 = {
+12904 = {
 	default = "Khankendi"
 	entry = { 
         name = "Stepanakert"
@@ -17255,7 +17255,7 @@
         }
     }
 }
-15442 = {
+10473 = {
 	default = "Heydar Aliyev International Airport"
 	entry = { 
         name = "Heydər Əliyev Adına Beynəlxalq Hava Limanı"
@@ -17270,7 +17270,7 @@
         }
     }
 }
-15441 = {
+2186 = {
 	default = "Gazakh"
 	entry = { 
         name = "Qazax"
@@ -17294,7 +17294,7 @@
         }
     }
 }
-15443 = {
+13172 = {
 	default = "Sumqayit"
 	entry = { 
         name = "Sumqayıt"
@@ -17386,4 +17386,43 @@
             "TAG_using_russian_names = yes"
         }
     }
+}
+7798 = {
+	default = "Melbourne"
+}
+15420 = {
+	default = "Melbourne Airport"
+}
+12934 = {
+	default = "Geelong"
+}
+4776 = {
+	default = "Bendigo"
+}
+2114 = {
+	default = "Ballarat"
+}
+7755 = {
+	default = "Shepparton - Mooroopna"
+}
+1759 = {
+	default = "Traralgon"
+}
+7859 = {
+	default = "Canberra"
+}
+10977 = {
+	default = "Hobart"
+}
+12645 = {
+	default = "Launceston"
+}
+5181 = {
+	default = "Devonport"
+}
+7811 = {
+	default = "Warrnambool"
+}
+8249 = {
+	default = "Mildura"
 }
