@@ -5,10 +5,10 @@ state={
 		owner = AUS
 		add_core_of = AUS
 		
-		set_variable = { sq_km = 4433062.07 }
+		set_variable = { sq_km = 4394762.05 }
 	}
 	provinces = {
-		5138 8134 10955 10991 11013 
+		5138 8134 10955 10991 11013 15442 15443 15444 15445 
 	}
 	manpower= 81549
 	buildings_max_level_factor=1.000

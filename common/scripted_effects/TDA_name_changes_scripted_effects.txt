@@ -18484,7 +18484,7 @@ TDA_update_state_908_names = {
 TDA_update_state_909_names = {
 }
 
-#Stuart & Barkly Highways
+#Outback Highways
 TDA_update_state_910_names = {
 }
 

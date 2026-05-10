@@ -4993,5 +4993,5 @@
 	default = "Geraldton"
 }
 910 = {
-	default = "Stuart & Barkly Highways"
+	default = "Outback Highways"
 }
