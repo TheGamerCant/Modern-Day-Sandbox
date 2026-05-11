@@ -596,3 +596,11 @@ HEZ = {
 	color = rgb { 205 190 36 }
 	color_ui = rgb { 205 190 36 }
 }
+CYP = {
+	color = rgb { 225 207 202 }
+	color_ui = rgb { 225 207 202 }
+}
+NCP = {
+	color = rgb { 178 36 22 }
+	color_ui = rgb { 178 36 22 }
+}

@@ -17848,3 +17848,48 @@
         }
     }
 }
+15490 = {
+	default = "Nicosia"
+	entry = {
+        name = "Lefkosía"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+	entry = {
+        name = "Lefkoşa"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
+}
+7193 = {
+	default = "Limassol"
+	entry = {
+        name = "Lemesós"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+	entry = {
+        name = "Limasol"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
+}
+11984 = {
+	default = "Northern Nicosia"
+	entry = {
+        name = "Kuzey Lefkoşa"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
+	entry = {
+        name = "Vóreia Lefkosía"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}

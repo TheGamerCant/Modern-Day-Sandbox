@@ -959,7 +959,7 @@ TDA_update_state_46_names = {
 #Thessaly
 TDA_update_state_47_names = {
 	47 = {
-		#Thessalía 
+		#Thessalía
 		if = {
 			limit = { CONTROLLER = { TAG_using_greek_names = yes } }
 			set_state_name = STATE_47_0
@@ -3547,6 +3547,49 @@ TDA_update_state_182_names = {
 
 #Cyprus
 TDA_update_state_183_names = {
+	183 = {
+		#Kýpros
+		if = {
+			limit = { CONTROLLER = { TAG_using_greek_names = yes } }
+			set_state_name = STATE_183_0
+		}
+		#Kıbrıs
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_turkish_names = yes } }
+			set_state_name = STATE_183_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Lemesós
+	if = {
+		limit = { any_country = { controls_province = 7193 TAG_using_greek_names = yes } }
+		set_province_name = { id = 7193 name = VICTORY_POINTS_7193_0 }
+	}
+	#Limasol
+	else_if = {
+		limit = { any_country = { controls_province = 7193 TAG_using_turkish_names = yes } }
+		set_province_name = { id = 7193 name = VICTORY_POINTS_7193_1 }
+	}
+	#Limassol
+	else = {
+		reset_province_name = 7193
+	}
+	#Lefkosía
+	if = {
+		limit = { any_country = { controls_province = 15490 TAG_using_greek_names = yes } }
+		set_province_name = { id = 15490 name = VICTORY_POINTS_15490_0 }
+	}
+	#Lefkoşa
+	else_if = {
+		limit = { any_country = { controls_province = 15490 TAG_using_turkish_names = yes } }
+		set_province_name = { id = 15490 name = VICTORY_POINTS_15490_1 }
+	}
+	#Nicosia
+	else = {
+		reset_province_name = 15490
+	}
 }
 
 #Eastern Macedonia and Thrace
@@ -18952,6 +18995,58 @@ TDA_update_state_921_names = {
 	}
 }
 
+#Northern Cyprus
+TDA_update_state_922_names = {
+	922 = {
+		#Kuzey Kıbrıs
+		if = {
+			limit = { CONTROLLER = { TAG_using_turkish_names = yes } }
+			set_state_name = STATE_922_0
+		}
+		#Vóreia Kýpros
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_greek_names = yes } }
+			set_state_name = STATE_922_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Kuzey Lefkoşa
+	if = {
+		limit = { any_country = { controls_province = 11984 TAG_using_turkish_names = yes } }
+		set_province_name = { id = 11984 name = VICTORY_POINTS_11984_0 }
+	}
+	#Vóreia Lefkosía
+	else_if = {
+		limit = { any_country = { controls_province = 11984 TAG_using_greek_names = yes } }
+		set_province_name = { id = 11984 name = VICTORY_POINTS_11984_1 }
+	}
+	#Northern Nicosia
+	else = {
+		reset_province_name = 11984
+	}
+}
+
+#Akrotiri and Dhekelia Base Areas
+TDA_update_state_923_names = {
+	923 = {
+		#Periochés Váseon Akrotiríou kai Dekéleias
+		if = {
+			limit = { CONTROLLER = { TAG_using_greek_names = yes } }
+			set_state_name = STATE_923_0
+		}
+		#Akrotiri ve Dikelya Üs Bölgeleri
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_turkish_names = yes } }
+			set_state_name = STATE_923_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+}
+
 
 
 TDA_change_all_city_names = {
@@ -19876,6 +19971,8 @@ TDA_change_all_city_names = {
 	TDA_update_state_919_names = yes
 	TDA_update_state_920_names = yes
 	TDA_update_state_921_names = yes
+	TDA_update_state_922_names = yes
+	TDA_update_state_923_names = yes
 }
 
 TDA_toggle_change_city_names = {

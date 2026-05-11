@@ -494,3 +494,11 @@
  HEZ:0 "Hezbollah"                                  
  HEZ_DEF:0 "the Islamic Resistance in Lebanon"                                  
  HEZ_ADJ:0 "Hezbollah"
+
+ CYP:0 "Cyprus"                                  
+ CYP_DEF:0 "the Republic of Cyprus"                                  
+ CYP_ADJ:0 "Cypriot"
+
+ NCP:0 "Northern Cyprus"                                  
+ NCP_DEF:0 "the Turkish Republic of Northern Cyprus"                                  
+ NCP_ADJ:0 "Turkish Cypriot"

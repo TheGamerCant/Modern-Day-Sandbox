@@ -686,11 +686,13 @@ TAG_using_greek_names = {
 		AND = {
 			OR = {
 				original_tag = GRC
+				original_tag = CYP
 			}
 			is_subject = no
 		}
 		
 		is_puppet_of = GRC
+		is_puppet_of = CYP
 	}
 }
 
@@ -700,11 +702,13 @@ TAG_using_turkish_names = {
 		AND = {
 			OR = {
 				original_tag = TUR
+				original_tag = NCP
 			}
 			is_subject = no
 		}
 		
 		is_puppet_of = TUR
+		is_puppet_of = NCP
 	}
 }
 

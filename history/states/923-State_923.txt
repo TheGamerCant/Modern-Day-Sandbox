@@ -1,0 +1,17 @@
+state={
+	id=923
+	name="STATE_923"
+	history = {
+		owner = GBR
+		add_core_of = GBR
+		
+		set_variable = { sq_km = 254 }
+	}
+	provinces={
+		15488 15489  
+	}
+	manpower=16795
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

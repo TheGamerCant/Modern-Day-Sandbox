@@ -304,7 +304,7 @@
 47 = {
 	default = "Thessaly"
 	entry = {
-	    name = "Thessalía "
+	    name = "Thessalía"
         requirements = {
             "TAG_using_greek_names = yes"
         }
@@ -1278,6 +1278,18 @@
 }
 183 = {
 	default = "Cyprus"
+	entry = {
+	    name = "Kýpros"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+	entry = {
+	    name = "Kıbrıs"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
 }
 184 = {
 	default = "Eastern Macedonia and Thrace"
@@ -5115,6 +5127,36 @@
         name = "Al-Qunayṭirah"
         requirements = {
             "TAG_using_arab_names = yes"
+        }
+    }
+}
+922 = {
+	default = "Northern Cyprus"
+	entry = {
+	    name = "Kuzey Kıbrıs"
+        requirements = {
+            "TAG_using_turkish_names = yes"
+        }
+    }
+	entry = {
+	    name = "Vóreia Kýpros"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+}
+923 = {
+	default = "Akrotiri and Dhekelia Base Areas"
+	entry = {
+	    name = "Periochés Váseon Akrotiríou kai Dekéleias"
+        requirements = {
+            "TAG_using_greek_names = yes"
+        }
+    }
+	entry = {
+	    name = "Akrotiri ve Dikelya Üs Bölgeleri"
+        requirements = {
+            "TAG_using_turkish_names = yes"
         }
     }
 }
