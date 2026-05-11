@@ -164,27 +164,27 @@
         },
 		{
           "token" : "serbian",
-          "red" : 54,
-          "green" : 57,
-          "blue" : 88,
+          "red" : 43,
+          "green" : 45,
+          "blue" : 70,
           "colour" : "d",
 		  "name" : "Serbian",
           "desc" : ""
         },
 		{
           "token" : "albanian",
-          "red" : 138,
-          "green" : 26,
-          "blue" : 26,
+          "red" : 110,
+          "green" : 20,
+          "blue" : 20,
           "colour" : "r",
 		  "name" : "Albanian",
           "desc" : ""
         },
 		{
           "token" : "french",
-          "red" : 27,
-          "green" : 35,
-          "blue" : 167,
+          "red" : 21,
+          "green" : 27,
+          "blue" : 133,
           "colour" : "A",
 		  "name" : "French",
           "desc" : ""
@@ -196,6 +196,33 @@
           "blue" : 182,
           "colour" : "e",
 		  "name" : "Ukrainian",
+          "desc" : ""
+        },
+		{
+          "token" : "mexican",
+          "red" : 4,
+          "green" : 63,
+          "blue" : 12,
+          "colour" : "I",
+		  "name" : "Mexican",
+          "desc" : ""
+        },
+		{
+          "token" : "turkish",
+          "red" : 143,
+          "green" : 100,
+          "blue" : 58,
+          "colour" : "F",
+		  "name" : "Turkish",
+          "desc" : ""
+        },
+		{
+          "token" : "kurdish",
+          "red" : 212,
+          "green" : 161,
+          "blue" : 37,
+          "colour" : "Y",
+		  "name" : "Kurdish",
           "desc" : ""
         }
     ],
@@ -1706,9 +1733,9 @@
         },
 		{
           "token" : "spanish",
-          "red" : 233,
-          "green" : 190,
-          "blue" : 56,
+          "red" : 208,
+          "green" : 163,
+          "blue" : 23,
           "colour" : "Y",
 		  "name" : "Spanish",
           "desc" : ""
@@ -1887,6 +1914,176 @@
           "blue" : 66,
           "colour" : "c",
 		  "name" : "Libyan",
+          "desc" : ""
+        },
+		{
+          "token" : "greek",
+          "red" : 9,
+          "green" : 145,
+          "blue" : 184,
+          "colour" : "C",
+		  "name" : "Greek",
+          "desc" : ""
+        },
+		{
+          "token" : "tunisian",
+          "red" : 120,
+          "green" : 0,
+          "blue" : 6,
+          "colour" : "r",
+		  "name" : "Tunisian",
+          "desc" : ""
+        },
+		{
+          "token" : "moroccan",
+          "red" : 76,
+          "green" : 23,
+          "blue" : 12,
+          "colour" : "F",
+		  "name" : "Moroccan",
+          "desc" : ""
+        },
+		{
+          "token" : "sahrawi",
+          "red" : 156,
+          "green" : 91,
+          "blue" : 40,
+          "colour" : "O",
+		  "name" : "Sahrawi",
+          "desc" : ""
+        },
+		{
+          "token" : "algerian",
+          "red" : 75,
+          "green" : 148,
+          "blue" : 62,
+          "colour" : "c",
+		  "name" : "Algerian",
+          "desc" : ""
+        },
+		{
+          "token" : "tuareg",
+          "red" : 112,
+          "green" : 43,
+          "blue" : 12,
+          "colour" : "F",
+		  "name" : "Tuareg",
+          "desc" : ""
+        },
+		{
+          "token" : "northern_mexican",
+          "red" : 4,
+          "green" : 60,
+          "blue" : 10,
+          "colour" : "I",
+		  "name" : "Norteño",
+          "desc" : "",
+		  "super_culture": "mexican"
+        },
+		{
+          "token" : "central_mexican",
+          "red" : 16,
+          "green" : 105,
+          "blue" : 35,
+          "colour" : "c",
+		  "name" : "Bajios",
+          "desc" : "",
+		  "super_culture": "mexican"
+        },
+		{
+          "token" : "southern_mexican",
+          "red" : 14,
+          "green" : 78,
+          "blue" : 74,
+          "colour" : "n",
+		  "name" : "Sureños",
+          "desc" : "",
+		  "super_culture": "mexican"
+        },
+		{
+          "token" : "yucatan",
+          "red" : 51,
+          "green" : 109,
+          "blue" : 132,
+          "colour" : "d",
+		  "name" : "Yucatán",
+          "desc" : "",
+		  "super_culture": "mexican"
+        },
+		{
+          "token" : "western_turkish",
+          "red" : 145,
+          "green" : 136,
+          "blue" : 122,
+          "colour" : "g",
+		  "name" : "Western Turkish",
+          "desc" : "",
+		  "super_culture": "turkish"
+        },
+		{
+          "token" : "inland_turkish",
+          "red" : 142,
+          "green" : 51,
+          "blue" : 31,
+          "colour" : "F",
+		  "name" : "Inland Turkish",
+          "desc" : "",
+		  "super_culture": "turkish"
+        },
+		{
+          "token" : "black_sea_turkish",
+          "red" : 188,
+          "green" : 132,
+          "blue" : 86,
+          "colour" : "q",
+		  "name" : "Black Sea Turkish",
+          "desc" : "",
+		  "super_culture": "turkish"
+        },
+		{
+          "token" : "turkish_kurd",
+          "red" : 212,
+          "green" : 97,
+          "blue" : 30,
+          "colour" : "O",
+		  "name" : "Turkish Kurd",
+          "desc" : "",
+		  "super_culture": "kurdish"
+        },
+		{
+          "token" : "georgian",
+          "red" : 212,
+          "green" : 167,
+          "blue" : 167,
+          "colour" : "W",
+		  "name" : "Georgian",
+          "desc" : ""
+        },
+		{
+          "token" : "abkhaz",
+          "red" : 74,
+          "green" : 197,
+          "blue" : 80,
+          "colour" : "K",
+		  "name" : "Abkhaz",
+          "desc" : ""
+        },
+		{
+          "token" : "armenian",
+          "red" : 200,
+          "green" : 124,
+          "blue" : 10,
+          "colour" : "O",
+		  "name" : "Armenian",
+          "desc" : ""
+        },
+		{
+          "token" : "azeri",
+          "red" : 18,
+          "green" : 158,
+          "blue" : 123,
+          "colour" : "n",
+		  "name" : "Azeri",
           "desc" : ""
         }
     ]

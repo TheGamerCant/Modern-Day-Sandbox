@@ -144,6 +144,7 @@ bitmapfonts = {
 		v = { 113 145 47 }			# Light Olive / Montenegrin-Bosniak
 		D = { 100 31 138 }			# Dark Purple 2 / Tibetean
 		n = { 32 116 112 }			# Light Turquoise / Southern Ukrainian
+		q = { 188 132 86 }			# Light Brown / Black Sea Turkish
 	
 		C = { 35 206 255 }  		# Cyan
 		L = { 195 176 145 } 		# Lilac

@@ -863,7 +863,7 @@ defined_text = {
 			set_temp_variable = { dem4 = FROM.super_culture_index_array^3 }
 			if = {
 				limit = { check_variable = { dem4 < 0 } }
-				multiply_temp_variable = { dem3 = -1 }
+				multiply_temp_variable = { dem4 = -1 }
 				set_temp_variable = { dem4 = global.super_culture_names_array^dem4 }
 			}
 			else = {

@@ -31,6 +31,8 @@
 
  TDA_culture_other_token_idea:0 "§gOther§!"
 
+ TDA_culture_turkish_kurd_token_idea:0 "§OTurkish Kurd§!"
+
  TDA_culture_irish_token_idea:0 "§IIrish§!"
 
  TDA_culture_northern_irish_catholic_token_idea:0 "§GNorthern Irish Catholic§!"
@@ -87,6 +89,12 @@
 
  TDA_culture_macedonian_albanian_token_idea:0 "§mMacedonian-Albanian§!"
 
+ TDA_culture_western_turkish_token_idea:0 "§gWestern Turkish§!"
+
+ TDA_culture_inland_turkish_token_idea:0 "§FInland Turkish§!"
+
+ TDA_culture_black_sea_turkish_token_idea:0 "§qBlack Sea Turkish§!"
+
  TDA_culture_anglo_canadian_token_idea:0 "§RAnglo-Canadian§!"
 
  TDA_culture_atlantic_canadian_token_idea:0 "§tAtlantic Canadian§!"
@@ -110,6 +118,14 @@
  TDA_culture_bavarian_token_idea:0 "§ABavarian§!"
 
  TDA_culture_berlinner_token_idea:0 "§1Berlinner§!"
+
+ TDA_culture_northern_mexican_token_idea:0 "§INorteño§!"
+
+ TDA_culture_central_mexican_token_idea:0 "§cBajios§!"
+
+ TDA_culture_southern_mexican_token_idea:0 "§nSureños§!"
+
+ TDA_culture_yucatan_token_idea:0 "§dYucatán§!"
 
  TDA_culture_southern_english_token_idea:0 "§RSouthern English§!"
 
@@ -381,6 +397,28 @@
 
  TDA_culture_libyan_token_idea:0 "§cLibyan§!"
 
+ TDA_culture_greek_token_idea:0 "§CGreek§!"
+
+ TDA_culture_tunisian_token_idea:0 "§rTunisian§!"
+
+ TDA_culture_moroccan_token_idea:0 "§FMoroccan§!"
+
+ TDA_culture_sahrawi_token_idea:0 "§OSahrawi§!"
+
+ TDA_culture_algerian_token_idea:0 "§cAlgerian§!"
+
+ TDA_culture_tuareg_token_idea:0 "§FTuareg§!"
+
+ TDA_culture_georgian_token_idea:0 "§WGeorgian§!"
+
+ TDA_culture_abkhaz_token_idea:0 "§KAbkhaz§!"
+
+ TDA_culture_armenian_token_idea:0 "§OArmenian§!"
+
+ TDA_culture_azeri_token_idea:0 "§nAzeri§!"
+
+ TDA_super_culture_kurdish_token_idea:0 "§YKurdish§!"
+
  TDA_super_culture_irish_token_idea:0 "§IIrish§!"
 
  TDA_super_culture_welsh_token_idea:0 "§9Welsh§!"
@@ -405,11 +443,15 @@
 
  TDA_super_culture_albanian_token_idea:0 "§rAlbanian§!"
 
+ TDA_super_culture_turkish_token_idea:0 "§FTurkish§!"
+
  TDA_super_culture_canadian_token_idea:0 "§tAnglo-Canadian§!"
 
  TDA_super_culture_italian_token_idea:0 "§cItalian§!"
 
  TDA_super_culture_german_token_idea:0 "§gGerman§!"
+
+ TDA_super_culture_mexican_token_idea:0 "§IMexican§!"
 
  TDA_super_culture_english_token_idea:0 "§mEnglish§!"
 
