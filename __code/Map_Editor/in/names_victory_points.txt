@@ -17573,3 +17573,278 @@
 15432 = {
 	default = "Mount Isa"
 }
+11919 = {
+	default = "Sidon"
+	entry = {
+        name = "Ṣaydā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15446 = {
+	default = "Baalbek"
+	entry = {
+        name = "Ba'albak"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15448 = {
+	default = "Beirut"
+	entry = {
+        name = "Bayrūt"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15449 = {
+	default = "Tripoli"
+	entry = {
+        name = "Ṭarābulus"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15452 = {
+	default = "Latakia"
+	entry = {
+        name = "Al-Lādhiqiyah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10087 = {
+	default = "Tartus"
+	entry = {
+        name = "Ṭarṭūs"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15453 = {
+	default = "Idlib"
+	entry = {
+        name = "'Idlib"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15455 = {
+	default = "Qamishli"
+	entry = {
+        name = "Al-Qāmishlī"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15456 = {
+	default = "Hasakah"
+	entry = {
+        name = "Al-Ḥasakah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15457 = {
+	default = "Amuda"
+	entry = {
+        name = "'Amūdā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1578 = {
+	default = "Ras Al-Ayn"
+	entry = {
+        name = "Ra's Al-'Aīn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15458 = {
+	default = "Deir ez-Zur"
+	entry = {
+        name = "Dayr az-Zawr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+2013 = {
+	default = "Mayadin"
+	entry = {
+        name = "Al-Mayādīn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15461 = {
+	default = "Raqqa"
+	entry = {
+        name = "Ar-Raqqah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15462 = {
+	#Change to Tabqa / Aṭ-Ṭabaqah for free Syria
+	
+	default = "Al-Thawrah"
+	entry = {
+        name = "Ad-Ṭhawrah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1606 = {
+	default = "Tell Abyad"
+	entry = {
+        name = "Tall Abyaḍ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15464 = {
+	default = "Aleppo"
+	entry = {
+        name = "Ḥalab"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15466 = {
+	default = "Aleppo International Airport"
+	entry = {
+        name = "Maṭār Ḥalab"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15470 = {
+	default = "Manbij"
+	entry = {
+        name = "Manbiǧ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15469 = {
+	default = "Afrin"
+	entry = {
+        name = "'Afrīn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15471 = {
+	default = "Hama"
+	entry = {
+        name = "Ḥamāh"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1056 = {
+	default = "Salamiyah"
+	entry = {
+        name = "Salamiyya"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1074 = {
+	default = "Daraa"
+	entry = {
+        name = "Dar'ā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15473 = {
+	default = "Suwayda"
+	entry = {
+        name = "As-Suwaydā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15474 = {
+	default = "Homs"
+	entry = {
+        name = "Ḥimṣ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15477 = {
+	default = "Palmyra"
+	entry = {
+        name = "Tadmur"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15476 = {
+	default = "Ar-Rastan"
+}
+4111 = {
+	default = "Damascus"
+	entry = {
+        name = "Dimashq"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15483 = {
+	default = "Damascus International Airport"
+	entry = {
+        name = "Maṭār Dimashq"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15482 = {
+	default = "Douma"
+	entry = {
+        name = "Dūmā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15485 = {
+	default = "An-Nabek"
+	entry = {
+        name = "An-Nabk"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}

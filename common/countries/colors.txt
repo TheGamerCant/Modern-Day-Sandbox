@@ -584,3 +584,15 @@ AUS = {
 	color = rgb { 32 125 105 }
 	color_ui = rgb { 32 125 105 }
 }
+SYR = {
+	color = rgb { 96 8 15 }
+	color_ui = rgb { 96 8 15 }
+}
+LEB = {
+	color = rgb { 78 120 80 }
+	color_ui = rgb { 78 120 80 }
+}
+HEZ = {
+	color = rgb { 205 190 36 }
+	color_ui = rgb { 205 190 36 }
+}

@@ -325,7 +325,7 @@ TDA_update_every_country_population_density = {
 			break = break
 
 			set_variable = { ZZZ.pop_dens_ranked^i = v }
-			log= "[?v]"
+			#log= "[?v]"
 		}
 
 		clear_array = ZZZ.arr
@@ -388,7 +388,7 @@ TDA_update_every_country_population_density = {
 		value = v
 		index = i
 		
-		log = "Index: [?i], Value: [?v.GetTag]"
+		#log = "Index: [?i], Value: [?v.GetTag]"
 	}
 
     #Now have an array of country tags in order of pop dens

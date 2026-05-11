@@ -482,3 +482,15 @@
  AUS:0 "Australia"                                  
  AUS_DEF:0 "the Commonwealth of Australia"                                  
  AUS_ADJ:0 "Australian"
+
+ SYR:0 "Syria"                                  
+ SYR_DEF:0 "the Syrian Arab Republic"                                  
+ SYR_ADJ:0 "Syrian"
+
+ LEB:0 "Lebanon"                                  
+ LEB_DEF:0 "the Lebanese Republic"                                  
+ LEB_ADJ:0 "Lebanese"
+
+ HEZ:0 "Hezbollah"                                  
+ HEZ_DEF:0 "the Islamic Resistance in Lebanon"                                  
+ HEZ_ADJ:0 "Hezbollah"

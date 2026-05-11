@@ -1,0 +1,20 @@
+state={
+	id=911
+	name="STATE_911"
+	history = {
+		owner = HEZ
+		add_core_of = HEZ
+		add_core_of = LEB
+		
+		victory_points = { 11919 5 }
+		
+		set_variable = { sq_km = 2027.6 }
+	}
+	provinces={
+		11919 
+	}
+	manpower=718968
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

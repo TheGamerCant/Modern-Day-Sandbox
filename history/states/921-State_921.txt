@@ -1,0 +1,17 @@
+state={
+	id=921
+	name="STATE_921"
+	history = {
+		owner = SYR
+		add_core_of = SYR
+		
+		set_variable = { sq_km = 685 }
+	}
+	provinces={
+		15451 
+	}
+	manpower=88903
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

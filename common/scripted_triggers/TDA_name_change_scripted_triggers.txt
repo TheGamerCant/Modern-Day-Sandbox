@@ -207,6 +207,9 @@ TAG_using_arab_names = {
 				original_tag = ALG
 				original_tag = MRC
 				original_tag = SHW
+				original_tag = SYR
+				original_tag = LEB
+				original_tag = HEZ
 			}
 			is_subject = no
 		}
@@ -219,6 +222,9 @@ TAG_using_arab_names = {
 		original_tag = ALG
 		original_tag = MRC
 		original_tag = SHW
+		original_tag = SYR
+		original_tag = LEB
+		original_tag = HEZ
 	}
 }
 

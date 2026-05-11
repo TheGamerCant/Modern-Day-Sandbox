@@ -1,0 +1,22 @@
+state={
+	id=919
+	name="STATE_919"
+	history = {
+		owner = SYR
+		add_core_of = SYR
+		
+		victory_points = { 15455 3 }
+		victory_points = { 15456 3 }
+		victory_points = { 15457 1 }
+		victory_points = { 1578 1 }
+		
+		set_variable = { sq_km = 23334 }
+	}
+	provinces={
+		1549 1578 10882 15455 15456 15457 
+	}
+	manpower=1493575
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

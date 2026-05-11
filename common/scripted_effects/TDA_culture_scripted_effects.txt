@@ -512,7 +512,7 @@ DEBUG_test_cultures = {
 		
 		set_variable = { culture_index = v }
 		ANY_get_super_culture_from_culture = yes
-		log = "[?v] - [?super_culture_index]"
+		#log = "[?v] - [?super_culture_index]"
 	}
 }
 

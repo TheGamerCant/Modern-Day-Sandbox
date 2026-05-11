@@ -2974,9 +2974,21 @@
 }
 553 = {
 	default = "Lebanon"
+	entry = {
+        name = "Lubnān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 554 = {
 	default = "Damascus"
+	entry = {
+        name = "Dimashq"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 555 = {
 	default = "Kuril Islands"
@@ -3694,6 +3706,12 @@
 }
 677 = {
 	default = "Aleppo"
+	entry = {
+        name = "Ḥalab"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 678 = {
 	default = "Rub al Khali"
@@ -3702,7 +3720,13 @@
 	default = "Madinah"
 }
 680 = {
-	default = "Deir-az-Zur"
+	default = "Raqqa"
+	entry = {
+        name = "Ar-Raqqah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 681 = {
 	default = "Cape"
@@ -4994,4 +5018,103 @@
 }
 910 = {
 	default = "Outback Highways"
+}
+911 = {
+	default = "Southern Lebanon - Nabatiyé"
+	entry = {
+        name = "Lubnān al-Janūbī - An-Nabaṭiyah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+912 = {
+	default = "Baalbek - Hermel"
+	entry = {
+        name = "Ba'albak - Al-Harmal"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+913 = {
+	default = "Latakia & Tartus"
+	entry = {
+        name = "Al-Lādhiqiyah & Ṭarṭūs"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+914 = {
+	default = "Idlib"
+	entry = {
+        name = "'Idlib"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+915 = {
+	default = "Daraa"
+	entry = {
+        name = "Dar'ā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+916 = {
+	default = "Suwayda"
+	entry = {
+        name = "As-Suwaydā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+917 = {
+	default = "Hama"
+	entry = {
+        name = "Ḥamāh"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+918 = {
+	default = "Homs"
+	entry = {
+        name = "Ḥimṣ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+919 = {
+	default = "Hasakah"
+	entry = {
+        name = "Al-Ḥasakah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+920 = {
+	default = "Deir ez-Zur"
+	entry = {
+        name = "Dayr az-Zawr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+921 = {
+	default = "Quneitra"
+	entry = {
+        name = "Al-Qunayṭirah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
