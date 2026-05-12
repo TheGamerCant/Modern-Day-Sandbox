@@ -1,6 +1,6 @@
 *.ipch
-__code/Map_Editor/out/
-__code/animated_images/in/
-__code/animated_images/out/
+__code__/Map_Editor/out/
+__code__/animated_images/in/
+__code__/animated_images/out/
 ColdWar1980.zip
 .idea/
