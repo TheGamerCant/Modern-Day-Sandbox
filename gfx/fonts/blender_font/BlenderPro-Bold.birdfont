@@ -4749,6 +4749,46 @@
 	</glyph>
 </collection>
 
+<collection unicode="U+1e40" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 28.1,0 L 17.6,0 L 17.6,40.9 L 5.7,14.7 L -1.2,14.7 L -13.1,40.8 L -13.1,0 L -23.6,0 L -23.6,59.8 L -11.6,59.8 L 2.4,30.3 L 16.2,59.8 L 28.1,59.8 L 28.1,0" />
+			<path data="S 7.6,64.9 L -3.1,64.9 L -3.1,75.6 L 7.6,75.6 L 7.6,64.9" />
+		</layer>
+	</glyph>
+</collection>
+
+<collection unicode="U+1e41" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 35.3,0 L 25.3,0 L 25.3,30.4 Q 25.3,30.7 25.2,31 Q 24.3,32.7 22.1,34.1 Q 21.9,34.2 21.3,34.2 L 16.7,34.2 Q 14.6,34.2 10.9,30.2 L 10.9,0 L 10.8,0 L 1,0 L 0.9,0 L 0.9,30.4 Q 0.9,30.8 0.8,31 Q 0,32.5 -2.5,34.1 Q -2.7,34.2 -3.3,34.2 L -7.9,34.2 D -8.5,34.2 -9.8,33.7 -10.3,33.4 D -10.8,33.2 -12,32.1 -12.3,31.8 D -12.6,31.5 -13.7,30.2 -13.8,30.1 L -13.8,0 L -23.8,0 L -23.8,34.3 L -24.8,43.2 L -15,43.2 L -14.5,40.9 Q -10.6,43.7 -8.2,43.7 L -3.2,43.7 Q 1,43.7 4.1,41.5 Q 5.3,40.6 7,38.9 L 9.2,40.6 Q 13.3,43.7 16.4,43.7 L 21.4,43.7 Q 25.6,43.7 28.7,41.5 Q 31.8,39.2 33.5,36.7 Q 35.3,34.3 35.3,30.6 L 35.3,0" />
+			<path data="S 10.6,49.4 L -0.1,49.4 L -0.1,60.1 L 10.6,60.1 L 10.6,49.4" />
+		</layer>
+	</glyph>
+</collection>
+
+<collection unicode="U+1e44" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 18.7,0 L 7.6,0 L -13.1,39.7 L -13.1,0 L -23.6,0 L -23.6,59.8 L -12.3,59.8 L 8.2,19.6 L 8.2,59.8 L 18.7,59.8 L 18.7,0" />
+			<path data="S 2.9,64.9 L -7.8,64.9 L -7.8,75.6 L 2.9,75.6 L 2.9,64.9" />
+		</layer>
+	</glyph>
+</collection>
+
+<collection unicode="U+1e45" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 13.2,0 L 3.2,0 L 3.2,30.4 Q 3.2,30.8 3.1,31 Q 2.2,32.7 0,34.1 Q -0.1,34.2 -0.8,34.2 L -7.8,34.2 Q -9.9,34.2 -13.7,30.1 L -13.7,0 L -23.7,0 L -23.7,34.3 L -24.7,43.2 L -14.9,43.2 L -14.4,40.9 Q -10.5,43.7 -8.1,43.7 L -0.7,43.7 Q 3.5,43.7 6.6,41.5 Q 9.7,39.2 11.4,36.7 Q 13.2,34.3 13.2,30.6 L 13.2,0" />
+			<path data="S -0.4,49.4 L -11.1,49.4 L -11.1,60.1 L -0.4,60.1 L -0.4,49.4" />
+		</layer>
+	</glyph>
+</collection>
+
 <collection unicode="U+1e54" svg="false" colr="false" auto_generate="false" meta_name="">
 	<selected id="0"/>
 	<glyph id="0" left="-28" right="28" zero_width="false">

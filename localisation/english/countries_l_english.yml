@@ -502,3 +502,15 @@
  NCP:0 "Northern Cyprus"                                  
  NCP_DEF:0 "the Turkish Republic of Northern Cyprus"                                  
  NCP_ADJ:0 "Turkish Cypriot"
+
+ IND:0 "India"                                  
+ IND_DEF:0 "the Republic of India"                                  
+ IND_ADJ:0 "Indian"
+
+ BHU:0 "Bhutan"                                  
+ BHU_DEF:0 "the Kingdom of Bhutan"                                  
+ BHU_ADJ:0 "Bhutanese"
+
+ NPL:0 "Nepal"                                  
+ NPL_DEF:0 "the Federal Democratic Republic of Nepal"                                  
+ NPL_ADJ:0 "Nepali"

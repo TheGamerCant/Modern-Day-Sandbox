@@ -6240,10 +6240,111 @@ TDA_update_state_322_names = {
 
 #Nepal
 TDA_update_state_323_names = {
+	323 = {
+		#Nēpāla
+		if = {
+			limit = { CONTROLLER = { TAG_using_nepali_names = yes } }
+			set_state_name = STATE_323_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Buṭavala
+	if = {
+		limit = { any_country = { controls_province = 4386 TAG_using_nepali_names = yes } }
+		set_province_name = { id = 4386 name = VICTORY_POINTS_4386_0 }
+	}
+	#Butwal
+	else = {
+		reset_province_name = 4386
+	}
+	#Vīraganja
+	if = {
+		limit = { any_country = { controls_province = 4987 TAG_using_nepali_names = yes } }
+		set_province_name = { id = 4987 name = VICTORY_POINTS_4987_0 }
+	}
+	#Birgunj
+	else = {
+		reset_province_name = 4987
+	}
+	#Janakapura
+	if = {
+		limit = { any_country = { controls_province = 5310 TAG_using_nepali_names = yes } }
+		set_province_name = { id = 5310 name = VICTORY_POINTS_5310_0 }
+	}
+	#Janakpur
+	else = {
+		reset_province_name = 5310
+	}
+	#Dhanagaḍhī
+	if = {
+		limit = { any_country = { controls_province = 7374 TAG_using_nepali_names = yes } }
+		set_province_name = { id = 7374 name = VICTORY_POINTS_7374_0 }
+	}
+	#Dhangadhi
+	else = {
+		reset_province_name = 7374
+	}
+	#Birāṭanagara
+	if = {
+		limit = { any_country = { controls_province = 12892 TAG_using_nepali_names = yes } }
+		set_province_name = { id = 12892 name = VICTORY_POINTS_12892_0 }
+	}
+	#Biratnagar
+	else = {
+		reset_province_name = 12892
+	}
+	#Kāṭhamāḍauṁ
+	if = {
+		limit = { any_country = { controls_province = 15493 TAG_using_nepali_names = yes } }
+		set_province_name = { id = 15493 name = VICTORY_POINTS_15493_0 }
+	}
+	#Kathmandu
+	else = {
+		reset_province_name = 15493
+	}
+	#Tribhuvana Antarrāṣṭriya Vimānasthala
+	if = {
+		limit = { any_country = { controls_province = 15495 TAG_using_nepali_names = yes } }
+		set_province_name = { id = 15495 name = VICTORY_POINTS_15495_0 }
+	}
+	#Tribhuvan International Airport
+	else = {
+		reset_province_name = 15495
+	}
+	#Ghōrāhī
+	if = {
+		limit = { any_country = { controls_province = 15499 TAG_using_nepali_names = yes } }
+		set_province_name = { id = 15499 name = VICTORY_POINTS_15499_0 }
+	}
+	#Ghorahi
+	else = {
+		reset_province_name = 15499
+	}
+	#Pōkharā
+	if = {
+		limit = { any_country = { controls_province = 15502 TAG_using_nepali_names = yes } }
+		set_province_name = { id = 15502 name = VICTORY_POINTS_15502_0 }
+	}
+	#Pokhara
+	else = {
+		reset_province_name = 15502
+	}
 }
 
 #Bhutan
 TDA_update_state_324_names = {
+	324 = {
+		#Druk Yul
+		if = {
+			limit = { CONTROLLER = { TAG_using_bhutanese_names = yes } }
+			set_state_name = STATE_324_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #Yunnan

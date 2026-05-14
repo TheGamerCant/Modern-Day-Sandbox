@@ -604,3 +604,15 @@ NCP = {
 	color = rgb { 178 36 22 }
 	color_ui = rgb { 178 36 22 }
 }
+IND = {
+	color = rgb { 217 128 47 }
+	color_ui = rgb { 217 128 47 }
+}
+BHU = {
+	color = rgb { 246 166 87 }
+	color_ui = rgb { 246 166 87 }
+}
+NPL = {
+	color = rgb { 207 189 227 }
+	color_ui = rgb { 207 189 227 }
+}

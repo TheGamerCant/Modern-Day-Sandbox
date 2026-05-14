@@ -13,7 +13,7 @@ def makeFlags(info: str) -> str:
     tag = split_text[0]
     modDirectory = split_text[1]
     
-    flagPathString = os.path.join(modDirectory, "__code", "countryMaker", "flags", tag + ".png")
+    flagPathString = os.path.join(modDirectory, "__code__", "__countryMaker_legacy", "flags", tag + ".png")
     if os.path.exists(flagPathString):
         flagLarge = Image.open(flagPathString).convert('RGBA')
 
@@ -24,7 +24,7 @@ def makeFlags(info: str) -> str:
         for ideology in ideologyArray:
             ideologyFlagNameStringTGA = tag + "_" + ideology + ".tga"
             ideologyFlagNameStringPNG = tag + "_" + ideology + ".png"
-            ideologyFlagPathString = os.path.join(modDirectory, "__code", "countryMaker", "flags", ideologyFlagNameStringPNG)
+            ideologyFlagPathString = os.path.join(modDirectory, "__code__", "__countryMaker_legacy", "flags", ideologyFlagNameStringPNG)
 
             if os.path.isfile(ideologyFlagPathString):
                 ideologyFlagLarge = Image.open(ideologyFlagPathString).convert('RGBA')

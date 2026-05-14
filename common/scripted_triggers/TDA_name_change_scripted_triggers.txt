@@ -769,3 +769,45 @@ TAG_using_azeri_names = {
 		is_puppet_of = AZJ
 	}
 }
+
+TAG_using_bhutanese_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = BHU
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = BHU
+	}
+}
+
+TAG_using_nepali_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = NPL
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = NPL
+	}
+}
+
+TAG_using_indian_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = IND
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = IND
+	}
+}

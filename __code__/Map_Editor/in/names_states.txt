@@ -2022,9 +2022,21 @@
 }
 323 = {
 	default = "Nepal"
+	entry = {
+	    name = "Nēpāla"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
 }
 324 = {
 	default = "Bhutan"
+	entry = {
+	    name = "Druk Yul"
+        requirements = {
+            "TAG_using_bhutanese_names = yes"
+        }
+    }
 }
 325 = {
 	default = "Yunnan"
@@ -2114,10 +2126,10 @@
 	default = "Guanajuato"
 }
 342 = {
-	default = "Antalya"
+	default = "Norilsk"
 }
 343 = {
-	default = "Norilsk"
+	default = "Nayarit"
 }
 344 = {
 	#default = "Zacatecas-Aguascalientes"

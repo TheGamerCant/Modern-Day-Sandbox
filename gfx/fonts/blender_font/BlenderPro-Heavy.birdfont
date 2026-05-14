@@ -4653,6 +4653,46 @@
 	</glyph>
 </collection>
 
+<collection unicode="U+1e40" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 28.8,0 L 16.6,0 L 16.6,36.1 D 14.7,32.1 7.6,17.2 6.2,14.3 L -1.8,14.3 L -12.1,36 L -12.1,0 L -24.3,0 L -24.3,60 L -11,60 L 2.4,32.8 D 4.2,36.4 13.2,55.1 15.6,60 L 28.8,60 L 28.8,0" />
+			<path data="S 8.55,68.4 L -4.05,68.4 L -4.05,80.8 L 8.55,80.8 L 8.55,68.4" />
+		</layer>
+	</glyph>
+</collection>
+
+<collection unicode="U+1e41" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 28.8,0 L 16.6,0 L 16.6,36.1 D 14.7,32.1 7.6,17.2 6.2,14.3 L -1.8,14.3 L -12.1,36 L -12.1,0 L -24.3,0 L -24.3,60 L -11,60 L 2.4,32.8 D 4.2,36.4 13.2,55.1 15.6,60 L 28.8,60 L 28.8,0" />
+			<path data="S 8.55,68.4 L -4.05,68.4 L -4.05,80.8 L 8.55,80.8 L 8.55,68.4" />
+		</layer>
+	</glyph>
+</collection>
+
+<collection unicode="U+1e44" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 19.6,0 L 7.3,0 L -12.1,35.3 L -12.1,0 L -24.3,0 L -24.3,60 L -11.8,60 L 7.4,24.2 L 7.4,60 L 19.6,60 L 19.6,0" />
+			<path data="S 3.95,68.4 L -8.65,68.4 L -8.65,80.8 L 3.95,80.8 L 3.95,68.4" />
+		</layer>
+	</glyph>
+</collection>
+
+<collection unicode="U+1e45" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 19.6,0 L 7.3,0 L -12.1,35.3 L -12.1,0 L -24.3,0 L -24.3,60 L -11.8,60 L 7.4,24.2 L 7.4,60 L 19.6,60 L 19.6,0" />
+			<path data="S 3.95,68.4 L -8.65,68.4 L -8.65,80.8 L 3.95,80.8 L 3.95,68.4" />
+		</layer>
+	</glyph>
+</collection>
+
 <collection unicode="U+1e54" svg="false" colr="false" auto_generate="false" meta_name="">
 	<selected id="0"/>
 	<glyph id="0" left="-28" right="28" zero_width="false">

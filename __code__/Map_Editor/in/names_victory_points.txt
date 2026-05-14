@@ -17893,3 +17893,87 @@
         }
     }
 }
+8010 = {
+	default = "Thimphu"
+}
+15493 = {
+	default = "Kathmandu"
+	entry = {
+        name = "Kāṭhamāḍauṁ"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
+}
+15495 = {
+	default = "Tribhuvan International Airport"
+	entry = {
+        name = "Tribhuvana Antarrāṣṭriya Vimānasthala"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
+}
+15502 = {
+	default = "Pokhara"
+	entry = {
+        name = "Pōkharā"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
+}
+4987 = {
+	default = "Birgunj"
+	entry = {
+        name = "Vīraganja"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
+}
+5310 = {
+	default = "Janakpur"
+	entry = {
+        name = "Janakapura"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
+}
+12892 = {
+	default = "Biratnagar"
+	entry = {
+        name = "Birāṭanagara"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
+}
+7374 = {
+	default = "Dhangadhi"
+	entry = {
+        name = "Dhanagaḍhī"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
+}
+15499 = {
+	default = "Ghorahi"
+	entry = {
+        name = "Ghōrāhī"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
+}
+4386 = {
+	default = "Butwal"
+	entry = {
+        name = "Buṭavala"
+        requirements = {
+            "TAG_using_nepali_names = yes"
+        }
+    }
+}
