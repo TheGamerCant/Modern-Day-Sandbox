@@ -12,6 +12,9 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 7014;14992;sea;8396;-1;-1;-1;-1;;Shanghai
 11928;14992;sea;8396;-1;-1;-1;-1;;Shanghai
 11957;15217;sea;5631;-1;-1;-1;-1;;Tunisia
+15505;4003;impassable;-1;-1;-1;-1;-1;;Rann of Kutch
+15505;1147;impassable;-1;-1;-1;-1;-1;;Rann of Kutch
+15504;1147;impassable;-1;-1;-1;-1;-1;;Rann of Kutch
 15377;4178;sea;225;-1;-1;-1;-1;;Aegean
 12251;10321;sea;8313;-1;-1;-1;-1;;Andaman
 7413;1419;sea;5294;-1;-1;-1;-1;;Moluccas

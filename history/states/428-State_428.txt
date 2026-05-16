@@ -5,12 +5,29 @@ state={
 		owner = IND
 		add_core_of = IND
 		
-		##set_variable = { sq_km = 
+		victory_points = { 15516 60 }
+		victory_points = { 15523 12 }
+		victory_points = { 15521 6 }
+		victory_points = { 15522 6 }
+		victory_points = { 4090 3 }
+		victory_points = { 12037 2 }
+		victory_points = { 1144 3 }
+		victory_points = { 4064 2 }
+		victory_points = { 1061 2 }
+		victory_points = { 9975 3 }
+		victory_points = { 15512 18 }
+		victory_points = { 15506 45 }
+		victory_points = { 15507 3 }
+		victory_points = { 11952 2 }
+		victory_points = { 7150 2 }
+		victory_points = { 1190 2 }
+		
+		set_variable = { sq_km = 175197.16 }
 	}
 	provinces={
-		1061 1103 1144 1190 4064 4090 4132 4187 7020 7150 7165 7207 9975 10118 11952 12037 12092 
+		1061 1103 1144 1190 4064 4090 4132 4187 7020 7150 7165 7207 9975 10118 11952 12037 12092 15503 15504 15505 15506 15507 15508 15509 15510 15511 15512 15513 15514 15515 15516 15517 15518 15519 15520 15521 15522 15523 15524 15525 15526 15527 15528 
 	}
-	manpower= 100000
+	manpower= 61026387
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=town

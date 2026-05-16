@@ -2476,6 +2476,12 @@
 }
 428 = {
 	default = "Gujarat"
+	entry = {
+        name = "Gujarāt"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 429 = {
 	default = "Bombay"
@@ -2491,6 +2497,12 @@
 }
 433 = {
 	default = "Rajahsthan"
+	entry = {
+        name = "Rājasthān"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 434 = {
 	default = "Arunachal Pradesh"
@@ -5169,6 +5181,15 @@
 	    name = "Akrotiri ve Dikelya Üs Bölgeleri"
         requirements = {
             "TAG_using_turkish_names = yes"
+        }
+    }
+}
+924 = {
+	default = "Kerala"
+	entry = {
+	    name = "Kēraḷaṁ"
+        requirements = {
+            "TAG_using_indian_names = yes"
         }
     }
 }

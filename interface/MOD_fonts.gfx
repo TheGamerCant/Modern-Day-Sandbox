@@ -5,32 +5,6 @@ bitmapfonts = {
 		color = 0xffffffff
 	}
 
-
-	bitmapfont = {
-		name = "Blender_Bold_White_10"
-		path = "gfx/fonts/Blender_Bold_White_10"
-		color = 0xffffffff
-	}	
-	bitmapfont = {
-		name = "Blender_Bold_White_12"
-		path = "gfx/fonts/Blender_Bold_White_12"
-		color = 0xffffffff
-	}	
-	bitmapfont = {
-		name = "Blender_Bold_White_13"
-		path = "gfx/fonts/Blender_Bold_White_13"
-		color = 0xffffffff
-	}	
-	bitmapfont = {
-		name = "Blender_Bold_White_14"
-		path = "gfx/fonts/Blender_Bold_White_14"
-		color = 0xffffffff
-	}	
-	bitmapfont = {
-		name = "Blender_Bold_White_15"
-		path = "gfx/fonts/Blender_Bold_White_15"
-		color = 0xffffffff
-	}	
 	bitmapfont = {
 		name = "Blender_Bold_White_16"
 		path = "gfx/fonts/Blender_Bold_White_16"
@@ -47,16 +21,6 @@ bitmapfonts = {
 		color = 0xffffffff
 	}
 	bitmapfont = {
-		name = "Blender_Bold_White_18_Outline"
-		path = "gfx/fonts/Blender_Bold_White_18_Outline"
-		color = 0xffffffff
-	}
-	bitmapfont = {
-		name = "Blender_Heavy_White_18_Outline"
-		path = "gfx/fonts/Blender_Heavy_White_18_Outline"
-		color = 0xffffffff
-	}
-	bitmapfont = {
 		name = "Blender_Bold_White_19"
 		path = "gfx/fonts/Blender_Bold_White_19"
 		color = 0xffffffff
@@ -70,20 +34,12 @@ bitmapfonts = {
 		name = "Blender_Bold_White_20_Outline"
 		path = "gfx/fonts/Blender_Bold_White_20_Outline"
 		color = 0xffffffff
-	}	
-	bitmapfont = {
-		name = "Blender_Heavy_White_22_Outline"
-		path = "gfx/fonts/Blender_Heavy_White_22_Outline"
-		color = 0xffffffff
 	}
+	
+	
 	bitmapfont = {
-		name = "Blender_Bold_White_24"
-		path = "gfx/fonts/Blender_Bold_White_24"
-		color = 0xffffffff
-	}
-	bitmapfont = {
-		name = "Blender_Heavy_White_24"
-		path = "gfx/fonts/Blender_Heavy_White_24"
+		name = "Blender_Heavy_White_18_Outline"
+		path = "gfx/fonts/Blender_Heavy_White_18_Outline"
 		color = 0xffffffff
 	}
 	bitmapfont = {
@@ -91,28 +47,6 @@ bitmapfonts = {
 		path = "gfx/fonts/Blender_Heavy_White_24_50pc_opacity"
 		color = 0xffffffff
 	}
-	bitmapfont = {
-		name = "Blender_Heavy_White_24_Outline"
-		path = "gfx/fonts/Blender_Heavy_White_24_Outline"
-		color = 0xffffffff
-	}
-	bitmapfont = {
-		name = "Blender_Bold_White_28"
-		path = "gfx/fonts/Blender_Bold_White_28"
-		color = 0xffffffff
-	}
-	bitmapfont = {
-		name = "Blender_Heavy_White_28"
-		path = "gfx/fonts/Blender_Heavy_White_28"
-		color = 0xffffffff
-	}
-
-	bitmapfont = {
-		name = "Blender_Heavy_White_30"
-		path = "gfx/fonts/Blender_Heavy_White_30"
-		color = 0xffffffff
-	}
-
 	bitmapfont = {
 		name = "Blender_Heavy_White_32"
 		path = "gfx/fonts/Blender_Heavy_White_32"

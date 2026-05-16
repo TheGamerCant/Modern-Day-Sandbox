@@ -1,0 +1,28 @@
+state={
+	id=924
+	name="STATE_924"
+	history = {
+		owner = IND
+		add_core_of = IND
+		
+		victory_points = { 15550 16 }
+		victory_points = { 15551 20 }
+		victory_points = { 15552 18 }
+		victory_points = { 15555 18 }
+		victory_points = { 15553 20 }
+		victory_points = { 15549 11 }
+		victory_points = { 15548 16 }
+		victory_points = { 15554 2 }
+		victory_points = { 12275 3 }
+		victory_points = { 10190 2 }
+		
+		set_variable = { sq_km = 36520.88 }
+	}
+	provinces={
+		1238 1321 7288 7391 7447 10190 12275 15548 15549 15550 15551 15552 15553 15554 15555 15556 
+	}
+	manpower=33406061
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}
