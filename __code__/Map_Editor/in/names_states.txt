@@ -2460,7 +2460,13 @@
 	default = "Ceylon"
 }
 423 = {
-	default = "Madurai"
+	default = "Tamil Nadu"
+	entry = {
+        name = "Tamiḻnāṭu"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 424 = {
 	default = "Madras"
@@ -5188,6 +5194,33 @@
 	default = "Kerala"
 	entry = {
 	    name = "Kēraḷaṁ"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+925 = {
+	default = "Haryana"
+	entry = {
+	    name = "Hariyāṇā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+926 = {
+	default = "Delhi"
+	entry = {
+	    name = "Dillī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+927 = {
+	default = "Punjab"
+	entry = {
+	    name = "Pañjāba"
         requirements = {
             "TAG_using_indian_names = yes"
         }

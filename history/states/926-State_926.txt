@@ -1,0 +1,19 @@
+state={
+	id=926
+	name="STATE_926"
+	history = {
+		owner = IND
+		add_core_of = IND
+		
+		victory_points = { 15572 100 }
+		
+		set_variable = { sq_km = 1474 }
+	}
+	provinces={
+		15572 
+	}
+	manpower=16787941
+	buildings_max_level_factor=1
+	state_category=pastoral
+	local_supplies=0.5
+}

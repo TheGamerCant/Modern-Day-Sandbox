@@ -2,7 +2,7 @@ info face="Blender Pro Heavy" size=-32 bold=0 italic=0 charset="" unicode=1 stre
 common lineheight=32 base=25 scaleW=331 scaleH=329 pages=1 packed=0 alphaChnl=0 redChnl=0 greenChnl=0 blueChnl=0
 page id=0 file="Blender_Heavy_White_32.dds"
 chars count=311
-char id=32 x=0 y=0 width=7 height=32 xoffset=0 yoffset=25 xadvance=7 page=0 chnl=15
+char id=32 x=0 y=0 width=7 height=32 xoffset=0 yoffset=0 xadvance=7 page=0 chnl=15
 char id=33 x=268 y=309 width=5 height=20 xoffset=2 yoffset=5 xadvance=9 page=0 chnl=15
 char id=34 x=0 y=314 width=12 height=8 xoffset=1 yoffset=4 xadvance=13 page=0 chnl=15
 char id=35 x=312 y=309 width=16 height=15 xoffset=0 yoffset=8 xadvance=17 page=0 chnl=15

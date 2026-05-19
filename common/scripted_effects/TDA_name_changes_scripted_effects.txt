@@ -7696,8 +7696,162 @@ TDA_update_state_421_names = {
 TDA_update_state_422_names = {
 }
 
-#Madurai
+#Tamil Nadu
 TDA_update_state_423_names = {
+	423 = {
+		#Tamiḻnāṭu
+		if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_423_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Tañcāvūr
+	if = {
+		limit = { any_country = { controls_province = 1381 TAG_using_indian_names = yes } }
+		set_province_name = { id = 1381 name = VICTORY_POINTS_1381_0 }
+	}
+	#Thanjavur
+	else = {
+		reset_province_name = 1381
+	}
+	#Tiṇṭukkal
+	if = {
+		limit = { any_country = { controls_province = 1409 TAG_using_indian_names = yes } }
+		set_province_name = { id = 1409 name = VICTORY_POINTS_1409_0 }
+	}
+	#Dindigul
+	else = {
+		reset_province_name = 1409
+	}
+	#Civakāci
+	if = {
+		limit = { any_country = { controls_province = 4327 TAG_using_indian_names = yes } }
+		set_province_name = { id = 4327 name = VICTORY_POINTS_4327_0 }
+	}
+	#Sivakasi
+	else = {
+		reset_province_name = 4327
+	}
+	#Vēlūr
+	if = {
+		limit = { any_country = { controls_province = 7436 TAG_using_indian_names = yes } }
+		set_province_name = { id = 7436 name = VICTORY_POINTS_7436_0 }
+	}
+	#Vellore
+	else = {
+		reset_province_name = 7436
+	}
+	#Tirucceṅkōṭu
+	if = {
+		limit = { any_country = { controls_province = 8067 TAG_using_indian_names = yes } }
+		set_province_name = { id = 8067 name = VICTORY_POINTS_8067_0 }
+	}
+	#Tiruchengode
+	else = {
+		reset_province_name = 8067
+	}
+	#Ceṉṉai
+	if = {
+		limit = { any_country = { controls_province = 10278 TAG_using_indian_names = yes } }
+		set_province_name = { id = 10278 name = VICTORY_POINTS_10278_0 }
+	}
+	#Chennai
+	else = {
+		reset_province_name = 10278
+	}
+	#Kaṭalūr
+	if = {
+		limit = { any_country = { controls_province = 12164 TAG_using_indian_names = yes } }
+		set_province_name = { id = 12164 name = VICTORY_POINTS_12164_0 }
+	}
+	#Cuddalore
+	else = {
+		reset_province_name = 12164
+	}
+	#Karūr
+	if = {
+		limit = { any_country = { controls_province = 12247 TAG_using_indian_names = yes } }
+		set_province_name = { id = 12247 name = VICTORY_POINTS_12247_0 }
+	}
+	#Karur
+	else = {
+		reset_province_name = 12247
+	}
+	#Ceṉṉai Vimāṉa Nilaiyam
+	if = {
+		limit = { any_country = { controls_province = 15558 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15558 name = VICTORY_POINTS_15558_0 }
+	}
+	#Chennai International Airport
+	else = {
+		reset_province_name = 15558
+	}
+	#Cēlam
+	if = {
+		limit = { any_country = { controls_province = 15561 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15561 name = VICTORY_POINTS_15561_0 }
+	}
+	#Salem
+	else = {
+		reset_province_name = 15561
+	}
+	#Pāṇṭiccēri
+	if = {
+		limit = { any_country = { controls_province = 15562 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15562 name = VICTORY_POINTS_15562_0 }
+	}
+	#Puducherry
+	else = {
+		reset_province_name = 15562
+	}
+	#Maturai
+	if = {
+		limit = { any_country = { controls_province = 15564 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15564 name = VICTORY_POINTS_15564_0 }
+	}
+	#Madurai
+	else = {
+		reset_province_name = 15564
+	}
+	#Kōyamputtūr
+	if = {
+		limit = { any_country = { controls_province = 15566 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15566 name = VICTORY_POINTS_15566_0 }
+	}
+	#Coimbatore
+	else = {
+		reset_province_name = 15566
+	}
+	#Tiruppūr
+	if = {
+		limit = { any_country = { controls_province = 15568 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15568 name = VICTORY_POINTS_15568_0 }
+	}
+	#Tiruppur
+	else = {
+		reset_province_name = 15568
+	}
+	#Tiruccirāppaḷḷi
+	if = {
+		limit = { any_country = { controls_province = 15570 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15570 name = VICTORY_POINTS_15570_0 }
+	}
+	#Tiruchirappalli
+	else = {
+		reset_province_name = 15570
+	}
+	#Īrōṭu
+	if = {
+		limit = { any_country = { controls_province = 15571 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15571 name = VICTORY_POINTS_15571_0 }
+	}
+	#Erode
+	else = {
+		reset_province_name = 15571
+	}
 }
 
 #Madras
@@ -19533,6 +19687,192 @@ TDA_update_state_924_names = {
 	}
 }
 
+#Haryana
+TDA_update_state_925_names = {
+	925 = {
+		#Hariyāṇā
+		if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_925_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Sirasā
+	if = {
+		limit = { any_country = { controls_province = 2002 TAG_using_indian_names = yes } }
+		set_province_name = { id = 2002 name = VICTORY_POINTS_2002_0 }
+	}
+	#Sirsa
+	else = {
+		reset_province_name = 2002
+	}
+	#Hisāra
+	if = {
+		limit = { any_country = { controls_province = 12868 TAG_using_indian_names = yes } }
+		set_province_name = { id = 12868 name = VICTORY_POINTS_12868_0 }
+	}
+	#Hisar
+	else = {
+		reset_province_name = 12868
+	}
+	#Iṁdirā Gāṁdhī Iṁṭaranēśanal Ēyarapōrṭ
+	if = {
+		limit = { any_country = { controls_province = 15573 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15573 name = VICTORY_POINTS_15573_0 }
+	}
+	#Indira Gandhi International Airport
+	else = {
+		reset_province_name = 15573
+	}
+	#Pharīdābād
+	if = {
+		limit = { any_country = { controls_province = 15574 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15574 name = VICTORY_POINTS_15574_0 }
+	}
+	#Faridabad
+	else = {
+		reset_province_name = 15574
+	}
+	#Gurugrām
+	if = {
+		limit = { any_country = { controls_province = 15577 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15577 name = VICTORY_POINTS_15577_0 }
+	}
+	#Gurugram
+	else = {
+		reset_province_name = 15577
+	}
+	#Pānīpat
+	if = {
+		limit = { any_country = { controls_province = 15579 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15579 name = VICTORY_POINTS_15579_0 }
+	}
+	#Panipat
+	else = {
+		reset_province_name = 15579
+	}
+	#Yamunānagar
+	if = {
+		limit = { any_country = { controls_province = 15580 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15580 name = VICTORY_POINTS_15580_0 }
+	}
+	#Yamuna Nagar
+	else = {
+		reset_province_name = 15580
+	}
+	#Paṁcakulā
+	if = {
+		limit = { any_country = { controls_province = 15585 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15585 name = VICTORY_POINTS_15585_0 }
+	}
+	#Panchkula
+	else = {
+		reset_province_name = 15585
+	}
+}
+
+#Delhi
+TDA_update_state_926_names = {
+	926 = {
+		#Dillī
+		if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_926_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Dillī
+	if = {
+		limit = { any_country = { controls_province = 15572 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15572 name = VICTORY_POINTS_15572_0 }
+	}
+	#Delhi
+	else = {
+		reset_province_name = 15572
+	}
+}
+
+#Punjab
+TDA_update_state_927_names = {
+	927 = {
+		#Pañjāba
+		if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_927_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Paṭiālā
+	if = {
+		limit = { any_country = { controls_province = 10729 TAG_using_indian_names = yes } }
+		set_province_name = { id = 10729 name = VICTORY_POINTS_10729_0 }
+	}
+	#Patiala
+	else = {
+		reset_province_name = 10729
+	}
+	#Paṭhānakōṭ
+	if = {
+		limit = { any_country = { controls_province = 12822 TAG_using_indian_names = yes } }
+		set_province_name = { id = 12822 name = VICTORY_POINTS_12822_0 }
+	}
+	#Pathankot
+	else = {
+		reset_province_name = 12822
+	}
+	#Caṁḍīgaṛh
+	if = {
+		limit = { any_country = { controls_province = 15583 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15583 name = VICTORY_POINTS_15583_0 }
+	}
+	#Chandigarh
+	else = {
+		reset_province_name = 15583
+	}
+	#Ludhiāṇā
+	if = {
+		limit = { any_country = { controls_province = 15584 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15584 name = VICTORY_POINTS_15584_0 }
+	}
+	#Ludhiana
+	else = {
+		reset_province_name = 15584
+	}
+	#Aṁmritasar
+	if = {
+		limit = { any_country = { controls_province = 15586 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15586 name = VICTORY_POINTS_15586_0 }
+	}
+	#Amritsar
+	else = {
+		reset_province_name = 15586
+	}
+	#Jalaṁdhar
+	if = {
+		limit = { any_country = { controls_province = 15590 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15590 name = VICTORY_POINTS_15590_0 }
+	}
+	#Jalandhar
+	else = {
+		reset_province_name = 15590
+	}
+	#Baṭhiṁḍā
+	if = {
+		limit = { any_country = { controls_province = 15594 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15594 name = VICTORY_POINTS_15594_0 }
+	}
+	#Bathinda
+	else = {
+		reset_province_name = 15594
+	}
+}
+
 
 
 TDA_change_all_city_names = {
@@ -20460,6 +20800,9 @@ TDA_change_all_city_names = {
 	TDA_update_state_922_names = yes
 	TDA_update_state_923_names = yes
 	TDA_update_state_924_names = yes
+	TDA_update_state_925_names = yes
+	TDA_update_state_926_names = yes
+	TDA_update_state_927_names = yes
 }
 
 TDA_toggle_change_city_names = {

@@ -1,3 +1,5 @@
+// g++ src/*.cpp -std=c++20 -IC:/raylib/raylib/src -LC:/raylib/raylib/src -lraylib -lopengl32 -lgdi32 -lwinmm -static -O3 -o BitmapFontEditor.exe
+
 #include "data_types.hpp"
 #include "functions.hpp"
 #include <iostream>
@@ -6,7 +8,8 @@
 #include "json.hpp"
 using json = nlohmann::json;
 
-#define STB_RECT_PACK_IMPLEMENTATION
+//Uncomment if VS code, needs comment for cmd compile
+//#define STB_RECT_PACK_IMPLEMENTATION
 #include "stb_rect_pack.h"
 
 #include "raylib.h"
@@ -299,19 +302,28 @@ int main(void) {
 
 				SignedInteger32 xOffset = letter.offsetX - subFont.outline;
 				SignedInteger32 xAdvance = letter.advanceX + subFont.outline + subFont.additionalAdvanceX;
-
+				SignedInteger32 width = letterData.w;
                 
                 if (font.similarGlyphs.contains(letter.value)) {
                     const UnsignedInteger32 similarGlyphValue = font.similarGlyphs.at(letter.value);
                     const UnsignedInteger32 similarGlyphIndex = letterIndexMap.at(similarGlyphValue);
                     const GlyphInfo& similarGlyph = raylibFont.glyphs[similarGlyphIndex];
-                    xOffset = similarGlyph.offsetX - subFont.outline;
+					
+					//if (letter.value == 7739) { 
+					//	std::cout << "\n\n" << xOffset << " : " << similarGlyph.offsetX - subFont.outline << "\n" << xAdvance << " : " << similarGlyph.advanceX + subFont.outline + subFont.additionalAdvanceX << "\n" << width << " : " << rects[similarGlyphIndex].w << "\n" << "\n\n"; 
+					//}
+					
+					//If the old xOffset is less than the new one, keep it as is
+                    if (similarGlyph.offsetX - subFont.outline < xOffset) {
+						xOffset = similarGlyph.offsetX - subFont.outline;
+					}
                     xAdvance = similarGlyph.advanceX + subFont.outline + subFont.additionalAdvanceX;
+					width = rects[similarGlyphIndex].w;
 				}
                 
 
                 fntFileString += "\nchar id=" + std::to_string(letter.value) + " x=" + std::to_string(letterData.x) + " y=" + std::to_string(letterData.y) +
-                    " width=" + std::to_string(letterData.w) + " height=" + std::to_string(letterData.h) + " xoffset=" + std::to_string(xOffset) +
+                    " width=" + std::to_string(width) + " height=" + std::to_string(letterData.h) + " xoffset=" + std::to_string(xOffset) +
                     " yoffset=" + std::to_string(letter.offsetY - subFont.outline) + " xadvance=" + std::to_string(xAdvance) + " page=0 chnl=15";
             }
 

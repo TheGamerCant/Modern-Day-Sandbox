@@ -18334,3 +18334,303 @@
         }
     }
 }
+10278 = {
+	default = "Chennai"
+	entry = {
+        name = "Ceṉṉai"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15558 = {
+	default = "Chennai International Airport"
+	entry = {
+        name = "Ceṉṉai Vimāṉa Nilaiyam"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15562 = {
+	default = "Puducherry"
+	entry = {
+        name = "Pāṇṭiccēri"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15561 = {
+	default = "Salem"
+	entry = {
+        name = "Cēlam"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15571 = {
+	default = "Erode"
+	entry = {
+        name = "Īrōṭu"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15568 = {
+	default = "Tiruppur"
+	entry = {
+        name = "Tiruppūr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15566 = {
+	default = "Coimbatore"
+	entry = {
+        name = "Kōyamputtūr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15570 = {
+	default = "Tiruchirappalli"
+	entry = {
+        name = "Tiruccirāppaḷḷi"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15564 = {
+	default = "Madurai"
+	entry = {
+        name = "Maturai"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+4327 = {
+	default = "Tirunelveli"
+	entry = {
+        name = "Tirunelvēli"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+4327 = {
+	default = "Sivakasi"
+	entry = {
+        name = "Civakāci"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+1409 = {
+	default = "Dindigul"
+	entry = {
+        name = "Tiṇṭukkal"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12247 = {
+	default = "Karur"
+	entry = {
+        name = "Karūr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+1381 = {
+	default = "Thanjavur"
+	entry = {
+        name = "Tañcāvūr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+8067 = {
+	default = "Tiruchengode"
+	entry = {
+        name = "Tirucceṅkōṭu"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+7436 = {
+	default = "Vellore"
+	entry = {
+        name = "Vēlūr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12164 = {
+	default = "Cuddalore"
+	entry = {
+        name = "Kaṭalūr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15572 = {
+	default = "Delhi"
+	entry = {
+	    name = "Dillī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15573 = {
+	default = "Indira Gandhi International Airport"
+	entry = {
+	    name = "Iṁdirā Gāṁdhī Iṁṭaranēśanal Ēyarapōrṭ"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15574 = {
+	default = "Faridabad"
+	entry = {
+	    name = "Pharīdābād"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15577 = {
+	default = "Gurugram"
+	entry = {
+	    name = "Gurugrām"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15579 = {
+	default = "Panipat"
+	entry = {
+	    name = "Pānīpat"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12868 = {
+	default = "Hisar"
+	entry = {
+	    name = "Hisāra"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+2002 = {
+	default = "Sirsa"
+	entry = {
+	    name = "Sirasā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15580 = {
+	default = "Yamuna Nagar"
+	entry = {
+	    name = "Yamunānagar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15581 = {
+	default = "Kaithal"
+}
+15585 = {
+	default = "Panchkula"
+	entry = {
+	    name = "Paṁcakulā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15583 = {
+	default = "Chandigarh"
+	entry = {
+	    name = "Caṁḍīgaṛh"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15586 = {
+	default = "Amritsar"
+	entry = {
+	    name = "Aṁmritasar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15584 = {
+	default = "Ludhiana"
+	entry = {
+	    name = "Ludhiāṇā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15590 = {
+	default = "Jalandhar"
+	entry = {
+	    name = "Jalaṁdhar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12822 = {
+	default = "Pathankot"
+	entry = {
+	    name = "Paṭhānakōṭ"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10729 = {
+	default = "Patiala"
+	entry = {
+	    name = "Paṭiālā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15594 = {
+	default = "Bathinda"
+	entry = {
+	    name = "Baṭhiṁḍā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
