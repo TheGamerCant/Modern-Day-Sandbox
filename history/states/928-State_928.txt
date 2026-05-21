@@ -1,0 +1,23 @@
+state={
+	id=928
+	name="STATE_928"
+	history = {
+		owner = IND
+		add_core_of = IND
+		
+		victory_points = { 15599 6 }
+		victory_points = { 15600 12 }
+		victory_points = { 10905 2 }
+		victory_points = { 15596 2 }
+		victory_points = { 15602 2 }
+		
+		set_variable = { sq_km = 41649.63 }
+	}
+	provinces={
+		10905 12754 15596 15597 15598 15599 15600 15601 15602 
+	}
+	manpower=12267013
+	buildings_max_level_factor=1
+	state_category=rural
+	local_supplies=0.5
+}

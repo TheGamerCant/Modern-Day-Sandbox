@@ -8204,16 +8204,82 @@ TDA_update_state_437_names = {
 TDA_update_state_438_names = {
 }
 
-#Delhi
+#Uttarakhand
 TDA_update_state_439_names = {
+	439 = {
+		#Uttarākhaṁḍ
+		if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_439_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Haridvār
+	if = {
+		limit = { any_country = { controls_province = 5157 TAG_using_indian_names = yes } }
+		set_province_name = { id = 5157 name = VICTORY_POINTS_5157_0 }
+	}
+	#Haridwar
+	else = {
+		reset_province_name = 5157
+	}
+	#Haldvānī
+	if = {
+		limit = { any_country = { controls_province = 10021 TAG_using_indian_names = yes } }
+		set_province_name = { id = 10021 name = VICTORY_POINTS_10021_0 }
+	}
+	#Haldwani
+	else = {
+		reset_province_name = 10021
+	}
+	#Dēharādūna
+	if = {
+		limit = { any_country = { controls_province = 15607 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15607 name = VICTORY_POINTS_15607_0 }
+	}
+	#Dehradun
+	else = {
+		reset_province_name = 15607
+	}
 }
 
 #Punjab
 TDA_update_state_440_names = {
 }
 
-#Kashmir
+#Ladakh
 TDA_update_state_441_names = {
+	441 = {
+		#Laddākh
+		if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_441_0
+		}
+		#Ladākh
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_pakistani_names = yes } }
+			set_state_name = STATE_441_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Lēh
+	if = {
+		limit = { any_country = { controls_province = 7273 TAG_using_indian_names = yes } }
+		set_province_name = { id = 7273 name = VICTORY_POINTS_7273_0 }
+	}
+	#Lehh
+	else_if = {
+		limit = { any_country = { controls_province = 7273 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 7273 name = VICTORY_POINTS_7273_1 }
+	}
+	#Leh
+	else = {
+		reset_province_name = 7273
+	}
 }
 
 #Peshawar
@@ -16769,6 +16835,11 @@ TDA_update_state_751_names = {
 			limit = { CONTROLLER = { TAG_using_chinese_names = yes } }
 			set_state_name = STATE_751_0
 		}
+		#Aksāī Cin
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_751_1
+		}
 		else = {
 			reset_state_name = yes
 		}
@@ -19817,6 +19888,15 @@ TDA_update_state_927_names = {
 	else = {
 		reset_province_name = 10729
 	}
+	#Mōgā
+	if = {
+		limit = { any_country = { controls_province = 10772 TAG_using_indian_names = yes } }
+		set_province_name = { id = 10772 name = VICTORY_POINTS_10772_0 }
+	}
+	#Moga
+	else = {
+		reset_province_name = 10772
+	}
 	#Paṭhānakōṭ
 	if = {
 		limit = { any_country = { controls_province = 12822 TAG_using_indian_names = yes } }
@@ -19870,6 +19950,136 @@ TDA_update_state_927_names = {
 	#Bathinda
 	else = {
 		reset_province_name = 15594
+	}
+}
+
+#Jammu and Kashmir
+TDA_update_state_928_names = {
+	928 = {
+		#Jammū aur Kaśmīr
+		if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_928_0
+		}
+		#Jamoṁ w Kashmyr
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_pakistani_names = yes } }
+			set_state_name = STATE_928_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Anantanāg
+	if = {
+		limit = { any_country = { controls_province = 10905 TAG_using_indian_names = yes } }
+		set_province_name = { id = 10905 name = VICTORY_POINTS_10905_0 }
+	}
+	#Āslām Ābād
+	else_if = {
+		limit = { any_country = { controls_province = 10905 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 10905 name = VICTORY_POINTS_10905_1 }
+	}
+	#Anantnag
+	else = {
+		reset_province_name = 10905
+	}
+	#Udhamapur
+	if = {
+		limit = { any_country = { controls_province = 15596 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15596 name = VICTORY_POINTS_15596_0 }
+	}
+	#Ādham Por
+	else_if = {
+		limit = { any_country = { controls_province = 15596 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 15596 name = VICTORY_POINTS_15596_1 }
+	}
+	#Udhampur
+	else = {
+		reset_province_name = 15596
+	}
+	#Jammū
+	if = {
+		limit = { any_country = { controls_province = 15599 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15599 name = VICTORY_POINTS_15599_0 }
+	}
+	#Jamoṁ
+	else_if = {
+		limit = { any_country = { controls_province = 15599 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 15599 name = VICTORY_POINTS_15599_1 }
+	}
+	#Jammu
+	else = {
+		reset_province_name = 15599
+	}
+	#Śrīnagar
+	if = {
+		limit = { any_country = { controls_province = 15600 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15600 name = VICTORY_POINTS_15600_0 }
+	}
+	#Sary Nagr
+	else_if = {
+		limit = { any_country = { controls_province = 15600 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 15600 name = VICTORY_POINTS_15600_1 }
+	}
+	#Srinagar
+	else = {
+		reset_province_name = 15600
+	}
+	#Bārāmūlā
+	if = {
+		limit = { any_country = { controls_province = 15602 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15602 name = VICTORY_POINTS_15602_0 }
+	}
+	#Bārha Molah
+	else_if = {
+		limit = { any_country = { controls_province = 15602 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 15602 name = VICTORY_POINTS_15602_1 }
+	}
+	#Baramulla
+	else = {
+		reset_province_name = 15602
+	}
+}
+
+#Himachal Pradesh
+TDA_update_state_929_names = {
+	929 = {
+		#Himācal Pradēś
+		if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_929_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Maṁḍī
+	if = {
+		limit = { any_country = { controls_province = 2076 TAG_using_indian_names = yes } }
+		set_province_name = { id = 2076 name = VICTORY_POINTS_2076_0 }
+	}
+	#Mandi
+	else = {
+		reset_province_name = 2076
+	}
+	#Śimalā
+	if = {
+		limit = { any_country = { controls_province = 12708 TAG_using_indian_names = yes } }
+		set_province_name = { id = 12708 name = VICTORY_POINTS_12708_0 }
+	}
+	#Shimla
+	else = {
+		reset_province_name = 12708
+	}
+	#Dharmaśālā
+	if = {
+		limit = { any_country = { controls_province = 15605 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15605 name = VICTORY_POINTS_15605_0 }
+	}
+	#Dharamshala
+	else = {
+		reset_province_name = 15605
 	}
 }
 
@@ -20803,6 +21013,8 @@ TDA_change_all_city_names = {
 	TDA_update_state_925_names = yes
 	TDA_update_state_926_names = yes
 	TDA_update_state_927_names = yes
+	TDA_update_state_928_names = yes
+	TDA_update_state_929_names = yes
 }
 
 TDA_toggle_change_city_names = {

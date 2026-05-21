@@ -18634,3 +18634,159 @@
         }
     }
 }
+10772 = {
+	default = "Moga"
+	entry = {
+	    name = "Mōgā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15599 = {
+	default = "Jammu"
+	entry = {
+	    name = "Jammū"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+	entry = {
+        name = "Jamoṁ"
+        requirements = {
+            "TAG_using_pakistani_names = yes"
+        }
+    }
+}
+15600 = {
+	default = "Srinagar"
+	entry = {
+	    name = "Śrīnagar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+	entry = {
+	    name = "Sary Nagr"
+        requirements = {
+            "TAG_using_pakistani_names = yes"
+        }
+    }
+}
+10905 = {
+	default = "Anantnag"
+	entry = {
+	    name = "Anantanāg"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+	entry = {
+	    name = "Āslām Ābād"
+        requirements = {
+            "TAG_using_pakistani_names = yes"
+        }
+    }
+}
+15596 = {
+	default = "Udhampur"
+	entry = {
+	    name = "Udhamapur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+	entry = {
+	    name = "Ādham Por"
+        requirements = {
+            "TAG_using_pakistani_names = yes"
+        }
+    }
+}
+15602 = {
+	default = "Baramulla"
+	entry = {
+	    name = "Bārāmūlā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+	entry = {
+	    name = "Bārha Molah"
+        requirements = {
+            "TAG_using_pakistani_names = yes"
+        }
+    }
+}
+7273 = {
+	default = "Leh"
+	entry = {
+	    name = "Lēh"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+	entry = {
+	    name = "Lehh"
+        requirements = {
+            "TAG_using_pakistani_names = yes"
+        }
+    }
+}
+12708 = {
+	default = "Shimla"
+	entry = {
+	    name = "Śimalā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15605 = {
+	default = "Dharamshala"
+	entry = {
+	    name = "Dharmaśālā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+2076 = {
+	default = "Mandi"
+	entry = {
+	    name = "Maṁḍī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15607 = {
+	default = "Dehradun"
+	entry = {
+	    name = "Dēharādūna"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+5157 = {
+	default = "Haridwar"
+	entry = {
+	    name = "Haridvār"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+5002 = {
+	default = "Rudrapur"
+}
+10021 = {
+	default = "Haldwani"
+	entry = {
+	    name = "Haldvānī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}

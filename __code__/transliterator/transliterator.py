@@ -1,6 +1,7 @@
 import pyperclip
+import unicodedata
 
-def transliterate_gujarati(text_in: str) -> str:
+def transliterate_gujarati(text: str) -> str:
     # Independent vowels
     VOWELS = {
         "અ": "a",
@@ -65,8 +66,8 @@ def transliterate_gujarati(text_in: str) -> str:
     result = []
     i = 0
 
-    while i < len(text_in):
-        ch = text_in[i]
+    while i < len(text):
+        ch = text[i]
 
         # Independent vowels
         if ch in VOWELS:
@@ -78,8 +79,8 @@ def transliterate_gujarati(text_in: str) -> str:
             vowel = "a"  # inherent vowel
 
             # Look ahead
-            if i + 1 < len(text_in):
-                nxt = text_in[i + 1]
+            if i + 1 < len(text):
+                nxt = text[i + 1]
 
                 # Virama suppresses vowel
                 if nxt == VIRAMA:
@@ -101,7 +102,7 @@ def transliterate_gujarati(text_in: str) -> str:
 
     return "".join(result)
 
-def transliterate_arabic(text_in: str) -> str:
+def transliterate_arabic(text: str) -> str:
     ARABIC_MAP = {
         "ا": "ā",
         "ب": "b",
@@ -162,8 +163,8 @@ def transliterate_arabic(text_in: str) -> str:
     result = []
     i = 0
 
-    while i < len(text_in):
-        ch = text_in[i]
+    while i < len(text):
+        ch = text[i]
 
         # Shadda doubles consonant
         if ch == "ّ":
@@ -185,7 +186,7 @@ def transliterate_arabic(text_in: str) -> str:
 
     return "".join(result)
 
-def transliterate_devanagari(text_in: str) -> str:
+def transliterate_devanagari(text: str) -> str:
     # Independent vowels
     VOWELS = {
         "अ": "a",
@@ -282,8 +283,8 @@ def transliterate_devanagari(text_in: str) -> str:
     result = []
     i = 0
 
-    while i < len(text_in):
-        ch = text_in[i]
+    while i < len(text):
+        ch = text[i]
 
         # Independent vowels
         if ch in VOWELS:
@@ -297,8 +298,8 @@ def transliterate_devanagari(text_in: str) -> str:
             vowel = "a"  # inherent vowel
 
             # Look ahead
-            if i + 1 < len(text_in):
-                nxt = text_in[i + 1]
+            if i + 1 < len(text):
+                nxt = text[i + 1]
 
                 # Virama suppresses vowel
                 if nxt == VIRAMA:
@@ -345,7 +346,7 @@ def transliterate_devanagari(text_in: str) -> str:
 
     return "".join(result)
 
-def transliterate_malayam(text_in: str) -> str:
+def transliterate_malayam(text: str) -> str:
     # Independent vowels
     VOWELS = {
         "അ": "a",
@@ -454,8 +455,8 @@ def transliterate_malayam(text_in: str) -> str:
     result = []
     i = 0
 
-    while i < len(text_in):
-        ch = text_in[i]
+    while i < len(text):
+        ch = text[i]
 
         # Independent vowels
         if ch in VOWELS:
@@ -474,8 +475,8 @@ def transliterate_malayam(text_in: str) -> str:
             cons = CONSONANTS[ch]
             vowel = "a"  # inherent vowel
 
-            if i + 1 < len(text_in):
-                nxt = text_in[i + 1]
+            if i + 1 < len(text):
+                nxt = text[i + 1]
 
                 # Chandrakkala suppresses vowel
                 if nxt == CHANDRAKKALA:
@@ -522,7 +523,7 @@ def transliterate_malayam(text_in: str) -> str:
 
     return "".join(result)
 
-def transliterate_tamil(text_in: str) -> str:
+def transliterate_tamil(text: str) -> str:
     # Independent vowels
     VOWELS = {
         "அ": "a",
@@ -599,8 +600,8 @@ def transliterate_tamil(text_in: str) -> str:
     result = []
     i = 0
 
-    while i < len(text_in):
-        ch = text_in[i]
+    while i < len(text):
+        ch = text[i]
 
         # Independent vowels
         if ch in VOWELS:
@@ -613,8 +614,8 @@ def transliterate_tamil(text_in: str) -> str:
             cons = CONSONANTS[ch]
             vowel = "a"  # inherent vowel
 
-            if i + 1 < len(text_in):
-                nxt = text_in[i + 1]
+            if i + 1 < len(text):
+                nxt = text[i + 1]
 
                 # Pulli suppresses vowel
                 if nxt == VIRAMA:
@@ -661,7 +662,7 @@ def transliterate_tamil(text_in: str) -> str:
 
     return "".join(result)
 
-def transliterate_gurmukhi(text_in: str) -> str:
+def transliterate_gurmukhi(text: str) -> str:
     # Independent vowels
     VOWELS = {
         "ਅ": "a",
@@ -753,13 +754,13 @@ def transliterate_gurmukhi(text_in: str) -> str:
     result = []
     i = 0
 
-    while i < len(text_in):
-        ch = text_in[i]
+    while i < len(text):
+        ch = text[i]
 
         # Adhak doubles next consonant
         if ch == ADHAK:
-            if i + 1 < len(text_in):
-                nxt = text_in[i + 1]
+            if i + 1 < len(text):
+                nxt = text[i + 1]
                 if nxt in CONSONANTS:
                     result.append(CONSONANTS[nxt])
             i += 1
@@ -776,8 +777,8 @@ def transliterate_gurmukhi(text_in: str) -> str:
             cons = CONSONANTS[ch]
             vowel = "a"  # inherent vowel
 
-            if i + 1 < len(text_in):
-                nxt = text_in[i + 1]
+            if i + 1 < len(text):
+                nxt = text[i + 1]
 
                 # Virama suppresses vowel
                 if nxt == VIRAMA:
@@ -824,11 +825,159 @@ def transliterate_gurmukhi(text_in: str) -> str:
 
     return "".join(result)
 
+def transliterate_urdu(text: str):
+    URDU_MAP = {
+        # Vowels
+        "ا": "ā",
+        "آ": "ā",
+        "أ": "a",
+        "إ": "i",
+        "ؤ": "u",
+        "ئ": "i",
+        "ء": "ʾ",
+
+        # Consonants
+        "ب": "b",
+        "پ": "p",
+        "ت": "t",
+        "ٹ": "ṭ",
+        "ث": "s",
+        "ج": "j",
+        "چ": "c",
+        "ح": "ḥ",
+        "خ": "kh",
+        "د": "d",
+        "ڈ": "ḍ",
+        "ذ": "z",
+        "ر": "r",
+        "ڑ": "ṛ",
+        "ز": "z",
+        "ژ": "zh",
+        "س": "s",
+        "ش": "sh",
+        "ص": "ṣ",
+        "ض": "ẓ",
+        "ط": "ṭ",
+        "ظ": "ẓ",
+        "ع": "ʿ",
+        "غ": "gh",
+        "ف": "f",
+        "ق": "q",
+        "ک": "k",
+        "گ": "g",
+        "ل": "l",
+        "م": "m",
+        "ن": "n",
+        "ں": "ṁ",
+        "و": "v",
+        "ہ": "h",
+        "ھ": "h",
+        "ی": "y",
+        "ے": "ē",
+
+        # Arabic/Persian extras
+        "ة": "t",
+    }
+
+    # Urdu aspirated consonants
+    ASPIRATES = {
+        "بھ": "bh",
+        "پھ": "ph",
+        "تھ": "th",
+        "ٹھ": "ṭh",
+        "دھ": "dh",
+        "ڈھ": "ḍh",
+        "جھ": "jh",
+        "چھ": "chh",
+        "کھ": "kh",
+        "گھ": "gh",
+    }
+
+    # Arabic diacritics
+    DIACRITICS = {
+        "َ": "a",    # zabar
+        "ِ": "i",    # zer
+        "ُ": "u",    # pesh
+
+        "ً": "an",
+        "ٍ": "in",
+        "ٌ": "un",
+
+        "ْ": "",     # sukun
+        "ّ": "",     # shadda handled separately
+    }
+
+    # Urdu digits
+    URDU_DIGITS = {
+        "۰": "0",
+        "۱": "1",
+        "۲": "2",
+        "۳": "3",
+        "۴": "4",
+        "۵": "5",
+        "۶": "6",
+        "۷": "7",
+        "۸": "8",
+        "۹": "9",
+    }
+
+    text = unicodedata.normalize("NFC", text)
+
+    result = []
+    i = 0
+
+    while i < len(text):
+
+        # Handle aspirated digraphs first
+        if i + 1 < len(text):
+            pair = text[i:i+2]
+
+            if pair in ASPIRATES:
+                result.append(ASPIRATES[pair])
+                i += 2
+                continue
+
+        ch = text[i]
+
+        # Shadda doubles previous consonant
+        if ch == "ّ":
+            if result:
+                last = result[-1]
+
+                # Double final consonant character
+                if len(last) > 0:
+                    result[-1] = last + last[-1]
+
+            i += 1
+            continue
+
+        # Diacritics
+        if ch in DIACRITICS:
+            result.append(DIACRITICS[ch])
+            i += 1
+            continue
+
+        # Digits
+        if ch in URDU_DIGITS:
+            result.append(URDU_DIGITS[ch])
+            i += 1
+            continue
+
+        # Main mappings
+        if ch in URDU_MAP:
+            result.append(URDU_MAP[ch])
+        else:
+            result.append(ch)
+
+        i += 1
+
+    return "".join(result)
+
 def main():
     transliteration_result: str = ""
     user_input: str = ""
 
-    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\ngu - Gujarati\nmm - Malayam\ntm - Tamil\n")
+    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\nur - Urdu\ngu - Gujarati\nmm - Malayam\ntm - Tamil\n")
     
     while True:
         user_input = input("")
@@ -853,6 +1002,8 @@ def main():
                     transliteration_result = transliterate_tamil(user_input[3:]).title()
                 case "gk":
                     transliteration_result = transliterate_gurmukhi(user_input[3:]).title()
+                case "ur":
+                    transliteration_result = transliterate_urdu(user_input[3:]).title()
                 case _:
                     pass
             

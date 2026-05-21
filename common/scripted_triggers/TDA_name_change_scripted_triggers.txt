@@ -811,3 +811,7 @@ TAG_using_indian_names = {
 		is_puppet_of = IND
 	}
 }
+
+TAG_using_pakistani_names = {
+	always = no
+}

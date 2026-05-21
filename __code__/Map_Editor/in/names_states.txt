@@ -2526,13 +2526,31 @@
 	default = "Lucknow"
 }
 439 = {
-	default = "Delhi"
+	default = "Uttarakhand"
+	entry = {
+	    name = "Uttarākhaṁḍ"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 440 = {
 	default = "Punjab"
 }
 441 = {
-	default = "Kashmir"
+	default = "Ladakh"
+	entry = {
+        name = "Laddākh"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+	entry = {
+        name = "Ladākh"
+        requirements = {
+            "TAG_using_pakistani_names = yes"
+        }
+    }
 }
 442 = {
 	default = "Peshawar"
@@ -4060,6 +4078,12 @@
             "TAG_using_chinese_names = yes"
         }
     }
+	entry = {
+        name = "Aksāī Cin"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 752 = {
 	default = "Gaza Strip"
@@ -5221,6 +5245,30 @@
 	default = "Punjab"
 	entry = {
 	    name = "Pañjāba"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+928 = {
+	default = "Jammu and Kashmir"
+	entry = {
+	    name = "Jammū aur Kaśmīr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+	entry = {
+	    name = "Jamoṁ w Kashmyr"
+        requirements = {
+            "TAG_using_pakistani_names = yes"
+        }
+    }
+}
+929 = {
+	default = "Himachal Pradesh"
+	entry = {
+	    name = "Himācal Pradēś"
         requirements = {
             "TAG_using_indian_names = yes"
         }
