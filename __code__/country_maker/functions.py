@@ -130,3 +130,11 @@ def get_map_from_brackets(obj_in: str | list[str] | None):
                     results[key] = value
 
     return results
+
+def clamp(n, min_val, max_val):
+    if n < min_val:
+        return min_val
+    elif n > max_val:
+        return max_val
+    else:
+        return n
