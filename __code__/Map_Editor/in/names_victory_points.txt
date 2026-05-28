@@ -18790,3 +18790,277 @@
         }
     }
 }
+15633 = {
+	default = "Saharanpur"
+	entry = {
+	    name = "Sahāranapur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15609 = {
+	default = "Meerut"
+	entry = {
+	    name = "Mēraṭh"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15645 = {
+	default = "Muzaffarnagar"
+	entry = {
+	    name = "Muzaffar Nagar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15634 = {
+	default = "Aligarh"
+	entry = {
+	    name = "Alīgaḍh"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15646 = {
+	default = "Greater Noida"
+	entry = {
+	    name = "Greṭar Noeḍā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15613 = {
+	default = "Agra"
+	entry = {
+	    name = "Āgarā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15631 = {
+	default = "Firozabad"
+	entry = {
+	    name = "Phirozābād"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15632 = {
+	default = "Jhansi"
+	entry = {
+	    name = "Jhāvṁsī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+2036 = {
+	default = "Orai"
+	entry = {
+	    name = "Uraī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15617 = {
+	default = "Kanpur"
+	entry = {
+	    name = "Kānapur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15620 = {
+	default = "Lucknow"
+	entry = {
+	    name = "Lakhanaū"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+5086 = {
+	default = "Farrukhabad"
+	entry = {
+	    name = "Farrūxābād"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+#Changed from Allahabad to Prayagraj in 2018
+15615 = {
+	default = "Prayagraj"
+	entry = {
+	    name = "Prayāgarāj"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15624 = {
+	default = "Varanasi"
+	entry = {
+	    name = "Vārāṇasī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15630 = {
+	default = "Gorakhpur"
+	entry = {
+	    name = "Gorakhapur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10751 = {
+	default = "Mau"
+	entry = {
+	    name = "Maū"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15629 = {
+	default = "Bareilly"
+	entry = {
+	    name = "Barelī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15627 = {
+	default = "Moradabad"
+	entry = {
+	    name = "Murādābād"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15628 = {
+	default = "Rampur"
+	entry = {
+	    name = "Rāmapur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+2005 = {
+	default = "Mirzapur"
+	entry = {
+	    name = "Mirzāpur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15647 = {
+	default = "Jaunpur"
+	entry = {
+	    name = "Jaunapur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+9973 = {
+	default = "Ayodhya"
+	entry = {
+	    name = "Ayodhyā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+1983 = {
+	default = "Bahraich"
+	entry = {
+	    name = "Baharāic"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+8114 = {
+	default = "Shahjahanpur"
+	entry = {
+	    name = "Śāhajahāṁpur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+9951 = {
+	default = "Sambhal"
+}
+15643 = {
+	default = "Pilibhit"
+	entry = {
+	    name = "Pīlībhīt"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12777 = {
+	default = "Raebareli"
+	entry = {
+	    name = "Rāyabarelī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+5055 = {
+	default = "Fatehpur"
+	entry = {
+	    name = "Phatehapur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15636 = {
+	default = "Banda"
+	entry = {
+	    name = "Bāṁdā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15640 = {
+	default = "Bulandshahr"
+	entry = {
+	    name = "Bulaṁdaśahar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+4435 = {
+	default = "Gantok"
+	entry = {
+	    name = "Gāntok"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}

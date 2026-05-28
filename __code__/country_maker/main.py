@@ -5,7 +5,7 @@ from pathlib import Path
 import colorsys
 from PIL import Image
 from time import perf_counter
-from __code__.country_maker.functions import get_map_from_brackets, load_file_to_string, clamp
+from functions import get_map_from_brackets, load_file_to_string, clamp
 from typing import Literal
 
 MOD_DIRECTORY: Path = Path.cwd()
@@ -20,6 +20,7 @@ COUNTRY_COLOURS_FILE: Path = MOD_DIRECTORY / "common/countries/colors.txt"
 COSMETIC_TAGS_FILE: Path = MOD_DIRECTORY / "common/countries/cosmetic.txt"
 COUNTRY_LOCALISATION: Path = MOD_DIRECTORY / "localisation/english/countries_l_english.yml"
 COSMETIC_TAG_LOCALISATION: Path = MOD_DIRECTORY / "localisation/english/countries_cosmetic_l_english.yml"
+IDEOLOGY_LOCALISATION: Path = MOD_DIRECTORY / "localisation/english/parties_l_english.yml"
 PDX_FLAGS_FOLDER: Path = MOD_DIRECTORY / "gfx/flags"
 
 class Colour:
@@ -131,6 +132,8 @@ class Country:
         self.__colour: Colour | None = None
         self.__colour_ui: Colour | None = None
 
+        self.__localisation: dict[str, str] = {}
+
     def load_country_file_data(self, graphical_culture: str, graphical_culture_2d: str, colour: Colour):
         self.__graphical_culture = graphical_culture
         self.__graphical_culture_2d = graphical_culture_2d
@@ -143,6 +146,12 @@ class Country:
     def get_file_path(self) -> Path:
         return self.__file_path
 
+    def set_localisation_dict(self, loc: dict[str, str]) -> None:
+        self.__localisation = loc
+
+    def get_localisation_dict(self) -> dict[str, str]:
+        return self.__localisation
+
 
 class CosmeticCountry:
     def __init__(self, tag: str, colour: Colour, colour_ui: Colour):
@@ -150,12 +159,35 @@ class CosmeticCountry:
         self.__colour: Colour = colour
         self.__colour_ui: Colour = colour_ui
 
+        self.__localisation: dict[str, str] = {}
 
-def load_ideologies() -> list[str]:
-    ideologies: list[str] = []
+    def set_localisation_dict(self, loc: dict[str, str]) -> None:
+        self.__localisation = loc
+
+    def get_localisation_dict(self) -> dict[str, str]:
+        return self.__localisation
+
+
+class Ideology:
+    def __init__(self, ideology: str):
+        self.__ideology: str = ideology
+        self.__localised_name: str | None = None
+    
+    def set_localised_name(self, name: str) -> None:
+        self.__localised_name = name
+    
+    def get_localised_name(self) -> str:
+        return self.__localised_name
+    
+    def get_ideology(self) -> str:
+        return self.__ideology
+
+def load_ideologies() -> list[Ideology]:
+    ideologies: list[Ideology] = []
 
     for file in IDEOLOGY_FILES:
-        ideologies.extend(get_map_from_brackets(get_map_from_brackets(load_file_to_string(str(file))).get("ideologies")).keys())
+        ideology_strings: list[str] = list(get_map_from_brackets(get_map_from_brackets(load_file_to_string(str(file))).get("ideologies")).keys())
+        ideologies.extend([Ideology(ideology) for ideology in ideology_strings])
 
     if len(ideologies) == 0:
         raise Exception("No Ideologies have been defined")
@@ -287,7 +319,7 @@ def load_countries(graphical_cultures: list[str]) -> tuple[dict[str, Country], d
 
     return countries, cosmetic_tags
 
-def write_flags(countries: dict[str, Country], cosmetic_countries: dict[str, CosmeticCountry], ideologies: list[str]) -> None:
+def write_flags(countries: dict[str, Country], cosmetic_countries: dict[str, CosmeticCountry], ideologies: list[Ideology]) -> None:
     shutil.rmtree(PDX_FLAGS_FOLDER, ignore_errors=True)
     os.makedirs(PDX_FLAGS_FOLDER / "medium")
     os.makedirs(PDX_FLAGS_FOLDER / "small")
@@ -299,7 +331,7 @@ def write_flags(countries: dict[str, Country], cosmetic_countries: dict[str, Cos
 
     #Loop over every cosmetic and country tag
     for tag in tags:
-        tag_ideologies: list[str] = [f"{tag}_{ideology}" for ideology in ideologies]
+        tag_ideologies: list[str] = [f"{tag}_{ideology.get_ideology()}" for ideology in ideologies]
         ideology_flags_made: set[str] = set()
 
         for tag_w_ideology in tag_ideologies:
@@ -348,27 +380,99 @@ def write_flags(countries: dict[str, Country], cosmetic_countries: dict[str, Cos
         flag_small.save(str(PDX_FLAGS_FOLDER / f"small/{default_ideology}.tga"), format='TGA', rle=False)
         if flag_large.width != 82 or flag_large.height != 52:
             flag_large = flag_large.resize((82, 52))
-            flag_large.save(str(PDX_FLAGS_FOLDER / f"{default_ideology}.tga"), format='TGA', rle=False)
-        else:
-            shutil.copyfile(tag_ideology_flag_root_path, str(PDX_FLAGS_FOLDER / f"{default_ideology}.tga"))
+        flag_large.save(str(PDX_FLAGS_FOLDER / f"{default_ideology}.tga"), format='TGA', rle=False)
 
         for tag_ideology in tag_ideologies_remaining:
             shutil.copyfile(str(PDX_FLAGS_FOLDER / f"{default_ideology}.tga"), str(PDX_FLAGS_FOLDER / f"{tag_ideology}.tga"))
             shutil.copyfile(str(PDX_FLAGS_FOLDER / f"medium/{default_ideology}.tga"), str(PDX_FLAGS_FOLDER / f"medium/{tag_ideology}.tga"))
             shutil.copyfile(str(PDX_FLAGS_FOLDER / f"small/{default_ideology}.tga"), str(PDX_FLAGS_FOLDER / f"small/{tag_ideology}.tga"))
+        
+        flag_large.close()
+        flag_medium.close()
+        flag_small.close()
 
+def load_localisation(countries: dict[str, Country], cosmetic_countries: dict[str, CosmeticCountry], ideologies: list[Ideology]):
+    def format_line(line : str) -> str:
+        return_line: str = line.strip()
+        first_quote: int = return_line.find('"')
+        last_quote: int = return_line.rfind('"')
+
+        if first_quote == -1 or last_quote == -1:
+            return return_line
+    
+        l_hash: int = return_line.find('#', 0, first_quote)
+        if l_hash != -1:
+            return return_line[:l_hash]
+        
+        r_hash: int = -1
+        if last_quote + 1 != len(return_line):
+            r_hash = return_line.find('#', last_quote + 1)
+        
+            if r_hash != -1:
+                return return_line[:r_hash]
+        
+        return return_line
+
+    pattern = re.compile(r'^\s*(\w+):\d*\s+"(.*)"')
+    localisation: dict[str, str] = {}
+
+    for file in [COUNTRY_LOCALISATION, COSMETIC_TAG_LOCALISATION, IDEOLOGY_LOCALISATION]:
+        with open(file, encoding="utf-8") as f:
+            for line in f:
+                line_formatted: str = format_line(line)
+
+                match = pattern.match(line_formatted)
+                if match:
+                    localisation[match.group(1)] = match.group(2)
+    
+    for ideology in ideologies:
+        if idly := localisation.get(ideology.get_ideology()):
+            ideology.set_localised_name(idly)
+    
+    for tag in countries:
+        loc_keys: list[str] = [
+            f"{key}{suffix}"
+            for key in (
+                [f"{tag}_{ideology.get_ideology()}" for ideology in ideologies] + [tag]
+            )
+            for suffix in ("", "_ADJ", "_DEF")
+        ]
+        
+        country_localisation: dict[str, str] = {key: "" for key in loc_keys}
+        for key in loc_keys:
+            if loc := localisation.get(key):
+                country_localisation[key] = loc
+        
+        countries[tag].set_localisation_dict(country_localisation)
+    
+    for tag in cosmetic_countries:
+        loc_keys: list[str] = [
+            f"{key}{suffix}"
+            for key in (
+                [f"{tag}_{ideology.get_ideology()}" for ideology in ideologies] + [tag]
+            )
+            for suffix in ("", "_ADJ", "_DEF")
+        ]
+        
+        country_localisation: dict[str, str] = {key: "" for key in loc_keys}
+        for key in loc_keys:
+            if loc := localisation.get(key):
+                country_localisation[key] = loc
+        
+        cosmetic_countries[tag].set_localisation_dict(country_localisation)
 
 def main():
     time_start: float = perf_counter()
 
-    ideologies: list[str] = load_ideologies()
+    ideologies: list[Ideology] = load_ideologies()
     graphical_cultures: list[str] = load_graphical_cultures()
     countries, cosmetic_countries = load_countries(graphical_cultures)
-
-    write_flags(countries, cosmetic_countries, ideologies)
+    load_localisation(countries, cosmetic_countries, ideologies)
 
     load_time: float = perf_counter() - time_start
     print(f"Load Time: {load_time:.3}s")
+
+    write_flags(countries, cosmetic_countries, ideologies)
 
 if __name__ == "__main__":
     main()

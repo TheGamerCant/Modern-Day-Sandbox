@@ -1,14 +1,48 @@
 state={
 	id=438
 	name="STATE_438"
-	history={
-		owner = ZZZ
+	history = {
+		owner = IND
+		add_core_of = IND
+		
+		victory_points = { 15633 8 }
+		victory_points = { 15609 15 }
+		victory_points = { 15645 6 }
+		victory_points = { 15634 10 }
+		victory_points = { 15646 5 }
+		victory_points = { 15613 18 }
+		victory_points = { 15631 6 }
+		victory_points = { 15632 5 }
+		victory_points = { 2036 2 }
+		victory_points = { 15617 30 }
+		victory_points = { 15620 30 }
+		victory_points = { 5086 3 }
+		victory_points = { 15615 12 }
+		victory_points = { 15624 15 }
+		victory_points = { 15630 7 }
+		victory_points = { 10751 3 }
+		victory_points = { 15629 10 }
+		victory_points = { 15627 9 }
+		victory_points = { 15628 4 }
+		victory_points = { 2005 2 }
+		victory_points = { 15647 2 }
+		victory_points = { 9973 2 }
+		victory_points = { 1983 2 }
+		victory_points = { 8114 4 }
+		victory_points = { 9951 2 }
+		victory_points = { 15643 2 }
+		victory_points = { 12777 2 }
+		victory_points = { 5055 2 }
+		victory_points = { 15636 2 }
+		victory_points = { 15640 2 }
+		
+		set_variable = { sq_km = 223099.33 }
 	}
 	provinces={
-		1377 1983 2005 4045 4299 4410 4915 5040 5055 5086 5096 7064 7938 8082 8114 9951 9973 10332 10794 11955 12137 12777 12786 
+		1377 1983 2005 2036 4045 4299 4915 5055 5086 7064 7334 8082 8114 9951 9973 10751 10794 11955 12137 12777 12786 15609 15610 15611 15612 15613 15614 15615 15616 15617 15618 15619 15620 15621 15622 15623 15624 15625 15626 15627 15628 15629 15630 15631 15632 15633 15634 15635 15636 15637 15638 15639 15640 15641 15642 15643 15644 15645 15646 15647 
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	manpower=199812341
+	buildings_max_level_factor=1
 	state_category=rural
+	local_supplies=0.5
 }

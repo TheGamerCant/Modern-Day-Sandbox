@@ -2490,7 +2490,13 @@
     }
 }
 429 = {
-	default = "Bombay"
+	default = "Maharashtra"
+	entry = {
+        name = "Mahārāṣṭra"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 430 = {
 	default = "East Bengal"
@@ -2523,7 +2529,13 @@
 	default = "Indore"
 }
 438 = {
-	default = "Lucknow"
+	default = "Uttar Pradesh"
+	entry = {
+        name = "Uttar Pradēś"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 439 = {
 	default = "Uttarakhand"
@@ -5273,4 +5285,7 @@
             "TAG_using_indian_names = yes"
         }
     }
+}
+930 = {
+	default = "Sikkim"
 }

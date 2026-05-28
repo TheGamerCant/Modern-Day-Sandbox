@@ -199,14 +199,14 @@ def transliterate_devanagari(text: str) -> str:
         "ॠ": "ṝ",
         "ऌ": "ḷ",
         "ॡ": "ḹ",
-        "ए": "ē",
+        "ए": "e",
         "ऐ": "ai",
-        "ओ": "ō",
+        "ओ": "o",
         "औ": "au",
     }
 
-    # Consonants
     CONSONANTS = {
+        # Basic consonants
         "क": "k",
         "ख": "kh",
         "ग": "g",
@@ -247,13 +247,20 @@ def transliterate_devanagari(text: str) -> str:
         "स": "s",
         "ह": "h",
 
-        # Additional consonants
         "ळ": "ḷ",
-        "क्ष": "kṣ",
-        "ज्ञ": "jñ",
+
+        # Nukta consonants
+        "क़": "q",
+        "ख़": "x",
+        "ग़": "ġ",
+        "ज़": "z",
+        "झ़": "ž",
+        "ड़": "ṛ",
+        "ढ़": "ṛh",
+        "फ़": "f",
+        "य़": "ẏ",
     }
 
-    # Dependent vowel signs
     VOWEL_SIGNS = {
         "ा": "ā",
         "ि": "i",
@@ -264,26 +271,65 @@ def transliterate_devanagari(text: str) -> str:
         "ॄ": "ṝ",
         "ॢ": "ḷ",
         "ॣ": "ḹ",
-        "े": "ē",
+        "े": "e",
         "ै": "ai",
-        "ो": "ō",
+        "ो": "o",
         "ौ": "au",
     }
 
-    # Misc signs
     SIGNS = {
-        "ं": "ṁ",   # anusvara
-        "ः": "ḥ",   # visarga
-        "ँ": "m̐",  # candrabindu
-        "ऽ": "'",   # avagraha
+        "ं": "ṁ",
+        "ः": "ḥ",
+        "ँ": "ṁ",
+        "ऽ": "'",
     }
 
     VIRAMA = "्"
+
+    DEVANAGARI_DIGITS = {
+        "०": "0",
+        "१": "1",
+        "२": "2",
+        "३": "3",
+        "४": "4",
+        "५": "5",
+        "६": "6",
+        "७": "7",
+        "८": "8",
+        "९": "9",
+    }
+
+    text = unicodedata.normalize("NFC", text)
 
     result = []
     i = 0
 
     while i < len(text):
+
+        # Check 2-character consonants first
+        if i + 1 < len(text):
+            pair = text[i:i+2]
+
+            if pair in CONSONANTS:
+                cons = CONSONANTS[pair]
+                vowel = "a"
+
+                # Look ahead beyond pair
+                if i + 2 < len(text):
+                    nxt = text[i + 2]
+
+                    if nxt == VIRAMA:
+                        vowel = ""
+                        i += 1
+
+                    elif nxt in VOWEL_SIGNS:
+                        vowel = VOWEL_SIGNS[nxt]
+                        i += 1
+
+                result.append(cons + vowel)
+                i += 2
+                continue
+
         ch = text[i]
 
         # Independent vowels
@@ -295,18 +341,15 @@ def transliterate_devanagari(text: str) -> str:
         # Consonants
         if ch in CONSONANTS:
             cons = CONSONANTS[ch]
-            vowel = "a"  # inherent vowel
+            vowel = "a"
 
-            # Look ahead
             if i + 1 < len(text):
                 nxt = text[i + 1]
 
-                # Virama suppresses vowel
                 if nxt == VIRAMA:
                     vowel = ""
                     i += 1
 
-                # Dependent vowel sign replaces inherent vowel
                 elif nxt in VOWEL_SIGNS:
                     vowel = VOWEL_SIGNS[nxt]
                     i += 1
@@ -321,26 +364,13 @@ def transliterate_devanagari(text: str) -> str:
             i += 1
             continue
 
-        # Numbers (optional)
-        DEVANAGARI_DIGITS = {
-            "०": "0",
-            "१": "1",
-            "२": "2",
-            "३": "3",
-            "४": "4",
-            "५": "5",
-            "६": "6",
-            "७": "7",
-            "८": "8",
-            "९": "9",
-        }
-
+        # Digits
         if ch in DEVANAGARI_DIGITS:
             result.append(DEVANAGARI_DIGITS[ch])
             i += 1
             continue
 
-        # Unknown chars copied directly
+        # Unknown chars
         result.append(ch)
         i += 1
 
