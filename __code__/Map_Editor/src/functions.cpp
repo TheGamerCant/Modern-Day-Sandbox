@@ -78,7 +78,7 @@ String ForwardToBackslashes(String str) {
 
 String ToUpper(String str) {
     std::transform(str.begin(), str.end(), str.begin(),
-        [](unsigned char c) { return std::tolower(c); });
+        [](unsigned char c) { return std::toupper(c); });
     return str;
 }
 String ToLower(String str) {
