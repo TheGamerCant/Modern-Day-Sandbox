@@ -149,6 +149,17 @@ def WriteScriptedEffectsFile(cultures_list: list[Culture], super_cultures_list: 
                     f"\n\tset_variable = {{ global.culture_colour_array^{culture.new_index} = {RgbToInteger(super_cultures_list[super_culture_index].red, super_cultures_list[super_culture_index].green, super_cultures_list[super_culture_index].blue)} }}"
                 )
 
+def WriteTokensFile(cultures_list: list[Culture], super_cultures_list: list[SuperCulture], culture_tokens_file: Path):
+    with open(str(culture_tokens_file), "w", encoding="utf-8") as f:
+
+        for culture in cultures_list:
+            f.write(
+                f"TDA_culture_{culture.token}_token_idea\n"
+            )
+        for super_culture in super_cultures_list:
+            f.write(
+                f"TDA_super_culture_{super_culture.token}_token_idea\n"
+            )
 
 def WriteLocalisationFile(cultures_list: list[Culture], super_cultures_list: list[SuperCulture], localisation_file: Path) -> None:
     with open(str(localisation_file), "w", encoding="utf-8") as f:
@@ -379,6 +390,7 @@ def main():
     on_actions_file: Path = mod_directory / "common/on_actions/TDA_culture_on_actions.txt"
     idea_tokens_file: Path = mod_directory / "common/ideas/TDA_culture_tokens.txt"
     scripted_effects_file: Path = mod_directory / "common/scripted_effects/TDA_culture_toggle_scripted_effects.txt"
+    culture_tokens_file: Path = mod_directory / "common/synchronized_dynamic_tokens/culture_tokens.txt"
     localisation_file: Path = mod_directory / "localisation/english/TDA_culture_l_english.yml"
     history_states_folder: Path = mod_directory / "history/states"
     history_countries_folder: Path = mod_directory / "history/countries"
@@ -397,6 +409,7 @@ def main():
 
     WriteOnActionsFile(cultures_list, super_cultures_list, on_actions_file, bucket_size, largest_bucket, max_culture_index, max_super_culture_index)
     WriteIdeasFile(cultures_list, super_cultures_list, idea_tokens_file)
+    WriteTokensFile(cultures_list, super_cultures_list, culture_tokens_file)
     #WriteScriptedEffectsFile(cultures_list, super_cultures_list, scripted_effects_file)
     WriteLocalisationFile(cultures_list, super_cultures_list, localisation_file)
 

@@ -50,10 +50,5 @@ music = {
 	song = "chile_militaristic"
 	chance = { 
 		factor = 1 
-		modifier = {
-			factor = 2
-			tag = CHL
-		}
-	
 	}
 }
