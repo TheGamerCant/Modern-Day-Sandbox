@@ -131,13 +131,8 @@ TDA_update_every_state_population_density = {
 		round_variable = ZZZ.index_high
 		set_variable = { ZZZ.value_high = ZZZ.pop_dens_ranked^index_high }
 
-		set_variable = { x = ZZZ.value_low }
-		approximate_log = yes
-		set_variable = { ZZZ.value_low_log = x }
-		
-		set_variable = { x = ZZZ.value_high }
-		approximate_log = yes
-		set_variable = { ZZZ.value_high_log = x }
+		set_variable = { ZZZ.value_low_log = { value = ZZZ.value_low log = 2.71828 } }
+		set_variable = { ZZZ.value_high_log = { value = ZZZ.value_high log = 2.71828 } }
 		
 		set_variable = { ZZZ.range_log = ZZZ.value_high_log }
 		subtract_from_variable = { ZZZ.range_log = ZZZ.value_low_log }
@@ -149,8 +144,7 @@ TDA_update_every_state_population_density = {
 			index = i
 			break = break
 			
-			set_variable = { x = v }
-			approximate_log = yes
+			set_variable = { x =  { value = v log = 2.71828 } }
 			subtract_from_variable = { x = ZZZ.value_low_log }
 			divide_variable = { x = ZZZ.range_log }
 
@@ -404,13 +398,8 @@ TDA_update_every_country_population_density = {
 		round_variable = ZZZ.index_high
 		set_variable = { ZZZ.value_high = ZZZ.pop_dens_ranked^index_high }
 
-		set_variable = { x = ZZZ.value_low }
-		approximate_log = yes
-		set_variable = { ZZZ.value_low_log = x }
-
-		set_variable = { x = ZZZ.value_high }
-		approximate_log = yes
-		set_variable = { ZZZ.value_high_log = x }
+		set_variable = { ZZZ.value_low_log = { value = ZZZ.value_low log = 2.71828 } }
+		set_variable = { ZZZ.value_high_log = { value = ZZZ.value_high log = 2.71828 } }
 
 		set_variable = { ZZZ.range_log = ZZZ.value_high_log }
 		subtract_from_variable = { ZZZ.range_log = ZZZ.value_low_log }
@@ -422,8 +411,7 @@ TDA_update_every_country_population_density = {
 			index = i
 			break = break
 
-			set_variable = { x = v }
-			approximate_log = yes
+			set_variable = { x =  { value = v log = 2.71828 } }
 			subtract_from_variable = { x = ZZZ.value_low_log }
 			divide_variable = { x = ZZZ.range_log }
 

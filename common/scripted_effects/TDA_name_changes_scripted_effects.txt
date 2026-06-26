@@ -8031,6 +8031,258 @@ TDA_update_state_429_names = {
 			reset_state_name = yes
 		}
 	}
+	#Bārśī
+	if = {
+		limit = { any_country = { controls_province = 4353 TAG_using_indian_names = yes } }
+		set_province_name = { id = 4353 name = VICTORY_POINTS_4353_0 }
+	}
+	#Barshi
+	else = {
+		reset_province_name = 4353
+	}
+	#Goṁdiyā
+	if = {
+		limit = { any_country = { controls_province = 4557 TAG_using_indian_names = yes } }
+		set_province_name = { id = 4557 name = VICTORY_POINTS_4557_0 }
+	}
+	#Gondia
+	else = {
+		reset_province_name = 4557
+	}
+	#Bhaṁḍārā
+	if = {
+		limit = { any_country = { controls_province = 4883 TAG_using_indian_names = yes } }
+		set_province_name = { id = 4883 name = VICTORY_POINTS_4883_0 }
+	}
+	#Bhandara
+	else = {
+		reset_province_name = 4883
+	}
+	#Nāṁdeḍ
+	if = {
+		limit = { any_country = { controls_province = 5019 TAG_using_indian_names = yes } }
+		set_province_name = { id = 5019 name = VICTORY_POINTS_5019_0 }
+	}
+	#Nanded
+	else = {
+		reset_province_name = 5019
+	}
+	#Lātūr
+	if = {
+		limit = { any_country = { controls_province = 5063 TAG_using_indian_names = yes } }
+		set_province_name = { id = 5063 name = VICTORY_POINTS_5063_0 }
+	}
+	#Latur
+	else = {
+		reset_province_name = 5063
+	}
+	#Jaḷagāṁ
+	if = {
+		limit = { any_country = { controls_province = 7177 TAG_using_indian_names = yes } }
+		set_province_name = { id = 7177 name = VICTORY_POINTS_7177_0 }
+	}
+	#Jalagon
+	else = {
+		reset_province_name = 7177
+	}
+	#Ratnāgirī
+	if = {
+		limit = { any_country = { controls_province = 7232 TAG_using_indian_names = yes } }
+		set_province_name = { id = 7232 name = VICTORY_POINTS_7232_0 }
+	}
+	#Ratnagiri
+	else = {
+		reset_province_name = 7232
+	}
+	#Akolā
+	if = {
+		limit = { any_country = { controls_province = 7430 TAG_using_indian_names = yes } }
+		set_province_name = { id = 7430 name = VICTORY_POINTS_7430_0 }
+	}
+	#Akola
+	else = {
+		reset_province_name = 7430
+	}
+	#Caṁdrapūr
+	if = {
+		limit = { any_country = { controls_province = 7619 TAG_using_indian_names = yes } }
+		set_province_name = { id = 7619 name = VICTORY_POINTS_7619_0 }
+	}
+	#Chandrapur
+	else = {
+		reset_province_name = 7619
+	}
+	#Mālegāv
+	if = {
+		limit = { any_country = { controls_province = 10019 TAG_using_indian_names = yes } }
+		set_province_name = { id = 10019 name = VICTORY_POINTS_10019_0 }
+	}
+	#Malegaon
+	else = {
+		reset_province_name = 10019
+	}
+	#Yavatamāḷ
+	if = {
+		limit = { any_country = { controls_province = 10030 TAG_using_indian_names = yes } }
+		set_province_name = { id = 10030 name = VICTORY_POINTS_10030_0 }
+	}
+	#Yavatmal
+	else = {
+		reset_province_name = 10030
+	}
+	#Sātārā
+	if = {
+		limit = { any_country = { controls_province = 10210 TAG_using_indian_names = yes } }
+		set_province_name = { id = 10210 name = VICTORY_POINTS_10210_0 }
+	}
+	#Satara
+	else = {
+		reset_province_name = 10210
+	}
+	#Jālanā
+	if = {
+		limit = { any_country = { controls_province = 10311 TAG_using_indian_names = yes } }
+		set_province_name = { id = 10311 name = VICTORY_POINTS_10311_0 }
+	}
+	#Jalna
+	else = {
+		reset_province_name = 10311
+	}
+	#Naṁdurabār
+	if = {
+		limit = { any_country = { controls_province = 11993 TAG_using_indian_names = yes } }
+		set_province_name = { id = 11993 name = VICTORY_POINTS_11993_0 }
+	}
+	#Nandurbar
+	else = {
+		reset_province_name = 11993
+	}
+	#Udagīr
+	if = {
+		limit = { any_country = { controls_province = 12226 TAG_using_indian_names = yes } }
+		set_province_name = { id = 12226 name = VICTORY_POINTS_12226_0 }
+	}
+	#Udgir
+	else = {
+		reset_province_name = 12226
+	}
+	#Muṁbaī
+	if = {
+		limit = { any_country = { controls_province = 15648 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15648 name = VICTORY_POINTS_15648_0 }
+	}
+	#Mumbai
+	else = {
+		reset_province_name = 15648
+	}
+	#Navī Muṁbaī Iṁṭaraneśanala Eyaraporṭa
+	if = {
+		limit = { any_country = { controls_province = 15649 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15649 name = VICTORY_POINTS_15649_0 }
+	}
+	#Navi Mumbai International Airport
+	else = {
+		reset_province_name = 15649
+	}
+	#Vasaī
+	if = {
+		limit = { any_country = { controls_province = 15652 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15652 name = VICTORY_POINTS_15652_0 }
+	}
+	#Vasai
+	else = {
+		reset_province_name = 15652
+	}
+	#Solāpūr
+	if = {
+		limit = { any_country = { controls_province = 15653 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15653 name = VICTORY_POINTS_15653_0 }
+	}
+	#Solapur
+	else = {
+		reset_province_name = 15653
+	}
+	#Nāśik
+	if = {
+		limit = { any_country = { controls_province = 15654 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15654 name = VICTORY_POINTS_15654_0 }
+	}
+	#Nashik
+	else = {
+		reset_province_name = 15654
+	}
+	#Puṇe
+	if = {
+		limit = { any_country = { controls_province = 15656 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15656 name = VICTORY_POINTS_15656_0 }
+	}
+	#Pune
+	else = {
+		reset_province_name = 15656
+	}
+	#Nāgapūr
+	if = {
+		limit = { any_country = { controls_province = 15661 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15661 name = VICTORY_POINTS_15661_0 }
+	}
+	#Nagpur
+	else = {
+		reset_province_name = 15661
+	}
+	#Amarāvatī
+	if = {
+		limit = { any_country = { controls_province = 15664 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15664 name = VICTORY_POINTS_15664_0 }
+	}
+	#Amravati
+	else = {
+		reset_province_name = 15664
+	}
+	#Kolhāpūr
+	if = {
+		limit = { any_country = { controls_province = 15665 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15665 name = VICTORY_POINTS_15665_0 }
+	}
+	#Kolhapur
+	else = {
+		reset_province_name = 15665
+	}
+	#Sāṁgalī
+	if = {
+		limit = { any_country = { controls_province = 15666 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15666 name = VICTORY_POINTS_15666_0 }
+	}
+	#Sangli
+	else = {
+		reset_province_name = 15666
+	}
+	#Auraṁgābāda
+	if = {
+		limit = { any_country = { controls_province = 15667 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15667 name = VICTORY_POINTS_15667_0 }
+	}
+	#Aurangabad
+	else = {
+		reset_province_name = 15667
+	}
+	#Usmānābād
+	if = {
+		limit = { any_country = { controls_province = 15669 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15669 name = VICTORY_POINTS_15669_0 }
+	}
+	#Osmanabad
+	else = {
+		reset_province_name = 15669
+	}
+	#Parabhaṇī
+	if = {
+		limit = { any_country = { controls_province = 15672 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15672 name = VICTORY_POINTS_15672_0 }
+	}
+	#Parbhani
+	else = {
+		reset_province_name = 15672
+	}
 }
 
 #East Bengal
