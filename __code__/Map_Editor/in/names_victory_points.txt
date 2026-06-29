@@ -17935,7 +17935,7 @@
 5310 = {
 	default = "Janakpur"
 	entry = {
-        name = "Janakapura"
+        name = "Janakpur"
         requirements = {
             "TAG_using_nepali_names = yes"
         }
@@ -17944,7 +17944,7 @@
 12892 = {
 	default = "Biratnagar"
 	entry = {
-        name = "Birāṭanagara"
+        name = "Birāṭnagar"
         requirements = {
             "TAG_using_nepali_names = yes"
         }
@@ -18117,12 +18117,6 @@
 }
 15533 = {
 	default = "Jaipur"
-	entry = {
-        name = "Jayapur"
-        requirements = {
-            "TAG_using_indian_names = yes"
-        }
-    }
 }
 15540 = {
 	default = "Bikaner"
@@ -18136,7 +18130,7 @@
 15537 = {
 	default = "Jodhpur"
 	entry = {
-        name = "Jōdhapur"
+        name = "Jōdhpur"
         requirements = {
             "TAG_using_indian_names = yes"
         }
@@ -18189,12 +18183,6 @@
 }
 12829 = {
 	default = "Udaipur"
-	entry = {
-        name = "Udayapur"
-        requirements = {
-            "TAG_using_indian_names = yes"
-        }
-    }
 }
 12041 = {
 	default = "Sri Ganganagar"
@@ -18487,6 +18475,15 @@
         }
     }
 }
+4420 = {
+	default = "Hosur"
+	entry = {
+        name = "Hōcūr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
 15572 = {
 	default = "Delhi"
 	entry = {
@@ -18691,12 +18688,6 @@
 15596 = {
 	default = "Udhampur"
 	entry = {
-	    name = "Udhamapur"
-        requirements = {
-            "TAG_using_indian_names = yes"
-        }
-    }
-	entry = {
 	    name = "Ādham Por"
         requirements = {
             "TAG_using_pakistani_names = yes"
@@ -18793,7 +18784,7 @@
 15633 = {
 	default = "Saharanpur"
 	entry = {
-	    name = "Sahāranapur"
+	    name = "Sahāranpur"
         requirements = {
             "TAG_using_indian_names = yes"
         }
@@ -18874,7 +18865,7 @@
 15617 = {
 	default = "Kanpur"
 	entry = {
-	    name = "Kānapur"
+	    name = "Kānpur"
         requirements = {
             "TAG_using_indian_names = yes"
         }
@@ -18919,12 +18910,6 @@
 }
 15630 = {
 	default = "Gorakhpur"
-	entry = {
-	    name = "Gorakhapur"
-        requirements = {
-            "TAG_using_indian_names = yes"
-        }
-    }
 }
 10751 = {
 	default = "Mau"
@@ -18956,7 +18941,7 @@
 15628 = {
 	default = "Rampur"
 	entry = {
-	    name = "Rāmapur"
+	    name = "Rāmpur"
         requirements = {
             "TAG_using_indian_names = yes"
         }
@@ -18973,12 +18958,6 @@
 }
 15647 = {
 	default = "Jaunpur"
-	entry = {
-	    name = "Jaunapur"
-        requirements = {
-            "TAG_using_indian_names = yes"
-        }
-    }
 }
 9973 = {
 	default = "Ayodhya"
@@ -19031,7 +19010,7 @@
 5055 = {
 	default = "Fatehpur"
 	entry = {
-	    name = "Phatehapur"
+	    name = "Phatehpur"
         requirements = {
             "TAG_using_indian_names = yes"
         }
@@ -19311,6 +19290,258 @@
 	default = "Chandrapur"
 	entry = {
 	    name = "Caṁdrapūr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15675 = {
+	default = "Indore"
+}
+15676 = {
+	default = "Dewas"
+	entry = {
+	    name = "Devās"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15677 = {
+	default = "Ujjain"
+}
+15673 = {
+	default = "Gwailor"
+	entry = {
+	    name = "Gvāliyar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15684 = {
+	default = "Morena"
+	entry = {
+	    name = "Murainā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15682 = {
+	default = "Jabalpur"
+}
+15680 = {
+	default = "Bhopal"
+	entry = {
+	    name = "Bhopāl"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15686 = {
+	default = "Guna"
+	entry = {
+	    name = "Gunā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15685 = {
+	default = "Shivpuri"
+	entry = {
+	    name = "Śivapurī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10807 = {
+	default = "Bhind"
+	entry = {
+	    name = "Bhiṇḍ"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+5096 = {
+	default = "Sagar"
+	entry = {
+	    name = "Sāgar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12080 = {
+	default = "Pithampur"
+	entry = {
+	    name = "Pīthampur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15688 = {
+	default = "Ratlam"
+	entry = {
+	    name = "Ratlām"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+7205 = {
+	default = "Burhanpur"
+	entry = {
+	    name = "Burhānpurs"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15694 = {
+	default = "Chhindwara"
+	entry = {
+	    name = "Chiṁdvāṛā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15691 = {
+	default = "Seoni"
+	entry = {
+	    name = "Sivanī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+7938 = {
+	default = "Rewa"
+	entry = {
+	    name = "Rīvā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+5040 = {
+	default = "Satna"
+	entry = {
+	    name = "Satnā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15690 = {
+	default = "Katni"
+	entry = {
+	    name = "Kaṭnī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10332 = {
+	default = "Singrauli"
+	entry = {
+	    name = "Siṁgraulī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+4950 = {
+	default = "Betul"
+	entry = {
+	    name = "Baitūl"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+1949 = {
+	default = "Vidisha"
+	entry = {
+	    name = "Vidiśā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10816 = {
+	default = "Sehore"
+	entry = {
+	    name = "Sīhor"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15698 = {
+	default = "Bangalore"
+	entry = {
+	    name = "Beṁgaḷūru"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15702 = {
+	default = "Mysore"
+	entry = {
+	    name = "Maisūru"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15704 = {
+	default = "Mangalore"
+	entry = {
+	    name = "Maṁgaḷūru"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15705 = {
+	default = "Belgaum"
+	entry = {
+	    name = "Beḷagāvi"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15706 = {
+	default = "Gulbarga"
+	entry = {
+	    name = "Gulbargā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15708 = {
+	default = "Hubballi"
+	entry = {
+	    name = "Hubbaḷḷi"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15709 = {
+	default = "Dharwad"
+	entry = {
+	    name = "Dhāravāḍ"
         requirements = {
             "TAG_using_indian_names = yes"
         }

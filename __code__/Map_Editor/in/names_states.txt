@@ -2472,7 +2472,13 @@
 	default = "Madras"
 }
 425 = {
-	default = "Mysore"
+	default = "Karnataka"
+	entry = {
+        name = "Karnāṭaka"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 426 = {
 	default = "Orissa"
@@ -2526,12 +2532,18 @@
 	default = "Jabalpur"
 }
 437 = {
-	default = "Indore"
+	default = "Madhya Pradesh"
+	entry = {
+        name = "Madhya Pradeś"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 438 = {
 	default = "Uttar Pradesh"
 	entry = {
-        name = "Uttar Pradēś"
+        name = "Uttar Pradeś"
         requirements = {
             "TAG_using_indian_names = yes"
         }
@@ -5280,7 +5292,7 @@
 929 = {
 	default = "Himachal Pradesh"
 	entry = {
-	    name = "Himācal Pradēś"
+	    name = "Himācal Pradeś"
         requirements = {
             "TAG_using_indian_names = yes"
         }

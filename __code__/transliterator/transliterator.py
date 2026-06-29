@@ -1003,11 +1003,194 @@ def transliterate_urdu(text: str):
 
     return "".join(result)
 
+def transliterate_kannada(text):
+    # Independent vowels
+    VOWELS = {
+        "ಅ": "a",
+        "ಆ": "ā",
+        "ಇ": "i",
+        "ಈ": "ī",
+        "ಉ": "u",
+        "ಊ": "ū",
+        "ಋ": "ṛ",
+        "ೠ": "ṝ",
+        "ಌ": "ḷ",
+        "ೡ": "ḹ",
+        "ಎ": "e",
+        "ಏ": "ē",
+        "ಐ": "ai",
+        "ಒ": "o",
+        "ಓ": "ō",
+        "ಔ": "au",
+    }
+
+    # Consonants
+    CONSONANTS = {
+        "ಕ": "k",
+        "ಖ": "kh",
+        "ಗ": "g",
+        "ಘ": "gh",
+        "ಙ": "ṅ",
+
+        "ಚ": "c",
+        "ಛ": "ch",
+        "ಜ": "j",
+        "ಝ": "jh",
+        "ಞ": "ñ",
+
+        "ಟ": "ṭ",
+        "ಠ": "ṭh",
+        "ಡ": "ḍ",
+        "ಢ": "ḍh",
+        "ಣ": "ṇ",
+
+        "ತ": "t",
+        "ಥ": "th",
+        "ದ": "d",
+        "ಧ": "dh",
+        "ನ": "n",
+
+        "ಪ": "p",
+        "ಫ": "ph",
+        "ಬ": "b",
+        "ಭ": "bh",
+        "ಮ": "m",
+
+        "ಯ": "y",
+        "ರ": "r",
+        "ಲ": "l",
+        "ವ": "v",
+
+        "ಶ": "ś",
+        "ಷ": "ṣ",
+        "ಸ": "s",
+        "ಹ": "h",
+
+        "ಳ": "ḷ",
+
+        # Common conjuncts
+        "ಕ್ಷ": "kṣ",
+        "ಜ್ಞ": "jñ",
+    }
+
+    # Dependent vowel signs
+    VOWEL_SIGNS = {
+        "ಾ": "ā",
+        "ಿ": "i",
+        "ೀ": "ī",
+        "ು": "u",
+        "ೂ": "ū",
+        "ೃ": "ṛ",
+        "ೄ": "ṝ",
+        "ೢ": "ḷ",
+        "ೣ": "ḹ",
+        "ೆ": "e",
+        "ೇ": "ē",
+        "ೈ": "ai",
+        "ೊ": "o",
+        "ೋ": "ō",
+        "ೌ": "au",
+    }
+
+    SIGNS = {
+        "ಂ": "ṁ",
+        "ಃ": "ḥ",
+        "ಁ": "m̐",
+        "ಽ": "'",
+    }
+
+    VIRAMA = "್"
+
+    DIGITS = {
+        "೦": "0",
+        "೧": "1",
+        "೨": "2",
+        "೩": "3",
+        "೪": "4",
+        "೫": "5",
+        "೬": "6",
+        "೭": "7",
+        "೮": "8",
+        "೯": "9",
+    }
+
+        
+    text = unicodedata.normalize("NFC", text)
+
+    result = []
+    i = 0
+
+    while i < len(text):
+
+        # Handle conjuncts defined as multi-character keys
+        matched = False
+        for length in (2,):
+            if i + length <= len(text):
+                seq = text[i:i + length]
+
+                if seq in CONSONANTS:
+                    cons = CONSONANTS[seq]
+                    vowel = "a"
+
+                    if i + length < len(text):
+                        nxt = text[i + length]
+
+                        if nxt == VIRAMA:
+                            vowel = ""
+                            i += 1
+
+                        elif nxt in VOWEL_SIGNS:
+                            vowel = VOWEL_SIGNS[nxt]
+                            i += 1
+
+                    result.append(cons + vowel)
+                    i += length
+                    matched = True
+                    break
+
+        if matched:
+            continue
+
+        ch = text[i]
+
+        if ch in VOWELS:
+            result.append(VOWELS[ch])
+
+        elif ch in CONSONANTS:
+            cons = CONSONANTS[ch]
+            vowel = "a"
+
+            if i + 1 < len(text):
+                nxt = text[i + 1]
+
+                if nxt == VIRAMA:
+                    vowel = ""
+                    i += 1
+
+                elif nxt in VOWEL_SIGNS:
+                    vowel = VOWEL_SIGNS[nxt]
+                    i += 1
+
+            result.append(cons + vowel)
+
+        elif ch in SIGNS:
+            result.append(SIGNS[ch])
+
+        elif ch in DIGITS:
+            result.append(DIGITS[ch])
+
+        else:
+            result.append(ch)
+
+        i += 1
+
+    return "".join(result)
+
 def main():
     transliteration_result: str = ""
     user_input: str = ""
 
-    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\nur - Urdu\ngu - Gujarati\nmm - Malayam\ntm - Tamil\n")
+    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\nur - Urdu\ngu - Gujarati\nmm - Malayam\ntm - Tamil\nkn - Kannada\n")
     
     while True:
         user_input = input("")
@@ -1034,6 +1217,8 @@ def main():
                     transliteration_result = transliterate_gurmukhi(user_input[3:]).title()
                 case "ur":
                     transliteration_result = transliterate_urdu(user_input[3:]).title()
+                case "kn":
+                    transliteration_result = transliterate_kannada(user_input[3:]).title()
                 case _:
                     pass
             
