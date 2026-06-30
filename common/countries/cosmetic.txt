@@ -1,4 +1,4 @@
 ZZZ_0b_00000000_00000000_00000001 = {
-    color = rgb { 0 0 1 }
-    color_ui = rgb { 0 0 1 }
+	color = rgb { 0 0 1 }
+	color_ui = rgb { 0 0 1 }
 }
