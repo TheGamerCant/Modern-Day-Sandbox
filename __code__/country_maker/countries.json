@@ -1,0 +1,2539 @@
+{
+    "flags": {
+        "print_country_logs": false,
+        "print_localisation_logs": false,
+        "print_history_logs": false,
+        "print_flag_logs": true,
+        "write_flags": true,
+        "create_flags_for_every_ideology": false,
+        "use_macro_ideologies": true,
+        "macro_ideologies": {}
+    },
+  "dynamic_countries": [
+		{
+			"tag": "D01",
+			"red": 85,
+			"green": 139,
+			"blue": 171
+		},
+		{
+			"tag": "D02",
+			"red": 162,
+			"green": 97,
+			"blue": 106
+		},
+		{
+			"tag": "D03",
+			"red": 112,
+			"green": 147,
+			"blue": 96
+		},
+		{
+			"tag": "D04",
+			"red": 159,
+			"green": 126,
+			"blue": 93
+		},
+		{
+			"tag": "D05",
+			"red": 153,
+			"green": 87,
+			"blue": 91
+		},
+		{
+			"tag": "D06",
+			"red": 85,
+			"green": 139,
+			"blue": 171
+		},
+		{
+			"tag": "D07",
+			"red": 162,
+			"green": 97,
+			"blue": 106
+		},
+		{
+			"tag": "D08",
+			"red": 112,
+			"green": 147,
+			"blue": 96
+		},
+		{
+			"tag": "D09",
+			"red": 159,
+			"green": 126,
+			"blue": 93
+		},
+		{
+			"tag": "D10",
+			"red": 160,
+			"green": 132,
+			"blue": 135
+		},
+		{
+			"tag": "D11",
+			"red": 172,
+			"green": 108,
+			"blue": 72
+		},
+		{
+			"tag": "D12",
+			"red": 126,
+			"green": 74,
+			"blue": 103
+		},
+		{
+			"tag": "D13",
+			"red": 122,
+			"green": 150,
+			"blue": 114
+		},
+		{
+			"tag": "D14",
+			"red": 109,
+			"green": 119,
+			"blue": 133
+		},
+		{
+			"tag": "D15",
+			"red": 153,
+			"green": 87,
+			"blue": 91
+		},
+		{
+			"tag": "D16",
+			"red": 85,
+			"green": 139,
+			"blue": 171
+		},
+		{
+			"tag": "D17",
+			"red": 162,
+			"green": 97,
+			"blue": 106
+		},
+		{
+			"tag": "D18",
+			"red": 112,
+			"green": 147,
+			"blue": 96
+		},
+		{
+			"tag": "D19",
+			"red": 159,
+			"green": 126,
+			"blue": 93
+		},
+		{
+			"tag": "D20",
+			"red": 153,
+			"green": 87,
+			"blue": 91
+		},
+		{
+			"tag": "D21",
+			"red": 85,
+			"green": 139,
+			"blue": 171
+		},
+		{
+			"tag": "D22",
+			"red": 162,
+			"green": 97,
+			"blue": 106
+		},
+		{
+			"tag": "D23",
+			"red": 112,
+			"green": 147,
+			"blue": 96
+		},
+		{
+			"tag": "D24",
+			"red": 159,
+			"green": 126,
+			"blue": 93
+		},
+		{
+			"tag": "D25",
+			"red": 160,
+			"green": 132,
+			"blue": 135
+		},
+		{
+			"tag": "D26",
+			"red": 172,
+			"green": 108,
+			"blue": 72
+		},
+		{
+			"tag": "D27",
+			"red": 126,
+			"green": 74,
+			"blue": 103
+		},
+		{
+			"tag": "D28",
+			"red": 122,
+			"green": 150,
+			"blue": 114
+		},
+		{
+			"tag": "D29",
+			"red": 109,
+			"green": 119,
+			"blue": 133
+		},
+		{
+			"tag": "D30",
+			"red": 153,
+			"green": 87,
+			"blue": 91
+		},
+		{
+			"tag": "D31",
+			"red": 85,
+			"green": 139,
+			"blue": 171
+		},
+		{
+			"tag": "D32",
+			"red": 162,
+			"green": 97,
+			"blue": 106
+		},
+		{
+			"tag": "D33",
+			"red": 112,
+			"green": 147,
+			"blue": 96
+		},
+		{
+			"tag": "D34",
+			"red": 159,
+			"green": 126,
+			"blue": 93
+		},
+		{
+			"tag": "D35",
+			"red": 153,
+			"green": 87,
+			"blue": 91
+		},
+		{
+			"tag": "D36",
+			"red": 85,
+			"green": 139,
+			"blue": 171
+		},
+		{
+			"tag": "D37",
+			"red": 162,
+			"green": 97,
+			"blue": 106
+		},
+		{
+			"tag": "D38",
+			"red": 112,
+			"green": 147,
+			"blue": 96
+		},
+		{
+			"tag": "D39",
+			"red": 159,
+			"green": 126,
+			"blue": 93
+		},
+		{
+			"tag": "D40",
+			"red": 160,
+			"green": 132,
+			"blue": 135
+		},
+		{
+			"tag": "D41",
+			"red": 172,
+			"green": 108,
+			"blue": 72
+		},
+		{
+			"tag": "D42",
+			"red": 126,
+			"green": 74,
+			"blue": 103
+		},
+		{
+			"tag": "D43",
+			"red": 122,
+			"green": 150,
+			"blue": 114
+		},
+		{
+			"tag": "D44",
+			"red": 109,
+			"green": 119,
+			"blue": 133
+		},
+		{
+			"tag": "D45",
+			"red": 153,
+			"green": 87,
+			"blue": 91
+		},
+		{
+			"tag": "D46",
+			"red": 85,
+			"green": 139,
+			"blue": 171
+		},
+		{
+			"tag": "D47",
+			"red": 162,
+			"green": 97,
+			"blue": 106
+		},
+		{
+			"tag": "D48",
+			"red": 112,
+			"green": 147,
+			"blue": 96
+		},
+		{
+			"tag": "D49",
+			"red": 159,
+			"green": 126,
+			"blue": 93
+		},
+		{
+			"tag": "D50",
+			"red": 153,
+			"green": 87,
+			"blue": 91
+		},
+		{
+			"tag": "D51",
+			"red": 123,
+			"green": 123,
+			"blue": 38
+		},
+		{
+			"tag": "D52",
+			"red": 43,
+			"green": 168,
+			"blue": 121
+		},
+		{
+			"tag": "D53",
+			"red": 105,
+			"green": 105,
+			"blue": 105
+		},
+		{
+			"tag": "D54",
+			"red": 90,
+			"green": 86,
+			"blue": 75
+		},
+		{
+			"tag": "D55",
+			"red": 92,
+			"green": 123,
+			"blue": 71
+		},
+		{
+			"tag": "D56",
+			"red": 167,
+			"green": 62,
+			"blue": 81
+		},
+		{
+			"tag": "D57",
+			"red": 164,
+			"green": 133,
+			"blue": 194
+		},
+		{
+			"tag": "D58",
+			"red": 184,
+			"green": 194,
+			"blue": 133
+		},
+		{
+			"tag": "D59",
+			"red": 133,
+			"green": 163,
+			"blue": 194
+		},
+		{
+			"tag": "D60",
+			"red": 194,
+			"green": 140,
+			"blue": 133
+		},
+		{
+			"tag": "D61",
+			"red": 77,
+			"green": 105,
+			"blue": 90
+		},
+		{
+			"tag": "D62",
+			"red": 64,
+			"green": 136,
+			"blue": 203
+		},
+		{
+			"tag": "D63",
+			"red": 203,
+			"green": 159,
+			"blue": 64
+		},
+		{
+			"tag": "D64",
+			"red": 180,
+			"green": 178,
+			"blue": 175
+		},
+		{
+			"tag": "D65",
+			"red": 165,
+			"green": 176,
+			"blue": 184
+		},
+		{
+			"tag": "D66",
+			"red": 170,
+			"green": 131,
+			"blue": 171
+		},
+		{
+			"tag": "D67",
+			"red": 75,
+			"green": 66,
+			"blue": 84
+		},
+		{
+			"tag": "D68",
+			"red": 93,
+			"green": 174,
+			"blue": 198
+		},
+		{
+			"tag": "D69",
+			"red": 86,
+			"green": 157,
+			"blue": 60
+		},
+		{
+			"tag": "D70",
+			"red": 80,
+			"green": 31,
+			"blue": 33
+		},
+		{
+			"tag": "D71",
+			"red": 67,
+			"green": 74,
+			"blue": 201
+		},
+		{
+			"tag": "D72",
+			"red": 155,
+			"green": 42,
+			"blue": 132
+		},
+		{
+			"tag": "D73",
+			"red": 69,
+			"green": 69,
+			"blue": 39
+		},
+		{
+			"tag": "D74",
+			"red": 39,
+			"green": 69,
+			"blue": 51
+		},
+		{
+			"tag": "D75",
+			"red": 191,
+			"green": 204,
+			"blue": 205
+		}
+	],
+    "cosmetic_countries": [
+		{
+			"tag": "ZZZ_0b_00000000_00000000_00000001",
+			"red": 0,
+			"green": 0,
+			"blue": 1,
+			"localisation": {}
+		}
+    ],
+	"countries": [
+		{
+			"tag": "GLC",
+			"red": 73,
+			"green": 73,
+			"blue": 73,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 171,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"GLC": "Galicia",
+				"GLC_DEF": "the Republic of Galicia",
+				"GLC_ADJ": "Galician"
+			}
+		},
+		{
+			"tag": "CAT",
+			"red": 163,
+			"green": 163,
+			"blue": 163,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 165,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"CAT": "Catalonia",
+				"CAT_DEF": "the Republic of Catalonia",
+				"CAT_ADJ": "Catalan"
+			}
+		},
+		{
+			"tag": "GER",
+			"red": 80,
+			"green": 80,
+			"blue": 80,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 64,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"GER": "Germany",
+				"GER_DEF": "the Federal Republic of Germany",
+				"GER_ADJ": "German"
+			}
+		},
+		{
+			"tag": "BLR",
+			"red": 155,
+			"green": 155,
+			"blue": 155,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 206,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"BLR": "Belarus",
+				"BLR_DEF": "the Republic of Belarus",
+				"BLR_ADJ": "Belarusian"
+			}
+		},
+		{
+			"tag": "SLV",
+			"red": 44,
+			"green": 44,
+			"blue": 44,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 102,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"SLV": "Slovenia",
+				"SLV_DEF": "the Republic of Slovenia",
+				"SLV_ADJ": "Slovenian"
+			}
+		},
+		{
+			"tag": "ROM",
+			"red": 190,
+			"green": 190,
+			"blue": 190,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 46,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ROM": "Romania",
+				"ROM_DEF": "Romania",
+				"ROM_ADJ": "Romanian"
+			}
+		},
+		{
+			"tag": "BYA",
+			"red": 37,
+			"green": 37,
+			"blue": 37,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 564,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"BYA": "Buryatia",
+				"BYA_DEF": "the Republic of Buryatia",
+				"BYA_ADJ": "Buryat"
+			}
+		},
+		{
+			"tag": "NMA",
+			"red": 165,
+			"green": 165,
+			"blue": 165,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 106,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"NMA": "Macedonia",
+				"NMA_DEF": "the Former Yugoslav Republic of Macedonia",
+				"NMA_ADJ": "Macedonian"
+			}
+		},
+		{
+			"tag": "SPA",
+			"red": 208,
+			"green": 208,
+			"blue": 208,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 41,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"SPA": "Spain",
+				"SPA_DEF": "the Kingdom of Spain",
+				"SPA_ADJ": "Spanish"
+			}
+		},
+		{
+			"tag": "LIT",
+			"red": 141,
+			"green": 141,
+			"blue": 141,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 11,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"LIT": "Lithuania",
+				"LIT_DEF": "the Republic of Lithuania",
+				"LIT_ADJ": "Lithuanian"
+			}
+		},
+		{
+			"tag": "SOS",
+			"red": 219,
+			"green": 219,
+			"blue": 219,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 872,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"SOS": "South Ossetia",
+				"SOS_DEF": "the Republic of South Ossetia",
+				"SOS_ADJ": "South Ossetian"
+			}
+		},
+		{
+			"tag": "QUE",
+			"red": 2,
+			"green": 2,
+			"blue": 2,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 468,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"QUE": "Quebec",
+				"QUE_DEF": "the Republic of Quebec",
+				"QUE_ADJ": "Quebecois"
+			}
+		},
+		{
+			"tag": "GTM",
+			"red": 25,
+			"green": 25,
+			"blue": 25,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 313,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"GTM": "Guatemala",
+				"GTM_DEF": "the Republic of Guatemala",
+				"GTM_ADJ": "Guatemalan"
+			}
+		},
+		{
+			"tag": "PRC",
+			"red": 155,
+			"green": 155,
+			"blue": 155,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 608,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"PRC": "China",
+				"PRC_DEF": "the People's Republic of China",
+				"PRC_ADJ": "Chinese"
+			}
+		},
+		{
+			"tag": "BSH",
+			"red": 144,
+			"green": 144,
+			"blue": 144,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 104,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"BSH": "Bosnia and Herzegovina",
+				"BSH_DEF": "Bosnia and Herzegovina",
+				"BSH_ADJ": "Bosniak"
+			}
+		},
+		{
+			"tag": "TRZ",
+			"red": 162,
+			"green": 162,
+			"blue": 162,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 834,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"TRZ": "Transnistria",
+				"TRZ_DEF": "the Pridnestrovian Moldavian Republic",
+				"TRZ_ADJ": "Transnistrian"
+			}
+		},
+		{
+			"tag": "FRA",
+			"red": 21,
+			"green": 21,
+			"blue": 21,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 16,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"FRA": "France",
+				"FRA_DEF": "the French Republic",
+				"FRA_ADJ": "French"
+			}
+		},
+		{
+			"tag": "MCU",
+			"red": 8,
+			"green": 8,
+			"blue": 8,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 729,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "no",
+			"localisation": {
+				"MCU": "Macau",
+				"MCU_DEF": "the Macao Special Administrative Region",
+				"MCU_ADJ": "Macau"
+			}
+		},
+		{
+			"tag": "BLZ",
+			"red": 47,
+			"green": 47,
+			"blue": 47,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 311,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"BLZ": "Belize",
+				"BLZ_DEF": "Belize",
+				"BLZ_ADJ": "Belizean"
+			}
+		},
+		{
+			"tag": "MLD",
+			"red": 213,
+			"green": 213,
+			"blue": 213,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 78,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"MLD": "Moldova",
+				"MLD_DEF": "the Republic of Moldova",
+				"MLD_ADJ": "Moldovan"
+			}
+		},
+		{
+			"tag": "KAZ",
+			"red": 12,
+			"green": 12,
+			"blue": 12,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 590,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "no",
+			"localisation": {
+				"KAZ": "Kazakhstan",
+				"KAZ_DEF": "the Republic of Kazakhstan",
+				"KAZ_ADJ": "Kazakh"
+			}
+		},
+		{
+			"tag": "HEZ",
+			"red": 205,
+			"green": 205,
+			"blue": 205,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 911,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"HEZ": "Hezbollah",
+				"HEZ_DEF": "the Islamic Resistance in Lebanon",
+				"HEZ_ADJ": "Hezbollah"
+			}
+		},
+		{
+			"tag": "DSK",
+			"red": 6,
+			"green": 6,
+			"blue": 6,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 575,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"DSK": "Donetsk",
+				"DSK_DEF": "the Donetsk People's Republic",
+				"DSK_ADJ": "Donetsk"
+			}
+		},
+		{
+			"tag": "NWY",
+			"red": 99,
+			"green": 99,
+			"blue": 99,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 110,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"NWY": "Norway",
+				"NWY_DEF": "the Kingdom of Norway",
+				"NWY_ADJ": "Norwegian"
+			}
+		},
+		{
+			"tag": "ULS",
+			"red": 132,
+			"green": 132,
+			"blue": 132,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 119,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ULS": "Northern Ireland",
+				"ULS_DEF": "the Commonwealth of Ulster",
+				"ULS_ADJ": "Northern Irish"
+			}
+		},
+		{
+			"tag": "CHV",
+			"red": 160,
+			"green": 160,
+			"blue": 160,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 256,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"CHV": "Chuvashia",
+				"CHV_DEF": "the Chuvash Republic",
+				"CHV_ADJ": "Chuvash"
+			}
+		},
+		{
+			"tag": "UKR",
+			"red": 12,
+			"green": 12,
+			"blue": 12,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 202,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"UKR": "Ukraine",
+				"UKR_DEF": "Ukraine",
+				"UKR_ADJ": "Ukrainian"
+			}
+		},
+		{
+			"tag": "NCP",
+			"red": 178,
+			"green": 178,
+			"blue": 178,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 922,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "no",
+			"localisation": {
+				"NCP": "Northern Cyprus",
+				"NCP_DEF": "the Turkish Republic of Northern Cyprus",
+				"NCP_ADJ": "Turkish Cypriot"
+			}
+		},
+		{
+			"tag": "NPL",
+			"red": 207,
+			"green": 207,
+			"blue": 207,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 323,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"NPL": "Nepal",
+				"NPL_DEF": "the Federal Democratic Republic of Nepal",
+				"NPL_ADJ": "Nepali"
+			}
+		},
+		{
+			"tag": "SLO",
+			"red": 90,
+			"green": 90,
+			"blue": 90,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 70,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"SLO": "Slovakia",
+				"SLO_DEF": "the Slovak Republic",
+				"SLO_ADJ": "Slovak"
+			}
+		},
+		{
+			"tag": "AZJ",
+			"red": 18,
+			"green": 18,
+			"blue": 18,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 229,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"AZJ": "Azerbaijan",
+				"AZJ_DEF": "the Republic of Azerbaijan",
+				"AZJ_ADJ": "Azeri"
+			}
+		},
+		{
+			"tag": "WAL",
+			"red": 127,
+			"green": 127,
+			"blue": 127,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 34,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"WAL": "Wallonia",
+				"WAL_DEF": "the Republic of Wallonia",
+				"WAL_ADJ": "Walloon"
+			}
+		},
+		{
+			"tag": "IRE",
+			"red": 8,
+			"green": 8,
+			"blue": 8,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 783,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"IRE": "Ireland",
+				"IRE_DEF": "the Republic of Ireland",
+				"IRE_ADJ": "Irish"
+			}
+		},
+		{
+			"tag": "GOR",
+			"red": 212,
+			"green": 212,
+			"blue": 212,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 231,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"GOR": "Georgia",
+				"GOR_DEF": "Georgia",
+				"GOR_ADJ": "Georgian"
+			}
+		},
+		{
+			"tag": "GRN",
+			"red": 137,
+			"green": 137,
+			"blue": 137,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 101,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"GRN": "Greenland",
+				"GRN_DEF": "the Republic of Greenland",
+				"GRN_ADJ": "Greenlandic"
+			}
+		},
+		{
+			"tag": "ADR",
+			"red": 73,
+			"green": 73,
+			"blue": 73,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 794,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ADR": "Andorra",
+				"ADR_DEF": "the Principality of Andorra",
+				"ADR_ADJ": "Andorran"
+			}
+		},
+		{
+			"tag": "USA",
+			"red": 0,
+			"green": 0,
+			"blue": 0,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 867,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"USA": "United States of America",
+				"USA_DEF": "the United States of America",
+				"USA_ADJ": "American"
+			}
+		},
+		{
+			"tag": "ISR",
+			"red": 67,
+			"green": 67,
+			"blue": 67,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 789,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"ISR": "Israel",
+				"ISR_DEF": "the State of Israel",
+				"ISR_ADJ": "Israeli"
+			}
+		},
+		{
+			"tag": "ENG",
+			"red": 140,
+			"green": 140,
+			"blue": 140,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 126,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ENG": "England",
+				"ENG_DEF": "the Kingdom of England",
+				"ENG_ADJ": "English"
+			}
+		},
+		{
+			"tag": "CRO",
+			"red": 138,
+			"green": 138,
+			"blue": 138,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 109,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"CRO": "Croatia",
+				"CRO_DEF": "the Republic of Croatia",
+				"CRO_ADJ": "Croatian"
+			}
+		},
+		{
+			"tag": "SWE",
+			"red": 18,
+			"green": 18,
+			"blue": 18,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 141,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"SWE": "Sweden",
+				"SWE_DEF": "the Kingdom of Sweden",
+				"SWE_ADJ": "Swedish"
+			}
+		},
+		{
+			"tag": "NCG",
+			"red": 100,
+			"green": 100,
+			"blue": 100,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 317,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"NCG": "Nicaragua",
+				"NCG_DEF": "the Republic of Nicaragua",
+				"NCG_ADJ": "Nicaraguan"
+			}
+		},
+		{
+			"tag": "SHW",
+			"red": 156,
+			"green": 156,
+			"blue": 156,
+			"graphical_culture": "african_gfx",
+			"graphical_culture_2d": "african_2d",
+			"capital": 899,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"SHW": "Western Sahara",
+				"SHW_DEF": "The Sahrawi Arab Democratic Republic",
+				"SHW_ADJ": "Saharawi"
+			}
+		},
+		{
+			"tag": "HDU",
+			"red": 13,
+			"green": 13,
+			"blue": 13,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 312,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"HDU": "Honduras",
+				"HDU_DEF": "the Republic of Honduras",
+				"HDU_ADJ": "Honduran"
+			}
+		},
+		{
+			"tag": "BRT",
+			"red": 122,
+			"green": 122,
+			"blue": 122,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 14,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"BRT": "Brittany",
+				"BRT_DEF": "the Bretange Republic",
+				"BRT_ADJ": "Breton"
+			}
+		},
+		{
+			"tag": "BKT",
+			"red": 18,
+			"green": 18,
+			"blue": 18,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 651,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"BKT": "Bashkortostan",
+				"BKT_DEF": "the Republic of Bashkortostan",
+				"BKT_ADJ": "Bashkir"
+			}
+		},
+		{
+			"tag": "TTR",
+			"red": 145,
+			"green": 145,
+			"blue": 145,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 249,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"TTR": "Tatarstan",
+				"TTR_DEF": "the Republic of Tatarstan",
+				"TTR_ADJ": "Tatar"
+			}
+		},
+		{
+			"tag": "ROC",
+			"red": 19,
+			"green": 19,
+			"blue": 19,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 524,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ROC": "Taiwan",
+				"ROC_DEF": "the Republic of China",
+				"ROC_ADJ": "Taiwanese"
+			}
+		},
+		{
+			"tag": "GGZ",
+			"red": 5,
+			"green": 5,
+			"blue": 5,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 83,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"GGZ": "Gagauzia",
+				"GGZ_DEF": "the Gagauz Republic",
+				"GGZ_ADJ": "Gagauz"
+			}
+		},
+		{
+			"tag": "SYR",
+			"red": 96,
+			"green": 96,
+			"blue": 96,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 554,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"SYR": "Syria",
+				"SYR_DEF": "the Syrian Arab Republic",
+				"SYR_ADJ": "Syrian"
+			}
+		},
+		{
+			"tag": "TUR",
+			"red": 143,
+			"green": 143,
+			"blue": 143,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 49,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"TUR": "Turkey",
+				"TUR_DEF": "the Republic of Türkiye",
+				"TUR_ADJ": "Turkish"
+			}
+		},
+		{
+			"tag": "ASA",
+			"red": 168,
+			"green": 168,
+			"blue": 168,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 4,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ASA": "Austria",
+				"ASA_DEF": "the Republic of Austria",
+				"ASA_ADJ": "Austrian"
+			}
+		},
+		{
+			"tag": "UDM",
+			"red": 20,
+			"green": 20,
+			"blue": 20,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 399,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"UDM": "Udmurtia",
+				"UDM_DEF": "the Udmurt Republic",
+				"UDM_ADJ": "Udmurt"
+			}
+		},
+		{
+			"tag": "ICE",
+			"red": 98,
+			"green": 98,
+			"blue": 98,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 100,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ICE": "Iceland",
+				"ICE_DEF": "Iceland",
+				"ICE_ADJ": "Icelandic"
+			}
+		},
+		{
+			"tag": "LUX",
+			"red": 74,
+			"green": 74,
+			"blue": 74,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 8,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"LUX": "Luxembourg",
+				"LUX_DEF": "the Grand Duchy of Luxembourg",
+				"LUX_ADJ": "Luxembourgish"
+			}
+		},
+		{
+			"tag": "VCY",
+			"red": 175,
+			"green": 175,
+			"blue": 175,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 96,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"VCY": "Vatican City",
+				"VCY_DEF": "the Vatican City State",
+				"VCY_ADJ": "Vatican"
+			}
+		},
+		{
+			"tag": "CZE",
+			"red": 36,
+			"green": 36,
+			"blue": 36,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 9,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"CZE": "Czechia",
+				"CZE_DEF": "the Czech Republic",
+				"CZE_ADJ": "Czech"
+			}
+		},
+		{
+			"tag": "YAK",
+			"red": 73,
+			"green": 73,
+			"blue": 73,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 574,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"YAK": "Yakutia",
+				"YAK_DEF": "the Sakha Republic",
+				"YAK_ADJ": "Yakut"
+			}
+		},
+		{
+			"tag": "DPK",
+			"red": 109,
+			"green": 109,
+			"blue": 109,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 754,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"DPK": "North Korea",
+				"DPK_DEF": "the Democratic People's Republic of Korea",
+				"DPK_ADJ": "North Korean"
+			}
+		},
+		{
+			"tag": "KBB",
+			"red": 49,
+			"green": 49,
+			"blue": 49,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 827,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"KBB": "Kabardino-Balkaria",
+				"KBB_DEF": "the Kabardino-Balkarian Republic",
+				"KBB_ADJ": "Kabardian"
+			}
+		},
+		{
+			"tag": "ING",
+			"red": 0,
+			"green": 0,
+			"blue": 0,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 890,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"ING": "Ingushetia",
+				"ING_DEF": "the Republic of Ingushetia",
+				"ING_ADJ": "Ingush"
+			}
+		},
+		{
+			"tag": "ALB",
+			"red": 110,
+			"green": 110,
+			"blue": 110,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 44,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ALB": "Albania",
+				"ALB_DEF": "the Republic of Albania",
+				"ALB_ADJ": "Albanian"
+			}
+		},
+		{
+			"tag": "NOS",
+			"red": 179,
+			"green": 179,
+			"blue": 179,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 891,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"NOS": "North Ossetia",
+				"NOS_DEF": "the Republic of North Ossetia-Alania",
+				"NOS_ADJ": "North Ossetian"
+			}
+		},
+		{
+			"tag": "MRC",
+			"red": 76,
+			"green": 76,
+			"blue": 76,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 904,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"MRC": "Morocco",
+				"MRC_DEF": "the Kingdom of Morocco",
+				"MRC_ADJ": "Moroccan"
+			}
+		},
+		{
+			"tag": "PUE",
+			"red": 145,
+			"green": 145,
+			"blue": 145,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 686,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"PUE": "Puerto Rico",
+				"PUE_DEF": "the Commonwealth of Puerto Rico",
+				"PUE_ADJ": "Puerto Rican"
+			}
+		},
+		{
+			"tag": "KHS",
+			"red": 194,
+			"green": 194,
+			"blue": 194,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 569,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"KHS": "Khakassia",
+				"KHS_DEF": "the Republic of Khakassia",
+				"KHS_ADJ": "Khakas"
+			}
+		},
+		{
+			"tag": "EST",
+			"red": 4,
+			"green": 4,
+			"blue": 4,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 812,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"EST": "Estonia",
+				"EST_DEF": "the Republic of Estonia",
+				"EST_ADJ": "Estonian"
+			}
+		},
+		{
+			"tag": "LYB",
+			"red": 0,
+			"green": 0,
+			"blue": 0,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 448,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"LYB": "Libya",
+				"LYB_DEF": "the Great Socialist People's Libyan Arab Jamahiriya",
+				"LYB_ADJ": "Libyan"
+			}
+		},
+		{
+			"tag": "LEB",
+			"red": 78,
+			"green": 78,
+			"blue": 78,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 553,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"LEB": "Lebanon",
+				"LEB_DEF": "the Lebanese Republic",
+				"LEB_ADJ": "Lebanese"
+			}
+		},
+		{
+			"tag": "TUN",
+			"red": 120,
+			"green": 120,
+			"blue": 120,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 458,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"TUN": "Tunisia",
+				"TUN_DEF": "the Republic of Tunisia",
+				"TUN_ADJ": "Tunisian"
+			}
+		},
+		{
+			"tag": "SOV",
+			"red": 4,
+			"green": 4,
+			"blue": 4,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 219,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "no",
+			"localisation": {
+				"SOV": "Russian Federation",
+				"SOV_DEF": "the Russian Federation",
+				"SOV_ADJ": "Russian"
+			}
+		},
+		{
+			"tag": "SWI",
+			"red": 142,
+			"green": 142,
+			"blue": 142,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 657,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"SWI": "Switzerland",
+				"SWI_DEF": "the Swiss Confederation",
+				"SWI_ADJ": "Swiss"
+			}
+		},
+		{
+			"tag": "AKH",
+			"red": 242,
+			"green": 242,
+			"blue": 242,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 871,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"AKH": "Artsakh",
+				"AKH_DEF": "the Republic of Artsakh",
+				"AKH_ADJ": "Artsakhi"
+			}
+		},
+		{
+			"tag": "LAT",
+			"red": 100,
+			"green": 100,
+			"blue": 100,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 12,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"LAT": "Latvia",
+				"LAT_DEF": "the Republic of Latvia",
+				"LAT_ADJ": "Latvian"
+			}
+		},
+		{
+			"tag": "UYG",
+			"red": 52,
+			"green": 52,
+			"blue": 52,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 617,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"UYG": "East Turkestan",
+				"UYG_DEF": "the Republic of East Turkestan",
+				"UYG_ADJ": "Uyghur"
+			}
+		},
+		{
+			"tag": "MRL",
+			"red": 255,
+			"green": 255,
+			"blue": 255,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 833,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"MRL": "Mari El",
+				"MRL_DEF": "the Mari El Republic",
+				"MRL_ADJ": "Mari"
+			}
+		},
+		{
+			"tag": "SCT",
+			"red": 0,
+			"green": 0,
+			"blue": 0,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 121,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"SCT": "Scotland",
+				"SCT_DEF": "the Republic of Scotland",
+				"SCT_ADJ": "Scottish"
+			}
+		},
+		{
+			"tag": "GRC",
+			"red": 9,
+			"green": 9,
+			"blue": 9,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 164,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"GRC": "Greece",
+				"GRC_DEF": "the Hellenic Republic",
+				"GRC_ADJ": "Greek"
+			}
+		},
+		{
+			"tag": "SRB",
+			"red": 43,
+			"green": 43,
+			"blue": 43,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 107,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"SRB": "Serbia",
+				"SRB_DEF": "the Republic of Serbia",
+				"SRB_ADJ": "Serbian"
+			}
+		},
+		{
+			"tag": "COR",
+			"red": 29,
+			"green": 29,
+			"blue": 29,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 1,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"COR": "Corsica",
+				"COR_DEF": "the Republic of Corsica",
+				"COR_ADJ": "Corsican"
+			}
+		},
+		{
+			"tag": "KOS",
+			"red": 28,
+			"green": 28,
+			"blue": 28,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 802,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"KOS": "Kosovo",
+				"KOS_DEF": "the Republic of Kosovo",
+				"KOS_ADJ": "Kosovar"
+			}
+		},
+		{
+			"tag": "IND",
+			"red": 217,
+			"green": 217,
+			"blue": 217,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 926,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"IND": "India",
+				"IND_DEF": "the Republic of India",
+				"IND_ADJ": "Indian"
+			}
+		},
+		{
+			"tag": "MCO",
+			"red": 254,
+			"green": 254,
+			"blue": 254,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 851,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"MCO": "Monaco",
+				"MCO_DEF": "the Principality of Monaco",
+				"MCO_ADJ": "Monégasque"
+			}
+		},
+		{
+			"tag": "CUB",
+			"red": 174,
+			"green": 174,
+			"blue": 174,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 315,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"CUB": "Cuba",
+				"CUB_DEF": "the Republic of Cuba",
+				"CUB_ADJ": "Cuban"
+			}
+		},
+		{
+			"tag": "CYP",
+			"red": 225,
+			"green": 225,
+			"blue": 225,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 183,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"CYP": "Cyprus",
+				"CYP_DEF": "the Republic of Cyprus",
+				"CYP_ADJ": "Cypriot"
+			}
+		},
+		{
+			"tag": "FIN",
+			"red": 188,
+			"green": 188,
+			"blue": 188,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 111,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"FIN": "Finland",
+				"FIN_DEF": "the Republic of Finland",
+				"FIN_ADJ": "Finnish"
+			}
+		},
+		{
+			"tag": "ALG",
+			"red": 75,
+			"green": 75,
+			"blue": 75,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 459,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"ALG": "Algeria",
+				"ALG_DEF": "the People's Democratic Republic of Algeria",
+				"ALG_ADJ": "Algerian"
+			}
+		},
+		{
+			"tag": "PST",
+			"red": 148,
+			"green": 148,
+			"blue": 148,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 788,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"PST": "Palestine",
+				"PST_DEF": "the State of Palestine",
+				"PST_ADJ": "Palestinian"
+			}
+		},
+		{
+			"tag": "MLT",
+			"red": 211,
+			"green": 211,
+			"blue": 211,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 116,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"MLT": "Malta",
+				"MLT_DEF": "the Republic of Malta",
+				"MLT_ADJ": "Maltese"
+			}
+		},
+		{
+			"tag": "BHU",
+			"red": 246,
+			"green": 246,
+			"blue": 246,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 324,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"BHU": "Bhutan",
+				"BHU_DEF": "the Kingdom of Bhutan",
+				"BHU_ADJ": "Bhutanese"
+			}
+		},
+		{
+			"tag": "KLK",
+			"red": 206,
+			"green": 206,
+			"blue": 206,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 237,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"KLK": "Kalmykia",
+				"KLK_DEF": "the Republic of Kalmykia",
+				"KLK_ADJ": "Kalmyk"
+			}
+		},
+		{
+			"tag": "CHC",
+			"red": 67,
+			"green": 67,
+			"blue": 67,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 821,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"CHC": "Chechnya",
+				"CHC_DEF": "the Chechen Republic",
+				"CHC_ADJ": "Chechen"
+			}
+		},
+		{
+			"tag": "BUL",
+			"red": 16,
+			"green": 16,
+			"blue": 16,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 48,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"BUL": "Bulgaria",
+				"BUL_DEF": "the Republic of Bulgaria",
+				"BUL_ADJ": "Bulgarian"
+			}
+		},
+		{
+			"tag": "ATY",
+			"red": 108,
+			"green": 108,
+			"blue": 108,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 654,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"ATY": "Altai",
+				"ATY_DEF": "the Gorno-Altai Republic",
+				"ATY_ADJ": "Altai"
+			}
+		},
+		{
+			"tag": "CAN",
+			"red": 161,
+			"green": 161,
+			"blue": 161,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 338,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"CAN": "Canada",
+				"CAN_DEF": "Canada",
+				"CAN_ADJ": "Canadian"
+			}
+		},
+		{
+			"tag": "DMK",
+			"red": 123,
+			"green": 123,
+			"blue": 123,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 37,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"DMK": "Denmark",
+				"DMK_DEF": "the Kingdom of Denmark",
+				"DMK_ADJ": "Danish"
+			}
+		},
+		{
+			"tag": "AUS",
+			"red": 32,
+			"green": 32,
+			"blue": 32,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 907,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"AUS": "Australia",
+				"AUS_DEF": "the Commonwealth of Australia",
+				"AUS_ADJ": "Australian"
+			}
+		},
+		{
+			"tag": "SNM",
+			"red": 55,
+			"green": 55,
+			"blue": 55,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 204,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"SNM": "San Marino",
+				"SNM_DEF": "the Republic of San Marino",
+				"SNM_ADJ": "Sammarinese"
+			}
+		},
+		{
+			"tag": "HMS",
+			"red": 37,
+			"green": 37,
+			"blue": 37,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 752,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"HMS": "Hamas",
+				"HMS_DEF": "the Islamic Resistance Movement",
+				"HMS_ADJ": "Gazan"
+			}
+		},
+		{
+			"tag": "SRP",
+			"red": 45,
+			"green": 45,
+			"blue": 45,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 840,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "no",
+			"localisation": {
+				"SRP": "Republika Srpska",
+				"SRP_DEF": "Republika Srpska",
+				"SRP_ADJ": "Serbian"
+			}
+		},
+		{
+			"tag": "EGY",
+			"red": 215,
+			"green": 215,
+			"blue": 215,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 581,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"EGY": "Egypt",
+				"EGY_DEF": "the Arab Republic of Egypt",
+				"EGY_ADJ": "Egyptian"
+			}
+		},
+		{
+			"tag": "HKG",
+			"red": 153,
+			"green": 153,
+			"blue": 153,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 326,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "no",
+			"localisation": {
+				"HKG": "Hong Kong",
+				"HKG_DEF": "the Hong Kong Special Administrative Region",
+				"HKG_ADJ": "Hong Konger"
+			}
+		},
+		{
+			"tag": "DAG",
+			"red": 0,
+			"green": 0,
+			"blue": 0,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 232,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"DAG": "Dagestan",
+				"DAG_DEF": "the Republic of Dagestan",
+				"DAG_ADJ": "Dagestani"
+			}
+		},
+		{
+			"tag": "TVA",
+			"red": 109,
+			"green": 109,
+			"blue": 109,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 329,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"TVA": "Tuva",
+				"TVA_DEF": "the Republic of Tuva",
+				"TVA_ADJ": "Tuvan"
+			}
+		},
+		{
+			"tag": "BSQ",
+			"red": 103,
+			"green": 103,
+			"blue": 103,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 792,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"BSQ": "Basque Country",
+				"BSQ_DEF": "the Basque Country",
+				"BSQ_ADJ": "Basque"
+			}
+		},
+		{
+			"tag": "VLA",
+			"red": 174,
+			"green": 174,
+			"blue": 174,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 843,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"VLA": "Flanders",
+				"VLA_DEF": "the Republic of Flanders",
+				"VLA_ADJ": "Flemish"
+			}
+		},
+		{
+			"tag": "ITA",
+			"red": 6,
+			"green": 6,
+			"blue": 6,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 2,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ITA": "Italy",
+				"ITA_DEF": "the Italian Republic",
+				"ITA_ADJ": "Italian"
+			}
+		},
+		{
+			"tag": "GBR",
+			"red": 140,
+			"green": 140,
+			"blue": 140,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 126,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"GBR": "United Kingdom",
+				"GBR_DEF": "the United Kingdom of Great Britain and Northern Ireland",
+				"GBR_ADJ": "English"
+			}
+		},
+		{
+			"tag": "CRM",
+			"red": 35,
+			"green": 35,
+			"blue": 35,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 137,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"CRM": "Crimea",
+				"CRM_DEF": "the Autonomous Republic of Crimea",
+				"CRM_ADJ": "Crimean"
+			}
+		},
+		{
+			"tag": "KCH",
+			"red": 127,
+			"green": 127,
+			"blue": 127,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 889,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"KCH": "Karachay-Cherkessia",
+				"KCH_DEF": "the Karachay-Cherkess Republic",
+				"KCH_ADJ": "Karachay"
+			}
+		},
+		{
+			"tag": "POL",
+			"red": 164,
+			"green": 164,
+			"blue": 164,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 10,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"POL": "Poland",
+				"POL_DEF": "the Republic of Poland",
+				"POL_ADJ": "Polish"
+			}
+		},
+		{
+			"tag": "MEX",
+			"red": 4,
+			"green": 4,
+			"blue": 4,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 277,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"MEX": "Mexico",
+				"MEX_DEF": "the United Mexican States",
+				"MEX_ADJ": "Mexican"
+			}
+		},
+		{
+			"tag": "ESV",
+			"red": 0,
+			"green": 0,
+			"blue": 0,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 314,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"ESV": "El Salvador",
+				"ESV_DEF": "the Republic of El Salvador",
+				"ESV_ADJ": "Salvadoran"
+			}
+		},
+		{
+			"tag": "MNT",
+			"red": 31,
+			"green": 31,
+			"blue": 31,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 105,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"MNT": "Montenegro",
+				"MNT_DEF": "Montenegro",
+				"MNT_ADJ": "Montenegrin"
+			}
+		},
+		{
+			"tag": "MDV",
+			"red": 41,
+			"green": 41,
+			"blue": 41,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 837,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"MDV": "Mordovia",
+				"MDV_DEF": "the Republic of Mordovia",
+				"MDV_ADJ": "Mordvin"
+			}
+		},
+		{
+			"tag": "WLS",
+			"red": 210,
+			"green": 210,
+			"blue": 210,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 644,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"WLS": "Wales",
+				"WLS_DEF": "the Commonwealth of Wales",
+				"WLS_ADJ": "Welsh"
+			}
+		},
+		{
+			"tag": "LTN",
+			"red": 34,
+			"green": 34,
+			"blue": 34,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 655,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"LTN": "Liechtenstein",
+				"LTN_DEF": "the Principality of Liechtenstein",
+				"LTN_ADJ": "Liechtensteiner"
+			}
+		},
+		{
+			"tag": "ROK",
+			"red": 48,
+			"green": 48,
+			"blue": 48,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 525,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ROK": "South Korea",
+				"ROK_DEF": "the Republic of Korea",
+				"ROK_ADJ": "South Korean"
+			}
+		},
+		{
+			"tag": "MON",
+			"red": 120,
+			"green": 120,
+			"blue": 120,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 330,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"MON": "Mongolia",
+				"MON_DEF": "Mongolia",
+				"MON_ADJ": "Mongolian"
+			}
+		},
+		{
+			"tag": "ABZ",
+			"red": 74,
+			"green": 74,
+			"blue": 74,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 826,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"ABZ": "Abkhazia",
+				"ABZ_DEF": "the Republic of Abkhazia",
+				"ABZ_ADJ": "Abkhaz"
+			}
+		},
+		{
+			"tag": "POR",
+			"red": 0,
+			"green": 0,
+			"blue": 0,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 112,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"POR": "Portugal",
+				"POR_DEF": "the Portugese Republic",
+				"POR_ADJ": "Portugese"
+			}
+		},
+		{
+			"tag": "ARM",
+			"red": 200,
+			"green": 200,
+			"blue": 200,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 230,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ARM": "Armenia",
+				"ARM_DEF": "the Republic of Armenia",
+				"ARM_ADJ": "Armenian"
+			}
+		},
+		{
+			"tag": "HUN",
+			"red": 204,
+			"green": 204,
+			"blue": 204,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 43,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"HUN": "Hungary",
+				"HUN_DEF": "Hungary",
+				"HUN_ADJ": "Hungarian"
+			}
+		},
+		{
+			"tag": "TIB",
+			"red": 62,
+			"green": 62,
+			"blue": 62,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 322,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"TIB": "Tibet",
+				"TIB_DEF": "Tibet",
+				"TIB_ADJ": "Tibetan"
+			}
+		},
+		{
+			"tag": "LGK",
+			"red": 20,
+			"green": 20,
+			"blue": 20,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 33,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"LGK": "Lugansk",
+				"LGK_DEF": "the Lugansk People's Republic",
+				"LGK_ADJ": "Lugansk"
+			}
+		},
+		{
+			"tag": "FOE",
+			"red": 51,
+			"green": 51,
+			"blue": 51,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 337,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"FOE": "Faroe Islands",
+				"FOE_DEF": "the Faroe Islands",
+				"FOE_ADJ": "Faroese"
+			}
+		},
+		{
+			"tag": "NRD",
+			"red": 170,
+			"green": 170,
+			"blue": 170,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 7,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"NRD": "Netherlands",
+				"NRD_DEF": "the Kingdom of the Netherlands",
+				"NRD_ADJ": "Dutch"
+			}
+		},
+		{
+			"tag": "ZZZ",
+			"red": 0,
+			"green": 0,
+			"blue": 0,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 353,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ZZZ": "Hello World",
+				"ZZZ_DEF": "Germany",
+				"ZZZ_ADJ": "German"
+			}
+		},
+		{
+			"tag": "BLG",
+			"red": 175,
+			"green": 175,
+			"blue": 175,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 843,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"BLG": "Belgium",
+				"BLG_DEF": "the Kingdom of Belgium",
+				"BLG_ADJ": "Belgian"
+			}
+		}
+	]
+}
