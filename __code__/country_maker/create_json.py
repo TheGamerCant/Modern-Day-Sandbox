@@ -170,8 +170,8 @@ def load_countries() -> dict[str, dict[str, Any]]:
         countries_dict[tag] = {
             "tag": tag,
             "red": int(colour.group(1)),
-            "green": int(colour.group(1)),
-            "blue": int(colour.group(1)),
+            "green": int(colour.group(2)),
+            "blue": int(colour.group(3)),
             "graphical_culture": graphical_culture.group(1),
             "graphical_culture_2d": graphical_culture_2d.group(1)
         }
