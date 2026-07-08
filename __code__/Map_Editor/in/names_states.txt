@@ -926,8 +926,7 @@
 	default = "Malta"
 }
 117 = {
-	default = "Campania and Basilicata"
-	
+	default = "Campania-Basilicata"
 }
 118 = {
 	default = "Gibraltar"
@@ -1033,6 +1032,12 @@
 }
 146 = {
 	default = "Karelian Isthmus"
+	entry = {
+        name = "Karel'skiy Peresheyek"
+        requirements = {
+            "TAG_using_russian_names = yes"
+        }
+    }
 }
 147 = {
 	default = "Donegal"
@@ -2469,7 +2474,13 @@
     }
 }
 424 = {
-	default = "Madras"
+	default = "Andhra Pradesh"
+	entry = {
+        name = "Āṁdhra Pradēś"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 425 = {
 	default = "Karnataka"
@@ -2484,7 +2495,13 @@
 	default = "Orissa"
 }
 427 = {
-	default = "Hyderabad"
+	default = "Telangana"
+	entry = {
+        name = "Telaṁgāṇa"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 428 = {
 	default = "Gujarat"
@@ -2512,6 +2529,12 @@
 }
 432 = {
 	default = "Assam"
+	entry = {
+        name = "Asam"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 433 = {
 	default = "Rajahsthan"
@@ -2524,6 +2547,18 @@
 }
 434 = {
 	default = "Arunachal Pradesh"
+	entry = {
+        name = "Aruṇācal Pradeś"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+	entry = {
+        name = "Zàngnán"
+        requirements = {
+            "TAG_using_chinese_names = yes"
+        }
+    }
 }
 435 = {
 	default = "Bihar"
@@ -5300,4 +5335,31 @@
 }
 930 = {
 	default = "Sikkim"
+}
+931 = {
+	default = "Tripura"
+	entry = {
+	    name = "Tripurā"
+        requirements = {
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
+        }
+    }
+}
+932 = {
+	default = "Mizoram"
+}
+933 = {
+	default = "Manipur"
+	entry = {
+	    name = "Maṇipur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+934 = {
+	default = "Nagaland"
+}
+935 = {
+	default = "Meghalaya"
 }

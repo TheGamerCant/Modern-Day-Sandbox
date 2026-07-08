@@ -1,0 +1,19 @@
+state={
+	id=934
+	name="STATE_934"
+	history={
+		owner = IND
+		add_core_of = IND
+		
+		victory_points = { 15720 2 }
+		
+		set_variable = { sq_km = 16247.42 }
+	}
+	provinces={
+		1525 15720 
+	}
+	manpower= 1978502
+	buildings_max_level_factor=1.000
+	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+	state_category=city
+}

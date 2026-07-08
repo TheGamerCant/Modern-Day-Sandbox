@@ -815,3 +815,6 @@ TAG_using_indian_names = {
 TAG_using_pakistani_names = {
 	always = no
 }
+TAG_using_bengali_names = {
+	always = no
+}

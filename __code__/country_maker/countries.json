@@ -463,7 +463,14 @@
 		}
 	],
 	"cosmetic_countries": [
-	],
+		{
+			"tag": "ZZZ_0b_00000000_00000000_00000001",
+			"red": 0,
+			"green": 0,
+			"blue": 1,
+			"localisation": {}
+		}
+    ],
 	"countries": [
 		{
 			"tag": "ABZ",

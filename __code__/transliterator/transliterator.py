@@ -1186,11 +1186,354 @@ def transliterate_kannada(text):
 
     return "".join(result)
 
+def transliterate_bengali(text):
+    # Independent vowels
+    VOWELS = {
+        "অ": "a",
+        "আ": "ā",
+        "ই": "i",
+        "ঈ": "ī",
+        "উ": "u",
+        "ঊ": "ū",
+        "ঋ": "ṛ",
+        "ৠ": "ṝ",
+        "ঌ": "ḷ",
+        "ৡ": "ḹ",
+        "এ": "e",
+        "ঐ": "ai",
+        "ও": "o",
+        "ঔ": "au",
+    }
+
+    # Consonants
+    CONSONANTS = {
+        "ক": "k",
+        "খ": "kh",
+        "গ": "g",
+        "ঘ": "gh",
+        "ঙ": "ṅ",
+
+        "চ": "c",
+        "ছ": "ch",
+        "জ": "j",
+        "ঝ": "jh",
+        "ঞ": "ñ",
+
+        "ট": "ṭ",
+        "ঠ": "ṭh",
+        "ড": "ḍ",
+        "ঢ": "ḍh",
+        "ণ": "ṇ",
+
+        "ত": "t",
+        "থ": "th",
+        "দ": "d",
+        "ধ": "dh",
+        "ন": "n",
+
+        "প": "p",
+        "ফ": "ph",
+        "ব": "b",
+        "ভ": "bh",
+        "ম": "m",
+
+        "য": "y",
+        "য়": "ẏ",
+        "র": "r",
+        "ল": "l",
+
+        "শ": "ś",
+        "ষ": "ṣ",
+        "স": "s",
+        "হ": "h",
+
+        "ড়": "ṛ",
+        "ঢ়": "ṛh",
+
+        # Nukta letters
+        "ক়": "q",
+        "খ়": "x",
+        "গ়": "ġ",
+        "জ়": "z",
+        "ফ়": "f",
+
+        #Assamese
+
+        "ৰ": "r",
+        "ৱ": "v",
+    }
+
+    # Dependent vowel signs
+    VOWEL_SIGNS = {
+        "া": "ā",
+        "ি": "i",
+        "ী": "ī",
+        "ু": "u",
+        "ূ": "ū",
+        "ৃ": "ṛ",
+        "ৄ": "ṝ",
+        "ৢ": "ḷ",
+        "ৣ": "ḹ",
+        "ে": "e",
+        "ৈ": "ai",
+        "ো": "o",
+        "ৌ": "au",
+    }
+
+    # Signs
+    SIGNS = {
+        "ং": "ṁ",
+        "ঃ": "ḥ",
+        "ঁ": "m̐",
+        "ঽ": "'",
+    }
+
+    VIRAMA = "্"
+
+    DIGITS = {
+        "০": "0",
+        "১": "1",
+        "২": "2",
+        "৩": "3",
+        "৪": "4",
+        "৫": "5",
+        "৬": "6",
+        "৭": "7",
+        "৮": "8",
+        "৯": "9",
+    }
+    text = unicodedata.normalize("NFC", text)
+
+    result = []
+    i = 0
+
+    while i < len(text):
+
+        # Handle two-character consonants (ড়, ঢ়, ক়, etc.)
+        if i + 1 < len(text):
+            pair = text[i:i+2]
+
+            if pair in CONSONANTS:
+                cons = CONSONANTS[pair]
+                vowel = "a"
+
+                if i + 2 < len(text):
+                    nxt = text[i + 2]
+
+                    if nxt == VIRAMA:
+                        vowel = ""
+                        i += 1
+
+                    elif nxt in VOWEL_SIGNS:
+                        vowel = VOWEL_SIGNS[nxt]
+                        i += 1
+
+                result.append(cons + vowel)
+                i += 2
+                continue
+
+        ch = text[i]
+
+        if ch in VOWELS:
+            result.append(VOWELS[ch])
+
+        elif ch in CONSONANTS:
+            cons = CONSONANTS[ch]
+            vowel = "a"
+
+            if i + 1 < len(text):
+                nxt = text[i + 1]
+
+                if nxt == VIRAMA:
+                    vowel = ""
+                    i += 1
+
+                elif nxt in VOWEL_SIGNS:
+                    vowel = VOWEL_SIGNS[nxt]
+                    i += 1
+
+            result.append(cons + vowel)
+
+        elif ch in SIGNS:
+            result.append(SIGNS[ch])
+
+        elif ch in DIGITS:
+            result.append(DIGITS[ch])
+
+        else:
+            result.append(ch)
+
+        i += 1
+
+    return "".join(result)
+
+def transliterate_telugu(text):
+    # Independent vowels
+    VOWELS = {
+        "అ": "a",
+        "ఆ": "ā",
+        "ఇ": "i",
+        "ఈ": "ī",
+        "ఉ": "u",
+        "ఊ": "ū",
+        "ఋ": "ṛ",
+        "ౠ": "ṝ",
+        "ఌ": "ḷ",
+        "ౡ": "ḹ",
+        "ఎ": "e",
+        "ఏ": "ē",
+        "ఐ": "ai",
+        "ఒ": "o",
+        "ఓ": "ō",
+        "ఔ": "au",
+    }
+
+    # Consonants
+    CONSONANTS = {
+        "క": "k",
+        "ఖ": "kh",
+        "గ": "g",
+        "ఘ": "gh",
+        "ఙ": "ṅ",
+
+        "చ": "c",
+        "ఛ": "ch",
+        "జ": "j",
+        "ఝ": "jh",
+        "ఞ": "ñ",
+
+        "ట": "ṭ",
+        "ఠ": "ṭh",
+        "డ": "ḍ",
+        "ఢ": "ḍh",
+        "ణ": "ṇ",
+
+        "త": "t",
+        "థ": "th",
+        "ద": "d",
+        "ధ": "dh",
+        "న": "n",
+
+        "ప": "p",
+        "ఫ": "ph",
+        "బ": "b",
+        "భ": "bh",
+        "మ": "m",
+
+        "య": "y",
+        "ర": "r",
+        "ఱ": "ṟ",
+        "ల": "l",
+        "ళ": "ḷ",
+        "వ": "v",
+
+        "శ": "ś",
+        "ష": "ṣ",
+        "స": "s",
+        "హ": "h",
+    }
+
+    # Dependent vowel signs
+    VOWEL_SIGNS = {
+        "ా": "ā",
+        "ి": "i",
+        "ీ": "ī",
+        "ు": "u",
+        "ూ": "ū",
+        "ృ": "ṛ",
+        "ౄ": "ṝ",
+        "ౢ": "ḷ",
+        "ౣ": "ḹ",
+        "ె": "e",
+        "ే": "ē",
+        "ై": "ai",
+        "ొ": "o",
+        "ో": "ō",
+        "ౌ": "au",
+    }
+
+    # Miscellaneous signs
+    SIGNS = {
+        "ం": "ṁ",
+        "ః": "ḥ",
+        "ఁ": "m̐",
+        "ఽ": "'",
+    }
+
+    VIRAMA = "్"
+
+    DIGITS = {
+        "౦": "0",
+        "౧": "1",
+        "౨": "2",
+        "౩": "3",
+        "౪": "4",
+        "౫": "5",
+        "౬": "6",
+        "౭": "7",
+        "౮": "8",
+        "౯": "9",
+    }
+        
+    text = unicodedata.normalize("NFC", text)
+
+    result = []
+    i = 0
+
+    while i < len(text):
+        ch = text[i]
+
+        # Independent vowels
+        if ch in VOWELS:
+            result.append(VOWELS[ch])
+            i += 1
+            continue
+
+        # Consonants
+        if ch in CONSONANTS:
+            cons = CONSONANTS[ch]
+            vowel = "a"  # inherent vowel
+
+            if i + 1 < len(text):
+                nxt = text[i + 1]
+
+                # Virama suppresses inherent vowel
+                if nxt == VIRAMA:
+                    vowel = ""
+                    i += 1
+
+                # Dependent vowel sign replaces inherent vowel
+                elif nxt in VOWEL_SIGNS:
+                    vowel = VOWEL_SIGNS[nxt]
+                    i += 1
+
+            result.append(cons + vowel)
+            i += 1
+            continue
+
+        # Signs
+        if ch in SIGNS:
+            result.append(SIGNS[ch])
+            i += 1
+            continue
+
+        # Digits
+        if ch in DIGITS:
+            result.append(DIGITS[ch])
+            i += 1
+            continue
+
+        # Unknown character
+        result.append(ch)
+        i += 1
+
+    return "".join(result)
+
 def main():
     transliteration_result: str = ""
     user_input: str = ""
 
-    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\nur - Urdu\ngu - Gujarati\nmm - Malayam\ntm - Tamil\nkn - Kannada\n")
+    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\nur - Urdu\ngu - Gujarati\nmm - Malayam\ntm - Tamil\nkn - Kannada\nbg - Bengali\ntu - Telugu\n")
     
     while True:
         user_input = input("")
@@ -1219,6 +1562,10 @@ def main():
                     transliteration_result = transliterate_urdu(user_input[3:]).title()
                 case "kn":
                     transliteration_result = transliterate_kannada(user_input[3:]).title()
+                case "bg":
+                    transliteration_result = transliterate_bengali(user_input[3:]).title()
+                case "tu":
+                    transliteration_result = transliterate_telugu(user_input[3:]).title()
                 case _:
                     pass
             
