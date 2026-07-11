@@ -2492,7 +2492,13 @@
     }
 }
 426 = {
-	default = "Orissa"
+	default = "Odisha"
+	entry = {
+        name = "Oṛiśā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 427 = {
 	default = "Telangana"
@@ -2564,7 +2570,13 @@
 	default = "Bihar"
 }
 436 = {
-	default = "Jabalpur"
+	default = "Chhattisgarh"
+	entry = {
+        name = "Chattīsagaṛh"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 437 = {
 	default = "Madhya Pradesh"

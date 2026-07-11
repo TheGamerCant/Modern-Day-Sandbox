@@ -1529,11 +1529,186 @@ def transliterate_telugu(text):
 
     return "".join(result)
 
+def transliterate_odia(text):
+    # Independent vowels
+    VOWELS = {
+        "ଅ": "a",
+        "ଆ": "ā",
+        "ଇ": "i",
+        "ଈ": "ī",
+        "ଉ": "u",
+        "ଊ": "ū",
+        "ଋ": "ṛ",
+        "ୠ": "ṝ",
+        "ଌ": "ḷ",
+        "ୡ": "ḹ",
+        "ଏ": "e",
+        "ଐ": "ai",
+        "ଓ": "o",
+        "ଔ": "au",
+    }
+
+    # Consonants
+    CONSONANTS = {
+        "କ": "k",
+        "ଖ": "kh",
+        "ଗ": "g",
+        "ଘ": "gh",
+        "ଙ": "ṅ",
+
+        "ଚ": "c",
+        "ଛ": "ch",
+        "ଜ": "j",
+        "ଝ": "jh",
+        "ଞ": "ñ",
+
+        "ଟ": "ṭ",
+        "ଠ": "ṭh",
+        "ଡ": "ḍ",
+        "ଢ": "ḍh",
+        "ଣ": "ṇ",
+
+        "ତ": "t",
+        "ଥ": "th",
+        "ଦ": "d",
+        "ଧ": "dh",
+        "ନ": "n",
+
+        "ପ": "p",
+        "ଫ": "ph",
+        "ବ": "b",
+        "ଭ": "bh",
+        "ମ": "m",
+
+        "ଯ": "y",
+        "ୟ": "ẏ",      # distinct yya
+        "ର": "r",
+        "ଲ": "l",
+        "ଳ": "ḷ",
+        "ୱ": "v",      # wa
+
+        "ଶ": "ś",
+        "ଷ": "ṣ",
+        "ସ": "s",
+        "ହ": "h",
+
+        "ଡ଼": "ṛ",
+        "ଢ଼": "ṛh",
+
+        "ଵ": "v",
+        "ୱ": "w",
+    }
+
+    # Dependent vowel signs
+    VOWEL_SIGNS = {
+        "ା": "ā",
+        "ି": "i",
+        "ୀ": "ī",
+        "ୁ": "u",
+        "ୂ": "ū",
+        "ୃ": "ṛ",
+        "ୄ": "ṝ",
+        "ୢ": "ḷ",
+        "ୣ": "ḹ",
+        "େ": "e",
+        "ୈ": "ai",
+        "ୋ": "o",
+        "ୌ": "au",
+    }
+
+    # Signs
+    SIGNS = {
+        "ଂ": "ṁ",
+        "ଃ": "ḥ",
+        "ଁ": "m̐",
+        "ଽ": "'",
+    }
+
+    VIRAMA = "୍"
+
+    DIGITS = {
+        "୦": "0",
+        "୧": "1",
+        "୨": "2",
+        "୩": "3",
+        "୪": "4",
+        "୫": "5",
+        "୬": "6",
+        "୭": "7",
+        "୮": "8",
+        "୯": "9",
+    }
+
+    text = unicodedata.normalize("NFC", text)
+
+    result = []
+    i = 0
+
+    # Longest consonant sequence in CONSONANTS
+    max_cons_len = max(len(k) for k in CONSONANTS)
+
+    while i < len(text):
+
+        # Try to match the longest consonant first
+        matched = False
+        for length in range(max_cons_len, 0, -1):
+            if i + length > len(text):
+                continue
+
+            seq = text[i:i + length]
+
+            if seq in CONSONANTS:
+                cons = CONSONANTS[seq]
+                vowel = "a"
+
+                j = i + length
+
+                if j < len(text):
+                    nxt = text[j]
+
+                    if nxt == VIRAMA:
+                        vowel = ""
+                        j += 1
+
+                    elif nxt in VOWEL_SIGNS:
+                        vowel = VOWEL_SIGNS[nxt]
+                        j += 1
+
+                result.append(cons + vowel)
+                i = j
+                matched = True
+                break
+
+        if matched:
+            continue
+
+        ch = text[i]
+
+        # Independent vowels
+        if ch in VOWELS:
+            result.append(VOWELS[ch])
+
+        # Signs
+        elif ch in SIGNS:
+            result.append(SIGNS[ch])
+
+        # Digits
+        elif ch in DIGITS:
+            result.append(DIGITS[ch])
+
+        # Unknown character
+        else:
+            result.append(ch)
+
+        i += 1
+
+    return "".join(result)
+
 def main():
     transliteration_result: str = ""
     user_input: str = ""
 
-    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\nur - Urdu\ngu - Gujarati\nmm - Malayam\ntm - Tamil\nkn - Kannada\nbg - Bengali\ntu - Telugu\n")
+    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\nur - Urdu\ngu - Gujarati\nmm - Malayam\ntm - Tamil\nkn - Kannada\nbg - Bengali\ntu - Telugu\nod - Odia\n")
     
     while True:
         user_input = input("")
@@ -1566,6 +1741,8 @@ def main():
                     transliteration_result = transliterate_bengali(user_input[3:]).title()
                 case "tu":
                     transliteration_result = transliterate_telugu(user_input[3:]).title()
+                case "od":
+                    transliteration_result = transliterate_odia(user_input[3:]).title()
                 case _:
                     pass
             

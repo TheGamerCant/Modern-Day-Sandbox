@@ -5055,6 +5055,26 @@
 	</glyph>
 </collection>
 
+<collection unicode="U+1e8e" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 20.2,59.8 L 0.4,26.1 L 0.4,0 L -10.1,0 L -10.1,26.1 L -29.7,59.8 L -18.1,59.8 L -4.8,37.1 L 8.5,59.8 L 20.2,59.8" />
+			<path data="S 0.6,64.9 L -10.1,64.9 L -10.1,75.6 L 0.6,75.6 L 0.6,64.9" />
+		</layer>
+	</glyph>
+</collection>
+
+<collection unicode="U+1e8f" svg="false" colr="false" auto_generate="false" meta_name="">
+	<selected id="0"/>
+	<glyph id="0" left="-28" right="28" zero_width="false">
+		<layer name="Layer" visible="true">
+			<path data="S 12.5,43.2 L -8.7,-16.2 L -18.8,-16.2 L -12.8,0 L -13.7,0 L -29.6,43.2 L -18.4,43.2 L -8.3,13.9 L 1.9,43.2 L 12.5,43.2" />
+			<path data="S -3.2,49.4 L -13.9,49.4 L -13.9,60.1 L -3.2,60.1 L -3.2,49.4" />
+		</layer>
+	</glyph>
+</collection>
+
 <collection unicode="U+1e92" svg="false" colr="false" auto_generate="false" meta_name="">
 	<selected id="0"/>
 	<glyph id="0" left="-28" right="28" zero_width="false">

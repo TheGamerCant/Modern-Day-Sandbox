@@ -19988,3 +19988,150 @@
         }
     }
 }
+15750 = {
+	default = "Raipur"
+	entry = {
+	    name = "Rāypur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15751 = {
+	default = "Bhilai"
+	entry = {
+	    name = "Bhilāī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15753 = {
+	default = "Rajnandgaon"
+	entry = {
+	    name = "Rājnāṁdgāṁ"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+8120 = {
+	default = "Bilaspur"
+	entry = {
+	    name = "Bilāspur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12375 = {
+	default = "Raigarh"
+	entry = {
+	    name = "Rāygaṛh"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+7465 = {
+	default = "Jagdalpur"
+}
+10401 = {
+	default = "Dhamtari"
+	entry = {
+	    name = "Dhamtarī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12480 = {
+	default = "Ambikapur"
+	entry = {
+	    name = "Aṁbikāpur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+1510 = {
+	default = "Chirimiri"
+	entry = {
+	    name = "Cirīmirī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15755 = {
+	default = "Cuttack"
+	entry = {
+	    name = "Kaṭak"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15756 = {
+	default = "Bhubaneswar"
+	entry = {
+	    name = "Bhubaneśvar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15757 = {
+	default = "Rourkela"
+	entry = {
+	    name = "Rāurkelā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12462 = {
+	default = "Brahmapur"
+}
+10428 = {
+	default = "Sambalpur"
+}
+4104 = {
+	default = "Balasore"
+	entry = {
+	    name = "Bāleśwar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+12063 = {
+	default = "Bhadrak"
+}
+12241 = {
+	default = "Jeypore"
+	entry = {
+	    name = "Jaẏpur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+9946 = {
+	default = "Balangir"
+	entry = {
+	    name = "Balāṅgīr"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+1538 = {
+	default = "Keonjhar"
+	entry = {
+	    name = "Kendujhar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
