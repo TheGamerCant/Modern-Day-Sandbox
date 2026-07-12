@@ -1,10 +1,26 @@
 state={
 	id=435
 	name="STATE_435"
-	provinces={
-		1637 7593 10358 10471 12035 12307 12452 
+	history = {
+		owner = IND
+		add_core_of = IND
+		
+		victory_points = { 15769 12 }
+		victory_points = { 15770 5 }
+		victory_points = { 15768 11 }
+		victory_points = { 15766 13 }
+		victory_points = { 7593 2 }
+		victory_points = { 10358 1 }
+		victory_points = { 15772 2 }
+		victory_points = { 10471 1 }
+		victory_points = { 15773 1 }
+		
+		set_variable = { sq_km = 78281.11 }
 	}
-	manpower=100000
+	provinces={
+		1637 7593 10358 10471 12035 12307 12452 15766 15767 15768 15769 15770 15771 15772 15773 15774 15775 
+	}
+	manpower=32988134
 	buildings_max_level_factor=1
 	state_category=rural
 	local_supplies=0.5

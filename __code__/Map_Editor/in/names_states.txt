@@ -2532,6 +2532,12 @@
 }
 431 = {
 	default = "West Bengal"
+	entry = {
+        name = "Oẏesṭa Beṅgala"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 432 = {
 	default = "Assam"
@@ -2567,7 +2573,13 @@
     }
 }
 435 = {
-	default = "Bihar"
+	default = "Jharkhand"
+	entry = {
+        name = "Jhārkhaṁḍ"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }
 436 = {
 	default = "Chhattisgarh"
@@ -5374,4 +5386,13 @@
 }
 935 = {
 	default = "Meghalaya"
+}
+936 = {
+	default = "Bihar"
+	entry = {
+	    name = "Bihār"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
 }

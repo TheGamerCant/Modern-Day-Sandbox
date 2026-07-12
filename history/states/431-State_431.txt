@@ -1,10 +1,30 @@
 state={
 	id=431
 	name="STATE_431"
-	provinces={
-		1159 1444 1609 4062 4204 4245 4644 7220 7565 10077 12050 12338 
+	history = {
+		owner = IND
+		add_core_of = IND
+		
+		victory_points = { 15760 100 }
+		victory_points = { 15761 2 }
+		victory_points = { 1609 3 }
+		victory_points = { 15758 7 }
+		victory_points = { 7565 3 }
+		victory_points = { 15763 12 }
+		victory_points = { 15764 6 }
+		victory_points = { 10077 3 }
+		victory_points = { 7220 3 }
+		victory_points = { 4062 2 }
+		victory_points = { 4204 2 }
+		
+		set_variable = { sq_km = 84557 }
+		
+		buildings = { air_base = 3 }
 	}
-	manpower=100000
+	provinces={
+		1159 1444 1609 4062 4204 4245 4644 7220 7565 10077 12050 12338 15758 15759 15760 15761 15762 15763 15764 15765 
+	}
+	manpower=91276115
 	buildings_max_level_factor=1
 	state_category=city
 	local_supplies=0.5

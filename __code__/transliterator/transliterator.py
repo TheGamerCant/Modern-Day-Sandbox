@@ -1261,6 +1261,9 @@ def transliterate_bengali(text):
 
         "ৰ": "r",
         "ৱ": "v",
+
+        "য়": "ẏ",   # U+09DF BENGALI LETTER YYA
+        "য়": "ẏ",   # য + nukta
     }
 
     # Dependent vowel signs

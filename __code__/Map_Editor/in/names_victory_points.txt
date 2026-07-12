@@ -20135,3 +20135,279 @@
         }
     }
 }
+15760 = {
+	default = "Kolkata"
+	entry = {
+	    name = "Kalkātā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15761 = {
+	default = "Netaji Chandra Bose International Airport"
+	entry = {
+	    name = "Subhāṣcandra Basu Āntarjātik Bimānbandar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+1609 = {
+	default = "Baharampur"
+}
+15758 = {
+	default = "Siliguri"
+	entry = {
+	    name = "Śiliguṛi"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+7565 = {
+	default = "Malda"
+	entry = {
+	    name = "Māldā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15763 = {
+	default = "Asansol"
+	entry = {
+	    name = "Āsānsol"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15764 = {
+	default = "Durgapur"
+	entry = {
+	    name = "Durgāpur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10077 = {
+	default = "Bardhaman"
+	entry = {
+	    name = "Bardhamān"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+7220 = {
+	default = "Kharagpur"
+	entry = {
+	    name = "Khaṛgpur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+4062 = {
+	default = "Haldia"
+	entry = {
+	    name = "Haladiẏā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+4204 = {
+	default = "Bankura"
+	entry = {
+	    name = "Baṁkuṛā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15769 = {
+	default = "Dhanbad"
+	entry = {
+	    name = "Dhanbād"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15770 = {
+	default = "Bokaro"
+	entry = {
+	    name = "Bokāro"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15768 = {
+	default = "Ranchi"
+	entry = {
+	    name = "Rāṁcī"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15766 = {
+	default = "Jamshedpur"
+	entry = {
+	    name = "Jamśedpur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+7593 = {
+	default = "Deoghar"
+	entry = {
+	    name = "Devghar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10358 = {
+	default = "Chaibasa"
+	entry = {
+	    name = "Cāībāsā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15772 = {
+	default = "Hazaribagh"
+	entry = {
+	    name = "Hazārībāg"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10471 = {
+	default = "Medininagar"
+	entry = {
+	    name = "Medinīnagar"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15773 = {
+	default = "Gumla"
+	entry = {
+	    name = "Gumlā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15776 = {
+	default = "Patna"
+	entry = {
+	    name = "Paṭnā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15780 = {
+	default = "Arrah"
+	entry = {
+	    name = "Ārā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+15779 = {
+	default = "Sasaram"
+	entry = {
+	    name = "Sāsārām"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+1541 = {
+	default = "Siwan"
+	entry = {
+	    name = "Sivān"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+4516 = {
+	default = "Bodh Gaya"
+	entry = {
+	    name = "Bodh Gayā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10361 = {
+	default = "Muzaffarpur"
+}
+4459 = {
+	default = "Bettiah"
+	entry = {
+	    name = "Betiyā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+10878 = {
+	default = "Darbhanga"
+	entry = {
+	    name = "Darbhaṁgā"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+4544 = {
+	default = "Bihar Sharif"
+	entry = {
+	    name = "Bihār Śarīph"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+7537 = {
+	default = "Bhagalpur"
+	entry = {
+	    name = "Bhāgalpur"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+7475 = {
+	default = "Purnia"
+	entry = {
+	    name = "Pūrṇiyāṁ"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
+1569 = {
+	default = "Begusarai"
+	entry = {
+	    name = "Begūsarāy"
+        requirements = {
+            "TAG_using_indian_names = yes"
+        }
+    }
+}
