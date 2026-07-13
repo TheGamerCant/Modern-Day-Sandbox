@@ -816,5 +816,15 @@ TAG_using_pakistani_names = {
 	always = no
 }
 TAG_using_bengali_names = {
-	always = no
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = BAN
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = BAN
+	}
 }

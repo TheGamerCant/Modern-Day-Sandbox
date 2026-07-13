@@ -2,12 +2,39 @@ state={
 	id=430
 	name="STATE_430"
 	history={
-		owner = ZZZ
+		owner = BAN
+		add_core_of = BAN
+		
+		set_variable = { sq_km = 130170 }
+		
+		victory_points = { 15792 100 }
+		victory_points = { 15790 2 }
+		victory_points = { 15784 5 }
+		victory_points = { 15781 7 }
+		victory_points = { 15782 5 }
+		victory_points = { 15785 5 }
+		victory_points = { 15783 7 }
+		victory_points = { 15786 30 }
+		victory_points = { 12010 2 }
+		victory_points = { 11968 4 }
+		victory_points = { 11929 9 }
+		victory_points = { 10035 4 }
+		victory_points = { 10389 2 }
+		victory_points = { 15794 25 }
+		victory_points = { 10443 4 }
+		victory_points = { 7662 2 }
+		victory_points = { 4162 2 }
+		victory_points = { 7124 2 }
+		victory_points = { 2843 2 }
+		victory_points = { 15795 2 }
+		victory_points = { 12423 1 }
+		
+		buildings = { air_base = 6 }
 	}
 	provinces={
-		2843 4162 4616 7078 7124 7179 7634 7662 9935 9991 9993 10035 10389 10416 10443 11911 11929 11968 12010 12423 13208 
+		2843 4162 4616 7078 7124 7179 7634 7662 9935 9991 9993 10035 10389 10416 10443 11911 11929 11968 12010 12423 13208 15781 15782 15783 15784 15785 15786 15787 15788 15789 15790 15791 15792 15793 15794 15795 
 	}
-	manpower= 100000
+	manpower= 149772364
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=town

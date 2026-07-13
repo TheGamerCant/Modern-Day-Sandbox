@@ -633,6 +633,22 @@
 			}
 		},
 		{
+			"tag": "BAN",
+			"red": 27,
+			"green": 58,
+			"blue": 17,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 430,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"BAN": "Bangladesh",
+				"BAN_DEF": "the People's Republic of Bangladesh",
+				"BAN_ADJ": "Bangladeshi"
+			}
+		},
+		{
 			"tag": "BHU",
 			"red": 246,
 			"green": 166,

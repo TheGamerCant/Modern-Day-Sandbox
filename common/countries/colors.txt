@@ -40,6 +40,10 @@ AZJ = {
 	color = rgb { 18 158 123 }
 	color_ui = rgb { 18 158 123 }
 }
+BAN = {
+	color = rgb { 27 58 17 }
+	color_ui = rgb { 27 58 17 }
+}
 BHU = {
 	color = rgb { 246 166 87 }
 	color_ui = rgb { 246 166 87 }

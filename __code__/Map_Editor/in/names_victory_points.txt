@@ -20140,7 +20140,7 @@
 	entry = {
 	    name = "Kalkātā"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20149,7 +20149,7 @@
 	entry = {
 	    name = "Subhāṣcandra Basu Āntarjātik Bimānbandar"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20161,7 +20161,7 @@
 	entry = {
 	    name = "Śiliguṛi"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20170,7 +20170,7 @@
 	entry = {
 	    name = "Māldā"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20179,7 +20179,7 @@
 	entry = {
 	    name = "Āsānsol"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20188,7 +20188,7 @@
 	entry = {
 	    name = "Durgāpur"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20197,7 +20197,7 @@
 	entry = {
 	    name = "Bardhamān"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20206,7 +20206,7 @@
 	entry = {
 	    name = "Khaṛgpur"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20215,7 +20215,7 @@
 	entry = {
 	    name = "Haladiẏā"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20224,7 +20224,7 @@
 	entry = {
 	    name = "Baṁkuṛā"
         requirements = {
-            "TAG_using_indian_names = yes"
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
         }
     }
 }
@@ -20408,6 +20408,189 @@
 	    name = "Begūsarāy"
         requirements = {
             "TAG_using_indian_names = yes"
+        }
+    }
+}
+15792 = {
+	default = "Dhaka"
+	entry = {
+	    name = "Ḍhākā"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+15790 = {
+	default = "Hazrat Shahjalal International Airport"
+	entry = {
+	    name = "Hayarata Śāhjālāla Āntarjātika Bimānabandara"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+15784 = {
+	default = "Sylhet"
+	entry = {
+	    name = "Sileṭa"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+15781 = {
+	default = "Rangpur"
+	entry = {
+	    name = "Raṁpura"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+15782 = {
+	default = "Rajshahi"
+	entry = {
+	    name = "Rājśāhī"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+15785 = {
+	default = "Mymensingh"
+	entry = {
+	    name = "Maẏmansiṁh"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+15783 = {
+	default = "Khulna"
+	entry = {
+	    name = "Khulnā"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+15786 = {
+	default = "Chittagong"
+	entry = {
+	    name = "Caṭṭagrām"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+12010 = {
+	default = "Feni"
+	entry = {
+	    name = "Phenī"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+11968 = {
+	default = "Cumilla"
+	entry = {
+	    name = "Kumillā"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+11929 = {
+	default = "Narayanganj"
+	entry = {
+	    name = "Nārāẏaṇgañj"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+10035 = {
+	default = "Barishal"
+	entry = {
+	    name = "Bariśāl"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+10389 = {
+	default = "Dinajpur"
+	entry = {
+	    name = "Dinājpur"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+15794 = {
+	default = "Gazipur"
+	entry = {
+	    name = "Gājīpur"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+10443 = {
+	default = "Bogura"
+	entry = {
+	    name = "Baguṛā"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+7662 = {
+	default = "Chapai Nawabganj"
+	entry = {
+	    name = "Cāṁpāi Nabābgañj"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+4162 = {
+	default = "Faridpur"
+}
+7124 = {
+	default = "Kushtia"
+	entry = {
+	    name = "Kuṣṭiẏā"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+2843 = {
+	default = "Jashore"
+	entry = {
+	    name = "Yaśor"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+15795 = {
+	default = "Tangail"
+	entry = {
+	    name = "Ṭāṅgāil"
+        requirements = {
+            "TAG_using_bengali_names = yes"
+        }
+    }
+}
+12423 = {
+	default = "Sunamganj"
+	entry = {
+	    name = "Sunāmgañj"
+        requirements = {
+            "TAG_using_bengali_names = yes"
         }
     }
 }

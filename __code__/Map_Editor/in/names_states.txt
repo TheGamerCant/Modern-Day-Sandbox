@@ -2528,7 +2528,13 @@
     }
 }
 430 = {
-	default = "East Bengal"
+	default = "Bangladesh"
+	entry = {
+        name = "Bāṁlādeś"
+        requirements = {
+            "OR = { TAG_using_indian_names = yes TAG_using_bengali_names = yes }"
+        }
+    }
 }
 431 = {
 	default = "West Bengal"
