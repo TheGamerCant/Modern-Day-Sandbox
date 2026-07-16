@@ -4,3 +4,4 @@ __code__/animated_images/in/
 __code__/animated_images/out/
 ColdWar1980.zip
 .idea/
+*.DS_store
