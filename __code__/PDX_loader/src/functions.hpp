@@ -51,6 +51,9 @@ String LoadFileToString(const String& file);
 Key StringToCorrectTypeKey(const String& stringIn);
 PdxJson StringToCorrectTypePdxJson(const String& stringIn);
 
+//Parse a tokenised segment vector (data split on spaces / = / { }) into a PdxJson
+PdxJson ParseSegmentsToPdxJson(const Vector<String>& segments);
+
 //Parse a string into a PdxJson
 PdxJson ParseFileToPdxJson(const String& fileName);
 

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <random>
+#include <map>
 #include "data_types.hpp"
 #include <format>
 
@@ -76,6 +77,9 @@ String ToLower(String str) {
 
 Boolean StringCanBecomeInteger(const String& str) {
     SizeT stringLength = str.size();
+
+    if (stringLength == 0) { return false; }
+
     for (SizeT i = 0; i < stringLength; ++i) { 
         if (i == 0 && !CharIsNumber(str[i]) && str[i] != '+' && str[i] != '-') return false;
         else if (!CharIsNumber(str[i])) return false; 
@@ -85,7 +89,10 @@ Boolean StringCanBecomeInteger(const String& str) {
 Boolean StringCanBecomeFloat(const String& str) {
     if (str.ends_with(".") || str.ends_with("+") || str.ends_with("-")) return false;
 
-    SizeT stringLength = str.size(); 
+    SizeT stringLength = str.size();
+
+    if (stringLength == 0) { return false; }
+
     UnsignedInteger64 dotCount = 0;
     for (SizeT i = 0; i < stringLength; ++i) { 
         if (i == 0 && !CharIsNumber(str[i]) && str[i] != '+' && str[i] != '-') return false;
@@ -688,6 +695,75 @@ PdxJson StringToCorrectTypePdxJson(const String& stringIn) {
     return stringIn;
 }
 
+// Recursively parses a run of tokens (as produced by the tokenizer, where data
+// is separated by spaces and '=' '{' '}' are their own segments) into a PdxJson.
+//
+//   key = value        -> dict entry, stored as [value]
+//   key = { ... }       -> dict entry, the block pushed as one element
+//   { a b c }           -> list
+//
+// Every keyed value is stored as a List by default, so repeated keys need no
+// special-casing: each occurrence just appends one element. For example
+//   key = { 1 2 3 }  key = { 4 5 6 }   ->   key: [[1, 2, 3], [4, 5, 6]]
+//   add_core = A  add_core = B          ->   add_core: [A, B]
+//
+// A '{ }' block containing '=' becomes a Dict; one containing only scalars
+// becomes a List. `pos` indexes the next token to read and is advanced past the
+// block; the recursion returns when it hits the matching '}' or the end.
+static PdxJson ParseBlockSegments(const Vector<String>& t, SizeT& pos, Boolean expectBrace) {
+    Dict dict;
+    List list;
+    Boolean sawKey = false;
+
+    auto addKeyed = [&](const Key& k, PdxJson val) {
+        // dict[k] is a null PdxJson on first access; push_back promotes it to a
+        // List, so every key ends up mapping to a list of its assigned values.
+        dict[k].push_back(std::move(val));
+        sawKey = true;
+    };
+
+    while (pos < t.size()) {
+        if (t[pos] == "}") {                                // end of this block
+            ++pos;
+            return sawKey ? PdxJson(std::move(dict)) : PdxJson(std::move(list));
+        }
+
+        // key = value ?
+        if (pos + 1 < t.size() && t[pos + 1] == "=") {
+            Key key = StringToCorrectTypeKey(t[pos]);
+            pos += 2;                                       // consume key and '='
+            if (pos >= t.size()) break;                     // malformed: '=' with no value
+            if (t[pos] == "{") {
+                ++pos;                                      // consume '{'
+                addKeyed(key, ParseBlockSegments(t, pos, true));
+            }
+            else {
+                addKeyed(key, StringToCorrectTypePdxJson(t[pos]));
+                ++pos;
+            }
+            continue;
+        }
+
+        // bare scalar or anonymous block -> list element
+        if (t[pos] == "{") {
+            ++pos;
+            list.push_back(ParseBlockSegments(t, pos, true));
+        }
+        else {
+            list.push_back(StringToCorrectTypePdxJson(t[pos]));
+            ++pos;
+        }
+    }
+
+    (void)expectBrace;   // ran out of tokens (top level, or unbalanced braces)
+    return sawKey ? PdxJson(std::move(dict)) : PdxJson(std::move(list));
+}
+
+PdxJson ParseSegmentsToPdxJson(const Vector<String>& segments) {
+    SizeT pos = 0;
+    return ParseBlockSegments(segments, pos, false);
+}
+
 PdxJson ParseFileToPdxJson(const String& fileName) {
     PdxJson returnJson;
 
@@ -718,8 +794,6 @@ PdxJson ParseFileToPdxJson(const String& fileName) {
             return returnJson;
         }
 
-        HashMap<Key, UnsignedInteger64> keysFoundCount;
-
         Dict keyValuePairs{};
 
         for (SizeT i = 0; i < documentSegmentsSize; i += 3) {
@@ -735,12 +809,6 @@ PdxJson ParseFileToPdxJson(const String& fileName) {
             Key key = (StringToCorrectTypeKey(segmentOne));
             PdxJson value = (StringToCorrectTypePdxJson(segmentThree));
 
-            if (keysFoundCount.contains(key)){
-                keysFoundCount[key]++;
-            } else {
-                keysFoundCount[key] = 1;
-            }
-
             if (keyValuePairs.contains(key)) {
                 keyValuePairs[key].push_back(value);
             } else {
@@ -749,6 +817,11 @@ PdxJson ParseFileToPdxJson(const String& fileName) {
         }
 
         returnJson = std::move(keyValuePairs);
+    }
+
+    //Else
+    if (hasEqualsSigns && hasSquigglyBrackets) {
+        returnJson = ParseSegmentsToPdxJson(documentSegments);
     }
 
     return returnJson;

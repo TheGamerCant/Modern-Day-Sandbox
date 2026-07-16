@@ -17,7 +17,7 @@ int main() {
     std::cout << "\n\n" << pdxJson.toString() << "\n";
     */
 
-    PdxJson pdxJson = ParseFileToPdxJson("/Users/charles/Documents/GitHub/Modern-Day-Sandbox/common/graphicalculturetype.txt");
+    PdxJson pdxJson = ParseFileToPdxJson("/Users/charles/Documents/GitHub/Fight-For-The-Fatherland/common/national_focus/FFTF_france.txt");
     std::cout << "\n\n" << pdxJson.toString() << "\n";
 
     return 0;
