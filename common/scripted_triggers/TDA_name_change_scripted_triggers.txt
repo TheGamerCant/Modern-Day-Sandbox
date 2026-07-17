@@ -213,6 +213,9 @@ TAG_using_arab_names = {
 				original_tag = JOR
 				original_tag = OMA
 				original_tag = YEM
+				original_tag = BHR
+				original_tag = QAT
+				original_tag = UAE
 			}
 			is_subject = no
 		}
@@ -231,6 +234,9 @@ TAG_using_arab_names = {
 		is_puppet_of = JOR
 		is_puppet_of = OMA
 		is_puppet_of = YEM
+		is_puppet_of = BHR
+		is_puppet_of = QAT
+		is_puppet_of = UAE
 	}
 }
 

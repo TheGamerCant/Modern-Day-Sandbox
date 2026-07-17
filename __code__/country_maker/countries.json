@@ -649,6 +649,22 @@
 			}
 		},
 		{
+			"tag": "BHR",
+			"red": 183,
+			"green": 34,
+			"blue": 23,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 946,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"BHR": "Bahrain",
+				"BHR_DEF": "the Kingdom of Bahrain",
+				"BHR_ADJ": "Bahraini"
+			}
+		},
+		{
 			"tag": "BHU",
 			"red": 246,
 			"green": 166,
@@ -2041,6 +2057,22 @@
 			}
 		},
 		{
+			"tag": "QAT",
+			"red": 138,
+			"green": 21,
+			"blue": 56,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 765,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"QAT": "Qatar",
+				"QAT_DEF": "the State of Qatar",
+				"QAT_ADJ": "Qatari"
+			}
+		},
+		{
 			"tag": "QUE",
 			"red": 2,
 			"green": 46,
@@ -2406,6 +2438,22 @@
 				"TVA": "Tuva",
 				"TVA_DEF": "the Republic of Tuva",
 				"TVA_ADJ": "Tuvan"
+			}
+		},
+		{
+			"tag": "UAE",
+			"red": 74,
+			"green": 118,
+			"blue": 12,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 658,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"UAE": "United Arab Emirates",
+				"UAE_DEF": "the United Arab Emirates",
+				"UAE_ADJ": "Emirati"
 			}
 		},
 		{

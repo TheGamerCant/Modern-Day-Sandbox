@@ -1,0 +1,19 @@
+state={
+	id=946
+	name="STATE_946"
+	history={
+		owner = BHR
+		add_core_of = BHR
+		
+		victory_points = { 13313 10 }
+		
+		set_variable = { sq_km = 778 }
+	}
+	provinces={
+		13313 
+	}
+	manpower=1234571
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

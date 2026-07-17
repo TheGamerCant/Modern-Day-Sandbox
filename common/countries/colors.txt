@@ -44,6 +44,10 @@ BAN = {
 	color = rgb { 27 58 17 }
 	color_ui = rgb { 27 58 17 }
 }
+BHR = {
+	color = rgb { 183 34 23 }
+	color_ui = rgb { 183 34 23 }
+}
 BHU = {
 	color = rgb { 246 166 87 }
 	color_ui = rgb { 246 166 87 }
@@ -392,6 +396,10 @@ PUE = {
 	color = rgb { 145 26 22 }
 	color_ui = rgb { 145 26 22 }
 }
+QAT = {
+	color = rgb { 138 21 56 }
+	color_ui = rgb { 138 21 56 }
+}
 QUE = {
 	color = rgb { 2 46 122 }
 	color_ui = rgb { 2 46 122 }
@@ -483,6 +491,10 @@ TUR = {
 TVA = {
 	color = rgb { 109 89 178 }
 	color_ui = rgb { 109 89 178 }
+}
+UAE = {
+	color = rgb { 74 118 12 }
+	color_ui = rgb { 74 118 12 }
 }
 UDM = {
 	color = rgb { 20 0 0 }

@@ -1,0 +1,24 @@
+state={
+	id=947
+	name="STATE_947"
+	history={
+		owner = UAE
+		add_core_of = UAE
+		
+		victory_points = { 15844 40 }
+		victory_points = { 15845 3 }
+		victory_points = { 15846 16 }
+		victory_points = { 10904 3 }
+		
+		set_variable = { sq_km = 23380 }
+		
+		buildings = { air_base = 8 }
+	}
+	provinces={
+		7960 10904 15844 15845 15846 15847 
+	}
+	manpower=4997829
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

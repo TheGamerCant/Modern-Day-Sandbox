@@ -20879,3 +20879,75 @@
         }
     }
 }
+13313 = {
+	default = "Manama"
+	entry = {
+        name = "Al-Manāmah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15838 = {
+	default = "Doha"
+	entry = {
+        name = "Ad-Dawḥah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15840 = {
+	default = "Abu Dhabi"
+	entry = {
+        name = "Abū Ẓaby"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15848 = {
+	default = "Al-Ain"
+	entry = {
+        name = "Al-'Ayn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15844 = {
+	default = "Dubai"
+	entry = {
+        name = "Dubayy"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15845 = {
+	default = "Dubai International Airport"
+	entry = {
+        name = "Maṭār Dubayy Al-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15846 = {
+	default = "Sharjah City"
+	entry = {
+        name = "Ash-Shāriqah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10904 = {
+	default = "Ras Al-Khaimah"
+	entry = {
+        name = "Rā's Al-Khaymah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}

@@ -3786,6 +3786,12 @@
 }
 658 = {
 	default = "Abu Dhabi"
+	entry = {
+        name = "Abū Ẓaby"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 659 = {
 	default = "Hadhramaut"
@@ -4365,6 +4371,12 @@
 }
 765 = {
 	default = "Qatar"
+	entry = {
+        name = "Qaṭar"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 766 = {
 	default = "Budjak"
@@ -5484,6 +5496,24 @@
 	default = "Hajjah"
 	entry = {
         name = "Ḥajjah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+946 = {
+	default = "Bahrain"
+	entry = {
+        name = "Al-Baḥrayn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+947 = {
+	default = "Dubai"
+	entry = {
+        name = "Dubayy"
         requirements = {
             "TAG_using_arab_names = yes"
         }

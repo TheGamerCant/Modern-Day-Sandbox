@@ -17558,6 +17558,34 @@ TDA_update_state_657_names = {
 
 #Abu Dhabi
 TDA_update_state_658_names = {
+	658 = {
+		#Abū Ẓaby
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_658_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Abū Ẓaby
+	if = {
+		limit = { any_country = { controls_province = 15840 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15840 name = VICTORY_POINTS_15840_0 }
+	}
+	#Abu Dhabi
+	else = {
+		reset_province_name = 15840
+	}
+	#Al-'Ayn
+	if = {
+		limit = { any_country = { controls_province = 15848 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15848 name = VICTORY_POINTS_15848_0 }
+	}
+	#Al-Ain
+	else = {
+		reset_province_name = 15848
+	}
 }
 
 #Hadhramaut
@@ -19469,6 +19497,25 @@ TDA_update_state_764_names = {
 
 #Qatar
 TDA_update_state_765_names = {
+	765 = {
+		#Qaṭar
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_765_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Ad-Dawḥah
+	if = {
+		limit = { any_country = { controls_province = 15838 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15838 name = VICTORY_POINTS_15838_0 }
+	}
+	#Doha
+	else = {
+		reset_province_name = 15838
+	}
 }
 
 #Budjak
@@ -22433,6 +22480,79 @@ TDA_update_state_945_names = {
 	}
 }
 
+#Bahrain
+TDA_update_state_946_names = {
+	946 = {
+		#Al-Baḥrayn
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_946_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Al-Manāmah
+	if = {
+		limit = { any_country = { controls_province = 13313 TAG_using_arab_names = yes } }
+		set_province_name = { id = 13313 name = VICTORY_POINTS_13313_0 }
+	}
+	#Manama
+	else = {
+		reset_province_name = 13313
+	}
+}
+
+#Dubai
+TDA_update_state_947_names = {
+	947 = {
+		#Dubayy
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_947_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Rā's Al-Khaymah
+	if = {
+		limit = { any_country = { controls_province = 10904 TAG_using_arab_names = yes } }
+		set_province_name = { id = 10904 name = VICTORY_POINTS_10904_0 }
+	}
+	#Ras Al-Khaimah
+	else = {
+		reset_province_name = 10904
+	}
+	#Dubayy
+	if = {
+		limit = { any_country = { controls_province = 15844 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15844 name = VICTORY_POINTS_15844_0 }
+	}
+	#Dubai
+	else = {
+		reset_province_name = 15844
+	}
+	#Maṭār Dubayy Al-Dawli
+	if = {
+		limit = { any_country = { controls_province = 15845 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15845 name = VICTORY_POINTS_15845_0 }
+	}
+	#Dubai International Airport
+	else = {
+		reset_province_name = 15845
+	}
+	#Ash-Shāriqah
+	if = {
+		limit = { any_country = { controls_province = 15846 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15846 name = VICTORY_POINTS_15846_0 }
+	}
+	#Sharjah City
+	else = {
+		reset_province_name = 15846
+	}
+}
+
 
 
 TDA_change_all_city_names = {
@@ -23381,6 +23501,8 @@ TDA_change_all_city_names = {
 	TDA_update_state_943_names = yes
 	TDA_update_state_944_names = yes
 	TDA_update_state_945_names = yes
+	TDA_update_state_946_names = yes
+	TDA_update_state_947_names = yes
 }
 
 TDA_toggle_change_city_names = {
