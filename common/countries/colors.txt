@@ -244,6 +244,10 @@ ITA = {
 	color = rgb { 6 115 80 }
 	color_ui = rgb { 6 115 80 }
 }
+JOR = {
+	color = rgb { 105 33 61 }
+	color_ui = rgb { 105 33 61 }
+}
 KAZ = {
 	color = rgb { 12 143 160 }
 	color_ui = rgb { 12 143 160 }
@@ -363,6 +367,10 @@ NRD = {
 NWY = {
 	color = rgb { 99 44 44 }
 	color_ui = rgb { 99 44 44 }
+}
+OMA = {
+	color = rgb { 178 39 24 }
+	color_ui = rgb { 178 39 24 }
 }
 POL = {
 	color = rgb { 164 58 58 }
@@ -515,6 +523,10 @@ WLS = {
 YAK = {
 	color = rgb { 73 156 216 }
 	color_ui = rgb { 73 156 216 }
+}
+YEM = {
+	color = rgb { 153 81 33 }
+	color_ui = rgb { 153 81 33 }
 }
 ZZZ = {
 	color = rgb { 0 0 0 }

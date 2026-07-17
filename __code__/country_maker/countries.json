@@ -1449,6 +1449,22 @@
 			}
 		},
 		{
+			"tag": "JOR",
+			"red": 105,
+			"green": 33,
+			"blue": 61,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 455,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "yes",
+			"localisation": {
+				"JOR": "Jordan",
+				"JOR_DEF": "the Hashemite Kingdom of Jordan",
+				"JOR_ADJ": "Jordanian"
+			}
+		},
+		{
 			"tag": "KAZ",
 			"red": 12,
 			"green": 143,
@@ -1926,6 +1942,22 @@
 				"NWY": "Norway",
 				"NWY_DEF": "the Kingdom of Norway",
 				"NWY_ADJ": "Norwegian"
+			}
+		},
+		{
+			"tag": "OMA",
+			"red": 178,
+			"green": 39,
+			"blue": 24,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 294,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"OMA": "Oman",
+				"OMA_DEF": "the Sultanate of Oman",
+				"OMA_ADJ": "Omani"
 			}
 		},
 		{
@@ -2534,6 +2566,22 @@
 				"YAK": "Yakutia",
 				"YAK_DEF": "the Sakha Republic",
 				"YAK_ADJ": "Yakut"
+			}
+		},
+		{
+			"tag": "YEM",
+			"red": 153,
+			"green": 81,
+			"blue": 33,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 293,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"YEM": "Yemen",
+				"YEM_DEF": "the Republic of Yemen",
+				"YEM_ADJ": "Yemeni"
 			}
 		},
 		{

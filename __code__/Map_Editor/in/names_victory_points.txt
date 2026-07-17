@@ -20594,3 +20594,288 @@
         }
     }
 }
+15796 = {
+	default = "Amman"
+	entry = {
+	    name = "'Ammān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15801 = {
+	default = "Queen Alia International Airport"
+	entry = {
+	    name = "Maṭār Al-Malikat Alyā Al-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15802 = {
+	default = "Irbid"
+	entry = {
+	    name = "'Irb'd"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15803 = {
+	default = "Aqaba"
+	entry = {
+	    name = "Al-Aqaba"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15798 = {
+	default = "Zarqa"
+	entry = {
+	    name = "Al-Zarqā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+7151 = {
+	default = "Salt"
+	entry = {
+	    name = "As-Salṭ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10089 = {
+	default = "Madaba"
+	entry = {
+	    name = "Mādabā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+4017 = {
+	default = "Ma'an"
+	entry = {
+	    name = "Ma'ān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+2103 = {
+	default = "Salalah"
+	entry = {
+	    name = "Ṣalālah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15804 = {
+	default = "Khasab"
+	entry = {
+	    name = "Khaṣab"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15809 = {
+	default = "Muscat"
+	entry = {
+	    name = "Masqaṭ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15810 = {
+	default = "Muscat International Airport"
+	entry = {
+	    name = "Maṭār Masqaṭ Al-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15811 = {
+	default = "Seeb"
+	entry = {
+	    name = "As-Sīb"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+4993 = {
+	default = "Sohar"
+	entry = {
+	    name = "Ṣuḥār"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10670 = {
+	default = "Sur"
+	entry = {
+	    name = "Ṣūr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+8020 = {
+	default = "Jalan Bani Buali"
+	entry = {
+	    name = "Ja'alān Banī Bū 'Alī"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15812 = {
+	default = "Nizwa"
+	entry = {
+	    name = "Nizwā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15830 = {
+	default = "Sana'a"
+	entry = {
+        name = "Ṣan'ā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15833 = {
+	default = "Sana'a International Airport"
+	entry = {
+        name = "Maṭār Ṣan'ā' Al-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10840 = {
+	default = "Dhamar"
+	entry = {
+        name = "Dhamār"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15836 = {
+	default = "Ibb"
+}
+15824 = {
+	default = "Sa'dah"
+	entry = {
+        name = "Ṣa'dah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1920 = {
+	default = "Amram"
+	entry = {
+        name = "'Amrān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15826 = {
+	default = "Al-Hudaydah"
+	entry = {
+        name = "Al-Ḥudaydah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15827 = {
+	default = "Taiz"
+	entry = {
+        name = "Ta'izz"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15828 = {
+	default = "Bajil"
+	entry = {
+        name = "Bājil"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15823 = {
+	default = "Al-Marhinah"
+}
+15835 = {
+	default = "Rada'a"
+	entry = {
+        name = "Radā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15819 = {
+	default = "Aden"
+	entry = {
+        name = "'Adan"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+5074 = {
+	default = "Ja'ar"
+	entry = {
+        name = "Ja'ār"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+12821 = {
+	default = "Ataq"
+	entry = {
+        name = "'Atāq"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15815 = {
+	default = "Al-Mukalla"
+	entry = {
+        name = "Al-Mukallā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15816 = {
+	default = "Seiyun"
+	entry = {
+        name = "Say'ūn"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}

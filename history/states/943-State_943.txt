@@ -1,0 +1,19 @@
+state={
+	id=943
+	name="STATE_943"
+	history={
+		owner = YEM
+		add_core_of = YEM
+		
+		victory_points = { 15823 1 }
+		
+		set_variable = { sq_km = 57000 }
+	}
+	provinces={
+		4924 15822 15823 
+	}
+	manpower=791908
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

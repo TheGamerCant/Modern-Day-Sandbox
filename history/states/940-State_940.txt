@@ -1,0 +1,17 @@
+state={
+	id=940
+	name="STATE_940"
+	history={
+		owner = YEM
+		add_core_of = YEM
+		
+		set_variable = { sq_km = 67000 }
+	}
+	provinces={
+		13079 15813 15814 
+	}
+	manpower=102819
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

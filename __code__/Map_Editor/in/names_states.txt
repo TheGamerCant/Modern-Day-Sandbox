@@ -1918,10 +1918,22 @@
 	default = "Nejd"
 }
 293 = {
-	default = "Yemen"
+	default = "Sana'a"
+	entry = {
+        name = "Ṣan'ā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 294 = {
 	default = "Oman"
+	entry = {
+        name = "'Umān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 295 = {
 	default = "Léopoldville"
@@ -2154,7 +2166,7 @@
 	entry = {
         name = "Iónia Nisiá"
         requirements = {
-            "TAG_using_arab_names = yes"
+            "TAG_using_greek_names = yes"
         }
     }
 }
@@ -2340,6 +2352,12 @@
 }
 397 = {
 	default = "Socotra"
+	entry = {
+        name = "Suquṭrā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 398 = {
 	default = "Perm"
@@ -2742,6 +2760,12 @@
 }
 455 = {
 	default = "Jordan"
+	entry = {
+        name = "Al-Urdun"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 456 = {
 	default = "Upper Egypt"
@@ -3764,7 +3788,13 @@
 	default = "Abu Dhabi"
 }
 659 = {
-	default = "Aden"
+	default = "Hadhramaut"
+	entry = {
+        name = "Ḥaḍramaūt"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 660 = {
 	default = "Equatorial Africa"
@@ -5055,7 +5085,7 @@
 #            "TAG_using_arab_names = yes"
 #        }
 #    }
-	default = "El Eglab Massif"
+	default = "El-Eglab Massif"
 	entry = {
         name = "Katlat Īghlāb"
         requirements = {
@@ -5109,9 +5139,9 @@
     }
 }
 901 = {
-	default = "Tanger-Tétouan-Al Hoceima"
+	default = "Tanger-Tétouan-Al-Hoceima"
 	entry = {
-        name = "Ṭanjah/Tiṭwan/Al-Ḥusima"
+        name = "Ṭanjah-Tiṭwan/Al-Ḥusima"
         requirements = {
             "TAG_using_arab_names = yes"
         }
@@ -5399,6 +5429,63 @@
 	    name = "Bihār"
         requirements = {
             "TAG_using_indian_names = yes"
+        }
+    }
+}
+937 = {
+	default = "Musandam"
+}
+938 = {
+	default = "Dhofar"
+	entry = {
+        name = "Ẓufār"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+939 = {
+	default = "Al-Wusta"
+	entry = {
+        name = "Al-Wusṭa"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+940 = {
+	default = "Al-Mahrah"
+}
+941 = {
+	default = "Shabwah"
+}
+942 = {
+	default = "Aden"
+	entry = {
+        name = "'Adan"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+943 = {
+	default = "Al-Jawf"
+}
+944 = {
+	default = "Taiz & Al-Hudaydah"
+	entry = {
+        name = "Ta'izz & Al-Ḥudaydah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+945 = {
+	default = "Hajjah"
+	entry = {
+        name = "Ḥajjah"
+        requirements = {
+            "TAG_using_arab_names = yes"
         }
     }
 }

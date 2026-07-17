@@ -1,0 +1,17 @@
+state={
+	id=939
+	name="STATE_939"
+	history={
+		owner = OMA
+		add_core_of = OMA
+		
+		set_variable = { sq_km = 82471 }
+	}
+	provinces={
+		2018 8002 15806 
+	}
+	manpower=42111
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

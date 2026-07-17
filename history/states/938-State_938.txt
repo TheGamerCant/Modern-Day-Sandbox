@@ -1,0 +1,19 @@
+state={
+	id=938
+	name="STATE_938"
+	history={
+		owner = OMA
+		add_core_of = OMA
+		
+		victory_points = { 15807 2 }
+		
+		set_variable = { sq_km = 99062 }
+	}
+	provinces={
+		2059 2103 15805 15807 15808 
+	}
+	manpower=249729
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

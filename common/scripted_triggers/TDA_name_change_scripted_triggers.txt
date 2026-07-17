@@ -210,6 +210,9 @@ TAG_using_arab_names = {
 				original_tag = SYR
 				original_tag = LEB
 				original_tag = HEZ
+				original_tag = JOR
+				original_tag = OMA
+				original_tag = YEM
 			}
 			is_subject = no
 		}
@@ -218,13 +221,16 @@ TAG_using_arab_names = {
 		is_puppet_of = PST
 		is_puppet_of = EGY
 		is_puppet_of = LYB
-		original_tag = TUN
-		original_tag = ALG
-		original_tag = MRC
-		original_tag = SHW
-		original_tag = SYR
-		original_tag = LEB
-		original_tag = HEZ
+		is_puppet_of = TUN
+		is_puppet_of = ALG
+		is_puppet_of = MRC
+		is_puppet_of = SHW
+		is_puppet_of = SYR
+		is_puppet_of = LEB
+		is_puppet_of = HEZ
+		is_puppet_of = JOR
+		is_puppet_of = OMA
+		is_puppet_of = YEM
 	}
 }
 
