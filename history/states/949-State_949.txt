@@ -1,0 +1,21 @@
+state={
+	id=949
+	name="STATE_949"
+	history={
+		owner = KSA
+		add_core_of = KSA
+		
+		victory_points = { 15864 6 }
+		victory_points = { 15865 2 }
+		victory_points = { 15868 2 }
+		
+		set_variable = { sq_km = 58046 }
+	}
+	provinces={
+		10892 15864 15865 15866 15867 15868 15869 
+	}
+	manpower=1219184
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

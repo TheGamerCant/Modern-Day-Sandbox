@@ -434,8 +434,18 @@ PixelShader =
 						r_x + r_y - fmod(vGlobalTime * line_speed, pixels_until_new_diagonal), 
 						pixels_until_new_diagonal
 					);
-						
+					
 					vOut.r += step(pattern, line_width) * ImpassableAlpha;
+
+					// Region-dependent colours
+					/*
+					if (r_y < 500.0) {
+						vOut.b += step(pattern, line_width) * ImpassableAlpha;
+					}
+					else {
+						vOut.r += step(pattern, line_width) * ImpassableAlpha;
+					}
+					*/
 				}
 			}
 	

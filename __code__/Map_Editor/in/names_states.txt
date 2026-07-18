@@ -1915,7 +1915,13 @@
 	default = "Baghdad"
 }
 292 = {
-	default = "Nejd"
+	default = "Riyadh"
+	entry = {
+        name = "Ar-Riyāḍ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    } 
 }
 293 = {
 	default = "Sana'a"
@@ -3899,10 +3905,22 @@
     }
 }
 678 = {
-	default = "Rub al Khali"
+	default = "Eastern Region"
+	entry = {
+        name = "Ash-Sharqiyah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 679 = {
-	default = "Madinah"
+	default = "Medina"
+	entry = {
+        name = "Al-Madīnah Al-Munuwarah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 680 = {
 	default = "Raqqa"
@@ -4841,22 +4859,58 @@
 	default = "Los Angeles"
 }
 854 = {
-	default = "Jawf"
+	default = "Al-Jouf"
+	entry = {
+        name = "Al-Jawf"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 855 = {
 	default = "Tabuk"
+	entry = {
+        name = "Tabūk"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 856 = {
-	default = "Asir-Makkah"
+	default = "Mecca"
+	entry = {
+        name = "Makkah Al-Mukarramah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 857 = {
-	default = "Al-Qassim"
+	default = "Hail"
+	entry = {
+        name = "Ḥā'il"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 858 = {
 	default = "Najiran"
+	entry = {
+        name = "Najrān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 859 = {
-	default = "Dammam"
+	default = "Jazan"
+	entry = {
+        name = "Jāzān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 860 = {
 	default = "Tianjin"
@@ -5514,6 +5568,51 @@
 	default = "Dubai"
 	entry = {
         name = "Dubayy"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+948 = {
+	default = "Northern Borders"
+	entry = {
+        name = "Al-Ḥudūd Ash-Shamāliyah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+949 = {
+	default = "Al-Qassim"
+	entry = {
+        name = "Al-Qaṣīm"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+950 = {
+	default = "Al-Bahah"
+	entry = {
+        name = "Al-Bāḥah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+951 = {
+	default = "Aseer"
+	entry = {
+        name = "'Asīr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+952 = {
+	default = "Rub' Al-Khali"
+	entry = {
+        name = "Ar-Rub' Al-Khālī"
         requirements = {
             "TAG_using_arab_names = yes"
         }

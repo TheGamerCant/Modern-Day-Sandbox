@@ -1577,6 +1577,22 @@
 			}
 		},
 		{
+			"tag": "KSA",
+			"red": 0,
+			"green": 71,
+			"blue": 30,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 292,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"KSA": "Saudi Arabia",
+				"KSA_DEF": "the Kingdom of Saudi Arabia",
+				"KSA_ADJ": "Saudi"
+			}
+		},
+		{
 			"tag": "LAT",
 			"red": 100,
 			"green": 3,

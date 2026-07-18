@@ -2,12 +2,18 @@ state={
 	id=855
 	name="STATE_855"
 	history={
-		owner = ZZZ
+		owner = KSA
+		add_core_of = KSA
+		
+		victory_points = { 15854 5 }
+		victory_points = { 8092 1 }
+		
+		set_variable = { sq_km = 146072 }
 	}
 	provinces={
-		1033 2027 2095 5027 7970 8092 12101 12455 
+		1033 2095 5099 7970 8092 12101 12455 15854 15855 15856 15857 15858 15859 
 	}
-	manpower= 100000
+	manpower= 796425
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral

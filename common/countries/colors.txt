@@ -276,6 +276,10 @@ KOS = {
 	color = rgb { 28 56 126 }
 	color_ui = rgb { 28 56 126 }
 }
+KSA = {
+	color = rgb { 0 71 30 }
+	color_ui = rgb { 0 71 30 }
+}
 LAT = {
 	color = rgb { 100 3 46 }
 	color_ui = rgb { 100 3 46 }

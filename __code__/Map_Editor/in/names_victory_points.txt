@@ -20951,3 +20951,351 @@
         }
     }
 }
+15850 = {
+	default = "Al-Qurayyat"
+	entry = {
+        name = "Al-Qurayyāt"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+8101 = {
+	default = "Sakaka"
+	entry = {
+        name = "Sakākā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+10815 = {
+	default = "Turaif"
+	entry = {
+        name = "Ṭuraīf"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15853 = {
+	default = "Arar"
+	entry = {
+        name = "'Ar'ar"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15852 = {
+	default = "Rafha"
+	entry = {
+        name = "Rafḥā'"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15854 = {
+	default = "Tabuk"
+	entry = {
+        name = "Tabūk"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+8092 = {
+	default = "Umluj"
+	entry = {
+        name = "'Umluj"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15860 = {
+	default = "Hail"
+	entry = {
+        name = "Ḥā'il"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    } 
+}
+15864 = {
+	default = "Buraydah"
+}
+15865 = {
+	default = "Unaizah"
+	entry = {
+        name = "'Unaīzah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    } 
+}
+15868 = {
+	default = "Ar-Rass"
+}
+15870 = {
+	default = "Riyadh"
+	entry = {
+        name = "Ar-Riyāḍ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    } 
+}
+15871 = {
+	default = "King Khalid International Airport"
+	entry = {
+        name = "Maṭār Al-Mlik Khāld Al-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    } 
+}
+12727 = {
+	default = "Al-Kharj"
+}
+15882 = {
+	default = "Wadi Ad-Dawasir"
+	entry = {
+        name = "Wādī Ad-Dawāsir"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    } 
+}
+15885 = {
+	default = "Al-Duwadimi"
+	entry = {
+        name = "Ad-Dawādmī"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    } 
+}
+12870 = {
+	default = "Al-Majma'ah"
+}
+15886 = {
+	default = "Najiran"
+	entry = {
+        name = "Najrān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15887 = {
+	default = "Sharorah"
+	entry = {
+        name = "Sharūrah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15890 = {
+	default = "Dammam"
+	entry = {
+        name = "Ad-Dammām"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15893 = {
+	default = "King Fahd International Airport"
+	entry = {
+        name = "Maṭār Al-Mlik Fahd Al-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15891 = {
+	default = "Khobar"
+	entry = {
+        name = "Al-Khubar"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15897 = {
+	default = "Hafar Al-Batin"
+	entry = {
+        name = "Ḥafar Al-Bāṭin"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15898 = {
+	default = "Hofuf"
+	entry = {
+        name = "Al-Hufūf"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15900 = {
+	default = "Jubail"
+	entry = {
+        name = "Al-Jubaīl"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1955 = {
+	default = "Khafji"
+	entry = {
+        name = "Al-Khafjī"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+8073 = {
+	default = "Jizan"
+	entry = {
+        name = "Jīzān"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15849 = {
+	default = "Al-Bahah"
+	entry = {
+        name = "Al-Bāḥah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15901 = {
+	default = "Khamis Mushait"
+	entry = {
+        name = "Khamīs Mushaīṭ"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15902 = {
+	default = "Abha"
+	entry = {
+        name = "Abhā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+1923 = {
+	default = "Muhayil"
+	entry = {
+        name = "Muḥā'yil"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15906 = {
+	default = "Bisha"
+	entry = {
+        name = "Bīshah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15908 = {
+	default = "Jeddah"
+	entry = {
+        name = "Jiddah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15909 = {
+	default = "King Abdulaziz International Airport"
+	entry = {
+        name = "Maṭār Al-Mlik 'Abdāl'azyz Al-Dawli"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15911 = {
+	default = "Mecca"
+	entry = {
+        name = "Makkah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15921 = {
+	default = "Taif"
+	entry = {
+        name = "Aṭ-Ṭa'if"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15912 = {
+	default = "Bahrah"
+	entry = {
+        name = "Baḥrah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+12883 = {
+	default = "Rabigh"
+	entry = {
+        name = "Rābigh"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15917 = {
+	default = "Al-Qunfudhah"
+}
+15923 = {
+	default = "Yanbu"
+	entry = {
+        name = "Yanbu' al-Baḥr"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+15924 = {
+	default = "Medina"
+	entry = {
+        name = "Al-Madīnah"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}
+2027 = {
+	default = "Al-Ula"
+	entry = {
+        name = "Al-'Ulā"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
+}

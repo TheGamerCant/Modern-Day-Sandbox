@@ -1,0 +1,19 @@
+state={
+	id=952
+	name="STATE_952"
+	history={
+		owner = KSA
+		add_core_of = KSA
+		
+		set_variable = { sq_km = 563070.44 }
+	}
+	provinces={
+		8118 10870 12768 
+	}
+	manpower=29000
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+	impassable = yes
+	force_link_ownership_to = 678
+}

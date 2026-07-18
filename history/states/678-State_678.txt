@@ -2,12 +2,25 @@ state={
 	id=678
 	name="STATE_678"
 	history={
-		owner = ZZZ
+		owner = KSA
+		add_core_of = KSA
+		
+		victory_points = { 15890 25 }
+		victory_points = { 15893 2 }
+		victory_points = { 15891 5 }
+		victory_points = { 15897 4 }
+		victory_points = { 15898 8 }
+		victory_points = { 15900 4 }
+		victory_points = { 1955 1 }
+		
+		set_variable = { sq_km = 248785.50 }
+		
+		buildings = { air_base = 4 }
 	}
 	provinces={
-		4932 5081 8118 12740 
+		1955 4932 5024 5081 10791 10850 12702 12740 12749 15890 15891 15892 15893 15894 15895 15896 15897 15898 15899 15900 
 	}
-	manpower= 100000
+	manpower= 4117033
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=wasteland
