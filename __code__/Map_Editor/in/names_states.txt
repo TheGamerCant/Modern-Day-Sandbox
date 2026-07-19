@@ -3959,7 +3959,7 @@
 	default = "Jamaica"
 }
 690 = {
-	default = "Northern Bahamas"
+	default = "Bahamas"
 }
 691 = {
 	default = "Trinidad"
@@ -3968,7 +3968,13 @@
 	default = "Windward Islands"
 }
 693 = {
-	default = "Southern Bahamas"
+	default = "Rub' Al-Khali"
+	entry = {
+        name = "Ar-Rub' Al-Khālī"
+        requirements = {
+            "TAG_using_arab_names = yes"
+        }
+    }
 }
 694 = {
 	default = "French Caribbean"
@@ -5609,12 +5615,6 @@
         }
     }
 }
-952 = {
-	default = "Rub' Al-Khali"
-	entry = {
-        name = "Ar-Rub' Al-Khālī"
-        requirements = {
-            "TAG_using_arab_names = yes"
-        }
-    }
+951 = {
+	default = "Cayman Islands"
 }

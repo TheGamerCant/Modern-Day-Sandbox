@@ -6320,6 +6320,15 @@ TDA_update_state_318_names = {
 
 #Dominican Republic
 TDA_update_state_319_names = {
+	#Aeropuerto Internacional Las Américas
+	if = {
+		limit = { any_country = { controls_province = 15939 TAG_using_spanish_names = yes } }
+		set_province_name = { id = 15939 name = VICTORY_POINTS_15939_0 }
+	}
+	#Las Américas International Airport
+	else = {
+		reset_province_name = 15939
+	}
 }
 
 #San Luis y La Pampa
@@ -18084,7 +18093,7 @@ TDA_update_state_688_names = {
 TDA_update_state_689_names = {
 }
 
-#Northern Bahamas
+#Bahamas
 TDA_update_state_690_names = {
 }
 
@@ -18096,8 +18105,18 @@ TDA_update_state_691_names = {
 TDA_update_state_692_names = {
 }
 
-#Southern Bahamas
+#Rub' Al-Khali
 TDA_update_state_693_names = {
+	693 = {
+		#Ar-Rub' Al-Khālī
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_693_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 }
 
 #French Caribbean
@@ -22982,18 +23001,8 @@ TDA_update_state_950_names = {
 	}
 }
 
-#Aseer
+#Cayman Islands
 TDA_update_state_951_names = {
-	951 = {
-		#'Asīr
-		if = {
-			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
-			set_state_name = STATE_951_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
 	#Muḥā'yil
 	if = {
 		limit = { any_country = { controls_province = 1923 TAG_using_arab_names = yes } }
@@ -23032,18 +23041,8 @@ TDA_update_state_951_names = {
 	}
 }
 
-#Rub' Al-Khali
+#
 TDA_update_state_952_names = {
-	952 = {
-		#Ar-Rub' Al-Khālī
-		if = {
-			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
-			set_state_name = STATE_952_0
-		}
-		else = {
-			reset_state_name = yes
-		}
-	}
 }
 
 

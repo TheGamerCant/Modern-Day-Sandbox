@@ -649,6 +649,22 @@
 			}
 		},
 		{
+			"tag": "BHA",
+			"red": 55,
+			"green": 132,
+			"blue": 160,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 690,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"BHA": "The Bahamas",
+				"BHA_DEF": "the Commonwealth of the Bahamas",
+				"BHA_ADJ": "Bahamian"
+			}
+		},
+		{
 			"tag": "BHR",
 			"red": 183,
 			"green": 34,
@@ -742,6 +758,22 @@
 				"BLZ": "Belize",
 				"BLZ_DEF": "Belize",
 				"BLZ_ADJ": "Belizean"
+			}
+		},
+		{
+			"tag": "BMD",
+			"red": 160,
+			"green": 51,
+			"blue": 54,
+			"graphical_culture": "commonwealth_gfx",
+			"graphical_culture_2d": "commonwealth_2d",
+			"capital": 696,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"BMD": "Bermuda",
+				"BMD_DEF": "Bermuda",
+				"BMD_ADJ": "Bermudan"
 			}
 		},
 		{
@@ -1017,6 +1049,22 @@
 			}
 		},
 		{
+			"tag": "DMR",
+			"red": 158,
+			"green": 105,
+			"blue": 102,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 319,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"DMR": "Dominican Republic",
+				"DMR_DEF": "the Dominican Republic",
+				"DMR_ADJ": "Dominican"
+			}
+		},
+		{
 			"tag": "DPK",
 			"red": 109,
 			"green": 5,
@@ -1161,6 +1209,22 @@
 			}
 		},
 		{
+			"tag": "GBL",
+			"red": 236,
+			"green": 159,
+			"blue": 161,
+			"graphical_culture": "western_european_gfx",
+			"graphical_culture_2d": "western_european_2d",
+			"capital": 118,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"GBL": "Gibraltar",
+				"GBL_DEF": "Gibraltar",
+				"GBL_ADJ": "Gibraltarian"
+			}
+		},
+		{
 			"tag": "GBR",
 			"red": 140,
 			"green": 36,
@@ -1286,6 +1350,22 @@
 				"GTM": "Guatemala",
 				"GTM_DEF": "the Republic of Guatemala",
 				"GTM_ADJ": "Guatemalan"
+			}
+		},
+		{
+			"tag": "HAI",
+			"red": 142,
+			"green": 23,
+			"blue": 96,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 318,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"HAI": "Haiti",
+				"HAI_DEF": "the Republic of Haiti",
+				"HAI_ADJ": "Haitian"
 			}
 		},
 		{
@@ -1462,6 +1542,22 @@
 				"ITA": "Italy",
 				"ITA_DEF": "the Italian Republic",
 				"ITA_ADJ": "Italian"
+			}
+		},
+		{
+			"tag": "JAM",
+			"red": 19,
+			"green": 90,
+			"blue": 63,
+			"graphical_culture": "southamerican_gfx",
+			"graphical_culture_2d": "southamerican_2d",
+			"capital": 689,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"JAM": "Jamaica",
+				"JAM_DEF": "Jamaica",
+				"JAM_ADJ": "Jamaican"
 			}
 		},
 		{

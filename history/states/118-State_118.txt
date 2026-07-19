@@ -4,6 +4,7 @@ state={
 	history={
 		owner = GBR
 		add_core_of = GBR
+		add_core_of = GBL
 		
 		victory_points = { 4135 5 }
 		

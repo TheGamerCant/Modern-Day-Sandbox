@@ -21299,3 +21299,48 @@
         }
     }
 }
+13010 = {
+	default = "Hamilton"
+}
+10254 = {
+	default = "Nassau"
+}
+15932 = {
+	default = "Kingston"
+}
+15931 = {
+	default = "George Town"
+}
+15933 = {
+	default = "Port-au-Prince"
+}
+1635 = {
+	default = "Les Cayes"
+}
+15937 = {
+	default = "Gonaïves"
+}
+15938 = {
+	default = "Santo Domingo"
+}
+15939 = {
+	default = "Las Américas International Airport"
+	entry = {
+        name = "Aeropuerto Internacional Las Américas"
+        requirements = {
+            "TAG_using_spanish_names = yes"
+        }
+    }
+}
+15942 = {
+	default = "Santiago de los Caballeros"
+}
+4598 = {
+	default = "Puerto Plata"
+}
+7660 = {
+	default = "La Romana"
+}
+7632 = {
+	default = "Barahona"
+}

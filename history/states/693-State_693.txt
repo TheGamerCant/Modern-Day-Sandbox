@@ -1,14 +1,19 @@
 state={
-	id=693
+	id = 693
 	name="STATE_693"
 	history={
-		owner = ZZZ
+		owner = KSA
+		add_core_of = KSA
+		
+		set_variable = { sq_km = 563070.44 }
 	}
-	provinces={
-		1513 10440 
+	provinces = {
+		8118 10870 12768
 	}
-	manpower= 100000
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=tiny_island
+	manpower=29000
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+	impassable = yes
+	force_link_ownership_to = 678
 }

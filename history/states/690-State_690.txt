@@ -2,12 +2,17 @@ state={
 	id=690
 	name="STATE_690"
 	history={
-		owner = ZZZ
+		owner = BHA
+		add_core_of = BHA
+		
+		victory_points = { 10254 5 }
+		
+		set_variable = { sq_km = 10010 }
 	}
-	provinces={
-		4647 7245 10254 
+	provinces = {
+		1513 4647 7245 10254 10440
 	}
-	manpower= 100000
+	manpower= 351461
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=tiny_island

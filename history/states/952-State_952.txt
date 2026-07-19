@@ -2,18 +2,18 @@ state={
 	id=952
 	name="STATE_952"
 	history={
-		owner = KSA
-		add_core_of = KSA
+		owner = GBR
+		add_core_of = GBR
 		
-		set_variable = { sq_km = 563070.44 }
+		victory_points = { 15931 2 }
+		
+		set_variable = { sq_km = 264 }
 	}
 	provinces={
-		8118 10870 12768 
+		15931 
 	}
-	manpower=29000
+	manpower=55456
 	buildings_max_level_factor=1
 	state_category=city
 	local_supplies=0.5
-	impassable = yes
-	force_link_ownership_to = 678
 }

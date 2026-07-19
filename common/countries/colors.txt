@@ -44,6 +44,10 @@ BAN = {
 	color = rgb { 27 58 17 }
 	color_ui = rgb { 27 58 17 }
 }
+BHA = {
+	color = rgb { 55 132 160 }
+	color_ui = rgb { 55 132 160 }
+}
 BHR = {
 	color = rgb { 183 34 23 }
 	color_ui = rgb { 183 34 23 }
@@ -67,6 +71,10 @@ BLR = {
 BLZ = {
 	color = rgb { 47 17 120 }
 	color_ui = rgb { 47 17 120 }
+}
+BMD = {
+	color = rgb { 160 51 54 }
+	color_ui = rgb { 160 51 54 }
 }
 BRT = {
 	color = rgb { 122 255 188 }
@@ -136,6 +144,10 @@ DMK = {
 	color = rgb { 123 92 74 }
 	color_ui = rgb { 123 92 74 }
 }
+DMR = {
+	color = rgb { 158 105 102 }
+	color_ui = rgb { 158 105 102 }
+}
 DPK = {
 	color = rgb { 109 5 10 }
 	color_ui = rgb { 109 5 10 }
@@ -172,6 +184,10 @@ FRA = {
 	color = rgb { 21 27 133 }
 	color_ui = rgb { 21 27 133 }
 }
+GBL = {
+	color = rgb { 236 159 161 }
+	color_ui = rgb { 236 159 161 }
+}
 GBR = {
 	color = rgb { 140 36 43 }
 	color_ui = rgb { 140 36 43 }
@@ -203,6 +219,10 @@ GRN = {
 GTM = {
 	color = rgb { 25 160 198 }
 	color_ui = rgb { 25 160 198 }
+}
+HAI = {
+	color = rgb { 142 23 96 }
+	color_ui = rgb { 142 23 96 }
 }
 HDU = {
 	color = rgb { 13 71 155 }
@@ -247,6 +267,10 @@ ISR = {
 ITA = {
 	color = rgb { 6 115 80 }
 	color_ui = rgb { 6 115 80 }
+}
+JAM = {
+	color = rgb { 19 90 63 }
+	color_ui = rgb { 19 90 63 }
 }
 JOR = {
 	color = rgb { 105 33 61 }

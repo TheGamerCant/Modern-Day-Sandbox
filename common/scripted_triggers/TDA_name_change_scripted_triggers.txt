@@ -123,6 +123,7 @@ TAG_using_french_names = {
 				original_tag = MCO
 				original_tag = QUE
 				original_tag = BRT
+				original_tag = HAI
 			}
 			is_subject = no
 		}
@@ -133,6 +134,7 @@ TAG_using_french_names = {
 		is_puppet_of = MCO
 		is_puppet_of = QUE
 		is_puppet_of = BRT
+		is_puppet_of = HAI
 	}
 }
 
@@ -583,6 +585,7 @@ TAG_using_spanish_names = {
 				original_tag = HDU
 				original_tag = MEX
 				original_tag = NCG
+				original_tag = DMR
 			}
 			is_subject = no
 		}
@@ -597,6 +600,7 @@ TAG_using_spanish_names = {
 		is_puppet_of = HDU
 		is_puppet_of = MEX
 		is_puppet_of = NCG
+		is_puppet_of = DMR
 	}
 }
 
