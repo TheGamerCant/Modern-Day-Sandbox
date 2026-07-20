@@ -1,0 +1,15 @@
+state={
+	id=960
+	name="STATE_960"
+	history={
+		owner = KEN
+		add_core_of = KEN
+	}
+	provinces={
+		16002
+	}
+	manpower=100000
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

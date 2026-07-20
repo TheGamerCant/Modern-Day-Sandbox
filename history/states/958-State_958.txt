@@ -1,0 +1,17 @@
+state={
+	id=958
+	name="STATE_958"
+	history={
+		owner = KEN
+		add_core_of = KEN
+		
+		set_variable = { sq_km = 11000 }
+	}
+	provinces={
+		16000 
+	}
+	manpower=125000
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

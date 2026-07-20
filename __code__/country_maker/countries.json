@@ -1641,6 +1641,22 @@
 			}
 		},
 		{
+			"tag": "KEN",
+			"red": 84,
+			"green": 5,
+			"blue": 0,
+			"graphical_culture": "african_gfx",
+			"graphical_culture_2d": "african_2d",
+			"capital": 547,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"KEN": "Kenya",
+				"KEN_DEF": "the Republic of Kenya",
+				"KEN_ADJ": "Keyan"
+			}
+		},
+		{
 			"tag": "KHS",
 			"red": 194,
 			"green": 157,

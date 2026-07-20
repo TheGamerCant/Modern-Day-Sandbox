@@ -292,6 +292,10 @@ KCH = {
 	color = rgb { 127 62 24 }
 	color_ui = rgb { 127 62 24 }
 }
+KEN = {
+	color = rgb { 84 5 0 }
+	color_ui = rgb { 84 5 0 }
+}
 KHS = {
 	color = rgb { 194 157 16 }
 	color_ui = rgb { 194 157 16 }
