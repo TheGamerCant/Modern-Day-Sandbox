@@ -22354,6 +22354,15 @@ TDA_update_state_927_names = {
 	else = {
 		reset_province_name = 15590
 	}
+	#Baṭhiṁḍā
+	if = {
+		limit = { any_country = { controls_province = 15594 TAG_using_indian_names = yes } }
+		set_province_name = { id = 15594 name = VICTORY_POINTS_15594_0 }
+	}
+	#Bathinda
+	else = {
+		reset_province_name = 15594
+	}
 }
 
 #Jammu and Kashmir
@@ -22386,6 +22395,15 @@ TDA_update_state_928_names = {
 	#Anantnag
 	else = {
 		reset_province_name = 10905
+	}
+	#Ādham Por
+	if = {
+		limit = { any_country = { controls_province = 15596 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 15596 name = VICTORY_POINTS_15596_0 }
+	}
+	#Udhampur
+	else = {
+		reset_province_name = 15596
 	}
 	#Jammū
 	if = {

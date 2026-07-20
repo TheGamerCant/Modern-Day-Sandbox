@@ -21446,22 +21446,22 @@
 12929 = {
 	default = "Jinja"
 }
-15596 = {
+15996 = {
 	default = "Mbale"
 }
-15595 = {
+15995 = {
 	default = "Soroti"
 }
 7133 = {
 	default = "Arua"
 }
-15597 = {
+15997 = {
 	default = "Gulu"
 }
 3854 = {
 	default = "Masaka"
 }
-15594 = {
+15994 = {
 	default = "Mbarara"
 }
 7088 = {
