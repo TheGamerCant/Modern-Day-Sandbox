@@ -80,6 +80,10 @@ BRT = {
 	color = rgb { 122 255 188 }
 	color_ui = rgb { 122 255 188 }
 }
+BRU = {
+	color = rgb { 150 49 29 }
+	color_ui = rgb { 150 49 29 }
+}
 BSH = {
 	color = rgb { 144 96 20 }
 	color_ui = rgb { 144 96 20 }
@@ -444,6 +448,10 @@ ROM = {
 	color = rgb { 190 161 27 }
 	color_ui = rgb { 190 161 27 }
 }
+RWA = {
+	color = rgb { 38 170 184 }
+	color_ui = rgb { 38 170 184 }
+}
 SCT = {
 	color = rgb { 0 28 118 }
 	color_ui = rgb { 0 28 118 }
@@ -520,6 +528,10 @@ TVA = {
 	color = rgb { 109 89 178 }
 	color_ui = rgb { 109 89 178 }
 }
+TZN = {
+	color = rgb { 46 168 148 }
+	color_ui = rgb { 46 168 148 }
+}
 UAE = {
 	color = rgb { 74 118 12 }
 	color_ui = rgb { 74 118 12 }
@@ -527,6 +539,10 @@ UAE = {
 UDM = {
 	color = rgb { 20 0 0 }
 	color_ui = rgb { 20 0 0 }
+}
+UGA = {
+	color = rgb { 198 116 1 }
+	color_ui = rgb { 198 116 1 }
 }
 UKR = {
 	color = rgb { 12 36 145 }

@@ -2,12 +2,30 @@ state={
 	id=548
 	name="STATE_548"
 	history={
-		owner = ZZZ
+		owner = UGA
+		add_core_of = UGA
+		
+		victory_points = { 15988 50 }
+		victory_points = { 15990 2 }
+		victory_points = { 15991 5 }
+		victory_points = { 12929 2 }
+		victory_points = { 15596 2 }
+		victory_points = { 15595 2 }
+		victory_points = { 7133 3 }
+		victory_points = { 15597 2 }
+		victory_points = { 3854 3 }
+		victory_points = { 15594 2 }
+		victory_points = { 7088 2 }
+		victory_points = { 15993 2 }
+		
+		set_variable = { sq_km = 200520 }
+		
+		buildings = { air_base = 4 }
 	}
 	provinces={
-		3854 7088 7133 8223 12929 12989 13177 
+		3854 7088 7133 8223 12929 12989 13177 15988 15989 15990 15991 15992 15993 15994 15995 15996 15997 15998 15999 
 	}
-	manpower= 100000
+	manpower= 33149000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=rural

@@ -793,6 +793,22 @@
 			}
 		},
 		{
+			"tag": "BRU",
+			"red": 150,
+			"green": 49,
+			"blue": 29,
+			"graphical_culture": "african_gfx",
+			"graphical_culture_2d": "african_2d",
+			"capital": 769,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "yes",
+			"localisation": {
+				"BRU": "Burundi",
+				"BRU_DEF": "the Republic of Burundi",
+				"BRU_ADJ": "Burundian"
+			}
+		},
+		{
 			"tag": "BSH",
 			"red": 144,
 			"green": 96,
@@ -2249,6 +2265,22 @@
 			}
 		},
 		{
+			"tag": "RWA",
+			"red": 38,
+			"green": 170,
+			"blue": 184,
+			"graphical_culture": "african_gfx",
+			"graphical_culture_2d": "african_2d",
+			"capital": 768,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "yes",
+			"localisation": {
+				"RWA": "Rwanda",
+				"RWA_DEF": "the Republic of Rwanda",
+				"RWA_ADJ": "Rwandan"
+			}
+		},
+		{
 			"tag": "SCT",
 			"red": 0,
 			"green": 28,
@@ -2553,6 +2585,22 @@
 			}
 		},
 		{
+			"tag": "TZN",
+			"red": 46,
+			"green": 168,
+			"blue": 148,
+			"graphical_culture": "african_gfx",
+			"graphical_culture_2d": "african_2d",
+			"capital": 546,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"TZN": "Tanzania",
+				"TZN_DEF": "the United Republic of Tanzania",
+				"TZN_ADJ": "Tanzanian"
+			}
+		},
+		{
 			"tag": "UAE",
 			"red": 74,
 			"green": 118,
@@ -2582,6 +2630,22 @@
 				"UDM": "Udmurtia",
 				"UDM_DEF": "the Udmurt Republic",
 				"UDM_ADJ": "Udmurt"
+			}
+		},
+		{
+			"tag": "UGA",
+			"red": 198,
+			"green": 116,
+			"blue": 1,
+			"graphical_culture": "african_gfx",
+			"graphical_culture_2d": "african_2d",
+			"capital": 548,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"UGA": "Uganda",
+				"UGA_DEF": "the Republic of Uganda",
+				"UGA_ADJ": "Ugandan"
 			}
 		},
 		{

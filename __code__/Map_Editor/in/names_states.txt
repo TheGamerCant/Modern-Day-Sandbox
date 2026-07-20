@@ -3124,7 +3124,7 @@
 	default = "Rhodesia"
 }
 546 = {
-	default = "Tanganyika"
+	default = "Coastal Tanzania"
 }
 547 = {
 	default = "Nairobi"
@@ -5615,6 +5615,21 @@
         }
     }
 }
-951 = {
+952 = {
 	default = "Cayman Islands"
+}
+953 = {
+	default = "Tanzanian Lakes"
+}
+954 = {
+	default = "Southern Highlands"
+}
+955 = {
+	default = "Northern Tanzania"
+}
+956 = {
+	default = "Central Tanzania"
+}
+957 = {
+	default = "Zanzibar"
 }

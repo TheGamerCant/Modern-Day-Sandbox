@@ -1,0 +1,19 @@
+state={
+	id=957
+	name="STATE_957"
+	history={
+		owner = TZN
+		add_core_of = TZN
+		
+		victory_points = { 15980 6 }
+		
+		set_variable = { sq_km = 2460 }
+	}
+	provinces={
+		15980 
+	}
+	manpower=1252855
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

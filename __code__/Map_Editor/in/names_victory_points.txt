@@ -21344,3 +21344,129 @@
 7632 = {
 	default = "Barahona"
 }
+15943 = {
+	default = "Kigali"
+}
+13364 = {
+	default = "Gisenyi"
+}
+15945 = {
+	default = "Bujumbura"
+}
+15947 = {
+	default = "Mwanza"
+}
+15950 = {
+	default = "Bukoba"
+}
+11017 = {
+	default = "Musoma"
+}
+4171 = {
+	default = "Kahama"
+}
+15952 = {
+	default = "Bariadi"
+}
+8144 = {
+	default = "Kigoma"
+}
+15955 = {
+	default = "Dodoma"
+}
+15962 = {
+	default = "Nzega"
+}
+15964 = {
+	default = "Tabora"
+}
+15960 = {
+	default = "Singida"
+}
+15969 = {
+	default = "Arusha"
+}
+8183 = {
+	default = "Tanga"
+}
+5224 = {
+	default = "Handeni"
+}
+2206 = {
+	default = "Babati"
+}
+15973 = {
+	default = "Mbeya"
+}
+10845 = {
+	default = "Songea"
+}
+15972 = {
+	default = "Sumbawanga"
+}
+2176 = {
+	default = "Mpanda"
+}
+15977 = {
+	default = "Iringa"
+}
+15976 = {
+	default = "Njombe"
+}
+15980 = {
+	default = "Zanzibar"
+}
+15981 = {
+	default = "Dar es Salaam"
+}
+15982 = {
+	default = "Julius Nyerere International Airport"
+}
+8205 = {
+	default = "Morogoro"
+}
+12944 = {
+	default = "Mtwara"
+}
+12967 = {
+	default = "Ifakara"
+}
+8201 = {
+	default = "Masasi"
+}
+15988 = {
+	default = "Kampala"
+}
+15990 = {
+	default = "Entebbe International Airport"
+}
+15991 = {
+	default = "Nansana"
+}
+12929 = {
+	default = "Jinja"
+}
+15596 = {
+	default = "Mbale"
+}
+15595 = {
+	default = "Soroti"
+}
+7133 = {
+	default = "Arua"
+}
+15597 = {
+	default = "Gulu"
+}
+3854 = {
+	default = "Masaka"
+}
+15594 = {
+	default = "Mbarara"
+}
+7088 = {
+	default = "Fort Portal"
+}
+15993 = {
+	default = "Hoima"
+}

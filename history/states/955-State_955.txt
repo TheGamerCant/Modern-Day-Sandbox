@@ -1,0 +1,22 @@
+state={
+	id=955
+	name="STATE_955"
+	history={
+		owner = TZN
+		add_core_of = TZN
+		
+		victory_points = { 15969 5 }
+		victory_points = { 8183 3 }
+		victory_points = { 5224 2 }
+		victory_points = { 2206 1 }
+		
+		set_variable = { sq_km = 122025 }
+	}
+	provinces={
+		2206 5224 8183 15965 15966 15967 15968 15969 
+	}
+	manpower=6540003
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

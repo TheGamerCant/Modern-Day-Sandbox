@@ -12004,7 +12004,7 @@ TDA_update_state_544_names = {
 TDA_update_state_545_names = {
 }
 
-#Tanganyika
+#Coastal Tanzania
 TDA_update_state_546_names = {
 }
 
@@ -22354,15 +22354,6 @@ TDA_update_state_927_names = {
 	else = {
 		reset_province_name = 15590
 	}
-	#Baṭhiṁḍā
-	if = {
-		limit = { any_country = { controls_province = 15594 TAG_using_indian_names = yes } }
-		set_province_name = { id = 15594 name = VICTORY_POINTS_15594_0 }
-	}
-	#Bathinda
-	else = {
-		reset_province_name = 15594
-	}
 }
 
 #Jammu and Kashmir
@@ -22395,15 +22386,6 @@ TDA_update_state_928_names = {
 	#Anantnag
 	else = {
 		reset_province_name = 10905
-	}
-	#Ādham Por
-	if = {
-		limit = { any_country = { controls_province = 15596 TAG_using_pakistani_names = yes } }
-		set_province_name = { id = 15596 name = VICTORY_POINTS_15596_0 }
-	}
-	#Udhampur
-	else = {
-		reset_province_name = 15596
 	}
 	#Jammū
 	if = {
@@ -23001,8 +22983,18 @@ TDA_update_state_950_names = {
 	}
 }
 
-#Cayman Islands
+#Aseer
 TDA_update_state_951_names = {
+	951 = {
+		#'Asīr
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_951_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
 	#Muḥā'yil
 	if = {
 		limit = { any_country = { controls_province = 1923 TAG_using_arab_names = yes } }
@@ -23041,8 +23033,28 @@ TDA_update_state_951_names = {
 	}
 }
 
-#
+#Cayman Islands
 TDA_update_state_952_names = {
+}
+
+#Tanzanian Lakes
+TDA_update_state_953_names = {
+}
+
+#Southern Highlands
+TDA_update_state_954_names = {
+}
+
+#Northern Tanzania
+TDA_update_state_955_names = {
+}
+
+#Central Tanzania
+TDA_update_state_956_names = {
+}
+
+#Zanzibar
+TDA_update_state_957_names = {
 }
 
 
@@ -24000,6 +24012,11 @@ TDA_change_all_city_names = {
 	TDA_update_state_950_names = yes
 	TDA_update_state_951_names = yes
 	TDA_update_state_952_names = yes
+	TDA_update_state_953_names = yes
+	TDA_update_state_954_names = yes
+	TDA_update_state_955_names = yes
+	TDA_update_state_956_names = yes
+	TDA_update_state_957_names = yes
 }
 
 TDA_toggle_change_city_names = {
