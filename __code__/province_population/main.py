@@ -7,6 +7,9 @@ import pandas as pd
 from pandas import DataFrame
 import json
 
+MOD_DIRECTORY: Path = Path.cwd()
+MOD_DIRECTORY = MOD_DIRECTORY.parents[1]
+
 class Province:
     def __init__(self, prov_id: int):
         self.prov_id: int = prov_id
@@ -23,11 +26,11 @@ class State:
         self.names: set[str] = set()
         self.file: Path | None = file
 
-def LoadMap(mod_dir: Path) -> tuple[list[Province], list[State]]:
-    definition_file: Path = mod_dir / "map/definition.csv"
-    states_dir: Path = mod_dir / "history/states"
-    victory_point_loc: Path = mod_dir / "localisation/english/victory_points_l_english.yml"
-    state_name_loc: Path = mod_dir / "localisation/english/state_names_l_english.yml"
+def LoadMap() -> tuple[list[Province], list[State]]:
+    definition_file: Path = MOD_DIRECTORY / "map/definition.csv"
+    states_dir: Path = MOD_DIRECTORY / "history/states"
+    victory_point_loc: Path = MOD_DIRECTORY / "localisation/english/victory_points_l_english.yml"
+    state_name_loc: Path = MOD_DIRECTORY / "localisation/english/state_names_l_english.yml"
 
     provinces_list: list[Province] = []
 
@@ -95,16 +98,16 @@ def LoadMap(mod_dir: Path) -> tuple[list[Province], list[State]]:
 
     return provinces_list, states_list
 
-def LoadCityData(mod_dir: Path) -> DataFrame:
-    data_dir: Path = mod_dir / "__code/province_population/data"
+def LoadCityData() -> DataFrame:
+    data_dir: Path = Path.cwd() / "data"
     data_files: list[Path] = list(data_dir.glob("**/*.csv"))
 
     df: DataFrame = pd.concat((pd.read_csv(f) for f in data_files), ignore_index=True)
     df["Population (2025)"] = df["Population (2025)"].round().astype(int)
     return df
 
-def LoadJson(mod_dir: Path) -> Any:
-    json_file: Path = mod_dir / "__code/province_population/tag_data.json"
+def LoadJson() -> Any:
+    json_file: Path = Path.cwd() / "tag_data.json"
     json_data: Any = None
 
     with open(str(json_file), "r", encoding="utf-8") as f:
@@ -135,16 +138,14 @@ def FindDuplicates(provinces_list: list[Province], states_list: list[State], cit
 def main():
     time_start: float = perf_counter()
 
-    mod_directory: Path = Path.cwd()
-
     #Load the map
-    provinces_list, states_list = LoadMap(mod_directory)
+    provinces_list, states_list = LoadMap()
 
     #Load the city data
-    #city_df: DataFrame = LoadCityData(mod_directory)
+    #city_df: DataFrame = LoadCityData()
 
     #Load JSON file
-    json_data = LoadJson(mod_directory)
+    json_data = LoadJson()
 
     #Find duplicates
     #FindDuplicates(provinces_list, states_list, city_df)

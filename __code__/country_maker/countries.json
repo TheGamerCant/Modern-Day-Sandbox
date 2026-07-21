@@ -1257,6 +1257,22 @@
 			}
 		},
 		{
+			"tag": "GEO",
+			"red": 212,
+			"green": 167,
+			"blue": 167,
+			"graphical_culture": "eastern_european_gfx",
+			"graphical_culture_2d": "eastern_european_2d",
+			"capital": 231,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"GEO": "Georgia",
+				"GEO_DEF": "Georgia",
+				"GEO_ADJ": "Georgian"
+			}
+		},
+		{
 			"tag": "GER",
 			"red": 80,
 			"green": 80,
@@ -1302,22 +1318,6 @@
 				"GLC": "Galicia",
 				"GLC_DEF": "the Republic of Galicia",
 				"GLC_ADJ": "Galician"
-			}
-		},
-		{
-			"tag": "GOR",
-			"red": 212,
-			"green": 167,
-			"blue": 167,
-			"graphical_culture": "eastern_european_gfx",
-			"graphical_culture_2d": "eastern_european_2d",
-			"capital": 231,
-			"ideology": "IDEOLOGY_authoritarian",
-			"elections_allowed": "no",
-			"localisation": {
-				"GOR": "Georgia",
-				"GOR_DEF": "Georgia",
-				"GOR_ADJ": "Georgian"
 			}
 		},
 		{

@@ -1,38 +1,39 @@
-state={
-	id=399
-	name="STATE_399"
-	history={
-		owner = SOV
-		add_core_of = SOV
-		add_core_of = UDM
-		
-		victory_points = { 370 3 }
-		victory_points = { 14409 10 }
-		victory_points = { 4400 3 }
-		victory_points = { 12244 3 }
-		victory_points = { 305 1 }
-		victory_points = { 6388 2 }
-		victory_points = { 6278 2 }
-		victory_points = { 7359 1 }
-		
-		resize_array = { array = culture_index_array size = 3 value = 0 }
-		resize_array = { array = culture_value_array size = 3 value = 0 }
-		
-		set_variable = { culture_index_array^0 = 220 }
-		set_variable = { culture_value_array^0 = 64.0 }
-		
-		set_variable = { culture_index_array^1 = None }
-		set_variable = { culture_value_array^1 = 28.7 }
-		
-		set_variable = { culture_index_array^2 = 291 }
-		set_variable = { culture_value_array^2 = 7.3 }
-		
-		set_variable = { sq_km = 41523 }
-	}
-	provinces={
-		305 370 381 3300 4356 4400 6217 6278 6388 7359 7403 9293 11320 12203 12244 14408 14409 14410 14411 
-	}
-	manpower= 1521420
-	buildings_max_level_factor=1.000
-	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
-	state_category=rural
+state= {
+    id = 399
+    name = "STATE_399"
+    history = {
+        owner = SOV
+        add_core_of = SOV
+        add_core_of = UDM
+
+        victory_points = { 370 3 }
+        victory_points = { 14409 10 }
+        victory_points = { 4400 3 }
+        victory_points = { 12244 3 }
+        victory_points = { 305 1 }
+        victory_points = { 6388 2 }
+        victory_points = { 6278 2 }
+        victory_points = { 7359 1 }
+
+        #		resize_array = { array = culture_index_array size = 3 value = 0 }
+        #		resize_array = { array = culture_value_array size = 3 value = 0 }
+        #
+        #		set_variable = { culture_index_array^0 = 220 }
+        #		set_variable = { culture_value_array^0 = 64.0 }
+        #
+        #		set_variable = { culture_index_array^1 = None }
+        #		set_variable = { culture_value_array^1 = 28.7 }
+        #
+        #		set_variable = { culture_index_array^2 = 291 }
+        #		set_variable = { culture_value_array^2 = 7.3 }
+
+        set_variable = { sq_km = 41523 }
+    }
+    provinces = {
+        305 370 381 3300 4356 4400 6217 6278 6388 7359 7403 9293 11320 12203 12244 14408 14409 14410 14411
+    }
+    manpower = 1521420
+    buildings_max_level_factor = 1.000
+    local_supplies = 0.5        #One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
+    state_category = rural
+}

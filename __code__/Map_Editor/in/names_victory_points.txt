@@ -7775,7 +7775,7 @@
 14592 = {
 	default = "Baganuur"
 }
-14592 = {
+7717 = {
 	default = "Sükhbaatar"
 }
 14598 = {
@@ -7817,7 +7817,7 @@
 12612 = {
 	default = "Sainshand"
 }
-12612 = {
+14591 = {
 	default = "Choyr"
 }
 14571 = {
@@ -8921,15 +8921,6 @@
         }
     }
 }
-1187 = {
-	default = "Yunfu"
-	entry = {
-        name = "Yúnfú"
-        requirements = {
-            "TAG_using_chinese_names = yes"
-        }
-    }
-}
 14719 = {
 	default = "Zhaoqing"
 	entry = {
@@ -9512,7 +9503,7 @@
         }
     }
 }
-10841 = {
+6999 = {
 	default = "Chongqing"
 	entry = {
         name = "Chóngqìng"
@@ -16166,9 +16157,6 @@
 15315 = {
 	default = "San Juan Bautista Tuxtepec"
 }
-15315 = {
-	default = "San Juan Bautista Tuxtepec"
-}
 10773 = {
 	default = "Huajuapan de León"
 }
@@ -16303,9 +16291,6 @@
 }
 12746 = {
 	default = "Puerto Vallarta"
-}
-12746 = {
-	default = "Guadalajara"
 }
 5052 = {
 	default = "Lagos de Moreno"
@@ -18412,7 +18397,7 @@
         }
     }
 }
-4327 = {
+15563 = {
 	default = "Sivakasi"
 	entry = {
         name = "Civakāci"
@@ -19889,15 +19874,6 @@
 7310 = {
 	default = "Tirupati"
 }
-15747 = {
-	default = "Kadapa"
-	entry = {
-	    name = "Kaḍapa"
-        requirements = {
-            "TAG_using_indian_names = yes"
-        }
-    }
-}
 1344 = {
 	default = "Chittur"
 	entry = {
@@ -20720,7 +20696,7 @@
         }
     }
 }
-10670 = {
+10760 = {
 	default = "Sur"
 	entry = {
 	    name = "Ṣūr"

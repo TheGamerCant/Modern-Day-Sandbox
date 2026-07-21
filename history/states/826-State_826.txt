@@ -4,7 +4,7 @@ state={
 	history={
 		owner = ABZ
 		add_core_of = ABZ
-		add_claim_by = GOR
+		add_claim_by = GEO
 		
 		victory_points = { 11599 2 }
 		victory_points = { 11647 1 }

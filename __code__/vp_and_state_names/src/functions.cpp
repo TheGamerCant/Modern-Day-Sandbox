@@ -263,7 +263,7 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
         filesReturnVector.reserve(fileCount);
 
         for (const auto& file : std::filesystem::directory_iterator(modFolder)) {
-            if (file.is_regular_file() && fileTypes.contains(file.path().extension())) {
+            if (file.is_regular_file() && fileTypes.contains(file.path().extension().string())) {
                 filesReturnVector.emplace_back(file.path());
             }
         }
@@ -275,7 +275,7 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
         filesReturnVector.reserve(fileCount);
 
         for (const auto& file : std::filesystem::directory_iterator(vanillaFolder)) {
-            if (file.is_regular_file() && fileTypes.contains(file.path().extension())) {
+            if (file.is_regular_file() && fileTypes.contains(file.path().extension().string())) {
                 filesReturnVector.emplace_back(file.path());
             }
         }
@@ -287,7 +287,7 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
         filesReturnVector.reserve(fileCount);
 
         for (const auto& file : std::filesystem::directory_iterator(vanillaFolder)) {
-            if (file.is_regular_file() && fileTypes.contains(file.path().extension())) {
+            if (file.is_regular_file() && fileTypes.contains(file.path().extension().string())) {
                 //Create a hypothetical file to check for in our mod folder - if it exists, don't add the current vanilla file
                 Path fileToCheckFor = modDirectory / folderPath / file.path().filename();
                 if (!std::filesystem::exists(fileToCheckFor)) {
@@ -298,7 +298,7 @@ Vector<Path> GetGameFiles(const Path& vanillaDirectory, const Path& modDirectory
 
         //Now load all mod files
         for (const auto& file : std::filesystem::directory_iterator(modFolder)) {
-            if (file.is_regular_file() && fileTypes.contains(file.path().extension())) {
+            if (file.is_regular_file() && fileTypes.contains(file.path().extension().string())) {
                 filesReturnVector.emplace_back(file.path());
             }
         }
@@ -440,7 +440,7 @@ Path GetGameFile(const Path& vanillaDirectory, const Path& modDirectory, const S
     Path directory = p.parent_path();
     Path fileName = p.filename();
 
-    const Boolean modReplacesDirectory = modReplaceDirectories.contains(directory);
+    const Boolean modReplacesDirectory = modReplaceDirectories.contains(directory.string());
 
     if (std::filesystem::exists(modPath) && std::filesystem::is_regular_file(modPath)) { return modPath; }
     else if (modReplacesDirectory) { FatalError("File " + path + " does not exist in the mod"); }

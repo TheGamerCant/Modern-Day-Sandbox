@@ -4,7 +4,7 @@ state={
 	history = {
 		owner = SOS
 		add_core_of = SOS
-		add_claim_by = GOR
+		add_claim_by = GEO
 		
 		victory_points = { 9626 2 }
 		
