@@ -16,7 +16,7 @@ class Province:
         self.state_id: int = 0
         self.names: set[str] = set()
         self.prev_victory_points: int = 0
-        self.new_victory_points: int = 0
+        self.population: int = 0
 
 class State:
     def __init__(self, state_id: int, provinces: set[int], file: Path | None = None, owner: str = "ZZZ"):
@@ -103,6 +103,7 @@ def LoadCityData() -> DataFrame:
     data_files: list[Path] = list(data_dir.glob("**/*.csv"))
 
     df: DataFrame = pd.concat((pd.read_csv(f) for f in data_files), ignore_index=True)
+
     df["Population (2025)"] = df["Population (2025)"].round().astype(int)
     return df
 
@@ -115,7 +116,7 @@ def LoadJson() -> Any:
 
     return json_data
 
-def FindDuplicates(provinces_list: list[Province], states_list: list[State], city_df: DataFrame):
+def FindDuplicates(provinces_list: list[Province], states_list: list[State]) -> set[int]:
     all_keys: dict[tuple[str, str], list[int]] = {}
     duplicate_tuples: set[tuple[str, str]] = set()
 
@@ -133,26 +134,43 @@ def FindDuplicates(provinces_list: list[Province], states_list: list[State], cit
             else:
                 all_keys[key] = [vp.prov_id]
 
-    print({key: value for key, value in all_keys.items() if key in duplicate_tuples})
+    #print({key: value for key, value in all_keys.items() if key in duplicate_tuples})
+    duplicate_provinces: set[int] = set()
+
+    for provs in all_keys.values():
+        duplicate_provinces.update(set(provs))
+
+    return duplicate_provinces
 
 def main():
     time_start: float = perf_counter()
 
-    #Load the map
+    # Load the map
     provinces_list, states_list = LoadMap()
 
-    #Load the city data
-    #city_df: DataFrame = LoadCityData()
+    # Only look at provinces with VPs
+    provinces_list = [prov for prov in provinces_list if prov.prev_victory_points > 0]
 
-    #Load JSON file
+    # Load the city data
+    city_df: DataFrame = LoadCityData()
+
+    # Load JSON file
     json_data = LoadJson()
-
-    #Find duplicates
-    #FindDuplicates(provinces_list, states_list, city_df)
+    country_name_to_tag_dict: dict[str, str] = {
+        key: value.get("tag") for key, value in json_data.get("tag_map").items()
+    }
 
     load_time: float = perf_counter()- time_start
     print(f"Load Time: {load_time:.3}s\n")
 
+    # Find duplicates
+    duplicate_provinces: set[int] = FindDuplicates(provinces_list, states_list)
+
+    # Tuple (city name, country tag) -> population
+    cities_to_population_dict: dict[tuple[str, str], int] = dict(zip(
+        zip(city_df["City"], city_df["Country"].map(country_name_to_tag_dict)),
+        city_df["Population (2025)"],
+    ))
 
 if __name__ == "__main__":
     main()

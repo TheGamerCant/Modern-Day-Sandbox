@@ -1,1652 +1,1652 @@
-City,Country,Population (2025),Province ID,Victory Points
-Mindelo,Cabo Verde,88273.87923,,
-Dakar,Senegal,3970201.794,,
-Serrekunda,Gambia,1313464.797,,
-Nouadhibou,Mauritania,177468.9802,,
-Bissau,Guinea-Bissau,674444.3312,,
-Kamsar,Guinea,127957.5515,,
-Freetown,Sierra Leone,2150532.945,,
-Kayes,Mali,287390.9855,,
-Monrovia,Liberia,2049817.566,,
-Danané,Côte d'Ivoire,101136.3078,,
-Niangoloko,Burkina Faso,73780.51196,,
-Dormaa Ahenkro,Ghana,84688.8429,,
-Cinkassé,Togo,77949.04564,,
-Téra,Niger,98781.27049,,
-Tanguieta,Benin,51645.32078,,
-Idi-Iroko,Nigeria,120092.9649,,
-São Tomé,São Tomé and Príncipe,154878.0805,,
-Malabo,Equatorial Guinea,729478.227,,
-Port-Gentil,Gabon,103562.4293,,
-Limbe,Cameroon,210456.087,,
-Tômbua,Angola,78748.71133,,
-Pointe-Noire,Republic of the Congo,665655.8464,,
-Moanda,Democratic Republic of the Congo,76337.06924,,
-Walvis Bay,Namibia,84904.15708,,
-Léré,Chad,74772.16287,,
-Bouar,Central African Republic,71859.10554,,
-Tierkloof,South Africa,52800.97695,,
-Mongu,Zambia,121413.393,,
-Kanye,Botswana,52205.61235,,
-Maseru,Lesotho,296516.0661,,
-Bulawayo,Zimbabwe,492010.9037,,
-Wau,South Sudan,115385.1009,,
-Cibitoke,Burundi,56028.19568,,
-Rubavu,Rwanda,342554.9873,,
-Manzini,Swaziland,93405.68221,,
-Kigoma,Tanzania,347891.7651,,
-Bwera,Uganda,123131.252,,
-Matola-Rio,Mozambique,54128.19009,,
-Kasungu,Malawi,59047.0707,,
-Busia,Kenya,86348.98529,,
-Teseney,Eritrea,98083.8909,,
-Dhobley,Somalia,57159.53044,,
-Toliara,Madagascar,118186.7567,,
-Ali Sabieh,Djibouti,86780.63403,,
-Moroni,Comoros,175832.4714,,
-Mamoudzou,Mayotte,127510.6566,,
-Le Port,Réunion,105572.3109,,
-Port Louis,Mauritius,557430.5551,,
-João Teves,Cabo Verde,161477.1755,,
-M'bour,Senegal,506407.1053,,
-Brikama,Gambia,213625.807,,
-Nouakchott,Mauritania,1625383.896,,
-Bafatá,Guinea-Bissau,69724.70242,,
-Boké,Guinea,58796.60876,,
-Mahera,Sierra Leone,97367.24621,,
-Kakata,Liberia,78566.32827,,
-Kita,Mali,80559.87679,,
-Man,Côte d'Ivoire,205655.7066,,
-Banfora,Burkina Faso,187824.0147,,
-Kato,Ghana,137807.4493,,
-Dapaong,Togo,215916.3371,,
-Natitingou,Benin,66756.99089,,
-Tillabéri,Niger,80356.15878,,
-Meko,Nigeria,86917.24776,,
-Buea,Cameroon,189165.1939,,
-Bata,Equatorial Guinea,789800.2459,,
-Moçâmedes,Angola,405248.6373,,
-Tshela,Democratic Republic of the Congo,133137.7321,,
-Sibiti,Republic of the Congo,60351.78908,,
-Swakopmund,Namibia,77246.78387,,
-Pala,Chad,129935.2493,,
-Carnot,Central African Republic,90317.37297,,
-Masiphumelele,South Africa,50831.16264,,
-Molepolole,Botswana,121562.1229,,
-Mwinilunga,Zambia,52434.34108,,
-Yambio,South Sudan,102732.5936,,
-Mkoba,Zimbabwe,54654.32832,,
-Bujumbura,Burundi,1403418.731,,
-Musanze,Rwanda,144218.4358,,
-Kasulu,Tanzania,189666.1017,,
-Kasese,Uganda,100112.2989,,
-Maputo,Mozambique,3533370.361,,
-Likuni,Malawi,160123.2554,,
-Asosa,Ethiopia,136276.8328,,
-Migori,Kenya,77425.10812,,
-Barentu,Eritrea,101015.391,,
-Tadjoura,Djibouti,62279.23161,,
-Fomboni,Comoros,236188.257,,
-Le Tampon,Réunion,66485.94005,,
-Thiès,Senegal,483414.6727,,
-Gabu,Guinea-Bissau,86490.69096,,
-Basse Santa Su,Gambia,64316.98188,,
-Sangarédi,Guinea,86486.31524,,
-Kaédi,Mauritania,61350.09904,,
-Kambia,Sierra Leone,75701.58122,,
-Harbel City,Liberia,55323.05704,,
-Bamako,Mali,3960562.859,,
-Guiglo,Côte d'Ivoire,82226.89637,,
-Bobo-Dioulasso,Burkina Faso,1297389.392,,
-Wa,Ghana,81255.40457,,
-Mango,Togo,56063.33,,
-Djougou,Benin,157892.5678,,
-Torodi,Niger,65700.32105,,
-Oja Odan,Nigeria,68007.37907,,
-Mamfe,Cameroon,85129.37088,,
-Libreville,Gabon,917056.3782,,
-Cacongo,Angola,84030.04461,,
-Nsioni,Democratic Republic of the Congo,73387.19114,,
-N'Djamena,Chad,1910082.319,,
-Brazzaville,Republic of the Congo,3190742.929,,
-Nola,Central African Republic,50105.09628,,
-Windhoek,Namibia,417841.6386,,
-Cape Town,South Africa,4338251.176,,
-Lobatse,Botswana,62160.49325,,
-Livingstone,Zambia,207975.0533,,
-Gweru,Zimbabwe,65304.30419,,
-Bubanza,Burundi,57027.63764,,
-Rumbek,South Sudan,76197.58067,,
-Muhanga,Rwanda,65498.55698,,
-Fort Portal,Uganda,55643.11616,,
-Mumigunga,Tanzania,129051.0553,,
-Chókwè,Mozambique,50276.8408,,
-Lilongwe,Malawi,1018797.715,,
-Gambela,Ethiopia,105142.1039,,
-Bungoma,Kenya,98411.45174,,
-Andatabo,Madagascar,61336.57875,,
-Bardera,Somalia,147179.2828,,
-Djibouti,Djibouti,735131.508,,
-Saint-Denis,Réunion,189854.3756,,
-Darou Khoudoss,Senegal,65892.27379,,
-Tanene,Guinea,54726.46378,,
-Port Loko,Sierra Leone,72165.91764,,
-Zouérat,Mauritania,50284.91007,,
-Foya City,Liberia,52684.38198,,
-Kati,Mali,206375.6557,,
-Duekoue,Côte d'Ivoire,194869.1287,,
-Houndé,Burkina Faso,84219.22772,,
-Sunyani,Ghana,187687.6515,,
-Kpalimé,Togo,143596.0177,,
-Aplahoué,Benin,99690.95124,,
-Niamey,Niger,1600656.083,,
-Ajara,Nigeria,69585.9599,,
-Tiko,Cameroon,89593.3157,,
-Oyem,Gabon,89005.77299,,
-Cabinda,Angola,1220203.558,,
-Lukula,Democratic Republic of the Congo,63528.90278,,
-Fianga,Chad,61231.72345,,
-Blouberg Rise,South Africa,149508.4566,,
-Dongou,Republic of the Congo,61084.57622,,
-Bangui,Central African Republic,1270413.659,,
-Rundu,Namibia,56841.78631,,
-Gaborone,Botswana,298992.6473,,
-Solwezi,Zambia,107345.292,,
-Kwekwe,Zimbabwe,134107.4783,,
-Rumonge,Burundi,103918.7538,,
-Kigali,Rwanda,1621760.398,,
-Yei,South Sudan,166142.8088,,
-Mbarara,Uganda,285351.8242,,
-Mpanda,Tanzania,116980.7215,,
-Chibuto,Mozambique,84459.96572,,
-Mzuzu,Malawi,223848.5438,,
-Dambidollo,Ethiopia,161162.3843,,
-Vihiga,Kenya,86079.72904,,
-Keren,Eritrea,255389.4748,,
-Saakow,Somalia,69341.4985,,
-Morondava,Madagascar,75420.37823,,
-Saint-André,Réunion,60621.1399,,
-Tivaouane,Senegal,138729.0962,,
-Coyah,Guinea,2991110.752,,
-Mile 91,Sierra Leone,74204.06774,,
-Kiffa,Mauritania,89004.99136,,
-Buchanan,Liberia,79368.3757,,
-Sénou,Mali,218887.2167,,
-Buyo,Côte d'Ivoire,51238.11257,,
-Dédougou,Burkina Faso,87037.40566,,
-Wenchi,Ghana,54107.02354,,
-Blitta-Gare,Togo,200654.845,,
-Lokossa,Benin,96705.42974,,
-Owode,Nigeria,90425.50518,,
-Dosso,Niger,236672.7275,,
-Kumba,Cameroon,304428.2436,,
-Soyo,Angola,401232.6945,,
-Lemba Village,Democratic Republic of the Congo,64055.67016,,
-Moanda,Gabon,125350.04,,
-Mao,Chad,70324.56065,,
-Atlantis,South Africa,75926.36449,,
-Impfondo,Republic of the Congo,360182.6367,,
-Badokwa,Central African Republic,73587.33596,,
-Mahalapye,Botswana,61469.37821,,
-Choma,Zambia,126195.4729,,
-Zvishavane,Zimbabwe,52779.33926,,
-Kayanza,Burundi,124447.918,,
-Kayonza,Rwanda,53237.94025,,
-Arua,Uganda,215725.9256,,
-Malakal,South Sudan,91732.1652,,
-Sumbawanga,Tanzania,184292.8148,,
-Xai-Xai,Mozambique,200271.9537,,
-Salima,Malawi,60567.96734,,
-Kisii,Kenya,190856.9178,,
-Mendi,Ethiopia,117007.0119,,
-Asmara,Eritrea,251979.7984,,
-Luuq لوق,Somalia,56810.69988,,
-Ambovombe,Madagascar,138577.4137,,
-Bambey,Senegal,59471.7285,,
-Fria,Guinea,55494.25271,,
-Makeni,Sierra Leone,212452.4803,,
-Voinjama,Liberia,71959.30948,,
-Ouélessébougou,Mali,52861.45187,,
-San-Pédro,Côte d'Ivoire,273597.655,,
-Fassala,Mauritania,114618.262,,
-Gaoua,Burkina Faso,53779.13915,,
-Tarkwa,Ghana,65593.45074,,
-Lomé,Togo,2498073.763,,
-Comè,Benin,57558.21682,,
-Agbara,Nigeria,219039.4718,,
-Filingué,Niger,60026.45185,,
-Douala,Cameroon,4457861.533,,
-Buco-Zau,Angola,59535.24817,,
-Boma,Democratic Republic of the Congo,190065.2531,,
-Franceville,Gabon,300424.0652,,
-Bongor,Chad,123624.2478,,
-Malmesbury,South Africa,55104.44617,,
-Bétou,Republic of the Congo,349599.6426,,
-Bambari,Central African Republic,66172.96352,,
-Francistown,Botswana,116208.6386,,
-Mumbwa,Zambia,50550.18003,,
-Kadoma,Zimbabwe,88656.31313,,
-Ngozi,Burundi,138142.6239,,
-Koboko,Uganda,87723.61632,,
-Bor,South Sudan,139876.2628,,
-Ibamba,Tanzania,57506.28164,,
-Manica,Mozambique,51796.12479,,
-Blantyre,Malawi,941888.0305,,
-Kakamega,Kenya,125259.1883,,
-Meti Chafi / Tilk u Meti,Ethiopia,66324.19314,,
-Ghinda,Eritrea,165905.6887,,
-Kismayo,Somalia,452404.1172,,
-Saint-Louis,Senegal,263603.0204,,
-Kindia,Guinea,197263.877,,
-Magburaka,Sierra Leone,77501.21107,,
-Gbarnga,Liberia,77864.88304,,
-Koulikoro,Mali,60806.41479,,
-Séguéla,Côte d'Ivoire,62010.97137,,
-Ouahigouya,Burkina Faso,129505.638,,
-Techiman,Ghana,166351.0354,,
-Atakpamé,Togo,160358.7765,,
-Savalou,Benin,63667.52373,,
-Ilaro,Nigeria,140483.8952,,
-Gaya,Niger,149329.8705,,
-Nkongsamba,Cameroon,164405.5738,,
-N'zeto,Angola,64331.69133,,
-Kinzao,Democratic Republic of the Congo,191358.1202,,
-Dourbali,Chad,63974.35006,,
-Somerset West,South Africa,232390.5489,,
-Bria,Central African Republic,53673.3722,,
-Selebi Phikwe,Botswana,54136.74112,,
-Monze,Zambia,52362.18907,,
-Chegutu,Zimbabwe,73152.38104,,
-Gitega,Burundi,176122.5345,,
-Yumbe,Uganda,68658.52894,,
-Juba,South Sudan,296086.9767,,
-Chato,Tanzania,53099.64604,,
-Catandica,Mozambique,109311.9673,,
-Zomba,Malawi,77471.11519,,
-Kisumu,Kenya,452000.4631,,
-Nedjo,Ethiopia,75735.59832,,
-Jamame,Somalia,100184.646,,
-Tolanaro,Madagascar,50851.30354,,
-Fatick,Senegal,64861.15138,,
-Labé,Guinea,245719.2091,,
-Bo,Sierra Leone,376731.1691,,
-Ganta,Liberia,72447.49004,,
-Bougouni,Mali,83460.35046,,
-Soubré,Côte d'Ivoire,160765.5623,,
-Koudougou,Burkina Faso,165240.0511,,
-Takoradi,Ghana,1255808.568,,
-Sokodé,Togo,184962.2224,,
-Bohicon,Benin,278594.3707,,
-Aiyetoro,Nigeria,74897.82162,,
-Dogondoutchi,Niger,128991.7575,,
-Kribi,Cameroon,127946.8813,,
-Luanda,Angola,11672133.85,,
-Matadi,Democratic Republic of the Congo,415703.9417,,
-Kelo,Chad,127284.0264,,
-Stellenbosch,South Africa,96052.04384,,
-Mazabuka,Zambia,76006.75458,,
-Chinhoyi,Zimbabwe,100652.2773,,
-Kirundo,Burundi,52050.78764,,
-Hoima,Uganda,76892.50598,,
-Bukoba,Tanzania,155944.8882,,
-Nimule,South Sudan,665398.4615,,
-Chimoio,Mozambique,519720.7068,,
-Mangochi,Malawi,67587.88186,,
-Kitale,Kenya,182451.2779,,
-Tepi,Ethiopia,141621.9349,,
-Dekemhare,Eritrea,62982.29961,,
-Borama,Somalia,343917.8415,,
-Ambatolahy II,Madagascar,120769.7343,,
-Ziguinchor,Senegal,288803.6113,,
-Mamou,Guinea,80758.78551,,
-Yogomaia,Sierra Leone,50538.89735,,
-Pleebo,Liberia,62321.58639,,
-Fana,Mali,70906.64189,,
-Issia,Côte d'Ivoire,74298.43691,,
-Yako,Burkina Faso,54965.2178,,
-Dunkwa-on-Offin,Ghana,60944.50244,,
-Notsé,Togo,95842.32803,,
-Whydah,Benin,134852.1815,,
-Isale,Nigeria,83248.64074,,
-Tahoua,Niger,369904.5451,,
-Dschang,Cameroon,63235.96644,,
-Benguela,Angola,510265.5735,,
-Luozi,Democratic Republic of the Congo,53120.53052,,
-Moundou,Chad,257316.0425,,
-Paarl,South Africa,244652.8874,,
-Chingola,Zambia,268785.8725,,
-Masvingo,Zimbabwe,118739.9571,,
-Muyinga,Burundi,102770.6307,,
-Mubende,Uganda,66598.40209,,
-Ushirombo,Tanzania,69899.9125,,
-Magwi,South Sudan,73581.34209,,
-Gondola,Mozambique,57039.91993,,
-Eldoret,Kenya,439306.5233,,
-Massawa,Eritrea,369309.8604,,
-Jilib,Somalia,104059.3653,,
-Mahajanga,Madagascar,220110.4313,,
-Bignona,Senegal,82776.49342,,
-Kenema,Sierra Leone,262149.4505,,
-Faranah,Guinea,102561.0153,,
-Méagui,Côte d'Ivoire,116228.8474,,
-Ségou,Mali,286478.2584,,
-Leo,Burkina Faso,59608.83169,,
-Kumasi,Ghana,4923114.703,,
-Kara,Togo,169198.5186,,
-Tindji,Benin,61140.92587,,
-Lagos,Nigeria,12846045.23,,
-Illela,Niger,74897.47766,,
-Wum,Cameroon,64815.77934,,
-Lubango,Angola,1331212.795,,
-Kimpese,Democratic Republic of the Congo,111119.7172,,
-Laï,Chad,66572.39806,,
-Worcester,South Africa,86647.78919,,
-Chililabombwe,Zambia,99789.27984,,
-Norton,Zimbabwe,94189.04427,,
-Giteranyi,Burundi,58168.74806,,
-Masindi,Uganda,52075.81988,,
-Katoro,Tanzania,163721.6358,,
-Renk,South Sudan,97082.93991,,
-Tete,Mozambique,470793.518,,
-Kericho,Kenya,55990.05095,,
-Metu,Ethiopia,79503.55378,,
-Assab,Eritrea,65827.76652,,
-Antsirabe,Madagascar,54133.52371,,
-Diourbel,Senegal,220539.7198,,
-Koidu Town,Sierra Leone,149267.5815,,
-Guéckédou,Guinea,55437.1354,,
-Vavoua,Côte d'Ivoire,95900.10594,,
-Niono-Socoura,Mali,52115.00901,,
-Sapouy,Burkina Faso,53066.1721,,
-Kintampo,Ghana,110778.6533,,
-Anié,Togo,88877.73014,,
-Allada,Benin,67237.07219,,
-Igangan,Nigeria,65048.51765,,
-Birni N'Konni,Niger,181092.4964,,
-Bamenda,Cameroon,399783.773,,
-Baía,Angola,207326.8459,,
-Lukala,Democratic Republic of the Congo,55312.45858,,
-Moussoro,Chad,128413.6356,,
-Upington,South Africa,74271.87974,,
-Kafue,Zambia,82387.52972,,
-Harare,Zimbabwe,2076037.334,,
-Masaka,Uganda,141042.289,,
-Urambo,Tanzania,51251.53819,,
-Moatize,Mozambique,165147.446,,
-Mizan Teferi,Ethiopia,70594.83414,,
-Lodwar,Kenya,68119.30669,,
-Diinsoor,Somalia,65100.80871,,
-Ambano,Madagascar,230883.9115,,
-Louga,Senegal,187360.2719,,
-Kailahun,Sierra Leone,58471.36005,,
-Kissidougou,Guinea,116024.2154,,
-Daloa,Côte d'Ivoire,324486.2606,,
-Kadiolo,Mali,72363.21831,,
-Nkoranza,Ghana,71620.31657,,
-Ouagadougou,Burkina Faso,3616268.287,,
-Tsévié,Togo,96783.80397,,
-Dassa-Zoumé,Benin,56173.67146,,
-Aiyete,Nigeria,67710.90975,,
-Tamaské Sabon Guida,Niger,53970.36861,,
-Edéa,Cameroon,91832.43858,,
-Panguila,Angola,54394.3063,,
-Kwilu-Ngongo,Democratic Republic of the Congo,141569.4863,,
-Bebedjia,Chad,60857.25775,,
-Mossel Bay,South Africa,76856.52117,,
-Lusaka,Zambia,3658064.188,,
-Ruwa,Zimbabwe,183053.3971,,
-Mityana,Uganda,54610.74583,,
-Geita,Tanzania,176247.5738,,
-Torit,South Sudan,526256.8321,,
-Nhamatanda,Mozambique,80327.71054,,
-Ghimbi,Ethiopia,71648.59126,,
-Nakuru,Kenya,628217.6479,,
-Amparihimahitsy,Madagascar,180166.4361,,
-Kaolack,Senegal,406200.8382,,
-Kouroussa,Guinea,51808.47664,,
-Boundiali,Côte d'Ivoire,59196.83519,,
-Sikasso,Mali,423182.4209,,
-Obuasi,Ghana,233391.745,,
-Djibo,Burkina Faso,60410.96764,,
-Adétikopé,Togo,71174.22638,,
-Cotonou,Benin,2647117.374,,
-Abeokuta,Nigeria,806897.1129,,
-Tchin-Tabaraden,Niger,149097.1405,,
-Mbouda,Cameroon,65159.25023,,
-Zango V Centrality,Angola,73314.66972,,
-Mbanza-Ngungu,Democratic Republic of the Congo,218446.7695,,
-Goré,Chad,54675.96658,,
-Oudtshoorn,South Africa,76129.60067,,
-Chilanga,Zambia,87213.51481,,
-Marondera,Zimbabwe,88717.13596,,
-Gulu,Uganda,205487.0389,,
-Tunduma,Tanzania,152280.3016,,
-Maxixe,Mozambique,97317.93829,,
-Shahadi,Ethiopia,63691.01335,,
-Naivasha,Kenya,244867.7157,,
-Wajid,Somalia,119799.6654,,
-Farafangana,Madagascar,74679.29409,,
-Darou Mousty,Senegal,53486.55792,,
-Macenta,Guinea,64467.409,,
-Tengréla,Côte d'Ivoire,60122.20592,,
-Zégoua,Mali,57825.01713,,
-Patase,Ghana,101126.1859,,
-Kaya,Burkina Faso,124685.7743,,
-Akakopé,Togo,112837.4517,,
-Covè,Benin,54846.38395,,
-Igbo Ora,Nigeria,139009.4122,,
-Madaoua,Niger,159571.1946,,
-Bafoussam,Cameroon,331777.2622,,
-Lobito,Angola,509172.5616,,
-Kisantu,Democratic Republic of the Congo,183794.7034,,
-Doba,Chad,162832.17,,
-George,South Africa,199515.2946,,
-Kalulushi,Zambia,67389.57894,,
-Mutare,Zimbabwe,147135.4874,,
-Kampala,Uganda,5177877.659,,
-Kahama,Tanzania,147472.2356,,
-Dondo,Mozambique,77491.64274,,
-Sigmo,Ethiopia,73467.81215,,
-Nairobi,Kenya,6646256.557,,
-Gebiley,Somalia,60993.44518,,
-Ankazomborona,Madagascar,62266.06012,,
-Touba,Senegal,1170258.55,,
-Sètiguiya,Guinea,54815.50235,,
-Zuénoula,Côte d'Ivoire,62047.16545,,
-Koutiala,Mali,286417.2678,,
-Bekwai,Ghana,72487.93305,,
-Pouytenga,Burkina Faso,94381.83358,,
-Tchamba,Togo,51096.16733,,
-Ouèssè,Benin,57613.01074,,
-Ilero,Nigeria,64074.5852,,
-Bouza,Niger,66090.68127,,
-Ndop,Cameroon,59417.03379,,
-Chibia,Angola,67791.61761,,
-Kasangulu,Democratic Republic of the Congo,189184.4114,,
-Bokoro,Chad,63728.27135,,
-Fraaisig,South Africa,53885.22748,,
-Kitwe,Zambia,731813.0732,,
-Luweero,Uganda,54596.85727,,
-Sengerema,Tanzania,148039.1977,,
-Imehejek,South Sudan,128401.5906,,
-Inhambane,Mozambique,68997.17065,,
-Ngong,Kenya,75218.89971,,
-Baidoa,Somalia,437223.2307,,
-Manakara,Madagascar,82023.18319,,
-Sédhiou,Senegal,60980.41171,,
-Boukaria,Guinea,54414.23735,,
-Bonon,Côte d'Ivoire,91045.42427,,
-San,Mali,87173.30019,,
-Mampong,Ghana,68579.47077,,
-Tenkodogo,Burkina Faso,105418.7454,,
-Tabligbo,Togo,67702.69288,,
-Savè,Benin,55434.11397,,
-Oke Iho,Nigeria,220540.2343,,
-Abalak,Niger,176156.8112,,
-Foumbot,Cameroon,52185.0737,,
-Caxito,Angola,53145.4393,,
-Kinshasa,Democratic Republic of the Congo,12945682.99,,
-Koumra,Chad,155733.0135,,
-KwaNobuhle,South Africa,127189.6312,,
-Mufulira,Zambia,179085.5227,,
-Vwawa,Tanzania,76244.80638,,
-Lira,Uganda,142859.2164,,
-Ikotos,South Sudan,98913.87103,,
-Beira,Mozambique,627141.8472,,
-Chagni,Ethiopia,106013.6618,,
-Ndenderu,Kenya,54108.76624,,
-Hargeisa,Somalia,1500449.28,,
-Ambohitrimanjaka,Madagascar,58641.89973,,
-Richard-Toll,Senegal,80805.62807,,
-Kankan,Guinea,287892.2956,,
-Gagnoa,Côte d'Ivoire,211572.3068,,
-Mopti,Mali,66634.39635,,
-Ejura,Ghana,53163.80522,,
-Koupéla,Burkina Faso,62822.76192,,
-Vogan,Togo,57378.94443,,
-Porto-Novo,Benin,815039.8996,,
-Saki,Nigeria,392972.6133,,
-Guidan Roumdji,Niger,53979.69071,,
-Kumbo,Cameroon,125455.8693,,
-Sumbe,Angola,193656.4886,,
-Maluku,Democratic Republic of the Congo,94833.70575,,
-Kariega,South Africa,115933.9616,,
-Kabwe,Zambia,236405.3389,,
-Tabora,Tanzania,199592.422,,
-Lugazi,Uganda,58866.56623,,
-Riwoto,South Sudan,432309.6866,,
-Massinga,Mozambique,59267.007,,
-Bedele,Ethiopia,66650.2336,,
-Ongata Rongai,Kenya,144132.1414,,
-Hudur,Somalia,87186.81987,,
-Antananarivo,Madagascar,4255253.768,,
-Kaffrine,Senegal,94450.60387,,
-Banankoro,Guinea,78514.84999,,
-Sinfra,Côte d'Ivoire,120618.454,,
-Sévaré,Mali,144436.7296,,
-Elmina,Ghana,56265.083,,
-Dori,Burkina Faso,61563.10119,,
-Parakou,Benin,392540.7189,,
-Magboro,Nigeria,264612.6568,,
-Dakoro,Niger,113322.2001,,
-Foumban,Cameroon,174723.8181,,
-Chingo,Angola,97605.53171,,
-Kasongo-Lunda,Democratic Republic of the Congo,50199.27215,,
-Bitkine,Chad,92111.61031,,
-Gqeberha,South Africa,806318.7028,,
-Luanshya,Zambia,106792.7255,,
-Mwanza,Tanzania,977475.3385,,
-Njeru,Uganda,56562.95947,,
-Zóbue,Mozambique,81375.41352,,
-Naqamte,Ethiopia,217687.3637,,
-Kiambu,Kenya,77140.93965,,
-Barawa,Somalia,98702.63079,,
-Hell-Ville,Madagascar,67988.54575,,
-Dahra Djoloff,Senegal,73946.19702,,
-Balato,Guinea,67049.19464,,
-Bouaflé,Côte d'Ivoire,154187.4192,,
-Koro,Mali,52443.57591,,
-Cape Coast,Ghana,283454.2262,,
-Fada N'Gourma,Burkina Faso,140170.5088,,
-Kétou,Benin,90464.46799,,
-Eruwa,Nigeria,127062.2471,,
-Maradi,Niger,673215.4418,,
-Ebolowa,Cameroon,158781.0987,,
-Cubal,Angola,106304.1418,,
-Kenge,Democratic Republic of the Congo,108939.9387,,
-Ati,Chad,126644.0721,,
-Kimberley,South Africa,259456.6042,,
-Ndola,Zambia,559469.3247,,
-Nansio,Tanzania,69000.36047,,
-Jinja,Uganda,245758.5263,,
-Vilanculos,Mozambique,75978.17757,,
-Gutin,Ethiopia,50162.91144,,
-Nyeri,Kenya,66311.77765,,
-Buurhakaba,Somalia,128534.0302,,
-Ambanja,Madagascar,55235.43465,,
-Kolda,Senegal,199859.8099,,
-Siguiri,Guinea,304098.5704,,
-Korhogo,Côte d'Ivoire,348793.2526,,
-Timbuktu,Mali,129745.8465,,
-Assin Fosu,Ghana,92069.22174,,
-Ikpinlè,Benin,56050.32875,,
-Ikorodu,Nigeria,863150.4757,,
-Arlit,Niger,121919.9111,,
-Bafia,Cameroon,86252.59385,,
-Seles,Angola,77139.59119,,
-Bandundu,Democratic Republic of the Congo,178670.6199,,
-Sarh,Chad,249114.6378,,
-Motherwell,South Africa,167327.142,,
-Kapiri Mposhi,Zambia,110231.5155,,
-Mbalizi,Tanzania,84221.02736,,
-Iganga,Uganda,147409.7277,,
-Kapoeta,South Sudan,345376.7497,,
-Caia,Mozambique,59906.00841,,
-Agaro,Ethiopia,118709.431,,
-Kitengela,Kenya,105486.4742,,
-Antsiramandroso,Madagascar,310056.2308,,
-Koungheul,Senegal,63226.41215,,
-Tonborho,Guinea,53659.34628,,
-Diégonéfla,Côte d'Ivoire,66949.8769,,
-Konongo,Ghana,79026.05847,,
-Gao,Mali,174987.9601,,
-Pobè,Benin,117567.1649,,
-Iseyin,Nigeria,377456.8719,,
-Tchadoua,Niger,60811.13861,,
-Yaoundé,Cameroon,5479203.927,,
-M'banza Congo,Angola,340621.6882,,
-Masi Manimba,Democratic Republic of the Congo,62798.2759,,
-Mongo,Chad,205278.8269,,
-Makhanda,South Africa,68174.41164,,
-Nchelenge,Zambia,102427.6123,,
-Nzega,Tanzania,50213.34022,,
-Soroti,Uganda,77727.08535,,
-Morrumbala,Mozambique,105629.8437,,
-Thika,Kenya,124580.1316,,
-Qoryooley,Somalia,108378.3198,,
-Toamasina,Madagascar,78264.82319,,
-Vélingara,Senegal,84758.86684,,
-Nzérékoré,Guinea,298615.5389,,
-Oumé,Côte d'Ivoire,70987.59311,,
-Mankessim,Ghana,78727.73534,,
-Kidal,Mali,57743.57753,,
-Kandi,Benin,101483.5001,,
-Agbaku,Nigeria,59980.42436,,
-Mayahi,Niger,57393.89223,,
-Mbalmayo,Cameroon,85710.0795,,
-Gabela,Angola,151597.9973,,
-Bikoro,Democratic Republic of the Congo,52059.3052,,
-Faya-Largeau,Chad,183007.2697,,
-Seweding,South Africa,181490.544,,
-Mansa,Zambia,427109.652,,
-Mbeya,Tanzania,587388.0278,,
-Busia,Uganda,88704.5731,,
-Mopeia,Mozambique,63461.04881,,
-Dangla,Ethiopia,88868.19153,,
-Machakos,Kenya,93679.35485,,
-Buulo Mareer,Somalia,113906.4012,,
-Antetezambaro,Madagascar,144776.3591,,
-Médina Gounass,Senegal,67376.52666,,
-Lola,Guinea,59781.37987,,
-Divo,Côte d'Ivoire,178851.6979,,
-Atebubu,Ghana,83943.91204,,
-Nikki,Benin,56333.35684,,
-Sagamu,Nigeria,111818.5865,,
-Aguié,Niger,53474.06157,,
-Banyo,Cameroon,103946.8837,,
-Quipungo,Angola,67004.14186,,
-Mbandaka,Democratic Republic of the Congo,464867.7395,,
-Kyabé,Chad,77972.63727,,
-Bloemfontein,South Africa,482751.3551,,
-Kasama,Zambia,221568.8589,,
-Shinyanga,Tanzania,123672.519,,
-Narus,South Sudan,274881.0818,,
-Mbale City,Uganda,380225.0899,,
-Lichinga,Mozambique,295133.7227,,
-Jinka,Ethiopia,153849.4747,,
-Embu,Kenya,333699.8381,,
-Berbera,Somalia,147172.1842,,
-Antsiranana,Madagascar,99633.78577,,
-Tambacounda,Senegal,241376.9138,,
-Sinko,Guinea,99678.52494,,
-Yamoussoukro,Côte d'Ivoire,227858.5613,,
-Akim Oda,Ghana,112164.8719,,
-Malanville,Benin,103428.2917,,
-Kamba,Nigeria,68515.38383,,
-Agadez,Niger,360388.0329,,
-Sangmélima,Cameroon,93356.07589,,
-Ganda,Angola,101900.9961,,
-Bulungu,Democratic Republic of the Congo,58987.81422,,
-Komani,South Africa,55575.22982,,
-Mpulungu,Zambia,88867.48151,,
-Kyela,Tanzania,71758.79821,,
-Bukalasi,Uganda,374528.2554,,
-Marromeu,Mozambique,101945.9284,,
-Addis Kidan,Ethiopia,52669.54321,,
-Meru,Kenya,117462.5823,,
-Shalaambood,Somalia,72787.76128,,
-Kedougou,Senegal,60486.29122,,
-Ferkéssédougou,Côte d'Ivoire,108042.3774,,
-Tamale,Ghana,774161.6478,,
-Iperu,Nigeria,89532.01883,,
-Tibati,Cameroon,52537.84766,,
-Caluquembe,Angola,90044.89547,,
-Libenge,Democratic Republic of the Congo,65415.85609,,
-Umm Hajar,Chad,118033.7518,,
-Botshabelo-K,South Africa,73085.90962,,
-Mpika,Zambia,58385.33035,,
-Musoma,Tanzania,189130.8342,,
-Buligenyi,Uganda,138526.6429,,
-Milange,Mozambique,120961.7617,,
-Durbete,Ethiopia,69328.96471,,
-KK Market Centre,Kenya,65236.62005,,
-Merca,Somalia,246381.3241,,
-Ouangolodougou,Côte d'Ivoire,69139.69725,,
-Bolgatanga,Ghana,86234.29754,,
-Ishara,Nigeria,74778.56968,,
-Tessaoua,Niger,157245.8879,,
-Ngaoundal,Cameroon,73115.32858,,
-Cuimba,Angola,102343.3132,,
-Kikwit,Democratic Republic of the Congo,488733.9059,,
-Am Timan,Chad,189462.96,,
-Botshabelo-N,South Africa,122484.2943,,
-Mbala,Zambia,57336.81532,,
-Bunda,Tanzania,82903.10407,,
-Mandimba,Mozambique,71382.99744,,
-Injibara,Ethiopia,85412.03052,,
-Mado Gashi,Kenya,60846.88469,,
-Katiola,Côte d'Ivoire,56158.77019,,
-Savelugu,Ghana,86111.94233,,
-Lakowe,Nigeria,76351.37321,,
-Matamèye,Niger,71119.24802,,
-Garoua,Cameroon,699540.8696,,
-Xangongo,Angola,110199.917,,
-Kahemba,Democratic Republic of the Congo,191592.7143,,
-Abéché,Chad,395144.5101,,
-Welkom,South Africa,161045.941,,
-Katete,Zambia,52406.45114,,
-Bariadi,Tanzania,56154.95254,,
-Nicoadala,Mozambique,57527.66169,,
-Aykel,Ethiopia,106434.4321,,
-Bute Town,Kenya,57068.35163,,
-Wanlaweyn,Somalia,301525.1673,,
-Bouaké,Côte d'Ivoire,704948.97,,
-Walewale,Ghana,55984.4038,,
-Ilishan,Nigeria,91301.78428,,
-Tanout,Niger,81755.5218,,
-Ngong,Cameroon,85070.818,,
-Matala,Angola,297590.0721,,
-Makanza,Democratic Republic of the Congo,71311.5879,,
-Biltine,Chad,106749.7585,,
-Alabama,South Africa,144961.679,,
-Chipata,Zambia,189254.1179,,
-Tarime,Tanzania,63531.11068,,
-Quelimane,Mozambique,521923.5175,,
-Seka,Ethiopia,103256.9533,,
-Habswein,Kenya,77526.16248,,
-Beledweyne,Somalia,246587.5611,,
-Dimbokro,Côte d'Ivoire,59649.98138,,
-Nkawkaw,Ghana,80945.13667,,
-Igboho,Nigeria,141437.1048,,
-Magaria,Niger,129206.8051,,
-Ngaoundéré,Cameroon,359176.4499,,
-Calulo,Angola,69279.85105,,
-Bozene,Democratic Republic of the Congo,60535.06255,,
-Goz Beïda,Chad,60206.85052,,
-Uitkomsdal,South Africa,85890.20122,,
-Nakonde,Zambia,139612.7631,,
-Makambako,Tanzania,59618.96959,,
-Cuamba,Mozambique,79435.8962,,
-Jimma,Ethiopia,356723.876,,
-Ukunda,Kenya,61074.44666,,
-Afgooye,Somalia,53671.72446,,
-Dabou,Côte d'Ivoire,73883.06026,,
-Agona Swedru,Ghana,175249.453,,
-Ibadan,Nigeria,4043954.957,,
-Zinder,Niger,748965.2014,,
-Bertoua,Cameroon,204775.4185,,
-N'dalatando,Angola,107129.3473,,
-Bwamanda,Democratic Republic of the Congo,59973.87405,,
-Adré,Chad,101240.1057,,
-Sisulu Village,South Africa,151960.7384,,
-Lundazi,Zambia,57915.03354,,
-Singida,Tanzania,120810.2959,,
-Muala,Mozambique,70976.33067,,
-Tilili,Ethiopia,52506.60634,,
-Mombasa,Kenya,1617738.965,,
-Burao,Somalia,403480.599,,
-Agboville,Côte d'Ivoire,74339.27283,,
-Asamankese,Ghana,100710.5265,,
-Kishi,Nigeria,175076.0201,,
-Gouré,Niger,57489.90876,,
-Mokolo,Cameroon,167263.3535,,
-Caconda,Angola,72157.21953,,
-Gungu,Democratic Republic of the Congo,77411.31166,,
-Tiné-Djagaraba,Chad,91023.38312,,
-East London,South Africa,244635.4694,,
-Songea,Tanzania,228439.5078,,
-Mocuba,Mozambique,182674.659,,
-Burie,Ethiopia,75659.87934,,
-Garissa,Kenya,422142.9108,,
-Mogadishu,Somalia,4798452.599,,
-Abidjan,Côte d'Ivoire,6450315.611,,
-Yeji,Ghana,71894.74463,,
-Oyo,Nigeria,791680.8508,,
-Maïné-Soroa,Niger,82052.64694,,
-Guider,Cameroon,179745.6857,,
-Quibala,Angola,59122.14628,,
-Idiofa,Democratic Republic of the Congo,131882.5099,,
-Karyari,Chad,191898.4604,,
-Potchefstroom,South Africa,182281.9105,,
-Iringa,Tanzania,217074.0422,,
-Gurue,Mozambique,119934.5426,,
-Jumba la Mtwana,Kenya,77070.29911,,
-Balcad,Somalia,160177.8167,,
-Daoukro,Côte d'Ivoire,62499.82864,,
-Winneba,Ghana,116442.9113,,
-Ijebu-Ode,Nigeria,487147.0804,,
-Diffa,Niger,119289.9628,,
-Figuil,Cameroon,61161.06602,,
-Waku Kungo,Angola,103118.7293,,
-Budjala,Democratic Republic of the Congo,52011.94373,,
-Um Dukhan,Chad,72946.14715,,
-Kroonstad,South Africa,88320.97658,,
-Dodoma,Tanzania,267332.8444,,
-Maganja,Mozambique,57025.80338,,
-Merawi,Ethiopia,80667.62641,,
-Jowhar,Somalia,221075.5432,,
-Adzopé,Côte d'Ivoire,75864.51196,,
-Salaga,Ghana,71904.62723,,
-Ago-Iwoye,Nigeria,179068.8403,,
-N'guigmi,Niger,70390.60936,,
-Mora,Cameroon,100279.3436,,
-Uíge,Angola,237785.821,,
-Gemena,Democratic Republic of the Congo,411587.8826,,
-Rustenburg,South Africa,164634.9564,,
-Ifakara,Tanzania,98173.75739,,
-Pebane,Mozambique,51815.62204,,
-Bulo Burto,Somalia,68288.11851,,
-Grand-Bassam,Côte d'Ivoire,70176.13543,,
-Accra,Ghana,5890466.043,,
-Epe,Nigeria,136280.2543,,
-Fotokol,Cameroon,60452.94701,,
-Ondjiva,Angola,321292.4321,,
-Basankusu,Democratic Republic of the Congo,128733.8118,,
-Khutsong,South Africa,65826.62997,,
-Arusha,Tanzania,806517.8929,,
-Genet,Ethiopia,54084.52784,,
-Moma,Mozambique,50931.78712,,
-Wajir,Kenya,219967.0344,,
-Jalalaqsi,Somalia,52041.02715,,
-Abengourou,Côte d'Ivoire,137373.5053,,
-Suhum,Ghana,92457.64946,,
-Bunza,Nigeria,88279.21049,,
-Maroua,Cameroon,512800.867,,
-Caála,Angola,78876.79854,,
-Dibaya-Lubwe,Democratic Republic of the Congo,61939.43619,,
-Paardekraal Ext 2,South Africa,102445.8152,,
-Sawla Felege Neway,Ethiopia,53005.66006,,
-Tunduru,Tanzania,50409.96989,,
-Montepuez,Mozambique,112428.3799,,
-Malindi,Kenya,122250.1345,,
-Guriel,Somalia,89393.21144,,
-Aboisso,Côte d'Ivoire,61342.65312,,
-New Tafo Akim,Ghana,92641.03975,,
-Ijebu-Igbo,Nigeria,251772.3235,,
-Meiganga,Cameroon,109946.6702,,
-Santa Clara,Angola,80427.54546,,
-Bili,Democratic Republic of the Congo,60557.53626,,
-Mohlakeng,South Africa,91501.80051,,
-Bako,Ethiopia,84882.18601,,
-Moshi,Tanzania,317890.0627,,
-Nampula,Mozambique,1028776.293,,
-Masalani,Kenya,53355.2878,,
-Adado,Somalia,50043.7214,,
-Agnibilékrou,Côte d'Ivoire,58853.56128,,
-Nsawam,Ghana,73339.76642,,
-Dakingari,Nigeria,71582.30025,,
-Kaélé,Cameroon,110020.2433,,
-Huambo,Angola,582510.2496,,
-Brabanta,Democratic Republic of the Congo,57551.25602,,
-Vanderbijlpark,South Africa,245429.4234,,
-Shambu,Ethiopia,51992.56622,,
-Morogoro,Tanzania,407719.3676,,
-Chiure-Sede,Mozambique,54336.48652,,
-Takaba,Kenya,138348.1291,,
-Bondoukou,Côte d'Ivoire,108445.0275,,
-Koforidua,Ghana,220999.9709,,
-Igbeti,Nigeria,110522.5045,,
-Batouri,Cameroon,80406.39233,,
-Bailundo,Angola,65860.44759,,
-Karawa,Democratic Republic of the Congo,56970.26811,,
-Modderspruit,South Africa,68991.03697,,
-Kola Diba,Ethiopia,55850.16098,,
-Masasi,Tanzania,72491.84693,,
-Namialo,Mozambique,53113.86308,,
-Lulis,Kenya,50357.42068,,
-Erigavo,Somalia,116188.0347,,
-Bawku,Ghana,74672.11088,,
-Birnin Kebbi,Nigeria,298462.4412,,
-Kousseri,Cameroon,233755.0582,,
-Mussende,Angola,54411.89006,,
-Binga,Democratic Republic of the Congo,57488.51839,,
-Sasolburg,South Africa,129513.4662,,
-Gonder,Ethiopia,372444.5387,,
-Picha Ya Ndege,Tanzania,93938.24056,,
-Monapo,Mozambique,64250.18389,,
-Banissa,Kenya,81492.51295,,
-Gushiegu,Ghana,52751.31965,,
-Taba,Nigeria,53077.44484,,
-Pouss,Cameroon,60116.66873,,
-Malanje,Angola,1052123.793,,
-Ilebo,Democratic Republic of the Congo,309940.0591,,
-Johannesburg,South Africa,8592842.571,,
-Bahir Dar,Ethiopia,483227.6216,,
-Bagamoyo,Tanzania,56123.8626,,
-Miézi,Mozambique,51297.60102,,
-Dagahaley Refugee Camp,Kenya,81387.2397,,
-Las Anod,Somalia,113075.3864,,
-Donkorkrom,Ghana,58450.64332,,
-Iwo,Nigeria,263227.2085,,
-Yokadouma,Cameroon,52081.74299,,
-Andulo,Angola,55412.07912,,
-Tshikapa,Democratic Republic of the Congo,1074734.771,,
-Evaton,South Africa,738086.7596,,
-Asendabo,Ethiopia,51918.84838,,
-Dar es-Salaam,Tanzania,8918524.621,,
-Mocímboa da Praia,Mozambique,64754.24618,,
-Dadaab,Kenya,165576.9589,,
-Ceel Dheer,Somalia,63120.14398,,
-Yendi,Ghana,158847.8,,
-Ikire,Nigeria,208746.9899,,
-Yagoua,Cameroon,108041.3279,,
-Cuito,Angola,879631.625,,
-Tshibinda,Democratic Republic of the Congo,60650.36971,,
-Lenasia,South Africa,423514.252,,
-Sheraro,Ethiopia,54692.12356,,
-Tanga,Tanzania,252498.7515,,
-Pemba,Mozambique,290869.0296,,
-Ifo Refugee Camp,Kenya,77522.74094,,
-Galkayo,Somalia,187161.5973,,
-Odumase,Ghana,122380.2835,,
-Bagudo,Nigeria,53211.63627,,
-Touboro,Cameroon,84930.65808,,
-Camacupa,Angola,62600.75422,,
-Kamonia,Democratic Republic of the Congo,70974.62035,,
-Mthatha,South Africa,136893.746,,
-Adet,Ethiopia,68296.32638,,
-Zanzibar City,Tanzania,1026755.37,,
-Nacala,Mozambique,277625.9638,,
-Hagadera Refugee Camp,Kenya,198013.52,,
-Bimbilla,Ghana,82631.33579,,
-Ogbomosho,Nigeria,429184.5318,,
-Menongue,Angola,212794.7824,,
-Businga,Democratic Republic of the Congo,73511.99379,,
-Brits,South Africa,56365.07028,,
-Demebecha,Ethiopia,53762.78985,,
-Mtwara,Tanzania,116730.8941,,
-Dambai,Ghana,63613.49186,,
-Ejigbo,Nigeria,144553.0614,,
-Cafunfo,Angola,172091.2819,,
-Boende,Democratic Republic of the Congo,144791.84,,
-Mboloko,South Africa,99376.38789,,
-ዳባት,Ethiopia,69049.36027,,
-Garoowe,Somalia,98360.08406,,
-Kpando,Ghana,53085.87788,,
-Jega,Nigeria,230737.2099,,
-Luena,Angola,892161.9914,,
-Mutombo-Lamata,Democratic Republic of the Congo,68120.18769,,
-Soshanguve,South Africa,1463579.384,,
-Wereta,Ethiopia,94430.77575,,
-El Wak,Kenya,262677.1425,,
-Bosaso,Somalia,246624.0986,,
-Ho,Ghana,237757.4519,,
-Gbongan,Nigeria,88255.09005,,
-Camanongue,Angola,54708.55056,,
-Gbadolite,Democratic Republic of the Congo,100793.6871,,
-Bethlehem,South Africa,61713.55957,,
-Lafey,Kenya,67851.57451,,
-Qardho,Somalia,105712.8698,,
-Hohoe,Ghana,154336.6986,,
-Ode-Omu,Nigeria,50896.12456,,
-Saurimo,Angola,432901.4691,,
-Diepsloot,South Africa,201505.3676,,
-Gidole,Ethiopia,54386.34449,,
-Mandera,Kenya,130114.1799,,
-Nkwanta,Ghana,51577.594,,
-Ede,Nigeria,122020.1243,,
-Lumeje,Angola,59982.22926,,
-Pretoria,South Africa,1826231.895,,
-Adis Zemen,Ethiopia,55838.8849,,
-Akatsi,Ghana,74788.50348,,
-Ipetumodu,Nigeria,64986.39822,,
-Lucapa,Angola,122575.751,,
-Kakumba,Democratic Republic of the Congo,80996.26061,,
-Centurion,South Africa,358903.2959,,
-Debark,Ethiopia,140658.4549,,
-Tegbi,Ghana,76149.79464,,
-Oshogbo,Nigeria,832611.3211,,
-Dundo,Angola,229164.5071,,
-Dekese,Democratic Republic of the Congo,70131.82315,,
-Brakpan,South Africa,57758.06179,,
-Konso,Ethiopia,84714.18211,,
-Aflao,Ghana,151442.8009,,
-Argungu,Nigeria,158199.6502,,
-Bundas,Angola,86107.89995,,
-Lwebo,Democratic Republic of the Congo,136870.9873,,
-Masetjhaba View,South Africa,509304.9879,,
-Debre Markos,Ethiopia,142237.5255,,
-Koko,Nigeria,116022.6567,,
-Nzagi,Angola,99059.42776,,
-Lisala,Democratic Republic of the Congo,226972.7227,,
-Chief Albert Luthuli Park,South Africa,430379.5429,,
-New Bussa,Nigeria,69458.833,,
-Luau,Angola,206833.075,,
-Phuthaditjhaba,South Africa,162201.3854,,
-Arba Minch,Ethiopia,171917.0218,,
-Ilorin,Nigeria,1359616.605,,
-Mweka,Democratic Republic of the Congo,271052.0413,,
-Cazombo,Angola,208652.2517,,
-Ekangala,South Africa,67040.24282,,
-Gimbichu,Ethiopia,82020.70924,,
-Owode Ede,Nigeria,50465.87147,,
-Kakenge,Democratic Republic of the Congo,83427.96198,,
-KwaMhlanga,South Africa,159454.1773,,
-Mota,Ethiopia,118446.1148,,
-Ife,Nigeria,496956.8406,,
-Dilolo,Democratic Republic of the Congo,207055.1996,,
-eMbalenhle,South Africa,139815.1165,,
-Chencha,Ethiopia,83620.46499,,
-Gwandu,Nigeria,52267.8313,,
-Bena-Leka,Democratic Republic of the Congo,77435.42813,,
-Sakhile,South Africa,68976.8479,,
-Hadero,Ethiopia,85932.0222,,
-Tambawal,Nigeria,52655.23868,,
-Demba,Democratic Republic of the Congo,236759.5965,,
-Vosman,South Africa,178343.3357,,
-Inisa,Nigeria,85254.4766,,
-Luiza,Democratic Republic of the Congo,123179.5713,,
-eMalahleni,South Africa,215384.4552,,
-Gouder,Ethiopia,71154.306,,
-Aiyepe,Nigeria,73927.64116,,
-Kananga,Democratic Republic of the Congo,1538649.435,,
-Mokopane,South Africa,108136.693,,
-Debre Tabor,Ethiopia,110895.9692,,
-Ikirun,Nigeria,283483.0153,,
-Yakoma,Democratic Republic of the Congo,76389.5476,,
-eMzinoni,South Africa,58700.61562,,
-Kachise,Ethiopia,55993.13133,,
-Ijagbo Offa,Nigeria,196322.7777,,
-Mashimba,Democratic Republic of the Congo,56387.26528,,
-Middelburg,South Africa,208686.4894,,
-Morsito,Ethiopia,51444.15296,,
-Ifetedo,Nigeria,53452.62732,,
-Bumba,Democratic Republic of the Congo,199405.2305,,
-Ezakheni,South Africa,55802.3694,,
-Yelwa,Nigeria,85477.20327,,
-Musumba,Democratic Republic of the Congo,162245.7081,,
-Pietermaritzburg,South Africa,485402.6809,,
-Areka,Ethiopia,108873.436,,
-Ire,Nigeria,104584.5233,,
-Sandoa,Democratic Republic of the Congo,175731.7506,,
-Polokwane,South Africa,526589.9348,,
-Welkite,Ethiopia,63679.50014,,
-Ilesa,Nigeria,446592.4141,,
-Tshimbulu,Democratic Republic of the Congo,132407.4379,,
-Madadeni,South Africa,279761.325,,
-Ambo,Ethiopia,177561.7632,,
-Okitipupa,Nigeria,215708.4395,,
-Tshimbalanga,Democratic Republic of the Congo,127015.7836,,
-Ermelo,South Africa,86023.86099,,
-Shire,Ethiopia,122947.3986,,
-Igbokoda,Nigeria,167973.3656,,
-Kisenge,Democratic Republic of the Congo,67195.95428,,
-Mpumalanga,South Africa,99605.69994,,
-Sodo,Ethiopia,145382.9241,,
-Iwoye,Nigeria,58776.35583,,
-Kabeya-Kamuanga,Democratic Republic of the Congo,53831.52326,,
-Mankweng,South Africa,78792.48113,,
-Shinshicho,Ethiopia,69112.46124,,
-Ondo,Nigeria,560263.9575,,
-Kamiji,Democratic Republic of the Congo,51316.25362,,
-Durban,South Africa,3270867.743,,
-Doyogena,Ethiopia,59476.33837,,
-Ile Oluji,Nigeria,214394.8101,,
-Kasaji,Democratic Republic of the Congo,314536.9724,,
-Tongaat,South Africa,57301.88553,,
-Tebela,Ethiopia,65128.05556,,
-Irele,Nigeria,178989.1657,,
-Wikong,Democratic Republic of the Congo,69809.26251,,
-Kempville,South Africa,52420.86736,,
-Hossana,Ethiopia,213507.6636,,
-Iludun,Nigeria,81940.19911,,
-Stanger / KwaDukuza,South Africa,50945.42069,,
-Beke Kelate,Ethiopia,64741.06204,,
-Ore,Nigeria,236528.9434,,
-Mwene-Ditu,Democratic Republic of the Congo,306399.2665,,
-Thohoyandou,South Africa,56734.62672,,
-Gende Woin,Ethiopia,54395.464,,
-Ila Orangun,Nigeria,63272.67124,,
-Kasaï-Oriental,Democratic Republic of the Congo,3596107.274,,
-Kanyamazane,South Africa,274518.3192,,
-Boditi,Ethiopia,105531.6559,,
-Ipetu Ijesha,Nigeria,51570.34436,,
-Djulu,Democratic Republic of the Congo,79754.74519,,
-Jerusalem,South Africa,83707.30656,,
-Waliso,Ethiopia,117539.6426,,
-Effon Alaiye,Nigeria,126523.0264,,
-Lukalaba,Democratic Republic of the Congo,95182.51368,,
-Sikhalasenkosi,South Africa,74385.70556,,
-Durame,Ethiopia,165850.9494,,
-Ajagba,Nigeria,99590.25597,,
-Luputa,Democratic Republic of the Congo,202132.411,,
-Matsulu,South Africa,51151.17778,,
-Wegeda,Ethiopia,75892.82869,,
-Salka,Nigeria,52190.32257,,
-Basoko,Democratic Republic of the Congo,62306.29172,,
-KaMaqhekeza,South Africa,101151.1467,,
-Gojo Town,Ethiopia,77156.17045,,
-Share,Nigeria,59253.76985,,
-Yata,Democratic Republic of the Congo,60883.01058,,
-Shone,Ethiopia,87202.63286,,
-Arogbo,Nigeria,56452.8129,,
-Bondo,Democratic Republic of the Congo,73409.38501,,
-Kele,Ethiopia,82436.38748,,
-Mokwa,Nigeria,127118.7683,,
-Tshilenge,Democratic Republic of the Congo,55636.00506,,
-Bechena,Ethiopia,70768.70005,,
-Ikoro,Nigeria,57409.95716,,
-Aketi,Democratic Republic of the Congo,68462.89384,,
-Mertule Mariam,Ethiopia,62615.5655,,
-Aramoko-Ekiti,Nigeria,170789.5777,,
-Bena Muganda,Democratic Republic of the Congo,69557.78099,,
-Ginsi,Ethiopia,58057.71171,,
-Igbara-Odo,Nigeria,74009.13739,,
-Ngandajika,Democratic Republic of the Congo,289514.2712,,
-Alaba Kulito,Ethiopia,173428.7971,,
-Igbara-Oke,Nigeria,78224.90478,,
-Tulu Bolo,Ethiopia,70383.94934,,
-Gummi,Nigeria,98087.37812,,
-Kanyama,Democratic Republic of the Congo,178063.5016,,
-K'Ali K'Esa Bota,Ethiopia,58279.42155,,
-Ijero-Ekiti,Nigeria,156119.4618,,
-Kabinda,Democratic Republic of the Congo,225740.3497,,
-Nefas Meewcha,Ethiopia,79762.99308,,
-Sifawa,Nigeria,52612.33291,,
-Buta,Democratic Republic of the Congo,192830.2627,,
-Axum,Ethiopia,79634.57264,,
-Ipoti,Nigeria,69277.04402,,
-Kamina,Democratic Republic of the Congo,782856.2682,,
-Yabelo,Ethiopia,74505.79917,,
-Omu Aran,Nigeria,112205.2407,,
-Kisangani,Democratic Republic of the Congo,929056.2112,,
-Otun,Nigeria,154591.5047,,
-Kolwezi,Democratic Republic of the Congo,450630.548,,
-Yirga Cheffe,Ethiopia,128060.6738,,
-Ilawe-Ekiti,Nigeria,133763.9842,,
-Banalia,Democratic Republic of the Congo,51553.66605,,
-Gebre Guracha,Ethiopia,93063.084,,
-Ilara Mokin,Nigeria,70906.45108,,
-Kabongo,Democratic Republic of the Congo,105451.9667,,
-Kibet,Ethiopia,75160.06203,,
-Idanre,Nigeria,117412.9655,,
-Kabondo-Dianda,Democratic Republic of the Congo,225093.2964,,
-Bule Hora,Ethiopia,237132.1803,,
-Sokoto,Nigeria,953790.3788,,
-Kabongo,Democratic Republic of the Congo,234793.5608,,
-Wenago,Ethiopia,63030.38531,,
-Akure,Nigeria,712937.9509,,
-Luena,Democratic Republic of the Congo,218416.51,,
-Butajira,Ethiopia,95742.32944,,
-Ido Ekiti,Nigeria,116695.5985,,
-Bukama,Democratic Republic of the Congo,109718.2894,,
-Gedeb,Ethiopia,85737.67407,,
-Ado Ekiti,Nigeria,615574.1737,,
-Dilla,Ethiopia,180887.1814,,
-Ugborodo,Nigeria,115685.469,,
-Lubao,Democratic Republic of the Congo,118232.8502,,
-Adwa,Ethiopia,114262.4038,,
-Zuru,Nigeria,159044.1041,,
-Gwangwa,Ethiopia,68152.32126,,
-Ikere-Ekiti,Nigeria,387297.9557,,
-Holeta Genet,Ethiopia,84084.36819,,
-Rijau,Nigeria,55333.24672,,
-Tenke,Democratic Republic of the Congo,115616.9806,,
-Chucko,Ethiopia,97757.61375,,
-Amarawa,Nigeria,119380.8047,,
-Kitenge,Democratic Republic of the Congo,186252.5675,,
-Irba,Ethiopia,101112.1575,,
-Egosi,Nigeria,98473.37676,,
-Kindu,Democratic Republic of the Congo,265658.5979,,
-Wurno,Nigeria,90172.26861,,
-Kibombo,Democratic Republic of the Congo,51436.88977,,
-Irgalem,Ethiopia,217937.5852,,
-Lafiagi,Nigeria,84934.20967,,
-Fungurume,Democratic Republic of the Congo,304508.2997,,
-Aleta Wendo,Ethiopia,142203.2541,,
-Kontagora,Nigeria,168687.7362,,
-Kakanda,Democratic Republic of the Congo,134322.1278,,
-Leku,Ethiopia,131766.6441,,
-Ise,Nigeria,144667.9465,,
-Hawassa,Ethiopia,446057.3575,,
-Koko,Nigeria,147329.7315,,
-Kikondja,Democratic Republic of the Congo,118628.3679,,
-Gundo Meskel,Ethiopia,106011.2354,,
-Emure-Ekiti,Nigeria,122499.3014,,
-Kambove,Democratic Republic of the Congo,264734.6424,,
-Addis Ababa,Ethiopia,7280462.518,,
-Aisegba,Nigeria,53761.52739,,
-Samba,Democratic Republic of the Congo,67210.66078,,
-Mekane Selam,Ethiopia,75349.75642,,
-Ikole,Nigeria,168771.4101,,
-Mangi 1,Democratic Republic of the Congo,100232.657,,
-Wijigra,Ethiopia,79944.14332,,
-Egbe,Nigeria,126506.9562,,
-Likasi,Democratic Republic of the Congo,712507.2887,,
-Benin City,Nigeria,1912370.433,,
-Punia,Democratic Republic of the Congo,98931.84345,,
-Fiche,Ethiopia,52532.0028,,
-Owo,Nigeria,299594.9017,,
-Lwambo,Democratic Republic of the Congo,176067.21,,
-Sapele,Nigeria,323739.7063,,
-Shashamane,Ethiopia,443093.5025,,
-Ogharefe,Nigeria,131256.0429,,
-Lubutu,Democratic Republic of the Congo,103130.0424,,
-Basha,Ethiopia,109018.7179,,
-Warri,Nigeria,1617738.511,,
-Kibango,Democratic Republic of the Congo,58063.81935,,
-Shufune,Ethiopia,103089.3538,,
-Omuo-Obadore,Nigeria,217009.1256,,
-Kasongo,Democratic Republic of the Congo,169616.4018,,
-Ikare,Nigeria,331030.8783,,
-Malemba-Nkulu,Democratic Republic of the Congo,418461.5007,,
-Arsi Negelle,Ethiopia,246886.546,,
-Akugba,Nigeria,181093.7096,,
-Kingombe,Democratic Republic of the Congo,106986.8619,,
-Bore,Ethiopia,68422.6356,,
-Pategi,Nigeria,71996.36656,,
-Kapolowe,Democratic Republic of the Congo,125479.5934,,
-Ziway,Ethiopia,218532.8098,,
-Ekeremor,Nigeria,102665.1963,,
-Kabala,Democratic Republic of the Congo,61838.503,,
-Lalibela,Ethiopia,75900.17073,,
-Jesse,Nigeria,50007.74637,,
-Lwishia,Democratic Republic of the Congo,100596.6884,,
-Ifon,Nigeria,73751.10359,,
-Mukanga,Democratic Republic of the Congo,140622.7561,,
-Oka-Akoko,Nigeria,122977.4131,,
-Songwe,Democratic Republic of the Congo,56299.29846,,
-Meki,Ethiopia,134591.9042,,
-Isanlu Mopo,Nigeria,150099.0517,,
-Kabalo,Democratic Republic of the Congo,109978.2048,,
-Kefole,Ethiopia,146720.0746,,
-Okwagbe,Nigeria,50615.31591,,
-Ankoro,Democratic Republic of the Congo,141185.7166,,
-Alem Ketema,Ethiopia,55064.78982,,
-Anka,Nigeria,85544.10449,,
-Mulongo,Democratic Republic of the Congo,348914.1682,,
-Bishoftu,Ethiopia,421173.9329,,
-Poko,Democratic Republic of the Congo,67601.84179,,
-Bena,Nigeria,59956.18845,,
-Mukubu,Democratic Republic of the Congo,180314.3398,,
-Bonsa Bota,Ethiopia,210082.9546,,
-Orerokpe,Nigeria,62874.72105,,
-Kipushi,Democratic Republic of the Congo,233450.2729,,
-Adigrat,Ethiopia,151676.0029,,
-Bomadi,Nigeria,86111.21441,,
-Kongolo,Democratic Republic of the Congo,431047.0362,,
-Mek'elē,Ethiopia,381610.6884,,
-Bida,Nigeria,413315.2382,,
-Mwadingusha,Democratic Republic of the Congo,158016.5624,,
-Kersa,Ethiopia,55109.37281,,
-Aiyetoro Gbede,Nigeria,68030.80145,,
-Kyolo,Democratic Republic of the Congo,121560.0868,,
-Shakiso,Ethiopia,106664.9675,,
-Ughelli,Nigeria,300632.8656,,
-Lubumbashi,Democratic Republic of the Congo,2907723.958,,
-Mafara,Nigeria,107418.905,,
-Wamaza,Democratic Republic of the Congo,57681.63556,,
-Kibre Mengist,Ethiopia,108130.3799,,
-Afuze,Nigeria,59824.59609,,
-Lukuni,Democratic Republic of the Congo,58000.34216,,
-Mojo,Ethiopia,106302.5967,,
-Kabba,Nigeria,136367.3139,,
-Bafwasende,Democratic Republic of the Congo,74379.80926,,
-Quiha,Ethiopia,237818.1428,,
-Ibillo,Nigeria,59542.58998,,
-Mitwaba,Democratic Republic of the Congo,80124.49924,,
-Wukro,Ethiopia,61110.39638,,
-Ekpoma,Nigeria,171732.1029,,
-Asella,Ethiopia,209306.7932,,
-Igarra,Nigeria,136787.5863,,
-Maychew,Ethiopia,54568.88922,,
-Abraka,Nigeria,129282.1488,,
-Manono,Democratic Republic of the Congo,582983.6135,,
-Korem,Ethiopia,64726.63859,,
-Amassoma,Nigeria,161946.1869,,
-Shabunda,Democratic Republic of the Congo,88264.30434,,
-Adama,Ethiopia,607616.7186,,
-Maradun,Nigeria,77505.65351,,
-Kitotolo,Democratic Republic of the Congo,104574.6361,,
-Alamata,Ethiopia,92563.59171,,
-Okene,Nigeria,1036026.784,,
-Mbulula,Democratic Republic of the Congo,65862.70949,,
-Itiya,Ethiopia,75358.62847,,
-Agbor,Nigeria,266287.0506,,
-Kasumbalesa,Democratic Republic of the Congo,337698.7077,,
-Dodolla,Ethiopia,157784.0695,,
-Obiaruku,Nigeria,113207.7589,,
-Saramabila,Democratic Republic of the Congo,90692.00722,,
-Asassa,Ethiopia,117598.7592,,
-Irrua,Nigeria,70557.4013,,
-Isiro,Democratic Republic of the Congo,136844.691,,
-Mekoni,Ethiopia,56226.13619,,
-Oleh,Nigeria,166628.5857,,
-Bekoji,Ethiopia,98859.56738,,
-Patani,Nigeria,57533.64714,,
-Nyunzu,Democratic Republic of the Congo,207035.8656,,
-Dera,Ethiopia,83207.31111,,
-Sagbama,Nigeria,77900.91201,,
-Walikale,Democratic Republic of the Congo,68590.09454,,
-Woldia,Ethiopia,141728.8339,,
-Ozoro,Nigeria,101256.8924,,
-Kilwa,Democratic Republic of the Congo,279517.9717,,
-Kobo,Ethiopia,121602.5345,,
-Magagindoke,Nigeria,59342.294,,
-Sakania,Democratic Republic of the Congo,62808.36862,,
-Huruta,Ethiopia,53150.46192,,
-Auchi,Nigeria,207256.136,,
-Kamituga,Democratic Republic of the Congo,216274.7966,,
-Mersa,Ethiopia,76675.5733,,
-Brass,Nigeria,93231.18722,,
-Musangala,Democratic Republic of the Congo,182101.3636,,
-Welenchete,Ethiopia,76450.50797,,
-Yenagoa,Nigeria,565532.1861,,
-Mutabi,Democratic Republic of the Congo,80693.45396,,
-Dessie,Ethiopia,300409.4608,,
-Agaie,Nigeria,82041.83598,,
-Lukonzolwa,Democratic Republic of the Congo,79050.96936,,
-Debre Birhan,Ethiopia,136781.9378,,
-Umunede,Nigeria,88429.44501,,
-Dungu,Democratic Republic of the Congo,83739.85894,,
-Hayq,Ethiopia,52230.47848,,
-Uromi,Nigeria,220391.6048,,
-Mafuo,Democratic Republic of the Congo,88057.73444,,
-Adaba,Ethiopia,73043.98503,,
-Isa,Nigeria,90079.11384,,
-Misisi,Democratic Republic of the Congo,71690.06143,,
-Kombolcha,Ethiopia,276540.8034,,
-Okugbe,Nigeria,70212.60286,,
-Walungu,Democratic Republic of the Congo,54195.72061,,
-Ubiaja,Nigeria,100137.4073,,
-Pweto,Democratic Republic of the Congo,189940.226,,
-Gobesa,Ethiopia,69815.16432,,
-Nembe,Nigeria,162425.1484,,
-Bukavu,Democratic Republic of the Congo,852067.3679,,
-Robe,Ethiopia,74976.95013,,
-Shinkafi,Nigeria,79307.70997,,
-Masisi,Democratic Republic of the Congo,73971.9888,,
-Kwale,Nigeria,104887.7609,,
-Nyangezi,Democratic Republic of the Congo,51202.19037,,
-Kamisee,Ethiopia,62864.59157,,
-Akinima,Nigeria,110459.1284,,
-Rubaya,Democratic Republic of the Congo,153259.4455,,
-Negele,Ethiopia,114698.2694,,
-Minna,Nigeria,503352.867,,
-Ngungu Centre,Democratic Republic of the Congo,52183.36833,,
-Birnin Gwari,Nigeria,84104.70165,,
-Kamanyola,Democratic Republic of the Congo,66454.71725,,
-Fugar,Nigeria,56884.57749,,
-Busisi,Democratic Republic of the Congo,79931.50485,,
-Shoa Robit,Ethiopia,82499.27566,,
-Kaura-Namoda,Nigeria,181434.3136,,
-Luvungi,Democratic Republic of the Congo,54851.45273,,
-Bati,Ethiopia,80641.52296,,
-Ogwashi-Uku,Nigeria,113019.4561,,
-Mambasa,Democratic Republic of the Congo,85713.89441,,
-Ataye,Ethiopia,57852.68094,,
-Baraka,Democratic Republic of the Congo,148713.427,,
-Abomsa,Ethiopia,61590.58235,,
-Lapai,Nigeria,54531.70468,,
-Sake,Democratic Republic of the Congo,79650.72577,,
-Meslo,Ethiopia,72512.18113,,
-Gusau,Nigeria,469151.8893,,
-Kitchanga,Democratic Republic of the Congo,62631.74989,,
-Goba,Ethiopia,63353.84817,,
-Lokoja,Nigeria,715746.1968,,
-Kalemie,Democratic Republic of the Congo,872444.6422,,
-Robe,Ethiopia,148830.8233,,
-Asaba,Nigeria,409379.7668,,
-Uvira,Democratic Republic of the Congo,380103.0074,,
-Akabuka,Nigeria,62142.34906,,
-Goma,Democratic Republic of the Congo,775780.8497,,
-Ahoada,Nigeria,131843.2702,,
-Kanyabayonga,Democratic Republic of the Congo,110314.3193,,
-Mechara,Ethiopia,57198.23345,,
-Omoku,Nigeria,198457.5685,,
-Kirumba,Democratic Republic of the Congo,162229.3312,,
-Gelemso,Ethiopia,78745.01702,,
-Abua,Nigeria,237311.0357,,
-Kitsombiro,Democratic Republic of the Congo,71601.85475,,
-Shiroro,Nigeria,53774.4509,,
-Biakato,Democratic Republic of the Congo,58235.23758,,
-Bedessa,Ethiopia,60818.71922,,
-Butembo,Democratic Republic of the Congo,425059.0667,,
-Ginir,Ethiopia,58078.46517,,
-Agenebode,Nigeria,82325.44309,,
-Kipese,Democratic Republic of the Congo,84666.39225,,
-Chiro,Ethiopia,119717.5673,,
-Zurmi,Nigeria,52670.23853,,
-Loutu,Democratic Republic of the Congo,54358.52537,,
-Filtu,Ethiopia,141543.0438,,
-Soku,Nigeria,60060.9833,,
-Beni,Democratic Republic of the Congo,1872704.98,,
-Hirna,Ethiopia,54016.92864,,
-Ebocha,Nigeria,71778.62477,,
-Rutshuru,Democratic Republic of the Congo,190498.3048,,
-Idah,Nigeria,169791.8935,,
-Durba,Democratic Republic of the Congo,158744.5524,,
-Karamile,Ethiopia,83424.90797,,
-Onitsha,Nigeria,5788295.914,,
-Nyamilima,Democratic Republic of the Congo,52003.30342,,
-Elele Alimini,Nigeria,50819.94852,,
-Katanga,Democratic Republic of the Congo,175735.1205,,
-Deder,Ethiopia,53283.81976,,
-Abonnema,Nigeria,373043.3137,,
-Moba,Democratic Republic of the Congo,135449.6289,,
-Chelenko,Ethiopia,58281.44158,,
-Owerri,Nigeria,3594823.131,,
-Mongbwalu,Democratic Republic of the Congo,177453.9554,,
-Burka,Ethiopia,86575.21586,,
-Idama,Nigeria,61796.63404,,
-Bunia,Democratic Republic of the Congo,526337.0149,,
-Dire Dawa,Ethiopia,482064.1833,,
-Chafe,Nigeria,74622.09314,,
-Lingi,Democratic Republic of the Congo,56659.80578,,
-Aweday,Ethiopia,67455.02778,,
-Bugama,Nigeria,273241.3386,,
-Ariwara,Democratic Republic of the Congo,64214.30574,,
-Harar,Ethiopia,219703.6849,,
-Awomama,Nigeria,57519.84512,,
-Aru,Democratic Republic of the Congo,66097.06024,,
-Melka Chireti,Ethiopia,95827.84697,,
-Abaji,Nigeria,68275.11165,,
-Mahagi,Democratic Republic of the Congo,98278.02944,,
-Port Harcourt,Nigeria,2623779.514,,
-Omo,Nigeria,100793.269,,
-Babille,Ethiopia,56462.28587,,
-Yangoji,Nigeria,68471.72232,,
-Dolo,Ethiopia,54678.47097,,
-Dekina,Nigeria,55963.12888,,
-Fik',Ethiopia,172410.1521,,
-Igwuruta,Nigeria,101222.7601,,
-Gwagwalada,Nigeria,314641.55,,
-Jijiga,Ethiopia,425845.4701,,
-Awka,Nigeria,269997.9653,,
-Doka Ashafa,Nigeria,131338.2236,,
-Gidan Mai Ungwan,Nigeria,60228.96375,,
-Kebri Beyah,Ethiopia,73986.33746,,
-Oyigbo,Nigeria,361809.9765,,
-Togechane,Ethiopia,212412.6596,,
-Okrika,Nigeria,277635.2364,,
-Hartishek,Ethiopia,76626.60016,,
-Maji,Nigeria,51551.3367,,
-Degehabur,Ethiopia,122231.4742,,
-Ogale,Nigeria,338276.4946,,
-Djibia,Nigeria,70258.1898,,
-Gode,Ethiopia,164869.8882,,
-Madalla,Nigeria,520664.8001,,
-Ayangba,Nigeria,166230.4234,,
-Bonny,Nigeria,318271.36,,
-Kebri Dehar,Ethiopia,180464.8109,,
-Batsari,Nigeria,60034.79876,,
-Onne,Nigeria,276680.2421,,
-Abudwak,Ethiopia,143673.2247,,
-Kuje,Nigeria,59347.57112,,
-Aboh,Nigeria,1282172.248,,
-Chara,Nigeria,234841.5816,,
-Enugu Umunze,Nigeria,124462.0956,,
-Funtua,Nigeria,224435.6657,,
-Bolo,Nigeria,114459.4284,,
-Abuja,Nigeria,1322229.41,,
-Okpogho,Nigeria,71299.9053,,
-Dere,Nigeria,456498.6535,,
-Bodo,Nigeria,163404.7493,,
-Holo,Nigeria,74893.20127,,
-Kaduna,Nigeria,1937932.023,,
-Rubuchi,Nigeria,131175.5819,,
-Aku,Nigeria,111054.8372,,
-Aba,Nigeria,1472091.316,,
-Bwari,Nigeria,56510.66043,,
-Umu Lawlaw,Nigeria,120245.3641,,
-Kura,Nigeria,70691.80501,,
-Kauran Yankwani,Nigeria,55174.25897,,
-Nsukka,Nigeria,806616.9631,,
-Egwuachi,Nigeria,60764.57232,,
-Bori,Nigeria,143035.1486,,
-Ekenobizi,Nigeria,78617.88707,,
-Dema,Nigeria,93973.13185,,
-Ngodo,Nigeria,106123.1873,,
-Ama Apu,Nigeria,103712.4465,,
-Ngo,Nigeria,222182.3346,,
-Dutsin Ma,Nigeria,148609.3212,,
-Ungwan Shehu,Nigeria,54491.51929,,
-Nine Mile Corner,Nigeria,77433.15604,,
-Uturu,Nigeria,68511.80827,,
-Ekwegbe,Nigeria,81057.40688,,
-Enugu-Ezike,Nigeria,75988.12721,,
-Umuahia,Nigeria,916557.4964,,
-Asarama,Nigeria,72796.76368,,
-Enugu,Nigeria,1086433.765,,
-Katsina,Nigeria,610192.6108,,
-Awgu,Nigeria,58823.32848,,
-Abejukolo,Nigeria,52038.06146,,
-Malumfashi,Nigeria,136413.567,,
-Ado,Nigeria,279808.1804,,
-Agbani,Nigeria,55706.13508,,
-Opobo,Nigeria,78911.62629,,
-Ishiagu,Nigeria,118552.2537,,
-Ikot Aba,Nigeria,101631.2611,,
-Ikot Ide,Nigeria,65035.16612,,
-Uduma,Nigeria,93733.9681,,
-Ankpa,Nigeria,178690.1358,,
-Zaria,Nigeria,720877.213,,
-Charanchi,Nigeria,54307.14839,,
-Amakpo,Nigeria,50962.79246,,
-Uruk Esiet,Nigeria,61263.37989,,
-Nassarawa,Nigeria,90275.46885,,
-Akeze,Nigeria,52864.5448,,
-Ikot Ekpene,Nigeria,399324.8184,,
-Kankiya,Nigeria,57342.35059,,
-Abiriba,Nigeria,140154.1774,,
-Rogo Sabon Gari,Nigeria,50069.60911,,
-Obiozara,Nigeria,54239.27316,,
-Abat,Nigeria,244165.7159,,
-Okoroete,Nigeria,59006.05656,,
-Abak,Nigeria,272749.6553,,
-Ugbokolo,Nigeria,83840.67873,,
-Okposi,Nigeria,127915.7016,,
-Ungwan Tamowa,Nigeria,53246.40018,,
-Nguzu Edda,Nigeria,85658.48021,,
-Ohafia,Nigeria,119684.0125,,
-Mashi,Nigeria,57870.11466,,
-Keffi,Nigeria,162177.7767,,
-Ekeje,Nigeria,78857.12235,,
-Uyo,Nigeria,1606054.354,,
-Gwarzo,Nigeria,100413.2198,,
-Amaseri,Nigeria,59961.80627,,
-Arochukwu,Nigeria,136445.756,,
-Eket,Nigeria,269048.7933,,
-Afikpo,Nigeria,192261.9144,,
-Unguwar Fari,Nigeria,59191.16184,,
-Koi,Nigeria,80002.72561,,
-Upenekang,Nigeria,59933.63661,,
-Kwa Ibo,Nigeria,59747.2504,,
-Uquo,Nigeria,59025.80438,,
-Abakaliki,Nigeria,441689.2033,,
-Ugep,Nigeria,172415.3381,,
-Otukpo,Nigeria,259959.9963,,
-Zango Bichi,Nigeria,109743.7946,,
-Sabuwar Abuja,Nigeria,53556.08678,,
-Okopedi,Nigeria,58213.12773,,
-Ikara,Nigeria,60865.37889,,
-Tarzoho,Nigeria,128564.9716,,
-Daura,Nigeria,335447.8405,,
-Pambeguwa,Nigeria,64098.54094,,
-Oron,Nigeria,422507.9002,,
-Kafanchan,Nigeria,163557.5733,,
-Udung Uko,Nigeria,71256.79334,,
-kazaure,Nigeria,148792.6956,,
-Kano,Nigeria,5110616.249,,
-Doma,Nigeria,121981.0952,,
-Tudun Wada,Nigeria,80973.61029,,
-Calabar,Nigeria,664342.2362,,
-James Town,Nigeria,63549.36824,,
-Kagoro,Nigeria,125949.1736,,
-Rimin Daddo,Nigeria,87316.67055,,
-Akwanga,Nigeria,101758.7596,,
-Zango,Nigeria,63612.38999,,
-Oju,Nigeria,78776.47194,,
-Dambatta,Nigeria,110535.2794,,
-Aliade,Nigeria,52777.8557,,
-Lafia,Nigeria,266607.9348,,
-Makurdi,Nigeria,428736.9887,,
-Yanbarau,Nigeria,98791.76514,,
-Unguwar Findi,Nigeria,98760.6873,,
-Nassarawan Eggon,Nigeria,96892.83826,,
-Ihalav,Nigeria,56278.37232,,
-Samunakar,Nigeria,95183.00065,,
-Ikom,Nigeria,141009.9757,,
-Unguwar Arewa,Nigeria,148682.8764,,
-Okuku Lepuole,Nigeria,58610.34123,,
-Jos,Nigeria,965884.7194,,
-Ogoja,Nigeria,73899.31046,,
-Barakin Gangare,Nigeria,61692.0102,,
-Zango,Nigeria,58296.03557,,
-Unguwar Mahaukci,Nigeria,70496.44873,,
-Tungan Fulani,Nigeria,50973.45308,,
-Bokkos,Nigeria,50618.83042,,
-Gboko,Nigeria,355117.4052,,
-Vandeikya Town,Nigeria,66676.17918,,
-Ringim,Nigeria,59489.92729,,
-Mongu Arna,Nigeria,109765.9329,,
-Obudu,Nigeria,149106.7636,,
-Adikpo,Nigeria,65164.75405,,
-Dutse,Nigeria,175636.0682,,
-Katsina Ala,Nigeria,69005.93002,,
-Gumel,Nigeria,144027.7296,,
-Ugba,Nigeria,64969.08001,,
-Maigatari,Nigeria,83419.38743,,
-Gwolong,Nigeria,97499.35748,,
-Birnin Kudu,Nigeria,95611.78552,,
-Bununu Dass,Nigeria,70549.17344,,
-Ningi,Nigeria,106910.7511,,
-Shendam,Nigeria,63376.4671,,
-Tafawa-Balewa,Nigeria,73250.89432,,
-Jahun,Nigeria,54668.1291,,
-Zaki Biam,Nigeria,76142.2752,,
-Bauchi,Nigeria,636274.7026,,
-Langtang,Nigeria,110981.0419,,
-Wukari,Nigeria,173414.451,,
-Malummaduri,Nigeria,56458.09216,,
-Kafin Hausa,Nigeria,63981.30565,,
-Gwaram,Nigeria,55505.42697,,
-Jamaari,Nigeria,74754.49787,,
-Hadejia,Nigeria,251051.3273,,
-Dengi,Nigeria,66960.96414,,
-Takum,Nigeria,73171.63917,,
-Azare,Nigeria,237747.2326,,
-Giade,Nigeria,68834.15248,,
-Alkalere,Nigeria,106045.1974,,
-Nguru,Nigeria,188839.4469,,
-Katsiro,Nigeria,110443.0948,,
-Misau,Nigeria,122120.6784,,
-Gamawa,Nigeria,55074.46872,,
-Dambam,Nigeria,60344.76238,,
-Dukku,Nigeria,78925.13966,,
-Mutum Biyu,Nigeria,86299.09187,,
-Gashua,Nigeria,139353.4135,,
-Dogari Tiv,Nigeria,62258.92564,,
-Potiskum,Nigeria,400652.7586,,
-KUNDULUN,Nigeria,386160.5552,,
-Biliri,Nigeria,219197.6963,,
-Titi,Nigeria,451431.9374,,
-Damagum,Nigeria,66287.96473,,
-Kaltungo,Nigeria,135944.5594,,
-Gembu,Nigeria,84357.55736,,
-Jalingo,Nigeria,265648.389,,
-Bajoga,Nigeria,129960.863,,
-Serti,Nigeria,69574.72838,,
-Ashaka,Nigeria,67273.27168,,
-Zinna,Nigeria,107040.6151,,
-Ibrahim Baidu,Nigeria,51476.05279,,
-Geidam,Nigeria,136351.0131,,
-Damaturu,Nigeria,110213.9805,,
-Guyuk,Nigeria,70058.83881,,
-Buni Yadi,Nigeria,85505.00052,,
-Shellem,Nigeria,59006.53371,,
-Numan,Nigeria,112091.9887,,
-Maya Belwa,Nigeria,54521.83327,,
-Sangasumi,Nigeria,145472.3596,,
-Biu,Nigeria,217028.2783,,
-Yola,Nigeria,763630.2483,,
-Benisheikh,Nigeria,52921.66654,,
-Dakri,Nigeria,70799.78006,,
-Song,Nigeria,81859.168,,
-Gubio,Nigeria,51368.09878,,
-Damboa,Nigeria,186486.1112,,
-Gombi,Nigeria,130482.5936,,
-Maiduguri,Nigeria,1293405.661,,
-Uba,Nigeria,65878.38339,,
-Mubi,Nigeria,260582.0741,,
-Michika,Nigeria,95114.49742,,
-Monguno,Nigeria,96736.13447,,
-Madagali,Nigeria,72258.32402,,
-Kasugula Bama,Nigeria,107300.2336,,
-Gwoza,Nigeria,216423.9569,,
-Baga,Nigeria,104724.7044,,
-Pulka,Nigeria,96175.28137,,
-Doro Gowon,Nigeria,83371.19824,,
-Dikwa,Nigeria,131212.6129,,
-Gamboru,Nigeria,338698.4729,,
-Banki,Nigeria,61196.31152,,
+City,Country,Population (2025)
+Mindelo,Cabo Verde,88273.87923
+Dakar,Senegal,3970201.794
+Serrekunda,Gambia,1313464.797
+Nouadhibou,Mauritania,177468.9802
+Bissau,Guinea-Bissau,674444.3312
+Kamsar,Guinea,127957.5515
+Freetown,Sierra Leone,2150532.945
+Kayes,Mali,287390.9855
+Monrovia,Liberia,2049817.566
+Danané,Côte d'Ivoire,101136.3078
+Niangoloko,Burkina Faso,73780.51196
+Dormaa Ahenkro,Ghana,84688.8429
+Cinkassé,Togo,77949.04564
+Téra,Niger,98781.27049
+Tanguieta,Benin,51645.32078
+Idi-Iroko,Nigeria,120092.9649
+São Tomé,São Tomé and Príncipe,154878.0805
+Malabo,Equatorial Guinea,729478.227
+Port-Gentil,Gabon,103562.4293
+Limbe,Cameroon,210456.087
+Tômbua,Angola,78748.71133
+Pointe-Noire,Republic of the Congo,665655.8464
+Moanda,Democratic Republic of the Congo,76337.06924
+Walvis Bay,Namibia,84904.15708
+Léré,Chad,74772.16287
+Bouar,Central African Republic,71859.10554
+Tierkloof,South Africa,52800.97695
+Mongu,Zambia,121413.393
+Kanye,Botswana,52205.61235
+Maseru,Lesotho,296516.0661
+Bulawayo,Zimbabwe,492010.9037
+Wau,South Sudan,115385.1009
+Cibitoke,Burundi,56028.19568
+Rubavu,Rwanda,342554.9873
+Manzini,Swaziland,93405.68221
+Kigoma,Tanzania,347891.7651
+Bwera,Uganda,123131.252
+Matola-Rio,Mozambique,54128.19009
+Kasungu,Malawi,59047.0707
+Busia,Kenya,86348.98529
+Teseney,Eritrea,98083.8909
+Dhobley,Somalia,57159.53044
+Toliara,Madagascar,118186.7567
+Ali Sabieh,Djibouti,86780.63403
+Moroni,Comoros,175832.4714
+Mamoudzou,Mayotte,127510.6566
+Le Port,Réunion,105572.3109
+Port Louis,Mauritius,557430.5551
+João Teves,Cabo Verde,161477.1755
+M'bour,Senegal,506407.1053
+Brikama,Gambia,213625.807
+Nouakchott,Mauritania,1625383.896
+Bafatá,Guinea-Bissau,69724.70242
+Boké,Guinea,58796.60876
+Mahera,Sierra Leone,97367.24621
+Kakata,Liberia,78566.32827
+Kita,Mali,80559.87679
+Man,Côte d'Ivoire,205655.7066
+Banfora,Burkina Faso,187824.0147
+Kato,Ghana,137807.4493
+Dapaong,Togo,215916.3371
+Natitingou,Benin,66756.99089
+Tillabéri,Niger,80356.15878
+Meko,Nigeria,86917.24776
+Buea,Cameroon,189165.1939
+Bata,Equatorial Guinea,789800.2459
+Moçâmedes,Angola,405248.6373
+Tshela,Democratic Republic of the Congo,133137.7321
+Sibiti,Republic of the Congo,60351.78908
+Swakopmund,Namibia,77246.78387
+Pala,Chad,129935.2493
+Carnot,Central African Republic,90317.37297
+Masiphumelele,South Africa,50831.16264
+Molepolole,Botswana,121562.1229
+Mwinilunga,Zambia,52434.34108
+Yambio,South Sudan,102732.5936
+Mkoba,Zimbabwe,54654.32832
+Bujumbura,Burundi,1403418.731
+Musanze,Rwanda,144218.4358
+Kasulu,Tanzania,189666.1017
+Kasese,Uganda,100112.2989
+Maputo,Mozambique,3533370.361
+Likuni,Malawi,160123.2554
+Asosa,Ethiopia,136276.8328
+Migori,Kenya,77425.10812
+Barentu,Eritrea,101015.391
+Tadjoura,Djibouti,62279.23161
+Fomboni,Comoros,236188.257
+Le Tampon,Réunion,66485.94005
+Thiès,Senegal,483414.6727
+Gabu,Guinea-Bissau,86490.69096
+Basse Santa Su,Gambia,64316.98188
+Sangarédi,Guinea,86486.31524
+Kaédi,Mauritania,61350.09904
+Kambia,Sierra Leone,75701.58122
+Harbel City,Liberia,55323.05704
+Bamako,Mali,3960562.859
+Guiglo,Côte d'Ivoire,82226.89637
+Bobo-Dioulasso,Burkina Faso,1297389.392
+Wa,Ghana,81255.40457
+Mango,Togo,56063.33
+Djougou,Benin,157892.5678
+Torodi,Niger,65700.32105
+Oja Odan,Nigeria,68007.37907
+Mamfe,Cameroon,85129.37088
+Libreville,Gabon,917056.3782
+Cacongo,Angola,84030.04461
+Nsioni,Democratic Republic of the Congo,73387.19114
+N'Djamena,Chad,1910082.319
+Brazzaville,Republic of the Congo,3190742.929
+Nola,Central African Republic,50105.09628
+Windhoek,Namibia,417841.6386
+Cape Town,South Africa,4338251.176
+Lobatse,Botswana,62160.49325
+Livingstone,Zambia,207975.0533
+Gweru,Zimbabwe,65304.30419
+Bubanza,Burundi,57027.63764
+Rumbek,South Sudan,76197.58067
+Muhanga,Rwanda,65498.55698
+Fort Portal,Uganda,55643.11616
+Mumigunga,Tanzania,129051.0553
+Chókwè,Mozambique,50276.8408
+Lilongwe,Malawi,1018797.715
+Gambela,Ethiopia,105142.1039
+Bungoma,Kenya,98411.45174
+Andatabo,Madagascar,61336.57875
+Bardera,Somalia,147179.2828
+Djibouti,Djibouti,735131.508
+Saint-Denis,Réunion,189854.3756
+Darou Khoudoss,Senegal,65892.27379
+Tanene,Guinea,54726.46378
+Port Loko,Sierra Leone,72165.91764
+Zouérat,Mauritania,50284.91007
+Foya City,Liberia,52684.38198
+Kati,Mali,206375.6557
+Duekoue,Côte d'Ivoire,194869.1287
+Houndé,Burkina Faso,84219.22772
+Sunyani,Ghana,187687.6515
+Kpalimé,Togo,143596.0177
+Aplahoué,Benin,99690.95124
+Niamey,Niger,1600656.083
+Ajara,Nigeria,69585.9599
+Tiko,Cameroon,89593.3157
+Oyem,Gabon,89005.77299
+Cabinda,Angola,1220203.558
+Lukula,Democratic Republic of the Congo,63528.90278
+Fianga,Chad,61231.72345
+Blouberg Rise,South Africa,149508.4566
+Dongou,Republic of the Congo,61084.57622
+Bangui,Central African Republic,1270413.659
+Rundu,Namibia,56841.78631
+Gaborone,Botswana,298992.6473
+Solwezi,Zambia,107345.292
+Kwekwe,Zimbabwe,134107.4783
+Rumonge,Burundi,103918.7538
+Kigali,Rwanda,1621760.398
+Yei,South Sudan,166142.8088
+Mbarara,Uganda,285351.8242
+Mpanda,Tanzania,116980.7215
+Chibuto,Mozambique,84459.96572
+Mzuzu,Malawi,223848.5438
+Dambidollo,Ethiopia,161162.3843
+Vihiga,Kenya,86079.72904
+Keren,Eritrea,255389.4748
+Saakow,Somalia,69341.4985
+Morondava,Madagascar,75420.37823
+Saint-André,Réunion,60621.1399
+Tivaouane,Senegal,138729.0962
+Coyah,Guinea,2991110.752
+Mile 91,Sierra Leone,74204.06774
+Kiffa,Mauritania,89004.99136
+Buchanan,Liberia,79368.3757
+Sénou,Mali,218887.2167
+Buyo,Côte d'Ivoire,51238.11257
+Dédougou,Burkina Faso,87037.40566
+Wenchi,Ghana,54107.02354
+Blitta-Gare,Togo,200654.845
+Lokossa,Benin,96705.42974
+Owode,Nigeria,90425.50518
+Dosso,Niger,236672.7275
+Kumba,Cameroon,304428.2436
+Soyo,Angola,401232.6945
+Lemba Village,Democratic Republic of the Congo,64055.67016
+Moanda,Gabon,125350.04
+Mao,Chad,70324.56065
+Atlantis,South Africa,75926.36449
+Impfondo,Republic of the Congo,360182.6367
+Badokwa,Central African Republic,73587.33596
+Mahalapye,Botswana,61469.37821
+Choma,Zambia,126195.4729
+Zvishavane,Zimbabwe,52779.33926
+Kayanza,Burundi,124447.918
+Kayonza,Rwanda,53237.94025
+Arua,Uganda,215725.9256
+Malakal,South Sudan,91732.1652
+Sumbawanga,Tanzania,184292.8148
+Xai-Xai,Mozambique,200271.9537
+Salima,Malawi,60567.96734
+Kisii,Kenya,190856.9178
+Mendi,Ethiopia,117007.0119
+Asmara,Eritrea,251979.7984
+Luuq لوق,Somalia,56810.69988
+Ambovombe,Madagascar,138577.4137
+Bambey,Senegal,59471.7285
+Fria,Guinea,55494.25271
+Makeni,Sierra Leone,212452.4803
+Voinjama,Liberia,71959.30948
+Ouélessébougou,Mali,52861.45187
+San-Pédro,Côte d'Ivoire,273597.655
+Fassala,Mauritania,114618.262
+Gaoua,Burkina Faso,53779.13915
+Tarkwa,Ghana,65593.45074
+Lomé,Togo,2498073.763
+Comè,Benin,57558.21682
+Agbara,Nigeria,219039.4718
+Filingué,Niger,60026.45185
+Douala,Cameroon,4457861.533
+Buco-Zau,Angola,59535.24817
+Boma,Democratic Republic of the Congo,190065.2531
+Franceville,Gabon,300424.0652
+Bongor,Chad,123624.2478
+Malmesbury,South Africa,55104.44617
+Bétou,Republic of the Congo,349599.6426
+Bambari,Central African Republic,66172.96352
+Francistown,Botswana,116208.6386
+Mumbwa,Zambia,50550.18003
+Kadoma,Zimbabwe,88656.31313
+Ngozi,Burundi,138142.6239
+Koboko,Uganda,87723.61632
+Bor,South Sudan,139876.2628
+Ibamba,Tanzania,57506.28164
+Manica,Mozambique,51796.12479
+Blantyre,Malawi,941888.0305
+Kakamega,Kenya,125259.1883
+Meti Chafi / Tilk u Meti,Ethiopia,66324.19314
+Ghinda,Eritrea,165905.6887
+Kismayo,Somalia,452404.1172
+Saint-Louis,Senegal,263603.0204
+Kindia,Guinea,197263.877
+Magburaka,Sierra Leone,77501.21107
+Gbarnga,Liberia,77864.88304
+Koulikoro,Mali,60806.41479
+Séguéla,Côte d'Ivoire,62010.97137
+Ouahigouya,Burkina Faso,129505.638
+Techiman,Ghana,166351.0354
+Atakpamé,Togo,160358.7765
+Savalou,Benin,63667.52373
+Ilaro,Nigeria,140483.8952
+Gaya,Niger,149329.8705
+Nkongsamba,Cameroon,164405.5738
+N'zeto,Angola,64331.69133
+Kinzao,Democratic Republic of the Congo,191358.1202
+Dourbali,Chad,63974.35006
+Somerset West,South Africa,232390.5489
+Bria,Central African Republic,53673.3722
+Selebi Phikwe,Botswana,54136.74112
+Monze,Zambia,52362.18907
+Chegutu,Zimbabwe,73152.38104
+Gitega,Burundi,176122.5345
+Yumbe,Uganda,68658.52894
+Juba,South Sudan,296086.9767
+Chato,Tanzania,53099.64604
+Catandica,Mozambique,109311.9673
+Zomba,Malawi,77471.11519
+Kisumu,Kenya,452000.4631
+Nedjo,Ethiopia,75735.59832
+Jamame,Somalia,100184.646
+Tolanaro,Madagascar,50851.30354
+Fatick,Senegal,64861.15138
+Labé,Guinea,245719.2091
+Bo,Sierra Leone,376731.1691
+Ganta,Liberia,72447.49004
+Bougouni,Mali,83460.35046
+Soubré,Côte d'Ivoire,160765.5623
+Koudougou,Burkina Faso,165240.0511
+Takoradi,Ghana,1255808.568
+Sokodé,Togo,184962.2224
+Bohicon,Benin,278594.3707
+Aiyetoro,Nigeria,74897.82162
+Dogondoutchi,Niger,128991.7575
+Kribi,Cameroon,127946.8813
+Luanda,Angola,11672133.85
+Matadi,Democratic Republic of the Congo,415703.9417
+Kelo,Chad,127284.0264
+Stellenbosch,South Africa,96052.04384
+Mazabuka,Zambia,76006.75458
+Chinhoyi,Zimbabwe,100652.2773
+Kirundo,Burundi,52050.78764
+Hoima,Uganda,76892.50598
+Bukoba,Tanzania,155944.8882
+Nimule,South Sudan,665398.4615
+Chimoio,Mozambique,519720.7068
+Mangochi,Malawi,67587.88186
+Kitale,Kenya,182451.2779
+Tepi,Ethiopia,141621.9349
+Dekemhare,Eritrea,62982.29961
+Borama,Somalia,343917.8415
+Ambatolahy II,Madagascar,120769.7343
+Ziguinchor,Senegal,288803.6113
+Mamou,Guinea,80758.78551
+Yogomaia,Sierra Leone,50538.89735
+Pleebo,Liberia,62321.58639
+Fana,Mali,70906.64189
+Issia,Côte d'Ivoire,74298.43691
+Yako,Burkina Faso,54965.2178
+Dunkwa-on-Offin,Ghana,60944.50244
+Notsé,Togo,95842.32803
+Whydah,Benin,134852.1815
+Isale,Nigeria,83248.64074
+Tahoua,Niger,369904.5451
+Dschang,Cameroon,63235.96644
+Benguela,Angola,510265.5735
+Luozi,Democratic Republic of the Congo,53120.53052
+Moundou,Chad,257316.0425
+Paarl,South Africa,244652.8874
+Chingola,Zambia,268785.8725
+Masvingo,Zimbabwe,118739.9571
+Muyinga,Burundi,102770.6307
+Mubende,Uganda,66598.40209
+Ushirombo,Tanzania,69899.9125
+Magwi,South Sudan,73581.34209
+Gondola,Mozambique,57039.91993
+Eldoret,Kenya,439306.5233
+Massawa,Eritrea,369309.8604
+Jilib,Somalia,104059.3653
+Mahajanga,Madagascar,220110.4313
+Bignona,Senegal,82776.49342
+Kenema,Sierra Leone,262149.4505
+Faranah,Guinea,102561.0153
+Méagui,Côte d'Ivoire,116228.8474
+Ségou,Mali,286478.2584
+Leo,Burkina Faso,59608.83169
+Kumasi,Ghana,4923114.703
+Kara,Togo,169198.5186
+Tindji,Benin,61140.92587
+Lagos,Nigeria,12846045.23
+Illela,Niger,74897.47766
+Wum,Cameroon,64815.77934
+Lubango,Angola,1331212.795
+Kimpese,Democratic Republic of the Congo,111119.7172
+Laï,Chad,66572.39806
+Worcester,South Africa,86647.78919
+Chililabombwe,Zambia,99789.27984
+Norton,Zimbabwe,94189.04427
+Giteranyi,Burundi,58168.74806
+Masindi,Uganda,52075.81988
+Katoro,Tanzania,163721.6358
+Renk,South Sudan,97082.93991
+Tete,Mozambique,470793.518
+Kericho,Kenya,55990.05095
+Metu,Ethiopia,79503.55378
+Assab,Eritrea,65827.76652
+Antsirabe,Madagascar,54133.52371
+Diourbel,Senegal,220539.7198
+Koidu Town,Sierra Leone,149267.5815
+Guéckédou,Guinea,55437.1354
+Vavoua,Côte d'Ivoire,95900.10594
+Niono-Socoura,Mali,52115.00901
+Sapouy,Burkina Faso,53066.1721
+Kintampo,Ghana,110778.6533
+Anié,Togo,88877.73014
+Allada,Benin,67237.07219
+Igangan,Nigeria,65048.51765
+Birni N'Konni,Niger,181092.4964
+Bamenda,Cameroon,399783.773
+Baía,Angola,207326.8459
+Lukala,Democratic Republic of the Congo,55312.45858
+Moussoro,Chad,128413.6356
+Upington,South Africa,74271.87974
+Kafue,Zambia,82387.52972
+Harare,Zimbabwe,2076037.334
+Masaka,Uganda,141042.289
+Urambo,Tanzania,51251.53819
+Moatize,Mozambique,165147.446
+Mizan Teferi,Ethiopia,70594.83414
+Lodwar,Kenya,68119.30669
+Diinsoor,Somalia,65100.80871
+Ambano,Madagascar,230883.9115
+Louga,Senegal,187360.2719
+Kailahun,Sierra Leone,58471.36005
+Kissidougou,Guinea,116024.2154
+Daloa,Côte d'Ivoire,324486.2606
+Kadiolo,Mali,72363.21831
+Nkoranza,Ghana,71620.31657
+Ouagadougou,Burkina Faso,3616268.287
+Tsévié,Togo,96783.80397
+Dassa-Zoumé,Benin,56173.67146
+Aiyete,Nigeria,67710.90975
+Tamaské Sabon Guida,Niger,53970.36861
+Edéa,Cameroon,91832.43858
+Panguila,Angola,54394.3063
+Kwilu-Ngongo,Democratic Republic of the Congo,141569.4863
+Bebedjia,Chad,60857.25775
+Mossel Bay,South Africa,76856.52117
+Lusaka,Zambia,3658064.188
+Ruwa,Zimbabwe,183053.3971
+Mityana,Uganda,54610.74583
+Geita,Tanzania,176247.5738
+Torit,South Sudan,526256.8321
+Nhamatanda,Mozambique,80327.71054
+Ghimbi,Ethiopia,71648.59126
+Nakuru,Kenya,628217.6479
+Amparihimahitsy,Madagascar,180166.4361
+Kaolack,Senegal,406200.8382
+Kouroussa,Guinea,51808.47664
+Boundiali,Côte d'Ivoire,59196.83519
+Sikasso,Mali,423182.4209
+Obuasi,Ghana,233391.745
+Djibo,Burkina Faso,60410.96764
+Adétikopé,Togo,71174.22638
+Cotonou,Benin,2647117.374
+Abeokuta,Nigeria,806897.1129
+Tchin-Tabaraden,Niger,149097.1405
+Mbouda,Cameroon,65159.25023
+Zango V Centrality,Angola,73314.66972
+Mbanza-Ngungu,Democratic Republic of the Congo,218446.7695
+Goré,Chad,54675.96658
+Oudtshoorn,South Africa,76129.60067
+Chilanga,Zambia,87213.51481
+Marondera,Zimbabwe,88717.13596
+Gulu,Uganda,205487.0389
+Tunduma,Tanzania,152280.3016
+Maxixe,Mozambique,97317.93829
+Shahadi,Ethiopia,63691.01335
+Naivasha,Kenya,244867.7157
+Wajid,Somalia,119799.6654
+Farafangana,Madagascar,74679.29409
+Darou Mousty,Senegal,53486.55792
+Macenta,Guinea,64467.409
+Tengréla,Côte d'Ivoire,60122.20592
+Zégoua,Mali,57825.01713
+Patase,Ghana,101126.1859
+Kaya,Burkina Faso,124685.7743
+Akakopé,Togo,112837.4517
+Covè,Benin,54846.38395
+Igbo Ora,Nigeria,139009.4122
+Madaoua,Niger,159571.1946
+Bafoussam,Cameroon,331777.2622
+Lobito,Angola,509172.5616
+Kisantu,Democratic Republic of the Congo,183794.7034
+Doba,Chad,162832.17
+George,South Africa,199515.2946
+Kalulushi,Zambia,67389.57894
+Mutare,Zimbabwe,147135.4874
+Kampala,Uganda,5177877.659
+Kahama,Tanzania,147472.2356
+Dondo,Mozambique,77491.64274
+Sigmo,Ethiopia,73467.81215
+Nairobi,Kenya,6646256.557
+Gebiley,Somalia,60993.44518
+Ankazomborona,Madagascar,62266.06012
+Touba,Senegal,1170258.55
+Sètiguiya,Guinea,54815.50235
+Zuénoula,Côte d'Ivoire,62047.16545
+Koutiala,Mali,286417.2678
+Bekwai,Ghana,72487.93305
+Pouytenga,Burkina Faso,94381.83358
+Tchamba,Togo,51096.16733
+Ouèssè,Benin,57613.01074
+Ilero,Nigeria,64074.5852
+Bouza,Niger,66090.68127
+Ndop,Cameroon,59417.03379
+Chibia,Angola,67791.61761
+Kasangulu,Democratic Republic of the Congo,189184.4114
+Bokoro,Chad,63728.27135
+Fraaisig,South Africa,53885.22748
+Kitwe,Zambia,731813.0732
+Luweero,Uganda,54596.85727
+Sengerema,Tanzania,148039.1977
+Imehejek,South Sudan,128401.5906
+Inhambane,Mozambique,68997.17065
+Ngong,Kenya,75218.89971
+Baidoa,Somalia,437223.2307
+Manakara,Madagascar,82023.18319
+Sédhiou,Senegal,60980.41171
+Boukaria,Guinea,54414.23735
+Bonon,Côte d'Ivoire,91045.42427
+San,Mali,87173.30019
+Mampong,Ghana,68579.47077
+Tenkodogo,Burkina Faso,105418.7454
+Tabligbo,Togo,67702.69288
+Savè,Benin,55434.11397
+Oke Iho,Nigeria,220540.2343
+Abalak,Niger,176156.8112
+Foumbot,Cameroon,52185.0737
+Caxito,Angola,53145.4393
+Kinshasa,Democratic Republic of the Congo,12945682.99
+Koumra,Chad,155733.0135
+KwaNobuhle,South Africa,127189.6312
+Mufulira,Zambia,179085.5227
+Vwawa,Tanzania,76244.80638
+Lira,Uganda,142859.2164
+Ikotos,South Sudan,98913.87103
+Beira,Mozambique,627141.8472
+Chagni,Ethiopia,106013.6618
+Ndenderu,Kenya,54108.76624
+Hargeisa,Somalia,1500449.28
+Ambohitrimanjaka,Madagascar,58641.89973
+Richard-Toll,Senegal,80805.62807
+Kankan,Guinea,287892.2956
+Gagnoa,Côte d'Ivoire,211572.3068
+Mopti,Mali,66634.39635
+Ejura,Ghana,53163.80522
+Koupéla,Burkina Faso,62822.76192
+Vogan,Togo,57378.94443
+Porto-Novo,Benin,815039.8996
+Saki,Nigeria,392972.6133
+Guidan Roumdji,Niger,53979.69071
+Kumbo,Cameroon,125455.8693
+Sumbe,Angola,193656.4886
+Maluku,Democratic Republic of the Congo,94833.70575
+Kariega,South Africa,115933.9616
+Kabwe,Zambia,236405.3389
+Tabora,Tanzania,199592.422
+Lugazi,Uganda,58866.56623
+Riwoto,South Sudan,432309.6866
+Massinga,Mozambique,59267.007
+Bedele,Ethiopia,66650.2336
+Ongata Rongai,Kenya,144132.1414
+Hudur,Somalia,87186.81987
+Antananarivo,Madagascar,4255253.768
+Kaffrine,Senegal,94450.60387
+Banankoro,Guinea,78514.84999
+Sinfra,Côte d'Ivoire,120618.454
+Sévaré,Mali,144436.7296
+Elmina,Ghana,56265.083
+Dori,Burkina Faso,61563.10119
+Parakou,Benin,392540.7189
+Magboro,Nigeria,264612.6568
+Dakoro,Niger,113322.2001
+Foumban,Cameroon,174723.8181
+Chingo,Angola,97605.53171
+Kasongo-Lunda,Democratic Republic of the Congo,50199.27215
+Bitkine,Chad,92111.61031
+Gqeberha,South Africa,806318.7028
+Luanshya,Zambia,106792.7255
+Mwanza,Tanzania,977475.3385
+Njeru,Uganda,56562.95947
+Zóbue,Mozambique,81375.41352
+Naqamte,Ethiopia,217687.3637
+Kiambu,Kenya,77140.93965
+Barawa,Somalia,98702.63079
+Hell-Ville,Madagascar,67988.54575
+Dahra Djoloff,Senegal,73946.19702
+Balato,Guinea,67049.19464
+Bouaflé,Côte d'Ivoire,154187.4192
+Koro,Mali,52443.57591
+Cape Coast,Ghana,283454.2262
+Fada N'Gourma,Burkina Faso,140170.5088
+Kétou,Benin,90464.46799
+Eruwa,Nigeria,127062.2471
+Maradi,Niger,673215.4418
+Ebolowa,Cameroon,158781.0987
+Cubal,Angola,106304.1418
+Kenge,Democratic Republic of the Congo,108939.9387
+Ati,Chad,126644.0721
+Kimberley,South Africa,259456.6042
+Ndola,Zambia,559469.3247
+Nansio,Tanzania,69000.36047
+Jinja,Uganda,245758.5263
+Vilanculos,Mozambique,75978.17757
+Gutin,Ethiopia,50162.91144
+Nyeri,Kenya,66311.77765
+Buurhakaba,Somalia,128534.0302
+Ambanja,Madagascar,55235.43465
+Kolda,Senegal,199859.8099
+Siguiri,Guinea,304098.5704
+Korhogo,Côte d'Ivoire,348793.2526
+Timbuktu,Mali,129745.8465
+Assin Fosu,Ghana,92069.22174
+Ikpinlè,Benin,56050.32875
+Ikorodu,Nigeria,863150.4757
+Arlit,Niger,121919.9111
+Bafia,Cameroon,86252.59385
+Seles,Angola,77139.59119
+Bandundu,Democratic Republic of the Congo,178670.6199
+Sarh,Chad,249114.6378
+Motherwell,South Africa,167327.142
+Kapiri Mposhi,Zambia,110231.5155
+Mbalizi,Tanzania,84221.02736
+Iganga,Uganda,147409.7277
+Kapoeta,South Sudan,345376.7497
+Caia,Mozambique,59906.00841
+Agaro,Ethiopia,118709.431
+Kitengela,Kenya,105486.4742
+Antsiramandroso,Madagascar,310056.2308
+Koungheul,Senegal,63226.41215
+Tonborho,Guinea,53659.34628
+Diégonéfla,Côte d'Ivoire,66949.8769
+Konongo,Ghana,79026.05847
+Gao,Mali,174987.9601
+Pobè,Benin,117567.1649
+Iseyin,Nigeria,377456.8719
+Tchadoua,Niger,60811.13861
+Yaoundé,Cameroon,5479203.927
+M'banza Congo,Angola,340621.6882
+Masi Manimba,Democratic Republic of the Congo,62798.2759
+Mongo,Chad,205278.8269
+Makhanda,South Africa,68174.41164
+Nchelenge,Zambia,102427.6123
+Nzega,Tanzania,50213.34022
+Soroti,Uganda,77727.08535
+Morrumbala,Mozambique,105629.8437
+Thika,Kenya,124580.1316
+Qoryooley,Somalia,108378.3198
+Toamasina,Madagascar,78264.82319
+Vélingara,Senegal,84758.86684
+Nzérékoré,Guinea,298615.5389
+Oumé,Côte d'Ivoire,70987.59311
+Mankessim,Ghana,78727.73534
+Kidal,Mali,57743.57753
+Kandi,Benin,101483.5001
+Agbaku,Nigeria,59980.42436
+Mayahi,Niger,57393.89223
+Mbalmayo,Cameroon,85710.0795
+Gabela,Angola,151597.9973
+Bikoro,Democratic Republic of the Congo,52059.3052
+Faya-Largeau,Chad,183007.2697
+Seweding,South Africa,181490.544
+Mansa,Zambia,427109.652
+Mbeya,Tanzania,587388.0278
+Busia,Uganda,88704.5731
+Mopeia,Mozambique,63461.04881
+Dangla,Ethiopia,88868.19153
+Machakos,Kenya,93679.35485
+Buulo Mareer,Somalia,113906.4012
+Antetezambaro,Madagascar,144776.3591
+Médina Gounass,Senegal,67376.52666
+Lola,Guinea,59781.37987
+Divo,Côte d'Ivoire,178851.6979
+Atebubu,Ghana,83943.91204
+Nikki,Benin,56333.35684
+Sagamu,Nigeria,111818.5865
+Aguié,Niger,53474.06157
+Banyo,Cameroon,103946.8837
+Quipungo,Angola,67004.14186
+Mbandaka,Democratic Republic of the Congo,464867.7395
+Kyabé,Chad,77972.63727
+Bloemfontein,South Africa,482751.3551
+Kasama,Zambia,221568.8589
+Shinyanga,Tanzania,123672.519
+Narus,South Sudan,274881.0818
+Mbale City,Uganda,380225.0899
+Lichinga,Mozambique,295133.7227
+Jinka,Ethiopia,153849.4747
+Embu,Kenya,333699.8381
+Berbera,Somalia,147172.1842
+Antsiranana,Madagascar,99633.78577
+Tambacounda,Senegal,241376.9138
+Sinko,Guinea,99678.52494
+Yamoussoukro,Côte d'Ivoire,227858.5613
+Akim Oda,Ghana,112164.8719
+Malanville,Benin,103428.2917
+Kamba,Nigeria,68515.38383
+Agadez,Niger,360388.0329
+Sangmélima,Cameroon,93356.07589
+Ganda,Angola,101900.9961
+Bulungu,Democratic Republic of the Congo,58987.81422
+Komani,South Africa,55575.22982
+Mpulungu,Zambia,88867.48151
+Kyela,Tanzania,71758.79821
+Bukalasi,Uganda,374528.2554
+Marromeu,Mozambique,101945.9284
+Addis Kidan,Ethiopia,52669.54321
+Meru,Kenya,117462.5823
+Shalaambood,Somalia,72787.76128
+Kedougou,Senegal,60486.29122
+Ferkéssédougou,Côte d'Ivoire,108042.3774
+Tamale,Ghana,774161.6478
+Iperu,Nigeria,89532.01883
+Tibati,Cameroon,52537.84766
+Caluquembe,Angola,90044.89547
+Libenge,Democratic Republic of the Congo,65415.85609
+Umm Hajar,Chad,118033.7518
+Botshabelo-K,South Africa,73085.90962
+Mpika,Zambia,58385.33035
+Musoma,Tanzania,189130.8342
+Buligenyi,Uganda,138526.6429
+Milange,Mozambique,120961.7617
+Durbete,Ethiopia,69328.96471
+KK Market Centre,Kenya,65236.62005
+Merca,Somalia,246381.3241
+Ouangolodougou,Côte d'Ivoire,69139.69725
+Bolgatanga,Ghana,86234.29754
+Ishara,Nigeria,74778.56968
+Tessaoua,Niger,157245.8879
+Ngaoundal,Cameroon,73115.32858
+Cuimba,Angola,102343.3132
+Kikwit,Democratic Republic of the Congo,488733.9059
+Am Timan,Chad,189462.96
+Botshabelo-N,South Africa,122484.2943
+Mbala,Zambia,57336.81532
+Bunda,Tanzania,82903.10407
+Mandimba,Mozambique,71382.99744
+Injibara,Ethiopia,85412.03052
+Mado Gashi,Kenya,60846.88469
+Katiola,Côte d'Ivoire,56158.77019
+Savelugu,Ghana,86111.94233
+Lakowe,Nigeria,76351.37321
+Matamèye,Niger,71119.24802
+Garoua,Cameroon,699540.8696
+Xangongo,Angola,110199.917
+Kahemba,Democratic Republic of the Congo,191592.7143
+Abéché,Chad,395144.5101
+Welkom,South Africa,161045.941
+Katete,Zambia,52406.45114
+Bariadi,Tanzania,56154.95254
+Nicoadala,Mozambique,57527.66169
+Aykel,Ethiopia,106434.4321
+Bute Town,Kenya,57068.35163
+Wanlaweyn,Somalia,301525.1673
+Bouaké,Côte d'Ivoire,704948.97
+Walewale,Ghana,55984.4038
+Ilishan,Nigeria,91301.78428
+Tanout,Niger,81755.5218
+Ngong,Cameroon,85070.818
+Matala,Angola,297590.0721
+Makanza,Democratic Republic of the Congo,71311.5879
+Biltine,Chad,106749.7585
+Alabama,South Africa,144961.679
+Chipata,Zambia,189254.1179
+Tarime,Tanzania,63531.11068
+Quelimane,Mozambique,521923.5175
+Seka,Ethiopia,103256.9533
+Habswein,Kenya,77526.16248
+Beledweyne,Somalia,246587.5611
+Dimbokro,Côte d'Ivoire,59649.98138
+Nkawkaw,Ghana,80945.13667
+Igboho,Nigeria,141437.1048
+Magaria,Niger,129206.8051
+Ngaoundéré,Cameroon,359176.4499
+Calulo,Angola,69279.85105
+Bozene,Democratic Republic of the Congo,60535.06255
+Goz Beïda,Chad,60206.85052
+Uitkomsdal,South Africa,85890.20122
+Nakonde,Zambia,139612.7631
+Makambako,Tanzania,59618.96959
+Cuamba,Mozambique,79435.8962
+Jimma,Ethiopia,356723.876
+Ukunda,Kenya,61074.44666
+Afgooye,Somalia,53671.72446
+Dabou,Côte d'Ivoire,73883.06026
+Agona Swedru,Ghana,175249.453
+Ibadan,Nigeria,4043954.957
+Zinder,Niger,748965.2014
+Bertoua,Cameroon,204775.4185
+N'dalatando,Angola,107129.3473
+Bwamanda,Democratic Republic of the Congo,59973.87405
+Adré,Chad,101240.1057
+Sisulu Village,South Africa,151960.7384
+Lundazi,Zambia,57915.03354
+Singida,Tanzania,120810.2959
+Muala,Mozambique,70976.33067
+Tilili,Ethiopia,52506.60634
+Mombasa,Kenya,1617738.965
+Burao,Somalia,403480.599
+Agboville,Côte d'Ivoire,74339.27283
+Asamankese,Ghana,100710.5265
+Kishi,Nigeria,175076.0201
+Gouré,Niger,57489.90876
+Mokolo,Cameroon,167263.3535
+Caconda,Angola,72157.21953
+Gungu,Democratic Republic of the Congo,77411.31166
+Tiné-Djagaraba,Chad,91023.38312
+East London,South Africa,244635.4694
+Songea,Tanzania,228439.5078
+Mocuba,Mozambique,182674.659
+Burie,Ethiopia,75659.87934
+Garissa,Kenya,422142.9108
+Mogadishu,Somalia,4798452.599
+Abidjan,Côte d'Ivoire,6450315.611
+Yeji,Ghana,71894.74463
+Oyo,Nigeria,791680.8508
+Maïné-Soroa,Niger,82052.64694
+Guider,Cameroon,179745.6857
+Quibala,Angola,59122.14628
+Idiofa,Democratic Republic of the Congo,131882.5099
+Karyari,Chad,191898.4604
+Potchefstroom,South Africa,182281.9105
+Iringa,Tanzania,217074.0422
+Gurue,Mozambique,119934.5426
+Jumba la Mtwana,Kenya,77070.29911
+Balcad,Somalia,160177.8167
+Daoukro,Côte d'Ivoire,62499.82864
+Winneba,Ghana,116442.9113
+Ijebu-Ode,Nigeria,487147.0804
+Diffa,Niger,119289.9628
+Figuil,Cameroon,61161.06602
+Waku Kungo,Angola,103118.7293
+Budjala,Democratic Republic of the Congo,52011.94373
+Um Dukhan,Chad,72946.14715
+Kroonstad,South Africa,88320.97658
+Dodoma,Tanzania,267332.8444
+Maganja,Mozambique,57025.80338
+Merawi,Ethiopia,80667.62641
+Jowhar,Somalia,221075.5432
+Adzopé,Côte d'Ivoire,75864.51196
+Salaga,Ghana,71904.62723
+Ago-Iwoye,Nigeria,179068.8403
+N'guigmi,Niger,70390.60936
+Mora,Cameroon,100279.3436
+Uíge,Angola,237785.821
+Gemena,Democratic Republic of the Congo,411587.8826
+Rustenburg,South Africa,164634.9564
+Ifakara,Tanzania,98173.75739
+Pebane,Mozambique,51815.62204
+Bulo Burto,Somalia,68288.11851
+Grand-Bassam,Côte d'Ivoire,70176.13543
+Accra,Ghana,5890466.043
+Epe,Nigeria,136280.2543
+Fotokol,Cameroon,60452.94701
+Ondjiva,Angola,321292.4321
+Basankusu,Democratic Republic of the Congo,128733.8118
+Khutsong,South Africa,65826.62997
+Arusha,Tanzania,806517.8929
+Genet,Ethiopia,54084.52784
+Moma,Mozambique,50931.78712
+Wajir,Kenya,219967.0344
+Jalalaqsi,Somalia,52041.02715
+Abengourou,Côte d'Ivoire,137373.5053
+Suhum,Ghana,92457.64946
+Bunza,Nigeria,88279.21049
+Maroua,Cameroon,512800.867
+Caála,Angola,78876.79854
+Dibaya-Lubwe,Democratic Republic of the Congo,61939.43619
+Paardekraal Ext 2,South Africa,102445.8152
+Sawla Felege Neway,Ethiopia,53005.66006
+Tunduru,Tanzania,50409.96989
+Montepuez,Mozambique,112428.3799
+Malindi,Kenya,122250.1345
+Guriel,Somalia,89393.21144
+Aboisso,Côte d'Ivoire,61342.65312
+New Tafo Akim,Ghana,92641.03975
+Ijebu-Igbo,Nigeria,251772.3235
+Meiganga,Cameroon,109946.6702
+Santa Clara,Angola,80427.54546
+Bili,Democratic Republic of the Congo,60557.53626
+Mohlakeng,South Africa,91501.80051
+Bako,Ethiopia,84882.18601
+Moshi,Tanzania,317890.0627
+Nampula,Mozambique,1028776.293
+Masalani,Kenya,53355.2878
+Adado,Somalia,50043.7214
+Agnibilékrou,Côte d'Ivoire,58853.56128
+Nsawam,Ghana,73339.76642
+Dakingari,Nigeria,71582.30025
+Kaélé,Cameroon,110020.2433
+Huambo,Angola,582510.2496
+Brabanta,Democratic Republic of the Congo,57551.25602
+Vanderbijlpark,South Africa,245429.4234
+Shambu,Ethiopia,51992.56622
+Morogoro,Tanzania,407719.3676
+Chiure-Sede,Mozambique,54336.48652
+Takaba,Kenya,138348.1291
+Bondoukou,Côte d'Ivoire,108445.0275
+Koforidua,Ghana,220999.9709
+Igbeti,Nigeria,110522.5045
+Batouri,Cameroon,80406.39233
+Bailundo,Angola,65860.44759
+Karawa,Democratic Republic of the Congo,56970.26811
+Modderspruit,South Africa,68991.03697
+Kola Diba,Ethiopia,55850.16098
+Masasi,Tanzania,72491.84693
+Namialo,Mozambique,53113.86308
+Lulis,Kenya,50357.42068
+Erigavo,Somalia,116188.0347
+Bawku,Ghana,74672.11088
+Birnin Kebbi,Nigeria,298462.4412
+Kousseri,Cameroon,233755.0582
+Mussende,Angola,54411.89006
+Binga,Democratic Republic of the Congo,57488.51839
+Sasolburg,South Africa,129513.4662
+Gonder,Ethiopia,372444.5387
+Picha Ya Ndege,Tanzania,93938.24056
+Monapo,Mozambique,64250.18389
+Banissa,Kenya,81492.51295
+Gushiegu,Ghana,52751.31965
+Taba,Nigeria,53077.44484
+Pouss,Cameroon,60116.66873
+Malanje,Angola,1052123.793
+Ilebo,Democratic Republic of the Congo,309940.0591
+Johannesburg,South Africa,8592842.571
+Bahir Dar,Ethiopia,483227.6216
+Bagamoyo,Tanzania,56123.8626
+Miézi,Mozambique,51297.60102
+Dagahaley Refugee Camp,Kenya,81387.2397
+Las Anod,Somalia,113075.3864
+Donkorkrom,Ghana,58450.64332
+Iwo,Nigeria,263227.2085
+Yokadouma,Cameroon,52081.74299
+Andulo,Angola,55412.07912
+Tshikapa,Democratic Republic of the Congo,1074734.771
+Evaton,South Africa,738086.7596
+Asendabo,Ethiopia,51918.84838
+Dar es-Salaam,Tanzania,8918524.621
+Mocímboa da Praia,Mozambique,64754.24618
+Dadaab,Kenya,165576.9589
+Ceel Dheer,Somalia,63120.14398
+Yendi,Ghana,158847.8
+Ikire,Nigeria,208746.9899
+Yagoua,Cameroon,108041.3279
+Cuito,Angola,879631.625
+Tshibinda,Democratic Republic of the Congo,60650.36971
+Lenasia,South Africa,423514.252
+Sheraro,Ethiopia,54692.12356
+Tanga,Tanzania,252498.7515
+Pemba,Mozambique,290869.0296
+Ifo Refugee Camp,Kenya,77522.74094
+Galkayo,Somalia,187161.5973
+Odumase,Ghana,122380.2835
+Bagudo,Nigeria,53211.63627
+Touboro,Cameroon,84930.65808
+Camacupa,Angola,62600.75422
+Kamonia,Democratic Republic of the Congo,70974.62035
+Mthatha,South Africa,136893.746
+Adet,Ethiopia,68296.32638
+Zanzibar City,Tanzania,1026755.37
+Nacala,Mozambique,277625.9638
+Hagadera Refugee Camp,Kenya,198013.52
+Bimbilla,Ghana,82631.33579
+Ogbomosho,Nigeria,429184.5318
+Menongue,Angola,212794.7824
+Businga,Democratic Republic of the Congo,73511.99379
+Brits,South Africa,56365.07028
+Demebecha,Ethiopia,53762.78985
+Mtwara,Tanzania,116730.8941
+Dambai,Ghana,63613.49186
+Ejigbo,Nigeria,144553.0614
+Cafunfo,Angola,172091.2819
+Boende,Democratic Republic of the Congo,144791.84
+Mboloko,South Africa,99376.38789
+ዳባት,Ethiopia,69049.36027
+Garoowe,Somalia,98360.08406
+Kpando,Ghana,53085.87788
+Jega,Nigeria,230737.2099
+Luena,Angola,892161.9914
+Mutombo-Lamata,Democratic Republic of the Congo,68120.18769
+Soshanguve,South Africa,1463579.384
+Wereta,Ethiopia,94430.77575
+El Wak,Kenya,262677.1425
+Bosaso,Somalia,246624.0986
+Ho,Ghana,237757.4519
+Gbongan,Nigeria,88255.09005
+Camanongue,Angola,54708.55056
+Gbadolite,Democratic Republic of the Congo,100793.6871
+Bethlehem,South Africa,61713.55957
+Lafey,Kenya,67851.57451
+Qardho,Somalia,105712.8698
+Hohoe,Ghana,154336.6986
+Ode-Omu,Nigeria,50896.12456
+Saurimo,Angola,432901.4691
+Diepsloot,South Africa,201505.3676
+Gidole,Ethiopia,54386.34449
+Mandera,Kenya,130114.1799
+Nkwanta,Ghana,51577.594
+Ede,Nigeria,122020.1243
+Lumeje,Angola,59982.22926
+Pretoria,South Africa,1826231.895
+Adis Zemen,Ethiopia,55838.8849
+Akatsi,Ghana,74788.50348
+Ipetumodu,Nigeria,64986.39822
+Lucapa,Angola,122575.751
+Kakumba,Democratic Republic of the Congo,80996.26061
+Centurion,South Africa,358903.2959
+Debark,Ethiopia,140658.4549
+Tegbi,Ghana,76149.79464
+Oshogbo,Nigeria,832611.3211
+Dundo,Angola,229164.5071
+Dekese,Democratic Republic of the Congo,70131.82315
+Brakpan,South Africa,57758.06179
+Konso,Ethiopia,84714.18211
+Aflao,Ghana,151442.8009
+Argungu,Nigeria,158199.6502
+Bundas,Angola,86107.89995
+Lwebo,Democratic Republic of the Congo,136870.9873
+Masetjhaba View,South Africa,509304.9879
+Debre Markos,Ethiopia,142237.5255
+Koko,Nigeria,116022.6567
+Nzagi,Angola,99059.42776
+Lisala,Democratic Republic of the Congo,226972.7227
+Chief Albert Luthuli Park,South Africa,430379.5429
+New Bussa,Nigeria,69458.833
+Luau,Angola,206833.075
+Phuthaditjhaba,South Africa,162201.3854
+Arba Minch,Ethiopia,171917.0218
+Ilorin,Nigeria,1359616.605
+Mweka,Democratic Republic of the Congo,271052.0413
+Cazombo,Angola,208652.2517
+Ekangala,South Africa,67040.24282
+Gimbichu,Ethiopia,82020.70924
+Owode Ede,Nigeria,50465.87147
+Kakenge,Democratic Republic of the Congo,83427.96198
+KwaMhlanga,South Africa,159454.1773
+Mota,Ethiopia,118446.1148
+Ife,Nigeria,496956.8406
+Dilolo,Democratic Republic of the Congo,207055.1996
+eMbalenhle,South Africa,139815.1165
+Chencha,Ethiopia,83620.46499
+Gwandu,Nigeria,52267.8313
+Bena-Leka,Democratic Republic of the Congo,77435.42813
+Sakhile,South Africa,68976.8479
+Hadero,Ethiopia,85932.0222
+Tambawal,Nigeria,52655.23868
+Demba,Democratic Republic of the Congo,236759.5965
+Vosman,South Africa,178343.3357
+Inisa,Nigeria,85254.4766
+Luiza,Democratic Republic of the Congo,123179.5713
+eMalahleni,South Africa,215384.4552
+Gouder,Ethiopia,71154.306
+Aiyepe,Nigeria,73927.64116
+Kananga,Democratic Republic of the Congo,1538649.435
+Mokopane,South Africa,108136.693
+Debre Tabor,Ethiopia,110895.9692
+Ikirun,Nigeria,283483.0153
+Yakoma,Democratic Republic of the Congo,76389.5476
+eMzinoni,South Africa,58700.61562
+Kachise,Ethiopia,55993.13133
+Ijagbo Offa,Nigeria,196322.7777
+Mashimba,Democratic Republic of the Congo,56387.26528
+Middelburg,South Africa,208686.4894
+Morsito,Ethiopia,51444.15296
+Ifetedo,Nigeria,53452.62732
+Bumba,Democratic Republic of the Congo,199405.2305
+Ezakheni,South Africa,55802.3694
+Yelwa,Nigeria,85477.20327
+Musumba,Democratic Republic of the Congo,162245.7081
+Pietermaritzburg,South Africa,485402.6809
+Areka,Ethiopia,108873.436
+Ire,Nigeria,104584.5233
+Sandoa,Democratic Republic of the Congo,175731.7506
+Polokwane,South Africa,526589.9348
+Welkite,Ethiopia,63679.50014
+Ilesa,Nigeria,446592.4141
+Tshimbulu,Democratic Republic of the Congo,132407.4379
+Madadeni,South Africa,279761.325
+Ambo,Ethiopia,177561.7632
+Okitipupa,Nigeria,215708.4395
+Tshimbalanga,Democratic Republic of the Congo,127015.7836
+Ermelo,South Africa,86023.86099
+Shire,Ethiopia,122947.3986
+Igbokoda,Nigeria,167973.3656
+Kisenge,Democratic Republic of the Congo,67195.95428
+Mpumalanga,South Africa,99605.69994
+Sodo,Ethiopia,145382.9241
+Iwoye,Nigeria,58776.35583
+Kabeya-Kamuanga,Democratic Republic of the Congo,53831.52326
+Mankweng,South Africa,78792.48113
+Shinshicho,Ethiopia,69112.46124
+Ondo,Nigeria,560263.9575
+Kamiji,Democratic Republic of the Congo,51316.25362
+Durban,South Africa,3270867.743
+Doyogena,Ethiopia,59476.33837
+Ile Oluji,Nigeria,214394.8101
+Kasaji,Democratic Republic of the Congo,314536.9724
+Tongaat,South Africa,57301.88553
+Tebela,Ethiopia,65128.05556
+Irele,Nigeria,178989.1657
+Wikong,Democratic Republic of the Congo,69809.26251
+Kempville,South Africa,52420.86736
+Hossana,Ethiopia,213507.6636
+Iludun,Nigeria,81940.19911
+Stanger / KwaDukuza,South Africa,50945.42069
+Beke Kelate,Ethiopia,64741.06204
+Ore,Nigeria,236528.9434
+Mwene-Ditu,Democratic Republic of the Congo,306399.2665
+Thohoyandou,South Africa,56734.62672
+Gende Woin,Ethiopia,54395.464
+Ila Orangun,Nigeria,63272.67124
+Kasaï-Oriental,Democratic Republic of the Congo,3596107.274
+Kanyamazane,South Africa,274518.3192
+Boditi,Ethiopia,105531.6559
+Ipetu Ijesha,Nigeria,51570.34436
+Djulu,Democratic Republic of the Congo,79754.74519
+Jerusalem,South Africa,83707.30656
+Waliso,Ethiopia,117539.6426
+Effon Alaiye,Nigeria,126523.0264
+Lukalaba,Democratic Republic of the Congo,95182.51368
+Sikhalasenkosi,South Africa,74385.70556
+Durame,Ethiopia,165850.9494
+Ajagba,Nigeria,99590.25597
+Luputa,Democratic Republic of the Congo,202132.411
+Matsulu,South Africa,51151.17778
+Wegeda,Ethiopia,75892.82869
+Salka,Nigeria,52190.32257
+Basoko,Democratic Republic of the Congo,62306.29172
+KaMaqhekeza,South Africa,101151.1467
+Gojo Town,Ethiopia,77156.17045
+Share,Nigeria,59253.76985
+Yata,Democratic Republic of the Congo,60883.01058
+Shone,Ethiopia,87202.63286
+Arogbo,Nigeria,56452.8129
+Bondo,Democratic Republic of the Congo,73409.38501
+Kele,Ethiopia,82436.38748
+Mokwa,Nigeria,127118.7683
+Tshilenge,Democratic Republic of the Congo,55636.00506
+Bechena,Ethiopia,70768.70005
+Ikoro,Nigeria,57409.95716
+Aketi,Democratic Republic of the Congo,68462.89384
+Mertule Mariam,Ethiopia,62615.5655
+Aramoko-Ekiti,Nigeria,170789.5777
+Bena Muganda,Democratic Republic of the Congo,69557.78099
+Ginsi,Ethiopia,58057.71171
+Igbara-Odo,Nigeria,74009.13739
+Ngandajika,Democratic Republic of the Congo,289514.2712
+Alaba Kulito,Ethiopia,173428.7971
+Igbara-Oke,Nigeria,78224.90478
+Tulu Bolo,Ethiopia,70383.94934
+Gummi,Nigeria,98087.37812
+Kanyama,Democratic Republic of the Congo,178063.5016
+K'Ali K'Esa Bota,Ethiopia,58279.42155
+Ijero-Ekiti,Nigeria,156119.4618
+Kabinda,Democratic Republic of the Congo,225740.3497
+Nefas Meewcha,Ethiopia,79762.99308
+Sifawa,Nigeria,52612.33291
+Buta,Democratic Republic of the Congo,192830.2627
+Axum,Ethiopia,79634.57264
+Ipoti,Nigeria,69277.04402
+Kamina,Democratic Republic of the Congo,782856.2682
+Yabelo,Ethiopia,74505.79917
+Omu Aran,Nigeria,112205.2407
+Kisangani,Democratic Republic of the Congo,929056.2112
+Otun,Nigeria,154591.5047
+Kolwezi,Democratic Republic of the Congo,450630.548
+Yirga Cheffe,Ethiopia,128060.6738
+Ilawe-Ekiti,Nigeria,133763.9842
+Banalia,Democratic Republic of the Congo,51553.66605
+Gebre Guracha,Ethiopia,93063.084
+Ilara Mokin,Nigeria,70906.45108
+Kabongo,Democratic Republic of the Congo,105451.9667
+Kibet,Ethiopia,75160.06203
+Idanre,Nigeria,117412.9655
+Kabondo-Dianda,Democratic Republic of the Congo,225093.2964
+Bule Hora,Ethiopia,237132.1803
+Sokoto,Nigeria,953790.3788
+Kabongo,Democratic Republic of the Congo,234793.5608
+Wenago,Ethiopia,63030.38531
+Akure,Nigeria,712937.9509
+Luena,Democratic Republic of the Congo,218416.51
+Butajira,Ethiopia,95742.32944
+Ido Ekiti,Nigeria,116695.5985
+Bukama,Democratic Republic of the Congo,109718.2894
+Gedeb,Ethiopia,85737.67407
+Ado Ekiti,Nigeria,615574.1737
+Dilla,Ethiopia,180887.1814
+Ugborodo,Nigeria,115685.469
+Lubao,Democratic Republic of the Congo,118232.8502
+Adwa,Ethiopia,114262.4038
+Zuru,Nigeria,159044.1041
+Gwangwa,Ethiopia,68152.32126
+Ikere-Ekiti,Nigeria,387297.9557
+Holeta Genet,Ethiopia,84084.36819
+Rijau,Nigeria,55333.24672
+Tenke,Democratic Republic of the Congo,115616.9806
+Chucko,Ethiopia,97757.61375
+Amarawa,Nigeria,119380.8047
+Kitenge,Democratic Republic of the Congo,186252.5675
+Irba,Ethiopia,101112.1575
+Egosi,Nigeria,98473.37676
+Kindu,Democratic Republic of the Congo,265658.5979
+Wurno,Nigeria,90172.26861
+Kibombo,Democratic Republic of the Congo,51436.88977
+Irgalem,Ethiopia,217937.5852
+Lafiagi,Nigeria,84934.20967
+Fungurume,Democratic Republic of the Congo,304508.2997
+Aleta Wendo,Ethiopia,142203.2541
+Kontagora,Nigeria,168687.7362
+Kakanda,Democratic Republic of the Congo,134322.1278
+Leku,Ethiopia,131766.6441
+Ise,Nigeria,144667.9465
+Hawassa,Ethiopia,446057.3575
+Koko,Nigeria,147329.7315
+Kikondja,Democratic Republic of the Congo,118628.3679
+Gundo Meskel,Ethiopia,106011.2354
+Emure-Ekiti,Nigeria,122499.3014
+Kambove,Democratic Republic of the Congo,264734.6424
+Addis Ababa,Ethiopia,7280462.518
+Aisegba,Nigeria,53761.52739
+Samba,Democratic Republic of the Congo,67210.66078
+Mekane Selam,Ethiopia,75349.75642
+Ikole,Nigeria,168771.4101
+Mangi 1,Democratic Republic of the Congo,100232.657
+Wijigra,Ethiopia,79944.14332
+Egbe,Nigeria,126506.9562
+Likasi,Democratic Republic of the Congo,712507.2887
+Benin City,Nigeria,1912370.433
+Punia,Democratic Republic of the Congo,98931.84345
+Fiche,Ethiopia,52532.0028
+Owo,Nigeria,299594.9017
+Lwambo,Democratic Republic of the Congo,176067.21
+Sapele,Nigeria,323739.7063
+Shashamane,Ethiopia,443093.5025
+Ogharefe,Nigeria,131256.0429
+Lubutu,Democratic Republic of the Congo,103130.0424
+Basha,Ethiopia,109018.7179
+Warri,Nigeria,1617738.511
+Kibango,Democratic Republic of the Congo,58063.81935
+Shufune,Ethiopia,103089.3538
+Omuo-Obadore,Nigeria,217009.1256
+Kasongo,Democratic Republic of the Congo,169616.4018
+Ikare,Nigeria,331030.8783
+Malemba-Nkulu,Democratic Republic of the Congo,418461.5007
+Arsi Negelle,Ethiopia,246886.546
+Akugba,Nigeria,181093.7096
+Kingombe,Democratic Republic of the Congo,106986.8619
+Bore,Ethiopia,68422.6356
+Pategi,Nigeria,71996.36656
+Kapolowe,Democratic Republic of the Congo,125479.5934
+Ziway,Ethiopia,218532.8098
+Ekeremor,Nigeria,102665.1963
+Kabala,Democratic Republic of the Congo,61838.503
+Lalibela,Ethiopia,75900.17073
+Jesse,Nigeria,50007.74637
+Lwishia,Democratic Republic of the Congo,100596.6884
+Ifon,Nigeria,73751.10359
+Mukanga,Democratic Republic of the Congo,140622.7561
+Oka-Akoko,Nigeria,122977.4131
+Songwe,Democratic Republic of the Congo,56299.29846
+Meki,Ethiopia,134591.9042
+Isanlu Mopo,Nigeria,150099.0517
+Kabalo,Democratic Republic of the Congo,109978.2048
+Kefole,Ethiopia,146720.0746
+Okwagbe,Nigeria,50615.31591
+Ankoro,Democratic Republic of the Congo,141185.7166
+Alem Ketema,Ethiopia,55064.78982
+Anka,Nigeria,85544.10449
+Mulongo,Democratic Republic of the Congo,348914.1682
+Bishoftu,Ethiopia,421173.9329
+Poko,Democratic Republic of the Congo,67601.84179
+Bena,Nigeria,59956.18845
+Mukubu,Democratic Republic of the Congo,180314.3398
+Bonsa Bota,Ethiopia,210082.9546
+Orerokpe,Nigeria,62874.72105
+Kipushi,Democratic Republic of the Congo,233450.2729
+Adigrat,Ethiopia,151676.0029
+Bomadi,Nigeria,86111.21441
+Kongolo,Democratic Republic of the Congo,431047.0362
+Mek'elē,Ethiopia,381610.6884
+Bida,Nigeria,413315.2382
+Mwadingusha,Democratic Republic of the Congo,158016.5624
+Kersa,Ethiopia,55109.37281
+Aiyetoro Gbede,Nigeria,68030.80145
+Kyolo,Democratic Republic of the Congo,121560.0868
+Shakiso,Ethiopia,106664.9675
+Ughelli,Nigeria,300632.8656
+Lubumbashi,Democratic Republic of the Congo,2907723.958
+Mafara,Nigeria,107418.905
+Wamaza,Democratic Republic of the Congo,57681.63556
+Kibre Mengist,Ethiopia,108130.3799
+Afuze,Nigeria,59824.59609
+Lukuni,Democratic Republic of the Congo,58000.34216
+Mojo,Ethiopia,106302.5967
+Kabba,Nigeria,136367.3139
+Bafwasende,Democratic Republic of the Congo,74379.80926
+Quiha,Ethiopia,237818.1428
+Ibillo,Nigeria,59542.58998
+Mitwaba,Democratic Republic of the Congo,80124.49924
+Wukro,Ethiopia,61110.39638
+Ekpoma,Nigeria,171732.1029
+Asella,Ethiopia,209306.7932
+Igarra,Nigeria,136787.5863
+Maychew,Ethiopia,54568.88922
+Abraka,Nigeria,129282.1488
+Manono,Democratic Republic of the Congo,582983.6135
+Korem,Ethiopia,64726.63859
+Amassoma,Nigeria,161946.1869
+Shabunda,Democratic Republic of the Congo,88264.30434
+Adama,Ethiopia,607616.7186
+Maradun,Nigeria,77505.65351
+Kitotolo,Democratic Republic of the Congo,104574.6361
+Alamata,Ethiopia,92563.59171
+Okene,Nigeria,1036026.784
+Mbulula,Democratic Republic of the Congo,65862.70949
+Itiya,Ethiopia,75358.62847
+Agbor,Nigeria,266287.0506
+Kasumbalesa,Democratic Republic of the Congo,337698.7077
+Dodolla,Ethiopia,157784.0695
+Obiaruku,Nigeria,113207.7589
+Saramabila,Democratic Republic of the Congo,90692.00722
+Asassa,Ethiopia,117598.7592
+Irrua,Nigeria,70557.4013
+Isiro,Democratic Republic of the Congo,136844.691
+Mekoni,Ethiopia,56226.13619
+Oleh,Nigeria,166628.5857
+Bekoji,Ethiopia,98859.56738
+Patani,Nigeria,57533.64714
+Nyunzu,Democratic Republic of the Congo,207035.8656
+Dera,Ethiopia,83207.31111
+Sagbama,Nigeria,77900.91201
+Walikale,Democratic Republic of the Congo,68590.09454
+Woldia,Ethiopia,141728.8339
+Ozoro,Nigeria,101256.8924
+Kilwa,Democratic Republic of the Congo,279517.9717
+Kobo,Ethiopia,121602.5345
+Magagindoke,Nigeria,59342.294
+Sakania,Democratic Republic of the Congo,62808.36862
+Huruta,Ethiopia,53150.46192
+Auchi,Nigeria,207256.136
+Kamituga,Democratic Republic of the Congo,216274.7966
+Mersa,Ethiopia,76675.5733
+Brass,Nigeria,93231.18722
+Musangala,Democratic Republic of the Congo,182101.3636
+Welenchete,Ethiopia,76450.50797
+Yenagoa,Nigeria,565532.1861
+Mutabi,Democratic Republic of the Congo,80693.45396
+Dessie,Ethiopia,300409.4608
+Agaie,Nigeria,82041.83598
+Lukonzolwa,Democratic Republic of the Congo,79050.96936
+Debre Birhan,Ethiopia,136781.9378
+Umunede,Nigeria,88429.44501
+Dungu,Democratic Republic of the Congo,83739.85894
+Hayq,Ethiopia,52230.47848
+Uromi,Nigeria,220391.6048
+Mafuo,Democratic Republic of the Congo,88057.73444
+Adaba,Ethiopia,73043.98503
+Isa,Nigeria,90079.11384
+Misisi,Democratic Republic of the Congo,71690.06143
+Kombolcha,Ethiopia,276540.8034
+Okugbe,Nigeria,70212.60286
+Walungu,Democratic Republic of the Congo,54195.72061
+Ubiaja,Nigeria,100137.4073
+Pweto,Democratic Republic of the Congo,189940.226
+Gobesa,Ethiopia,69815.16432
+Nembe,Nigeria,162425.1484
+Bukavu,Democratic Republic of the Congo,852067.3679
+Robe,Ethiopia,74976.95013
+Shinkafi,Nigeria,79307.70997
+Masisi,Democratic Republic of the Congo,73971.9888
+Kwale,Nigeria,104887.7609
+Nyangezi,Democratic Republic of the Congo,51202.19037
+Kamisee,Ethiopia,62864.59157
+Akinima,Nigeria,110459.1284
+Rubaya,Democratic Republic of the Congo,153259.4455
+Negele,Ethiopia,114698.2694
+Minna,Nigeria,503352.867
+Ngungu Centre,Democratic Republic of the Congo,52183.36833
+Birnin Gwari,Nigeria,84104.70165
+Kamanyola,Democratic Republic of the Congo,66454.71725
+Fugar,Nigeria,56884.57749
+Busisi,Democratic Republic of the Congo,79931.50485
+Shoa Robit,Ethiopia,82499.27566
+Kaura-Namoda,Nigeria,181434.3136
+Luvungi,Democratic Republic of the Congo,54851.45273
+Bati,Ethiopia,80641.52296
+Ogwashi-Uku,Nigeria,113019.4561
+Mambasa,Democratic Republic of the Congo,85713.89441
+Ataye,Ethiopia,57852.68094
+Baraka,Democratic Republic of the Congo,148713.427
+Abomsa,Ethiopia,61590.58235
+Lapai,Nigeria,54531.70468
+Sake,Democratic Republic of the Congo,79650.72577
+Meslo,Ethiopia,72512.18113
+Gusau,Nigeria,469151.8893
+Kitchanga,Democratic Republic of the Congo,62631.74989
+Goba,Ethiopia,63353.84817
+Lokoja,Nigeria,715746.1968
+Kalemie,Democratic Republic of the Congo,872444.6422
+Robe,Ethiopia,148830.8233
+Asaba,Nigeria,409379.7668
+Uvira,Democratic Republic of the Congo,380103.0074
+Akabuka,Nigeria,62142.34906
+Goma,Democratic Republic of the Congo,775780.8497
+Ahoada,Nigeria,131843.2702
+Kanyabayonga,Democratic Republic of the Congo,110314.3193
+Mechara,Ethiopia,57198.23345
+Omoku,Nigeria,198457.5685
+Kirumba,Democratic Republic of the Congo,162229.3312
+Gelemso,Ethiopia,78745.01702
+Abua,Nigeria,237311.0357
+Kitsombiro,Democratic Republic of the Congo,71601.85475
+Shiroro,Nigeria,53774.4509
+Biakato,Democratic Republic of the Congo,58235.23758
+Bedessa,Ethiopia,60818.71922
+Butembo,Democratic Republic of the Congo,425059.0667
+Ginir,Ethiopia,58078.46517
+Agenebode,Nigeria,82325.44309
+Kipese,Democratic Republic of the Congo,84666.39225
+Chiro,Ethiopia,119717.5673
+Zurmi,Nigeria,52670.23853
+Loutu,Democratic Republic of the Congo,54358.52537
+Filtu,Ethiopia,141543.0438
+Soku,Nigeria,60060.9833
+Beni,Democratic Republic of the Congo,1872704.98
+Hirna,Ethiopia,54016.92864
+Ebocha,Nigeria,71778.62477
+Rutshuru,Democratic Republic of the Congo,190498.3048
+Idah,Nigeria,169791.8935
+Durba,Democratic Republic of the Congo,158744.5524
+Karamile,Ethiopia,83424.90797
+Onitsha,Nigeria,5788295.914
+Nyamilima,Democratic Republic of the Congo,52003.30342
+Elele Alimini,Nigeria,50819.94852
+Katanga,Democratic Republic of the Congo,175735.1205
+Deder,Ethiopia,53283.81976
+Abonnema,Nigeria,373043.3137
+Moba,Democratic Republic of the Congo,135449.6289
+Chelenko,Ethiopia,58281.44158
+Owerri,Nigeria,3594823.131
+Mongbwalu,Democratic Republic of the Congo,177453.9554
+Burka,Ethiopia,86575.21586
+Idama,Nigeria,61796.63404
+Bunia,Democratic Republic of the Congo,526337.0149
+Dire Dawa,Ethiopia,482064.1833
+Chafe,Nigeria,74622.09314
+Lingi,Democratic Republic of the Congo,56659.80578
+Aweday,Ethiopia,67455.02778
+Bugama,Nigeria,273241.3386
+Ariwara,Democratic Republic of the Congo,64214.30574
+Harar,Ethiopia,219703.6849
+Awomama,Nigeria,57519.84512
+Aru,Democratic Republic of the Congo,66097.06024
+Melka Chireti,Ethiopia,95827.84697
+Abaji,Nigeria,68275.11165
+Mahagi,Democratic Republic of the Congo,98278.02944
+Port Harcourt,Nigeria,2623779.514
+Omo,Nigeria,100793.269
+Babille,Ethiopia,56462.28587
+Yangoji,Nigeria,68471.72232
+Dolo,Ethiopia,54678.47097
+Dekina,Nigeria,55963.12888
+Fik',Ethiopia,172410.1521
+Igwuruta,Nigeria,101222.7601
+Gwagwalada,Nigeria,314641.55
+Jijiga,Ethiopia,425845.4701
+Awka,Nigeria,269997.9653
+Doka Ashafa,Nigeria,131338.2236
+Gidan Mai Ungwan,Nigeria,60228.96375
+Kebri Beyah,Ethiopia,73986.33746
+Oyigbo,Nigeria,361809.9765
+Togechane,Ethiopia,212412.6596
+Okrika,Nigeria,277635.2364
+Hartishek,Ethiopia,76626.60016
+Maji,Nigeria,51551.3367
+Degehabur,Ethiopia,122231.4742
+Ogale,Nigeria,338276.4946
+Djibia,Nigeria,70258.1898
+Gode,Ethiopia,164869.8882
+Madalla,Nigeria,520664.8001
+Ayangba,Nigeria,166230.4234
+Bonny,Nigeria,318271.36
+Kebri Dehar,Ethiopia,180464.8109
+Batsari,Nigeria,60034.79876
+Onne,Nigeria,276680.2421
+Abudwak,Ethiopia,143673.2247
+Kuje,Nigeria,59347.57112
+Aboh,Nigeria,1282172.248
+Chara,Nigeria,234841.5816
+Enugu Umunze,Nigeria,124462.0956
+Funtua,Nigeria,224435.6657
+Bolo,Nigeria,114459.4284
+Abuja,Nigeria,1322229.41
+Okpogho,Nigeria,71299.9053
+Dere,Nigeria,456498.6535
+Bodo,Nigeria,163404.7493
+Holo,Nigeria,74893.20127
+Kaduna,Nigeria,1937932.023
+Rubuchi,Nigeria,131175.5819
+Aku,Nigeria,111054.8372
+Aba,Nigeria,1472091.316
+Bwari,Nigeria,56510.66043
+Umu Lawlaw,Nigeria,120245.3641
+Kura,Nigeria,70691.80501
+Kauran Yankwani,Nigeria,55174.25897
+Nsukka,Nigeria,806616.9631
+Egwuachi,Nigeria,60764.57232
+Bori,Nigeria,143035.1486
+Ekenobizi,Nigeria,78617.88707
+Dema,Nigeria,93973.13185
+Ngodo,Nigeria,106123.1873
+Ama Apu,Nigeria,103712.4465
+Ngo,Nigeria,222182.3346
+Dutsin Ma,Nigeria,148609.3212
+Ungwan Shehu,Nigeria,54491.51929
+Nine Mile Corner,Nigeria,77433.15604
+Uturu,Nigeria,68511.80827
+Ekwegbe,Nigeria,81057.40688
+Enugu-Ezike,Nigeria,75988.12721
+Umuahia,Nigeria,916557.4964
+Asarama,Nigeria,72796.76368
+Enugu,Nigeria,1086433.765
+Katsina,Nigeria,610192.6108
+Awgu,Nigeria,58823.32848
+Abejukolo,Nigeria,52038.06146
+Malumfashi,Nigeria,136413.567
+Ado,Nigeria,279808.1804
+Agbani,Nigeria,55706.13508
+Opobo,Nigeria,78911.62629
+Ishiagu,Nigeria,118552.2537
+Ikot Aba,Nigeria,101631.2611
+Ikot Ide,Nigeria,65035.16612
+Uduma,Nigeria,93733.9681
+Ankpa,Nigeria,178690.1358
+Zaria,Nigeria,720877.213
+Charanchi,Nigeria,54307.14839
+Amakpo,Nigeria,50962.79246
+Uruk Esiet,Nigeria,61263.37989
+Nassarawa,Nigeria,90275.46885
+Akeze,Nigeria,52864.5448
+Ikot Ekpene,Nigeria,399324.8184
+Kankiya,Nigeria,57342.35059
+Abiriba,Nigeria,140154.1774
+Rogo Sabon Gari,Nigeria,50069.60911
+Obiozara,Nigeria,54239.27316
+Abat,Nigeria,244165.7159
+Okoroete,Nigeria,59006.05656
+Abak,Nigeria,272749.6553
+Ugbokolo,Nigeria,83840.67873
+Okposi,Nigeria,127915.7016
+Ungwan Tamowa,Nigeria,53246.40018
+Nguzu Edda,Nigeria,85658.48021
+Ohafia,Nigeria,119684.0125
+Mashi,Nigeria,57870.11466
+Keffi,Nigeria,162177.7767
+Ekeje,Nigeria,78857.12235
+Uyo,Nigeria,1606054.354
+Gwarzo,Nigeria,100413.2198
+Amaseri,Nigeria,59961.80627
+Arochukwu,Nigeria,136445.756
+Eket,Nigeria,269048.7933
+Afikpo,Nigeria,192261.9144
+Unguwar Fari,Nigeria,59191.16184
+Koi,Nigeria,80002.72561
+Upenekang,Nigeria,59933.63661
+Kwa Ibo,Nigeria,59747.2504
+Uquo,Nigeria,59025.80438
+Abakaliki,Nigeria,441689.2033
+Ugep,Nigeria,172415.3381
+Otukpo,Nigeria,259959.9963
+Zango Bichi,Nigeria,109743.7946
+Sabuwar Abuja,Nigeria,53556.08678
+Okopedi,Nigeria,58213.12773
+Ikara,Nigeria,60865.37889
+Tarzoho,Nigeria,128564.9716
+Daura,Nigeria,335447.8405
+Pambeguwa,Nigeria,64098.54094
+Oron,Nigeria,422507.9002
+Kafanchan,Nigeria,163557.5733
+Udung Uko,Nigeria,71256.79334
+kazaure,Nigeria,148792.6956
+Kano,Nigeria,5110616.249
+Doma,Nigeria,121981.0952
+Tudun Wada,Nigeria,80973.61029
+Calabar,Nigeria,664342.2362
+James Town,Nigeria,63549.36824
+Kagoro,Nigeria,125949.1736
+Rimin Daddo,Nigeria,87316.67055
+Akwanga,Nigeria,101758.7596
+Zango,Nigeria,63612.38999
+Oju,Nigeria,78776.47194
+Dambatta,Nigeria,110535.2794
+Aliade,Nigeria,52777.8557
+Lafia,Nigeria,266607.9348
+Makurdi,Nigeria,428736.9887
+Yanbarau,Nigeria,98791.76514
+Unguwar Findi,Nigeria,98760.6873
+Nassarawan Eggon,Nigeria,96892.83826
+Ihalav,Nigeria,56278.37232
+Samunakar,Nigeria,95183.00065
+Ikom,Nigeria,141009.9757
+Unguwar Arewa,Nigeria,148682.8764
+Okuku Lepuole,Nigeria,58610.34123
+Jos,Nigeria,965884.7194
+Ogoja,Nigeria,73899.31046
+Barakin Gangare,Nigeria,61692.0102
+Zango,Nigeria,58296.03557
+Unguwar Mahaukci,Nigeria,70496.44873
+Tungan Fulani,Nigeria,50973.45308
+Bokkos,Nigeria,50618.83042
+Gboko,Nigeria,355117.4052
+Vandeikya Town,Nigeria,66676.17918
+Ringim,Nigeria,59489.92729
+Mongu Arna,Nigeria,109765.9329
+Obudu,Nigeria,149106.7636
+Adikpo,Nigeria,65164.75405
+Dutse,Nigeria,175636.0682
+Katsina Ala,Nigeria,69005.93002
+Gumel,Nigeria,144027.7296
+Ugba,Nigeria,64969.08001
+Maigatari,Nigeria,83419.38743
+Gwolong,Nigeria,97499.35748
+Birnin Kudu,Nigeria,95611.78552
+Bununu Dass,Nigeria,70549.17344
+Ningi,Nigeria,106910.7511
+Shendam,Nigeria,63376.4671
+Tafawa-Balewa,Nigeria,73250.89432
+Jahun,Nigeria,54668.1291
+Zaki Biam,Nigeria,76142.2752
+Bauchi,Nigeria,636274.7026
+Langtang,Nigeria,110981.0419
+Wukari,Nigeria,173414.451
+Malummaduri,Nigeria,56458.09216
+Kafin Hausa,Nigeria,63981.30565
+Gwaram,Nigeria,55505.42697
+Jamaari,Nigeria,74754.49787
+Hadejia,Nigeria,251051.3273
+Dengi,Nigeria,66960.96414
+Takum,Nigeria,73171.63917
+Azare,Nigeria,237747.2326
+Giade,Nigeria,68834.15248
+Alkalere,Nigeria,106045.1974
+Nguru,Nigeria,188839.4469
+Katsiro,Nigeria,110443.0948
+Misau,Nigeria,122120.6784
+Gamawa,Nigeria,55074.46872
+Dambam,Nigeria,60344.76238
+Dukku,Nigeria,78925.13966
+Mutum Biyu,Nigeria,86299.09187
+Gashua,Nigeria,139353.4135
+Dogari Tiv,Nigeria,62258.92564
+Potiskum,Nigeria,400652.7586
+KUNDULUN,Nigeria,386160.5552
+Biliri,Nigeria,219197.6963
+Titi,Nigeria,451431.9374
+Damagum,Nigeria,66287.96473
+Kaltungo,Nigeria,135944.5594
+Gembu,Nigeria,84357.55736
+Jalingo,Nigeria,265648.389
+Bajoga,Nigeria,129960.863
+Serti,Nigeria,69574.72838
+Ashaka,Nigeria,67273.27168
+Zinna,Nigeria,107040.6151
+Ibrahim Baidu,Nigeria,51476.05279
+Geidam,Nigeria,136351.0131
+Damaturu,Nigeria,110213.9805
+Guyuk,Nigeria,70058.83881
+Buni Yadi,Nigeria,85505.00052
+Shellem,Nigeria,59006.53371
+Numan,Nigeria,112091.9887
+Maya Belwa,Nigeria,54521.83327
+Sangasumi,Nigeria,145472.3596
+Biu,Nigeria,217028.2783
+Yola,Nigeria,763630.2483
+Benisheikh,Nigeria,52921.66654
+Dakri,Nigeria,70799.78006
+Song,Nigeria,81859.168
+Gubio,Nigeria,51368.09878
+Damboa,Nigeria,186486.1112
+Gombi,Nigeria,130482.5936
+Maiduguri,Nigeria,1293405.661
+Uba,Nigeria,65878.38339
+Mubi,Nigeria,260582.0741
+Michika,Nigeria,95114.49742
+Monguno,Nigeria,96736.13447
+Madagali,Nigeria,72258.32402
+Kasugula Bama,Nigeria,107300.2336
+Gwoza,Nigeria,216423.9569
+Baga,Nigeria,104724.7044
+Pulka,Nigeria,96175.28137
+Doro Gowon,Nigeria,83371.19824
+Dikwa,Nigeria,131212.6129
+Gamboru,Nigeria,338698.4729
+Banki,Nigeria,61196.31152

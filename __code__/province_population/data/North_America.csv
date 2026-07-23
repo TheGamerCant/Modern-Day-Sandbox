@@ -1,399 +1,399 @@
-City,Country,Population (2025),Province ID,Victory Points
-Ewa Beach,United States,53720.65818,,
-Victoria,Canada,250759.7761,,
-Honolulu,United States,541956.7544,,
-Nanaimo,Canada,78391.23222,,
-Mililani,United States,51805.77418,,
-Vancouver,Canada,2198106.667,,
-Kahului,United States,51667.89837,,
-White Rock,Canada,92978.36576,,
-Santa Maria,United States,102215.9631,,
-Langley City,Canada,111957.9831,,
-Santa Barbara,United States,96521.30264,,
-Maple Ridge,Canada,83596.00921,,
-Santa Cruz,United States,93032.12262,,
-Abbotsford,Canada,110035.8289,,
-Salinas,United States,164375.8959,,
-Kelowna,Canada,72915.40591,,
-Oxnard,United States,247773.1298,,
-Lethbridge,Canada,63047.54135,,
-Watsonville,United States,58506.6287,,
-Calgary,Canada,1524648.523,,
-Ventura,United States,72162.89916,,
-Red Deer,Canada,107274.6703,,
-San Francisco,United States,4718348.828,,
-Grande Prairie,Canada,56968.02446,,
-Camarillo,United States,63042.37005,,
-Edmonton,Canada,1144485.708,,
-San Rafael,United States,67983.67397,,
-Sherwood Park,Canada,85457.81379,,
-Thousand Oaks,United States,53507.04975,,
-Regina,Canada,241948.588,,
-Petaluma,United States,53297.71077,,
-Saskatoon,Canada,286314.9234,,
-Simi Valley,United States,105845.655,,
-Timberlea,Canada,55193.11899,,
-Los Angeles,United States,13474332.62,,
-Winnipeg,Canada,752807.6451,,
-Santa Rosa,United States,147435.946,,
-Windsor,Canada,244810.3135,,
-Pleasanton,United States,133551.7596,,
-Sarnia,Canada,67429.2033,,
-Concord,United States,285552.8092,,
-London,Canada,365269.0491,,
-Vallejo,United States,149890.9945,,
-Sault Ste. Marie,Canada,51849.11927,,
-Livermore,United States,74099.92886,,
-Kitchener,Canada,388026.6619,,
-San Diego,United States,1977278.929,,
-Brantford,Canada,105140.1635,,
-Napa,United States,76799.75972,,
-Cambridge,Canada,148072.5144,,
-Antioch,United States,187963.5613,,
-Guelph,Canada,118287.7541,,
-Mission Viejo,United States,370029.2788,,
-Hamilton,Canada,446366.6817,,
-Poway,United States,262038.2523,,
-Burlington,Canada,188401.649,,
-Encinitas,United States,78795.81213,,
-Milton,Canada,89006.68527,,
-Oceanside,United States,116636.8732,,
-Toronto,Canada,5566381.566,,
-Fairfield,United States,101521.8112,,
-St. Catharines,Canada,145796.5757,,
-Brentwood,United States,74478.06754,,
-Niagara Falls,Canada,75875.27775,,
-Escondido,United States,449581.3416,,
-Newmarket,Canada,90057.89641,,
-Bakersfield,United States,644120.8269,,
-Barrie,Canada,139402.353,,
-Tracy,United States,94817.56671,,
-Pickering,Canada,222937.883,,
-Vacaville,United States,83182.98973,,
-Oshawa,Canada,311499.7659,,
-Riverside,United States,495766.989,,
-Peterborough,Canada,66802.37242,,
-Manteca,United States,59238.7273,,
-Kingston,Canada,88900.134,,
-Stockton,United States,408517.1329,,
-Kanata,Canada,61217.55502,,
-Modesto,United States,334844.7468,,
-Honey Gables,Canada,82570.67154,,
-Palmdale,United States,70308.41787,,
-Ottawa,Canada,604618.1703,,
-Turlock,United States,72284.46149,,
-Gatineau,Canada,119331.5523,,
-Temecula,United States,231862.1793,,
-Orléans,Canada,118003.9613,,
-Hanford,United States,57595.21034,,
-Vaudreuil-Dorion,Canada,52862.60505,,
-Lancaster,United States,63792.85533,,
-Montreal,Canada,3221844.478,,
-Merced,United States,85960.78581,,
-Saint-Jérôme,Canada,52799.38369,,
-Davis,United States,78088.97252,,
-Terrebonne,Canada,91639.94387,,
-Lodi,United States,73053.43309,,
-Saint-Jean-sur-Richelieu,Canada,76552.53136,,
-Rancho las Perris,United States,51757.49941,,
-Repentigny,Canada,97561.00836,,
-Madera,United States,69217.56117,,
-Sherbrooke,Canada,87476.69269,,
-Moreno Valley,United States,210389.6834,,
-Trois-Rivières,Canada,97591.30653,,
-Fresno,United States,747153.9112,,
-Quebec,Canada,619035.9201,,
-Woodland,United States,54503.37336,,
-Halifax,Canada,227622.3687,,
-Sacramento,United States,1697183.792,,
-St. John's,Canada,75023.41972,,
-Visalia,United States,96382.52604,,
-Hemet,United States,145151.1669,,
-Porterville,United States,57544.66296,,
-Natoma Station,United States,60602.60173,,
-Yuba City,United States,62503.2726,,
-Palm Springs,United States,53538.07129,,
-Rocklin,United States,59092.335,,
-Palm Desert,United States,124015.5752,,
-Indio,United States,209723.6758,,
-Chico,United States,91701.62104,,
-Yuma,United States,72053.03068,,
-Reno,United States,233376.4633,,
-Medford,United States,86430.0037,,
-Las Vegas,United States,2371780.056,,
-Providence,United States,74470.41029,,
-Phoenix,United States,2608874.085,,
-Mesa,United States,1724503.365,,
-Eugene,United States,241884.9839,,
-Drexel Heights,United States,130465.6218,,
-Tucson,United States,466091.8057,,
-Casas Adobes,United States,66460.86438,,
-Salem,United States,228919.6332,,
-Portland,United States,1839775.879,13396,
-Tacoma,United States,330413.9109,,
-Montoya,United States,102378.2817,,
-El Paso,United States,639025.5472,,
-Las Cruces,United States,61229.69545,,
-Seattle,United States,2099643.254,,
-Auburn,United States,61115.54306,,
-Yakima,United States,100894.3667,,
-Nampa,United States,85368.87759,,
-Boise,United States,348689.1449,,
-Anchorage,United States,225127.9138,,
-Kennewick,United States,129728.5231,,
-Spanish Fork,United States,53226.84703,,
-Bellingham,United States,65926.46037,,
-Provo,United States,534551.9818,,
-Salt Lake City,United States,1108953.042,,
-Wenatchee,United States,56780.62744,,
-South Valley,United States,184311.9177,,
-Albuquerque,United States,456284.6029,,
-Paradise Hills,United States,128728.2211,,
-Bountiful,United States,91729.57841,,
-Layton,United States,210470.4227,,
-Ogden,United States,138934.1887,,
-Grand Junction,United States,78680.33903,,
-Odessa,United States,84418.62813,,
-Laredo,United States,260013.4578,,
-Midland,United States,88805.92242,,
-McAllen,United States,367656.1312,,
-Spokane,United States,308681.0018,,
-Edinburg,United States,66402.26203,,
-Brownsville,United States,133551.6717,,
-Lubbock,United States,178646.8977,,
-Valley Hi,United States,213375.5483,,
-San Antonio,United States,1513874.436,,
-Corpus Christi,United States,239777.0267,,
-Wetmore,United States,151760.6683,,
-Mineral Palace,United States,75212.07021,,
-Amarillo,United States,138828.7872,,
-Abilene,United States,62023.67675,,
-Colorado Springs,United States,445670.1323,,
-Denver,United States,2425086.009,,
-Austin,United States,1580153.318,,
-Leander,United States,71045.95958,,
-Boulder,United States,95315.17562,,
-Longmont,United States,77241.15525,,
-Killeen,United States,118366.2406,,
-Loveland,United States,56553.69396,,
-Fort Collins,United States,146901.3694,,
-Greeley,United States,101983.7452,,
-Waco,United States,52606.72308,,
-Cinco Ranch,United States,248654.9113,,
-College Station,United States,117186.8816,,
-Greatwood,United States,51317.15895,,
-Houston,United States,4301460.936,,
-White Settlement,United States,76679.676,,
-Edgecliff Village,United States,267808.0441,,
-Fort Worth,United States,102172.847,,
-Handley,United States,103212.3485,,
-North Richland Hills,United States,523625.3282,,
-Arlington,United States,698786.0852,,
-The Woodlands,United States,398009.8169,,
-Webster,United States,86110.96559,,
-Jacinto City,United States,149871.8148,,
-Duncanville,United States,58733.69841,,
-Atascocita,United States,61027.88957,,
-Irving,United States,186668.2783,,
-Pittsville,United States,59468.91122,,
-Dallas,United States,2577308.218,,
-Lewisville,United States,258935.9551,,
-Denton,United States,136135.8713,,
-Little Elm,United States,64381.26677,,
-Billings,United States,80941.67075,,
-Stonebridge,United States,128192.7844,,
-Allen,United States,105209.4236,,
-Norman,United States,71139.12612,,
-Oklahoma City,United States,492130.2164,,
-Edmond,United States,85411.63124,,
-Wichita,United States,238759.5028,,
-Lafayette,United States,158412.5305,1643,
-Tulsa,United States,434183.0803,,
-Baton Rouge,United States,226126.1949,,
-New Orleans,United States,821135.4605,,
-Little Rock,United States,81252.41372,,
-Lawrence,United States,66968.40056,,
-Lincoln,United States,226803.8453,,
-Olathe,United States,149409.6652,,
-Springfield,United States,132417.8075,,
-Kansas City,United States,398609.568,,
-Chalco,United States,117411.6934,,
-Omaha,United States,368050.2779,,
-Mobile,United States,93512.21732,,
-Memphis,United States,402281.1712,,
-Sioux Falls,United States,79285.41647,,
-Fort Walton Beach,United States,55899.60972,,
-Panama City,United States,64271.56774,,
-Des Moines,United States,242764.6177,,
-Montgomery,United States,117536.5135,,
-O’Fallon,United States,96609.19981,,
-Birmingham,United States,136699.7048,,
-St. Louis,United States,797219.7287,,
-Tallahassee,United States,80597.26862,,
-Saint Petersburg,United States,942906.5027,,
-Sarasota,United States,170962.3936,,
-Bradenton,United States,207806.4539,,
-Venice,United States,56827.48177,,
-Huntsville,United States,100172.4756,,
-Cape Coral,United States,308438.3529,,
-Naples,United States,192263.8761,,
-Bayonet Point,United States,117386.0437,,
-Tampa,United States,709022.9745,,
-Fargo,United States,131027.4873,,
-Iowa City,United States,53322.17468,,
-Cedar Rapids,United States,55742.45684,,
-Brandon,United States,70421.20544,,
-Spring Hill,United States,67107.64199,,
-Nashville,United States,280464.4627,,
-Lakeland,United States,124948.1547,,
-Davenport,United States,88647.02564,,
-Evansville,United States,67985.48328,,
-Homestead,United States,143551.8056,,
-Saint Cloud,United States,52701.63967,,
-Miami,United States,5733041.657,,
-Minneapolis [Saint Paul],United States,1217972.426,,
-Rochester,United States,67266.32746,4664,
-Fair Oaks,United States,62799.68636,,
-Atlanta,United States,602708.1902,,
-Riverwood,United States,72343.71518,,
-Orlando,United States,1231650.392,,
-Dunwoody,United States,99853.6263,,
-Bloomington,United States,77176.98115,,
-Norcross,United States,171141.5356,,
-Hopkins Mill,United States,139283.2056,,
-Alafaya,United States,89707.49251,,
-Lawrenceville,United States,74753.36141,,
-Champaign,United States,86488.20317,,
-Port Saint Lucie,United States,167173.7599,,
-Palm Bay,United States,145611.3122,,
-Jacksonville,United States,379642.6937,,
-Jupiter,United States,65986.00609,,
-Fort Pierce,United States,52518.68802,,
-Palm Coast,United States,70622.93393,,
-Daytona Beach,United States,140506.4447,,
-Beechwood,United States,100764.1914,,
-Jacksonville Beach,United States,57072.3199,,
-Louisville,United States,505689.8991,,
-Bloomington,United States,56286.28266,,
-Rockford,United States,151022.4692,,
-Westhaven Trails,United States,64481.20512,,
-Aurora,United States,359036.7811,,
-Joliet,United States,96889.58164,,
-Madison,United States,147384.3248,,
-Bolingbrook,United States,279554.1979,,
-Elgin,United States,88854.16898,,
-Wheaton,United States,191148.096,,
-Lafayette,United States,79644.20599,7551,
-Lake in the Hills,United States,63893.51226,,
-Chicago,United States,5318734.586,,
-Chicago Heights,United States,66583.58234,,
-Savannah,United States,115675.9329,,
-Indianapolis,United States,418056.6458,,
-Lawrence,United States,76753.85469,,
-Lexington,United States,295163.9507,,
-Waukegan,United States,130399.0327,,
-Kenosha,United States,77138.46272,,
-Racine,United States,72878.55675,,
-Milwaukee,United States,833927.3349,,
-Florence,United States,69728.29166,,
-Cincinnati,United States,414285.7157,,
-North College Hill,United States,60385.72652,,
-Columbia,United States,88320.48662,,
-Hamilton,United States,80532.24549,,
-South Bend,United States,109856.572,,
-Appleton,United States,74930.79837,,
-Dayton,United States,153881.228,,
-Fort Wayne,United States,108272.2891,,
-Carmel Commons,United States,53715.05773,,
-Green Bay,United States,95228.22955,,
-Charlotte,United States,229305.4845,,
-Kalamazoo,United States,61021.85835,,
-Grand Rapids,United States,293006.3464,,
-Urbancrest,United States,256240.5115,,
-Columbus,United States,875004.3611,,
-Greensboro,United States,147671.3352,,
-Lansing,United States,111165.4761,,
-Toledo,United States,194258.6836,,
-Ann Arbor,United States,75953.71046,,
-Wilmington,United States,64491.95016,13474,
-Cary,United States,105582.5086,,
-Detroit,United States,1918653.086,,
-Raleigh,United States,152973.0235,,
-New Hope,United States,184970.0298,,
-Buena Vista,United States,56131.12037,,
-Encore Townhomes,United States,63514.28607,,
-Canton,United States,58892.10409,,
-Akron,United States,119273.8379,,
-Cleveland,United States,722539.6877,,
-Cuyahoga Falls,United States,56086.144,,
-Pittsburgh,United States,490507.7336,,
-Lakeside,United States,85237.35736,,
-Richmond,United States,151923.5315,,
-Erie,United States,111536.5153,,
-Courthouse Green,United States,83445.10417,,
-Norfolk,United States,622410.207,,
-Newport News,United States,97455.95321,,
-Manassas Park,United States,79610.97791,,
-Dale City,United States,192927.0109,,
-Washington,United States,3471725.09,,
-Ashburn,United States,76087.33456,,
-Leesburg,United States,72977.47285,,
-Sugarland Run,United States,58093.19581,,
-Fairland,United States,53968.11284,,
-Laurel,United States,72841.42439,,
-Columbia,United States,87350.18098,,
-Baltimore,United States,1127337.892,,
-Glen Burnie,United States,60513.46328,,
-York,United States,72505.95179,,
-Buffalo,United States,439526.679,13602,
-Harrisburg,United States,81706.80422,,
-Lancaster,United States,83179.20907,,
-New Castle,United States,60561.31291,,
-Wilmington,United States,135688.2456,1132,
-Reading,United States,134068.7129,,
-Chester,United States,73125.73068,,
-Philadelphia,United States,2286396.408,,
-Rochester,United States,247644.1314,68,
-Norristown,United States,64344.56978,,
-Allentown,United States,133164.4677,,
-Wilkes-Barre,United States,67033.99629,,
-Bethlehem,United States,110410.2981,,
-Bensalem Township,United States,75461.44338,,
-Levittown,United States,98545.57269,,
-Easton,United States,58283.20238,,
-Scranton,United States,74950.79519,,
-Trenton,United States,179668.313,,
-New York City,United States,14197658.75,,
-Beachwood,United States,55496.90849,,
-Lakewood Township,United States,70894.40536,,
-Point Pleasant,United States,65285.03331,,
-Syracuse,United States,155390.9826,,
-Asbury Park,United States,70944.39208,,
-Spring Valley,United States,87894.8541,,
-White Plains,United States,80465.95685,,
-Stamford,United States,115807.1567,,
-Huntington Station,United States,63013.70945,,
-Norwalk,United States,61650.614,,
-Lake Ronkonkoma,United States,84189.24621,,
-Selden,United States,66490.72703,,
-Bridgeport,United States,234491.0868,,
-New Haven,United States,147120.6447,,
-Schenectady,United States,84995.03275,,
-Waterbury,United States,96593.97824,,
-Albany,United States,99832.54191,,
-Troy,United States,63526.94525,,
-New Britain,United States,68405.33455,,
-Hartford,United States,187629.2206,,
-Springfield,United States,110005.3014,,
-Worcester,United States,134217.3147,,
-Providence,United States,437120.5596,,
-Fall River,United States,111575.4187,,
-New Bedford,United States,117685.8388,,
-Boston,United States,1669310.016,,
-Brockton,United States,72110.94581,,
-Lowell,United States,104075.1971,,
-Manchester,United States,67542.11058,,
-Lawrence,United States,108912.7573,,
-Lynn,United States,119551.9511,,
-Peabody,United States,114640.4097,,
-Portland,United States,67689.55023,3732,
+City,Country,Population (2025)
+Ewa Beach,United States,53720.65818
+Victoria,Canada,250759.7761
+Honolulu,United States,541956.7544
+Nanaimo,Canada,78391.23222
+Mililani,United States,51805.77418
+Vancouver,Canada,2198106.667
+Kahului,United States,51667.89837
+White Rock,Canada,92978.36576
+Santa Maria,United States,102215.9631
+Langley City,Canada,111957.9831
+Santa Barbara,United States,96521.30264
+Maple Ridge,Canada,83596.00921
+Santa Cruz,United States,93032.12262
+Abbotsford,Canada,110035.8289
+Salinas,United States,164375.8959
+Kelowna,Canada,72915.40591
+Oxnard,United States,247773.1298
+Lethbridge,Canada,63047.54135
+Watsonville,United States,58506.6287
+Calgary,Canada,1524648.523
+Ventura,United States,72162.89916
+Red Deer,Canada,107274.6703
+San Francisco,United States,4718348.828
+Grande Prairie,Canada,56968.02446
+Camarillo,United States,63042.37005
+Edmonton,Canada,1144485.708
+San Rafael,United States,67983.67397
+Sherwood Park,Canada,85457.81379
+Thousand Oaks,United States,53507.04975
+Regina,Canada,241948.588
+Petaluma,United States,53297.71077
+Saskatoon,Canada,286314.9234
+Simi Valley,United States,105845.655
+Timberlea,Canada,55193.11899
+Los Angeles,United States,13474332.62
+Winnipeg,Canada,752807.6451
+Santa Rosa,United States,147435.946
+Windsor,Canada,244810.3135
+Pleasanton,United States,133551.7596
+Sarnia,Canada,67429.2033
+Concord,United States,285552.8092
+London,Canada,365269.0491
+Vallejo,United States,149890.9945
+Sault Ste. Marie,Canada,51849.11927
+Livermore,United States,74099.92886
+Kitchener,Canada,388026.6619
+San Diego,United States,1977278.929
+Brantford,Canada,105140.1635
+Napa,United States,76799.75972
+Cambridge,Canada,148072.5144
+Antioch,United States,187963.5613
+Guelph,Canada,118287.7541
+Mission Viejo,United States,370029.2788
+Hamilton,Canada,446366.6817
+Poway,United States,262038.2523
+Burlington,Canada,188401.649
+Encinitas,United States,78795.81213
+Milton,Canada,89006.68527
+Oceanside,United States,116636.8732
+Toronto,Canada,5566381.566
+Fairfield,United States,101521.8112
+St. Catharines,Canada,145796.5757
+Brentwood,United States,74478.06754
+Niagara Falls,Canada,75875.27775
+Escondido,United States,449581.3416
+Newmarket,Canada,90057.89641
+Bakersfield,United States,644120.8269
+Barrie,Canada,139402.353
+Tracy,United States,94817.56671
+Pickering,Canada,222937.883
+Vacaville,United States,83182.98973
+Oshawa,Canada,311499.7659
+Riverside,United States,495766.989
+Peterborough,Canada,66802.37242
+Manteca,United States,59238.7273
+Kingston,Canada,88900.134
+Stockton,United States,408517.1329
+Kanata,Canada,61217.55502
+Modesto,United States,334844.7468
+Honey Gables,Canada,82570.67154
+Palmdale,United States,70308.41787
+Ottawa,Canada,604618.1703
+Turlock,United States,72284.46149
+Gatineau,Canada,119331.5523
+Temecula,United States,231862.1793
+Orléans,Canada,118003.9613
+Hanford,United States,57595.21034
+Vaudreuil-Dorion,Canada,52862.60505
+Lancaster,United States,63792.85533
+Montreal,Canada,3221844.478
+Merced,United States,85960.78581
+Saint-Jérôme,Canada,52799.38369
+Davis,United States,78088.97252
+Terrebonne,Canada,91639.94387
+Lodi,United States,73053.43309
+Saint-Jean-sur-Richelieu,Canada,76552.53136
+Rancho las Perris,United States,51757.49941
+Repentigny,Canada,97561.00836
+Madera,United States,69217.56117
+Sherbrooke,Canada,87476.69269
+Moreno Valley,United States,210389.6834
+Trois-Rivières,Canada,97591.30653
+Fresno,United States,747153.9112
+Quebec,Canada,619035.9201
+Woodland,United States,54503.37336
+Halifax,Canada,227622.3687
+Sacramento,United States,1697183.792
+St. John's,Canada,75023.41972
+Visalia,United States,96382.52604
+Hemet,United States,145151.1669
+Porterville,United States,57544.66296
+Natoma Station,United States,60602.60173
+Yuba City,United States,62503.2726
+Palm Springs,United States,53538.07129
+Rocklin,United States,59092.335
+Palm Desert,United States,124015.5752
+Indio,United States,209723.6758
+Chico,United States,91701.62104
+Yuma,United States,72053.03068
+Reno,United States,233376.4633
+Medford,United States,86430.0037
+Las Vegas,United States,2371780.056
+Providence,United States,74470.41029
+Phoenix,United States,2608874.085
+Mesa,United States,1724503.365
+Eugene,United States,241884.9839
+Drexel Heights,United States,130465.6218
+Tucson,United States,466091.8057
+Casas Adobes,United States,66460.86438
+Salem,United States,228919.6332
+Portland,United States,1839775.879
+Tacoma,United States,330413.9109
+Montoya,United States,102378.2817
+El Paso,United States,639025.5472
+Las Cruces,United States,61229.69545
+Seattle,United States,2099643.254
+Auburn,United States,61115.54306
+Yakima,United States,100894.3667
+Nampa,United States,85368.87759
+Boise,United States,348689.1449
+Anchorage,United States,225127.9138
+Kennewick,United States,129728.5231
+Spanish Fork,United States,53226.84703
+Bellingham,United States,65926.46037
+Provo,United States,534551.9818
+Salt Lake City,United States,1108953.042
+Wenatchee,United States,56780.62744
+South Valley,United States,184311.9177
+Albuquerque,United States,456284.6029
+Paradise Hills,United States,128728.2211
+Bountiful,United States,91729.57841
+Layton,United States,210470.4227
+Ogden,United States,138934.1887
+Grand Junction,United States,78680.33903
+Odessa,United States,84418.62813
+Laredo,United States,260013.4578
+Midland,United States,88805.92242
+McAllen,United States,367656.1312
+Spokane,United States,308681.0018
+Edinburg,United States,66402.26203
+Brownsville,United States,133551.6717
+Lubbock,United States,178646.8977
+Valley Hi,United States,213375.5483
+San Antonio,United States,1513874.436
+Corpus Christi,United States,239777.0267
+Wetmore,United States,151760.6683
+Mineral Palace,United States,75212.07021
+Amarillo,United States,138828.7872
+Abilene,United States,62023.67675
+Colorado Springs,United States,445670.1323
+Denver,United States,2425086.009
+Austin,United States,1580153.318
+Leander,United States,71045.95958
+Boulder,United States,95315.17562
+Longmont,United States,77241.15525
+Killeen,United States,118366.2406
+Loveland,United States,56553.69396
+Fort Collins,United States,146901.3694
+Greeley,United States,101983.7452
+Waco,United States,52606.72308
+Cinco Ranch,United States,248654.9113
+College Station,United States,117186.8816
+Greatwood,United States,51317.15895
+Houston,United States,4301460.936
+White Settlement,United States,76679.676
+Edgecliff Village,United States,267808.0441
+Fort Worth,United States,102172.847
+Handley,United States,103212.3485
+North Richland Hills,United States,523625.3282
+Arlington,United States,698786.0852
+The Woodlands,United States,398009.8169
+Webster,United States,86110.96559
+Jacinto City,United States,149871.8148
+Duncanville,United States,58733.69841
+Atascocita,United States,61027.88957
+Irving,United States,186668.2783
+Pittsville,United States,59468.91122
+Dallas,United States,2577308.218
+Lewisville,United States,258935.9551
+Denton,United States,136135.8713
+Little Elm,United States,64381.26677
+Billings,United States,80941.67075
+Stonebridge,United States,128192.7844
+Allen,United States,105209.4236
+Norman,United States,71139.12612
+Oklahoma City,United States,492130.2164
+Edmond,United States,85411.63124
+Wichita,United States,238759.5028
+Lafayette,United States,158412.5305
+Tulsa,United States,434183.0803
+Baton Rouge,United States,226126.1949
+New Orleans,United States,821135.4605
+Little Rock,United States,81252.41372
+Lawrence,United States,66968.40056
+Lincoln,United States,226803.8453
+Olathe,United States,149409.6652
+Springfield,United States,132417.8075
+Kansas City,United States,398609.568
+Chalco,United States,117411.6934
+Omaha,United States,368050.2779
+Mobile,United States,93512.21732
+Memphis,United States,402281.1712
+Sioux Falls,United States,79285.41647
+Fort Walton Beach,United States,55899.60972
+Panama City,United States,64271.56774
+Des Moines,United States,242764.6177
+Montgomery,United States,117536.5135
+O’Fallon,United States,96609.19981
+Birmingham,United States,136699.7048
+St. Louis,United States,797219.7287
+Tallahassee,United States,80597.26862
+Saint Petersburg,United States,942906.5027
+Sarasota,United States,170962.3936
+Bradenton,United States,207806.4539
+Venice,United States,56827.48177
+Huntsville,United States,100172.4756
+Cape Coral,United States,308438.3529
+Naples,United States,192263.8761
+Bayonet Point,United States,117386.0437
+Tampa,United States,709022.9745
+Fargo,United States,131027.4873
+Iowa City,United States,53322.17468
+Cedar Rapids,United States,55742.45684
+Brandon,United States,70421.20544
+Spring Hill,United States,67107.64199
+Nashville,United States,280464.4627
+Lakeland,United States,124948.1547
+Davenport,United States,88647.02564
+Evansville,United States,67985.48328
+Homestead,United States,143551.8056
+Saint Cloud,United States,52701.63967
+Miami,United States,5733041.657
+Minneapolis [Saint Paul],United States,1217972.426
+Rochester,United States,67266.32746
+Fair Oaks,United States,62799.68636
+Atlanta,United States,602708.1902
+Riverwood,United States,72343.71518
+Orlando,United States,1231650.392
+Dunwoody,United States,99853.6263
+Bloomington,United States,77176.98115
+Norcross,United States,171141.5356
+Hopkins Mill,United States,139283.2056
+Alafaya,United States,89707.49251
+Lawrenceville,United States,74753.36141
+Champaign,United States,86488.20317
+Port Saint Lucie,United States,167173.7599
+Palm Bay,United States,145611.3122
+Jacksonville,United States,379642.6937
+Jupiter,United States,65986.00609
+Fort Pierce,United States,52518.68802
+Palm Coast,United States,70622.93393
+Daytona Beach,United States,140506.4447
+Beechwood,United States,100764.1914
+Jacksonville Beach,United States,57072.3199
+Louisville,United States,505689.8991
+Bloomington,United States,56286.28266
+Rockford,United States,151022.4692
+Westhaven Trails,United States,64481.20512
+Aurora,United States,359036.7811
+Joliet,United States,96889.58164
+Madison,United States,147384.3248
+Bolingbrook,United States,279554.1979
+Elgin,United States,88854.16898
+Wheaton,United States,191148.096
+Lafayette,United States,79644.20599
+Lake in the Hills,United States,63893.51226
+Chicago,United States,5318734.586
+Chicago Heights,United States,66583.58234
+Savannah,United States,115675.9329
+Indianapolis,United States,418056.6458
+Lawrence,United States,76753.85469
+Lexington,United States,295163.9507
+Waukegan,United States,130399.0327
+Kenosha,United States,77138.46272
+Racine,United States,72878.55675
+Milwaukee,United States,833927.3349
+Florence,United States,69728.29166
+Cincinnati,United States,414285.7157
+North College Hill,United States,60385.72652
+Columbia,United States,88320.48662
+Hamilton,United States,80532.24549
+South Bend,United States,109856.572
+Appleton,United States,74930.79837
+Dayton,United States,153881.228
+Fort Wayne,United States,108272.2891
+Carmel Commons,United States,53715.05773
+Green Bay,United States,95228.22955
+Charlotte,United States,229305.4845
+Kalamazoo,United States,61021.85835
+Grand Rapids,United States,293006.3464
+Urbancrest,United States,256240.5115
+Columbus,United States,875004.3611
+Greensboro,United States,147671.3352
+Lansing,United States,111165.4761
+Toledo,United States,194258.6836
+Ann Arbor,United States,75953.71046
+Wilmington,United States,64491.95016
+Cary,United States,105582.5086
+Detroit,United States,1918653.086
+Raleigh,United States,152973.0235
+New Hope,United States,184970.0298
+Buena Vista,United States,56131.12037
+Encore Townhomes,United States,63514.28607
+Canton,United States,58892.10409
+Akron,United States,119273.8379
+Cleveland,United States,722539.6877
+Cuyahoga Falls,United States,56086.144
+Pittsburgh,United States,490507.7336
+Lakeside,United States,85237.35736
+Richmond,United States,151923.5315
+Erie,United States,111536.5153
+Courthouse Green,United States,83445.10417
+Norfolk,United States,622410.207
+Newport News,United States,97455.95321
+Manassas Park,United States,79610.97791
+Dale City,United States,192927.0109
+Washington,United States,3471725.09
+Ashburn,United States,76087.33456
+Leesburg,United States,72977.47285
+Sugarland Run,United States,58093.19581
+Fairland,United States,53968.11284
+Laurel,United States,72841.42439
+Columbia,United States,87350.18098
+Baltimore,United States,1127337.892
+Glen Burnie,United States,60513.46328
+York,United States,72505.95179
+Buffalo,United States,439526.679
+Harrisburg,United States,81706.80422
+Lancaster,United States,83179.20907
+New Castle,United States,60561.31291
+Wilmington,United States,135688.2456
+Reading,United States,134068.7129
+Chester,United States,73125.73068
+Philadelphia,United States,2286396.408
+Rochester,United States,247644.1314
+Norristown,United States,64344.56978
+Allentown,United States,133164.4677
+Wilkes-Barre,United States,67033.99629
+Bethlehem,United States,110410.2981
+Bensalem Township,United States,75461.44338
+Levittown,United States,98545.57269
+Easton,United States,58283.20238
+Scranton,United States,74950.79519
+Trenton,United States,179668.313
+New York City,United States,14197658.75
+Beachwood,United States,55496.90849
+Lakewood Township,United States,70894.40536
+Point Pleasant,United States,65285.03331
+Syracuse,United States,155390.9826
+Asbury Park,United States,70944.39208
+Spring Valley,United States,87894.8541
+White Plains,United States,80465.95685
+Stamford,United States,115807.1567
+Huntington Station,United States,63013.70945
+Norwalk,United States,61650.614
+Lake Ronkonkoma,United States,84189.24621
+Selden,United States,66490.72703
+Bridgeport,United States,234491.0868
+New Haven,United States,147120.6447
+Schenectady,United States,84995.03275
+Waterbury,United States,96593.97824
+Albany,United States,99832.54191
+Troy,United States,63526.94525
+New Britain,United States,68405.33455
+Hartford,United States,187629.2206
+Springfield,United States,110005.3014
+Worcester,United States,134217.3147
+Providence,United States,437120.5596
+Fall River,United States,111575.4187
+New Bedford,United States,117685.8388
+Boston,United States,1669310.016
+Brockton,United States,72110.94581
+Lowell,United States,104075.1971
+Manchester,United States,67542.11058
+Lawrence,United States,108912.7573
+Lynn,United States,119551.9511
+Peabody,United States,114640.4097
+Portland,United States,67689.55023
