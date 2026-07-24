@@ -85,8 +85,8 @@ def normalize_url(url_or_slug: str) -> str:
     text = url_or_slug.strip()
     if text.startswith("http"):
         return text
-    slug = text.strip("/")
-    return f"{BASE_URL}/en/{slug}/cities/"
+    
+    return f"{BASE_URL}/en/{text}/"
 
 
 def country_from_url(url: str) -> str:
@@ -117,28 +117,47 @@ def _clean_population(raw: str) -> int | None:
     return int(digits) if digits else None
 
 
-def _find_data_table(soup: BeautifulSoup) -> Tag | None:
-    """Locate the cities grid.
+def _looks_like_data_row(row: Tag) -> bool:
+    """True if a row looks like a locality row: a name plus ≥2 numeric cells.
 
-    A citypopulation.de page usually has several tables — a small subdivisions
-    grid (often first) plus the larger cities grid we actually want. We pick the
-    table with the most population cells (``td.rpop*``), tie-broken by row count,
-    which reliably selects the cities grid rather than the subdivisions one.
-    Falls back to the table with the most rows if none expose ``rpop`` cells.
+    This is markup-independent — it works whether or not the site tags cells
+    with ``rname`` / ``rpop`` classes (the ``/cities/`` listing pages do; the
+    census / admin-division pages use plain tables that don't).
+    """
+    cells = row.find_all(["td", "th"])
+    if len(cells) < 2:
+        return False
+    has_name = row.find("a") is not None or _clean_population(cells[0].get_text()) is None
+    numeric_cells = sum(1 for cell in cells if _clean_population(cell.get_text()) is not None)
+    return bool(has_name) and numeric_cells >= 1
+
+
+def _find_data_table(soup: BeautifulSoup) -> Tag | None:
+    """Locate the cities / localities grid.
+
+    A citypopulation.de page has several tables — the site's region-navigation
+    menu, a one-row summary for the area itself, and the localities grid we
+    want. We pick the table with the most *data rows* (a name + several numeric
+    columns). That beats scoring by CSS class (absent on census pages) or by raw
+    row count (which would wrongly grab the big navigation menu). ``rpop`` cell
+    count is kept only as a tie-breaker for the ``/cities/`` listing pages.
     """
     tables = soup.find_all("table")
     if not tables:
         return None
 
     def table_score(table: Tag) -> tuple[int, int]:
+        data_rows = sum(1 for row in table.find_all("tr") if _looks_like_data_row(row))
         population_cells = sum(
             1
             for td in table.find_all("td")
             if any(cls.startswith("rpop") for cls in td.get("class", []))
         )
-        return (population_cells, len(table.find_all("tr")))
+        return (data_rows, population_cells)
 
-    return max(tables, key=table_score)
+    best_table = max(tables, key=table_score)
+    # If nothing looks like a data table, report failure rather than a nav menu.
+    return best_table if table_score(best_table)[0] > 0 else None
 
 
 def _header_dates(table: Tag) -> list[str]:
