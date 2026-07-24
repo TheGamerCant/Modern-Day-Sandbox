@@ -762,7 +762,7 @@
 15278,Villa Nueva,GTM,,
 15279,Cobán,GTM,221271,2025
 15281,Huehuetenango,GTM,,
-14710,,Guǎngzhōu Báiyún Guójì Jīchǎng; Guangzhou Baiyun International Airport,PRC,2025
+14710,Guǎngzhōu Báiyún Guójì Jīchǎng; Guangzhou Baiyun International Airport,PRC,,
 1635,Les Cayes,HAI,83543,2025
 15933,Port-au-Prince,HAI,1733378,2025
 15937,Gonaïves,HAI,393644,2025
@@ -2779,7 +2779,7 @@
 14218,Murmansk,SOV,272712,2025
 14220,Kola,SOV,,
 14221,Severomorsk,SOV,,
-14222,Sankt-Peterburg; St. Petersburg,SOV,,
+14222,Sankt-Peterburg; St. Petersburg,SOV,4878966,2025
 14226,Aeroport Pulkovo; Pulkovo Airport,SOV,,
 14229,Smolensk,SOV,279694,2025
 14231,Khimki,SOV,,
@@ -3636,4 +3636,3 @@
 15833,Maṭār Ṣan'ā' Al-Dawli; Sana'a International Airport,YEM,,
 15835,Rada'a; Radā',YEM,136799,2025
 15836,Ibb,YEM,843581,2025
-,,,,

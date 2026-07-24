@@ -77,7 +77,7 @@ class CityPopulation:
     country: str
     population: int
     reference_date: str  # date the figure refers to; "" if not determinable
-    source_url: str
+#    source_url: str
 
 
 def normalize_url(url_or_slug: str) -> str:
@@ -173,26 +173,28 @@ def _find_data_table(soup: BeautifulSoup) -> Tag | None:
     """Locate the cities / localities grid.
 
     A citypopulation.de page has several tables — the site's region-navigation
-    menu (which can itself list populations), a one-row summary for the area,
-    and the localities grid we want. We rank tables by, in order: number of
-    dated population-header columns, then data rows (a name + numeric cells),
-    then ``rpop`` cell count. Anchoring on the population *header* first means a
-    navigation menu full of numbers can't win — it has no such header — and the
-    many-row localities grid beats the one-row area summary.
+    menu (which can itself list populations), a small table of parent divisions
+    (e.g. the four UK home countries), and the cities/localities grid we want.
+    We rank tables by, in order: whether they have ANY dated population header
+    (a yes/no gate), then data-row count, then ``rpop`` cell count. The header
+    gate excludes the navigation menu (no dated header); ranking the survivors
+    by rows then picks the many-row cities grid over a small parent-division
+    table — which may otherwise carry MORE historical census columns and would
+    win if we ranked on header-column count.
     """
     tables = soup.find_all("table")
     if not tables:
         return None
 
     def table_score(table: Tag) -> tuple[int, int, int]:
-        header_columns = _population_header_columns(table)
+        has_population_header = 1 if _population_header_columns(table) > 0 else 0
         data_rows = sum(1 for row in table.find_all("tr") if _looks_like_data_row(row))
         population_cells = sum(
             1
             for td in table.find_all("td")
             if any(cls.startswith("rpop") for cls in td.get("class", []))
         )
-        return (header_columns, data_rows, population_cells)
+        return (has_population_header, data_rows, population_cells)
 
     best_table = max(tables, key=table_score)
     # If nothing looks like a data table at all, report failure (not a nav menu).
@@ -289,7 +291,7 @@ def parse_population_table(html: str, country: str, url: str) -> list[CityPopula
             country=country,
             population=most_recent,
             reference_date=reference_date,
-            source_url=url,
+#            source_url=url,
         ))
 
     return results
@@ -367,7 +369,7 @@ def scrape(urls: list[str], delay: float = 1.5) -> pd.DataFrame:
 
     return pd.DataFrame(
         [vars(r) for r in all_rows],
-        columns=["city", "country", "population", "reference_date", "source_url"],
+        columns=["city", "country", "population", "reference_date"],
     )
 
 
@@ -394,9 +396,78 @@ def main() -> None:
 
     debug = False
     urls = [
-        "austria/cities", "australia/cities", "bangladesh/cities", "belgium/cities", "belarus/cities", "bosnia/cities", "bulgaria/cities", "canada/cities",
+        "austria/cities",
+        "australia/cities",
+        "bangladesh/cities",
+        "belgium/cities",
+        "belarus/cities",
+        "bosnia/cities",
+        "bulgaria/cities",
+        "canada/cities",
+        "croatia/cities",
+        "czechrep/cities",
+        "denmark/cities",
+        "domrep/cities",
+        "northkorea/cities",
+        "egypt/cities",
+        "estonia/cities",
+        "finland/cities",
+        "france/cities",
+        "uk/cities/ua",
+        "georgia/cities",
+        "germany/cities",
+        "greece/cities",
+        "guatemala/cities",
+        "hungary/cities",
+        "iceland/cities",
+        "india/cities",
+        "ireland/cities",
+        "italy/cities",
+        "jordan/cities",
+        "kazakhstan/cities",
+        "kenya/cities",
+        "saudiarabia/cities",
+        "latvia/cities",
+        "lithuania/cities",
+        "libya",
+        "mexico/cities",
+        "moldova/cities",
+        "mongolia/cities",
+        "morocco/cities",
+        "nicaragua/cities",
+        "nepal/cities",
+        "netherlands/cities",
+        "norway/cities",
+        "poland/cities",
+        "portugal/cities",
+        "china/cities",
+        "southkorea/cities",
+        "romania/cities",
+        "slovakia/cities",
+        "slovenia/cities",
+        "russia/cities/central",
+        "russia/cities/fareast",
+        "russia/cities/northwestern",
+        "russia/cities/northerncaucasus",
+        "russia/cities/siberia",
+        "russia/cities/southern",
+        "russia/cities/ural",
+        "russia/cities/volga",
+        "spain/cities",
+        "serbia/cities",
+        "sweden/cities",
+        "switzerland/cities",
+        "syria",
+        "tunisia/cities",
+        "turkey/cities",
+        "tanzania/cities",
+        "uae/cities",
+        "uganda/cities",
+        "ukraine/cities",
+#        "usa/ua",
+        "yemen",
     ]
-    delay = 1.5
+    delay = 1.0
     output = "city_populations.csv"
 
     if debug:

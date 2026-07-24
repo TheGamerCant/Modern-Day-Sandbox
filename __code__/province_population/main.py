@@ -1,3 +1,4 @@
+from collections import Counter
 from pathlib import Path
 import re
 import unicodedata
@@ -173,14 +174,78 @@ def LoadMap() -> tuple[list[Province], list[State]]:
 
     return provinces_list, states_list
 
-def LoadCityData() -> DataFrame:
-    data_dir: Path = Path.cwd() / "data"
+# citypopulation.de derives its country column from URL slugs, so a handful
+# don't match the tag_map's full country names. Bridge them here.
+_COUNTRY_ALIASES: dict[str, str] = {
+    "Bosnia": "Bosnia and Herzegovina",
+    "Czechrep": "Czechia",
+    "Domrep": "Dominican Republic",
+    "Mexico": "México",
+    "Northkorea": "North Korea",
+    "Saudiarabia": "Saudi Arabia",
+    "Southkorea": "South Korea",
+    "USA": "United States",
+    "Uae": "United Arab Emirates",
+    "Uk": "United Kingdom",
+}
+
+def LoadEuData() -> DataFrame:
+    """Primary source of truth: the hand-curated EU_data regional CSVs
+    (columns City, Country, Population (2025))."""
+    data_dir: Path = Path.cwd() / "EU_data"
     data_files: list[Path] = list(data_dir.glob("**/*.csv"))
 
-    df: DataFrame = pd.concat((pd.read_csv(f) for f in data_files), ignore_index=True)
+    eu_df: DataFrame = pd.concat((pd.read_csv(f) for f in data_files), ignore_index=True)
+    eu_df["Population (2025)"] = eu_df["Population (2025)"].round().astype(int)
+    return eu_df
 
-    df["Population (2025)"] = df["Population (2025)"].round().astype(int)
-    return df
+def LoadCityPopulationData() -> DataFrame:
+    """Fallback source: the scraped citypopulation.de data
+    (columns city, country, population, ...)."""
+    data_file: Path = Path.cwd() / "citypopulation_data" / "city_populations.csv"
+    citypop_df: DataFrame = pd.read_csv(data_file)
+    citypop_df = citypop_df.dropna(subset=["population"])
+    citypop_df["population"] = citypop_df["population"].round().astype(int)
+    return citypop_df
+
+def _extract_year(value: Any) -> int | None:
+    """Pull a 4-digit year out of a value (a date string, column name, etc.)."""
+    match = re.search(r"\d{4}", str(value))
+    return int(match.group(0)) if match else None
+
+
+def BuildPopulationLookup(
+    city_df: DataFrame,
+    city_column: str,
+    country_column: str,
+    population_column: str,
+    country_name_to_tag_dict: dict[str, str],
+    year_column: str | None = None,
+    default_year: int | None = None,
+) -> dict[tuple[str, str], tuple[int, int | None]]:
+    """Build a (normalized city, owner tag) -> (population, year) dict.
+
+    Works for either source by naming its columns. The year comes from
+    ``year_column`` per row (e.g. citypopulation's reference_date) or from
+    ``default_year`` (e.g. EU_data's single 2025 vintage). Rows whose country
+    doesn't resolve to a tag are skipped — their key could never match a
+    province's owner tag anyway."""
+    tags = city_df[country_column].map(country_name_to_tag_dict)
+    if year_column is not None:
+        years: Any = city_df[year_column].map(_extract_year)
+    else:
+        years = [default_year] * len(city_df)
+
+    lookup: dict[tuple[str, str], tuple[int, int | None]] = {}
+    for city, tag, population, year in zip(
+        city_df[city_column].map(NormalizeName), tags, city_df[population_column], years
+    ):
+        if isinstance(tag, str):
+            # pandas may widen an int column to float when NaNs are present;
+            # coerce back to a clean int (or None) so years aren't "2020.0".
+            clean_year = int(year) if pd.notna(year) else None
+            lookup[(city, tag)] = (int(population), clean_year)
+    return lookup
 
 def LoadJson() -> Any:
     json_file: Path = Path.cwd() / "tag_data.json"
@@ -218,20 +283,37 @@ def FindDuplicates(provinces_list: list[Province], states_list: list[State]) -> 
 def LinkPopulations(
     provinces_list: list[Province],
     states_list: list[State],
-    cities_to_population_dict: dict[tuple[str, str], int],
+    primary_lookup: dict[tuple[str, str], tuple[int, int | None]],
+    fallback_lookup: dict[tuple[str, str], tuple[int, int | None]],
     duplicate_provinces: set[int],
-) -> dict[int, int]:
-    """Assign a population to each province where a city under the province's
-    owner tag matches one of its names. Returns prov_id -> population for the
-    provinces that were linked; also sets `Province.population` in place."""
-    prov_id_to_population: dict[int, int] = {}
+) -> dict[int, tuple[int, int | None]]:
+    """Assign a population to each province.
 
+    ``primary_lookup`` (EU_data) is the source of truth; ``fallback_lookup``
+    (citypopulation.de) is consulted ONLY for provinces the primary can't
+    resolve. Returns prov_id -> (population, year) for linked provinces; also
+    sets `Province.population` in place."""
     # Normalize the manual alias table once: normalized VP name -> normalized city name.
     aliases_by_name: dict[str, str] = {
         NormalizeName(vp_name): NormalizeName(city_name)
         for vp_name, city_name in MANUAL_NAME_ALIASES.items()
     }
 
+    def matched_entries(
+        lookup: dict[tuple[str, str], tuple[int, int | None]],
+        province: Province,
+        owner_tag: str,
+    ) -> list[tuple[int, int | None]]:
+        # For each name try both its normalized form and any manual alias.
+        entries: list[tuple[int, int | None]] = []
+        for name in province.names:
+            normalized_name = NormalizeName(name)
+            for city_key in {normalized_name, aliases_by_name.get(normalized_name, normalized_name)}:
+                if (city_key, owner_tag) in lookup:
+                    entries.append(lookup[(city_key, owner_tag)])
+        return entries
+
+    prov_id_to_result: dict[int, tuple[int, int | None]] = {}
     for province in provinces_list:
         # Skip provinces whose (owner, name) key is shared — can't tell which
         # province the city population belongs to.
@@ -242,47 +324,48 @@ def LinkPopulations(
         if owner_tag == "ZZZ":
             continue
 
-        # For each name try a direct match, then fall back to a manual alias.
-        matched_populations: list[int] = []
-        for name in province.names:
-            normalized_name: str = NormalizeName(name)
-            city_key: str = aliases_by_name.get(normalized_name, normalized_name)
-            if (city_key, owner_tag) in cities_to_population_dict:
-                matched_populations.append(cities_to_population_dict[(city_key, owner_tag)])
-        if not matched_populations:
+        # EU_data first; only consult citypopulation if EU_data found nothing.
+        entries = matched_entries(primary_lookup, province, owner_tag)
+        if not entries:
+            entries = matched_entries(fallback_lookup, province, owner_tag)
+        if not entries:
             continue
 
-        # A province may carry several names; take the largest matching city.
-        population: int = max(matched_populations)
+        # A province may carry several names; take the largest matching city
+        # and keep the year that figure refers to.
+        population, year = max(entries, key=lambda pop_year: pop_year[0])
         province.population = population
-        prov_id_to_population[province.prov_id] = population
+        prov_id_to_result[province.prov_id] = (population, year)
 
-    return prov_id_to_population
+    return prov_id_to_result
 
 def WritePopulationCsv(
     provinces_list: list[Province],
     states_list: list[State],
-    prov_id_to_population: dict[int, int],
+    prov_id_to_result: dict[int, tuple[int, int | None]],
     output_path: Path,
 ) -> DataFrame:
-    """Write one row per VP province: prov_id, names, owner tag and population.
-    Population is blank (None) for provinces with no matched city."""
+    """Write one row per VP province: prov_id, names, owner tag, population and
+    the year that figure refers to. Population and year are blank for provinces
+    with no matched city."""
     population_records: list[dict[str, Any]] = [
         {
             "prov_id": province.prov_id,
             "names": "; ".join(sorted(province.names)),
             "owner": states_list[province.state_id].owner,
-            # .get -> None when unmatched, which na_rep renders as an empty cell.
-            "population": prov_id_to_population.get(province.prov_id),
+            # .get -> (None, None) when unmatched, rendered as empty cells.
+            "population": prov_id_to_result.get(province.prov_id, (None, None))[0],
+            "year": prov_id_to_result.get(province.prov_id, (None, None))[1],
         }
         for province in provinces_list
     ]
 
     populations_df: DataFrame = pd.DataFrame(
-        population_records, columns=["prov_id", "names", "owner", "population"]
+        population_records, columns=["prov_id", "names", "owner", "population", "year"]
     )
     # Nullable integer so unmatched rows stay blank rather than becoming floats.
     populations_df["population"] = populations_df["population"].astype("Int64")
+    populations_df["year"] = populations_df["year"].astype("Int64")
     # utf-8-sig writes a BOM so Excel detects UTF-8 and renders accented /
     # transliterated names correctly instead of mojibake.
     populations_df.to_csv(output_path, index=False, na_rep="", encoding="utf-8-sig")
@@ -298,14 +381,19 @@ def main():
     # Only look at provinces with VPs
     provinces_list = [prov for prov in provinces_list if prov.prev_victory_points > 0]
 
-    # Load the city data
-    city_df: DataFrame = LoadCityData()
+    # Load both city-data sources
+    eu_df: DataFrame = LoadEuData()
+    citypop_df: DataFrame = LoadCityPopulationData()
 
     # Load JSON file
     json_data = LoadJson()
     country_name_to_tag_dict: dict[str, str] = {
         key: value.get("tag") for key, value in json_data.get("tag_map").items()
     }
+    # citypopulation uses slug-style country names; bridge them to the tag_map.
+    citypop_country_to_tag_dict: dict[str, str] = dict(country_name_to_tag_dict)
+    for slug, full_name in _COUNTRY_ALIASES.items():
+        citypop_country_to_tag_dict[slug] = country_name_to_tag_dict.get(full_name)
 
     load_time: float = perf_counter()- time_start
     print(f"Load Time: {load_time:.3}s\n")
@@ -313,29 +401,40 @@ def main():
     # Find duplicates
     duplicate_provinces: set[int] = FindDuplicates(provinces_list, states_list)
 
-    # Tuple (city name, country tag) -> population
-    cities_to_population_dict: dict[tuple[str, str], int] = dict(zip(
-        zip(city_df["City"].map(NormalizeName), city_df["Country"].map(country_name_to_tag_dict)),
-        city_df["Population (2025)"],
-    ))
-
-    # Province ID -> population, for provinces whose name matches a city
-    # owned by the province's state owner.
-    prov_id_to_population: dict[int, int] = LinkPopulations(
-        provinces_list, states_list, cities_to_population_dict, duplicate_provinces
+    # (normalized city, tag) -> (population, year), one lookup per source.
+    # EU_data carries a single 2025 vintage (read from its column name);
+    # citypopulation carries a per-row reference_date.
+    eu_population_column: str = "Population (2025)"
+    primary_lookup: dict[tuple[str, str], tuple[int, int | None]] = BuildPopulationLookup(
+        eu_df, "City", "Country", eu_population_column, country_name_to_tag_dict,
+        default_year=_extract_year(eu_population_column),
+    )
+    fallback_lookup: dict[tuple[str, str], tuple[int, int | None]] = BuildPopulationLookup(
+        citypop_df, "city", "country", "population", citypop_country_to_tag_dict,
+        year_column="reference_date",
     )
 
+    # Province ID -> (population, year). EU_data is authoritative; citypopulation
+    # only fills provinces EU_data can't resolve.
+    prov_id_to_result: dict[int, tuple[int, int | None]] = LinkPopulations(
+        provinces_list, states_list, primary_lookup, fallback_lookup, duplicate_provinces
+    )
+
+    year_counts = Counter(year for _, year in prov_id_to_result.values())
+    year_summary = ", ".join(
+        f"{year}: {count}" for year, count in sorted(year_counts.items(), key=lambda yc: (yc[0] is None, yc[0]))
+    )
     print(
-        f"Linked {len(prov_id_to_population)} of {len(provinces_list)} "
-        f"VP provinces to a population."
+        f"Linked {len(prov_id_to_result)} of {len(provinces_list)} VP provinces "
+        f"(by year — {year_summary})."
     )
 
     # Write every VP province out to CSV, blank where no population was found.
     output_path: Path = Path.cwd() / "vp_populations_2.csv"
-    WritePopulationCsv(provinces_list, states_list, prov_id_to_population, output_path)
+    WritePopulationCsv(provinces_list, states_list, prov_id_to_result, output_path)
     print(f"Wrote {output_path.name}")
 
-    return prov_id_to_population
+    return prov_id_to_result
 
 if __name__ == "__main__":
     main()
