@@ -1,389 +1,1222 @@
 ﻿city,country,population,reference_date,source_url
-Aachen [ Aix-la-Chapelle ],Germany,263703,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Aalen,Germany,67675,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Ahlen,Germany,52387,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Arnsberg,Germany,74479,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Aschaffenburg,Germany,73326,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Augsburg,Germany,301786,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Baden-Baden,Germany,56952,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bad Homburg vor der Höhe,Germany,56938,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bad Kreuznach,Germany,54347,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bad Oeynhausen,Germany,50515,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bad Salzuflen,Germany,53807,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bamberg,Germany,77218,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bayreuth,Germany,72919,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bergheim,Germany,61976,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bergisch Gladbach,Germany,111174,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Berlin,Germany,3700577,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bielefeld,Germany,331419,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Böblingen,Germany,51204,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bocholt,Germany,73048,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bochum,Germany,358880,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bonn,Germany,323587,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bottrop,Germany,118482,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Brandenburg an der Havel,Germany,73945,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Braunschweig [ Brunswick ],Germany,252811,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bremen,Germany,588413,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Bremerhaven,Germany,118502,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Castrop-Rauxel,Germany,72353,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Celle,Germany,66930,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Chemnitz,Germany,247252,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Cottbus ( Chóśebuz ),Germany,95140,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Darmstadt,Germany,168253,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Delmenhorst,Germany,81274,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Dessau-Roßlau,Germany,75035,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Detmold,Germany,74438,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Dinslaken,Germany,66869,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Dormagen,Germany,63619,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Dorsten,Germany,74783,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Dortmund,Germany,600880,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Dresden,Germany,562764,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Duisburg,Germany,500810,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Düren,Germany,94539,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Düsseldorf [ Dusseldorf ],Germany,619444,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Elmshorn,Germany,51375,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Erfurt,Germany,217159,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Erlangen,Germany,116450,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Eschweiler,Germany,57573,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Essen,Germany,573618,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Esslingen am Neckar,Germany,95419,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Euskirchen,Germany,59977,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Flensburg,Germany,95568,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Frankfurt (Oder),Germany,56586,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Frankfurt am Main,Germany,760656,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Frechen,Germany,51927,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Freiburg im Breisgau,Germany,238299,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Friedrichshafen,Germany,62781,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Fulda,Germany,65755,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Fürth,Germany,131344,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Garbsen,Germany,60007,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Gelsenkirchen,Germany,266199,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Gera,Germany,95162,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Gießen,Germany,88544,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Gladbeck,Germany,75647,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Göppingen,Germany,58678,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Görlitz,Germany,55065,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Göttingen,Germany,130521,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Greifswald,Germany,56154,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Grevenbroich,Germany,65605,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Gronau (Westf.),Germany,50349,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Gummersbach,Germany,51332,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Gütersloh,Germany,99854,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hagen,Germany,189983,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Halle (Saale),Germany,226186,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hamburg,Germany,1869473,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hameln,Germany,58152,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hamm,Germany,179108,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hanau,Germany,98582,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hannover [ Hanover ],Germany,522803,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hattingen,Germany,52969,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Heidelberg,Germany,156092,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Heidenheim an der Brenz,Germany,50612,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Heilbronn,Germany,132516,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Herford,Germany,67074,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Herne,Germany,156266,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Herten,Germany,60707,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hilden,Germany,54859,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hildesheim,Germany,98207,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Hürth,Germany,61732,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Ibbenbüren,Germany,51596,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Ingolstadt,Germany,140799,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Iserlohn,Germany,91317,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Jena,Germany,109353,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Kaiserslautern,Germany,100247,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Karlsruhe,Germany,309247,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Kassel,Germany,196799,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Kempten (Allgäu),Germany,67916,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Kerpen,Germany,66377,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Kiel,Germany,251842,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Kleve,Germany,53094,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Koblenz,Germany,113020,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Köln [ Cologne ],Germany,1025523,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Konstanz,Germany,86691,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Krefeld,Germany,230738,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Lahr/Schwarzwald,Germany,51208,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Landshut,Germany,71922,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Langenfeld (Rheinland),Germany,59821,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Langenhagen,Germany,54059,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Leipzig,Germany,615932,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Leverkusen,Germany,168299,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Lingen (Ems),Germany,56539,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Lippstadt,Germany,68383,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Lörrach,Germany,51274,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Lübeck,Germany,217061,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Lüdenscheid,Germany,70810,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Ludwigsburg,Germany,93002,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Ludwigshafen am Rhein,Germany,177355,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Lüneburg,Germany,74502,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Lünen,Germany,85844,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Magdeburg,Germany,244494,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Mainz,Germany,223888,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Mannheim,Germany,319536,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Marburg,Germany,73571,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Marl,Germany,86899,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Meerbusch,Germany,56947,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Menden (Sauerland),Germany,52121,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Minden,Germany,83598,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Moers,Germany,101298,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Mönchengladbach,Germany,267176,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Mülheim an der Ruhr,Germany,171674,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-München [ Munich ],Germany,1505036,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Münster,Germany,306368,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Neubrandenburg,Germany,59494,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Neumünster,Germany,80145,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Neuss,Germany,153767,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Neustadt an der Weinstraße,Germany,52882,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Neu-Ulm,Germany,62843,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Neuwied,Germany,67201,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Norderstedt,Germany,83196,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Nordhorn,Germany,57372,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Nürnberg [ Nuremberg ],Germany,531159,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Oberhausen,Germany,213178,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Offenbach am Main,Germany,133195,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Offenburg,Germany,63437,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Oldenburg (Oldb),Germany,177055,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Osnabrück,Germany,166257,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Paderborn,Germany,155906,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Passau,Germany,53523,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Peine,Germany,51005,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Pforzheim,Germany,134422,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Plauen,Germany,64893,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Potsdam,Germany,185137,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Pulheim,Germany,55979,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Rastatt,Germany,50753,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Ratingen,Germany,88914,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Ravensburg,Germany,50549,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Recklinghausen,Germany,114851,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Regensburg,Germany,151517,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Remscheid,Germany,113333,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Reutlingen,Germany,119040,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Rheine,Germany,77552,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Rosenheim,Germany,65808,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Rostock,Germany,204929,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Rüsselsheim am Main,Germany,66028,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Saarbrücken,Germany,182859,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Salzgitter,Germany,104433,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Sankt Augustin,Germany,56033,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Schwäbisch Gmünd,Germany,63930,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Schweinfurt,Germany,54539,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Schwerin,Germany,97922,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Siegen,Germany,102450,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Sindelfingen,Germany,61428,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Solingen,Germany,164621,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Stolberg (Rhld.),Germany,57678,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Stralsund,Germany,55481,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Stuttgart,Germany,609365,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Trier,Germany,105054,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Troisdorf,Germany,75742,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Tübingen,Germany,92607,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Ulm,Germany,130288,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Unna,Germany,57961,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Velbert,Germany,82166,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Viersen,Germany,78227,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Villingen-Schwenningen,Germany,89766,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Waiblingen,Germany,57186,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Weimar,Germany,65566,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Wesel,Germany,60717,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Wetzlar,Germany,54865,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Wiesbaden,Germany,288584,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Wilhelmshaven,Germany,75324,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Witten,Germany,91474,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Wolfenbüttel,Germany,52511,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Wolfsburg,Germany,129813,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Worms,Germany,86921,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Wuppertal,Germany,357243,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Würzburg,Germany,133753,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Zwickau,Germany,86405,2025-12-31,https://www.citypopulation.de/en/germany/cities/
-Aix-en-Provence,France,149695,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Amiens,France,136449,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Angers,France,159022,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Annecy,France,132117,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Argenteuil,France,106130,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Besançon,France,118489,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Bordeaux,France,267991,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Boulogne-Billancourt,France,119019,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Brest,France,142346,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Caen,France,109400,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Clermont-Ferrand,France,146351,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Dijon,France,161830,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Grenoble,France,156140,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Le Havre,France,166687,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Le Mans,France,146249,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Lille,France,238246,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Limoges,France,129937,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Lyon,France,519127,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Marseille,France,886040,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Metz,France,122572,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Montpellier,France,310240,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Montreuil,France,111934,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Mulhouse,France,104978,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Nancy,France,103671,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Nantes,France,327734,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Nice,France,357737,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Nîmes,France,151839,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Orléans,France,116357,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Paris,France,2103778,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Perpignan,France,121616,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Reims,France,177674,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Rennes,France,230890,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Rouen,France,117662,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Saint-Denis ( incl. Pierrefitte-sur-Seine ),France,149077,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Saint-Étienne,France,173136,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Strasbourg,France,293771,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Toulon,France,179116,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Toulouse,France,514819,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Tours,France,139259,2023-01-01,https://www.citypopulation.de/en/france/cities/
-Villeurbanne,France,163684,2023-01-01,https://www.citypopulation.de/en/france/cities/
-A Coruña ( La Coruña ),Spain,251277,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Adeje,Spain,50612,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Albacete,Spain,175068,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Alcalá de Guadaíra,Spain,77718,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Alcalá de Henares,Spain,202549,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Alcobendas,Spain,123222,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Alcoi ( Alcoy ),Spain,61613,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Alcorcón,Spain,176806,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Algeciras,Spain,126500,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Alicant ( Alicante ),Spain,365586,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Almería,Spain,204772,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Aranjuez,Spain,63838,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Arganda del Rey,Spain,60105,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Arona,Spain,89036,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Arrecife,Spain,70265,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Ávila,Spain,59480,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Avilés,Spain,75915,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Badajoz,Spain,150870,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Badalona,Spain,230642,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Barakaldo ( San Vicente de Baracaldo ),Spain,103084,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Barcelona,Spain,1713247,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Benalmádena,Spain,78787,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Benidorm,Spain,77211,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Bilbao,Spain,350975,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Boadilla del Monte,Spain,66319,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Burgos,Spain,178370,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Cáceres,Spain,96598,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Cádiz,Spain,110123,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Calvià,Spain,54082,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Cartagena,Spain,220400,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Castelldefels,Spain,69689,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Castelló de la Plana ( Castellón de la Plana ),Spain,183709,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Cerdanyola del Vallès,Spain,58264,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Ceuta,Spain,83567,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Chiclana de la Frontera,Spain,90997,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Ciudad Real,Spain,76087,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Collado Villalba,Spain,67956,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Colmenar Viejo,Spain,58654,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Córdoba,Spain,324159,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Cornellà de Llobregat,Spain,92255,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Coslada,Spain,80365,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Cuenca,Spain,53761,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Donostia ( San Sebastián ),Spain,189507,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Dos Hermanas,Spain,142463,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Eivissa ( Ibiza ),Spain,54628,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Elda,Spain,55554,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-El Ejido,Spain,90617,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-El Prat de Llobregat,Spain,66251,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-El Puerto de Santa María,Spain,90242,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Elx ( Elche ),Spain,245575,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Estepona,Spain,79593,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Ferrol ( El Ferrol ),Spain,64903,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Fuengirola,Spain,84857,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Fuenlabrada,Spain,189814,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Gandia ( Gandía ),Spain,82909,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Getafe,Spain,195628,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Getxo ( Guecho ),Spain,75967,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Gijón,Spain,271259,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Girona ( Gerona ),Spain,108352,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Granada,Spain,235294,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Granadilla de Abona,Spain,59126,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Granollers,Spain,65123,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Guadalajara,Spain,92798,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Huelva,Spain,143774,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Huesca,Spain,55033,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Irun ( Irún ),Spain,63737,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Jaén,Spain,112119,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Jerez de la Frontera,Spain,215025,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-La Línea de la Concepción,Spain,65420,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Las Palmas de Gran Canaria,Spain,384023,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Las Rozas de Madrid,Spain,99579,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Leganés,Spain,195946,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-León,Spain,124091,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-L'Hospitalet de Llobregat,Spain,292161,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Linares,Spain,55689,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Lleida ( Lérida ),Spain,147369,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Logroño,Spain,151681,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Lorca,Spain,98613,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Lugo,Spain,100071,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Madrid,Spain,3477497,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Majadahonda,Spain,73662,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Málaga,Spain,597173,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Manresa,Spain,80692,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Marbella,Spain,160478,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Mataró,Spain,131370,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Melilla,Spain,87067,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Mérida,Spain,60319,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Mijas,Spain,94320,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Molina de Segura,Spain,78210,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Mollet del Vallès,Spain,52759,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Móstoles,Spain,214293,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Motril,Spain,60160,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Murcia,Spain,477631,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Orihuela,Spain,84279,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Ourense ( Orense ),Spain,105609,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Oviedo,Spain,223576,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Palencia,Spain,77369,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Palma ( Palma de Mallorca ),Spain,443196,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Pamplona ( Iruña ),Spain,209676,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Parla,Spain,138012,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Paterna,Spain,75805,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Pinto,Spain,56592,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Ponferrada,Spain,63112,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Pontevedra,Spain,83339,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Pozuelo de Alarcón,Spain,89474,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Reus,Spain,111911,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Rincón de la Victoria,Spain,52355,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Rivas-Vaciamadrid,Spain,103243,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Roquetas de Mar,Spain,110054,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Rubí,Spain,82825,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Sabadell,Spain,224589,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Sagunt ( Sagunto ),Spain,73416,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Salamanca,Spain,145583,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-San Bartolomé de Tirajana,Spain,54925,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-San Cristóbal de la Laguna ( La Laguna ),Spain,161927,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-San Fernando,Spain,93490,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Sanlúcar de Barrameda,Spain,69952,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-San Sebastián de los Reyes,Spain,97330,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Santa Coloma de Gramenet ( Santa Coloma de Gramanet ),Spain,123250,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Santa Cruz de Tenerife,Spain,211498,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Santa Lucía de Tirajana,Spain,79506,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Santander,Spain,175082,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Sant Boi de Llobregat,Spain,85317,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Sant Cugat del Vallès,Spain,97959,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Santiago de Compostela,Spain,100842,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Sant Vicent del Raspeig ( San Vicente del Raspeig ),Spain,60428,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Segovia,Spain,52189,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Sevilla,Spain,688714,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Siero,Spain,52997,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Talavera de la Reina,Spain,84413,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Tarragona,Spain,143260,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Telde,Spain,104933,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Terrassa ( Tarrasa ),Spain,232676,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Toledo,Spain,87074,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Torrejón de Ardoz,Spain,144211,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Torrelavega,Spain,51668,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Torremolinos,Spain,71270,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Torrent ( Torrente ),Spain,91353,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Torrevieja,Spain,100470,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Tres Cantos,Spain,54506,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Utrera,Spain,52489,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Valdemoro,Spain,86078,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-València [ Valencia ],Spain,841558,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Valladolid,Spain,301798,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Vélez-Málaga,Spain,87798,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Vic,Spain,50405,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Vigo,Spain,295735,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Viladecans,Spain,67536,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Vilanova i la Geltrú,Spain,71305,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Vila-real ( Villarreal ),Spain,53634,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Vitoria-Gasteiz,Spain,260402,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Zamora,Spain,59857,2025-01-01,https://www.citypopulation.de/en/spain/cities/
-Zaragoza,Spain,699007,2025-01-01,https://www.citypopulation.de/en/spain/cities/
+Altmünster,Austria,9974,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Amstetten,Austria,23980,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Ansfelden,Austria,18229,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Baden,Austria,26097,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Bad Ischl,Austria,14137,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Bad Vöslau,Austria,12589,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Bischofshofen,Austria,10804,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Bludenz,Austria,14994,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Braunau am Inn,Austria,17534,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Bregenz,Austria,29270,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Bruck an der Mur,Austria,15608,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Brunn am Gebirge,Austria,12308,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Deutschlandsberg,Austria,11675,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Dornbirn,Austria,52252,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Ebreichsdorf,Austria,12017,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Eisenstadt,Austria,16396,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Enns,Austria,12191,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Feldbach,Austria,13369,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Feldkirch,Austria,36643,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Feldkirchen in Kärnten,Austria,14558,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Fürstenfeld,Austria,10358,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Gänserndorf,Austria,12348,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Gerasdorf bei Wien,Austria,12142,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Gleisdorf,Austria,11554,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Gmunden,Austria,13142,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Götzis,Austria,12426,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Gratwein-Straßengel,Austria,12759,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Graz,Austria,306971,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Groß-Enzersdorf,Austria,12156,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Hallein,Austria,21607,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Hall in Tirol,Austria,14625,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Hard,Austria,13800,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Hohenems,Austria,17668,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Hollabrunn,Austria,12573,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Imst,Austria,11076,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Innsbruck,Austria,132820,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Judenburg,Austria,9441,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Kapfenberg,Austria,21796,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Klagenfurt am Wörthersee,Austria,105734,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Klosterneuburg,Austria,28153,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Knittelfeld,Austria,12792,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Köflach,Austria,9557,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Korneuburg,Austria,13790,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Krems an der Donau,Austria,25581,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Kufstein,Austria,20118,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Laakirchen,Austria,9726,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Lauterach,Austria,10670,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Leibnitz,Austria,13441,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Leoben,Austria,24455,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Leonding,Austria,29161,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Lienz,Austria,12105,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Linz,Austria,214272,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Lustenau,Austria,24704,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Marchtrenk,Austria,14942,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Mistelbach,Austria,11976,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Mödling,Austria,20662,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Neunkirchen,Austria,12984,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Perchtoldsdorf,Austria,14904,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Purkersdorf,Austria,9931,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Rankweil,Austria,12168,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Ried im Innkreis,Austria,12965,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Saalfelden am Steinernen Meer,Austria,17360,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Salzburg,Austria,157834,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Sankt Andrä,Austria,9836,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Sankt Johann im Pongau,Austria,11593,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Sankt Johann in Tirol,Austria,9908,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Sankt Pölten,Austria,60112,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Sankt Veit an der Glan,Austria,12178,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Schwaz,Austria,14581,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Schwechat,Austria,21471,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Seekirchen am Wallersee,Austria,11722,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Seiersberg-Pirka,Austria,12264,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Sierning,Austria,9910,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Spittal an der Drau,Austria,15263,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Steyr,Austria,37898,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Stockerau,Austria,17363,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Strasshof an der Nordbahn,Austria,12324,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Telfs,Austria,16467,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Ternitz,Austria,14637,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Traiskirchen,Austria,18958,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Traun,Austria,25436,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Trofaiach,Austria,10960,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Tulln an der Donau,Austria,16758,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Villach,Austria,66051,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Vöcklabruck,Austria,12985,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Voitsberg,Austria,9517,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Völkermarkt,Austria,10803,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Waidhofen an der Ybbs,Austria,11053,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Wals-Siezenheim,Austria,14452,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Weiz,Austria,12212,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Wels,Austria,65764,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Wien [ Vienna ],Austria,2040914,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Wiener Neustadt,Austria,50025,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Wolfsberg,Austria,25011,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Wörgl,Austria,14398,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Zell am See,Austria,10217,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Zwettl-Niederösterreich,Austria,10710,2026-01-01,https://www.citypopulation.de/en/austria/cities/
+Adelaide,Australia,1470938,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Airlie Beach - Cannonvale,Australia,16597,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Albany,Australia,38287,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Albury ( - Wodonga (Vic.) ),Australia,102435,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Alice Springs,Australia,30875,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Armidale,Australia,24436,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Bacchus Marsh,Australia,27182,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Bairnsdale,Australia,15917,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Ballarat,Australia,120939,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Ballina,Australia,48465,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Batemans Bay,Australia,17849,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Bathurst,Australia,39013,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Bendigo,Australia,106493,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Bowral - Mittagong,Australia,42529,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Brisbane,Australia,2745086,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Broken Hill,Australia,17515,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Broome,Australia,16506,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Bunbury,Australia,84332,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Bundaberg,Australia,79283,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Burnie,Australia,28643,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Busselton,Australia,46023,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Byron Bay,Australia,11482,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Cairns ( incl. Northern Beaches ),Australia,164149,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Camden Haven,Australia,19995,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Canberra ( - Queanbeyan (NSW) ),Australia,521049,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Castlemaine,Australia,11640,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Central Coast ( Gosford ),Australia,354189,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Coffs Harbour ( incl. Sawtell ),Australia,77244,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Colac,Australia,12558,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Darwin,Australia,145019,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Devonport,Australia,32938,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Dubbo,Australia,42452,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Echuca ( - Moama (NSW) ),Australia,23393,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Emerald,Australia,15238,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Esperance,Australia,12580,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Forster - Tuncurry,Australia,21272,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Geelong,Australia,314381,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Geraldton,Australia,42104,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Gisborne,Australia,24163,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Gladstone,Australia,48505,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Gold Coast ( - Tweed Heads (NSW) ),Australia,761634,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Goulburn,Australia,25647,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Grafton,Australia,19905,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Griffith,Australia,20774,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Gympie,Australia,24591,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Hervey Bay,Australia,63312,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Hobart,Australia,233736,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Horsham,Australia,16882,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Kalgoorlie-Boulder,Australia,31016,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Karratha,Australia,19659,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Kempsey,Australia,16272,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Kingaroy,Australia,11059,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Launceston,Australia,92993,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Lismore,Australia,27856,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Lithgow,Australia,12124,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Mackay,Australia,89761,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Maryborough,Australia,28658,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Medowie,Australia,17178,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Melbourne,Australia,5328274,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Mildura ( - Buronga (NSW) ),Australia,54379,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Moe - Newborough,Australia,22612,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Morisset - Cooranbong,Australia,31333,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Mount Gambier,Australia,30875,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Mount Isa,Australia,18162,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Mudgee,Australia,12965,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Murray Bridge,Australia,19938,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Muswellbrook,Australia,12595,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Nelson Bay ( incl. Corlette ),Australia,29024,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Newcastle,Australia,541634,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Nowra - Bomaderry,Australia,40264,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Orange,Australia,43213,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Perth,Australia,2430757,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Port Augusta,Australia,14134,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Port Hedland,Australia,17300,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Portland,Australia,11124,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Port Lincoln,Australia,17064,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Port Macquarie,Australia,53369,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Port Pirie,Australia,14195,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Rockhampton,Australia,83508,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Sale,Australia,15232,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Shepparton - Mooroopna,Australia,55332,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Singleton,Australia,17396,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+St Georges Basin - Sanctuary Point,Australia,20492,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Sunshine Coast ( Caloundra - Buderim - Noosa ),Australia,424741,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Swan Hill,Australia,10747,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Sydney,Australia,5219674,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Tamworth,Australia,46024,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Taree,Australia,26858,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Toowoomba,Australia,153781,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Townsville ( incl. Thuringowa ),Australia,190551,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Traralgon,Australia,44085,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Ulladulla,Australia,17567,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Ulverstone,Australia,15471,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Victor Harbor,Australia,30900,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Wagga Wagga,Australia,58117,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Wangaratta,Australia,20019,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Warragul,Australia,47510,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Warrnambool,Australia,36689,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Warwick,Australia,16197,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Whyalla,Australia,21641,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Wollongong,Australia,322343,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Yeppoon,Australia,22522,2025-06-30,https://www.citypopulation.de/en/australia/cities/
+Aichganti,Bangladesh,21183,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Akhaura,Bangladesh,46541,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Akkelpur,Bangladesh,28166,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Alamdanga,Bangladesh,34834,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Algi Durgapur Dakshin,Bangladesh,22072,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Alikadam,Bangladesh,19351,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Amtali,Bangladesh,25223,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Araihazar,Bangladesh,38447,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ashulia,Bangladesh,71608,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Atra Gilatala,Bangladesh,46917,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Badarganj,Bangladesh,28548,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Badarkhali,Bangladesh,36700,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bagerhat,Bangladesh,55091,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bagha,Bangladesh,39288,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bajitpur,Bangladesh,41003,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bakerganj,Bangladesh,21433,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bakshiganj,Bangladesh,51189,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Baktabali,Bangladesh,45090,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Baluchar,Bangladesh,20700,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Banchharampur,Bangladesh,33073,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bandarban,Bangladesh,54450,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Banpara,Bangladesh,32378,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Banshkhali,Bangladesh,46785,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bapta,Bangladesh,26280,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Barabagi ( Taltali ),Bangladesh,24845,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Barabakia,Bangladesh,22520,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Baraigram,Bangladesh,19677,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bara Maheshkhali,Bangladesh,41165,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Barguna,Bangladesh,40019,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Barishal ( Barisal ),Bangladesh,419484,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Barlekha,Bangladesh,26682,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Barura,Bangladesh,57941,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Basail,Bangladesh,23812,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Basurhat ( Companiganj ),Bangladesh,38479,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Battali,Bangladesh,20275,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Beani Bazar,Bangladesh,42328,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Belkuchi,Bangladesh,80182,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Benapole ( in: Sharsha Upazila ),Bangladesh,44352,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bera,Bangladesh,63337,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhabaniganj,Bangladesh,20050,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhadeshwar,Bangladesh,19344,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhairab ( Bhairab Bazar ),Bangladesh,156297,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhaluka,Bangladesh,50488,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhandaria,Bangladesh,30470,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhanga,Bangladesh,43202,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhangura,Bangladesh,23720,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bheramara,Bangladesh,26415,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhogdabari ( Chilahati ),Bangladesh,23298,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhola,Bangladesh,57159,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhuanpur,Bangladesh,36980,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bhurungamari,Bangladesh,30220,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Birampur,Bangladesh,50102,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Birganj,Bangladesh,23534,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bishwanath,Bangladesh,47767,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Boalkhali,Bangladesh,79363,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Boalmari,Bangladesh,31130,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Boda,Bangladesh,23240,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Bogra,Bangladesh,486016,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Brahmanbaria,Bangladesh,264341,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Burimari,Bangladesh,21794,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Burishchar,Bangladesh,29447,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chakaria,Bangladesh,94398,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chandanaish,Bangladesh,40604,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chandina,Bangladesh,58665,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chandpur,Bangladesh,23315,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chandpur,Bangladesh,203451,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chandraghona,Bangladesh,32123,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chapai Nawabganj ( Nawabganj ),Bangladesh,201005,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Char Ababil ( Haiderganj ),Bangladesh,19654,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Char Bangshi,Bangladesh,29697,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Charbhadrasan,Bangladesh,25577,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Char Bhairabi,Bangladesh,18026,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Char Fasson,Bangladesh,41562,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Charghat,Bangladesh,40553,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Char Parbati,Bangladesh,32415,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Char Putimari,Bangladesh,18021,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chatkhil,Bangladesh,39756,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chatmohar,Bangladesh,19357,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chauddagram,Bangladesh,46330,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chaugachha,Bangladesh,26075,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chaumohoni ( Begumganj ),Bangladesh,100065,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chhagalnaiya,Bangladesh,59131,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chhatak,Bangladesh,45514,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chhengarchar ( Matlab Uttar ),Bangladesh,39762,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chikandandi,Bangladesh,41478,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chittagong ( Chattogram ),Bangladesh,3230507,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Choudala,Bangladesh,20175,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Choufaldandi,Bangladesh,33504,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chuadanga,Bangladesh,97548,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Chunarughat,Bangladesh,23686,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Cox's Bazar,Bangladesh,196385,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Cumilla ( Comilla ),Bangladesh,440233,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Daganbhuiyan,Bangladesh,38153,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dakshin Bedkashi,Bangladesh,19391,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dakshin Dhurung,Bangladesh,19182,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Damodar,Bangladesh,22577,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Darshana ( Damurhuda ),Bangladesh,36902,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Daudkandi,Bangladesh,55030,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Debidwar,Bangladesh,71887,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Debinagar,Bangladesh,28158,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Derai,Bangladesh,30857,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dewanganj,Bangladesh,41123,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+"Dhaka ( incl. Dhaka North, Dhaka South ) [ Dacca ]",Bangladesh,10295786,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dhalai,Bangladesh,29927,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dhamrai,Bangladesh,81260,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dhamsona ( Ganakbari ),Bangladesh,133276,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dhanbari,Bangladesh,42708,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dinajpur,Bangladesh,212288,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dohar,Bangladesh,54589,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Domar,Bangladesh,20043,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dulahazara,Bangladesh,28382,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Dupchanchia,Bangladesh,28700,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Durgapur,Bangladesh,29187,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Durgapur,Bangladesh,30410,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Eidgaon,Bangladesh,66675,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Elenga,Bangladesh,49784,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Failjana ( Marambalpur ),Bangladesh,23216,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Faridganj,Bangladesh,40788,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Faridpur,Bangladesh,237283,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Fatikchhari,Bangladesh,53632,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Fatullah ( Dapa Idrakpur ),Bangladesh,49597,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Fenchuganj,Bangladesh,21589,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Feni,Bangladesh,234357,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Fulbari,Bangladesh,27520,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Fulbaria,Bangladesh,40423,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Fulbaria,Bangladesh,18392,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gabtali,Bangladesh,24620,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gaffargaon,Bangladesh,39021,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gaibandha,Bangladesh,79264,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Galachipa,Bangladesh,25721,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gangni,Bangladesh,30067,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gaurichanna,Bangladesh,23512,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gaurnadi,Bangladesh,48337,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gazipur ( incl. Tongi ),Bangladesh,2677715,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gazipur,Bangladesh,23440,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gazirkhamar,Bangladesh,18864,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ghagra,Bangladesh,32612,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ghatail,Bangladesh,36839,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ghoraghat,Bangladesh,26639,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ghorashal ( in: Palash Upazila ),Bangladesh,101690,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Goalanda Ghat,Bangladesh,22370,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gobaria Abdullahpur,Bangladesh,36624,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gobindaganj,Bangladesh,41511,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Godagari,Bangladesh,48629,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Golapganj,Bangladesh,36507,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gopaldi,Bangladesh,47722,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gopalganj,Bangladesh,108523,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gopalpur ( in: Lalpur Upazila ),Bangladesh,22564,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gopalpur,Bangladesh,55235,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gosairhat,Bangladesh,24753,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gouripur,Bangladesh,31665,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gujadia,Bangladesh,27249,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Gurudaspur,Bangladesh,37881,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Habiganj,Bangladesh,85644,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Habirbari,Bangladesh,64698,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Haidgaon,Bangladesh,25093,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hajiganj,Bangladesh,79483,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hajirhat,Bangladesh,37101,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hakimpur,Bangladesh,29127,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Haluaghat,Bangladesh,24272,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Haragacha ( in: Kaunia Upazila ),Bangladesh,60376,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Harinakundu,Bangladesh,26162,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hashimpur,Bangladesh,22788,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hasnabad ( Amirganj ),Bangladesh,24081,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hathazari,Bangladesh,94225,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hatiya,Bangladesh,57449,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hazariganj,Bangladesh,23123,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hazrabari,Bangladesh,19447,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hnila ( Nhila ),Bangladesh,57195,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Homna,Bangladesh,42204,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Hossainpur,Bangladesh,29105,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ishwardi,Bangladesh,81139,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ishwarganj,Bangladesh,33633,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Islampur,Bangladesh,41148,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jagannathpur,Bangladesh,40815,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jaipurhat ( Joypurhat ),Bangladesh,84921,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jajira ( Zajira ),Bangladesh,26669,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jaldhaka,Bangladesh,54044,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jalia Palang ( Sonarpara ),Bangladesh,24248,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jamalpur,Bangladesh,158889,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jessore ( Jashore ),Bangladesh,209352,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jessore Cantonment,Bangladesh,18869,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jhalakati ( Jhalokati ),Bangladesh,68194,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jhenaidah ( Jhenida ),Bangladesh,140271,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jhikargacha,Bangladesh,37032,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jhilangja,Bangladesh,43139,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jibannagar,Bangladesh,29175,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Jinjira,Bangladesh,40820,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Joyrampur,Bangladesh,19636,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kabirhat,Bangladesh,21507,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kachchhapia,Bangladesh,32807,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kachua,Bangladesh,30837,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kadalpur,Bangladesh,21254,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kakanhat,Bangladesh,19150,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kalapara,Bangladesh,22339,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kalaroa,Bangladesh,30777,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kalia,Bangladesh,22336,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kalia Haripur ( Kalia Chowdhury ),Bangladesh,21828,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kaliakair,Bangladesh,249111,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kaliganj,Bangladesh,60584,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kaliganj,Bangladesh,58833,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kalihati,Bangladesh,41810,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kalikaprasad,Bangladesh,28602,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kalkini,Bangladesh,48867,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kamalganj,Bangladesh,19435,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kamarerchar,Bangladesh,22560,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kanaighat,Bangladesh,31741,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kanchan ( in: Rupganj Upazila ),Bangladesh,58019,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kanchpur,Bangladesh,30713,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Karimganj,Bangladesh,31031,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kasba,Bangladesh,52022,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Katakhali ( in: Paba Upazila ),Bangladesh,35018,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Katiadi,Bangladesh,47698,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kendua,Bangladesh,26838,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Keochia,Bangladesh,19793,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Keshabpur,Bangladesh,32559,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kesharhat ( in: Mohanpur Upazila ),Bangladesh,22539,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Khadimpara,Bangladesh,27002,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Khagrachhari,Bangladesh,58875,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Khas Kaulia,Bangladesh,18937,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Khetlal,Bangladesh,20337,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Khoksa,Bangladesh,19052,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Khukni,Bangladesh,19689,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Khulna,Bangladesh,719557,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Khurushkul,Bangladesh,46499,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kishoreganj,Bangladesh,138063,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kotalipara,Bangladesh,21432,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kotchandpur,Bangladesh,38217,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kulaura,Bangladesh,30846,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kuliarchar,Bangladesh,35909,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kumarkhali,Bangladesh,24468,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kurigram,Bangladesh,90746,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kushtia ( incl. Barakhada ),Bangladesh,221806,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Kutubdia ( Bara Ghop ),Bangladesh,31289,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Laksham,Bangladesh,95110,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Lakshmipur,Bangladesh,132230,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Lalmohan,Bangladesh,32462,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Lalmonirhat,Bangladesh,67135,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Lama,Bangladesh,22655,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Lohagara,Bangladesh,40185,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Lohagara,Bangladesh,34336,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Madarganj,Bangladesh,36976,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Madaripur,Bangladesh,88743,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Madhabdi ( in: Narsingdi Sadar Upazila ),Bangladesh,73911,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Madhabpur,Bangladesh,29988,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Madhukhali,Bangladesh,30379,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Madhupur,Bangladesh,63741,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Magdhara,Bangladesh,38070,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Magura,Bangladesh,20691,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Magura,Bangladesh,114249,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Maheshkhali,Bangladesh,29372,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Maheshpur,Bangladesh,32779,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Maitbhanga,Bangladesh,24702,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Manikchhari,Bangladesh,45021,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Manikganj,Bangladesh,97496,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Manirampur,Bangladesh,30986,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Manohardi,Bangladesh,22809,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Marjal,Bangladesh,28810,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Matarbari,Bangladesh,52746,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mathbaria,Bangladesh,24964,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Matiranga,Bangladesh,29324,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Matlab ( in: Matlab Dakshin ),Bangladesh,65768,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Maulvi Bazar ( Moulvibazar ),Bangladesh,68304,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mehendiganj,Bangladesh,34955,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Meherpur,Bangladesh,47142,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Melandaha,Bangladesh,38377,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Merurchar,Bangladesh,23745,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mirkadim ( in: Munshiganj Sadar Upazila ),Bangladesh,49045,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mirpur,Bangladesh,26713,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mirsharai,Bangladesh,21611,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mirzapur,Bangladesh,22110,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mirzapur,Bangladesh,33331,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mohanganj,Bangladesh,32384,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mongla,Bangladesh,42613,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Morrelganj,Bangladesh,23321,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Muksudpur,Bangladesh,28762,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Muktagachha,Bangladesh,61421,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Muladi,Bangladesh,25876,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mundumala ( in: Tanore Upazila ),Bangladesh,25863,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Munshiganj,Bangladesh,93120,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Munshiganj,Bangladesh,19266,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Murapara,Bangladesh,28043,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Mymensingh ( Nasirabad ),Bangladesh,577000,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nabiganj,Bangladesh,26952,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nabinagar,Bangladesh,68219,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nachole,Bangladesh,21930,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nageshwari,Bangladesh,65999,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Naikhongchhari,Bangladesh,21955,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Najirhat ( Nazirhat ),Bangladesh,68323,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nakla,Bangladesh,38383,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nalchiti,Bangladesh,31658,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nalitabari,Bangladesh,31052,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nandail,Bangladesh,36255,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nandigram,Bangladesh,22275,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nangalkot,Bangladesh,33434,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Naogaon,Bangladesh,178649,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Naohata ( in: Paba Upazila ),Bangladesh,66523,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Narail,Bangladesh,52975,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+"Narayanganj ( incl. Siddirganj, Kadamrasul )",Bangladesh,967951,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Naria,Bangladesh,28927,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Narsingdi,Bangladesh,180711,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Natore,Bangladesh,87067,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nazipur ( in: Patnitala Upazila ),Bangladesh,27830,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Netrakona ( Netrokona ),Bangladesh,122299,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nikli,Bangladesh,27290,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nilakkha,Bangladesh,24660,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Nilphamari,Bangladesh,75483,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Noakhali,Bangladesh,132198,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Noapara ( in: Abhaynagar Upazila ),Bangladesh,96060,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Pabna,Bangladesh,176005,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Padua,Bangladesh,36158,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Paikgachha,Bangladesh,19551,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Pakundia,Bangladesh,35882,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Palashbari,Bangladesh,46509,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Panchagarh,Bangladesh,57010,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Panchbibi,Bangladesh,26577,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Panchhari,Bangladesh,24619,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Pangsha,Bangladesh,36445,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Parbatipur,Bangladesh,44855,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Parshuram,Bangladesh,36112,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Parulia,Bangladesh,28741,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Paschim Ilisha,Bangladesh,20520,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Patgram,Bangladesh,35842,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Patharghata,Bangladesh,21175,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Patiya,Bangladesh,66809,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Patuakhali,Bangladesh,82521,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Pekua,Bangladesh,40470,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Phulbari,Bangladesh,39622,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Phulpur,Bangladesh,36113,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Pirganj,Bangladesh,31403,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Pirganj,Bangladesh,23468,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Pirojpur,Bangladesh,72679,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Pomara,Bangladesh,29171,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Puthia,Bangladesh,21516,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Rahanpur ( in: Gomastapur Upazila ),Bangladesh,39173,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Raipur,Bangladesh,39809,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Raipura,Bangladesh,41384,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Rajakhali,Bangladesh,30062,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Rajbari,Bangladesh,65421,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Rajibpur ( Char Rajibpur - Baliamari ),Bangladesh,26000,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Rajoir,Bangladesh,44517,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Rajshahi,Bangladesh,553288,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ramganj,Bangladesh,53538,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ramgarh,Bangladesh,28212,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ramgati,Bangladesh,30840,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ramrampur ( Sarmara ),Bangladesh,19578,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ramu ( Fatekharkul ),Bangladesh,25097,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Rangamati,Bangladesh,106069,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Rangpur,Bangladesh,708570,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Rangunia,Bangladesh,39144,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ranishankail,Bangladesh,22398,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Raozan,Bangladesh,70101,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sahapur,Bangladesh,21310,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Saidpur,Bangladesh,143538,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sakhipur,Bangladesh,30370,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sakhipur,Bangladesh,43544,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sakuchia Dakshin,Bangladesh,21124,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sanandabari,Bangladesh,19354,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sandwip,Bangladesh,52720,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Santahar ( in: Adamdighi Upazila ),Bangladesh,35009,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Santhia,Bangladesh,41249,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sarail,Bangladesh,56522,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sariakandi,Bangladesh,18818,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sarishabari,Bangladesh,55840,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Satkania,Bangladesh,53692,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Satkhira,Bangladesh,138411,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Savar,Bangladesh,384105,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Senbagh,Bangladesh,22969,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Senhati,Bangladesh,19616,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Setabganj ( in: Bochaganj Upazila ),Bangladesh,29469,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shahjadpur,Bangladesh,76015,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shah Mirpur,Bangladesh,23390,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shahparir Dwip,Bangladesh,22317,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shahrasti,Bangladesh,45982,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shailkupa,Bangladesh,39696,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shaistaganj ( in: Habiganj Sadar Upazila ),Bangladesh,30832,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shakpura,Bangladesh,21919,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shariatpur,Bangladesh,70581,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sharsha,Bangladesh,51810,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sherpur,Bangladesh,30058,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sherpur,Bangladesh,123516,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shibchar,Bangladesh,32202,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shibganj,Bangladesh,23714,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shibganj,Bangladesh,52006,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shibpur,Bangladesh,25491,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shikalbaha,Bangladesh,46611,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Shyamnagar,Bangladesh,20279,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Singair,Bangladesh,32031,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Singra,Bangladesh,39863,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sirajganj,Bangladesh,188549,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sitakunda,Bangladesh,50139,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sonagazi,Bangladesh,24808,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sonaimuri,Bangladesh,44745,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sonargaon,Bangladesh,48213,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sonatala,Bangladesh,26770,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sreebardi,Bangladesh,27827,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sreemangal,Bangladesh,23332,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sreepur,Bangladesh,258973,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sujanagar,Bangladesh,29733,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sunamganj,Bangladesh,74595,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sundarganj,Bangladesh,19323,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Swarupkati,Bangladesh,23371,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Sylhet,Bangladesh,532839,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Tahirpur ( in: Baghmara Upazila ),Bangladesh,19906,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Talora,Bangladesh,20667,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Tamaraddi,Bangladesh,29599,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Tangail,Bangladesh,212887,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Tanore,Bangladesh,35444,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Tarabo ( in: Rupganj Upazila ),Bangladesh,197672,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Teknaf,Bangladesh,26248,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Teknaf,Bangladesh,38509,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Thakurgaon,Bangladesh,100462,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Trishal,Bangladesh,43799,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Tushbhandar,Bangladesh,19868,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ukhia ( Rajapalang ),Bangladesh,29526,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ulipur,Bangladesh,50958,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Ullahpara,Bangladesh,58718,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Uttar Haola ( Baralla ),Bangladesh,19191,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Whykyong,Bangladesh,64672,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Zakiganj,Bangladesh,19999,2022-06-14,https://www.citypopulation.de/en/bangladesh/cities/
+Aalst ( Alost ),Belgium,93094,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Aalter,Belgium,29862,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Aarschot,Belgium,31948,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Andenne,Belgium,28239,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Anderlecht,Belgium,129600,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Ans,Belgium,29268,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Antwerpen ( Anvers ) [ Antwerp ],Belgium,565615,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Arlon ( Aarlen ),Belgium,31440,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Asse,Belgium,36018,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Ath ( Aat ),Belgium,30235,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Auderghem ( Oudergem ),Belgium,35659,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Balen,Belgium,23916,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Bastogne ( Bastenaken ),Belgium,21010,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Beersel,Belgium,26800,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Berchem-Sainte-Agathe ( Sint-Agatha-Berchem ),Belgium,25762,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Beringen,Belgium,49034,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Beveren-Kruibeke-Zwijndrecht,Belgium,88344,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Bilzen-Hoeselt,Belgium,43228,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Binche,Belgium,33841,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Blankenberge,Belgium,20741,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Boom,Belgium,19963,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Bornem,Belgium,22333,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Boussu,Belgium,20516,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Braine-l'Alleud ( Eigenbrakel ),Belgium,40815,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Braine-le-Comte ( 's Gravenbrakel ),Belgium,23761,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Brasschaat,Belgium,38529,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Brecht,Belgium,30755,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Brugge ( Bruges ),Belgium,120458,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Bruxelles ( Brussel ) [ Brussels ],Belgium,198674,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Charleroi,Belgium,206900,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Châtelet,Belgium,35975,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Chaudfontaine,Belgium,20525,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Colfontaine,Belgium,20761,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Courcelles,Belgium,31673,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Deinze,Belgium,46380,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Denderleeuw,Belgium,21402,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Dendermonde ( Termonde ),Belgium,47828,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Diepenbeek,Belgium,19867,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Diest,Belgium,25196,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Dilbeek,Belgium,45111,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Dilsen-Stokkem,Belgium,21677,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Edegem,Belgium,23698,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Eeklo,Belgium,22911,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Erpe-Mere,Belgium,21211,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Etterbeek,Belgium,49638,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Eupen,Belgium,20145,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Evere,Belgium,45984,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Evergem,Belgium,37371,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Flémalle,Belgium,27167,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Fleurus,Belgium,23037,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Forest ( Vorst ),Belgium,58904,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Frameries,Belgium,21472,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Ganshoren,Belgium,25731,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Geel,Belgium,42650,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Gembloux,Belgium,26573,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Genk,Belgium,68101,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Gent ( Gand ) [ Ghent ],Belgium,274042,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Geraardsbergen ( Grammont ),Belgium,35338,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Grâce-Hollogne,Belgium,23353,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Grimbergen,Belgium,40491,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Halle ( Hal ),Belgium,43131,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Hamme,Belgium,25763,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Harelbeke,Belgium,30605,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Hasselt,Belgium,90914,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Heist-op-den-Berg,Belgium,44991,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Herent,Belgium,23287,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Herentals,Belgium,29163,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Herstal,Belgium,40909,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Heusden-Zolder,Belgium,35032,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Hoogstraten,Belgium,22525,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Houthalen-Helchteren,Belgium,30879,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Huy ( Hoei ),Belgium,21913,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Ieper ( Ypres ),Belgium,35629,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Ixelles ( Elsene ),Belgium,89162,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Izegem,Belgium,29444,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Jette,Belgium,54330,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Kalmthout,Belgium,19826,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Kapellen,Belgium,28190,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Kasterlee,Belgium,19835,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Knokke-Heist,Belgium,32163,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Koekelberg,Belgium,22578,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Koksijde,Belgium,21072,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Kontich,Belgium,21894,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Kortenberg,Belgium,21425,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Kortrijk ( Courtrai ),Belgium,81523,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+La Louvière,Belgium,81751,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Lanaken,Belgium,26513,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Lebbeke,Belgium,20380,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Leuven ( Louvain ),Belgium,105357,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Liège ( Luik ),Belgium,198102,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Lier ( Lierre ),Belgium,38747,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Lievegem,Belgium,27502,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Lochristi,Belgium,30982,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Lokeren,Belgium,50897,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Lommel,Belgium,35451,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Maaseik,Belgium,25896,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Maasmechelen,Belgium,40653,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Maldegem,Belgium,24927,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Manage,Belgium,24249,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Mechelen ( Malines ),Belgium,90355,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Meise,Belgium,20592,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Menen ( Menin ),Belgium,34640,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Merelbeke-Melle,Belgium,37675,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Middelkerke,Belgium,20069,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Mol,Belgium,38793,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Molenbeek-Saint-Jean ( Sint-Jans-Molenbeek ),Belgium,98411,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Mons ( Bergen ),Belgium,97745,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Mortsel,Belgium,26961,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Mouscron ( Moeskroen ),Belgium,60410,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Namur ( Namen ),Belgium,115457,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Nazareth-De Pinte,Belgium,23633,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Nijlen,Belgium,23881,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Ninove,Belgium,40879,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Nivelles ( Nijvel ),Belgium,29830,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Oostende ( Ostende ) [ Ostend ],Belgium,73000,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Oostkamp,Belgium,24102,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Ottignies-Louvain-la-Neuve,Belgium,31823,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Oudenaarde ( Audenarde ),Belgium,33105,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Oudsbergen,Belgium,24005,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Oupeye,Belgium,26036,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Overijse,Belgium,26452,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Pajottegem,Belgium,25501,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Pelt,Belgium,34698,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Poperinge,Belgium,19890,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Puurs-Sint-Amands,Belgium,27389,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Ranst,Belgium,19867,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Rixensart,Belgium,22973,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Roeselare ( Roulers ),Belgium,67697,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Ronse ( Renaix ),Belgium,27731,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Saint-Ghislain,Belgium,23969,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Saint-Gilles ( Sint-Gillis ),Belgium,48756,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Saint-Josse-ten-Noode ( Sint-Joost-ten-Node ),Belgium,27003,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Saint-Nicolas,Belgium,24529,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Sambreville,Belgium,28587,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Schaerbeek ( Schaarbeek ),Belgium,129278,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Scherpenheuvel-Zichem ( Montaigu-Zichem ),Belgium,24537,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Schilde,Belgium,20476,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Schoten,Belgium,34849,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Seraing,Belgium,64764,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Sint-Gillis-Waas,Belgium,20272,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Sint-Katelijne-Waver,Belgium,21937,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Sint-Niklaas ( Saint-Nicolas ),Belgium,83400,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Sint-Pieters-Leeuw,Belgium,37055,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Sint-Truiden ( Saint-Trond ),Belgium,41987,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Soignies ( Zinnik ),Belgium,29397,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Stekene,Belgium,19955,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Temse ( Tamise ),Belgium,31814,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Tervuren,Belgium,23179,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Tessenderlo-Ham,Belgium,30827,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Tielt,Belgium,31973,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Tienen ( Tirlemont ),Belgium,36962,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Tongeren-Borgloon ( Tongres-Looz ),Belgium,44239,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Torhout,Belgium,21154,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Tournai ( Doornik ),Belgium,69066,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Tubize ( Tubeke ),Belgium,29043,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Turnhout,Belgium,48490,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Uccle ( Ukkel ),Belgium,87548,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Verviers,Belgium,56182,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Vilvoorde ( Vilvorde ),Belgium,48413,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Waregem,Belgium,40737,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Waterloo,Belgium,30386,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Watermael-Boitsfort ( Watermaal-Bosvoorde ),Belgium,25271,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Wavre ( Waver ),Belgium,35735,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Westerlo,Belgium,25723,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Wetteren,Belgium,27071,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Wevelgem,Belgium,32089,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Willebroek,Belgium,28923,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Wingene,Belgium,20919,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Woluwe-Saint-Lambert ( Sint-Lambrechts-Woluwe ),Belgium,60979,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Woluwe-Saint-Pierre ( Sint-Pieters-Woluwe ),Belgium,42566,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Wuustwezel,Belgium,21902,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Zaventem,Belgium,37518,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Zedelgem,Belgium,23747,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Zele,Belgium,21587,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Zemst,Belgium,23367,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Zoersel,Belgium,23223,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Zonhoven,Belgium,22030,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Zottegem,Belgium,28343,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Zwevegem,Belgium,26035,2026-01-01,https://www.citypopulation.de/en/belgium/cities/
+Asipovičy ( Osipoviči ) [ Asipovichy ],Belarus,29329,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Ašmiany [ Ashmyany ],Belarus,16870,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Astraviec,Belarus,14805,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Babrujsk [ Babruysk ],Belarus,208611,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Barań,Belarus,10301,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Baranavičy ( Baranoviči ) [ Baranovichi ],Belarus,172150,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Barysaǔ ( Borisov ) [ Barysaw ],Belarus,136409,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Bialyničy [ Byalynichy ],Belarus,9749,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Biaroza ( Berëza ) [ Byaroza ],Belarus,28397,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Biarozaǔka [ Byarozawka ],Belarus,9657,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Bielaaziorsk [ Byelaazyorsk ],Belarus,10997,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Bierazino [ Byerazino ],Belarus,11395,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Braslaǔ [ Braslaw ],Belarus,9426,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Brest,Belarus,342461,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Bychaǔ ( Bychov ) [ Bykhaw ],Belarus,16426,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Čašniki [ Chashniki ],Belarus,7843,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Čavusy [ Chavusy ],Belarus,9944,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Červień [ Chervyen ],Belarus,10542,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Chojniki [ Hoiniki ],Belarus,13248,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Dobruš [ Dobrush ],Belarus,18137,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Drahičyn [ Drahichyn ],Belarus,14856,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Dziaržynsk ( Dzeržinsk ) [ Dzyarzhynsk ],Belarus,29811,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Fanipaĺ,Belarus,17768,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Hancavičy [ Hantsavichy ],Belarus,13486,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Haradok ( Gorodok ),Belarus,11570,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Hlybokaje ( Glybokaje ) [ Hlybokaye ],Belarus,17707,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Homieĺ ( incl. Kascjukoŭka ) [ Gomel ],Belarus,501802,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Horki [ Gorki ],Belarus,29152,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Hrodna [ Grodno ],Belarus,358717,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Ivacevičy ( Ivaceviči ) [ Ivatsevichy ],Belarus,22487,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Ivanava,Belarus,16272,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Jeĺsk ( Jelsk ) [ Yel'sk ],Belarus,8864,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Kalinkavičy [ Kalinkavichy ],Belarus,37050,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Kapyĺ,Belarus,10087,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Kasciukovičy [ Kastsyukovichy ],Belarus,15089,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Kleck [ Kletsk ],Belarus,11350,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Klimavičy [ Klimavichy ],Belarus,15121,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Kobryn ( Kobrin ),Belarus,52670,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Kryčaǔ ( Krčiëv ) [ Krychaw ],Belarus,23469,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Lahojsk ( Logojsk ) [ Lahoysk ],Belarus,15515,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Leĺčycy [ Lelchytsy ],Belarus,12378,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Lepieĺ,Belarus,17182,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Liachavičy [ Lyakhavichy ],Belarus,10613,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Lida,Belarus,103915,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Liubań [ Lyuban ],Belarus,11360,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Luniniec [ Luninets ],Belarus,23548,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Mačuliščy [ Machulishchy ],Belarus,10474,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Mahiloǔ [ Mogilev ],Belarus,353338,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Maladziečna ( Molodečno ) [ Maladzyechna ],Belarus,89268,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Malaryta,Belarus,12850,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Marjina Horka ( Mar'ina Gorka ) [ Maryina Horka ],Belarus,20242,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Masty,Belarus,14683,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Mazyr ( Mozyr' ),Belarus,105321,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Mikaševičy [ Mikashevichy ],Belarus,12395,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Minsk,Belarus,1995471,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Mscislaǔ [ Mstsislaw ],Belarus,10063,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Navahrudak [ Novogrudok ],Belarus,28021,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Navapolack ( Novopolock ) [ Navapolatsk ],Belarus,96320,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Niasviž [ Nesvizh ],Belarus,15907,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Novalukomĺ,Belarus,12048,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Orša [ Orsha ],Belarus,103658,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Pastavy ( Postavy ),Belarus,18772,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Pietrykaǔ [ Pietrykaw ],Belarus,10303,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Pinsk,Belarus,124613,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Polack ( Polock ) [ Polotsk ],Belarus,79960,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Pružany [ Pruzhany ],Belarus,19064,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Rahačoǔ ( Rogačëv ) [ Rahachow ],Belarus,32029,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Rečyca ( Rečica ) [ Rechytsa ],Belarus,65423,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Salihorsk [ Soligorsk ],Belarus,98590,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Ščučyn [ Shchuchyn ],Belarus,15653,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Skidzieĺ [ Skidzyel ],Belarus,9742,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Škloǔ [ Shklow ],Belarus,14989,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Slonim,Belarus,49113,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Sluck [ Slutsk ],Belarus,60376,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Smaliavičy [ Smalyavichy ],Belarus,21820,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Smarhoń ( Smorgon' ),Belarus,35781,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Staryja Darohi [ Staryya Darohi ],Belarus,10972,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Stolin,Belarus,13550,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Stoǔbcy [ Stowbtsy ],Belarus,17640,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Svietlahorsk ( Sveltlogorsk ),Belarus,63202,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Talačyn [ Talachyn ],Belarus,9691,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Uzda,Belarus,10677,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Valožyn [ Valozhyn ],Belarus,10064,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Vaǔkavysk ( Volkovyjsk ) [ Vawkavysk ],Belarus,41991,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Viciebsk [ Vitebsk ],Belarus,359148,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Vilejka [ Vileyka ],Belarus,26811,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Žabinka [ Zhabinka ],Belarus,14231,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Zaslaǔje [ Zaslawye ],Belarus,17419,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Žlobin [ Zhlobin ],Belarus,77049,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Žodzina ( Žodino ) [ Zhodzina ],Belarus,64000,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Žytkavičy [ Zhytkavichy ],Belarus,15961,2023-01-01,https://www.citypopulation.de/en/belarus/cities/
+Banja Luka,Bosnia,135059,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Bihać,Bosnia,39690,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Bijeljina,Bosnia,41121,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Bosanska Krupa,Bosnia,10196,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Brčko,Bosnia,39893,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Bugojno,Bosnia,15555,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Cazin,Bosnia,13863,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Derventa,Bosnia,11076,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Doboj,Bosnia,24349,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Foča ( Srbinje ),Bosnia,10831,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Goražde,Bosnia,11806,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Gračanica,Bosnia,12882,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Gradačac,Bosnia,12764,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Gradiška ( Bosanska Gradiška ),Bosnia,13691,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Janja,Bosnia,10542,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Kakanj,Bosnia,11796,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Konjic,Bosnia,10732,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Kozarska Dubica ( Bosanska Dubica ),Bosnia,10005,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Livno,Bosnia,7927,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Ljubuški,Bosnia,4023,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Lukavac,Bosnia,12061,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Modriča,Bosnia,9419,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Mostar,Bosnia,60195,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Novi Grad ( Bosanski Novi ),Bosnia,9415,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Orašje,Bosnia,3614,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Pale,Bosnia,12569,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Prijedor,Bosnia,27970,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Sanski Most,Bosnia,16913,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Sarajevo,Bosnia,348363,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Travnik,Bosnia,15344,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Trebinje,Bosnia,22987,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Tuzla,Bosnia,74457,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Visoko,Bosnia,11205,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Vogošća,Bosnia,10568,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Zenica,Bosnia,70553,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Živinice Grad,Bosnia,16157,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Zvornik,Bosnia,11082,2013-10-01,https://www.citypopulation.de/en/bosnia/cities/
+Ajtos [ Aytos ],Bulgaria,17119,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Asenovgrad,Bulgaria,45271,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Bankja [ Bankya ],Bulgaria,11642,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Bansko,Bulgaria,10189,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Berkovica [ Berkovitsa ],Bulgaria,9587,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Blagoevgrad,Bulgaria,64171,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Botevgrad,Bulgaria,18497,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Burgas,Bulgaria,189086,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Červen Brjag [ Cherven Bryag ],Bulgaria,10041,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Čirpan [ Chirpan ],Bulgaria,12375,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Dimitrovgrad,Bulgaria,29835,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Dobrič ( Tolbuhin ) [ Dobrich ],Bulgaria,68573,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Dupnica ( Stanke Dimitrov ) [ Dupnitsa ],Bulgaria,26108,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Gabrovo,Bulgaria,43229,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Goce Delčev [ Gotse Delchev ],Bulgaria,17672,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Gorna Orjahovica [ Gorna Oryahovitsa ],Bulgaria,24768,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Harmanli [ Kharmanli ],Bulgaria,17223,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Haskovo [ Khaskovo ],Bulgaria,62923,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Ihtiman,Bulgaria,12537,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Jambol [ Yambol ],Bulgaria,58997,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Kǎrdžali [ Kardzhali ],Bulgaria,42250,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Karlovo,Bulgaria,18590,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Karnobat,Bulgaria,14176,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Kavarna,Bulgaria,9838,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Kazanlǎk,Bulgaria,41260,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Kjustendil [ Kyustendil ],Bulgaria,34063,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Kostinbrod,Bulgaria,11665,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Kozloduj [ Kozloduy ],Bulgaria,10652,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Lom,Bulgaria,15429,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Loveč [ Lovech ],Bulgaria,26693,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Montana ( Mihajlovgrad ),Bulgaria,34614,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Nesebǎr [ Nesebar ],Bulgaria,18384,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Nova Zagora,Bulgaria,16298,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Novi Iskǎr [ Novi Iskar ],Bulgaria,13307,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Novi Pazar,Bulgaria,9826,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Panagjurište [ Panagyurishte ],Bulgaria,14754,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Pǎrvomaj [ Parvomay ],Bulgaria,10862,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Pazardžik [ Pazardzhik ],Bulgaria,53693,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Pernik,Bulgaria,65317,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Peštera [ Peshtera ],Bulgaria,12452,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Petrič [ Petrich ],Bulgaria,25888,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Pleven,Bulgaria,88058,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Plovdiv,Bulgaria,333994,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Pomorie [ Anhialo ],Bulgaria,14195,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Popovo,Bulgaria,12161,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Provadija [ Provadia ],Bulgaria,9634,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Radnevo,Bulgaria,9964,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Radomir,Bulgaria,11486,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Rakovski,Bulgaria,14670,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Razgrad,Bulgaria,27517,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Razlog,Bulgaria,11025,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Ruse [ Rousse ],Bulgaria,120282,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Samokov,Bulgaria,23741,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Sandanski,Bulgaria,23334,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Sevlievo,Bulgaria,16935,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Silistra,Bulgaria,26470,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Sliven,Bulgaria,77832,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Smoljan [ Smolyan ],Bulgaria,24028,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Sofija [ Sofia ],Bulgaria,1213134,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Stambolijski [ Stamboliyski ],Bulgaria,9671,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Stara Zagora,Bulgaria,120976,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Šumen [ Shumen ],Bulgaria,66399,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Svilengrad,Bulgaria,16302,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Svištov [ Svishtov ],Bulgaria,17115,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Tǎrgovište [ Targovishte ],Bulgaria,32524,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Trojan [ Troyan ],Bulgaria,16501,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Varna,Bulgaria,322683,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Veliko Tǎrnovo,Bulgaria,60067,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Velingrad,Bulgaria,19843,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Vidin,Bulgaria,33127,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Vraca [ Vratsa ],Bulgaria,47874,2025-12-31,https://www.citypopulation.de/en/bulgaria/cities/
+Abbotsford ( Matsqui ),Canada,132300,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Airdrie,Canada,73578,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Aldergrove,Canada,13105,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Alliston,Canada,23253,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Alma,Canada,20274,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Amherstburg,Canada,15177,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Angus - Borden CFB-BFC,Canada,14503,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Arnprior,Canada,11305,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Barrie,Canada,154676,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Bathurst,Canada,15985,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Beamsville,Canada,13323,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Beaumont,Canada,20779,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Belleville,Canada,75052,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Beloeil,Canada,52959,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Binbrook,Canada,10791,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Blackfalds,Canada,10315,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Bolton,Canada,26795,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Bowmanville,Canada,56742,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Bracebridge,Canada,9884,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Bradford,Canada,38128,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Brandon,Canada,50532,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Brantford,Canada,104413,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Brockville,Canada,22293,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Brooks,Canada,14904,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Buckingham,Canada,17407,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Caledonia,Canada,12179,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Calgary,Canada,1305550,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Campbell River,Canada,38108,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Camrose,Canada,18454,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Canmore,Canada,13268,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Carleton Place,Canada,13940,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Castlegar,Canada,10029,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Charlottetown,Canada,52390,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Châteauguay,Canada,75891,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Chatham,Canada,45171,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Chestermere,Canada,21425,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Chilliwack,Canada,81622,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Cobourg,Canada,19830,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Cochrane,Canada,31638,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Collingwood,Canada,22983,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Corner Brook,Canada,19129,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Cornwall,Canada,47286,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Courtenay,Canada,48917,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Cowansville,Canada,13334,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Cranbrook,Canada,20008,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Dawson Creek,Canada,11706,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Dolbeau-Mistassini,Canada,10849,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Drummondville,Canada,72089,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Duncan,Canada,24358,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Edmonton,Canada,1151635,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Edmundston,Canada,13125,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Elliot Lake,Canada,10998,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Elmira,Canada,10790,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Estevan,Canada,10629,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Fergus ( Centre Wellington ),Canada,23209,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Fort Erie,Canada,15372,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Fort McMurray,Canada,68002,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Fort Saskatchewan,Canada,26831,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Fort St. John,Canada,21123,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Fredericton,Canada,64614,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Gander,Canada,9918,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Georgetown,Canada,44058,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Glace Bay,Canada,16915,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Granby,Canada,62624,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Grande Prairie,Canada,63172,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Grand Falls - Windsor,Canada,11986,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Greater Sudbury ( Grand Sudbury ),Canada,92093,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Guelph,Canada,144356,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Halifax,Canada,348634,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Hamilton,Canada,729560,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Hauterive,Canada,11147,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Hawkesbury,Canada,11755,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+High River,Canada,14119,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Hudson,Canada,24245,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Ingersoll,Canada,13607,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Innisfil,Canada,29464,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Joliette,Canada,49246,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Kamloops,Canada,92442,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Kanata,Canada,137118,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Kelowna,Canada,181380,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Kenora,Canada,10974,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Kentville,Canada,14905,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Keswick,Canada,27145,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Kingston,Canada,127943,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Kitchener,Canada,522888,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Lachute,Canada,11221,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Lacombe,Canada,12835,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Ladner,Canada,23016,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Ladysmith,Canada,11194,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Lake Country ( Duck Lake ),Canada,12725,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+L'Assomption,Canada,16443,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Laurentides,Canada,15768,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Lavaltrie,Canada,11301,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Leamington,Canada,35730,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Leduc,Canada,33505,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Les Coteaux,Canada,19582,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Lethbridge,Canada,92563,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Lindsay,Canada,22367,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Lloydminster ( incl. Lloydminster (Sask.) ),Canada,31582,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+London,Canada,423369,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Magog,Canada,22222,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Marieville,Canada,10015,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Martensville,Canada,10499,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Matane,Canada,10371,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Medicine Hat,Canada,63382,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Midland,Canada,26246,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Milton,Canada,124579,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Miramichi ( Chatham - Douglastown ),Canada,11594,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Mission,Canada,36193,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Moncton,Canada,119785,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Montréal [ Montreal ],Canada,3675219,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Moose Jaw,Canada,32813,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Morinville,Canada,10385,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Nanaimo,Canada,106079,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Nelson,Canada,11198,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+New Glasgow,Canada,19316,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+New Hamburg,Canada,14379,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+North Battleford,Canada,13649,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+North Bay,Canada,51433,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Okotoks,Canada,30214,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Orangeville,Canada,34177,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Orillia,Canada,33379,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Oshawa,Canada,335949,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Ottawa,Canada,1068821,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Owen Sound,Canada,22318,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Paris,Canada,14956,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Parksville,Canada,27330,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Pembroke,Canada,16571,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Penticton,Canada,36893,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Petawawa,Canada,14382,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Peterborough,Canada,84793,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Portage la Prairie,Canada,12944,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Port Alberni,Canada,21711,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Port-Alfred - Bagotville ( La Baie ),Canada,13350,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Port Colborne,Canada,15441,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Port Hope,Canada,13012,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Powell River,Canada,13116,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Prince Albert,Canada,36768,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Prince George,Canada,67339,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Prince Rupert,Canada,11814,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Québec [ Quebec ],Canada,733156,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Quesnel,Canada,12110,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Quispamsis,Canada,24881,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Red Deer,Canada,99846,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Regina,Canada,224996,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Rimouski,Canada,38708,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Rivière-du-Loup,Canada,19081,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Rockland,Canada,13625,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Rouyn-Noranda,Canada,23186,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Saguenay ( Chicoutimi - Jonquière ),Canada,103934,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Saint-Amable,Canada,11199,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Saint-Augustin,Canada,11769,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sainte-Agathe-des-Monts,Canada,12136,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sainte-Anne-des-Plaines,Canada,11269,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sainte-Marie,Canada,10716,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Saint-Georges,Canada,27402,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Saint-Hyacinthe,Canada,50616,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Saint-Jean-sur-Richelieu,Canada,88083,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Saint-Jérôme,Canada,100859,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Saint John,Canada,63447,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Salaberry-de-Valleyfield,Canada,41655,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Salmon Arm,Canada,16065,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sarnia,Canada,73944,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Saskatoon,Canada,264637,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sault Ste. Marie,Canada,64923,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Selkirk,Canada,9761,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sept-Îles,Canada,21352,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Shawinigan,Canada,38930,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sherbrooke,Canada,151157,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Simcoe,Canada,16121,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sooke,Canada,11583,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sorel-Tracy,Canada,36650,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Spruce Grove,Canada,39348,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Squamish,Canada,22221,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+St. Catharines,Canada,242460,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+St. John's,Canada,185565,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+St. Thomas,Canada,45732,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Steinbach,Canada,17589,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Stony Plain,Canada,17253,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Stouffville,Canada,36753,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Stratford,Canada,32878,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Strathmore,Canada,13851,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Strathroy,Canada,16056,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Summerland,Canada,9860,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Summerside,Canada,14952,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Swift Current,Canada,16304,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sydney,Canada,30960,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sydney Mines,Canada,12353,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Sylvan Lake,Canada,16142,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Terrace,Canada,14633,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Thetford Mines,Canada,17046,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Thompson,Canada,12329,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Thunder Bay,Canada,95266,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Tillsonburg,Canada,18573,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Timmins,Canada,28874,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Toronto,Canada,5647656,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Trail - Fruitvale,Canada,12863,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Trois-Rivières,Canada,128057,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Truro,Canada,23583,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Tsawwassen,Canada,23940,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Uxbridge,Canada,11794,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Val-d'Or,Canada,25473,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Valley East,Canada,17251,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Vancouver,Canada,2426160,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Varennes,Canada,20591,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Vernon,Canada,51896,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Victoria,Canada,363222,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Victoriaville,Canada,46322,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Wallaceburg,Canada,10323,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Warman,Canada,12362,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Wasaga Beach,Canada,22194,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Welland,Canada,69302,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Wetaskiwin,Canada,12438,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Weyburn,Canada,10883,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Whistler,Canada,9974,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Whitehorse,Canada,24513,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+White Rock,Canada,109167,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Williams Lake,Canada,11906,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Windsor,Canada,306519,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Winkler,Canada,15335,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Winnipeg,Canada,758515,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Woodstock,Canada,46296,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Yellowknife,Canada,19673,2021-05-11,https://www.citypopulation.de/en/canada/cities/
+Yorkton,Canada,15969,2021-05-11,https://www.citypopulation.de/en/canada/cities/

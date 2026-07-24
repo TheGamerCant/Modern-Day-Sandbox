@@ -377,6 +377,7 @@ def _read_url_file(path: Path) -> list[str]:
 
 
 def main() -> None:
+    """
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("urls", nargs="*", help="cities URLs or bare country slugs")
@@ -389,12 +390,16 @@ def main() -> None:
     args = parser.parse_args()
 
     urls = list(args.urls)
-    if args.url_file:
-        urls.extend(_read_url_file(args.url_file))
-    if not urls:
-        parser.error("provide at least one URL/slug, or --url-file")
+    """
 
-    if args.debug:
+    debug = False
+    urls = [
+        "austria/cities", "australia/cities", "bangladesh/cities", "belgium/cities", "belarus/cities", "bosnia/cities", "bulgaria/cities", "canada/cities",
+    ]
+    delay = 1.5
+    output = "city_populations.csv"
+
+    if debug:
         session = requests.Session()
         for raw in urls:
             url = normalize_url(raw)
@@ -402,10 +407,10 @@ def main() -> None:
             debug_tables(fetch_html(url, session))
         return
 
-    populations_df = scrape(urls, delay=args.delay)
+    populations_df = scrape(urls, delay=delay)
     # utf-8-sig so the CSV opens cleanly in Excel (matches the rest of this repo).
-    populations_df.to_csv(args.output, index=False, encoding="utf-8-sig")
-    print(f"Wrote {len(populations_df)} rows to {args.output}")
+    populations_df.to_csv(output, index=False, encoding="utf-8-sig")
+    print(f"Wrote {len(populations_df)} rows to {output}")
 
 
 if __name__ == "__main__":
