@@ -196,6 +196,10 @@ GBR = {
 	color = rgb { 140 36 43 }
 	color_ui = rgb { 140 36 43 }
 }
+GEO = {
+	color = rgb { 212 167 167 }
+	color_ui = rgb { 212 167 167 }
+}
 GER = {
 	color = rgb { 80 80 80 }
 	color_ui = rgb { 80 80 80 }
@@ -207,10 +211,6 @@ GGZ = {
 GLC = {
 	color = rgb { 73 204 203 }
 	color_ui = rgb { 73 204 203 }
-}
-GOR = {
-	color = rgb { 212 167 167 }
-	color_ui = rgb { 212 167 167 }
 }
 GRC = {
 	color = rgb { 9 145 184 }

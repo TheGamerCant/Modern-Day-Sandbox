@@ -4,11 +4,16 @@ state={
 	history={
 		owner = KEN
 		add_core_of = KEN
+		
+		victory_points = { 16021 4 }
+		victory_points = { 16002 2 }
+		
+		set_variable = { sq_km = 12602 }
 	}
 	provinces={
-		16002
+		16002 16021 
 	}
-	manpower=100000
+	manpower=5442711
 	buildings_max_level_factor=1
 	state_category=city
 	local_supplies=0.5

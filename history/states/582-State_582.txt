@@ -2,12 +2,19 @@ state={
 	id=582
 	name="STATE_582"
 	history = {
-		owner = ZZZ
+		owner = KEN
+		add_core_of = KEN
+		
+		victory_points = { 16008 10 }
+		victory_points = { 16006 2 }
+		victory_points = { 16010 1 }
+		
+		set_variable = { sq_km = 82382 }
 	}
 	provinces={
-		5210 6020 
+		5210 6020 16005 16006 16007 16008 16009 16010 16011 
 	}
-	manpower=100000
+	manpower=3325307
 	buildings_max_level_factor=1.000
 	state_category=rural
 	local_supplies=0.500

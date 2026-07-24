@@ -4459,7 +4459,7 @@
 		},
 		{
 			"id": 547,
-			"default_name": "Nairobi",
+			"default_name": "Eastern Kenya",
 			"comment": "",
 			"custom_names": []
 		},
@@ -4708,7 +4708,7 @@
 		},
 		{
 			"id": 582,
-			"default_name": "Mombasa",
+			"default_name": "Coastal Kenya",
 			"comment": "",
 			"custom_names": []
 		},
@@ -6064,7 +6064,7 @@
 		},
 		{
 			"id": 750,
-			"default_name": "Garissa",
+			"default_name": "North-Eastern Kenya",
 			"comment": "",
 			"custom_names": []
 		},
@@ -6806,7 +6806,7 @@
 		},
 		{
 			"id": 838,
-			"default_name": "Nyanza-Rift Valley",
+			"default_name": "Rift Valley",
 			"comment": "",
 			"custom_names": []
 		},
@@ -7938,6 +7938,24 @@
 		{
 			"id": 958,
 			"default_name": "Ilemi Triangle",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 959,
+			"default_name": "Western Kenya",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 960,
+			"default_name": "Nyanza",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 961,
+			"default_name": "Central Kenya",
 			"comment": "",
 			"custom_names": []
 		}
@@ -38284,6 +38302,120 @@
 		{
 			"id": 15993,
 			"default_name": "Hoima",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 8133,
+			"default_name": "Mandera",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 10761,
+			"default_name": "Garissa",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16004,
+			"default_name": "Wajir",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16008,
+			"default_name": "Mombasa",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16006,
+			"default_name": "Malindi",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16010,
+			"default_name": "Voi",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 1939,
+			"default_name": "Mlolongo",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 10962,
+			"default_name": "Meru",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16018,
+			"default_name": "Nairobi",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16017,
+			"default_name": "Jomo Kenyatta International Airport",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16021,
+			"default_name": "Kisumu",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16002,
+			"default_name": "Kisii",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16001,
+			"default_name": "Kakamega",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16022,
+			"default_name": "Nakuru",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 5160,
+			"default_name": "Eldoret",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16023,
+			"default_name": "Kitale",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 10860,
+			"default_name": "Naivasha",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 16026,
+			"default_name": "Kitengela",
+			"comment": "",
+			"custom_names": []
+		},
+		{
+			"id": 11145,
+			"default_name": "Lodwar",
 			"comment": "",
 			"custom_names": []
 		}

@@ -12017,7 +12017,7 @@ TDA_update_state_545_names = {
 TDA_update_state_546_names = {
 }
 
-#Nairobi
+#Eastern Kenya
 TDA_update_state_547_names = {
 }
 
@@ -12489,7 +12489,7 @@ TDA_update_state_581_names = {
 	}
 }
 
-#Mombasa
+#Coastal Kenya
 TDA_update_state_582_names = {
 }
 
@@ -19048,7 +19048,7 @@ TDA_update_state_748_names = {
 TDA_update_state_749_names = {
 }
 
-#Garissa
+#North-Eastern Kenya
 TDA_update_state_750_names = {
 }
 
@@ -20400,7 +20400,7 @@ TDA_update_state_836_names = {
 TDA_update_state_837_names = {
 }
 
-#Nyanza-Rift Valley
+#Rift Valley
 TDA_update_state_838_names = {
 }
 
@@ -23097,15 +23097,15 @@ TDA_update_state_957_names = {
 TDA_update_state_958_names = {
 }
 
-#
+#Western Kenya
 TDA_update_state_959_names = {
 }
 
-#
+#Nyanza
 TDA_update_state_960_names = {
 }
 
-#
+#Central Kenya
 TDA_update_state_961_names = {
 }
 
