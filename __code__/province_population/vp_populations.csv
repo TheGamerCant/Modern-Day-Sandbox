@@ -15,7 +15,7 @@
 1141,Henšela; Khenchela,ALG,160444
 1145,Al-Jazā'ir; Algiers,ALG,3316232
 1160,Souk Ahras; Sūq Ahrās,ALG,222438
-1958,Tindouf; Tindūf,ALG,
+1958,Tindouf; Tindūf,ALG,203598
 1967,Al-Aghwāṭ; Laghouat,ALG,235439
 2049,Ghardaïa; Ġardāya,ALG,149916
 4116,Tilimsān; Tlemcen,ALG,294082
@@ -25,20 +25,20 @@
 7033,M'Sila; Āl-Msyla,ALG,201841
 7065,Al-'Ulma; El Eulma,ALG,196881
 7166,Bordj Bou Arréridj; Burğ Bū 'Urairīğ,ALG,209845
-8077,'Īn Ṣalāḥ; Aïn Salah,ALG,
+8077,'Īn Ṣalāḥ; Aïn Salah,ALG,44137
 10045,Sa'īda; Saïda,ALG,191803
 10731,Bešār; Béchar,ALG,200687
-10749,Illizi; Ilyzy,ALG,
+10749,Illizi; Ilyzy,ALG,71033
 11923,Sidi Bel Abbès; Sīdī Bu Al-'Abbās,ALG,265431
 11939,Tizi Ouzou; Tizi Wuzu,ALG,121426
 12018,Al-Mašrya; Mécheria,ALG,112802
 12034,Al-Ǧilfah; Djelfa,ALG,612877
 12051,Skikda; Skykda,ALG,252926
 12760,Tiaret; Tyāret,ALG,246774
-13074,Al-Bayaḍ; El Bayadh,ALG,
+13074,Al-Bayaḍ; El Bayadh,ALG,116155
 15219,Tamanrasset; Tāmanrāssit,ALG,125555
-15223,'In 'Amanās; In Amenas,ALG,
-15224,Bordj Badji Mokhtar; Borǧ Bāǧy Moẖtār,ALG,
+15223,'In 'Amanās; In Amenas,ALG,10024
+15224,Bordj Badji Mokhtar; Borǧ Bāǧy Moẖtār,ALG,22310
 15231,Oran; Wahrān,ALG,1261238
 15235,Algiers International Airport; Maṭār Al-Jazā'ir Al-Dawli,ALG,
 15236,Al-Bulaydah; Blida,ALG,703326
@@ -46,12 +46,12 @@
 15239,Constantine; Qusanṭīnah,ALG,507697
 15241,Annaba; Anāba,ALG,471639
 15242,Siṭīf; Sétif,ALG,366338
-4660,Kapan,ARM,
+4660,Kapan,ARM,32900
 8155,Mezhdunarodnyy Aeroport Erevan; Zvartnots International Airport; Zvart’nots’ Odanavakayan,ARM,
-12380,Vanadzor,ARM,
+12380,Vanadzor,ARM,78100
 12441,Gyumri,ARM,84760
 12906,Erevan; Yerevan,ARM,1027656
-671,Lienz,ASA,
+671,Lienz,ASA,12105
 673,Innsbruck,ASA,144226
 688,Salzburg,ASA,143452
 704,St Pölten,ASA,
@@ -1242,49 +1242,68 @@
 15206,Almaty,KAZ,2315538
 15207,Kaskelen; Qaskeleŋ,KAZ,
 15208,Almaty International Airport; Almaty Xalıqaralıq Äwejayı; Mezhdunarodnyy Aeroport Almaty,KAZ,
+1939,Mlolongo,KEN,
+5160,Eldoret,KEN,439307
+8133,Mandera,KEN,130114
+10761,Garissa,KEN,422143
+10860,Naivasha,KEN,244868
+10962,Meru,KEN,117463
+11145,Lodwar,KEN,68119
+16001,Kakamega,KEN,125259
+16002,Kisii,KEN,190857
+16004,Wajir,KEN,219967
+16006,Malindi,KEN,122250
+16008,Mombasa,KEN,1617739
+16010,Voi,KEN,
+16017,Jomo Kenyatta International Airport,KEN,
+16018,Nairobi,KEN,6646257
+16021,Kisumu,KEN,452000
+16022,Nakuru,KEN,628218
+16023,Kitale,KEN,182451
+16026,Kitengela,KEN,105486
 9849,Prizren,KOS,111237
 13840,Prishtina,KOS,218971
 1923,Muhayil; Muḥā'yil,KSA,
 1955,Al-Khafjī; Khafji,KSA,
 2027,Al-'Ulā; Al-Ula,KSA,
-8073,Jizan; Jīzān,KSA,
+8073,Jizan; Jīzān,KSA,65731
 8092,'Umluj; Umluj,KSA,
-8101,Sakaka; Sakākā,KSA,
+8101,Sakaka; Sakākā,KSA,117237
 10815,Turaif; Ṭuraīf,KSA,
 12727,Al-Kharj,KSA,
 12870,Al-Majma'ah,KSA,
 12883,Rabigh; Rābigh,KSA,
 15849,Al-Bahah; Al-Bāḥah,KSA,
 15850,Al-Qurayyat; Al-Qurayyāt,KSA,
-15852,Rafha; Rafḥā',KSA,
-15853,'Ar'ar; Arar,KSA,
-15854,Tabuk; Tabūk,KSA,
-15860,Hail; Ḥā'il,KSA,
-15864,Buraydah,KSA,
-15865,'Unaīzah; Unaizah,KSA,
+15852,Rafha; Rafḥā',KSA,51422
+15853,'Ar'ar; Arar,KSA,224010
+15854,Tabuk; Tabūk,KSA,586538
+15860,Hail; Ḥā'il,KSA,243303
+15864,Buraydah,KSA,217480
+15865,'Unaīzah; Unaizah,KSA,186214
 15868,Ar-Rass,KSA,
-15870,Ar-Riyāḍ; Riyadh,KSA,
+15870,Ar-Riyāḍ; Riyadh,KSA,7970319
 15871,King Khalid International Airport; Maṭār Al-Mlik Khāld Al-Dawli,KSA,
 15882,Wadi Ad-Dawasir; Wādī Ad-Dawāsir,KSA,
 15885,Ad-Dawādmī; Al-Duwadimi,KSA,
-15886,Najiran; Najrān,KSA,
-15887,Sharorah; Sharūrah,KSA,
-15890,Ad-Dammām; Dammam,KSA,
+15886,Najiran; Najrān,KSA,261656
+15887,Sharorah; Sharūrah,KSA,108687
+15890,Ad-Dammām; Dammam,KSA,2634829
 15891,Al-Khubar; Khobar,KSA,
 15893,King Fahd International Airport; Maṭār Al-Mlik Fahd Al-Dawli,KSA,
-15897,Hafar Al-Batin; Ḥafar Al-Bāṭin,KSA,
+15897,Hafar Al-Batin; Ḥafar Al-Bāṭin,KSA,346993
 15898,Al-Hufūf; Hofuf,KSA,
 15900,Al-Jubaīl; Jubail,KSA,
 15901,Khamis Mushait; Khamīs Mushaīṭ,KSA,
-15902,Abha; Abhā,KSA,
-15906,Bisha; Bīshah,KSA,
-15908,Jeddah; Jiddah,KSA,
+15902,Abha; Abhā,KSA,125622
+15906,Bisha; Bīshah,KSA,57725
+15908,Jeddah; Jiddah,KSA,4842257
 15909,King Abdulaziz International Airport; Maṭār Al-Mlik 'Abdāl'azyz Al-Dawli,KSA,
-15911,Makkah; Mecca,KSA,
-15912,Bahrah; Baḥrah,KSA,
+15911,Makkah; Mecca,KSA,1876451
+15912,Bahrah; Baḥrah,KSA,57033
 15917,Al-Qunfudhah,KSA,
 15921,Aṭ-Ṭa'if; Taif,KSA,
-15923,Yanbu; Yanbu' al-Baḥr,KSA,
+15923,Yanbu; Yanbu' al-Baḥr,KSA,123579
 15924,Al-Madīnah; Medina,KSA,
 265,Bauska,LAT,
 310,Daugavpils,LAT,51342
