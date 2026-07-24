@@ -181,12 +181,12 @@
 689,Toledo,USA,194259,2025
 701,Székesfehérvár,HUN,75063,2025
 703,Rhinelander,USA,9738,2020
-704,St Pölten,ASA,,
+704,St Pölten,ASA,60112,2026
 705,Yevpatoriya,UKR,90934,2025
 714,Cherkessk,SOV,137895,2025
 719,Gelendzhik,SOV,,
 723,Vaslui,ROM,63035,2021
-724,Villa Real,POR,,
+724,Villa Real,POR,27370,2021
 726,León,SPA,145844,2025
 728,Terekli-Mekteb,SOV,,
 732,Freistadt,ASA,,
@@ -194,7 +194,7 @@
 743,Bayonne,FRA,89012,2025
 744,Suceava,ROM,89152,2025
 746,Satu Mare; Szatmárnémeti,ROM,79655,2025
-749,Niagra Falls,CAN,,
+749,Niagra Falls,CAN,75875,2025
 750,Yeysk,SOV,58632,2025
 758,Santiago de Compostela,SPA,100842,2025
 759,Yashkul; Yashkul',SOV,,
@@ -422,7 +422,7 @@
 1812,Khanty-Mansiysk,SOV,65656,2025
 1828,Aeropuerto Internacional de la Ciudad de México; Mexico City International Airport,MEX,,
 1832,Sandpoint,USA,12824,2020
-1836,Bismark,USA,,
+1836,Bismark,USA,98198,2020
 1840,Shelek; Şelek,KAZ,29032,2021
 1844,Karamay; Kèlāmǎyī; Qaramay,PRC,311815,2025
 1845,Tynda,SOV,27626,2025
@@ -542,7 +542,7 @@
 3296,Ventspils,LAT,32719,2025
 3298,Alūksne,LAT,6188,2025
 3299,Ingolstadt,GER,88782,2025
-3305,Nykøbing Falster,DMK,,
+3305,Nykøbing Falster,DMK,16682,2025
 3309,Slonim,BLR,49113,2023
 3311,Douglas,GBR,,
 3315,Volzhsk,SOV,,
@@ -783,7 +783,7 @@
 4146,Al-Madiya; Médéa,ALG,156467,2025
 4151,Al Bayda; Al-Bayḍā',LYB,,
 4156,Yongxin; Yŏngxīn,PRC,,
-4157,Zhucheng; Zhūchéng,PRC,,
+4157,Zhucheng; Zhūchéng,PRC,759969,2025
 4159,Messina,ITA,178836,2025
 4162,Faridpur,BAN,326743,2025
 4169,Ningde; Níngdé,PRC,350783,2025
@@ -850,7 +850,7 @@
 4606,Jiyuan; Jìyuán,PRC,405860,2025
 4607,Carson City,USA,61629,2020
 4610,Buffalo,USA,,
-4614,Shamakhy; Shemaka; Şamaxı,AZJ,,
+4614,Shamakhy; Shemaka; Şamaxı,AZJ,54196,2025
 4619,Xianning; Xiánníng,PRC,276077,2025
 4625,Jonesboro,USA,5245,2020
 4632,Emerald,AUS,15238,2025
@@ -1274,7 +1274,7 @@
 7158,Ulagančab; Ulanqab; Wūlánchábù,PRC,272964,2025
 7162,Al-Qayrawān; Kairouan,TUN,81409,2025
 7166,Bordj Bou Arréridj; Burğ Bū 'Urairīğ,ALG,209845,2025
-7177,Jalagon; Jaḷagāṁ,IND,,
+7177,Jalagon; Jaḷagāṁ,IND,747454,2025
 7180,Zaghouan; Zaghwān,TUN,,
 7183,Dos Hermanas,SPA,97844,2025
 7186,Taipei; Táiběi,ROC,9686521,2025
@@ -1304,7 +1304,7 @@
 7314,Yulin; Yúlín,PRC,,
 7317,Ekibastuz; Ekıbastūz,KAZ,114479,2025
 7340,Bhimavaram; Bhīmavaraṁ,IND,246577,2025
-7341,Hromtau; Khromtau,KAZ,,
+7341,Hromtau; Khromtau,KAZ,30393,2026
 7359,Balezino,SOV,,
 7364,Celaya,MEX,381192,2025
 7374,Dhanagaḍhī; Dhangadhi,NPL,198792,2021
@@ -1326,7 +1326,7 @@
 7471,Tamworth,AUS,46024,2025
 7475,Purnia; Pūrṇiyāṁ,IND,461747,2025
 7480,Mobile,USA,93512,2025
-7481,Subshine Coast,AUS,,
+7481,Subshine Coast,AUS,96778,2025
 7522,Hervey Bay,AUS,63312,2025
 7523,Yushu; Yúshù,PRC,,
 7526,Bayan; Bāyàn,PRC,,
@@ -1515,7 +1515,7 @@
 9343,Torzhok,SOV,,
 9346,Osterode; Ostróda,POL,30755,2025
 9347,Hamburg,GER,1733898,2025
-9349,Tuymazy,SOV,,
+9349,Tuymazy,SOV,60399,2025
 9354,Buinsk,SOV,19495,2025
 9355,Oryol,SOV,281342,2025
 9358,Gorodets,SOV,,
@@ -1853,7 +1853,7 @@
 10579,Ukhta,SOV,,
 10586,Paducah,USA,50833,2020
 10596,Zhigalovo,SOV,,
-10601,Saryagash; Saryağaş,KAZ,,
+10601,Saryagash; Saryağaş,KAZ,69930,2025
 10603,Kulan; Qulan,KAZ,,
 10610,Zaisan,KAZ,,
 10612,Manjur; Manjuur; Mănzhōulĭ,PRC,213243,2025
@@ -2072,7 +2072,7 @@
 11558,Kalisch; Kalisz,POL,82185,2025
 11560,Mainz,GER,223888,2025
 11562,Maastricht,NRD,124921,2025
-11564,Rijelka,CRO,,
+11564,Rijelka,CRO,115636,2025
 11572,Zenica,BSH,65296,2025
 11573,Annecy,FRA,123116,2025
 11574,Brčko,BSH,66146,2025
@@ -2096,7 +2096,7 @@
 11636,Brăila,ROM,162041,2025
 11639,Medgyes; Mediaș,ROM,39505,2021
 11644,Békés,HUN,17282,2025
-11645,Mingechaur; Mingechevir; Mingəçevir,AZJ,,
+11645,Mingechaur; Mingechevir; Mingəçevir,AZJ,129064,2025
 11646,Békéscsaba,HUN,53944,2025
 11647,Gagra,ABZ,,
 11650,Elmira,USA,62468,2020
@@ -2206,7 +2206,7 @@
 11963,Basuo; Bāsuǒ,PRC,,
 11965,Kalamáta; Kalmata,GRC,63419,2021
 11967,Marsa Matrouh; Marsā Maṭrūḥ,EGY,191313,2025
-11968,Cumilla; Kumillā,BAN,,
+11968,Cumilla; Kumillā,BAN,74332,2025
 11969,Tunis; Tūnis,TUN,2790169,2025
 11974,Asyut; Asyūṭ,EGY,1152515,2025
 11975,Savannah,USA,115676,2025
@@ -2414,7 +2414,7 @@
 12904,Khankendi; Stepanakert; Xankəndi,AKH,,
 12906,Erevan; Yerevan,ARM,1027656,2025
 12915,Kilis,TUR,103014,2025
-12926,Sumgayt; Sumqayit; Sumqayıt,AZJ,,
+12926,Sumgayt; Sumqayit; Sumqayıt,AZJ,637053,2025
 12929,Jinja,UGA,245759,2025
 12934,Geelong,AUS,165825,2025
 12936,Mardin,TUR,84641,2025
@@ -2485,7 +2485,7 @@
 13411,Denver International Airport,USA,,
 13413,Boulder,USA,95315,2025
 13415,Tampa,USA,709023,2025
-13416,St. Petersburg,USA,,
+13416,St. Petersburg,USA,942907,2025
 13417,Clearwater,USA,,
 13419,Miami,USA,5733042,2025
 13421,Fort Lauderdale,USA,,
@@ -2812,7 +2812,7 @@
 14218,Murmansk,SOV,272712,2025
 14220,Kola,SOV,,
 14221,Severomorsk,SOV,44486,2025
-14222,Sankt-Peterburg; St. Petersburg,SOV,,
+14222,Sankt-Peterburg; St. Petersburg,SOV,4878966,2025
 14226,Aeroport Pulkovo; Pulkovo Airport,SOV,,
 14229,Smolensk,SOV,279694,2025
 14231,Khimki,SOV,,
@@ -2967,7 +2967,7 @@
 14622,Wonju; Wŏnju,ROK,218041,2025
 14623,Gwangju; Kwangju,ROK,1428492,2025
 14625,Daejeon; Taejŏn,ROK,1504229,2025
-14626,Ch'ŏngju; Cheongju,ROK,,
+14626,Ch'ŏngju; Cheongju,ROK,691161,2025
 14627,Chech'ŏn; Jecheon,ROK,134768,2020
 14628,Chŏnju; Jeonju,ROK,631782,2025
 14637,Chamdo; Chāngdū; Qamdo,PRC,,
@@ -3359,7 +3359,7 @@
 15457,'Amūdā; Amuda,SYR,26821,2004
 15458,Dayr az-Zawr; Deir ez-Zur,SYR,,
 15461,Ar-Raqqah; Raqqa,SYR,193731,2025
-15462,Ad-Ṭhawrah; Al-Thawrah,SYR,,
+15462,Ad-Ṭhawrah; Al-Thawrah,SYR,69425,2004
 15464,Aleppo; Ḥalab,SYR,3084136,2025
 15466,Aleppo International Airport; Maṭār Ḥalab,SYR,,
 15469,'Afrīn; Afrin,SYR,56283,2025
@@ -3459,7 +3459,7 @@
 15667,Aurangabad; Auraṁgābāda,IND,157594,2025
 15669,Osmanabad; Usmānābād,IND,,
 15672,Parabhaṇī; Parbhani,IND,432999,2025
-15673,Gvāliyar; Gwailor,IND,,
+15673,Gvāliyar; Gwailor,IND,1529323,2025
 15675,Indore,IND,3598874,2025
 15676,Devās; Dewas,IND,357534,2025
 15677,Ujjain,IND,573699,2025
@@ -3472,7 +3472,7 @@
 15690,Katni; Kaṭnī,IND,306752,2025
 15691,Seoni; Sivanī,IND,164969,2025
 15694,Chhindwara; Chiṁdvāṛā,IND,285974,2025
-15698,Bangalore; Beṁgaḷūru,IND,,
+15698,Bangalore; Beṁgaḷūru,IND,15178533,2025
 15702,Maisūru; Mysore,IND,990900,2011
 15704,Mangalore; Maṁgaḷūru,IND,623841,2011
 15705,Belgaum; Beḷagāvi,IND,789454,2025
@@ -3526,7 +3526,7 @@
 15783,Khulna; Khulnā,BAN,1081072,2025
 15784,Sileṭa; Sylhet,BAN,1206965,2025
 15785,Maẏmansiṁh; Mymensingh,BAN,677660,2025
-15786,Caṭṭagrām; Chittagong,BAN,,
+15786,Caṭṭagrām; Chittagong,BAN,5175717,2025
 15790,Hayarata Śāhjālāla Āntarjātika Bimānabandara; Hazrat Shahjalal International Airport,BAN,,
 15792,Dhaka; Ḍhākā,BAN,37307160,2025
 15794,Gazipur; Gājīpur,BAN,84943,2025
@@ -3581,7 +3581,7 @@
 15897,Hafar Al-Batin; Ḥafar Al-Bāṭin,KSA,346993,2025
 15898,Al-Hufūf; Hofuf,KSA,,
 15900,Al-Jubaīl; Jubail,KSA,,
-15901,Khamis Mushait; Khamīs Mushaīṭ,KSA,,
+15901,Khamis Mushait; Khamīs Mushaīṭ,KSA,580849,2025
 15902,Abha; Abhā,KSA,125622,2025
 15906,Bisha; Bīshah,KSA,57725,2025
 15908,Jeddah; Jiddah,KSA,4842257,2025
@@ -3589,7 +3589,7 @@
 15911,Makkah; Mecca,KSA,1876451,2025
 15912,Bahrah; Baḥrah,KSA,57033,2025
 15917,Al-Qunfudhah,KSA,42447,2022
-15921,Aṭ-Ṭa'if; Taif,KSA,,
+15921,Aṭ-Ṭa'if; Taif,KSA,489683,2025
 15923,Yanbu; Yanbu' al-Baḥr,KSA,123579,2025
 15924,Al-Madīnah; Medina,KSA,1565146,2025
 15931,George Town,GBR,,

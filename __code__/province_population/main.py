@@ -67,6 +67,33 @@ MANUAL_NAME_ALIASES: dict[str, str] = {
     "Nuremburg": "Nuremberg",
     "Slov'yans'k": "Sloviansk",
     "Ar-Rastan": "Al-Rastan",
+    # Second batch — weird-format / romanization mismatches against EU_data +
+    # citypopulation. Diacritics & tone marks the normalizer can't bridge,
+    # administrative suffixes/abbreviations, parentheticals, and mod typos.
+    "Niagra Falls": "Niagara Falls",
+    "Villa Real": "Vila Real",
+    "Nykøbing Falster": "Nykøbing (Falster)",
+    "Bismark": "Bismarck",
+    "Zhucheng": "Zucheng",
+    "Sumgayt": "Sumgayit",
+    "Subshine Coast": "Sunshine Coast",
+    "Khamis Mushait": "Khamis Mushayt",
+    "Rijelka": "Rijeka",
+    "Mingechevir": "Mingachevir",
+    "Bangalore": "Bengaluru",
+    "Shamakhy": "Shamakhi",
+    "Saryagash": "Sarıağaş",
+    "St. Petersburg": "Saint Petersburg",
+    "St Pölten": "Sankt Pölten",
+    "Jalagon": "Jālgaon",
+    "Hromtau": "Hromtaý",
+    "Tuymazy": "Tujmazy",
+    "Cumilla": "Comilla",
+    "Al-Thawrah": "Ath-Thawrah",
+    "Gwailor": "Gwalior",
+    "Taif": "At Ta'if",
+    "Cheongju": "Cheongju-si",
+    "Chittagong": "Chattogram",
 }
 
 def NormalizeName(name: str) -> str:
