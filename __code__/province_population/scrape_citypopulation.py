@@ -99,12 +99,32 @@ def country_from_url(url: str) -> str:
     return slug.replace("-", " ").replace("_", " ").title()
 
 
+class BotChallengeError(RuntimeError):
+    """Raised when citypopulation.de returns its anti-bot interstitial instead
+    of real content. Not something to defeat — a signal to slow down / stop."""
+
+
+def _is_bot_challenge(html: str) -> bool:
+    """Detect the "Check for Humans" interstitial (a short page with that title)."""
+    lowered = html.lower()
+    return "check for humans" in lowered or (
+        len(html) < 3000 and "verify" in lowered and "human" in lowered
+    )
+
+
 def fetch_html(url: str, session: requests.Session, timeout: int = 30) -> str:
     response = session.get(url, headers=_HEADERS, timeout=timeout)
     response.raise_for_status()
     # citypopulation.de is UTF-8; make sure requests doesn't mis-guess.
     response.encoding = response.apparent_encoding or "utf-8"
-    return response.text
+    html = response.text
+    if _is_bot_challenge(html):
+        raise BotChallengeError(
+            f"{url} returned an anti-bot challenge page instead of data. "
+            "The site is rate-limiting automated requests — increase --delay "
+            "and/or run fewer URLs at a time."
+        )
+    return html
 
 
 def _clean_population(raw: str) -> int | None:
@@ -132,32 +152,51 @@ def _looks_like_data_row(row: Tag) -> bool:
     return bool(has_name) and numeric_cells >= 1
 
 
+def _population_header_columns(table: Tag) -> int:
+    """Count header cells that name a population column (e.g. "Population
+    Census 2021-08-11" / "Population Estimate 2023"). This is the single most
+    reliable fingerprint of the real data grid: the region-navigation menu can
+    contain population *numbers*, but it has no such dated population *header*.
+    """
+    header = table.find("thead") or table
+    count = 0
+    for cell in header.find_all(["th", "td"]):
+        text = cell.get_text(" ", strip=True).lower()
+        if _DATE_RE.search(text) and (
+            "population" in text or "census" in text or "estimate" in text
+        ):
+            count += 1
+    return count
+
+
 def _find_data_table(soup: BeautifulSoup) -> Tag | None:
     """Locate the cities / localities grid.
 
     A citypopulation.de page has several tables — the site's region-navigation
-    menu, a one-row summary for the area itself, and the localities grid we
-    want. We pick the table with the most *data rows* (a name + several numeric
-    columns). That beats scoring by CSS class (absent on census pages) or by raw
-    row count (which would wrongly grab the big navigation menu). ``rpop`` cell
-    count is kept only as a tie-breaker for the ``/cities/`` listing pages.
+    menu (which can itself list populations), a one-row summary for the area,
+    and the localities grid we want. We rank tables by, in order: number of
+    dated population-header columns, then data rows (a name + numeric cells),
+    then ``rpop`` cell count. Anchoring on the population *header* first means a
+    navigation menu full of numbers can't win — it has no such header — and the
+    many-row localities grid beats the one-row area summary.
     """
     tables = soup.find_all("table")
     if not tables:
         return None
 
-    def table_score(table: Tag) -> tuple[int, int]:
+    def table_score(table: Tag) -> tuple[int, int, int]:
+        header_columns = _population_header_columns(table)
         data_rows = sum(1 for row in table.find_all("tr") if _looks_like_data_row(row))
         population_cells = sum(
             1
             for td in table.find_all("td")
             if any(cls.startswith("rpop") for cls in td.get("class", []))
         )
-        return (data_rows, population_cells)
+        return (header_columns, data_rows, population_cells)
 
     best_table = max(tables, key=table_score)
-    # If nothing looks like a data table, report failure rather than a nav menu.
-    return best_table if table_score(best_table)[0] > 0 else None
+    # If nothing looks like a data table at all, report failure (not a nav menu).
+    return best_table if table_score(best_table)[1] > 0 else None
 
 
 def _header_dates(table: Tag) -> list[str]:
@@ -178,14 +217,22 @@ def _header_dates(table: Tag) -> list[str]:
 
 
 def _row_name(row: Tag) -> str | None:
-    """The locality name for a data row."""
+    """The locality name for a data row.
+
+    The name is always the first column. We take that cell's text directly
+    rather than the first ``<a>`` — census rows end in a "→" detail link, and
+    grabbing the first link can otherwise pick up that arrow instead of the name.
+    """
     name_cell = row.find("td", class_="rname")
     if isinstance(name_cell, Tag):
         return name_cell.get_text(" ", strip=True)
-    # Fallback: first cell containing a link (name is always linked).
-    link = row.find("a")
-    if isinstance(link, Tag):
-        return link.get_text(" ", strip=True)
+
+    cells = row.find_all(["td", "th"])
+    if cells:
+        first_text = cells[0].get_text(" ", strip=True)
+        # A real name isn't a pure number and isn't a lone symbol like "→".
+        if first_text and _clean_population(first_text) is None and len(first_text) > 1:
+            return first_text
     return None
 
 
@@ -248,6 +295,51 @@ def parse_population_table(html: str, country: str, url: str) -> list[CityPopula
     return results
 
 
+def debug_tables(html: str) -> None:
+    """Print a summary of every table on the page so mis-selection is diagnosable.
+
+    Shows each table's population-header column count, data-row count and its
+    header text, plus which table would be chosen. Run with ``--debug``.
+    """
+    soup = BeautifulSoup(html, _PARSER)
+    tables = soup.find_all("table")
+    chosen = _find_data_table(soup)
+
+    # Raw-HTML clues — vital when 0 tables are found, to tell apart a JS-rendered
+    # page, a <div>/role="table" grid, or a JSON blob embedded in a <script>.
+    lower_html = html.lower()
+    table_count = lower_html.count("<table")
+    tr_count = lower_html.count("<tr")
+    role_count = lower_html.count('role="row"') + lower_html.count('role="gridcell"')
+    js_gated = "yes" if "enable javascript" in lower_html else "no"
+    print(f"html length: {len(html)} chars")
+    print(f"raw counts: <table>={table_count} <tr>={tr_count} "
+          f"role=row/gridcell={role_count} 'enable JavaScript'={js_gated}")
+    # Show the markup around the first locality-ish sentinel so the container
+    # (a <div>, a <script> data blob, etc.) is visible.
+    for sentinel in ("Alice Springs", "Locality", "Urban Cent", "Population"):
+        index = html.find(sentinel)
+        if index != -1:
+            start = max(0, index - 220)
+            print(f"\ncontext around first {sentinel!r}:\n"
+                  f"...{html[start:index + 120]}...\n")
+            break
+    else:
+        print("\n(no locality/population sentinel text found in raw HTML — "
+              "data is almost certainly loaded by JavaScript)")
+
+    print(f"found {len(tables)} table(s)")
+    for i, table in enumerate(tables):
+        header = table.find("thead") or table
+        header_row = header.find("tr")
+        header_text = header_row.get_text(" | ", strip=True) if header_row else "(no header)"
+        data_rows = sum(1 for row in table.find_all("tr") if _looks_like_data_row(row))
+        marker = "  <-- CHOSEN" if table is chosen else ""
+        print(f"[{i}] pop_header_cols={_population_header_columns(table)} "
+              f"data_rows={data_rows} total_rows={len(table.find_all('tr'))}{marker}")
+        print(f"     header: {header_text[:160]}")
+
+
 def scrape(urls: list[str], delay: float = 1.5) -> pd.DataFrame:
     session = requests.Session()
     all_rows: list[CityPopulation] = []
@@ -257,6 +349,11 @@ def scrape(urls: list[str], delay: float = 1.5) -> pd.DataFrame:
         country = country_from_url(url)
         try:
             html = fetch_html(url, session)
+        except BotChallengeError as exc:
+            print(f"[BLOCKED] {exc}", file=sys.stderr)
+            print("[BLOCKED] stopping so we don't keep hammering the site.",
+                  file=sys.stderr)
+            break
         except requests.RequestException as exc:
             print(f"[WARN] failed to fetch {url}: {exc}", file=sys.stderr)
             continue
@@ -287,6 +384,8 @@ def main() -> None:
     parser.add_argument("-o", "--output", type=Path, default=Path("city_populations.csv"))
     parser.add_argument("--delay", type=float, default=1.5,
                         help="seconds to wait between requests (default 1.5)")
+    parser.add_argument("--debug", action="store_true",
+                        help="print a per-table diagnostic for each page and exit")
     args = parser.parse_args()
 
     urls = list(args.urls)
@@ -294,6 +393,14 @@ def main() -> None:
         urls.extend(_read_url_file(args.url_file))
     if not urls:
         parser.error("provide at least one URL/slug, or --url-file")
+
+    if args.debug:
+        session = requests.Session()
+        for raw in urls:
+            url = normalize_url(raw)
+            print(f"\n=== {url} ===")
+            debug_tables(fetch_html(url, session))
+        return
 
     populations_df = scrape(urls, delay=args.delay)
     # utf-8-sig so the CSV opens cleanly in Excel (matches the rest of this repo).
