@@ -94,6 +94,18 @@ MANUAL_NAME_ALIASES: dict[str, str] = {
     "Taif": "At Ta'if",
     "Cheongju": "Cheongju-si",
     "Chittagong": "Chattogram",
+    # Third batch — Slavic/Kazakh scientific-vs-English transliteration (iy/y,
+    # y/j, kh/h, shch/sh) that the bracketed English form doesn't fully cover,
+    # plus renamed cities and a typo.
+    "Petropavlovsk-Kamchatskiy": "Petropavlovsk-Kamchatsky",
+    "Bilhorod-Dnistrovsky": "Bilhorod-Dnistrovskyj",
+    "Leninsk-Kuznetskiy": "Leninsk-Kuznetsky",
+    "Shakhtinsk": "Shahtinsk",
+    "Kostyantynivka": "Kostjantynivka",
+    "Rudny": "Rudniy",
+    "Zyryanovsk": "Zyrjanovsk",
+    "Shchuchinsk": "Shuchinsk",
+    "Pular": "Pula",
 }
 
 def NormalizeName(name: str) -> str:
@@ -111,6 +123,69 @@ def NormalizeName(name: str) -> str:
         if not unicodedata.combining(ch) and ch not in _TRANSLITERATION_MODIFIERS
     )
     return " ".join(stripped.casefold().split())
+
+def _bracketed_contents(text: str) -> tuple[list[str], str]:
+    """Pull the contents of every () / [] group (handling nesting) and return
+    them plus the "main" text left once all bracket groups are removed.
+
+    Repeatedly stripping the innermost group copes with nested labels like
+    "Albury ( - Wodonga (Vic.) )", which a single-level regex would mangle into
+    "Albury )"."""
+    contents: list[str] = []
+    stripped = text
+    previous: str | None = None
+    innermost = re.compile(r"[(\[]([^()\[\]]*)[)\]]")
+
+    def _collect(match: "re.Match[str]") -> str:
+        contents.append(match.group(1).strip())
+        return " "
+
+    while previous != stripped:
+        previous = stripped
+        stripped = innermost.sub(_collect, stripped)
+    return contents, " ".join(stripped.split())
+
+
+def _expand_city_variants(city: str) -> tuple[set[str], set[str]]:
+    """Split a label like "Name 1 (Name 2) [Name 3]" into its component names.
+
+    citypopulation.de often packs several names into one label — an alternate
+    or local/indigenous name in brackets (e.g. "Apatula (Finke)",
+    "Galiwinku (Elcho Island)"), a native-script name with the English form in
+    brackets ("Tajšet [ Tayshet ]"), or a dual name ("Wagait Beach - Mandorah",
+    "Albury ( - Wodonga (Vic.) )"). If only the whole string is a key, a VP
+    called just "Finke" or "Wodonga" never matches.
+
+    Returns (primary, alternate) sets of NORMALIZED names:
+    * primary   = the full label + the "main" name (label minus bracketed parts)
+    * alternate = each bracket group's content and each ' - '-split part
+
+    Keeping them separate lets the caller give primary names precedence, so an
+    alternate (sometimes just a region/disambiguator) can't clobber another
+    city's real name."""
+    full = city.strip()
+    contents, main = _bracketed_contents(full)
+
+    primary_raw: set[str] = {full}
+    alternate_raw: set[str] = set()
+    if main:
+        primary_raw.add(main)
+
+    # A ' - ' inside the main text or a bracket group joins twin cities.
+    for segment in [main, *contents]:
+        cleaned = segment.strip().lstrip("-").strip()
+        if not cleaned:
+            continue
+        if segment is not main:
+            alternate_raw.add(cleaned)
+        for part in cleaned.split(" - "):
+            if part.strip():
+                alternate_raw.add(part.strip())
+
+    primary = {NormalizeName(name) for name in primary_raw if name.strip()}
+    alternate = {NormalizeName(name) for name in alternate_raw if name.strip()} - primary
+    return primary, alternate
+
 
 class Province:
     def __init__(self, prov_id: int):
@@ -263,14 +338,27 @@ def BuildPopulationLookup(
         years = [default_year] * len(city_df)
 
     lookup: dict[tuple[str, str], tuple[int, int | None]] = {}
+    # Alternate names are collected separately and only added where no primary
+    # name already claims the key (see _expand_city_variants).
+    alternate_lookup: dict[tuple[str, str], tuple[int, int | None]] = {}
     for city, tag, population, year in zip(
-        city_df[city_column].map(NormalizeName), tags, city_df[population_column], years
+        city_df[city_column], tags, city_df[population_column], years
     ):
-        if isinstance(tag, str):
-            # pandas may widen an int column to float when NaNs are present;
-            # coerce back to a clean int (or None) so years aren't "2020.0".
-            clean_year = int(year) if pd.notna(year) else None
-            lookup[(city, tag)] = (int(population), clean_year)
+        if not isinstance(tag, str):
+            continue
+        # pandas may widen an int column to float when NaNs are present;
+        # coerce back to a clean int (or None) so years aren't "2020.0".
+        clean_year = int(year) if pd.notna(year) else None
+        value = (int(population), clean_year)
+
+        primary_names, alternate_names = _expand_city_variants(str(city))
+        for name in primary_names:
+            lookup[(name, tag)] = value
+        for name in alternate_names:
+            alternate_lookup.setdefault((name, tag), value)
+
+    for key, value in alternate_lookup.items():
+        lookup.setdefault(key, value)
     return lookup
 
 def LoadJson() -> Any:
@@ -453,6 +541,16 @@ def main():
     print(
         f"Linked {len(prov_id_to_result)} of {len(provinces_list)} VP provinces "
         f"(by year — {year_summary})."
+    )
+
+    # Remaining unmatched, ignoring provinces that are airports (never cities).
+    unmatched = [p for p in provinces_list if p.prov_id not in prov_id_to_result]
+    airport_unmatched = [
+        p for p in unmatched if any("airport" in name.lower() for name in p.names)
+    ]
+    print(
+        f"Remaining unmatched (excluding {len(airport_unmatched)} airports): "
+        f"{len(unmatched) - len(airport_unmatched)}."
     )
 
     # Write every VP province out to CSV, blank where no population was found.
