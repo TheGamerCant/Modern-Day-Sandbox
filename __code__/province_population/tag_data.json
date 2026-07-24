@@ -105,7 +105,9 @@
   },
   "owner_overwrites": {
     "HKG": "PRC",
-    "MCU": "PRC"
+    "MCU": "PRC",
+    "GRN": "DMK",
+    "FOE": "DMK"
   },
   "victory_points_from_population": [
     {"multiplier":  70000, "power":  1.04 },

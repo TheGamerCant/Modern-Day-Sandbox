@@ -1,8 +1,9 @@
 """Scrape city populations from citypopulation.de.
 
 Given a list of ``citypopulation.de/en/<country>/cities/`` pages, extract each
-locality and its MOST RECENT population figure into a tidy table
-(City, Country, Population, Reference Date, Source URL) and write it to CSV.
+locality and the population figure whose census/estimate year is CLOSEST to a
+target year (default 2010; see DEFAULT_TARGET_YEAR) into a tidy table
+(City, Country, Population, Reference Date) and write it to CSV.
 
 Usage
 -----
@@ -22,9 +23,9 @@ Notes
 -----
 * citypopulation.de serves the data table in static HTML but rejects the
   default ``requests`` user-agent, so a browser-like UA is sent.
-* "Most recent population" = the right-most non-empty population column for
-  each row (the newest column is sometimes blank for smaller places, so we walk
-  leftwards to the first populated figure and record which date it came from).
+* Population chosen = the non-empty column whose year is closest to the target
+  year (ties break toward the more recent year). If a row's cells can't be
+  aligned to the header dates, it falls back to the most recent non-empty value.
 * Be polite: there is a delay between requests. Don't hammer the site.
 
 Dependencies: ``pip install requests beautifulsoup4 pandas`` (``lxml`` optional,
@@ -69,6 +70,10 @@ _HEADERS = {
 
 # A full ISO date (1987-05-25) or a bare year (2023) in a column header.
 _DATE_RE = re.compile(r"\d{4}(?:-\d{2}-\d{2})?")
+
+# For each city we keep the population figure whose census/estimate year is
+# closest to this. Overridable via --target-year.
+DEFAULT_TARGET_YEAR = 2010
 
 
 @dataclass
@@ -238,25 +243,91 @@ def _row_name(row: Tag) -> str | None:
     return None
 
 
-def _row_population_cells(row: Tag) -> list[Tag]:
-    """Population cells of a row, left (oldest) to right (newest)."""
-    pop_cells = [
+def _population_columns(table: Tag) -> tuple[list[int], list[str]]:
+    """Return (indices, dates) for the population columns, read from the header
+    row that carries the dates.
+
+    The index positions line up with data-row cells, so empty "..." cells are
+    preserved — essential for mapping each value to its year when picking the
+    figure closest to a target year."""
+    header = table.find("thead") or table
+    best_indices: list[int] = []
+    best_dates: list[str] = []
+    for header_row in header.find_all("tr"):
+        indices: list[int] = []
+        dates: list[str] = []
+        for index, cell in enumerate(header_row.find_all(["th", "td"])):
+            text = cell.get_text(" ", strip=True)
+            match = _DATE_RE.search(text)
+            if match and ("population" in text.lower() or "census" in text.lower()
+                          or "estimate" in text.lower() or _DATE_RE.fullmatch(text)):
+                indices.append(index)
+                dates.append(match.group(0))
+        if len(indices) > len(best_indices):
+            best_indices, best_dates = indices, dates
+    return best_indices, best_dates
+
+
+def _row_population_cells(row: Tag, pop_indices: list[int]) -> list[Tag]:
+    """Population cells of a row, aligned with the header's population columns.
+
+    Prefers rpop-classed cells; otherwise takes the cells sitting at the
+    header's population-column indices (keeping empty "..." cells so values stay
+    aligned with their year); otherwise falls back to trailing numeric cells."""
+    rpop_cells = [
         td for td in row.find_all("td")
         if any(cls.startswith("rpop") for cls in td.get("class", []))
     ]
-    if pop_cells:
-        return pop_cells
-    # Fallback: every cell after the first that parses as a number.
-    return [td for td in row.find_all("td")[1:] if _clean_population(td.get_text())]
+    if rpop_cells:
+        return rpop_cells
+
+    cells = row.find_all(["td", "th"])
+    if pop_indices and max(pop_indices) < len(cells):
+        return [cells[index] for index in pop_indices]
+    # Last resort: every cell after the first that parses as a number.
+    return [td for td in cells[1:] if _clean_population(td.get_text())]
 
 
-def parse_population_table(html: str, country: str, url: str) -> list[CityPopulation]:
+def _select_population(
+    pop_cells: list[Tag], column_dates: list[str], target_year: int
+) -> tuple[int, str] | None:
+    """Choose the non-empty population cell whose column year is CLOSEST to
+    ``target_year``. Returns (population, reference_date) or None if the row has
+    no numeric value. Ties break toward the more recent year. If the row's cells
+    don't line up with the header dates (so years can't be mapped), falls back
+    to the most recent non-empty value."""
+    column_years = [int(_DATE_RE.search(date).group()[:4]) for date in column_dates]
+    aligned = len(column_years) == len(pop_cells)
+
+    best_key: tuple[int, int] | None = None
+    best: tuple[int, str] | None = None
+    for index, cell in enumerate(pop_cells):
+        value = _clean_population(cell.get_text())
+        if value is None:
+            continue
+        if aligned:
+            year = column_years[index]
+            # Smaller distance wins; on a tie prefer the later year (-year).
+            key = (abs(year - target_year), -year)
+            reference_date = column_dates[index]
+        else:
+            # No usable year mapping — approximate the old "most recent" rule.
+            key = (0, -index)
+            reference_date = ""
+        if best_key is None or key < best_key:
+            best_key, best = key, (value, reference_date)
+    return best
+
+
+def parse_population_table(
+    html: str, country: str, url: str, target_year: int = DEFAULT_TARGET_YEAR
+) -> list[CityPopulation]:
     soup = BeautifulSoup(html, _PARSER)
     table = _find_data_table(soup)
     if table is None:
         return []
 
-    column_dates = _header_dates(table)
+    pop_indices, column_dates = _population_columns(table)
     body = table.find("tbody") or table
 
     results: list[CityPopulation] = []
@@ -265,31 +336,19 @@ def parse_population_table(html: str, country: str, url: str) -> list[CityPopula
         if not name:
             continue
 
-        pop_cells = _row_population_cells(row)
+        pop_cells = _row_population_cells(row, pop_indices)
         if not pop_cells:
             continue
 
-        # Walk right-to-left to the most recent populated figure.
-        most_recent: int | None = None
-        used_index: int | None = None
-        for index in range(len(pop_cells) - 1, -1, -1):
-            value = _clean_population(pop_cells[index].get_text())
-            if value is not None:
-                most_recent = value
-                used_index = index
-                break
-        if most_recent is None:
+        chosen = _select_population(pop_cells, column_dates, target_year)
+        if chosen is None:
             continue
-
-        # Map the used column back to its header date when the counts line up.
-        reference_date = ""
-        if used_index is not None and len(column_dates) == len(pop_cells):
-            reference_date = column_dates[used_index]
+        population, reference_date = chosen
 
         results.append(CityPopulation(
             city=name,
             country=country,
-            population=most_recent,
+            population=population,
             reference_date=reference_date,
 #            source_url=url,
         ))
@@ -342,7 +401,9 @@ def debug_tables(html: str) -> None:
         print(f"     header: {header_text[:160]}")
 
 
-def scrape(urls: list[str], delay: float = 1.5) -> pd.DataFrame:
+def scrape(
+    urls: list[str], delay: float = 1.5, target_year: int = DEFAULT_TARGET_YEAR
+) -> pd.DataFrame:
     session = requests.Session()
     all_rows: list[CityPopulation] = []
 
@@ -360,7 +421,7 @@ def scrape(urls: list[str], delay: float = 1.5) -> pd.DataFrame:
             print(f"[WARN] failed to fetch {url}: {exc}", file=sys.stderr)
             continue
 
-        rows = parse_population_table(html, country, url)
+        rows = parse_population_table(html, country, url, target_year)
         print(f"[OK] {country}: {len(rows)} cities", file=sys.stderr)
         all_rows.extend(rows)
 
@@ -469,6 +530,7 @@ def main() -> None:
     ]
     delay = 1.0
     output = "city_populations.csv"
+    target_year = DEFAULT_TARGET_YEAR  # keep each city's figure closest to this
 
     if debug:
         session = requests.Session()
@@ -478,7 +540,7 @@ def main() -> None:
             debug_tables(fetch_html(url, session))
         return
 
-    populations_df = scrape(urls, delay=delay)
+    populations_df = scrape(urls, delay=delay, target_year=target_year)
     # utf-8-sig so the CSV opens cleanly in Excel (matches the rest of this repo).
     populations_df.to_csv(output, index=False, encoding="utf-8-sig")
     print(f"Wrote {len(populations_df)} rows to {output}")
