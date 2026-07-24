@@ -1,0 +1,3619 @@
+﻿prov_id,names,owner,population
+11599,Aqwa; Sokhumi; Sukhum; Sukhumi,ABZ,
+11647,Gagra,ABZ,
+3898,Andorra la Vella,ADR,
+12904,Khankendi; Stepanakert; Xankəndi,AKH,
+6900,Durrës,ALB,131865
+9780,Shkodër,ALB,77144
+9914,Elbasan,ALB,68429
+11767,Vlorë,ALB,74501
+13841,Tirana; Tirona,ALB,995789
+1013,Aš-Šalif; Chlef,ALG,216910
+1058,Tibissa; Tébessa,ALG,260482
+1095,Adrar; Adrār,ALG,107335
+1128,'Īn Wusāra; Aïn Oussera,ALG,147459
+1141,Henšela; Khenchela,ALG,160444
+1145,Al-Jazā'ir; Algiers,ALG,3316232
+1160,Souk Ahras; Sūq Ahrās,ALG,222438
+1958,Tindouf; Tindūf,ALG,
+1967,Al-Aghwāṭ; Laghouat,ALG,235439
+2049,Ghardaïa; Ġardāya,ALG,149916
+4116,Tilimsān; Tlemcen,ALG,294082
+4146,Al-Madiya; Médéa,ALG,156467
+4970,Al-Wādī; El Oued,ALG,281360
+5035,Ouargla; Warqalah,ALG,250308
+7033,M'Sila; Āl-Msyla,ALG,201841
+7065,Al-'Ulma; El Eulma,ALG,196881
+7166,Bordj Bou Arréridj; Burğ Bū 'Urairīğ,ALG,209845
+8077,'Īn Ṣalāḥ; Aïn Salah,ALG,
+10045,Sa'īda; Saïda,ALG,191803
+10731,Bešār; Béchar,ALG,200687
+10749,Illizi; Ilyzy,ALG,
+11923,Sidi Bel Abbès; Sīdī Bu Al-'Abbās,ALG,265431
+11939,Tizi Ouzou; Tizi Wuzu,ALG,121426
+12018,Al-Mašrya; Mécheria,ALG,112802
+12034,Al-Ǧilfah; Djelfa,ALG,612877
+12051,Skikda; Skykda,ALG,252926
+12760,Tiaret; Tyāret,ALG,246774
+13074,Al-Bayaḍ; El Bayadh,ALG,
+15219,Tamanrasset; Tāmanrāssit,ALG,125555
+15223,'In 'Amanās; In Amenas,ALG,
+15224,Bordj Badji Mokhtar; Borǧ Bāǧy Moẖtār,ALG,
+15231,Oran; Wahrān,ALG,1261238
+15235,Algiers International Airport; Maṭār Al-Jazā'ir Al-Dawli,ALG,
+15236,Al-Bulaydah; Blida,ALG,703326
+15238,Batna; Bātna,ALG,377992
+15239,Constantine; Qusanṭīnah,ALG,507697
+15241,Annaba; Anāba,ALG,471639
+15242,Siṭīf; Sétif,ALG,366338
+4660,Kapan,ARM,
+8155,Mezhdunarodnyy Aeroport Erevan; Zvartnots International Airport; Zvart’nots’ Odanavakayan,ARM,
+12380,Vanadzor,ARM,
+12441,Gyumri,ARM,84760
+12906,Erevan; Yerevan,ARM,1027656
+671,Lienz,ASA,
+673,Innsbruck,ASA,144226
+688,Salzburg,ASA,143452
+704,St Pölten,ASA,
+732,Freistadt,ASA,
+3673,Klagenfurt am Wörthersee,ASA,80261
+3700,Eisenstadt,ASA,
+6552,Krems an der Donau,ASA,
+6673,Villach,ASA,
+6680,Dornbirn,ASA,
+6687,Judenburg,ASA,
+6690,Leoben,ASA,
+6739,Liezen,ASA,
+9661,Wiener Neustadt,ASA,
+14440,Vienna; Wien,ASA,2056565
+14443,Vienna Airport; Wien-Flughafen,ASA,
+14444,Graz,ASA,306742
+14447,Linz,ASA,243243
+14448,Wels,ASA,54304
+1410,Nhulunbuy,AUS,
+1454,Gold Coast,AUS,279191
+1472,Biloela,AUS,
+1478,Townsville,AUS,
+1514,Katherene,AUS,
+1540,Geraldton,AUS,
+1611,Lismore,AUS,
+1667,Albury,AUS,
+1759,Traralgon,AUS,
+1773,Mount Gambier,AUS,
+2114,Ballarat,AUS,67880
+2116,Central Coast,AUS,
+4441,Cairns,AUS,57591
+4462,Mackay,AUS,
+4478,Dubbo,AUS,
+4481,Bundaberg,AUS,
+4487,Airlie Beach - Cannonvale,AUS,
+4632,Emerald,AUS,
+4776,Bendigo,AUS,
+5175,Kalgoorlie-Boulder,AUS,
+5181,Devonport,AUS,
+5207,Kununurra,AUS,
+7450,Coffs Harbour,AUS,
+7471,Tamworth,AUS,
+7481,Subshine Coast,AUS,
+7522,Hervey Bay,AUS,
+7535,Nambour,AUS,
+7538,Sydney Airport,AUS,
+7564,Brisbane,AUS,1359105
+7651,Rockhampton,AUS,
+7755,Shepparton - Mooroopna,AUS,
+7798,Melbourne,AUS,4010658
+7811,Warrnambool,AUS,
+7859,Canberra,AUS,
+8130,Esperance,AUS,
+8152,Karratha,AUS,
+8165,Perth,AUS,1357382
+8209,Broome,AUS,
+8228,Bunbury,AUS,
+8243,Albany,AUS,
+8249,Mildura,AUS,85038
+10430,Toowoomba,AUS,92941
+10445,Warwick,AUS,
+10455,Wagga Wagga,AUS,
+10941,Newcastle,AUS,205366
+10969,Darwin,AUS,
+10977,Hobart,AUS,69906
+11006,Wollongong,AUS,149057
+12308,Gladstone,AUS,
+12323,Carnarvon,AUS,
+12406,Sydney,AUS,4375394
+12424,Moranbah,AUS,
+12451,Goondiwindi,AUS,
+12645,Launceston,AUS,
+12934,Geelong,AUS,165825
+12993,Melbourne Airport,AUS,
+13169,Perth International Airport,AUS,
+15416,Adelaide,AUS,938328
+15419,Port Pirie,AUS,
+15420,Whyalla,AUS,
+15422,Alice Springs,AUS,
+15432,Mount Isa,AUS,
+1536,Shirvan; Şirvan,AZJ,100905
+1610,Agdzhabedi; Agjabedi; Ağcabədi,AZJ,54710
+2186,Gazakh; Qazax,AZJ,
+4458,Khachmaz; Xaçmaz,AZJ,66906
+4614,Shamakhy; Shemaka; Şamaxı,AZJ,54196
+6997,Nakhchivan; Nakhchyvan; Nakhch’yvan; Naxçıvan,AZJ,175331
+7661,Baku; Bakı,AZJ,1973054
+10473,Heydar Aliyev International Airport; Heydər Əliyev Adına Beynəlxalq Hava Limanı; Mezhdunarodnyy Aeroport Baku,AZJ,
+11645,Mingechaur; Mingechevir; Mingəçevir,AZJ,129064
+11674,Gandzha; Ganja; Gəncə,AZJ,399696
+12434,Cəlilabad; Dzhalil'abad; Jalilabad,AZJ,69331
+12926,Sumgayt; Sumqayit; Sumqayıt,AZJ,637053
+2843,Jashore; Yaśor,BAN,552981
+4162,Faridpur,BAN,326743
+7124,Kushtia; Kuṣṭiẏā,BAN,407149
+7662,Chapai Nawabganj; Cāṁpāi Nabābgañj,BAN,785704
+10035,Barishal; Bariśāl,BAN,432532
+10389,Dinajpur; Dinājpur,BAN,400029
+10443,Baguṛā; Bogura,BAN,650822
+11929,Narayanganj; Nārāẏaṇgañj,BAN,
+11968,Cumilla; Kumillā,BAN,
+12010,Feni; Phenī,BAN,396626
+12423,Sunamganj; Sunāmgañj,BAN,248062
+15781,Rangpur; Raṁpura,BAN,611287
+15782,Rajshahi; Rājśāhī,BAN,805560
+15783,Khulna; Khulnā,BAN,1081072
+15784,Sileṭa; Sylhet,BAN,1206965
+15785,Maẏmansiṁh; Mymensingh,BAN,677660
+15786,Caṭṭagrām; Chittagong,BAN,
+15790,Hayarata Śāhjālāla Āntarjātika Bimānabandara; Hazrat Shahjalal International Airport,BAN,
+15792,Dhaka; Ḍhākā,BAN,37307160
+15794,Gazipur; Gājīpur,BAN,84943
+15795,Tangail; Ṭāṅgāil,BAN,403296
+10254,Nassau,BHA,261235
+13313,Al-Manāmah; Manama,BHR,1361833
+8010,Thimphu,BHU,
+516,Brussel; Brussels; Bruxelles,BLG,1468754
+3488,Eupen,BLG,
+6560,Bruges; Brugge,BLG,67047
+6598,Saint-Nicholas; Sint-Niklaas,BLG,
+9536,Bergen; Mons,BLG,
+9574,Genk,BLG,
+11407,Bastenaken; Bastogne,BLG,
+13081,Charleroi,BLG,222465
+14056,Aéroport de Bruxelles; Brussels Airport; Luchthaven Brussel,BLG,
+14057,Waterloo,BLG,
+14058,Antwerp; Antwerpen; Anvers,BLG,767652
+14061,Gand; Gent; Ghent,BLG,250379
+14064,Liège; Luik; Lüttich,BLG,373662
+233,Pastavy; Postavy,BLR,
+277,Maladzyechna; Molodechno,BLR,
+289,Krichev; Krychaw,BLR,
+294,Barysaw; Borisov,BLR,85274
+318,Vawkavysk; Volkovytsk,BLR,
+360,Mar'ina Gorka; Maryina Horka,BLR,
+386,Asipovichy; Osipovichi,BLR,
+560,Pinsk,BLR,
+3293,Svetlogorsk; Svietlahorsk,BLR,
+3309,Slonim,BLR,
+3350,Babruysk; Bobruysk,BLR,177154
+3378,Bychaŭ; Bykhov,BLR,
+3392,Brest,BLR,397637
+3556,Luninets,BLR,
+6232,Mazyr; Mozyr',BLR,
+6249,Polatsk; Polotsk,BLR,
+6306,Ivatsevichi; Ivatsevichy,BLR,
+6319,Rechitsa; Rečyca,BLR,
+6326,Navapolatsk; Novopolotsk,BLR,
+6354,Gorki; Horki,BLR,
+6373,Zhlobin; Žlobin,BLR,
+6413,Lida,BLR,
+9288,Gomel'; Homieĺ,BLR,571257
+9304,Baranavichy; Baranovichi,BLR,179059
+9341,Glybokoye; Hlybokaye,BLR,
+9342,Dobrush,BLR,
+9359,Navahrudak; Novogrudok,BLR,
+11216,Dzerzhinsk; Dzyarzhynsk,BLR,
+11220,Orsha,BLR,70876
+11230,Kastsyukovichy; Kostyukovichi,BLR,
+11241,Vitebsk,BLR,382195
+11313,Salihorsk; Soligorsk,BLR,
+11370,Minsk,BLR,2093512
+11391,Smarhoń; Smorgon',BLR,
+13206,Grodno; Hrodna,BLR,395330
+14146,Slutsk,BLR,
+14147,Nacyjanaĺny Aeraport Minsk; National Airport Minsk; Natsional'nyy Aeroport Minsk,BLR,
+14153,Mogilev; Mogilyov,BLR,399369
+2077,Belize City,BLZ,76331
+15945,Bujumbura,BRU,1403419
+606,Bijeljina,BSH,
+6614,Bihać,BSH,
+6619,Prijedor,BSH,
+6799,Tuzla,BSH,55006
+6957,Livno,BSH,
+6983,Banja Luka,BSH,90140
+9591,Doboj,BSH,
+9894,Mostar,BSH,
+11572,Zenica,BSH,65296
+11574,Brčko,BSH,66146
+11741,Srebrenica,BSH,
+11845,Trebinje,BSH,
+13860,Sarajevo,BSH,235739
+793,Knezha,BUL,
+878,Kǎrdzhali,BUL,
+893,Smolyan,BUL,
+935,Pernik,BUL,
+965,Vratsa,BUL,
+3796,Pleven,BUL,
+3819,Gabrovo,BUL,
+3937,Velingrad,BUL,
+6814,Stara Zagora,BUL,77342
+6842,Veliko Tǎrnovo,BUL,
+6857,Blagoevgrad,BUL,
+6967,Sliven,BUL,
+6982,Pazardzhik,BUL,
+9610,Ruse,BUL,83022
+9614,Silistra,BUL,
+9771,Vidin,BUL,
+9783,Shumen,BUL,
+9862,Khaskovo,BUL,
+9888,Yambol,BUL,
+9919,Burgas,BUL,102154
+11597,Bazargic; Dobrich,BUL,
+15137,Varna,BUL,286140
+15138,Plovdiv,BUL,331578
+15139,Sofia; Sofiya,BUL,1068057
+15140,Mezhdunarodno Letishche Sofiya; Sofia International Airport,BUL,
+634,Fredericton,CAN,
+749,Niagra Falls,CAN,75875
+1262,Lethbridge,CAN,63048
+1323,Kamloops,CAN,
+1788,Estevan,CAN,
+1873,Steinbach,CAN,
+3605,Kingston,CAN,88900
+3769,Swift Current,CAN,
+3775,Toronto,CAN,5566382
+3778,Ottawa,CAN,604618
+4285,St. John,CAN,
+4360,Charlottetown,CAN,
+4428,Abbotsford,CAN,110036
+6610,Owen Sound,CAN,
+7304,Truro,CAN,
+7753,Chilliwack,CAN,
+7893,Saguenay,CAN,
+7899,Thunder Bay,CAN,
+9601,Trois-Rivières,CAN,97591
+9740,Fort Albany,CAN,
+10174,St. Georges,CAN,
+10230,Sherbrooke,CAN,87477
+11902,Rouyn-Noranda,CAN,
+12145,Brandon,CAN,
+12259,Port Hardy,CAN,
+12505,St. John's,CAN,75023
+12571,Prince George,CAN,
+12578,Kelowna,CAN,72915
+12582,Sault Ste. Marie,CAN,51849
+12603,Regina,CAN,241949
+13607,Toronto Pearson International Airport,CAN,
+13608,Gatineau,CAN,119332
+13613,Hamilton,CAN,446367
+13614,London,CAN,365269
+13615,Montreal; Montréal,CAN,3221844
+13619,Quebec City; Ville de Québec,CAN,
+13621,Winnipeg,CAN,752808
+13625,Calgary,CAN,1524649
+13627,Calgary International Airport,CAN,
+13630,Edmonton,CAN,1144486
+13635,Medicine Hat,CAN,
+13639,Nanaimo,CAN,78391
+13640,Victoria,CAN,250760
+13642,Vancouver,CAN,2198107
+14003,Halifax,CAN,227622
+14046,Windsor,CAN,244810
+3601,Karlovac,CRO,
+3868,Dubrovnik,CRO,
+3943,Zadar,CRO,68048
+6611,Gospić,CRO,
+6647,Osijek,CRO,69144
+9595,Slavonski Brod,CRO,
+9611,Varaždin,CRO,
+11564,Rijelka,CRO,
+11735,Pular,CRO,
+13252,Čakovec,CRO,
+13844,Split,CRO,215968
+13846,Zagreb,CRO,643962
+13848,Franjo Tuđman International Airport; Zračna luka Franjo Tuđman Zagreb,CRO,
+4476,Camagüey,CUB,286045
+4600,Pinar del Río,CUB,150119
+7451,Santa Clara,CUB,222229
+12347,Holguín,CUB,313757
+15372,Havana; La Habana,CUB,1632772
+15374,Aeropuerto Internacional José Martí; José Martí international Airport,CUB,
+15375,Santiago de Cuba,CUB,441985
+7193,Lemesós; Limasol; Limassol,CYP,191161
+15490,Lefkosía; Lefkoşa; Nicosia,CYP,
+421,Šumperk,CZE,
+445,Hradec Králové,CZE,68044
+557,Znojmo,CZE,
+569,Třebíč,CZE,
+3569,Brno,CZE,313582
+3583,Ostrava,CZE,150766
+6470,Karlovy Vary,CZE,
+6562,Olomouc,CZE,82848
+6576,Zlín,CZE,
+6592,Plzeň,CZE,
+9414,Liberec,CZE,86841
+9421,Příbram,CZE,
+9541,České Budějovice,CZE,83564
+11432,Ústí nad Labem,CZE,59097
+11542,Prag; Prague; Praha,CZE,1201278
+11556,Jihlava,CZE,
+14084,Flughafen Prag; Letiště Václava Havla; Václav Havel Airport,CZE,
+394,Hjørring,DMK,
+399,Esbjerg,DMK,
+3206,Randers,DMK,
+3260,Slagelse,DMK,
+3277,Kolding,DMK,
+3305,Nykøbing Falster,DMK,
+3341,Herning,DMK,
+6235,Aalborg,DMK,101029
+6287,Copenhagen; København,DMK,1258202
+6361,Rønne,DMK,
+6393,Roskilde,DMK,
+13003,Tórshavn,DMK,
+13262,Holstebro,DMK,
+15090,Sisimiut,DMK,
+15091,Nuuk,DMK,
+15098,Qaqortoq,DMK,
+15099,Aarhus,DMK,252649
+15100,Odense,DMK,147088
+15102,Copenhagen Airport; Københavns Lufthavn,DMK,
+4598,Puerto Plata,DMR,128131
+7632,Barahona,DMR,
+7660,La Romana,DMR,248412
+15938,Santo Domingo,DMR,4593164
+15939,Aeropuerto Internacional Las Américas; Las Américas International Airport,DMR,
+15942,Santiago de los Caballeros,DMR,678296
+848,Wonsan; Wŏnsan,DPK,370729
+3803,Hyesan,DPK,241782
+3912,Huichon; Hŭich'ŏn,DPK,144337
+4052,Namp'o; Nampo,DPK,144643
+4107,Haeju,DPK,263992
+6922,Tanch'ŏn; Tanchon,DPK,77317
+6944,Rason; Rasŏn,DPK,128331
+7070,Koksan,DPK,93927
+9790,Kaech'ŏn; Kaechon,DPK,200016
+11828,Kanggye,DPK,314915
+11835,Sinuiju; Sinŭiju,DPK,308840
+11915,Sariwon; Sariwŏn,DPK,401117
+11958,Changchŏn; Jangjon,DPK,
+12040,Kaesong; Kaesŏng,DPK,280963
+14604,P'yŏngyang; Pyongyang,DPK,2868313
+14605,P'yŏngyang Kukche Pihaengjang; Pyongyang Gukjegonghang; Pyongyang International Airport,DPK,
+14607,Ch'ŏngjin; Chongjin,DPK,683870
+14609,Hamhung; Hamhŭng,DPK,393816
+1068,Al-Fayyūm; Faiyum,EGY,741406
+1155,B'īr al-'Abd; Bir al-Abd,EGY,
+1977,Halaib; Ḥalāyib,EGY,
+4055,Al-Jīzah; Giza,EGY,
+4068,Al-Quṣayr; Quseer,EGY,
+4073,As-Suways; Suez,EGY,557510
+4076,Al-Iskandariyah; Alexandria,EGY,6931369
+5078,Mut,EGY,
+7011,Cairo International Airport; Maṭār Al-Qāhirah Al-Dawli,EGY,
+7079,As-Sallūm; Sallum,EGY,
+7091,Kafr Ash-Shaykh; Kafr El-Shaikh,EGY,
+9947,Sharm El-Sheikh; Sharm ash-Shaykh,EGY,
+10005,Al-Manṣūrah; Mansoura,EGY,
+10099,Aṭ-Ṭūr; El-Tor,EGY,
+11910,Aḍ-Ḍab'ah; El Dabaa,EGY,
+11967,Marsa Matrouh; Marsā Maṭrūḥ,EGY,191313
+11974,Asyut; Asyūṭ,EGY,1152515
+11999,Aswan; Aswān,EGY,472978
+12002,Al-Ghurdaqah; Hurghada,EGY,137973
+12004,Al-Qāhirah; Cairo,EGY,25230325
+12044,Sawhāj; Sohag,EGY,
+12049,Būr Sa'īd; Port Said,EGY,874651
+12071,Al-Uqṣur; Luxor,EGY,6314420
+12764,Siwa; Sīwa,EGY,
+14534,Al-Kharijah; Kharga,EGY,
+14535,Būr Fo'ād; Fouad,EGY,
+14537,Al-'Arīsh; Arish,EGY,115903
+14540,Damietta; Dumyāṭ,EGY,727330
+14542,Tanta; Ṭanṭā,EGY,941974
+83,Haapsalu,EST,
+185,Kuressaare,EST,
+592,Võru,EST,
+3174,Pärnu,EST,
+6178,Viljandi,EST,
+6408,Valga,EST,
+9221,Tartu,EST,74087
+11127,Rakvere,EST,
+13833,Tallinn,EST,449861
+13834,Tallinn Airport; Tallinna Lennujaam,EST,
+13836,Varna,EST,
+13093,San Miguel,ESV,165222
+15358,San Salvador,ESV,1615741
+32,Nokia,FIN,
+66,Kokkola,FIN,
+67,Lahti,FIN,57174
+124,Rovaniemi,FIN,
+169,Pori,FIN,
+204,Turku,FIN,104248
+3013,Mikkeli,FIN,
+3122,Vaasa,FIN,
+3125,Kajaani,FIN,
+3161,Kouvola,FIN,
+3172,Jakobstad,FIN,
+6009,Porvoo,FIN,
+6082,Lappeenranta,FIN,
+6141,Äänekoski,FIN,
+6163,Jämsä,FIN,
+9038,Seinäjoki,FIN,
+9061,Joensuu,FIN,
+9104,Iisalmi,FIN,
+9160,Jyväskylä,FIN,56663
+9194,Salo,FIN,
+9228,Mariehamn,FIN,
+11066,Hämeenlinna,FIN,
+11105,Helsinki,FIN,1001125
+11121,Oulu,FIN,84384
+11125,Tornio,FIN,
+11141,Kuopio,FIN,
+11211,Hanko,FIN,
+15106,Helsinki-Vantaa Airport; Helsinki-Vantaan Lentoasema,FIN,
+15108,Tampere,FIN,153567
+373,Saint-Pierre,FRA,
+485,Dieppe,FRA,
+503,Angers,FRA,162720
+542,Quipmer,FRA,
+551,Sézanne,FRA,
+553,Alençon,FRA,
+595,Angoulême,FRA,54289
+620,Limoges,FRA,105730
+648,Chalon-sur-Saône,FRA,
+667,Nevers,FRA,
+678,Mulhouse; Mülhausen,FRA,187082
+743,Bayonne,FRA,89012
+762,Valence,FRA,71751
+769,Brioude,FRA,
+929,Condom,FRA,
+3402,Saint-Quentin,FRA,
+3495,Laval,FRA,
+3509,Le Mans,FRA,140414
+3549,Évreux,FRA,
+3621,Guéret,FRA,
+3655,Bourges,FRA,53520
+3681,Auxerre,FRA,
+3751,Albi,FRA,
+3762,Gap,FRA,
+3768,Grenoble,FRA,348043
+3771,Brive-la-Gaillarde,FRA,
+3838,Ajaccio,FRA,57575
+5291,Verdun,FRA,
+6449,Cherbourg-en-Cotentin,FRA,57244
+6504,Arras,FRA,60903
+6529,Colmar,FRA,64537
+6533,Blois,FRA,
+6536,Lorient,FRA,72374
+6545,Châlons-en-Champagne,FRA,
+6547,Chatres,FRA,66599
+6585,Beauvais,FRA,
+6613,Lyon,FRA,1194741
+6766,Toulouse,FRA,712882
+6770,Mende,FRA,
+6773,Aurillac,FRA,
+6775,Agen,FRA,
+6777,Arcachon,FRA,
+6917,Carcassonne,FRA,
+6975,Guillestre,FRA,
+9434,Le Havre,FRA,168169
+9490,Troyes,FRA,101937
+9503,Strasbourg; Straßburg,FRA,419245
+9505,Saint-Dizier,FRA,
+9525,Saint-Brieuc,FRA,56276
+9559,Thionville,FRA,
+9561,Compiègne,FRA,
+9607,Vichy,FRA,
+9629,Châteauroux,FRA,
+9642,Besançon,FRA,98834
+9658,Langres,FRA,
+9725,Étampes,FRA,
+9732,Le Puy-en-Velay,FRA,
+9737,Bordeaux,FRA,642756
+9751,Périgueux,FRA,
+9853,Perpignan,FRA,124596
+9909,Nice,FRA,393492
+11420,Abbeville,FRA,
+11465,Nantes,FRA,472262
+11483,Lille,FRA,907123
+11491,Montereau-Fault-Yonne,FRA,
+11506,Paris,FRA,9328385
+11516,Nancy,FRA,217203
+11518,Meaux,FRA,52429
+11535,Caen,FRA,149422
+11573,Annecy,FRA,123116
+11582,Ruffec,FRA,
+11596,Poiters,FRA,93032
+11600,La Roche-sur-Yon,FRA,
+11613,Cholet,FRA,
+11697,Pau,FRA,95976
+11699,Tarbes,FRA,
+11702,Montauban,FRA,
+11709,Millau,FRA,
+11711,Alès,FRA,
+11713,Montélimar,FRA,
+11834,Marseille,FRA,911934
+11849,Avignon,FRA,78051
+11875,Aix-en-Provence,FRA,81548
+13011,Reims,FRA,190718
+13935,Metz,FRA,139827
+13990,Tourcoing,FRA,
+13993,Lens,FRA,147145
+13994,Dunkerque; Dunkirk,FRA,129033
+13995,Calais,FRA,72072
+13997,Amiens,FRA,102612
+13999,Brest,FRA,127489
+14000,Rennes,FRA,251924
+14004,Rouen,FRA,309210
+14010,Aéroport de Charles-de-Gaulle; Charles de Gaulle Airport,FRA,
+14012,Versailles,FRA,
+14016,Saint-Nazaire,FRA,56337
+14020,Orléans,FRA,219332
+14022,Tours,FRA,223834
+14027,Aéroport de Toulouse–Blagnac; Toulouse-Blagnac Airport,FRA,
+14029,Montpellier,FRA,337381
+14030,Béziers,FRA,69194
+14036,La Rochelle,FRA,84391
+14038,Dijon,FRA,219337
+14041,Aéroport de Lyon-Saint Exupéry; Lyon-Saint Exupéry Airport,FRA,
+14044,Saint-Étienne,FRA,180472
+14045,Clermont-Ferrand,FRA,203170
+14048,Cannes,FRA,212941
+14051,Toulon,FRA,290434
+14053,Aéroport Marseille-Provence; Marseille Provence Airport,FRA,
+385,Londonderry,GBR,
+507,Crawley,GBR,106964
+540,Plymouth,GBR,252928
+3150,Dundee,GBR,158327
+3241,Hereford,GBR,55483
+3273,Glasgow Airport,GBR,
+3274,Aberystwyth,GBR,
+3311,Douglas,GBR,
+3463,Exeter,GBR,110292
+3501,Dover,GBR,
+4135,Gibraltar,GBR,
+6103,London,GBR,10408332
+6196,Lerwick,GBR,
+6318,Manchester,GBR,2539907
+6335,Blackpool,GBR,189730
+6350,Stranraer,GBR,
+6351,Salisbury,GBR,
+6526,Truro,GBR,
+9075,Inverness,GBR,
+9239,Oxford,GBR,168021
+9268,Northampton,GBR,219781
+9269,York,GBR,151629
+9322,Boston,GBR,
+9332,Harrogate,GBR,65246
+9364,Wrexham,GBR,
+9379,Leeds,GBR,1053955
+9383,Falkirk,GBR,59626
+11064,Kirkwall,GBR,
+11161,Fort William,GBR,
+11207,Elgin,GBR,
+11218,Dumfries,GBR,
+11221,Luton,GBR,268353
+11253,Cambridge,GBR,136064
+11297,Hull,GBR,321006
+11299,Berwick-upon-Tweed,GBR,
+11332,Carlisle,GBR,74911
+11345,Stoke-on-Trent,GBR,329688
+11378,Cockburnspath,GBR,
+12960,Mount Pleasant,GBR,
+13010,Hamilton,GBR,
+13070,Maidstone,GBR,105233
+13650,Belfast,GBR,437125
+13653,Bournemouth,GBR,382597
+13654,Newport,GBR,
+13655,Basingstoke,GBR,109991
+13656,Southampton,GBR,374413
+13658,Portsmouth,GBR,480317
+13659,Brighton,GBR,456337
+13661,Reading,GBR,273287
+13662,Heathrow Airport,GBR,
+13666,Norwich,GBR,188535
+13667,Chatham,GBR,
+13668,Southend-on-Sea,GBR,265744
+13671,Llanfairpwllgwyngyll,GBR,
+13673,Cardiff,GBR,388460
+13674,Newport,GBR,
+13676,Swansea,GBR,150621
+13679,Bristol,GBR,680809
+13680,Gloucester,GBR,145718
+13681,Liverpool,GBR,1243206
+13685,Manchester Airport,GBR,
+13689,Birmingham,GBR,2617211
+13690,Wolverhampton,GBR,
+13695,Nottingham,GBR,650703
+13696,Derby,GBR,271899
+13698,Leicester,GBR,527124
+13700,Sheffield,GBR,665294
+13702,Doncaster,GBR,125305
+13708,Middlesbrough,GBR,351680
+13710,Newcastle,GBR,
+13711,Sunderland,GBR,180833
+13713,Aberdeen,GBR,193155
+13716,Edinburgh,GBR,530165
+13719,Glasgow,GBR,992059
+14184,Port Stanley,GBR,
+14909,Grimsby,GBR,126609
+15931,George Town,GBR,
+772,Zugdidi,GEO,
+3658,Kutaisi,GEO,132035
+6671,Gori,GEO,
+12309,Batumi,GEO,168438
+13131,Mezhdunarodnyy Aeroport Tbilisi; Tbilisi International Airport; Tbilisis Saertashoriso Aerodromi,GEO,
+13171,Rustavi,GEO,
+13172,Tblisi,GEO,988278
+309,Oldenburg,GER,147302
+317,Flensburg,GER,75426
+425,Wernigerode,GER,
+538,Naumburg,GER,
+564,Kassel,GER,238931
+586,Weiden in der Oberpfalz,GER,
+589,Frankfurt Airport,GER,
+3258,Neubrandenburg,GER,
+3299,Ingolstadt,GER,88782
+3326,Bremen,GER,425974
+3499,Brandenburg an der Havel,GER,
+3514,Görlitz,GER,
+3524,Marburg,GER,
+3530,Karlsruhe,GER,299990
+3558,Ludwigshafen am Rhein,GER,
+3679,Stuggart,GER,
+3705,Augsburg,GER,338257
+6257,Neumünster,GER,64451
+6377,Hannover,GER,663997
+6488,Frankfurt am Main,GER,
+6501,Jena,GER,82104
+6513,Göttingen,GER,110420
+6524,Erfurt,GER,174628
+6535,Münster,GER,269164
+6568,Mannheim,GER,456549
+6712,Freiburg im Breisgau,GER,238078
+9347,Hamburg,GER,1733898
+9375,Wolfsburg,GER,70340
+9388,Stralsund,GER,
+9441,Zwickau,GER,61730
+9471,Chemnitz,GER,241511
+9496,Frankfurt an der Oder,GER,
+9509,Bielefeld,GER,238107
+9515,Regensburg,GER,150502
+9522,Aachen,GER,218507
+9575,Trier,GER,88553
+9666,Kempten,GER,
+11219,Perleberg,GER,
+11264,Meppen,GER,
+11305,Schwerin,GER,50236
+11331,Lübeck,GER,175411
+11359,Stendal,GER,
+11388,Osnabrück,GER,118523
+11415,Cottbus,GER,
+11417,Würzburg,GER,120858
+11445,Fulda,GER,53458
+11499,Ulm,GER,115346
+11529,Ansbach,GER,
+11531,Saarbrücken,GER,125456
+11544,Nuremburg; Nürnberg,GER,645853
+11547,Kaiserslauten,GER,80641
+11560,Mainz,GER,
+13116,Bamberg,GER,72467
+13874,Rostock,GER,160700
+13876,Leipzig,GER,585335
+13879,Dresden,GER,566233
+13881,Wittenberg,GER,
+13884,Berlin,GER,3549997
+13887,Spandau,GER,
+13889,Berlin Brandenburg Airport,GER,
+13891,Magdeburg,GER,216131
+13892,Haale,GER,
+13893,Erlangen,GER,113282
+13896,Munich; München,GER,1827704
+13899,Munich Airport; München Flughafen,GER,
+13902,Ludwigsburg,GER,
+13908,Wiesbaden,GER,416574
+13909,Kiel,GER,231582
+13920,Bremerhaven,GER,136384
+13922,Bonn,GER,756475
+13923,Cologne; Köln,GER,1156303
+13927,Düsseldorf,GER,
+13929,Düsseldorf; Flughafen Düsseldorf,GER,
+13930,Duisburg,GER,
+13932,Essen,GER,2718996
+13933,Dortmund,GER,709615
+13934,Neuwied,GER,60145
+14108,Koblenz,GER,133939
+966,Kozani; Kozáni,GRC,
+976,Lamia; Lamía,GRC,
+1109,Chalcis; Chalkís,GRC,
+1205,Agrinio; Agrínion,GRC,
+3844,Katerini; Kateríni,GRC,
+3914,Ioannina; Ioánnina,GRC,94900
+3973,Volos; Vólos,GRC,99656
+3988,Thessaloniki; Thessaloníki,GRC,783450
+4078,Tripoli; Trípolis,GRC,
+4109,Athens; Athínai,GRC,3166757
+6550,Chios; Chíos,GRC,
+6930,Larissa; Lárisa,GRC,118892
+6990,Serres; Sérrai,GRC,
+7096,Corinth; Kórinthos,GRC,
+9940,Heraklion; Irákleion,GRC,159049
+10007,Rhodes; Ródos,GRC,
+10163,Giannitsá; Yannitsa,GRC,
+10203,Corfu; Kérkyra,GRC,
+11774,Xanthi; Xánthi,GRC,
+11786,Trikala; Tríkala,GRC,
+11905,Alexandroupoli; Alexandroúpolis,GRC,
+11965,Kalamáta; Kalmata,GRC,
+12058,Chania; Chanía,GRC,66403
+15379,Athens International Airport Eleftherios Venizelos; Diethnís Aeroliménas Athinón Elefthérios Venizélos,GRC,
+15381,Patras; Pátrai,GRC,146128
+10842,Quetzaltenango,GTM,295633
+13085,Puerto Barrios,GTM,66989
+15276,Ciudad de Guatemala; Guatemala City,GTM,2900619
+15277,Aeropuerto Internacional La Aurora; La Aurora International Airport,GTM,
+15278,Villa Nueva,GTM,
+15279,Cobán,GTM,221271
+15281,Huehuetenango,GTM,
+14710,,Guǎngzhōu Báiyún Guójì Jīchǎng; Guangzhou Baiyun International Airport,PRC
+1635,Les Cayes,HAI,83543
+15933,Port-au-Prince,HAI,1733378
+15937,Gonaïves,HAI,393644
+12865,Choluteca,HDU,128000
+15363,Tegucigalpa,HDU,1653509
+15364,San Pedro Sula,HDU,1301567
+15366,Comayagua,HDU,113060
+15367,La Ceiba,HDU,300948
+11919,Sidon; Ṣaydā,HEZ,
+15446,Ba'albak; Baalbek,HEZ,
+10062,Hong Kong; Xiānggǎng,HKG,
+14190,'Azzā; Gaza; Ghazzah,HMS,
+686,Sopron,HUN,55594
+701,Székesfehérvár,HUN,75063
+3730,Nyíregyháza,HUN,78595
+3731,Eger,HUN,
+6670,Baja,HUN,
+6685,Kaposvár,HUN,
+6700,Kecskemét,HUN,73080
+6703,Dunaújváros,HUN,
+6716,Szolnok,HUN,
+6720,Győr,HUN,88498
+6751,Miskolc,HUN,115425
+9660,Ferenc Liszt International Airport; Liszt Ferenc Nemzetközi Repülőtér,HUN,
+9690,Vác,HUN,
+11610,Pécs,HUN,123329
+11627,Szombathely,HUN,56106
+11644,Békés,HUN,
+11646,Békéscsaba,HUN,
+14451,Budapest,HUN,1743875
+14455,Szeged,HUN,122060
+14456,Debreccen,HUN,139471
+4861,Akureyri,ICE,
+12674,Akranes,ICE,
+13271,Ísafjörthur; Ísafjörður,ICE,
+15081,Reykjavík,ICE,206895
+15082,Keflavík International Airport; Keflavíkurflugvöllur,ICE,
+15089,Egilsstathir; Egilsstaðir,ICE,
+1061,Gandhidham; Gāndhīdhām,IND,307941
+1075,Agartala; Āgaratalā,IND,721130
+1144,Surendranagar; Surēndranagara,IND,310315
+1190,Bhuj,IND,186749
+1275,Khammam; Khammaṁ,IND,339172
+1317,Nalgonda; Nalgoṁḍa,IND,174421
+1344,Chittur; Cittūru,IND,
+1359,Bidar; Bīdar,IND,303956
+1381,Tañcāvūr; Thanjavur,IND,437549
+1409,Dindigul; Tiṇṭukkal,IND,406544
+1430,Ongole; Oṁgōlu,IND,244578
+1510,Chirimiri; Cirīmirī,IND,57331
+1538,Kendujhar; Keonjhar,IND,
+1541,Sivān; Siwan,IND,292602
+1569,Begusarai; Begūsarāy,IND,1193508
+1581,Imphal,IND,829904
+1609,Baharampur,IND,
+1908,Sikar; Sīkar,IND,294150
+1949,Vidisha; Vidiśā,IND,247130
+1983,Baharāic; Bahraich,IND,517750
+2002,Sirasā; Sirsa,IND,280987
+2005,Mirzapur; Mirzāpur,IND,703502
+2036,Orai; Uraī,IND,297192
+2054,Alavar; Alwar,IND,541266
+2076,Mandi; Maṁḍī,IND,
+2092,Baram; Bārām,IND,
+4062,Haladiẏā; Haldia,IND,
+4064,Mahesāna; Mehsana,IND,376010
+4090,Junagadh; Junāga,IND,357101
+4104,Balasore; Bāleśwar,IND,203378
+4204,Bankura; Baṁkuṛā,IND,300434
+4237,Kakinada; Kākināḍa,IND,496994
+4278,Shivamogga; Śivamogga,IND,404349
+4327,Tirunelveli; Tirunelvēli,IND,371087
+4353,Barshi; Bārśī,IND,132865
+4414,Anantapur; Anaṁtapuraṁ,IND,420001
+4420,Hosur; Hōcūr,IND,388678
+4435,Gantok; Gāntok,IND,132116
+4459,Betiyā; Bettiah,IND,589703
+4516,Bodh Gaya; Bodh Gayā,IND,
+4544,Bihar Sharif; Bihār Śarīph,IND,599180
+4557,Gondia; Goṁdiyā,IND,272964
+4883,Bhandara; Bhaṁḍārā,IND,173162
+4950,Baitūl; Betul,IND,177044
+5002,Rudrapur,IND,66325
+5019,Nanded; Nāṁdeḍ,IND,759900
+5032,Ballari; Baḷḷāri,IND,574842
+5040,Satna; Satnā,IND,504984
+5055,Fatehpur; Phatehpur,IND,89377
+5063,Latur; Lātūr,IND,493859
+5086,Farrukhabad; Farrūxābād,IND,576426
+5096,Sagar; Sāgar,IND,571737
+5104,Yadgiri; Yādgiri,IND,126731
+5157,Haridvār; Haridwar,IND,684947
+7150,Ankleshwar; Aṁkalēśvara,IND,284472
+7177,Jalagon; Jaḷagāṁ,IND,
+7205,Burhanpur; Burhānpurs,IND,330992
+7220,Kharagpur; Khaṛgpur,IND,760857
+7232,Ratnagiri; Ratnāgirī,IND,222402
+7250,Bagalkot; Bāgalkōṭ,IND,53622
+7273,Leh; Lehh; Lēh,IND,
+7310,Tirupati,IND,482025
+7340,Bhimavaram; Bhīmavaraṁ,IND,246577
+7395,Udupi; Uḍupi,IND,303722
+7430,Akola; Akolā,IND,671544
+7436,Vellore; Vēlūr,IND,765930
+7465,Jagdalpur,IND,138047
+7475,Purnia; Pūrṇiyāṁ,IND,461747
+7537,Bhagalpur; Bhāgalpur,IND,343274
+7565,Malda; Māldā,IND,185762
+7593,Deoghar; Devghar,IND,403639
+7619,Caṁdrapūr; Chandrapur,IND,421688
+7905,Tonk; Ṭōṁk,IND,216165
+7938,Rewa; Rīvā,IND,361737
+8067,Tirucceṅkōṭu; Tiruchengode,IND,155978
+8087,Mahbubnagar; Mahābubnagar,IND,226080
+8100,Tumakur; Tumakūru,IND,371851
+8114,Shahjahanpur; Śāhajahāṁpur,IND,652810
+8120,Bilaspur; Bilāspur,IND,789909
+9946,Balangir; Balāṅgīr,IND,195340
+9951,Sambhal,IND,420976
+9973,Ayodhya; Ayodhyā,IND,
+9975,Anand; Ānand,IND,639522
+10001,Srikakulam; Śrīkākuḷaṁ,IND,200889
+10019,Malegaon; Mālegāv,IND,552385
+10021,Haldvānī; Haldwani,IND,445612
+10030,Yavatamāḷ; Yavatmal,IND,358165
+10077,Bardhaman; Bardhamān,IND,216948
+10190,Kanhangad; Kāññaṅṅāṭ,IND,100444
+10208,Davangere; Dāvaṇgere,IND,536080
+10210,Satara; Sātārā,IND,345256
+10259,Raichur; Rāycūru,IND,314663
+10278,Ceṉṉai; Chennai,IND,11466400
+10296,Nandyala; Naṁdyāla,IND,244975
+10311,Jalna; Jālanā,IND,383638
+10332,Singrauli; Siṁgraulī,IND,55673
+10358,Chaibasa; Cāībāsā,IND,124116
+10361,Muzaffarpur,IND,
+10401,Dhamtari; Dhamtarī,IND,144195
+10428,Sambalpur,IND,248582
+10471,Medininagar; Medinīnagar,IND,262681
+10511,Mancherial; Maṁciryāl,IND,179447
+10729,Patiala; Paṭiālā,IND,694312
+10751,Mau; Maū,IND,472585
+10772,Moga; Mōgā,IND,188038
+10807,Bhind; Bhiṇḍ,IND,396784
+10810,Itanagar; Īṭānagar,IND,53883
+10816,Sehore; Sīhor,IND,161580
+10878,Darbhanga; Darbhaṁgā,IND,991525
+10905,Anantanāg; Anantnag; Āslām Ābād,IND,273306
+11950,Karimnagar; Karīṁnagar,IND,342883
+11952,Bharuch; Bharūch,IND,398029
+11993,Nandurbar; Naṁdurabār,IND,207515
+12037,Porbandar; Pōrabaṁdara,IND,231312
+12041,Sri Ganganagar; Śrī Gaṁgānagar,IND,322863
+12063,Bhadrak,IND,277332
+12080,Pithampur; Pīthampur,IND,125022
+12105,Gadag,IND,
+12146,Mandya; Maṁḍya,IND,209511
+12164,Cuddalore; Kaṭalūr,IND,435629
+12226,Udagīr; Udgir,IND,203505
+12241,Jaẏpur; Jeypore,IND,119477
+12247,Karur; Karūr,IND,281322
+12275,Palakkad; Pālakkāṭ,IND,368312
+12375,Raigarh; Rāygaṛh,IND,151048
+12395,Shillong,IND,552378
+12462,Brahmapur,IND,603330
+12480,Ambikapur; Aṁbikāpur,IND,213440
+12708,Shimla; Śimalā,IND,209366
+12734,Robertson Pet; Rābarṭsan Pēṭ,IND,
+12743,Banswara; Bāṁsavāḍa,IND,170990
+12777,Raebareli; Rāyabarelī,IND,434558
+12779,Proddatur; Prodduṭūr,IND,235589
+12822,Pathankot; Paṭhānakōṭ,IND,292356
+12829,Udaipur,IND,161945
+12844,Nagaur; Nāgaur,IND,190920
+12868,Hisar; Hisāra,IND,518588
+12886,Pali; Pālī,IND,251608
+15506,Surat; Sūrat,IND,7100723
+15507,Navsari; Navsāri,IND,392174
+15512,Vadodara; Vaḍōdarā,IND,2269390
+15516,Ahmedabad; Amadāvāda,IND,7898650
+15521,Bhaunagar; Bhāvnagar,IND,732066
+15522,Jamnagar; Jāmanagara,IND,676169
+15523,Rajkot; Rājakōṭa,IND,1553762
+15529,Kota; Kōṭā,IND,1220154
+15533,Jaipur,IND,4229050
+15537,Jodhpur; Jōdhpur,IND,1540835
+15539,Ajamēr; Ajmer,IND,619479
+15540,Bikaner; Bīkānēr,IND,880322
+15545,Bhilwara; Bhīlavāḍa,IND,421062
+15548,Thiruvananthapuram; Tiruvanantapuraṁ,IND,3166825
+15549,Kollam; Kollaṁ,IND,3463935
+15550,Kannur; Kaṇṇūr,IND,503269
+15551,Kozhikode; Kōḻikkōṭ,IND,7612130
+15552,Malappuram; Malappuṟaṁ,IND,
+15553,Kochi,IND,5069022
+15554,Kottayam; Kōṭṭayaṁ,IND,942500
+15555,Thrissur; Tṛiśśūr,IND,1644796
+15558,Ceṉṉai Vimāṉa Nilaiyam; Chennai International Airport,IND,
+15561,Cēlam; Salem,IND,1299777
+15562,Puducherry; Pāṇṭiccēri,IND,1058587
+15563,Civakāci; Sivakasi,IND,287420
+15564,Madurai; Maturai,IND,2184066
+15566,Coimbatore; Kōyamputtūr,IND,2360322
+15568,Tiruppur; Tiruppūr,IND,1156669
+15570,Tiruccirāppaḷḷi; Tiruchirappalli,IND,1378490
+15571,Erode; Īrōṭu,IND,828689
+15572,Delhi; Dillī,IND,
+15573,Indira Gandhi International Airport; Iṁdirā Gāṁdhī Iṁṭaranēśanal Ēyarapōrṭ,IND,
+15574,Faridabad; Pharīdābād,IND,
+15577,Gurugram; Gurugrām,IND,
+15579,Panipat; Pānīpat,IND,696045
+15580,Yamuna Nagar; Yamunānagar,IND,660062
+15581,Kaithal,IND,253734
+15583,Caṁḍīgaṛh; Chandigarh,IND,2417872
+15584,Ludhiana; Ludhiāṇā,IND,2323217
+15585,Panchkula; Paṁcakulā,IND,
+15586,Amritsar; Aṁmritasar,IND,1303219
+15590,Jalandhar; Jalaṁdhar,IND,1170867
+15594,Bathinda; Baṭhiṁḍā,IND,394005
+15596,Udhampur; Ādham Por,IND,198368
+15599,Jammu; Jammū; Jamoṁ,IND,1160687
+15600,Sary Nagr; Srinagar; Śrīnagar,IND,83806
+15602,Baramulla; Bārha Molah; Bārāmūlā,IND,138339
+15605,Dharamshala; Dharmaśālā,IND,82359
+15607,Dehradun; Dēharādūna,IND,1191308
+15609,Meerut; Mēraṭh,IND,2169152
+15613,Agra; Āgarā,IND,2790456
+15615,Prayagraj; Prayāgarāj,IND,2358995
+15617,Kanpur; Kānpur,IND,4413625
+15620,Lakhanaū; Lucknow,IND,5214964
+15624,Varanasi; Vārāṇasī,IND,3812496
+15627,Moradabad; Murādābād,IND,1446662
+15628,Rampur; Rāmpur,IND,533448
+15629,Bareilly; Barelī,IND,1609406
+15630,Gorakhpur,IND,1484201
+15631,Firozabad; Phirozābād,IND,859859
+15632,Jhansi; Jhāvṁsī,IND,678723
+15633,Saharanpur; Sahāranpur,IND,1252967
+15634,Aligarh; Alīgaḍh,IND,1694357
+15636,Banda; Bāṁdā,IND,281392
+15640,Bulandshahr; Bulaṁdaśahar,IND,510256
+15643,Pilibhit; Pīlībhīt,IND,332779
+15645,Muzaffar Nagar; Muzaffarnagar,IND,828958
+15646,Greater Noida; Greṭar Noeḍā,IND,324832
+15647,Jaunpur,IND,539055
+15648,Mumbai; Muṁbaī,IND,20453270
+15649,Navi Mumbai International Airport; Navī Muṁbaī Iṁṭaraneśanala Eyaraporṭa,IND,
+15652,Vasai; Vasaī,IND,
+15653,Solapur; Solāpūr,IND,1109882
+15654,Nashik; Nāśik,IND,1970970
+15656,Pune; Puṇe,IND,6674000
+15661,Nagpur; Nāgapūr,IND,3399891
+15664,Amarāvatī; Amravati,IND,765252
+15665,Kolhapur; Kolhāpūr,IND,807276
+15666,Sangli; Sāṁgalī,IND,727119
+15667,Aurangabad; Auraṁgābāda,IND,157594
+15669,Osmanabad; Usmānābād,IND,
+15672,Parabhaṇī; Parbhani,IND,432999
+15673,Gvāliyar; Gwailor,IND,
+15675,Indore,IND,3598874
+15676,Devās; Dewas,IND,357534
+15677,Ujjain,IND,573699
+15680,Bhopal; Bhopāl,IND,2599311
+15682,Jabalpur,IND,1621135
+15684,Morena; Murainā,IND,369897
+15685,Shivpuri; Śivapurī,IND,246608
+15686,Guna; Gunā,IND,257693
+15688,Ratlam; Ratlām,IND,347986
+15690,Katni; Kaṭnī,IND,306752
+15691,Seoni; Sivanī,IND,164969
+15694,Chhindwara; Chiṁdvāṛā,IND,285974
+15698,Bangalore; Beṁgaḷūru,IND,
+15702,Maisūru; Mysore,IND,
+15704,Mangalore; Maṁgaḷūru,IND,
+15705,Belgaum; Beḷagāvi,IND,789454
+15706,Gulbarga; Gulbargā,IND,
+15708,Hubballi; Hubbaḷḷi,IND,
+15709,Dharwad; Dhāravāḍ,IND,948072
+15711,Hassan; Hāsan,IND,245504
+15714,Bijapur; Vijayapura,IND,418497
+15718,Aizawl,IND,365806
+15720,Kohima,IND,
+15721,Guvāhāṭī; Guwahati,IND,1375937
+15723,Dibrugarh; Ḍibrugaṛ,IND,245389
+15724,Jorhat; Yorahāṭ,IND,227895
+15725,Silchar; Śilcar,IND,528261
+15726,Haidarābād; Hyderabad,IND,9455230
+15729,Rajiv Gandhi International Airport; Rājīv Gāṁdhī Aṁtarjātīya Vimānāśrayaṁ,IND,
+15732,Varaṁgal; Warangal,IND,788504
+15736,Nijāmābādu; Nizamabad,IND,429514
+15737,Nellore; Nellūru,IND,692502
+15738,Visakhapatnam; Viśākhapaṭnaṁ,IND,1634440
+15741,Vijayavāḍa; Vijayawada,IND,1240029
+15742,Guntur; Guṁṭūru,IND,835293
+15743,Karnūlu; Kurnool,IND,442142
+15744,Rajamahendravaram; Rājamahēṁdravaraṁ,IND,585458
+15745,Vijayanagaraṁ; Vizianagaram,IND,299740
+15746,Eluru; Ēlūru,IND,378263
+15747,Kadapa; Kaḍapa,IND,376919
+15749,Hindupur; Hiṁdūpuraṁ,IND,157720
+15750,Raipur; Rāypur,IND,1528592
+15751,Bhilai; Bhilāī,IND,
+15753,Rajnandgaon; Rājnāṁdgāṁ,IND,220032
+15755,Cuttack; Kaṭak,IND,808650
+15756,Bhubaneswar; Bhubaneśvar,IND,1173697
+15757,Rourkela; Rāurkelā,IND,749807
+15758,Siliguri; Śiliguṛi,IND,579972
+15760,Kalkātā; Kolkata,IND,23314585
+15761,Netaji Chandra Bose International Airport; Subhāṣcandra Basu Āntarjātik Bimānbandar,IND,
+15763,Asansol; Āsānsol,IND,2886897
+15764,Durgapur; Durgāpur,IND,223704
+15766,Jamshedpur; Jamśedpur,IND,2007932
+15768,Ranchi; Rāṁcī,IND,1817833
+15769,Dhanbad; Dhanbād,IND,2078658
+15770,Bokaro; Bokāro,IND,863889
+15772,Hazaribagh; Hazārībāg,IND,293350
+15773,Gumla; Gumlā,IND,130091
+15776,Patna; Paṭnā,IND,3434078
+15779,Sasaram; Sāsārām,IND,325822
+15780,Arrah; Ārā,IND,503401
+303,Tullamore,IRE,
+337,Letterkenny,IRE,
+3359,Drogheda,IRE,
+6313,Limerick,IRE,
+7394,Cork,IRE,137272
+9303,Galway,IRE,73625
+11237,Waterford,IRE,
+11293,Dublin,IRE,1124520
+11371,Sligo,IRE,
+13648,Dublin Airport,IRE,
+1086,Arīḥā; Jericho; Yericho,ISR,
+4088,Ashkelon,ISR,105812
+4206,Tall 'Abīb-Yāfā; Tel Aviv; Tel Aviv-Yafo,ISR,2628335
+9753,Al-Quds; Jerusalem; Yerushalayim,ISR,1022929
+14178,Haifa; Hefa,ISR,449588
+14182,Eilat,ISR,
+14216,Ben Gurion Airport; Maṭār Tall 'Abīb; Nimel Hitofa Ben Goryon,ISR,
+603,Verona,ITA,216582
+628,Udine,ITA,101454
+773,Cremona,ITA,50804
+782,Ravenna,ITA,90309
+819,Naples; Napoli,ITA,2885079
+883,Foggia,ITA,126645
+910,Siena,ITA,
+955,Salerno,ITA,128967
+967,Ancona,ITA,77488
+1009,Ragusa,ITA,
+3776,Mantua,ITA,
+3780,Milan; Milano,ITA,3135553
+3885,Perugia,ITA,55989
+3901,Cosenza,ITA,84898
+3923,Campobasso,ITA,
+3958,Potenza,ITA,
+4159,Messina,ITA,178836
+6606,Bologna,ITA,456780
+6626,Trieste,ITA,178655
+6635,Novara,ITA,92131
+6780,Torino; Turin,ITA,1243448
+6788,Genoa; Genova,ITA,523194
+6790,Piacenza,ITA,95643
+6831,Vasto,ITA,
+6843,Barletta,ITA,92131
+6862,Viterbo,ITA,
+6875,Grosseto,ITA,52134
+6926,Assisi,ITA,
+6946,Pisa,ITA,65764
+6979,Lecce,ITA,82977
+7147,Sciacca,ITA,
+9598,Trento,ITA,91890
+9630,Bolzano; Bozen,ITA,
+9741,Alessandria,ITA,63955
+9752,Parma,ITA,148518
+9772,Sassari,ITA,90913
+9794,Terni,ITA,92463
+9856,Policoro,ITA,
+9863,Olbia,ITA,
+9904,Roma; Rome,ITA,2476089
+9907,Firenze; Florence,ITA,711105
+9924,Rimini,ITA,126273
+10074,Palermo,ITA,666321
+11584,Venezia; Venice,ITA,61951
+11721,Cuneo,ITA,
+11723,Alba,ITA,
+11730,Asti,ITA,
+11773,Cagliari,ITA,257468
+11824,Oristano,ITA,
+11837,Taranto,ITA,136105
+11846,Latina,ITA,82137
+11891,Sanremo,ITA,
+12098,Catanzaro,ITA,
+14101,Aeroporto di Palermo; Palermo Airport,ITA,
+14102,Catania,ITA,455595
+14103,Syracuse,ITA,95712
+14105,Bari,ITA,311280
+14117,La Spezia,ITA,87709
+14119,Prato,ITA,
+14123,Aeroporto Leonardo da Vinci; Leonardo da Vinci Airport,ITA,
+14128,Rieti,ITA,
+14130,Pescara,ITA,212590
+14132,Ferrara,ITA,91055
+14135,Modena,ITA,155015
+14141,Monza,ITA,
+14142,Aeroporto di Milano Malpensa; Milano Malpensa Airport,ITA,
+14143,Bergamo,ITA,448364
+15932,Kingston,JAM,593375
+4017,Ma'an; Ma'ān,JOR,
+7151,As-Salṭ; Salt,JOR,
+10089,Madaba; Mādabā,JOR,151891
+15796,'Ammān; Amman,JOR,6425246
+15798,Al-Zarqā'; Zarqa,JOR,
+15801,Maṭār Al-Malikat Alyā Al-Dawli; Queen Alia International Airport,JOR,
+15802,'Irb'd; Irbid,JOR,704577
+15803,Al-Aqaba; Aqaba,JOR,118599
+554,Miyaly; Mïyalı,KAZ,
+642,Kul'sary; Kulsary; Qūlsary,KAZ,
+1239,Balkhash; Balqaş,KAZ,60602
+1371,Shalkar; Şalqar,KAZ,
+1418,Kokshetau; Kökşetau,KAZ,142171
+1517,Jañaözen; Zhanaozen,KAZ,168146
+1668,Aiagöz; Ayagoz,KAZ,
+1680,Stepnogorsk,KAZ,
+1840,Shelek; Şelek,KAZ,
+1864,Ridder,KAZ,
+4238,Atbasar,KAZ,
+4300,Ayteke Bi; Ayteke-Bi; Äyteke Bï,KAZ,50309
+4374,Aral; Aral'sk,KAZ,
+4845,Dzharkent; Jarkent; Zharkent,KAZ,54229
+7317,Ekibastuz; Ekıbastūz,KAZ,114479
+7341,Hromtau; Khromtau,KAZ,
+7425,Shakhtinsk; Şahtinsk,KAZ,
+7429,Jitiqara; Zhitikhara,KAZ,
+7777,Jetısai; Zhetisay,KAZ,
+9462,Jımpïtı; Zhympity,KAZ,
+10146,Konaev; Konayev; Qonaev,KAZ,
+10168,Lisakovsk,KAZ,
+10220,Satbayev; Sätbaev,KAZ,
+10239,Koshi; Koshy; Qosshy,KAZ,
+10253,Kandyagash; Qandıağaş,KAZ,
+10262,Beyneu; Beıneý,KAZ,
+10284,Rudny,KAZ,
+10547,Taldykorgan; Taldyqorğan,KAZ,146374
+10550,Sarkand; Sarqan,KAZ,
+10601,Saryagash; Saryağaş,KAZ,
+10603,Kulan; Qulan,KAZ,
+10610,Zaisan,KAZ,
+10630,Aksu; Aqsu,KAZ,
+11510,Aksay; Aqsay,KAZ,
+12285,Novoishim; Novoishimkoye,KAZ,
+12340,Jaŋatas; Zhanatas,KAZ,
+12397,Turkestan; Turkistan; Türkıstan,KAZ,213680
+12427,Zyrian; Zyryanovsk,KAZ,
+12529,Usharal; Üşaral,KAZ,
+12594,Shemonaikha; Şemonaiha,KAZ,
+15149,Aktau; Aqtau,KAZ,259510
+15150,Atyrau; Atyraý,KAZ,203400
+15152,Oral; Ural'sk,KAZ,173858
+15156,Aktobe; Aqtöbe,KAZ,420695
+15157,Aktobe International Airport; Aqtöbe Xalıqaralıq Äwejayı; Mezhdunarodnyy Aeroport Aktobe,KAZ,
+15160,Kyzylorda; Qyzylorda,KAZ,234839
+15163,Shieli; Şïeli,KAZ,
+15164,Shymkent; Şymkent,KAZ,1239663
+15168,Arys,KAZ,
+15169,Taraz,KAZ,234775
+15170,Shu; Şu,KAZ,
+15174,Kulan; Qostanai,KAZ,
+15175,Arkalyk; Arqalyq,KAZ,
+15177,Petropavl; Petropavlosk,KAZ,126723
+15180,Astana,KAZ,1128140
+15183,Astana International Airport; Astana Xalıqaralıq Äwejayı; Mezhdunarodnyy Aeroport Astana,KAZ,
+15184,Shchuchinsk; Şuçinsk,KAZ,
+15185,Karaganda; Qarağandy,KAZ,303663
+15186,Temirtau; Temırtau,KAZ,108297
+15190,Jezqazğan; Zhezkazgan,KAZ,51428
+15192,Pavlodar,KAZ,262864
+15193,Bayanaul,KAZ,
+15197,Semey,KAZ,291783
+15198,Oskemen; Ust'-Kamenogorsk; Öskemen,KAZ,240226
+15206,Almaty,KAZ,2315538
+15207,Kaskelen; Qaskeleŋ,KAZ,
+15208,Almaty International Airport; Almaty Xalıqaralıq Äwejayı; Mezhdunarodnyy Aeroport Almaty,KAZ,
+9849,Prizren,KOS,111237
+13840,Prishtina,KOS,218971
+1923,Muhayil; Muḥā'yil,KSA,
+1955,Al-Khafjī; Khafji,KSA,
+2027,Al-'Ulā; Al-Ula,KSA,
+8073,Jizan; Jīzān,KSA,
+8092,'Umluj; Umluj,KSA,
+8101,Sakaka; Sakākā,KSA,
+10815,Turaif; Ṭuraīf,KSA,
+12727,Al-Kharj,KSA,
+12870,Al-Majma'ah,KSA,
+12883,Rabigh; Rābigh,KSA,
+15849,Al-Bahah; Al-Bāḥah,KSA,
+15850,Al-Qurayyat; Al-Qurayyāt,KSA,
+15852,Rafha; Rafḥā',KSA,
+15853,'Ar'ar; Arar,KSA,
+15854,Tabuk; Tabūk,KSA,
+15860,Hail; Ḥā'il,KSA,
+15864,Buraydah,KSA,
+15865,'Unaīzah; Unaizah,KSA,
+15868,Ar-Rass,KSA,
+15870,Ar-Riyāḍ; Riyadh,KSA,
+15871,King Khalid International Airport; Maṭār Al-Mlik Khāld Al-Dawli,KSA,
+15882,Wadi Ad-Dawasir; Wādī Ad-Dawāsir,KSA,
+15885,Ad-Dawādmī; Al-Duwadimi,KSA,
+15886,Najiran; Najrān,KSA,
+15887,Sharorah; Sharūrah,KSA,
+15890,Ad-Dammām; Dammam,KSA,
+15891,Al-Khubar; Khobar,KSA,
+15893,King Fahd International Airport; Maṭār Al-Mlik Fahd Al-Dawli,KSA,
+15897,Hafar Al-Batin; Ḥafar Al-Bāṭin,KSA,
+15898,Al-Hufūf; Hofuf,KSA,
+15900,Al-Jubaīl; Jubail,KSA,
+15901,Khamis Mushait; Khamīs Mushaīṭ,KSA,
+15902,Abha; Abhā,KSA,
+15906,Bisha; Bīshah,KSA,
+15908,Jeddah; Jiddah,KSA,
+15909,King Abdulaziz International Airport; Maṭār Al-Mlik 'Abdāl'azyz Al-Dawli,KSA,
+15911,Makkah; Mecca,KSA,
+15912,Bahrah; Baḥrah,KSA,
+15917,Al-Qunfudhah,KSA,
+15921,Aṭ-Ṭa'if; Taif,KSA,
+15923,Yanbu; Yanbu' al-Baḥr,KSA,
+15924,Al-Madīnah; Medina,KSA,
+265,Bauska,LAT,
+310,Daugavpils,LAT,51342
+341,Rēzekne,LAT,
+3296,Ventspils,LAT,
+3298,Alūksne,LAT,
+9240,Cēsis,LAT,
+9262,Liepāja,LAT,
+9501,Valmiera,LAT,
+13827,Riga; Rīga,LAT,516897
+13831,Riga Airport; Rīgas Lidosta,LAT,
+15448,Bayrūt; Beirut,LEB,1538386
+15449,Tripoli; Ṭarābulus,LEB,309234
+327,Trakai,LIT,
+3272,Marijampolė,LIT,
+3288,Klaipėda; Memel,LIT,103210
+6281,Alytus,LIT,
+6314,Palanga,LIT,
+6360,Raseiniai,LIT,
+6376,Šiauliai,LIT,
+9438,Panevėžys,LIT,69938
+9731,Telšiai,LIT,
+13820,Vilnius; Wilno,LIT,339420
+13822,Lotnisko Wilno; Tarptautinis Vilniaus oro Uostas; Vilnius International Airport,LIT,
+13823,Kaunas,LIT,236910
+14096,Vaduz,LTN,
+6583,Luxembourg City; Stad Lëtzebuerg; Stadt Luxemburg; Ville de Luxembourg,LUX,
+1060,Al Jaghbub; Al-Jaġhbūb,LYB,
+1127,Ajdabiya; Ajdābiyā,LYB,91768
+1130,Tobruk; Ṭubruq,LYB,115429
+1140,Tazirbu; Tāzirbū,LYB,
+1149,Tripoli; Ṭarābulus,LYB,1248354
+4047,Sirte; Surt,LYB,59423
+4051,Az-Zintān; Zintan,LYB,
+4151,Al Bayda; Al-Bayḍā',LYB,
+7066,Bani Waled; Banī Walīd,LYB,
+7082,Darnah; Derna,LYB,59569
+10117,Bin Jawad,LYB,
+10884,Gadamis; Ghadāmis,LYB,
+11954,Banghāzī; Benghazi,LYB,599691
+12039,Zuwara; Zuwārah,LYB,
+12866,Hun; Hūn,LYB,
+14549,Al-Jawf,LYB,
+14550,Ghat; Ghāt,LYB,
+14552,Birāk; Brak,LYB,
+14553,Sabha; Sabhā,LYB,118712
+14558,Maṭār Ṭarābulus Al-Dawli; Tripoli International Airport,LYB,
+14560,Az-Zāwiyah; Zawiya,LYB,
+14563,Misrata; Miṣrātah,LYB,310800
+14047,Monaco,MCO,
+4189,Macau; Àomén,MCU,
+1828,Aeropuerto Internacional de la Ciudad de México; Mexico City International Airport,MEX,
+1900,Comitán de Domínguez,MEX,
+1945,Guasave,MEX,84062
+1952,Matehuala,MEX,91143
+2021,Coatzacoalcos,MEX,303635
+2051,Colima,MEX,307483
+2069,Heroica Caborca,MEX,76332
+2083,Ciudad Victoria,MEX,328571
+2853,Manzanillo,MEX,176405
+2947,San Miguel de Allende,MEX,92834
+3606,Chilpancingo de los Bravo,MEX,
+4229,Guadalajara,MEX,4138350
+4720,Zitácuaro,MEX,112349
+4787,Uruapan del Progreso,MEX,
+4831,Tepic,MEX,420020
+4878,Xalapa-Enríquez,MEX,
+4887,Zamora de Hidalgo,MEX,
+4904,Ciudad del Carmen,MEX,215256
+4908,Guaymas,MEX,125094
+4946,Santiago Papasquiaro,MEX,
+4965,Playa del Carmen,MEX,236352
+4977,Navojoa,MEX,110580
+5015,San Fernando,MEX,
+5052,Lagos de Moreno,MEX,118084
+5066,Zihuatanejo,MEX,86848
+7364,Celaya,MEX,381192
+7813,Cuernavaca,MEX,866396
+7830,León,MEX,1384014
+7869,Acapulco,MEX,668457
+7913,Pachuca de Soto,MEX,
+7921,El Salto,MEX,
+7935,Cuauhtémoc,MEX,125931
+8012,Nogales,MEX,
+8032,Lázaro Cárdenas,MEX,168921
+8079,Pánuco,MEX,
+8089,Tehuacán,MEX,223264
+8236,Juchitán de Zaragoza,MEX,
+8653,Fresnillo,MEX,151503
+10534,Teziutlán,MEX,106774
+10635,Ciudad de México; Mexico City,MEX,17639164
+10715,Querétaro,MEX,908964
+10732,Poza Rica de Hidalgo,MEX,
+10738,Río Grande,MEX,
+10746,Monclova,MEX,290389
+10773,Huajuapan de León,MEX,
+10830,Delicias,MEX,132480
+10832,Iguala de la Independencia,MEX,
+10869,Gómez Palacio,MEX,
+10907,Aguascalientes,MEX,878455
+10916,Hidalgo del Parral,MEX,115314
+12634,Veracruz,MEX,680672
+12721,Linares,MEX,73193
+12733,Jesús María,MEX,
+12736,Ciudad Constitución,MEX,63242
+12746,Puerto Vallarta,MEX,190176
+12753,Tapachula de Córdova y Ordóñez,MEX,
+12804,Guadalupe,MEX,
+12811,Ciudad Acuña,MEX,117262
+12827,Nuevo Casas Grandes,MEX,53484
+12833,San Luis Río Colorado,MEX,202388
+12835,Ciudad Sabinas Hidalgo,MEX,
+12873,Tuxpan,MEX,
+12897,Ojinaga,MEX,
+13162,Huejutla de Reyes,MEX,54453
+13165,Morelia,MEX,635588
+13166,Puebla,MEX,1949860
+13186,Irapuato,MEX,468285
+13188,Toluca,MEX,1594046
+13190,Valle de Santiago,MEX,90148
+13196,Tejupilco de Hidalgo,MEX,
+15282,Tijuana,MEX,1538301
+15283,Aeropuerto Internacional de Tijuana; Tijuana International Airport,MEX,
+15284,Rosarito,MEX,76707
+15285,La Paz,MEX,369299
+15286,Mexicali,MEX,736552
+15287,Cabo San Lucas,MEX,255770
+15288,Ensenada,MEX,268063
+15289,Hermosillo,MEX,778882
+15291,Ciudad Obregón,MEX,330237
+15293,Ciudad Juárez,MEX,1214949
+15295,Chihuahua,MEX,832220
+15300,Puerto Peñasco,MEX,
+15301,Agua Prieta,MEX,100741
+15303,Cancún,MEX,610781
+15304,Aeropuerto Internacional de Cancún; Cancún International Airport,MEX,
+15306,Mérida,MEX,852926
+15307,Campeche,MEX,229666
+15309,Cárdenas,MEX,131842
+15310,Villahermosa,MEX,492120
+15311,Tuxtla Gutiérrez,MEX,572808
+15313,San Cristóbal de las Casas,MEX,210903
+15315,San Juan Bautista Tuxtepec,MEX,
+15317,Oaxaca,MEX,
+15320,Piedras Negras,MEX,115624
+15322,Saltillo,MEX,735829
+15323,Ramos Arizpe,MEX,89396
+15324,Torreón,MEX,1363776
+15327,Monterrey,MEX,4011151
+15330,Aeropuerto Internacional de Monterrey; Monterrey International Airport,MEX,
+15331,Guadalupe,MEX,
+15333,Nuevo Laredo,MEX,316098
+15334,Reynosa,MEX,616127
+15335,Matamoros,MEX,518354
+15336,Tampico,MEX,614281
+15337,Ciudad Valles,MEX,115035
+15339,San Luis Potosí,MEX,1005068
+15342,Rioverde,MEX,72080
+15344,Culiacán,MEX,671459
+15346,Mazatlán,MEX,419192
+15347,Los Mochis,MEX,252461
+15348,Durango,MEX,548394
+414,Soroca; Soroki,MLD,
+565,Ungen'; Ungheni,MLD,
+3724,Comrat; Komrat,MLD,
+6600,Bel'tsy; Bălți,MLD,53610
+11686,Căușeni; Kaushany,MLD,
+11705,Orhei; Orkhey,MLD,
+15123,Cahul; Kagul,MLD,
+15124,Chișinău; Kishinyov,MLD,450581
+15126,Aeroportul Internațional Chișinău; Chișinău International Airport; Kishinyov Mezhdunarodnyy Aeroport,MLD,
+12003,Il-Belt Valletta; Valletta,MLT,366066
+9821,Budva,MNT,
+13856,Podgorica,MNT,152731
+13857,Nikshic,MNT,52875
+4751,Ölgii,MON,
+7717,Sükhbaatar,MON,
+10708,Choibalsan,MON,
+12520,Khovd,MON,
+12544,Uliastai,MON,
+12612,Sainshand,MON,
+12649,Murun; Mörön,MON,
+12669,Dalanzadgad,MON,
+12695,Ulaangom,MON,
+14571,Baruun-Urt,MON,
+14583,Altai,MON,
+14585,Ulaanbaatar,MON,1634097
+14587,Chinggis Khaan Olon Upsyn Nisėch Buudal; Ghengis Khan International Airport,MON,
+14591,Choyr,MON,
+14592,Baganuur,MON,
+14593,Chinggis,MON,
+14594,Darkhan,MON,
+14597,Erdenet; Ėrdėnėt,MON,97743
+14598,Tsetserleg; Tsėtsėrlėg,MON,
+989,Taourirt; Tāwrirt,MRC,
+1079,Khouribga; Khurībga,MRC,
+1102,Aṣ-Ṣawīra; Essaouira,MRC,
+1152,Midelt,MRC,
+1207,Banī Mallāl; Beni Mellal,MRC,
+4084,Khénifra; Ḵunayfira,MRC,
+4097,Taza; Tāza,MRC,
+4139,Kalaat Sraghna; Qal'at As-Sarāghna,MRC,
+4920,Samara; Smāra,MRC,
+4933,Al-Rāshīdiyya; Errachidia,MRC,
+5012,Boujdour; Bouǧdour,MRC,
+5046,Guelmim; Gulmīm,MRC,
+7069,Ad-Dār Al-Bayḍā; Casablanca,MRC,
+7100,Al-Khemisāt; Khemisset,MRC,
+7215,Al-Nāẓūr; Nador,MRC,
+9945,Tiṭwan; Tétouan,MRC,
+10107,Ouarzazate; Warzāzāt,MRC,
+10113,Al-'Arā'ish; Larache,MRC,
+11943,Al-Jadīda; El Jadida,MRC,
+12857,Tiznit; Tiznīt,MRC,
+15243,Tan-Tan; Ṭānṭān,MRC,
+15246,'Āsafi; Safi,MRC,
+15250,Al-Dāchla; Dakhla,MRC,
+15254,Al-'Uyūn; Laayoune,MRC,
+15255,Laayoune Hassan I International Airport; Maṭār Al-'Uyūn Al-Dawli; Maṭār Al-'Uyūn Al-Ḥasan Al-Dawli,MRC,
+15256,'Agādīr; Agadir,MRC,
+15258,Marrakesh; Murrākuš,MRC,
+15263,Maṭār Al-'Uyūn Muḥammad Al-Khāmis Al-Dawli; Mohamed V International Airport,MRC,
+15264,Al-Muḥammadiyya; Mohammedia,MRC,
+15266,Oujda; Wajda,MRC,
+15267,Maknās; Meknes,MRC,
+15268,Fez; Fās,MRC,
+15270,Tangier; Ṭanjah,MRC,
+15273,Ar-Ribāṭ; Rabat,MRC,
+15274,Salé; Salā,MRC,
+1988,Bluefields,NCG,
+2075,Puerto Cabezas,NCG,
+10728,Matagalpa,NCG,134380
+12738,León,NCG,155985
+15368,Managua,NCG,1436089
+15369,Aeropuerto Internacional Augusto C. Sandino; Augusto C. Sandino International Airport,NCG,
+11984,Kuzey Lefkoşa; Northern Nicosia; Vóreia Lefkosía,NCP,
+907,Kumanovo,NMA,70031
+11856,Bitola,NMA,59416
+13837,Skopje,NMA,402733
+4386,Butwal; Buṭavala,NPL,
+4987,Birgunj; Vīraganja,NPL,90237
+5310,Janakpur,NPL,
+7374,Dhanagaḍhī; Dhangadhi,NPL,
+12892,Biratnagar; Birāṭnagar,NPL,987897
+15493,Kathmandu; Kāṭhamāḍauṁ,NPL,3862697
+15495,Tribhuvan International Airport; Tribhuvana Antarrāṣṭriya Vimānasthala,NPL,
+15499,Ghorahi; Ghōrāhī,NPL,
+15502,Pokhara; Pōkharā,NPL,151399
+391,Amsterdam,NRD,1223407
+3211,Den Haag; The Hague,NRD,
+3262,Breda,NRD,177734
+6286,Zwolle,NRD,120061
+6336,Leeuwarden,NRD,92944
+6500,Venlo,NRD,
+11318,Groningen,NRD,167782
+11562,Maastricht,NRD,124921
+14067,Almere,NRD,185506
+14068,Nijmegen,NRD,190473
+14070,Enschede,NRD,129372
+14071,Almelo,NRD,74875
+14072,Eindhoven,NRD,293438
+14074,Rotterdam,NRD,
+14077,Utrecht,NRD,519237
+14078,Amsterdam Airport Schiphol; Luchthaven Schiphol,NRD,
+14,Sandefjord,NWY,
+21,Orkanger,NWY,
+22,Hammerfest,NWY,
+27,Fagernes,NWY,
+53,Stavanger,NWY,205533
+64,Vadsø,NWY,
+91,Finnsnes,NWY,
+122,Alver,NWY,
+144,Ringerike,NWY,
+179,Kongsvinger,NWY,
+192,Narvik,NWY,
+3021,Hamar,NWY,
+3022,Stjørdal,NWY,
+3059,Geilo,NWY,
+3082,Skjervøy,NWY,
+3088,Mo i Rana,NWY,
+3090,Sunnfjord,NWY,
+3171,Fredrikstad,NWY,52114
+3183,Røros,NWY,
+3188,Leikanger,NWY,
+3192,Karmøy,NWY,
+6038,Levanger,NWY,
+6041,Namsos,NWY,
+6042,Elverum,NWY,
+6114,Dombås,NWY,
+6118,Oppdal,NWY,
+6176,Hå,NWY,
+6187,Brønnøysund,NWY,
+6214,Rognan,NWY,
+9032,Vinstra,NWY,
+9116,Kirkenes,NWY,
+9126,Bodø,NWY,
+9127,Ålesund,NWY,
+9132,Steinkjer,NWY,
+9196,Evje,NWY,
+9204,Drammen,NWY,51726
+9296,Kristiansand,NWY,
+11028,Lillehammer,NWY,
+11029,Skien,NWY,
+11034,Båtsfjord,NWY,
+11050,Tromsø,NWY,53615
+11077,Alta,NWY,
+11100,Molde,NWY,
+11113,Tynset,NWY,
+11151,Halden,NWY,
+11157,Sortland,NWY,
+11176,Arendal,NWY,
+11184,Lillestrøm,NWY,
+15109,Oslo,NWY,889573
+15111,Oslo Airport; Oslo Lufthavn,NWY,
+15114,Bergen,NWY,138237
+15115,Trondheim,NWY,142104
+15116,Harstad,NWY,
+4993,Sohar; Ṣuḥār,OMA,139036
+8020,Ja'alān Banī Bū 'Alī; Jalan Bani Buali,OMA,
+10760,Sur; Ṣūr,OMA,
+15804,Khasab; Khaṣab,OMA,
+15807,,OMA,
+15809,Masqaṭ; Muscat,OMA,734542
+15810,Maṭār Masqaṭ Al-Dawli; Muscat International Airport,OMA,
+15811,As-Sīb; Seeb,OMA,604497
+15812,Nizwa; Nizwā,OMA,
+17,Gnesen; Gniezno,POL,59444
+243,Hohensalza; Inowrocław,POL,65095
+266,Giżycko; Lötzen,POL,
+334,Chojnice; Konitz,POL,
+362,Danzig; Gdańsk,POL,398019
+388,Piła; Schneidemühl,POL,
+400,Augustów,POL,
+402,Siedlce,POL,75113
+417,Neusandez; Nowy Sącz,POL,71561
+442,Tarnau; Tarnów,POL,71927
+444,Schwiebus; Świebodzin,POL,
+479,Kandrzin-Cosel; Kędzierzyn-Koźle,POL,
+552,Glogau; Głogów,POL,
+562,Ostrowiec Świętokrzyski,POL,
+584,Wieluń,POL,
+3230,Płock,POL,71016
+3254,Suwałki,POL,67937
+3434,Przemyśl,POL,54622
+3438,Grünberg; Zielona Góra,POL,159472
+3482,Petrikau; Piotrków Trybunalski,POL,50882
+3544,Warsaw; Warschau; Warszawa,POL,1999986
+3545,Legnica; Liegnitz,POL,77540
+6236,Arnswalde; Choszczno,POL,
+6282,Stetten; Szczecin,POL,311037
+6375,Allenstein; Olsztyn,POL,148647
+6390,Stargard; Stargard an der Ihna,POL,59566
+6402,Elbing; Elbląg,POL,110758
+6416,Kielce,POL,167460
+6464,Gleiwitz; Gliwice,POL,97807
+6485,Neisse; Nysa,POL,
+6499,Mielec,POL,52872
+6511,Radom,POL,176099
+6558,Posen; Poznań,POL,531736
+6595,Neusalz; Nowa Sól,POL,
+9306,Neustettin; Szczecinek,POL,
+9316,Ostrołęka,POL,
+9346,Osterode; Ostróda,POL,
+9361,Koszalin; Köslin,POL,94411
+9400,Skierniewice,POL,
+9412,Bielitz-Biala; Bielsko-Biała,POL,137192
+9427,Krakau; Kraków,POL,723413
+9452,Chełm,POL,51036
+9508,Lodsch; Łódź,POL,
+9511,Opole; Oppeln,POL,91438
+9544,Zamość,POL,58691
+9570,Breslau; Wrocław,POL,531845
+11274,Łomża,POL,65068
+11385,Wyszków,POL,
+11386,Ełk; Lyck,POL,
+11414,Waldenburg; Wałbrzych,POL,
+11466,Biała Podlaska,POL,
+11467,Częstochowa; Tschenstochau,POL,163595
+11478,Gorzów Wielkopolski; Landsberg,POL,96212
+11492,Żyrardów,POL,
+11507,Stalowa Wola,POL,54025
+11515,Konin,POL,
+11558,Kalisch; Kalisz,POL,82185
+13205,Katowice; Kattowitz,POL,879406
+13939,Flughafen Danzig; Lech Wałęsa Airport; Lotnisko im. Lecha Wałęsy,POL,
+13942,Gdingen; Gdynia,POL,216994
+13943,Dirschau; Tczew,POL,57325
+13944,Stolp; Słupsk,POL,82930
+13947,Leslau; Włocławek,POL,72910
+13948,Thorn; Toruń,POL,176296
+13949,Bromberg; Bydgoszcz,POL,269011
+13951,Białystok,POL,299386
+13955,Flughafen Warschau; Lotnisko Chopina Warszawa; Warsaw Chopin Airport,POL,
+13960,Lublin,POL,304641
+13974,Leszno; Lissa,POL,57192
+13982,Dombrowa; Dąbrowa Górnicza,POL,
+13986,Flughafen Krakau; John Paul II Airport; Lotnisko Jana Pawła II,POL,
+13988,Zakopane,POL,
+13989,Rzeszów,POL,197420
+724,Villa Real,POR,
+924,Santarem,POR,
+3861,Caldas da Rainha,POR,
+3892,Bragança,POR,
+3926,Portalegre,POR,
+3969,Castelo Branco,POR,
+6818,Viseu,POR,
+6880,Faro,POR,
+6924,Aveiro,POR,
+6933,Évora,POR,
+9787,Coimbra,POR,
+9817,Porto,POR,1060250
+11673,Braga,POR,93376
+11805,Lisboa; Lisbon,POR,1974574
+14493,Aeroporto Humberto Delgado; Humberto Delgado Airport,POR,
+14495,Setúbal,POR,99295
+14496,Portimão,POR,
+517,Qingyang; Qìngyáng,PRC,56809
+531,Longnan; Lǒngnán,PRC,123692
+556,Dingxi; Dìngxī,PRC,110323
+814,Pingquan; Píngquán,PRC,94823
+881,Luanping; Luánpíng,PRC,
+900,Zunhua; Zūnhuà,PRC,169536
+916,Changtu; Chāngtú,PRC,89349
+930,Changling; Chánglĭng,PRC,58658
+934,Chaoyang; Cháoyáng,PRC,448412
+944,Yanji; Yánjí,PRC,426296
+1001,Baoying; Băoyīng,PRC,
+1004,Yuzhou; Yŭzhōu,PRC,245470
+1006,Changting; Chángtīng,PRC,119482
+1018,Qinzhou; Qīnzhōu,PRC,193678
+1029,Ganyu; Gànyú,PRC,194501
+1038,Nada; Nàdà,PRC,
+1047,Guangzhou; Guăngzhōu,PRC,42987704
+1053,Yudu; Yúdū,PRC,223353
+1069,Jinan; Jìnán,PRC,3824875
+1070,Qionghai; Qiónghǎi,PRC,146854
+1076,Xinyi; Xīnyí,PRC,197050
+1083,Anqing; Ānqìng,PRC,469919
+1084,Binzhou; Bīnzhōu,PRC,696958
+1089,Taixing; Tàixīng,PRC,466711
+1094,Fuan; Fú'ān,PRC,356776
+1099,Maanshan; Mă'ānshān,PRC,1071589
+1104,Longkou; Lóngkŏu,PRC,
+1110,Nancheng; Nánchéng,PRC,137937
+1120,Shaoguan; Sháoguān,PRC,451567
+1121,Suining; Suīníng,PRC,
+1125,Huangshan; Huángshān,PRC,372354
+1131,Gaozhou; Gāozhōu,PRC,515770
+1137,Yuxian; Yùxiàn,PRC,86310
+1138,Shaowu; Shàowŭ,PRC,105235
+1139,Jiaozuo; Jiāozuò,PRC,723575
+1146,Chuzhou; Chúzhōu,PRC,295742
+1150,Dailan; Dàlián,PRC,3599519
+1153,Jingdezhen; Jĭngdézhèn,PRC,460993
+1161,Lingbi; Língbì,PRC,122748
+1162,Heyuan; Héyuán,PRC,466335
+1166,Minhou; Mĭnhòu,PRC,80161
+1168,Wenling; Wēnlĭng,PRC,339655
+1169,Weixian; Wèixiàn,PRC,
+1187,Yunfu; Yúnfú,PRC,207901
+1195,Yongkang; Yŏngkāng,PRC,373295
+1203,Xinzhou; Xīnzhōu,PRC,229257
+1474,Tongren; Tóngrén,PRC,255612
+1489,Zhangbei; Zhāngbĕi,PRC,101319
+1571,Qitaihe; Qītáihé,PRC,90592
+1575,Yuncheng; Yùnchéng,PRC,
+1597,Laibin; Láibīn,PRC,260628
+1603,Luanchuan; Luánchuān,PRC,89924
+1612,Jingmen; Jīngmén,PRC,159550
+1625,Longlin; Lónglín,PRC,
+1627,Baicheng; Báichéng,PRC,298421
+1630,Baiyin; Báiyín,PRC,222677
+1640,Liuyang; Liúyáng,PRC,456892
+1647,Pingliang; Píngliàng,PRC,461066
+1708,Chöchek; Tacheng; Tǎchéng,PRC,105710
+1732,Hegang; Hègăng,PRC,504410
+1776,Oroqen; Orčonu; Èlúnchūn,PRC,
+1844,Karamay; Kèlāmǎyī; Qaramay,PRC,311815
+1884,Xingyi; Xīngyì,PRC,212962
+1918,Maerkang; Mǎ'ěrkāng,PRC,
+1933,Tianshui; Tiānshuǐshì,PRC,584189
+1959,Wuhai; Wūhǎi; Üqai,PRC,162776
+1985,Haiyuan; Hǎiyuán,PRC,66365
+2014,Rìkāzé; Shigatse; Xigazê,PRC,56970
+2015,Shāchē; Yarkand; Yarkent,PRC,165031
+2028,Jiuquan; Jiǔquán,PRC,181625
+2067,Xichang; Xīchāng,PRC,281791
+3427,Ejin Horo; Ejin Qoroga; Yījīnhuòluò,PRC,
+3783,Wafangdian; Wăfángdiàn,PRC,319394
+3814,Lingyuan; Língyuán,PRC,170997
+3815,Jixi; Jīxī,PRC,413446
+3828,Aohan; Auqan; Áohàn,PRC,
+3830,Qian'an; Qiān'ān,PRC,190878
+3877,Tongliao; Tüngliyou; Tōngliáo,PRC,498536
+3881,Jinzhou; Jĭnzhōu,PRC,854828
+3888,Meihekou; Méihékŏu,PRC,223906
+3895,Benxi; Bĕnxī,PRC,773946
+3900,Changli; Chānglí,PRC,124655
+3913,Liaoyuan; Liáoyuán,PRC,328966
+3932,Huadian; Huàdiàn,PRC,130717
+3934,Fuxin; Fùxīn,PRC,522330
+3947,Dunhua; Dūnhuà,PRC,201611
+3970,Fengcheng; Fèngchéng,PRC,
+4009,Zaoyang; Zăoyáng,PRC,155165
+4032,Hengshui; Héngshuĭ,PRC,742818
+4053,Shanghang; Shàngháng,PRC,72050
+4058,Wuan; Wŭ'ān,PRC,204431
+4066,Taikang; Tàikāng,PRC,86916
+4070,Pucheng; Pŭchéng,PRC,60883
+4074,Xingxian; Xīngxiàn,PRC,115918
+4077,Baise; Bǎisè,PRC,119254
+4079,Mengcheng; Mĕngchéng,PRC,120365
+4082,Binhai; Bīnhăi,PRC,
+4083,Fengcheng; Fēngchéng,PRC,
+4091,Rugao; Rúgāo,PRC,139223
+4093,Zhuozhou; Zhuōzhōu,PRC,157065
+4105,Xuancheng; Xuānchéng,PRC,427032
+4123,Baoying; Băoyīng,PRC,
+4125,Yongzhou; Yǒngzhōu,PRC,416168
+4130,Tianmen; Tiānmén,PRC,402718
+4144,Hebi; Hèbì,PRC,238324
+4156,Yongxin; Yŏngxīn,PRC,
+4157,Zhucheng; Zhūchéng,PRC,
+4169,Ningde; Níngdé,PRC,350783
+4173,Ningguo; Níngguó,PRC,374587
+4174,Xiaoyi; Xiàoyì,PRC,165448
+4185,Poyang; Póyáng,PRC,188396
+4186,Laiyang; Láiyáng,PRC,265847
+4190,Xinji; Xīnjí,PRC,204940
+4192,Xuanwei; Xuānwēi,PRC,382363
+4196,Fuzhou; Fúzhōu,PRC,
+4203,Jinzhai; Jīnzhài,PRC,
+4205,Rongcheng; Róngchéng,PRC,174923
+4208,Fuping; Fùpíng,PRC,
+4503,Nongan; Nóng'ān,PRC,112174
+4504,Liupanshui; Liùpánshuǐ,PRC,924182
+4519,Dengzhou; Dèngzhōu,PRC,1095052
+4547,Xichuan; Xīchuān,PRC,127044
+4551,Tongjiang; Tóngjiāng,PRC,76727
+4572,Gongzhuling; Gōngzhŭlĭng,PRC,196813
+4592,Suihua; Suíhuà,PRC,289983
+4606,Jiyuan; Jìyuán,PRC,405860
+4619,Xianning; Xiánníng,PRC,276077
+4633,Songyuan; Sōngyuán,PRC,218036
+4634,Hongdong; Hóngdòng,PRC,
+4642,Siping; Sìpíng,PRC,508075
+4682,Aral; Ālā'ěr,PRC,65117
+4783,Ejen; Ejin; Éjǐnà,PRC,
+4823,Altay; Ālètài,PRC,63646
+4925,Chengdu; Chéngdū,PRC,5609627
+4964,Yushu; Yùshù; Yüshu,PRC,
+5007,Weinan; Wèinán,PRC,273989
+5025,Guyuan; Gùyuán,PRC,
+5031,Alaša Barayun; Alxa Right; Ālāshàn Yòu,PRC,
+5048,Dazhou; Dázhōu,PRC,771803
+5092,Shangluo; Shāngluò,PRC,110703
+5100,Zhangye; Zhāngyè,PRC,198224
+6828,Laiyuan; Láiyuán,PRC,99405
+6837,Huludao; Húlúdăo,PRC,497401
+6851,Anshan; Ānshān,PRC,1495743
+6860,Kuandian; Kuāndiàn,PRC,91876
+6868,Qingyuan; Qīngyuán,PRC,
+6905,Fusong; Fŭsōng,PRC,
+6932,Sanmexia; Sānménxiá,PRC,237530
+6937,Weichang; Wéichăng,PRC,74299
+6951,Xinmin; Xīnmín,PRC,193801
+6969,Xinglong; Xīnglóng,PRC,50721
+6981,Dandong; Dāndōng,PRC,714738
+6999,Chongqing; Chóngqìng,PRC,8449690
+7004,Dayu; Dàyú,PRC,80228
+7014,Shanghai; Shànghăi,PRC,30678616
+7019,Fangxian; Fángxiàn,PRC,57912
+7025,Peixian; Pèixiàn,PRC,154588
+7027,Huian; Huì'ān,PRC,325256
+7035,Susong; Sùsōng,PRC,100719
+7054,Guixi; Guìxī,PRC,
+7055,Xintai; Xīntài,PRC,236800
+7058,Ninghai; Nínghăi,PRC,
+7067,Lufeng; Lùfēng,PRC,310570
+7071,Xiamen; Xiàmén,PRC,
+7089,Gaomi; Gāomì,PRC,599934
+7092,Qinghe; Qīnghé,PRC,141229
+7097,Xiangtan; Xiāngtán,PRC,102212
+7099,Longyan; Lóngyán,PRC,392112
+7101,Changde; Chángdé,PRC,603681
+7105,Laizhou; Láizhōu,PRC,279120
+7108,Huizhou; Huìzhōu,PRC,1061952
+7120,Yixing; Yíxīng,PRC,452718
+7129,Caoxian; Cáoxiàn,PRC,209734
+7137,Nanning; Nánníng,PRC,3695575
+7146,Linhai; Línhăi,PRC,343381
+7158,Ulagančab; Ulanqab; Wūlánchábù,PRC,272964
+7191,Hangzhou; Hángzhōu,PRC,6387064
+7199,Xingguo; Xīngguó,PRC,168176
+7210,Wuzhou; Wúzhōu,PRC,370101
+7222,Dingyuan; Dìngyuăn,PRC,131594
+7240,Suining; Suìníng,PRC,
+7256,Guangyuan; Guǎngyuán,PRC,441909
+7279,Zhangjiajie; Zhāngjiājiè,PRC,163528
+7294,Panzhihua; Pānzhīhuā,PRC,292350
+7314,Yulin; Yúlín,PRC,
+7418,Ankang; Ānkāng,PRC,807066
+7523,Yushu; Yúshù,PRC,
+7526,Bayan; Bāyàn,PRC,
+7540,Shangcai; Shàngcài,PRC,169321
+7545,Shangdu; Shāngdū; Šangdu,PRC,61146
+7549,Kaili; Kǎilǐ,PRC,386453
+7568,Tongbai; Tóngbǎi,PRC,82568
+7571,Linfen; Línfén,PRC,1090241
+7575,Ongnigud; Ongniud; Wēngniútè,PRC,63234
+7580,Suizhou; Suízhōu,PRC,249979
+7591,Wuchang; Wŭcháng,PRC,164689
+7596,Badong; Bādōng,PRC,
+7625,Xiaogan; Xiàogăn,PRC,812534
+7637,Wuxue; Wŭxué,PRC,199876
+7702,Kucha; Kuqa; Kùchē,PRC,158060
+7767,Tieli; Tiĕlì,PRC,74235
+7832,Heihe; Hēihé,PRC,131222
+7866,Bole; Bólè; Börtala,PRC,
+7894,Jalan Ayil; Zalantun; Zhālántún,PRC,117266
+7949,Tumshuq; Tumxuk; Túmùshūkè,PRC,
+7971,Yumen; Yùmén,PRC,
+7976,Baoshan; Bǎoshān,PRC,66212
+8041,Línzhī; Nyingchi,PRC,
+8049,Tongchuan; Tóngchuān,PRC,130607
+8072,Zhushan; Zhúshān,PRC,54621
+8081,Wuzhong; Wúzhōng,PRC,245268
+9759,Tonghua; Tōnghuà,PRC,316018
+9768,Fengning; Fēngníng,PRC,62946
+9781,Liaoyang; Liáoyáng,PRC,640795
+9803,Baishan; Báishān,PRC,596610
+9843,Beijing Capital International Airport; Běijīng Shǒudū Guójì Jīchǎng,PRC,
+9854,Zhuanghe; Zhuānghé,PRC,132632
+9873,Ningcheng; Ningčėng; Níngchéng,PRC,80595
+9897,Wangqing; Wāngqīng,PRC,80912
+9905,Qinhuangdao; Qínhuángdăo,PRC,727667
+9913,Jiahoe; Jiāohé,PRC,131614
+9934,Anlu; Ānlù,PRC,341145
+9937,Linquan; Línquán,PRC,173937
+9939,Sinan; Sīnán,PRC,
+9944,Jiangshan; Jiāngshān,PRC,59933
+9953,Dafeng; Dàfēng,PRC,138525
+9956,Lanling; Lánlíng,PRC,215497
+9963,Yangjiang; Yángjiāng,PRC,490069
+9969,Bazhou; Bàzhōu,PRC,134472
+9972,Longquan; Lóngquán,PRC,76470
+9974,Zhoushan; Zhōushān,PRC,55248
+9978,Puning; Pŭníng,PRC,
+9982,Chenzhou; Chēnzhōu,PRC,617070
+9984,Fuzhou; Fŭzhōu,PRC,
+9987,Shenxian; Shēnxiàn,PRC,111749
+9995,Huaibei; Huáibĕi,PRC,886634
+9997,Lianzhou; Liánzhōu,PRC,138395
+10000,Qingdao; Qīngdăo,PRC,3682893
+10004,Fangchenggang; Fángchénggǎng,PRC,
+10006,Jishou; Jíshǒu,PRC,190543
+10008,Tianchang; Tiāncháng,PRC,115627
+10012,Wuyishan; Wŭyíshān,PRC,84944
+10017,Tongcheng; Tóngchéng,PRC,117455
+10022,Renqiu; Rènqiū,PRC,373140
+10042,Nanping; Nánpíng,PRC,
+10043,Tengzhou; Téngzhōu,PRC,1033769
+10053,Pingshan; Píngshān,PRC,88929
+10058,Taizhou; Táizhōu,PRC,
+10068,Binhai; Bīnhǎi,PRC,
+10069,Fuding; Fúdĭng,PRC,95283
+10072,Dongping; Dōngpíng,PRC,112726
+10076,Changshu; Chángshú,PRC,795441
+10079,Bozhou; Bózhōu,PRC,627970
+10084,Ninghua; Nínghuà,PRC,67800
+10093,Zhangpu; Zhāngpŭ,PRC,107312
+10095,Xinghua; Xīnghuà,PRC,429553
+10101,Changxiang; Chángxīng,PRC,61835
+10112,Ruijin; Ruìjīn,PRC,211192
+10119,Dezhou; Dézhōu,PRC,459282
+10257,Hanzhong; Hànzhōng,PRC,371212
+10304,Fuling; Fúlíng,PRC,
+10367,Luliang; Lǚliáng,PRC,87888
+10377,Shaoyang; Shàoyáng,PRC,95963
+10397,Chicheng; Chìchéng,PRC,
+10413,Jinghong; Jǐnghóng,PRC,95370
+10431,Hechi; Héchí,PRC,91277
+10446,Gushi; Gùshĭ,PRC,188007
+10451,Ordos; È'ěrduōsī; Ôrdôs,PRC,162978
+10462,Macheng; Máchéng,PRC,136894
+10463,Jiamusi; Jiāmùsī,PRC,705051
+10474,Gucheng; Gŭchéng,PRC,115583
+10501,Ji'an; Jí'ān,PRC,248029
+10503,Shangzhi; Shàngzhì,PRC,114330
+10519,Shuangyashan; Shuāngyāshān,PRC,224673
+10612,Manjur; Manjuur; Mănzhōulĭ,PRC,213243
+10614,Turpan; Tǔlǔfān,PRC,
+10616,Anshun; Ānshùn,PRC,582993
+10629,Bayannagur; Bayannur; Bāyànnào'ĕr,PRC,270742
+10698,Yuchun; Yīchūn,PRC,
+10763,Bijie; Bìjíe,PRC,533543
+10834,Golmud; Gé'ěrmù,PRC,238704
+10841,Ya'an; Yǎ'ān,PRC,376578
+10863,Mangshi; Mángshì,PRC,
+11771,Shenyang; Shĕnyáng,PRC,6175250
+11801,Chengde; Chéngdé,PRC,131203
+11808,Tieling; Tiĕlĭng,PRC,183324
+11822,Caofeidian; Cáofēidiàn,PRC,56120
+11862,Antu; Āntú,PRC,56129
+11886,Suizhong; Suízhōng,PRC,91626
+11906,Mudanjiang; Mŭdānjiāng,PRC,758112
+11913,Nanjing; Nánjīng,PRC,78589
+11920,Quzhou; Qúzhōu,PRC,959819
+11928,Qidong; Qĭdōng,PRC,404692
+11933,Puyang; Púyáng,PRC,871559
+11937,Tongling; Tónglíng,PRC,363353
+11945,Xinfeng; Xìnfēng,PRC,104523
+11947,Lishui; Lìshuĭ,PRC,468870
+11962,Linqing; Línqīng,PRC,282112
+11963,Basuo; Bāsuǒ,PRC,
+11980,Cangzhou; Cāngzhōu,PRC,635841
+11983,Yulin; Yùlín,PRC,
+11988,Xiushui; Xiūshuĭ,PRC,106401
+11991,Zhuji; Zhūjì,PRC,522884
+12012,Xiangcheng; Xiàngchéng,PRC,231203
+12015,Pingyi; Píngyì,PRC,169009
+12017,Huaihua; Huáihuà,PRC,
+12030,Ningdu; Níngdū,PRC,159642
+12045,Laiwu; Láiwú,PRC,369299
+12052,Kunshan; Kūnshān,PRC,
+12061,Lujiang; Lújiāng,PRC,140133
+12067,Sheyang; Shèyáng,PRC,152273
+12069,Yuncheng; Yùnchéng,PRC,
+12078,Yangquan; Yángquán,PRC,465981
+12084,Anxi; Ānxī,PRC,184535
+12086,Gong'an; Gōng'ān,PRC,123573
+12119,Artush; Atush; Ātúshí,PRC,120961
+12141,Leshan; Lèshān,PRC,728228
+12262,Puer; Pǔ'ěr,PRC,
+12274,Bazhong; Bāzhōng,PRC,
+12310,Loudi; Lóudǐ,PRC,686965
+12327,Jinchang; Jīnchāng,PRC,144055
+12342,Fujin; Fùjĭn,PRC,263095
+12344,Jincheng; Jìnchéng,PRC,921145
+12348,Siliyin hota; Xilinhot; Xīlínhàotè,PRC,290629
+12356,Yan'an; Yán'ān,PRC,401686
+12408,Yunxi; Yúnxī,PRC,58817
+12414,Enshi; Ēnshī,PRC,625489
+12448,Erenhot; Eriyen Qota; Èrliánhàotè,PRC,116563
+12467,Xiantao; Xiāntáo,PRC,278585
+12469,Holingol; Huòlínguōlè; Qoolin Gool,PRC,
+12478,Kailu; Kāilŭ; Ḵayilü,PRC,
+12537,Gegen Gool; Genhe; Gēnhé,PRC,
+12618,Nenjiang; Nènjiāng,PRC,137649
+12705,Zigong; Zìgòng,PRC,414628
+12706,Otog; Ètuōkè,PRC,
+12776,Wuwei; Wǔwēi,PRC,100155
+12797,Wushan; Wǔshān,PRC,79422
+12815,Maqin; Maqên; Mǎqìn,PRC,
+12820,Dunhuang; Dūnhuáng,PRC,
+12841,Zhaotong; Zhāotōng,PRC,295990
+13150,Hulunbuir; Hūlúnbèi'ĕr; Kölön Buyir,PRC,210423
+14637,Chamdo; Chāngdū; Qamdo,PRC,
+14638,Lhasa; Lāsà,PRC,273179
+14642,Nagqu; Nàqū,PRC,50126
+14657,Kashgar; Kāshí; Qeshqer,PRC,498252
+14658,Aksu; Aqsu; Ākèsū,PRC,293005
+14661,Hotan; Hétián; Xoten,PRC,216546
+14662,Makit; Mekit; Màigàití,PRC,
+14667,,PRC,
+14670,Wūlǔmùqí Tiānshān Guójìjīchǎng; Ürümchi Tianshan Xelqara Ayroporti; Ürümqi Tianshan International Airport,PRC,
+14671,Changji; Chāngjí; Sanji,PRC,
+14672,Ghulja; Yining; Yīníng,PRC,
+14673,Korla; Kù'ěrlè,PRC,871121
+14674,Shuozhou; Shuòzhōu,PRC,324877
+14676,Hami; Hāmì; Qumul,PRC,252812
+14680,Lijiang; Lìjiāng,PRC,150969
+14685,Kunming; Kūnmíng,PRC,3218010
+14686,Kunming International Airport; Kūnmíng Chángshuǐ Guójì Jīchǎng,PRC,
+14690,Dali; Dàlǐ,PRC,89851
+14694,Gejiu; Gèjiù,PRC,197814
+14695,Mengzi; Méngzì,PRC,
+14696,Qujing; Qūjìng,PRC,701652
+14697,Songming; Sōngmíng,PRC,63235
+14700,Haikou; Hǎikǒu,PRC,73175
+14702,Sanya; Sānyà,PRC,421522
+14705,Shenzen; Shēnzhèn,PRC,
+14707,Zhongshan; Zhōngshān,PRC,66367
+14708,Foshan; Fóshān,PRC,
+14711,Zhanjiang; Zhànjiāng,PRC,463739
+14712,Maoming; Màomíng,PRC,584253
+14713,Shantou; Shàntóu,PRC,10579303
+14715,Chaozou; Cháozhōu,PRC,
+14716,Jieyang; Jiēyáng,PRC,
+14717,Qingyuan; Qīngyuăn,PRC,
+14719,Zhaoqing; Zhàoqìng,PRC,592201
+14723,Guigang; Guìgăng,PRC,261422
+14725,Liuzhou; Liŭzhōu,PRC,1318051
+14728,Guilin; Guìlín,PRC,965076
+14739,Delingha; Délìnghā; Dêrlinka,PRC,
+14749,Xining; Xīníng; Zi-ling,PRC,1423665
+14759,Jiayuguan; Jiāyùguān,PRC,199681
+14762,Lanzhou; Lánzhōu,PRC,2689402
+14766,Tianjin; Tiānjīn,PRC,7330648
+14771,Bejing; Běijīng,PRC,18150576
+14777,Yinchuan; Yínchuān,PRC,1913287
+14779,Zhongwei; Zhōngwèi,PRC,173279
+14780,Chengdu Tianfu International Airport; Chéngdū Tiānfǔ Guójì Jīchǎng,PRC,
+14784,Deyang; Déyáng,PRC,810107
+14785,Yibin; Yíbīn,PRC,234841
+14789,Luzhou; Lúzhōu,PRC,446058
+14790,Mianyang; Miányáng,PRC,538166
+14792,Nanchong; Nánchōng,PRC,
+14798,Hechuan; Héchuān,PRC,273191
+14801,Jiangjin; Jiāngjīn,PRC,
+14802,Wanzhou; Wànzhōu,PRC,395844
+14804,Kaizhou; Kāizhōu,PRC,105588
+14807,Guiyang; Guìyáng,PRC,129943
+14817,Zunyi; Zūnyì,PRC,
+14821,Changsha; Chángshā,PRC,3246971
+14825,Zhuzhou; Zhūzhōu,PRC,1005568
+14827,Yueyang; Yuèyáng,PRC,120188
+14828,Hengyang; Héngyáng,PRC,809271
+14829,Yiyang; Yìyáng,PRC,86028
+14830,Shenmu; Shénmù,PRC,274814
+14831,Xi'an; Xī'ān,PRC,5298992
+14832,Xianyang; Xiányáng,PRC,564731
+14835,Xi'an Xianyang International Airport; Xī'ān Xiányáng Guójì Jīchǎng,PRC,
+14841,Baoji; Băojī,PRC,773901
+14848,Taiyuan; Tàiyuán,PRC,4332180
+14849,Jinzhong; Jìnzhōng,PRC,445102
+14850,Changzhi; Chángzhì,PRC,590098
+14851,Datong; Dàtóng,PRC,1571547
+14854,Alaša Jegün; Alxa Left; Ālāshàn Zuŏ,PRC,
+14857,Baotou; Bugutu; Bāotóu,PRC,1645072
+14860,Hohhot; Hūhéhàotè; Kökeqota,PRC,2029813
+14870,Jiagedaqi; Jiāgédáqí,PRC,
+14873,Xuguit; Yakeshi; Yákèshí,PRC,
+14875,Jalaid; Zhalaite; Zhālàitè,PRC,69540
+14876,Ulahan; Ulanhot; Wūlánhàotè,PRC,221373
+14877,Jarud; Zhalute; Zhālŭtè,PRC,54968
+14878,Linsi; Linxi; Línxī,PRC,
+14879,Chifeng; Chìfēng; Ulaganqada,PRC,549177
+14881,Fushun; Fŭshùn,PRC,852128
+14885,Shenyang Taoxian International Airport; Shěnyáng Táoxiān Guójì Jīchǎng,PRC,
+14887,Panjin; Pánjĭn,PRC,577712
+14889,Jilin; Jílín,PRC,
+14890,Changchun; Chángchūn,PRC,3519692
+14895,Harbin; Hā'ĕrbīn,PRC,4591886
+14897,Harbin Taiping International Airport; Hārbīn Tàipíng Guójì Jīchǎng,PRC,
+14900,Daqing; Dàqìng,PRC,421411
+14901,Qiqihar; Qíqíhā'ĕr,PRC,901649
+14902,Mohe; Mòhé,PRC,
+14904,Zhaodong; Zhàodōng,PRC,471428
+14905,Beian; Bĕi'ān,PRC,109509
+14907,Hailun; Hăilún,PRC,124959
+14910,Tangshan; Tángshān,PRC,2651179
+14913,Zhangjiakou; Zhāngjiākŏu,PRC,587854
+14914,Handan; Hándān,PRC,2099937
+14916,Xingtai; Xíngtái,PRC,139787
+14917,Langfang; Lángfāng,PRC,512854
+14918,Baoding; Băodìng,PRC,883758
+14920,Xushui; Xúshuĭ,PRC,
+14922,Gaodeidian; Gāobēidiàn,PRC,186474
+14923,Shijiazhuang; Shíjiāzhuāng,PRC,3100270
+14926,Ningjin; Níngjìn,PRC,71337
+14927,Dingzhou; Dìngzhōu,PRC,240736
+14930,Qingdao Jiaodong International Airport; Qīngdǎo Jiāodōng Guójì Jīchǎng,PRC,
+14931,Weihai; Wēihăi,PRC,535089
+14933,Yantai; Yāntái,PRC,
+14935,Weifang; Wéifāng,PRC,961428
+14936,Shouguang; Shòuguāng,PRC,350722
+14937,Heze; Hézé,PRC,450572
+14938,Zaozhuang; Zăozhuāng,PRC,200465
+14939,Jining; Jìníng,PRC,849585
+14940,Zoucheng; Zōuchéng,PRC,462609
+14944,Zouping; Zōupíng,PRC,233401
+14945,Zibo; Zībó,PRC,1680283
+14946,Qingzhou; Qīngzhōu,PRC,338584
+14947,Rizhao; Rìzhào,PRC,459144
+14950,Linyi; Línyí,PRC,1555397
+14951,Liaocheng; Liáochéng,PRC,530299
+14952,Qufu; Qŭfù,PRC,243583
+14954,Dongying; Dōngyíng,PRC,126739
+14955,Tai'an; Tài'ān,PRC,707595
+14956,Yichang; Yíchāng,PRC,1573289
+14957,Xiangyang; Xiāngyáng,PRC,938344
+14959,Shiyan; Shíyàn,PRC,1129747
+14960,Jingzhou; Jīngzhōu,PRC,625685
+14963,Wuhan; Wŭhàn,PRC,8079484
+14966,Ezhou; Èzhōu,PRC,583820
+14967,Huanggang; Huánggāng,PRC,
+14968,Wuhan Tianhe International Airport; Wǔhàn Tiānhé Guójì Jīchǎng,PRC,
+14971,Zhongxiang; Zhōngxiáng,PRC,157863
+14972,Anyang; Ānyáng,PRC,1736590
+14973,Shangqiu; Shāngqiū,PRC,779507
+14974,Xinyang; Xìnyáng,PRC,350067
+14975,Nanyang; Nányáng,PRC,768610
+14976,Zhengzhou; Zhèngzhōu,PRC,5126112
+14978,Luoyang; Luòyáng,PRC,1603585
+14980,Kaifeng; Kāifēng,PRC,1296334
+14982,Zhoukou; Zhōukŏu,PRC,788576
+14983,Xuchang; Xŭchāng,PRC,1821624
+14984,Zhumaidan; Zhùmădiàn,PRC,909144
+14985,Xinxiang; Xīnxiāng,PRC,870471
+14986,Pingdingshan; Píngdĭngshān,PRC,703495
+14987,Xinzheng; Xīnzhèng,PRC,311647
+14988,Fangcheng; Fāngchéng,PRC,75931
+14991,Luohe; Luòhé,PRC,1183149
+14992,Chongming; Chóngmíng,PRC,135058
+14993,Shanghai Pudong International Airport; Shànghǎi Pǔdōng Guójì Jīchǎng,PRC,
+14996,Xuzhou; Xúzhōu,PRC,1310475
+14997,Lianyungang; Liányúngăng,PRC,
+14998,Pizhou; Pīzhōu,PRC,
+14999,Suqian; Sùqiān,PRC,957665
+15000,Shuyang; Shùyáng,PRC,363144
+15001,Huaian; Huái'ān,PRC,54056
+15002,Suzhou; Sūzhōu,PRC,
+15003,Changzhou; Chángzhōu,PRC,2772878
+15004,Wuxi; Wúxī,PRC,53095
+15006,Zhenjiang; Zhènjiāng,PRC,782534
+15008,Nantong; Nántōng,PRC,2608604
+15009,Yangzhou; Yángzhōu,PRC,699843
+15010,Taizhou; Tàizhōu,PRC,
+15011,Yancheng; Yánchéng,PRC,1211454
+15013,Fuyang; Fùyáng,PRC,422210
+15014,Bengbu; Bèngbù,PRC,671789
+15015,Huainan; Huáinán,PRC,
+15016,Wuhu; Wúhú,PRC,2137949
+15017,Hefei; Héféi,PRC,5646049
+15019,Feixi; Féixī,PRC,
+15021,Luan; Lù'ān,PRC,891648
+15022,Suzhou; Sùzhōu,PRC,
+15023,Mingguang; Míngguāng,PRC,
+15024,Yingshang; Yĭngshàng,PRC,90278
+15026,Feidong; Féidōng,PRC,
+15028,Ganzhou; Gànzhōu,PRC,1476966
+15030,Jiujiang; Jiŭjiāng,PRC,570903
+15031,Shangrao; Shàngráo,PRC,613471
+15032,Nanchang; Nánchāng,PRC,3641447
+15038,Pingxiang; Píngxiāng,PRC,501237
+15039,Xinyu; Xīnyú,PRC,851536
+15040,Yichun; Yíchūn,PRC,
+15042,Jinjiang; Jìnjiāng,PRC,
+15044,Quanzhou; Quánzhōu,PRC,3384624
+15045,Fuqing; Fúqīng,PRC,378882
+15048,Zhangzhou; Zhāngzhōu,PRC,1535556
+15049,Nan'an; Nán'ān,PRC,134905
+15050,Sanming; Sānmíng,PRC,243815
+15051,Putian; Pútián,PRC,2463177
+15052,Rui'an; Ruì'ān,PRC,
+15053,Wenzhou; Wēnzhōu,PRC,3838182
+15054,Yueqing; Yuèqīng,PRC,1135366
+15057,Ningbo; Níngbō,PRC,2953172
+15058,Cixi; Cíxī,PRC,1459131
+15061,Yuyao; Yúyáo,PRC,624779
+15062,Shaoxing; Shàoxīng,PRC,
+15064,Jiaxing; Jiāxīng,PRC,659472
+15065,Huzhou; Húzhōu,PRC,431049
+15068,Yiwu; Yìwū,PRC,718657
+15069,Jinhua; Jīnhuá,PRC,1195207
+7107,Ram'allah; Ramallah; Rām Allāh,PST,1054623
+14192,Al-Khalīl; Hebron; Ḥeḇrōn,PST,414422
+15838,Ad-Dawḥah; Doha,QAT,1980416
+1175,Hualien; Huālián,ROC,137533
+7186,Taipei; Táiběi,ROC,9686521
+7214,Hsinchu; Xīnzhú,ROC,713497
+11959,Taichung; Táizhōng,ROC,2318377
+12068,Tainan; Táinán,ROC,1010792
+15072,Jincheng; Jīnchéng,ROC,
+15075,Taitung; Táidōng,ROC,67626
+15076,Gāoxióng; Kaohsiung,ROC,2294772
+15077,Yilan; Yílán,ROC,
+15078,Taoyuan International Airport; Táoyuán Gúojì Jīchǎng,ROC,
+15079,Chiayi; Jiāyì,ROC,460979
+1054,Chinju; Jinju,ROK,
+1081,Gumi; Kumi,ROK,
+1100,Ch'ungju; Chungju,ROK,
+1177,Cheju; Jeju,ROK,
+4056,Busan; Pusan,ROK,3263408
+4086,Gyeongsang; Kyŏngsang,ROK,
+4103,Yeongju; Yŏngju,ROK,
+4126,Namwon; Namwŏn,ROK,
+7021,Gangneung; Kangnŭng,ROK,118784
+7125,Seoul; Sŏul,ROK,22261692
+7204,Asan,ROK,
+7221,P'yŏngt'aek; Pyeongtaek,ROK,159972
+9936,Ch'unch'ŏn; Chuncheon,ROK,229165
+11948,Mokp'o; Mokpo,ROK,
+11977,Gunsan; Kunsan,ROK,
+11992,Seosan; Sŏsan,ROK,
+12060,Ch'angwŏn; Changwon,ROK,668434
+12085,Sunch'ŏn; Suncheon,ROK,
+14612,Inch'ŏn; Incheon,ROK,
+14614,Goyang; Koyang,ROK,
+14616,Gimhae Gukjegonghang; Gimhae International Airport; Kimhae Kukchegonghang,ROK,
+14617,Ulsan,ROK,887568
+14618,Gyeongju; Kyŏngju,ROK,
+14619,Daegu; Taegu,ROK,2300085
+14621,Inch'ŏn Kukchegonghang; Incheon Gukjegonghang; Incheon International Airport,ROK,
+14622,Wonju; Wŏnju,ROK,218041
+14623,Gwangju; Kwangju,ROK,1428492
+14625,Daejeon; Taejŏn,ROK,1504229
+14626,Ch'ŏngju; Cheongju,ROK,
+14627,Chech'ŏn; Jecheon,ROK,
+14628,Chŏnju; Jeonju,ROK,631782
+657,Mangalia,ROM,
+662,Lugoj,ROM,
+687,Tulcea,ROM,
+723,Vaslui,ROM,
+744,Suceava,ROM,89152
+746,Satu Mare; Szatmárnémeti,ROM,79655
+818,Slatina,ROM,57761
+3630,Băilești,ROM,
+3639,Pitești,ROM,147709
+3645,Târgu Jiu,ROM,63417
+3663,Ploiești,ROM,187350
+3676,Brassó; Brașov,ROM,230438
+3689,Csíkszereda; Miercurea Ciuc,ROM,
+3696,Nagyvárad; Oradea,ROM,164899
+3728,Piatra Neamț,ROM,70378
+6658,Giurgiu,ROM,
+6677,Călărași,ROM,
+6679,Nagyszeben; Sibiu,ROM,134213
+6682,Arad,ROM,120149
+6729,Bârlad,ROM,
+6747,Bacău,ROM,129974
+6761,Rădăuți,ROM,
+9617,Bucharest; București,ROM,1971350
+9619,Deva; Déva,ROM,
+9651,Buzău,ROM,93987
+9668,Sepsiszentgyörgy; Sfântu Gheorghe,ROM,
+9670,Marosvásárhely; Târgu Mureș,ROM,127546
+9685,Beszterce; Bistrița,ROM,52236
+9687,Zalău; Zilah,ROM,
+9701,Focșani,ROM,70273
+11534,Botoșani,ROM,98975
+11592,Resicabánya; Reșița,ROM,
+11603,Oltenița,ROM,
+11622,Alba Iulia,ROM,
+11636,Brăila,ROM,162041
+11639,Medgyes; Mediaș,ROM,
+11652,Râmnicu Sărat,ROM,
+11655,Onești,ROM,
+11657,Drobeta-Turnu Severin,ROM,81560
+11676,Baia Mare; Nagybánya,ROM,100934
+14457,Cluj-Napoca; Kolozsvár,ROM,321095
+15127,Constanța,ROM,273012
+15132,Aeroportul Internațional Henri Coandă; Henri Coandă International Airport,ROM,
+15133,Craiova,ROM,260150
+15134,Galați,ROM,232217
+15135,Iași,ROM,304851
+15136,Temesvár; Timișoara,ROM,335525
+13364,Gisenyi,RWA,
+15943,Kigali,RWA,1621760
+15251,Tifariti; Tyfāriti,SHW,
+541,Nitra,SLO,55299
+581,Poprad,SLO,
+3537,Banská Bystrica,SLO,60513
+3550,Prešov,SLO,77203
+6573,Košice,SLO,223173
+9551,Žilina,SLO,66636
+9692,Trnava,SLO,56412
+14080,Bratislava,SLO,310204
+14082,Letisko M. R. Štefánika; M. R. Štefánik Airport,SLO,
+596,Maribor,SLV,80272
+3631,Kranj,SLV,
+6672,Murska Sobota,SLV,
+9596,Celje,SLV,
+13851,Ljubljana,SLV,252736
+13855,Koper,SLV,
+14121,San Marino,SNM,
+9626,Tchinval; Tskhinvali,SOS,
+45,Yurya,SOV,
+72,Konosha,SOV,
+73,Shar'ya; Sharya,SOV,
+75,Vozhega,SOV,
+85,Bezhetsk,SOV,
+110,Valday,SOV,
+123,Gainy,SOV,
+126,Kingisepp,SOV,
+155,Segezha,SOV,
+164,Buy,SOV,
+166,Vytegra,SOV,
+186,Kotlas,SOV,
+206,Chaykovsky,SOV,
+214,Gus-Khrustalny,SOV,
+231,Uglich,SOV,
+232,Morshansk,SOV,
+252,Rostov,SOV,
+257,Kuznetsk,SOV,68549
+260,Arsk,SOV,
+272,Kirovo-Chepetsk,SOV,54225
+286,Inza,SOV,
+291,Birsk,SOV,
+300,Belyov,SOV,
+305,Uva,SOV,
+315,Starodub,SOV,
+324,Saransk,SOV,298291
+326,Vol'sk; Volsk,SOV,
+328,Livny,SOV,50685
+335,Gagarin,SOV,
+340,Tambov,SOV,310658
+348,Sovetsk; Tilsit; Tilžė; Tylża,SOV,
+370,Glazov,SOV,82436
+371,Unecha,SOV,
+376,Zubova Polyana,SOV,
+398,Pochep,SOV,
+437,Kalach,SOV,
+457,Shchigry,SOV,
+487,Mikhaylovka,SOV,
+509,Morozovsk,SOV,
+534,Stary Oskol,SOV,100351
+580,Kurchatov,SOV,
+664,Dalnerechensk,SOV,
+666,Shali,SOV,
+714,Cherkessk,SOV,137895
+719,Gelendzhik,SOV,
+728,Terekli-Mekteb,SOV,
+735,Armavir,SOV,178118
+750,Yeysk,SOV,58632
+759,Yashkul; Yashkul',SOV,
+775,Sal'sk; Salsk,SOV,57098
+855,Okha,SOV,
+1294,Petukhovo,SOV,
+1305,Sterlitamak,SOV,240965
+1336,Krasnokamsk,SOV,
+1369,Prokop'yevsk; Prokopyevsk,SOV,
+1378,Kumertau,SOV,
+1380,Chernushka,SOV,
+1387,Yalutorovsk,SOV,
+1399,Severo-Kurilsk,SOV,
+1450,Akhty,SOV,
+1676,Shagonar,SOV,
+1684,Salekhard,SOV,53827
+1718,Asino,SOV,
+1735,Ust'-Kut; Ust-Kut,SOV,
+1750,Irbit,SOV,
+1768,Salym,SOV,
+1779,Belokurikha,SOV,
+1794,Aleysk,SOV,
+1812,Khanty-Mansiysk,SOV,65656
+1845,Tynda,SOV,
+1876,Tayshet,SOV,
+2356,Petrozavodsk,SOV,217903
+2999,Vyshny Volochyok,SOV,
+3033,Kondopoga,SOV,
+3065,Bereznik,SOV,
+3102,Luza,SOV,
+3116,Nerekhta,SOV,
+3130,Plesetsk,SOV,
+3140,Tikhvin,SOV,
+3143,Krasny Kholm,SOV,
+3154,Kirillov,SOV,
+3155,Zheshart,SOV,
+3177,Demyanovo,SOV,
+3187,Sortavala,SOV,
+3199,Lebedyan; Lebedyan',SOV,
+3216,Otradny,SOV,
+3226,Dyatkovo,SOV,
+3240,Ivanovo-Severnyy,SOV,
+3246,Novospasskoye,SOV,
+3265,Buguruslan,SOV,
+3266,Zemetchino,SOV,
+3268,Kovrov,SOV,122872
+3276,Barysh,SOV,
+3292,Shchyokino,SOV,
+3315,Volzhsk,SOV,
+3317,Nikolsk,SOV,
+3321,Ostashkov,SOV,
+3335,Bryansk,SOV,131385
+3344,Toropets,SOV,
+3346,Yelets,SOV,71183
+3352,Sergach,SOV,
+3356,Skopin,SOV,
+3357,Buzuluk,SOV,65616
+3362,Yartsevo,SOV,
+3363,Omutninsk,SOV,
+3371,Kovylkino,SOV,
+3376,Yefremov,SOV,
+3377,Obninsk,SOV,104005
+3387,Kasimov,SOV,
+3431,Veshenskaya,SOV,
+3443,Zimovniki,SOV,
+3490,Novouzensk,SOV,
+3519,Millerovo,SOV,
+3527,Liski,SOV,
+3529,Volgograd,SOV,632650
+3566,Borisoglebsk,SOV,57845
+3580,Kursk,SOV,278148
+3587,Egorlykskaya,SOV,
+3672,Urus-Martan,SOV,
+3682,Khasavyurt,SOV,207881
+3720,Maykop,SOV,124382
+3739,Svetlaya,SOV,
+3748,Ipatovo,SOV,
+3765,Tikhoretsk,SOV,62800
+3787,Spassk-Dal'ny; Spassk-Dalny,SOV,
+3963,Lidoga,SOV,
+3977,Ussuriysk,SOV,129677
+4209,Zavodoukovsk,SOV,
+4242,Kargapole,SOV,
+4261,Gay,SOV,
+4311,Beloretsk,SOV,66427
+4354,Salavat,SOV,93693
+4400,Sarapul,SOV,81805
+4659,Tobol'sk; Tobolsk,SOV,58512
+4669,Labytnangi,SOV,
+4677,Borzya,SOV,
+4681,Belyi Yar,SOV,
+4690,Minusinsk,SOV,55421
+4719,Krasnokamensk,SOV,
+4724,Achinsk,SOV,77038
+4726,Aldan,SOV,
+4728,Petropavlovsk-Kamchatskiy,SOV,
+4743,Yakutsk,SOV,139152
+4766,Khyagt,SOV,
+4789,Tayga,SOV,
+4800,Gorno-Altaysk,SOV,
+4803,Biysk,SOV,162866
+4806,Karasuk,SOV,
+4813,Tavda,SOV,
+4817,Surgut,SOV,68952
+4827,Kargasok,SOV,
+4859,Svetlogorsk,SOV,
+6095,Kirishi,SOV,
+6135,Furmanov,SOV,
+6143,Poshekhonye,SOV,
+6149,Uren,SOV,
+6167,Rybinsk,SOV,
+6175,Kostomuksha,SOV,
+6181,Kandalaksha,SOV,
+6224,Urzhum,SOV,
+6226,Syzran; Syzran',SOV,111241
+6231,Murom,SOV,95975
+6242,Opochka,SOV,
+6243,Desnogorsk,SOV,
+6246,Neftekamsk,SOV,129583
+6253,Vurnary,SOV,
+6262,Tula,SOV,306559
+6278,Agryz,SOV,
+6283,Sergiyev Posad,SOV,99478
+6284,Sasovo,SOV,
+6290,Serpukhov,SOV,125982
+6291,Nizhny Lomov,SOV,
+6315,Novomoskovsk,SOV,62102
+6317,Usman,SOV,
+6323,Yelabuga,SOV,
+6324,Ostrov,SOV,
+6328,Rtishchevo,SOV,
+6338,Zelenodolsk,SOV,59300
+6346,Kalyazin,SOV,
+6357,Alatyr; Alatyr',SOV,
+6358,Vichuga,SOV,
+6365,Kozel'sk; Kozelsk,SOV,
+6367,Nelidovo,SOV,
+6369,Gryazi,SOV,
+6379,Sorochinsk,SOV,
+6380,Moscow; Moskva,SOV,14384082
+6382,Serdobsk,SOV,
+6383,Sovetsk,SOV,
+6388,Mozhga,SOV,
+6391,Ruzayevka,SOV,
+6409,Kamenka,SOV,
+6411,Karachev,SOV,
+6432,Valuyki,SOV,
+6454,Serafimovich,SOV,
+6486,Akhtubinsk,SOV,
+6490,Volgodonsk,SOV,129475
+6494,Pavlovsk,SOV,
+6502,Balakovo,SOV,117879
+6503,Kotel'nikovo; Kotelnikovo,SOV,
+6506,Kamyshin,SOV,91669
+6516,Znamensk,SOV,
+6517,Shebekino,SOV,
+6538,Ust-Tsilma,SOV,
+6539,Krasnoarmeysk,SOV,
+6543,Sudzha,SOV,
+6577,Gubkin,SOV,
+6620,Kharabali,SOV,
+6718,Pyatigorsk,SOV,208441
+6730,Kizlyar,SOV,72757
+6750,Budyonnovsk,SOV,56616
+6794,Elista,SOV,96053
+6961,Nakhodka,SOV,83146
+6989,Arsen'yev; Arsenyev,SOV,
+7274,Iskitim,SOV,
+7359,Balezino,SOV,
+7444,Askino,SOV,
+7624,Derbent,SOV,112956
+7672,Birobidzhan,SOV,
+7736,Bagdarin,SOV,
+7757,Yurga,SOV,
+7796,Nyagan; Nyagan',SOV,
+7815,Nazarovo,SOV,
+7822,Sheregesh,SOV,
+7844,Neryungri,SOV,
+7846,Yarkovo,SOV,
+7860,Petrovsk-Zabaykalsky,SOV,
+7886,Mariinsk,SOV,
+7895,Yugorsk,SOV,50484
+9043,Soligalich,SOV,
+9065,Vokhma,SOV,
+9097,Sosnovy Bor,SOV,
+9098,Luga,SOV,
+9105,Priozersk,SOV,
+9124,Veliky Ustyug,SOV,
+9140,Zapolyarny,SOV,
+9146,Slobodskoy,SOV,
+9172,Shakhun'ya; Shakhunya,SOV,
+9190,Podporozhye,SOV,
+9195,Kem; Kem',SOV,
+9197,Volkhov,SOV,
+9201,Apatity,SOV,
+9206,Vyborg,SOV,
+9214,Kotel'nich; Kotelnich,SOV,
+9243,Chapayevsk,SOV,59670
+9248,Onega,SOV,
+9257,Kineshma,SOV,
+9259,Kanash,SOV,
+9260,Zheleznogorsk,SOV,67435
+9271,Sukhodol,SOV,
+9278,Alexandrov,SOV,50202
+9301,Kirov,SOV,
+9302,Volokolamsk,SOV,
+9325,Lyskovo,SOV,
+9337,Pugachyov,SOV,
+9343,Torzhok,SOV,
+9349,Tuymazy,SOV,
+9354,Buinsk,SOV,
+9355,Oryol,SOV,281342
+9358,Gorodets,SOV,
+9360,Vyksa,SOV,
+9373,Novocheboksarsk,SOV,89352
+9402,Yoshkar-Ola,SOV,286454
+9407,Sarov,SOV,
+9417,Rostov-na-Donu; Rostov-on-Don,SOV,1028672
+9422,Uvarovo,SOV,
+9436,Frolovo,SOV,
+9502,Uryupinsk,SOV,
+9577,Yershov,SOV,
+9604,Sovetskaya Gavan; Sovetskaya Gavan',SOV,
+9628,Nazran; Nazran',SOV,144166
+9647,Prokhladny,SOV,55604
+9649,Karachayevsk,SOV,
+9696,Belorechensk,SOV,68957
+9709,Kropotkin,SOV,68370
+10133,Revda,SOV,
+10142,Mesyagutovo,SOV,
+10170,Tselinnoe,SOV,
+10189,Tugulym,SOV,
+10196,Yasny,SOV,
+10213,Troitsk,SOV,
+10329,Zlatoust,SOV,66803
+10466,Pereyaslavka,SOV,
+10528,Gusinoozyorsk,SOV,
+10531,Ust'-Koksa; Ust-Koksa,SOV,
+10536,Novy Urengoy,SOV,58144
+10537,Kamen'-na-Obi; Kamen-on-Ob,SOV,
+10557,Mirny,SOV,
+10579,Ukhta,SOV,
+10596,Zhigalovo,SOV,
+10617,Kolpashevo,SOV,
+10627,Kyzyl,SOV,89448
+10648,Krasnotur'yinsk; Krasnoturyinsk,SOV,
+10649,Abakan,SOV,167068
+10670,Ishim,SOV,63183
+10678,Zeya,SOV,
+10699,Ust'-Ilimsk; Ust-Ilimsk,SOV,
+10712,Sharypovo,SOV,
+11027,Makaryev,SOV,
+11048,Borovichi,SOV,
+11059,Lodeynoye Pole,SOV,
+11071,Kargopol,SOV,
+11074,Velsk,SOV,
+11080,Gatchina,SOV,
+11085,Alakurtti,SOV,
+11092,Medvezh'yegorsk; Medvezhyegorsk,SOV,
+11098,Inta,SOV,
+11099,Danilov,SOV,
+11109,Staraya Russa,SOV,
+11142,Nikel; Nikel',SOV,
+11182,Usinsk,SOV,
+11192,Kichmengskii Gorodok,SOV,
+11202,Pskov,SOV,145668
+11234,Velikiye Luki,SOV,61885
+11255,Yaransk,SOV,
+11256,Pokhvistnevo,SOV,
+11319,Dimitrovgrad,SOV,95281
+11324,Pochinki,SOV,
+11325,Klintsy,SOV,
+11336,Roslavl; Roslavl',SOV,
+11339,Bolgar,SOV,
+11340,Semyonov,SOV,
+11344,Arzamas,SOV,92653
+11349,Rzhev,SOV,
+11363,Shatsk,SOV,
+11368,Mtsensk,SOV,
+11381,Michurinsk,SOV,66261
+11387,Morki,SOV,
+11389,Al'met'yevsk; Almetyevsk,SOV,114543
+11408,Balashov,SOV,72854
+11410,Rubtsovsk,SOV,125380
+11412,Rossosh; Rossosh',SOV,52521
+11418,Novocherkassk,SOV,89495
+11436,Zherdevka,SOV,
+11449,Atkarsk,SOV,
+11450,Kamensk-Shakhtinsky,SOV,57220
+11475,Voronezh,SOV,863684
+11496,Chistopol,SOV,58396
+11540,Ertil,SOV,
+11614,Nal'chik; Nalchik,SOV,224566
+11633,Kislovodsk,SOV,123534
+11678,Nevinnomyssk,SOV,103094
+11745,Dal'negorsk; Dalnegorsk,SOV,
+12106,Shadrinsk,SOV,
+12157,Miass,SOV,78620
+12172,Oktyabrsky,SOV,
+12187,Cherdyn,SOV,
+12200,Sibay,SOV,
+12216,Kungur,SOV,53897
+12244,Votkinsk,SOV,75832
+12263,Komsomol'sk-na-Amure; Komsomolsk-on-Amur,SOV,193295
+12287,Ozersk,SOV,
+12393,Pechora,SOV,
+12446,Yuzhno-Sakhalinsk,SOV,106912
+12523,Kodinsk,SOV,
+12527,Berezniki,SOV,96387
+12540,Cheremkhovo,SOV,
+12546,Cherlak,SOV,
+12559,Nikolayevsk-na-Amure; Nikolayevsk-on-Amur,SOV,
+12575,Severobaykalsk,SOV,
+12584,Snezhinsk,SOV,
+12595,Lesosibirsk,SOV,
+12602,Lyantor,SOV,
+12606,Kuybyshev,SOV,
+12621,Kansk,SOV,
+12626,Osa,SOV,
+12654,Belogorsk,SOV,
+12657,Svobodny,SOV,
+12672,Nizhnevartovsk,SOV,195705
+12679,Tatarsk,SOV,
+12683,Magadan,SOV,61572
+12687,Norilsk,SOV,
+14156,Vladivostok,SOV,436926
+14157,Mezhdunarodnyy Aeroport Vladivostok; Vladivostok International Airport,SOV,
+14158,Khabarovsk,SOV,538466
+14160,Blagoveshchensk,SOV,192405
+14163,Irkutsk,SOV,434849
+14164,Irkutsk International Airport; Mezhdunarodnyy Aeroport Irkutsk,SOV,
+14166,Bratsk,SOV,80231
+14167,Ulan-Ude,SOV,245016
+14168,Chita,SOV,215428
+14169,Sayanogorsk,SOV,
+14171,Krasnoyarsk,SOV,559535
+14177,Makhachkala,SOV,740512
+14180,Makhachkala International Airport; Mezhdunarodnyy Aeroport Makhachkala,SOV,
+14181,Grozny,SOV,113095
+14183,Stavropol; Stavropol',SOV,357344
+14185,Krasnodar,SOV,753688
+14188,Krasnodar International Airport; Mezhdunarodnyy Aeroport Krasnodar,SOV,
+14189,Novorossiysk,SOV,244138
+14191,Sochi,SOV,188724
+14193,Kaliningrad; Karaliaučius; Królewiec; Königsberg,SOV,438435
+14194,Aeroport Khrabrovo; Airport Khrabrovo; Flughafen Königsberg; Kaliningrado oro Uostas; Lotnisko Królewiec,SOV,
+14196,Polevskoy,SOV,
+14197,Astrakhan; Astrakhan',SOV,520145
+14199,Azov,SOV,70429
+14200,Bataysk,SOV,111055
+14202,Aeroport Rostov-na-Donu; Rostov-on-Don Airport,SOV,
+14204,Taganrog,SOV,237019
+14205,Shakhty,SOV,125197
+14208,Volzhskiy,SOV,236086
+14210,Saratov,SOV,761437
+14211,Engels,SOV,162465
+14215,Belgorod,SOV,364359
+14218,Murmansk,SOV,272712
+14220,Kola,SOV,
+14221,Severomorsk,SOV,
+14222,Sankt-Peterburg; St. Petersburg,SOV,
+14226,Aeroport Pulkovo; Pulkovo Airport,SOV,
+14229,Smolensk,SOV,279694
+14231,Khimki,SOV,
+14234,Aeroport imeni Aleksandra S. Pushkina; Alexander S. Pushkin Airport,SOV,
+14236,Lyubertsy,SOV,
+14237,Podol'sk; Podolsk,SOV,414099
+14238,Kolomna,SOV,101135
+14240,Lipetsk,SOV,270711
+14244,Kaluga,SOV,267853
+14249,Veliky Novgorod,SOV,148374
+14250,Tver; Tver',SOV,339394
+14255,Archangel'sk; Archangelsk,SOV,213275
+14256,Severodvinsk,SOV,136041
+14260,Vorkuta,SOV,
+14265,Lesnoi,SOV,
+14266,Syktyvkar,SOV,128829
+14268,Kemerovo,SOV,431190
+14271,Novokuznetsk,SOV,288930
+14274,Leninsk-Kuznetskiy,SOV,
+14276,Barnaul,SOV,445561
+14279,Novosibirsk,SOV,1342711
+14282,Mezhdunarodnyy Aeroport Novosibirsk; Novosibirsk International Airport,SOV,
+14284,Tomsk,SOV,465966
+14285,Seversk,SOV,92893
+14286,Tevriz,SOV,
+14288,Omsk,SOV,869415
+14291,Mezhdunarodnyy Aeroport Omsk; Omsk International Airport,SOV,
+14292,Tara,SOV,
+14294,Isil'kul; Isilkul,SOV,
+14326,Tyumen; Tyumen',SOV,627661
+14331,Uvat,SOV,
+14334,Kamensk-Ural'sky; Kamensk-Uralsky,SOV,68037
+14339,Nizhny Tagil,SOV,202217
+14340,Alapayevsk,SOV,
+14342,Serov,SOV,68460
+14346,Yekaterinburg,SOV,1102145
+14350,Aeroport Kol'tsovo; Koltsovo Airport,SOV,
+14351,Pervoural'sk; Pervouralsk,SOV,69983
+14356,Kurgan,SOV,151394
+14358,Yurgamysh,SOV,
+14359,Asha,SOV,
+14361,Kartaly,SOV,
+14363,Chelyabinsk,SOV,809268
+14369,Magnitogorsk,SOV,351850
+14371,Orsk,SOV,105622
+14373,Orenburg,SOV,406414
+14377,Ufa,SOV,872395
+14384,Mezhdunarodnyy Aeroport Ufa; Ufa International Airport,SOV,
+14385,Samara,SOV,942553
+14386,Novokuybyshevsk,SOV,
+14388,Tolyatti,SOV,172659
+14394,Gubakha,SOV,
+14395,Perm; Perm',SOV,
+14398,Ul'yanovsk; Ulyanovsk,SOV,378459
+14402,Aeroport Kazan'; Kazan Airport,SOV,
+14403,Kazan; Kazan',SOV,1127086
+14405,Naberezhnye Chelny,SOV,499389
+14406,Nizhnekamsk,SOV,158702
+14409,Izhevsk,SOV,584048
+14412,Cheboksary,SOV,437913
+14414,Ryazan; Ryazan',SOV,427330
+14417,Penza,SOV,436253
+14419,Vologda,SOV,245776
+14421,Cherepovets,SOV,274714
+14423,Yaroslavl; Yaroslavl',SOV,524797
+14426,Vladimir,SOV,227182
+14428,Ivanovo,SOV,368358
+14430,Kostroma,SOV,220222
+14431,Kirov,SOV,
+14436,Dzerzhinsk,SOV,167436
+14437,Nizhny Novgorod,SOV,1189993
+15143,Vladikavkaz,SOV,312275
+15146,Baikonur; Baykonur; Bayqoŋır,SOV,
+15355,Dudinka,SOV,
+726,León,SPA,145844
+758,Santiago de Compostela,SPA,
+813,Calatayud,SPA,
+832,Albacete,SPA,137538
+854,Gerona; Girona,SPA,122502
+857,Soria,SPA,
+858,Toledo,SPA,
+871,Teruel,SPA,
+872,Lleida; Lérida,SPA,138521
+885,Burgos,SPA,151942
+918,Zamora,SPA,
+939,Ávila,SPA,
+950,Linares,SPA,
+962,Alicante,SPA,400711
+3799,Requena,SPA,
+3810,Pozoblanco,SPA,
+3902,Logroño,SPA,167010
+3933,Pampalona,SPA,302466
+3945,Cuenca,SPA,
+3954,Alcañiz,SPA,
+4095,Baza,SPA,
+6734,Ourense,SPA,90571
+6812,Tortosa,SPA,
+6817,Castellón de la Plana,SPA,159760
+6866,Cáceres,SPA,
+6867,Salamanca,SPA,143062
+6906,Valencia,SPA,1404208
+6936,Palencia,SPA,57573
+6959,Gandia,SPA,
+7111,Lorca,SPA,
+7114,Eivissa; Ibiza,SPA,53270
+7153,Ronda,SPA,
+7183,Dos Hermanas,SPA,97844
+9764,Barcelona,SPA,3908362
+9778,Ciudad Real,SPA,54362
+9797,Manresa,SPA,63542
+9815,Huelva,SPA,126787
+9845,Mahón; Maó,SPA,
+9917,Plasencia,SPA,
+9925,Mérida,SPA,
+10024,Cartagena,SPA,111592
+10111,Jaén,SPA,88443
+11688,Santander,SPA,206302
+11692,Lugo,SPA,
+11819,Monzón,SPA,
+11820,Talavera de la Reina,SPA,57079
+11821,Huesca,SPA,
+11843,Ponferrada,SPA,
+11851,Badajoz,SPA,105442
+13218,Oviedo,SPA,
+13227,Segovia,SPA,
+13228,Cádiz,SPA,114582
+13233,Vitoria-Gasteiz,SPA,252151
+14497,A Coruña,SPA,271212
+14498,Vigo,SPA,291792
+14499,Gijón,SPA,258571
+14500,Valladolid,SPA,309896
+14501,Bilbao,SPA,729222
+14502,Aeropuerto de Bilbao; Bilbao Airport,SPA,
+14503,Madrid,SPA,5680137
+14504,Adolfo Suárez Madrid-Barajas Airport; Aeropuerto Adolfo Suárez Madrid–Barajas,SPA,
+14506,Getafe,SPA,
+14508,Zaragoza,SPA,624271
+14510,Aeroport Josep Tarradellas; Aeropuerto Josep Tarradellas; Josep Tarradellas Airport,SPA,
+14512,Tarrasa; Terrassa,SPA,261366
+14514,Tarragona,SPA,152944
+14515,Palma,SPA,
+14520,Murcia,SPA,341431
+14521,Molina de Segura,SPA,
+14522,Sevilla; Seville,SPA,696193
+14523,Aeropuerto de Sevilla; Seville Airport,SPA,
+14525,Málaga,SPA,522827
+14527,Marbella,SPA,169908
+14528,Granada,SPA,362800
+14529,Almería,SPA,176307
+14530,Córdoba,SPA,239916
+3609,Šabac,SRB,
+3623,Sombor,SRB,
+3939,Novi Pazar,SRB,93110
+3956,Užice,SRB,
+3984,Čačak,SRB,70622
+6634,Požarevac,SRB,
+9906,Leskovac,SRB,51941
+11586,Kragujevac,SRB,140856
+11787,Zrenjanin,SRB,61395
+11832,Vranje,SRB,
+11887,Niš,SRB,219095
+13864,Belgrade; Beograd,SRB,1200547
+13867,Aerodrom Nikola Tesla Beograd; Nikola Tesla Airport,SRB,
+13869,Novi Sad,SRB,286753
+35,Västerås,SWE,104147
+46,Östersund,SWE,
+49,Bollnäs,SWE,
+125,Ljusdal,SWE,
+130,Härnösand,SWE,
+156,Leksand,SWE,
+182,Örnsköldsvik,SWE,
+201,Pajala,SWE,
+242,Växjö,SWE,
+295,Trollhättan,SWE,
+299,Kalmar,SWE,
+363,Nybro,SWE,
+383,Gothenberg,SWE,599675
+408,Visby,SWE,
+3095,Kiruna,SWE,
+3182,Skutskär,SWE,
+3229,Oskarshamn,SWE,
+3375,Skövde,SWE,
+6050,Stockholm,SWE,1543892
+6084,Lindesberg,SWE,
+6125,Kalix,SWE,
+6132,Umeå,SWE,64854
+6147,Mora,SWE,
+6164,Karlskoga,SWE,
+6165,Luleå,SWE,
+6188,Kumla,SWE,
+6195,Torsby,SWE,
+6209,Norrtälje,SWE,
+6310,Uddevalla,SWE,
+6311,Motala,SWE,
+6345,Helsingborg,SWE,106339
+6397,Mjölby,SWE,
+6406,Borås,SWE,50459
+6412,Halmstad,SWE,
+9054,Kristinehamn,SWE,
+9093,Lycksele,SWE,
+9108,Piteå,SWE,
+9109,Katrineholm,SWE,
+9117,Sandviken,SWE,
+9138,Arvika,SWE,
+9149,Uppsala,SWE,133611
+9151,Sundsvall,SWE,
+9185,Köping,SWE,
+9186,Boden,SWE,
+9193,Borlänge,SWE,
+9209,Örebro,SWE,94012
+9211,Sorsele,SWE,
+9279,Malmö,SWE,339007
+9329,Jönköping,SWE,64999
+9393,Linköping,SWE,84828
+11040,Hudiksvall,SWE,
+11049,Åre,SWE,
+11082,Nyköping,SWE,
+11091,Gävle,SWE,
+11114,Karlstad,SWE,
+11129,Sollefteå,SWE,
+11147,Söderhamn,SWE,
+11148,Strömsund,SWE,
+11155,Gällivare,SWE,
+11160,Kristianstad,SWE,
+11188,Eskilstuna,SWE,51933
+11197,Ludvika,SWE,
+11201,Skellefteå,SWE,
+11215,Karlskrona,SWE,
+11376,Lund,SWE,93091
+11380,Norrköping,SWE,90149
+11390,Västervik,SWE,
+13264,Vimmerby,SWE,
+13265,Tranås,SWE,
+15117,Södertälje,SWE,68810
+15119,Stockholm Arlanda Airport; Stockholm-Arlanda Flygplats,SWE,
+15122,Värnamo,SWE,
+663,Zurich; Zurigo; Zürich,SWI,689208
+3660,Davos,SWI,
+6666,Lausanne; Losanna,SWI,288888
+9600,Lugano,SWI,91995
+9618,Interlaken,SWI,
+9622,Neuchâtel; Neuenburg,SWI,51772
+11604,Lucerna; Lucerne; Luzern,SWI,146604
+14089,Geneva; Genf; Genève; Ginevra,SWI,433727
+14090,Basel; Basilea; Basle; Bâle,SWI,285823
+14092,Aeroporto di Zurigo; Aéroport de Zurich; Flughaven Zürich; Zurich Airport,SWI,
+14094,Bern; Berna; Berne,SWI,193474
+901,,SYR,
+1056,Salamiyah; Salamiyya,SYR,69464
+1074,Dar'ā; Daraa,SYR,129915
+1578,Ra's Al-'Aīn; Ras Al-Ayn,SYR,
+1606,Tall Abyaḍ; Tell Abyad,SYR,
+2013,Al-Mayādīn; Mayadin,SYR,83827
+4111,Damascus; Dimashq,SYR,3771638
+10087,Tartus; Ṭarṭūs,SYR,79503
+15452,Al-Lādhiqiyah; Latakia,SYR,573263
+15453,'Idlib; Idlib,SYR,132091
+15455,Al-Qāmishlī; Qamishli,SYR,272985
+15456,Al-Ḥasakah; Hasakah,SYR,186100
+15457,'Amūdā; Amuda,SYR,
+15458,Dayr az-Zawr; Deir ez-Zur,SYR,
+15461,Ar-Raqqah; Raqqa,SYR,193731
+15462,Ad-Ṭhawrah; Al-Thawrah,SYR,
+15464,Aleppo; Ḥalab,SYR,3084136
+15466,Aleppo International Airport; Maṭār Ḥalab,SYR,
+15469,'Afrīn; Afrin,SYR,56283
+15470,Manbij; Manbiǧ,SYR,177389
+15471,Hama; Ḥamāh,SYR,300945
+15473,As-Suwaydā'; Suwayda,SYR,128546
+15474,Homs; Ḥimṣ,SYR,913554
+15476,Ar-Rastan,SYR,60576
+15477,Palmyra; Tadmur,SYR,
+15482,Douma; Dūmā,SYR,
+15483,Damascus International Airport; Maṭār Dimashq,SYR,
+15485,An-Nabek; An-Nabk,SYR,
+13788,Tiraspol,TRZ,
+13789,Rybnitsa,TRZ,
+13790,Bendery,TRZ,
+13792,Dubossary,TRZ,
+1037,Sidi Bouzid; Sīdī Bū Zayd,TUN,58168
+1046,Al-Kāf; Le Kef,TUN,50809
+4061,Al-Qaṣrayn; Kasserine,TUN,83463
+7005,Gabès; Qābis,TUN,177608
+7162,Al-Qayrawān; Kairouan,TUN,81409
+7180,Zaghouan; Zaghwān,TUN,
+9994,Banzart; Bizerte,TUN,178254
+10082,Douz; Dūz,TUN,
+10091,Nabeul; Nābul,TUN,
+11921,Al-Mahdiyah; Mahdia,TUN,
+11935,Gafsa; Qafṣah,TUN,127458
+11957,Jarjīs; Zarzis,TUN,56320
+11969,Tunis; Tūnis,TUN,2790169
+12000,Tataouine; Taṭāwīn,TUN,62686
+15213,Sousse; Sūsah,TUN,537190
+15214,Sfax; Ṣafāqis,TUN,649272
+15215,Maṭār Tūnis Al-Dawli; Tunis International Airport,TUN,
+15217,Djerba Houmt Souk; Jarbah Ḥawmat as-Sūq,TUN,
+652,Ağrı,TUR,145032
+784,Isparta,TUR,226042
+789,Trabzon,TUR,328138
+804,Kırıkkale,TUR,
+806,Osmaniye,TUR,297348
+856,Tavşanlı,TUR,61528
+869,Aksaray,TUR,144904
+876,Kovancılar,TUR,
+904,Ereğli,TUR,
+928,Manisa,TUR,406110
+975,Giresun,TUR,121465
+981,Simav,TUR,
+1122,Manavgat,TUR,150381
+1463,Yüksekova,TUR,103169
+1498,Şanlıurfa,TUR,762062
+3714,Rize,TUR,125883
+3786,İnegöl,TUR,214533
+3788,Beyşehir,TUR,
+3851,Yalova,TUR,181686
+3862,Yozgat,TUR,
+3870,Talas,TUR,
+3879,Tekirdağ,TUR,155929
+3893,Lüleburgaz,TUR,82322
+3903,Sivas,TUR,401054
+3905,Bolu,TUR,132376
+3919,Karabük,TUR,197055
+3921,Elbistan,TUR,122644
+3935,Tokat,TUR,122160
+3979,Gümüşhane,TUR,
+3983,Afyonkarahisar,TUR,142324
+4008,Alanya,TUR,131344
+4112,Çeşme,TUR,
+4583,Iğdır,TUR,99682
+5170,Karaköprü,TUR,
+5206,Malatya,TUR,510425
+6864,Çanakkale,TUR,128856
+6871,Hendek,TUR,70580
+6894,Seydişehir,TUR,
+6895,Çorlu,TUR,123052
+6912,Bandırma,TUR,121652
+6938,Kastamonu,TUR,86877
+7026,Silifke,TUR,
+7130,Torbalı,TUR,52098
+7143,Karaman,TUR,125344
+7470,Erciş,TUR,145965
+7530,Batman,TUR,481850
+7620,Kâhta,TUR,81166
+8206,Elâzığ,TUR,437440
+8237,Van,TUR,623590
+9763,Ereğli,TUR,
+9799,Edremit,TUR,
+9806,Beypazarı,TUR,
+9823,Suruç,TUR,97691
+9830,Niğde,TUR,98173
+9833,Istanbul; İstanbul,TUR,14210222
+9844,Çankırı,TUR,84239
+9858,Muş,TUR,117955
+9861,Nevşehir,TUR,89205
+9868,Erzincan,TUR,75190
+9871,Tosya,TUR,
+9886,Bayburt,TUR,
+9900,Çorum,TUR,247552
+9901,Polatlı,TUR,81439
+9912,Adıyaman,TUR,229020
+9915,Amasya,TUR,97375
+9921,Akhisar,TUR,120412
+9941,Bodrum,TUR,66904
+10038,Aydın,TUR,
+10056,Kahramanmaraş,TUR,554382
+10122,Fethiye,TUR,107454
+10399,Bingöl,TUR,113230
+10403,Ardahan,TUR,
+10472,Kars,TUR,75346
+10497,Siirt,TUR,166361
+10936,Erzurum,TUR,162678
+10979,Viranşehir,TUR,136940
+11747,Ankara Esenboga Airport; Ankara Esenboğa Havalimanı,TUR,
+11753,Artvin,TUR,
+11759,Siverek,TUR,191657
+11778,Balıkesir,TUR,318029
+11796,Uşak,TUR,197267
+11797,Tunceli,TUR,
+11831,Kütahya,TUR,179126
+11839,Sungurlu,TUR,
+11842,Edirne,TUR,143148
+11844,Kırşehir,TUR,129610
+11848,Bergama,TUR,58457
+11860,Akşehir,TUR,56239
+11866,Zonguldak,TUR,200396
+11881,Samsun,TUR,643552
+11894,Ordu,TUR,154937
+12016,Burdur,TUR,71347
+12029,Antakya,TUR,
+12318,Tatvan,TUR,56119
+12387,Cizre,TUR,139569
+12416,Ceylanpınar,TUR,58587
+12476,Silopi,TUR,170924
+12915,Kilis,TUR,103014
+12936,Mardin,TUR,84641
+12992,Diyarbakır,TUR,648874
+15383,Istanbul Airport; İstanbul Havalimanı,TUR,
+15386,İzmit,TUR,
+15387,Gebze,TUR,
+15388,Bursa,TUR,2366448
+15390,Adapazarı,TUR,
+15392,Izmir; İzmir,TUR,2457529
+15394,Denizli,TUR,501994
+15395,Antalya,TUR,1372672
+15397,Mersin,TUR,654657
+15399,Adana,TUR,523158
+15400,Tarsus,TUR,218397
+15403,Ankara,TUR,3695989
+15406,Konya,TUR,1017329
+15408,Kayseri,TUR,893376
+15411,Eskişehir,TUR,608474
+15413,Gaziantep,TUR,1681270
+15414,Gaziantep Airport; Gaziantep Havalimanı,TUR,
+2176,Mpanda,TZN,116981
+2206,Babati,TZN,
+4171,Kahama,TZN,147472
+5224,Handeni,TZN,
+8144,Kigoma,TZN,347892
+8183,Tanga,TZN,252499
+8201,Masasi,TZN,72492
+8205,Morogoro,TZN,407719
+10845,Songea,TZN,228440
+11017,Musoma,TZN,189131
+12944,Mtwara,TZN,116731
+12967,Ifakara,TZN,98174
+15947,Mwanza,TZN,977475
+15950,Bukoba,TZN,155945
+15952,Bariadi,TZN,56155
+15955,Dodoma,TZN,267333
+15960,Singida,TZN,120810
+15962,Nzega,TZN,50213
+15964,Tabora,TZN,199592
+15969,Arusha,TZN,806518
+15972,Sumbawanga,TZN,184293
+15973,Mbeya,TZN,587388
+15976,Njombe,TZN,
+15977,Iringa,TZN,217074
+15980,Zanzibar,TZN,
+15981,Dar es Salaam,TZN,8918525
+15982,Julius Nyerere International Airport,TZN,
+10904,Ras Al-Khaimah; Rā's Al-Khaymah,UAE,259127
+15840,Abu Dhabi; Abū Ẓaby,UAE,508976
+15844,Dubai; Dubayy,UAE,4565478
+15845,Dubai International Airport; Maṭār Dubayy Al-Dawli,UAE,
+15846,Ash-Shāriqah; Sharjah City,UAE,
+15848,Al-'Ayn; Al-Ain,UAE,
+3854,Masaka,UGA,141042
+7088,Fort Portal,UGA,55643
+7133,Arua,UGA,215726
+12929,Jinja,UGA,245759
+15988,Kampala,UGA,5177878
+15990,Entebbe International Airport,UGA,
+15991,Nansana,UGA,
+15993,Hoima,UGA,76893
+15994,Mbarara,UGA,285352
+15995,Soroti,UGA,77727
+15996,Mbale,UGA,
+15997,Gulu,UGA,205487
+238,Novgorod-Severskiy; Novhorod-Sivers'kyy; Novhorod-Siverskyi,UKR,
+429,Gulyaipole; Hulyaipole,UKR,
+463,Romny,UKR,
+476,Zhmerynka,UKR,
+486,Pavlograd; Pavlohrad,UKR,76283
+488,Smela; Smila,UKR,57144
+504,Belaya Tserkov'; Bila Tserkva,UKR,185038
+511,Poltava,UKR,230006
+525,Kiev; Kyiv,UKR,2575199
+535,Sarny,UKR,
+536,Sheptitskiy; Sheptyts'kyy; Sheptytskyi; Szeptycki,UKR,
+559,Lubny,UKR,
+568,Skadovs'k; Skadovsk,UKR,
+570,Svatove; Svatoveo,UKR,
+574,Kazanka,UKR,
+577,Chernivtsi; Chernovtsy,UKR,225829
+705,Yevpatoriya,UKR,90934
+3225,Shostka,UKR,59079
+3409,Volchansk; Vovchans'k; Vovchansk,UKR,
+3430,Kam'yanets'-Podil's'kyy; Kamenets-Podol'skiy; Kamianets-Podilskyi,UKR,84179
+3452,Kirovograd; Kirovohrad; Kropivnits'kyy; Kropivnitskiy; Kropyvnytskyi,UKR,195361
+3455,Akhtyrka; Okhtyrka,UKR,
+3457,Khmel'nyts'kyy; Khmel'nytskiy; Khmelnytskyi,UKR,224407
+3466,Krasnoarmeysk; Krasnoarmiisk; Krasnoarmiys'k; Pokrovs'k; Pokrovsk,UKR,55117
+3468,Svetlovodsk; Svitlovods'k; Svitlovodsk,UKR,
+3470,Zviahel,UKR,
+3479,Artemivsk; Bakhmut,UKR,68173
+3480,Nezhin; Nizhyn,UKR,
+3483,Tarnopol; Ternopil; Ternopil'; Ternopol',UKR,183217
+3491,Krasnyi Lyman; Krasnyy Lyman; Lyman,UKR,
+3511,Shepetivka; Shepetovka,UKR,
+3548,Mukachevo,UKR,70871
+3573,Nova Kakhovka; Novaya Kakhovka,UKR,
+3701,Izmail; Izmayil,UKR,
+3738,Ochakiv; Ochakov,UKR,
+6435,Rivne; Rovno; Równe,UKR,214365
+6455,Mohyliv-Podilskyi,UKR,
+6480,Haisyn,UKR,
+6483,Drogobich; Drohobych; Drohobycz,UKR,83120
+6495,Kremenchuk,UKR,130957
+6505,Alchevs'k; Alchevsk,UKR,150118
+6597,Pervomaisk; Pervomays'k,UKR,51647
+6776,Ugledar; Vuhledar,UKR,
+9419,Nikopol; Nikopol',UKR,109993
+9433,Dneprodzerzhinsk; Dniprodzerzhins'k; Dniprodzerzhynsk; Kam'yans'ke; Kamianske,UKR,196341
+9437,Pryluky,UKR,
+9446,Roven'ky; Rovenky,UKR,50426
+9454,Zolochev; Zolochiv; Złoczów,UKR,
+9463,Novomoskovsk,UKR,59345
+9477,Konotop,UKR,66496
+9531,Izyum,UKR,
+9543,Pereiaslav,UKR,
+9548,Storozhinets; Storozhynets; Storozhynets',UKR,
+9556,Chuguyev; Chuhuiv,UKR,
+9571,Berdyans'k; Berdyansk,UKR,70026
+9576,Kotovs'k; Kotovsk; Podils'k; Podilsk; Podol'sk,UKR,
+9677,Feodosia,UKR,54744
+9680,Kerch; Kerch',UKR,77377
+9698,Berezivka,UKR,
+11411,Ivano-Frankivs'k; Ivano-Frankivsk; Ivano-Frankovsk,UKR,223969
+11424,Uman; Uman',UKR,73559
+11441,Vladimir-Volyns'kiy; Volodymyr-Volyns'kyy; Volodymyr-Volynskyi; Włodzimierz-Wołyński,UKR,
+11461,Lozova; Lozovaya,UKR,57204
+11477,Korosten,UKR,
+11479,L'viv; L'vov; Lviv; Lwów ,UKR,604320
+11504,Myrhorod,UKR,
+11513,Starobel'sk; Starobil's'k; Starobilsk,UKR,
+11514,Zhytomyr,UKR,210457
+11546,Yuzhnoukrainsk; Yuzhnoukrayins'k,UKR,
+11557,Brovary,UKR,118929
+11691,Uzhgorod; Uzhorod,UKR,121222
+11715,Velikaya Aleksandrovka; Velyka Oleksandrivka,UKR,
+13727,Sevastopol; Sevastopol',UKR,220792
+13731,Simferopol; Simferopol',UKR,292024
+13737,Kherson,UKR,246357
+13740,Lysychans'k; Lysychansk,UKR,60335
+13741,Donets'k; Dontesk,UKR,690522
+13742,Donetsk International Airport; Mezhdunarodnyy Aeroport Donetsk; Mizhnarodnyy Aeroport Donets'k,UKR,
+13743,Avdeevka; Avdiivka,UKR,
+13747,Lugansk; Luhans'k; Luhansk,UKR,342311
+13751,Gorlovka; Horlivka,UKR,143612
+13753,Mariupol; Mariupol',UKR,363415
+13756,Severodonetsk; Sivers'kodonets'k; Siverskodonetsk,UKR,84490
+13760,Zaporizhzhia; Zaporozh'ye,UKR,624951
+13763,Melitopol; Melitopol',UKR,111892
+13765,Tokmak,UKR,
+13767,Khar'kov; Kharkiv,UKR,1284380
+13768,Kharkiv International Airport; Mezhdunarodnyy Aeroport Khar'kov; Mizhnarodnyy Aeroport Kharkiv,UKR,
+13774,Kryvoy Rog; Kryvyi Rih,UKR,471275
+13779,Dnipro; Dnipropetrovsk,UKR,761540
+13782,Mykolaiv; Mykolayiv; Nikolayev,UKR,412070
+13785,Slavyansk; Slov'yans'k; Slovyansk,UKR,91074
+13786,Kramators'k; Kramatorsk,UKR,99066
+13787,Konstantinovka; Kostyantynivka,UKR,
+13797,Odesa; Odessa,UKR,977813
+13798,Mezhdunarodnyy Aeroport Odessa; Mizhnarodnyy Aeroport Odesa; Odesa International Airport,UKR,
+13799,Belgorod-Dnestrovskiy; Bilhorod-Dnistrovs'kyy; Bilhorod-Dnistrovsky,UKR,
+13802,Vinnytsia,UKR,355789
+13805,Luts'k; Lutsk; Łuck,UKR,201606
+13808,Chernigov; Chernihiv,UKR,223890
+13811,Gostomel'; Hostomel; Hostomel',UKR,
+13815,Sumy,UKR,177433
+13818,Cherkassy; Cherkasy,UKR,233431
+68,Rochester,USA,
+528,Eugene,USA,241885
+607,Albany,USA,99833
+610,Eureka,USA,
+638,Athens,USA,
+689,Toledo,USA,194259
+703,Rhinelander,USA,
+768,Redding,USA,
+860,Montgomery,USA,117537
+880,Butler,USA,
+882,Erie,USA,111537
+986,San Luis Obispo,USA,
+1132,Wilmington,USA,
+1352,Topeka,USA,
+1506,Roanoke,USA,
+1527,Peoria,USA,
+1559,Bastrop,USA,
+1587,Tuscaloosa,USA,
+1595,Fort Wayne,USA,108272
+1615,Hattiesburg,USA,
+1618,Muskogee,USA,
+1643,Lafayette,USA,
+1690,Spokane,USA,308681
+1734,Duluth,USA,
+1747,Rapid City,USA,
+1758,Chattanooga,USA,
+1793,Prescott,USA,
+1806,Tulsa,USA,434183
+1809,Colorado Springs,USA,445670
+1832,Sandpoint,USA,
+1836,Bismark,USA,
+1854,Whitefish,USA,
+1867,Marshall,USA,
+1913,Fort Myers,USA,
+1915,Abilene,USA,62024
+1998,Midland,USA,88806
+2019,Bandera,USA,
+3513,Salem,USA,228920
+3710,Worcester,USA,134217
+3712,Concord,USA,285553
+3719,Fargo,USA,131027
+3732,Portland,USA,
+3747,Oswego,USA,
+3823,Charlottesville,USA,
+3847,York,USA,72506
+3878,JFK International Airport,USA,
+3957,Washington,USA,3471725
+4029,Eau Claire,USA,
+4274,Bend,USA,
+4442,Youngstown,USA,
+4540,Sikeston,USA,
+4569,St. Louis,USA,797220
+4607,Carson City,USA,
+4610,Buffalo,USA,
+4625,Jonesboro,USA,
+4653,Greeneville,USA,
+4664,Rochester,USA,
+4723,Cheyenne,USA,
+4727,Blythe,USA,
+4747,Richland,USA,
+4749,Scottsbluff,USA,
+4759,Williston,USA,
+4778,Moscow,USA,
+4854,Marquette,USA,
+4857,Billings,USA,80942
+4955,Odessa,USA,84419
+4988,Bowling Green,USA,
+5022,Waco,USA,52607
+5059,Huntsville,USA,100172
+6694,Modesto,USA,334845
+6710,Detroit,USA,1918653
+6732,Boston,USA,1669310
+6742,Missoula,USA,
+6769,Lansing,USA,111165
+6785,Corpus Christi,USA,239777
+6845,Philadelphia,USA,2286396
+6882,Newark,USA,
+6887,Grand Junction,USA,78680
+6890,Cleveland,USA,722540
+6929,Hagerstown,USA,
+6971,Charleston,USA,
+6984,Frederick,USA,
+7195,Kahului,USA,51668
+7306,Cedar Rapids,USA,55742
+7420,Traverse City,USA,
+7462,Augusta,USA,
+7466,Beckley,USA,
+7480,Mobile,USA,93512
+7551,Lafayette,USA,
+7607,Columbia,USA,
+7629,Burlington,USA,
+7643,Asheville,USA,
+7668,Biloxi,USA,
+7756,Elko,USA,
+7831,Carbondale,USA,
+7852,Grand Island,USA,
+7862,Aberdeen,USA,
+7986,El Centro,USA,
+7999,Durango,USA,
+8070,Roswell,USA,
+9450,Chicago,USA,5318735
+9637,Monterey,USA,
+9654,South Bend,USA,109857
+9671,San Francisco,USA,4718349
+9697,Chico,USA,91702
+9730,Fort Bragg,USA,
+9773,Lubbock,USA,178647
+9786,Dover,USA,
+9814,Los Angeles International Airport,USA,
+9820,Scranton,USA,74951
+9832,New London,USA,
+9908,Amarillo,USA,138829
+9923,Morgantown,USA,
+10081,Greensboro,USA,147671
+10155,Yakima,USA,100894
+10159,Alturas,USA,
+10303,Alpena,USA,
+10352,Pensacola,USA,
+10370,Springfield,USA,
+10407,Tallahassee,USA,80597
+10422,Reno,USA,233376
+10457,Springfield,USA,
+10477,Conway,USA,
+10478,Davenport,USA,88647
+10492,Macon,USA,
+10532,Hays,USA,
+10586,Paducah,USA,
+10657,Knoxville,USA,
+10676,Lincoln,USA,226804
+10690,Kennewick,USA,129729
+10706,Glendive,USA,
+10711,Casper,USA,
+10717,Kansas City,USA,398610
+10778,Tyler,USA,
+11635,Evansville,USA,67985
+11650,Elmira,USA,
+11656,Ann Arbor,USA,75954
+11662,Plattsburgh,USA,
+11669,Flint,USA,
+11717,Tupelo,USA,
+11785,Harrisburg,USA,81707
+11927,Myrtle Beach,USA,
+11975,Savannah,USA,115676
+12021,Hilo,USA,
+12054,Fayetteville,USA,
+12312,Rockford,USA,151022
+12401,Shreveport,USA,
+12437,Bloomington,USA,56286
+12459,Bangor,USA,
+12498,Columbus,USA,
+12535,Pocatello,USA,
+12553,Baker City,USA,
+12585,Bozeman,USA,
+12627,Pueblo,USA,
+12633,Rock Springs,USA,
+12637,Pikeville,USA,
+12646,Sioux City,USA,
+12667,Sioux Falls,USA,79285
+12670,Clarksville,USA,
+12684,Santa Fe,USA,
+12699,St. George,USA,
+12765,Flagstaff,USA,
+12778,Fort Smith,USA,
+12791,Las Cruces,USA,61230
+13293,Minneapolis,USA,
+13315,St. Paul,USA,
+13368,Fremont,USA,
+13369,San Jose,USA,
+13370,Sacramento,USA,1697184
+13374,Sacramento International Airport,USA,
+13375,Santa Barbara,USA,96521
+13376,San Diego,USA,1977279
+13378,Los Angeles,USA,13474333
+13381,San Bernardino,USA,
+13383,Las Vegas,USA,2371780
+13384,Henderson,USA,
+13386,Salt Lake City,USA,1108953
+13387,Provo,USA,534552
+13389,Ogden,USA,138934
+13390,Phoenix,USA,2608874
+13393,Phoenix-Mesa Gateway Airport,USA,
+13394,Tuscon,USA,
+13396,Portland,USA,
+13399,Vancouver,USA,
+13400,Seattle,USA,2099643
+13402,Tacoma,USA,330414
+13407,Albuquerque,USA,456285
+13408,Denver,USA,2425086
+13409,Lakewood,USA,
+13411,Denver International Airport,USA,
+13413,Boulder,USA,95315
+13415,Tampa,USA,709023
+13416,St. Petersburg,USA,
+13417,Clearwater,USA,
+13419,Miami,USA,5733042
+13421,Fort Lauderdale,USA,
+13422,West Palm Beach,USA,
+13423,Orlando,USA,1231650
+13427,Orlando International Airport,USA,
+13428,Jacksonville,USA,379643
+13430,Des Moines,USA,242765
+13438,Overland Park,USA,
+13439,Oklahoma City,USA,492130
+13444,League City,USA,
+13446,Houston,USA,4301461
+13451,Cypress,USA,
+13454,Dallas,USA,2577308
+13455,Fort Worth,USA,102173
+13456,Dallas Fort Worth International Airport,USA,
+13458,,USA,
+13465,Austin,USA,1580153
+13467,San Antonio,USA,1513874
+13471,New Orleans,USA,821135
+13473,Baton Rouge,USA,226126
+13474,Wilmington,USA,
+13478,Springfield,USA,
+13480,Yarmouth,USA,
+13481,Providence,USA,437121
+13483,Hartford,USA,187629
+13484,New Haven,USA,147121
+13485,Sikorsky Memorial Airport,USA,
+13488,Birmingham,USA,136700
+13490,,USA,
+13492,Nashville,USA,280464
+13495,Nashville International Airport,USA,
+13496,Memphis,USA,402281
+13499,Augusta,USA,
+13501,Atlanta,USA,602708
+13504,Marietta,USA,
+13507,Hartsfield-Jackson Atlanta International Airport,USA,
+13510,Charleston,USA,
+13513,Columbia,USA,
+13514,Charlotte,USA,229305
+13518,Raleigh,USA,152973
+13519,Durham,USA,
+13520,Milwaukee,USA,833927
+13521,Milwaukee Mitchell International Airport,USA,
+13528,Grand Rapids,USA,293006
+13537,Anchorage,USA,225128
+13538,Ted Stevens Anchorage International Airport,USA,
+13543,Gary,USA,
+13546,Naperville,USA,
+13549,Indianapolis,USA,418057
+13553,Louisville,USA,505690
+13557,Lexington,USA,295164
+13560,Cincinnati,USA,414286
+13562,Dayton,USA,153881
+13563,Akron,USA,119274
+13566,Columbus,USA,
+13569,Green Bay,USA,95228
+13570,Alexandria,USA,
+13571,Dulles International Airport,USA,
+13572,Richmond,USA,151924
+13575,Newport News,USA,97456
+13576,Norfolk,USA,622410
+13579,Baltimore,USA,1127338
+13589,Toms River,USA,
+13593,Pittsburgh,USA,490508
+13601,New York City,USA,14197659
+13602,Buffalo,USA,
+13754,Madison,USA,147384
+13842,Trenton,USA,179668
+13901,Syracuse,USA,155391
+13972,Appleton,USA,74931
+14203,Kenosha,USA,77138
+14459,Fresno,USA,747154
+14462,Bakersfield,USA,644121
+14464,Stockton,USA,408517
+14469,Boise,USA,348689
+14471,Honolulu,USA,541957
+14472,San Juan,USA,
+14476,New Braunfels,USA,
+14482,El Paso,USA,639026
+14483,Wichita,USA,238760
+14485,Omaha,USA,368050
+14488,Little Rock,USA,81252
+14491,Jackson,USA,
+14122,Città del Vaticano; Vatican City,VCY,
+1920,'Amrān; Amram,YEM,176305
+5074,Ja'ar; Ja'ār,YEM,87954
+10840,Dhamar; Dhamār,YEM,337585
+12821,'Atāq; Ataq,YEM,50785
+15815,Al-Mukalla; Al-Mukallā,YEM,
+15816,Say'ūn; Seiyun,YEM,129910
+15819,'Adan; Aden,YEM,497379
+15823,Al-Marhinah,YEM,
+15824,Sa'dah; Ṣa'dah,YEM,159979
+15826,Al-Hudaydah; Al-Ḥudaydah,YEM,
+15827,Ta'izz; Taiz,YEM,1284739
+15828,Bajil; Bājil,YEM,177176
+15830,Sana'a; Ṣan'ā',YEM,3759520
+15833,Maṭār Ṣan'ā' Al-Dawli; Sana'a International Airport,YEM,
+15835,Rada'a; Radā',YEM,136799
+15836,Ibb,YEM,843581
+7887,Red Deer,ZZZ,
