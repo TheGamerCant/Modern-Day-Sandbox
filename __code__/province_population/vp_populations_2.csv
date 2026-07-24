@@ -194,7 +194,7 @@
 743,Bayonne,FRA,89012,2025
 744,Suceava,ROM,89152,2025
 746,Satu Mare; Szatmárnémeti,ROM,79655,2025
-749,Niagra Falls,CAN,75875,2025
+749,Niagra Falls,CAN,,
 750,Yeysk,SOV,58632,2025
 758,Santiago de Compostela,SPA,100842,2025
 759,Yashkul; Yashkul',SOV,,
@@ -367,7 +367,7 @@
 1514,Katherene,AUS,,
 1517,Jañaözen; Zhanaozen,KAZ,168146,2025
 1527,Peoria,USA,259781,2020
-1536,Shirvan; Şirvan,AZJ,,
+1536,Shirvan; Şirvan,AZJ,100905,2025
 1538,Kendujhar; Keonjhar,IND,,
 1540,Geraldton,AUS,42104,2025
 1541,Sivān; Siwan,IND,292602,2025
@@ -825,7 +825,7 @@
 4435,Gantok; Gāntok,IND,132116,2025
 4441,Cairns,AUS,57591,2025
 4442,Youngstown,USA,320901,2020
-4458,Khachmaz; Xaçmaz,AZJ,,
+4458,Khachmaz; Xaçmaz,AZJ,66906,2025
 4459,Betiyā; Bettiah,IND,589703,2025
 4462,Mackay,AUS,89761,2025
 4476,Camagüey,CUB,286045,2025
@@ -1220,7 +1220,7 @@
 6984,Frederick,USA,176456,2020
 6989,Arsen'yev; Arsenyev,SOV,,
 6990,Serres; Sérrai,GRC,,
-6997,Nakhchivan; Nakhchyvan; Nakhch’yvan; Naxçıvan,AZJ,,
+6997,Nakhchivan; Nakhchyvan; Nakhch’yvan; Naxçıvan,AZJ,175331,2025
 6999,Chongqing; Chóngqìng,PRC,8449690,2025
 7004,Dayu; Dàyú,PRC,80228,2025
 7005,Gabès; Qābis,TUN,177608,2025
@@ -1358,7 +1358,7 @@
 7643,Asheville,USA,285776,2020
 7651,Rockhampton,AUS,83508,2025
 7660,La Romana,DMR,248412,2025
-7661,Baku; Bakı,AZJ,,
+7661,Baku; Bakı,AZJ,1973054,2025
 7662,Chapai Nawabganj; Cāṁpāi Nabābgañj,BAN,785704,2025
 7668,Biloxi,USA,,
 7672,Birobidzhan,SOV,,
@@ -2107,7 +2107,7 @@
 11662,Plattsburgh,USA,28958,2020
 11669,Flint,USA,298964,2020
 11673,Braga,POR,93376,2025
-11674,Gandzha; Ganja; Gəncə,AZJ,,
+11674,Gandzha; Ganja; Gəncə,AZJ,399696,2025
 11676,Baia Mare; Nagybánya,ROM,100934,2025
 11678,Nevinnomyssk,SOV,103094,2025
 11686,Căușeni; Kaushany,MLD,13458,2024
@@ -2307,7 +2307,7 @@
 12423,Sunamganj; Sunāmgañj,BAN,248062,2025
 12424,Moranbah,AUS,,
 12427,Zyrian; Zyryanovsk,KAZ,,
-12434,Cəlilabad; Dzhalil'abad; Jalilabad,AZJ,,
+12434,Cəlilabad; Dzhalil'abad; Jalilabad,AZJ,69331,2025
 12437,Bloomington,USA,56286,2025
 12441,Gyumri,ARM,84760,2025
 12446,Yuzhno-Sakhalinsk,SOV,106912,2025

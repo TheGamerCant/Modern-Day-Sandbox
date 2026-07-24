@@ -33,7 +33,6 @@ MANUAL_NAME_ALIASES: dict[str, str] = {
     "Bordj Bou Arréridj": "Bordj Bou Arreridjj",
     "Chapai Nawabganj": "Chapainawabganj",
     "Kaiserslauten": "Kaiserslautern",
-    "Niagra Falls": "Niagara Falls",
     "Saarbrücken": "Saarbruecken",
     "Bhubaneswar": "Bhubaneshwar",
     "Chapayevsk": "Chapaevsk",
