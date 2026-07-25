@@ -306,6 +306,17 @@ _CHINA_PREFECTURE_TO_PROVINCE: dict[str, str] = {
     "tibet": "xizang", "bejing": "beijing",
 }
 
+# Mod-State names for Russia (owner SOV) vs the `Oblast` column in
+# russia_citypopulation.csv — spelling variants and a couple of alt names.
+_RUSSIA_OBLAST_ALIASES: dict[str, str] = {
+    "altai": "altaj", "altai krai": "altajkrai",
+    "arkhangelsk": "archangelsk", "irkutsk": "irkustsk",
+    "mari el": "mari-el", "mordoviya": "mordovia", "moskva": "moscow",
+    "udmurtia": "udmurtiya",
+    "konigsberg": "kaliningrad", "karaliaucius": "kaliningrad", "krolewiec": "kaliningrad",
+    "norilsk": "krasnoyarsk", "kuril islands": "sakhalin",
+}
+
 
 def LoadEuData() -> DataFrame:
     """Primary source of truth: the hand-curated EU_data regional CSVs
@@ -340,6 +351,13 @@ def LoadChinaData() -> DataFrame:
     china_df = china_df.dropna(subset=["population"])
     china_df["population"] = china_df["population"].round().astype(int)
     return china_df
+
+
+def LoadRussiaData() -> DataFrame:
+    """Russian cities scraped per-oblast (columns Name, country, population,
+    Oblast, date) — the `Oblast` column disambiguates same-named cities."""
+    data_file: Path = Path.cwd() / "russia_citypopulation.csv"
+    return pd.read_csv(data_file)
 
 
 def BuildPopulationLookup(
@@ -480,66 +498,83 @@ def LinkPopulations(
 
     return prov_id_to_result
 
-def LinkChineseProvinces(
+def LinkProvincesByState(
     provinces_list: list[Province],
     states_list: list[State],
-    china_df: DataFrame,
+    data_df: DataFrame,
     prov_id_to_result: dict[int, tuple[int, int | None]],
+    *,
+    owner_tag: str,
+    name_column: str,
+    population_column: str,
+    state_column: str,
+    date_column: str,
+    state_aliases: dict[str, str],
+    allow_unique_fallback: bool,
 ) -> int:
-    """Fill still-empty PRC provinces from china_citypopulation.csv.
+    """Fill still-empty provinces of one owner from a per-sub-state scrape.
 
-    Chinese city names collide heavily across provinces, so this uses the mod's
-    State name (a Chinese province, or a prefecture mapped to one) to pick the
-    right city when a name is ambiguous. A name that resolves to a single
-    province is taken directly. Only provinces with no existing result are
-    touched. Returns how many were filled; also sets Province.population."""
-    # Expanded name -> list of (chinese state, population, year).
-    china_index: dict[str, set[tuple[str, int, int | None]]] = {}
-    china_provinces: set[str] = set()
-    for city, state, population, reference_date in zip(
-        china_df["city"], china_df["state"], china_df["population"], china_df["reference_date"]
+    Cities in big countries collide heavily by name (China provinces, Russian
+    oblasts), so this uses the mod's State name — mapped through ``state_aliases``
+    to the data's sub-state value — to pick the right city when a name is
+    ambiguous. Matching priority:
+
+    1. state-verified: a candidate whose sub-state is one of the province's.
+    2. if the province's sub-state IS known but no candidate sits in it, skip
+       (a same-named city elsewhere would be the wrong match).
+    3. else, only if ``allow_unique_fallback``, take an unambiguous name.
+
+    ``allow_unique_fallback`` should be False when the owner spans several
+    countries (e.g. SOV = the whole USSR) so a Russian city can't be pinned onto
+    a same-named Belarusian/Kazakh province. Only empties are touched. Returns
+    the number filled; also sets Province.population."""
+    # Expanded name -> {(sub-state, population, year)}.
+    index: dict[str, set[tuple[str, int, int | None]]] = {}
+    known_states: set[str] = set()
+    for name, state, population, date in zip(
+        data_df[name_column], data_df[state_column],
+        data_df[population_column], data_df[date_column],
     ):
+        if pd.isna(population):
+            continue
+        try:
+            population_value = int(float(str(population).replace(",", "").replace(" ", "")))
+        except ValueError:
+            continue  # placeholder like "..."
         normalized_state = NormalizeName(str(state))
-        china_provinces.add(normalized_state)
-        year = _extract_year(reference_date)
-        primary_names, alternate_names = _expand_city_variants(str(city))
-        for name in primary_names | alternate_names:
-            china_index.setdefault(name, set()).add((normalized_state, int(population), year))
+        known_states.add(normalized_state)
+        year = _extract_year(date)
+        primary_names, alternate_names = _expand_city_variants(str(name))
+        for variant in primary_names | alternate_names:
+            index.setdefault(variant, set()).add((normalized_state, population_value, year))
 
     filled = 0
     for province in provinces_list:
-        if states_list[province.state_id].owner != "PRC":
+        if states_list[province.state_id].owner != owner_tag:
             continue
         if province.prov_id in prov_id_to_result:
             continue  # only fill empties
 
-        # The province's Chinese state(s), prefectures mapped to their province.
         province_states = {
-            _CHINA_PREFECTURE_TO_PROVINCE.get(NormalizeName(name), NormalizeName(name))
+            state_aliases.get(NormalizeName(name), NormalizeName(name))
             for name in states_list[province.state_id].names
         }
 
         candidates: set[tuple[str, int, int | None]] = set()
         for name in province.names:
-            candidates |= china_index.get(NormalizeName(name), set())
+            candidates |= index.get(NormalizeName(name), set())
         if not candidates:
             continue
 
         in_state = [entry for entry in candidates if entry[0] in province_states]
         if in_state:
-            # State-verified — the safest match.
             chosen = max(in_state, key=lambda entry: entry[1])
-        elif province_states & china_provinces:
-            # The province's real Chinese state is known but no candidate sits
-            # in it — so a same-named city elsewhere would be the WRONG match
-            # (e.g. Binhai/Tianjin vs Binhai/Jiangsu). Leave it empty.
-            continue
-        elif len({state for state, _, _ in candidates}) == 1:
-            # State unknown (e.g. an unmapped prefecture) but the name is
-            # unambiguous across the data — safe to take.
+        elif province_states & known_states:
+            continue  # real sub-state known but no candidate there -> wrong match
+        elif allow_unique_fallback and len({state for state, _, _ in candidates}) == 1:
             chosen = max(candidates, key=lambda entry: entry[1])
         else:
-            continue  # ambiguous and unresolvable
+            continue
 
         _, population, year = chosen
         province.population = population
@@ -630,11 +665,23 @@ def main():
         provinces_list, states_list, primary_lookup, fallback_lookup, duplicate_provinces
     )
 
-    # Fill still-empty Chinese provinces from the per-province China scrape,
-    # using the mod-State name to disambiguate same-named cities.
-    china_df: DataFrame = LoadChinaData()
-    china_filled = LinkChineseProvinces(provinces_list, states_list, china_df, prov_id_to_result)
-    print(f"China pass filled {china_filled} more PRC provinces.")
+    # Fill still-empty provinces from the per-sub-state scrapes, using the
+    # mod-State name to disambiguate same-named cities. China (PRC) is a single
+    # country so an unambiguous name is safe; Russia sits under SOV alongside
+    # other republics, so require a verified oblast (no unique-name fallback).
+    china_filled = LinkProvincesByState(
+        provinces_list, states_list, LoadChinaData(), prov_id_to_result,
+        owner_tag="PRC", name_column="city", population_column="population",
+        state_column="state", date_column="reference_date",
+        state_aliases=_CHINA_PREFECTURE_TO_PROVINCE, allow_unique_fallback=True,
+    )
+    russia_filled = LinkProvincesByState(
+        provinces_list, states_list, LoadRussiaData(), prov_id_to_result,
+        owner_tag="SOV", name_column="Name", population_column="population",
+        state_column="Oblast", date_column="date",
+        state_aliases=_RUSSIA_OBLAST_ALIASES, allow_unique_fallback=False,
+    )
+    print(f"Province-aware passes filled {china_filled} PRC + {russia_filled} SOV (Russia) provinces.")
 
     year_counts = Counter(year for _, year in prov_id_to_result.values())
     year_summary = ", ".join(
