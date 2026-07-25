@@ -2221,22 +2221,17 @@ TDA_update_state_89_names = {
 			reset_state_name = yes
 		}
 	}
-	#Sheptyts'kyy
+	#Chervonograd
 	if = {
-		limit = { any_country = { controls_province = 536 TAG_using_ukrainian_names = yes } }
+		limit = { any_country = { controls_province = 536 TAG_using_russian_names = yes } }
 		set_province_name = { id = 536 name = VICTORY_POINTS_536_0 }
 	}
-	#Sheptitskiy
-	else_if = {
-		limit = { any_country = { controls_province = 536 TAG_using_russian_names = yes } }
-		set_province_name = { id = 536 name = VICTORY_POINTS_536_1 }
-	}
-	#Szeptycki
+	#Czerwonogród
 	else_if = {
 		limit = { any_country = { controls_province = 536 TAG_using_polish_names = yes } }
-		set_province_name = { id = 536 name = VICTORY_POINTS_536_2 }
+		set_province_name = { id = 536 name = VICTORY_POINTS_536_1 }
 	}
-	#Sheptytskyi
+	#Chervonohrad
 	else = {
 		reset_province_name = 536
 	}
@@ -4041,6 +4036,15 @@ TDA_update_state_197_names = {
 			reset_state_name = yes
 		}
 	}
+	#Noviy Bug
+	if = {
+		limit = { any_country = { controls_province = 574 TAG_using_russian_names = yes } }
+		set_province_name = { id = 574 name = VICTORY_POINTS_574_0 }
+	}
+	#Novyi Buh
+	else = {
+		reset_province_name = 574
+	}
 	#Ochakov
 	if = {
 		limit = { any_country = { controls_province = 3738 TAG_using_russian_names = yes } }
@@ -4196,6 +4200,20 @@ TDA_update_state_200_names = {
 
 #Zhytomyr
 TDA_update_state_201_names = {
+	#Novohrad-Volyns'kiy
+	if = {
+		limit = { any_country = { controls_province = 3470 TAG_using_ukrainian_names = yes } }
+		set_province_name = { id = 3470 name = VICTORY_POINTS_3470_0 }
+	}
+	#Novograd-Volynskiy
+	else_if = {
+		limit = { any_country = { controls_province = 3470 TAG_using_russian_names = yes } }
+		set_province_name = { id = 3470 name = VICTORY_POINTS_3470_1 }
+	}
+	#Novohrad-Volynskyi
+	else = {
+		reset_province_name = 3470
+	}
 }
 
 #Kyiv
@@ -4228,17 +4246,17 @@ TDA_update_state_202_names = {
 	else = {
 		reset_province_name = 525
 	}
-	#Hostomel'
+	#Irpin'
 	if = {
 		limit = { any_country = { controls_province = 13811 TAG_using_ukrainian_names = yes } }
 		set_province_name = { id = 13811 name = VICTORY_POINTS_13811_0 }
 	}
-	#Gostomel'
+	#Irpen'
 	else_if = {
 		limit = { any_country = { controls_province = 13811 TAG_using_russian_names = yes } }
 		set_province_name = { id = 13811 name = VICTORY_POINTS_13811_1 }
 	}
-	#Hostomel
+	#Irpin
 	else = {
 		reset_province_name = 13811
 	}
@@ -12847,12 +12865,12 @@ TDA_update_state_590_names = {
 
 #Hainan
 TDA_update_state_591_names = {
-	#Nàdà
+	#Língāo
 	if = {
 		limit = { any_country = { controls_province = 1038 TAG_using_chinese_names = yes } }
 		set_province_name = { id = 1038 name = VICTORY_POINTS_1038_0 }
 	}
-	#Nada
+	#Lingao
 	else = {
 		reset_province_name = 1038
 	}
@@ -12865,12 +12883,12 @@ TDA_update_state_591_names = {
 	else = {
 		reset_province_name = 1070
 	}
-	#Bāsuǒ
+	#Dōngfāng
 	if = {
 		limit = { any_country = { controls_province = 11963 TAG_using_chinese_names = yes } }
 		set_province_name = { id = 11963 name = VICTORY_POINTS_11963_0 }
 	}
-	#Basuo
+	#Dongfang
 	else = {
 		reset_province_name = 11963
 	}
@@ -16654,17 +16672,17 @@ TDA_update_state_617_names = {
 	}
 	#Wūlǔmùqí
 	if = {
-		limit = { any_country = { controls_province = 14666 TAG_using_chinese_names = yes } }
-		set_province_name = { id = 14666 name = VICTORY_POINTS_14666_0 }
+		limit = { any_country = { controls_province = 14667 TAG_using_chinese_names = yes } }
+		set_province_name = { id = 14667 name = VICTORY_POINTS_14667_0 }
 	}
 	#Ürümchi
 	else_if = {
-		limit = { any_country = { controls_province = 14666 TAG_using_uyghur_names = yes } }
-		set_province_name = { id = 14666 name = VICTORY_POINTS_14666_1 }
+		limit = { any_country = { controls_province = 14667 TAG_using_uyghur_names = yes } }
+		set_province_name = { id = 14667 name = VICTORY_POINTS_14667_1 }
 	}
 	#Ürümqi
 	else = {
-		reset_province_name = 14666
+		reset_province_name = 14667
 	}
 	#Wūlǔmùqí Tiānshān Guójìjīchǎng
 	if = {
@@ -21998,12 +22016,12 @@ TDA_update_state_920_names = {
 	else = {
 		reset_province_name = 2013
 	}
-	#Dayr az-Zawr
+	#Gharānīj
 	if = {
 		limit = { any_country = { controls_province = 15458 TAG_using_arab_names = yes } }
 		set_province_name = { id = 15458 name = VICTORY_POINTS_15458_0 }
 	}
-	#Deir ez-Zur
+	#Gharanij
 	else = {
 		reset_province_name = 15458
 	}
