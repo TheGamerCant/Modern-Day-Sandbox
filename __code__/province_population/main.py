@@ -290,6 +290,23 @@ _COUNTRY_ALIASES: dict[str, str] = {
     "Uk": "United Kingdom",
 }
 
+# Mod-States for China are usually named after the Chinese province (which
+# matches china_citypopulation.csv's `state` column), but some are prefectures.
+# Map those prefectures to their province so the `state` disambiguation works.
+_CHINA_PREFECTURE_TO_PROVINCE: dict[str, str] = {
+    "chifeng": "neimenggu", "hohhot": "neimenggu", "huhehaote": "neimenggu",
+    "kokeqota": "neimenggu", "hulunbeier": "neimenggu", "hulunbuir": "neimenggu",
+    "kolon buyir": "neimenggu", "alxa": "neimenggu", "alashan": "neimenggu",
+    "alasa ayimay": "neimenggu", "xilingol": "neimenggu", "xilinguole": "neimenggu",
+    "sili-yin yool": "neimenggu", "ulaganqada": "neimenggu",
+    "kashgar": "xinjiang", "kashi": "xinjiang", "qeshqer": "xinjiang",
+    "urumqi": "xinjiang", "urumchi": "xinjiang", "wulumuqi": "xinjiang",
+    "shijiazhuang": "hebei", "tangshan": "hebei", "zhangjiakou": "hebei",
+    "harbin": "heilongjiang", "haerbin": "heilongjiang",
+    "tibet": "xizang", "bejing": "beijing",
+}
+
+
 def LoadEuData() -> DataFrame:
     """Primary source of truth: the hand-curated EU_data regional CSVs
     (columns City, Country, Population (2025))."""
@@ -313,6 +330,16 @@ def _extract_year(value: Any) -> int | None:
     """Pull a 4-digit year out of a value (a date string, column name, etc.)."""
     match = re.search(r"\d{4}", str(value))
     return int(match.group(0)) if match else None
+
+
+def LoadChinaData() -> DataFrame:
+    """China cities scraped per-province (columns city, country, population,
+    reference_date, state) — carries a `state` column for disambiguation."""
+    data_file: Path = Path.cwd() / "china_citypopulation.csv"
+    china_df: DataFrame = pd.read_csv(data_file)
+    china_df = china_df.dropna(subset=["population"])
+    china_df["population"] = china_df["population"].round().astype(int)
+    return china_df
 
 
 def BuildPopulationLookup(
@@ -453,6 +480,75 @@ def LinkPopulations(
 
     return prov_id_to_result
 
+def LinkChineseProvinces(
+    provinces_list: list[Province],
+    states_list: list[State],
+    china_df: DataFrame,
+    prov_id_to_result: dict[int, tuple[int, int | None]],
+) -> int:
+    """Fill still-empty PRC provinces from china_citypopulation.csv.
+
+    Chinese city names collide heavily across provinces, so this uses the mod's
+    State name (a Chinese province, or a prefecture mapped to one) to pick the
+    right city when a name is ambiguous. A name that resolves to a single
+    province is taken directly. Only provinces with no existing result are
+    touched. Returns how many were filled; also sets Province.population."""
+    # Expanded name -> list of (chinese state, population, year).
+    china_index: dict[str, set[tuple[str, int, int | None]]] = {}
+    china_provinces: set[str] = set()
+    for city, state, population, reference_date in zip(
+        china_df["city"], china_df["state"], china_df["population"], china_df["reference_date"]
+    ):
+        normalized_state = NormalizeName(str(state))
+        china_provinces.add(normalized_state)
+        year = _extract_year(reference_date)
+        primary_names, alternate_names = _expand_city_variants(str(city))
+        for name in primary_names | alternate_names:
+            china_index.setdefault(name, set()).add((normalized_state, int(population), year))
+
+    filled = 0
+    for province in provinces_list:
+        if states_list[province.state_id].owner != "PRC":
+            continue
+        if province.prov_id in prov_id_to_result:
+            continue  # only fill empties
+
+        # The province's Chinese state(s), prefectures mapped to their province.
+        province_states = {
+            _CHINA_PREFECTURE_TO_PROVINCE.get(NormalizeName(name), NormalizeName(name))
+            for name in states_list[province.state_id].names
+        }
+
+        candidates: set[tuple[str, int, int | None]] = set()
+        for name in province.names:
+            candidates |= china_index.get(NormalizeName(name), set())
+        if not candidates:
+            continue
+
+        in_state = [entry for entry in candidates if entry[0] in province_states]
+        if in_state:
+            # State-verified — the safest match.
+            chosen = max(in_state, key=lambda entry: entry[1])
+        elif province_states & china_provinces:
+            # The province's real Chinese state is known but no candidate sits
+            # in it — so a same-named city elsewhere would be the WRONG match
+            # (e.g. Binhai/Tianjin vs Binhai/Jiangsu). Leave it empty.
+            continue
+        elif len({state for state, _, _ in candidates}) == 1:
+            # State unknown (e.g. an unmapped prefecture) but the name is
+            # unambiguous across the data — safe to take.
+            chosen = max(candidates, key=lambda entry: entry[1])
+        else:
+            continue  # ambiguous and unresolvable
+
+        _, population, year = chosen
+        province.population = population
+        prov_id_to_result[province.prov_id] = (population, year)
+        filled += 1
+
+    return filled
+
+
 def WritePopulationCsv(
     provinces_list: list[Province],
     states_list: list[State],
@@ -533,6 +629,12 @@ def main():
     prov_id_to_result: dict[int, tuple[int, int | None]] = LinkPopulations(
         provinces_list, states_list, primary_lookup, fallback_lookup, duplicate_provinces
     )
+
+    # Fill still-empty Chinese provinces from the per-province China scrape,
+    # using the mod-State name to disambiguate same-named cities.
+    china_df: DataFrame = LoadChinaData()
+    china_filled = LinkChineseProvinces(provinces_list, states_list, china_df, prov_id_to_result)
+    print(f"China pass filled {china_filled} more PRC provinces.")
 
     year_counts = Counter(year for _, year in prov_id_to_result.values())
     year_summary = ", ".join(
