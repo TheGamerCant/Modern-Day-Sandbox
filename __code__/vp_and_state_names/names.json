@@ -10547,20 +10547,16 @@
 		},
 		{
 			"id": 536,
-			"default_name": "Sheptytskyi",
+			"default_name": "Chervonohrad",
 			"comment": "",
 			"custom_names": [
 				{
-					"requirements": "TAG_using_ukrainian_names = yes",
-					"name": "Sheptyts'kyy"
-				},
-				{
 					"requirements": "TAG_using_russian_names = yes",
-					"name": "Sheptitskiy"
+					"name": "Chervonograd"
 				},
 				{
 					"requirements": "TAG_using_polish_names = yes",
-					"name": "Szeptycki"
+					"name": "Czerwonogród"
 				}
 			]
 		},
@@ -11121,9 +11117,14 @@
 		},
 		{
 			"id": 574,
-			"default_name": "Kazanka",
+			"default_name": "Novyi Buh",
 			"comment": "",
-			"custom_names": []
+			"custom_names": [
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Noviy Bug"
+				}
+			]
 		},
 		{
 			"id": 13785,
@@ -11365,9 +11366,18 @@
 		},
 		{
 			"id": 3470,
-			"default_name": "Zviahel",
+			"default_name": "Novohrad-Volynskyi",
 			"comment": "",
-			"custom_names": []
+			"custom_names": [
+				{
+					"requirements": "TAG_using_ukrainian_names = yes",
+					"name": "Novohrad-Volyns'kiy"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Novograd-Volynskiy"
+				}
+			]
 		},
 		{
 			"id": 511,
@@ -11460,16 +11470,16 @@
 		},
 		{
 			"id": 13811,
-			"default_name": "Hostomel",
+			"default_name": "Irpin",
 			"comment": "",
 			"custom_names": [
 				{
 					"requirements": "TAG_using_ukrainian_names = yes",
-					"name": "Hostomel'"
+					"name": "Irpin'"
 				},
 				{
 					"requirements": "TAG_using_russian_names = yes",
-					"name": "Gostomel'"
+					"name": "Irpen'"
 				}
 			]
 		},
@@ -15613,12 +15623,6 @@
 			"custom_names": []
 		},
 		{
-			"id": 3963,
-			"default_name": "Lidoga",
-			"comment": "",
-			"custom_names": []
-		},
-		{
 			"id": 7672,
 			"default_name": "Birobidzhan",
 			"comment": "",
@@ -15756,7 +15760,7 @@
 		},
 		{
 			"id": 4766,
-			"default_name": "Khyagt",
+			"default_name": "Khyagta",
 			"comment": "",
 			"custom_names": []
 		},
@@ -16314,7 +16318,7 @@
 		},
 		{
 			"id": 3431,
-			"default_name": "Veshenskaya",
+			"default_name": "Vyoshenskaya",
 			"comment": "",
 			"custom_names": []
 		},
@@ -16332,7 +16336,7 @@
 		},
 		{
 			"id": 3587,
-			"default_name": "Egorlykskaya",
+			"default_name": "Yegorlykskaya",
 			"comment": "",
 			"custom_names": []
 		},
@@ -18222,7 +18226,7 @@
 		},
 		{
 			"id": 6253,
-			"default_name": "Vurnary",
+			"default_name": "Shumerlya",
 			"comment": "",
 			"custom_names": []
 		},
@@ -31280,7 +31284,7 @@
 		},
 		{
 			"id": 4859,
-			"default_name": "Svetlogorsk",
+			"default_name": "Igarka",
 			"comment": "",
 			"custom_names": []
 		},
@@ -32403,7 +32407,7 @@
 		},
 		{
 			"id": 904,
-			"default_name": "Ereğli",
+			"default_name": "Karadeniz Ereğli",
 			"comment": "",
 			"custom_names": []
 		},
@@ -33479,6 +33483,17 @@
 				{
 					"requirements": "TAG_using_arab_names = yes",
 					"name": "Dayr az-Zawr"
+				}
+			]
+		},
+		{
+			"id": 15458,
+			"default_name": "Gharanij",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_arab_names = yes",
+					"name": "Gharānīj"
 				}
 			]
 		},
