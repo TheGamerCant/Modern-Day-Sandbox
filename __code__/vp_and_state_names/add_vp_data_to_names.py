@@ -8,6 +8,10 @@ names.json matched by id == prov_id:
 * if the row has victory_points, sets
       entry["victory_points"] = <int>
 
+It also links every victory_point_names entry to map/definition.csv (matched by
+id == province id) and sets
+      entry["terrain"] = <terrain>   # e.g. plains / forest / urban / ocean
+
 Rows are matched on the numeric id; state_names is left untouched. Re-running is
 idempotent (it overwrites the same keys rather than duplicating them).
 """
@@ -22,6 +26,8 @@ from typing import Any
 SCRIPT_DIR = Path(__file__).resolve().parent
 NAMES_JSON = SCRIPT_DIR / "names.json"
 VP_POPS_CSV = SCRIPT_DIR.parent / "province_population" / "vp_pops.csv"
+# map/definition.csv lives at the mod root (two levels up from __code__/…).
+DEFINITION_CSV = SCRIPT_DIR.parent.parent / "map" / "definition.csv"
 
 
 def _to_int(value: str | None) -> int | None:
@@ -46,14 +52,36 @@ def load_vp_rows(csv_path: Path) -> dict[int, dict[str, str]]:
     return rows_by_prov_id
 
 
-def merge(names_path: Path, csv_path: Path) -> tuple[int, int]:
+def load_terrain(definition_path: Path) -> dict[int, str]:
+    """province id -> terrain, from map/definition.csv.
+
+    Format is `id;r;g;b;type;coastal;terrain;continent` (semicolon-separated),
+    so terrain is field index 6."""
+    terrain_by_id: dict[int, str] = {}
+    with open(definition_path, encoding="utf-8", newline="") as definition_file:
+        for line in definition_file:
+            fields = line.rstrip("\n").split(";")
+            if len(fields) > 6 and fields[0].isdigit():
+                terrain_by_id[int(fields[0])] = fields[6]
+    return terrain_by_id
+
+
+def merge(names_path: Path, csv_path: Path, definition_path: Path) -> dict[str, int]:
     data: dict[str, Any] = json.loads(names_path.read_text(encoding="utf-8"))
     vp_rows = load_vp_rows(csv_path)
+    terrain_by_id = load_terrain(definition_path)
 
-    populations_added = 0
-    victory_points_added = 0
+    counts = {"population": 0, "victory_points": 0, "terrain": 0}
     for entry in data.get("victory_point_names", []):
-        row = vp_rows.get(entry.get("id"))
+        province_id = entry.get("id")
+
+        # Terrain applies to every province, independent of the population CSV.
+        terrain = terrain_by_id.get(province_id)
+        if terrain is not None:
+            entry["terrain"] = terrain
+            counts["terrain"] += 1
+
+        row = vp_rows.get(province_id)
         if row is None:
             continue
 
@@ -65,25 +93,26 @@ def merge(names_path: Path, csv_path: Path) -> tuple[int, int]:
                 "population": population,
                 "year": year,
             }
-            populations_added += 1
+            counts["population"] += 1
 
         victory_points = _to_int(row.get("victory_points"))
         if victory_points is not None:
             entry["victory_points"] = victory_points
-            victory_points_added += 1
+            counts["victory_points"] += 1
 
     # ensure_ascii=False keeps accented names (Zürich, …) readable.
     names_path.write_text(
         json.dumps(data, indent=4, ensure_ascii=False) + "\n", encoding="utf-8"
     )
-    return populations_added, victory_points_added
+    return counts
 
 
 def main() -> None:
-    populations_added, victory_points_added = merge(NAMES_JSON, VP_POPS_CSV)
+    counts = merge(NAMES_JSON, VP_POPS_CSV, DEFINITION_CSV)
     print(
-        f"Added population objects to {populations_added} entries, "
-        f"victory_points to {victory_points_added} entries."
+        f"Added population to {counts['population']} entries, "
+        f"victory_points to {counts['victory_points']} entries, "
+        f"terrain to {counts['terrain']} entries."
     )
 
 
