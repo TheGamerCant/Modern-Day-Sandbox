@@ -12951,15 +12951,6 @@ TDA_update_state_592_names = {
 	else = {
 		reset_province_name = 4056
 	}
-	#Kyŏngsang
-	if = {
-		limit = { any_country = { controls_province = 4086 TAG_using_mr_korean_names = yes } }
-		set_province_name = { id = 4086 name = VICTORY_POINTS_4086_0 }
-	}
-	#Gyeongsang
-	else = {
-		reset_province_name = 4086
-	}
 	#Yŏngju
 	if = {
 		limit = { any_country = { controls_province = 4103 TAG_using_mr_korean_names = yes } }
@@ -22007,6 +21998,15 @@ TDA_update_state_920_names = {
 			reset_state_name = yes
 		}
 	}
+	#Gharānīj
+	if = {
+		limit = { any_country = { controls_province = 901 TAG_using_arab_names = yes } }
+		set_province_name = { id = 901 name = VICTORY_POINTS_901_0 }
+	}
+	#Gharanij
+	else = {
+		reset_province_name = 901
+	}
 	#Al-Mayādīn
 	if = {
 		limit = { any_country = { controls_province = 2013 TAG_using_arab_names = yes } }
@@ -22016,12 +22016,12 @@ TDA_update_state_920_names = {
 	else = {
 		reset_province_name = 2013
 	}
-	#Gharānīj
+	#Dayr az-Zawr
 	if = {
 		limit = { any_country = { controls_province = 15458 TAG_using_arab_names = yes } }
 		set_province_name = { id = 15458 name = VICTORY_POINTS_15458_0 }
 	}
-	#Gharanij
+	#Deir ez-Zur
 	else = {
 		reset_province_name = 15458
 	}
