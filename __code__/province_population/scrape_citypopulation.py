@@ -526,7 +526,10 @@ def main() -> None:
         "uganda/cities",
         "ukraine/cities",
 #        "usa/ua",
+        "oman/cities",
         "yemen",
+        "taiwan/cities"
+        "rwanda/cities"
     ]
     delay = 1.0
     output = "city_populations.csv"

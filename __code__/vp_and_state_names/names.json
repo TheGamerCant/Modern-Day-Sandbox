@@ -21135,7 +21135,7 @@
 			]
 		},
 		{
-			"id": 14666,
+			"id": 14667,
 			"default_name": "Ürümqi",
 			"comment": "",
 			"custom_names": [
@@ -21502,23 +21502,23 @@
 		},
 		{
 			"id": 1038,
-			"default_name": "Nada",
+			"default_name": "Lingao",
 			"comment": "",
 			"custom_names": [
 				{
 					"requirements": "TAG_using_chinese_names = yes",
-					"name": "Nàdà"
+					"name": "Língāo"
 				}
 			]
 		},
 		{
 			"id": 11963,
-			"default_name": "Basuo",
+			"default_name": "Dongfang",
 			"comment": "",
 			"custom_names": [
 				{
 					"requirements": "TAG_using_chinese_names = yes",
-					"name": "Bāsuǒ"
+					"name": "Dōngfāng"
 				}
 			]
 		},
@@ -29332,7 +29332,7 @@
 		},
 		{
 			"id": 15174,
-			"default_name": "Kulan",
+			"default_name": "Kostanay",
 			"comment": "",
 			"custom_names": [
 				{
@@ -31166,7 +31166,7 @@
 		},
 		{
 			"id": 5015,
-			"default_name": "San Fernando",
+			"default_name": "Río Bravo",
 			"comment": "",
 			"custom_names": []
 		},
@@ -31245,12 +31245,6 @@
 		{
 			"id": 10907,
 			"default_name": "Aguascalientes",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 12733,
-			"default_name": "Jesús María",
 			"comment": "",
 			"custom_names": []
 		},
@@ -35045,12 +35039,12 @@
 		},
 		{
 			"id": 9973,
-			"default_name": "Ayodhya",
+			"default_name": "Faizabad",
 			"comment": "",
 			"custom_names": [
 				{
 					"requirements": "TAG_using_indian_names = yes",
-					"name": "Ayodhyā"
+					"name": "Faizābād"
 				}
 			]
 		},
@@ -35751,23 +35745,12 @@
 		},
 		{
 			"id": 15708,
-			"default_name": "Hubballi",
+			"default_name": "Hubballi-Dharwad",
 			"comment": "",
 			"custom_names": [
 				{
 					"requirements": "TAG_using_indian_names = yes",
-					"name": "Hubbaḷḷi"
-				}
-			]
-		},
-		{
-			"id": 15709,
-			"default_name": "Dharwad",
-			"comment": "",
-			"custom_names": [
-				{
-					"requirements": "TAG_using_indian_names = yes",
-					"name": "Dhāravāḍ"
+					"name": "Hubbaḷḷi-Dhāravāḍ"
 				}
 			]
 		},
@@ -37177,6 +37160,17 @@
 				{
 					"requirements": "TAG_using_arab_names = yes",
 					"name": "Khaṣab"
+				}
+			]
+		},
+		{
+			"id": 15807,
+			"default_name": "Salalah",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_arab_names = yes",
+					"name": "Ṣalālah"
 				}
 			]
 		},

@@ -655,7 +655,7 @@
 425,Wernigerode,GER,41850,2011
 538,Naumburg,GER,25200,2011
 564,Kassel,GER,238931,2025
-586,Weiden in der Oberpfalz,GER,,
+586,Weiden in der Oberpfalz,GER,42444,2025
 589,Frankfurt Airport,GER,,
 3258,Neubrandenburg,GER,69100,2011
 3299,Ingolstadt,GER,88782,2025
@@ -767,10 +767,10 @@
 15367,La Ceiba,HDU,300948,2025
 15364,San Pedro Sula,HDU,1301567,2025
 15363,Tegucigalpa,HDU,1653509,2025
-11919,Sidon; Ṣaydā,HEZ,,
-15446,Ba'albak; Baalbek,HEZ,,
-10062,Hong Kong; Xiānggǎng,HKG,,
-14190,'Azzā; Gaza; Ghazzah,HMS,,
+11919,Sidon; Ṣaydā,HEZ,207486,2025
+15446,Ba'albak; Baalbek,HEZ,62954,2025
+10062,Hong Kong; Xiānggǎng,HKG,7024200,2010
+14190,'Azzā; Gaza; Ghazzah,HMS,1060587,2025
 11644,Békés,HUN,20088,2011
 6670,Baja,HUN,36267,2011
 9690,Vác,HUN,33831,2011
@@ -997,7 +997,7 @@
 15770,Bokaro; Bokāro,IND,863889,2025
 15540,Bikaner; Bīkānēr,IND,880322,2025
 15554,Kottayam; Kōṭṭayaṁ,IND,942500,2025
-15709,Dharwad; Dhāravāḍ,IND,948072,2025
+15708,Hubballi-Dharwad; Hubbaḷḷi-Dhāravāḍ,IND,948072,2025
 15702,Maisūru; Mysore,IND,990900,2011
 10878,Darbhanga; Darbhaṁgā,IND,991525,2025
 15562,Puducherry; Pāṇṭiccēri,IND,1058587,2025
@@ -1063,20 +1063,19 @@
 15572,Delhi; Dillī,IND,16349831,2011
 15648,Mumbai; Muṁbaī,IND,20453270,2025
 15760,Kalkātā; Kolkata,IND,23314585,2025
-1344,Chittur; Cittūru,IND,,
-1538,Kendujhar; Keonjhar,IND,,
-2076,Mandi; Maṁḍī,IND,,
-2092,Baram; Bārām,IND,,
-4516,Bodh Gaya; Bodh Gayā,IND,,
-9973,Ayodhya; Ayodhyā,IND,,
+1344,Chittur; Cittūru,IND,175647,2025
+1538,Kendujhar; Keonjhar,IND,60590,2011
+2076,Mandi; Maṁḍī,IND,26422,2011
+2092,Baram; Bārām,IND,117992,2011
+4516,Bodh Gaya; Bodh Gayā,IND,475987,2011
+9973,Faizabad; Faizābād,IND,871743,2025
 12105,Gadag,IND,,
 15558,Ceṉṉai Vimāṉa Nilaiyam; Chennai International Airport,IND,,
 15573,Indira Gandhi International Airport; Iṁdirā Gāṁdhī Iṁṭaranēśanal Ēyarapōrṭ,IND,,
-15577,Gurugram; Gurugrām,IND,,
+15577,Gurugram; Gurugrām,IND,902112,2011
 15649,Navi Mumbai International Airport; Navī Muṁbaī Iṁṭaraneśanala Eyaraporṭa,IND,,
-15652,Vasai; Vasaī,IND,,
-15669,Osmanabad; Usmānābād,IND,,
-15708,Hubballi; Hubbaḷḷi,IND,,
+15652,Vasai; Vasaī,IND,1222390,2011
+15669,Osmanabad; Usmānābād,IND,112085,2011
 15729,Rajiv Gandhi International Airport; Rājīv Gāṁdhī Aṁtarjātīya Vimānāśrayaṁ,IND,,
 15761,Netaji Chandra Bose International Airport; Subhāṣcandra Basu Āntarjātik Bimānbandar,IND,,
 303,Tullamore,IRE,11346,2011
@@ -1093,8 +1092,8 @@
 14178,Haifa; Hefa,ISR,449588,2025
 9753,Al-Quds; Jerusalem; Yerushalayim,ISR,1022929,2025
 4206,Tall 'Abīb-Yāfā; Tel Aviv; Tel Aviv-Yafo,ISR,2628335,2025
-1086,Arīḥā; Jericho; Yericho,ISR,,
-14182,Eilat,ISR,,
+1086,Arīḥā; Jericho; Yericho,ISR,20907,2017
+14182,Eilat,ISR,56004,2024
 14216,Ben Gurion Airport; Maṭār Tall 'Abīb; Nimel Hitofa Ben Goryon,ISR,,
 3776,Mantua,ITA,46649,2011
 773,Cremona,ITA,50804,2025
@@ -1152,16 +1151,16 @@
 9904,Roma; Rome,ITA,2476089,2025
 819,Naples; Napoli,ITA,2885079,2025
 3780,Milan; Milano,ITA,3135553,2025
-3923,Campobasso,ITA,,
-6831,Vasto,ITA,,
-6926,Assisi,ITA,,
-7147,Sciacca,ITA,,
-9856,Policoro,ITA,,
-11723,Alba,ITA,,
-11824,Oristano,ITA,,
+3923,Campobasso,ITA,47399,2026
+6831,Vasto,ITA,40692,2026
+6926,Assisi,ITA,27862,2022
+7147,Sciacca,ITA,38912,2022
+9856,Policoro,ITA,17313,2015
+11723,Alba,ITA,31215,2021
+11824,Oristano,ITA,30007,2025
 14101,Aeroporto di Palermo; Palermo Airport,ITA,,
 14123,Aeroporto Leonardo da Vinci; Leonardo da Vinci Airport,ITA,,
-14128,Rieti,ITA,,
+14128,Rieti,ITA,47745,2008
 14142,Aeroporto di Milano Malpensa; Milano Malpensa Airport,ITA,,
 15932,Kingston,JAM,593375,2025
 4017,Ma'an; Ma'ān,JOR,41055,2015
@@ -1228,16 +1227,16 @@
 15180,Astana,KAZ,1128140,2025
 15164,Shymkent; Şymkent,KAZ,1239663,2025
 15206,Almaty,KAZ,2315538,2025
-554,Miyaly; Mïyalı,KAZ,,
-1864,Ridder,KAZ,,
-9462,Jımpïtı; Zhympity,KAZ,,
-10603,Kulan; Qulan,KAZ,,
-10610,Zaisan,KAZ,,
-12285,Novoishim; Novoishimkoye,KAZ,,
+554,Miyaly; Mïyalı,KAZ,6213,2016
+1864,Ridder,KAZ,50874,2025
+9462,Jımpïtı; Zhympity,KAZ,4931,2009
+10603,Kulan; Qulan,KAZ,15380,2009
+10610,Zaisan,KAZ,14389,2009
+12285,Novoishim; Novoishimkoye,KAZ,11284,2009
 15157,Aktobe International Airport; Aqtöbe Xalıqaralıq Äwejayı; Mezhdunarodnyy Aeroport Aktobe,KAZ,,
-15174,Kulan; Qostanai,KAZ,,
+15174,Kostanay; Qostanai,KAZ,162918,2025
 15183,Astana International Airport; Astana Xalıqaralıq Äwejayı; Mezhdunarodnyy Aeroport Astana,KAZ,,
-15193,Bayanaul,KAZ,,
+15193,Bayanaul,KAZ,5893,2019
 15208,Almaty International Airport; Almaty Xalıqaralıq Äwejayı; Mezhdunarodnyy Aeroport Almaty,KAZ,,
 16010,Voi,KEN,16136,2009
 11145,Lodwar,KEN,68119,2025
@@ -1326,8 +1325,8 @@
 13823,Kaunas,LIT,236910,2025
 13820,Vilnius; Wilno,LIT,339420,2025
 13822,Lotnisko Wilno; Tarptautinis Vilniaus oro Uostas; Vilnius International Airport,LIT,,
-14096,Vaduz,LTN,,
-6583,Luxembourg City; Stad Lëtzebuerg; Stadt Luxemburg; Ville de Luxembourg,LUX,,
+14096,Vaduz,LTN,5696,2020
+6583,Luxembourg City; Stad Lëtzebuerg; Stadt Luxemburg; Ville de Luxembourg,LUX,161303,2025
 1140,Tazirbu; Tāzirbū,LYB,6600,2006
 10884,Gadamis; Ghadāmis,LYB,9874,2006
 14550,Ghat; Ghāt,LYB,11943,2006
@@ -1348,10 +1347,10 @@
 14563,Misrata; Miṣrātah,LYB,310800,2025
 11954,Banghāzī; Benghazi,LYB,599691,2025
 1149,Tripoli; Ṭarābulus,LYB,1248354,2025
-1060,Al Jaghbub; Al-Jaġhbūb,LYB,,
+1060,Al Jaghbub; Al-Jaġhbūb,LYB,2960,2023
 14558,Maṭār Ṭarābulus Al-Dawli; Tripoli International Airport,LYB,,
-14047,Monaco,MCO,,
-4189,Macau; Àomén,MCU,,
+14047,Monaco,MCO,33163,2010
+4189,Macau; Àomén,MCU,537000,2010
 12827,Nuevo Casas Grandes,MEX,53484,2025
 13162,Huejutla de Reyes,MEX,54453,2025
 12736,Ciudad Constitución,MEX,63242,2025
@@ -1444,25 +1443,24 @@
 4229,Guadalajara,MEX,4138350,2025
 10635,Ciudad de México; Mexico City,MEX,17639164,2025
 1828,Aeropuerto Internacional de la Ciudad de México; Mexico City International Airport,MEX,,
-4946,Santiago Papasquiaro,MEX,,
-5015,San Fernando,MEX,,
-7921,El Salto,MEX,,
-8079,Pánuco,MEX,,
-8236,Juchitán de Zaragoza,MEX,,
-10738,Río Grande,MEX,,
-10773,Huajuapan de León,MEX,,
-12733,Jesús María,MEX,,
-12804,Guadalupe,MEX,,
-12835,Ciudad Sabinas Hidalgo,MEX,,
-12873,Tuxpan,MEX,,
-12897,Ojinaga,MEX,,
-13196,Tejupilco de Hidalgo,MEX,,
+4946,Santiago Papasquiaro,MEX,48482,2015
+5015,Río Bravo,MEX,92655,2025
+7921,El Salto,MEX,24241,2015
+8079,Pánuco,MEX,41588,2020
+8236,Juchitán de Zaragoza,MEX,74825,2010
+10738,Río Grande,MEX,35050,2020
+10773,Huajuapan de León,MEX,53219,2010
+12804,Guadalupe,MEX,125320,2010
+12835,Ciudad Sabinas Hidalgo,MEX,32040,2005
+12873,Tuxpan,MEX,21709,2010
+12897,Ojinaga,MEX,28040,2015
+13196,Tejupilco de Hidalgo,MEX,25631,2010
 15283,Aeropuerto Internacional de Tijuana; Tijuana International Airport,MEX,,
-15300,Puerto Peñasco,MEX,,
+15300,Puerto Peñasco,MEX,62689,2020
 15304,Aeropuerto Internacional de Cancún; Cancún International Airport,MEX,,
-15317,Oaxaca,MEX,,
+15317,Oaxaca,MEX,510652,2025
 15330,Aeropuerto Internacional de Monterrey; Monterrey International Airport,MEX,,
-15331,Guadalupe,MEX,,
+15331,Guadalupe,MEX,673626,2010
 11686,Căușeni; Kaushany,MLD,14419,2014
 3724,Comrat; Komrat,MLD,19543,2014
 414,Soroca; Soroki,MLD,21260,2014
@@ -1475,7 +1473,7 @@
 12003,Il-Belt Valletta; Valletta,MLT,366066,2025
 13857,Nikshic,MNT,52875,2025
 13856,Podgorica,MNT,152731,2025
-9821,Budva,MNT,,
+9821,Budva,MNT,17479,1012
 12544,Uliastai,MON,17468,2010
 14583,Altai,MON,16542,2010
 14571,Baruun-Urt,MON,16130,2010
@@ -1493,8 +1491,8 @@
 14597,Erdenet; Ėrdėnėt,MON,97743,2025
 14585,Ulaanbaatar,MON,1634097,2025
 14587,Chinggis Khaan Olon Upsyn Nisėch Buudal; Ghengis Khan International Airport,MON,,
-14591,Choyr,MON,,
-14593,Chinggis,MON,,
+14591,Choyr,MON,10434,2017
+14593,Chinggis,MON,20935,2017
 989,Taourirt; Tāwrirt,MRC,118564,2025
 1079,Khouribga; Khurībga,MRC,227341,2025
 1102,Aṣ-Ṣawīra; Essaouira,MRC,73603,2025
@@ -1502,10 +1500,10 @@
 1207,Banī Mallāl; Beni Mellal,MRC,230259,2025
 4084,Khénifra; Ḵunayfira,MRC,131049,2025
 4097,Taza; Tāza,MRC,174777,2025
-4139,Kalaat Sraghna; Qal'at As-Sarāghna,MRC,,
-4920,Samara; Smāra,MRC,,
+4139,Kalaat Sraghna; Qal'at As-Sarāghna,MRC,107186,2025
+4920,Samara; Smāra,MRC,57035,2014
 4933,Al-Rāshīdiyya; Errachidia,MRC,107063,2025
-5012,Boujdour; Bouǧdour,MRC,,
+5012,Boujdour; Bouǧdour,MRC,42651,2014
 5046,Guelmim; Gulmīm,MRC,121103,2025
 7069,Ad-Dār Al-Bayḍā; Casablanca,MRC,4577677,2025
 7100,Al-Khemisāt; Khemisset,MRC,162073,2025
@@ -1517,8 +1515,8 @@
 12857,Tiznit; Tiznīt,MRC,85085,2025
 15243,Tan-Tan; Ṭānṭān,MRC,73209,2014
 15246,'Āsafi; Safi,MRC,352977,2025
-15250,Al-Dāchla; Dakhla,MRC,,
-15254,Al-'Uyūn; Laayoune,MRC,,
+15250,Al-Dāchla; Dakhla,MRC,180740,2025
+15254,Al-'Uyūn; Laayoune,MRC,262791,2024
 15255,Laayoune Hassan I International Airport; Maṭār Al-'Uyūn Al-Dawli; Maṭār Al-'Uyūn Al-Ḥasan Al-Dawli,MRC,,
 15256,'Agādīr; Agadir,MRC,926390,2025
 15258,Marrakesh; Murrākuš,MRC,1152691,2025
@@ -1536,7 +1534,7 @@
 12738,León,NCG,155985,2025
 15368,Managua,NCG,1436089,2025
 15369,Aeropuerto Internacional Augusto C. Sandino; Augusto C. Sandino International Airport,NCG,,
-11984,Kuzey Lefkoşa; Northern Nicosia; Vóreia Lefkosía,NCP,,
+11984,Kuzey Lefkoşa; Northern Nicosia; Vóreia Lefkosía,NCP,82539,2011
 11856,Bitola,NMA,59416,2025
 907,Kumanovo,NMA,70031,2025
 13837,Skopje,NMA,402733,2025
@@ -1561,9 +1559,9 @@
 14072,Eindhoven,NRD,293438,2025
 14077,Utrecht,NRD,519237,2025
 391,Amsterdam,NRD,1223407,2025
-3211,Den Haag; The Hague,NRD,2173754,2025
-14074,Rotterdam,NRD,2173754,2025
-6500,Venlo,NRD,,
+3211,Den Haag; The Hague,NRD,777960,2011
+14074,Rotterdam,NRD,819885,2011
+6500,Venlo,NRD,82035,2011
 14078,Amsterdam Airport Schiphol; Luchthaven Schiphol,NRD,,
 64,Vadsø,NWY,6163,2013
 6176,Hå,NWY,17635,2013
@@ -1596,37 +1594,37 @@
 15115,Trondheim,NWY,142104,2025
 53,Stavanger,NWY,205533,2025
 15109,Oslo,NWY,889573,2025
-21,Orkanger,NWY,,
-22,Hammerfest,NWY,,
-27,Fagernes,NWY,,
-91,Finnsnes,NWY,,
-179,Kongsvinger,NWY,,
-3059,Geilo,NWY,,
-3082,Skjervøy,NWY,,
-3088,Mo i Rana,NWY,,
-3183,Røros,NWY,,
-3188,Leikanger,NWY,,
-6041,Namsos,NWY,,
-6114,Dombås,NWY,,
-6118,Oppdal,NWY,,
-6187,Brønnøysund,NWY,,
-6214,Rognan,NWY,,
-9032,Vinstra,NWY,,
-9116,Kirkenes,NWY,,
-9196,Evje,NWY,,
-11034,Båtsfjord,NWY,,
-11113,Tynset,NWY,,
-11157,Sortland,NWY,,
+21,Orkanger,NWY,9161,2024
+22,Hammerfest,NWY,7882,2023
+27,Fagernes,NWY,1983,2023
+91,Finnsnes,NWY,4917,2023
+179,Kongsvinger,NWY,12443,2024
+3059,Geilo,NWY,2500,2025
+3082,Skjervøy,NWY,2437,2023
+3088,Mo i Rana,NWY,18755,2023
+3183,Røros,NWY,5665,2023
+3188,Leikanger,NWY,2294,2023
+6041,Namsos,NWY,8422,2024
+6114,Dombås,NWY,1163,2024
+6118,Oppdal,NWY,4637,2024
+6187,Brønnøysund,NWY,5093,2024
+6214,Rognan,NWY,2600,2023
+9032,Vinstra,NWY,2674,2024
+9116,Kirkenes,NWY,3404,2023
+9196,Evje,NWY,2408,2013
+11034,Båtsfjord,NWY,2105,2023
+11113,Tynset,NWY,2976,2023
+11157,Sortland,NWY,5609,2023
 15111,Oslo Airport; Oslo Lufthavn,NWY,,
 4993,Sohar; Ṣuḥār,OMA,139036,2025
-15811,As-Sīb; Seeb,OMA,604497,2025
+8020,Ja'alān Banī Bū 'Alī; Jalan Bani Buali,OMA,30291,2010
+10760,Sur; Ṣūr,OMA,48634,2010
+15804,Khasab; Khaṣab,OMA,12069,2010
+15807,Salalah; Ṣalālah,OMA,247073,2025
 15809,Masqaṭ; Muscat,OMA,734542,2025
-8020,Ja'alān Banī Bū 'Alī; Jalan Bani Buali,OMA,,
-10760,Sur; Ṣūr,OMA,,
-15804,Khasab; Khaṣab,OMA,,
-15807,,OMA,,
 15810,Maṭār Masqaṭ Al-Dawli; Muscat International Airport,OMA,,
-15812,Nizwa; Nizwā,OMA,,
+15811,As-Sīb; Seeb,OMA,604497,2025
+15812,Nizwa; Nizwā,OMA,42087,2010
 584,Wieluń,POL,24033,2011
 444,Schwiebus; Świebodzin,POL,22166,2011
 13988,Zakopane,POL,27857,2011
@@ -1696,7 +1694,7 @@
 9427,Krakau; Kraków,POL,723413,2025
 13205,Katowice; Kattowitz,POL,879406,2025
 3544,Warsaw; Warschau; Warszawa,POL,1999986,2025
-6236,Arnswalde; Choszczno,POL,,
+6236,Arnswalde; Choszczno,POL,14831,2022
 13939,Flughafen Danzig; Lech Wałęsa Airport; Lotnisko im. Lecha Wałęsy,POL,,
 13955,Flughafen Warschau; Lotnisko Chopina Warszawa; Warsaw Chopin Airport,POL,,
 13986,Flughafen Krakau; John Paul II Airport; Lotnisko Jana Pawła II,POL,,
@@ -1717,547 +1715,547 @@
 9817,Porto,POR,1060250,2025
 11805,Lisboa; Lisbon,POR,1974574,2025
 14493,Aeroporto Humberto Delgado; Humberto Delgado Airport,POR,,
-14642,Nagqu; Nàqū,PRC,50126,2025
-6969,Xinglong; Xīnglóng,PRC,50721,2025
-15004,Wuxi; Wúxī,PRC,53095,2025
-15001,Huaian; Huái'ān,PRC,54056,2025
-8072,Zhushan; Zhúshān,PRC,54621,2025
-14877,Jarud; Zhalute; Zhālŭtè,PRC,54968,2025
-9974,Zhoushan; Zhōushān,PRC,55248,2025
-11822,Caofeidian; Cáofēidiàn,PRC,56120,2025
-11862,Antu; Āntú,PRC,56129,2025
 517,Qingyang; Qìngyáng,PRC,56809,2025
-2014,Rìkāzé; Shigatse; Xigazê,PRC,56970,2025
-7019,Fangxian; Fángxiàn,PRC,57912,2025
+531,Longnan; Lǒngnán,PRC,123692,2025
+556,Dingxi; Dìngxī,PRC,110323,2025
+814,Pingquan; Píngquán,PRC,94823,2025
+881,Luanping; Luánpíng,PRC,79856,2010
+900,Zunhua; Zūnhuà,PRC,169536,2025
+916,Changtu; Chāngtú,PRC,89349,2025
 930,Changling; Chánglĭng,PRC,58658,2025
-12408,Yunxi; Yúnxī,PRC,58817,2025
-9944,Jiangshan; Jiāngshān,PRC,59933,2025
-4070,Pucheng; Pŭchéng,PRC,60883,2025
-7545,Shangdu; Shāngdū; Šangdu,PRC,61146,2025
-10101,Changxiang; Chángxīng,PRC,61835,2025
-9768,Fengning; Fēngníng,PRC,62946,2025
-7575,Ongnigud; Ongniud; Wēngniútè,PRC,63234,2025
-14697,Songming; Sōngmíng,PRC,63235,2025
-4823,Altay; Ālètài,PRC,63646,2025
-4682,Aral; Ālā'ěr,PRC,65117,2025
-7976,Baoshan; Bǎoshān,PRC,66212,2025
-1985,Haiyuan; Hǎiyuán,PRC,66365,2025
-14707,Zhongshan; Zhōngshān,PRC,66367,2025
-10084,Ninghua; Nínghuà,PRC,67800,2025
-14875,Jalaid; Zhalaite; Zhālàitè,PRC,69540,2025
-14926,Ningjin; Níngjìn,PRC,71337,2025
-4053,Shanghang; Shàngháng,PRC,72050,2025
-14700,Haikou; Hǎikǒu,PRC,73175,2025
-7767,Tieli; Tiĕlì,PRC,74235,2025
-6937,Weichang; Wéichăng,PRC,74299,2025
-14988,Fangcheng; Fāngchéng,PRC,75931,2025
-9972,Longquan; Lóngquán,PRC,76470,2025
-4551,Tongjiang; Tóngjiāng,PRC,76727,2025
-11913,Nanjing; Nánjīng,PRC,78589,2025
-12797,Wushan; Wǔshān,PRC,79422,2025
+934,Chaoyang; Cháoyáng,PRC,448412,2025
+944,Yanji; Yánjí,PRC,426296,2025
+1001,Baoying; Băoyīng,PRC,333643,2010
+1004,Yuzhou; Yŭzhōu,PRC,245470,2025
+1006,Changting; Chángtīng,PRC,119482,2025
+1018,Qinzhou; Qīnzhōu,PRC,193678,2025
+1029,Ganyu; Gànyú,PRC,194501,2025
+1038,Lingao; Língāo,PRC,155595,2010
+1047,Guangzhou; Guăngzhōu,PRC,42987704,2025
+1053,Yudu; Yúdū,PRC,223353,2025
+1069,Jinan; Jìnán,PRC,3824875,2025
+1070,Qionghai; Qiónghǎi,PRC,146854,2025
+1076,Xinyi; Xīnyí,PRC,197050,2025
+1083,Anqing; Ānqìng,PRC,469919,2025
+1084,Binzhou; Bīnzhōu,PRC,696958,2025
+1089,Taixing; Tàixīng,PRC,466711,2025
+1094,Fuan; Fú'ān,PRC,356776,2025
+1099,Maanshan; Mă'ānshān,PRC,1071589,2025
+1104,Longkou; Lóngkŏu,PRC,388770,2010
+1110,Nancheng; Nánchéng,PRC,137937,2025
+1120,Shaoguan; Sháoguān,PRC,451567,2025
+1121,Suining; Suīníng,PRC,426297,2010
+1125,Huangshan; Huángshān,PRC,372354,2025
+1131,Gaozhou; Gāozhōu,PRC,515770,2025
+1137,Yuxian; Yùxiàn,PRC,86310,2025
+1138,Shaowu; Shàowŭ,PRC,105235,2025
+1139,Jiaozuo; Jiāozuò,PRC,723575,2025
+1146,Chuzhou; Chúzhōu,PRC,295742,2025
+1150,Dailan; Dàlián,PRC,3599519,2025
+1153,Jingdezhen; Jĭngdézhèn,PRC,460993,2025
+1161,Lingbi; Língbì,PRC,122748,2025
+1162,Heyuan; Héyuán,PRC,466335,2025
 1166,Minhou; Mĭnhòu,PRC,80161,2025
+1168,Wenling; Wēnlĭng,PRC,339655,2025
+1169,Weixian; Wèixiàn,PRC,303449,2010
+1187,Yunfu; Yúnfú,PRC,207901,2025
+1195,Yongkang; Yŏngkāng,PRC,373295,2025
+1203,Xinzhou; Xīnzhōu,PRC,229257,2025
+1474,Tongren; Tóngrén,PRC,255612,2025
+1489,Zhangbei; Zhāngbĕi,PRC,101319,2025
+1571,Qitaihe; Qītáihé,PRC,90592,2025
+1575,Yuncheng; Yùnchéng,PRC,432554,2010
+1597,Laibin; Láibīn,PRC,260628,2025
+1603,Luanchuan; Luánchuān,PRC,89924,2025
+1612,Jingmen; Jīngmén,PRC,159550,2025
+1625,Longlin; Lónglín,PRC,45598,2010
+1627,Baicheng; Báichéng,PRC,298421,2025
+1630,Baiyin; Báiyín,PRC,222677,2025
+1640,Liuyang; Liúyáng,PRC,456892,2025
+1647,Pingliang; Píngliàng,PRC,461066,2025
+1708,Chöchek; Tacheng; Tǎchéng,PRC,105710,2025
+1732,Hegang; Hègăng,PRC,504410,2025
+1776,Oroqen; Orčonu; Èlúnchūn,PRC,151156,2010
+1844,Karamay; Kèlāmǎyī; Qaramay,PRC,311815,2025
+1884,Xingyi; Xīngyì,PRC,212962,2025
+1918,Maerkang; Mǎ'ěrkāng,PRC,28783,2010
+1933,Tianshui; Tiānshuǐshì,PRC,584189,2025
+1959,Wuhai; Wūhǎi; Üqai,PRC,162776,2025
+1985,Haiyuan; Hǎiyuán,PRC,66365,2025
+2014,Rìkāzé; Shigatse; Xigazê,PRC,56970,2025
+2015,Shāchē; Yarkand; Yarkent,PRC,165031,2025
+2028,Jiuquan; Jiǔquán,PRC,181625,2025
+2067,Xichang; Xīchāng,PRC,281791,2025
+3427,Ejin Horo; Ejin Qoroga; Yījīnhuòluò,PRC,144135,2010
+3783,Wafangdian; Wăfángdiàn,PRC,319394,2025
+3814,Lingyuan; Língyuán,PRC,170997,2025
+3815,Jixi; Jīxī,PRC,413446,2025
+3828,Aohan; Auqan; Áohàn,PRC,118673,2010
+3830,Qian'an; Qiān'ān,PRC,190878,2025
+3877,Tongliao; Tüngliyou; Tōngliáo,PRC,498536,2025
+3881,Jinzhou; Jĭnzhōu,PRC,854828,2025
+3888,Meihekou; Méihékŏu,PRC,223906,2025
+3895,Benxi; Bĕnxī,PRC,773946,2025
+3900,Changli; Chānglí,PRC,124655,2025
+3913,Liaoyuan; Liáoyuán,PRC,328966,2025
+3932,Huadian; Huàdiàn,PRC,130717,2025
+3934,Fuxin; Fùxīn,PRC,522330,2025
+3947,Dunhua; Dūnhuà,PRC,201611,2025
+3970,Fengcheng; Fèngchéng,PRC,247219,2010
+4009,Zaoyang; Zăoyáng,PRC,155165,2025
+4032,Hengshui; Héngshuĭ,PRC,742818,2025
+4053,Shanghang; Shàngháng,PRC,72050,2025
+4058,Wuan; Wŭ'ān,PRC,204431,2025
+4066,Taikang; Tàikāng,PRC,86916,2025
+4070,Pucheng; Pŭchéng,PRC,60883,2025
+4074,Xingxian; Xīngxiàn,PRC,115918,2025
+4077,Baise; Bǎisè,PRC,119254,2025
+4079,Mengcheng; Mĕngchéng,PRC,120365,2025
+4082,Binhai; Bīnhăi,PRC,415187,2010
+4083,Fengcheng; Fēngchéng,PRC,379914,2010
+4091,Rugao; Rúgāo,PRC,139223,2025
+4093,Zhuozhou; Zhuōzhōu,PRC,157065,2025
+4105,Xuancheng; Xuānchéng,PRC,427032,2025
+4123,Baoying; Băoyīng,PRC,333643,2010
+4125,Yongzhou; Yǒngzhōu,PRC,416168,2025
+4130,Tianmen; Tiānmén,PRC,402718,2025
+4144,Hebi; Hèbì,PRC,238324,2025
+4156,Yongxin; Yŏngxīn,PRC,182296,2010
+4157,Zhucheng; Zhūchéng,PRC,759969,2025
+4169,Ningde; Níngdé,PRC,350783,2025
+4173,Ningguo; Níngguó,PRC,374587,2025
+4174,Xiaoyi; Xiàoyì,PRC,165448,2025
+4185,Poyang; Póyáng,PRC,188396,2025
+4186,Laiyang; Láiyáng,PRC,265847,2025
+4190,Xinji; Xīnjí,PRC,204940,2025
+4192,Xuanwei; Xuānwēi,PRC,382363,2025
+4196,Fuzhou; Fúzhōu,PRC,3102421,2011
+4203,Jinzhai; Jīnzhài,PRC,157811,2010
+4205,Rongcheng; Róngchéng,PRC,174923,2025
+4208,Fuping; Fùpíng,PRC,40330,2010
+4503,Nongan; Nóng'ān,PRC,112174,2025
+4504,Liupanshui; Liùpánshuǐ,PRC,924182,2025
+4519,Dengzhou; Dèngzhōu,PRC,1095052,2025
+4547,Xichuan; Xīchuān,PRC,127044,2025
+4551,Tongjiang; Tóngjiāng,PRC,76727,2025
+4572,Gongzhuling; Gōngzhŭlĭng,PRC,196813,2025
+4592,Suihua; Suíhuà,PRC,289983,2025
+4606,Jiyuan; Jìyuán,PRC,405860,2025
+4619,Xianning; Xiánníng,PRC,276077,2025
+4633,Songyuan; Sōngyuán,PRC,218036,2025
+4634,Hongdong; Hóngdòng,PRC,240740,2010
+4642,Siping; Sìpíng,PRC,508075,2025
+4682,Aral; Ālā'ěr,PRC,65117,2025
+4783,Ejen; Ejin; Éjǐnà,PRC,35756,2020
+4823,Altay; Ālètài,PRC,63646,2025
+4925,Chengdu; Chéngdū,PRC,5609627,2025
+4964,Yushu; Yùshù; Yüshu,PRC,56802,2010
+5007,Weinan; Wèinán,PRC,273989,2025
+5025,Guyuan; Gùyuán,PRC,130155,2010
+5031,Alaša Barayun; Alxa Right; Ālāshàn Yòu,PRC,"129242	",2010
+5048,Dazhou; Dázhōu,PRC,771803,2025
+5092,Shangluo; Shāngluò,PRC,110703,2025
+5100,Zhangye; Zhāngyè,PRC,198224,2025
+6828,Laiyuan; Láiyuán,PRC,99405,2025
+6837,Huludao; Húlúdăo,PRC,497401,2025
+6851,Anshan; Ānshān,PRC,1495743,2025
+6860,Kuandian; Kuāndiàn,PRC,91876,2025
+6868,Qingyuan; Qīngyuán,PRC,114426,2010
+6905,Fusong; Fŭsōng,PRC,218680,2010
+6932,Sanmexia; Sānménxiá,PRC,237530,2025
+6937,Weichang; Wéichăng,PRC,74299,2025
+6951,Xinmin; Xīnmín,PRC,193801,2025
+6969,Xinglong; Xīnglóng,PRC,50721,2025
+6981,Dandong; Dāndōng,PRC,714738,2025
+6999,Chongqing; Chóngqìng,PRC,8449690,2025
 7004,Dayu; Dàyú,PRC,80228,2025
+7014,Shanghai; Shànghăi,PRC,30678616,2025
+7019,Fangxian; Fángxiàn,PRC,57912,2025
+7025,Peixian; Pèixiàn,PRC,154588,2025
+7027,Huian; Huì'ān,PRC,325256,2025
+7035,Susong; Sùsōng,PRC,100719,2025
+7054,Guixi; Guìxī,PRC,210319,2010
+7055,Xintai; Xīntài,PRC,236800,2025
+7058,Ninghai; Nínghăi,PRC,363121,2010
+7067,Lufeng; Lùfēng,PRC,310570,2025
+7071,Xiamen; Xiàmén,PRC,3119110,2010
+7089,Gaomi; Gāomì,PRC,599934,2025
+7092,Qinghe; Qīnghé,PRC,141229,2025
+7097,Xiangtan; Xiāngtán,PRC,102212,2025
+7099,Longyan; Lóngyán,PRC,392112,2025
+7101,Changde; Chángdé,PRC,603681,2025
+7105,Laizhou; Láizhōu,PRC,279120,2025
+7108,Huizhou; Huìzhōu,PRC,1061952,2025
+7120,Yixing; Yíxīng,PRC,452718,2025
+7129,Caoxian; Cáoxiàn,PRC,209734,2025
+7137,Nanning; Nánníng,PRC,3695575,2025
+7146,Linhai; Línhăi,PRC,343381,2025
+7158,Ulagančab; Ulanqab; Wūlánchábù,PRC,272964,2025
+7191,Hangzhou; Hángzhōu,PRC,6387064,2025
+7199,Xingguo; Xīngguó,PRC,168176,2025
+7210,Wuzhou; Wúzhōu,PRC,370101,2025
+7222,Dingyuan; Dìngyuăn,PRC,131594,2025
+7240,Suining; Suìníng,PRC,549826,2010
+7256,Guangyuan; Guǎngyuán,PRC,441909,2025
+7279,Zhangjiajie; Zhāngjiājiè,PRC,163528,2025
+7294,Panzhihua; Pānzhīhuā,PRC,292350,2025
+7314,Yulin; Yúlín,PRC,429189,2010
+7418,Ankang; Ānkāng,PRC,807066,2025
+7523,Yushu; Yúshù,PRC,280961,2010
+7526,Bayan; Bāyàn,PRC,143909,2010
+7540,Shangcai; Shàngcài,PRC,169321,2025
+7545,Shangdu; Shāngdū; Šangdu,PRC,61146,2025
+7549,Kaili; Kǎilǐ,PRC,386453,2025
+7568,Tongbai; Tóngbǎi,PRC,82568,2025
+7571,Linfen; Línfén,PRC,1090241,2025
+7575,Ongnigud; Ongniud; Wēngniútè,PRC,63234,2025
+7580,Suizhou; Suízhōu,PRC,249979,2025
+7591,Wuchang; Wŭcháng,PRC,164689,2025
+7596,Badong; Bādōng,PRC,109476,2010
+7625,Xiaogan; Xiàogăn,PRC,812534,2025
+7637,Wuxue; Wŭxué,PRC,199876,2025
+7702,Kucha; Kuqa; Kùchē,PRC,158060,2025
+7767,Tieli; Tiĕlì,PRC,74235,2025
+7832,Heihe; Hēihé,PRC,131222,2025
+7866,Bole; Bólè; Börtala,PRC,120138,2010
+7894,Jalan Ayil; Zalantun; Zhālántún,PRC,117266,2025
+7949,Tumshuq; Tumxuk; Túmùshūkè,PRC,128056,2020
+7971,Yumen; Yùmén,PRC,78940,2010
+7976,Baoshan; Bǎoshān,PRC,66212,2025
+8041,Línzhī; Nyingchi,PRC,195109,2010
+8049,Tongchuan; Tóngchuān,PRC,130607,2025
+8072,Zhushan; Zhúshān,PRC,54621,2025
+8081,Wuzhong; Wúzhōng,PRC,245268,2025
+9759,Tonghua; Tōnghuà,PRC,316018,2025
+9768,Fengning; Fēngníng,PRC,62946,2025
+9781,Liaoyang; Liáoyáng,PRC,640795,2025
+9803,Baishan; Báishān,PRC,596610,2025
+9843,Beijing Capital International Airport; Běijīng Shǒudū Guójì Jīchǎng,PRC,,
+9854,Zhuanghe; Zhuānghé,PRC,132632,2025
 9873,Ningcheng; Ningčėng; Níngchéng,PRC,80595,2025
 9897,Wangqing; Wāngqīng,PRC,80912,2025
-7568,Tongbai; Tóngbǎi,PRC,82568,2025
-10012,Wuyishan; Wŭyíshān,PRC,84944,2025
-14829,Yiyang; Yìyáng,PRC,86028,2025
-1137,Yuxian; Yùxiàn,PRC,86310,2025
-4066,Taikang; Tàikāng,PRC,86916,2025
-10367,Luliang; Lǚliáng,PRC,87888,2025
-10053,Pingshan; Píngshān,PRC,88929,2025
-916,Changtu; Chāngtú,PRC,89349,2025
-14690,Dali; Dàlǐ,PRC,89851,2025
-1603,Luanchuan; Luánchuān,PRC,89924,2025
-15024,Yingshang; Yĭngshàng,PRC,90278,2025
-1571,Qitaihe; Qītáihé,PRC,90592,2025
-10431,Hechi; Héchí,PRC,91277,2025
-11886,Suizhong; Suízhōng,PRC,91626,2025
-6860,Kuandian; Kuāndiàn,PRC,91876,2025
-814,Pingquan; Píngquán,PRC,94823,2025
-10069,Fuding; Fúdĭng,PRC,95283,2025
-10413,Jinghong; Jǐnghóng,PRC,95370,2025
-10377,Shaoyang; Shàoyáng,PRC,95963,2025
-6828,Laiyuan; Láiyuán,PRC,99405,2025
-12776,Wuwei; Wǔwēi,PRC,100155,2025
-7035,Susong; Sùsōng,PRC,100719,2025
-1489,Zhangbei; Zhāngbĕi,PRC,101319,2025
-7097,Xiangtan; Xiāngtán,PRC,102212,2025
-11945,Xinfeng; Xìnfēng,PRC,104523,2025
-1138,Shaowu; Shàowŭ,PRC,105235,2025
-14804,Kaizhou; Kāizhōu,PRC,105588,2025
-1708,Chöchek; Tacheng; Tǎchéng,PRC,105710,2025
-11988,Xiushui; Xiūshuĭ,PRC,106401,2025
-10093,Zhangpu; Zhāngpŭ,PRC,107312,2025
-14905,Beian; Bĕi'ān,PRC,109509,2025
-556,Dingxi; Dìngxī,PRC,110323,2025
-5092,Shangluo; Shāngluò,PRC,110703,2025
-9987,Shenxian; Shēnxiàn,PRC,111749,2025
-4503,Nongan; Nóng'ān,PRC,112174,2025
-10072,Dongping; Dōngpíng,PRC,112726,2025
-10503,Shangzhi; Shàngzhì,PRC,114330,2025
-10474,Gucheng; Gŭchéng,PRC,115583,2025
-10008,Tianchang; Tiāncháng,PRC,115627,2025
-4074,Xingxian; Xīngxiàn,PRC,115918,2025
-12448,Erenhot; Eriyen Qota; Èrliánhàotè,PRC,116563,2025
-7894,Jalan Ayil; Zalantun; Zhālántún,PRC,117266,2025
-10017,Tongcheng; Tóngchéng,PRC,117455,2025
-4077,Baise; Bǎisè,PRC,119254,2025
-1006,Changting; Chángtīng,PRC,119482,2025
-14827,Yueyang; Yuèyáng,PRC,120188,2025
-4079,Mengcheng; Mĕngchéng,PRC,120365,2025
-12119,Artush; Atush; Ātúshí,PRC,120961,2025
-1161,Lingbi; Língbì,PRC,122748,2025
-12086,Gong'an; Gōng'ān,PRC,123573,2025
-531,Longnan; Lǒngnán,PRC,123692,2025
-3900,Changli; Chānglí,PRC,124655,2025
-14907,Hailun; Hăilún,PRC,124959,2025
-14954,Dongying; Dōngyíng,PRC,126739,2025
-4547,Xichuan; Xīchuān,PRC,127044,2025
-14807,Guiyang; Guìyáng,PRC,129943,2025
-8049,Tongchuan; Tóngchuān,PRC,130607,2025
-3932,Huadian; Huàdiàn,PRC,130717,2025
-11801,Chengde; Chéngdé,PRC,131203,2025
-7832,Heihe; Hēihé,PRC,131222,2025
-7222,Dingyuan; Dìngyuăn,PRC,131594,2025
-9913,Jiahoe; Jiāohé,PRC,131614,2025
-9854,Zhuanghe; Zhuānghé,PRC,132632,2025
-9969,Bazhou; Bàzhōu,PRC,134472,2025
-15049,Nan'an; Nán'ān,PRC,134905,2025
-14992,Chongming; Chóngmíng,PRC,135058,2025
-10462,Macheng; Máchéng,PRC,136894,2025
-12618,Nenjiang; Nènjiāng,PRC,137649,2025
-1110,Nancheng; Nánchéng,PRC,137937,2025
-9997,Lianzhou; Liánzhōu,PRC,138395,2025
-9953,Dafeng; Dàfēng,PRC,138525,2025
-4091,Rugao; Rúgāo,PRC,139223,2025
-14916,Xingtai; Xíngtái,PRC,139787,2025
-12061,Lujiang; Lújiāng,PRC,140133,2025
-7092,Qinghe; Qīnghé,PRC,141229,2025
-12327,Jinchang; Jīnchāng,PRC,144055,2025
-1070,Qionghai; Qiónghǎi,PRC,146854,2025
-14680,Lijiang; Lìjiāng,PRC,150969,2025
-12067,Sheyang; Shèyáng,PRC,152273,2025
-7025,Peixian; Pèixiàn,PRC,154588,2025
-4009,Zaoyang; Zăoyáng,PRC,155165,2025
-4093,Zhuozhou; Zhuōzhōu,PRC,157065,2025
-14971,Zhongxiang; Zhōngxiáng,PRC,157863,2025
-7702,Kucha; Kuqa; Kùchē,PRC,158060,2025
-1612,Jingmen; Jīngmén,PRC,159550,2025
-12030,Ningdu; Níngdū,PRC,159642,2025
-1959,Wuhai; Wūhǎi; Üqai,PRC,162776,2025
-10451,Ordos; È'ěrduōsī; Ôrdôs,PRC,162978,2025
-7279,Zhangjiajie; Zhāngjiājiè,PRC,163528,2025
-7591,Wuchang; Wŭcháng,PRC,164689,2025
-2015,Shāchē; Yarkand; Yarkent,PRC,165031,2025
-4174,Xiaoyi; Xiàoyì,PRC,165448,2025
-7199,Xingguo; Xīngguó,PRC,168176,2025
-12015,Pingyi; Píngyì,PRC,169009,2025
-7540,Shangcai; Shàngcài,PRC,169321,2025
-900,Zunhua; Zūnhuà,PRC,169536,2025
-3814,Lingyuan; Língyuán,PRC,170997,2025
-14779,Zhongwei; Zhōngwèi,PRC,173279,2025
-9937,Linquan; Línquán,PRC,173937,2025
-4205,Rongcheng; Róngchéng,PRC,174923,2025
-2028,Jiuquan; Jiǔquán,PRC,181625,2025
-11808,Tieling; Tiĕlĭng,PRC,183324,2025
-12084,Anxi; Ānxī,PRC,184535,2025
-14922,Gaodeidian; Gāobēidiàn,PRC,186474,2025
-10446,Gushi; Gùshĭ,PRC,188007,2025
-4185,Poyang; Póyáng,PRC,188396,2025
-10006,Jishou; Jíshǒu,PRC,190543,2025
-3830,Qian'an; Qiān'ān,PRC,190878,2025
-1018,Qinzhou; Qīnzhōu,PRC,193678,2025
-6951,Xinmin; Xīnmín,PRC,193801,2025
-1029,Ganyu; Gànyú,PRC,194501,2025
-4572,Gongzhuling; Gōngzhŭlĭng,PRC,196813,2025
-1076,Xinyi; Xīnyí,PRC,197050,2025
-14694,Gejiu; Gèjiù,PRC,197814,2025
-5100,Zhangye; Zhāngyè,PRC,198224,2025
-14759,Jiayuguan; Jiāyùguān,PRC,199681,2025
-7637,Wuxue; Wŭxué,PRC,199876,2025
-14938,Zaozhuang; Zăozhuāng,PRC,200465,2025
-3947,Dunhua; Dūnhuà,PRC,201611,2025
-4058,Wuan; Wŭ'ān,PRC,204431,2025
-4190,Xinji; Xīnjí,PRC,204940,2025
-1187,Yunfu; Yúnfú,PRC,207901,2025
-7129,Caoxian; Cáoxiàn,PRC,209734,2025
-13150,Hulunbuir; Hūlúnbèi'ĕr; Kölön Buyir,PRC,210423,2025
-10112,Ruijin; Ruìjīn,PRC,211192,2025
-1884,Xingyi; Xīngyì,PRC,212962,2025
-10612,Manjur; Manjuur; Mănzhōulĭ,PRC,213243,2025
-9956,Lanling; Lánlíng,PRC,215497,2025
-14661,Hotan; Hétián; Xoten,PRC,216546,2025
-4633,Songyuan; Sōngyuán,PRC,218036,2025
-14876,Ulahan; Ulanhot; Wūlánhàotè,PRC,221373,2025
-1630,Baiyin; Báiyín,PRC,222677,2025
-1053,Yudu; Yúdū,PRC,223353,2025
-3888,Meihekou; Méihékŏu,PRC,223906,2025
-10519,Shuangyashan; Shuāngyāshān,PRC,224673,2025
-1203,Xinzhou; Xīnzhōu,PRC,229257,2025
-12012,Xiangcheng; Xiàngchéng,PRC,231203,2025
-14944,Zouping; Zōupíng,PRC,233401,2025
-14785,Yibin; Yíbīn,PRC,234841,2025
-7055,Xintai; Xīntài,PRC,236800,2025
-6932,Sanmexia; Sānménxiá,PRC,237530,2025
-4144,Hebi; Hèbì,PRC,238324,2025
-10834,Golmud; Gé'ěrmù,PRC,238704,2025
-14927,Dingzhou; Dìngzhōu,PRC,240736,2025
-14952,Qufu; Qŭfù,PRC,243583,2025
-15050,Sanming; Sānmíng,PRC,243815,2025
-8081,Wuzhong; Wúzhōng,PRC,245268,2025
-1004,Yuzhou; Yŭzhōu,PRC,245470,2025
-10501,Ji'an; Jí'ān,PRC,248029,2025
-7580,Suizhou; Suízhōu,PRC,249979,2025
-14676,Hami; Hāmì; Qumul,PRC,252812,2025
-1474,Tongren; Tóngrén,PRC,255612,2025
-1597,Laibin; Láibīn,PRC,260628,2025
-14723,Guigang; Guìgăng,PRC,261422,2025
-12342,Fujin; Fùjĭn,PRC,263095,2025
-4186,Laiyang; Láiyáng,PRC,265847,2025
-10629,Bayannagur; Bayannur; Bāyànnào'ĕr,PRC,270742,2025
-7158,Ulagančab; Ulanqab; Wūlánchábù,PRC,272964,2025
-14638,Lhasa; Lāsà,PRC,273179,2025
-14798,Hechuan; Héchuān,PRC,273191,2025
-5007,Weinan; Wèinán,PRC,273989,2025
-14830,Shenmu; Shénmù,PRC,274814,2025
-4619,Xianning; Xiánníng,PRC,276077,2025
-12467,Xiantao; Xiāntáo,PRC,278585,2025
-7105,Laizhou; Láizhōu,PRC,279120,2025
-2067,Xichang; Xīchāng,PRC,281791,2025
-11962,Linqing; Línqīng,PRC,282112,2025
-4592,Suihua; Suíhuà,PRC,289983,2025
-12348,Siliyin hota; Xilinhot; Xīlínhàotè,PRC,290629,2025
-7294,Panzhihua; Pānzhīhuā,PRC,292350,2025
-14658,Aksu; Aqsu; Ākèsū,PRC,293005,2025
-1146,Chuzhou; Chúzhōu,PRC,295742,2025
-12841,Zhaotong; Zhāotōng,PRC,295990,2025
-1627,Baicheng; Báichéng,PRC,298421,2025
-7067,Lufeng; Lùfēng,PRC,310570,2025
-14987,Xinzheng; Xīnzhèng,PRC,311647,2025
-1844,Karamay; Kèlāmǎyī; Qaramay,PRC,311815,2025
-9759,Tonghua; Tōnghuà,PRC,316018,2025
-3783,Wafangdian; Wăfángdiàn,PRC,319394,2025
-14674,Shuozhou; Shuòzhōu,PRC,324877,2025
-7027,Huian; Huì'ān,PRC,325256,2025
-3913,Liaoyuan; Liáoyuán,PRC,328966,2025
-14946,Qingzhou; Qīngzhōu,PRC,338584,2025
-1168,Wenling; Wēnlĭng,PRC,339655,2025
-9934,Anlu; Ānlù,PRC,341145,2025
-7146,Linhai; Línhăi,PRC,343381,2025
-14974,Xinyang; Xìnyáng,PRC,350067,2025
-14936,Shouguang; Shòuguāng,PRC,350722,2025
-4169,Ningde; Níngdé,PRC,350783,2025
-1094,Fuan; Fú'ān,PRC,356776,2025
-15000,Shuyang; Shùyáng,PRC,363144,2025
-11937,Tongling; Tónglíng,PRC,363353,2025
-12045,Laiwu; Láiwú,PRC,369299,2025
-7210,Wuzhou; Wúzhōu,PRC,370101,2025
-10257,Hanzhong; Hànzhōng,PRC,371212,2025
-1125,Huangshan; Huángshān,PRC,372354,2025
-10022,Renqiu; Rènqiū,PRC,373140,2025
-1195,Yongkang; Yŏngkāng,PRC,373295,2025
-4173,Ningguo; Níngguó,PRC,374587,2025
-10841,Ya'an; Yǎ'ān,PRC,376578,2025
-15045,Fuqing; Fúqīng,PRC,378882,2025
-4192,Xuanwei; Xuānwēi,PRC,382363,2025
-7549,Kaili; Kǎilǐ,PRC,386453,2025
-7099,Longyan; Lóngyán,PRC,392112,2025
-14802,Wanzhou; Wànzhōu,PRC,395844,2025
-12356,Yan'an; Yán'ān,PRC,401686,2025
-4130,Tianmen; Tiānmén,PRC,402718,2025
-11928,Qidong; Qĭdōng,PRC,404692,2025
-4606,Jiyuan; Jìyuán,PRC,405860,2025
-3815,Jixi; Jīxī,PRC,413446,2025
-12705,Zigong; Zìgòng,PRC,414628,2025
-4125,Yongzhou; Yǒngzhōu,PRC,416168,2025
-14900,Daqing; Dàqìng,PRC,421411,2025
-14702,Sanya; Sānyà,PRC,421522,2025
-15013,Fuyang; Fùyáng,PRC,422210,2025
-944,Yanji; Yánjí,PRC,426296,2025
-4105,Xuancheng; Xuānchéng,PRC,427032,2025
-10095,Xinghua; Xīnghuà,PRC,429553,2025
-15065,Huzhou; Húzhōu,PRC,431049,2025
-7256,Guangyuan; Guǎngyuán,PRC,441909,2025
-14849,Jinzhong; Jìnzhōng,PRC,445102,2025
-14789,Luzhou; Lúzhōu,PRC,446058,2025
-934,Chaoyang; Cháoyáng,PRC,448412,2025
-14937,Heze; Hézé,PRC,450572,2025
-1120,Shaoguan; Sháoguān,PRC,451567,2025
-7120,Yixing; Yíxīng,PRC,452718,2025
-1640,Liuyang; Liúyáng,PRC,456892,2025
-14947,Rizhao; Rìzhào,PRC,459144,2025
-10119,Dezhou; Dézhōu,PRC,459282,2025
-1153,Jingdezhen; Jĭngdézhèn,PRC,460993,2025
-1647,Pingliang; Píngliàng,PRC,461066,2025
-14940,Zoucheng; Zōuchéng,PRC,462609,2025
-14711,Zhanjiang; Zhànjiāng,PRC,463739,2025
-12078,Yangquan; Yángquán,PRC,465981,2025
-1162,Heyuan; Héyuán,PRC,466335,2025
-1089,Taixing; Tàixīng,PRC,466711,2025
-11947,Lishui; Lìshuĭ,PRC,468870,2025
-1083,Anqing; Ānqìng,PRC,469919,2025
-14904,Zhaodong; Zhàodōng,PRC,471428,2025
-9963,Yangjiang; Yángjiāng,PRC,490069,2025
-6837,Huludao; Húlúdăo,PRC,497401,2025
-14657,Kashgar; Kāshí; Qeshqer,PRC,498252,2025
-3877,Tongliao; Tüngliyou; Tōngliáo,PRC,498536,2025
-15038,Pingxiang; Píngxiāng,PRC,501237,2025
-1732,Hegang; Hègăng,PRC,504410,2025
-4642,Siping; Sìpíng,PRC,508075,2025
-14917,Langfang; Lángfāng,PRC,512854,2025
-1131,Gaozhou; Gāozhōu,PRC,515770,2025
-3934,Fuxin; Fùxīn,PRC,522330,2025
-11991,Zhuji; Zhūjì,PRC,522884,2025
-14951,Liaocheng; Liáochéng,PRC,530299,2025
-10763,Bijie; Bìjíe,PRC,533543,2025
-14931,Weihai; Wēihăi,PRC,535089,2025
-14790,Mianyang; Miányáng,PRC,538166,2025
-14879,Chifeng; Chìfēng; Ulaganqada,PRC,549177,2025
-14832,Xianyang; Xiányáng,PRC,564731,2025
-15030,Jiujiang; Jiŭjiāng,PRC,570903,2025
-14887,Panjin; Pánjĭn,PRC,577712,2025
-10616,Anshun; Ānshùn,PRC,582993,2025
-14966,Ezhou; Èzhōu,PRC,583820,2025
-1933,Tianshui; Tiānshuǐshì,PRC,584189,2025
-14712,Maoming; Màomíng,PRC,584253,2025
-14913,Zhangjiakou; Zhāngjiākŏu,PRC,587854,2025
-14850,Changzhi; Chángzhì,PRC,590098,2025
-14719,Zhaoqing; Zhàoqìng,PRC,592201,2025
-9803,Baishan; Báishān,PRC,596610,2025
-7089,Gaomi; Gāomì,PRC,599934,2025
-7101,Changde; Chángdé,PRC,603681,2025
-15031,Shangrao; Shàngráo,PRC,613471,2025
-9982,Chenzhou; Chēnzhōu,PRC,617070,2025
-15061,Yuyao; Yúyáo,PRC,624779,2025
-12414,Enshi; Ēnshī,PRC,625489,2025
-14960,Jingzhou; Jīngzhōu,PRC,625685,2025
-10079,Bozhou; Bózhōu,PRC,627970,2025
-11980,Cangzhou; Cāngzhōu,PRC,635841,2025
-9781,Liaoyang; Liáoyáng,PRC,640795,2025
-15064,Jiaxing; Jiāxīng,PRC,659472,2025
-15014,Bengbu; Bèngbù,PRC,671789,2025
-12310,Loudi; Lóudǐ,PRC,686965,2025
-1084,Binzhou; Bīnzhōu,PRC,696958,2025
-15009,Yangzhou; Yángzhōu,PRC,699843,2025
-14696,Qujing; Qūjìng,PRC,701652,2025
-14986,Pingdingshan; Píngdĭngshān,PRC,703495,2025
-10463,Jiamusi; Jiāmùsī,PRC,705051,2025
-14955,Tai'an; Tài'ān,PRC,707595,2025
-6981,Dandong; Dāndōng,PRC,714738,2025
-15068,Yiwu; Yìwū,PRC,718657,2025
-1139,Jiaozuo; Jiāozuò,PRC,723575,2025
 9905,Qinhuangdao; Qínhuángdăo,PRC,727667,2025
-12141,Leshan; Lèshān,PRC,728228,2025
-4032,Hengshui; Héngshuĭ,PRC,742818,2025
-11906,Mudanjiang; Mŭdānjiāng,PRC,758112,2025
-4157,Zhucheng; Zhūchéng,PRC,759969,2025
-14975,Nanyang; Nányáng,PRC,768610,2025
-5048,Dazhou; Dázhōu,PRC,771803,2025
-14841,Baoji; Băojī,PRC,773901,2025
-3895,Benxi; Bĕnxī,PRC,773946,2025
-14973,Shangqiu; Shāngqiū,PRC,779507,2025
-15006,Zhenjiang; Zhènjiāng,PRC,782534,2025
-14982,Zhoukou; Zhōukŏu,PRC,788576,2025
-10076,Changshu; Chángshú,PRC,795441,2025
-10304,Fuling; Fúlíng,PRC,595224,2010
-7418,Ankang; Ānkāng,PRC,807066,2025
-14828,Hengyang; Héngyáng,PRC,809271,2025
-14784,Deyang; Déyáng,PRC,810107,2025
-7625,Xiaogan; Xiàogăn,PRC,812534,2025
-14801,Jiangjin; Jiāngjīn,PRC,686189,2010
-14939,Jining; Jìníng,PRC,849585,2025
-14998,Pizhou; Pīzhōu,PRC,631572,2010
-15039,Xinyu; Xīnyú,PRC,851536,2025
-14881,Fushun; Fŭshùn,PRC,852128,2025
-3881,Jinzhou; Jĭnzhōu,PRC,854828,2025
-14985,Xinxiang; Xīnxiāng,PRC,870471,2025
-14673,Korla; Kù'ěrlè,PRC,871121,2025
-11933,Puyang; Púyáng,PRC,871559,2025
-14918,Baoding; Băodìng,PRC,883758,2025
-9995,Huaibei; Huáibĕi,PRC,886634,2025
-15021,Luan; Lù'ān,PRC,891648,2025
-14901,Qiqihar; Qíqíhā'ĕr,PRC,901649,2025
-14984,Zhumaidan; Zhùmădiàn,PRC,909144,2025
-12344,Jincheng; Jìnchéng,PRC,921145,2025
-4504,Liupanshui; Liùpánshuǐ,PRC,924182,2025
+9913,Jiahoe; Jiāohé,PRC,131614,2025
+9934,Anlu; Ānlù,PRC,341145,2025
+9937,Linquan; Línquán,PRC,173937,2025
+9939,Sinan; Sīnán,PRC,115462,2010
+9944,Jiangshan; Jiāngshān,PRC,59933,2025
+9953,Dafeng; Dàfēng,PRC,138525,2025
+9956,Lanling; Lánlíng,PRC,215497,2025
+9963,Yangjiang; Yángjiāng,PRC,490069,2025
+9969,Bazhou; Bàzhōu,PRC,134472,2025
+9972,Longquan; Lóngquán,PRC,76470,2025
+9974,Zhoushan; Zhōushān,PRC,55248,2025
 9978,Puning; Pŭníng,PRC,874954,2010
-14957,Xiangyang; Xiāngyáng,PRC,938344,2025
-14999,Suqian; Sùqiān,PRC,957665,2025
-11920,Quzhou; Qúzhōu,PRC,959819,2025
-14935,Weifang; Wéifāng,PRC,961428,2025
-14728,Guilin; Guìlín,PRC,965076,2025
-14825,Zhuzhou; Zhūzhōu,PRC,1005568,2025
-15052,Rui'an; Ruì'ān,PRC,927383,2010
-10043,Tengzhou; Téngzhōu,PRC,1033769,2025
-7108,Huizhou; Huìzhōu,PRC,1061952,2025
-14997,Lianyungang; Liányúngăng,PRC,897393,2010
-1099,Maanshan; Mă'ānshān,PRC,1071589,2025
-7571,Linfen; Línfén,PRC,1090241,2025
-4519,Dengzhou; Dèngzhōu,PRC,1095052,2025
-14959,Shiyan; Shíyàn,PRC,1129747,2025
-15054,Yueqing; Yuèqīng,PRC,1135366,2025
-14991,Luohe; Luòhé,PRC,1183149,2025
-15069,Jinhua; Jīnhuá,PRC,1195207,2025
-15011,Yancheng; Yánchéng,PRC,1211454,2025
-14716,Jieyang; Jiēyáng,PRC,1226848,2010
-14715,Chaozou; Cháozhōu,PRC,1256268,2010
-14792,Nanchong; Nánchōng,PRC,890402,2010
-15015,Huainan; Huáinán,PRC,1238488,2010
-14980,Kaifeng; Kāifēng,PRC,1296334,2025
-14996,Xuzhou; Xúzhōu,PRC,1310475,2025
-14725,Liuzhou; Liŭzhōu,PRC,1318051,2025
-15042,Jinjiang; Jìnjiāng,PRC,1172827,2010
-14749,Xining; Xīníng; Zi-ling,PRC,1423665,2025
-15058,Cixi; Cíxī,PRC,1459131,2025
-15028,Ganzhou; Gànzhōu,PRC,1476966,2025
-6851,Anshan; Ānshān,PRC,1495743,2025
-14889,Jilin; Jílín,PRC,1469722,2010
-15048,Zhangzhou; Zhāngzhōu,PRC,1535556,2025
-14950,Linyi; Línyí,PRC,1555397,2025
-14851,Datong; Dàtóng,PRC,1571547,2025
-14956,Yichang; Yíchāng,PRC,1573289,2025
-14978,Luoyang; Luòyáng,PRC,1603585,2025
-14857,Baotou; Bugutu; Bāotóu,PRC,1645072,2025
-12052,Kunshan; Kūnshān,PRC,1118617,2010
-14817,Zunyi; Zūnyì,PRC,995311,2010
-14945,Zibo; Zībó,PRC,1680283,2025
-14972,Anyang; Ānyáng,PRC,1736590,2025
-14983,Xuchang; Xŭchāng,PRC,1821624,2025
-14777,Yinchuan; Yínchuān,PRC,1913287,2025
-14860,Hohhot; Hūhéhàotè; Kökeqota,PRC,2029813,2025
-14914,Handan; Hándān,PRC,2099937,2025
-15016,Wuhu; Wúhú,PRC,2137949,2025
-14933,Yantai; Yāntái,PRC,1797861,2010
-15062,Shaoxing; Shàoxīng,PRC,1725726,2010
-15051,Putian; Pútián,PRC,2463177,2025
-15008,Nantong; Nántōng,PRC,2608604,2025
-14910,Tangshan; Tángshān,PRC,2651179,2025
-14762,Lanzhou; Lánzhōu,PRC,2689402,2025
-15003,Changzhou; Chángzhōu,PRC,2772878,2025
-15057,Ningbo; Níngbō,PRC,2953172,2025
-14923,Shijiazhuang; Shíjiāzhuāng,PRC,3100270,2025
-14685,Kunming; Kūnmíng,PRC,3218010,2025
-14821,Changsha; Chángshā,PRC,3246971,2025
-15044,Quanzhou; Quánzhōu,PRC,3384624,2025
-14890,Changchun; Chángchūn,PRC,3519692,2025
-1150,Dailan; Dàlián,PRC,3599519,2025
-15032,Nanchang; Nánchāng,PRC,3641447,2025
+9982,Chenzhou; Chēnzhōu,PRC,617070,2025
+9984,Fuzhou; Fŭzhōu,PRC,482940,2010
+9987,Shenxian; Shēnxiàn,PRC,111749,2025
+9995,Huaibei; Huáibĕi,PRC,886634,2025
+9997,Lianzhou; Liánzhōu,PRC,138395,2025
 10000,Qingdao; Qīngdăo,PRC,3682893,2025
-7137,Nanning; Nánníng,PRC,3695575,2025
-1069,Jinan; Jìnán,PRC,3824875,2025
-15053,Wenzhou; Wēnzhōu,PRC,3838182,2025
-14848,Taiyuan; Tàiyuán,PRC,4332180,2025
-14895,Harbin; Hā'ĕrbīn,PRC,4591886,2025
-7071,Xiamen; Xiàmén,PRC,3119110,2010
-14976,Zhengzhou; Zhèngzhōu,PRC,5126112,2025
-14831,Xi'an; Xī'ān,PRC,5298992,2025
-4925,Chengdu; Chéngdū,PRC,5609627,2025
-15017,Hefei; Héféi,PRC,5646049,2025
+10004,Fangchenggang; Fángchénggǎng,PRC,278955,2010
+10006,Jishou; Jíshǒu,PRC,190543,2025
+10008,Tianchang; Tiāncháng,PRC,115627,2025
+10012,Wuyishan; Wŭyíshān,PRC,84944,2025
+10017,Tongcheng; Tóngchéng,PRC,117455,2025
+10022,Renqiu; Rènqiū,PRC,373140,2025
+10042,Nanping; Nánpíng,PRC,30137,2011
+10043,Tengzhou; Téngzhōu,PRC,1033769,2025
+10053,Pingshan; Píngshān,PRC,88929,2025
+10058,Taizhou; Táizhōu,PRC,1189276,2010
+10068,Binhai; Bīnhǎi,PRC,1185700,2009
+10069,Fuding; Fúdĭng,PRC,95283,2025
+10072,Dongping; Dōngpíng,PRC,112726,2025
+10076,Changshu; Chángshú,PRC,795441,2025
+10079,Bozhou; Bózhōu,PRC,627970,2025
+10084,Ninghua; Nínghuà,PRC,67800,2025
+10093,Zhangpu; Zhāngpŭ,PRC,107312,2025
+10095,Xinghua; Xīnghuà,PRC,429553,2025
+10101,Changxiang; Chángxīng,PRC,61835,2025
+10112,Ruijin; Ruìjīn,PRC,211192,2025
+10119,Dezhou; Dézhōu,PRC,459282,2025
+10257,Hanzhong; Hànzhōng,PRC,371212,2025
+10304,Fuling; Fúlíng,PRC,595224,2010
+10367,Luliang; Lǚliáng,PRC,87888,2025
+10377,Shaoyang; Shàoyáng,PRC,95963,2025
+10397,Chicheng; Chìchéng,PRC,62616,2010
+10413,Jinghong; Jǐnghóng,PRC,95370,2025
+10431,Hechi; Héchí,PRC,91277,2025
+10446,Gushi; Gùshĭ,PRC,188007,2025
+10451,Ordos; È'ěrduōsī; Ôrdôs,PRC,162978,2025
+10462,Macheng; Máchéng,PRC,136894,2025
+10463,Jiamusi; Jiāmùsī,PRC,705051,2025
+10474,Gucheng; Gŭchéng,PRC,115583,2025
+10501,Ji'an; Jí'ān,PRC,248029,2025
+10503,Shangzhi; Shàngzhì,PRC,114330,2025
+10519,Shuangyashan; Shuāngyāshān,PRC,224673,2025
+10612,Manjur; Manjuur; Mănzhōulĭ,PRC,213243,2025
+10614,Turpan; Tǔlǔfān,PRC,89719,2010
+10616,Anshun; Ānshùn,PRC,582993,2025
+10629,Bayannagur; Bayannur; Bāyànnào'ĕr,PRC,270742,2025
+10698,Yuchun; Yīchūn,PRC,412791,2010
+10763,Bijie; Bìjíe,PRC,533543,2025
+10834,Golmud; Gé'ěrmù,PRC,238704,2025
+10841,Ya'an; Yǎ'ān,PRC,376578,2025
+10863,Mangshi; Mángshì,PRC,"131425	",2010
 11771,Shenyang; Shĕnyáng,PRC,6175250,2025
-7191,Hangzhou; Hángzhōu,PRC,6387064,2025
-14766,Tianjin; Tiānjīn,PRC,7330648,2025
-14963,Wuhan; Wŭhàn,PRC,8079484,2025
-6999,Chongqing; Chóngqìng,PRC,8449690,2025
-14708,Foshan; Fóshān,PRC,6771895,2010
-14713,Shantou; Shàntóu,PRC,10579303,2025
-14705,Shenzen; Shēnzhèn,PRC,10358381,2010
-14771,Bejing; Běijīng,PRC,18150576,2025
-7014,Shanghai; Shànghăi,PRC,30678616,2025
-1047,Guangzhou; Guăngzhōu,PRC,42987704,2025
-881,Luanping; Luánpíng,PRC,,
-1001,Baoying; Băoyīng,PRC,,
-1038,Nada; Nàdà,PRC,,
-1104,Longkou; Lóngkŏu,PRC,,
-1121,Suining; Suīníng,PRC,,
-1169,Weixian; Wèixiàn,PRC,,
-1575,Yuncheng; Yùnchéng,PRC,,
-1625,Longlin; Lónglín,PRC,,
-1776,Oroqen; Orčonu; Èlúnchūn,PRC,,
-1918,Maerkang; Mǎ'ěrkāng,PRC,,
-3427,Ejin Horo; Ejin Qoroga; Yījīnhuòluò,PRC,,
-3828,Aohan; Auqan; Áohàn,PRC,,
-3970,Fengcheng; Fèngchéng,PRC,,
-4082,Binhai; Bīnhăi,PRC,,
-4083,Fengcheng; Fēngchéng,PRC,,
-4123,Baoying; Băoyīng,PRC,,
-4156,Yongxin; Yŏngxīn,PRC,,
-4196,Fuzhou; Fúzhōu,PRC,,
-4203,Jinzhai; Jīnzhài,PRC,,
-4208,Fuping; Fùpíng,PRC,,
-4634,Hongdong; Hóngdòng,PRC,,
-4783,Ejen; Ejin; Éjǐnà,PRC,,
-4964,Yushu; Yùshù; Yüshu,PRC,,
-5025,Guyuan; Gùyuán,PRC,,
-5031,Alaša Barayun; Alxa Right; Ālāshàn Yòu,PRC,,
-6868,Qingyuan; Qīngyuán,PRC,,
-6905,Fusong; Fŭsōng,PRC,,
-7054,Guixi; Guìxī,PRC,,
-7058,Ninghai; Nínghăi,PRC,,
-7240,Suining; Suìníng,PRC,,
-7314,Yulin; Yúlín,PRC,,
-7523,Yushu; Yúshù,PRC,,
-7526,Bayan; Bāyàn,PRC,,
-7596,Badong; Bādōng,PRC,,
-7866,Bole; Bólè; Börtala,PRC,,
-7949,Tumshuq; Tumxuk; Túmùshūkè,PRC,,
-7971,Yumen; Yùmén,PRC,,
-8041,Línzhī; Nyingchi,PRC,,
-9843,Beijing Capital International Airport; Běijīng Shǒudū Guójì Jīchǎng,PRC,,
-9939,Sinan; Sīnán,PRC,,
-9984,Fuzhou; Fŭzhōu,PRC,,
-10004,Fangchenggang; Fángchénggǎng,PRC,,
-10042,Nanping; Nánpíng,PRC,,
-10058,Taizhou; Táizhōu,PRC,,
-10068,Binhai; Bīnhǎi,PRC,,
-10397,Chicheng; Chìchéng,PRC,,
-10614,Turpan; Tǔlǔfān,PRC,,
-10698,Yuchun; Yīchūn,PRC,,
-10863,Mangshi; Mángshì,PRC,,
-11963,Basuo; Bāsuǒ,PRC,,
-11983,Yulin; Yùlín,PRC,,
-12017,Huaihua; Huáihuà,PRC,,
-12069,Yuncheng; Yùnchéng,PRC,,
-12262,Puer; Pǔ'ěr,PRC,,
-12274,Bazhong; Bāzhōng,PRC,,
-12469,Holingol; Huòlínguōlè; Qoolin Gool,PRC,,
-12478,Kailu; Kāilŭ; Ḵayilü,PRC,,
-12537,Gegen Gool; Genhe; Gēnhé,PRC,,
-12706,Otog; Ètuōkè,PRC,,
-12815,Maqin; Maqên; Mǎqìn,PRC,,
-12820,Dunhuang; Dūnhuáng,PRC,,
-14637,Chamdo; Chāngdū; Qamdo,PRC,,
-14662,Makit; Mekit; Màigàití,PRC,,
-14667,,PRC,,
+11801,Chengde; Chéngdé,PRC,131203,2025
+11808,Tieling; Tiĕlĭng,PRC,183324,2025
+11822,Caofeidian; Cáofēidiàn,PRC,56120,2025
+11862,Antu; Āntú,PRC,56129,2025
+11886,Suizhong; Suízhōng,PRC,91626,2025
+11906,Mudanjiang; Mŭdānjiāng,PRC,758112,2025
+11913,Nanjing; Nánjīng,PRC,78589,2025
+11920,Quzhou; Qúzhōu,PRC,959819,2025
+11928,Qidong; Qĭdōng,PRC,404692,2025
+11933,Puyang; Púyáng,PRC,871559,2025
+11937,Tongling; Tónglíng,PRC,363353,2025
+11945,Xinfeng; Xìnfēng,PRC,104523,2025
+11947,Lishui; Lìshuĭ,PRC,468870,2025
+11962,Linqing; Línqīng,PRC,282112,2025
+11963,Dongfang; Dōngfāng,PRC,101809,2025
+11980,Cangzhou; Cāngzhōu,PRC,635841,2025
+11983,Yulin; Yùlín,PRC,547924,2010
+11988,Xiushui; Xiūshuĭ,PRC,106401,2025
+11991,Zhuji; Zhūjì,PRC,522884,2025
+12012,Xiangcheng; Xiàngchéng,PRC,231203,2025
+12015,Pingyi; Píngyì,PRC,169009,2025
+12017,Huaihua; Huáihuà,PRC,472687,2010
+12030,Ningdu; Níngdū,PRC,159642,2025
+12045,Laiwu; Láiwú,PRC,369299,2025
+12052,Kunshan; Kūnshān,PRC,1118617,2010
+12061,Lujiang; Lújiāng,PRC,140133,2025
+12067,Sheyang; Shèyáng,PRC,152273,2025
+12069,Yuncheng; Yùnchéng,PRC,380847,2010
+12078,Yangquan; Yángquán,PRC,465981,2025
+12084,Anxi; Ānxī,PRC,184535,2025
+12086,Gong'an; Gōng'ān,PRC,123573,2025
+12119,Artush; Atush; Ātúshí,PRC,120961,2025
+12141,Leshan; Lèshān,PRC,728228,2025
+12262,Puer; Pǔ'ěr,PRC,185473,2010
+12274,Bazhong; Bāzhōng,PRC,477235,2010
+12310,Loudi; Lóudǐ,PRC,686965,2025
+12327,Jinchang; Jīnchāng,PRC,144055,2025
+12342,Fujin; Fùjĭn,PRC,263095,2025
+12344,Jincheng; Jìnchéng,PRC,921145,2025
+12348,Siliyin hota; Xilinhot; Xīlínhàotè,PRC,290629,2025
+12356,Yan'an; Yán'ān,PRC,401686,2025
+12408,Yunxi; Yúnxī,PRC,58817,2025
+12414,Enshi; Ēnshī,PRC,625489,2025
+12448,Erenhot; Eriyen Qota; Èrliánhàotè,PRC,116563,2025
+12467,Xiantao; Xiāntáo,PRC,278585,2025
+12469,Holingol; Huòlínguōlè; Qoolin Gool,PRC,101496,2010
+12478,Kailu; Kāilŭ; Ḵayilü,PRC,111502,2010
+12537,Gegen Gool; Genhe; Gēnhé,PRC,89194,2010
+12618,Nenjiang; Nènjiāng,PRC,137649,2025
+12705,Zigong; Zìgòng,PRC,414628,2025
+12706,Otog; Ètuōkè,PRC,119423,2010
+12776,Wuwei; Wǔwēi,PRC,100155,2025
+12797,Wushan; Wǔshān,PRC,79422,2025
+12815,Maqin; Maqên; Mǎqìn,PRC,24098,2010
+12820,Dunhuang; Dūnhuáng,PRC,111535,2010
+12841,Zhaotong; Zhāotōng,PRC,295990,2025
+13150,Hulunbuir; Hūlúnbèi'ĕr; Kölön Buyir,PRC,210423,2025
+14637,Chamdo; Chāngdū; Qamdo,PRC,657505,2010
+14638,Lhasa; Lāsà,PRC,273179,2025
+14642,Nagqu; Nàqū,PRC,50126,2025
+14657,Kashgar; Kāshí; Qeshqer,PRC,498252,2025
+14658,Aksu; Aqsu; Ākèsū,PRC,293005,2025
+14661,Hotan; Hétián; Xoten,PRC,216546,2025
+14662,Makit; Mekit; Màigàití,PRC,53823,2010
+14667,Ürümqi; Wūlǔmùqí; Ürümchi,PRC,3974257,2025
 14670,Wūlǔmùqí Tiānshān Guójìjīchǎng; Ürümchi Tianshan Xelqara Ayroporti; Ürümqi Tianshan International Airport,PRC,,
-14671,Changji; Chāngjí; Sanji,PRC,,
-14672,Ghulja; Yining; Yīníng,PRC,,
+14671,Changji; Chāngjí; Sanji,PRC,303938,2010
+14672,Ghulja; Yining; Yīníng,PRC,368813,2010
+14673,Korla; Kù'ěrlè,PRC,871121,2025
+14674,Shuozhou; Shuòzhōu,PRC,324877,2025
+14676,Hami; Hāmì; Qumul,PRC,252812,2025
+14680,Lijiang; Lìjiāng,PRC,150969,2025
+14685,Kunming; Kūnmíng,PRC,3218010,2025
 14686,Kunming International Airport; Kūnmíng Chángshuǐ Guójì Jīchǎng,PRC,,
-14695,Mengzi; Méngzì,PRC,,
+14690,Dali; Dàlǐ,PRC,89851,2025
+14694,Gejiu; Gèjiù,PRC,197814,2025
+14695,Mengzi; Méngzì,PRC,212724,2010
+14696,Qujing; Qūjìng,PRC,701652,2025
+14697,Songming; Sōngmíng,PRC,63235,2025
+14700,Haikou; Hǎikǒu,PRC,73175,2025
+14702,Sanya; Sānyà,PRC,421522,2025
+14705,Shenzen; Shēnzhèn,PRC,10358381,2010
+14707,Zhongshan; Zhōngshān,PRC,66367,2025
+14708,Foshan; Fóshān,PRC,6771895,2010
 14710,"	Guǎngzhōu Báiyún Guójì Jīchǎng; Guangzhou Baiyun International Airport",PRC,,
-14717,Qingyuan; Qīngyuăn,PRC,,
-14739,Delingha; Délìnghā; Dêrlinka,PRC,,
+14711,Zhanjiang; Zhànjiāng,PRC,463739,2025
+14712,Maoming; Màomíng,PRC,584253,2025
+14713,Shantou; Shàntóu,PRC,10579303,2025
+14715,Chaozou; Cháozhōu,PRC,1256268,2010
+14716,Jieyang; Jiēyáng,PRC,1226848,2010
+14717,Qingyuan; Qīngyuăn,PRC,916453,2010
+14719,Zhaoqing; Zhàoqìng,PRC,592201,2025
+14723,Guigang; Guìgăng,PRC,261422,2025
+14725,Liuzhou; Liŭzhōu,PRC,1318051,2025
+14728,Guilin; Guìlín,PRC,965076,2025
+14739,Delingha; Délìnghā; Dêrlinka,PRC,54844,2010
+14749,Xining; Xīníng; Zi-ling,PRC,1423665,2025
+14759,Jiayuguan; Jiāyùguān,PRC,199681,2025
+14762,Lanzhou; Lánzhōu,PRC,2689402,2025
+14766,Tianjin; Tiānjīn,PRC,7330648,2025
+14771,Bejing; Běijīng,PRC,18150576,2025
+14777,Yinchuan; Yínchuān,PRC,1913287,2025
+14779,Zhongwei; Zhōngwèi,PRC,173279,2025
 14780,Chengdu Tianfu International Airport; Chéngdū Tiānfǔ Guójì Jīchǎng,PRC,,
+14784,Deyang; Déyáng,PRC,810107,2025
+14785,Yibin; Yíbīn,PRC,234841,2025
+14789,Luzhou; Lúzhōu,PRC,446058,2025
+14790,Mianyang; Miányáng,PRC,538166,2025
+14792,Nanchong; Nánchōng,PRC,890402,2010
+14798,Hechuan; Héchuān,PRC,273191,2025
+14801,Jiangjin; Jiāngjīn,PRC,686189,2010
+14802,Wanzhou; Wànzhōu,PRC,395844,2025
+14804,Kaizhou; Kāizhōu,PRC,105588,2025
+14807,Guiyang; Guìyáng,PRC,129943,2025
+14817,Zunyi; Zūnyì,PRC,995311,2010
+14821,Changsha; Chángshā,PRC,3246971,2025
+14825,Zhuzhou; Zhūzhōu,PRC,1005568,2025
+14827,Yueyang; Yuèyáng,PRC,120188,2025
+14828,Hengyang; Héngyáng,PRC,809271,2025
+14829,Yiyang; Yìyáng,PRC,86028,2025
+14830,Shenmu; Shénmù,PRC,274814,2025
+14831,Xi'an; Xī'ān,PRC,5298992,2025
+14832,Xianyang; Xiányáng,PRC,564731,2025
 14835,Xi'an Xianyang International Airport; Xī'ān Xiányáng Guójì Jīchǎng,PRC,,
-14854,Alaša Jegün; Alxa Left; Ālāshàn Zuŏ,PRC,,
-14870,Jiagedaqi; Jiāgédáqí,PRC,,
-14873,Xuguit; Yakeshi; Yákèshí,PRC,,
-14878,Linsi; Linxi; Línxī,PRC,,
+14841,Baoji; Băojī,PRC,773901,2025
+14848,Taiyuan; Tàiyuán,PRC,4332180,2025
+14849,Jinzhong; Jìnzhōng,PRC,445102,2025
+14850,Changzhi; Chángzhì,PRC,590098,2025
+14851,Datong; Dàtóng,PRC,1571547,2025
+14854,Alaša Jegün; Alxa Left; Ālāshàn Zuŏ,PRC,129242,2010
+14857,Baotou; Bugutu; Bāotóu,PRC,1645072,2025
+14860,Hohhot; Hūhéhàotè; Kökeqota,PRC,2029813,2025
+14870,Jiagedaqi; Jiāgédáqí,PRC,142465,2010
+14873,Xuguit; Yakeshi; Yákèshí,PRC,338275,2010
+14875,Jalaid; Zhalaite; Zhālàitè,PRC,69540,2025
+14876,Ulahan; Ulanhot; Wūlánhàotè,PRC,221373,2025
+14877,Jarud; Zhalute; Zhālŭtè,PRC,54968,2025
+14878,Linsi; Linxi; Línxī,PRC,99301,2010
+14879,Chifeng; Chìfēng; Ulaganqada,PRC,549177,2025
+14881,Fushun; Fŭshùn,PRC,852128,2025
 14885,Shenyang Taoxian International Airport; Shěnyáng Táoxiān Guójì Jīchǎng,PRC,,
+14887,Panjin; Pánjĭn,PRC,577712,2025
+14889,Jilin; Jílín,PRC,1469722,2010
+14890,Changchun; Chángchūn,PRC,3519692,2025
+14895,Harbin; Hā'ĕrbīn,PRC,4591886,2025
 14897,Harbin Taiping International Airport; Hārbīn Tàipíng Guójì Jīchǎng,PRC,,
-14902,Mohe; Mòhé,PRC,,
-14920,Xushui; Xúshuĭ,PRC,,
+14900,Daqing; Dàqìng,PRC,421411,2025
+14901,Qiqihar; Qíqíhā'ĕr,PRC,901649,2025
+14902,Mohe; Mòhé,PRC,71307,2010
+14904,Zhaodong; Zhàodōng,PRC,471428,2025
+14905,Beian; Bĕi'ān,PRC,109509,2025
+14907,Hailun; Hăilún,PRC,124959,2025
+14910,Tangshan; Tángshān,PRC,2651179,2025
+14913,Zhangjiakou; Zhāngjiākŏu,PRC,587854,2025
+14914,Handan; Hándān,PRC,2099937,2025
+14916,Xingtai; Xíngtái,PRC,139787,2025
+14917,Langfang; Lángfāng,PRC,512854,2025
+14918,Baoding; Băodìng,PRC,883758,2025
+14920,Xushui; Xúshuĭ,PRC,193770,2010
+14922,Gaodeidian; Gāobēidiàn,PRC,186474,2025
+14923,Shijiazhuang; Shíjiāzhuāng,PRC,3100270,2025
+14926,Ningjin; Níngjìn,PRC,71337,2025
+14927,Dingzhou; Dìngzhōu,PRC,240736,2025
 14930,Qingdao Jiaodong International Airport; Qīngdǎo Jiāodōng Guójì Jīchǎng,PRC,,
-14967,Huanggang; Huánggāng,PRC,,
+14931,Weihai; Wēihăi,PRC,535089,2025
+14933,Yantai; Yāntái,PRC,1797861,2010
+14935,Weifang; Wéifāng,PRC,961428,2025
+14936,Shouguang; Shòuguāng,PRC,350722,2025
+14937,Heze; Hézé,PRC,450572,2025
+14938,Zaozhuang; Zăozhuāng,PRC,200465,2025
+14939,Jining; Jìníng,PRC,849585,2025
+14940,Zoucheng; Zōuchéng,PRC,462609,2025
+14944,Zouping; Zōupíng,PRC,233401,2025
+14945,Zibo; Zībó,PRC,1680283,2025
+14946,Qingzhou; Qīngzhōu,PRC,338584,2025
+14947,Rizhao; Rìzhào,PRC,459144,2025
+14950,Linyi; Línyí,PRC,1555397,2025
+14951,Liaocheng; Liáochéng,PRC,530299,2025
+14952,Qufu; Qŭfù,PRC,243583,2025
+14954,Dongying; Dōngyíng,PRC,126739,2025
+14955,Tai'an; Tài'ān,PRC,707595,2025
+14956,Yichang; Yíchāng,PRC,1573289,2025
+14957,Xiangyang; Xiāngyáng,PRC,938344,2025
+14959,Shiyan; Shíyàn,PRC,1129747,2025
+14960,Jingzhou; Jīngzhōu,PRC,625685,2025
+14963,Wuhan; Wŭhàn,PRC,8079484,2025
+14966,Ezhou; Èzhōu,PRC,583820,2025
+14967,Huanggang; Huánggāng,PRC,267860,2010
 14968,Wuhan Tianhe International Airport; Wǔhàn Tiānhé Guójì Jīchǎng,PRC,,
+14971,Zhongxiang; Zhōngxiáng,PRC,157863,2025
+14972,Anyang; Ānyáng,PRC,1736590,2025
+14973,Shangqiu; Shāngqiū,PRC,779507,2025
+14974,Xinyang; Xìnyáng,PRC,350067,2025
+14975,Nanyang; Nányáng,PRC,768610,2025
+14976,Zhengzhou; Zhèngzhōu,PRC,5126112,2025
+14978,Luoyang; Luòyáng,PRC,1603585,2025
+14980,Kaifeng; Kāifēng,PRC,1296334,2025
+14982,Zhoukou; Zhōukŏu,PRC,788576,2025
+14983,Xuchang; Xŭchāng,PRC,1821624,2025
+14984,Zhumaidan; Zhùmădiàn,PRC,909144,2025
+14985,Xinxiang; Xīnxiāng,PRC,870471,2025
+14986,Pingdingshan; Píngdĭngshān,PRC,703495,2025
+14987,Xinzheng; Xīnzhèng,PRC,311647,2025
+14988,Fangcheng; Fāngchéng,PRC,75931,2025
+14991,Luohe; Luòhé,PRC,1183149,2025
+14992,Chongming; Chóngmíng,PRC,135058,2025
 14993,Shanghai Pudong International Airport; Shànghǎi Pǔdōng Guójì Jīchǎng,PRC,,
-15002,Suzhou; Sūzhōu,PRC,,
-15010,Taizhou; Tàizhōu,PRC,,
-15019,Feixi; Féixī,PRC,,
-15022,Suzhou; Sùzhōu,PRC,,
-15023,Mingguang; Míngguāng,PRC,,
-15026,Feidong; Féidōng,PRC,,
-15040,Yichun; Yíchūn,PRC,,
+14996,Xuzhou; Xúzhōu,PRC,1310475,2025
+14997,Lianyungang; Liányúngăng,PRC,897393,2010
+14998,Pizhou; Pīzhōu,PRC,631572,2010
+14999,Suqian; Sùqiān,PRC,957665,2025
+15000,Shuyang; Shùyáng,PRC,363144,2025
+15001,Huaian; Huái'ān,PRC,54056,2025
+15002,Suzhou; Sūzhōu,PRC,4083923,2010
+15003,Changzhou; Chángzhōu,PRC,2772878,2025
+15004,Wuxi; Wúxī,PRC,53095,2025
+15006,Zhenjiang; Zhènjiāng,PRC,782534,2025
+15008,Nantong; Nántōng,PRC,2608604,2025
+15009,Yangzhou; Yángzhōu,PRC,699843,2025
+15010,Taizhou; Tàizhōu,PRC,1053601,2010
+15011,Yancheng; Yánchéng,PRC,1211454,2025
+15013,Fuyang; Fùyáng,PRC,422210,2025
+15014,Bengbu; Bèngbù,PRC,671789,2025
+15015,Huainan; Huáinán,PRC,1238488,2010
+15016,Wuhu; Wúhú,PRC,2137949,2025
+15017,Hefei; Héféi,PRC,5646049,2025
+15019,Feixi; Féixī,PRC,297150,2010
+15021,Luan; Lù'ān,PRC,891648,2025
+15022,Suzhou; Sùzhōu,PRC,742685,2010
+15023,Mingguang; Míngguāng,PRC,204323,2010
+15024,Yingshang; Yĭngshàng,PRC,90278,2025
+15026,Feidong; Féidōng,PRC,303171,2010
+15028,Ganzhou; Gànzhōu,PRC,1476966,2025
+15030,Jiujiang; Jiŭjiāng,PRC,570903,2025
+15031,Shangrao; Shàngráo,PRC,613471,2025
+15032,Nanchang; Nánchāng,PRC,3641447,2025
+15038,Pingxiang; Píngxiāng,PRC,501237,2025
+15039,Xinyu; Xīnyú,PRC,851536,2025
+15040,Yichun; Yíchūn,PRC,461817,2010
+15042,Jinjiang; Jìnjiāng,PRC,1172827,2010
+15044,Quanzhou; Quánzhōu,PRC,3384624,2025
+15045,Fuqing; Fúqīng,PRC,378882,2025
+15048,Zhangzhou; Zhāngzhōu,PRC,1535556,2025
+15049,Nan'an; Nán'ān,PRC,134905,2025
+15050,Sanming; Sānmíng,PRC,243815,2025
+15051,Putian; Pútián,PRC,2463177,2025
+15052,Rui'an; Ruì'ān,PRC,927383,2010
+15053,Wenzhou; Wēnzhōu,PRC,3838182,2025
+15054,Yueqing; Yuèqīng,PRC,1135366,2025
+15057,Ningbo; Níngbō,PRC,2953172,2025
+15058,Cixi; Cíxī,PRC,1459131,2025
+15061,Yuyao; Yúyáo,PRC,624779,2025
+15062,Shaoxing; Shàoxīng,PRC,1725726,2010
+15064,Jiaxing; Jiāxīng,PRC,659472,2025
+15065,Huzhou; Húzhōu,PRC,431049,2025
+15068,Yiwu; Yìwū,PRC,718657,2025
+15069,Jinhua; Jīnhuá,PRC,1195207,2025
 14192,Al-Khalīl; Hebron; Ḥeḇrōn,PST,414422,2025
 7107,Ram'allah; Ramallah; Rām Allāh,PST,1054623,2025
 15838,Ad-Dawḥah; Doha,QAT,1980416,2025
@@ -2269,8 +2267,8 @@
 15076,Gāoxióng; Kaohsiung,ROC,2294772,2025
 11959,Taichung; Táizhōng,ROC,2318377,2025
 7186,Taipei; Táiběi,ROC,9686521,2025
-15072,Jincheng; Jīnchéng,ROC,,
-15077,Yilan; Yílán,ROC,,
+15072,Jincheng; Jīnchéng,ROC,34245,2011
+15077,Yilan; Yílán,ROC,76045,2025
 15078,Taoyuan International Airport; Táoyuán Gúojì Jīchǎng,ROC,,
 4126,Namwon; Namwŏn,ROK,78770,2010
 4103,Yeongju; Yŏngju,ROK,108888,2010
@@ -2351,8 +2349,8 @@
 9617,Bucharest; București,ROM,1971350,2025
 15132,Aeroportul Internațional Henri Coandă; Henri Coandă International Airport,ROM,,
 15943,Kigali,RWA,1621760,2025
-13364,Gisenyi,RWA,,
-15251,Tifariti; Tyfāriti,SHW,,
+13364,Gisenyi,RWA,149209,2012
+15251,Tifariti; Tyfāriti,SHW,3000,2010
 581,Poprad,SLO,52862,2011
 541,Nitra,SLO,55299,2025
 9692,Trnava,SLO,56412,2025
@@ -2368,8 +2366,8 @@
 9596,Celje,SLV,37520,2011
 596,Maribor,SLV,80272,2025
 13851,Ljubljana,SLV,252736,2025
-14121,San Marino,SNM,,
-9626,Tchinval; Tskhinvali,SOS,,
+14121,San Marino,SNM,4130,2026
+9626,Tchinval; Tskhinvali,SOS,32180,2019
 7860,Petrovsk-Zabaykalsky,SOV,18549,2010
 3187,Sortavala,SOV,19235,2010
 9190,Podporozhye,SOV,18733,2010

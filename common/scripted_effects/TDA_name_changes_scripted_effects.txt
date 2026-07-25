@@ -8398,23 +8398,14 @@ TDA_update_state_425_names = {
 	else = {
 		reset_province_name = 15706
 	}
-	#Hubbaḷḷi
+	#Hubbaḷḷi-Dhāravāḍ
 	if = {
 		limit = { any_country = { controls_province = 15708 TAG_using_indian_names = yes } }
 		set_province_name = { id = 15708 name = VICTORY_POINTS_15708_0 }
 	}
-	#Hubballi
+	#Hubballi-Dharwad
 	else = {
 		reset_province_name = 15708
-	}
-	#Dhāravāḍ
-	if = {
-		limit = { any_country = { controls_province = 15709 TAG_using_indian_names = yes } }
-		set_province_name = { id = 15709 name = VICTORY_POINTS_15709_0 }
-	}
-	#Dharwad
-	else = {
-		reset_province_name = 15709
 	}
 	#Hāsan
 	if = {
@@ -9971,12 +9962,12 @@ TDA_update_state_438_names = {
 	else = {
 		reset_province_name = 8114
 	}
-	#Ayodhyā
+	#Faizābād
 	if = {
 		limit = { any_country = { controls_province = 9973 TAG_using_indian_names = yes } }
 		set_province_name = { id = 9973 name = VICTORY_POINTS_9973_0 }
 	}
-	#Ayodhya
+	#Faizabad
 	else = {
 		reset_province_name = 9973
 	}
@@ -12528,7 +12519,7 @@ TDA_update_state_583_names = {
 		limit = { any_country = { controls_province = 15174 TAG_using_kazakh_names = yes } }
 		set_province_name = { id = 15174 name = VICTORY_POINTS_15174_0 }
 	}
-	#Kulan
+	#Kostanay
 	else = {
 		reset_province_name = 15174
 	}
@@ -22707,6 +22698,15 @@ TDA_update_state_938_names = {
 	#Salalah
 	else = {
 		reset_province_name = 2103
+	}
+	#Ṣalālah
+	if = {
+		limit = { any_country = { controls_province = 15807 TAG_using_arab_names = yes } }
+		set_province_name = { id = 15807 name = VICTORY_POINTS_15807_0 }
+	}
+	#Salalah
+	else = {
+		reset_province_name = 15807
 	}
 }
 
