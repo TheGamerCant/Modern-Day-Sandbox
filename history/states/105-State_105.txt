@@ -5,9 +5,6 @@ state={
 		owner = MNT
 		add_core_of = MNT
 		
-		victory_points = { 13856 5 }
-		victory_points = { 9821 1 }
-		victory_points = { 13857 2 }
 		
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }

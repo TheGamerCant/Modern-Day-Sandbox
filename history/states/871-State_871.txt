@@ -6,7 +6,6 @@ state={
 		add_core_of = AKH
 		add_claim_by = AZJ
 		
-		victory_points = { 12904 2 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

@@ -5,9 +5,6 @@ state={
 		owner = CRO
 		add_core_of = CRO
 		
-		victory_points = { 13844 5 }
-		victory_points = { 3868 2 }
-		victory_points = { 3943 2 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

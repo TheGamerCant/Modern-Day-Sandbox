@@ -5,12 +5,6 @@ state={
 		owner = SLV
 		add_core_of = SLV
 		
-		victory_points = { 13851 12 }
-		victory_points = { 596 3 }
-		victory_points = { 13855 2 }
-		victory_points = { 9596 2 }
-		victory_points = { 3631 2 }
-		victory_points = { 6672 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

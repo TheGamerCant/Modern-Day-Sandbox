@@ -5,24 +5,6 @@ state={
 		owner = ALG
 		add_core_of = ALG
 		
-		victory_points = { 1958 3 }
-		victory_points = { 10731 2 }
-		victory_points = { 1095 2 }
-		victory_points = { 8077 2 }
-		victory_points = { 15219 2 }
-		victory_points = { 15224 1 }
-		victory_points = { 10749 1 }
-		victory_points = { 4970 3 }
-		victory_points = { 5035 3 }
-		victory_points = { 2049 2 }
-		victory_points = { 12034 5 }
-		victory_points = { 12018 2 }
-		victory_points = { 1967 3 }
-		victory_points = { 13074 2 }
-		victory_points = { 15223 1 }
-		victory_points = { 1128 2 }
-		victory_points = { 1058 4 }
-		victory_points = { 1141 3 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

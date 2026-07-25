@@ -5,8 +5,6 @@ state={
 		owner = LEB
 		add_core_of = LEB
 		
-		victory_points = { 15448 40 }
-		victory_points = { 15449 7 }
 		
 		set_variable = { sq_km = 5348.4 }
 	}

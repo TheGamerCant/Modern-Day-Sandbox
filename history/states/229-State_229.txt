@@ -5,17 +5,6 @@ state={
 		owner = AZJ
 		add_core_of = AZJ
 		
-		victory_points = { 7661 40 }
-		victory_points = { 10473 2 }
-		victory_points = { 2186 1 }
-		victory_points = { 11674 4 }
-		victory_points = { 12926 5 }
-		victory_points = { 11645 2 }
-		victory_points = { 1536 2 }
-		victory_points = { 1610 2 }
-		victory_points = { 12434 1 }
-		victory_points = { 4458 1 }
-		victory_points = { 4614 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

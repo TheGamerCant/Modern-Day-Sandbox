@@ -6,9 +6,6 @@ state={
 		add_core_of = DMK
 		add_core_of = GRN
 		
-		victory_points = { 15091 3 }
-		victory_points = { 15090 1 }
-		victory_points = { 15098 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

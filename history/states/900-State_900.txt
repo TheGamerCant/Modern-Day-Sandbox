@@ -6,7 +6,6 @@ state={
 		add_core_of = MRC
 		add_claim_by = SHW
 		
-		victory_points = { 15250 2 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

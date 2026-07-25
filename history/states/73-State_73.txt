@@ -5,8 +5,6 @@ state={
 		owner = UKR
 		add_core_of = UKR
 		
-		victory_points = { 11691 3 }
-		victory_points = { 3548 2 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

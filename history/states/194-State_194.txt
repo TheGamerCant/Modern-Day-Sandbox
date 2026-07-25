@@ -5,12 +5,6 @@ state={
 		owner = BLR
 		add_core_of = BLR
 		
-		victory_points = { 9288 8 }
-		victory_points = { 6232 3 }
-		victory_points = { 6319 2 }
-		victory_points = { 6373 2 }
-		victory_points = { 3293 2 }
-		victory_points = { 9342 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

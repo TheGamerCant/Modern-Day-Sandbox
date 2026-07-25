@@ -6,8 +6,6 @@ state={
 		add_core_of = SOV
 		add_core_of = KLK
 		
-		victory_points = { 6794 3 }
-		victory_points = { 759 1 }
 		
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }

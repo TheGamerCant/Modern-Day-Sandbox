@@ -5,10 +5,6 @@ state={
 		owner = ITA
 		add_core_of = ITA
 		
-		victory_points = { 819 30 }
-		victory_points = { 3958 2 }
-		victory_points = { 955 3 }
-		victory_points = { 9856 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

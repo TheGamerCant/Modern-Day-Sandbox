@@ -5,14 +5,6 @@ state={
 		owner = NWY
 		add_core_of = NWY
 		
-		victory_points = { 15115 4 }
-		victory_points = { 3022 1 }
-		victory_points = { 6038 1 }
-		victory_points = { 9132 1 }
-		victory_points = { 6041 1 }
-		victory_points = { 3183 1 }
-		victory_points = { 21 1 }
-		victory_points = { 6118 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

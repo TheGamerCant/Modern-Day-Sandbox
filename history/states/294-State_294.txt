@@ -5,13 +5,6 @@ state={
 		owner = OMA
 		add_core_of = OMA
 		
-		victory_points = { 15809 20 }
-		victory_points = { 15810 2 }
-		victory_points = { 15811 5 }
-		victory_points = { 4993 2 }
-		victory_points = { 10760 1 }
-		victory_points = { 8020 1 }
-		victory_points = { 15812 1 }
 		
 		set_variable = { sq_km = 126348 }
 		

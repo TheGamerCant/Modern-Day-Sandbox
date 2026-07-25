@@ -6,12 +6,6 @@ state={
 		add_core_of = PRC
 		add_claim_by = ROC
 		
-		victory_points = { 10612 2 }
-		victory_points = { 13150 3 }
-		victory_points = { 14873 2 }
-		victory_points = { 1776 2 }
-		victory_points = { 7894 2 }
-		victory_points = { 12537 1 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

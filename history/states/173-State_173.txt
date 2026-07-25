@@ -6,8 +6,6 @@ state={
 		add_core_of = ISR
 		add_claim_by = HMS
 		
-		victory_points = { 14182 2 }
-		victory_points = { 4088 2 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

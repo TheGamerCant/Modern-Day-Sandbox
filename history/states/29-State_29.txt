@@ -5,12 +5,6 @@ state={
 		owner = FRA
 		add_core_of = FRA
 		
-		victory_points = { 11483 15 }
-		victory_points = { 13990 5 }
-		victory_points = { 13994 4 }
-		victory_points = { 13995 3 }
-		victory_points = { 6504 3 }
-		victory_points = { 13993 5 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

@@ -6,44 +6,6 @@ state={
 		add_core_of = PRC
 		add_claim_by = ROC
 		
-		victory_points = { 10000 55 }
-		victory_points = { 14930 2 }
-		victory_points = { 14931 13 }
-		victory_points = { 14933 25 }
-		victory_points = { 1104 5 }
-		victory_points = { 14947 10 }
-		victory_points = { 14950 25 }
-		victory_points = { 14938 13 }
-		victory_points = { 14937 13 }
-		victory_points = { 14939 17 }
-		victory_points = { 14940 7 }
-		victory_points = { 1069 50 }
-		victory_points = { 14951 10 }
-		victory_points = { 10119 8 }
-		victory_points = { 14954 10 }
-		victory_points = { 14945 25 }
-		victory_points = { 14944 5 }
-		victory_points = { 14955 14 }
-		victory_points = { 14935 20 }
-		victory_points = { 14936 7 }
-		victory_points = { 4205 4 }
-		victory_points = { 7105 4 }
-		victory_points = { 10043 9 }
-		victory_points = { 7129 6 }
-		victory_points = { 12069 5 }
-		victory_points = { 7055 7 }
-		victory_points = { 1084 6 }
-		victory_points = { 9987 3 }
-		victory_points = { 11962 4 }
-		victory_points = { 14946 6 }
-		victory_points = { 4186 4 }
-		victory_points = { 9956 4 }
-		victory_points = { 12015 4 }
-		victory_points = { 12045 7 }
-		victory_points = { 4157 6 }
-		victory_points = { 7089 5 }
-		victory_points = { 10072 3 }
-		victory_points = { 14952 4 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

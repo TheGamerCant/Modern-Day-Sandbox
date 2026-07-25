@@ -5,7 +5,6 @@ state={
 		owner = CAN
 		add_core_of = CAN
 		
-		victory_points = { 12505 4 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

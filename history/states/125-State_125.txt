@@ -6,10 +6,6 @@ state={
 		add_core_of = GBR
 		add_core_of = ENG
 		
-		victory_points = { 13668 4 }
-		victory_points = { 13666 4 }
-		victory_points = { 11253 3 }
-		victory_points = { 11221 5 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

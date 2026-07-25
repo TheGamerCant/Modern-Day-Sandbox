@@ -6,27 +6,6 @@ state={
 		add_core_of = PRC
 		add_claim_by = ROC
 		
-		victory_points = { 14914 20 }
-		victory_points = { 4058 5 }
-		victory_points = { 14916 15 }
-		victory_points = { 14923 45 }
-		victory_points = { 14927 6 }
-		victory_points = { 14918 20 }
-		victory_points = { 14917 9 }
-		victory_points = { 11980 7 }
-		victory_points = { 4032 8 }
-		victory_points = { 9969 4 }
-		victory_points = { 7092 2 }
-		victory_points = { 10022 4 }
-		victory_points = { 14922 4 }
-		victory_points = { 14920 3 }
-		victory_points = { 4093 4 }
-		victory_points = { 6828 2 }
-		victory_points = { 10053 2 }
-		victory_points = { 1169 3 }
-		victory_points = { 14926 3 }
-		victory_points = { 4190 3 }
-		victory_points = { 4208 2 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

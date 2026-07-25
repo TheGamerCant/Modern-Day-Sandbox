@@ -5,15 +5,6 @@ state={
 		owner = ALG
 		add_core_of = ALG
 		
-		victory_points = { 15238 4 }
-		victory_points = { 15239 10 }
-		victory_points = { 15241 7 }
-		victory_points = { 15242 6 }
-		victory_points = { 12051 2 }
-		victory_points = { 7033 2 }
-		victory_points = { 1160 2 }
-		victory_points = { 7166 3 }
-		victory_points = { 7065 3 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

@@ -5,13 +5,6 @@ state={
 		owner = NRD
 		add_core_of = NRD
 		
-		victory_points = { 14068 6 }
-		victory_points = { 14067 2 }
-		victory_points = { 11318 5 }
-		victory_points = { 14070 4 }
-		victory_points = { 14071 3 }
-		victory_points = { 6286 4 }
-		victory_points = { 6336 2 }
 
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

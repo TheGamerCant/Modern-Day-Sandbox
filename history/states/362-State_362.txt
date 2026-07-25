@@ -6,12 +6,6 @@ state={
 		add_core_of = USA
 		
 #		victory_points = { 13570 10 }
-		victory_points = { 13571 2 }
-		victory_points = { 13572 12 }
-		victory_points = { 13575 5 }
-		victory_points = { 13576 15 }
-		victory_points = { 1506 4 }
-		victory_points = { 3823 3 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

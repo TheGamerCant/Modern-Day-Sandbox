@@ -5,36 +5,6 @@ state={
 		owner = IND
 		add_core_of = IND
 		
-		victory_points = { 15633 8 }
-		victory_points = { 15609 15 }
-		victory_points = { 15645 6 }
-		victory_points = { 15634 10 }
-		victory_points = { 15646 5 }
-		victory_points = { 15613 18 }
-		victory_points = { 15631 6 }
-		victory_points = { 15632 5 }
-		victory_points = { 2036 2 }
-		victory_points = { 15617 30 }
-		victory_points = { 15620 30 }
-		victory_points = { 5086 3 }
-		victory_points = { 15615 12 }
-		victory_points = { 15624 15 }
-		victory_points = { 15630 7 }
-		victory_points = { 10751 3 }
-		victory_points = { 15629 10 }
-		victory_points = { 15627 9 }
-		victory_points = { 15628 4 }
-		victory_points = { 2005 2 }
-		victory_points = { 15647 2 }
-		victory_points = { 9973 2 }
-		victory_points = { 1983 2 }
-		victory_points = { 8114 4 }
-		victory_points = { 9951 2 }
-		victory_points = { 15643 2 }
-		victory_points = { 12777 2 }
-		victory_points = { 5055 2 }
-		victory_points = { 15636 2 }
-		victory_points = { 15640 2 }
 		
 		set_variable = { sq_km = 223099.33 }
 	}

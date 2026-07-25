@@ -5,16 +5,6 @@ state={
 		owner = CZE
 		add_core_of = CZE
 		
-		victory_points = { 11542 35 }
-		victory_points = { 14084 2 }
-		victory_points = { 11432 3 }
-		victory_points = { 6470 2 }
-		victory_points = { 6592 3 }
-		victory_points = { 9414 3 }
-		victory_points = { 445 3 }
-		victory_points = { 9541 2 }
-		victory_points = { 11556 2 }
-		victory_points = { 9421 2 }
 
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

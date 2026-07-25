@@ -5,17 +5,6 @@ state={
 		owner = SWE
 		add_core_of = SWE
 		
-		victory_points = { 6050 35 }
-		victory_points = { 15119 2 }
-		victory_points = { 35 3 }
-		victory_points = { 9149 3 }
-		victory_points = { 15117 2 }
-		victory_points = { 11188 2 }
-		victory_points = { 11082 2 }
-		victory_points = { 6209 1 }
-		victory_points = { 3182 1 }
-		victory_points = { 9185 1 }
-		victory_points = { 9109 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

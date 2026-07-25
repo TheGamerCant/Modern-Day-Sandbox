@@ -5,13 +5,6 @@ state={
 		owner = CUB
 		add_core_of = CUB
 		
-		victory_points = { 15372 30 }
-		victory_points = { 15374 2 }
-		victory_points = { 15375 6 }
-		victory_points = { 4600 2 }
-		victory_points = { 4476 5 }
-		victory_points = { 7451 3 }
-		victory_points = { 12347 4 }
 		
 		set_variable = { sq_km = 109884 }
 		

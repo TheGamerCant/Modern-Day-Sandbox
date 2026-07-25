@@ -5,7 +5,6 @@ state={
 		owner = LTN
 		add_core_of = LTN
 
-		victory_points = { 14096 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

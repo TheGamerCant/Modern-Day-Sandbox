@@ -6,7 +6,6 @@ state={
 		add_core_of = MLD
 		add_core_of = GGZ
 		
-		victory_points = { 3724 1 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

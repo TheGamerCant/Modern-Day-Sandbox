@@ -5,7 +5,6 @@ state={
 		owner = FRA
 		add_core_of = FRA
 		
-		victory_points = { 373 1 }
 		
 		set_variable = { sq_km = 242 }
 	}

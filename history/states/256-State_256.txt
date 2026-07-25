@@ -6,11 +6,6 @@ state={
 		add_core_of = SOV
 		add_core_of = CHV
 		
-		victory_points = { 14412 8 }
-		victory_points = { 9373 3 }
-		victory_points = { 9259 2 }
-		victory_points = { 6253 1 }
-		victory_points = { 6357 2 }
 		
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }

@@ -6,9 +6,6 @@ state={
 		add_core_of = BSH
 		add_core_of = SRP
 		
-		victory_points = { 6983 5 }
-		victory_points = { 6619 2 }
-		victory_points = { 9591 2 }
 		
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }

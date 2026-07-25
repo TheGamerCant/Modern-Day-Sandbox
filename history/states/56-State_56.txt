@@ -5,14 +5,6 @@ state={
 		owner = GER
 		add_core_of = GER
 		
-		victory_points = { 6377 15 }
-		victory_points = { 3326 10 }
-		victory_points = { 13920 3 }
-		victory_points = { 309 4 }
-		victory_points = { 9375 3 }
-		victory_points = { 11388 4 }
-		victory_points = { 11264 1 }
-		victory_points = { 6513 2 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

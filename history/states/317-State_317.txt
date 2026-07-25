@@ -5,12 +5,6 @@ state={
 		owner = NCG
 		add_core_of = NCG
 		
-		victory_points = { 15368 18 }
-		victory_points = { 15369 2 }
-		victory_points = { 12738 3 }
-		victory_points = { 10728 2 }
-		victory_points = { 2075 2 }
-		victory_points = { 1988 2 }
 		
 		set_variable = { sq_km = 120340 }
 		

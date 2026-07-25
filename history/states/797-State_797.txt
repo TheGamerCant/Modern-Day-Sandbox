@@ -5,9 +5,6 @@ state={
 		owner = MEX
 		add_core_of = MEX
 		
-		victory_points = { 13166 30 }
-		victory_points = { 8089 5 }
-		victory_points = { 10534 2 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

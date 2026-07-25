@@ -6,7 +6,6 @@ state={
 		add_core_of = GBR
 		add_core_of = BMD
 		
-		victory_points = { 13010 2 }
 		
 		set_variable = { sq_km = 54 }
 	}

@@ -6,13 +6,6 @@ state={
 		add_core_of = SOV
 		add_core_of = DAG
 		
-		victory_points = { 14177 12 }
-		victory_points = { 14180 2 }
-		victory_points = { 6730 2 }
-		victory_points = { 3682 3 }
-		victory_points = { 7624 3 }
-		victory_points = { 728 1 }
-		victory_points = { 1450 1 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

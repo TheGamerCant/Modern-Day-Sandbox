@@ -6,10 +6,6 @@ state={
 		add_core_of = TRZ
 		add_core_of = MLD
 		
-		victory_points = { 13788 4 }
-		victory_points = { 13790 2 }
-		victory_points = { 13789 2 }
-		victory_points = { 13792 1 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

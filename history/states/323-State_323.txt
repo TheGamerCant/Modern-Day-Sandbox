@@ -5,15 +5,6 @@ state={
 		owner = NPL
 		add_core_of = NPL
 		
-		victory_points = { 15493 40 }
-		victory_points = { 15495 2 }
-		victory_points = { 15502 5 }
-		victory_points = { 4987 3 }
-		victory_points = { 5310 2 }
-		victory_points = { 12892 3 }
-		victory_points = { 7374 3 }
-		victory_points = { 15499 3 }
-		victory_points = { 4386 3 }
 		
 		set_variable = { sq_km = 143350 }
 		

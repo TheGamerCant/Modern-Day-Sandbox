@@ -5,9 +5,6 @@ state={
 		owner = HAI
 		add_core_of = HAI
 		
-		victory_points = { 15933 30 }
-		victory_points = { 1635 1 }
-		victory_points = { 15937 1 }
 		
 		set_variable = { sq_km = 27560 }
 	}

@@ -5,13 +5,6 @@ state={
 		owner = KAZ
 		add_core_of = KAZ
 		
-		victory_points = { 15180 10 }
-		victory_points = { 15183 2 }
-		victory_points = { 1418 2 }
-		victory_points = { 4238 1 }
-		victory_points = { 15184 1 }
-		victory_points = { 10239 1 }
-		victory_points = { 1680 1 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

@@ -5,9 +5,6 @@ state={
 		owner = MRC
 		add_core_of = MRC
 		
-		victory_points = { 15270 12 }
-		victory_points = { 9945 4 }
-		victory_points = { 10113 2 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

@@ -6,7 +6,6 @@ state={
 		add_core_of = ROC
 		add_claim_by = PRC
 		
-		victory_points = { 15072 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

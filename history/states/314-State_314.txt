@@ -5,8 +5,6 @@ state={
 		owner = ESV
 		add_core_of = ESV
 		
-		victory_points = { 15358 30 }
-		victory_points = { 13093 4 }
 		
 		set_variable = { sq_km = 20720 }
 	}

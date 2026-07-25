@@ -5,18 +5,6 @@ state={
 		owner = BUL
 		add_core_of = BUL
 		
-		victory_points = { 15139 20 }
-		victory_points = { 15140 2 }
-		victory_points = { 15138 6 }
-		victory_points = { 935 2 }
-		victory_points = { 6857 2 }
-		victory_points = { 6982 2 }
-		victory_points = { 3796 2 }
-		victory_points = { 965 2 }
-		victory_points = { 9771 2 }
-		victory_points = { 893 1 }
-		victory_points = { 793 1 }
-		victory_points = { 3937 1 }
 
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

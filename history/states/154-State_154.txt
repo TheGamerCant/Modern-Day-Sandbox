@@ -5,12 +5,6 @@ state={
 		owner = HUN
 		add_core_of = HUN
 		
-		victory_points = { 14455 4 }
-		victory_points = { 14456 6 }
-		victory_points = { 11646 2 }
-		victory_points = { 3730 3 }
-		victory_points = { 6716 2 }
-		victory_points = { 11644 1 }
 
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

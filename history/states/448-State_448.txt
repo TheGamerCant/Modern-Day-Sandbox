@@ -5,13 +5,6 @@ state={
 		owner = LYB
 		add_core_of = LYB
 		
-		victory_points = { 1149 16 }
-		victory_points = { 14558 2 }
-		victory_points = { 14560 3 }
-		victory_points = { 14563 5 }
-		victory_points = { 12039 2 }
-		victory_points = { 7066 2 }
-		victory_points = { 4051 1 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

@@ -5,12 +5,6 @@ state={
 		owner = DMR
 		add_core_of = DMR
 		
-		victory_points = { 15938 40 }
-		victory_points = { 15939 2 }
-		victory_points = { 15942 7 }
-		victory_points = { 4598 2 }
-		victory_points = { 7660 2 }
-		victory_points = { 7632 1 }
 		
 		set_variable = { sq_km = 48320 }
 		

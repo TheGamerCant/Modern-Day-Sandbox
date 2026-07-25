@@ -5,15 +5,6 @@ state={
 		owner = ROM
 		add_core_of = ROM
 		
-		victory_points = { 15136 5 }
-		victory_points = { 6682 3 }
-		victory_points = { 11592 2 }
-		victory_points = { 3676 4 }
-		victory_points = { 6679 3 }
-		victory_points = { 9619 2 }
-		victory_points = { 11622 2 }
-		victory_points = { 662 2 }
-		victory_points = { 11639 2 }
 
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

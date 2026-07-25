@@ -6,7 +6,6 @@ state={
 		add_core_of = HEZ
 		add_core_of = LEB
 		
-		victory_points = { 15446 2 }
 		
 		set_variable = { sq_km = 2825 }
 	}

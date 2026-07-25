@@ -6,11 +6,6 @@ state={
 		add_core_of = SPA
 		add_core_of = GLC
 		
-		victory_points = { 14497 8 }
-		victory_points = { 14498 10 }
-		victory_points = { 11692 3 }
-		victory_points = { 6734 3 }
-		victory_points = { 758 3 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

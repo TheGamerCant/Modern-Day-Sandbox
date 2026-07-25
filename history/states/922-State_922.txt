@@ -6,7 +6,6 @@ state={
 		add_core_of = NCP
 		add_claim_by = CYP
 		
-		victory_points = { 11984 2 }
 		
 		set_variable = { sq_km = 3355 }
 	}

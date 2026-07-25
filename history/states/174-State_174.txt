@@ -5,16 +5,6 @@ state={
 		owner = SPA
 		add_core_of = SPA
 		
-		victory_points = { 14500 6 }
-		victory_points = { 885 3 }
-		victory_points = { 726 3 }
-		victory_points = { 6867 3 }
-		victory_points = { 857 2 }
-		victory_points = { 11843 2 }
-		victory_points = { 13227 2 }
-		victory_points = { 939 2 }
-		victory_points = { 6936 2 }
-		victory_points = { 918 2 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

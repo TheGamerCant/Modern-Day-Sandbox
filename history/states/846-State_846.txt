@@ -5,7 +5,6 @@ state={
 		owner = SWI
 		add_core_of = SWI
 		
-		victory_points = { 9600 2 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

@@ -5,13 +5,6 @@ state={
 		owner = KSA
 		add_core_of = KSA
 		
-		victory_points = { 15890 25 }
-		victory_points = { 15893 2 }
-		victory_points = { 15891 5 }
-		victory_points = { 15897 4 }
-		victory_points = { 15898 8 }
-		victory_points = { 15900 4 }
-		victory_points = { 1955 1 }
 		
 		set_variable = { sq_km = 248785.50 }
 		

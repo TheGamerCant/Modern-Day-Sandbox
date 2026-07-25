@@ -6,9 +6,6 @@ state={
 		add_core_of = SPA
 		add_core_of = BSQ
 		
-		victory_points = { 14501 15 }
-		victory_points = { 14502 2 }
-		victory_points = { 13233 5 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

@@ -6,11 +6,6 @@ state={
 		add_core_of = UKR
 		add_core_of = CRM
 		
-		victory_points = { 13727 10 }
-		victory_points = { 9680 3 }
-		victory_points = { 13731 5 }
-		victory_points = { 705 3 }
-		victory_points = { 9677 2 }
 		
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }

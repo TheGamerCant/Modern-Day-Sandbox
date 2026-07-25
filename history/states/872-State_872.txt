@@ -6,7 +6,6 @@ state={
 		add_core_of = SOS
 		add_claim_by = GEO
 		
-		victory_points = { 9626 2 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

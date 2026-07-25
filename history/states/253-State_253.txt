@@ -5,11 +5,6 @@ state={
 		owner = SOV
 		add_core_of = SOV
 		
-		victory_points = { 14428 7 }
-		victory_points = { 3240 2 }
-		victory_points = { 6135 2 }
-		victory_points = { 9257 3 }
-		victory_points = { 6358 2 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

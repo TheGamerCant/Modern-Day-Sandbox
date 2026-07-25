@@ -5,11 +5,6 @@ state={
 		owner = EGY
 		add_core_of = EGY
 		
-		victory_points = { 10005 7 }
-		victory_points = { 4076 20 }
-		victory_points = { 7091 5 }
-		victory_points = { 14540 8 }
-		victory_points = { 14542 10 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

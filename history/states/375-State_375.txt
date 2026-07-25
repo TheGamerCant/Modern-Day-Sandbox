@@ -5,22 +5,6 @@ state={
 		owner = USA
 		add_core_of = USA
 		
-		victory_points = { 13453 50 }
-		victory_points = { 13456 3 }
-		victory_points = { 13465 20 }
-		victory_points = { 13446 50 }
-		victory_points = { 9908 3 }
-		victory_points = { 9773 5 }
-		victory_points = { 10778 1 }
-		victory_points = { 5022 3 }
-		victory_points = { 1915 2 }
-		victory_points = { 13451 2 }
-		victory_points = { 13467 20 }
-		victory_points = { 14482 10 }
-		victory_points = { 4955 3 }
-		victory_points = { 1998 4 }
-		victory_points = { 6785 5 }
-		victory_points = { 14476 3 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

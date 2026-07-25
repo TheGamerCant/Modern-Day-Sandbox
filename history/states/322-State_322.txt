@@ -7,11 +7,6 @@ state={
 		add_claim_by = ROC
 		add_core_of = TIB
 		
-		victory_points = { 14638 7 }
-		victory_points = { 14642 1 }
-		victory_points = { 8041 1 }
-		victory_points = { 2014 2 }
-		victory_points = { 14637 2 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

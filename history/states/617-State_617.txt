@@ -7,18 +7,6 @@ state={
 		add_claim_by = ROC
 		add_core_of = UYG
 		
-		victory_points = { 14667 30 }
-		victory_points = { 14670 2 }
-		victory_points = { 14671 5 }
-		victory_points = { 14673 5 }
-		victory_points = { 10614 2 }
-		victory_points = { 14676 4 }
-		victory_points = { 1844 3 }
-		victory_points = { 1708 2 }
-		victory_points = { 7866 2 }
-		victory_points = { 14672 5 }
-		victory_points = { 4823 2 }
-		victory_points = { 7702 2 }
 		
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }

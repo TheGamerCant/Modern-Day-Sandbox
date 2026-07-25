@@ -5,12 +5,6 @@ state={
 		owner = TZN
 		add_core_of = TZN
 		
-		victory_points = { 15947 9 }
-		victory_points = { 15950 2 }
-		victory_points = { 11017 2 }
-		victory_points = { 4171 4 }
-		victory_points = { 15952 2 }
-		victory_points = { 8144 2 }
 		
 		set_variable = { sq_km = 157699 }
 	}

@@ -6,12 +6,6 @@ state={
 		add_core_of = ROK
 		add_claim_by = ROK
 		
-		victory_points = { 14623 17 }
-		victory_points = { 14628 10 }
-		victory_points = { 11977 5 }
-		victory_points = { 4126 2 }
-		victory_points = { 12085 5 }
-		victory_points = { 11948 4 }
 		
 		set_variable = { sq_km = 20820.2 }
 	}

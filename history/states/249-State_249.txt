@@ -6,17 +6,6 @@ state={
 		add_core_of = SOV
 		add_core_of = TTR
 		
-		victory_points = { 14403 20 }
-		victory_points = { 14402 2 }
-		victory_points = { 6338 3 }
-		victory_points = { 9354 2 }
-		victory_points = { 11339 1 }
-		victory_points = { 14405 9 }
-		victory_points = { 14406 4 }
-		victory_points = { 6323 2 }
-		victory_points = { 11389 3 }
-		victory_points = { 11496 2 }
-		victory_points = { 260 1 }
 		
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }

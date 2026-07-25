@@ -5,24 +5,6 @@ state={
 		owner = TUR
 		add_core_of = TUR
 		
-		victory_points = { 11881 9 }
-		victory_points = { 789 5 }
-		victory_points = { 3714 2 }
-		victory_points = { 11894 3 }
-		victory_points = { 3935 3 }
-		victory_points = { 9900 4 }
-		victory_points = { 9915 2 }
-		victory_points = { 3905 3 }
-		victory_points = { 904 2 }
-		victory_points = { 11866 3 }
-		victory_points = { 3919 2 }
-		victory_points = { 6938 2 }
-		victory_points = { 9871 1 }
-		victory_points = { 11839 1 }
-		victory_points = { 975 2 }
-		victory_points = { 9886 2 }
-		victory_points = { 3979 2 }
-		victory_points = { 11753 1 }
 		
 		resize_array = { array = culture_index_array size = 3 value = 0 }
 		resize_array = { array = culture_value_array size = 3 value = 0 }

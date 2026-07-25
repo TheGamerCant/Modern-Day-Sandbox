@@ -6,11 +6,6 @@ state={
 		add_core_of = CAN
 		add_core_of = QUE
 		
-		victory_points = { 13615 35 }
-		victory_points = { 13619 6 }
-		victory_points = { 9601 3 }
-		victory_points = { 10230 4 }
-		victory_points = { 10174 2 }
 		
 		resize_array = { array = culture_index_array size = 2 value = 0 }
 		resize_array = { array = culture_value_array size = 2 value = 0 }

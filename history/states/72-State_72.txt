@@ -5,10 +5,6 @@ state={
 		owner = POL
 		add_core_of = POL
 		
-		victory_points = { 13989 5 }
-		victory_points = { 3434 2 }
-		victory_points = { 6499 2 }
-		victory_points = { 11507 2 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
 		resize_array = { array = culture_value_array size = 1 value = 0 }

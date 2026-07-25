@@ -6,7 +6,6 @@ state={
 		add_core_of = ROK
 		add_claim_by = ROK
 		
-		victory_points = { 1177 8 }
 		
 		set_variable = { sq_km = 1849 }
 	}

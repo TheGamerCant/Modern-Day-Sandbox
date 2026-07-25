@@ -6,10 +6,6 @@ state={
 		add_core_of = DPK
 		add_claim_by = ROK
 		
-		victory_points = { 11915 4 }
-		victory_points = { 4107 3 }
-		victory_points = { 12040 3 }
-		victory_points = { 7070 1 }
 		
 		set_variable = { sq_km = 18809 }
 	}
