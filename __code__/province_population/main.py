@@ -1,4 +1,5 @@
 from collections import Counter
+from datetime import date, timedelta
 from pathlib import Path
 import re
 import unicodedata
@@ -317,6 +318,17 @@ _RUSSIA_OBLAST_ALIASES: dict[str, str] = {
     "norilsk": "krasnoyarsk", "kuril islands": "sakhalin",
 }
 
+# Mod-State names for the USA (owner USA) that are regions rather than the
+# state used by usa_citypopulations.csv's `State` column.
+_USA_STATE_ALIASES: dict[str, str] = {
+    "central valley": "california",
+    "los angeles": "california",
+    "northern california": "california",
+    "new york city": "new york",
+    "upstate new york": "new york",
+    "upper peninsula": "michigan",
+}
+
 
 def LoadEuData() -> DataFrame:
     """Primary source of truth: the hand-curated EU_data regional CSVs
@@ -358,6 +370,38 @@ def LoadRussiaData() -> DataFrame:
     Oblast, date) — the `Oblast` column disambiguates same-named cities."""
     data_file: Path = Path.cwd() / "russia_citypopulation.csv"
     return pd.read_csv(data_file)
+
+
+def LoadUsaData() -> DataFrame:
+    """US urban areas (wide: Name, Status, State, one column per census year
+    named by an Excel date serial). Reduce to long form — one row per (Name,
+    State) with the population closest to 2010 — and split multi-state urban
+    areas ("Arizona / California") into one row per state so either matches."""
+    raw: DataFrame = pd.read_csv(Path.cwd() / "usa_citypopulations.csv")
+    serial_columns = [column for column in raw.columns if str(column).isdigit()]
+    epoch = date(1899, 12, 30)  # Excel's day-0
+    column_year = {column: (epoch + timedelta(days=int(column))).year for column in serial_columns}
+
+    records: list[dict[str, Any]] = []
+    for name, state, *populations in zip(
+        raw["Name"], raw["State"], *[raw[column] for column in serial_columns]
+    ):
+        best: tuple[tuple[int, int], int, int] | None = None
+        for column, value in zip(serial_columns, populations):
+            if pd.isna(value):
+                continue
+            year = column_year[column]
+            key = (abs(year - 2010), -year)  # closest to 2010, ties to later
+            if best is None or key < best[0]:
+                best = (key, int(value), year)
+        if best is None:
+            continue
+        _, population, year = best
+        for part in str(state).split("/"):
+            if part.strip():
+                records.append({"Name": name, "State": part.strip(),
+                                "population": population, "year": year})
+    return pd.DataFrame(records, columns=["Name", "State", "population", "year"])
 
 
 def BuildPopulationLookup(
@@ -681,7 +725,14 @@ def main():
         state_column="Oblast", date_column="date",
         state_aliases=_RUSSIA_OBLAST_ALIASES, allow_unique_fallback=False,
     )
-    print(f"Province-aware passes filled {china_filled} PRC + {russia_filled} SOV (Russia) provinces.")
+    usa_filled = LinkProvincesByState(
+        provinces_list, states_list, LoadUsaData(), prov_id_to_result,
+        owner_tag="USA", name_column="Name", population_column="population",
+        state_column="State", date_column="year",
+        state_aliases=_USA_STATE_ALIASES, allow_unique_fallback=True,
+    )
+    print(f"Province-aware passes filled {china_filled} PRC + {russia_filled} SOV (Russia) "
+          f"+ {usa_filled} USA provinces.")
 
     year_counts = Counter(year for _, year in prov_id_to_result.values())
     year_summary = ", ".join(
