@@ -152,7 +152,6 @@ public:
     const String ToHex() const;
 };
 
-
 struct Date {
 private:
     SignedInteger64 hoursSinceStart;
@@ -166,6 +165,57 @@ public:
 
     SignedInteger64 GetHoursSinceStart();
     const SignedInteger64 GetHoursSinceStart() const;
+};
+
+struct NameEntry {
+public:
+    String name;
+    String nameRequirements;
+
+    NameEntry() : name(""), nameRequirements("") {};
+    NameEntry(const String& name, const String& nameRequirements) :
+        name(name), nameRequirements(nameRequirements) {};
+};
+
+struct Province {
+public:
+    SignedInteger64 id;
+    String defaultName;
+    Vector<NameEntry> customNames;
+
+    Province() : id(0), defaultName(""), customNames() {};
+    Province(const SignedInteger64 id, const String& defaultName, const Vector<NameEntry>& customNames) :
+        id(id), defaultName(defaultName), customNames(customNames) {};
+};
+
+struct State {
+public:
+    SignedInteger64 id;
+    String defaultName;
+    Vector<NameEntry> customNames;
+    Vector<SignedInteger64> provinces;
+
+    State() : id(0), defaultName(""), customNames(), provinces() {};
+    State(const SignedInteger64 id, const Vector<SignedInteger64>& provinces) :
+        id(id), defaultName(""), customNames(), provinces(provinces) {};
+};
+
+struct TerrainSubunitModifier {
+    HashMap<String, Float64> units;
+    HashMap<String, Float64> modifiers;
+};
+
+struct Terrain {
+    ColourRGB colour;
+    Boolean isWater, navalTerrain;
+    UnsignedInteger32 combatWidth, combatSupportWidth;
+    String soundType;
+    Float64 movementCost, aiTerrainImportanceFactor, matchValue;
+    HashMap<String, UnsignedInteger32> buildingsMaxLevel;
+    HashMap<String, Float64> units;
+    HashMap<String, TerrainSubunitModifier> subUnits;
+
+    HashMap<String, Float64> modifiers;
 };
 
 /*

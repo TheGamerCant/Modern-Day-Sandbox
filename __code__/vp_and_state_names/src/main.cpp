@@ -11,39 +11,6 @@
 #include "json.hpp"
 using json = nlohmann::json;
 
-struct NameEntry {
-public:
-    String name;
-    String nameRequirements;
-
-    NameEntry() : name(""), nameRequirements("") {};
-    NameEntry(const String& name, const String& nameRequirements) :
-        name(name), nameRequirements(nameRequirements) {};
-};
-
-struct Province {
-public:
-    SignedInteger64 id;
-    String defaultName;
-    Vector<NameEntry> customNames;
-
-    Province() : id(0), defaultName(""), customNames() {};
-    Province(const SignedInteger64 id, const String& defaultName, const Vector<NameEntry>& customNames) :
-        id(id), defaultName(defaultName), customNames(customNames) {};
-};
-
-struct State {
-public:
-    SignedInteger64 id;
-    String defaultName;
-    Vector<NameEntry> customNames;
-    Vector<SignedInteger64> provinces;
-
-    State() : id(0), defaultName(""), customNames(), provinces() {};
-    State(const SignedInteger64 id, const Vector<SignedInteger64>& provinces) :
-        id(id), defaultName(""), customNames(), provinces(provinces) {};
-};
-
 void LoadStateProvinceList(const Path& modDirectory, HashMap<SignedInteger64, State>& states) {
 	Vector<Path> stateFiles = GetGameFiles(modDirectory, modDirectory, {"history/states"}, "history/states", ".txt");
 
@@ -318,9 +285,112 @@ void WriteNames(const Path& modDirectory, const HashMap<SignedInteger64, Provinc
 	victoryPointNamesYmlOutFile.close();
 }
 
+static Terrain ParseTerrainCategory(const PdxJson& data) {
+	Terrain terrain{};
+
+	for (const auto& [fieldKey, fieldValues] : data.asDict()) {
+		if (!std::holds_alternative<String>(fieldKey) || fieldValues.empty()) { continue; }
+		const String& field = std::get<String>(fieldKey);
+		const PdxJson& value = fieldValues[0];
+
+		if (field == "color") {
+			if (value.isList() && value.size() >= 3) {
+				terrain.colour = ColourRGB(
+					static_cast<UnsignedInteger8>(value[0].getInt()),
+					static_cast<UnsignedInteger8>(value[1].getInt()),
+					static_cast<UnsignedInteger8>(value[2].getInt()));
+			}
+		}
+		else if (field == "is_water")                     { terrain.isWater = value.getBool(); }
+		else if (field == "naval_terrain")                { terrain.navalTerrain = value.getBool(); }
+		else if (field == "sound_type")                   { terrain.soundType = value.getString(); }
+		else if (field == "movement_cost")                { terrain.movementCost = value.getDouble(); }
+		else if (field == "ai_terrain_importance_factor") { terrain.aiTerrainImportanceFactor = value.getDouble(); }
+		else if (field == "combat_width")                 { terrain.combatWidth = static_cast<UnsignedInteger32>(value.getInt()); }
+		else if (field == "combat_support_width")         { terrain.combatSupportWidth = static_cast<UnsignedInteger32>(value.getInt()); }
+		else if (field == "match_value")                  { terrain.matchValue = static_cast<Float64>(value.getInt()); }
+		else if (field == "buildings_max_level") {
+			if (value.isDict()) {
+				for (const auto& [buildingKey, buildingValues] : value.asDict()) {
+					if (std::holds_alternative<String>(buildingKey) && !buildingValues.empty()) {
+						terrain.buildingsMaxLevel[std::get<String>(buildingKey)] =
+							static_cast<UnsignedInteger32>(buildingValues[0].getInt());
+					}
+				}
+			}
+		}
+		else if (field == "units") {
+			if (value.isDict()) {
+				for (const auto& [unitKey, unitValues] : value.asDict()) {
+					if (std::holds_alternative<String>(unitKey) && !unitValues.empty()) {
+						terrain.units[std::get<String>(unitKey)] = unitValues[0].getDouble();
+					}
+				}
+			}
+		}
+		else if (value.isDict()) {
+			// Subunit modifiers
+			TerrainSubunitModifier subUnit{};
+			for (const auto& [subKey, subValues] : value.asDict()) {
+				if (!std::holds_alternative<String>(subKey) || subValues.empty()) { continue; }
+				const String& subField = std::get<String>(subKey);
+				const PdxJson& subValue = subValues[0];
+
+				if (subField == "units" && subValue.isDict()) {
+					for (const auto& [unitKey, unitValues] : subValue.asDict()) {
+						if (std::holds_alternative<String>(unitKey) && !unitValues.empty()) {
+							subUnit.units[std::get<String>(unitKey)] = unitValues[0].getDouble();
+						}
+					}
+				}
+				else if (subValue.isNumber() || subValue.isBool()) {
+					subUnit.modifiers[subField] = subValue.getDouble();
+				}
+			}
+			terrain.subUnits[field] = std::move(subUnit);
+		}
+		else if (value.isNumber() || value.isBool()) {
+			// Any other value is added to modifiers
+			terrain.modifiers[field] = value.getDouble();
+		}
+	}
+
+	return terrain;
+}
+
+HashMap<String, Terrain> LoadTerrain(const Path& modDirectory) {
+	HashMap<String, Terrain> terrains;
+
+	Vector<Path> terrainFiles = GetGameFiles(modDirectory, modDirectory, {"common/terrain"}, "common/terrain", ".txt");
+
+	std::erase_if(terrainFiles, [](const Path& file) {
+		return file.filename() == "TDA_unique_province_terrains.txt";
+	});
+
+	for (const auto& file : terrainFiles) {
+		PdxJson terrainFile = ParseFileToPdxJson(file.string());
+
+		if (!terrainFile.contains("categories")) { continue; }
+
+		const PdxJson& categories = terrainFile.at("categories")[0];
+		if (!categories.isDict()) { continue; }
+
+		for (const auto& [nameKey, categoryValues] : categories.asDict()) {
+			if (!std::holds_alternative<String>(nameKey) || categoryValues.empty()) { continue; }
+			if (!categoryValues[0].isDict()) { continue; }
+
+			terrains[std::get<String>(nameKey)] = ParseTerrainCategory(categoryValues[0]);
+		}
+	}
+
+	return terrains;
+}
+
 int main() {
 	//Get the mod directory
 	Path modDirectory = std::filesystem::current_path().parent_path().parent_path();
+
+	HashMap<String, Terrain> terrains = LoadTerrain(modDirectory);
 
     HashMap<SignedInteger64, Province> provinces;
     HashMap<SignedInteger64, State> states;
