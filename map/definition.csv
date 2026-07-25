@@ -13414,7 +13414,7 @@
 13413;226;53;12;land;false;urban;2
 13414;56;53;239;lake;false;lakes;2
 13415;67;158;155;land;true;dense_urban;2
-13416;140;104;201;land;true;sub_urban;2
+13416;140;104;201;land;true;dense_urban;2
 13417;105;56;248;land;true;urban;2
 13418;110;3;97;land;true;urban;2
 13419;212;1;146;land;true;dense_urban;2

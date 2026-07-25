@@ -8437,13 +8437,7 @@
 		},
 		{
 			"id": 13416,
-			"default_name": "St. Petersburg",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 13417,
-			"default_name": "Clearwater",
+			"default_name": "St. Petersburg-Clearwater",
 			"comment": "",
 			"custom_names": []
 		},
@@ -20681,17 +20675,6 @@
 				{
 					"requirements": "TAG_using_mr_korean_names = yes",
 					"name": "Kyŏngju"
-				}
-			]
-		},
-		{
-			"id": 4086,
-			"default_name": "Gyeongsang",
-			"comment": "",
-			"custom_names": [
-				{
-					"requirements": "TAG_using_mr_korean_names = yes",
-					"name": "Kyŏngsang"
 				}
 			]
 		},
