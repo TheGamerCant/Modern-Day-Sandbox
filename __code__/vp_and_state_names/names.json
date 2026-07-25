@@ -8167,7 +8167,7 @@
 		},
 		{
 			"id": 13394,
-			"default_name": "Tuscon",
+			"default_name": "Tucson",
 			"comment": "",
 			"custom_names": []
 		},
@@ -8300,12 +8300,6 @@
 		{
 			"id": 13408,
 			"default_name": "Denver",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 13409,
-			"default_name": "Lakewood",
 			"comment": "",
 			"custom_names": []
 		},
@@ -8455,7 +8449,7 @@
 		},
 		{
 			"id": 1913,
-			"default_name": "Fort Myers",
+			"default_name": "Cape Coral",
 			"comment": "",
 			"custom_names": []
 		},
@@ -8473,19 +8467,7 @@
 		},
 		{
 			"id": 13419,
-			"default_name": "Miami",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 13421,
-			"default_name": "Fort Lauderdale",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 13422,
-			"default_name": "West Palm Beach",
+			"default_name": "Miami-Fort Lauderdale",
 			"comment": "",
 			"custom_names": []
 		},
@@ -8575,13 +8557,7 @@
 		},
 		{
 			"id": 13293,
-			"default_name": "Minneapolis",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 13315,
-			"default_name": "St. Paul",
+			"default_name": "Minneapolis-St. Paul",
 			"comment": "",
 			"custom_names": []
 		},
@@ -8634,12 +8610,6 @@
 			"custom_names": []
 		},
 		{
-			"id": 13438,
-			"default_name": "Overland Park",
-			"comment": "",
-			"custom_names": []
-		},
-		{
 			"id": 10717,
 			"default_name": "Kansas City",
 			"comment": "",
@@ -8688,14 +8658,8 @@
 			"custom_names": []
 		},
 		{
-			"id": 13454,
-			"default_name": "Dallas",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 13455,
-			"default_name": "Fort Worth",
+			"id": 13453,
+			"default_name": "Dallas-Fort Worth",
 			"comment": "",
 			"custom_names": []
 		},
@@ -8749,13 +8713,7 @@
 		},
 		{
 			"id": 13451,
-			"default_name": "Cypress",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 13444,
-			"default_name": "League City",
+			"default_name": "College Station",
 			"comment": "",
 			"custom_names": []
 		},
@@ -8786,12 +8744,6 @@
 		{
 			"id": 1998,
 			"default_name": "Midland",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 2019,
-			"default_name": "Bandera",
 			"comment": "",
 			"custom_names": []
 		},
@@ -8923,7 +8875,7 @@
 		},
 		{
 			"id": 13480,
-			"default_name": "Yarmouth",
+			"default_name": "Barnstable Town",
 			"comment": "",
 			"custom_names": []
 		},
@@ -9288,12 +9240,6 @@
 			"custom_names": []
 		},
 		{
-			"id": 13546,
-			"default_name": "Naperville",
-			"comment": "",
-			"custom_names": []
-		},
-		{
 			"id": 12312,
 			"default_name": "Rockford",
 			"comment": "",
@@ -9488,12 +9434,6 @@
 		{
 			"id": 6882,
 			"default_name": "Newark",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 13589,
-			"default_name": "Toms River",
 			"comment": "",
 			"custom_names": []
 		},

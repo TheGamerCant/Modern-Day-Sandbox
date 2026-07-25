@@ -6,7 +6,6 @@ state={
 		add_core_of = USA
 		
 		victory_points = { 6882 25 }
-		victory_points = { 13589 3 }
 		victory_points = { 13842 5 }
 		
 		resize_array = { array = culture_index_array size = 1 value = 0 }
