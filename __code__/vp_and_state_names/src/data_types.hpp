@@ -183,6 +183,16 @@ public:
     String defaultName;
     Vector<NameEntry> customNames;
 
+    // Population figure attached in names.json ("population": {tag, population, year}).
+    Boolean hasPopulation = false;
+    String populationTag = "";
+    SignedInteger64 population = 0;
+    SignedInteger32 populationYear = 0;
+
+    // Victory points: taken from names.json when present, else computed from population.
+    Boolean hasVictoryPoints = false;
+    SignedInteger64 victoryPoints = 0;
+
     Province() : id(0), defaultName(""), customNames() {};
     Province(const SignedInteger64 id, const String& defaultName, const Vector<NameEntry>& customNames) :
         id(id), defaultName(defaultName), customNames(customNames) {};

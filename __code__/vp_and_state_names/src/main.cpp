@@ -4,6 +4,10 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
+#include <cmath>
+#include <cctype>
+#include <regex>
+#include <sstream>
 
 #include "data_types.hpp"
 #include "functions.hpp"
@@ -139,7 +143,29 @@ void LoadNamesFromJson(const String& jsonPath, HashMap<SignedInteger64, Province
             }
         }
 
-        provinces[objectId] = Province(objectId, objectDefaultName, objectCustomNames);
+        Province province(objectId, objectDefaultName, objectCustomNames);
+
+        // Explicit victory-point count (e.g. airports), if present.
+        if (victoryPointEntry.contains("victory_points") && victoryPointEntry.at("victory_points").is_number_integer()) {
+            province.victoryPoints = victoryPointEntry.at("victory_points").get<SignedInteger64>();
+            province.hasVictoryPoints = true;
+        }
+
+        // Population object { tag, population, year } used to compute VPs when not set.
+        if (victoryPointEntry.contains("population") && victoryPointEntry.at("population").is_object()) {
+            const auto& populationObject = victoryPointEntry.at("population");
+            if (populationObject.contains("population") && populationObject.at("population").is_number_integer() &&
+                populationObject.contains("year") && populationObject.at("year").is_number_integer()) {
+                province.population = populationObject.at("population").get<SignedInteger64>();
+                province.populationYear = populationObject.at("year").get<SignedInteger32>();
+                if (populationObject.contains("tag") && populationObject.at("tag").is_string()) {
+                    province.populationTag = populationObject.at("tag").get<String>();
+                }
+                province.hasPopulation = true;
+            }
+        }
+
+        provinces[objectId] = std::move(province);
     }
 }
 
@@ -386,11 +412,274 @@ HashMap<String, Terrain> LoadTerrain(const Path& modDirectory) {
 	return terrains;
 }
 
+// Split one CSV line into fields, honouring double-quoted fields that may
+// contain commas (e.g. "Korea, Rep.") and "" as an escaped quote.
+static Vector<String> SplitCsvLine(const String& line) {
+	Vector<String> fields;
+	String field;
+	Boolean inQuotes = false;
+
+	for (SizeT i = 0; i < line.size(); ++i) {
+		const Char c = line[i];
+		if (inQuotes) {
+			if (c == '"') {
+				if (i + 1 < line.size() && line[i + 1] == '"') { field += '"'; ++i; }
+				else { inQuotes = false; }
+			}
+			else { field += c; }
+		}
+		else if (c == '"')  { inQuotes = true; }
+		else if (c == ',')  { fields.push_back(field); field.clear(); }
+		else if (c != '\r') { field += c; }
+	}
+	fields.push_back(field);
+	return fields;
+}
+
+// Load country_pops.csv into tag -> (year -> population). The file is wide:
+// "Country Name","Country Tag",1960,1961,...,2022.
+HashMap<String, HashMap<SignedInteger32, SignedInteger64>> LoadCountryPopulations(const String& csvPath) {
+	HashMap<String, HashMap<SignedInteger32, SignedInteger64>> populations;
+
+	std::ifstream file(csvPath);
+	if (!file.is_open()) {
+		std::cout << "Could not open " << csvPath << ", skipping population-based victory points.\n";
+		return populations;
+	}
+
+	String line;
+	if (!std::getline(file, line)) { return populations; }
+
+	Vector<String> header = SplitCsvLine(line);
+	SizeT tagColumn = 1;                                   // "Country Tag"
+	Vector<std::pair<SizeT, SignedInteger32>> yearColumns; // (column index, year)
+	for (SizeT i = 0; i < header.size(); ++i) {
+		if (header[i] == "Country Tag") { tagColumn = i; }
+		else if (header[i].size() == 4 &&
+			std::all_of(header[i].begin(), header[i].end(), [](unsigned char ch) { return std::isdigit(ch); })) {
+			yearColumns.emplace_back(i, static_cast<SignedInteger32>(std::stoi(header[i])));
+		}
+	}
+
+	while (std::getline(file, line)) {
+		if (line.empty()) { continue; }
+		Vector<String> fields = SplitCsvLine(line);
+		if (tagColumn >= fields.size() || fields[tagColumn].empty()) { continue; }
+
+		HashMap<SignedInteger32, SignedInteger64>& byYear = populations[fields[tagColumn]];
+		for (const auto& [columnIndex, year] : yearColumns) {
+			if (columnIndex >= fields.size() || fields[columnIndex].empty()) { continue; }
+			try { byYear[year] = static_cast<SignedInteger64>(std::stod(fields[columnIndex])); }
+			catch (...) { /* non-numeric cell, skip */ }
+		}
+	}
+	return populations;
+}
+
+// Country population for a year, clamping to the nearest available year when the
+// exact one is missing (the table only runs 1960-2022, but VP years can be 2025).
+static SignedInteger64 CountryPopulationForYear(const HashMap<SignedInteger32, SignedInteger64>& byYear, SignedInteger32 year) {
+	if (byYear.empty()) { return 0; }
+	if (auto it = byYear.find(year); it != byYear.end()) { return it->second; }
+
+	SignedInteger32 minYear = INT32_MAX, maxYear = INT32_MIN;
+	for (const auto& [y, _] : byYear) { minYear = std::min(minYear, y); maxYear = std::max(maxYear, y); }
+
+	SignedInteger32 clamped = std::clamp(year, minYear, maxYear);
+	auto it = byYear.find(clamped);
+	return it != byYear.end() ? it->second : 0;
+}
+
+// For every VP province WITHOUT an explicit victory-point count but WITH a
+// population, estimate its 2010 population via its owner country's population
+// trend and set victory_points at 1 per 100,000 people (minimum 1).
+void AssignVictoryPointsFromPopulation(
+	HashMap<SignedInteger64, Province>& provinces,
+	const HashMap<String, HashMap<SignedInteger32, SignedInteger64>>& countryPopulations
+) {
+	constexpr SignedInteger32 targetYear = 2010;
+	constexpr Float64 peoplePerVictoryPoint = 100000.0;
+
+	SizeT assigned = 0;
+	for (auto& [id, province] : provinces) {
+		if (province.hasVictoryPoints || !province.hasPopulation) { continue; }
+
+		// Default: use the raw figure if we can't scale via the owner country.
+		Float64 population2010 = static_cast<Float64>(province.population);
+
+		if (auto tagIt = countryPopulations.find(province.populationTag); tagIt != countryPopulations.end()) {
+			const SignedInteger64 countryAtTarget = CountryPopulationForYear(tagIt->second, targetYear);
+			const SignedInteger64 countryAtBase = CountryPopulationForYear(tagIt->second, province.populationYear);
+			if (countryAtTarget > 0 && countryAtBase > 0) {
+				population2010 = static_cast<Float64>(province.population)
+					* static_cast<Float64>(countryAtTarget) / static_cast<Float64>(countryAtBase);
+			}
+		}
+
+		SignedInteger64 victoryPoints = static_cast<SignedInteger64>(std::llround(population2010 / peoplePerVictoryPoint));
+		if (victoryPoints < 1) { victoryPoints = 1; }  // a named VP with people is worth at least 1
+
+		province.victoryPoints = victoryPoints;
+		province.hasVictoryPoints = true;
+		++assigned;
+	}
+
+	std::cout << "Assigned population-based victory points to " << assigned << " province(s).\n";
+}
+
+// Read/write a whole file as raw bytes (binary) so line endings and every other
+// byte are preserved exactly — these edits must not reformat anything.
+static String ReadFileBytes(const Path& path) {
+	std::ifstream in(path, std::ios::binary);
+	return String((std::istreambuf_iterator<Char>(in)), std::istreambuf_iterator<Char>());
+}
+static void WriteFileBytes(const Path& path, const String& content) {
+	std::ofstream out(path, std::ios::binary);
+	out << content;
+}
+
+// Index of the '}' matching the '{' at openBrace (simple depth count).
+static SizeT FindMatchingBrace(const String& text, SizeT openBrace) {
+	SignedInteger32 depth = 0;
+	for (SizeT i = openBrace; i < text.size(); ++i) {
+		if (text[i] == '{') { ++depth; }
+		else if (text[i] == '}') { if (--depth == 0) { return i; } }
+	}
+	return String::npos;
+}
+
+// Return the state-file text with (a) every active `victory_points = { id n }`
+// line removed and (b) fresh victory_points for the state's VP provinces added at
+// the end of the history = { } block. Everything else is left byte-for-byte.
+static String InjectVictoryPointsIntoState(const String& original, const HashMap<SignedInteger64, Province>& provinces) {
+	const String newline = original.find("\r\n") != String::npos ? "\r\n" : "\n";
+
+	// (a) Drop active victory_points lines (commented ones don't match, so survive).
+	static const std::regex activeVictoryPoint(
+		R"(^[ \t]*victory_points[ \t]*=[ \t]*\{[ \t]*[0-9]+[ \t]+[0-9]+[ \t]*\}[ \t]*$)");
+	String content;
+	content.reserve(original.size());
+	for (SizeT i = 0; i < original.size();) {
+		SizeT eol = original.find('\n', i);
+		SizeT lineEnd = (eol == String::npos) ? original.size() : eol + 1;
+		String body = original.substr(i, ((eol == String::npos) ? original.size() : eol) - i);
+		if (!body.empty() && body.back() == '\r') { body.pop_back(); }
+		if (!std::regex_match(body, activeVictoryPoint)) {
+			content += original.substr(i, lineEnd - i);  // keep line incl. its newline
+		}
+		i = lineEnd;
+	}
+
+	// Collect the state's VP provinces (its provinces = { ... } that carry a VP value).
+	Vector<std::pair<SignedInteger64, SignedInteger64>> toAdd;
+	{
+		static const std::regex provincesBlock(R"(provinces[ \t]*=[ \t]*\{([^}]*)\})");
+		std::smatch match;
+		if (std::regex_search(content, match, provincesBlock)) {
+			std::istringstream ids(match[1].str());
+			SignedInteger64 provinceId;
+			while (ids >> provinceId) {
+				auto it = provinces.find(provinceId);
+				if (it != provinces.end() && it->second.hasVictoryPoints) {
+					toAdd.emplace_back(provinceId, it->second.victoryPoints);
+				}
+			}
+		}
+	}
+	std::sort(toAdd.begin(), toAdd.end());
+
+	if (toAdd.empty()) { return content; }
+
+	// (b) Insert at the end of the history block, before its closing brace's line.
+	static const std::regex historyOpen(R"(history[ \t]*=[ \t]*\{)");
+	std::smatch historyMatch;
+	if (!std::regex_search(content, historyMatch, historyOpen)) { return content; }
+
+	SizeT openBrace = static_cast<SizeT>(historyMatch.position(0) + historyMatch.length(0)) - 1;
+	SizeT closeBrace = FindMatchingBrace(content, openBrace);
+	if (closeBrace == String::npos) { return content; }
+
+	SizeT lineStart = content.rfind('\n', closeBrace);
+	lineStart = (lineStart == String::npos) ? 0 : lineStart + 1;
+	SizeT firstNonWs = lineStart;
+	while (firstNonWs < closeBrace && (content[firstNonWs] == ' ' || content[firstNonWs] == '\t')) { ++firstNonWs; }
+	const String indent = content.substr(lineStart, firstNonWs - lineStart) + "\t";  // one deeper than the brace
+
+	String insertion;
+	for (const auto& [provinceId, victoryPoints] : toAdd) {
+		insertion += indent + "victory_points = { " + std::to_string(provinceId) + " " + std::to_string(victoryPoints) + " }" + newline;
+	}
+	content.insert(lineStart, insertion);
+	return content;
+}
+
+void WriteVictoryPointsToStateFiles(const Path& modDirectory, const HashMap<SignedInteger64, Province>& provinces) {
+	Vector<Path> stateFiles = GetGameFiles(modDirectory, modDirectory, {"history/states"}, "history/states", ".txt");
+
+	SizeT edited = 0;
+	for (const auto& file : stateFiles) {
+		String content = ReadFileBytes(file);
+		String updated = InjectVictoryPointsIntoState(content, provinces);
+		if (updated != content) { WriteFileBytes(file, updated); ++edited; }
+	}
+	std::cout << "Rewrote victory points in " << edited << " state file(s).\n";
+}
+
+// Rewrite map/definition.csv so every VP province's terrain (field index 6) becomes
+// "TDA_terrain_<id>". All other fields, lines and line endings are untouched.
+static String ReplaceVpTerrainsInDefinition(const String& content, const HashMap<SignedInteger64, Province>& provinces) {
+	String result;
+	result.reserve(content.size());
+
+	for (SizeT i = 0; i < content.size();) {
+		SizeT eol = content.find('\n', i);
+		SizeT lineEnd = (eol == String::npos) ? content.size() : eol + 1;
+		String line = content.substr(i, lineEnd - i);
+		i = lineEnd;
+
+		String body = line;
+		String ending;
+		while (!body.empty() && (body.back() == '\n' || body.back() == '\r')) { ending.insert(ending.begin(), body.back()); body.pop_back(); }
+
+		Vector<String> fields;
+		for (SizeT start = 0, k = 0; k <= body.size(); ++k) {
+			if (k == body.size() || body[k] == ';') { fields.push_back(body.substr(start, k - start)); start = k + 1; }
+		}
+
+		bool isNumericId = !fields.empty() && !fields[0].empty() &&
+			std::all_of(fields[0].begin(), fields[0].end(), [](unsigned char c) { return std::isdigit(c); });
+
+		if (fields.size() > 6 && isNumericId && provinces.count(std::stoll(fields[0]))) {
+			fields[6] = "TDA_terrain_" + fields[0];
+			String rebuilt;
+			for (SizeT f = 0; f < fields.size(); ++f) { if (f) { rebuilt += ';'; } rebuilt += fields[f]; }
+			result += rebuilt + ending;
+		}
+		else {
+			result += line;
+		}
+	}
+	return result;
+}
+
+void WriteUniqueProvinceTerrains(const Path& modDirectory, const HashMap<SignedInteger64, Province>& provinces) {
+	Path definitionPath = modDirectory / "map" / "definition.csv";
+	String content = ReadFileBytes(definitionPath);
+	if (content.empty()) {
+		std::cout << "Could not read " << definitionPath.string() << ", skipping terrain rewrite.\n";
+		return;
+	}
+	WriteFileBytes(definitionPath, ReplaceVpTerrainsInDefinition(content, provinces));
+	std::cout << "Rewrote per-VP terrains in definition.csv.\n";
+}
+
 int main() {
 	//Get the mod directory
 	Path modDirectory = std::filesystem::current_path().parent_path().parent_path();
 
 	HashMap<String, Terrain> terrains = LoadTerrain(modDirectory);
+
+	HashMap<String, HashMap<SignedInteger32, SignedInteger64>> countryPopulations = LoadCountryPopulations("country_pops.csv");
 
     HashMap<SignedInteger64, Province> provinces;
     HashMap<SignedInteger64, State> states;
@@ -399,6 +688,10 @@ int main() {
     LoadStateProvinceList(modDirectory, states);
 
 	LoadNamesFromJson("names.json", provinces, states, modPrefix);
+
+	// Fill in victory points from population (1 per 100k, scaled to 2010) for
+	// any province that doesn't already have an explicit value.
+	AssignVictoryPointsFromPopulation(provinces, countryPopulations);
 
     Vector<State> statesVector {}; statesVector.reserve(states.size());
 	for (auto& [stateId, stateData] : states) {
@@ -409,6 +702,10 @@ int main() {
 	std::sort(statesVector.begin(), statesVector.end(), [](const State& a, const State& b) { return a.id < b.id; });
 
 	WriteNames(modDirectory, provinces, statesVector, modPrefix);
+
+	// Write victory points into history/states and per-VP terrains into definition.csv.
+	WriteVictoryPointsToStateFiles(modDirectory, provinces);
+	WriteUniqueProvinceTerrains(modDirectory, provinces);
 
 	return 0;
 }
