@@ -1100,7 +1100,7 @@ TDA_update_state_51_names = {
 		limit = { any_country = { controls_province = 13929 TAG_using_german_names = yes } }
 		set_province_name = { id = 13929 name = VICTORY_POINTS_13929_0 }
 	}
-	#Düsseldorf
+	#Düsseldorf Airport
 	else = {
 		reset_province_name = 13929
 	}
@@ -17713,15 +17713,6 @@ TDA_update_state_662_names = {
 		else = {
 			reset_state_name = yes
 		}
-	}
-	#Ḥalāyib
-	if = {
-		limit = { any_country = { controls_province = 1977 TAG_using_arab_names = yes } }
-		set_province_name = { id = 1977 name = VICTORY_POINTS_1977_0 }
-	}
-	#Halaib
-	else = {
-		reset_province_name = 1977
 	}
 }
 

@@ -10043,7 +10043,7 @@
 		},
 		{
 			"id": 13667,
-			"default_name": "Chatham",
+			"default_name": "Gillingham",
 			"comment": "",
 			"custom_names": []
 		},
@@ -10368,12 +10368,6 @@
 		{
 			"id": 9383,
 			"default_name": "Falkirk",
-			"comment": "",
-			"custom_names": []
-		},
-		{
-			"id": 11378,
-			"default_name": "Cockburnspath",
 			"comment": "",
 			"custom_names": []
 		},
@@ -11754,7 +11748,7 @@
 		},
 		{
 			"id": 13836,
-			"default_name": "Varna",
+			"default_name": "Narva",
 			"comment": "",
 			"custom_names": []
 		},
@@ -12235,12 +12229,6 @@
 			"custom_names": []
 		},
 		{
-			"id": 13887,
-			"default_name": "Spandau",
-			"comment": "",
-			"custom_names": []
-		},
-		{
 			"id": 9496,
 			"default_name": "Frankfurt an der Oder",
 			"comment": "",
@@ -12401,7 +12389,7 @@
 		},
 		{
 			"id": 3679,
-			"default_name": "Stuggart",
+			"default_name": "Stuttgart",
 			"comment": "",
 			"custom_names": []
 		},
@@ -12610,7 +12598,7 @@
 		},
 		{
 			"id": 13929,
-			"default_name": "Düsseldorf",
+			"default_name": "Düsseldorf Airport",
 			"comment": "",
 			"custom_names": [
 				{
@@ -13457,7 +13445,8 @@
 		},
 		{
 			"id": 542,
-			"default_name": "Quipmer",
+			"default_name": "Quimper",
+			"default_name": "Quimper",
 			"comment": "",
 			"custom_names": []
 		},
@@ -19792,17 +19781,6 @@
 			"default_name": "Mut",
 			"comment": "",
 			"custom_names": []
-		},
-		{
-			"id": 1977,
-			"default_name": "Halaib",
-			"comment": "",
-			"custom_names": [
-				{
-					"requirements": "TAG_using_arab_names = yes",
-					"name": "Ḥalāyib"
-				}
-			]
 		},
 		{
 			"id": 9947,
