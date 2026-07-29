@@ -14,8 +14,8 @@ state={
 		
 		set_variable = { sq_km = 114345.96 }
 		victory_points = { 610 1 }
-		victory_points = { 768 1 }
-		victory_points = { 9697 1 }
+		victory_points = { 768 2 }
+		victory_points = { 9697 2 }
 		victory_points = { 9730 1 }
 		victory_points = { 10159 1 }
 	}

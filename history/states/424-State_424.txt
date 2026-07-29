@@ -7,22 +7,22 @@ state={
 		
 		
 		set_variable = { sq_km = 149443.49 }
-		victory_points = { 1344 2 }
+		victory_points = { 1344 1 }
 		victory_points = { 1430 2 }
-		victory_points = { 4237 4 }
-		victory_points = { 4414 4 }
-		victory_points = { 7310 4 }
+		victory_points = { 4237 3 }
+		victory_points = { 4414 3 }
+		victory_points = { 7310 3 }
 		victory_points = { 7340 2 }
-		victory_points = { 10001 2 }
+		victory_points = { 10001 1 }
 		victory_points = { 10296 2 }
 		victory_points = { 12779 2 }
-		victory_points = { 15737 6 }
-		victory_points = { 15738 14 }
-		victory_points = { 15741 11 }
-		victory_points = { 15742 7 }
-		victory_points = { 15743 4 }
-		victory_points = { 15744 5 }
-		victory_points = { 15745 3 }
+		victory_points = { 15737 5 }
+		victory_points = { 15738 11 }
+		victory_points = { 15741 9 }
+		victory_points = { 15742 6 }
+		victory_points = { 15743 3 }
+		victory_points = { 15744 4 }
+		victory_points = { 15745 2 }
 		victory_points = { 15746 3 }
 		victory_points = { 15747 3 }
 		victory_points = { 15749 1 }

@@ -25,7 +25,7 @@ state={
 		victory_points = { 1153 4 }
 		victory_points = { 4083 4 }
 		victory_points = { 4156 2 }
-		victory_points = { 4185 4 }
+		victory_points = { 4185 3 }
 		victory_points = { 7004 1 }
 		victory_points = { 7054 2 }
 		victory_points = { 7199 2 }
@@ -37,11 +37,11 @@ state={
 		victory_points = { 12030 2 }
 		victory_points = { 15028 10 }
 		victory_points = { 15030 7 }
-		victory_points = { 15031 9 }
-		victory_points = { 15032 26 }
+		victory_points = { 15031 8 }
+		victory_points = { 15032 25 }
 		victory_points = { 15038 7 }
-		victory_points = { 15039 6 }
-		victory_points = { 15040 5 }
+		victory_points = { 15039 5 }
+		victory_points = { 15040 4 }
 	}
 	provinces={
 		1053 1066 1110 1153 1628 3992 4038 4081 4083 4156 4183 4185 7004 7007 7054 7172 7199 7653 9942 9984 10057 10112 10114 10501 11945 11988 12030 12495 13141 15028 15029 15030 15031 15032 15033 15034 15035 15036 15037 15038 15039 15040 15041 

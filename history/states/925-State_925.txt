@@ -10,12 +10,12 @@ state={
 		
 		buildings = { air_base = 10 }
 		victory_points = { 2002 2 }
-		victory_points = { 12868 5 }
+		victory_points = { 12868 4 }
 		victory_points = { 15573 3 }
-		victory_points = { 15574 14 }
-		victory_points = { 15577 9 }
-		victory_points = { 15579 6 }
-		victory_points = { 15580 6 }
+		victory_points = { 15574 11 }
+		victory_points = { 15577 7 }
+		victory_points = { 15579 5 }
+		victory_points = { 15580 5 }
 		victory_points = { 15581 2 }
 		victory_points = { 15585 2 }
 	}

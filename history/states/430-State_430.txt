@@ -9,25 +9,25 @@ state={
 		
 		
 		buildings = { air_base = 6 }
-		victory_points = { 2843 5 }
-		victory_points = { 4162 3 }
-		victory_points = { 7124 4 }
-		victory_points = { 7662 7 }
-		victory_points = { 10035 4 }
+		victory_points = { 2843 4 }
+		victory_points = { 4162 2 }
+		victory_points = { 7124 3 }
+		victory_points = { 7662 5 }
+		victory_points = { 10035 3 }
 		victory_points = { 10389 3 }
-		victory_points = { 10443 6 }
-		victory_points = { 11929 7 }
+		victory_points = { 10443 5 }
+		victory_points = { 11929 6 }
 		victory_points = { 11968 1 }
 		victory_points = { 12010 3 }
 		victory_points = { 12423 2 }
-		victory_points = { 15781 5 }
-		victory_points = { 15782 7 }
-		victory_points = { 15783 9 }
-		victory_points = { 15784 10 }
-		victory_points = { 15785 6 }
-		victory_points = { 15786 45 }
+		victory_points = { 15781 4 }
+		victory_points = { 15782 6 }
+		victory_points = { 15783 7 }
+		victory_points = { 15784 8 }
+		victory_points = { 15785 5 }
+		victory_points = { 15786 36 }
 		victory_points = { 15790 2 }
-		victory_points = { 15792 323 }
+		victory_points = { 15792 259 }
 		victory_points = { 15794 1 }
 		victory_points = { 15795 3 }
 	}

@@ -14,9 +14,9 @@ state={
 		
 		set_variable = { sq_km = 30608 }
 		victory_points = { 2947 1 }
-		victory_points = { 7364 3 }
-		victory_points = { 7830 12 }
-		victory_points = { 13186 4 }
+		victory_points = { 7364 4 }
+		victory_points = { 7830 14 }
+		victory_points = { 13186 5 }
 		victory_points = { 13190 1 }
 	}
 	provinces = {

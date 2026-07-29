@@ -9,14 +9,14 @@ state={
 		set_variable = { sq_km = 36520.88 }
 		victory_points = { 10190 1 }
 		victory_points = { 12275 3 }
-		victory_points = { 15548 28 }
-		victory_points = { 15549 30 }
+		victory_points = { 15548 22 }
+		victory_points = { 15549 24 }
 		victory_points = { 15550 4 }
-		victory_points = { 15551 67 }
-		victory_points = { 15552 17 }
-		victory_points = { 15553 44 }
-		victory_points = { 15554 8 }
-		victory_points = { 15555 14 }
+		victory_points = { 15551 53 }
+		victory_points = { 15552 13 }
+		victory_points = { 15553 35 }
+		victory_points = { 15554 7 }
+		victory_points = { 15555 12 }
 	}
 	provinces={
 		1238 1321 7288 7391 7447 10190 12275 15548 15549 15550 15551 15552 15553 15554 15555 15556 

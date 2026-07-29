@@ -8,28 +8,28 @@ state={
 		
 		set_variable = { sq_km = 294319 }
 		victory_points = { 1949 2 }
-		victory_points = { 4950 2 }
+		victory_points = { 4950 1 }
 		victory_points = { 5040 4 }
-		victory_points = { 5096 5 }
-		victory_points = { 7205 3 }
+		victory_points = { 5096 4 }
+		victory_points = { 7205 2 }
 		victory_points = { 7938 3 }
 		victory_points = { 10332 1 }
 		victory_points = { 10807 3 }
 		victory_points = { 10816 1 }
 		victory_points = { 12080 1 }
-		victory_points = { 15673 13 }
-		victory_points = { 15675 32 }
+		victory_points = { 15673 11 }
+		victory_points = { 15675 25 }
 		victory_points = { 15676 3 }
-		victory_points = { 15677 5 }
-		victory_points = { 15680 23 }
-		victory_points = { 15682 14 }
+		victory_points = { 15677 4 }
+		victory_points = { 15680 18 }
+		victory_points = { 15682 11 }
 		victory_points = { 15684 3 }
 		victory_points = { 15685 2 }
 		victory_points = { 15686 2 }
-		victory_points = { 15688 3 }
-		victory_points = { 15690 3 }
+		victory_points = { 15688 2 }
+		victory_points = { 15690 2 }
 		victory_points = { 15691 1 }
-		victory_points = { 15694 3 }
+		victory_points = { 15694 2 }
 	}
 	provinces={
 		1199 1949 2105 4106 4410 4950 4953 5040 5096 7080 7205 7938 8076 10332 10801 10807 10816 11995 12080 12799 12854 15673 15674 15675 15676 15677 15678 15679 15680 15681 15682 15683 15684 15685 15686 15687 15688 15689 15690 15691 15692 15693 15694 15695 15696 15697 

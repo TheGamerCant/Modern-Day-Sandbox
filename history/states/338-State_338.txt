@@ -20,8 +20,8 @@ state={
 		buildings = {
 
 		}
-		victory_points = { 3778 5 }
-		victory_points = { 13608 1 }
+		victory_points = { 3778 11 }
+		victory_points = { 13608 2 }
 	}
 	provinces={
 		3778 13608 13609 13610 13611 

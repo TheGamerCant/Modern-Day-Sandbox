@@ -24,10 +24,10 @@ state={
 		victory_points = { 6690 1 }
 		victory_points = { 6739 1 }
 		victory_points = { 9661 1 }
-		victory_points = { 14440 19 }
+		victory_points = { 14440 38 }
 		victory_points = { 14443 2 }
-		victory_points = { 14444 3 }
-		victory_points = { 14447 2 }
+		victory_points = { 14444 6 }
+		victory_points = { 14447 4 }
 		victory_points = { 14448 1 }
 	}
 	provinces={
