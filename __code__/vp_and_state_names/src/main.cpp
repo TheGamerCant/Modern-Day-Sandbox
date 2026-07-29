@@ -490,15 +490,60 @@ static SignedInteger64 CountryPopulationForYear(const HashMap<SignedInteger32, S
 	return it != byYear.end() ? it->second : 0;
 }
 
+// Level -> people-per-victory-point scale plus per-country level assignments,
+// loaded from country_levels.json.
+struct CountryLevels {
+	HashMap<String, Float64> peoplePerVictoryPointByTag;
+	Float64 defaultPeoplePerVictoryPoint = 100000.0;
+};
+
+static CountryLevels LoadCountryLevels(const String& jsonPath) {
+	CountryLevels result;
+
+	std::ifstream file(jsonPath);
+	if (!file.is_open()) {
+		std::cout << "Could not open " << jsonPath << "; falling back to "
+			<< result.defaultPeoplePerVictoryPoint << " people per victory point.\n";
+		return result;
+	}
+
+	json levelsJson = json::parse(file);
+
+	// level number -> people per victory point (e.g. 1 -> 50000, 5 -> 125000).
+	HashMap<SignedInteger32, Float64> peoplePerVpByLevel;
+	if (levelsJson.contains("levels") && levelsJson["levels"].is_object()) {
+		for (const auto& [levelKey, value] : levelsJson["levels"].items()) {
+			if (value.is_number()) { peoplePerVpByLevel[std::stoi(levelKey)] = value.get<Float64>(); }
+		}
+	}
+
+	SignedInteger32 defaultLevel = levelsJson.value("default_level", 3);
+	if (auto it = peoplePerVpByLevel.find(defaultLevel); it != peoplePerVpByLevel.end()) {
+		result.defaultPeoplePerVictoryPoint = it->second;
+	}
+
+	// country tag -> people per victory point (resolved through its level).
+	if (levelsJson.contains("country_levels") && levelsJson["country_levels"].is_object()) {
+		for (const auto& [tag, levelValue] : levelsJson["country_levels"].items()) {
+			if (!levelValue.is_number_integer()) { continue; }
+			if (auto it = peoplePerVpByLevel.find(levelValue.get<SignedInteger32>()); it != peoplePerVpByLevel.end()) {
+				result.peoplePerVictoryPointByTag[tag] = it->second;
+			}
+		}
+	}
+	return result;
+}
+
 // For every VP province WITHOUT an explicit victory-point count but WITH a
 // population, estimate its 2010 population via its owner country's population
-// trend and set victory_points at 1 per 100,000 people (minimum 1).
+// trend and set victory_points at 1 per (people-per-VP for the owner's level;
+// minimum 1).
 void AssignVictoryPointsFromPopulation(
 	HashMap<SignedInteger64, Province>& provinces,
-	const HashMap<String, HashMap<SignedInteger32, SignedInteger64>>& countryPopulations
+	const HashMap<String, HashMap<SignedInteger32, SignedInteger64>>& countryPopulations,
+	const CountryLevels& countryLevels
 ) {
 	constexpr SignedInteger32 targetYear = 2010;
-	constexpr Float64 peoplePerVictoryPoint = 100000.0;
 
 	SizeT assigned = 0;
 	for (auto& [id, province] : provinces) {
@@ -514,6 +559,13 @@ void AssignVictoryPointsFromPopulation(
 				population2010 = static_cast<Float64>(province.population)
 					* static_cast<Float64>(countryAtTarget) / static_cast<Float64>(countryAtBase);
 			}
+		}
+
+		// People-per-victory-point comes from the owner country's level.
+		Float64 peoplePerVictoryPoint = countryLevels.defaultPeoplePerVictoryPoint;
+		if (auto it = countryLevels.peoplePerVictoryPointByTag.find(province.populationTag);
+			it != countryLevels.peoplePerVictoryPointByTag.end()) {
+			peoplePerVictoryPoint = it->second;
 		}
 
 		SignedInteger64 victoryPoints = static_cast<SignedInteger64>(std::llround(population2010 / peoplePerVictoryPoint));
@@ -680,6 +732,7 @@ int main() {
 	HashMap<String, Terrain> terrains = LoadTerrain(modDirectory);
 
 	HashMap<String, HashMap<SignedInteger32, SignedInteger64>> countryPopulations = LoadCountryPopulations("country_pops.csv");
+	CountryLevels countryLevels = LoadCountryLevels("country_levels.json");
 
     HashMap<SignedInteger64, Province> provinces;
     HashMap<SignedInteger64, State> states;
@@ -691,7 +744,7 @@ int main() {
 
 	// Fill in victory points from population (1 per 100k, scaled to 2010) for
 	// any province that doesn't already have an explicit value.
-	AssignVictoryPointsFromPopulation(provinces, countryPopulations);
+	AssignVictoryPointsFromPopulation(provinces, countryPopulations, countryLevels);
 
     Vector<State> statesVector {}; statesVector.reserve(states.size());
 	for (auto& [stateId, stateData] : states) {
