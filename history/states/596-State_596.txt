@@ -17,30 +17,30 @@ state={
 		set_variable = { culture_value_array^1 = 15.0 }
 		
 		set_variable = { sq_km = 104873 }
-		victory_points = { 1168 3 }
+		victory_points = { 1168 7 }
 		victory_points = { 1195 4 }
 		victory_points = { 7058 4 }
-		victory_points = { 7146 3 }
-		victory_points = { 7191 61 }
-		victory_points = { 9944 1 }
+		victory_points = { 7146 5 }
+		victory_points = { 7191 58 }
+		victory_points = { 9944 2 }
 		victory_points = { 9972 1 }
-		victory_points = { 9974 1 }
+		victory_points = { 9974 5 }
 		victory_points = { 10058 12 }
-		victory_points = { 10101 1 }
-		victory_points = { 11920 9 }
-		victory_points = { 11947 4 }
-		victory_points = { 11991 5 }
+		victory_points = { 10101 3 }
+		victory_points = { 11920 4 }
+		victory_points = { 11947 3 }
+		victory_points = { 11991 6 }
 		victory_points = { 15052 9 }
-		victory_points = { 15053 36 }
-		victory_points = { 15054 11 }
-		victory_points = { 15057 28 }
-		victory_points = { 15058 14 }
-		victory_points = { 15061 6 }
+		victory_points = { 15053 27 }
+		victory_points = { 15054 7 }
+		victory_points = { 15057 26 }
+		victory_points = { 15058 11 }
+		victory_points = { 15061 7 }
 		victory_points = { 15062 17 }
-		victory_points = { 15064 6 }
-		victory_points = { 15065 4 }
-		victory_points = { 15068 7 }
-		victory_points = { 15069 11 }
+		victory_points = { 15064 8 }
+		victory_points = { 15065 7 }
+		victory_points = { 15068 9 }
+		victory_points = { 15069 7 }
 	}
 	provinces={
 		1055 1096 1168 1195 4013 4042 4099 7058 7086 7146 7174 7191 9944 9972 9974 10014 10058 10086 10101 11920 11947 11991 12059 15052 15053 15054 15055 15056 15057 15058 15059 15060 15061 15062 15063 15064 15065 15066 15067 15068 15069 

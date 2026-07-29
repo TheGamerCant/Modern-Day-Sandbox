@@ -26,16 +26,16 @@ state={
 			air_base = 8
 		}
 		victory_points = { 1708 1 }
-		victory_points = { 1844 3 }
+		victory_points = { 1844 2 }
 		victory_points = { 4823 1 }
-		victory_points = { 7702 1 }
+		victory_points = { 7702 2 }
 		victory_points = { 7866 1 }
 		victory_points = { 10614 1 }
-		victory_points = { 14667 38 }
+		victory_points = { 14667 29 }
 		victory_points = { 14670 2 }
 		victory_points = { 14671 3 }
 		victory_points = { 14672 4 }
-		victory_points = { 14673 8 }
+		victory_points = { 14673 4 }
 		victory_points = { 14676 2 }
 	}
 	provinces={
