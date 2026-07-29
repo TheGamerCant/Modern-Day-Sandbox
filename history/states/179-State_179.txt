@@ -13,6 +13,10 @@ state={
 		set_variable = { culture_value_array^0 = 100.0 }
 		
 		set_variable = { sq_km = 27864 }
+		victory_points = { 6880 1 }
+		victory_points = { 6933 1 }
+		victory_points = { 14495 1 }
+		victory_points = { 14496 1 }
 	}
 	provinces={
 		970 980 3790 3846 3866 6880 6884 6933 6986 9765 9819 9869 14495 14496 

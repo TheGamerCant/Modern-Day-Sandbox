@@ -19,6 +19,7 @@ state={
 		# ~59% Israeli, 41% Palestinian
 		
 		set_variable = { sq_km = 3380 }
+		victory_points = { 1086 1 }
 	}
 	provinces={
 		1086  

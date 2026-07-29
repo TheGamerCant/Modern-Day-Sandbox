@@ -9,6 +9,27 @@ state={
 		
 		
 		buildings = { air_base = 6 }
+		victory_points = { 2843 5 }
+		victory_points = { 4162 3 }
+		victory_points = { 7124 4 }
+		victory_points = { 7662 7 }
+		victory_points = { 10035 4 }
+		victory_points = { 10389 3 }
+		victory_points = { 10443 6 }
+		victory_points = { 11929 7 }
+		victory_points = { 11968 1 }
+		victory_points = { 12010 3 }
+		victory_points = { 12423 2 }
+		victory_points = { 15781 5 }
+		victory_points = { 15782 7 }
+		victory_points = { 15783 9 }
+		victory_points = { 15784 10 }
+		victory_points = { 15785 6 }
+		victory_points = { 15786 45 }
+		victory_points = { 15790 2 }
+		victory_points = { 15792 323 }
+		victory_points = { 15794 1 }
+		victory_points = { 15795 3 }
 	}
 	provinces={
 		2843 4162 4616 7078 7124 7179 7634 7662 9935 9991 9993 10035 10389 10416 10443 11911 11929 11968 12010 12423 13208 15781 15782 15783 15784 15785 15786 15787 15788 15789 15790 15791 15792 15793 15794 15795 

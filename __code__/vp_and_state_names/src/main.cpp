@@ -705,7 +705,7 @@ int main() {
 
 	// Write victory points into history/states and per-VP terrains into definition.csv.
 	WriteVictoryPointsToStateFiles(modDirectory, provinces);
-	WriteUniqueProvinceTerrains(modDirectory, provinces);
+	//WriteUniqueProvinceTerrains(modDirectory, provinces);
 
 	return 0;
 }

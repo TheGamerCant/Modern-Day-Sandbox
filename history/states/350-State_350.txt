@@ -18,6 +18,23 @@ state={
 		set_variable = { sq_km = 28680.33 }
 		
 		buildings = { air_base = 3 }
+		victory_points = { 1498 7 }
+		victory_points = { 5170 1 }
+		victory_points = { 7530 4 }
+		victory_points = { 7620 1 }
+		victory_points = { 9823 1 }
+		victory_points = { 9912 2 }
+		victory_points = { 10497 1 }
+		victory_points = { 10979 1 }
+		victory_points = { 11759 2 }
+		victory_points = { 12387 1 }
+		victory_points = { 12416 1 }
+		victory_points = { 12476 1 }
+		victory_points = { 12915 1 }
+		victory_points = { 12936 1 }
+		victory_points = { 12992 6 }
+		victory_points = { 15413 14 }
+		victory_points = { 15414 1 }
 	}
 	provinces = {
 		1498 2223 3889 4512 5170 7530 7579 7620 9823 9893 9912 10497 10950 10979 11739 11759 11871 12387 12416 12476 12915 12936 12992 15413 15414 15415

@@ -13,6 +13,32 @@ state={
 		set_variable = { culture_value_array^0 = 100.0 }
 		
 		set_variable = { sq_km = 90419 }
+		victory_points = { 242 1 }
+		victory_points = { 295 1 }
+		victory_points = { 299 1 }
+		victory_points = { 363 1 }
+		victory_points = { 383 5 }
+		victory_points = { 3229 1 }
+		victory_points = { 3375 1 }
+		victory_points = { 6084 1 }
+		victory_points = { 6164 1 }
+		victory_points = { 6188 1 }
+		victory_points = { 6195 1 }
+		victory_points = { 6310 1 }
+		victory_points = { 6311 1 }
+		victory_points = { 6397 1 }
+		victory_points = { 6406 1 }
+		victory_points = { 9054 1 }
+		victory_points = { 9138 1 }
+		victory_points = { 9209 1 }
+		victory_points = { 9329 1 }
+		victory_points = { 9393 1 }
+		victory_points = { 11114 1 }
+		victory_points = { 11380 1 }
+		victory_points = { 11390 1 }
+		victory_points = { 13264 1 }
+		victory_points = { 13265 1 }
+		victory_points = { 15122 1 }
 	}
 	provinces={
 		69 147 171 211 242 295 299 329 363 383 3063 3128 3141 3229 3286 3375 3386 6028 6084 6148 6164 6188 6195 6310 6311 6331 6397 6406 9054 9138 9209 9218 9251 9308 9329 9393 9406 9410 11044 11070 11114 11231 11280 11289 11311 11380 11390 13095 13096 13264 13265 15120 15121 15122 

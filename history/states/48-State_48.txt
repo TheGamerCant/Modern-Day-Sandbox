@@ -17,6 +17,18 @@ state={
 		buildings = {
 			air_base = 3
 		}
+		victory_points = { 793 1 }
+		victory_points = { 893 1 }
+		victory_points = { 935 1 }
+		victory_points = { 965 1 }
+		victory_points = { 3796 1 }
+		victory_points = { 3937 1 }
+		victory_points = { 6857 1 }
+		victory_points = { 6982 1 }
+		victory_points = { 9771 1 }
+		victory_points = { 15138 4 }
+		victory_points = { 15139 12 }
+		victory_points = { 15140 1 }
 	}
 	provinces={
 		793 893 935 949 965 3796 3908 3937 3952 3971 6857 6923 6982 9771 9818 11754 11813 15138 15139 15140 

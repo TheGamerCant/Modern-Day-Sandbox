@@ -9,6 +9,12 @@ state={
 		set_variable = { sq_km = 371694.25 }
 		
 		buildings = { air_base = 6 }
+		victory_points = { 12727 2 }
+		victory_points = { 12870 1 }
+		victory_points = { 15870 64 }
+		victory_points = { 15871 2 }
+		victory_points = { 15882 1 }
+		victory_points = { 15885 1 }
 	}
 	provinces={
 		5093 7995 8004 8060 10923 12727 12813 12870 15870 15871 15872 15873 15874 15875 15876 15877 15878 15879 15880 15881 15882 15883 15884 15885 

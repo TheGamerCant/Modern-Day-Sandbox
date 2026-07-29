@@ -20,6 +20,10 @@ state={
 		buildings = {
 			air_base = 3
 		}
+		victory_points = { 265 1 }
+		victory_points = { 3296 1 }
+		victory_points = { 9262 1 }
+		victory_points = { 13831 1 }
 	}
 	provinces={
 		3194 3296 3319 6322 9262 11246 265 3255 3525 6222 6342 11358 13830 13831 
