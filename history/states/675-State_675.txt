@@ -2,12 +2,19 @@ state={
 	id=675
 	name="STATE_675"
 	history={
-		owner = ZZZ
+		owner = IRQ
+		add_core_of = IRQ
+		
+		set_variable = { sq_km = 138501 }
+		victory_points = { 1631 2 }
+		victory_points = { 12413 1 }
+		victory_points = { 12839 1 }
+		victory_points = { 16076 2 }
 	}
 	provinces={
-		1631 4951 10744 12413 12879 
+		1631 4951 12372 12413 12839 16076 16077 16078 16079 16080 16081 
 	}
-	manpower= 100000
+	manpower= 1364613
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=wasteland

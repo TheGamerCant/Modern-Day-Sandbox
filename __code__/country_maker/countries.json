@@ -1529,6 +1529,22 @@
 			}
 		},
 		{
+			"tag": "IRQ",
+			"red": 158,
+			"green": 97,
+			"blue": 79,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 291,
+			"ideology": "IDEOLOGY_democratic",
+			"elections_allowed": "yes",
+			"localisation": {
+				"IRQ": "Iraq",
+				"IRQ_DEF": "the Republic of Iraq",
+				"IRQ_ADJ": "Iraqi"
+			}
+		},
+		{
 			"tag": "ISR",
 			"red": 67,
 			"green": 171,
@@ -1718,6 +1734,22 @@
 				"KSA": "Saudi Arabia",
 				"KSA_DEF": "the Kingdom of Saudi Arabia",
 				"KSA_ADJ": "Saudi"
+			}
+		},
+		{
+			"tag": "KUW",
+			"red": 181,
+			"green": 58,
+			"blue": 20,
+			"graphical_culture": "middle_eastern_gfx",
+			"graphical_culture_2d": "middle_eastern_2d",
+			"capital": 656,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"KUW": "Kuwait",
+				"KUW_DEF": "the State of Kuwait",
+				"KUW_ADJ": "Kuwaiti"
 			}
 		},
 		{

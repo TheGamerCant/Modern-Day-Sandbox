@@ -5369,7 +5369,12 @@
             "id": 656,
             "default_name": "Kuwait",
             "comment": "",
-            "custom_names": []
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Kuwayt"
+                }
+			]
         },
         {
             "id": 657,
@@ -5530,15 +5535,25 @@
         },
         {
             "id": 675,
-            "default_name": "Al Hajara",
+            "default_name": "Al-Anbar",
             "comment": "",
-            "custom_names": []
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Anbār"
+                }
+            ]
         },
         {
             "id": 676,
-            "default_name": "Mosul",
+            "default_name": "Erbil",
             "comment": "",
-            "custom_names": []
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Arbīl"
+                }
+            ]
         },
         {
             "id": 677,
@@ -7958,6 +7973,171 @@
             "default_name": "Central Kenya",
             "comment": "",
             "custom_names": []
+        },
+        {
+            "id": 962,
+            "default_name": "Basra",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Baṣrah"
+                }
+            ]
+        },
+        {
+            "id": 963,
+            "default_name": "Al-Muthanna",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Muthannā"
+                }
+            ]
+        },
+        {
+            "id": 964,
+            "default_name": "Al-Najaf",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "An-Najaf"
+                }
+            ]
+        },
+        {
+            "id": 965,
+            "default_name": "Misan",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Maysān"
+                }
+            ]
+        },
+        {
+            "id": 966,
+            "default_name": "Dohuk",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Dahūk"
+                }
+            ]
+        },
+        {
+            "id": 967,
+            "default_name": "Theqar",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Dhī Qār"
+                }
+            ]
+        },
+        {
+            "id": 968,
+            "default_name": "Al-Qadisiyah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Qādisiyah"
+                }
+            ]
+        },
+        {
+            "id": 969,
+            "default_name": "Wasit",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Wasiṭ"
+                }
+            ]
+        },
+        {
+            "id": 970,
+            "default_name": "Babylon",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Bābil"
+                }
+            ]
+        },
+        {
+            "id": 971,
+            "default_name": "Kerbala",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Karbalā'"
+                }
+            ]
+        },
+        {
+            "id": 972,
+            "default_name": "Saladin",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Ṣalāḥ Ad-Dīn"
+                }
+            ]
+        },
+        {
+            "id": 973,
+            "default_name": "Nineveh",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Nīnawā"
+                }
+            ]
+        },
+        {
+            "id": 974,
+            "default_name": "Al-Sulaimaniyah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "As-Sulaymāniyah"
+                }
+            ]
+        },
+        {
+            "id": 975,
+            "default_name": "Diyala",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Diyālā"
+                }
+            ]
+        },
+        {
+            "id": 976,
+            "default_name": "Kirkuk",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Kirkūk"
+                }
+            ]
         }
     ],
     "victory_point_names": [
@@ -9872,8 +10052,8 @@
             "custom_names": [],
             "population": {
                 "tag": "USA",
-                "population": 136700,
-                "year": 2025
+                "population": 1128047,
+                "year": 2010
             },
             "terrain": "dense_urban"
         },
@@ -10000,8 +10180,8 @@
             "custom_names": [],
             "population": {
                 "tag": "USA",
-                "population": 602708,
-                "year": 2025
+                "population": 5298377,
+                "year": 2010
             },
             "terrain": "dense_urban"
         },
@@ -10032,7 +10212,7 @@
             "custom_names": [],
             "population": {
                 "tag": "USA",
-                "population": 386787,
+                "population": 564873,
                 "year": 2010
             },
             "terrain": "urban"
@@ -10140,8 +10320,8 @@
             "custom_names": [],
             "population": {
                 "tag": "USA",
-                "population": 229305,
-                "year": 2025
+                "population": 2243960,
+                "year": 2010
             },
             "terrain": "dense_urban"
         },
@@ -15649,8 +15829,8 @@
             "custom_names": [],
             "population": {
                 "tag": "GER",
-                "population": 916259,
-                "year": 2025
+                "population": 57900,
+                "year": 2011
             },
             "terrain": "forest"
         },
@@ -52040,8 +52220,8 @@
             ],
             "population": {
                 "tag": "CYP",
-                "population": 191161,
-                "year": 2025
+                "population": 101000,
+                "year": 2010
             },
             "terrain": "hills"
         },
@@ -57829,8 +58009,8 @@
             ],
             "population": {
                 "tag": "UAE",
-                "population": 508976,
-                "year": 2025
+                "population": 912318,
+                "year": 2010
             },
             "terrain": "dense_urban"
         },
@@ -57863,8 +58043,8 @@
             ],
             "population": {
                 "tag": "UAE",
-                "population": 4565478,
-                "year": 2025
+                "population": 1874729,
+                "year": 2010
             },
             "terrain": "dense_urban"
         },
@@ -59468,6 +59648,711 @@
                 "year": 2025
             },
             "terrain": "desert"
+        },
+        {
+            "id": 16030,
+            "default_name": "Kuwait City",
+            "comment": "",
+			"custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Madīnat Al-Kuwayt"
+                }
+			],
+            "population": {
+                "tag": "KUW",
+                "population": 2925375,
+                "year": 2010
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16035,
+            "default_name": "Kerbala",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Karbalā'"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 568100,
+                "year": 2010
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 2097,
+            "default_name": "Baghdad",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Baghdād"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 6259611,
+                "year": 2010
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16039,
+            "default_name": "Baghdad International Airport",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Maṭār Baghdād Al-Dawli"
+                }
+            ],
+            "victory_points": 2,
+            "terrain": "sub_urban"
+        },
+        {
+            "id": 16040,
+            "default_name": "Hillah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Ḥillah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 373063,
+                "year": 2010
+            },
+            "terrain": "urban"
+        },
+        {
+            "id": 16041,
+            "default_name": "Najaf",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "An-Najaf"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 1361936,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16047,
+            "default_name": "Diwaniyah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Ad-Dīwāniyah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 332124,
+                "year": 2010
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16048,
+            "default_name": "Al-Hamzah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Ḥamzah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 71346,
+                "year": 2010
+            },
+            "terrain": "plains"
+        },
+        {
+            "id": 16049,
+            "default_name": "Samawah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "As-Samāwah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 179140,
+                "year": 2010
+            },
+            "terrain": "urban"
+        },
+        {
+            "id": 8001,
+            "default_name": "Rumaythah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Ar-Rumaītah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 69528,
+                "year": 2010
+            },
+            "terrain": "plains"
+        },
+        {
+            "id": 16051,
+            "default_name": "Al-Khidhir",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Khiḍir"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 34597,
+                "year": 2010
+            },
+            "terrain": "plains"
+        },
+        {
+            "id": 16058,
+            "default_name": "Basra",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Baṣrah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 2131556,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16057,
+            "default_name": "Al-Qurnah",
+            "comment": "",
+            "custom_names": [],
+            "population": {
+                "tag": "IRQ",
+                "population": 102936,
+                "year": 2010
+            },
+            "terrain": "plains"
+        },
+        {
+            "id": 16063,
+            "default_name": "Nasiriyah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "An-Nāṣiriyah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 455721,
+                "year": 2010
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16067,
+            "default_name": "Shatrah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Ash-Shaṭrah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 148664,
+                "year": 2010
+            },
+            "terrain": "plains"
+        },
+        {
+            "id": 2004,
+            "default_name": "Rifai",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Ar-Rifā'ī"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 60885,
+                "year": 2010
+            },
+            "terrain": "plains"
+        },
+        {
+            "id": 16068,
+            "default_name": "Amarah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-'Amārah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 428804,
+                "year": 2010
+            },
+            "terrain": "urban"
+        },
+        {
+            "id": 16071,
+            "default_name": "Al-Majar Al-Kaber",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Majar Al-Kabīr"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 76365,
+                "year": 2010
+            },
+            "terrain": "desert"
+        },
+        {
+            "id": 16073,
+            "default_name": "Kut",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Kūt"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 312610,
+                "year": 2010
+            },
+            "terrain": "urban"
+        },
+        {
+            "id": 16072,
+            "default_name": "Al-Suwaira",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Aṣ-Ṣuwaīrah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 61954,
+                "year": 2010
+            },
+            "terrain": "sub_urban"
+        },
+        {
+            "id": 16076,
+            "default_name": "Fallujah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Fallūjah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 203451,
+                "year": 2010
+            },
+            "terrain": "dense_urban"
+		},
+        {
+            "id": 1631,
+            "default_name": "Ramadi",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Ar-Ramādī"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 181264,
+                "year": 2010
+            },
+            "terrain": "desert"
+        },
+        {
+            "id": 12413,
+            "default_name": "Qa'im",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Qā'im"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 60055,
+                "year": 2010
+            },
+            "terrain": "desert"
+        },
+        {
+            "id": 12839,
+            "default_name": "Rutba",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Ar-Ruṭbah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 23042,
+                "year": 2010
+            },
+            "terrain": "desert"
+        },
+        {
+            "id": 16084,
+            "default_name": "Baqubah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Ba'qūbah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 227785,
+                "year": 2010
+            },
+            "terrain": "urban"
+        },
+        {
+            "id": 16086,
+            "default_name": "Khanaqin",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Khānaqīn"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 42057,
+                "year": 2010
+            },
+            "terrain": "hills"
+        },
+        {
+            "id": 8123,
+            "default_name": "Samarra",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Sāmarrā'"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 119022,
+                "year": 2010
+            },
+            "terrain": "hills"
+        },
+        {
+            "id": 1600,
+            "default_name": "Tikrit",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Tikrīt"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 89584,
+                "year": 2010
+            },
+            "terrain": "desert"
+        },
+        {
+            "id": 16088,
+            "default_name": "Kirkuk",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Kirkūk"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 782143,
+                "year": 2010
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16092,
+            "default_name": "Mosul",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Al-Mawṣil"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 1136990,
+                "year": 2010
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16098,
+            "default_name": "Akre",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "'Ākra"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 55961,
+                "year": 2010
+            },
+            "terrain": "plains"
+        },
+        {
+            "id": 10106,
+            "default_name": "Tal Afar",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Tal'afar"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 143982,
+                "year": 2010
+            },
+            "terrain": "plains"
+        },
+        {
+            "id": 10804,
+            "default_name": "Sinjar",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Sinjār"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 33921,
+                "year": 2010
+            },
+            "terrain": "desert"
+        },
+        {
+            "id": 16101,
+            "default_name": "Dohuk",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Dahūk"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 1142889,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16102,
+            "default_name": "Zakho",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Zākhū"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 174197,
+                "year": 2010
+            },
+            "terrain": "urban"
+        },
+        {
+            "id": 10811,
+            "default_name": "Sheladiz",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Shīladizā"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 39879,
+                "year": 2025
+            },
+            "terrain": "plains"
+        },
+        {
+            "id": 16103,
+            "default_name": "Erbil",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Arbīl"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 1514144,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 5014,
+            "default_name": "Soran",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Sūrān"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 52955,
+                "year": 2010
+            },
+            "terrain": "mountain"
+        },
+        {
+            "id": 16109,
+            "default_name": "Al-Sulaimaniyah",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "As-Sulaymāniyah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 618793,
+                "year": 2010
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16111,
+            "default_name": "Ranya",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Rānyah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 76111,
+                "year": 2010
+            },
+            "terrain": "mountain"
+        },
+        {
+            "id": 6826,
+            "default_name": "Kalar",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Kalār"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 120099,
+                "year": 2010
+            },
+            "terrain": "mountain"
+        },
+        {
+            "id": 16112,
+            "default_name": "Halabja",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Ḥalabjah"
+                }
+            ],
+            "population": {
+                "tag": "IRQ",
+                "population": 55588,
+                "year": 2010
+            },
+            "terrain": "mountain"
         }
     ]
 }

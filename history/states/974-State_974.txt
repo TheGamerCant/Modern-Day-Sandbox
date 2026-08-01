@@ -1,0 +1,21 @@
+state={
+	id=974
+	name="STATE_974"
+	history={
+		owner = IRQ
+		add_core_of = IRQ
+		
+		set_variable = { sq_km = 17912 }
+		victory_points = { 6826 1 }
+		victory_points = { 16109 6 }
+		victory_points = { 16111 1 }
+		victory_points = { 16112 1 }
+	}
+	provinces={
+		6826 16109 16110 16111 16112 
+	}
+	manpower=1536472
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

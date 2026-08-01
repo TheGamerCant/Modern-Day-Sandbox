@@ -219,6 +219,8 @@ TAG_using_arab_names = {
 				original_tag = QAT
 				original_tag = UAE
 				original_tag = KSA
+				original_tag = KUW
+				original_tag = IRQ
 			}
 			is_subject = no
 		}
@@ -241,6 +243,8 @@ TAG_using_arab_names = {
 		is_puppet_of = QAT
 		is_puppet_of = UAE
 		is_puppet_of = KSA
+		is_puppet_of = KUW
+		is_puppet_of = IRQ
 	}
 }
 

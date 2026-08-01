@@ -1,0 +1,22 @@
+state={
+	id=970
+	name="STATE_970"
+	history={
+		owner = IRQ
+		add_core_of = IRQ
+		
+		set_variable = { sq_km = 5603 }
+		
+		buildings = { air_base = 6 }
+		
+		victory_points = { 16039 2 }
+		victory_points = { 16040 4 }
+	}
+	provinces={
+		12046 16038 16039 16040 
+	}
+	manpower=1590593
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

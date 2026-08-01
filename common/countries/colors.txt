@@ -264,6 +264,10 @@ IRE = {
 	color = rgb { 8 109 12 }
 	color_ui = rgb { 8 109 12 }
 }
+IRQ = {
+	color = rgb { 168 115 102 }
+	color_ui = rgb { 168 115 102 }
+}
 ISR = {
 	color = rgb { 67 171 218 }
 	color_ui = rgb { 67 171 218 }
@@ -311,6 +315,10 @@ KOS = {
 KSA = {
 	color = rgb { 0 71 30 }
 	color_ui = rgb { 0 71 30 }
+}
+KUW = {
+	color = rgb { 181 58 20 }
+	color_ui = rgb { 181 58 20 }
 }
 LAT = {
 	color = rgb { 100 3 46 }
