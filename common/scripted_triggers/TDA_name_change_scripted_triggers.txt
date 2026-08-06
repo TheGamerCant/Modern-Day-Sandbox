@@ -835,7 +835,17 @@ TAG_using_indian_names = {
 }
 
 TAG_using_pakistani_names = {
-	always = no
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = PAK
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = PAK
+	}
 }
 TAG_using_bengali_names = {
 	has_global_flag = TDA_city_name_changes_active_flag
@@ -849,4 +859,7 @@ TAG_using_bengali_names = {
 		
 		is_puppet_of = BAN
 	}
+}
+TAG_using_afghan_names = {
+	always = no
 }

@@ -1,0 +1,18 @@
+state={
+	id=977
+	name="STATE_977"
+	history={
+		owner = PAK
+		add_core_of = PAK
+		
+		set_variable = { sq_km = 895 }
+		victory_points = { 16113 17 }
+	}
+	provinces={
+		16113 
+	}
+	manpower=1800372
+	buildings_max_level_factor=1
+	state_category=city
+	local_supplies=0.5
+}

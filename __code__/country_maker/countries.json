@@ -2153,6 +2153,22 @@
 			}
 		},
 		{
+			"tag": "PAK",
+			"red": 0,
+			"green": 61,
+			"blue": 19,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 440,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "yes",
+			"localisation": {
+				"PAK": "Pakistan",
+				"PAK_DEF": "the Islamic Republic of Pakistan",
+				"PAK_ADJ": "Pakistani"
+			}
+		},
+		{
 			"tag": "POL",
 			"red": 164,
 			"green": 58,

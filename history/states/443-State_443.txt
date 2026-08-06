@@ -2,12 +2,26 @@ state={
 	id=443
 	name="STATE_443"
 	history={
-		owner = ZZZ
+		owner = PAK
+		add_core_of = PAK
+		
+		set_variable = { sq_km = 136687 }
+		
+		buildings = { air_base = 8 }
+		victory_points = { 4110 2 }
+		victory_points = { 7084 1 }
+		victory_points = { 10108 1 }
+		victory_points = { 10735 1 }
+		victory_points = { 16120 126 }
+		victory_points = { 16121 2 }
+		victory_points = { 16125 23 }
+		victory_points = { 16128 6 }
+		victory_points = { 16129 5 }
 	}
 	provinces={
-		1147 1971 1980 3456 4003 4110 4382 7049 7084 10108 10735 
+		1147 1971 1980 3456 4003 4110 4382 7049 7084 10108 10735 16120 16121 16122 16123 16124 16125 16126 16127 16128 16129 16130 
 	}
-	manpower= 100000
+	manpower= 43005544
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=rural

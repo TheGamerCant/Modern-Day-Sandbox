@@ -1707,11 +1707,239 @@ def transliterate_odia(text):
 
     return "".join(result)
 
+
+def transliterate_pashto(text):
+    text = unicodedata.normalize("NFC", text)
+
+    PASHTO_MAP = {
+        # Vowels
+        "ا": "ā",
+        "آ": "ā",
+        "أ": "a",
+        "إ": "i",
+        "ؤ": "u",
+        "ئ": "i",
+        "ء": "ʾ",
+
+        # Consonants
+        "ب": "b",
+        "پ": "p",
+        "ت": "t",
+        "ټ": "ṭ",
+        "ث": "s",
+        "ج": "j",
+        "څ": "c",
+        "چ": "č",
+        "ح": "ḥ",
+        "خ": "x",
+        "د": "d",
+        "ډ": "ḍ",
+        "ذ": "z",
+        "ر": "r",
+        "ړ": "ṛ",
+        "ز": "z",
+        "ژ": "ž",
+        "ږ": "ǧ",
+        "س": "s",
+        "ش": "š",
+        "ښ": "x̌",
+        "ص": "ṣ",
+        "ض": "ẓ",
+        "ط": "ṭ",
+        "ظ": "ẓ",
+        "ع": "ʿ",
+        "غ": "ġ",
+        "ف": "f",
+        "ق": "q",
+        "ک": "k",
+        "ګ": "g",
+        "ل": "l",
+        "م": "m",
+        "ن": "n",
+        "ڼ": "ṇ",
+        "و": "w",
+        "ه": "h",
+        "ۀ": "a",
+        "ی": "y",
+        "ې": "ē",
+        "ۍ": "ai",
+        "ې": "e",
+        "ئ": "ʾy",
+
+        # Pashto-specific
+        "ځ": "dz",
+    }
+
+    DIACRITICS = {
+        "َ": "a",
+        "ِ": "i",
+        "ُ": "u",
+        "ً": "an",
+        "ٍ": "in",
+        "ٌ": "un",
+        "ْ": "",
+    }
+
+    DIGITS = {
+        "۰": "0",
+        "۱": "1",
+        "۲": "2",
+        "۳": "3",
+        "۴": "4",
+        "۵": "5",
+        "۶": "6",
+        "۷": "7",
+        "۸": "8",
+        "۹": "9",
+    }
+
+    result = []
+    i = 0
+
+    while i < len(text):
+        ch = text[i]
+
+        # Shadda doubles previous consonant
+        if ch == "ّ":
+            if result:
+                last = result[-1]
+                if last:
+                    result[-1] = last + last[-1]
+            i += 1
+            continue
+
+        if ch in DIACRITICS:
+            result.append(DIACRITICS[ch])
+        elif ch in DIGITS:
+            result.append(DIGITS[ch])
+        elif ch in PASHTO_MAP:
+            result.append(PASHTO_MAP[ch])
+        else:
+            result.append(ch)
+
+        i += 1
+
+    return "".join(result)
+
+
+def transliterate_balochi(text):
+    text = unicodedata.normalize("NFC", text)
+
+    BALOCHI_MAP = {
+        # Vowels
+        "ا": "ā",
+        "آ": "ā",
+        "أ": "a",
+        "إ": "i",
+        "ؤ": "u",
+        "ئ": "i",
+        "ء": "ʾ",
+
+        # Consonants
+        "ب": "b",
+        "پ": "p",
+        "ت": "t",
+        "ٹ": "ṭ",
+        "ث": "s",
+        "ج": "j",
+        "چ": "č",
+        "ح": "ḥ",
+        "خ": "x",
+        "د": "d",
+        "ڈ": "ḍ",
+        "ذ": "z",
+        "ر": "r",
+        "ڑ": "ṛ",
+        "ز": "z",
+        "ژ": "ž",
+        "س": "s",
+        "ش": "š",
+        "ص": "ṣ",
+        "ض": "ẓ",
+        "ط": "ṭ",
+        "ظ": "ẓ",
+        "ع": "ʿ",
+        "غ": "ġ",
+        "ف": "f",
+        "ق": "q",
+        "ک": "k",
+        "گ": "g",
+        "ل": "l",
+        "م": "m",
+        "ن": "n",
+        "ں": "ṁ",
+        "و": "w",
+        "ه": "h",
+        "ہ": "h",
+        "ی": "y",
+        "ے": "ē",
+
+        # Balochi/Persian additions
+        "ڤ": "v",
+        "ݔ": "ŋ",
+        "ݐ": "ṭ",
+        "ݖ": "ṛ",
+    }
+
+    DIACRITICS = {
+        "َ": "a",
+        "ِ": "i",
+        "ُ": "u",
+        "ً": "an",
+        "ٍ": "in",
+        "ٌ": "un",
+        "ْ": "",
+    }
+
+    DIGITS = {
+        "۰": "0",
+        "۱": "1",
+        "۲": "2",
+        "۳": "3",
+        "۴": "4",
+        "۵": "5",
+        "۶": "6",
+        "۷": "7",
+        "۸": "8",
+        "۹": "9",
+    }
+
+    result = []
+    i = 0
+
+    while i < len(text):
+        ch = text[i]
+
+        # Shadda
+        if ch == "ّ":
+            if result:
+                last = result[-1]
+                if last:
+                    result[-1] = last + last[-1]
+            i += 1
+            continue
+
+        if ch in DIACRITICS:
+            result.append(DIACRITICS[ch])
+
+        elif ch in DIGITS:
+            result.append(DIGITS[ch])
+
+        elif ch in BALOCHI_MAP:
+            result.append(BALOCHI_MAP[ch])
+
+        else:
+            result.append(ch)
+
+        i += 1
+
+    return "".join(result)
+
 def main():
     transliteration_result: str = ""
     user_input: str = ""
 
-    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\nur - Urdu\ngu - Gujarati\nmm - Malayam\ntm - Tamil\nkn - Kannada\nbg - Bengali\ntu - Telugu\nod - Odia\n")
+    print("Commands:\nab - Arabic\ndv - Devangari (Hindi, Sanskrit)\ngk - Gurmukhi (Punjabi)\nur - Urdu\ngu - Gujarati\nmm - Malayam\ntm - Tamil\nkn - Kannada\nbg - Bengali\ntu - Telugu\nod - Odia\nps - Pashto\nbc - Balochi\n")
     
     while True:
         user_input = input("")
@@ -1746,6 +1974,10 @@ def main():
                     transliteration_result = transliterate_telugu(user_input[3:]).title()
                 case "od":
                     transliteration_result = transliterate_odia(user_input[3:]).title()
+                case "ps":
+                    transliteration_result = transliterate_pashto(user_input[3:]).title()
+                case "bc":
+                    transliteration_result = transliterate_balochi(user_input[3:]).title()
                 case _:
                     pass
             

@@ -265,8 +265,8 @@ IRE = {
 	color_ui = rgb { 8 109 12 }
 }
 IRQ = {
-	color = rgb { 168 115 102 }
-	color_ui = rgb { 168 115 102 }
+	color = rgb { 158 97 79 }
+	color_ui = rgb { 158 97 79 }
 }
 ISR = {
 	color = rgb { 67 171 218 }
@@ -419,6 +419,10 @@ NWY = {
 OMA = {
 	color = rgb { 178 39 24 }
 	color_ui = rgb { 178 39 24 }
+}
+PAK = {
+	color = rgb { 0 61 19 }
+	color_ui = rgb { 0 61 19 }
 }
 POL = {
 	color = rgb { 164 58 58 }
