@@ -6,9 +6,21 @@ state={
 		add_core_of = PAK
 		
 		set_variable = { sq_km = 100418.4 }
+		victory_points = { 1978 3 }
+		victory_points = { 4998 1 }
+		victory_points = { 12717 4 }
+		victory_points = { 12763 4 }
+		victory_points = { 16136 27 }
+		victory_points = { 16144 4 }
+		victory_points = { 16145 6 }
+		victory_points = { 16147 8 }
+		victory_points = { 16149 1 }
+		victory_points = { 16150 6 }
+		victory_points = { 16151 10 }
+		victory_points = { 16152 10 }
 	}
 	provinces={
-		1978 4558 4998 12717 12763 
+		1978 4558 4998 12717 12763 16134 16135 16136 16137 16138 16139 16140 16141 16142 16143 16144 16145 16146 16147 16148 16149 16150 16151 16152 
 	}
 	manpower= 31920790
 	buildings_max_level_factor=1.000

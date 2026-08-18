@@ -3689,7 +3689,7 @@
         },
         {
             "id": 440,
-            "default_name": "Punjab",
+            "default_name": "Pakistani Punjab",
             "comment": "",
             "custom_names": [
 				{
@@ -3747,12 +3747,16 @@
         },
         {
             "id": 445,
-            "default_name": "Gilgit-Baltistan",
+            "default_name": "Azad Jammu and Kashmir",
             "comment": "",
             "custom_names": [
 				{
-                    "requirements": "OR = { TAG_using_pakistani_names = yes TAG_using_indian_names = yes }",
-                    "name": "Gilgit-Baltistān"
+                    "requirements": "TAG_using_pakistani_names = yes",
+                    "name": "Āzād Jammū o Kaśmīr"
+                },
+				{
+                    "requirements": "TAG_using_indian_names = yes",
+                    "name": "Āzād Kaśmīr"
                 }
 			]
         },
@@ -6440,12 +6444,8 @@
             "comment": "",
             "custom_names": [
 				{
-                    "requirements": "TAG_using_pakistani_names = yes",
-                    "name": "Āzād Jammū o Kaśmīr"
-                },
-				{
-                    "requirements": "TAG_using_indian_names = yes",
-                    "name": "Āzād Kaśmīr"
+                    "requirements": "OR = { TAG_using_pakistani_names = yes TAG_using_indian_names = yes }",
+                    "name": "Gilgit-Baltistān"
                 }
 			]
         },
@@ -7710,7 +7710,7 @@
         },
         {
             "id": 927,
-            "default_name": "Punjab",
+            "default_name": "Indian Punjab",
             "comment": "",
             "custom_names": [
                 {
@@ -60631,6 +60631,734 @@
 			"population": {
                 "tag": "PAK",
                 "population": 279338,
+                "year": 2017
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16131,
+			"default_name": "Gilgit",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "PAK",
+                "population": 56701,
+                "year": 1998
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 1910,
+			"default_name": "Mirpur",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Mīrpur"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 124352,
+                "year": 2017
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16133,
+			"default_name": "Muzaffarabad",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Muẓafarābād"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 149913,
+                "year": 2017
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 16136,
+			"default_name": "Pashawar",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Peshāvar"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 3497359,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 1978,
+			"default_name": "Dera Ismail Khan",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Ḍyrah Āsmā'il Khān"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 381589,
+                "year": 2025
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 16145,
+			"default_name": "Abbottabad",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Āyboṭābād"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 801284,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16147,
+			"default_name": "Mingora",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Mingorah"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 972559,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16149,
+			"default_name": "Barikot",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Barikoṭ"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 94019,
+                "year": 2017
+            },
+            "terrain": "urban"
+		},
+		{
+			"id": 16150,
+			"default_name": "Nowshera",
+			"comment": "",
+			"custom_names": [
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 772117,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16152,
+			"default_name": "Mardan",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Mardān"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 1291183,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16151,
+			"default_name": "Charsadda",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Chārsadah"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 1291183,
+                "year": 2025
+            },
+            "terrain": "urban"
+		},
+		{
+			"id": 16144,
+			"default_name": "Shabqadar",
+			"comment": "",
+			"custom_names": [
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 454331,
+                "year": 2025
+            },
+            "terrain": "hills"
+		},
+		{
+			"id": 12763,
+			"default_name": "Swabi",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Ṣvāby"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 523909,
+                "year": 2025
+            },
+            "terrain": "hills"
+		},
+		{
+			"id": 12717,
+			"default_name": "Kohat",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Kohāt"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 465455,
+                "year": 2025
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 4998,
+			"default_name": "Lakki Marwat",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Laky Marvat"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 90553,
+                "year": 2025
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 16154,
+			"default_name": "Lahore",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Lāhore"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 14305060,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16153,
+			"default_name": "Allama Iqbal International Airport",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "'Alāmah Āqbāl Ānṭrnyshanal Āyirporṭ"
+				}
+			],
+			"victory_points": 2,
+            "terrain": "urban"
+		},
+		{
+			"id": 16164,
+			"default_name": "Faisalabad",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Fayṣalābād"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 5676793,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16168,
+			"default_name": "Rawalpindi",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Rāvalpinḍy"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 2097824,
+                "year": 2017
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16158,
+			"default_name": "Gujranwala",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Gvjrānvālah"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 3108698,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16161,
+			"default_name": "Kamoke",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Kāmoke"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 248814,
+                "year": 2017
+            },
+            "terrain": "sub_urban"
+		},
+		{
+			"id": 16159,
+			"default_name": "Sialkot",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Syālkoṭ"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 1830744,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16160,
+			"default_name": "Daska",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Ḍaskah"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 408493,
+                "year": 2025
+            },
+            "terrain": "urban"
+		},
+		{
+			"id": 16170,
+			"default_name": "Multan",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Multān"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 2970059,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16173,
+			"default_name": "Bahawalpur",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Bahāvalpur"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 762774,
+                "year": 2017
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16183,
+			"default_name": "Sargodha",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Sargodhā"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 1127651,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16189,
+			"default_name": "Gujrat",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Gujrāt"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 801914,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 4979,
+			"default_name": "Jhelum",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "PAK",
+                "population": 433354,
+                "year": 2025
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16180,
+			"default_name": "Chakwal",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Chakvāl"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 138214,
+                "year": 2017
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16169,
+			"default_name": "Taxila",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Ṭyksilā"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 692754,
+                "year": 2025
+            },
+            "terrain": "urban"
+		},
+		{
+			"id": 16179,
+			"default_name": "Attock",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Āṭok"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 229788,
+                "year": 2025
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16177,
+			"default_name": "Chiniot",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Chinīoṭ"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 278528,
+                "year": 2017
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 10173,
+			"default_name": "Mianwali",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Myānvāly"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 214081,
+                "year": 2025
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 9084,
+			"default_name": "Jhang",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "PAK",
+                "population": 485195,
+                "year": 2025
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 1107,
+			"default_name": "Taunsa",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "PAK",
+                "population": 97193,
+                "year": 2017
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 16175,
+			"default_name": "Dera Ghazi Khan",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Ḍyrah Ghāzy Khān"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 397362,
+                "year": 2017
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 7903,
+			"default_name": "Rajanpur",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Rājanpur"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 99097,
+                "year": 2017
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 10898,
+			"default_name": "Rahim Yar Khan",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Raḥym Yār Khān"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 653186,
+                "year": 2025
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 10843,
+			"default_name": "Bahawalnagar",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Bahāvalnagar"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 160883,
+                "year": 2017
+            },
+            "terrain": "hills"
+		},
+		{
+			"id": 16176,
+			"default_name": "Jatoi",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Jatviy"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 109538,
+                "year": 2017
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16186,
+			"default_name": "Bhakkar",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "PAK",
+                "population": 112807,
+                "year": 2017
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 10139,
+			"default_name": "Muzaffargarh",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Muẓafar Gaṛh"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 335838,
+                "year": 2025
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16190,
+			"default_name": "Khanewal",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Khānyvāl"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 249916,
+                "year": 2017
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 10066,
+			"default_name": "Sahiwal",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Sāhyvāl"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 693877,
+                "year": 2025
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16182,
+			"default_name": "Kasur",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_pakistani_names = yes",
+					"name": "Qaṣur"
+				}
+			],
+			"population": {
+                "tag": "PAK",
+                "population": 358296,
                 "year": 2017
             },
             "terrain": "plains"

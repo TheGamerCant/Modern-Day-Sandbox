@@ -6,9 +6,41 @@ state={
 		add_core_of = PAK
 		
 		set_variable = { sq_km = 197131.2 }
+		
+		buildings = { air_base = 6 }
+		victory_points = { 1107 1 }
+		victory_points = { 4979 3 }
+		victory_points = { 7903 1 }
+		victory_points = { 9084 4 }
+		victory_points = { 10066 5 }
+		victory_points = { 10139 3 }
+		victory_points = { 10173 2 }
+		victory_points = { 10843 1 }
+		victory_points = { 10898 5 }
+		victory_points = { 16153 2 }
+		victory_points = { 16154 111 }
+		victory_points = { 16158 24 }
+		victory_points = { 16159 14 }
+		victory_points = { 16160 3 }
+		victory_points = { 16161 2 }
+		victory_points = { 16164 44 }
+		victory_points = { 16168 18 }
+		victory_points = { 16169 5 }
+		victory_points = { 16170 23 }
+		victory_points = { 16173 6 }
+		victory_points = { 16175 3 }
+		victory_points = { 16176 1 }
+		victory_points = { 16177 2 }
+		victory_points = { 16179 2 }
+		victory_points = { 16180 1 }
+		victory_points = { 16182 3 }
+		victory_points = { 16183 9 }
+		victory_points = { 16186 1 }
+		victory_points = { 16189 6 }
+		victory_points = { 16190 2 }
 	}
 	provinces={
-		1107 4979 7903 8007 8022 8106 9084 10066 10139 10173 10843 10887 10898 12005 12792 
+		1107 4979 7903 8007 8022 8106 9084 10066 10139 10173 10843 10887 10898 12005 12792 16153 16154 16155 16156 16157 16158 16159 16160 16161 16162 16163 16164 16165 16166 16167 16168 16169 16170 16171 16172 16173 16174 16175 16176 16177 16178 16179 16180 16181 16182 16183 16184 16185 16186 16187 16188 16189 16190 
 	}
 	manpower= 98844705
 	buildings_max_level_factor=1.000

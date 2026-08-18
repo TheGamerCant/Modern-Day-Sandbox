@@ -10221,7 +10221,7 @@ TDA_update_state_439_names = {
 	}
 }
 
-#Punjab
+#Pakistani Punjab
 TDA_update_state_440_names = {
 	440 = {
 		#Panjāb
@@ -10237,6 +10237,240 @@ TDA_update_state_440_names = {
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Rājanpur
+	if = {
+		limit = { any_country = { controls_province = 7903 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 7903 name = VICTORY_POINTS_7903_0 }
+	}
+	#Rajanpur
+	else = {
+		reset_province_name = 7903
+	}
+	#Sāhyvāl
+	if = {
+		limit = { any_country = { controls_province = 10066 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 10066 name = VICTORY_POINTS_10066_0 }
+	}
+	#Sahiwal
+	else = {
+		reset_province_name = 10066
+	}
+	#Muẓafar Gaṛh
+	if = {
+		limit = { any_country = { controls_province = 10139 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 10139 name = VICTORY_POINTS_10139_0 }
+	}
+	#Muzaffargarh
+	else = {
+		reset_province_name = 10139
+	}
+	#Myānvāly
+	if = {
+		limit = { any_country = { controls_province = 10173 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 10173 name = VICTORY_POINTS_10173_0 }
+	}
+	#Mianwali
+	else = {
+		reset_province_name = 10173
+	}
+	#Bahāvalnagar
+	if = {
+		limit = { any_country = { controls_province = 10843 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 10843 name = VICTORY_POINTS_10843_0 }
+	}
+	#Bahawalnagar
+	else = {
+		reset_province_name = 10843
+	}
+	#Raḥym Yār Khān
+	if = {
+		limit = { any_country = { controls_province = 10898 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 10898 name = VICTORY_POINTS_10898_0 }
+	}
+	#Rahim Yar Khan
+	else = {
+		reset_province_name = 10898
+	}
+	#'Alāmah Āqbāl Ānṭrnyshanal Āyirporṭ
+	if = {
+		limit = { any_country = { controls_province = 16153 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16153 name = VICTORY_POINTS_16153_0 }
+	}
+	#Allama Iqbal International Airport
+	else = {
+		reset_province_name = 16153
+	}
+	#Lāhore
+	if = {
+		limit = { any_country = { controls_province = 16154 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16154 name = VICTORY_POINTS_16154_0 }
+	}
+	#Lahore
+	else = {
+		reset_province_name = 16154
+	}
+	#Gvjrānvālah
+	if = {
+		limit = { any_country = { controls_province = 16158 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16158 name = VICTORY_POINTS_16158_0 }
+	}
+	#Gujranwala
+	else = {
+		reset_province_name = 16158
+	}
+	#Syālkoṭ
+	if = {
+		limit = { any_country = { controls_province = 16159 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16159 name = VICTORY_POINTS_16159_0 }
+	}
+	#Sialkot
+	else = {
+		reset_province_name = 16159
+	}
+	#Ḍaskah
+	if = {
+		limit = { any_country = { controls_province = 16160 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16160 name = VICTORY_POINTS_16160_0 }
+	}
+	#Daska
+	else = {
+		reset_province_name = 16160
+	}
+	#Kāmoke
+	if = {
+		limit = { any_country = { controls_province = 16161 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16161 name = VICTORY_POINTS_16161_0 }
+	}
+	#Kamoke
+	else = {
+		reset_province_name = 16161
+	}
+	#Fayṣalābād
+	if = {
+		limit = { any_country = { controls_province = 16164 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16164 name = VICTORY_POINTS_16164_0 }
+	}
+	#Faisalabad
+	else = {
+		reset_province_name = 16164
+	}
+	#Rāvalpinḍy
+	if = {
+		limit = { any_country = { controls_province = 16168 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16168 name = VICTORY_POINTS_16168_0 }
+	}
+	#Rawalpindi
+	else = {
+		reset_province_name = 16168
+	}
+	#Ṭyksilā
+	if = {
+		limit = { any_country = { controls_province = 16169 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16169 name = VICTORY_POINTS_16169_0 }
+	}
+	#Taxila
+	else = {
+		reset_province_name = 16169
+	}
+	#Multān
+	if = {
+		limit = { any_country = { controls_province = 16170 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16170 name = VICTORY_POINTS_16170_0 }
+	}
+	#Multan
+	else = {
+		reset_province_name = 16170
+	}
+	#Bahāvalpur
+	if = {
+		limit = { any_country = { controls_province = 16173 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16173 name = VICTORY_POINTS_16173_0 }
+	}
+	#Bahawalpur
+	else = {
+		reset_province_name = 16173
+	}
+	#Ḍyrah Ghāzy Khān
+	if = {
+		limit = { any_country = { controls_province = 16175 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16175 name = VICTORY_POINTS_16175_0 }
+	}
+	#Dera Ghazi Khan
+	else = {
+		reset_province_name = 16175
+	}
+	#Jatviy
+	if = {
+		limit = { any_country = { controls_province = 16176 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16176 name = VICTORY_POINTS_16176_0 }
+	}
+	#Jatoi
+	else = {
+		reset_province_name = 16176
+	}
+	#Chinīoṭ
+	if = {
+		limit = { any_country = { controls_province = 16177 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16177 name = VICTORY_POINTS_16177_0 }
+	}
+	#Chiniot
+	else = {
+		reset_province_name = 16177
+	}
+	#Āṭok
+	if = {
+		limit = { any_country = { controls_province = 16179 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16179 name = VICTORY_POINTS_16179_0 }
+	}
+	#Attock
+	else = {
+		reset_province_name = 16179
+	}
+	#Chakvāl
+	if = {
+		limit = { any_country = { controls_province = 16180 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16180 name = VICTORY_POINTS_16180_0 }
+	}
+	#Chakwal
+	else = {
+		reset_province_name = 16180
+	}
+	#Qaṣur
+	if = {
+		limit = { any_country = { controls_province = 16182 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16182 name = VICTORY_POINTS_16182_0 }
+	}
+	#Kasur
+	else = {
+		reset_province_name = 16182
+	}
+	#Sargodhā
+	if = {
+		limit = { any_country = { controls_province = 16183 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16183 name = VICTORY_POINTS_16183_0 }
+	}
+	#Sargodha
+	else = {
+		reset_province_name = 16183
+	}
+	#Gujrāt
+	if = {
+		limit = { any_country = { controls_province = 16189 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16189 name = VICTORY_POINTS_16189_0 }
+	}
+	#Gujrat
+	else = {
+		reset_province_name = 16189
+	}
+	#Khānyvāl
+	if = {
+		limit = { any_country = { controls_province = 16190 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16190 name = VICTORY_POINTS_16190_0 }
+	}
+	#Khanewal
+	else = {
+		reset_province_name = 16190
 	}
 }
 
@@ -10284,6 +10518,96 @@ TDA_update_state_442_names = {
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Ḍyrah Āsmā'il Khān
+	if = {
+		limit = { any_country = { controls_province = 1978 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 1978 name = VICTORY_POINTS_1978_0 }
+	}
+	#Dera Ismail Khan
+	else = {
+		reset_province_name = 1978
+	}
+	#Laky Marvat
+	if = {
+		limit = { any_country = { controls_province = 4998 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 4998 name = VICTORY_POINTS_4998_0 }
+	}
+	#Lakki Marwat
+	else = {
+		reset_province_name = 4998
+	}
+	#Kohāt
+	if = {
+		limit = { any_country = { controls_province = 12717 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 12717 name = VICTORY_POINTS_12717_0 }
+	}
+	#Kohat
+	else = {
+		reset_province_name = 12717
+	}
+	#Ṣvāby
+	if = {
+		limit = { any_country = { controls_province = 12763 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 12763 name = VICTORY_POINTS_12763_0 }
+	}
+	#Swabi
+	else = {
+		reset_province_name = 12763
+	}
+	#Peshāvar
+	if = {
+		limit = { any_country = { controls_province = 16136 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16136 name = VICTORY_POINTS_16136_0 }
+	}
+	#Pashawar
+	else = {
+		reset_province_name = 16136
+	}
+	#Āyboṭābād
+	if = {
+		limit = { any_country = { controls_province = 16145 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16145 name = VICTORY_POINTS_16145_0 }
+	}
+	#Abbottabad
+	else = {
+		reset_province_name = 16145
+	}
+	#Mingorah
+	if = {
+		limit = { any_country = { controls_province = 16147 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16147 name = VICTORY_POINTS_16147_0 }
+	}
+	#Mingora
+	else = {
+		reset_province_name = 16147
+	}
+	#Barikoṭ
+	if = {
+		limit = { any_country = { controls_province = 16149 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16149 name = VICTORY_POINTS_16149_0 }
+	}
+	#Barikot
+	else = {
+		reset_province_name = 16149
+	}
+	#Chārsadah
+	if = {
+		limit = { any_country = { controls_province = 16151 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16151 name = VICTORY_POINTS_16151_0 }
+	}
+	#Charsadda
+	else = {
+		reset_province_name = 16151
+	}
+	#Mardān
+	if = {
+		limit = { any_country = { controls_province = 16152 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16152 name = VICTORY_POINTS_16152_0 }
+	}
+	#Mardan
+	else = {
+		reset_province_name = 16152
 	}
 }
 
@@ -10395,17 +10719,40 @@ TDA_update_state_444_names = {
 	}
 }
 
-#Gilgit-Baltistan
+#Azad Jammu and Kashmir
 TDA_update_state_445_names = {
 	445 = {
-		#Gilgit-Baltistān
+		#Āzād Jammū o Kaśmīr
 		if = {
-			limit = { CONTROLLER = { OR = { TAG_using_pakistani_names = yes TAG_using_indian_names = yes } } }
+			limit = { CONTROLLER = { TAG_using_pakistani_names = yes } }
 			set_state_name = STATE_445_0
+		}
+		#Āzād Kaśmīr
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
+			set_state_name = STATE_445_1
 		}
 		else = {
 			reset_state_name = yes
 		}
+	}
+	#Mīrpur
+	if = {
+		limit = { any_country = { controls_province = 1910 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 1910 name = VICTORY_POINTS_1910_0 }
+	}
+	#Mirpur
+	else = {
+		reset_province_name = 1910
+	}
+	#Muẓafarābād
+	if = {
+		limit = { any_country = { controls_province = 16133 TAG_using_pakistani_names = yes } }
+		set_province_name = { id = 16133 name = VICTORY_POINTS_16133_0 }
+	}
+	#Muzaffarabad
+	else = {
+		reset_province_name = 16133
 	}
 }
 
@@ -20068,15 +20415,10 @@ TDA_update_state_786_names = {
 #Northern Kashmir
 TDA_update_state_787_names = {
 	787 = {
-		#Āzād Jammū o Kaśmīr
+		#Gilgit-Baltistān
 		if = {
-			limit = { CONTROLLER = { TAG_using_pakistani_names = yes } }
+			limit = { CONTROLLER = { OR = { TAG_using_pakistani_names = yes TAG_using_indian_names = yes } } }
 			set_state_name = STATE_787_0
-		}
-		#Āzād Kaśmīr
-		else_if = {
-			limit = { CONTROLLER = { TAG_using_indian_names = yes } }
-			set_state_name = STATE_787_1
 		}
 		else = {
 			reset_state_name = yes
@@ -22549,7 +22891,7 @@ TDA_update_state_926_names = {
 	}
 }
 
-#Punjab
+#Indian Punjab
 TDA_update_state_927_names = {
 	927 = {
 		#Pañjāba

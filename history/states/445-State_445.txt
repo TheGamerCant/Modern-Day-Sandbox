@@ -6,9 +6,11 @@ state={
 		add_core_of = PAK
 		
 		set_variable = { sq_km = 13297 }
+		victory_points = { 1910 1 }
+		victory_points = { 16133 1 }
 	}
 	provinces={
-		1910 
+		1910 16133 
 	}
 	manpower= 3635460
 	buildings_max_level_factor=1.000
