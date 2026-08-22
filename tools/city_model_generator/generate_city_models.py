@@ -32,18 +32,25 @@ naming/wiring conventions below mirror vanilla exactly:
 
 Everything this script produces is a fully valid (if crude) asset: real PDX
 binary .mesh files, real uncompressed .dds textures, real .gfx/.asset text
-files, and a ready-to-merge map/cities.txt fragment. Geometry is
-deliberately simple axis-aligned boxes (+ an optional pitched roof / a
-smaller "setback" block on top) -- these are meant to be stand-ins you
-replace with real hand-modelled low-poly buildings later, not final art.
+files, and a ready-to-merge map/cities.txt fragment. Each .mesh is actually
+a small CLUSTER of 10-20 individual low-poly buildings (mixed types, e.g.
+mostly houses at the sparse outskirts tier vs. mostly towers/blocks at the
+dense downtown tier) merged into one file -- matching how vanilla's own
+city meshes are city-block chunks, not single buildings. Each building is
+an axis-aligned box (+ an optional pitched roof / a smaller "setback" block
+on top for towers) -- these are meant to be stand-ins you replace with real
+hand-modelled low-poly buildings later, not final art.
 
 Ships with 6 example regions (western, east_asian, mediterranean, informal,
 south_america, eastern_europe) -- add/rename more in REGIONS below. Every
-mesh's diffuse is an obvious "dev texture": plain yellow, a 1px black
-outline, and a black text label (region abbreviation + tier + variant, e.g.
-"EEU-T4-04") stamped on it via a tiny built-in bitmap font, so it shows up
-identically on every face and you can identify any building in-engine at a
-glance.
+mesh's diffuse is an obvious "dev texture" atlas: a dedicated colored,
+outlined, labeled cell for each of the 6 building types (house, rowhouse,
+shop, shed, block, tower) plus one per roof shape (pitched, flat), stamped
+via a tiny built-in bitmap font, so every wall face and roof face UVs into
+the cell matching what it actually is -- a house's walls look different
+from a tower's, a pitched roof looks different from a flat one -- plus a
+top strip carrying the mesh's own identifying code (e.g. "EEU-T4-04") so
+the file itself is still recognizable in-engine at a glance.
 
 Nothing here touches your live mod. Everything is written under OUTPUT_DIR;
 copy the pieces you want into your mod folder yourself (see the generated
@@ -67,6 +74,7 @@ import struct
 OUTPUT_DIR = "output"
 VARIANTS_PER_TIER = 4          # vanilla always ships 4 variants per tier (01-04)
 UNIT_SCALE = 1.0                # 1 game "map unit" per world unit; tweak to taste
+BUILDINGS_PER_MESH = (10, 20)    # each .mesh is a small city block cluster, not a single building
 
 # Each region = one map/cities.bmp palette color. `color_index` is only a
 # suggestion (matches vanilla's own western/asian/french/unciv indices where
@@ -124,15 +132,122 @@ REGIONS = {
 
 # Density tiers = cities.txt `distance` values, sorted growing (1 = urban
 # edge / lowest density, 4 = urban core / highest density), exactly like
-# vanilla's building{ distance = N mesh = {...} } blocks.
+# vanilla's building{ distance = N mesh = {...} } blocks. Each tier's
+# footprint/height is the *base* size that individual building types below
+# scale off of (a "tower" at tier 1 is still small; at tier 4 it's a
+# skyscraper) -- per-type massing (setback, roof) lives in BUILDING_TYPES.
 DENSITY_TIERS = {
-    1: {"label": "outskirts", "footprint": (4.0, 4.0), "height": (3.0, 5.0), "setback": False},
-    2: {"label": "suburban", "footprint": (5.0, 5.5), "height": (6.0, 9.0), "setback": False},
-    3: {"label": "urban", "footprint": (6.5, 7.0), "height": (10.0, 16.0), "setback": False},
-    4: {"label": "downtown", "footprint": (7.0, 8.0), "height": (18.0, 30.0), "setback": True},
+    1: {"label": "outskirts", "footprint": (4.0, 4.0), "height": (3.0, 5.0)},
+    2: {"label": "suburban", "footprint": (5.0, 5.5), "height": (6.0, 9.0)},
+    3: {"label": "urban", "footprint": (6.5, 7.0), "height": (10.0, 16.0)},
+    4: {"label": "downtown", "footprint": (7.0, 8.0), "height": (18.0, 30.0)},
+}
+
+# Building "types" mixed into each cluster. w_mult/d_mult/h_mult scale a
+# tier's base footprint/height (above) per building; "roof" is the type's
+# usual roof unless the type is low-rise ("house"/"rowhouse"), in which case
+# the *region's* roof_style wins instead (small residential roofs are the
+# part that actually varies by regional architecture -- commercial/tall
+# types are flat-roofed everywhere). "setback" stacks a slimmer block on
+# top, for a skyscraper silhouette.
+BUILDING_TYPES = {
+    "house":    {"w_mult": 0.90, "d_mult": 0.90, "h_mult": 0.80, "roof": "pitched"},
+    "rowhouse": {"w_mult": 0.60, "d_mult": 1.00, "h_mult": 1.10, "roof": "pitched"},
+    "shop":     {"w_mult": 1.30, "d_mult": 1.00, "h_mult": 0.55, "roof": "flat"},
+    "shed":     {"w_mult": 1.60, "d_mult": 0.80, "h_mult": 0.45, "roof": "flat"},
+    "block":    {"w_mult": 1.10, "d_mult": 1.10, "h_mult": 1.15, "roof": "flat"},
+    "tower":    {"w_mult": 0.85, "d_mult": 0.85, "h_mult": 1.60, "roof": "flat", "setback": True},
+}
+
+# Which types show up at each density tier, and how often (relative
+# weights -- don't need to sum to 1). This is the "different types where
+# appropriate" mechanic: a tier-1 (outskirts) cluster is mostly houses with
+# the odd shed, a tier-4 (downtown) cluster is mostly towers and blocks.
+TIER_TYPE_WEIGHTS = {
+    1: {"house": 0.65, "shed": 0.20, "shop": 0.15},
+    2: {"house": 0.40, "rowhouse": 0.25, "shop": 0.20, "block": 0.15},
+    3: {"block": 0.40, "shop": 0.25, "rowhouse": 0.20, "tower": 0.15},
+    4: {"tower": 0.50, "block": 0.35, "shop": 0.15},
 }
 
 PITCHED_ROOF_HEIGHT_FRACTION = 0.35  # roof apex height, as a fraction of wall height
+
+# ---------------------------------------------------------------------------
+# Texture atlas layout -- shared by geometry (UV mapping) and the
+# placeholder texture generator. One diffuse per mesh is still generated
+# (so each mesh's file stays individually identifiable), but its CONTENT is
+# now a grid with a dedicated wall sub-region PER BUILDING TYPE plus a
+# dedicated roof sub-region per roof shape, instead of one generic
+# wall/roof split. This is "different segments for each building type
+# where it's a good idea": walls are what's actually visible and where a
+# house/shed/tower/etc. should read as a different material, so every type
+# gets its own wall segment; roofs only have two distinct *shapes*
+# (pitched vs flat), so those share just two segments rather than one per
+# type (a flat commercial roof doesn't need its own look per building).
+# ---------------------------------------------------------------------------
+
+ATLAS_WIDTH = 384
+ATLAS_HEIGHT = 288
+ATLAS_CODE_STRIP_H = 32          # thin top strip carrying the mesh's own identifying code
+ATLAS_GRID_H = ATLAS_HEIGHT - ATLAS_CODE_STRIP_H
+ATLAS_MARGIN_PX = 4               # inset per cell so each keeps its own 1px outline
+
+CODE_LABEL_SCALE = 3   # the code strip is one wide cell -- biggest, most legible text
+WALL_LABEL_SCALE = 1   # wall cells are narrow (6 across a row) -- keep text small to fit
+ROOF_LABEL_SCALE = 2   # roof cells are wide (2 across a row, each 3 columns) -- room to spare
+
+WALL_TYPE_ORDER = ["house", "rowhouse", "shop", "shed", "block", "tower"]   # one column each
+ROOF_STYLE_ORDER = ["pitched", "flat"]                                      # each spans 3 columns
+
+# BGRA fill colors -- one per wall type, one per roof style. Distinct hues
+# so each type/shape is recognizable at a glance, not just from its label.
+WALL_FILL_BY_TYPE = {
+    "house": (0, 255, 255, 255),      # yellow
+    "rowhouse": (0, 200, 255, 255),   # amber
+    "shop": (255, 255, 0, 255),       # cyan
+    "shed": (255, 0, 255, 255),       # magenta
+    "block": (0, 190, 0, 255),        # green
+    "tower": (200, 80, 150, 255),     # purple
+}
+ROOF_FILL_BY_STYLE = {
+    "pitched": (0, 140, 255, 255),    # orange
+    "flat": (90, 110, 130, 255),      # slate
+}
+
+
+def _build_atlas_layout():
+    """Computes the pixel-space, then UV-space (0..1), rect for every wall
+    type and every roof style in the grid described above. Single source
+    of truth for both the geometry (which UV rect a face maps into) and
+    write_atlas_dds (which pixels to fill/outline/label) -- so they can
+    never drift out of sync."""
+    cols = len(WALL_TYPE_ORDER)
+    col_w = ATLAS_WIDTH / cols
+    row_h = ATLAS_GRID_H / 2
+    row0_y0, row0_y1 = ATLAS_CODE_STRIP_H, ATLAS_CODE_STRIP_H + row_h
+    row1_y0, row1_y1 = row0_y1, row0_y1 + row_h
+    m = ATLAS_MARGIN_PX
+
+    wall_px, roof_px = {}, {}
+    for i, btype in enumerate(WALL_TYPE_ORDER):
+        x0, x1 = i * col_w, (i + 1) * col_w
+        wall_px[btype] = (x0 + m, row0_y0 + m, x1 - m, row0_y1 - m)
+
+    span = cols // len(ROOF_STYLE_ORDER)  # each roof style spans this many columns
+    for i, style in enumerate(ROOF_STYLE_ORDER):
+        x0, x1 = i * span * col_w, (i + 1) * span * col_w
+        roof_px[style] = (x0 + m, row1_y0 + m, x1 - m, row1_y1 - m)
+
+    def to_uv(rect):
+        x0, y0, x1, y1 = rect
+        return (x0 / ATLAS_WIDTH, y0 / ATLAS_HEIGHT, x1 / ATLAS_WIDTH, y1 / ATLAS_HEIGHT)
+
+    wall_uv = {k: to_uv(v) for k, v in wall_px.items()}
+    roof_uv = {k: to_uv(v) for k, v in roof_px.items()}
+    return wall_uv, roof_uv, wall_px, roof_px
+
+
+WALL_UV_BY_TYPE, ROOF_UV_BY_STYLE, _WALL_PX_BY_TYPE, _ROOF_PX_BY_STYLE = _build_atlas_layout()
 
 
 # ---------------------------------------------------------------------------
@@ -201,23 +316,28 @@ class MeshBuilder:
         self.uvs.append(uv)
         return idx
 
-    def add_quad(self, p0, p1, p2, p3, uv_repeat=(1.0, 1.0)):
+    def add_quad(self, p0, p1, p2, p3, uv_rect=(0.0, 0.0, 1.0, 1.0)):
         """Adds a planar quad (p0..p3 wound so the surface normal, computed
-        via the right-hand rule, points outward) as two triangles."""
+        via the right-hand rule, points outward) as two triangles. `uv_rect`
+        = (u0, v0, u1, v1) maps the quad's own unit square into that
+        sub-region of the shared texture (see WALL_UV_BY_TYPE /
+        ROOF_UV_BY_STYLE) -- this is what puts each building type's walls,
+        and each roof style, on their own part of the diffuse atlas."""
         n = face_normal(p0, p1, p2)
-        ur, vr = uv_repeat
-        i0 = self._add_vertex(p0, n, (0.0, 0.0))
-        i1 = self._add_vertex(p1, n, (ur, 0.0))
-        i2 = self._add_vertex(p2, n, (ur, vr))
-        i3 = self._add_vertex(p3, n, (0.0, vr))
+        u0, v0, u1, v1 = uv_rect
+        i0 = self._add_vertex(p0, n, (u0, v0))
+        i1 = self._add_vertex(p1, n, (u1, v0))
+        i2 = self._add_vertex(p2, n, (u1, v1))
+        i3 = self._add_vertex(p3, n, (u0, v1))
         self.tris.append((i0, i1, i2))
         self.tris.append((i0, i2, i3))
 
-    def add_tri(self, p0, p1, p2):
+    def add_tri(self, p0, p1, p2, uv_rect=(0.0, 0.0, 1.0, 1.0)):
         n = face_normal(p0, p1, p2)
-        i0 = self._add_vertex(p0, n, (0.0, 0.0))
-        i1 = self._add_vertex(p1, n, (1.0, 0.0))
-        i2 = self._add_vertex(p2, n, (0.5, 1.0))
+        u0, v0, u1, v1 = uv_rect
+        i0 = self._add_vertex(p0, n, (u0, v0))
+        i1 = self._add_vertex(p1, n, (u1, v0))
+        i2 = self._add_vertex(p2, n, ((u0 + u1) / 2.0, v1))
         self.tris.append((i0, i1, i2))
 
     def extend(self, other, offset=(0.0, 0.0, 0.0)):
@@ -241,58 +361,128 @@ class MeshBuilder:
 # "setback" box stacked on top for a skyscraper silhouette)
 # ---------------------------------------------------------------------------
 
-def add_box_walls_and_flat_roof(mb, hw, hd, wall_h, y0=0.0, roof=True):
-    """4 side walls + (optionally) a flat roof cap. No floor (never seen)."""
+def add_box_walls_and_flat_roof(mb, hw, hd, wall_h, wall_uv, roof_uv, y0=0.0, roof=True):
+    """4 side walls + (optionally) a flat roof cap. No floor (never seen).
+    `wall_uv`/`roof_uv` are the atlas sub-rects this particular building's
+    type/roof-style map into (see WALL_UV_BY_TYPE / ROOF_UV_BY_STYLE)."""
     y1 = y0 + wall_h
     # front (-z)
-    mb.add_quad((-hw, y0, -hd), (-hw, y1, -hd), (hw, y1, -hd), (hw, y0, -hd))
+    mb.add_quad((-hw, y0, -hd), (-hw, y1, -hd), (hw, y1, -hd), (hw, y0, -hd), uv_rect=wall_uv)
     # back (+z)
-    mb.add_quad((-hw, y0, hd), (hw, y0, hd), (hw, y1, hd), (-hw, y1, hd))
+    mb.add_quad((-hw, y0, hd), (hw, y0, hd), (hw, y1, hd), (-hw, y1, hd), uv_rect=wall_uv)
     # left (-x)
-    mb.add_quad((-hw, y0, -hd), (-hw, y0, hd), (-hw, y1, hd), (-hw, y1, -hd))
+    mb.add_quad((-hw, y0, -hd), (-hw, y0, hd), (-hw, y1, hd), (-hw, y1, -hd), uv_rect=wall_uv)
     # right (+x)
-    mb.add_quad((hw, y0, -hd), (hw, y1, -hd), (hw, y1, hd), (hw, y0, hd))
+    mb.add_quad((hw, y0, -hd), (hw, y1, -hd), (hw, y1, hd), (hw, y0, hd), uv_rect=wall_uv)
     if roof:
         # top (+y)
-        mb.add_quad((-hw, y1, -hd), (-hw, y1, hd), (hw, y1, hd), (hw, y1, -hd))
+        mb.add_quad((-hw, y1, -hd), (-hw, y1, hd), (hw, y1, hd), (hw, y1, -hd), uv_rect=roof_uv)
     return y1
 
 
-def add_pitched_roof(mb, hw, hd, y1, roof_h):
+def add_pitched_roof(mb, hw, hd, y1, roof_h, roof_uv):
+    """Pitched roof slopes UV into `roof_uv` (the same sub-region a flat
+    roof cap of this roof_style would use -- both are "the roof" as far as
+    the texture atlas is concerned)."""
     apex = (0.0, y1 + roof_h, 0.0)
     tl, tr = (-hw, y1, -hd), (hw, y1, -hd)   # front top edge
     bl, br = (-hw, y1, hd), (hw, y1, hd)     # back top edge
-    mb.add_tri(tr, tl, apex)   # front slope
-    mb.add_tri(bl, br, apex)   # back slope
-    mb.add_tri(tl, bl, apex)   # left slope
-    mb.add_tri(br, tr, apex)   # right slope
+    mb.add_tri(tr, tl, apex, uv_rect=roof_uv)   # front slope
+    mb.add_tri(bl, br, apex, uv_rect=roof_uv)   # back slope
+    mb.add_tri(tl, bl, apex, uv_rect=roof_uv)   # left slope
+    mb.add_tri(br, tr, apex, uv_rect=roof_uv)   # right slope
 
 
-def build_building_mesh(width, depth, height, roof_style, setback, rng):
-    """Builds one low-poly building. `rng` is a seeded random.Random used for
-    small per-variant jitter so the 4 variants in a tier don't look identical
-    (matching vanilla's approach of shipping 4 hand-varied meshes/tier)."""
+def build_building_mesh(width, depth, height, roof_style, setback, building_type, rng):
+    """Builds one low-poly building. `building_type` selects this
+    building's own wall sub-region in the shared atlas (WALL_UV_BY_TYPE);
+    `roof_style` selects its roof sub-region (ROOF_UV_BY_STYLE). `rng` is a
+    seeded random.Random used for small per-variant jitter so the 4
+    variants in a tier don't look identical (matching vanilla's approach of
+    shipping 4 hand-varied meshes/tier)."""
     hw, hd = width / 2.0, depth / 2.0
     mb = MeshBuilder()
+    wall_uv = WALL_UV_BY_TYPE[building_type]
+    roof_uv = ROOF_UV_BY_STYLE[roof_style]
 
     if roof_style == "pitched":
         wall_h = height * (1.0 - PITCHED_ROOF_HEIGHT_FRACTION)
-        y1 = add_box_walls_and_flat_roof(mb, hw, hd, wall_h, roof=False)
-        add_pitched_roof(mb, hw, hd, y1, height - wall_h)
+        y1 = add_box_walls_and_flat_roof(mb, hw, hd, wall_h, wall_uv, roof_uv, roof=False)
+        add_pitched_roof(mb, hw, hd, y1, height - wall_h, roof_uv)
     else:
         main_h = height
         if setback:
             # downtown towers: a slimmer block stacked on the main block,
             # like a rooftop massing setback on a skyscraper.
             main_h = height * rng.uniform(0.55, 0.7)
-        y1 = add_box_walls_and_flat_roof(mb, hw, hd, main_h, roof=not setback)
+        y1 = add_box_walls_and_flat_roof(mb, hw, hd, main_h, wall_uv, roof_uv, roof=not setback)
         if setback:
             top_w = width * rng.uniform(0.45, 0.65)
             top_d = depth * rng.uniform(0.45, 0.65)
             top_h = height - main_h
-            add_box_walls_and_flat_roof(mb, top_w / 2.0, top_d / 2.0, top_h, y0=y1, roof=True)
+            add_box_walls_and_flat_roof(mb, top_w / 2.0, top_d / 2.0, top_h, wall_uv, roof_uv, y0=y1, roof=True)
 
     return mb
+
+
+def build_city_cluster(region_cfg, tier, tier_cfg, rng):
+    """Builds ONE .mesh's worth of content: a small city-block cluster of
+    BUILDINGS_PER_MESH (10-20) individual buildings of mixed types, laid out
+    on a jittered grid and merged into a single combined mesh (this mirrors
+    vanilla's own city meshes, which are likewise multi-building clusters,
+    not single buildings -- one clutter placement = one little block, not
+    one house). Building types are picked per-tier via TIER_TYPE_WEIGHTS so
+    e.g. a tier-4 "downtown" cluster leans heavily on towers/blocks while a
+    tier-1 "outskirts" cluster is mostly houses."""
+    count = rng.randint(*BUILDINGS_PER_MESH)
+    weights = TIER_TYPE_WEIGHTS[tier]
+    type_names = list(weights.keys())
+    type_probs = list(weights.values())
+
+    base_fw, base_fd = tier_cfg["footprint"]
+    h_lo, h_hi = tier_cfg["height"]
+
+    # loose grid, wide enough that even the biggest type in this tier won't
+    # overlap its neighbours; some per-cell jitter keeps it from looking
+    # like a spreadsheet.
+    cols = rng.randint(3, 5)
+    rows = math.ceil(count / cols)
+    cell_w = base_fw * region_cfg["footprint_scale"] * 2.3
+    cell_d = base_fd * region_cfg["footprint_scale"] * 2.3
+
+    cluster = MeshBuilder()
+    placed = 0
+    for row in range(rows):
+        for col in range(cols):
+            if placed >= count:
+                break
+            btype = rng.choices(type_names, weights=type_probs, k=1)[0]
+            type_cfg = BUILDING_TYPES[btype]
+
+            fw = base_fw * type_cfg["w_mult"] * region_cfg["footprint_scale"] * rng.uniform(0.85, 1.15)
+            fd = base_fd * type_cfg["d_mult"] * region_cfg["footprint_scale"] * rng.uniform(0.85, 1.15)
+            height = rng.uniform(h_lo, h_hi) * type_cfg["h_mult"] * region_cfg["height_scale"]
+
+            # small residential types take on the region's own roof style
+            # (that's the regional-architecture cue); everything else -
+            # shops, blocks, towers - is flat-roofed regardless of region.
+            if btype in ("house", "rowhouse"):
+                roof_style = region_cfg["roof_style"]
+            else:
+                roof_style = "flat"
+            setback = type_cfg.get("setback", False)
+
+            bx = (col - (cols - 1) / 2.0) * cell_w + rng.uniform(-0.12, 0.12) * cell_w
+            bz = (row - (rows - 1) / 2.0) * cell_d + rng.uniform(-0.12, 0.12) * cell_d
+
+            building = build_building_mesh(
+                width=fw * UNIT_SCALE, depth=fd * UNIT_SCALE, height=height * UNIT_SCALE,
+                roof_style=roof_style, setback=setback, building_type=btype, rng=rng,
+            )
+            cluster.extend(building, offset=(bx * UNIT_SCALE, 0.0, bz * UNIT_SCALE))
+            placed += 1
+
+    return cluster, count
 
 
 # ---------------------------------------------------------------------------
@@ -422,9 +612,10 @@ def write_flat_dds(path, width, height, bgra):
 
 # ---------------------------------------------------------------------------
 # tiny built-in 5x7 bitmap font -- just enough characters for the default
-# "{REGION_ABBR}-T{tier}-{variant}" labels (A,D,E,F,I,M,N,S,T,U,W, 0-9, '-',
-# space). Add more glyphs here (5 rows of 5 bits, MSB-first, '1'=ink) if you
-# use different label text.
+# "{REGION_ABBR}-T{tier}-{variant}" code strip and the building-type /
+# roof-style segment labels (BLOCK, HOUSE, ROWHOUSE, SHOP, SHED, TOWER,
+# PITCHED, FLAT). Add more glyphs here (5 rows of 5 bits, MSB-first,
+# '1'=ink) if you use different label text.
 # ---------------------------------------------------------------------------
 
 FONT_5X7 = {
@@ -439,12 +630,20 @@ FONT_5X7 = {
     "8": ["01110", "10001", "10001", "01110", "10001", "10001", "01110"],
     "9": ["01110", "10001", "10001", "01111", "00001", "00010", "01100"],
     "A": ["01110", "10001", "10001", "11111", "10001", "10001", "10001"],
+    "B": ["11110", "10001", "11110", "10001", "10001", "10001", "11110"],
+    "C": ["01111", "10000", "10000", "10000", "10000", "10000", "01111"],
     "D": ["11110", "10001", "10001", "10001", "10001", "10001", "11110"],
     "E": ["11111", "10000", "10000", "11110", "10000", "10000", "11111"],
     "F": ["11111", "10000", "10000", "11110", "10000", "10000", "10000"],
+    "H": ["10001", "10001", "10001", "11111", "10001", "10001", "10001"],
     "I": ["01110", "00100", "00100", "00100", "00100", "00100", "01110"],
+    "K": ["10001", "10010", "10100", "11000", "10100", "10010", "10001"],
+    "L": ["10000", "10000", "10000", "10000", "10000", "10000", "11111"],
     "M": ["10001", "11011", "10101", "10101", "10001", "10001", "10001"],
     "N": ["10001", "11001", "10101", "10101", "10011", "10001", "10001"],
+    "O": ["01110", "10001", "10001", "10001", "10001", "10001", "01110"],
+    "P": ["11110", "10001", "10001", "11110", "10000", "10000", "10000"],
+    "R": ["11110", "10001", "10001", "11110", "10100", "10010", "10001"],
     "S": ["01111", "10000", "10000", "01110", "00001", "00001", "11110"],
     "T": ["11111", "00100", "00100", "00100", "00100", "00100", "00100"],
     "U": ["10001", "10001", "10001", "10001", "10001", "10001", "01110"],
@@ -475,34 +674,71 @@ def _text_pixel_positions(text, scale):
     return coords, total_w, glyph_h
 
 
-def write_label_dds(path, width, height, text, scale=2):
-    """Writes a 'dev texture' style placeholder: plain yellow fill, a 1px
-    black outline around the whole texture, and `text` stamped in black,
-    centered. Every mesh face UVs to the full 0..1 square (see
-    MeshBuilder.add_quad), so this appears identically on every face."""
-    YELLOW = (0, 255, 255, 255)   # BGRA
-    BLACK = (0, 0, 0, 255)        # BGRA
+def write_atlas_dds(path, mesh_code):
+    """Writes this mesh's 'dev texture' placeholder diffuse: a thin top
+    strip with the mesh's own identifying code (so the file is still
+    recognizable in an asset browser even though its content below is now
+    shared/generic), then a grid with one labeled, outlined, colored
+    sub-region per building type (WALL_UV_BY_TYPE) and per roof style
+    (ROOF_UV_BY_STYLE) -- see _build_atlas_layout(). Every building's walls
+    and roof UV into exactly the matching cell here, so each type/shape
+    reads as a visibly different material in-engine. The gutter
+    between/around cells is a neutral dark gray so each cell's own 1px
+    black outline stays visible."""
+    width, height = ATLAS_WIDTH, ATLAS_HEIGHT
+    GUTTER = (40, 40, 40, 255)      # BGRA dark gray
+    CODE_BG = (200, 200, 200, 255)  # BGRA light gray
+    BLACK = (0, 0, 0, 255)
 
-    pixels = [YELLOW] * (width * height)
+    pixels = [GUTTER] * (width * height)
 
     def set_px(x, y, color):
         if 0 <= x < width and 0 <= y < height:
             pixels[y * width + x] = color
 
-    # 1px black outline around the whole texture
-    for x in range(width):
-        set_px(x, 0, BLACK)
-        set_px(x, height - 1, BLACK)
-    for y in range(height):
-        set_px(0, y, BLACK)
-        set_px(width - 1, y, BLACK)
+    def fill_rect(x0, y0, x1, y1, color):
+        for y in range(int(y0), int(y1)):
+            for x in range(int(x0), int(x1)):
+                set_px(x, y, color)
 
-    # centered text label
-    coords, text_w, text_h = _text_pixel_positions(text, scale)
-    ox = (width - text_w) // 2
-    oy = (height - text_h) // 2
-    for (x, y) in coords:
-        set_px(ox + x, oy + y, BLACK)
+    def outline_rect(x0, y0, x1, y1, color):
+        x0, y0, x1, y1 = int(x0), int(y0), int(x1), int(y1)
+        for x in range(x0, x1):
+            set_px(x, y0, color)
+            set_px(x, y1 - 1, color)
+        for y in range(y0, y1):
+            set_px(x0, y, color)
+            set_px(x1 - 1, y, color)
+
+    def draw_label(text, x0, y0, x1, y1, s):
+        coords, text_w, text_h = _text_pixel_positions(text, s)
+        ox = int(x0) + max(0, (int(x1 - x0) - text_w) // 2)
+        oy = int(y0) + max(0, (int(y1 - y0) - text_h) // 2)
+        for (x, y) in coords:
+            set_px(ox + x, oy + y, BLACK)
+
+    def draw_cell(x0, y0, x1, y1, fill, label, s):
+        fill_rect(x0, y0, x1, y1, fill)
+        outline_rect(x0, y0, x1, y1, BLACK)
+        draw_label(label, x0, y0, x1, y1, s)
+
+    # 1px black outline around the whole texture
+    outline_rect(0, 0, width, height, BLACK)
+
+    # thin top strip: this mesh's own identifying code (roomiest cell, so
+    # it gets the biggest, most legible text)
+    draw_cell(ATLAS_MARGIN_PX, ATLAS_MARGIN_PX, width - ATLAS_MARGIN_PX, ATLAS_CODE_STRIP_H - ATLAS_MARGIN_PX,
+              CODE_BG, mesh_code, CODE_LABEL_SCALE)
+
+    # one cell per building type (walls) and per roof style (roofs) --
+    # wall cells are narrower (6 across) so their labels stay at scale 1;
+    # roof cells are 3x wider (2 across) so theirs can go bigger.
+    for btype in WALL_TYPE_ORDER:
+        x0, y0, x1, y1 = _WALL_PX_BY_TYPE[btype]
+        draw_cell(x0, y0, x1, y1, WALL_FILL_BY_TYPE[btype], btype.upper(), WALL_LABEL_SCALE)
+    for style in ROOF_STYLE_ORDER:
+        x0, y0, x1, y1 = _ROOF_PX_BY_STYLE[style]
+        draw_cell(x0, y0, x1, y1, ROOF_FILL_BY_STYLE[style], style.upper(), ROOF_LABEL_SCALE)
 
     header = _dds_header(width, height)
     with open(path, "wb") as f:
@@ -537,6 +773,7 @@ def generate_region(region_name, region_cfg, out_root):
     gfx_lines = ["objectTypes = {"]
     asset_lines = []
     mesh_names_by_tier = {}
+    total_buildings = 0
 
     for tier, tier_cfg in sorted(DENSITY_TIERS.items()):
         mesh_names_by_tier[tier] = []
@@ -544,28 +781,19 @@ def generate_region(region_name, region_cfg, out_root):
             name = region_mesh_name(region_name, tier, variant)
             rng = random.Random("{}-{}-{}".format(region_name, tier, variant))
 
-            fw, fd = tier_cfg["footprint"]
-            fw *= region_cfg["footprint_scale"] * rng.uniform(0.9, 1.1)
-            fd *= region_cfg["footprint_scale"] * rng.uniform(0.9, 1.1)
-            h_lo, h_hi = tier_cfg["height"]
-            height = rng.uniform(h_lo, h_hi) * region_cfg["height_scale"]
+            # each .mesh is a small city-block cluster of 10-20 mixed
+            # building types, not a single building (see build_city_cluster).
+            mb, building_count = build_city_cluster(region_cfg, tier, tier_cfg, rng)
+            total_buildings += building_count
 
-            mb = build_building_mesh(
-                width=fw * UNIT_SCALE,
-                depth=fd * UNIT_SCALE,
-                height=height * UNIT_SCALE,
-                roof_style=region_cfg["roof_style"],
-                setback=tier_cfg["setback"],
-                rng=rng,
-            )
-
-            # unique per-mesh "dev texture": plain yellow, 1px black outline,
-            # black text label -- lets you identify any building in-engine
-            # at a glance. Every face UVs to the full 0..1 square (see
-            # MeshBuilder.add_quad) so the label shows up on every face.
+            # unique per-mesh "dev texture" atlas: one labeled, outlined,
+            # colored cell per building type + per roof style, plus a top
+            # strip carrying this mesh's own identifying code -- lets you
+            # tell every building type and roof shape apart, and identify
+            # any mesh, in-engine at a glance (see write_atlas_dds).
             label = "{}-T{}-{:02d}".format(region_cfg["abbr"], tier, variant)
             diffuse_tex = "{}_diffuse.dds".format(name)
-            write_label_dds(os.path.join(region_dir, diffuse_tex), 128, 128, label)
+            write_atlas_dds(os.path.join(region_dir, diffuse_tex), label)
 
             mesh_path = os.path.join(region_dir, name + ".mesh")
             shape_name = "{}Shape".format(name)
@@ -601,7 +829,7 @@ def generate_region(region_name, region_cfg, out_root):
     with open(os.path.join(region_dir, "{}_buildings.asset".format(region_name)), "w") as f:
         f.write("\n".join(asset_lines))
 
-    return mesh_names_by_tier
+    return mesh_names_by_tier, total_buildings
 
 
 def generate_cities_txt_fragment(all_mesh_names, out_root):
@@ -674,9 +902,16 @@ def generate_readme(out_root, all_mesh_names):
     lines.append("")
     lines.append("## About the geometry")
     lines.append("")
-    lines.append("These are deliberately crude, low-poly, flat-shaded boxes (with an")
-    lines.append("optional pitched roof or a stacked \"setback\" block for the tallest")
-    lines.append("tier) -- stand-ins to get the region/density pipeline wired up and")
+    lines.append("Each `.mesh` file is a small city-block CLUSTER of 10-20 individual")
+    lines.append("low-poly buildings (see `BUILDINGS_PER_MESH`), not a single building --")
+    lines.append("this matches vanilla's own city meshes, which are likewise multi-")
+    lines.append("building chunks. Building *type* is picked per building from")
+    lines.append("`TIER_TYPE_WEIGHTS`, so the mix changes with density tier (mostly")
+    lines.append("`house`/`shed` at the sparse outskirts tier, mostly `tower`/`block` at")
+    lines.append("the dense downtown tier -- see `BUILDING_TYPES`). Each individual")
+    lines.append("building is a deliberately crude, low-poly, flat-shaded box (with an")
+    lines.append("optional pitched roof or a stacked \"setback\" block for towers) --")
+    lines.append("stand-ins to get the region/density/type pipeline wired up and")
     lines.append("testable in-game before you commission or model real low-poly")
     lines.append("buildings. The `.mesh` files are real, valid PDX binary meshes")
     lines.append("(reverse-engineered from TGC-Hearts-of-Iron-IV's own files), so they")
@@ -684,14 +919,22 @@ def generate_readme(out_root, all_mesh_names):
     lines.append("")
     lines.append("## About the textures")
     lines.append("")
-    lines.append("Every mesh gets its own \"dev texture\" diffuse: plain yellow fill, a")
-    lines.append("1px black outline around the whole texture, and a black text label")
-    lines.append("(`{REGION_ABBR}-T{tier}-{variant}`, e.g. `EEU-T4-04`) stamped in the")
-    lines.append("center. Because every face UVs to the same 0..1 square, the label")
-    lines.append("shows up identically on every face of the building -- so you can")
-    lines.append("identify any mesh in-engine at a glance. Normal/specular stay flat")
-    lines.append("and shared per-region. Edit `FONT_5X7` in the script to add more")
-    lines.append("characters, or `write_label_dds()` to change the look.")
+    lines.append("Every mesh gets its own \"dev texture\" diffuse atlas (see")
+    lines.append("`_build_atlas_layout()` / `write_atlas_dds()`): a thin top strip")
+    lines.append("carrying the mesh's own identifying code (`{REGION_ABBR}-T{tier}-")
+    lines.append("{variant}`, e.g. `EEU-T4-04`), then a grid with one colored, outlined,")
+    lines.append("labeled cell per building type -- `HOUSE`, `ROWHOUSE`, `SHOP`, `SHED`,")
+    lines.append("`BLOCK`, `TOWER` -- and one per roof shape -- `PITCHED`, `FLAT`. Every")
+    lines.append("wall face UVs into its building's own type cell (`WALL_UV_BY_TYPE`) and")
+    lines.append("every roof face into its roof-shape cell (`ROOF_UV_BY_STYLE`), so a")
+    lines.append("house's walls, a tower's walls, and a pitched vs. flat roof all read as")
+    lines.append("visibly different materials in-engine -- not just \"wall\" vs. \"roof\",")
+    lines.append("but a distinct look per building type, wherever that's actually useful")
+    lines.append("(every type gets its own wall look; roofs only have two distinct")
+    lines.append("*shapes*, so those two share their cells across every type that uses")
+    lines.append("them). Normal/specular stay flat and shared per-region. Edit")
+    lines.append("`WALL_FILL_BY_TYPE` / `ROOF_FILL_BY_STYLE` to change colors, `FONT_5X7`")
+    lines.append("to add characters, or `_build_atlas_layout()` to change the grid.")
     with open(os.path.join(out_root, "README.md"), "w") as f:
         f.write("\n".join(lines))
 
@@ -702,16 +945,18 @@ def main():
 
     all_mesh_names = {}
     total_meshes = 0
+    total_buildings = 0
     for region_name, region_cfg in REGIONS.items():
-        mesh_names_by_tier = generate_region(region_name, region_cfg, out_root)
+        mesh_names_by_tier, region_buildings = generate_region(region_name, region_cfg, out_root)
         all_mesh_names[region_name] = mesh_names_by_tier
         total_meshes += sum(len(v) for v in mesh_names_by_tier.values())
+        total_buildings += region_buildings
 
     generate_cities_txt_fragment(all_mesh_names, out_root)
     generate_readme(out_root, all_mesh_names)
 
-    print("Generated {} regions x {} tiers x {} variants = {} meshes".format(
-        len(REGIONS), len(DENSITY_TIERS), VARIANTS_PER_TIER, total_meshes))
+    print("Generated {} regions x {} tiers x {} variants = {} mesh files, {} buildings total".format(
+        len(REGIONS), len(DENSITY_TIERS), VARIANTS_PER_TIER, total_meshes, total_buildings))
     print("Output written to: {}/".format(os.path.abspath(out_root)))
 
 
