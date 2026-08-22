@@ -1753,6 +1753,22 @@
 			}
 		},
 		{
+			"tag": "KYR",
+			"red": 170,
+			"green": 19,
+			"blue": 28,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 732,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "no",
+			"localisation": {
+				"KYR": "Kyrgyzstan",
+				"KYR_DEF": "the Kyrgyz Republic",
+				"KYR_ADJ": "Kyrgyz"
+			}
+		},
+		{
 			"tag": "LAT",
 			"red": 100,
 			"green": 3,
@@ -2550,6 +2566,22 @@
 				"SYR": "Syria",
 				"SYR_DEF": "the Syrian Arab Republic",
 				"SYR_ADJ": "Syrian"
+			}
+		},
+		{
+			"tag": "TAJ",
+			"red": 74,
+			"green": 120,
+			"blue": 22,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 742,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"TAJ": "Tajikistan",
+				"TAJ_DEF": "the Republic of Tajikistan",
+				"TAJ_ADJ": "Tajik"
 			}
 		},
 		{

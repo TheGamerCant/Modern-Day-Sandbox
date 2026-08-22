@@ -1,0 +1,16 @@
+state = {
+    id = 979
+    name = "STATE_979"
+    manpower = 205949
+    state_category = rural
+	history={
+		owner = TAJ
+		add_core_of = TAJ
+		
+		set_variable = { sq_km = 62900 }
+		victory_points = { 10417 1 }
+	}
+    provinces = {
+        8027 10417 12805 16203 
+    }
+}

@@ -863,3 +863,29 @@ TAG_using_bengali_names = {
 TAG_using_afghan_names = {
 	always = no
 }
+TAG_using_kyrgyz_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = KYR
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = KYR
+	}
+}
+TAG_using_tajik_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = TAJ
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = TAJ
+	}
+}

@@ -320,6 +320,10 @@ KUW = {
 	color = rgb { 181 58 20 }
 	color_ui = rgb { 181 58 20 }
 }
+KYR = {
+	color = rgb { 170 19 28 }
+	color_ui = rgb { 170 19 28 }
+}
 LAT = {
 	color = rgb { 100 3 46 }
 	color_ui = rgb { 100 3 46 }
@@ -519,6 +523,10 @@ SWI = {
 SYR = {
 	color = rgb { 96 8 15 }
 	color_ui = rgb { 96 8 15 }
+}
+TAJ = {
+	color = rgb { 74 120 22 }
+	color_ui = rgb { 74 120 22 }
 }
 TIB = {
 	color = rgb { 62 24 110 }

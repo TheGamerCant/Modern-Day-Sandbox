@@ -2,13 +2,18 @@ state={
 	id=742
 	name="STATE_742"
 	history={
-		owner = ZZZ
+		owner = TAJ
+		add_core_of = TAJ
+		
+		set_variable = { sq_km = 53410 }
+		victory_points = { 1216 11 }
+		victory_points = { 1384 1 }
+		victory_points = { 7224 1 }
+		victory_points = { 12218 1 }
 	}
-	provinces={
-		1216 1384 1919 4542 7224 8027 10187 10417 12218 12250 12430 12805 
-	}
-	manpower= 100000
+	provinces={ 1216 1384 4542 7224 12218 12250 12430 16204 16205 16206 16207 }
+	manpower= 5125003
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=wasteland
-}
+}

@@ -19453,8 +19453,26 @@ TDA_update_state_731_names = {
 	}
 }
 
-#Pamir
+#Kyrgyzstan
 TDA_update_state_732_names = {
+	#Oş
+	if = {
+		limit = { any_country = { controls_province = 2058 TAG_using_kyrgyz_names = yes } }
+		set_province_name = { id = 2058 name = VICTORY_POINTS_2058_0 }
+	}
+	#Osh
+	else = {
+		reset_province_name = 2058
+	}
+	#Zhalal-Abad
+	if = {
+		limit = { any_country = { controls_province = 16195 TAG_using_kyrgyz_names = yes } }
+		set_province_name = { id = 16195 name = VICTORY_POINTS_16195_0 }
+	}
+	#Jalal-Abad
+	else = {
+		reset_province_name = 16195
+	}
 }
 
 #Andaman
@@ -19493,8 +19511,31 @@ TDA_update_state_740_names = {
 TDA_update_state_741_names = {
 }
 
-#Stalinabad
+#Dushanbe
 TDA_update_state_742_names = {
+	#Tursunzade
+	if = {
+		limit = { any_country = { controls_province = 1384 TAG_using_russian_names = yes } }
+		set_province_name = { id = 1384 name = VICTORY_POINTS_1384_0 }
+	}
+	#Tursunzoda
+	else = {
+		reset_province_name = 1384
+	}
+	#Kūlob
+	if = {
+		limit = { any_country = { controls_province = 7224 TAG_using_tajik_names = yes } }
+		set_province_name = { id = 7224 name = VICTORY_POINTS_7224_0 }
+	}
+	#Kulyab
+	else_if = {
+		limit = { any_country = { controls_province = 7224 TAG_using_russian_names = yes } }
+		set_province_name = { id = 7224 name = VICTORY_POINTS_7224_1 }
+	}
+	#Kulob
+	else = {
+		reset_province_name = 7224
+	}
 }
 
 #Northern Kosovo
@@ -24247,6 +24288,62 @@ TDA_update_state_977_names = {
 	}
 }
 
+#Sughd
+TDA_update_state_978_names = {
+	978 = {
+		#Sug'd
+		if = {
+			limit = { CONTROLLER = { TAG_using_tajik_names = yes } }
+			set_state_name = STATE_978_0
+		}
+		#Sogdiy
+		else_if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_978_1
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Khojand
+	if = {
+		limit = { any_country = { controls_province = 16200 TAG_using_tajik_names = yes } }
+		set_province_name = { id = 16200 name = VICTORY_POINTS_16200_0 }
+	}
+	#Khudzhand
+	else_if = {
+		limit = { any_country = { controls_province = 16200 TAG_using_russian_names = yes } }
+		set_province_name = { id = 16200 name = VICTORY_POINTS_16200_1 }
+	}
+	#Khujand
+	else = {
+		reset_province_name = 16200
+	}
+}
+
+#Gorno-Badakhshan
+TDA_update_state_979_names = {
+	979 = {
+		#Ko'histoni Badakhshon
+		if = {
+			limit = { CONTROLLER = { TAG_using_tajik_names = yes } }
+			set_state_name = STATE_979_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Khorugh
+	if = {
+		limit = { any_country = { controls_province = 10417 TAG_using_tajik_names = yes } }
+		set_province_name = { id = 10417 name = VICTORY_POINTS_10417_0 }
+	}
+	#Khorog
+	else = {
+		reset_province_name = 10417
+	}
+}
+
 
 
 TDA_change_all_city_names = {
@@ -25227,6 +25324,8 @@ TDA_change_all_city_names = {
 	TDA_update_state_975_names = yes
 	TDA_update_state_976_names = yes
 	TDA_update_state_977_names = yes
+	TDA_update_state_978_names = yes
+	TDA_update_state_979_names = yes
 }
 
 TDA_toggle_change_city_names = {

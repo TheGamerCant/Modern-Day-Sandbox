@@ -5980,7 +5980,7 @@
         },
         {
             "id": 732,
-            "default_name": "Pamir",
+            "default_name": "Kyrgyzstan",
             "comment": "",
             "custom_names": []
         },
@@ -6040,7 +6040,7 @@
         },
         {
             "id": 742,
-            "default_name": "Stalinabad",
+            "default_name": "Dushanbe",
             "comment": "",
             "custom_names": []
         },
@@ -8184,6 +8184,32 @@
                 {
                     "requirements": "TAG_using_pakistani_names = yes",
                     "name": "Islāmābād"
+                }
+            ]
+        },
+        {
+            "id": 978,
+            "default_name": "Sughd",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_tajik_names = yes",
+                    "name": "Sug'd"
+                },
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Sogdiy"
+                }
+            ]
+        },
+        {
+            "id": 979,
+            "default_name": "Gorno-Badakhshan",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_tajik_names = yes",
+                    "name": "Ko'histoni Badakhshon"
                 }
             ]
         }
@@ -61362,6 +61388,212 @@
                 "year": 2017
             },
             "terrain": "plains"
+		},
+		{
+			"id": 16191,
+			"default_name": "Bishkek",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "KYR",
+                "population": 1428079,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 2058,
+			"default_name": "Osh",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_kyrgyz_names = yes",
+					"name": "Oş"
+				}
+			],
+			"population": {
+                "tag": "KYR",
+                "population": 481389,
+                "year": 2025
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16195,
+			"default_name": "Jalal-Abad",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_kyrgyz_names = yes",
+					"name": "Zhalal-Abad"
+				}
+			],
+			"population": {
+                "tag": "KYR",
+                "population": 89004,
+                "year": 2009
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 4768,
+			"default_name": "Karakol",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "KYR",
+                "population": 63377,
+                "year": 2009
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 4224,
+			"default_name": "Balykchy",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "KYR",
+                "population": 42380,
+                "year": 2009
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 12583,
+			"default_name": "Tokmok",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "KYR",
+                "population": 53231,
+                "year": 2009
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 16196,
+			"default_name": "Kyzyl-Kiya",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "KYR",
+                "population": 31727,
+                "year": 2009
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 10417,
+			"default_name": "Khorog",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_tajik_names = yes",
+					"name": "Khorugh"
+				}
+			],
+			"population": {
+                "tag": "TAJ",
+                "population": 28098,
+                "year": 2010
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 16200,
+			"default_name": "Khujand",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_tajik_names = yes",
+					"name": "Khojand"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Khudzhand"
+				}
+			],
+			"population": {
+                "tag": "TAJ",
+                "population": 162825,
+                "year": 2010
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 16201,
+			"default_name": "Istaravshan",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "TAJ",
+                "population": 54746,
+                "year": 2010
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 1216,
+			"default_name": "Dushanbe",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "TAJ",
+                "population": 1471812,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 12218,
+			"default_name": "Bokhtar",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "TAJ",
+                "population": 75450,
+                "year": 2010
+            },
+            "terrain": "hills"
+		},
+		{
+			"id": 7224,
+			"default_name": "Kulob",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_tajik_names = yes",
+					"name": "Kūlob"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Kulyab"
+				}
+			],
+			"population": {
+                "tag": "TAJ",
+                "population": 177692,
+                "year": 2025
+            },
+            "terrain": "mountain"
+		},
+		{
+			"id": 1384,
+			"default_name": "Tursunzoda",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Tursunzade"
+				}
+			],
+			"population": {
+                "tag": "TAJ",
+                "population": 46712,
+                "year": 2010
+            },
+            "terrain": "mountain"
 		}
     ]
 }
