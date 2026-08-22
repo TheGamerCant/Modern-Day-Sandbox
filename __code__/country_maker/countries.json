@@ -2601,6 +2601,22 @@
 			}
 		},
 		{
+			"tag": "TMS",
+			"red": 45,
+			"green": 70,
+			"blue": 5,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 584,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"TMS": "Turkmenistan",
+				"TMS_DEF": "Turkmenistan",
+				"TMS_ADJ": "Turkmen"
+			}
+		},
+		{
 			"tag": "TRZ",
 			"red": 162,
 			"green": 6,
@@ -2806,6 +2822,22 @@
 				"UYG": "East Turkestan",
 				"UYG_DEF": "the Republic of East Turkestan",
 				"UYG_ADJ": "Uyghur"
+			}
+		},
+		{
+			"tag": "UZB",
+			"red": 17,
+			"green": 50,
+			"blue": 113,
+			"graphical_culture": "asian_gfx",
+			"graphical_culture_2d": "asian_2d",
+			"capital": 405,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"UZB": "Uzbekistan",
+				"UZB_DEF": "the Republic of Uzbekistan",
+				"UZB_ADJ": "Uzbek"
 			}
 		},
 		{
