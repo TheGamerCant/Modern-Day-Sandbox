@@ -16,41 +16,66 @@ Hearts of Iron IV mod, following the exact same data pipeline vanilla HOI4
 
 This was reverse-engineered directly from the files shipped in
 TGC-Hearts-of-Iron-IV (map/cities.txt + gfx/models/buildings/*.mesh), so the
-naming/wiring conventions below mirror vanilla exactly:
+naming/wiring conventions below mirror vanilla exactly, with one addition:
+vanilla only really varies "region" (a palette color) and "distance"
+(sparse edge vs. dense core of an urban blob). This script splits things
+one level further, by actual BUILDING TYPE first:
 
-  * REGION  = a palette color in map/cities.bmp (`color_index` in cities.txt).
-              Vanilla ships four: Western (15), Asian (0), French (1) and
-              "uncivilized" (2). This script generates N regions the same
-              way -- you paint the matching color onto map/cities.bmp
-              wherever you want that regional building style to appear.
-  * DENSITY = the `distance` field inside a city_group's `building` blocks.
-              distance = 1 is the outer edge of an urban blob (sparsest),
-              distance = 4 is deep in the blob's core (densest). Vanilla
-              swaps in a visually "bigger" mesh at each successive distance
-              tier -- that's the "different models for different levels of
-              urban density" mechanic.
+  * ARCHETYPE = the actual *kind* of district being generated -- suburb,
+              urban_core, metropolis, commie_block, informal. This is what
+              decides which BUILDING_TYPES get used and how densely/tall,
+              AND how they're physically arranged (see LAYOUTS below). This
+              is the "separate buildings based on actual building type"
+              part -- a metropolis is a district of skyscrapers organized
+              in a tidy block/grid; a suburb is sprawling houses at loose,
+              varied angles; a commie_block district is near-identical
+              uniform slabs in strict rows; informal is chaotic and packed.
+  * REGION    = a regional/material flavor layered on top of an archetype
+              (western/east_asian/mediterranean/south_america/eastern_europe)
+              -- this is the "regional varieties" part. It nudges footprint/
+              height scale and picks the roof style small residential
+              buildings use, so e.g. a western suburb and an east asian
+              suburb are both unmistakably suburbs, just styled differently.
+  * LOCALE    = one curated (archetype, region, color_index) combination --
+              see LOCALES below. Each locale is its own city_group / palette
+              color in map/cities.bmp, exactly like a vanilla "region" was,
+              except now keyed on archetype+region together.
+  * DISTANCE  = the `distance` field inside a city_group's `building` blocks,
+              unchanged from vanilla: distance = 1 is the outer edge of an
+              urban blob (sparsest), distance = 4 is deep in the blob's core
+              (densest). Here it's a mild size-growth applied on top of a
+              locale's own archetype (a suburb never suddenly becomes a
+              skyscraper district just because distance is higher).
 
 Everything this script produces is a fully valid (if crude) asset: real PDX
 binary .mesh files, real uncompressed .dds textures, real .gfx/.asset text
 files, and a ready-to-merge map/cities.txt fragment. Each .mesh is actually
-a small CLUSTER of 10-20 individual low-poly buildings (mixed types, e.g.
-mostly houses at the sparse outskirts tier vs. mostly towers/blocks at the
-dense downtown tier) merged into one file -- matching how vanilla's own
-city meshes are city-block chunks, not single buildings. Each building is
-an axis-aligned box (+ an optional pitched roof / a smaller "setback" block
-on top for towers) -- these are meant to be stand-ins you replace with real
-hand-modelled low-poly buildings later, not final art.
+a small CLUSTER of 10-20 individual low-poly buildings (mixed types drawn
+from its archetype's own type_weights) merged into one file -- matching how
+vanilla's own city meshes are city-block chunks, not single buildings. Each
+building is an axis-aligned box (+ an optional pitched roof / a smaller
+"setback" block on top for towers) -- these are meant to be stand-ins you
+replace with real hand-modelled low-poly buildings later, not final art.
 
-Ships with 6 example regions (western, east_asian, mediterranean, informal,
-south_america, eastern_europe) -- add/rename more in REGIONS below. Every
-mesh's diffuse is an obvious "dev texture" atlas: a dedicated colored,
-outlined, labeled cell for each of the 6 building types (house, rowhouse,
-shop, shed, block, tower) plus one per roof shape (pitched, flat), stamped
-via a tiny built-in bitmap font, so every wall face and roof face UVs into
-the cell matching what it actually is -- a house's walls look different
-from a tower's, a pitched roof looks different from a flat one -- plus a
-top strip carrying the mesh's own identifying code (e.g. "EEU-T4-04") so
-the file itself is still recognizable in-engine at a glance.
+How a cluster's buildings are actually *spawned* also now varies by
+archetype (see LAYOUTS): a "grid" layout places buildings on a tidy,
+lightly-jittered lattice (metropolis/urban_core/commie_block -- a block of
+towers or slabs really is organized that way); a "scatter" layout places
+them with wide positional jitter AND a random yaw rotation per building
+(suburb/informal -- sprawling, irregularly angled lots).
+
+Ships with 5 example regions (western, east_asian, mediterranean,
+south_america, eastern_europe) and 5 example archetypes (suburb, urban_core,
+metropolis, commie_block, informal), combined into 14 example locales -- add/
+rename/recombine in REGIONS / ARCHETYPES / LOCALES below. Every mesh's
+diffuse is an obvious "dev texture" atlas: a dedicated colored, outlined,
+labeled cell for each of the 6 building types (house, rowhouse, shop, shed,
+block, tower) plus one per roof shape (pitched, flat), stamped via a tiny
+built-in bitmap font, so every wall face and roof face UVs into the cell
+matching what it actually is -- a house's walls look different from a
+tower's, a pitched roof looks different from a flat one -- plus a top strip
+carrying the mesh's own identifying code (e.g. "MET-EAS-T4-04") so the file
+itself is still recognizable in-engine at a glance.
 
 Nothing here touches your live mod. Everything is written under OUTPUT_DIR;
 copy the pieces you want into your mod folder yourself (see the generated
@@ -72,84 +97,34 @@ import struct
 # ---------------------------------------------------------------------------
 
 OUTPUT_DIR = "output"
-VARIANTS_PER_TIER = 4          # vanilla always ships 4 variants per tier (01-04)
-UNIT_SCALE = 1.0                # 1 game "map unit" per world unit; tweak to taste
+VARIANTS_PER_TIER = 4            # vanilla always ships 4 variants per distance (01-04)
+UNIT_SCALE = 1.0                 # 1 game "map unit" per world unit; tweak to taste
 BUILDINGS_PER_MESH = (10, 20)    # each .mesh is a small city block cluster, not a single building
+DISTANCE_LEVELS = (1, 2, 3, 4)   # cities.txt `distance`: 1 = edge of this locale's urban blob, 4 = its core
 
-# Each region = one map/cities.bmp palette color. `color_index` is only a
-# suggestion (matches vanilla's own western/asian/french/unciv indices where
-# convenient) -- repaint map/cities.bmp with whatever indices your mod's
-# palette actually uses and update these to match.
-#
-# `abbr` is a short code baked into that region's placeholder diffuse
-# textures (see PLACEHOLDER TEXTURES below) so you can tell meshes apart
-# in-engine at a glance -- keep it <= 3 chars and stick to the characters
-# covered by FONT_5X7 (A-Z, 0-9, '-') or extend the font first.
+# Regional/material flavor -- layered ON TOP of an archetype (see
+# ARCHETYPES below), not a city_group on its own. `footprint_scale` /
+# `height_scale` multiply an archetype's own base size; `roof_style` is
+# what this region's low-rise residential types (house/rowhouse) use
+# (commercial/tall types stay flat-roofed everywhere -- see
+# BUILDING_TYPES). `abbr` is baked into a mesh's identifying code strip on
+# its diffuse -- keep it <= 3 chars and stick to characters covered by
+# FONT_5X7 (A-Z, 0-9, '-') or extend the font first.
 REGIONS = {
-    "western": {
-        "color_index": 15,
-        "abbr": "WST",
-        "roof_style": "pitched",
-        "footprint_scale": 1.00,
-        "height_scale": 1.00,
-    },
-    "east_asian": {
-        "color_index": 0,
-        "abbr": "EAS",
-        "roof_style": "pitched",
-        "footprint_scale": 0.92,
-        "height_scale": 1.10,
-    },
-    "mediterranean": {
-        "color_index": 1,
-        "abbr": "MED",
-        "roof_style": "flat",
-        "footprint_scale": 1.05,
-        "height_scale": 0.95,
-    },
-    "informal": {
-        "color_index": 2,
-        "abbr": "INF",
-        "roof_style": "flat",
-        "footprint_scale": 0.85,
-        "height_scale": 0.70,
-    },
-    "south_america": {
-        "color_index": 3,
-        "abbr": "SAM",
-        "roof_style": "flat",        # concrete flat-roof self-built infill is the dominant silhouette
-        "footprint_scale": 0.95,
-        "height_scale": 0.90,
-    },
-    "eastern_europe": {
-        "color_index": 4,
-        "abbr": "EEU",               # ex-Soviet panel-block ("khrushchyovka"/"panelka") style
-        "roof_style": "flat",
-        "footprint_scale": 1.15,
-        "height_scale": 1.20,
-    },
+    "western":       {"abbr": "WST", "roof_style": "pitched", "footprint_scale": 1.00, "height_scale": 1.00},
+    "east_asian":    {"abbr": "EAS", "roof_style": "pitched", "footprint_scale": 0.92, "height_scale": 1.10},
+    "mediterranean": {"abbr": "MED", "roof_style": "flat",    "footprint_scale": 1.05, "height_scale": 0.95},
+    "south_america": {"abbr": "SAM", "roof_style": "flat",    "footprint_scale": 0.95, "height_scale": 0.90},
+    "eastern_europe": {"abbr": "EEU", "roof_style": "flat",   "footprint_scale": 1.15, "height_scale": 1.20},
 }
 
-# Density tiers = cities.txt `distance` values, sorted growing (1 = urban
-# edge / lowest density, 4 = urban core / highest density), exactly like
-# vanilla's building{ distance = N mesh = {...} } blocks. Each tier's
-# footprint/height is the *base* size that individual building types below
-# scale off of (a "tower" at tier 1 is still small; at tier 4 it's a
-# skyscraper) -- per-type massing (setback, roof) lives in BUILDING_TYPES.
-DENSITY_TIERS = {
-    1: {"label": "outskirts", "footprint": (4.0, 4.0), "height": (3.0, 5.0)},
-    2: {"label": "suburban", "footprint": (5.0, 5.5), "height": (6.0, 9.0)},
-    3: {"label": "urban", "footprint": (6.5, 7.0), "height": (10.0, 16.0)},
-    4: {"label": "downtown", "footprint": (7.0, 8.0), "height": (18.0, 30.0)},
-}
-
-# Building "types" mixed into each cluster. w_mult/d_mult/h_mult scale a
-# tier's base footprint/height (above) per building; "roof" is the type's
-# usual roof unless the type is low-rise ("house"/"rowhouse"), in which case
-# the *region's* roof_style wins instead (small residential roofs are the
-# part that actually varies by regional architecture -- commercial/tall
-# types are flat-roofed everywhere). "setback" stacks a slimmer block on
-# top, for a skyscraper silhouette.
+# Building "types" mixed into a cluster. w_mult/d_mult/h_mult scale an
+# archetype's base footprint/height (below) per building; "roof" is the
+# type's usual roof unless the type is low-rise ("house"/"rowhouse"), in
+# which case the *region's* roof_style wins instead (small residential
+# roofs are the part that actually varies by regional architecture --
+# commercial/tall types are flat-roofed everywhere). "setback" stacks a
+# slimmer block on top, for a skyscraper silhouette.
 BUILDING_TYPES = {
     "house":    {"w_mult": 0.90, "d_mult": 0.90, "h_mult": 0.80, "roof": "pitched"},
     "rowhouse": {"w_mult": 0.60, "d_mult": 1.00, "h_mult": 1.10, "roof": "pitched"},
@@ -159,16 +134,86 @@ BUILDING_TYPES = {
     "tower":    {"w_mult": 0.85, "d_mult": 0.85, "h_mult": 1.60, "roof": "flat", "setback": True},
 }
 
-# Which types show up at each density tier, and how often (relative
-# weights -- don't need to sum to 1). This is the "different types where
-# appropriate" mechanic: a tier-1 (outskirts) cluster is mostly houses with
-# the odd shed, a tier-4 (downtown) cluster is mostly towers and blocks.
-TIER_TYPE_WEIGHTS = {
-    1: {"house": 0.65, "shed": 0.20, "shop": 0.15},
-    2: {"house": 0.40, "rowhouse": 0.25, "shop": 0.20, "block": 0.15},
-    3: {"block": 0.40, "shop": 0.25, "rowhouse": 0.20, "tower": 0.15},
-    4: {"tower": 0.50, "block": 0.35, "shop": 0.15},
+# ---------------------------------------------------------------------------
+# ARCHETYPES -- the "actual building type" split: instead of one generic
+# 1-4 density gradient reused identically everywhere, each archetype is a
+# distinct kind of district (suburb, dense downtown metropolis, Soviet-style
+# uniform housing blocks, informal settlement, mixed-use urban core), each
+# with its own:
+#   - type_weights   which BUILDING_TYPES it draws from, and how often
+#   - footprint/height   its own base size range (before region/distance scale)
+#   - layout + pos_jitter/rot_jitter_deg/spread_mult   how its buildings are
+#     actually arranged -- a metropolis of towers is organized in a tidy
+#     block/grid (low jitter, no rotation); a suburb sprawls at irregular
+#     angles (loose "scatter" layout, wide spread, real rotation); a
+#     commie_block district is almost perfectly uniform repeated rows;
+#     an informal settlement is chaotic and tightly packed.
+# ---------------------------------------------------------------------------
+ARCHETYPES = {
+    "suburb": {
+        "abbr": "SUB",
+        "footprint": (5.0, 5.5), "height": (5.0, 8.0),
+        "type_weights": {"house": 0.55, "rowhouse": 0.25, "shop": 0.20},
+        "layout": "scatter", "pos_jitter": 0.55, "rot_jitter_deg": 30, "spread_mult": 1.7,
+    },
+    "urban_core": {
+        "abbr": "URB",
+        "footprint": (6.5, 7.0), "height": (9.0, 14.0),
+        "type_weights": {"block": 0.35, "shop": 0.30, "rowhouse": 0.20, "tower": 0.15},
+        "layout": "grid", "pos_jitter": 0.18, "rot_jitter_deg": 10, "spread_mult": 1.0,
+    },
+    "metropolis": {
+        "abbr": "MET",
+        "footprint": (7.5, 8.5), "height": (22.0, 36.0),
+        "type_weights": {"tower": 0.55, "block": 0.35, "shop": 0.10},
+        "layout": "grid", "pos_jitter": 0.05, "rot_jitter_deg": 0, "spread_mult": 1.0,
+    },
+    "commie_block": {
+        "abbr": "CBL",
+        "footprint": (7.0, 10.0), "height": (14.0, 20.0),
+        "type_weights": {"block": 1.0},   # near-identical repeated slabs -- deliberately monotonous
+        "layout": "grid", "pos_jitter": 0.02, "rot_jitter_deg": 0, "spread_mult": 1.0,
+    },
+    "informal": {
+        "abbr": "INF",
+        "footprint": (3.0, 3.5), "height": (2.0, 4.0),
+        "type_weights": {"shed": 0.50, "house": 0.35, "shop": 0.15},
+        "layout": "scatter", "pos_jitter": 0.60, "rot_jitter_deg": 45, "spread_mult": 1.05,
+    },
 }
+
+# Curated (archetype, region, color_index) combinations to actually
+# generate -- this is the "regional varieties" layer on top of archetype:
+# a western metropolis and an east asian metropolis are both still
+# unmistakably a metropolis (grid of towers), just styled per-region. Each
+# combination becomes its own map/cities.bmp color_index / city_group --
+# add, remove, or re-pair tuples here (with an unused color_index) to
+# change what's generated; it doesn't have to be every archetype x every
+# region.
+LOCALES = [
+    ("suburb", "western", 10),
+    ("suburb", "east_asian", 11),
+    ("suburb", "south_america", 12),
+    ("suburb", "eastern_europe", 13),
+    ("urban_core", "western", 14),
+    ("urban_core", "mediterranean", 15),
+    ("urban_core", "east_asian", 16),
+    ("metropolis", "western", 17),
+    ("metropolis", "east_asian", 18),
+    ("metropolis", "mediterranean", 19),
+    ("commie_block", "eastern_europe", 20),
+    ("commie_block", "east_asian", 21),
+    ("informal", "south_america", 22),
+    ("informal", "east_asian", 23),
+]
+
+# Mild "edge of blob -> core of blob" growth across cities.txt's 4
+# `distance` levels, applied on top of an archetype's own base size --
+# keeps the same archetype/character at every distance (a suburb never
+# suddenly becomes a skyscraper district), matching what vanilla's
+# per-distance mesh swap is actually for more closely than a generic
+# tier-swap would.
+DISTANCE_SCALE = {1: 0.90, 2: 0.97, 3: 1.05, 4: 1.13}
 
 PITCHED_ROOF_HEIGHT_FRACTION = 0.35  # roof apex height, as a fraction of wall height
 
@@ -340,11 +385,29 @@ class MeshBuilder:
         i2 = self._add_vertex(p2, n, ((u0 + u1) / 2.0, v1))
         self.tris.append((i0, i1, i2))
 
-    def extend(self, other, offset=(0.0, 0.0, 0.0)):
+    def extend(self, other, offset=(0.0, 0.0, 0.0), yaw=0.0):
+        """Merges `other` into self, translated by `offset` and (if
+        non-zero) first rotated `yaw` radians around the Y (up) axis --
+        this is what lets scatter-layout buildings (see layout_scatter)
+        sit at varied angles instead of always facing the same way.
+        Positions AND normals both get rotated (normals untranslated, since
+        rotation doesn't need re-normalizing -- it's already unit length)."""
         base = len(self.positions)
-        for p in other.positions:
-            self.positions.append(v_add(p, offset))
-        self.normals.extend(other.normals)
+        if abs(yaw) < 1e-9:
+            for p in other.positions:
+                self.positions.append(v_add(p, offset))
+            self.normals.extend(other.normals)
+        else:
+            cos_y, sin_y = math.cos(yaw), math.sin(yaw)
+
+            def rot_y(v):
+                x, y, z = v
+                return (x * cos_y + z * sin_y, y, -x * sin_y + z * cos_y)
+
+            for p in other.positions:
+                self.positions.append(v_add(rot_y(p), offset))
+            for n in other.normals:
+                self.normals.append(rot_y(n))
         self.uvs.extend(other.uvs)
         for (a, b, c) in other.tris:
             self.tris.append((a + base, b + base, c + base))
@@ -415,7 +478,12 @@ def build_building_mesh(width, depth, height, roof_style, setback, building_type
             # downtown towers: a slimmer block stacked on the main block,
             # like a rooftop massing setback on a skyscraper.
             main_h = height * rng.uniform(0.55, 0.7)
-        y1 = add_box_walls_and_flat_roof(mb, hw, hd, main_h, wall_uv, roof_uv, roof=not setback)
+        # always cap the main box, even when a smaller setback block sits on
+        # top of it -- that block doesn't cover the main box's full
+        # footprint, so without its own roof/ledge here the main box would
+        # be open-topped around the setback (the bug: "tower blocks don't
+        # have roofs on layer 1", layer 1 being this main/lower block).
+        y1 = add_box_walls_and_flat_roof(mb, hw, hd, main_h, wall_uv, roof_uv, roof=True)
         if setback:
             top_w = width * rng.uniform(0.45, 0.65)
             top_d = depth * rng.uniform(0.45, 0.65)
@@ -425,64 +493,121 @@ def build_building_mesh(width, depth, height, roof_style, setback, building_type
     return mb
 
 
-def build_city_cluster(region_cfg, tier, tier_cfg, rng):
+def layout_grid(count, cell_w, cell_d, rng, pos_jitter, rot_jitter_deg):
+    """Tidy, mostly-regular lattice: a metropolis block of towers, an
+    urban_core street grid, or a commie_block district's repeated rows all
+    read as *organized*, so positions/rotations only get a small fraction of
+    a cell's own jitter (pos_jitter) and a small yaw jitter (rot_jitter_deg),
+    both scaled down further here vs. layout_scatter's use of the same
+    knobs -- a "grid" archetype should still look like a grid even with its
+    own pos_jitter/rot_jitter_deg dialed up a little for variety."""
+    cols = rng.randint(3, 5)
+    rows = math.ceil(count / cols)
+    placements = []
+    for row in range(rows):
+        for col in range(cols):
+            if len(placements) >= count:
+                break
+            bx = (col - (cols - 1) / 2.0) * cell_w + rng.uniform(-pos_jitter, pos_jitter) * cell_w * 0.5
+            bz = (row - (rows - 1) / 2.0) * cell_d + rng.uniform(-pos_jitter, pos_jitter) * cell_d * 0.5
+            yaw_deg = rng.uniform(-rot_jitter_deg, rot_jitter_deg)
+            placements.append((bx, bz, math.radians(yaw_deg)))
+    return placements
+
+
+def layout_scatter(count, cell_w, cell_d, rng, pos_jitter, rot_jitter_deg, spread_mult):
+    """Loose, irregular sprawl: a suburb's houses on curving/angled lots, or
+    an informal settlement's chaotic packing. Still starts from the same
+    grid of cells as layout_grid (so buildings still don't just pile on top
+    of each other), but `spread_mult` widens the cells themselves and both
+    pos_jitter and rot_jitter_deg are used at full strength (typically much
+    higher values than a "grid" archetype passes in), so buildings sit at
+    visibly varied positions AND angles instead of facing a uniform way."""
+    cols = rng.randint(3, 5)
+    rows = math.ceil(count / cols)
+    cell_w *= spread_mult
+    cell_d *= spread_mult
+    placements = []
+    for row in range(rows):
+        for col in range(cols):
+            if len(placements) >= count:
+                break
+            bx = (col - (cols - 1) / 2.0) * cell_w + rng.uniform(-pos_jitter, pos_jitter) * cell_w
+            bz = (row - (rows - 1) / 2.0) * cell_d + rng.uniform(-pos_jitter, pos_jitter) * cell_d
+            yaw_deg = rng.uniform(-rot_jitter_deg, rot_jitter_deg)
+            placements.append((bx, bz, math.radians(yaw_deg)))
+    return placements
+
+
+LAYOUTS = {"grid": layout_grid, "scatter": layout_scatter}
+
+
+def build_city_cluster(archetype_cfg, region_cfg, distance, rng):
     """Builds ONE .mesh's worth of content: a small city-block cluster of
     BUILDINGS_PER_MESH (10-20) individual buildings of mixed types, laid out
-    on a jittered grid and merged into a single combined mesh (this mirrors
-    vanilla's own city meshes, which are likewise multi-building clusters,
-    not single buildings -- one clutter placement = one little block, not
-    one house). Building types are picked per-tier via TIER_TYPE_WEIGHTS so
-    e.g. a tier-4 "downtown" cluster leans heavily on towers/blocks while a
-    tier-1 "outskirts" cluster is mostly houses."""
+    and merged into a single combined mesh (this mirrors vanilla's own city
+    meshes, which are likewise multi-building clusters, not single buildings
+    -- one clutter placement = one little block, not one house).
+
+    Building types are picked from the LOCALE's archetype (`type_weights`),
+    not from region or distance -- that's the actual-building-type split:
+    a metropolis leans on tower/block regardless of which region it's
+    styled as, a suburb leans on house/rowhouse/shop regardless of distance.
+    Region only nudges footprint/height scale and (for small residential
+    types) roof style; distance only applies a mild overall size bump
+    (DISTANCE_SCALE) on top of the archetype's own base size.
+
+    How buildings are actually arranged also comes from the archetype: its
+    `layout` ("grid" or "scatter", see LAYOUTS) plus `pos_jitter` /
+    `rot_jitter_deg` / `spread_mult` decide whether this cluster reads as an
+    organized block or a sprawling, irregularly angled district."""
     count = rng.randint(*BUILDINGS_PER_MESH)
-    weights = TIER_TYPE_WEIGHTS[tier]
+    weights = archetype_cfg["type_weights"]
     type_names = list(weights.keys())
     type_probs = list(weights.values())
 
-    base_fw, base_fd = tier_cfg["footprint"]
-    h_lo, h_hi = tier_cfg["height"]
+    base_fw, base_fd = archetype_cfg["footprint"]
+    h_lo, h_hi = archetype_cfg["height"]
+    dist_scale = DISTANCE_SCALE[distance]
 
-    # loose grid, wide enough that even the biggest type in this tier won't
-    # overlap its neighbours; some per-cell jitter keeps it from looking
-    # like a spreadsheet.
-    cols = rng.randint(3, 5)
-    rows = math.ceil(count / cols)
-    cell_w = base_fw * region_cfg["footprint_scale"] * 2.3
-    cell_d = base_fd * region_cfg["footprint_scale"] * 2.3
+    # cell size wide enough that even the biggest type in this archetype
+    # won't overlap its neighbours before the layout's own jitter/spread.
+    cell_w = base_fw * region_cfg["footprint_scale"] * dist_scale * 2.3
+    cell_d = base_fd * region_cfg["footprint_scale"] * dist_scale * 2.3
+
+    layout_fn = LAYOUTS[archetype_cfg["layout"]]
+    placements = layout_fn(
+        count, cell_w, cell_d, rng,
+        pos_jitter=archetype_cfg["pos_jitter"],
+        rot_jitter_deg=archetype_cfg["rot_jitter_deg"],
+        **({"spread_mult": archetype_cfg["spread_mult"]} if archetype_cfg["layout"] == "scatter" else {})
+    )
 
     cluster = MeshBuilder()
-    placed = 0
-    for row in range(rows):
-        for col in range(cols):
-            if placed >= count:
-                break
-            btype = rng.choices(type_names, weights=type_probs, k=1)[0]
-            type_cfg = BUILDING_TYPES[btype]
+    for (bx, bz, yaw) in placements:
+        btype = rng.choices(type_names, weights=type_probs, k=1)[0]
+        type_cfg = BUILDING_TYPES[btype]
 
-            fw = base_fw * type_cfg["w_mult"] * region_cfg["footprint_scale"] * rng.uniform(0.85, 1.15)
-            fd = base_fd * type_cfg["d_mult"] * region_cfg["footprint_scale"] * rng.uniform(0.85, 1.15)
-            height = rng.uniform(h_lo, h_hi) * type_cfg["h_mult"] * region_cfg["height_scale"]
+        fw = base_fw * type_cfg["w_mult"] * region_cfg["footprint_scale"] * dist_scale * rng.uniform(0.85, 1.15)
+        fd = base_fd * type_cfg["d_mult"] * region_cfg["footprint_scale"] * dist_scale * rng.uniform(0.85, 1.15)
+        height = rng.uniform(h_lo, h_hi) * type_cfg["h_mult"] * region_cfg["height_scale"] * dist_scale
 
-            # small residential types take on the region's own roof style
-            # (that's the regional-architecture cue); everything else -
-            # shops, blocks, towers - is flat-roofed regardless of region.
-            if btype in ("house", "rowhouse"):
-                roof_style = region_cfg["roof_style"]
-            else:
-                roof_style = "flat"
-            setback = type_cfg.get("setback", False)
+        # small residential types take on the region's own roof style
+        # (that's the regional-architecture cue); everything else - shops,
+        # blocks, towers - is flat-roofed regardless of region.
+        if btype in ("house", "rowhouse"):
+            roof_style = region_cfg["roof_style"]
+        else:
+            roof_style = "flat"
+        setback = type_cfg.get("setback", False)
 
-            bx = (col - (cols - 1) / 2.0) * cell_w + rng.uniform(-0.12, 0.12) * cell_w
-            bz = (row - (rows - 1) / 2.0) * cell_d + rng.uniform(-0.12, 0.12) * cell_d
+        building = build_building_mesh(
+            width=fw * UNIT_SCALE, depth=fd * UNIT_SCALE, height=height * UNIT_SCALE,
+            roof_style=roof_style, setback=setback, building_type=btype, rng=rng,
+        )
+        cluster.extend(building, offset=(bx * UNIT_SCALE, 0.0, bz * UNIT_SCALE), yaw=yaw)
 
-            building = build_building_mesh(
-                width=fw * UNIT_SCALE, depth=fd * UNIT_SCALE, height=height * UNIT_SCALE,
-                roof_style=roof_style, setback=setback, building_type=btype, rng=rng,
-            )
-            cluster.extend(building, offset=(bx * UNIT_SCALE, 0.0, bz * UNIT_SCALE))
-            placed += 1
-
-    return cluster, count
+    return cluster, len(placements)
 
 
 # ---------------------------------------------------------------------------
@@ -751,39 +876,45 @@ def write_atlas_dds(path, mesh_code):
 # generation driver
 # ---------------------------------------------------------------------------
 
-def region_mesh_name(region, tier, variant):
-    return "{}_buildings_{}_{:02d}".format(region, tier, variant)
+def locale_mesh_name(locale_name, distance, variant):
+    return "{}_buildings_{}_{:02d}".format(locale_name, distance, variant)
 
 
-def generate_region_shared_textures(region_dir, region_name):
+def generate_locale_shared_textures(locale_dir, locale_name):
     """Normal/specular stay flat, neutral, and shared across every mesh in
-    the region -- only the diffuse becomes a unique labeled texture per
-    mesh (see generate_region)."""
-    write_flat_dds(os.path.join(region_dir, "{}_normal.dds".format(region_name)), 4, 4, (255, 128, 128, 255))  # flat "up" normal (BGRA)
-    write_flat_dds(os.path.join(region_dir, "{}_specular.dds".format(region_name)), 4, 4, (20, 20, 20, 255))   # low, uniform shininess
+    the locale -- only the diffuse becomes a unique labeled texture per
+    mesh (see generate_locale)."""
+    write_flat_dds(os.path.join(locale_dir, "{}_normal.dds".format(locale_name)), 4, 4, (255, 128, 128, 255))  # flat "up" normal (BGRA)
+    write_flat_dds(os.path.join(locale_dir, "{}_specular.dds".format(locale_name)), 4, 4, (20, 20, 20, 255))   # low, uniform shininess
 
 
-def generate_region(region_name, region_cfg, out_root):
-    region_dir = os.path.join(out_root, "gfx", "models", "buildings", region_name)
-    os.makedirs(region_dir, exist_ok=True)
-    generate_region_shared_textures(region_dir, region_name)
+def generate_locale(archetype_key, archetype_cfg, region_key, region_cfg, color_index, out_root):
+    """Generates every mesh/texture/gfx/asset for one (archetype, region)
+    LOCALE -- e.g. "metropolis_western" -- across all 4 DISTANCE_LEVELS x
+    VARIANTS_PER_TIER variants, exactly like a vanilla "region" folder used
+    to, just keyed on archetype+region together instead of region alone."""
+    locale_name = "{}_{}".format(archetype_key, region_key)
+    locale_dir = os.path.join(out_root, "gfx", "models", "buildings", locale_name)
+    os.makedirs(locale_dir, exist_ok=True)
+    generate_locale_shared_textures(locale_dir, locale_name)
 
-    normal_tex = "{}_normal.dds".format(region_name)
+    normal_tex = "{}_normal.dds".format(locale_name)
 
     gfx_lines = ["objectTypes = {"]
     asset_lines = []
-    mesh_names_by_tier = {}
+    mesh_names_by_distance = {}
     total_buildings = 0
 
-    for tier, tier_cfg in sorted(DENSITY_TIERS.items()):
-        mesh_names_by_tier[tier] = []
+    for distance in DISTANCE_LEVELS:
+        mesh_names_by_distance[distance] = []
         for variant in range(1, VARIANTS_PER_TIER + 1):
-            name = region_mesh_name(region_name, tier, variant)
-            rng = random.Random("{}-{}-{}".format(region_name, tier, variant))
+            name = locale_mesh_name(locale_name, distance, variant)
+            rng = random.Random("{}-{}-{}".format(locale_name, distance, variant))
 
             # each .mesh is a small city-block cluster of 10-20 mixed
-            # building types, not a single building (see build_city_cluster).
-            mb, building_count = build_city_cluster(region_cfg, tier, tier_cfg, rng)
+            # building types drawn from this LOCALE's archetype, arranged by
+            # its archetype's own layout (see build_city_cluster).
+            mb, building_count = build_city_cluster(archetype_cfg, region_cfg, distance, rng)
             total_buildings += building_count
 
             # unique per-mesh "dev texture" atlas: one labeled, outlined,
@@ -791,15 +922,15 @@ def generate_region(region_name, region_cfg, out_root):
             # strip carrying this mesh's own identifying code -- lets you
             # tell every building type and roof shape apart, and identify
             # any mesh, in-engine at a glance (see write_atlas_dds).
-            label = "{}-T{}-{:02d}".format(region_cfg["abbr"], tier, variant)
+            label = "{}-{}-T{}-{:02d}".format(archetype_cfg["abbr"], region_cfg["abbr"], distance, variant)
             diffuse_tex = "{}_diffuse.dds".format(name)
-            write_atlas_dds(os.path.join(region_dir, diffuse_tex), label)
+            write_atlas_dds(os.path.join(locale_dir, diffuse_tex), label)
 
-            mesh_path = os.path.join(region_dir, name + ".mesh")
+            mesh_path = os.path.join(locale_dir, name + ".mesh")
             shape_name = "{}Shape".format(name)
             write_mesh_file(mesh_path, mb, shape_name, "PdxMeshAdvanced", diffuse_tex, normal_tex)
 
-            rel_mesh_path = "gfx/models/buildings/{}/{}.mesh".format(region_name, name)
+            rel_mesh_path = "gfx/models/buildings/{}/{}.mesh".format(locale_name, name)
             gfx_lines.append("\tpdxmesh = {")
             gfx_lines.append('\t\tname = "{}_mesh"'.format(name))
             gfx_lines.append('\t\tfile = "{}"'.format(rel_mesh_path))
@@ -808,7 +939,7 @@ def generate_region(region_name, region_cfg, out_root):
             gfx_lines.append("\t\t\tindex = 0")
             gfx_lines.append('\t\t\ttexture_diffuse = "{}"'.format(diffuse_tex))
             gfx_lines.append('\t\t\ttexture_normal = "{}"'.format(normal_tex))
-            gfx_lines.append('\t\t\ttexture_specular = "{}_specular.dds"'.format(region_name))
+            gfx_lines.append('\t\t\ttexture_specular = "{}_specular.dds"'.format(locale_name))
             gfx_lines.append('\t\t\tshader = "PdxMeshAdvanced"')
             gfx_lines.append("\t\t}")
             gfx_lines.append("\t}")
@@ -820,42 +951,45 @@ def generate_region(region_name, region_cfg, out_root):
             asset_lines.append('}')
             asset_lines.append('')
 
-            mesh_names_by_tier[tier].append(name)
+            mesh_names_by_distance[distance].append(name)
 
     gfx_lines.append("}")
 
-    with open(os.path.join(region_dir, "{}_buildings.gfx".format(region_name)), "w") as f:
+    with open(os.path.join(locale_dir, "{}_buildings.gfx".format(locale_name)), "w") as f:
         f.write("\n".join(gfx_lines) + "\n")
-    with open(os.path.join(region_dir, "{}_buildings.asset".format(region_name)), "w") as f:
+    with open(os.path.join(locale_dir, "{}_buildings.asset".format(locale_name)), "w") as f:
         f.write("\n".join(asset_lines))
 
-    return mesh_names_by_tier, total_buildings
+    return locale_name, mesh_names_by_distance, total_buildings
 
 
-def generate_cities_txt_fragment(all_mesh_names, out_root):
-    """Writes a ready-to-merge city_group per region, in the exact shape
+def generate_cities_txt_fragment(locale_results, out_root):
+    """Writes a ready-to-merge city_group per LOCALE, in the exact shape
     vanilla's own map/cities.txt uses. `distance` is sorted growing (1 =
     urban edge / sparse, 4 = urban core / dense) per vanilla convention;
-    each tier's mesh pool is written as multiple candidate meshes so the
+    each distance's mesh pool is written as multiple candidate meshes so the
     game can pick between the 4 hand-varied variants (mirrors how vanilla
-    lists e.g. "asia_city_01_entity".."asia_city_04_entity" as siblings)."""
+    lists e.g. "asia_city_01_entity".."asia_city_04_entity" as siblings).
+    `locale_results` is a list of (archetype_key, region_key, color_index,
+    locale_name, mesh_names_by_distance) tuples, one per LOCALES entry."""
     lines = []
     lines.append("# Generated by generate_city_models.py -- merge these city_group")
     lines.append("# blocks into your mod's map/cities.txt. Paint map/cities.bmp with")
-    lines.append("# the matching color_index wherever you want each region's style to")
+    lines.append("# the matching color_index wherever you want each locale's style to")
     lines.append("# appear (this is how vanilla assigns Western/Asian/French/uncivilized")
-    lines.append("# city looks to different parts of the map).")
+    lines.append("# city looks to different parts of the map -- here it's per")
+    lines.append("# archetype+region combination instead of per region alone).")
     lines.append("")
-    for region_name, region_cfg in REGIONS.items():
-        lines.append("city_group = {")
+    for (archetype_key, region_key, color_index, locale_name, mesh_names_by_distance) in locale_results:
+        lines.append("city_group = {{ # {} ({} archetype, {} region)".format(locale_name, archetype_key, region_key))
         lines.append("\tcolor_index = {} # paint this palette index onto map/cities.bmp for {}".format(
-            region_cfg["color_index"], region_name))
-        lines.append("\tdensity = 0.5 # fraction of urban-blob pixels that spawn a building -- tune per region")
+            color_index, locale_name))
+        lines.append("\tdensity = 0.5 # fraction of urban-blob pixels that spawn a building -- tune per locale")
         lines.append("")
-        for tier in sorted(all_mesh_names[region_name].keys()):
-            names = all_mesh_names[region_name][tier]
+        for distance in sorted(mesh_names_by_distance.keys()):
+            names = mesh_names_by_distance[distance]
             lines.append("\tbuilding = {")
-            lines.append("\t\tdistance = {} # tier {} ({})".format(tier, tier, DENSITY_TIERS[tier]["label"]))
+            lines.append("\t\tdistance = {} # 1 = sparse urban-blob edge, 4 = dense urban-blob core".format(distance))
             lines.append("\t\tmesh = {")
             for n in names:
                 lines.append('\t\t\t"{}_entity"'.format(n))
@@ -868,7 +1002,7 @@ def generate_cities_txt_fragment(all_mesh_names, out_root):
         f.write("\n".join(lines))
 
 
-def generate_readme(out_root, all_mesh_names):
+def generate_readme(out_root, locale_results):
     lines = []
     lines.append("# Generated placeholder city models")
     lines.append("")
@@ -876,63 +1010,101 @@ def generate_readme(out_root, all_mesh_names):
     lines.append("`generate_city_models.py`. Nothing has been copied into your live")
     lines.append("mod -- do that yourself once you're happy with the results:")
     lines.append("")
-    lines.append("1. Copy `gfx/models/buildings/<region>/` into your mod's own")
-    lines.append("   `gfx/models/buildings/<region>/` folder.")
+    lines.append("1. Copy `gfx/models/buildings/<archetype>_<region>/` into your mod's")
+    lines.append("   own `gfx/models/buildings/<archetype>_<region>/` folder.")
     lines.append("2. Merge the `city_group` blocks in `map/cities_fragment.txt` into")
     lines.append("   your mod's `map/cities.txt` (copy the vanilla file into your mod")
     lines.append("   first if you don't have your own copy yet -- HOI4 mods override")
     lines.append("   base files wholesale, they don't merge automatically).")
-    lines.append("3. In `map/cities.bmp`, paint the region(s) you want onto the")
+    lines.append("3. In `map/cities.bmp`, paint the locale(s) you want onto the")
     lines.append("   geographic areas where that building style should appear, using")
     lines.append("   the palette `color_index` values from step 2. This bitmap is")
     lines.append("   indexed-color -- edit the palette, don't just pick RGB values.")
     lines.append("4. Reload the map in-game (or restart) to see the new clutter.")
     lines.append("")
-    lines.append("## Regions x density tiers generated")
+    lines.append("## Archetypes")
     lines.append("")
-    for region_name in REGIONS:
+    lines.append("Buildings are split first by *actual building type* -- the")
+    lines.append("archetype -- not just by region. Each archetype has its own mix of")
+    lines.append("`BUILDING_TYPES` and its own spawn layout:")
+    lines.append("")
+    for key, cfg in ARCHETYPES.items():
+        type_mix = ", ".join("{} {:.0%}".format(t, w) for t, w in cfg["type_weights"].items())
+        lines.append("- **{}** ({}): {} layout, types: {}".format(key, cfg["abbr"], cfg["layout"], type_mix))
+    lines.append("")
+    lines.append("Two spawn layouts (see `layout_grid` / `layout_scatter` / `LAYOUTS`):")
+    lines.append("")
+    lines.append("- **grid** -- a tidy, lightly-jittered lattice. Used by archetypes that")
+    lines.append("  should read as organized city blocks (`metropolis`'s towers,")
+    lines.append("  `urban_core`'s street grid, `commie_block`'s uniform rows).")
+    lines.append("- **scatter** -- wide positional jitter *and* a random yaw rotation per")
+    lines.append("  building. Used by archetypes that should sprawl at irregular angles")
+    lines.append("  (`suburb`'s houses on varied lots, `informal`'s chaotic packing).")
+    lines.append("")
+    lines.append("## Regions")
+    lines.append("")
+    lines.append("A region is a lighter-weight flavor layered on top of an archetype --")
+    lines.append("it nudges footprint/height scale and picks the roof style small")
+    lines.append("residential buildings use, so e.g. a western suburb and an east asian")
+    lines.append("suburb are both unmistakably suburbs, just styled differently:")
+    lines.append("")
+    for key, cfg in REGIONS.items():
+        lines.append("- **{}** ({}): {} roofs, footprint x{:.2f}, height x{:.2f}".format(
+            key, cfg["abbr"], cfg["roof_style"], cfg["footprint_scale"], cfg["height_scale"]))
+    lines.append("")
+    lines.append("## Locales generated")
+    lines.append("")
+    lines.append("A LOCALE is one curated (archetype, region, color_index) combination --")
+    lines.append("its own city_group / palette color, same as a vanilla \"region\" was:")
+    lines.append("")
+    for (archetype_key, region_key, color_index, locale_name, mesh_names_by_distance) in locale_results:
         lines.append("- **{}** (color_index {}): {}".format(
-            region_name, REGIONS[region_name]["color_index"],
-            ", ".join("tier {} x{}".format(t, len(all_mesh_names[region_name][t])) for t in sorted(all_mesh_names[region_name]))))
+            locale_name, color_index,
+            ", ".join("distance {} x{}".format(d, len(mesh_names_by_distance[d])) for d in sorted(mesh_names_by_distance))))
     lines.append("")
-    lines.append("Density tiers follow vanilla's `distance` field in cities.txt: tier 1")
-    lines.append("is the sparse outer edge of an urban blob, tier 4 is the dense core.")
-    lines.append("Edit `DENSITY_TIERS` / `REGIONS` at the top of the script to add more")
-    lines.append("regions, retune footprints/heights, or change roof styles.")
+    lines.append("`distance` still follows vanilla's field in cities.txt: 1 is the sparse")
+    lines.append("outer edge of an urban blob, 4 is the dense core -- here it's a mild")
+    lines.append("size bump (`DISTANCE_SCALE`) applied on top of a locale's own")
+    lines.append("archetype, so a locale never changes character across distances, only")
+    lines.append("size. Edit `ARCHETYPES` / `REGIONS` / `LOCALES` at the top of the")
+    lines.append("script to add more, retune footprints/heights/layouts, or change roof")
+    lines.append("styles.")
     lines.append("")
     lines.append("## About the geometry")
     lines.append("")
     lines.append("Each `.mesh` file is a small city-block CLUSTER of 10-20 individual")
     lines.append("low-poly buildings (see `BUILDINGS_PER_MESH`), not a single building --")
     lines.append("this matches vanilla's own city meshes, which are likewise multi-")
-    lines.append("building chunks. Building *type* is picked per building from")
-    lines.append("`TIER_TYPE_WEIGHTS`, so the mix changes with density tier (mostly")
-    lines.append("`house`/`shed` at the sparse outskirts tier, mostly `tower`/`block` at")
-    lines.append("the dense downtown tier -- see `BUILDING_TYPES`). Each individual")
-    lines.append("building is a deliberately crude, low-poly, flat-shaded box (with an")
-    lines.append("optional pitched roof or a stacked \"setback\" block for towers) --")
-    lines.append("stand-ins to get the region/density/type pipeline wired up and")
-    lines.append("testable in-game before you commission or model real low-poly")
-    lines.append("buildings. The `.mesh` files are real, valid PDX binary meshes")
-    lines.append("(reverse-engineered from TGC-Hearts-of-Iron-IV's own files), so they")
-    lines.append("will load in-engine as-is.")
+    lines.append("building chunks. Building *type* is picked per building from its")
+    lines.append("locale's archetype `type_weights` (see `ARCHETYPES`), and *layout* --")
+    lines.append("grid vs. scatter, including per-building yaw rotation for scatter --")
+    lines.append("also comes from the archetype (see `build_city_cluster`,")
+    lines.append("`layout_grid`/`layout_scatter`). Each individual building is a")
+    lines.append("deliberately crude, low-poly, flat-shaded box (with an optional")
+    lines.append("pitched roof or a stacked \"setback\" block for towers) -- stand-ins to")
+    lines.append("get the archetype/region/distance pipeline wired up and testable")
+    lines.append("in-game before you commission or model real low-poly buildings. The")
+    lines.append("`.mesh` files are real, valid PDX binary meshes (reverse-engineered")
+    lines.append("from TGC-Hearts-of-Iron-IV's own files), so they will load in-engine")
+    lines.append("as-is.")
     lines.append("")
     lines.append("## About the textures")
     lines.append("")
     lines.append("Every mesh gets its own \"dev texture\" diffuse atlas (see")
     lines.append("`_build_atlas_layout()` / `write_atlas_dds()`): a thin top strip")
-    lines.append("carrying the mesh's own identifying code (`{REGION_ABBR}-T{tier}-")
-    lines.append("{variant}`, e.g. `EEU-T4-04`), then a grid with one colored, outlined,")
-    lines.append("labeled cell per building type -- `HOUSE`, `ROWHOUSE`, `SHOP`, `SHED`,")
-    lines.append("`BLOCK`, `TOWER` -- and one per roof shape -- `PITCHED`, `FLAT`. Every")
-    lines.append("wall face UVs into its building's own type cell (`WALL_UV_BY_TYPE`) and")
-    lines.append("every roof face into its roof-shape cell (`ROOF_UV_BY_STYLE`), so a")
-    lines.append("house's walls, a tower's walls, and a pitched vs. flat roof all read as")
-    lines.append("visibly different materials in-engine -- not just \"wall\" vs. \"roof\",")
-    lines.append("but a distinct look per building type, wherever that's actually useful")
+    lines.append("carrying the mesh's own identifying code (`{ARCHETYPE_ABBR}-")
+    lines.append("{REGION_ABBR}-T{distance}-{variant}`, e.g. `MET-EAS-T4-04`), then a")
+    lines.append("grid with one colored, outlined, labeled cell per building type --")
+    lines.append("`HOUSE`, `ROWHOUSE`, `SHOP`, `SHED`, `BLOCK`, `TOWER` -- and one per")
+    lines.append("roof shape -- `PITCHED`, `FLAT`. Every wall face UVs into its")
+    lines.append("building's own type cell (`WALL_UV_BY_TYPE`) and every roof face into")
+    lines.append("its roof-shape cell (`ROOF_UV_BY_STYLE`), so a house's walls, a")
+    lines.append("tower's walls, and a pitched vs. flat roof all read as visibly")
+    lines.append("different materials in-engine -- not just \"wall\" vs. \"roof\", but a")
+    lines.append("distinct look per building type, wherever that's actually useful")
     lines.append("(every type gets its own wall look; roofs only have two distinct")
     lines.append("*shapes*, so those two share their cells across every type that uses")
-    lines.append("them). Normal/specular stay flat and shared per-region. Edit")
+    lines.append("them). Normal/specular stay flat and shared per-locale. Edit")
     lines.append("`WALL_FILL_BY_TYPE` / `ROOF_FILL_BY_STYLE` to change colors, `FONT_5X7`")
     lines.append("to add characters, or `_build_atlas_layout()` to change the grid.")
     with open(os.path.join(out_root, "README.md"), "w") as f:
@@ -943,20 +1115,23 @@ def main():
     out_root = OUTPUT_DIR
     os.makedirs(os.path.join(out_root, "map"), exist_ok=True)
 
-    all_mesh_names = {}
+    locale_results = []
     total_meshes = 0
     total_buildings = 0
-    for region_name, region_cfg in REGIONS.items():
-        mesh_names_by_tier, region_buildings = generate_region(region_name, region_cfg, out_root)
-        all_mesh_names[region_name] = mesh_names_by_tier
-        total_meshes += sum(len(v) for v in mesh_names_by_tier.values())
-        total_buildings += region_buildings
+    for (archetype_key, region_key, color_index) in LOCALES:
+        archetype_cfg = ARCHETYPES[archetype_key]
+        region_cfg = REGIONS[region_key]
+        locale_name, mesh_names_by_distance, locale_buildings = generate_locale(
+            archetype_key, archetype_cfg, region_key, region_cfg, color_index, out_root)
+        locale_results.append((archetype_key, region_key, color_index, locale_name, mesh_names_by_distance))
+        total_meshes += sum(len(v) for v in mesh_names_by_distance.values())
+        total_buildings += locale_buildings
 
-    generate_cities_txt_fragment(all_mesh_names, out_root)
-    generate_readme(out_root, all_mesh_names)
+    generate_cities_txt_fragment(locale_results, out_root)
+    generate_readme(out_root, locale_results)
 
-    print("Generated {} regions x {} tiers x {} variants = {} mesh files, {} buildings total".format(
-        len(REGIONS), len(DENSITY_TIERS), VARIANTS_PER_TIER, total_meshes, total_buildings))
+    print("Generated {} locales ({} archetypes x {} regions curated) x {} distances x {} variants = {} mesh files, {} buildings total".format(
+        len(LOCALES), len(ARCHETYPES), len(REGIONS), len(DISTANCE_LEVELS), VARIANTS_PER_TIER, total_meshes, total_buildings))
     print("Output written to: {}/".format(os.path.abspath(out_root)))
 
 
