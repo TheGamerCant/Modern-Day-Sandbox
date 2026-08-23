@@ -500,14 +500,30 @@ def add_box_walls_and_flat_roof(wall_mb, roof_mb, hw, hd, wall_h, y0=0.0, roof=T
     a repeated texture instead of one squashed copy -- just via hardware
     UV-wrap now instead of extra geometry."""
     y1 = y0 + wall_h
+    # Every wall quad below is deliberately wound so p1-p0 (add_quad/
+    # add_tiled_quad's "u" edge) is always the HORIZONTAL edge (around the
+    # building) and p3-p0 ("v" edge) is always the VERTICAL edge (up) --
+    # same convention on all 4 walls. That consistency is what this bug
+    # report ("each face is rotated differently") was missing: front/back
+    # and left/right used to each be wound independently (whatever
+    # happened to trace out the correct OUTWARD normal), so 2 of the 4
+    # walls ended up with u/v transposed relative to the other 2 -- with a
+    # flat fill color + tiny label that was nearly invisible, but once
+    # walls got real directional bump patterns (brick coursing, corrugation
+    # -- see BUMP_PROFILES) and hardware-wrap tiling (see add_tiled_quad),
+    # a transposed face very visibly shows its pattern running sideways
+    # instead of upright, and its texture repeating across the wrong axis.
+    # Every quad below keeps its original (already-correct) outward
+    # normal -- only which corner is p0 changes (a cyclic shift around the
+    # same 4 corners doesn't change a planar quad's winding/normal).
     # front (-z)
-    wall_mb.add_tiled_quad((-hw, y0, -hd), (-hw, y1, -hd), (hw, y1, -hd), (hw, y0, -hd))
+    wall_mb.add_tiled_quad((-hw, y1, -hd), (hw, y1, -hd), (hw, y0, -hd), (-hw, y0, -hd))
     # back (+z)
     wall_mb.add_tiled_quad((-hw, y0, hd), (hw, y0, hd), (hw, y1, hd), (-hw, y1, hd))
     # left (-x)
     wall_mb.add_tiled_quad((-hw, y0, -hd), (-hw, y0, hd), (-hw, y1, hd), (-hw, y1, -hd))
     # right (+x)
-    wall_mb.add_tiled_quad((hw, y0, -hd), (hw, y1, -hd), (hw, y1, hd), (hw, y0, hd))
+    wall_mb.add_tiled_quad((hw, y1, -hd), (hw, y1, hd), (hw, y0, hd), (hw, y0, -hd))
     if roof:
         # top (+y)
         roof_mb.add_tiled_quad((-hw, y1, -hd), (-hw, y1, hd), (hw, y1, hd), (hw, y1, -hd))
