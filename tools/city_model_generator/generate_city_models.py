@@ -78,13 +78,15 @@ south_america, eastern_europe) and 5 example archetypes (suburb, urban_core,
 metropolis, commie_block, informal), combined into 13 example locales -- add/
 rename/recombine in REGIONS / ARCHETYPES / LOCALES below.
 
-Texturing is a single shared "dev texture" diffuse (+ matching normal/
-specular) used by every mesh in every locale -- not one generated per mesh
-any more. It's a packed grid of equal SQUARE cells with no gutter or
-outline between them, one cell per building type (house, rowhouse, shop,
-shed, block, tower) and one per roof shape (pitched, flat), each colored
-and labeled via a tiny built-in bitmap font (see write_shared_diffuse_atlas
-/ _build_atlas_layout). Because a building's actual wall or roof face is
+Texturing is one "dev texture" diffuse (+ matching normal/specular) PER
+LOCALE (e.g. `commie_block_eastern_europe_diffuse.dds`) -- shared by every
+mesh within that locale (every distance/variant), but not with any other
+locale, and not one generated per individual mesh either. It's a packed
+grid of equal SQUARE cells with no gutter or outline between them, one
+cell per building type (house, rowhouse, shop, shed, block, tower) and one
+per roof shape (pitched, flat), each colored and labeled via a tiny
+built-in bitmap font (see write_diffuse_atlas / _build_atlas_layout).
+Because a building's actual wall or roof face is
 almost never itself square -- a metropolis tower's wall is far taller than
 it is wide; a commie_block slab's long face is far wider than it is tall --
 each face is TILED with repeated copies of its square cell rather than one
@@ -253,19 +255,20 @@ PITCHED_ROOF_HEIGHT_FRACTION = 0.35  # roof apex height, as a fraction of wall h
 
 # ---------------------------------------------------------------------------
 # Texture atlas layout -- shared by geometry (UV mapping) and the
-# placeholder texture generator. This is now ONE diffuse (+ one shared
-# normal, one shared specular) for the WHOLE output, not one generated per
-# mesh -- see generate_shared_textures / write_shared_diffuse_atlas. Its
-# content is a grid with a dedicated wall cell PER BUILDING TYPE plus a
-# dedicated roof cell per roof shape ("different segments for each
+# placeholder texture generator. This is ONE diffuse (+ one normal, one
+# specular) PER LOCALE, not one generated per individual mesh, and not one
+# shared across every locale either -- see generate_locale_textures /
+# write_diffuse_atlas. Its content (identical across locales -- only the
+# filename differs) is a grid with a dedicated wall cell PER BUILDING TYPE
+# plus a dedicated roof cell per roof shape ("different segments for each
 # building type where it's a good idea": walls are what's actually visible
 # and where a house/shed/tower/etc. should read as a different material,
 # so every type gets its own; roofs only have two distinct *shapes*, so
 # those share just two cells rather than one per type). Every cell is an
 # equal SQUARE, and 6 wall types + 2 roof styles = 8 cells packs exactly
 # into a 4x2 grid with nothing left over -- packed edge-to-edge, no gutter
-# or outline between cells (see write_shared_diffuse_atlas). Square cells
-# are what let MeshBuilder.add_tiled_quad repeat a cell cleanly across a
+# or outline between cells (see write_diffuse_atlas). Square cells are
+# what let MeshBuilder.add_tiled_quad repeat a cell cleanly across a
 # non-square face instead of stretching it.
 # ---------------------------------------------------------------------------
 
@@ -305,8 +308,8 @@ def _build_atlas_layout():
     type and every roof style -- all equal ATLAS_CELL_PX squares, packed
     edge-to-edge in row-major order with no gap between them. Single
     source of truth for both the geometry (which UV rect a face tiles
-    into) and write_shared_diffuse_atlas (which pixels to fill/label) --
-    so they can never drift out of sync."""
+    into) and write_diffuse_atlas (which pixels to fill/label) -- so they
+    can never drift out of sync."""
     wall_px, roof_px = {}, {}
     for i, (kind, key) in enumerate(_ATLAS_CELL_ORDER):
         col, row = i % ATLAS_COLS, i // ATLAS_COLS
@@ -964,15 +967,20 @@ def _text_pixel_positions(text, scale):
     return coords, total_w, glyph_h
 
 
-def write_shared_diffuse_atlas(path):
-    """Writes the ONE shared 'dev texture' placeholder diffuse used by
-    every building in every locale (see generate_shared_textures): a
-    packed grid of equal square cells, one per building type
-    (WALL_UV_BY_TYPE) and one per roof style (ROOF_UV_BY_STYLE) -- see
-    _build_atlas_layout(). Cells are packed directly edge-to-edge with no
-    gutter or outline between them -- nothing but each cell's own fill +
-    label -- since with every mesh now reading from one shared file
-    there's no separate per-mesh territory left to visually fence off."""
+def write_diffuse_atlas(path):
+    """Writes one locale's 'dev texture' placeholder diffuse -- shared by
+    every mesh (every distance/variant) within that locale, but not with
+    any other locale (see generate_locale_textures): a packed grid of
+    equal square cells, one per building type (WALL_UV_BY_TYPE) and one
+    per roof style (ROOF_UV_BY_STYLE) -- see _build_atlas_layout(). Cells
+    are packed directly edge-to-edge with no gutter or outline between
+    them -- nothing but each cell's own fill + label -- since with every
+    mesh in this locale reading from the one file there's no separate
+    per-mesh territory left to visually fence off. Content is identical
+    across locales (same building types, same roof styles); only the
+    filename differs per locale (e.g. `commie_block_eastern_europe_
+    diffuse.dds`), so every locale's meshes can reference their own copy
+    by bare filename instead of reaching into a shared folder."""
     width, height = ATLAS_WIDTH, ATLAS_HEIGHT
     BLACK = (0, 0, 0, 255)
 
@@ -1023,43 +1031,44 @@ def locale_mesh_name(locale_name, distance, variant):
     return "{}_buildings_{}_{:02d}".format(locale_name, distance, variant)
 
 
-# Root-relative paths (same convention as a pdxmesh's own "file" field --
-# see write_mesh_file) to the ONE shared diffuse/normal/specular set every
-# locale's every mesh reads from. Generated once by generate_shared_textures,
-# not per-locale or per-mesh any more.
-SHARED_TEXTURES_REL_DIR = "gfx/models/buildings/shared"
-SHARED_DIFFUSE_REL = SHARED_TEXTURES_REL_DIR + "/buildings_diffuse.dds"
-SHARED_NORMAL_REL = SHARED_TEXTURES_REL_DIR + "/buildings_normal.dds"
-SHARED_SPECULAR_REL = SHARED_TEXTURES_REL_DIR + "/buildings_specular.dds"
-
-
-def generate_shared_textures(out_root):
-    """Writes the ONE diffuse/normal/specular set used by every mesh in
-    every locale -- replaces what used to be a unique diffuse generated per
-    mesh (224 near-duplicate files) plus a normal/specular pair duplicated
-    per locale. Every locale's .gfx (and every .mesh's own internal
-    material node) references this same trio by the root-relative paths
-    above, matching how a mesh's own `file` field is already root-relative
-    (not a bare filename), since these textures no longer live next to the
-    meshes that use them."""
-    shared_dir = os.path.join(out_root, "gfx", "models", "buildings", "shared")
-    os.makedirs(shared_dir, exist_ok=True)
-    write_shared_diffuse_atlas(os.path.join(shared_dir, "buildings_diffuse.dds"))
-    write_flat_dds(os.path.join(shared_dir, "buildings_normal.dds"), 4, 4, (255, 128, 128, 255))  # flat "up" normal (BGRA)
-    write_flat_dds(os.path.join(shared_dir, "buildings_specular.dds"), 4, 4, (20, 20, 20, 255))   # low, uniform shininess
+def generate_locale_textures(locale_dir, locale_name):
+    """Writes this LOCALE's own diffuse/normal/specular set (e.g.
+    `commie_block_eastern_europe_diffuse.dds`) -- one set per locale,
+    shared across that locale's own distances/variants but NOT with any
+    other locale. Every texture referenced by anything in `locale_dir`
+    lives in `locale_dir` itself, so every reference to it (both the
+    .mesh's own internal material node and the .gfx's texture_diffuse/
+    texture_normal/texture_specular -- see generate_locale) can just use
+    the bare filename, matching the one confirmed-real vanilla convention
+    (TGC-Hearts-of-Iron-IV's own TEST_building1.mesh: `diffs =
+    "test_buildings_diffuse.dds"`, no path prefix) instead of a
+    root-relative path reaching into another folder -- which is exactly
+    what broke when every locale shared ONE texture set from a separate
+    "shared/" folder: the engine couldn't resolve the cross-folder
+    reference. Keeping the texture beside the mesh that uses it removes
+    that failure mode entirely."""
+    diffuse_name = "{}_diffuse.dds".format(locale_name)
+    normal_name = "{}_normal.dds".format(locale_name)
+    specular_name = "{}_specular.dds".format(locale_name)
+    write_diffuse_atlas(os.path.join(locale_dir, diffuse_name))
+    write_flat_dds(os.path.join(locale_dir, normal_name), 4, 4, (255, 128, 128, 255))  # flat "up" normal (BGRA)
+    write_flat_dds(os.path.join(locale_dir, specular_name), 4, 4, (20, 20, 20, 255))   # low, uniform shininess
+    return diffuse_name, normal_name, specular_name
 
 
 def generate_locale(archetype_key, archetype_cfg, region_key, region_cfg, color_index, out_root):
-    """Generates every mesh/gfx/asset for one (archetype, region) LOCALE --
-    e.g. "metropolis_western" -- across all 4 DISTANCE_LEVELS x
+    """Generates every mesh/texture/gfx/asset for one (archetype, region)
+    LOCALE -- e.g. "metropolis_western" -- across all 4 DISTANCE_LEVELS x
     VARIANTS_PER_TIER variants, exactly like a vanilla "region" folder used
     to, just keyed on archetype+region together instead of region alone.
-    Nothing texture-related is generated here any more -- every mesh just
-    references the one shared diffuse/normal/specular (see
-    generate_shared_textures), called once up in main()."""
+    Every mesh in this locale shares this ONE locale's own diffuse/normal/
+    specular (see generate_locale_textures) -- not one per mesh (too much
+    duplication) and not one shared globally across every locale (broke
+    texture lookup -- see generate_locale_textures)."""
     locale_name = "{}_{}".format(archetype_key, region_key)
     locale_dir = os.path.join(out_root, "gfx", "models", "buildings", locale_name)
     os.makedirs(locale_dir, exist_ok=True)
+    diffuse_tex, normal_tex, specular_tex = generate_locale_textures(locale_dir, locale_name)
 
     gfx_lines = ["objectTypes = {"]
     asset_lines = []
@@ -1080,7 +1089,7 @@ def generate_locale(archetype_key, archetype_cfg, region_key, region_cfg, color_
 
             mesh_path = os.path.join(locale_dir, name + ".mesh")
             shape_name = "{}Shape".format(name)
-            write_mesh_file(mesh_path, mb, shape_name, "PdxMeshAdvanced", SHARED_DIFFUSE_REL, SHARED_NORMAL_REL)
+            write_mesh_file(mesh_path, mb, shape_name, "PdxMeshAdvanced", diffuse_tex, normal_tex)
 
             rel_mesh_path = "gfx/models/buildings/{}/{}.mesh".format(locale_name, name)
             gfx_lines.append("\tpdxmesh = {")
@@ -1089,9 +1098,9 @@ def generate_locale(archetype_key, archetype_cfg, region_key, region_cfg, color_
             gfx_lines.append("\t\tmeshsettings = {")
             gfx_lines.append('\t\t\tname = "{}"'.format(shape_name))
             gfx_lines.append("\t\t\tindex = 0")
-            gfx_lines.append('\t\t\ttexture_diffuse = "{}"'.format(SHARED_DIFFUSE_REL))
-            gfx_lines.append('\t\t\ttexture_normal = "{}"'.format(SHARED_NORMAL_REL))
-            gfx_lines.append('\t\t\ttexture_specular = "{}"'.format(SHARED_SPECULAR_REL))
+            gfx_lines.append('\t\t\ttexture_diffuse = "{}"'.format(diffuse_tex))
+            gfx_lines.append('\t\t\ttexture_normal = "{}"'.format(normal_tex))
+            gfx_lines.append('\t\t\ttexture_specular = "{}"'.format(specular_tex))
             gfx_lines.append('\t\t\tshader = "PdxMeshAdvanced"')
             gfx_lines.append("\t\t}")
             gfx_lines.append("\t}")
@@ -1162,10 +1171,10 @@ def generate_readme(out_root, locale_results):
     lines.append("`generate_city_models.py`. Nothing has been copied into your live")
     lines.append("mod -- do that yourself once you're happy with the results:")
     lines.append("")
-    lines.append("1. Copy `gfx/models/buildings/<archetype>_<region>/` (one folder per")
-    lines.append("   locale) AND `gfx/models/buildings/shared/` (the one diffuse/normal/")
-    lines.append("   specular every locale's meshes reference -- see \"About the")
-    lines.append("   textures\" below) into your mod's own `gfx/models/buildings/`.")
+    lines.append("1. Copy `gfx/models/buildings/<archetype>_<region>/` (one self-contained")
+    lines.append("   folder per locale -- meshes AND that locale's own diffuse/normal/")
+    lines.append("   specular together, see \"About the textures\" below) into your mod's")
+    lines.append("   own `gfx/models/buildings/`.")
     lines.append("2. Merge the `city_group` blocks in `map/cities_fragment.txt` into")
     lines.append("   your mod's `map/cities.txt` (copy the vanilla file into your mod")
     lines.append("   first if you don't have your own copy yet -- HOI4 mods override")
@@ -1252,17 +1261,28 @@ def generate_readme(out_root, locale_results):
     lines.append("")
     lines.append("## About the textures")
     lines.append("")
-    lines.append("There is now exactly ONE diffuse (`{}`), one normal, and one".format(SHARED_DIFFUSE_REL))
-    lines.append("specular -- shared by every building, in every mesh, in every locale")
-    lines.append("(see `generate_shared_textures()` / `write_shared_diffuse_atlas()`),")
-    lines.append("instead of a unique diffuse generated per mesh. It's a grid of equal")
-    lines.append("SQUARE cells packed edge-to-edge with no gutter or border between")
-    lines.append("them, one per building type -- `HOUSE`, `ROWHOUSE`, `SHOP`, `SHED`,")
-    lines.append("`BLOCK`, `TOWER` -- and one per roof shape -- `PITCHED`, `FLAT` (6 + 2")
-    lines.append("= 8 cells, a 4x2 grid with nothing left over). Every wall face UVs into")
-    lines.append("its building's own type cell (`WALL_UV_BY_TYPE`) and every roof face")
-    lines.append("into its roof-shape cell (`ROOF_UV_BY_STYLE`), so a house's walls, a")
-    lines.append("tower's walls, and a pitched vs. flat roof all read as visibly")
+    lines.append("Each LOCALE gets its own diffuse/normal/specular set, named after it")
+    lines.append("(e.g. `commie_block_eastern_europe_diffuse.dds`) and living right beside")
+    lines.append("that locale's own `.mesh`/`.gfx`/`.asset` files -- shared across every")
+    lines.append("distance/variant WITHIN that locale, but not with any other locale, and")
+    lines.append("not unique per individual mesh either (see `generate_locale_textures()`")
+    lines.append("/ `write_diffuse_atlas()`). Every reference to it -- both the `.mesh`'s")
+    lines.append("own internal material node and the `.gfx`'s `texture_diffuse`/")
+    lines.append("`texture_normal`/`texture_specular` -- uses a bare filename, no path,")
+    lines.append("matching the one confirmed-real vanilla convention (a TGC-Hearts-of-")
+    lines.append("Iron-IV sample .mesh's own material node: `diffs = ")
+    lines.append("\"test_buildings_diffuse.dds\"`, no path prefix) -- since the texture")
+    lines.append("always sits in the exact same folder as whatever references it, there's")
+    lines.append("no cross-folder path to get wrong.")
+    lines.append("")
+    lines.append("Content is identical from locale to locale -- only the filename differs")
+    lines.append("-- a grid of equal SQUARE cells packed edge-to-edge with no gutter or")
+    lines.append("border between them, one per building type -- `HOUSE`, `ROWHOUSE`,")
+    lines.append("`SHOP`, `SHED`, `BLOCK`, `TOWER` -- and one per roof shape -- `PITCHED`,")
+    lines.append("`FLAT` (6 + 2 = 8 cells, a 4x2 grid with nothing left over). Every wall")
+    lines.append("face UVs into its building's own type cell (`WALL_UV_BY_TYPE`) and every")
+    lines.append("roof face into its roof-shape cell (`ROOF_UV_BY_STYLE`), so a house's")
+    lines.append("walls, a tower's walls, and a pitched vs. flat roof all read as visibly")
     lines.append("different materials in-engine. A `BUILDING_TYPES` entry can also set")
     lines.append("`wall_type` to borrow another type's cell instead of getting its own --")
     lines.append("e.g. commie_block's `slab_low`/`slab_mid`/`slab_tall` (same material as")
@@ -1282,22 +1302,14 @@ def generate_readme(out_root, locale_results):
     lines.append("here are only ever modest, low-rise shapes where the stretching this")
     lines.append("mostly avoids barely arises anyway.)")
     lines.append("")
-    lines.append("Losing a unique diffuse per mesh also means losing the old per-mesh")
-    lines.append("identifying code baked into the texture (e.g. `MET-EAS-T4-04`) -- with")
-    lines.append("one shared file there's no longer anywhere to put mesh-specific text.")
-    lines.append("Each mesh, entity, and pdxmesh name is still fully identifying on disk")
-    lines.append("and in any asset browser/outliner (e.g.")
+    lines.append("A per-locale (rather than per-mesh) diffuse still means there's no room")
+    lines.append("for a per-mesh identifying code baked into the texture the way an even")
+    lines.append("earlier version of this script did (e.g. `MET-EAS-T4-04`) -- with one")
+    lines.append("file per locale, text on it could only ever identify the locale, which")
+    lines.append("the filename itself already does. Each mesh, entity, and pdxmesh name is")
+    lines.append("still fully identifying on disk and in any asset browser/outliner (e.g.")
     lines.append("`metropolis_western_buildings_2_01_entity`), just not on the texture")
-    lines.append("itself any more.")
-    lines.append("")
-    lines.append("Note on paths: since these textures no longer live next to the meshes")
-    lines.append("that use them, `texture_diffuse`/`texture_normal`/`texture_specular` in")
-    lines.append("every `.gfx` (and the material node inside every `.mesh`) now reference")
-    lines.append("them by a root-relative path (`{}`), the same convention already".format(SHARED_DIFFUSE_REL))
-    lines.append("used by a pdxmesh's own `file` field -- rather than a bare filename.")
-    lines.append("This matches how the mesh path itself is written, but wasn't directly")
-    lines.append("confirmed against a real shared-texture example, so double-check it")
-    lines.append("resolves correctly the first time you load this in-game.")
+    lines.append("itself.")
     lines.append("")
     lines.append("Edit `WALL_FILL_BY_TYPE` / `ROOF_FILL_BY_STYLE` to change colors,")
     lines.append("`FONT_5X7` to add characters, `ATLAS_CELL_PX` to change resolution, or")
@@ -1309,10 +1321,6 @@ def generate_readme(out_root, locale_results):
 def main():
     out_root = OUTPUT_DIR
     os.makedirs(os.path.join(out_root, "map"), exist_ok=True)
-
-    # ONE diffuse/normal/specular set, shared by every mesh in every locale
-    # (see generate_shared_textures) -- generated once, up front.
-    generate_shared_textures(out_root)
 
     locale_results = []
     total_meshes = 0
