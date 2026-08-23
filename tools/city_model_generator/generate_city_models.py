@@ -24,7 +24,7 @@ one level further, by actual BUILDING TYPE first:
   * ARCHETYPE = the actual *kind* of district being generated -- suburb,
               urban_core, metropolis, commie_block, informal. This is what
               decides which BUILDING_TYPES get used and how densely/tall,
-              AND how they're physically arranged (see LAYOUTS below). This
+              AND how they're physically arranged (see LAYOUT_PARAMS below). This
               is the "separate buildings based on actual building type"
               part -- a metropolis is a district of skyscrapers organized
               in a tidy block/grid; a suburb is sprawling houses at loose,
@@ -50,15 +50,24 @@ one level further, by actual BUILDING TYPE first:
 Everything this script produces is a fully valid (if crude) asset: real PDX
 binary .mesh files, real uncompressed .dds textures, real .gfx/.asset text
 files, and a ready-to-merge map/cities.txt fragment. Each .mesh is actually
-a small CLUSTER of 10-20 individual low-poly buildings (mixed types drawn
-from its archetype's own type_weights) merged into one file -- matching how
-vanilla's own city meshes are city-block chunks, not single buildings. Each
-building is an axis-aligned box (+ an optional pitched roof / a smaller
-"setback" block on top for towers) -- these are meant to be stand-ins you
-replace with real hand-modelled low-poly buildings later, not final art.
+a small CLUSTER of individual low-poly buildings (mixed types drawn from
+its archetype's own type_weights) merged into one file -- matching how
+vanilla's own city meshes are city-block chunks, not single buildings. Most
+archetypes cluster 10-20 buildings per mesh (BUILDINGS_PER_MESH); an
+archetype can override this via its own "count_range" -- commie_block does,
+at 5-10, since its buildings (long Soviet-style slabs) are individually much
+bigger. Each building is an axis-aligned box (+ an optional pitched roof / a
+smaller "setback" block on top for towers) -- these are meant to be
+stand-ins you replace with real hand-modelled low-poly buildings later, not
+final art. Whatever the count or layout, buildings within a cluster are
+never allowed to actually overlap: every placement is checked against every
+building already placed (accounting for its real size and yaw rotation)
+before being committed, so a mesh can end up with slightly fewer buildings
+than its count_range's upper bound suggests, but never with two models
+visibly intersecting (see build_city_cluster).
 
-How a cluster's buildings are actually *spawned* also now varies by
-archetype (see LAYOUTS): a "grid" layout places buildings on a tidy,
+How a cluster's buildings are actually *spawned* also varies by archetype
+(see LAYOUT_PARAMS): a "grid" layout places buildings on a tidy,
 lightly-jittered lattice (metropolis/urban_core/commie_block -- a block of
 towers or slabs really is organized that way); a "scatter" layout places
 them with wide positional jitter AND a random yaw rotation per building
@@ -66,7 +75,7 @@ them with wide positional jitter AND a random yaw rotation per building
 
 Ships with 5 example regions (western, east_asian, mediterranean,
 south_america, eastern_europe) and 5 example archetypes (suburb, urban_core,
-metropolis, commie_block, informal), combined into 14 example locales -- add/
+metropolis, commie_block, informal), combined into 13 example locales -- add/
 rename/recombine in REGIONS / ARCHETYPES / LOCALES below. Every mesh's
 diffuse is an obvious "dev texture" atlas: a dedicated colored, outlined,
 labeled cell for each of the 6 building types (house, rowhouse, shop, shed,
@@ -99,7 +108,7 @@ import struct
 OUTPUT_DIR = "output"
 VARIANTS_PER_TIER = 4            # vanilla always ships 4 variants per distance (01-04)
 UNIT_SCALE = 1.0                 # 1 game "map unit" per world unit; tweak to taste
-BUILDINGS_PER_MESH = (10, 20)    # each .mesh is a small city block cluster, not a single building
+BUILDINGS_PER_MESH = (10, 20)    # default per-mesh building count; an archetype can override via its own "count_range"
 DISTANCE_LEVELS = (1, 2, 3, 4)   # cities.txt `distance`: 1 = edge of this locale's urban blob, 4 = its core
 
 # Regional/material flavor -- layered ON TOP of an archetype (see
@@ -124,14 +133,23 @@ REGIONS = {
 # which case the *region's* roof_style wins instead (small residential
 # roofs are the part that actually varies by regional architecture --
 # commercial/tall types are flat-roofed everywhere). "setback" stacks a
-# slimmer block on top, for a skyscraper silhouette.
+# slimmer block on top, for a skyscraper silhouette. "wall_type" (optional)
+# makes this type reuse another type's diffuse-atlas wall segment instead
+# of needing its own dedicated cell -- e.g. the commie_block slab_* types
+# below are all the same "material" as a regular block, just a different
+# massing (much longer, and each a different height tier), so they borrow
+# "block"'s cell rather than bloating the shared atlas with near-duplicates.
 BUILDING_TYPES = {
-    "house":    {"w_mult": 0.90, "d_mult": 0.90, "h_mult": 0.80, "roof": "pitched"},
-    "rowhouse": {"w_mult": 0.60, "d_mult": 1.00, "h_mult": 1.10, "roof": "pitched"},
-    "shop":     {"w_mult": 1.30, "d_mult": 1.00, "h_mult": 0.55, "roof": "flat"},
-    "shed":     {"w_mult": 1.60, "d_mult": 0.80, "h_mult": 0.45, "roof": "flat"},
-    "block":    {"w_mult": 1.10, "d_mult": 1.10, "h_mult": 1.15, "roof": "flat"},
-    "tower":    {"w_mult": 0.85, "d_mult": 0.85, "h_mult": 1.60, "roof": "flat", "setback": True},
+    "house":     {"w_mult": 0.90, "d_mult": 0.90, "h_mult": 0.80, "roof": "pitched"},
+    "rowhouse":  {"w_mult": 0.60, "d_mult": 1.00, "h_mult": 1.10, "roof": "pitched"},
+    "shop":      {"w_mult": 1.30, "d_mult": 1.00, "h_mult": 0.55, "roof": "flat"},
+    "shed":      {"w_mult": 1.60, "d_mult": 0.80, "h_mult": 0.45, "roof": "flat"},
+    "block":     {"w_mult": 1.10, "d_mult": 1.10, "h_mult": 1.15, "roof": "flat"},
+    "tower":     {"w_mult": 0.85, "d_mult": 0.85, "h_mult": 1.60, "roof": "flat", "setback": True},
+    # long Soviet-style residential slabs (commie_block archetype only) --
+    "slab_low":  {"w_mult": 1.00, "d_mult": 2.2, "h_mult": 0.65, "roof": "flat", "wall_type": "block"},
+    "slab_mid":  {"w_mult": 1.00, "d_mult": 2.6, "h_mult": 1.15, "roof": "flat", "wall_type": "block"},
+    "slab_tall": {"w_mult": 0.95, "d_mult": 2.0, "h_mult": 1.85, "roof": "flat", "wall_type": "block"},
 }
 
 # ---------------------------------------------------------------------------
@@ -170,9 +188,15 @@ ARCHETYPES = {
     },
     "commie_block": {
         "abbr": "CBL",
-        "footprint": (7.0, 10.0), "height": (14.0, 20.0),
-        "type_weights": {"block": 1.0},   # near-identical repeated slabs -- deliberately monotonous
+        "footprint": (7.0, 10.0), "height": (10.0, 16.0),
+        # long slabs at 3 distinct height tiers ("various heights") instead
+        # of one generic type -- see slab_low/slab_mid/slab_tall above.
+        "type_weights": {"slab_low": 0.30, "slab_mid": 0.40, "slab_tall": 0.30},
         "layout": "grid", "pos_jitter": 0.02, "rot_jitter_deg": 0, "spread_mult": 1.0,
+        # fewer buildings per mesh than other archetypes -- each one is
+        # much longer, so the same 10-20 count would sprawl this cluster
+        # far larger than every other locale's.
+        "count_range": (5, 10),
     },
     "informal": {
         "abbr": "INF",
@@ -202,7 +226,6 @@ LOCALES = [
     ("metropolis", "east_asian", 18),
     ("metropolis", "mediterranean", 19),
     ("commie_block", "eastern_europe", 20),
-    ("commie_block", "east_asian", 21),
     ("informal", "south_america", 22),
     ("informal", "east_asian", 23),
 ]
@@ -388,8 +411,9 @@ class MeshBuilder:
     def extend(self, other, offset=(0.0, 0.0, 0.0), yaw=0.0):
         """Merges `other` into self, translated by `offset` and (if
         non-zero) first rotated `yaw` radians around the Y (up) axis --
-        this is what lets scatter-layout buildings (see layout_scatter)
-        sit at varied angles instead of always facing the same way.
+        this is what lets scatter-layout buildings (see build_city_cluster /
+        LAYOUT_PARAMS) sit at varied angles instead of always facing the
+        same way.
         Positions AND normals both get rotated (normals untranslated, since
         rotation doesn't need re-normalizing -- it's already unit length)."""
         base = len(self.positions)
@@ -493,61 +517,97 @@ def build_building_mesh(width, depth, height, roof_style, setback, building_type
     return mb
 
 
-def layout_grid(count, cell_w, cell_d, rng, pos_jitter, rot_jitter_deg):
-    """Tidy, mostly-regular lattice: a metropolis block of towers, an
-    urban_core street grid, or a commie_block district's repeated rows all
-    read as *organized*, so positions/rotations only get a small fraction of
-    a cell's own jitter (pos_jitter) and a small yaw jitter (rot_jitter_deg),
-    both scaled down further here vs. layout_scatter's use of the same
-    knobs -- a "grid" archetype should still look like a grid even with its
-    own pos_jitter/rot_jitter_deg dialed up a little for variety."""
+def _rect_axes(yaw):
+    """The world-space unit axes (u, v) of a building's local (width,
+    depth) directions after MeshBuilder.extend's yaw rotation. Must match
+    extend's own rot_y exactly ((x,z) -> (x*cos+z*sin, -x*sin+z*cos)), or
+    this collision check would be testing the wrong orientation."""
+    cos_y, sin_y = math.cos(yaw), math.sin(yaw)
+    u = (cos_y, -sin_y)   # local +x (half-extent hw) in world (x, z)
+    v = (sin_y, cos_y)    # local +z (half-extent hd) in world (x, z)
+    return u, v
+
+
+def rects_too_close(cA, hwA, hdA, yawA, cB, hwB, hdB, yawB, margin):
+    """Separating-Axis-Theorem overlap test for two independently rotated
+    rectangles in the XZ plane, with `margin` extra clearance required on
+    top of merely touching. This is what actually handles very elongated
+    footprints correctly (e.g. commie_block's long slabs): a simple
+    circumscribed-circle check sizes its clearance off a shape's DIAGONAL,
+    which is wildly too conservative for two long, thin slabs standing
+    side by side (close together across their short axis, nowhere near
+    touching along their long one) -- SAT instead checks each rectangle's
+    own two axes, so two long-but-narrow buildings can sit as close
+    together, side to side, as their actual width allows."""
+    uA, vA = _rect_axes(yawA)
+    uB, vB = _rect_axes(yawB)
+    dx, dz = cB[0] - cA[0], cB[1] - cA[1]
+
+    for axis in (uA, vA, uB, vB):
+        proj_a = hwA * abs(uA[0] * axis[0] + uA[1] * axis[1]) + hdA * abs(vA[0] * axis[0] + vA[1] * axis[1])
+        proj_b = hwB * abs(uB[0] * axis[0] + uB[1] * axis[1]) + hdB * abs(vB[0] * axis[0] + vB[1] * axis[1])
+        center_dist = abs(dx * axis[0] + dz * axis[1])
+        if center_dist > proj_a + proj_b + margin:
+            return False   # separated along this axis -- definitely not too close
+    return True   # no separating axis found among the 4 candidates -- overlapping or within margin
+
+
+def compute_grid_cells(count, cell_w, cell_d, rng):
+    """Lays out `count` cell CENTERS on a roughly square lattice (3-5
+    columns). This is only a starting proposal for where each building
+    goes -- build_city_cluster jitters around these centers and, more
+    importantly, checks every building's real footprint against every
+    already-placed one before committing to a position, so the lattice
+    itself doesn't need to be collision-proof on its own."""
     cols = rng.randint(3, 5)
     rows = math.ceil(count / cols)
-    placements = []
+    cells = []
     for row in range(rows):
         for col in range(cols):
-            if len(placements) >= count:
+            if len(cells) >= count:
                 break
-            bx = (col - (cols - 1) / 2.0) * cell_w + rng.uniform(-pos_jitter, pos_jitter) * cell_w * 0.5
-            bz = (row - (rows - 1) / 2.0) * cell_d + rng.uniform(-pos_jitter, pos_jitter) * cell_d * 0.5
-            yaw_deg = rng.uniform(-rot_jitter_deg, rot_jitter_deg)
-            placements.append((bx, bz, math.radians(yaw_deg)))
-    return placements
+            cx = (col - (cols - 1) / 2.0) * cell_w
+            cz = (row - (rows - 1) / 2.0) * cell_d
+            cells.append((cx, cz))
+    return cells
 
 
-def layout_scatter(count, cell_w, cell_d, rng, pos_jitter, rot_jitter_deg, spread_mult):
-    """Loose, irregular sprawl: a suburb's houses on curving/angled lots, or
-    an informal settlement's chaotic packing. Still starts from the same
-    grid of cells as layout_grid (so buildings still don't just pile on top
-    of each other), but `spread_mult` widens the cells themselves and both
-    pos_jitter and rot_jitter_deg are used at full strength (typically much
-    higher values than a "grid" archetype passes in), so buildings sit at
-    visibly varied positions AND angles instead of facing a uniform way."""
-    cols = rng.randint(3, 5)
-    rows = math.ceil(count / cols)
-    cell_w *= spread_mult
-    cell_d *= spread_mult
-    placements = []
-    for row in range(rows):
-        for col in range(cols):
-            if len(placements) >= count:
-                break
-            bx = (col - (cols - 1) / 2.0) * cell_w + rng.uniform(-pos_jitter, pos_jitter) * cell_w
-            bz = (row - (rows - 1) / 2.0) * cell_d + rng.uniform(-pos_jitter, pos_jitter) * cell_d
-            yaw_deg = rng.uniform(-rot_jitter_deg, rot_jitter_deg)
-            placements.append((bx, bz, math.radians(yaw_deg)))
-    return placements
+def jittered_candidate(cell_center, cell_w, cell_d, rng, pos_jitter, rot_jitter_deg, pos_scale, jitter_frac):
+    """One candidate (x, z, yaw_radians) near `cell_center`. `jitter_frac`
+    (1.0 down to 0.0) shrinks pos_jitter/rot_jitter_deg on repeated overlap
+    retries in build_city_cluster -- at jitter_frac == 0.0 this collapses to
+    the bare, unrotated cell center: the fallback of last resort."""
+    cx, cz = cell_center
+    bx = cx + rng.uniform(-pos_jitter, pos_jitter) * cell_w * pos_scale * jitter_frac
+    bz = cz + rng.uniform(-pos_jitter, pos_jitter) * cell_d * pos_scale * jitter_frac
+    yaw_deg = rng.uniform(-rot_jitter_deg, rot_jitter_deg) * jitter_frac
+    return bx, bz, math.radians(yaw_deg)
 
 
-LAYOUTS = {"grid": layout_grid, "scatter": layout_scatter}
+# How tightly each layout hugs its cell lattice: "grid" only ever uses half
+# of an archetype's own pos_jitter (and doesn't widen its cells) so a
+# metropolis/urban_core/commie_block cluster still reads as organized;
+# "scatter" uses the full jitter AND widens cells by the archetype's own
+# spread_mult, so a suburb/informal cluster sprawls at real angles.
+LAYOUT_PARAMS = {
+    "grid": {"pos_scale": 0.5, "use_spread": False},
+    "scatter": {"pos_scale": 1.0, "use_spread": True},
+}
+
+# On overlap, a building's position/rotation is retried with progressively
+# less jitter before giving up -- 0.0 (a bare, unrotated cell center) is
+# always tried last as the fallback of last resort.
+OVERLAP_RETRY_JITTER_FRACS = (1.0, 0.7, 0.45, 0.2, 0.0)
+MIN_BUILDING_GAP = 0.4   # small clear gap kept between any two footprints, so they never even touch
 
 
 def build_city_cluster(archetype_cfg, region_cfg, distance, rng):
     """Builds ONE .mesh's worth of content: a small city-block cluster of
-    BUILDINGS_PER_MESH (10-20) individual buildings of mixed types, laid out
-    and merged into a single combined mesh (this mirrors vanilla's own city
-    meshes, which are likewise multi-building clusters, not single buildings
-    -- one clutter placement = one little block, not one house).
+    individual buildings of mixed types (count drawn from the archetype's
+    own `count_range`, or BUILDINGS_PER_MESH if it doesn't set one), laid
+    out and merged into a single combined mesh (this mirrors vanilla's own
+    city meshes, which are likewise multi-building clusters, not single
+    buildings -- one clutter placement = one little block, not one house).
 
     Building types are picked from the LOCALE's archetype (`type_weights`),
     not from region or distance -- that's the actual-building-type split:
@@ -558,10 +618,21 @@ def build_city_cluster(archetype_cfg, region_cfg, distance, rng):
     (DISTANCE_SCALE) on top of the archetype's own base size.
 
     How buildings are actually arranged also comes from the archetype: its
-    `layout` ("grid" or "scatter", see LAYOUTS) plus `pos_jitter` /
+    `layout` ("grid" or "scatter", see LAYOUT_PARAMS) plus `pos_jitter` /
     `rot_jitter_deg` / `spread_mult` decide whether this cluster reads as an
-    organized block or a sprawling, irregularly angled district."""
-    count = rng.randint(*BUILDINGS_PER_MESH)
+    organized block or a sprawling, irregularly angled district. Whatever
+    the layout, no two buildings are ever allowed to actually overlap: each
+    one's real oriented footprint (accounting for its own randomized size
+    AND its yaw rotation, via `rects_too_close`'s separating-axis test) is
+    checked against every already-placed building before it's committed,
+    retrying with
+    progressively less jitter/rotation and, as an absolute last resort,
+    dropping the building from this cluster entirely rather than ever let
+    two models visibly intersect (see OVERLAP_RETRY_JITTER_FRACS) -- so a
+    cluster can end up with slightly fewer buildings than `count` asked
+    for, but never with overlapping ones."""
+    count_lo, count_hi = archetype_cfg.get("count_range", BUILDINGS_PER_MESH)
+    count = rng.randint(count_lo, count_hi)
     weights = archetype_cfg["type_weights"]
     type_names = list(weights.keys())
     type_probs = list(weights.values())
@@ -569,45 +640,80 @@ def build_city_cluster(archetype_cfg, region_cfg, distance, rng):
     base_fw, base_fd = archetype_cfg["footprint"]
     h_lo, h_hi = archetype_cfg["height"]
     dist_scale = DISTANCE_SCALE[distance]
+    fscale = region_cfg["footprint_scale"] * dist_scale
 
-    # cell size wide enough that even the biggest type in this archetype
-    # won't overlap its neighbours before the layout's own jitter/spread.
-    cell_w = base_fw * region_cfg["footprint_scale"] * dist_scale * 2.3
-    cell_d = base_fd * region_cfg["footprint_scale"] * dist_scale * 2.3
+    # Size the lattice's cells off the LARGEST building this archetype can
+    # actually produce (not just its base footprint) -- a commie_block's
+    # long slabs need much more per-cell room along their long axis than a
+    # generic "block" would. This is only a starting proposal (the
+    # per-building overlap-retry loop below is what actually guarantees no
+    # overlap), so it just needs to be a reasonable guess that keeps most
+    # buildings collision-free on their first placement attempt.
+    max_w_mult = max(BUILDING_TYPES[t]["w_mult"] for t in type_names)
+    max_d_mult = max(BUILDING_TYPES[t]["d_mult"] for t in type_names)
+    cell_w = base_fw * max_w_mult * fscale * 1.35
+    cell_d = base_fd * max_d_mult * fscale * 1.35
 
-    layout_fn = LAYOUTS[archetype_cfg["layout"]]
-    placements = layout_fn(
-        count, cell_w, cell_d, rng,
-        pos_jitter=archetype_cfg["pos_jitter"],
-        rot_jitter_deg=archetype_cfg["rot_jitter_deg"],
-        **({"spread_mult": archetype_cfg["spread_mult"]} if archetype_cfg["layout"] == "scatter" else {})
-    )
+    layout_params = LAYOUT_PARAMS[archetype_cfg["layout"]]
+    if layout_params["use_spread"]:
+        cell_w *= archetype_cfg["spread_mult"]
+        cell_d *= archetype_cfg["spread_mult"]
+
+    cells = compute_grid_cells(count, cell_w, cell_d, rng)
+    pos_jitter = archetype_cfg["pos_jitter"]
+    rot_jitter_deg = archetype_cfg["rot_jitter_deg"]
+    pos_scale = layout_params["pos_scale"]
 
     cluster = MeshBuilder()
-    for (bx, bz, yaw) in placements:
+    placed = []   # (x, z, half_width, half_depth, yaw) of every building already committed
+    placed_count = 0
+
+    for cell_center in cells:
         btype = rng.choices(type_names, weights=type_probs, k=1)[0]
         type_cfg = BUILDING_TYPES[btype]
 
-        fw = base_fw * type_cfg["w_mult"] * region_cfg["footprint_scale"] * dist_scale * rng.uniform(0.85, 1.15)
-        fd = base_fd * type_cfg["d_mult"] * region_cfg["footprint_scale"] * dist_scale * rng.uniform(0.85, 1.15)
+        fw = base_fw * type_cfg["w_mult"] * fscale * rng.uniform(0.85, 1.15)
+        fd = base_fd * type_cfg["d_mult"] * fscale * rng.uniform(0.85, 1.15)
         height = rng.uniform(h_lo, h_hi) * type_cfg["h_mult"] * region_cfg["height_scale"] * dist_scale
+        hw, hd = fw / 2.0, fd / 2.0
 
         # small residential types take on the region's own roof style
         # (that's the regional-architecture cue); everything else - shops,
-        # blocks, towers - is flat-roofed regardless of region.
+        # blocks, slabs, towers - is flat-roofed regardless of region.
         if btype in ("house", "rowhouse"):
             roof_style = region_cfg["roof_style"]
         else:
             roof_style = "flat"
         setback = type_cfg.get("setback", False)
+        # this type may borrow another type's atlas wall segment (see
+        # BUILDING_TYPES's "wall_type") instead of needing its own cell.
+        wall_type = type_cfg.get("wall_type", btype)
 
+        chosen = None
+        for jitter_frac in OVERLAP_RETRY_JITTER_FRACS:
+            bx, bz, yaw = jittered_candidate(
+                cell_center, cell_w, cell_d, rng, pos_jitter, rot_jitter_deg, pos_scale, jitter_frac)
+            if not any(rects_too_close(
+                    (bx, bz), hw, hd, yaw, (px, pz), phw, phd, pyaw, MIN_BUILDING_GAP)
+                    for (px, pz, phw, phd, pyaw) in placed):
+                chosen = (bx, bz, yaw)
+                break
+        if chosen is None:
+            # every attempt -- down to a dead-centered, unrotated placement
+            # -- still overlapped a neighbour. Skip this slot rather than
+            # ever let two building models visibly intersect.
+            continue
+
+        bx, bz, yaw = chosen
         building = build_building_mesh(
             width=fw * UNIT_SCALE, depth=fd * UNIT_SCALE, height=height * UNIT_SCALE,
-            roof_style=roof_style, setback=setback, building_type=btype, rng=rng,
+            roof_style=roof_style, setback=setback, building_type=wall_type, rng=rng,
         )
         cluster.extend(building, offset=(bx * UNIT_SCALE, 0.0, bz * UNIT_SCALE), yaw=yaw)
+        placed.append((bx, bz, hw, hd, yaw))
+        placed_count += 1
 
-    return cluster, len(placements)
+    return cluster, placed_count
 
 
 # ---------------------------------------------------------------------------
@@ -1030,9 +1136,11 @@ def generate_readme(out_root, locale_results):
     lines.append("")
     for key, cfg in ARCHETYPES.items():
         type_mix = ", ".join("{} {:.0%}".format(t, w) for t, w in cfg["type_weights"].items())
-        lines.append("- **{}** ({}): {} layout, types: {}".format(key, cfg["abbr"], cfg["layout"], type_mix))
+        c_lo, c_hi = cfg.get("count_range", BUILDINGS_PER_MESH)
+        lines.append("- **{}** ({}): {} layout, {}-{} buildings/mesh, types: {}".format(
+            key, cfg["abbr"], cfg["layout"], c_lo, c_hi, type_mix))
     lines.append("")
-    lines.append("Two spawn layouts (see `layout_grid` / `layout_scatter` / `LAYOUTS`):")
+    lines.append("Two spawn layouts (see `build_city_cluster` / `LAYOUT_PARAMS`):")
     lines.append("")
     lines.append("- **grid** -- a tidy, lightly-jittered lattice. Used by archetypes that")
     lines.append("  should read as organized city blocks (`metropolis`'s towers,")
@@ -1072,14 +1180,20 @@ def generate_readme(out_root, locale_results):
     lines.append("")
     lines.append("## About the geometry")
     lines.append("")
-    lines.append("Each `.mesh` file is a small city-block CLUSTER of 10-20 individual")
-    lines.append("low-poly buildings (see `BUILDINGS_PER_MESH`), not a single building --")
-    lines.append("this matches vanilla's own city meshes, which are likewise multi-")
-    lines.append("building chunks. Building *type* is picked per building from its")
-    lines.append("locale's archetype `type_weights` (see `ARCHETYPES`), and *layout* --")
-    lines.append("grid vs. scatter, including per-building yaw rotation for scatter --")
-    lines.append("also comes from the archetype (see `build_city_cluster`,")
-    lines.append("`layout_grid`/`layout_scatter`). Each individual building is a")
+    lines.append("Each `.mesh` file is a small city-block CLUSTER of individual")
+    lines.append("low-poly buildings (count per archetype's own `count_range`, or")
+    lines.append("`BUILDINGS_PER_MESH` = 10-20 by default), not a single building -- this")
+    lines.append("matches vanilla's own city meshes, which are likewise multi-building")
+    lines.append("chunks. Building *type* is picked per building from its locale's")
+    lines.append("archetype `type_weights` (see `ARCHETYPES`), and *layout* -- grid vs.")
+    lines.append("scatter, including per-building yaw rotation for scatter -- also comes")
+    lines.append("from the archetype (see `build_city_cluster`, `LAYOUT_PARAMS`). No two")
+    lines.append("buildings in a cluster are ever allowed to actually overlap: each")
+    lines.append("placement is checked (accounting for its real size and yaw) against")
+    lines.append("every building already placed, retrying with progressively less jitter")
+    lines.append("before dropping the building entirely as a last resort -- so a cluster")
+    lines.append("can occasionally land a little under its `count_range`, but never with")
+    lines.append("two models visibly intersecting. Each individual building is a")
     lines.append("deliberately crude, low-poly, flat-shaded box (with an optional")
     lines.append("pitched roof or a stacked \"setback\" block for towers) -- stand-ins to")
     lines.append("get the archetype/region/distance pipeline wired up and testable")
@@ -1104,7 +1218,11 @@ def generate_readme(out_root, locale_results):
     lines.append("distinct look per building type, wherever that's actually useful")
     lines.append("(every type gets its own wall look; roofs only have two distinct")
     lines.append("*shapes*, so those two share their cells across every type that uses")
-    lines.append("them). Normal/specular stay flat and shared per-locale. Edit")
+    lines.append("them). Normal/specular stay flat and shared per-locale. A `BUILDING_TYPES`")
+    lines.append("entry can also set `wall_type` to borrow another type's cell instead of")
+    lines.append("getting its own -- e.g. commie_block's `slab_low`/`slab_mid`/`slab_tall`")
+    lines.append("(same material as a regular block, just longer and at a different")
+    lines.append("height tier) all render with `BLOCK`'s wall cell. Edit")
     lines.append("`WALL_FILL_BY_TYPE` / `ROOF_FILL_BY_STYLE` to change colors, `FONT_5X7`")
     lines.append("to add characters, or `_build_atlas_layout()` to change the grid.")
     with open(os.path.join(out_root, "README.md"), "w") as f:
