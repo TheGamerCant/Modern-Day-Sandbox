@@ -157,48 +157,6 @@ city_group = {
 }
 
 city_group = {
-	color_index = 13 
-	density = 0.5
-
-	building = {
-		distance = 1
-		mesh = {
-			"suburb_eastern_europe_buildings_1_01_entity"
-			"suburb_eastern_europe_buildings_1_02_entity"
-			"suburb_eastern_europe_buildings_1_03_entity"
-			"suburb_eastern_europe_buildings_1_04_entity"
-		}
-	}
-	building = {
-		distance = 2
-		mesh = {
-			"suburb_eastern_europe_buildings_2_01_entity"
-			"suburb_eastern_europe_buildings_2_02_entity"
-			"suburb_eastern_europe_buildings_2_03_entity"
-			"suburb_eastern_europe_buildings_2_04_entity"
-		}
-	}
-	building = {
-		distance = 3
-		mesh = {
-			"suburb_eastern_europe_buildings_3_01_entity"
-			"suburb_eastern_europe_buildings_3_02_entity"
-			"suburb_eastern_europe_buildings_3_03_entity"
-			"suburb_eastern_europe_buildings_3_04_entity"
-		}
-	}
-	building = {
-		distance = 4
-		mesh = {
-			"suburb_eastern_europe_buildings_4_01_entity"
-			"suburb_eastern_europe_buildings_4_02_entity"
-			"suburb_eastern_europe_buildings_4_03_entity"
-			"suburb_eastern_europe_buildings_4_04_entity"
-		}
-	}
-}
-
-city_group = {
 	color_index = 14 
 	density = 0.5
 
@@ -326,7 +284,7 @@ city_group = {
 
 city_group = {
 	color_index = 17 
-	density = 0.5
+	density = -1.0
 
 	building = {
 		distance = 1

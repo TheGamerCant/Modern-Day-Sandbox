@@ -63,32 +63,16 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_1_02Shape_shop"
-			index = 1
-			texture_diffuse = "urban_core_western_shop_diffuse.dds"
-			texture_normal = "urban_core_western_shop_normal.dds"
-			texture_specular = "urban_core_western_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_1_02Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_western_block_diffuse.dds"
 			texture_normal = "urban_core_western_block_normal.dds"
 			texture_specular = "urban_core_western_block_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_1_02Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_western_tower_diffuse.dds"
-			texture_normal = "urban_core_western_tower_normal.dds"
-			texture_specular = "urban_core_western_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_1_02Shape_pitched"
-			index = 4
+			index = 2
 			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
 			texture_normal = "urban_core_western_pitched_normal.dds"
 			texture_specular = "urban_core_western_pitched_specular.dds"
@@ -96,7 +80,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_1_02Shape_flat"
-			index = 5
+			index = 3
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"
@@ -123,24 +107,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_1_03Shape_block"
-			index = 2
-			texture_diffuse = "urban_core_western_block_diffuse.dds"
-			texture_normal = "urban_core_western_block_normal.dds"
-			texture_specular = "urban_core_western_block_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
-			name = "urban_core_western_buildings_1_03Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_western_tower_diffuse.dds"
-			texture_normal = "urban_core_western_tower_normal.dds"
-			texture_specular = "urban_core_western_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_1_03Shape_pitched"
-			index = 4
+			index = 2
 			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
 			texture_normal = "urban_core_western_pitched_normal.dds"
 			texture_specular = "urban_core_western_pitched_specular.dds"
@@ -148,7 +116,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_1_03Shape_flat"
-			index = 5
+			index = 3
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"
@@ -183,16 +151,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_1_04Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_western_tower_diffuse.dds"
-			texture_normal = "urban_core_western_tower_normal.dds"
-			texture_specular = "urban_core_western_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_1_04Shape_pitched"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
 			texture_normal = "urban_core_western_pitched_normal.dds"
 			texture_specular = "urban_core_western_pitched_specular.dds"
@@ -200,7 +160,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_1_04Shape_flat"
-			index = 5
+			index = 4
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"
@@ -235,16 +195,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_2_01Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_western_tower_diffuse.dds"
-			texture_normal = "urban_core_western_tower_normal.dds"
-			texture_specular = "urban_core_western_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_2_01Shape_pitched"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
 			texture_normal = "urban_core_western_pitched_normal.dds"
 			texture_specular = "urban_core_western_pitched_specular.dds"
@@ -252,7 +204,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_2_01Shape_flat"
-			index = 5
+			index = 4
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"
@@ -339,16 +291,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_2_03Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_western_tower_diffuse.dds"
-			texture_normal = "urban_core_western_tower_normal.dds"
-			texture_specular = "urban_core_western_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_2_03Shape_pitched"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
 			texture_normal = "urban_core_western_pitched_normal.dds"
 			texture_specular = "urban_core_western_pitched_specular.dds"
@@ -356,7 +300,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_2_03Shape_flat"
-			index = 5
+			index = 4
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"
@@ -495,16 +439,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_3_02Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_western_tower_diffuse.dds"
-			texture_normal = "urban_core_western_tower_normal.dds"
-			texture_specular = "urban_core_western_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_3_02Shape_pitched"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
 			texture_normal = "urban_core_western_pitched_normal.dds"
 			texture_specular = "urban_core_western_pitched_specular.dds"
@@ -512,7 +448,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_3_02Shape_flat"
-			index = 5
+			index = 4
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"
@@ -523,16 +459,8 @@ objectTypes = {
 		name = "urban_core_western_buildings_3_03_mesh"
 		file = "gfx/models/buildings/urban_core_western/urban_core_western_buildings_3_03.mesh"
 		meshsettings = {
-			name = "urban_core_western_buildings_3_03Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_western_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_western_rowhouse_normal.dds"
-			texture_specular = "urban_core_western_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_3_03Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_western_shop_diffuse.dds"
 			texture_normal = "urban_core_western_shop_normal.dds"
 			texture_specular = "urban_core_western_shop_specular.dds"
@@ -540,7 +468,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_3_03Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_western_block_diffuse.dds"
 			texture_normal = "urban_core_western_block_normal.dds"
 			texture_specular = "urban_core_western_block_specular.dds"
@@ -548,23 +476,15 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_3_03Shape_tower"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_western_tower_diffuse.dds"
 			texture_normal = "urban_core_western_tower_normal.dds"
 			texture_specular = "urban_core_western_tower_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_3_03Shape_pitched"
-			index = 4
-			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
-			texture_normal = "urban_core_western_pitched_normal.dds"
-			texture_specular = "urban_core_western_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_3_03Shape_flat"
-			index = 5
+			index = 3
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"
@@ -575,16 +495,8 @@ objectTypes = {
 		name = "urban_core_western_buildings_3_04_mesh"
 		file = "gfx/models/buildings/urban_core_western/urban_core_western_buildings_3_04.mesh"
 		meshsettings = {
-			name = "urban_core_western_buildings_3_04Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_western_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_western_rowhouse_normal.dds"
-			texture_specular = "urban_core_western_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_3_04Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_western_shop_diffuse.dds"
 			texture_normal = "urban_core_western_shop_normal.dds"
 			texture_specular = "urban_core_western_shop_specular.dds"
@@ -592,7 +504,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_3_04Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_western_block_diffuse.dds"
 			texture_normal = "urban_core_western_block_normal.dds"
 			texture_specular = "urban_core_western_block_specular.dds"
@@ -600,23 +512,15 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_3_04Shape_tower"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_western_tower_diffuse.dds"
 			texture_normal = "urban_core_western_tower_normal.dds"
 			texture_specular = "urban_core_western_tower_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_3_04Shape_pitched"
-			index = 4
-			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
-			texture_normal = "urban_core_western_pitched_normal.dds"
-			texture_specular = "urban_core_western_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_3_04Shape_flat"
-			index = 5
+			index = 3
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"
@@ -627,16 +531,8 @@ objectTypes = {
 		name = "urban_core_western_buildings_4_01_mesh"
 		file = "gfx/models/buildings/urban_core_western/urban_core_western_buildings_4_01.mesh"
 		meshsettings = {
-			name = "urban_core_western_buildings_4_01Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_western_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_western_rowhouse_normal.dds"
-			texture_specular = "urban_core_western_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_4_01Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_western_shop_diffuse.dds"
 			texture_normal = "urban_core_western_shop_normal.dds"
 			texture_specular = "urban_core_western_shop_specular.dds"
@@ -644,7 +540,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_4_01Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_western_block_diffuse.dds"
 			texture_normal = "urban_core_western_block_normal.dds"
 			texture_specular = "urban_core_western_block_specular.dds"
@@ -652,23 +548,15 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_4_01Shape_tower"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_western_tower_diffuse.dds"
 			texture_normal = "urban_core_western_tower_normal.dds"
 			texture_specular = "urban_core_western_tower_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_4_01Shape_pitched"
-			index = 4
-			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
-			texture_normal = "urban_core_western_pitched_normal.dds"
-			texture_specular = "urban_core_western_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_4_01Shape_flat"
-			index = 5
+			index = 3
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"
@@ -775,16 +663,8 @@ objectTypes = {
 		name = "urban_core_western_buildings_4_04_mesh"
 		file = "gfx/models/buildings/urban_core_western/urban_core_western_buildings_4_04.mesh"
 		meshsettings = {
-			name = "urban_core_western_buildings_4_04Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_western_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_western_rowhouse_normal.dds"
-			texture_specular = "urban_core_western_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_4_04Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_western_shop_diffuse.dds"
 			texture_normal = "urban_core_western_shop_normal.dds"
 			texture_specular = "urban_core_western_shop_specular.dds"
@@ -792,31 +672,15 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_western_buildings_4_04Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_western_block_diffuse.dds"
 			texture_normal = "urban_core_western_block_normal.dds"
 			texture_specular = "urban_core_western_block_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_western_buildings_4_04Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_western_tower_diffuse.dds"
-			texture_normal = "urban_core_western_tower_normal.dds"
-			texture_specular = "urban_core_western_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
-			name = "urban_core_western_buildings_4_04Shape_pitched"
-			index = 4
-			texture_diffuse = "urban_core_western_pitched_diffuse.dds"
-			texture_normal = "urban_core_western_pitched_normal.dds"
-			texture_specular = "urban_core_western_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_western_buildings_4_04Shape_flat"
-			index = 5
+			index = 2
 			texture_diffuse = "urban_core_western_flat_diffuse.dds"
 			texture_normal = "urban_core_western_flat_normal.dds"
 			texture_specular = "urban_core_western_flat_specular.dds"

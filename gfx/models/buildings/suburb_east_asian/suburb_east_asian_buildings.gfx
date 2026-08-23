@@ -223,27 +223,11 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "suburb_east_asian_buildings_2_02Shape_shop"
-			index = 2
-			texture_diffuse = "suburb_east_asian_shop_diffuse.dds"
-			texture_normal = "suburb_east_asian_shop_normal.dds"
-			texture_specular = "suburb_east_asian_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "suburb_east_asian_buildings_2_02Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "suburb_east_asian_pitched_diffuse.dds"
 			texture_normal = "suburb_east_asian_pitched_normal.dds"
 			texture_specular = "suburb_east_asian_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
-			name = "suburb_east_asian_buildings_2_02Shape_flat"
-			index = 4
-			texture_diffuse = "suburb_east_asian_flat_diffuse.dds"
-			texture_normal = "suburb_east_asian_flat_normal.dds"
-			texture_specular = "suburb_east_asian_flat_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 	}

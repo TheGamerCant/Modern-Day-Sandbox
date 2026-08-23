@@ -139,16 +139,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_south_america_buildings_2_01Shape_shop"
-			index = 1
-			texture_diffuse = "informal_south_america_shop_diffuse.dds"
-			texture_normal = "informal_south_america_shop_normal.dds"
-			texture_specular = "informal_south_america_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_south_america_buildings_2_01Shape_shed"
-			index = 2
+			index = 1
 			texture_diffuse = "informal_south_america_shed_diffuse.dds"
 			texture_normal = "informal_south_america_shed_normal.dds"
 			texture_specular = "informal_south_america_shed_specular.dds"
@@ -156,7 +148,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_south_america_buildings_2_01Shape_flat"
-			index = 3
+			index = 2
 			texture_diffuse = "informal_south_america_flat_diffuse.dds"
 			texture_normal = "informal_south_america_flat_normal.dds"
 			texture_specular = "informal_south_america_flat_specular.dds"
@@ -211,16 +203,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_south_america_buildings_2_03Shape_shop"
-			index = 1
-			texture_diffuse = "informal_south_america_shop_diffuse.dds"
-			texture_normal = "informal_south_america_shop_normal.dds"
-			texture_specular = "informal_south_america_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_south_america_buildings_2_03Shape_shed"
-			index = 2
+			index = 1
 			texture_diffuse = "informal_south_america_shed_diffuse.dds"
 			texture_normal = "informal_south_america_shed_normal.dds"
 			texture_specular = "informal_south_america_shed_specular.dds"
@@ -228,7 +212,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_south_america_buildings_2_03Shape_flat"
-			index = 3
+			index = 2
 			texture_diffuse = "informal_south_america_flat_diffuse.dds"
 			texture_normal = "informal_south_america_flat_normal.dds"
 			texture_specular = "informal_south_america_flat_specular.dds"
@@ -247,16 +231,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_south_america_buildings_2_04Shape_shop"
-			index = 1
-			texture_diffuse = "informal_south_america_shop_diffuse.dds"
-			texture_normal = "informal_south_america_shop_normal.dds"
-			texture_specular = "informal_south_america_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_south_america_buildings_2_04Shape_shed"
-			index = 2
+			index = 1
 			texture_diffuse = "informal_south_america_shed_diffuse.dds"
 			texture_normal = "informal_south_america_shed_normal.dds"
 			texture_specular = "informal_south_america_shed_specular.dds"
@@ -264,7 +240,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_south_america_buildings_2_04Shape_flat"
-			index = 3
+			index = 2
 			texture_diffuse = "informal_south_america_flat_diffuse.dds"
 			texture_normal = "informal_south_america_flat_normal.dds"
 			texture_specular = "informal_south_america_flat_specular.dds"
@@ -483,24 +459,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_south_america_buildings_4_03Shape_shop"
-			index = 1
-			texture_diffuse = "informal_south_america_shop_diffuse.dds"
-			texture_normal = "informal_south_america_shop_normal.dds"
-			texture_specular = "informal_south_america_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
-			name = "informal_south_america_buildings_4_03Shape_shed"
-			index = 2
-			texture_diffuse = "informal_south_america_shed_diffuse.dds"
-			texture_normal = "informal_south_america_shed_normal.dds"
-			texture_specular = "informal_south_america_shed_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_south_america_buildings_4_03Shape_flat"
-			index = 3
+			index = 1
 			texture_diffuse = "informal_south_america_flat_diffuse.dds"
 			texture_normal = "informal_south_america_flat_normal.dds"
 			texture_specular = "informal_south_america_flat_specular.dds"
@@ -527,16 +487,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_south_america_buildings_4_04Shape_shed"
-			index = 2
-			texture_diffuse = "informal_south_america_shed_diffuse.dds"
-			texture_normal = "informal_south_america_shed_normal.dds"
-			texture_specular = "informal_south_america_shed_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_south_america_buildings_4_04Shape_flat"
-			index = 3
+			index = 2
 			texture_diffuse = "informal_south_america_flat_diffuse.dds"
 			texture_normal = "informal_south_america_flat_normal.dds"
 			texture_specular = "informal_south_america_flat_specular.dds"

@@ -27,16 +27,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_1_01Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_mediterranean_tower_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_tower_normal.dds"
-			texture_specular = "urban_core_mediterranean_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_1_01Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"
@@ -55,16 +47,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_1_02Shape_shop"
-			index = 1
-			texture_diffuse = "urban_core_mediterranean_shop_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_shop_normal.dds"
-			texture_specular = "urban_core_mediterranean_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_1_02Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_mediterranean_block_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_block_normal.dds"
 			texture_specular = "urban_core_mediterranean_block_specular.dds"
@@ -72,7 +56,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_1_02Shape_flat"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"
@@ -171,16 +155,8 @@ objectTypes = {
 		name = "urban_core_mediterranean_buildings_2_01_mesh"
 		file = "gfx/models/buildings/urban_core_mediterranean/urban_core_mediterranean_buildings_2_01.mesh"
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_2_01Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_mediterranean_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_rowhouse_normal.dds"
-			texture_specular = "urban_core_mediterranean_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_2_01Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_mediterranean_shop_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_shop_normal.dds"
 			texture_specular = "urban_core_mediterranean_shop_specular.dds"
@@ -188,7 +164,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_2_01Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_mediterranean_block_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_block_normal.dds"
 			texture_specular = "urban_core_mediterranean_block_specular.dds"
@@ -196,7 +172,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_2_01Shape_tower"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_mediterranean_tower_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_tower_normal.dds"
 			texture_specular = "urban_core_mediterranean_tower_specular.dds"
@@ -204,7 +180,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_2_01Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"
@@ -275,24 +251,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_2_03Shape_block"
-			index = 2
-			texture_diffuse = "urban_core_mediterranean_block_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_block_normal.dds"
-			texture_specular = "urban_core_mediterranean_block_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
-			name = "urban_core_mediterranean_buildings_2_03Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_mediterranean_tower_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_tower_normal.dds"
-			texture_specular = "urban_core_mediterranean_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_2_03Shape_flat"
-			index = 4
+			index = 2
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"
@@ -319,16 +279,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_2_04Shape_tower"
-			index = 2
-			texture_diffuse = "urban_core_mediterranean_tower_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_tower_normal.dds"
-			texture_specular = "urban_core_mediterranean_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_2_04Shape_flat"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"
@@ -339,16 +291,8 @@ objectTypes = {
 		name = "urban_core_mediterranean_buildings_3_01_mesh"
 		file = "gfx/models/buildings/urban_core_mediterranean/urban_core_mediterranean_buildings_3_01.mesh"
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_3_01Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_mediterranean_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_rowhouse_normal.dds"
-			texture_specular = "urban_core_mediterranean_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_3_01Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_mediterranean_shop_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_shop_normal.dds"
 			texture_specular = "urban_core_mediterranean_shop_specular.dds"
@@ -356,7 +300,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_3_01Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_mediterranean_block_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_block_normal.dds"
 			texture_specular = "urban_core_mediterranean_block_specular.dds"
@@ -364,7 +308,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_3_01Shape_tower"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_mediterranean_tower_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_tower_normal.dds"
 			texture_specular = "urban_core_mediterranean_tower_specular.dds"
@@ -372,7 +316,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_3_01Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"
@@ -399,16 +343,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_3_02Shape_tower"
-			index = 2
-			texture_diffuse = "urban_core_mediterranean_tower_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_tower_normal.dds"
-			texture_specular = "urban_core_mediterranean_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_3_02Shape_flat"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"
@@ -443,16 +379,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_3_03Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_mediterranean_tower_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_tower_normal.dds"
-			texture_specular = "urban_core_mediterranean_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_3_03Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"
@@ -487,16 +415,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_3_04Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_mediterranean_tower_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_tower_normal.dds"
-			texture_specular = "urban_core_mediterranean_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_3_04Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"
@@ -507,16 +427,8 @@ objectTypes = {
 		name = "urban_core_mediterranean_buildings_4_01_mesh"
 		file = "gfx/models/buildings/urban_core_mediterranean/urban_core_mediterranean_buildings_4_01.mesh"
 		meshsettings = {
-			name = "urban_core_mediterranean_buildings_4_01Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_mediterranean_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_mediterranean_rowhouse_normal.dds"
-			texture_specular = "urban_core_mediterranean_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_mediterranean_buildings_4_01Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_mediterranean_shop_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_shop_normal.dds"
 			texture_specular = "urban_core_mediterranean_shop_specular.dds"
@@ -524,7 +436,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_4_01Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_mediterranean_block_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_block_normal.dds"
 			texture_specular = "urban_core_mediterranean_block_specular.dds"
@@ -532,7 +444,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_4_01Shape_tower"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_mediterranean_tower_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_tower_normal.dds"
 			texture_specular = "urban_core_mediterranean_tower_specular.dds"
@@ -540,7 +452,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_mediterranean_buildings_4_01Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_mediterranean_flat_diffuse.dds"
 			texture_normal = "urban_core_mediterranean_flat_normal.dds"
 			texture_specular = "urban_core_mediterranean_flat_specular.dds"

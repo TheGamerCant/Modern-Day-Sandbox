@@ -135,27 +135,11 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "suburb_western_buildings_1_04Shape_shop"
-			index = 2
-			texture_diffuse = "suburb_western_shop_diffuse.dds"
-			texture_normal = "suburb_western_shop_normal.dds"
-			texture_specular = "suburb_western_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "suburb_western_buildings_1_04Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "suburb_western_pitched_diffuse.dds"
 			texture_normal = "suburb_western_pitched_normal.dds"
 			texture_specular = "suburb_western_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
-			name = "suburb_western_buildings_1_04Shape_flat"
-			index = 4
-			texture_diffuse = "suburb_western_flat_diffuse.dds"
-			texture_normal = "suburb_western_flat_normal.dds"
-			texture_specular = "suburb_western_flat_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 	}
@@ -215,16 +199,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "suburb_western_buildings_2_02Shape_rowhouse"
-			index = 1
-			texture_diffuse = "suburb_western_rowhouse_diffuse.dds"
-			texture_normal = "suburb_western_rowhouse_normal.dds"
-			texture_specular = "suburb_western_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "suburb_western_buildings_2_02Shape_shop"
-			index = 2
+			index = 1
 			texture_diffuse = "suburb_western_shop_diffuse.dds"
 			texture_normal = "suburb_western_shop_normal.dds"
 			texture_specular = "suburb_western_shop_specular.dds"
@@ -232,7 +208,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "suburb_western_buildings_2_02Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "suburb_western_pitched_diffuse.dds"
 			texture_normal = "suburb_western_pitched_normal.dds"
 			texture_specular = "suburb_western_pitched_specular.dds"
@@ -240,7 +216,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "suburb_western_buildings_2_02Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "suburb_western_flat_diffuse.dds"
 			texture_normal = "suburb_western_flat_normal.dds"
 			texture_specular = "suburb_western_flat_specular.dds"
@@ -347,16 +323,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "suburb_western_buildings_3_01Shape_rowhouse"
-			index = 1
-			texture_diffuse = "suburb_western_rowhouse_diffuse.dds"
-			texture_normal = "suburb_western_rowhouse_normal.dds"
-			texture_specular = "suburb_western_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "suburb_western_buildings_3_01Shape_shop"
-			index = 2
+			index = 1
 			texture_diffuse = "suburb_western_shop_diffuse.dds"
 			texture_normal = "suburb_western_shop_normal.dds"
 			texture_specular = "suburb_western_shop_specular.dds"
@@ -364,7 +332,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "suburb_western_buildings_3_01Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "suburb_western_pitched_diffuse.dds"
 			texture_normal = "suburb_western_pitched_normal.dds"
 			texture_specular = "suburb_western_pitched_specular.dds"
@@ -372,7 +340,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "suburb_western_buildings_3_01Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "suburb_western_flat_diffuse.dds"
 			texture_normal = "suburb_western_flat_normal.dds"
 			texture_specular = "suburb_western_flat_specular.dds"
@@ -611,16 +579,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "suburb_western_buildings_4_03Shape_rowhouse"
-			index = 1
-			texture_diffuse = "suburb_western_rowhouse_diffuse.dds"
-			texture_normal = "suburb_western_rowhouse_normal.dds"
-			texture_specular = "suburb_western_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "suburb_western_buildings_4_03Shape_shop"
-			index = 2
+			index = 1
 			texture_diffuse = "suburb_western_shop_diffuse.dds"
 			texture_normal = "suburb_western_shop_normal.dds"
 			texture_specular = "suburb_western_shop_specular.dds"
@@ -628,7 +588,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "suburb_western_buildings_4_03Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "suburb_western_pitched_diffuse.dds"
 			texture_normal = "suburb_western_pitched_normal.dds"
 			texture_specular = "suburb_western_pitched_specular.dds"
@@ -636,7 +596,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "suburb_western_buildings_4_03Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "suburb_western_flat_diffuse.dds"
 			texture_normal = "suburb_western_flat_normal.dds"
 			texture_specular = "suburb_western_flat_specular.dds"
@@ -663,27 +623,11 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "suburb_western_buildings_4_04Shape_shop"
-			index = 2
-			texture_diffuse = "suburb_western_shop_diffuse.dds"
-			texture_normal = "suburb_western_shop_normal.dds"
-			texture_specular = "suburb_western_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "suburb_western_buildings_4_04Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "suburb_western_pitched_diffuse.dds"
 			texture_normal = "suburb_western_pitched_normal.dds"
 			texture_specular = "suburb_western_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
-			name = "suburb_western_buildings_4_04Shape_flat"
-			index = 4
-			texture_diffuse = "suburb_western_flat_diffuse.dds"
-			texture_normal = "suburb_western_flat_normal.dds"
-			texture_specular = "suburb_western_flat_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 	}

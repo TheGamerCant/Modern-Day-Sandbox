@@ -55,16 +55,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_east_asian_buildings_1_02Shape_shop"
-			index = 1
-			texture_diffuse = "informal_east_asian_shop_diffuse.dds"
-			texture_normal = "informal_east_asian_shop_normal.dds"
-			texture_specular = "informal_east_asian_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_east_asian_buildings_1_02Shape_shed"
-			index = 2
+			index = 1
 			texture_diffuse = "informal_east_asian_shed_diffuse.dds"
 			texture_normal = "informal_east_asian_shed_normal.dds"
 			texture_specular = "informal_east_asian_shed_specular.dds"
@@ -72,7 +64,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_1_02Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "informal_east_asian_pitched_diffuse.dds"
 			texture_normal = "informal_east_asian_pitched_normal.dds"
 			texture_specular = "informal_east_asian_pitched_specular.dds"
@@ -80,7 +72,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_1_02Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "informal_east_asian_flat_diffuse.dds"
 			texture_normal = "informal_east_asian_flat_normal.dds"
 			texture_specular = "informal_east_asian_flat_specular.dds"
@@ -99,16 +91,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_east_asian_buildings_1_03Shape_shop"
-			index = 1
-			texture_diffuse = "informal_east_asian_shop_diffuse.dds"
-			texture_normal = "informal_east_asian_shop_normal.dds"
-			texture_specular = "informal_east_asian_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_east_asian_buildings_1_03Shape_shed"
-			index = 2
+			index = 1
 			texture_diffuse = "informal_east_asian_shed_diffuse.dds"
 			texture_normal = "informal_east_asian_shed_normal.dds"
 			texture_specular = "informal_east_asian_shed_specular.dds"
@@ -116,7 +100,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_1_03Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "informal_east_asian_pitched_diffuse.dds"
 			texture_normal = "informal_east_asian_pitched_normal.dds"
 			texture_specular = "informal_east_asian_pitched_specular.dds"
@@ -124,7 +108,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_1_03Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "informal_east_asian_flat_diffuse.dds"
 			texture_normal = "informal_east_asian_flat_normal.dds"
 			texture_specular = "informal_east_asian_flat_specular.dds"
@@ -231,16 +215,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_east_asian_buildings_2_02Shape_shop"
-			index = 1
-			texture_diffuse = "informal_east_asian_shop_diffuse.dds"
-			texture_normal = "informal_east_asian_shop_normal.dds"
-			texture_specular = "informal_east_asian_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_east_asian_buildings_2_02Shape_shed"
-			index = 2
+			index = 1
 			texture_diffuse = "informal_east_asian_shed_diffuse.dds"
 			texture_normal = "informal_east_asian_shed_normal.dds"
 			texture_specular = "informal_east_asian_shed_specular.dds"
@@ -248,7 +224,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_2_02Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "informal_east_asian_pitched_diffuse.dds"
 			texture_normal = "informal_east_asian_pitched_normal.dds"
 			texture_specular = "informal_east_asian_pitched_specular.dds"
@@ -256,7 +232,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_2_02Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "informal_east_asian_flat_diffuse.dds"
 			texture_normal = "informal_east_asian_flat_normal.dds"
 			texture_specular = "informal_east_asian_flat_specular.dds"
@@ -355,16 +331,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_east_asian_buildings_3_01Shape_shop"
-			index = 1
-			texture_diffuse = "informal_east_asian_shop_diffuse.dds"
-			texture_normal = "informal_east_asian_shop_normal.dds"
-			texture_specular = "informal_east_asian_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_east_asian_buildings_3_01Shape_shed"
-			index = 2
+			index = 1
 			texture_diffuse = "informal_east_asian_shed_diffuse.dds"
 			texture_normal = "informal_east_asian_shed_normal.dds"
 			texture_specular = "informal_east_asian_shed_specular.dds"
@@ -372,7 +340,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_3_01Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "informal_east_asian_pitched_diffuse.dds"
 			texture_normal = "informal_east_asian_pitched_normal.dds"
 			texture_specular = "informal_east_asian_pitched_specular.dds"
@@ -380,7 +348,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_3_01Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "informal_east_asian_flat_diffuse.dds"
 			texture_normal = "informal_east_asian_flat_normal.dds"
 			texture_specular = "informal_east_asian_flat_specular.dds"
@@ -487,16 +455,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "informal_east_asian_buildings_3_04Shape_shop"
-			index = 1
-			texture_diffuse = "informal_east_asian_shop_diffuse.dds"
-			texture_normal = "informal_east_asian_shop_normal.dds"
-			texture_specular = "informal_east_asian_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "informal_east_asian_buildings_3_04Shape_shed"
-			index = 2
+			index = 1
 			texture_diffuse = "informal_east_asian_shed_diffuse.dds"
 			texture_normal = "informal_east_asian_shed_normal.dds"
 			texture_specular = "informal_east_asian_shed_specular.dds"
@@ -504,7 +464,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_3_04Shape_pitched"
-			index = 3
+			index = 2
 			texture_diffuse = "informal_east_asian_pitched_diffuse.dds"
 			texture_normal = "informal_east_asian_pitched_normal.dds"
 			texture_specular = "informal_east_asian_pitched_specular.dds"
@@ -512,7 +472,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "informal_east_asian_buildings_3_04Shape_flat"
-			index = 4
+			index = 3
 			texture_diffuse = "informal_east_asian_flat_diffuse.dds"
 			texture_normal = "informal_east_asian_flat_normal.dds"
 			texture_specular = "informal_east_asian_flat_specular.dds"

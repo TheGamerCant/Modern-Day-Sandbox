@@ -27,16 +27,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_1_01Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_east_asian_tower_diffuse.dds"
-			texture_normal = "urban_core_east_asian_tower_normal.dds"
-			texture_specular = "urban_core_east_asian_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_1_01Shape_pitched"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_east_asian_pitched_diffuse.dds"
 			texture_normal = "urban_core_east_asian_pitched_normal.dds"
 			texture_specular = "urban_core_east_asian_pitched_specular.dds"
@@ -44,7 +36,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_east_asian_buildings_1_01Shape_flat"
-			index = 5
+			index = 4
 			texture_diffuse = "urban_core_east_asian_flat_diffuse.dds"
 			texture_normal = "urban_core_east_asian_flat_normal.dds"
 			texture_specular = "urban_core_east_asian_flat_specular.dds"
@@ -203,16 +195,8 @@ objectTypes = {
 		name = "urban_core_east_asian_buildings_2_01_mesh"
 		file = "gfx/models/buildings/urban_core_east_asian/urban_core_east_asian_buildings_2_01.mesh"
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_2_01Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_east_asian_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_east_asian_rowhouse_normal.dds"
-			texture_specular = "urban_core_east_asian_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_2_01Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_east_asian_shop_diffuse.dds"
 			texture_normal = "urban_core_east_asian_shop_normal.dds"
 			texture_specular = "urban_core_east_asian_shop_specular.dds"
@@ -220,7 +204,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_east_asian_buildings_2_01Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_east_asian_block_diffuse.dds"
 			texture_normal = "urban_core_east_asian_block_normal.dds"
 			texture_specular = "urban_core_east_asian_block_specular.dds"
@@ -228,23 +212,15 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_east_asian_buildings_2_01Shape_tower"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_east_asian_tower_diffuse.dds"
 			texture_normal = "urban_core_east_asian_tower_normal.dds"
 			texture_specular = "urban_core_east_asian_tower_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_2_01Shape_pitched"
-			index = 4
-			texture_diffuse = "urban_core_east_asian_pitched_diffuse.dds"
-			texture_normal = "urban_core_east_asian_pitched_normal.dds"
-			texture_specular = "urban_core_east_asian_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_2_01Shape_flat"
-			index = 5
+			index = 3
 			texture_diffuse = "urban_core_east_asian_flat_diffuse.dds"
 			texture_normal = "urban_core_east_asian_flat_normal.dds"
 			texture_specular = "urban_core_east_asian_flat_specular.dds"
@@ -255,16 +231,8 @@ objectTypes = {
 		name = "urban_core_east_asian_buildings_2_02_mesh"
 		file = "gfx/models/buildings/urban_core_east_asian/urban_core_east_asian_buildings_2_02.mesh"
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_2_02Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_east_asian_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_east_asian_rowhouse_normal.dds"
-			texture_specular = "urban_core_east_asian_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_2_02Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_east_asian_shop_diffuse.dds"
 			texture_normal = "urban_core_east_asian_shop_normal.dds"
 			texture_specular = "urban_core_east_asian_shop_specular.dds"
@@ -272,7 +240,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_east_asian_buildings_2_02Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_east_asian_block_diffuse.dds"
 			texture_normal = "urban_core_east_asian_block_normal.dds"
 			texture_specular = "urban_core_east_asian_block_specular.dds"
@@ -280,23 +248,15 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_east_asian_buildings_2_02Shape_tower"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_east_asian_tower_diffuse.dds"
 			texture_normal = "urban_core_east_asian_tower_normal.dds"
 			texture_specular = "urban_core_east_asian_tower_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_2_02Shape_pitched"
-			index = 4
-			texture_diffuse = "urban_core_east_asian_pitched_diffuse.dds"
-			texture_normal = "urban_core_east_asian_pitched_normal.dds"
-			texture_specular = "urban_core_east_asian_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_2_02Shape_flat"
-			index = 5
+			index = 3
 			texture_diffuse = "urban_core_east_asian_flat_diffuse.dds"
 			texture_normal = "urban_core_east_asian_flat_normal.dds"
 			texture_specular = "urban_core_east_asian_flat_specular.dds"
@@ -655,32 +615,16 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_4_02Shape_shop"
-			index = 1
-			texture_diffuse = "urban_core_east_asian_shop_diffuse.dds"
-			texture_normal = "urban_core_east_asian_shop_normal.dds"
-			texture_specular = "urban_core_east_asian_shop_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_4_02Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_east_asian_block_diffuse.dds"
 			texture_normal = "urban_core_east_asian_block_normal.dds"
 			texture_specular = "urban_core_east_asian_block_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_4_02Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_east_asian_tower_diffuse.dds"
-			texture_normal = "urban_core_east_asian_tower_normal.dds"
-			texture_specular = "urban_core_east_asian_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_4_02Shape_pitched"
-			index = 4
+			index = 2
 			texture_diffuse = "urban_core_east_asian_pitched_diffuse.dds"
 			texture_normal = "urban_core_east_asian_pitched_normal.dds"
 			texture_specular = "urban_core_east_asian_pitched_specular.dds"
@@ -688,7 +632,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_east_asian_buildings_4_02Shape_flat"
-			index = 5
+			index = 3
 			texture_diffuse = "urban_core_east_asian_flat_diffuse.dds"
 			texture_normal = "urban_core_east_asian_flat_normal.dds"
 			texture_specular = "urban_core_east_asian_flat_specular.dds"
@@ -723,16 +667,8 @@ objectTypes = {
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_4_03Shape_tower"
-			index = 3
-			texture_diffuse = "urban_core_east_asian_tower_diffuse.dds"
-			texture_normal = "urban_core_east_asian_tower_normal.dds"
-			texture_specular = "urban_core_east_asian_tower_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_4_03Shape_pitched"
-			index = 4
+			index = 3
 			texture_diffuse = "urban_core_east_asian_pitched_diffuse.dds"
 			texture_normal = "urban_core_east_asian_pitched_normal.dds"
 			texture_specular = "urban_core_east_asian_pitched_specular.dds"
@@ -740,7 +676,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_east_asian_buildings_4_03Shape_flat"
-			index = 5
+			index = 4
 			texture_diffuse = "urban_core_east_asian_flat_diffuse.dds"
 			texture_normal = "urban_core_east_asian_flat_normal.dds"
 			texture_specular = "urban_core_east_asian_flat_specular.dds"
@@ -751,16 +687,8 @@ objectTypes = {
 		name = "urban_core_east_asian_buildings_4_04_mesh"
 		file = "gfx/models/buildings/urban_core_east_asian/urban_core_east_asian_buildings_4_04.mesh"
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_4_04Shape_rowhouse"
-			index = 0
-			texture_diffuse = "urban_core_east_asian_rowhouse_diffuse.dds"
-			texture_normal = "urban_core_east_asian_rowhouse_normal.dds"
-			texture_specular = "urban_core_east_asian_rowhouse_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_4_04Shape_shop"
-			index = 1
+			index = 0
 			texture_diffuse = "urban_core_east_asian_shop_diffuse.dds"
 			texture_normal = "urban_core_east_asian_shop_normal.dds"
 			texture_specular = "urban_core_east_asian_shop_specular.dds"
@@ -768,7 +696,7 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_east_asian_buildings_4_04Shape_block"
-			index = 2
+			index = 1
 			texture_diffuse = "urban_core_east_asian_block_diffuse.dds"
 			texture_normal = "urban_core_east_asian_block_normal.dds"
 			texture_specular = "urban_core_east_asian_block_specular.dds"
@@ -776,23 +704,15 @@ objectTypes = {
 		}
 		meshsettings = {
 			name = "urban_core_east_asian_buildings_4_04Shape_tower"
-			index = 3
+			index = 2
 			texture_diffuse = "urban_core_east_asian_tower_diffuse.dds"
 			texture_normal = "urban_core_east_asian_tower_normal.dds"
 			texture_specular = "urban_core_east_asian_tower_specular.dds"
 			shader = "PdxMeshAdvanced"
 		}
 		meshsettings = {
-			name = "urban_core_east_asian_buildings_4_04Shape_pitched"
-			index = 4
-			texture_diffuse = "urban_core_east_asian_pitched_diffuse.dds"
-			texture_normal = "urban_core_east_asian_pitched_normal.dds"
-			texture_specular = "urban_core_east_asian_pitched_specular.dds"
-			shader = "PdxMeshAdvanced"
-		}
-		meshsettings = {
 			name = "urban_core_east_asian_buildings_4_04Shape_flat"
-			index = 5
+			index = 3
 			texture_diffuse = "urban_core_east_asian_flat_diffuse.dds"
 			texture_normal = "urban_core_east_asian_flat_normal.dds"
 			texture_specular = "urban_core_east_asian_flat_specular.dds"

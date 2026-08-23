@@ -148,7 +148,7 @@ import struct
 OUTPUT_DIR = "output"
 VARIANTS_PER_TIER = 4            # vanilla always ships 4 variants per distance (01-04)
 UNIT_SCALE = 1.0                 # 1 game "map unit" per world unit; tweak to taste
-BUILDINGS_PER_MESH = (10, 20)    # default per-mesh building count; an archetype can override via its own "count_range"
+BUILDINGS_PER_MESH = (5, 10)    # default per-mesh building count; an archetype can override via its own "count_range"
 DISTANCE_LEVELS = (1, 2, 3, 4)   # cities.txt `distance`: 1 = edge of this locale's urban blob, 4 = its core
 
 # Regional/material flavor -- layered ON TOP of an archetype (see
@@ -236,7 +236,7 @@ ARCHETYPES = {
         # fewer buildings per mesh than other archetypes -- each one is
         # much longer, so the same 10-20 count would sprawl this cluster
         # far larger than every other locale's.
-        "count_range": (5, 10),
+        "count_range": (3, 7),
     },
     "informal": {
         "abbr": "INF",
@@ -258,7 +258,7 @@ LOCALES = [
     ("suburb", "western", 10),
     ("suburb", "east_asian", 11),
     ("suburb", "south_america", 12),
-    ("suburb", "eastern_europe", 13),
+#    ("suburb", "eastern_europe", 13),
     ("urban_core", "western", 14),
     ("urban_core", "mediterranean", 15),
     ("urban_core", "east_asian", 16),
