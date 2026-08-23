@@ -533,8 +533,8 @@ TIB = {
 	color_ui = rgb { 62 24 110 }
 }
 TMS = {
-	color = rgb { 0 116 38 }
-	color_ui = rgb { 0 116 38 }
+	color = rgb { 45 70 5 }
+	color_ui = rgb { 45 70 5 }
 }
 TRZ = {
 	color = rgb { 162 6 9 }
@@ -589,8 +589,8 @@ UYG = {
 	color_ui = rgb { 52 113 167 }
 }
 UZB = {
-	color = rgb { 24 105 209 }
-	color_ui = rgb { 24 105 209 }
+	color = rgb { 17 50 113 }
+	color_ui = rgb { 17 50 113 }
 }
 VCY = {
 	color = rgb { 175 152 0 }

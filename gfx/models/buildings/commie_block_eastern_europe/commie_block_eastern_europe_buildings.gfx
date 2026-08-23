@@ -1,0 +1,322 @@
+objectTypes = {
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_1_01_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_1_01.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_1_01Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_1_01Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_1_02_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_1_02.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_1_02Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_1_02Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_1_03_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_1_03.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_1_03Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_1_03Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_1_04_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_1_04.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_1_04Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_1_04Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_2_01_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_2_01.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_2_01Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_2_01Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_2_02_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_2_02.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_2_02Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_2_02Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_2_03_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_2_03.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_2_03Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_2_03Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_2_04_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_2_04.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_2_04Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_2_04Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_3_01_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_3_01.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_3_01Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_3_01Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_3_02_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_3_02.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_3_02Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_3_02Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_3_03_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_3_03.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_3_03Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_3_03Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_3_04_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_3_04.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_3_04Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_3_04Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_4_01_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_4_01.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_4_01Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_4_01Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_4_02_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_4_02.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_4_02Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_4_02Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_4_03_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_4_03.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_4_03Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_4_03Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+	pdxmesh = {
+		name = "commie_block_eastern_europe_buildings_4_04_mesh"
+		file = "gfx/models/buildings/commie_block_eastern_europe/commie_block_eastern_europe_buildings_4_04.mesh"
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_4_04Shape_block"
+			index = 0
+			texture_diffuse = "commie_block_eastern_europe_block_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_block_normal.dds"
+			texture_specular = "commie_block_eastern_europe_block_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+		meshsettings = {
+			name = "commie_block_eastern_europe_buildings_4_04Shape_flat"
+			index = 1
+			texture_diffuse = "commie_block_eastern_europe_flat_diffuse.dds"
+			texture_normal = "commie_block_eastern_europe_flat_normal.dds"
+			texture_specular = "commie_block_eastern_europe_flat_specular.dds"
+			shader = "PdxMeshAdvanced"
+		}
+	}
+}

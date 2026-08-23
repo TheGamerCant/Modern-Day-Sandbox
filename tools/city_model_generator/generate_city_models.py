@@ -1286,7 +1286,7 @@ def generate_locale(archetype_key, archetype_cfg, region_key, region_cfg, color_
             asset_lines.append('entity = {')
             asset_lines.append('\tname = "{}_entity"'.format(name))
             asset_lines.append('\tpdxmesh = "{}_mesh"'.format(name))
-            asset_lines.append('\tscale = 1.0')
+            asset_lines.append('\tscale = 0.06')
             asset_lines.append('}')
             asset_lines.append('')
 
@@ -1320,15 +1320,15 @@ def generate_cities_txt_fragment(locale_results, out_root):
     lines.append("# archetype+region combination instead of per region alone).")
     lines.append("")
     for (archetype_key, region_key, color_index, locale_name, mesh_names_by_distance) in locale_results:
-        lines.append("city_group = {{ # {} ({} archetype, {} region)".format(locale_name, archetype_key, region_key))
-        lines.append("\tcolor_index = {} # paint this palette index onto map/cities.bmp for {}".format(
-            color_index, locale_name))
-        lines.append("\tdensity = 0.5 # fraction of urban-blob pixels that spawn a building -- tune per locale")
+        lines.append("city_group = {")
+        lines.append("\tcolor_index = {} ".format(
+            color_index))
+        lines.append("\tdensity = 0.5")
         lines.append("")
         for distance in sorted(mesh_names_by_distance.keys()):
             names = mesh_names_by_distance[distance]
             lines.append("\tbuilding = {")
-            lines.append("\t\tdistance = {} # 1 = sparse urban-blob edge, 4 = dense urban-blob core".format(distance))
+            lines.append("\t\tdistance = {}".format(distance))
             lines.append("\t\tmesh = {")
             for n in names:
                 lines.append('\t\t\t"{}_entity"'.format(n))
