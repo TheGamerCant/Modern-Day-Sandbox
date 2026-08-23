@@ -76,15 +76,26 @@ them with wide positional jitter AND a random yaw rotation per building
 Ships with 5 example regions (western, east_asian, mediterranean,
 south_america, eastern_europe) and 5 example archetypes (suburb, urban_core,
 metropolis, commie_block, informal), combined into 13 example locales -- add/
-rename/recombine in REGIONS / ARCHETYPES / LOCALES below. Every mesh's
-diffuse is an obvious "dev texture" atlas: a dedicated colored, outlined,
-labeled cell for each of the 6 building types (house, rowhouse, shop, shed,
-block, tower) plus one per roof shape (pitched, flat), stamped via a tiny
-built-in bitmap font, so every wall face and roof face UVs into the cell
-matching what it actually is -- a house's walls look different from a
-tower's, a pitched roof looks different from a flat one -- plus a top strip
-carrying the mesh's own identifying code (e.g. "MET-EAS-T4-04") so the file
-itself is still recognizable in-engine at a glance.
+rename/recombine in REGIONS / ARCHETYPES / LOCALES below.
+
+Texturing is a single shared "dev texture" diffuse (+ matching normal/
+specular) used by every mesh in every locale -- not one generated per mesh
+any more. It's a packed grid of equal SQUARE cells with no gutter or
+outline between them, one cell per building type (house, rowhouse, shop,
+shed, block, tower) and one per roof shape (pitched, flat), each colored
+and labeled via a tiny built-in bitmap font (see write_shared_diffuse_atlas
+/ _build_atlas_layout). Because a building's actual wall or roof face is
+almost never itself square -- a metropolis tower's wall is far taller than
+it is wide; a commie_block slab's long face is far wider than it is tall --
+each face is TILED with repeated copies of its square cell rather than one
+copy stretched to fit (see MeshBuilder.add_tiled_quad): a face twice as
+tall as it is wide shows the same square texture twice, stacked, instead
+of once squashed. (Scope note: this tiling applies to every wall and every
+flat roof cap; a pitched roof's sloped triangular faces still map onto
+their cell as a single, untiled read -- subdividing a triangle into square
+repeats is a fair bit more geometry than a quad, and pitched roofs are
+only ever modest, low-rise shapes here, so the stretching it avoids on
+walls barely arises for them.)
 
 Nothing here touches your live mod. Everything is written under OUTPUT_DIR;
 copy the pieces you want into your mod folder yourself (see the generated
@@ -242,30 +253,36 @@ PITCHED_ROOF_HEIGHT_FRACTION = 0.35  # roof apex height, as a fraction of wall h
 
 # ---------------------------------------------------------------------------
 # Texture atlas layout -- shared by geometry (UV mapping) and the
-# placeholder texture generator. One diffuse per mesh is still generated
-# (so each mesh's file stays individually identifiable), but its CONTENT is
-# now a grid with a dedicated wall sub-region PER BUILDING TYPE plus a
-# dedicated roof sub-region per roof shape, instead of one generic
-# wall/roof split. This is "different segments for each building type
-# where it's a good idea": walls are what's actually visible and where a
-# house/shed/tower/etc. should read as a different material, so every type
-# gets its own wall segment; roofs only have two distinct *shapes*
-# (pitched vs flat), so those share just two segments rather than one per
-# type (a flat commercial roof doesn't need its own look per building).
+# placeholder texture generator. This is now ONE diffuse (+ one shared
+# normal, one shared specular) for the WHOLE output, not one generated per
+# mesh -- see generate_shared_textures / write_shared_diffuse_atlas. Its
+# content is a grid with a dedicated wall cell PER BUILDING TYPE plus a
+# dedicated roof cell per roof shape ("different segments for each
+# building type where it's a good idea": walls are what's actually visible
+# and where a house/shed/tower/etc. should read as a different material,
+# so every type gets its own; roofs only have two distinct *shapes*, so
+# those share just two cells rather than one per type). Every cell is an
+# equal SQUARE, and 6 wall types + 2 roof styles = 8 cells packs exactly
+# into a 4x2 grid with nothing left over -- packed edge-to-edge, no gutter
+# or outline between cells (see write_shared_diffuse_atlas). Square cells
+# are what let MeshBuilder.add_tiled_quad repeat a cell cleanly across a
+# non-square face instead of stretching it.
 # ---------------------------------------------------------------------------
 
-ATLAS_WIDTH = 384
-ATLAS_HEIGHT = 288
-ATLAS_CODE_STRIP_H = 32          # thin top strip carrying the mesh's own identifying code
-ATLAS_GRID_H = ATLAS_HEIGHT - ATLAS_CODE_STRIP_H
-ATLAS_MARGIN_PX = 4               # inset per cell so each keeps its own 1px outline
+WALL_TYPE_ORDER = ["house", "rowhouse", "shop", "shed", "block", "tower"]
+ROOF_STYLE_ORDER = ["pitched", "flat"]
 
-CODE_LABEL_SCALE = 3   # the code strip is one wide cell -- biggest, most legible text
-WALL_LABEL_SCALE = 1   # wall cells are narrow (6 across a row) -- keep text small to fit
-ROOF_LABEL_SCALE = 2   # roof cells are wide (2 across a row, each 3 columns) -- room to spare
+ATLAS_CELL_PX = 128                      # every cell is this many pixels square
+ATLAS_COLS, ATLAS_ROWS = 4, 2            # 6 wall types + 2 roof styles = 8 cells = a 4x2 grid, exactly
+ATLAS_WIDTH = ATLAS_COLS * ATLAS_CELL_PX
+ATLAS_HEIGHT = ATLAS_ROWS * ATLAS_CELL_PX
+LABEL_SCALE = 2                          # every cell is the same size now, so one label scale fits all
 
-WALL_TYPE_ORDER = ["house", "rowhouse", "shop", "shed", "block", "tower"]   # one column each
-ROOF_STYLE_ORDER = ["pitched", "flat"]                                      # each spans 3 columns
+# Row-major cell assignment: the 6 wall types fill row 0 and spill one into
+# row 1, then the 2 roof styles take the rest of row 1.
+_ATLAS_CELL_ORDER = [("wall", t) for t in WALL_TYPE_ORDER] + [("roof", s) for s in ROOF_STYLE_ORDER]
+
+MAX_TILE_REPEATS = 24   # safety cap on how many times add_tiled_quad will repeat a cell across one face
 
 # BGRA fill colors -- one per wall type, one per roof style. Distinct hues
 # so each type/shape is recognizable at a glance, not just from its label.
@@ -285,26 +302,17 @@ ROOF_FILL_BY_STYLE = {
 
 def _build_atlas_layout():
     """Computes the pixel-space, then UV-space (0..1), rect for every wall
-    type and every roof style in the grid described above. Single source
-    of truth for both the geometry (which UV rect a face maps into) and
-    write_atlas_dds (which pixels to fill/outline/label) -- so they can
-    never drift out of sync."""
-    cols = len(WALL_TYPE_ORDER)
-    col_w = ATLAS_WIDTH / cols
-    row_h = ATLAS_GRID_H / 2
-    row0_y0, row0_y1 = ATLAS_CODE_STRIP_H, ATLAS_CODE_STRIP_H + row_h
-    row1_y0, row1_y1 = row0_y1, row0_y1 + row_h
-    m = ATLAS_MARGIN_PX
-
+    type and every roof style -- all equal ATLAS_CELL_PX squares, packed
+    edge-to-edge in row-major order with no gap between them. Single
+    source of truth for both the geometry (which UV rect a face tiles
+    into) and write_shared_diffuse_atlas (which pixels to fill/label) --
+    so they can never drift out of sync."""
     wall_px, roof_px = {}, {}
-    for i, btype in enumerate(WALL_TYPE_ORDER):
-        x0, x1 = i * col_w, (i + 1) * col_w
-        wall_px[btype] = (x0 + m, row0_y0 + m, x1 - m, row0_y1 - m)
-
-    span = cols // len(ROOF_STYLE_ORDER)  # each roof style spans this many columns
-    for i, style in enumerate(ROOF_STYLE_ORDER):
-        x0, x1 = i * span * col_w, (i + 1) * span * col_w
-        roof_px[style] = (x0 + m, row1_y0 + m, x1 - m, row1_y1 - m)
+    for i, (kind, key) in enumerate(_ATLAS_CELL_ORDER):
+        col, row = i % ATLAS_COLS, i // ATLAS_COLS
+        x0, y0 = col * ATLAS_CELL_PX, row * ATLAS_CELL_PX
+        x1, y1 = x0 + ATLAS_CELL_PX, y0 + ATLAS_CELL_PX
+        (wall_px if kind == "wall" else roof_px)[key] = (x0, y0, x1, y1)
 
     def to_uv(rect):
         x0, y0, x1, y1 = rect
@@ -400,6 +408,49 @@ class MeshBuilder:
         self.tris.append((i0, i1, i2))
         self.tris.append((i0, i2, i3))
 
+    def add_tiled_quad(self, p0, p1, p2, p3, uv_rect=(0.0, 0.0, 1.0, 1.0)):
+        """Like add_quad, but repeats -- rather than stretches -- the
+        square atlas cell in `uv_rect` across the quad's real proportions.
+        A plain texture atlas has no hardware way to wrap just one
+        sub-region of a shared texture (UV wrap cycles the WHOLE texture,
+        not a single cell), so this tiles geometrically instead: it
+        subdivides the quad into a tiles_u x tiles_v grid of sub-quads
+        sized to keep each one as close to square as the whole face
+        allows, then maps every sub-quad with the SAME uv_rect. A face
+        twice as tall as it is wide (tiles_u=1, tiles_v=2) shows its
+        square cell twice, stacked, instead of once squashed 2x tall --
+        this is what keeps a very tall tower's wall, or a commie_block
+        slab's long face, looking like repeated square tiles instead of a
+        stretched sliver."""
+        edge_u = v_len(v_sub(p1, p0))   # length of the quad's own "u" edge (p0->p1)
+        edge_v = v_len(v_sub(p3, p0))   # length of the quad's own "v" edge (p0->p3)
+        if edge_u < 1e-6 or edge_v < 1e-6:
+            tiles_u, tiles_v = 1, 1
+        elif edge_u >= edge_v:
+            tiles_u = min(MAX_TILE_REPEATS, max(1, round(edge_u / edge_v)))
+            tiles_v = 1
+        else:
+            tiles_u = 1
+            tiles_v = min(MAX_TILE_REPEATS, max(1, round(edge_v / edge_u)))
+
+        def lerp3(a, b, t):
+            return (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t)
+
+        def bilerp(fu, fv):
+            top = lerp3(p0, p1, fu)      # v=0 edge
+            bottom = lerp3(p3, p2, fu)   # v=1 edge
+            return lerp3(top, bottom, fv)
+
+        for iv in range(tiles_v):
+            fv0, fv1 = iv / tiles_v, (iv + 1) / tiles_v
+            for iu in range(tiles_u):
+                fu0, fu1 = iu / tiles_u, (iu + 1) / tiles_u
+                c0 = bilerp(fu0, fv0)
+                c1 = bilerp(fu1, fv0)
+                c2 = bilerp(fu1, fv1)
+                c3 = bilerp(fu0, fv1)
+                self.add_quad(c0, c1, c2, c3, uv_rect=uv_rect)
+
     def add_tri(self, p0, p1, p2, uv_rect=(0.0, 0.0, 1.0, 1.0)):
         n = face_normal(p0, p1, p2)
         u0, v0, u1, v1 = uv_rect
@@ -451,26 +502,34 @@ class MeshBuilder:
 def add_box_walls_and_flat_roof(mb, hw, hd, wall_h, wall_uv, roof_uv, y0=0.0, roof=True):
     """4 side walls + (optionally) a flat roof cap. No floor (never seen).
     `wall_uv`/`roof_uv` are the atlas sub-rects this particular building's
-    type/roof-style map into (see WALL_UV_BY_TYPE / ROOF_UV_BY_STYLE)."""
+    type/roof-style map into (see WALL_UV_BY_TYPE / ROOF_UV_BY_STYLE). Every
+    face is TILED (add_tiled_quad), not stretched, so a very tall wall or a
+    long flat roof cap (e.g. commie_block's slabs) reads as repeated square
+    texture instead of one squashed copy."""
     y1 = y0 + wall_h
     # front (-z)
-    mb.add_quad((-hw, y0, -hd), (-hw, y1, -hd), (hw, y1, -hd), (hw, y0, -hd), uv_rect=wall_uv)
+    mb.add_tiled_quad((-hw, y0, -hd), (-hw, y1, -hd), (hw, y1, -hd), (hw, y0, -hd), uv_rect=wall_uv)
     # back (+z)
-    mb.add_quad((-hw, y0, hd), (hw, y0, hd), (hw, y1, hd), (-hw, y1, hd), uv_rect=wall_uv)
+    mb.add_tiled_quad((-hw, y0, hd), (hw, y0, hd), (hw, y1, hd), (-hw, y1, hd), uv_rect=wall_uv)
     # left (-x)
-    mb.add_quad((-hw, y0, -hd), (-hw, y0, hd), (-hw, y1, hd), (-hw, y1, -hd), uv_rect=wall_uv)
+    mb.add_tiled_quad((-hw, y0, -hd), (-hw, y0, hd), (-hw, y1, hd), (-hw, y1, -hd), uv_rect=wall_uv)
     # right (+x)
-    mb.add_quad((hw, y0, -hd), (hw, y1, -hd), (hw, y1, hd), (hw, y0, hd), uv_rect=wall_uv)
+    mb.add_tiled_quad((hw, y0, -hd), (hw, y1, -hd), (hw, y1, hd), (hw, y0, hd), uv_rect=wall_uv)
     if roof:
         # top (+y)
-        mb.add_quad((-hw, y1, -hd), (-hw, y1, hd), (hw, y1, hd), (hw, y1, -hd), uv_rect=roof_uv)
+        mb.add_tiled_quad((-hw, y1, -hd), (-hw, y1, hd), (hw, y1, hd), (hw, y1, -hd), uv_rect=roof_uv)
     return y1
 
 
 def add_pitched_roof(mb, hw, hd, y1, roof_h, roof_uv):
     """Pitched roof slopes UV into `roof_uv` (the same sub-region a flat
     roof cap of this roof_style would use -- both are "the roof" as far as
-    the texture atlas is concerned)."""
+    the texture atlas is concerned). Unlike the walls/flat roof cap (see
+    add_tiled_quad), these triangular slopes are NOT tiled -- cleanly
+    subdividing a triangle into square repeats is meaningfully more
+    geometry than a quad, and pitched roofs here are only ever modest,
+    low-rise shapes (house/rowhouse), so the stretching that tiling exists
+    to avoid barely arises for them."""
     apex = (0.0, y1 + roof_h, 0.0)
     tl, tr = (-hw, y1, -hd), (hw, y1, -hd)   # front top edge
     bl, br = (-hw, y1, hd), (hw, y1, hd)     # back top edge
@@ -905,23 +964,22 @@ def _text_pixel_positions(text, scale):
     return coords, total_w, glyph_h
 
 
-def write_atlas_dds(path, mesh_code):
-    """Writes this mesh's 'dev texture' placeholder diffuse: a thin top
-    strip with the mesh's own identifying code (so the file is still
-    recognizable in an asset browser even though its content below is now
-    shared/generic), then a grid with one labeled, outlined, colored
-    sub-region per building type (WALL_UV_BY_TYPE) and per roof style
-    (ROOF_UV_BY_STYLE) -- see _build_atlas_layout(). Every building's walls
-    and roof UV into exactly the matching cell here, so each type/shape
-    reads as a visibly different material in-engine. The gutter
-    between/around cells is a neutral dark gray so each cell's own 1px
-    black outline stays visible."""
+def write_shared_diffuse_atlas(path):
+    """Writes the ONE shared 'dev texture' placeholder diffuse used by
+    every building in every locale (see generate_shared_textures): a
+    packed grid of equal square cells, one per building type
+    (WALL_UV_BY_TYPE) and one per roof style (ROOF_UV_BY_STYLE) -- see
+    _build_atlas_layout(). Cells are packed directly edge-to-edge with no
+    gutter or outline between them -- nothing but each cell's own fill +
+    label -- since with every mesh now reading from one shared file
+    there's no separate per-mesh territory left to visually fence off."""
     width, height = ATLAS_WIDTH, ATLAS_HEIGHT
-    GUTTER = (40, 40, 40, 255)      # BGRA dark gray
-    CODE_BG = (200, 200, 200, 255)  # BGRA light gray
     BLACK = (0, 0, 0, 255)
 
-    pixels = [GUTTER] * (width * height)
+    # 6 wall cells + 2 roof cells = 8 = the whole 4x2 grid, so every pixel
+    # below gets overwritten by some cell's own fill -- this initial color
+    # never actually shows through.
+    pixels = [(0, 0, 0, 255)] * (width * height)
 
     def set_px(x, y, color):
         if 0 <= x < width and 0 <= y < height:
@@ -932,15 +990,6 @@ def write_atlas_dds(path, mesh_code):
             for x in range(int(x0), int(x1)):
                 set_px(x, y, color)
 
-    def outline_rect(x0, y0, x1, y1, color):
-        x0, y0, x1, y1 = int(x0), int(y0), int(x1), int(y1)
-        for x in range(x0, x1):
-            set_px(x, y0, color)
-            set_px(x, y1 - 1, color)
-        for y in range(y0, y1):
-            set_px(x0, y, color)
-            set_px(x1 - 1, y, color)
-
     def draw_label(text, x0, y0, x1, y1, s):
         coords, text_w, text_h = _text_pixel_positions(text, s)
         ox = int(x0) + max(0, (int(x1 - x0) - text_w) // 2)
@@ -948,28 +997,16 @@ def write_atlas_dds(path, mesh_code):
         for (x, y) in coords:
             set_px(ox + x, oy + y, BLACK)
 
-    def draw_cell(x0, y0, x1, y1, fill, label, s):
+    def draw_cell(x0, y0, x1, y1, fill, label):
         fill_rect(x0, y0, x1, y1, fill)
-        outline_rect(x0, y0, x1, y1, BLACK)
-        draw_label(label, x0, y0, x1, y1, s)
+        draw_label(label, x0, y0, x1, y1, LABEL_SCALE)
 
-    # 1px black outline around the whole texture
-    outline_rect(0, 0, width, height, BLACK)
-
-    # thin top strip: this mesh's own identifying code (roomiest cell, so
-    # it gets the biggest, most legible text)
-    draw_cell(ATLAS_MARGIN_PX, ATLAS_MARGIN_PX, width - ATLAS_MARGIN_PX, ATLAS_CODE_STRIP_H - ATLAS_MARGIN_PX,
-              CODE_BG, mesh_code, CODE_LABEL_SCALE)
-
-    # one cell per building type (walls) and per roof style (roofs) --
-    # wall cells are narrower (6 across) so their labels stay at scale 1;
-    # roof cells are 3x wider (2 across) so theirs can go bigger.
     for btype in WALL_TYPE_ORDER:
         x0, y0, x1, y1 = _WALL_PX_BY_TYPE[btype]
-        draw_cell(x0, y0, x1, y1, WALL_FILL_BY_TYPE[btype], btype.upper(), WALL_LABEL_SCALE)
+        draw_cell(x0, y0, x1, y1, WALL_FILL_BY_TYPE[btype], btype.upper())
     for style in ROOF_STYLE_ORDER:
         x0, y0, x1, y1 = _ROOF_PX_BY_STYLE[style]
-        draw_cell(x0, y0, x1, y1, ROOF_FILL_BY_STYLE[style], style.upper(), ROOF_LABEL_SCALE)
+        draw_cell(x0, y0, x1, y1, ROOF_FILL_BY_STYLE[style], style.upper())
 
     header = _dds_header(width, height)
     with open(path, "wb") as f:
@@ -986,25 +1023,43 @@ def locale_mesh_name(locale_name, distance, variant):
     return "{}_buildings_{}_{:02d}".format(locale_name, distance, variant)
 
 
-def generate_locale_shared_textures(locale_dir, locale_name):
-    """Normal/specular stay flat, neutral, and shared across every mesh in
-    the locale -- only the diffuse becomes a unique labeled texture per
-    mesh (see generate_locale)."""
-    write_flat_dds(os.path.join(locale_dir, "{}_normal.dds".format(locale_name)), 4, 4, (255, 128, 128, 255))  # flat "up" normal (BGRA)
-    write_flat_dds(os.path.join(locale_dir, "{}_specular.dds".format(locale_name)), 4, 4, (20, 20, 20, 255))   # low, uniform shininess
+# Root-relative paths (same convention as a pdxmesh's own "file" field --
+# see write_mesh_file) to the ONE shared diffuse/normal/specular set every
+# locale's every mesh reads from. Generated once by generate_shared_textures,
+# not per-locale or per-mesh any more.
+SHARED_TEXTURES_REL_DIR = "gfx/models/buildings/shared"
+SHARED_DIFFUSE_REL = SHARED_TEXTURES_REL_DIR + "/buildings_diffuse.dds"
+SHARED_NORMAL_REL = SHARED_TEXTURES_REL_DIR + "/buildings_normal.dds"
+SHARED_SPECULAR_REL = SHARED_TEXTURES_REL_DIR + "/buildings_specular.dds"
+
+
+def generate_shared_textures(out_root):
+    """Writes the ONE diffuse/normal/specular set used by every mesh in
+    every locale -- replaces what used to be a unique diffuse generated per
+    mesh (224 near-duplicate files) plus a normal/specular pair duplicated
+    per locale. Every locale's .gfx (and every .mesh's own internal
+    material node) references this same trio by the root-relative paths
+    above, matching how a mesh's own `file` field is already root-relative
+    (not a bare filename), since these textures no longer live next to the
+    meshes that use them."""
+    shared_dir = os.path.join(out_root, "gfx", "models", "buildings", "shared")
+    os.makedirs(shared_dir, exist_ok=True)
+    write_shared_diffuse_atlas(os.path.join(shared_dir, "buildings_diffuse.dds"))
+    write_flat_dds(os.path.join(shared_dir, "buildings_normal.dds"), 4, 4, (255, 128, 128, 255))  # flat "up" normal (BGRA)
+    write_flat_dds(os.path.join(shared_dir, "buildings_specular.dds"), 4, 4, (20, 20, 20, 255))   # low, uniform shininess
 
 
 def generate_locale(archetype_key, archetype_cfg, region_key, region_cfg, color_index, out_root):
-    """Generates every mesh/texture/gfx/asset for one (archetype, region)
-    LOCALE -- e.g. "metropolis_western" -- across all 4 DISTANCE_LEVELS x
+    """Generates every mesh/gfx/asset for one (archetype, region) LOCALE --
+    e.g. "metropolis_western" -- across all 4 DISTANCE_LEVELS x
     VARIANTS_PER_TIER variants, exactly like a vanilla "region" folder used
-    to, just keyed on archetype+region together instead of region alone."""
+    to, just keyed on archetype+region together instead of region alone.
+    Nothing texture-related is generated here any more -- every mesh just
+    references the one shared diffuse/normal/specular (see
+    generate_shared_textures), called once up in main()."""
     locale_name = "{}_{}".format(archetype_key, region_key)
     locale_dir = os.path.join(out_root, "gfx", "models", "buildings", locale_name)
     os.makedirs(locale_dir, exist_ok=True)
-    generate_locale_shared_textures(locale_dir, locale_name)
-
-    normal_tex = "{}_normal.dds".format(locale_name)
 
     gfx_lines = ["objectTypes = {"]
     asset_lines = []
@@ -1017,24 +1072,15 @@ def generate_locale(archetype_key, archetype_cfg, region_key, region_cfg, color_
             name = locale_mesh_name(locale_name, distance, variant)
             rng = random.Random("{}-{}-{}".format(locale_name, distance, variant))
 
-            # each .mesh is a small city-block cluster of 10-20 mixed
-            # building types drawn from this LOCALE's archetype, arranged by
-            # its archetype's own layout (see build_city_cluster).
+            # each .mesh is a small city-block cluster of mixed building
+            # types drawn from this LOCALE's archetype, arranged by its
+            # archetype's own layout (see build_city_cluster).
             mb, building_count = build_city_cluster(archetype_cfg, region_cfg, distance, rng)
             total_buildings += building_count
 
-            # unique per-mesh "dev texture" atlas: one labeled, outlined,
-            # colored cell per building type + per roof style, plus a top
-            # strip carrying this mesh's own identifying code -- lets you
-            # tell every building type and roof shape apart, and identify
-            # any mesh, in-engine at a glance (see write_atlas_dds).
-            label = "{}-{}-T{}-{:02d}".format(archetype_cfg["abbr"], region_cfg["abbr"], distance, variant)
-            diffuse_tex = "{}_diffuse.dds".format(name)
-            write_atlas_dds(os.path.join(locale_dir, diffuse_tex), label)
-
             mesh_path = os.path.join(locale_dir, name + ".mesh")
             shape_name = "{}Shape".format(name)
-            write_mesh_file(mesh_path, mb, shape_name, "PdxMeshAdvanced", diffuse_tex, normal_tex)
+            write_mesh_file(mesh_path, mb, shape_name, "PdxMeshAdvanced", SHARED_DIFFUSE_REL, SHARED_NORMAL_REL)
 
             rel_mesh_path = "gfx/models/buildings/{}/{}.mesh".format(locale_name, name)
             gfx_lines.append("\tpdxmesh = {")
@@ -1043,9 +1089,9 @@ def generate_locale(archetype_key, archetype_cfg, region_key, region_cfg, color_
             gfx_lines.append("\t\tmeshsettings = {")
             gfx_lines.append('\t\t\tname = "{}"'.format(shape_name))
             gfx_lines.append("\t\t\tindex = 0")
-            gfx_lines.append('\t\t\ttexture_diffuse = "{}"'.format(diffuse_tex))
-            gfx_lines.append('\t\t\ttexture_normal = "{}"'.format(normal_tex))
-            gfx_lines.append('\t\t\ttexture_specular = "{}_specular.dds"'.format(locale_name))
+            gfx_lines.append('\t\t\ttexture_diffuse = "{}"'.format(SHARED_DIFFUSE_REL))
+            gfx_lines.append('\t\t\ttexture_normal = "{}"'.format(SHARED_NORMAL_REL))
+            gfx_lines.append('\t\t\ttexture_specular = "{}"'.format(SHARED_SPECULAR_REL))
             gfx_lines.append('\t\t\tshader = "PdxMeshAdvanced"')
             gfx_lines.append("\t\t}")
             gfx_lines.append("\t}")
@@ -1116,8 +1162,10 @@ def generate_readme(out_root, locale_results):
     lines.append("`generate_city_models.py`. Nothing has been copied into your live")
     lines.append("mod -- do that yourself once you're happy with the results:")
     lines.append("")
-    lines.append("1. Copy `gfx/models/buildings/<archetype>_<region>/` into your mod's")
-    lines.append("   own `gfx/models/buildings/<archetype>_<region>/` folder.")
+    lines.append("1. Copy `gfx/models/buildings/<archetype>_<region>/` (one folder per")
+    lines.append("   locale) AND `gfx/models/buildings/shared/` (the one diffuse/normal/")
+    lines.append("   specular every locale's meshes reference -- see \"About the")
+    lines.append("   textures\" below) into your mod's own `gfx/models/buildings/`.")
     lines.append("2. Merge the `city_group` blocks in `map/cities_fragment.txt` into")
     lines.append("   your mod's `map/cities.txt` (copy the vanilla file into your mod")
     lines.append("   first if you don't have your own copy yet -- HOI4 mods override")
@@ -1204,27 +1252,56 @@ def generate_readme(out_root, locale_results):
     lines.append("")
     lines.append("## About the textures")
     lines.append("")
-    lines.append("Every mesh gets its own \"dev texture\" diffuse atlas (see")
-    lines.append("`_build_atlas_layout()` / `write_atlas_dds()`): a thin top strip")
-    lines.append("carrying the mesh's own identifying code (`{ARCHETYPE_ABBR}-")
-    lines.append("{REGION_ABBR}-T{distance}-{variant}`, e.g. `MET-EAS-T4-04`), then a")
-    lines.append("grid with one colored, outlined, labeled cell per building type --")
-    lines.append("`HOUSE`, `ROWHOUSE`, `SHOP`, `SHED`, `BLOCK`, `TOWER` -- and one per")
-    lines.append("roof shape -- `PITCHED`, `FLAT`. Every wall face UVs into its")
-    lines.append("building's own type cell (`WALL_UV_BY_TYPE`) and every roof face into")
-    lines.append("its roof-shape cell (`ROOF_UV_BY_STYLE`), so a house's walls, a")
+    lines.append("There is now exactly ONE diffuse (`{}`), one normal, and one".format(SHARED_DIFFUSE_REL))
+    lines.append("specular -- shared by every building, in every mesh, in every locale")
+    lines.append("(see `generate_shared_textures()` / `write_shared_diffuse_atlas()`),")
+    lines.append("instead of a unique diffuse generated per mesh. It's a grid of equal")
+    lines.append("SQUARE cells packed edge-to-edge with no gutter or border between")
+    lines.append("them, one per building type -- `HOUSE`, `ROWHOUSE`, `SHOP`, `SHED`,")
+    lines.append("`BLOCK`, `TOWER` -- and one per roof shape -- `PITCHED`, `FLAT` (6 + 2")
+    lines.append("= 8 cells, a 4x2 grid with nothing left over). Every wall face UVs into")
+    lines.append("its building's own type cell (`WALL_UV_BY_TYPE`) and every roof face")
+    lines.append("into its roof-shape cell (`ROOF_UV_BY_STYLE`), so a house's walls, a")
     lines.append("tower's walls, and a pitched vs. flat roof all read as visibly")
-    lines.append("different materials in-engine -- not just \"wall\" vs. \"roof\", but a")
-    lines.append("distinct look per building type, wherever that's actually useful")
-    lines.append("(every type gets its own wall look; roofs only have two distinct")
-    lines.append("*shapes*, so those two share their cells across every type that uses")
-    lines.append("them). Normal/specular stay flat and shared per-locale. A `BUILDING_TYPES`")
-    lines.append("entry can also set `wall_type` to borrow another type's cell instead of")
-    lines.append("getting its own -- e.g. commie_block's `slab_low`/`slab_mid`/`slab_tall`")
-    lines.append("(same material as a regular block, just longer and at a different")
-    lines.append("height tier) all render with `BLOCK`'s wall cell. Edit")
-    lines.append("`WALL_FILL_BY_TYPE` / `ROOF_FILL_BY_STYLE` to change colors, `FONT_5X7`")
-    lines.append("to add characters, or `_build_atlas_layout()` to change the grid.")
+    lines.append("different materials in-engine. A `BUILDING_TYPES` entry can also set")
+    lines.append("`wall_type` to borrow another type's cell instead of getting its own --")
+    lines.append("e.g. commie_block's `slab_low`/`slab_mid`/`slab_tall` (same material as")
+    lines.append("a regular block, just longer and at a different height tier) all")
+    lines.append("render with `BLOCK`'s wall cell.")
+    lines.append("")
+    lines.append("Because every cell is square but almost no real building face is,")
+    lines.append("faces are TILED rather than stretched (see")
+    lines.append("`MeshBuilder.add_tiled_quad()`): every wall, and every flat roof cap, is")
+    lines.append("subdivided into a grid of sub-quads sized to stay close to square, each")
+    lines.append("mapped with the SAME cell -- so e.g. a wall twice as tall as it is wide")
+    lines.append("shows its square texture twice, stacked, and a commie_block slab with a")
+    lines.append("2:1 long face shows its cell twice, side by side, instead of once")
+    lines.append("squashed either way. (Pitched roof slopes are the one exception --")
+    lines.append("still a single untiled read per triangular face, since tiling a triangle")
+    lines.append("cleanly takes meaningfully more geometry than a quad, and pitched roofs")
+    lines.append("here are only ever modest, low-rise shapes where the stretching this")
+    lines.append("mostly avoids barely arises anyway.)")
+    lines.append("")
+    lines.append("Losing a unique diffuse per mesh also means losing the old per-mesh")
+    lines.append("identifying code baked into the texture (e.g. `MET-EAS-T4-04`) -- with")
+    lines.append("one shared file there's no longer anywhere to put mesh-specific text.")
+    lines.append("Each mesh, entity, and pdxmesh name is still fully identifying on disk")
+    lines.append("and in any asset browser/outliner (e.g.")
+    lines.append("`metropolis_western_buildings_2_01_entity`), just not on the texture")
+    lines.append("itself any more.")
+    lines.append("")
+    lines.append("Note on paths: since these textures no longer live next to the meshes")
+    lines.append("that use them, `texture_diffuse`/`texture_normal`/`texture_specular` in")
+    lines.append("every `.gfx` (and the material node inside every `.mesh`) now reference")
+    lines.append("them by a root-relative path (`{}`), the same convention already".format(SHARED_DIFFUSE_REL))
+    lines.append("used by a pdxmesh's own `file` field -- rather than a bare filename.")
+    lines.append("This matches how the mesh path itself is written, but wasn't directly")
+    lines.append("confirmed against a real shared-texture example, so double-check it")
+    lines.append("resolves correctly the first time you load this in-game.")
+    lines.append("")
+    lines.append("Edit `WALL_FILL_BY_TYPE` / `ROOF_FILL_BY_STYLE` to change colors,")
+    lines.append("`FONT_5X7` to add characters, `ATLAS_CELL_PX` to change resolution, or")
+    lines.append("`_build_atlas_layout()` to change the grid.")
     with open(os.path.join(out_root, "README.md"), "w") as f:
         f.write("\n".join(lines))
 
@@ -1232,6 +1309,10 @@ def generate_readme(out_root, locale_results):
 def main():
     out_root = OUTPUT_DIR
     os.makedirs(os.path.join(out_root, "map"), exist_ok=True)
+
+    # ONE diffuse/normal/specular set, shared by every mesh in every locale
+    # (see generate_shared_textures) -- generated once, up front.
+    generate_shared_textures(out_root)
 
     locale_results = []
     total_meshes = 0
