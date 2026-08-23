@@ -78,26 +78,39 @@ south_america, eastern_europe) and 5 example archetypes (suburb, urban_core,
 metropolis, commie_block, informal), combined into 13 example locales -- add/
 rename/recombine in REGIONS / ARCHETYPES / LOCALES below.
 
-Texturing is one "dev texture" diffuse (+ matching normal/specular) PER
-LOCALE (e.g. `commie_block_eastern_europe_diffuse.dds`) -- shared by every
-mesh within that locale (every distance/variant), but not with any other
-locale, and not one generated per individual mesh either. It's a packed
-grid of equal SQUARE cells with no gutter or outline between them, one
-cell per building type (house, rowhouse, shop, shed, block, tower) and one
-per roof shape (pitched, flat), each colored and labeled via a tiny
-built-in bitmap font (see write_diffuse_atlas / _build_atlas_layout).
-Because a building's actual wall or roof face is
-almost never itself square -- a metropolis tower's wall is far taller than
-it is wide; a commie_block slab's long face is far wider than it is tall --
-each face is TILED with repeated copies of its square cell rather than one
-copy stretched to fit (see MeshBuilder.add_tiled_quad): a face twice as
-tall as it is wide shows the same square texture twice, stacked, instead
-of once squashed. (Scope note: this tiling applies to every wall and every
-flat roof cap; a pitched roof's sloped triangular faces still map onto
-their cell as a single, untiled read -- subdividing a triangle into square
-repeats is a fair bit more geometry than a quad, and pitched roofs are
-only ever modest, low-rise shapes here, so the stretching it avoids on
-walls barely arises for them.)
+Texturing is one "dev texture" diffuse + matching normal + matching
+specular PER LOCALE (e.g. `commie_block_eastern_europe_diffuse.dds`) --
+shared by every mesh within that locale (every distance/variant), but not
+with any other locale, and not one generated per individual mesh either.
+All three are the same packed grid of equal SQUARE cells with no gutter
+or outline between them, one cell per building type (house, rowhouse,
+shop, shed, block, tower) and one per roof shape (pitched, flat): the
+diffuse cell is colored and labeled via a tiny built-in bitmap font (see
+write_diffuse_atlas), the normal cell holds that type's own small bump
+pattern -- brick coursing, siding grooves, corrugated metal, or a window/
+panel grid (see write_normal_atlas / BUMP_PROFILES) -- and the specular
+cell holds that type's own shininess, e.g. a tower/shop/block's window
+panes reading brighter than their frame (see write_specular_atlas). Since
+all three share _build_atlas_layout's one cell grid, a mesh's existing UVs
+already line up across all three without any per-texture UV work.
+
+Because a building's actual wall or roof face is almost never itself
+square -- a metropolis tower's wall is far taller than it is wide; a
+commie_block slab's long face is far wider than it is tall -- each face is
+TILED with repeated copies of its square cell rather than one copy
+stretched to fit (see MeshBuilder.add_tiled_quad): the tile count on each
+axis comes from that axis's own absolute length divided by
+WORLD_UNITS_PER_TILE, independently of the other axis, so a face tiles
+because it's genuinely big, not merely because it's far more one
+dimension than the other -- a commie_block slab's long side reads as a
+grid of several repeated cells (across AND stacked), not one cell
+squashed or a single untiled copy just because its width happens to be
+close to its height. (Scope note: this tiling applies to every wall and
+every flat roof cap; a pitched roof's sloped triangular faces still map
+onto their cell as a single, untiled read -- subdividing a triangle into
+square repeats is a fair bit more geometry than a quad, and pitched roofs
+are only ever modest, low-rise shapes here, so the stretching it avoids
+on walls barely arises for them.)
 
 Nothing here touches your live mod. Everything is written under OUTPUT_DIR;
 copy the pieces you want into your mod folder yourself (see the generated
@@ -286,6 +299,7 @@ LABEL_SCALE = 2                          # every cell is the same size now, so o
 _ATLAS_CELL_ORDER = [("wall", t) for t in WALL_TYPE_ORDER] + [("roof", s) for s in ROOF_STYLE_ORDER]
 
 MAX_TILE_REPEATS = 24   # safety cap on how many times add_tiled_quad will repeat a cell across one face
+WORLD_UNITS_PER_TILE = 5.0   # ~how many world units of wall one square atlas cell should cover
 
 # BGRA fill colors -- one per wall type, one per roof style. Distinct hues
 # so each type/shape is recognizable at a glance, not just from its label.
@@ -418,23 +432,28 @@ class MeshBuilder:
         sub-region of a shared texture (UV wrap cycles the WHOLE texture,
         not a single cell), so this tiles geometrically instead: it
         subdivides the quad into a tiles_u x tiles_v grid of sub-quads
-        sized to keep each one as close to square as the whole face
-        allows, then maps every sub-quad with the SAME uv_rect. A face
-        twice as tall as it is wide (tiles_u=1, tiles_v=2) shows its
-        square cell twice, stacked, instead of once squashed 2x tall --
-        this is what keeps a very tall tower's wall, or a commie_block
-        slab's long face, looking like repeated square tiles instead of a
-        stretched sliver."""
+        sized to keep each one close to WORLD_UNITS_PER_TILE world units
+        on a side, then maps every sub-quad with the SAME uv_rect.
+
+        tiles_u and tiles_v are each computed from that edge's own
+        absolute length (edge length / WORLD_UNITS_PER_TILE), independently
+        of the other edge -- NOT from the two edges' ratio to each other.
+        That distinction matters for e.g. a commie_block slab: an early
+        version of this compared the face's own width to its own height,
+        so a long-but-almost-as-tall slab (long face width ~= height, a
+        ratio close to 1) rounded down to a single untiled copy despite
+        being a genuinely huge face -- one giant stretched "block" texture
+        across the whole slab. Sizing off absolute world-unit length
+        instead means a big face tiles in BOTH directions purely because
+        it's big, regardless of its aspect ratio, so a wide commie_block
+        side reads as a grid of repeated square cells (several tiles
+        across, several stacked), not one stretched panel -- and a small
+        building's wall, which is genuinely close to one cell's own real
+        size, still gets left untiled instead of needlessly subdivided."""
         edge_u = v_len(v_sub(p1, p0))   # length of the quad's own "u" edge (p0->p1)
         edge_v = v_len(v_sub(p3, p0))   # length of the quad's own "v" edge (p0->p3)
-        if edge_u < 1e-6 or edge_v < 1e-6:
-            tiles_u, tiles_v = 1, 1
-        elif edge_u >= edge_v:
-            tiles_u = min(MAX_TILE_REPEATS, max(1, round(edge_u / edge_v)))
-            tiles_v = 1
-        else:
-            tiles_u = 1
-            tiles_v = min(MAX_TILE_REPEATS, max(1, round(edge_v / edge_u)))
+        tiles_u = 1 if edge_u < 1e-6 else min(MAX_TILE_REPEATS, max(1, round(edge_u / WORLD_UNITS_PER_TILE)))
+        tiles_v = 1 if edge_v < 1e-6 else min(MAX_TILE_REPEATS, max(1, round(edge_v / WORLD_UNITS_PER_TILE)))
 
         def lerp3(a, b, t):
             return (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t)
@@ -895,14 +914,6 @@ def _dds_header(width, height):
     return header
 
 
-def write_flat_dds(path, width, height, bgra):
-    header = _dds_header(width, height)
-    pixel = bytes(bgra)
-    with open(path, "wb") as f:
-        f.write(header)
-        f.write(pixel * (width * height))
-
-
 # ---------------------------------------------------------------------------
 # tiny built-in 5x7 bitmap font -- just enough characters for the default
 # "{REGION_ABBR}-T{tier}-{variant}" code strip and the building-type /
@@ -1024,6 +1035,149 @@ def write_diffuse_atlas(path):
 
 
 # ---------------------------------------------------------------------------
+# normal/specular atlases -- MATCHING the diffuse atlas cell-for-cell (same
+# _ALL_CELL_PX layout, so the geometry's existing WALL_UV_BY_TYPE/
+# ROOF_UV_BY_STYLE UVs already line up with these too, with zero mesh
+# changes needed), but with real per-type bump/shininess detail instead of
+# a single flat color -- a plain neutral normal + uniform low specular
+# everywhere would look identical whether the wall behind it is "house"
+# brick or "tower" curtain-wall glass. Each wall type / roof style gets a
+# small deterministic, seamlessly-tileable procedural pattern (see
+# BUMP_PROFILES) instead: brick coursing, siding grooves, corrugated
+# metal, or a window/panel grid for the normal map, and a matching
+# base/accent shininess (e.g. glazing brighter than its frame) for the
+# specular map. Every pattern's period evenly divides ATLAS_CELL_PX (128),
+# so a cell butts up against a repeat of itself with no seam -- required
+# since add_tiled_quad repeats a cell edge-to-edge across a face.
+# ---------------------------------------------------------------------------
+
+BUMP_PROFILES = {
+    # wall types
+    "house":    {"pattern": "ridge_h",     "period": 16, "amp": 0.35, "spec_base": 25,  "spec_accent": None},
+    "rowhouse": {"pattern": "ridge_v",      "period": 16, "amp": 0.30, "spec_base": 20,  "spec_accent": None},
+    "shop":     {"pattern": "grid", "period": 32, "mullion": 4, "amp": 0.45, "spec_base": 30, "spec_accent": 190},
+    "shed":     {"pattern": "corrugated_v", "period": 8,  "amp": 0.55, "spec_base": 90,  "spec_accent": None},
+    "block":    {"pattern": "grid", "period": 32, "mullion": 5, "amp": 0.35, "spec_base": 35, "spec_accent": 140},
+    "tower":    {"pattern": "grid", "period": 16, "mullion": 2, "amp": 0.40, "spec_base": 40, "spec_accent": 210},
+    # roof styles
+    "pitched":  {"pattern": "ridge_h",  "period": 16, "amp": 0.30, "spec_base": 18, "spec_accent": None},
+    "flat":     {"pattern": "stipple",  "period": 8,  "amp": 0.20, "spec_base": 22, "spec_accent": None},
+}
+
+_ALL_CELL_PX = dict(_WALL_PX_BY_TYPE)
+_ALL_CELL_PX.update(_ROOF_PX_BY_STYLE)
+
+
+def _bump_height(kind, px, py):
+    """Deterministic small height field for `kind`'s bump pattern, sampled
+    at LOCAL cell pixel coords (can go outside 0..ATLAS_CELL_PX-1 -- callers
+    sample neighbors for a gradient). Every pattern is built from sin/tri
+    waves whose period evenly divides ATLAS_CELL_PX, so it's exactly
+    periodic across one cell -- required for a seamless tile-to-tile
+    repeat (see add_tiled_quad)."""
+    prof = BUMP_PROFILES[kind]
+    pattern, period, amp = prof["pattern"], prof["period"], prof["amp"]
+    if pattern == "ridge_h":            # horizontal courses (brick/shingle rows)
+        return amp * math.sin(2 * math.pi * py / period)
+    if pattern == "ridge_v":            # vertical grooves (siding)
+        return amp * math.sin(2 * math.pi * px / period)
+    if pattern == "corrugated_v":       # tight vertical ridges (corrugated metal)
+        t = (px % period) / period
+        return amp * (4 * abs(t - 0.5) - 1)   # triangle wave, range [-amp, amp]
+    if pattern == "grid":               # window/panel grid (frame raised, pane recessed)
+        mullion = prof["mullion"]
+        on_frame = (px % period) < mullion or (py % period) < mullion
+        return amp if on_frame else -amp
+    if pattern == "stipple":            # mottled roof membrane/gravel
+        return amp * 0.5 * (math.sin(2 * math.pi * px / period) + math.sin(2 * math.pi * py / period))
+    return 0.0
+
+
+def _normal_bgra(kind, px, py, strength=60.0):
+    """Tangent-space normal at local cell coords (px, py), encoded BGRA
+    (matching _dds_header's B8G8R8A8 layout): neutral "flat, facing up"
+    is (255,128,128,255) -- same convention the old flat placeholder used,
+    just perturbed per-pixel here via a finite-difference gradient of
+    _bump_height instead of being uniform everywhere."""
+    h_l = _bump_height(kind, px - 1, py)
+    h_r = _bump_height(kind, px + 1, py)
+    h_u = _bump_height(kind, px, py - 1)
+    h_d = _bump_height(kind, px, py + 1)
+    nx, ny, nz = -(h_r - h_l) * strength, -(h_d - h_u) * strength, 1.0
+    length = math.sqrt(nx * nx + ny * ny + nz * nz)
+    nx, ny, nz = nx / length, ny / length, nz / length
+    b = int(round((nz * 0.5 + 0.5) * 255))
+    g = int(round((ny * 0.5 + 0.5) * 255))
+    r = int(round((nx * 0.5 + 0.5) * 255))
+    return (max(0, min(255, b)), max(0, min(255, g)), max(0, min(255, r)), 255)
+
+
+def _specular_gray(kind, px, py):
+    """Grayscale shininess (0-255) at local cell coords. Flat per type
+    except "grid"-pattern types (shop/block/tower), where the recessed
+    "pane" area gets a distinct, brighter `spec_accent` (glazing is more
+    reflective than its frame) -- so specular reads as a matching set of
+    materials, not one uniform value regardless of wall type."""
+    prof = BUMP_PROFILES[kind]
+    if prof["pattern"] == "grid" and prof["spec_accent"] is not None:
+        mullion = prof["mullion"]
+        on_frame = (px % prof["period"]) < mullion or (py % prof["period"]) < mullion
+        return prof["spec_base"] if on_frame else prof["spec_accent"]
+    return prof["spec_base"]
+
+
+def _build_atlas_bytes(pixel_fn):
+    """Shared driver for write_normal_atlas/write_specular_atlas: fills
+    the whole ATLAS_WIDTH x ATLAS_HEIGHT canvas one cell at a time (see
+    _ALL_CELL_PX), calling `pixel_fn(kind, local_x, local_y)` -> BGRA per
+    pixel. Computed once and cached by each caller, since -- like the
+    diffuse atlas -- content is identical across every locale; only the
+    filename differs, so there's no need to redo this per locale."""
+    width, height = ATLAS_WIDTH, ATLAS_HEIGHT
+    buf = bytearray(width * height * 4)
+    for kind, (x0, y0, x1, y1) in _ALL_CELL_PX.items():
+        for py in range(y0, y1):
+            local_y = py - y0
+            row_base = py * width
+            for px in range(x0, x1):
+                idx = (row_base + px) * 4
+                buf[idx:idx + 4] = bytes(pixel_fn(kind, px - x0, local_y))
+    return bytes(buf)
+
+
+_NORMAL_ATLAS_BYTES = None
+_SPECULAR_ATLAS_BYTES = None
+
+
+def write_normal_atlas(path):
+    """Writes the per-locale normal map -- same 4x2 cell grid as
+    write_diffuse_atlas, but each cell holds its wall-type/roof-style's own
+    bump pattern (see BUMP_PROFILES/_normal_bgra) instead of a flat neutral
+    normal. Cached at module scope after the first call: the pixel content
+    never varies by locale, only the destination filename does."""
+    global _NORMAL_ATLAS_BYTES
+    if _NORMAL_ATLAS_BYTES is None:
+        _NORMAL_ATLAS_BYTES = _build_atlas_bytes(_normal_bgra)
+    with open(path, "wb") as f:
+        f.write(_dds_header(ATLAS_WIDTH, ATLAS_HEIGHT))
+        f.write(_NORMAL_ATLAS_BYTES)
+
+
+def write_specular_atlas(path):
+    """Writes the per-locale specular map -- same 4x2 cell grid as
+    write_diffuse_atlas/write_normal_atlas, each cell a per-type grayscale
+    shininess (see BUMP_PROFILES/_specular_gray), e.g. a tower/shop/block's
+    window panes reading brighter than their frame. Cached at module scope
+    for the same reason as write_normal_atlas."""
+    global _SPECULAR_ATLAS_BYTES
+    if _SPECULAR_ATLAS_BYTES is None:
+        _SPECULAR_ATLAS_BYTES = _build_atlas_bytes(lambda k, x, y: (lambda v: (v, v, v, 255))(_specular_gray(k, x, y)))
+    with open(path, "wb") as f:
+        f.write(_dds_header(ATLAS_WIDTH, ATLAS_HEIGHT))
+        f.write(_SPECULAR_ATLAS_BYTES)
+
+
+# ---------------------------------------------------------------------------
 # generation driver
 # ---------------------------------------------------------------------------
 
@@ -1046,13 +1200,17 @@ def generate_locale_textures(locale_dir, locale_name):
     what broke when every locale shared ONE texture set from a separate
     "shared/" folder: the engine couldn't resolve the cross-folder
     reference. Keeping the texture beside the mesh that uses it removes
-    that failure mode entirely."""
+    that failure mode entirely.
+
+    The normal/specular maps aren't flat placeholders -- they use the same
+    cell grid as the diffuse atlas, with real per-type bump/shininess detail
+    (see write_normal_atlas/write_specular_atlas/BUMP_PROFILES)."""
     diffuse_name = "{}_diffuse.dds".format(locale_name)
     normal_name = "{}_normal.dds".format(locale_name)
     specular_name = "{}_specular.dds".format(locale_name)
     write_diffuse_atlas(os.path.join(locale_dir, diffuse_name))
-    write_flat_dds(os.path.join(locale_dir, normal_name), 4, 4, (255, 128, 128, 255))  # flat "up" normal (BGRA)
-    write_flat_dds(os.path.join(locale_dir, specular_name), 4, 4, (20, 20, 20, 255))   # low, uniform shininess
+    write_normal_atlas(os.path.join(locale_dir, normal_name))
+    write_specular_atlas(os.path.join(locale_dir, specular_name))
     return diffuse_name, normal_name, specular_name
 
 
@@ -1289,18 +1447,36 @@ def generate_readme(out_root, locale_results):
     lines.append("a regular block, just longer and at a different height tier) all")
     lines.append("render with `BLOCK`'s wall cell.")
     lines.append("")
+    lines.append("The normal and specular maps use this exact same cell grid (see")
+    lines.append("`write_normal_atlas()` / `write_specular_atlas()` / `BUMP_PROFILES`), so")
+    lines.append("a mesh's existing UVs already line up across all three -- no separate")
+    lines.append("normal/specular UV work needed. Each cell isn't just a flat value: the")
+    lines.append("normal map holds a small type-specific bump pattern (brick coursing for")
+    lines.append("`HOUSE`, siding grooves for `ROWHOUSE`, corrugation for `SHED`, a")
+    lines.append("window/panel grid for `SHOP`/`BLOCK`/`TOWER`, roof shingle ridges/")
+    lines.append("membrane stipple for the two roof cells), and the specular map holds a")
+    lines.append("matching per-type shininess (e.g. `TOWER`'s glazing reads brighter than")
+    lines.append("its frame). Every pattern's period evenly divides `ATLAS_CELL_PX` so a")
+    lines.append("cell repeats seamlessly against itself when tiled.")
+    lines.append("")
     lines.append("Because every cell is square but almost no real building face is,")
     lines.append("faces are TILED rather than stretched (see")
     lines.append("`MeshBuilder.add_tiled_quad()`): every wall, and every flat roof cap, is")
-    lines.append("subdivided into a grid of sub-quads sized to stay close to square, each")
-    lines.append("mapped with the SAME cell -- so e.g. a wall twice as tall as it is wide")
-    lines.append("shows its square texture twice, stacked, and a commie_block slab with a")
-    lines.append("2:1 long face shows its cell twice, side by side, instead of once")
-    lines.append("squashed either way. (Pitched roof slopes are the one exception --")
-    lines.append("still a single untiled read per triangular face, since tiling a triangle")
-    lines.append("cleanly takes meaningfully more geometry than a quad, and pitched roofs")
-    lines.append("here are only ever modest, low-rise shapes where the stretching this")
-    lines.append("mostly avoids barely arises anyway.)")
+    lines.append("subdivided into a tiles_u x tiles_v grid of sub-quads, each mapped with")
+    lines.append("the SAME cell. Each axis's tile count comes from that axis's own")
+    lines.append("absolute length divided by `WORLD_UNITS_PER_TILE`, independently of the")
+    lines.append("other axis -- NOT from the two axes' ratio to each other -- so a face")
+    lines.append("tiles because it is genuinely large, regardless of its aspect ratio. A")
+    lines.append("commie_block slab's long side, for instance, now reads as a grid of")
+    lines.append("several repeated cells (across AND stacked), rather than the ratio-based")
+    lines.append("version's occasional single untiled copy on faces whose width happened")
+    lines.append("to be close to their height despite being large in absolute terms. Small")
+    lines.append("buildings close to one cell's own real-world size are correctly left")
+    lines.append("untiled. (Pitched roof slopes are the one exception -- still a single")
+    lines.append("untiled read per triangular face, since tiling a triangle cleanly takes")
+    lines.append("meaningfully more geometry than a quad, and pitched roofs here are only")
+    lines.append("ever modest, low-rise shapes where the stretching this mostly avoids")
+    lines.append("barely arises anyway.)")
     lines.append("")
     lines.append("A per-locale (rather than per-mesh) diffuse still means there's no room")
     lines.append("for a per-mesh identifying code baked into the texture the way an even")
@@ -1311,9 +1487,11 @@ def generate_readme(out_root, locale_results):
     lines.append("`metropolis_western_buildings_2_01_entity`), just not on the texture")
     lines.append("itself.")
     lines.append("")
-    lines.append("Edit `WALL_FILL_BY_TYPE` / `ROOF_FILL_BY_STYLE` to change colors,")
-    lines.append("`FONT_5X7` to add characters, `ATLAS_CELL_PX` to change resolution, or")
-    lines.append("`_build_atlas_layout()` to change the grid.")
+    lines.append("Edit `WALL_FILL_BY_TYPE` / `ROOF_FILL_BY_STYLE` to change diffuse colors,")
+    lines.append("`BUMP_PROFILES` to change normal/specular patterns and shininess,")
+    lines.append("`FONT_5X7` to add characters, `ATLAS_CELL_PX` to change resolution,")
+    lines.append("`_build_atlas_layout()` to change the grid, or `WORLD_UNITS_PER_TILE` to")
+    lines.append("change how densely faces tile.")
     with open(os.path.join(out_root, "README.md"), "w") as f:
         f.write("\n".join(lines))
 
