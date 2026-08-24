@@ -310,6 +310,12 @@ struct PixelMap {
     Vector<UnsignedInteger8> heightmap;
     Vector<UnsignedInteger16> provinceIdMap;
 
+    // How far each pixel is from the nearest pixel of a different province. One means
+    // the pixel is on the border. FindProvinceInteriors fills this in; placement needs
+    // it to keep models off province edges, which is why it is kept rather than
+    // discarded once the interior points have been found.
+    Vector<UnsignedInteger16> borderDistance;
+
     PixelMap(
         const Path& provincesBmpPath,
         const Path& heightmapBmpPath,
@@ -491,9 +497,24 @@ void UpdateCoastalStatuses(Vector<Province>& provincesVector, const PixelMap& pi
     }
 }
 
-void FindProvinceInteriors(Vector<Province>& provincesVector, const PixelMap& pixelMap) {
+// Placement scoring. A candidate pixel is judged on how far it is from everything
+// already placed, capped because past a dozen pixels the models already read as
+// separate and chasing more just drives them into the corners.
+constexpr SignedInteger32 placementSpreadCap = 12;
+
+// How much room to insist on between a model and the province border, when the
+// province is big enough to offer it. Raise it and models hug the middle; lower it
+// and they drift towards the edges
+constexpr SignedInteger32 placementClearanceTarget = 3;
+
+// A province larger than this is sampled by stride rather than pixel by pixel, which
+// keeps the cost flat on continent sized provinces without biasing where models land
+constexpr SizeT placementCandidateCap = 1024;
+
+void FindProvinceInteriors(Vector<Province>& provincesVector, PixelMap& pixelMap) {
     // Each pixels' distance to a nearest province
-    Vector<UnsignedInteger16> distances(pixelMap.area, 0);
+    Vector<UnsignedInteger16>& distances = pixelMap.borderDistance;
+    distances.assign(pixelMap.area, 0);
 
     // Every pixel enters this exactly once, so works as both the queue and the visit order
     Vector<UnsignedInteger32> frontier;
@@ -552,6 +573,116 @@ void FindProvinceInteriors(Vector<Province>& provincesVector, const PixelMap& pi
         }
     }
 }
+
+// Chebyshev distance between two pixels, taking the shorter way round the seam
+SignedInteger32 PixelDistance(const PixelMap& pixelMap, const UnsignedInteger32 a, const UnsignedInteger32 b) {
+    const SignedInteger32 ax = static_cast<SignedInteger32>(a % pixelMap.width);
+    const SignedInteger32 ay = static_cast<SignedInteger32>(a / pixelMap.width);
+    const SignedInteger32 bx = static_cast<SignedInteger32>(b % pixelMap.width);
+    const SignedInteger32 by = static_cast<SignedInteger32>(b / pixelMap.width);
+
+    SignedInteger32 dx = std::abs(ax - bx);
+    if (dx > static_cast<SignedInteger32>(pixelMap.width) / 2) { dx = static_cast<SignedInteger32>(pixelMap.width) - dx; }
+
+    return std::max(dx, std::abs(ay - by));
+}
+
+// Holds the candidate pixels of every province in one state, together with how far
+// each of them currently sits from the nearest model already placed anywhere in the
+// state. Keeping that distance and updating it as models land turns the search from
+// "every candidate against every placed model" into one pass per placement, which is
+// what makes this affordable on a map with fourteen thousand provinces.
+//
+// It replaces sampling a box around each province's interior point. A box big enough
+// to hold every model overflows a small province, so the models that fell outside it
+// used to be dropped onto whatever pixel came next in the province's raster ordered
+// pixel list. That packed them into horizontal runs along whichever row the scan
+// happened to start on, which in a province ten pixels across meant its border.
+struct StatePlacements {
+    struct Candidates {
+        UnsignedInteger16 provinceIndex = 0;
+        Boolean coastal = false;
+        SignedInteger32 clearanceTarget = 1;
+        Vector<UnsignedInteger32> pixels;
+        Vector<SignedInteger32> spread;   // distance to the nearest model already placed
+    };
+
+    Vector<Candidates> provinces;
+    Vector<UnsignedInteger32> taken;
+
+    void Build(const PixelMap& pixelMap, const Vector<Province>& provincesVector, const Vector<UnsignedInteger16>& stateProvinces) {
+        (void)pixelMap;
+        provinces.clear();
+        taken.clear();
+
+        for (const auto& provinceIndex : stateProvinces) {
+            if (provinceIndex >= provincesVector.size()) { continue; }
+
+            const Province& province = provincesVector[provinceIndex];
+            if (province.type != Land || province.pixelIndexes.empty()) { continue; }
+
+            Candidates c;
+            c.provinceIndex = provinceIndex;
+            c.coastal = province.isCoastal;
+            c.clearanceTarget = std::max(1, std::min<SignedInteger32>(
+                placementClearanceTarget, static_cast<SignedInteger32>(province.interiorPixelDepth)));
+
+            // Every pixel of a small province is a candidate. A large one is sampled by
+            // stride, which caps the cost without biasing towards any part of it
+            const SizeT size = province.pixelIndexes.size();
+            const SizeT step = (size + placementCandidateCap - 1) / placementCandidateCap;
+            c.pixels.reserve((size + step - 1) / step);
+            for (SizeT i = 0; i < size; i += step) { c.pixels.push_back(province.pixelIndexes[i]); }
+            c.spread.assign(c.pixels.size(), placementSpreadCap);
+
+            provinces.push_back(std::move(c));
+        }
+    }
+
+    void Add(const PixelMap& pixelMap, const UnsignedInteger32 pixel) {
+        taken.push_back(pixel);
+        for (auto& c : provinces) {
+            for (SizeT i = 0; i < c.pixels.size(); i++) {
+                c.spread[i] = std::min(c.spread[i], PixelDistance(pixelMap, c.pixels[i], pixel));
+            }
+        }
+    }
+
+    // Takes the best free spot in the state, or in just its coastal provinces. Clearance
+    // is a filter rather than part of a score, because scoring it loses: pushing a model
+    // as far as it can get from its neighbours pushes it into a corner, and a few points
+    // of clearance never outweigh that.
+    // onlyProvince restricts the search to one province, which is what a province
+    // scoped type needs; anyProvince lets a state scoped type use the whole state.
+    static constexpr UnsignedInteger16 anyProvince = 0xFFFF;
+
+    Boolean Take(const PixelMap& pixelMap, const Boolean coastalOnly, const UnsignedInteger16 onlyProvince, UnsignedInteger32& chosen) {
+        for (SignedInteger32 relax = 0; relax < placementClearanceTarget; relax++) {
+            Boolean found = false;
+            SignedInteger32 bestSpread = 0;
+            UnsignedInteger32 bestPixel = 0;
+
+            for (const auto& c : provinces) {
+                if (coastalOnly && !c.coastal) { continue; }
+                if (onlyProvince != anyProvince && c.provinceIndex != onlyProvince) { continue; }
+
+                const SignedInteger32 minDepth = std::max(1, c.clearanceTarget - relax);
+
+                for (SizeT i = 0; i < c.pixels.size(); i++) {
+                    if (c.spread[i] <= 0) { continue; }   // already occupied
+                    if (static_cast<SignedInteger32>(pixelMap.borderDistance[c.pixels[i]]) < minDepth) { continue; }
+
+                    // Ties go to the lower pixel index, so two runs over one map agree
+                    if (!found || c.spread[i] > bestSpread) { found = true; bestSpread = c.spread[i]; bestPixel = c.pixels[i]; }
+                }
+            }
+
+            if (found) { chosen = bestPixel; Add(pixelMap, bestPixel); return true; }
+        }
+
+        return false;
+    }
+};
 
 void LoadStateFiles(const Vector<Path>& stateFiles, Vector<Province>& provincesVector, Vector<State>& statesVector) {
     statesVector.reserve(stateFiles.size());
@@ -647,7 +778,6 @@ const String floatingHarbourName = "floating_harbor";
 constexpr SignedInteger32 portFacingRadius = 8;
 constexpr SignedInteger32 floatingHarbourOffshoreDistance = 7;
 constexpr Float64 quarterTurn = 1.57079632679;
-constexpr SignedInteger32 statePlacementSpacing = 6;
 
 // Only these two types name the sea they open onto. Verified against the existing
 // map/buildings.txt: all 2508 naval_base_spawn and all 2349 floating_harbor lines
@@ -859,217 +989,23 @@ UnsignedInteger32 PushOffshore(
 // one pixel; it is appended to as models are accepted.
 Vector<UnsignedInteger32> PickStatePlacements(
     const PixelMap& pixelMap,
-    const Vector<Province>& provincesVector,
-    const Vector<UnsignedInteger16>& candidateProvinces,
-    const String& name,
+    StatePlacements& placements,
+    const Boolean coastalOnly,
     const SizeT count,
-    Vector<UnsignedInteger32>& taken
+    const UnsignedInteger16 onlyProvince = StatePlacements::anyProvince
 ) {
     Vector<UnsignedInteger32> pixels;
-    if (count == 0 || candidateProvinces.empty()) { return pixels; }
     pixels.reserve(count);
 
-    // Provinces are drawn in proportion to their area, so a large province takes its
-    // share of the state's buildings and a three pixel sliver does not take an equal one
-    Vector<UnsignedInteger64> cumulativeArea;
-    cumulativeArea.reserve(candidateProvinces.size());
-
-    UnsignedInteger64 totalArea = 0;
-    for (const auto& provinceIndex : candidateProvinces) {
-        totalArea += provincesVector[provinceIndex].pixelIndexes.size();
-        cumulativeArea.push_back(totalArea);
-    }
-    if (totalArea == 0) { return pixels; }
-
-    const UnsignedInteger64 seed = candidateProvinces.front();
-
-    auto TooClose = [&](const SignedInteger32 x, const SignedInteger32 y, const UnsignedInteger32 pixel, const SignedInteger32 spacing) {
-        for (const auto& chosen : taken) {
-            if (chosen == pixel) { return true; }
-            if (spacing <= 0) { continue; }
-
-            const SignedInteger32 chosenX = static_cast<SignedInteger32>(chosen % pixelMap.width);
-            const SignedInteger32 chosenY = static_cast<SignedInteger32>(chosen / pixelMap.width);
-
-            // The map is a cylinder, so the real horizontal distance is the shorter
-            // way round rather than the plain difference
-            SignedInteger32 dx = std::abs(chosenX - x);
-            if (dx > pixelMap.width / 2) { dx = pixelMap.width - dx; }
-
-            if (dx < spacing && std::abs(chosenY - y) < spacing) { return true; }
-        }
-        return false;
-    };
-
     for (SizeT modelIndex = 0; modelIndex < count; modelIndex++) {
-        Boolean placed = false;
-
-        // Relax the separation rather than drop a model a cramped state cannot space out
-        for (SignedInteger32 spacing = statePlacementSpacing; spacing >= 0 && !placed; spacing--) {
-            for (UnsignedInteger64 attempt = 0; attempt < 64 && !placed; attempt++) {
-                // Two independent hashes: dividing one of them down would spend most
-                // of its entropy on the province choice and leave the offset lumpy
-                const UnsignedInteger64 provinceHash = PlacementHash(seed, name, modelIndex, attempt * 2);
-                UnsignedInteger64 pixelHash = PlacementHash(seed, name, modelIndex, attempt * 2 + 1);
-
-                const UnsignedInteger64 pick = provinceHash % totalArea;
-                SizeT slot = 0;
-                while (slot + 1 < cumulativeArea.size() && pick >= cumulativeArea[slot]) { slot++; }
-
-                const UnsignedInteger16 provinceIndex = candidateProvinces[slot];
-                const Province& province = provincesVector[provinceIndex];
-                if (province.pixelIndexes.empty()) { continue; }
-
-                // Inside the province, sample a box around its interior point so
-                // models stay off the province border
-                const SignedInteger32 spread = std::max(1, static_cast<SignedInteger32>(province.interiorPixelDepth) - 1);
-                const UnsignedInteger64 spreadRange = static_cast<UnsignedInteger64>(spread) * 2 + 1;
-
-                const SignedInteger32 centreX = static_cast<SignedInteger32>(province.interiorPixel % pixelMap.width);
-                const SignedInteger32 centreY = static_cast<SignedInteger32>(province.interiorPixel / pixelMap.width);
-
-                const SignedInteger32 dx = static_cast<SignedInteger32>(pixelHash % spreadRange) - spread;
-                pixelHash /= spreadRange;
-                const SignedInteger32 dy = static_cast<SignedInteger32>(pixelHash % spreadRange) - spread;
-
-                const SignedInteger32 y = centreY + dy;
-                if (y < 0 || y >= pixelMap.height) { continue; }
-
-                SignedInteger32 x = centreX + dx;
-                while (x < 0) { x += pixelMap.width; }
-                while (x >= pixelMap.width) { x -= pixelMap.width; }
-
-                const UnsignedInteger32 pixel = static_cast<UnsignedInteger32>(y) * pixelMap.width + static_cast<UnsignedInteger32>(x);
-                if (pixelMap.provinceIdMap[pixel] != provinceIndex) { continue; }
-                if (TooClose(x, y, pixel, spacing)) { continue; }
-
-                pixels.push_back(pixel);
-                taken.push_back(pixel);
-                placed = true;
-            }
-        }
-
-        // Nowhere clear left to sample: walk the candidate provinces' own pixel lists
-        // for any spot not already occupied, so a model is never silently dropped
-        if (!placed) {
-            for (const auto& provinceIndex : candidateProvinces) {
-                const Province& province = provincesVector[provinceIndex];
-                const SizeT size = province.pixelIndexes.size();
-                if (size == 0) { continue; }
-
-                const UnsignedInteger64 hash = PlacementHash(provinceIndex, name, modelIndex, 0xFFFF);
-
-                for (SizeT offset = 0; offset < size && !placed; offset++) {
-                    const UnsignedInteger32 pixel = province.pixelIndexes[(hash + offset) % size];
-
-                    const SignedInteger32 x = static_cast<SignedInteger32>(pixel % pixelMap.width);
-                    const SignedInteger32 y = static_cast<SignedInteger32>(pixel / pixelMap.width);
-                    if (TooClose(x, y, pixel, 0)) { continue; }
-
-                    pixels.push_back(pixel);
-                    taken.push_back(pixel);
-                    placed = true;
-                }
-
-                if (placed) { break; }
-            }
-        }
-
-        // Every pixel of every candidate province is taken, so there is genuinely
-        // nowhere left for the rest of this type's models
-        if (!placed) { break; }
+        UnsignedInteger32 chosen = 0;
+        if (!placements.Take(pixelMap, coastalOnly, onlyProvince, chosen)) { break; }
+        pixels.push_back(chosen);
     }
 
     return pixels;
 }
 
-// Scatters count models around the province instead of parking them all on its
-// interior pixel. Candidates are sampled from a box around the interior point whose
-// size comes from interiorPixelDepth, which is the clearance there, so models stay
-// off the province border without needing the full distance field kept around.
-Vector<UnsignedInteger32> PickPlacementPixels(
-    const PixelMap& pixelMap,
-    const Province& province,
-    const UnsignedInteger16 provinceIndex,
-    const String& name,
-    const SizeT count
-) {
-    Vector<UnsignedInteger32> pixels;
-    if (count == 0 || province.pixelIndexes.empty()) { return pixels; }
-    pixels.reserve(count);
-
-    const SignedInteger32 spread = std::max(1, static_cast<SignedInteger32>(province.interiorPixelDepth) - 1);
-    const UnsignedInteger64 spreadRange = static_cast<UnsignedInteger64>(spread) * 2 + 1;
-
-    const SignedInteger32 centreX = static_cast<SignedInteger32>(province.interiorPixel % pixelMap.width);
-    const SignedInteger32 centreY = static_cast<SignedInteger32>(province.interiorPixel / pixelMap.width);
-
-    // Rejects a candidate that lands on top of, or right next to, one already taken
-    auto TooClose = [&](const SignedInteger32 x, const SignedInteger32 y, const UnsignedInteger32 pixel, const SignedInteger32 spacing) {
-        for (const auto& chosen : pixels) {
-            if (chosen == pixel) { return true; }
-
-            const SignedInteger32 chosenX = static_cast<SignedInteger32>(chosen % pixelMap.width);
-            const SignedInteger32 chosenY = static_cast<SignedInteger32>(chosen / pixelMap.width);
-            if (std::abs(chosenX - x) < spacing && std::abs(chosenY - y) < spacing) { return true; }
-        }
-        return false;
-    };
-
-    for (SizeT modelIndex = 0; modelIndex < count; modelIndex++) {
-        Boolean placed = false;
-
-        // Relax the separation rather than drop a model a small province could not
-        // space out properly
-        for (SignedInteger32 spacing = 3; spacing >= 0 && !placed; spacing--) {
-            for (UnsignedInteger64 attempt = 0; attempt < 48 && !placed; attempt++) {
-                UnsignedInteger64 hash = PlacementHash(provinceIndex, name, modelIndex, attempt);
-
-                const SignedInteger32 dx = static_cast<SignedInteger32>(hash % spreadRange) - spread;
-                hash /= spreadRange;
-                const SignedInteger32 dy = static_cast<SignedInteger32>(hash % spreadRange) - spread;
-
-                const SignedInteger32 y = centreY + dy;
-                if (y < 0 || y >= pixelMap.height) { continue; }
-
-                // The map is a cylinder, so x wraps
-                SignedInteger32 x = centreX + dx;
-                while (x < 0) { x += pixelMap.width; }
-                while (x >= pixelMap.width) { x -= pixelMap.width; }
-
-                const UnsignedInteger32 pixel = static_cast<UnsignedInteger32>(y) * pixelMap.width + static_cast<UnsignedInteger32>(x);
-                if (pixelMap.provinceIdMap[pixel] != provinceIndex) { continue; }
-                if (TooClose(x, y, pixel, spacing)) { continue; }
-
-                pixels.push_back(pixel);
-                placed = true;
-            }
-        }
-
-        // A province too awkward to sample from still gets its model: fall back to
-        // walking its own pixel list, which is guaranteed to be inside it
-        if (!placed) {
-            const UnsignedInteger64 hash = PlacementHash(provinceIndex, name, modelIndex, 0xFFFF);
-            const SizeT size = province.pixelIndexes.size();
-
-            for (SizeT offset = 0; offset < size && !placed; offset++) {
-                const UnsignedInteger32 pixel = province.pixelIndexes[(hash + offset) % size];
-
-                const SignedInteger32 x = static_cast<SignedInteger32>(pixel % pixelMap.width);
-                const SignedInteger32 y = static_cast<SignedInteger32>(pixel / pixelMap.width);
-                if (TooClose(x, y, pixel, 1)) { continue; }
-
-                pixels.push_back(pixel);
-                placed = true;
-            }
-        }
-
-        // Fewer pixels than models: the province has nowhere left to put this one
-        if (!placed) { break; }
-    }
-
-    return pixels;
-}
 
 // Hands out up to count pixels of the province, walking outwards ring by ring from
 // a centre, so repeated models of one type do not stack on a single pixel. Used for
@@ -1196,12 +1132,13 @@ void WriteBuildings(
         // Nothing of this state is drawn on the map, so there is nowhere to build
         if (!hasLand) { continue; }
 
-        // Every state level model in this state is placed against this one list, so
-        // an arms factory knows where the radar station went and will not stand on
+        // Every state level model in this state is placed against this one structure,
+        // so an arms factory knows where the radar station went and will not stand on
         // top of it. Province level models keep to their own province and are not
-        // part of it.
-        Vector<UnsignedInteger32> stateTaken;
-        stateTaken.reserve(64);
+        // part of it. Built once per state, because the cost of building it is the
+        // same whether one model or forty are placed against it.
+        StatePlacements statePlacements;
+        statePlacements.Build(pixelMap, provincesVector, state.provinces);
 
         for (const auto& spawnPoint : spawnPointsVector) {
             if (spawnPoint.count <= 0) { continue; }
@@ -1213,21 +1150,7 @@ void WriteBuildings(
             // into one province. Only the two port types name a sea province and both
             // are province scoped, so nothing on this path needs one.
             if (!spawnPoint.provincial) {
-                Vector<UnsignedInteger16> candidateProvinces;
-
-                for (const auto& provinceIndex : state.provinces) {
-                    if (provinceIndex >= provincesVector.size()) { continue; }
-
-                    const Province& province = provincesVector[provinceIndex];
-                    if (province.type != Land || province.pixelIndexes.empty()) { continue; }
-                    if (spawnPoint.onlyCoastal && !province.isCoastal) { continue; }
-
-                    candidateProvinces.push_back(provinceIndex);
-                }
-
-                if (candidateProvinces.empty()) { continue; }
-
-                for (const auto& pixel : PickStatePlacements(pixelMap, provincesVector, candidateProvinces, spawnPoint.name, count, stateTaken)) {
+                for (const auto& pixel : PickStatePlacements(pixelMap, statePlacements, spawnPoint.onlyCoastal, count)) {
                     lines.emplace_back(state.id, FormatBuildingLine(
                         pixelMap, state.id, spawnPoint.name, pixel, RotationForPixel(pixel, spawnPoint.name), 0));
                 }
@@ -1263,7 +1186,7 @@ void WriteBuildings(
                     placements = SpreadInProvince(pixelMap, provinceIndex, site.landPixel, count, 24);
                 }
                 else {
-                    placements = PickPlacementPixels(pixelMap, province, provinceIndex, spawnPoint.name, count);
+                    placements = PickStatePlacements(pixelMap, statePlacements, false, count, provinceIndex);
                 }
 
                 for (const auto& pixel : placements) {
