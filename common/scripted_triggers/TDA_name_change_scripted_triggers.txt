@@ -889,3 +889,16 @@ TAG_using_tajik_names = {
 		is_puppet_of = TAJ
 	}
 }
+TAG_using_turkmen_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = TMS
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = TMS
+	}
+}

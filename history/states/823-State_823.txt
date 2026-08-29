@@ -4,7 +4,7 @@ state={
 	history={
 		owner = ZZZ
 	}
-	provinces={ 1479 1576 1614 1721 1899 2560 4618 7541 10348 10395 10435 12233 12454 12474 13207 }
+	provinces={ 1479 1614 1721 1899 2560 7541 10348 10395 10435 12233 12454 12474 13207 16210 }
 	manpower= 100000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.

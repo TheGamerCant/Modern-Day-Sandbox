@@ -13043,8 +13043,46 @@ TDA_update_state_583_names = {
 	}
 }
 
-#Ashkhabad
+#Dashoguz
 TDA_update_state_584_names = {
+	584 = {
+		#Daşoguz
+		if = {
+			limit = { CONTROLLER = { TAG_using_turkmen_names = yes } }
+			set_state_name = STATE_584_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Köneürgench
+	if = {
+		limit = { any_country = { controls_province = 12324 TAG_using_turkmen_names = yes } }
+		set_province_name = { id = 12324 name = VICTORY_POINTS_12324_0 }
+	}
+	#Kyoneurgench
+	else_if = {
+		limit = { any_country = { controls_province = 12324 TAG_using_russian_names = yes } }
+		set_province_name = { id = 12324 name = VICTORY_POINTS_12324_1 }
+	}
+	#Konye-Urgench
+	else = {
+		reset_province_name = 12324
+	}
+	#Daşoguz
+	if = {
+		limit = { any_country = { controls_province = 16211 TAG_using_turkmen_names = yes } }
+		set_province_name = { id = 16211 name = VICTORY_POINTS_16211_0 }
+	}
+	#Dashkhovuz
+	else_if = {
+		limit = { any_country = { controls_province = 16211 TAG_using_russian_names = yes } }
+		set_province_name = { id = 16211 name = VICTORY_POINTS_16211_1 }
+	}
+	#Dashoguz
+	else = {
+		reset_province_name = 16211
+	}
 }
 
 #Navoi
@@ -24344,6 +24382,134 @@ TDA_update_state_979_names = {
 	}
 }
 
+#Balkan
+TDA_update_state_980_names = {
+	#Türkmenbaşy
+	if = {
+		limit = { any_country = { controls_province = 1593 TAG_using_turkmen_names = yes } }
+		set_province_name = { id = 1593 name = VICTORY_POINTS_1593_0 }
+	}
+	#Krasnovodsk
+	else_if = {
+		limit = { any_country = { controls_province = 1593 TAG_using_russian_names = yes } }
+		set_province_name = { id = 1593 name = VICTORY_POINTS_1593_1 }
+	}
+	#Turkmenbashy
+	else = {
+		reset_province_name = 1593
+	}
+	#Balkanabad
+	if = {
+		limit = { any_country = { controls_province = 10359 TAG_using_russian_names = yes } }
+		set_province_name = { id = 10359 name = VICTORY_POINTS_10359_0 }
+	}
+	#Balkanabat
+	else = {
+		reset_province_name = 10359
+	}
+}
+
+#Lebap
+TDA_update_state_981_names = {
+	#Türkmenabat
+	if = {
+		limit = { any_country = { controls_province = 16226 TAG_using_turkmen_names = yes } }
+		set_province_name = { id = 16226 name = VICTORY_POINTS_16226_0 }
+	}
+	#Chardzhev
+	else_if = {
+		limit = { any_country = { controls_province = 16226 TAG_using_russian_names = yes } }
+		set_province_name = { id = 16226 name = VICTORY_POINTS_16226_1 }
+	}
+	#Turkmenabat
+	else = {
+		reset_province_name = 16226
+	}
+}
+
+#Ahal
+TDA_update_state_982_names = {
+	982 = {
+		#Akhal
+		if = {
+			limit = { CONTROLLER = { TAG_using_russian_names = yes } }
+			set_state_name = STATE_982_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Tedzhen
+	if = {
+		limit = { any_country = { controls_province = 10357 TAG_using_russian_names = yes } }
+		set_province_name = { id = 10357 name = VICTORY_POINTS_10357_0 }
+	}
+	#Tejen
+	else = {
+		reset_province_name = 10357
+	}
+	#Aşgabat
+	if = {
+		limit = { any_country = { controls_province = 16215 TAG_using_turkmen_names = yes } }
+		set_province_name = { id = 16215 name = VICTORY_POINTS_16215_0 }
+	}
+	#Ashgabad
+	else_if = {
+		limit = { any_country = { controls_province = 16215 TAG_using_russian_names = yes } }
+		set_province_name = { id = 16215 name = VICTORY_POINTS_16215_1 }
+	}
+	#Ashgabat
+	else = {
+		reset_province_name = 16215
+	}
+}
+
+#Mary
+TDA_update_state_983_names = {
+	#Baýramaly
+	if = {
+		limit = { any_country = { controls_province = 16224 TAG_using_turkmen_names = yes } }
+		set_province_name = { id = 16224 name = VICTORY_POINTS_16224_0 }
+	}
+	#Bayramali
+	else_if = {
+		limit = { any_country = { controls_province = 16224 TAG_using_russian_names = yes } }
+		set_province_name = { id = 16224 name = VICTORY_POINTS_16224_1 }
+	}
+	#Bayramaly
+	else = {
+		reset_province_name = 16224
+	}
+}
+
+#
+TDA_update_state_984_names = {
+}
+
+#
+TDA_update_state_985_names = {
+}
+
+#
+TDA_update_state_986_names = {
+}
+
+#
+TDA_update_state_987_names = {
+}
+
+#
+TDA_update_state_988_names = {
+}
+
+#
+TDA_update_state_989_names = {
+}
+
+#
+TDA_update_state_990_names = {
+}
+
 
 
 TDA_change_all_city_names = {
@@ -25326,6 +25492,17 @@ TDA_change_all_city_names = {
 	TDA_update_state_977_names = yes
 	TDA_update_state_978_names = yes
 	TDA_update_state_979_names = yes
+	TDA_update_state_980_names = yes
+	TDA_update_state_981_names = yes
+	TDA_update_state_982_names = yes
+	TDA_update_state_983_names = yes
+	TDA_update_state_984_names = yes
+	TDA_update_state_985_names = yes
+	TDA_update_state_986_names = yes
+	TDA_update_state_987_names = yes
+	TDA_update_state_988_names = yes
+	TDA_update_state_989_names = yes
+	TDA_update_state_990_names = yes
 }
 
 TDA_toggle_change_city_names = {

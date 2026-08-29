@@ -2,10 +2,15 @@ state={
 	id=584
 	name="STATE_584"
 	history={
-		owner = ZZZ
+		owner = TMS
+		add_core_of = TMS
+		
+		set_variable = { sq_km = 69000 }
+		victory_points = { 12324 1 }
+		victory_points = { 16211 2 }
 	}
-	provinces={ 756 1493 1593 1632 1649 4482 4549 4563 4599 4958 5003 7477 7491 7560 7563 7618 7635 7924 8099 9605 10357 10359 10406 10414 10485 10510 10742 12324 12333 12359 12465 12491 }
-	manpower= 100000
+	provinces={ 1493 7618 7635 10485 12324 12465 16209 16211 16212 16213 16214 }
+	manpower= 1270160
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=pastoral

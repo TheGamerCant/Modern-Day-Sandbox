@@ -1,0 +1,18 @@
+state = {
+    id = 981
+    name = "STATE_981"
+    manpower = 1185729
+    state_category = rural
+	history={
+		owner = TMS
+		add_core_of = TMS
+		
+		set_variable = { sq_km = 93730 }
+		victory_points = { 756 1 }
+		victory_points = { 4549 1 }
+		victory_points = { 16226 2 }
+	}
+    provinces = {
+        756 1632 1649 4549 7924 9605 10742 16226 16227 16228 16229 16230 
+    }
+}

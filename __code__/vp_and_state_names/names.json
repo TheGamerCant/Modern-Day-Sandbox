@@ -4753,9 +4753,14 @@
         },
         {
             "id": 584,
-            "default_name": "Ashkhabad",
+            "default_name": "Dashoguz",
             "comment": "",
-            "custom_names": []
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_turkmen_names = yes",
+                    "name": "Daşoguz"
+                }
+            ]
         },
         {
             "id": 585,
@@ -8212,6 +8217,35 @@
                     "name": "Ko'histoni Badakhshon"
                 }
             ]
+        },
+        {
+            "id": 980,
+            "default_name": "Balkan",
+            "comment": "",
+            "custom_names": []
+        },
+        {
+            "id": 981,
+            "default_name": "Lebap",
+            "comment": "",
+            "custom_names": []
+        },
+        {
+            "id": 982,
+            "default_name": "Ahal",
+            "comment": "",
+            "custom_names": [
+				{
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Akhal"
+                }
+			]
+        },
+        {
+            "id": 983,
+            "default_name": "Mary",
+            "comment": "",
+            "custom_names": []
         }
     ],
     "victory_point_names": [
@@ -61594,6 +61628,214 @@
                 "year": 2010
             },
             "terrain": "mountain"
+		},
+		{
+			"id": 16215,
+			"default_name": "Ashgabat",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_turkmen_names = yes",
+					"name": "Aşgabat"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Ashgabad"
+				}
+			],
+			"population": {
+                "tag": "TMS",
+                "population": 1030063,
+                "year": 2022
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 10357,
+			"default_name": "Tejen",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Tedzhen"
+				}
+			],
+			"population": {
+                "tag": "TMS",
+                "population": 67488,
+                "year": 2022
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 10359,
+			"default_name": "Balkanabat",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Balkanabad"
+				}
+			],
+			"population": {
+                "tag": "TMS",
+                "population": 123190,
+                "year": 2022
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 1593,
+			"default_name": "Turkmenbashy",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_turkmen_names = yes",
+					"name": "Türkmenbaşy"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Krasnovodsk"
+				}
+			],
+			"population": {
+                "tag": "TMS",
+                "population": 91745,
+                "year": 2022
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 10510,
+			"default_name": "Serdar",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "TMS",
+                "population": 48552,
+                "year": 2022
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 16211,
+			"default_name": "Dashoguz",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_turkmen_names = yes",
+					"name": "Daşoguz"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Dashkhovuz"
+				}
+			],
+			"population": {
+                "tag": "TMS",
+                "population": 201142,
+                "year": 2022
+            },
+            "terrain": "urban"
+		},
+		{
+			"id": 12324,
+			"default_name": "Konye-Urgench",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_turkmen_names = yes",
+					"name": "Köneürgench"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Kyoneurgench"
+				}
+			],
+			"population": {
+                "tag": "TMS",
+                "population": 37176,
+                "year": 2022
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 7560,
+			"default_name": "Mary",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "TMS",
+                "population": 167027,
+                "year": 2022
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 16224,
+			"default_name": "Bayramaly",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_turkmen_names = yes",
+					"name": "Baýramaly"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Bayramali"
+				}
+			],
+			"population": {
+                "tag": "TMS",
+                "population": 70376,
+                "year": 2022
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 16226,
+			"default_name": "Turkmenabat",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_turkmen_names = yes",
+					"name": "Türkmenabat"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Chardzhev"
+				}
+			],
+			"population": {
+                "tag": "TMS",
+                "population": 230861,
+                "year": 2022
+            },
+            "terrain": "urban"
+		},
+		{
+			"id": 756,
+			"default_name": "Magdanly",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "TMS",
+                "population": 44508,
+                "year": 2022
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 4549,
+			"default_name": "Kerki",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "TMS",
+                "population": 32489,
+                "year": 2022
+            },
+            "terrain": "desert"
 		}
     ]
 }
