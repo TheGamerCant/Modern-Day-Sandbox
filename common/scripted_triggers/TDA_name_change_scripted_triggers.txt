@@ -902,3 +902,16 @@ TAG_using_turkmen_names = {
 		is_puppet_of = TMS
 	}
 }
+TAG_using_uzbek_names = {
+	has_global_flag = TDA_city_name_changes_active_flag
+	OR = {
+		AND = {
+			OR = {
+				original_tag = UZB
+			}
+			is_subject = no
+		}
+		
+		is_puppet_of = UZB
+	}
+}

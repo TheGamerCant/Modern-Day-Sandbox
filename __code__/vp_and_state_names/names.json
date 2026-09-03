@@ -4764,7 +4764,7 @@
         },
         {
             "id": 585,
-            "default_name": "Navoi",
+            "default_name": "Navoiy",
             "comment": "",
             "custom_names": []
         },
@@ -6748,7 +6748,12 @@
             "id": 823,
             "default_name": "Karakalpakstan",
             "comment": "",
-            "custom_names": []
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Qoraqalpog'iston"
+                }
+            ]
         },
         {
             "id": 824,
@@ -6811,9 +6816,14 @@
         },
         {
             "id": 830,
-            "default_name": "Bukhara",
+            "default_name": "Samarkand",
             "comment": "",
-            "custom_names": []
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Samarqand"
+                }
+            ]
         },
         {
             "id": 831,
@@ -8246,6 +8256,88 @@
             "default_name": "Mary",
             "comment": "",
             "custom_names": []
+        },
+        {
+            "id": 984,
+            "default_name": "Fergana",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Farg'ona"
+                },
+                {
+                    "requirements": "TAG_using_kazakh_names = yes",
+                    "name": "Ferğana"
+                }
+            ]
+        },
+        {
+            "id": 985,
+            "default_name": "Khorazm",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Xorazm"
+                },
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Khorezm"
+                }
+            ]
+        },
+        {
+            "id": 986,
+            "default_name": "Bukhara",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Buxoro"
+                }
+            ]
+        },
+        {
+            "id": 987,
+            "default_name": "Surkhondaryo",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Surxondaryo"
+                },
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Surkhandar'yo"
+                }
+            ]
+        },
+        {
+            "id": 988,
+            "default_name": "Kashkadarya",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Qashqadaryo"
+                }
+            ]
+        },
+		{
+            "id": 989,
+            "default_name": "Jizzakh",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Jizzax"
+                },
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Dzhizak"
+                }
+            ]
         }
     ],
     "victory_point_names": [
@@ -61450,7 +61542,7 @@
                 "population": 481389,
                 "year": 2025
             },
-            "terrain": "plains"
+            "terrain": "mountain"
 		},
 		{
 			"id": 16195,
@@ -61515,7 +61607,7 @@
                 "population": 31727,
                 "year": 2009
             },
-            "terrain": "plains"
+            "terrain": "mountain"
 		},
 		{
 			"id": 10417,
@@ -61836,6 +61928,433 @@
                 "year": 2022
             },
             "terrain": "desert"
-		}
+		},
+		{
+			"id": 16232,
+			"default_name": "Nukus",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "UZB",
+                "population": 289000,
+                "year": 2013
+            },
+            "terrain": "urban"
+		},
+		{
+			"id": 10435,
+			"default_name": "Xojeli",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Khodzheyli"
+				}
+			],
+			"population": {
+                "tag": "UZB",
+                "population": 67800,
+                "year": 2013
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 1479,
+			"default_name": "Shimbay",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_uzbek_names = yes",
+					"name": "Shımbay"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Chimbay"
+				}
+			],
+			"population": {
+                "tag": "UZB",
+                "population": 50400,
+                "year": 2013
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 2560,
+			"default_name": "Turtkul",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_uzbek_names = yes",
+					"name": "To'rtko'l"
+				},
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Turtkul'" 
+				}
+			],
+			"population": {
+                "tag": "UZB",
+                "population": 58200,
+                "year": 2013
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 16239,
+			"default_name": "Urgench",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_uzbek_names = yes",
+					"name": "Urganch"
+				}
+			],
+			"population": {
+                "tag": "UZB",
+                "population": 136600,
+                "year": 2013
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16247,
+			"default_name": "Navoiy",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "UZB",
+                "population": 209624,
+                "year": 2025
+            },
+            "terrain": "urban"
+		},
+		{
+			"id": 16246,
+			"default_name": "Zarafshon",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Zarafhan"
+				}
+			],
+			"population": {
+                "tag": "UZB",
+                "population": 73100,
+                "year": 2013
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 16241,
+			"default_name": "Nurota",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Nurata"
+				}
+			],
+			"population": {
+                "tag": "UZB",
+                "population": 32300,
+                "year": 2013
+            },
+            "terrain": "desert"
+		},
+		{
+			"id": 16254,
+			"default_name": "Andijon",
+			"comment": "",
+			"custom_names": [
+				{
+					"requirements": "TAG_using_russian_names = yes",
+					"name": "Andijan"
+				}
+			],
+			"population": {
+                "tag": "UZB",
+                "population": 792859,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16255,
+			"default_name": "Namangan",
+			"comment": "",
+			"custom_names": [],
+			"population": {
+                "tag": "UZB",
+                "population": 927907,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16248,
+			"default_name": "Fergana",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Farg'ona"
+                },
+                {
+                    "requirements": "TAG_using_kazakh_names = yes",
+                    "name": "Ferğana"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 759423,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16250,
+			"default_name": "Kokand",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Qo'qon"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 230400,
+                "year": 2013
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16259,
+			"default_name": "Tashkent",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Toshkent"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 3874653,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+		},
+		{
+			"id": 16261,
+			"default_name": "Tashkent International Airport",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Toshkent Xalqaro Aeroporti"
+                },
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Mezhdunarodnyy Aeroport Tashkent"
+                }
+            ],
+			"victory_points": 2
+		},
+		{
+			"id": 16264,
+			"default_name": "Bekobod",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "UZB",
+                "population": 88500,
+                "year": 2013
+            },
+            "terrain": "plains"
+		},
+		{
+			"id": 16258,
+			"default_name": "Angren",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "UZB",
+                "population": 172800,
+                "year": 2013
+            },
+            "terrain": "plains"
+		},
+		{
+            "id": 16266,
+            "default_name": "Bukhara",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Buxoro"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 247500,
+                "year": 2013
+            },
+            "terrain": "urban"
+        },
+		{
+            "id": 16265,
+            "default_name": "Kogon",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Kagan"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 57800,
+                "year": 2013
+            },
+            "terrain": "desert"
+        },
+		{
+            "id": 11687,
+            "default_name": "Jizzakh",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Jizzax"
+                },
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Dzhizak"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 161400,
+                "year": 2013
+            },
+            "terrain": "desert"
+        },
+		{
+            "id": 16270,
+            "default_name": "Samarkand",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Samarqand"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 892554,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+        },
+		{
+            "id": 7775,
+            "default_name": "Kattakurgan",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Kattaqo'rg'on"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 80900,
+                "year": 2013
+            },
+            "terrain": "desert"
+        },
+		{
+            "id": 16274,
+            "default_name": "Karshi",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_uzbek_names = yes",
+                    "name": "Qarshi"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 512027,
+                "year": 2025
+            },
+            "terrain": "urban"
+        },
+		{
+            "id": 10671,
+            "default_name": "Shahrisabz",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Shakhrisabz"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 98400,
+                "year": 2013
+            },
+            "terrain": "desert"
+        },
+		{
+            "id": 1573,
+            "default_name": "Koson",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "UZB",
+                "population": 68900,
+                "year": 2013
+            },
+            "terrain": "desert"
+        },
+		{
+            "id": 12239,
+            "default_name": "Termiz",
+            "comment": "",
+             "custom_names": [
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Termez"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 135800,
+                "year": 2013
+            },
+            "terrain": "hills"
+        },
+		{
+            "id": 10205,
+            "default_name": "Denov",
+            "comment": "",
+             "custom_names": [
+                {
+                    "requirements": "TAG_using_russian_names = yes",
+                    "name": "Denau"
+                }
+            ],
+			"population": {
+                "tag": "UZB",
+                "population": 78300,
+                "year": 2013
+            },
+            "terrain": "hills"
+        }
     ]
 }

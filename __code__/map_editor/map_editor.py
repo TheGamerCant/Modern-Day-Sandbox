@@ -520,8 +520,8 @@ def verify_map(provinces_list: list[Province], states_list: list[State], regions
 COMMANDS_STRING: str = (
     "Commands (case insensitive):\n"
     "\n"
-    "s_move provinces=[] state=*int* - Moves the listed provinces into the state\n"
-    "r_move states=[] provinces=[] region=*int* - Moves the listed states (all their provinces) and the listed provinces into an existing strategic region. Either list may be empty\n"
+    "s_move provinces=[] into=*int* - Moves the listed provinces into the state\n"
+    "r_move states=[] into=[] region=*int* - Moves the listed states (all their provinces) and the listed provinces into an existing strategic region. Either list may be empty\n"
     "\n"
     "s_create provinces=[] - Creates a state with the listed provinces. If containing provinces in multiple regions, the region of the first province will be chosen\n"
     "r_create states=[] provinces=[] - Creates a new strategic region containing the listed states' provinces plus the listed provinces. Either list may be empty\n"
@@ -536,11 +536,11 @@ COMMANDS_STRING: str = (
 )
 
 COMMAND_SCHEMAS: dict[str, set[str]] = {
-    "s_move": {"provinces", "state"},
+    "s_move": {"provinces", "into"},
     "p_merge": {"provinces", "into"},
     "s_merge": {"states", "into"},
     "s_create": {"provinces"},
-    "r_move": {"states", "provinces", "region"},
+    "r_move": {"states", "provinces", "into"},
     "r_create": {"states", "provinces"},
     "r_merge": {"regions", "into"},
     "edit": {},
@@ -760,6 +760,14 @@ class BlockEdit:
         self.new_provinces: set[int] | None = new_provinces
 
 
+# Maps a block keyword to the prefix HOI4 auto-generates its localisation
+# key with (e.g. a "state" block's default `name` is `STATE_<id>`).
+LOC_KEY_PREFIXES: dict[str, str] = {
+    "state": "STATE",
+    "strategic_region": "STRATEGICREGION",
+}
+
+
 def apply_block_edits(text: str, keyword: str, edits_by_original_id: dict[int, BlockEdit]) -> str:
     """
     Apply queued edits to every `keyword = { ... }` block in text, matched
@@ -799,6 +807,18 @@ def apply_block_edits(text: str, keyword: str, edits_by_original_id: dict[int, B
             new_id_match = re.search(r"\bid\s*=\s*(-?\d+)", new_block_text)
             new_block_text = new_block_text[:new_id_match.start(1)] + str(edit.new_id) + new_block_text[new_id_match.end(1):]
 
+            # Keep an auto-generated localisation key (e.g. name = "STATE_1234")
+            # in sync with the id it's derived from. A custom name that
+            # doesn't match "<PREFIX>_<original id>" exactly is left alone.
+            name_prefix = LOC_KEY_PREFIXES.get(keyword)
+            if name_prefix is not None:
+                name_pattern = re.compile(rf'(\bname\s*=\s*"{name_prefix}_){original_id}(")')
+                new_block_text = name_pattern.sub(
+                    lambda m: f"{m.group(1)}{edit.new_id}{m.group(2)}",
+                    new_block_text,
+                    count=1,
+                )
+
         replacements.append((start, end, new_block_text))
 
     # Apply from the end of the file backwards so earlier offsets stay valid
@@ -812,6 +832,40 @@ def apply_block_edits(text: str, keyword: str, edits_by_original_id: dict[int, B
             text = text[:start] + new_block_text + text[end:]
 
     return text
+
+
+def rename_file_for_id_change(file_path: Path, edits: dict[int, BlockEdit]) -> Path:
+    """
+    A merge can leave a surviving state/region file's own id changed (e.g.
+    the highest-numbered state/region gets renumbered into the slot freed up
+    by the one that got merged away) without the file on disk being touched
+    otherwise. If exactly one surviving block in this file had its id
+    changed, and the file's name still follows the usual "<id>-<name>.txt"
+    convention with that block's *old* id, rename the file on disk so its
+    name reflects the new id too. Returns the (possibly renamed) path.
+    """
+    id_changes = {
+        original_id: edit.new_id
+        for original_id, edit in edits.items()
+        if not edit.delete and edit.new_id is not None
+    }
+
+    if len(id_changes) != 1:
+        return file_path
+
+    ((old_id, new_id),) = id_changes.items()
+
+    name_match = re.match(rf"^{old_id}-(.+)$", file_path.name)
+    if not name_match:
+        return file_path
+
+    new_file_path = file_path.with_name(f"{new_id}-{name_match.group(1)}")
+
+    if new_file_path.exists():
+        return file_path  # avoid clobbering an existing file with the same name
+
+    file_path.rename(new_file_path)
+    return new_file_path
 
 
 class PlanningError(Exception):
@@ -1215,7 +1269,13 @@ def write_state_files(
         else:
             with open(file_path, "w", encoding="utf-8") as file:
                 file.write(new_text)
-            edited_files.append(file_path)
+
+            final_path = rename_file_for_id_change(file_path, edits)
+            edited_files.append(final_path)
+
+            for state in state_plans:
+                if state.file_path == file_path and state.original_id in edits:
+                    state.file_path = final_path
 
     created_state_ids: list[int] = []
 
@@ -1290,7 +1350,13 @@ def write_region_files(
         else:
             with open(file_path, "w", encoding="utf-8") as file:
                 file.write(new_text)
-            edited_files.append(file_path)
+
+            final_path = rename_file_for_id_change(file_path, edits)
+            edited_files.append(final_path)
+
+            for region in region_plans:
+                if region.file_path == file_path and region.original_id in edits:
+                    region.file_path = final_path
 
     created_region_ids: list[int] = []
 
@@ -1492,7 +1558,7 @@ def main():
     errors = verify_map(provinces_list, states_list, regions_list)
     if len(errors) > 0:
         for error in errors:
-            print(f"ERROR: {error}")
+            print(f"\033[1;31mERROR\033[0m: {error}")
         return
 
     # Clear the terminal
@@ -1519,7 +1585,7 @@ def main():
         match command:
             case "s_move":
                 provinces: Any = read_id_list_arg(kwargs, "s_move", "provinces", len(provinces_list), "provinces")
-                state: Any = kwargs.get("state")
+                state: Any = kwargs.get("into")
 
                 if provinces is None:
                     continue
@@ -1596,7 +1662,7 @@ def main():
             case "r_move":
                 states: Any = read_id_list_arg(kwargs, "r_move", "states", len(states_list), "states", allow_empty=True)
                 provinces: Any = read_id_list_arg(kwargs, "r_move", "provinces", len(provinces_list), "provinces", allow_empty=True)
-                region: Any = kwargs.get("region")
+                region: Any = kwargs.get("into")
 
                 if states is None or provinces is None:
                     continue
