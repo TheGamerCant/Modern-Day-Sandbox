@@ -124,6 +124,7 @@ TAG_using_french_names = {
 				original_tag = QUE
 				original_tag = BRT
 				original_tag = HAI
+				original_tag = MAD
 			}
 			is_subject = no
 		}
@@ -135,6 +136,7 @@ TAG_using_french_names = {
 		is_puppet_of = QUE
 		is_puppet_of = BRT
 		is_puppet_of = HAI
+		is_puppet_of = MAD
 	}
 }
 

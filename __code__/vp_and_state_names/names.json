@@ -62161,7 +62161,8 @@
                     "name": "Mezhdunarodnyy Aeroport Tashkent"
                 }
             ],
-			"victory_points": 2
+			"victory_points": 2,
+            "terrain": "sub_urban"
 		},
 		{
 			"id": 16264,
@@ -62326,7 +62327,7 @@
             "id": 12239,
             "default_name": "Termiz",
             "comment": "",
-             "custom_names": [
+            "custom_names": [
                 {
                     "requirements": "TAG_using_russian_names = yes",
                     "name": "Termez"
@@ -62343,7 +62344,7 @@
             "id": 10205,
             "default_name": "Denov",
             "comment": "",
-             "custom_names": [
+            "custom_names": [
                 {
                     "requirements": "TAG_using_russian_names = yes",
                     "name": "Denau"
@@ -62355,6 +62356,151 @@
                 "year": 2013
             },
             "terrain": "hills"
+        },
+		{
+            "id": 16278,
+            "default_name": "Antananarivo",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 2300000,
+                "year": 2018
+            },
+            "terrain": "dense_urban"
+        },
+		{
+            "id": 16281,
+            "default_name": "Ivato International Airport",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_french_names = yes",
+                    "name": "Aéroport international d’Antananarivo-Ivato"
+                }
+            ],
+			"victory_points": 1,
+            "terrain": "sub_urban"
+        },
+		{
+            "id": 16276,
+            "default_name": "Mahajanga",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 246022,
+                "year": 2018
+            },
+            "terrain": "urban"
+        },
+		{
+            "id": 16277,
+            "default_name": "Toamasina",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 325857,
+                "year": 2018
+            },
+            "terrain": "urban"
+        },
+		{
+            "id": 5222,
+            "default_name": "Antsiranana",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 129320,
+                "year": 2018
+            },
+            "terrain": "jungle"
+        },
+		{
+            "id": 16287,
+            "default_name": "Fianarantsoa",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 191776,
+                "year": 2018
+            },
+            "terrain": "mountain"
+        },
+		{
+            "id": 12956,
+            "default_name": "Fianarantsoa",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 168756,
+                "year": 2018
+            },
+            "terrain": "mountain"
+        },
+		{
+            "id": 8246,
+            "default_name": "Taolanaro",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 67284,
+                "year": 2018
+            },
+            "terrain": "hills"
+        },
+		{
+            "id": 16286,
+            "default_name": "Ambovombe",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 65402,
+                "year": 2018
+            },
+            "terrain": "mountain"
+        },
+		{
+            "id": 8180,
+            "default_name": "Morondava",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 53510,
+                "year": 2018
+            },
+            "terrain": "hills"
+        },
+		{
+            "id": 16290,
+            "default_name": "Moramanga",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 57084,
+                "year": 2018
+            },
+            "terrain": "jungle"
+        },
+		{
+            "id": 16292,
+            "default_name": "Sambava",
+            "comment": "",
+            "custom_names": [],
+			"population": {
+                "tag": "MAD",
+                "population": 84039,
+                "year": 2018
+            },
+            "terrain": "jungle"
         }
     ]
 }

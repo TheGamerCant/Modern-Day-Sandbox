@@ -12526,6 +12526,15 @@ TDA_update_state_542_names = {
 
 #Madagascar
 TDA_update_state_543_names = {
+	#Aéroport international d’Antananarivo-Ivato
+	if = {
+		limit = { any_country = { controls_province = 16281 TAG_using_french_names = yes } }
+		set_province_name = { id = 16281 name = VICTORY_POINTS_16281_0 }
+	}
+	#Ivato International Airport
+	else = {
+		reset_province_name = 16281
+	}
 }
 
 #Lourenço Marques

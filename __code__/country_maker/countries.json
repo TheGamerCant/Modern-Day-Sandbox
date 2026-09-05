@@ -1881,6 +1881,22 @@
 			}
 		},
 		{
+			"tag": "MAD",
+			"red": 101,
+			"green": 128,
+			"blue": 61,
+			"graphical_culture": "african_gfx",
+			"graphical_culture_2d": "african_2d",
+			"capital": 543,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "no",
+			"localisation": {
+				"MAD": "Madagascar",
+				"MAD_DEF": "the Republic of Madagascar",
+				"MAD_ADJ": "Madagascan"
+			}
+		},
+		{
 			"tag": "MCO",
 			"red": 254,
 			"green": 129,

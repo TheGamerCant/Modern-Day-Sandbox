@@ -352,6 +352,10 @@ LYB = {
 	color = rgb { 0 106 52 }
 	color_ui = rgb { 0 106 52 }
 }
+MAD = {
+	color = rgb { 101 128 61 }
+	color_ui = rgb { 101 128 61 }
+}
 MCO = {
 	color = rgb { 254 129 32 }
 	color_ui = rgb { 254 129 32 }
