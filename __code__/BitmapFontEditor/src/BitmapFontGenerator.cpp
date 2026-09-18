@@ -5,7 +5,6 @@
 #include <iostream>
 #include <cmath>
 #include <fstream>
-#include <algorithm>
 #include "json.hpp"
 using json = nlohmann::json;
 
@@ -16,39 +15,25 @@ using json = nlohmann::json;
 #include "raylib.h"
 
 static void AddCodepointRange(Font* font, const Char* fontPath, const SignedInteger32 fontSize, SignedInteger32 start, SignedInteger32 stop) {
-    if (stop < start) {
-        FatalError("Invalid codepoint range: stop (" + std::to_string(stop) + ") is less than start (" + std::to_string(start) + ")");
-    }
-
+    SignedInteger32 rangeSize = stop - start + 1;
     SignedInteger32 currentRangeSize = font->glyphCount;
 
     // TODO: Load glyphs from provided vector font (if available),
     // add them to existing font, regenerating font image and texture
 
-    // Track codepoints already present so ranges that overlap the current glyph set
-    // (eg. raylib's default base set, or overlapping ranges in fonts.json) aren't
-    // requested twice, which used to produce duplicate glyphs.
-    Set<SignedInteger32> existingCodepoints;
-    existingCodepoints.reserve(static_cast<SizeT>(currentRangeSize));
-
-    Vector<SignedInteger32> updatedCodepoints;
-    updatedCodepoints.reserve(static_cast<SizeT>(currentRangeSize) + static_cast<SizeT>(stop - start + 1));
+    SignedInteger32 updatedCodepointCount = currentRangeSize + rangeSize;
+    SignedInteger32* updatedCodepoints = (SignedInteger32*)RL_CALLOC(updatedCodepointCount, sizeof(SignedInteger32));
 
     // Get current codepoint list
-    for (SignedInteger32 i = 0; i < currentRangeSize; i++) {
-        existingCodepoints.insert(font->glyphs[i].value);
-        updatedCodepoints.push_back(font->glyphs[i].value);
-    }
+    for (SignedInteger32 i = 0; i < currentRangeSize; i++) updatedCodepoints[i] = font->glyphs[i].value;
 
-    // Add new codepoints to list (provided range), skipping duplicates
-    for (SignedInteger32 codepoint = start; codepoint <= stop; codepoint++) {
-        if (existingCodepoints.insert(codepoint).second) {
-            updatedCodepoints.push_back(codepoint);
-        }
-    }
+    // Add new codepoints to list (provided range)
+    for (SignedInteger32 i = currentRangeSize; i < updatedCodepointCount; i++)
+        updatedCodepoints[i] = start + (i - currentRangeSize);
 
     UnloadFont(*font);
-    *font = LoadFontEx(fontPath, fontSize, updatedCodepoints.data(), static_cast<SignedInteger32>(updatedCodepoints.size()));
+    *font = LoadFontEx(fontPath, fontSize, updatedCodepoints, updatedCodepointCount);
+    RL_FREE(updatedCodepoints);
 }
 
 
@@ -203,10 +188,6 @@ int main(void) {
     for (const auto& font : fontsToLoad) {
         for (const auto& subFont : font.subFonts) {
             //Load font into raylib
-            if (subFont.charsToLoad.size() % 2 != 0) {
-                FatalError("Sub-font \"" + subFont.fontFileName + "\" has an odd number of entries in \"chars\" (expected start/stop pairs)");
-            }
-
             Font raylibFont = LoadFontEx(font.fontPath.c_str(), subFont.fontSize, nullptr, 0);
             for (SizeT charToLoadIndex = 0; charToLoadIndex < subFont.charsToLoad.size(); charToLoadIndex += 2) {
                 AddCodepointRange(
@@ -233,7 +214,7 @@ int main(void) {
             for (SizeT rectangleIndex = 0; rectangleIndex < raylibFont.glyphCount; rectangleIndex++) {
                 const GlyphInfo& glyphInfo = raylibFont.glyphs[rectangleIndex];
 
-                totalFontArea += static_cast<SizeT>(glyphInfo.image.width + outline2) * static_cast<SizeT>(glyphInfo.image.height + outline2);
+                totalFontArea += static_cast<SizeT>(glyphInfo.image.width + outline2) * static_cast<SizeT>(glyphInfo.image.width + outline2);
                 rects[rectangleIndex] = {
                     .id = static_cast<int>(glyphInfo.value),
                     .w = static_cast<stbrp_coord>(glyphInfo.image.width + outline2),
@@ -244,76 +225,42 @@ int main(void) {
                 };
             }
 
-            //Get the width and height of the total font image, growing it if the initial
-            //estimate doesn't fit every glyph (stb_rect_pack never guarantees a first guess fits).
-            SignedInteger32 dimension = static_cast<SignedInteger32>(std::sqrt(static_cast<Float64>(totalFontArea)) * 1.25);
-            if (dimension < 1) { dimension = 1; }
+            //Get the width and height of the total font image
+            const SignedInteger32 dimension = static_cast<SignedInteger32>(std::sqrt(totalFontArea) * 1.25f);
+            UnsignedInteger8* imgDataPtr = new UnsignedInteger8[static_cast<SizeT>(dimension) * static_cast<SizeT>(dimension) * 2]();
 
-            Boolean allRectsPacked = false;
+            //Pack rectanges
+            Vector<stbrp_node> nodes(dimension);
             stbrp_context context;
+            stbrp_init_target(&context, dimension, dimension, nodes.data(), dimension);
+            stbrp_pack_rects(&context, rects.data(), rects.size());
 
-            for (SignedInteger32 packAttempt = 0; packAttempt < 12; packAttempt++) {
-                for (auto& rect : rects) { rect.x = 0; rect.y = 0; rect.was_packed = 0; }
-
-                Vector<stbrp_node> nodes(dimension);
-                stbrp_init_target(&context, dimension, dimension, nodes.data(), dimension);
-                stbrp_pack_rects(&context, rects.data(), rects.size());
-
-                allRectsPacked = true;
-                for (const auto& rect : rects) {
-                    if (!rect.was_packed) { allRectsPacked = false; break; }
-                }
-
-                if (allRectsPacked) { break; }
-                dimension = static_cast<SignedInteger32>(dimension * 1.3f) + 1;
-            }
-
-            if (!allRectsPacked) {
-                FatalError("Failed to pack all glyphs for font \"" + subFont.fontFileName + "\" into the atlas; try a smaller font size or outline");
-            }
-
-            //Trim the canvas down to the tight bounding box the packed rects actually use,
-            //instead of allocating the full (oversized) packing canvas and alpha-cropping it
-            //afterwards. Cropping would shift every glyph's pixels left/up without updating the
-            //x/y coordinates written to the .fnt file below, which is what misaligned every
-            //character against the saved .dds image.
-            SignedInteger32 packedWidth = 1, packedHeight = 1;
-            for (const auto& rect : rects) {
-                packedWidth = std::max(packedWidth, static_cast<SignedInteger32>(rect.x + rect.w));
-                packedHeight = std::max(packedHeight, static_cast<SignedInteger32>(rect.y + rect.h));
-            }
-
-            UnsignedInteger8* imgDataPtr = new UnsignedInteger8[static_cast<SizeT>(packedWidth) * static_cast<SizeT>(packedHeight) * 2]();
 
             //Write image information to imgDataPtr
-            SizeT rectIndex = 0;
+            SizeT imgDataPtrIndex = 0, letterDataIndex = 0, rectIndex = 0;
             for (const auto& rect : rects) {
                 const GlyphInfo& currentGlyph = raylibFont.glyphs[rectIndex];
-                const unsigned char* glyphData = static_cast<const unsigned char*>(currentGlyph.image.data);
-                const SizeT glyphWidth = static_cast<SizeT>(currentGlyph.image.width);
-                const SizeT glyphHeight = static_cast<SizeT>(currentGlyph.image.height);
+                imgDataPtrIndex = (static_cast<SizeT>(rect.y + subFont.outline) * static_cast<SizeT>(dimension) + rect.x + subFont.outline) * 2;
+                letterDataIndex = 0;
 
-                for (SizeT row = 0; row < glyphHeight; row++) {
-                    SizeT imgDataPtrIndex = ((static_cast<SizeT>(rect.y + subFont.outline) + row) * static_cast<SizeT>(packedWidth)
-                        + static_cast<SizeT>(rect.x + subFont.outline)) * 2;
+                for (SizeT row = 0; row < currentGlyph.image.height; row++) {
+                    std::memcpy(&imgDataPtr[imgDataPtrIndex], static_cast<unsigned char*>(currentGlyph.image.data) + letterDataIndex, static_cast<SizeT>(currentGlyph.image.width) * 2);
 
-                    for (SizeT col = 0; col < glyphWidth; col++) {
-                        UnsignedInteger8 value = glyphData ? glyphData[row * glyphWidth + col] : 0;
-                        imgDataPtr[imgDataPtrIndex + col * 2 + 0] = value;
-                        imgDataPtr[imgDataPtrIndex + col * 2 + 1] = value;
-                    }
+                    letterDataIndex += static_cast<SizeT>(currentGlyph.image.width) * 2;
+                    imgDataPtrIndex += static_cast<SizeT>(dimension) * 2;
                 }
                 rectIndex++;
             }
 
             Image outImg{
                 .data = imgDataPtr,
-                .width = packedWidth,
-                .height = packedHeight,
+                .width = dimension,
+                .height = dimension,
                 .mipmaps = 1,
                 .format = PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA
             };
 
+            ImageAlphaCrop(&outImg, 0.0f);
             ImageFormat(&outImg, PIXELFORMAT_UNCOMPRESSED_R8G8B8A8);
 
             if (subFont.outline != 0) {
@@ -375,7 +322,7 @@ int main(void) {
 				}
                 
 
-                fntFileString += "\nchar id=" + std::to_string(letter.value) + " x=" + std::to_string(letterData.x + subFont.outline) + " y=" + std::to_string(letterData.y + subFont.outline) +
+                fntFileString += "\nchar id=" + std::to_string(letter.value) + " x=" + std::to_string(letterData.x) + " y=" + std::to_string(letterData.y) +
                     " width=" + std::to_string(width) + " height=" + std::to_string(letterData.h) + " xoffset=" + std::to_string(xOffset) +
                     " yoffset=" + std::to_string(letter.offsetY - subFont.outline) + " xadvance=" + std::to_string(xAdvance) + " page=0 chnl=15";
             }
