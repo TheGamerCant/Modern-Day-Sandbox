@@ -2,12 +2,18 @@ state={
 	id=268
 	name="STATE_268"
 	history={
-		owner = ZZZ
+		owner = DJI
+		add_core_of = DJI
+		
+		set_variable = { sq_km = 23180 }
+		buildings = { air_base = 6 }
+		victory_points = { 16293 6 }
+		victory_points = { 16294 2 }
 	}
 	provinces={
-		4985 8124 
+		4985 8124 16293 16294 
 	}
-	manpower= 100000
+	manpower= 840000
 	buildings_max_level_factor=1.000
 	local_supplies = 0.5		#One unit of local_supplies is equal to 0.2 units of supply. If undefined, assumed to be 0.
 	state_category=enclave

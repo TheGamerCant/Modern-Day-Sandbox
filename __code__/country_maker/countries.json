@@ -1049,6 +1049,22 @@
 			}
 		},
 		{
+			"tag": "DJI",
+			"red": 23,
+			"green": 23,
+			"blue": 61,
+			"graphical_culture": "african_gfx",
+			"graphical_culture_2d": "african_2d",
+			"capital": 268,
+			"ideology": "IDEOLOGY_authoritarian",
+			"elections_allowed": "no",
+			"localisation": {
+				"DJI": "Djibouti",
+				"DJI_DEF": "the Republic of Djibouti",
+				"DJI_ADJ": "Djiboutian"
+			}
+		},
+		{
 			"tag": "DMK",
 			"red": 123,
 			"green": 92,
@@ -1174,6 +1190,22 @@
 				"ESV": "El Salvador",
 				"ESV_DEF": "the Republic of El Salvador",
 				"ESV_ADJ": "Salvadoran"
+			}
+		},
+		{
+			"tag": "ETH",
+			"red": 123,
+			"green": 123,
+			"blue": 185,
+			"graphical_culture": "african_gfx",
+			"graphical_culture_2d": "african_2d",
+			"capital": 271,
+			"ideology": "IDEOLOGY_hybrid_regime",
+			"elections_allowed": "yes",
+			"localisation": {
+				"ETH": "Ethiopia",
+				"ETH_DEF": "the Federal Democratic Republic of Ethiopia",
+				"ETH_ADJ": "Ethiopian"
 			}
 		},
 		{

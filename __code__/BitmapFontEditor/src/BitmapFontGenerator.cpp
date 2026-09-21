@@ -226,15 +226,29 @@ int main(void) {
             }
 
             //Get the width and height of the total font image
-            const SignedInteger32 dimension = static_cast<SignedInteger32>(std::sqrt(totalFontArea) * 1.25f);
+            SignedInteger32 dimension = static_cast<SignedInteger32>(std::sqrt(totalFontArea) * 1.2f);
+			
+			//Pack the rectangles
+			Boolean allRectsPacked = false;
+			while (!allRectsPacked) {
+				for (auto& rect : rects) { rect.x = 0; rect.y = 0; rect.was_packed = false; }
+				
+				Vector<stbrp_node> nodes(dimension);
+				stbrp_context context;
+				stbrp_init_target(&context, dimension, dimension, nodes.data(), dimension);
+				stbrp_pack_rects(&context, rects.data(), rects.size());
+				
+				allRectsPacked = true;
+				for (const auto& rect : rects) {
+					if (!rect.was_packed) { 
+						allRectsPacked = false; 
+						dimension = static_cast<SignedInteger32>(static_cast<Float64>(dimension) * 1.2f);
+						break; 
+					}
+				}
+			}
+			
             UnsignedInteger8* imgDataPtr = new UnsignedInteger8[static_cast<SizeT>(dimension) * static_cast<SizeT>(dimension) * 2]();
-
-            //Pack rectanges
-            Vector<stbrp_node> nodes(dimension);
-            stbrp_context context;
-            stbrp_init_target(&context, dimension, dimension, nodes.data(), dimension);
-            stbrp_pack_rects(&context, rects.data(), rects.size());
-
 
             //Write image information to imgDataPtr
             SizeT imgDataPtrIndex = 0, letterDataIndex = 0, rectIndex = 0;

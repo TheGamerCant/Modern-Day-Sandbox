@@ -144,6 +144,10 @@ DAG = {
 	color = rgb { 0 17 46 }
 	color_ui = rgb { 0 17 46 }
 }
+DJI = {
+	color = rgb { 23 23 61 }
+	color_ui = rgb { 23 23 61 }
+}
 DMK = {
 	color = rgb { 123 92 74 }
 	color_ui = rgb { 123 92 74 }
@@ -175,6 +179,10 @@ EST = {
 ESV = {
 	color = rgb { 0 37 131 }
 	color_ui = rgb { 0 37 131 }
+}
+ETH = {
+	color = rgb { 123 123 185 }
+	color_ui = rgb { 123 123 185 }
 }
 FIN = {
 	color = rgb { 188 215 224 }

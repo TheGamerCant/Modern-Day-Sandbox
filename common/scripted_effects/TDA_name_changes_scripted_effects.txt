@@ -5714,8 +5714,36 @@ TDA_update_state_266_names = {
 TDA_update_state_267_names = {
 }
 
-#French Somaliland
+#Djibouti
 TDA_update_state_268_names = {
+	268 = {
+		#Jībūtī
+		if = {
+			limit = { CONTROLLER = { TAG_using_arab_names = yes } }
+			set_state_name = STATE_268_0
+		}
+		else = {
+			reset_state_name = yes
+		}
+	}
+	#Jībūtī
+	if = {
+		limit = { any_country = { controls_province = 16293 TAG_using_arab_names = yes } }
+		set_province_name = { id = 16293 name = VICTORY_POINTS_16293_0 }
+	}
+	#Djibouti
+	else = {
+		reset_province_name = 16293
+	}
+	#Maṭār Jībūtī Al-Dawli
+	if = {
+		limit = { any_country = { controls_province = 16294 TAG_using_arab_names = yes } }
+		set_province_name = { id = 16294 name = VICTORY_POINTS_16294_0 }
+	}
+	#Djibouti International Airport
+	else = {
+		reset_province_name = 16294
+	}
 }
 
 #British Somaliland
@@ -5726,7 +5754,7 @@ TDA_update_state_269_names = {
 TDA_update_state_270_names = {
 }
 
-#Ethiopia
+#Oromia
 TDA_update_state_271_names = {
 }
 
@@ -24820,6 +24848,38 @@ TDA_update_state_989_names = {
 	}
 }
 
+#Somali Ethiopia
+TDA_update_state_990_names = {
+}
+
+#Tigray
+TDA_update_state_991_names = {
+}
+
+#Afar
+TDA_update_state_992_names = {
+}
+
+#Gambela
+TDA_update_state_993_names = {
+}
+
+#Benishangul-Gumuz
+TDA_update_state_994_names = {
+}
+
+#South-West Ethiopia
+TDA_update_state_995_names = {
+}
+
+#Amhara
+TDA_update_state_996_names = {
+}
+
+#Southern Ethiopia
+TDA_update_state_997_names = {
+}
+
 
 
 TDA_change_all_city_names = {
@@ -25812,6 +25872,14 @@ TDA_change_all_city_names = {
 	TDA_update_state_987_names = yes
 	TDA_update_state_988_names = yes
 	TDA_update_state_989_names = yes
+	TDA_update_state_990_names = yes
+	TDA_update_state_991_names = yes
+	TDA_update_state_992_names = yes
+	TDA_update_state_993_names = yes
+	TDA_update_state_994_names = yes
+	TDA_update_state_995_names = yes
+	TDA_update_state_996_names = yes
+	TDA_update_state_997_names = yes
 }
 
 TDA_toggle_change_city_names = {

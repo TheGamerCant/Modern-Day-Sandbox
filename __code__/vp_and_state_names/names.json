@@ -2398,9 +2398,14 @@
         },
         {
             "id": 268,
-            "default_name": "French Somaliland",
+            "default_name": "Djibouti",
             "comment": "",
-            "custom_names": []
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Jībūtī"
+                }
+            ]
         },
         {
             "id": 269,
@@ -2416,7 +2421,7 @@
         },
         {
             "id": 271,
-            "default_name": "Ethiopia",
+            "default_name": "Oromia",
             "comment": "",
             "custom_names": []
         },
@@ -8338,6 +8343,54 @@
                     "name": "Dzhizak"
                 }
             ]
+        },
+        {
+            "id": 990,
+            "default_name": "Somali Ethiopia",
+            "comment": "",
+            "custom_names": []
+        },
+        {
+            "id": 991,
+            "default_name": "Tigray",
+            "comment": "",
+            "custom_names": []
+        },
+        {
+            "id": 992,
+            "default_name": "Afar",
+            "comment": "",
+            "custom_names": []
+        },
+        {
+            "id": 993,
+            "default_name": "Gambela",
+            "comment": "",
+            "custom_names": []
+        },
+        {
+            "id": 994,
+            "default_name": "Benishangul-Gumuz",
+            "comment": "",
+            "custom_names": []
+        },
+        {
+            "id": 995,
+            "default_name": "South-West Ethiopia",
+            "comment": "",
+            "custom_names": []
+        },
+        {
+            "id": 996,
+            "default_name": "Amhara",
+            "comment": "",
+            "custom_names": []
+        },
+        {
+            "id": 997,
+            "default_name": "Southern Ethiopia",
+            "comment": "",
+            "custom_names": []
         }
     ],
     "victory_point_names": [
@@ -62501,6 +62554,36 @@
                 "year": 2018
             },
             "terrain": "jungle"
+        },
+        {
+            "id": 16293,
+            "default_name": "Djibouti",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Jībūtī"
+                }
+            ],
+			"population": {
+                "tag": "DJI",
+                "population": 735132,
+                "year": 2025
+            },
+            "terrain": "dense_urban"
+        },
+        {
+            "id": 16294,
+            "default_name": "Djibouti International Airport",
+            "comment": "",
+            "custom_names": [
+                {
+                    "requirements": "TAG_using_arab_names = yes",
+                    "name": "Maṭār Jībūtī Al-Dawli"
+                }
+            ],
+			"victory_points": 2,
+            "terrain": "sub_urban"
         }
     ]
 }

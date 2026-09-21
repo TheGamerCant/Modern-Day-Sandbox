@@ -1,0 +1,15 @@
+state = {
+    id = 992
+    name = "STATE_992"
+    manpower = 1566133
+    state_category = rural
+	history = {
+		owner = ETH
+		add_core_of = ETH
+		
+		set_variable = { sq_km = 72051 }
+	}
+    provinces = {
+        5041 13236 13240
+    }
+}
