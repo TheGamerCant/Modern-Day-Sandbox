@@ -79,6 +79,12 @@ constexpr SizeT CLEANUP_PASSES = 2;
 constexpr SignedInteger32 THIN_RADIUS = 3;
 constexpr SizeT CLEANUP_ITERATIONS_PER_PIXEL = 2;
 
+// Border smoothing at the very end: each border pixel switches to whichever province owns most of the
+// disc of radius SMOOTHNESS around it (never splitting a province). Rounds off jagged edges and small
+// bumps without favouring any direction. 0 = off, 1.5 = light, 2-3 = noticeably smooth, 4+ = very smooth.
+// Fractional values are fine (the disc includes pixels within that distance).
+constexpr Float64 SMOOTHNESS = 2.0;
+
 // ======================================================================
 
 struct Pixel {
@@ -677,6 +683,58 @@ void CleanProvinces(
 
     const auto thinOffsets = DiscOffsets(THIN_RADIUS);
 
+    // Majority-filter smoothing (see SMOOTHNESS). Pixels are visited in random order and updated one at a
+    // time, so every switch is checked against the current map and can't split a province.
+    auto smoothBorders = [&]() {
+        // Own generator, seeded with exactly one draw whatever SMOOTHNESS is - so changing SMOOTHNESS
+        // smooths the same map differently instead of changing every state generated after this one
+        std::mt19937 smoothRng{ UnsignedInteger32(rng()) };
+        if (SMOOTHNESS <= 0.0) return;
+        constexpr SizeT smoothingPasses = 3;
+        Vector<std::pair<SignedInteger32, SignedInteger32>> disc;
+        const SignedInteger32 r = SignedInteger32(std::ceil(SMOOTHNESS));
+        for (SignedInteger32 oy = -r; oy <= r; ++oy)
+            for (SignedInteger32 ox = -r; ox <= r; ++ox)
+                if (Float64(ox * ox + oy * oy) <= SMOOTHNESS * SMOOTHNESS + 1e-9) disc.emplace_back(ox, oy);
+
+        Vector<UnsignedInteger32> order;
+        for (SizeT li = 0; li < G; ++li) if (label[li] >= 0) order.push_back(UnsignedInteger32(li));
+        Vector<SignedInteger32> votes(provincesCount, 0);
+        Vector<SignedInteger32> touched;
+
+        for (SizeT pass = 0; pass < smoothingPasses; ++pass) {
+            std::shuffle(order.begin(), order.end(), smoothRng);
+            SizeT changed = 0;
+            for (const UnsignedInteger32 li : order) {
+                const SignedInteger32 x = SignedInteger32(li % W), y = SignedInteger32(li / W), own = label[li];
+                if (countForeignSides(x, y) == 0) continue; // not on a border
+
+                // Count the disc's pixels per province (the pixel itself included)
+                for (const auto& [ox, oy] : disc) {
+                    const SignedInteger32 n = labelAt(x + ox, y + oy);
+                    if (n < 0) continue;
+                    if (votes[n] == 0) touched.push_back(n);
+                    ++votes[n];
+                }
+                // The winner must touch the pixel by a side, so it stays in one piece after gaining it
+                SignedInteger32 best = own;
+                for (SignedInteger32 d = 0; d < 4; ++d) {
+                    const SignedInteger32 n = labelAt(x + dx4[d], y + dy4[d]);
+                    if (n >= 0 && votes[n] > votes[best]) best = n;
+                }
+                for (const SignedInteger32 n : touched) votes[n] = 0;
+                touched.clear();
+
+                if (best == own || provinces[own].value <= 1 || !removalKeepsConnected(x, y, own)) continue;
+                label[li] = best;
+                provinces[own].Remove(x, y);
+                provinces[best].Add(x, y);
+                ++changed;
+            }
+            if (changed == 0) break;
+        }
+    };
+
     // Cut off every part of a province that a disc of radius thinRadius can't fit inside, plus anything
     // only connected to the rest of the province through such a part. Other states and sea count as
     // "inside" here, so a province isn't punished for a coastline or state border it can't change.
@@ -729,6 +787,8 @@ void CleanProvinces(
         rebuild();
         anneal(CLEANUP_ITERATIONS_PER_PIXEL * totalPixels, TEMPERATURE_END, TEMPERATURE_END);
     }
+
+    smoothBorders();
 
     // Write the result back
     for (SizeT i = 0; i < totalPixels; ++i)
