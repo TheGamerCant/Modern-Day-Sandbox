@@ -160,7 +160,7 @@ Vector<Pixel> SelectRandomPixels(const State& state, SizeT n, std::mt19937& rng)
     return randomPixels;
 }
 
-Vector<UnsignedInteger16> assignRegions(const State& state, const Vector<Pixel>& seeds) {
+Vector<UnsignedInteger16> AssignProvinces(const State& state, const Vector<Pixel>& seeds) {
     const auto& pixels = state.pixels;
 
     constexpr int32_t NOT_IN_STATE = -1;
@@ -168,9 +168,9 @@ Vector<UnsignedInteger16> assignRegions(const State& state, const Vector<Pixel>&
 
     // Create a vector of size state width * height that functions as a look up table
     // for whether a province is done or not
-    Vector<SignedInteger32> label(size_t(state.width) * state.height, NOT_IN_STATE);
+    Vector<SignedInteger32> label(SizeT(state.width) * state.height, NOT_IN_STATE);
     auto localIndex = [&](UnsignedInteger16 x, UnsignedInteger16 y) {
-        return size_t(y - state.y0) * state.width + (x - state.x0);
+        return SizeT(y - state.y0) * state.width + (x - state.x0);
     };
 
     for (const auto& p : pixels) label[localIndex(p.x, p.y)] = UNASSIGNED;
@@ -194,7 +194,7 @@ Vector<UnsignedInteger16> assignRegions(const State& state, const Vector<Pixel>&
             if (nx < SignedInteger32(state.x0) || nx > SignedInteger32(state.x1) ||
                 ny < SignedInteger32(state.y0) || ny > SignedInteger32(state.y1)) continue;
 
-            size_t ni = localIndex(UnsignedInteger16(nx), UnsignedInteger16(ny));
+            SizeT ni = localIndex(UnsignedInteger16(nx), UnsignedInteger16(ny));
             if (label[ni] == UNASSIGNED) {
                 label[ni] = myLabel;
                 frontier.push({UnsignedInteger16(nx), UnsignedInteger16(ny)});
@@ -206,7 +206,7 @@ Vector<UnsignedInteger16> assignRegions(const State& state, const Vector<Pixel>&
     // no seed of its own) never gets reached by the BFS and stays UNASSIGNED.
     // Give those leftovers to their nearest seed by straight-line distance.
     for (const auto& p : pixels) {
-        size_t li = localIndex(p.x, p.y);
+        SizeT li = localIndex(p.x, p.y);
         if (label[li] != UNASSIGNED) continue;
         uint32_t best = 0; long bestDist = -1;
         for (uint32_t s = 0; s < seeds.size(); ++s) {
@@ -219,7 +219,7 @@ Vector<UnsignedInteger16> assignRegions(const State& state, const Vector<Pixel>&
     }
 
     Vector<UnsignedInteger16> regionOf(pixels.size());
-    for (size_t i = 0; i < pixels.size(); ++i)
+    for (SizeT i = 0; i < pixels.size(); ++i)
         regionOf[i] = UnsignedInteger16(label[localIndex(pixels[i].x, pixels[i].y)]);
     return regionOf;
 }
@@ -242,6 +242,27 @@ Vector<ColourRGB> GenerateNRandomColours(
     return colours;
 }
 
+struct Province {
+    // When I add per-pixel density weights, this is what that'll measure - but for now,
+    // each pixel is just worth 1 value
+    SizeT value;
+}
+
+void CleanProvinces(const State& state, Vector<UnsignedInteger16>& pixelProvinceIds, const UnsignedInteger16 provincesCount) {
+    Vector<SignedInteger32> label(SizeT(state.width) * state.height, -1);
+    auto localIndex = [&](UnsignedInteger16 x, UnsignedInteger16 y) {
+        return SizeT(y - state.y0) * state.width + (x - state.x0);
+    };
+
+    for (SizeT i = 0; i < state.pixels.size(); i++) {
+        label[localIndex(state.pixels[i].x, state.pixels[i].y)] = pixelProvinceIds[i];
+    }
+
+    //Generate a map of all a pixels neighbour indexes
+    Vector<Vector<UnsignedInteger32>> provinceNeighbours(pixelProvinceIds.size());
+
+}
+
 int main() {
     Timestamp startTime = std::chrono::high_resolution_clock::now();
 
@@ -257,15 +278,19 @@ int main() {
         // Select semi-random points in each state to be our province centers
         // One province = ~500 pixels for now
         SizeT n = std::max<SizeT>(1, state.pixels.size() / 500);
-
         Vector<Pixel> randomPixels = SelectRandomPixels(state, n, rng);
-        Vector<UnsignedInteger16> provinces = assignRegions(state, randomPixels);
+        const UnsignedInteger16 provincesCount = randomPixels.size();
+        
+        // Given our semi-random points on the map, assign each pixel in the state to it's nearest point
+        Vector<UnsignedInteger16> pixelProvinceIds = AssignProvinces(state, randomPixels);
 
+        // Now call the main code
+        CleanProvinces(state, pixelProvinceIds, provincesCount);
 
-        // Generate n-random numbers for each province
+        // Colour in the provinces and print the map
         /*
         Vector<ColourRGB> colours = GenerateNRandomColours(
-            randomPixels.size(),
+            provincesCount,
             std::max(0, SignedInteger32(state.colour.r) - 25), std::min(255, SignedInteger32(state.colour.r) + 25),
             std::max(0, SignedInteger32(state.colour.g) - 25), std::min(255, SignedInteger32(state.colour.g) + 25),
             std::max(0, SignedInteger32(state.colour.b) - 25), std::min(255, SignedInteger32(state.colour.b) + 25),
@@ -274,7 +299,7 @@ int main() {
         */
 
         Vector<ColourRGB> colours = GenerateNRandomColours(
-            randomPixels.size(),
+            provincesCount,
             0, 255,
             0, 255,
             0, 255,
@@ -282,7 +307,7 @@ int main() {
         );
 
         for (SizeT i = 0; i < state.pixels.size(); i++) {
-            UnsignedInteger16 localId = provinces[i];
+            UnsignedInteger16 localId = pixelProvinceIds[i];
             SizeT index = ((state.pixels[i].y * mapWidth) + state.pixels[i].x) * 3;
             provincesMapData[index + 0] = colours[localId].r;
             provincesMapData[index + 1] = colours[localId].g;
