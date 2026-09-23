@@ -9,6 +9,7 @@
 #include <tuple>
 #include <queue>
 #include <format>
+#include <thread>
 
 
 #include "functions.hpp"
@@ -25,10 +26,13 @@ constexpr Float64 PI = 3.14159265358979323846;
 
 
 
+// Thread count - set to 0 for maximum thread usage
+constexpr SizeT THREAD_COUNT = 8;
+
 // Province density is calculated by summing it's rgb values (0-765) and normalising them
 // between MIN_DENSITY (all black) and MAX_DENSITY (all white)
 // DENSITY_PER_PROVINCE is how much density a single province should aim for
-constexpr Float64 DENSITY_PER_PROVINCE = 100.0;
+constexpr Float64 DENSITY_PER_PROVINCE = 160.0;
 constexpr Float64 MIN_DENSITY = 0.1;
 constexpr Float64 MAX_DENSITY = 1.0;
 
@@ -91,49 +95,61 @@ constexpr SizeT CLEANUP_ITERATIONS_PER_PIXEL = 4;
 // Simple smoothness weight. 0.0 = off, 2.0-3.0 is a fairly smooth province, anything above 4.0 becomes very smooth
 constexpr Float64 SMOOTHNESS = 2.0;
 
-// ======================================================================
 
-
+// Terrain type enum and return terrain type from colour
 enum TerrainType : UnsignedInteger8 {
     PLAINS, FOREST, HILLS, DESERT, MOUNTAIN, MARSH, URBAN, OCEAN, JUNGLE,
     // Use the enum itself to count the no. of terrains
     TERRAIN_TYPE_COUNT,
     NO_TERRAIN = 255,
 };
-
-struct TerrainColour { UnsignedInteger32 colour; TerrainType type; };
-constexpr TerrainColour TERRAIN_COLOURS[] = {
-    { 0x567C1B, PLAINS },   //  86, 124,  27
-    { 0x005606, FOREST },   //   0,  86,   6
-    { 0x704A1F, HILLS },    // 112,  74,  31
-    { 0xCEA963, DESERT },   // 206, 169,  99
-    { 0x06C80B, FOREST },   //   6, 200,  11
-    { 0xFF0018, PLAINS },   // 255,   0,  24
-    { 0x86541E, MOUNTAIN }, // 134,  84,  30
-    { 0xFCFF00, DESERT },   // 252, 255,   0
-    { 0x493B0F, DESERT },   //  73,  59,  15
-    { 0x4B93AE, MARSH },    //  75, 147, 174
-    { 0xAE00FF, MOUNTAIN }, // 174,   0, 255
-    { 0x5C534C, MOUNTAIN }, //  92,  83,  76
-    { 0xFF00F0, DESERT },   // 255,   0, 240
-    { 0xF0FF00, URBAN },    // 240, 255,   0
-    { 0x081F82, OCEAN },    //   8,  31, 130
-    { 0xFFFFFF, MOUNTAIN }, // 255, 255, 255
-    { 0x84FF00, HILLS },    // 132, 255,   0
-    { 0x728969, PLAINS },   // 114, 137, 105
-    { 0x3A8352, MOUNTAIN }, //  58, 131,  82
-    { 0xFF007F, JUNGLE },   // 255,   0, 127
-    { 0x005252, JUNGLE },   //   0,  82,  82
-    { 0x1B1B1B, MOUNTAIN }, //  27,  27,  27
-    { 0xFF7E00, MOUNTAIN }, // 255, 126,   0
-    { 0xF3C793, MOUNTAIN }, // 243, 199, 147
-};
-
 TerrainType TerrainFromColour(const UnsignedInteger32 colour) {
-    for (const auto& entry : TERRAIN_COLOURS){
-        if (entry.colour == colour) { return entry.type; }
+    switch (colour) {
+        case 0x567C1B: //  86, 124,  27
+        case 0xFF0018: // 255,   0,  24
+        case 0x728969: // 114, 137, 105
+            return PLAINS;
+
+        case 0x005606: //   0,  86,   6
+        case 0x06C80B: //   6, 200,  11
+            return FOREST;
+
+        case 0x704A1F: // 112,  74,  31
+        case 0x84FF00: // 132, 255,   0
+            return HILLS;
+
+        case 0xCEA963: // 206, 169,  99
+        case 0xFCFF00: // 252, 255,   0
+        case 0x493B0F: //  73,  59,  15
+        case 0xFF00F0: // 255,   0, 240
+            return DESERT;
+
+        case 0x86541E: // 134,  84,  30
+        case 0xAE00FF: // 174,   0, 255
+        case 0x5C534C: //  92,  83,  76
+        case 0xFFFFFF: // 255, 255, 255
+        case 0x3A8352: //  58, 131,  82
+        case 0x1B1B1B: //  27,  27,  27
+        case 0xFF7E00: // 255, 126,   0
+        case 0xF3C793: // 243, 199, 147
+            return MOUNTAIN;
+
+        case 0x4B93AE: //  75, 147, 174
+            return MARSH;
+
+        case 0xF0FF00: // 240, 255,   0
+            return URBAN;
+
+        case 0x081F82: //   8,  31, 130
+            return OCEAN;
+
+        case 0xFF007F: // 255,   0, 127
+        case 0x005252: //   0,  82,  82
+            return JUNGLE;
+
+        default:
+            return NO_TERRAIN;
     }
-    return NO_TERRAIN;
 }
 
 struct Pixel {
@@ -144,23 +160,24 @@ struct State {
     ColourRGB colour;
     UnsignedInteger16 x0 = UINT16_MAX, x1 = 0, y0 = UINT16_MAX, y1 = 0;
     UnsignedInteger16 width = 0, height = 0;
+
+    // Each vector entry indicates one pixel. Vectors are kept separate to optimise RAM usage.
+    // Merging them into one vector offers no actual speed improvements
     Vector<Pixel> pixels;
     Vector<Boolean> barrierPixels;
-    // Density per pixel, 0.0 (black) to 1.0 (white): (r + g + b) / 765 from densitymap.png
-    Vector<Float32> densities;
-    // Terrain per pixel (TerrainType) from terrain.png
-    Vector<UnsignedInteger8> terrains;
+    Vector<Float32> densityWeights; // MIN_DENSITY (black) to MAX_DENSITY (white), from densitymap.png
+    Vector<TerrainType> terrains;
 
-    State(): colour(), pixels(), barrierPixels(), densities(), terrains() {
+    State(): colour(), pixels(), barrierPixels(), densityWeights(), terrains() {
         pixels.reserve(6000);
         barrierPixels.reserve(6000);
-        densities.reserve(6000);
+        densityWeights.reserve(6000);
         terrains.reserve(6000);
     }
-    State(const ColourRGB colour): colour(colour), pixels(), barrierPixels(), densities(), terrains() {
+    State(const ColourRGB colour): colour(colour), pixels(), barrierPixels(), densityWeights(), terrains() {
         pixels.reserve(6000);
         barrierPixels.reserve(6000);
-        densities.reserve(6000);
+        densityWeights.reserve(6000);
         terrains.reserve(6000);
     }
 
@@ -184,10 +201,13 @@ struct State {
         terrains.push_back(TerrainFromColour(colour.ToInteger()));
     }
     void AddDensity(const ColourRGB colour) {
-        densities.push_back(Float32(UnsignedInteger32(colour.r) + colour.g + colour.b) / 765.0f);
+        const Float32 brightness = Float32(UnsignedInteger32(colour.r) + colour.g + colour.b) / 765.0;
+        densityWeights.push_back(
+            MIN_DENSITY + (MAX_DENSITY - MIN_DENSITY) * brightness
+        );
     }
     void AddBarrierPixel(const UnsignedInteger32 colour) {
-        // Land/water
+        // Land/water colour on rivers.png
         if (colour == 0x00ffffff || colour == 0x007a7a7a) {
             barrierPixels.push_back(false);
         }
@@ -200,8 +220,18 @@ struct State {
         width = x1 - x0 + 1;
         height = y1 - y0 + 1;
     }
+
+    // Return a Vector<SignedInteger32> of size width * height that maps the state's provinces,
+    // with -1 being "not in state"
+    Vector<SignedInteger32> GetLocalPixelGrid() const {
+        Vector<SignedInteger32> grid(SizeT(width) * height, -1);
+        for (SizeT i = 0; i < pixels.size(); ++i)
+            grid[SizeT(pixels[i].y - y0) * width + (pixels[i].x - x0)] = SignedInteger32(i);
+        return grid;
+    }
 };
 
+// Load our map from the in/ folder
 Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
     Vector<State> statesVector; statesVector.reserve(1600);
 
@@ -249,12 +279,14 @@ Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
             // Ocean tile
             if (colourInt == 0x00141414) { continue; }
 
+            // Current pixel is the same state as the last pixel - cache hit
             if (previousColourInt == colourInt) {
                 statesVector[previousIndex].AddPixel(x, y);
                 statesVector[previousIndex].AddBarrierPixel(riversColourInt);
                 statesVector[previousIndex].AddDensity(densityColour);
                 statesVector[previousIndex].AddTerrain(terrainColour);
             }
+
             else if (stateColourToIndexMap.contains(colourInt)){
                 const SizeT stateIndex = stateColourToIndexMap.at(colourInt);
                 statesVector[stateIndex].AddPixel(x, y);
@@ -283,11 +315,12 @@ Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
 	stbi_image_free(densityMapData);
 	stbi_image_free(terrainMapData);
 
+    // Save some RAM
 	statesVector.shrink_to_fit();
 	for (auto& state: statesVector) {
 	    state.pixels.shrink_to_fit();
 	    state.barrierPixels.shrink_to_fit();
-	    state.densities.shrink_to_fit();
+	    state.densityWeights.shrink_to_fit();
 	    state.terrains.shrink_to_fit();
 	    state.UpdateBoundaries();
 	}
@@ -295,39 +328,32 @@ Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
 	return statesVector;
 }
 
-// How much a pixel of the given density (0-1) counts towards its province's density (see MIN_DENSITY)
-inline Float64 PixelWeight(const Float32 density) {
-    return MIN_DENSITY + (MAX_DENSITY - MIN_DENSITY) * Float64(density);
-}
 
-// ---- Barriers (rivers) ----
-// Provinces can't cross barrier pixels: a province's land pixels must stay connected without passing
-// through a barrier. Barrier pixels still belong to a province - always one that touches them by a
-// full side from land - so provinces on either side of a river share its pixels between them.
-enum PixelKind : UnsignedInteger8 {
-    LAND = 0,          // ordinary pixel
-    BARRIER = 1,       // blocks connections; owned by a province touching it from land
-    INNER_BARRIER = 2, // barrier pixel with no land side-neighbour (e.g. a thick river junction);
-                       // left out of the optimisation and given to a neighbouring province at the end
+// Use rivers as a barrier - INNER_BARRIER means it a river pixel surrounded on all four sides by
+// other rivers and thus ignored
+enum PixelType : UnsignedInteger8 {
+    LAND = 0,
+    BARRIER = 1,
+    INNER_BARRIER = 2,
 };
 
-// Local grid over the state's bounding box: index into state.pixels, or -1 if not in the state
-Vector<SignedInteger32> LocalPixelGrid(const State& state) {
-    Vector<SignedInteger32> grid(SizeT(state.width) * state.height, -1);
-    for (SizeT i = 0; i < state.pixels.size(); ++i)
-        grid[SizeT(state.pixels[i].y - state.y0) * state.width + (state.pixels[i].x - state.x0)] = SignedInteger32(i);
-    return grid;
-}
-
-// Label the 4-connected land areas of the state (barriers and other states separate them).
-// Fills regionOf (per state pixel, -1 for non-land) and returns each region's size.
-Vector<SizeT> LabelLandRegions(const State& state, const Vector<SignedInteger32>& grid,
-                               const Vector<UnsignedInteger8>& kinds, Vector<SignedInteger32>& regionOf) {
+// Split a state into based on it's rivers, so if a state is split in half by a river, every pixel will
+// be assigned to region 0 & region 1
+Vector<SizeT> LabelLandRegions(
+    const State& state,
+    const Vector<SignedInteger32>& grid,
+    const Vector<UnsignedInteger8>& kinds,
+    Vector<SignedInteger32>& regionOf
+) {
     static const SignedInteger32 dx4[4] = { 1, 0, -1, 0 }, dy4[4] = { 0, 1, 0, -1 };
-    const SignedInteger32 W = state.width, H = state.height;
+
     regionOf.assign(state.pixels.size(), -1);
     Vector<SizeT> sizes;
     Vector<SizeT> stack;
+
+    // Perform flood-fill algorithm - load a pixel into the stack, then (where possible),
+    // remove it from the stack and add it's neighbours into the stack, declaring all of
+    // them to be of region n
     for (SizeT start = 0; start < state.pixels.size(); ++start) {
         if (kinds[start] != LAND || regionOf[start] >= 0) continue;
         const SignedInteger32 id = SignedInteger32(sizes.size());
@@ -340,7 +366,7 @@ Vector<SizeT> LabelLandRegions(const State& state, const Vector<SignedInteger32>
             const SignedInteger32 x = state.pixels[i].x - state.x0, y = state.pixels[i].y - state.y0;
             for (SignedInteger32 d = 0; d < 4; ++d) {
                 const SignedInteger32 nx = x + dx4[d], ny = y + dy4[d];
-                if (nx < 0 || ny < 0 || nx >= W || ny >= H) continue;
+                if (nx < 0 || ny < 0 || nx >= state.width || ny >= state.height) continue;
                 const SignedInteger32 n = grid[SizeT(ny) * W + nx];
                 if (n >= 0 && kinds[n] == LAND && regionOf[n] < 0) { regionOf[n] = id; stack.push_back(SizeT(n)); }
             }
@@ -349,56 +375,52 @@ Vector<SizeT> LabelLandRegions(const State& state, const Vector<SignedInteger32>
     return sizes;
 }
 
-// Work out each pixel's PixelKind. A land area smaller than MIN_REGION_SIZE cut off by a barrier
-// (e.g. a sliver between a river and the state border) has the barrier pixels next to it opened up,
-// merging it with its neighbour across the river rather than forcing a tiny province there.
-Vector<UnsignedInteger8> ClassifyPixels(const State& state) {
+// Work out each pixel's PixelType
+Vector<PixelType> ClassifyPixels(const State& state) {
     static const SignedInteger32 dx4[4] = { 1, 0, -1, 0 }, dy4[4] = { 0, 1, 0, -1 };
-    const SignedInteger32 W = state.width, H = state.height;
-    const Vector<SignedInteger32> grid = LocalPixelGrid(state);
+    const Vector<SignedInteger32> grid = state.GetLocalPixelGrid();
 
-    Vector<UnsignedInteger8> kinds(state.pixels.size());
-    for (SizeT i = 0; i < kinds.size(); ++i) kinds[i] = state.barrierPixels[i] ? BARRIER : LAND;
+    Vector<PixelType> pixelTypes(state.pixels.size());
+    for (SizeT i = 0; i < pixelTypes.size(); ++i) pixelTypes[i] = state.barrierPixels[i] ? BARRIER : LAND;
 
-    auto forEachSideNeighbour = [&](SizeT i, auto&& fn) {
+    // Execute function fn on all of a pixel's neighbours
+    auto ForEachSideNeighbour = [&](SizeT i, auto&& fn) {
         const SignedInteger32 x = state.pixels[i].x - state.x0, y = state.pixels[i].y - state.y0;
         for (SignedInteger32 d = 0; d < 4; ++d) {
             const SignedInteger32 nx = x + dx4[d], ny = y + dy4[d];
-            if (nx < 0 || ny < 0 || nx >= W || ny >= H) continue;
-            const SignedInteger32 n = grid[SizeT(ny) * W + nx];
+            if (nx < 0 || ny < 0 || nx >= state.width || ny >= state.height) continue;
+            const SignedInteger32 n = grid[SizeT(ny) * state.width + nx];
             if (n >= 0) fn(SizeT(n));
         }
     };
 
-    // Repeat, since a river more than one pixel thick needs opening up one layer at a time
+    // Repeat to account for river intersections
     Vector<SignedInteger32> regionOf;
     for (SizeT round = 0; round < 8; ++round) {
-        const Vector<SizeT> sizes = LabelLandRegions(state, grid, kinds, regionOf);
+        const Vector<SizeT> sizes = LabelLandRegions(state, grid, pixelTypes, regionOf);
         if (sizes.size() <= 1) break;
         Vector<SizeT> toOpen;
-        for (SizeT i = 0; i < kinds.size(); ++i) {
+        for (SizeT i = 0; i < pixelTypes.size(); ++i) {
             if (regionOf[i] < 0 || sizes[regionOf[i]] >= MIN_REGION_SIZE) continue;
-            forEachSideNeighbour(i, [&](SizeT n) { if (kinds[n] == BARRIER) toOpen.push_back(n); });
+            ForEachSideNeighbour(i, [&](SizeT n) { if (pixelTypes[n] == BARRIER) toOpen.push_back(n); });
         }
         if (toOpen.empty()) break;
-        for (const SizeT n : toOpen) kinds[n] = LAND;
+        for (const SizeT n : toOpen) pixelTypes[n] = LAND;
     }
 
-    for (SizeT i = 0; i < kinds.size(); ++i) {
-        if (kinds[i] != BARRIER) continue;
+    // Assign inner barrier type to any barrier pixels bordered only by other barrier pixels
+    for (SizeT i = 0; i < pixelTypes.size(); ++i) {
+        if (pixelTypes[i] != BARRIER) continue;
         Boolean touchesLand = false;
-        forEachSideNeighbour(i, [&](SizeT n) { if (kinds[n] == LAND) touchesLand = true; });
-        if (!touchesLand) kinds[i] = INNER_BARRIER;
+        ForEachSideNeighbour(i, [&](SizeT n) { if (pixelTypes[n] == LAND) touchesLand = true; });
+        if (!touchesLand) pixelTypes[i] = INNER_BARRIER;
     }
-    return kinds;
+    return pixelTypes;
 }
 
-// Pick the province centres: every land area of at least MIN_REGION_SIZE pixels gets
-// max(1, round(area's density / DENSITY_PER_PROVINCE)) of them, placed at random inside it - with each
-// pixel's chance proportional to its weight, so denser parts get more centres (no attempt to spread
-// them out). Areas split off by a river therefore get their own provinces.
+// Pick the province centres for every land area, weighted towards areas with higher density values
 Vector<Pixel> SelectSeeds(const State& state, const Vector<UnsignedInteger8>& kinds, std::mt19937& rng) {
-    const Vector<SignedInteger32> grid = LocalPixelGrid(state);
+    const Vector<SignedInteger32> grid = state.GetLocalPixelGrid();
     Vector<SignedInteger32> regionOf;
     const Vector<SizeT> sizes = LabelLandRegions(state, grid, kinds, regionOf);
     if (sizes.empty()) return { state.pixels.front() };
@@ -408,7 +430,7 @@ Vector<Pixel> SelectSeeds(const State& state, const Vector<UnsignedInteger8>& ki
     for (SizeT i = 0; i < state.pixels.size(); ++i) {
         if (regionOf[i] < 0) continue;
         regionPixels[regionOf[i]].push_back(i);
-        regionDensity[regionOf[i]] += PixelWeight(state.densities[i]);
+        regionDensity[regionOf[i]] += state.densityWeights[i];
     }
 
     // Weighted sampling without replacement: give each pixel the key u^(1 / weight) with u uniform in
@@ -418,7 +440,7 @@ Vector<Pixel> SelectSeeds(const State& state, const Vector<UnsignedInteger8>& ki
     auto sampleWeighted = [&](const Vector<SizeT>& candidates, SizeT n, Vector<Pixel>& out) {
         keys.clear();
         for (const SizeT i : candidates)
-            keys.emplace_back(std::pow(std::max(unit(rng), 1e-300), 1.0 / PixelWeight(state.densities[i])), i);
+            keys.emplace_back(std::pow(std::max(unit(rng), 1e-300), 1.0 / state.densityWeights[i]), i);
         n = std::min(n, keys.size());
         std::partial_sort(keys.begin(), keys.begin() + n, keys.end(), [](const auto& a, const auto& b) { return a.first > b.first; });
         for (SizeT k = 0; k < n; ++k) out.push_back(state.pixels[keys[k].second]);
@@ -443,7 +465,7 @@ Vector<Pixel> SelectSeeds(const State& state, const Vector<UnsignedInteger8>& ki
 Vector<UnsignedInteger16> AssignProvinces(const State& state, const Vector<UnsignedInteger8>& kinds, const Vector<Pixel>& seeds) {
     static const SignedInteger32 dx4[4] = { 1, 0, -1, 0 }, dy4[4] = { 0, 1, 0, -1 };
     const SignedInteger32 W = state.width, H = state.height;
-    const Vector<SignedInteger32> grid = LocalPixelGrid(state);
+    const Vector<SignedInteger32> grid = state.GetLocalPixelGrid();
     constexpr SignedInteger32 UNASSIGNED = -1;
 
     Vector<SignedInteger32> label(state.pixels.size(), UNASSIGNED);
@@ -512,7 +534,7 @@ Vector<ColourRGB> GenerateNRandomColours(
 }
 
 struct Province {
-    // The province's density: the sum of its pixels' weights (see MIN_DENSITY / PixelWeight)
+    // The province's density: the sum of its pixels' weights (see State::densityWeights)
     Float64 value = 0.0;
     SizeT pixelCount = 0;
     // Running coordinate sums, so the centre of gravity can be updated in O(1) per flip
@@ -620,10 +642,10 @@ struct ProvinceBalancer {
     const SizeT totalPixels;
     // Province id per pixel, or -1 if not in this state
     Vector<SignedInteger32> label;
-    // Pixel kinds (see PixelKind). Inner barrier pixels sit out the optimisation as if they weren't in
+    // Pixel kinds (see PixelType). Inner barrier pixels sit out the optimisation as if they weren't in
     // the state, and are handed to a neighbouring province at the very end.
     Vector<UnsignedInteger8> kindGrid;
-    // Each pixel's weight towards its province's density (see PixelWeight), and its terrain
+    // Each pixel's weight towards its province's density (see State::densityWeights), and its terrain
     Vector<Float64> weightGrid;
     Vector<UnsignedInteger8> terrainGrid;
     // Terrain cost per pixel (see NOISE_STRENGTH); a pixel pair costs the average of its two pixels
@@ -679,7 +701,7 @@ struct ProvinceBalancer {
         for (SizeT i = 0; i < totalPixels; ++i) {
             const SizeT li = LocalIndex(state.pixels[i].x - state.x0, state.pixels[i].y - state.y0);
             kindGrid[li] = kinds[i];
-            weightGrid[li] = PixelWeight(state.densities[i]);
+            weightGrid[li] = state.densityWeights[i];
             terrainGrid[li] = state.terrains[i];
             if (kinds[i] != INNER_BARRIER) totalDensity += weightGrid[li];
             if (kinds[i] != INNER_BARRIER) label[li] = pixelProvinceIds[i];
@@ -1439,6 +1461,41 @@ void CleanProvinces(
     balancer.WriteBack(pixelProvinceIds);
 }
 
+// Everything for one state, start to finish: seeds, starting layout, balancing, then colouring its
+// provinces into provincesMapData. States never share pixels, so several can run at once.
+void ProcessState(const State& state, std::mt19937& rng, UnsignedInteger8* provincesMapData, const SignedInteger32 mapWidth) {
+    // Work out which pixels are barriers (rivers), then pick random points in each state - per
+    // separate land area, more of them where it's denser - to be our province centres
+    const Vector<PixelType> pixelTypes = ClassifyPixels(state);
+    Vector<Pixel> randomPixels = SelectSeeds(state, pixelTypes, rng);
+    const UnsignedInteger16 provincesCount = randomPixels.size();
+
+    // Given our semi-random points on the map, assign each pixel in the state to it's nearest point
+    Vector<UnsignedInteger16> pixelProvinceIds = AssignProvinces(state, pixelTypes, randomPixels);
+
+    // Balance province sizes and shapes by flipping border pixels between neighbouring provinces
+    CleanProvinces(state, pixelTypes, pixelProvinceIds, provincesCount, rng);
+
+    // Colour in the provinces
+    /*
+    Vector<ColourRGB> colours = GenerateNRandomColours(
+        provincesCount,
+        std::max(0, SignedInteger32(state.colour.r) - 25), std::min(255, SignedInteger32(state.colour.r) + 25),
+        std::max(0, SignedInteger32(state.colour.g) - 25), std::min(255, SignedInteger32(state.colour.g) + 25),
+        std::max(0, SignedInteger32(state.colour.b) - 25), std::min(255, SignedInteger32(state.colour.b) + 25),
+        rng
+    );
+    */
+    Vector<ColourRGB> colours = GenerateNRandomColours(provincesCount, 0, 255, 0, 255, 0, 255, rng);
+    for (SizeT i = 0; i < state.pixels.size(); i++) {
+        const UnsignedInteger16 localId = pixelProvinceIds[i];
+        const SizeT index = ((SizeT(state.pixels[i].y) * mapWidth) + state.pixels[i].x) * 3;
+        provincesMapData[index + 0] = colours[localId].r;
+        provincesMapData[index + 1] = colours[localId].g;
+        provincesMapData[index + 2] = colours[localId].b;
+    }
+}
+
 int main() {
     Timestamp startTime = std::chrono::high_resolution_clock::now();
 
@@ -1450,46 +1507,42 @@ int main() {
     std::fill_n(provincesMapData, provincesMapDataSize, 20);
 
     std::mt19937 rng(std::random_device{}());
-    for (auto& state : statesVector) {
-        // Work out which pixels are barriers (rivers), then pick random points in each state - per
-        // separate land area, more of them where it's denser - to be our province centres
-        const Vector<UnsignedInteger8> pixelKinds = ClassifyPixels(state);
-        Vector<Pixel> randomPixels = SelectSeeds(state, pixelKinds, rng);
-        const UnsignedInteger16 provincesCount = randomPixels.size();
-        
-        // Given our semi-random points on the map, assign each pixel in the state to it's nearest point
-        Vector<UnsignedInteger16> pixelProvinceIds = AssignProvinces(state, pixelKinds, randomPixels);
 
-        // Balance province sizes and shapes by flipping border pixels between neighbouring provinces
-        CleanProvinces(state, pixelKinds, pixelProvinceIds, provincesCount, rng);
+    // One seed per state, drawn up front, so the map doesn't depend on which thread runs which state
+    Vector<UnsignedInteger32> stateSeeds(statesVector.size());
+    for (auto& seed : stateSeeds) seed = UnsignedInteger32(rng());
 
-        // Colour in the provinces and print the map
-        /*
-        Vector<ColourRGB> colours = GenerateNRandomColours(
-            provincesCount,
-            std::max(0, SignedInteger32(state.colour.r) - 25), std::min(255, SignedInteger32(state.colour.r) + 25),
-            std::max(0, SignedInteger32(state.colour.g) - 25), std::min(255, SignedInteger32(state.colour.g) + 25),
-            std::max(0, SignedInteger32(state.colour.b) - 25), std::min(255, SignedInteger32(state.colour.b) + 25),
-            rng
+    // Order the states based on size and divide them into threadCount vectors
+    const SizeT threadCount = (THREAD_COUNT == 0) ? std::thread::hardware_concurrency() : std::min<SizeT>(THREAD_COUNT, std::thread::hardware_concurrency());
+    Vector<Vector<SizeT>> stateGroups(threadCount);
+    {
+        Vector<SizeT> order(statesVector.size());
+        for (SizeT s = 0; s < order.size(); ++s) order[s] = s;
+        std::sort(
+            order.begin(), order.end(), [&](SizeT a, SizeT b) {
+                return statesVector[a].pixels.size() > statesVector[b].pixels.size();
+            }
         );
-        */
-
-        Vector<ColourRGB> colours = GenerateNRandomColours(
-            provincesCount,
-            0, 255,
-            0, 255,
-            0, 255,
-            rng
-        );
-
-        for (SizeT i = 0; i < state.pixels.size(); i++) {
-            UnsignedInteger16 localId = pixelProvinceIds[i];
-            SizeT index = ((state.pixels[i].y * mapWidth) + state.pixels[i].x) * 3;
-            provincesMapData[index + 0] = colours[localId].r;
-            provincesMapData[index + 1] = colours[localId].g;
-            provincesMapData[index + 2] = colours[localId].b;
+        Vector<SizeT> groupPixels(threadCount, 0);
+        for (const SizeT s : order) {
+            const SizeT lightest = SizeT(std::min_element(groupPixels.begin(), groupPixels.end()) - groupPixels.begin());
+            stateGroups[lightest].push_back(s);
+            groupPixels[lightest] += statesVector[s].pixels.size();
         }
     }
+
+    // Compute the states and write the provinces to provincesMapData concurrently, as no
+    // pixel will ever be overwritten by another state
+    Vector<std::thread> threads;
+    for (SizeT t = 0; t < threadCount; ++t) {
+        threads.emplace_back([&, t]() {
+            for (const SizeT s : stateGroups[t]) {
+                std::mt19937 stateRng(stateSeeds[s]);
+                ProcessState(statesVector[s], stateRng, provincesMapData, mapWidth);
+            }
+        });
+    }
+    for (auto& thread : threads) thread.join();
 
     stbi_write_png("out/provinces.png", mapWidth, mapHeight, 3, provincesMapData, mapWidth * 3);
     delete[] provincesMapData;
