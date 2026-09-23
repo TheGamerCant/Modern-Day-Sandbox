@@ -26,8 +26,12 @@ constexpr Float64 PI = 3.14159265358979323846;
 //  Tunable settings - everything that controls the output is here
 // ======================================================================
 
-// Average province size in pixels (each state gets max(1, statePixels / PIXELS_PER_PROVINCE) provinces)
+// Average province size in pixels. Each separate land area of a state (split off by rivers, sea or
+// the state's own shape) gets max(1, round(area / PIXELS_PER_PROVINCE)) provinces.
 constexpr SizeT PIXELS_PER_PROVINCE = 500;
+// Land areas smaller than this get no province of their own: if a river cuts them off, the river is
+// opened up next to them so they merge with the province across it (avoids tiny sliver provinces)
+constexpr SizeT MIN_REGION_SIZE = 100;
 
 // Main run: total flip attempts per state = ITERATIONS_PER_PIXEL * state pixel count
 constexpr SizeT ITERATIONS_PER_PIXEL = 10;
@@ -96,9 +100,16 @@ struct State {
     UnsignedInteger16 x0 = UINT16_MAX, x1 = 0, y0 = UINT16_MAX, y1 = 0;
     UnsignedInteger16 width = 0, height = 0;
     Vector<Pixel> pixels;
+    Vector<Boolean> barrierPixels;
 
-    State(): colour(), pixels() { pixels.reserve(6000); }
-    State(const ColourRGB colour): colour(colour), pixels() { pixels.reserve(6000); }
+    State(): colour(), pixels(), barrierPixels() {
+        pixels.reserve(6000);
+        barrierPixels.reserve(6000);
+    }
+    State(const ColourRGB colour): colour(colour), pixels(), barrierPixels() {
+        pixels.reserve(6000);
+        barrierPixels.reserve(6000);
+    }
 
     void AddPixel(const Pixel p) {
         pixels.push_back(p);
@@ -116,6 +127,16 @@ struct State {
         if (y < y0) { y0 = y; }
         else if (y > y1) { y1 = y; }
     }
+    void AddBarrierPixel(const UnsignedInteger32 colour) {
+        // Land/water
+        if (colour == 0x00ffffff || colour == 0x007a7a7a) {
+            barrierPixels.push_back(false);
+        }
+        else {
+            barrierPixels.push_back(true);
+        }
+    }
+
     void UpdateBoundaries() {
         width = x1 - x0 + 1;
         height = y1 - y0 + 1;
@@ -127,6 +148,12 @@ Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
 
     SignedInteger32 stateMapChannels{};
     UnsignedInteger8 *stateMapData = stbi_load("in/statemap.png", &mapWidth, &mapHeight, &stateMapChannels, 4);
+    SignedInteger32 riverMapWidth{}, riverMapHeight{}, riverMapChannels{};
+    UnsignedInteger8 *riverMapData = stbi_load("in/rivers.png", &riverMapWidth, &riverMapHeight, &riverMapChannels, 4);
+
+    if (riverMapWidth != mapWidth || riverMapHeight != mapHeight) {
+        FatalError("ERROR: statemap.png and rivers.png have different sizes.");
+    }
 
     HashMap<UnsignedInteger32, UnsignedInteger16> stateColourToIndexMap;
 
@@ -140,6 +167,9 @@ Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
             const ColourRGB pixelColour(stateMapData[imgIndex + 0], stateMapData[imgIndex + 1], stateMapData[imgIndex + 2]);
             const UnsignedInteger32 colourInt = pixelColour.ToInteger();
 
+            const ColourRGB riversColour(riverMapData[imgIndex + 0], riverMapData[imgIndex + 1], riverMapData[imgIndex + 2]);
+            const UnsignedInteger32 riversColourInt = riversColour.ToInteger();
+
             imgIndex += 4;
 
             // Ocean tile
@@ -147,10 +177,12 @@ Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
 
             if (previousColourInt == colourInt) {
                 statesVector[previousIndex].AddPixel(x, y);
+                statesVector[previousIndex].AddBarrierPixel(riversColourInt);
             }
             else if (stateColourToIndexMap.contains(colourInt)){
                 const SizeT stateIndex = stateColourToIndexMap.at(colourInt);
                 statesVector[stateIndex].AddPixel(x, y);
+                statesVector[stateIndex].AddBarrierPixel(riversColourInt);
                 previousColourInt = colourInt;
                 previousIndex = stateIndex;
             }
@@ -158,6 +190,7 @@ Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
                 const SizeT newIndex = statesVector.size();
                 statesVector.emplace_back(pixelColour);
                 statesVector[newIndex].AddPixel(x, y);
+                statesVector[newIndex].AddBarrierPixel(riversColourInt);
                 previousColourInt = colourInt;
                 previousIndex = newIndex;
                 stateColourToIndexMap[colourInt] = newIndex;
@@ -166,90 +199,191 @@ Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
     }
 
 	stbi_image_free(stateMapData);
+	stbi_image_free(riverMapData);
 
 	statesVector.shrink_to_fit();
 	for (auto& state: statesVector) {
 	    state.pixels.shrink_to_fit();
+	    state.barrierPixels.shrink_to_fit();
 	    state.UpdateBoundaries();
 	}
 
 	return statesVector;
 }
 
-// Pick n distinct pixels from the state, uniformly at random (no attempt to spread them out)
-Vector<Pixel> SelectRandomPixels(const State& state, SizeT n, std::mt19937& rng) {
-    const auto& pixels = state.pixels;
-    if (n == 0 || pixels.empty()) return {};
-    n = std::min(n, pixels.size());
+// ---- Barriers (rivers) ----
+// Provinces can't cross barrier pixels: a province's land pixels must stay connected without passing
+// through a barrier. Barrier pixels still belong to a province - always one that touches them by a
+// full side from land - so provinces on either side of a river share its pixels between them.
+enum PixelKind : UnsignedInteger8 {
+    LAND = 0,          // ordinary pixel
+    BARRIER = 1,       // blocks connections; owned by a province touching it from land
+    INNER_BARRIER = 2, // barrier pixel with no land side-neighbour (e.g. a thick river junction);
+                       // left out of the optimisation and given to a neighbouring province at the end
+};
 
-    Vector<Pixel> randomPixels;
-    randomPixels.reserve(n);
-    std::sample(pixels.begin(), pixels.end(), std::back_inserter(randomPixels), n, rng);
-    return randomPixels;
+// Local grid over the state's bounding box: index into state.pixels, or -1 if not in the state
+Vector<SignedInteger32> LocalPixelGrid(const State& state) {
+    Vector<SignedInteger32> grid(SizeT(state.width) * state.height, -1);
+    for (SizeT i = 0; i < state.pixels.size(); ++i)
+        grid[SizeT(state.pixels[i].y - state.y0) * state.width + (state.pixels[i].x - state.x0)] = SignedInteger32(i);
+    return grid;
 }
 
-Vector<UnsignedInteger16> AssignProvinces(const State& state, const Vector<Pixel>& seeds) {
-    const auto& pixels = state.pixels;
-
-    constexpr int32_t NOT_IN_STATE = -1;
-    constexpr int32_t UNASSIGNED   = -2;
-
-    // Create a vector of size state width * height that functions as a look up table
-    // for whether a province is done or not
-    Vector<SignedInteger32> label(SizeT(state.width) * state.height, NOT_IN_STATE);
-    auto localIndex = [&](UnsignedInteger16 x, UnsignedInteger16 y) {
-        return SizeT(y - state.y0) * state.width + (x - state.x0);
-    };
-
-    for (const auto& p : pixels) label[localIndex(p.x, p.y)] = UNASSIGNED;
-
-    std::queue<std::pair<UnsignedInteger16, UnsignedInteger16>> frontier;
-    for (UnsignedInteger32 s = 0; s < seeds.size(); ++s) {
-        label[localIndex(seeds[s].x, seeds[s].y)] = int32_t(s);
-        frontier.push({seeds[s].x, seeds[s].y});
-    }
-
-    // 8-connected so boundaries can run diagonally instead of stair-stepping
-    static const int dx[8] = {1,-1,0,0,1,1,-1,-1};
-    static const int dy[8] = {0,0,1,-1,1,-1,1,-1};
-
-    while (!frontier.empty()) {
-        auto [x, y] = frontier.front(); frontier.pop();
-        int32_t myLabel = label[localIndex(x, y)];
-
-        for (SignedInteger32 d = 0; d < 8; ++d) {
-            SignedInteger32 nx = SignedInteger32(x) + dx[d], ny = SignedInteger32(y) + dy[d];
-            if (nx < SignedInteger32(state.x0) || nx > SignedInteger32(state.x1) ||
-                ny < SignedInteger32(state.y0) || ny > SignedInteger32(state.y1)) continue;
-
-            SizeT ni = localIndex(UnsignedInteger16(nx), UnsignedInteger16(ny));
-            if (label[ni] == UNASSIGNED) {
-                label[ni] = myLabel;
-                frontier.push({UnsignedInteger16(nx), UnsignedInteger16(ny)});
+// Label the 4-connected land areas of the state (barriers and other states separate them).
+// Fills regionOf (per state pixel, -1 for non-land) and returns each region's size.
+Vector<SizeT> LabelLandRegions(const State& state, const Vector<SignedInteger32>& grid,
+                               const Vector<UnsignedInteger8>& kinds, Vector<SignedInteger32>& regionOf) {
+    static const SignedInteger32 dx4[4] = { 1, 0, -1, 0 }, dy4[4] = { 0, 1, 0, -1 };
+    const SignedInteger32 W = state.width, H = state.height;
+    regionOf.assign(state.pixels.size(), -1);
+    Vector<SizeT> sizes;
+    Vector<SizeT> stack;
+    for (SizeT start = 0; start < state.pixels.size(); ++start) {
+        if (kinds[start] != LAND || regionOf[start] >= 0) continue;
+        const SignedInteger32 id = SignedInteger32(sizes.size());
+        sizes.push_back(0);
+        regionOf[start] = id;
+        stack.push_back(start);
+        while (!stack.empty()) {
+            const SizeT i = stack.back(); stack.pop_back();
+            ++sizes[id];
+            const SignedInteger32 x = state.pixels[i].x - state.x0, y = state.pixels[i].y - state.y0;
+            for (SignedInteger32 d = 0; d < 4; ++d) {
+                const SignedInteger32 nx = x + dx4[d], ny = y + dy4[d];
+                if (nx < 0 || ny < 0 || nx >= W || ny >= H) continue;
+                const SignedInteger32 n = grid[SizeT(ny) * W + nx];
+                if (n >= 0 && kinds[n] == LAND && regionOf[n] < 0) { regionOf[n] = id; stack.push_back(SizeT(n)); }
             }
         }
     }
+    return sizes;
+}
 
-    // Fallback: a disconnected chunk of the state (e.g. a small island with
-    // no seed of its own) never gets reached by the BFS and stays UNASSIGNED.
-    // Give those leftovers to their nearest seed by straight-line distance.
-    for (const auto& p : pixels) {
-        SizeT li = localIndex(p.x, p.y);
-        if (label[li] != UNASSIGNED) continue;
-        uint32_t best = 0; long bestDist = -1;
-        for (uint32_t s = 0; s < seeds.size(); ++s) {
-            long ddx = long(p.x) - long(seeds[s].x);
-            long ddy = long(p.y) - long(seeds[s].y);
-            long dist = ddx*ddx + ddy*ddy;
-            if (bestDist < 0 || dist < bestDist) { bestDist = dist; best = s; }
+// Work out each pixel's PixelKind. A land area smaller than MIN_REGION_SIZE cut off by a barrier
+// (e.g. a sliver between a river and the state border) has the barrier pixels next to it opened up,
+// merging it with its neighbour across the river rather than forcing a tiny province there.
+Vector<UnsignedInteger8> ClassifyPixels(const State& state) {
+    static const SignedInteger32 dx4[4] = { 1, 0, -1, 0 }, dy4[4] = { 0, 1, 0, -1 };
+    const SignedInteger32 W = state.width, H = state.height;
+    const Vector<SignedInteger32> grid = LocalPixelGrid(state);
+
+    Vector<UnsignedInteger8> kinds(state.pixels.size());
+    for (SizeT i = 0; i < kinds.size(); ++i) kinds[i] = state.barrierPixels[i] ? BARRIER : LAND;
+
+    auto forEachSideNeighbour = [&](SizeT i, auto&& fn) {
+        const SignedInteger32 x = state.pixels[i].x - state.x0, y = state.pixels[i].y - state.y0;
+        for (SignedInteger32 d = 0; d < 4; ++d) {
+            const SignedInteger32 nx = x + dx4[d], ny = y + dy4[d];
+            if (nx < 0 || ny < 0 || nx >= W || ny >= H) continue;
+            const SignedInteger32 n = grid[SizeT(ny) * W + nx];
+            if (n >= 0) fn(SizeT(n));
         }
-        label[li] = SignedInteger32(best);
+    };
+
+    // Repeat, since a river more than one pixel thick needs opening up one layer at a time
+    Vector<SignedInteger32> regionOf;
+    for (SizeT round = 0; round < 8; ++round) {
+        const Vector<SizeT> sizes = LabelLandRegions(state, grid, kinds, regionOf);
+        if (sizes.size() <= 1) break;
+        Vector<SizeT> toOpen;
+        for (SizeT i = 0; i < kinds.size(); ++i) {
+            if (regionOf[i] < 0 || sizes[regionOf[i]] >= MIN_REGION_SIZE) continue;
+            forEachSideNeighbour(i, [&](SizeT n) { if (kinds[n] == BARRIER) toOpen.push_back(n); });
+        }
+        if (toOpen.empty()) break;
+        for (const SizeT n : toOpen) kinds[n] = LAND;
     }
 
-    Vector<UnsignedInteger16> regionOf(pixels.size());
-    for (SizeT i = 0; i < pixels.size(); ++i)
-        regionOf[i] = UnsignedInteger16(label[localIndex(pixels[i].x, pixels[i].y)]);
-    return regionOf;
+    for (SizeT i = 0; i < kinds.size(); ++i) {
+        if (kinds[i] != BARRIER) continue;
+        Boolean touchesLand = false;
+        forEachSideNeighbour(i, [&](SizeT n) { if (kinds[n] == LAND) touchesLand = true; });
+        if (!touchesLand) kinds[i] = INNER_BARRIER;
+    }
+    return kinds;
+}
+
+// Pick the province centres: every land area of at least MIN_REGION_SIZE pixels gets
+// max(1, round(area / PIXELS_PER_PROVINCE)) of them, placed uniformly at random inside it
+// (no attempt to spread them out). Areas split off by a river therefore get their own provinces.
+Vector<Pixel> SelectSeeds(const State& state, const Vector<UnsignedInteger8>& kinds, std::mt19937& rng) {
+    const Vector<SignedInteger32> grid = LocalPixelGrid(state);
+    Vector<SignedInteger32> regionOf;
+    const Vector<SizeT> sizes = LabelLandRegions(state, grid, kinds, regionOf);
+    if (sizes.empty()) return { state.pixels.front() };
+
+    Vector<Vector<Pixel>> regionPixels(sizes.size());
+    for (SizeT i = 0; i < state.pixels.size(); ++i)
+        if (regionOf[i] >= 0) regionPixels[regionOf[i]].push_back(state.pixels[i]);
+
+    Vector<Pixel> seeds;
+    for (SizeT r = 0; r < sizes.size(); ++r) {
+        if (sizes[r] < MIN_REGION_SIZE) continue;
+        const SizeT n = std::max<SizeT>(1, SizeT(std::llround(Float64(sizes[r]) / Float64(PIXELS_PER_PROVINCE))));
+        std::sample(regionPixels[r].begin(), regionPixels[r].end(), std::back_inserter(seeds), n, rng);
+    }
+    // A state made only of small areas still gets one province, in its largest area
+    if (seeds.empty()) {
+        const SizeT largest = SizeT(std::max_element(sizes.begin(), sizes.end()) - sizes.begin());
+        std::sample(regionPixels[largest].begin(), regionPixels[largest].end(), std::back_inserter(seeds), 1, rng);
+    }
+    return seeds;
+}
+
+// Starting map: grow every seed outwards over land (4-connected, never through a barrier) until the
+// land is shared out, then give each barrier pixel to a province touching it from land
+Vector<UnsignedInteger16> AssignProvinces(const State& state, const Vector<UnsignedInteger8>& kinds, const Vector<Pixel>& seeds) {
+    static const SignedInteger32 dx4[4] = { 1, 0, -1, 0 }, dy4[4] = { 0, 1, 0, -1 };
+    const SignedInteger32 W = state.width, H = state.height;
+    const Vector<SignedInteger32> grid = LocalPixelGrid(state);
+    constexpr SignedInteger32 UNASSIGNED = -1;
+
+    Vector<SignedInteger32> label(state.pixels.size(), UNASSIGNED);
+    std::queue<SizeT> frontier;
+    for (SizeT s = 0; s < seeds.size(); ++s) {
+        const SizeT i = SizeT(grid[SizeT(seeds[s].y - state.y0) * W + (seeds[s].x - state.x0)]);
+        label[i] = SignedInteger32(s);
+        frontier.push(i);
+    }
+    auto sideNeighbour = [&](SizeT i, SignedInteger32 d) -> SignedInteger32 {
+        const SignedInteger32 nx = state.pixels[i].x - state.x0 + dx4[d], ny = state.pixels[i].y - state.y0 + dy4[d];
+        if (nx < 0 || ny < 0 || nx >= W || ny >= H) return -1;
+        return grid[SizeT(ny) * W + nx];
+    };
+
+    while (!frontier.empty()) {
+        const SizeT i = frontier.front(); frontier.pop();
+        for (SignedInteger32 d = 0; d < 4; ++d) {
+            const SignedInteger32 n = sideNeighbour(i, d);
+            if (n >= 0 && kinds[n] == LAND && label[n] == UNASSIGNED) { label[n] = label[i]; frontier.push(SizeT(n)); }
+        }
+    }
+    // Barrier pixels join a province touching them from land
+    for (SizeT i = 0; i < label.size(); ++i) {
+        if (kinds[i] != BARRIER) continue;
+        for (SignedInteger32 d = 0; d < 4; ++d) {
+            const SignedInteger32 n = sideNeighbour(i, d);
+            if (n >= 0 && kinds[n] == LAND && label[n] != UNASSIGNED) { label[i] = label[n]; break; }
+        }
+    }
+
+    // Fallback for anything still unassigned (a small island with no seed of its own, or an inner
+    // barrier pixel): give it to the nearest seed by straight-line distance
+    for (SizeT i = 0; i < label.size(); ++i) {
+        if (label[i] != UNASSIGNED) continue;
+        SignedInteger64 bestDist = -1;
+        for (SizeT s = 0; s < seeds.size(); ++s) {
+            const SignedInteger64 ddx = SignedInteger64(state.pixels[i].x) - seeds[s].x;
+            const SignedInteger64 ddy = SignedInteger64(state.pixels[i].y) - seeds[s].y;
+            const SignedInteger64 dist = ddx * ddx + ddy * ddy;
+            if (bestDist < 0 || dist < bestDist) { bestDist = dist; label[i] = SignedInteger32(s); }
+        }
+    }
+
+    Vector<UnsignedInteger16> provinceOf(label.size());
+    for (SizeT i = 0; i < label.size(); ++i) provinceOf[i] = UnsignedInteger16(label[i]);
+    return provinceOf;
 }
 
 Vector<ColourRGB> GenerateNRandomColours(
@@ -339,6 +473,7 @@ Vector<std::pair<SignedInteger32, SignedInteger32>> DiscOffsets(const SignedInte
 
 void CleanProvinces(
     const State& state,
+    const Vector<UnsignedInteger8>& kinds,
     Vector<UnsignedInteger16>& pixelProvinceIds,
     const UnsignedInteger16 provincesCount,
     std::mt19937& rng
@@ -354,8 +489,16 @@ void CleanProvinces(
     auto labelAt = [&](SignedInteger32 x, SignedInteger32 y) -> SignedInteger32 {
         return inGrid(x, y) ? label[localIndex(x, y)] : -1;
     };
-    for (SizeT i = 0; i < totalPixels; ++i)
-        label[localIndex(state.pixels[i].x - state.x0, state.pixels[i].y - state.y0)] = pixelProvinceIds[i];
+    // Pixel kinds on the same grid (see PixelKind). Inner barrier pixels sit out the optimisation as if
+    // they weren't in the state, and are handed to a neighbouring province at the very end.
+    Vector<UnsignedInteger8> kindGrid(G, INNER_BARRIER);
+    for (SizeT i = 0; i < totalPixels; ++i) {
+        const SizeT li = localIndex(state.pixels[i].x - state.x0, state.pixels[i].y - state.y0);
+        kindGrid[li] = kinds[i];
+        if (kinds[i] != INNER_BARRIER) label[li] = pixelProvinceIds[i];
+    }
+    auto isLand = [&](SignedInteger32 x, SignedInteger32 y) { return inGrid(x, y) && kindGrid[localIndex(x, y)] == LAND; };
+    auto isBarrier = [&](SignedInteger32 x, SignedInteger32 y) { return inGrid(x, y) && kindGrid[localIndex(x, y)] == BARRIER; };
 
     // 4-connected: provinces only count as touching (and as connected) through full sides
     static const SignedInteger32 dx4[4] = { 1, 0, -1, 0 };
@@ -483,20 +626,40 @@ void CleanProvinces(
                 refreshBoundary(x, y);
     };
 
-    // ---- Split check ----
-    // Removing a pixel can only split its province if its same-province side-neighbours
-    // can't reach each other around the 3x3 ring. Walk the ring and count runs of
-    // same-province pixels that contain at least one side-neighbour: more than one such
-    // run means the flip might split the province, so it's rejected. This is a local test,
-    // so it's conservative (it may reject a few safe flips) but never allows a split.
-    auto removalKeepsConnected = [&](SignedInteger32 x, SignedInteger32 y, SignedInteger32 own) {
+    // ---- Move rules ----
+    // Every province is its land pixels, 4-connected without passing through a barrier, plus barrier
+    // pixels that each touch one of its land pixels by a full side. These two checks keep that true.
+
+    // Can (x, y) leave province `own`?
+    // A land pixel may leave only if the province's land stays in one piece and no barrier pixel of the
+    // province is left without a land pixel of it next door. For the first part: removing the pixel can
+    // only split the province's land if its same-province land side-neighbours can't reach each other
+    // around the 3x3 ring. Walk the ring and count runs of such pixels that contain at least one
+    // side-neighbour: more than one run means the flip might split the province, so it's rejected.
+    // This is a local test, so it's conservative (it may reject a few safe flips) but never allows a
+    // split. A barrier pixel can always leave, since nothing hangs off it.
+    auto canRemove = [&](SignedInteger32 x, SignedInteger32 y, SignedInteger32 own) {
+        if (provinces[own].value <= 1) return false;
+        if (!isLand(x, y)) return true;
+
+        for (SignedInteger32 d = 0; d < 4; ++d) {
+            const SignedInteger32 bx = x + dx4[d], by = y + dy4[d];
+            if (!isBarrier(bx, by) || labelAt(bx, by) != own) continue;
+            Boolean stillAttached = false;
+            for (SignedInteger32 e = 0; e < 4; ++e) {
+                const SignedInteger32 nx = bx + dx4[e], ny = by + dy4[e];
+                if ((nx != x || ny != y) && isLand(nx, ny) && labelAt(nx, ny) == own) stillAttached = true;
+            }
+            if (!stillAttached) return false;
+        }
+
         Boolean inProvince[8];
         SignedInteger32 start = -1;
         for (SignedInteger32 k = 0; k < 8; ++k) {
-            inProvince[k] = labelAt(x + ringX[k], y + ringY[k]) == own;
+            inProvince[k] = labelAt(x + ringX[k], y + ringY[k]) == own && isLand(x + ringX[k], y + ringY[k]);
             if (!inProvince[k] && start < 0) start = k;
         }
-        if (start < 0) return true; // fully surrounded; can't be a boundary pixel anyway
+        if (start < 0) return true; // fully surrounded by its own land; can't be a boundary pixel anyway
 
         SignedInteger32 runsTouchingSides = 0;
         Boolean inRun = false, runTouchesSide = false;
@@ -513,6 +676,14 @@ void CleanProvinces(
         }
         // The walk always ends on `start`, which is not in the province, so every run is closed
         return runsTouchingSides <= 1;
+    };
+
+    // Can (x, y) join province `target`? Only if one of target's land pixels touches it by a side -
+    // never across a barrier pixel, which is what stops provinces crossing rivers
+    auto canJoin = [&](SignedInteger32 x, SignedInteger32 y, SignedInteger32 target) {
+        for (SignedInteger32 d = 0; d < 4; ++d)
+            if (isLand(x + dx4[d], y + dy4[d]) && labelAt(x + dx4[d], y + dy4[d]) == target) return true;
+        return false;
     };
 
     // ---- Pixel weighting ----
@@ -549,17 +720,18 @@ void CleanProvinces(
             }
 
             // Pick which neighbouring province it flips to - a random foreign side, so a province
-            // touching two sides of the pixel is twice as likely as one touching one side
-            std::uniform_int_distribution<SignedInteger32> pickSide(0, foreignSides - 1);
-            SignedInteger32 sideIndex = pickSide(rng), target = -1;
+            // touching two sides of the pixel is twice as likely as one touching one side. Only sides
+            // touching another province's land count: a province can't reach across a barrier pixel.
+            SignedInteger32 candidates[4], candidateCount = 0;
             for (SignedInteger32 d = 0; d < 4; ++d) {
                 const SignedInteger32 n = labelAt(x + dx4[d], y + dy4[d]);
-                if (n >= 0 && n != own && sideIndex-- == 0) { target = n; break; }
+                if (n >= 0 && n != own && isLand(x + dx4[d], y + dy4[d])) candidates[candidateCount++] = n;
             }
+            if (candidateCount == 0) continue;
+            const SignedInteger32 target = candidates[std::uniform_int_distribution<SignedInteger32>(0, candidateCount - 1)(rng)];
 
-            // Provinces may not vanish or split
-            if (provinces[own].value <= 1) continue;
-            if (!removalKeepsConnected(x, y, own)) continue;
+            // Provinces may not vanish, split or cross a barrier
+            if (!canRemove(x, y, own)) continue;
 
             // ---- Build the two changed provinces as they'd be after the flip ----
             Province newOwn = provinces[own], newTarget = provinces[target];
@@ -599,14 +771,16 @@ void CleanProvinces(
 
     // ---- Cleanup helpers ----
 
-    // Mark (in `remove`) every pixel that isn't in its province's largest 4-connected piece of `include`
+    // Mark (in `remove`) every pixel that isn't part of its province's main piece: the largest
+    // 4-connected piece of the province's `include`d land pixels (never linked through a barrier), plus
+    // the `include`d barrier pixels touching that piece from land
     auto markAllButLargestPiece = [&](const Vector<UnsignedInteger8>& include, Vector<UnsignedInteger8>& remove) {
         Vector<SignedInteger32> piece(G, -1);
         Vector<SizeT> pieceSize;
         Vector<SignedInteger32> pieceProvince;
         Vector<UnsignedInteger32> stack;
         for (SizeT li = 0; li < G; ++li) {
-            if (!include[li] || piece[li] >= 0) continue;
+            if (!include[li] || piece[li] >= 0 || label[li] < 0 || kindGrid[li] != LAND) continue;
             const SignedInteger32 id = SignedInteger32(pieceSize.size());
             pieceSize.push_back(0);
             pieceProvince.push_back(label[li]);
@@ -618,7 +792,7 @@ void CleanProvinces(
                 const SignedInteger32 cx = SignedInteger32(c % W), cy = SignedInteger32(c / W);
                 for (SignedInteger32 d = 0; d < 4; ++d) {
                     const SignedInteger32 nx = cx + dx4[d], ny = cy + dy4[d];
-                    if (!inGrid(nx, ny)) continue;
+                    if (!isLand(nx, ny)) continue;
                     const SizeT ni = localIndex(nx, ny);
                     if (include[ni] && piece[ni] < 0 && label[ni] == label[li]) {
                         piece[ni] = id;
@@ -632,31 +806,71 @@ void CleanProvinces(
             SignedInteger32& best = largest[pieceProvince[id]];
             if (best < 0 || pieceSize[id] > pieceSize[best]) best = id;
         }
-        for (SizeT li = 0; li < G; ++li)
-            if (label[li] >= 0 && (!include[li] || piece[li] != largest[label[li]])) remove[li] = 1;
+        for (SizeT li = 0; li < G; ++li) {
+            const SignedInteger32 own = label[li];
+            if (own < 0) continue;
+            if (kindGrid[li] == LAND) {
+                if (!include[li] || piece[li] != largest[own]) remove[li] = 1;
+                continue;
+            }
+            // Barrier pixel: kept only if it touches the main piece from land
+            Boolean attached = false;
+            const SignedInteger32 x = SignedInteger32(li % W), y = SignedInteger32(li / W);
+            for (SignedInteger32 d = 0; d < 4; ++d) {
+                const SignedInteger32 nx = x + dx4[d], ny = y + dy4[d];
+                if (isLand(nx, ny) && piece[localIndex(nx, ny)] >= 0 && piece[localIndex(nx, ny)] == largest[own]) attached = true;
+            }
+            if (!include[li] || !attached) remove[li] = 1;
+        }
     };
 
-    // Hand every marked pixel to a neighbouring province (never back to its own), spreading out from
-    // the unmarked pixels with a flood fill so every province gaining pixels stays in one piece.
-    // Pixels the fill can't reach (e.g. an island with no other province on it) are left alone.
+    // Give every barrier pixel that no longer touches its own province's land to the neighbouring
+    // province with the most land sides against it (never back to `avoid`, if given)
+    auto reattachBarrierPixels = [&](const Vector<UnsignedInteger8>* avoid) -> SizeT {
+        SizeT moved = 0;
+        for (SizeT li = 0; li < G; ++li) {
+            if (label[li] < 0 || kindGrid[li] != BARRIER) continue;
+            const SignedInteger32 x = SignedInteger32(li % W), y = SignedInteger32(li / W);
+            const Boolean mustLeave = avoid && (*avoid)[li];
+            if (!mustLeave && canJoin(x, y, label[li])) continue;
+            SignedInteger32 best = -1, bestCount = 0;
+            for (SignedInteger32 d = 0; d < 4; ++d) {
+                if (!isLand(x + dx4[d], y + dy4[d])) continue;
+                const SignedInteger32 n = labelAt(x + dx4[d], y + dy4[d]);
+                if (mustLeave && n == label[li]) continue;
+                SignedInteger32 count = 0;
+                for (SignedInteger32 e = 0; e < 4; ++e)
+                    if (isLand(x + dx4[e], y + dy4[e]) && labelAt(x + dx4[e], y + dy4[e]) == n) ++count;
+                if (count > bestCount) { best = n; bestCount = count; }
+            }
+            if (best >= 0 && best != label[li]) { label[li] = best; ++moved; }
+        }
+        return moved;
+    };
+
+    // Hand every marked pixel to a neighbouring province (never back to its own), spreading out over
+    // land from the unmarked pixels with a flood fill so every province gaining pixels stays in one piece
+    // and nothing crosses a barrier. Marked barrier pixels, and any barrier pixels whose land neighbours
+    // changed hands, then go to a province touching them from land. Pixels the fill can't reach (e.g. an
+    // island with no other province on it) are left alone.
     auto reassignPixels = [&](const Vector<UnsignedInteger8>& remove) -> SizeT {
         Vector<SignedInteger32> newLabel(G, -1);
         std::queue<UnsignedInteger32> frontier;
         for (SizeT li = 0; li < G; ++li) {
-            if (!remove[li]) continue;
+            if (!remove[li] || kindGrid[li] != LAND) continue;
             const SignedInteger32 x = SignedInteger32(li % W), y = SignedInteger32(li / W);
             // Prefer the neighbouring province touching the most sides
             SignedInteger32 best = -1, bestCount = 0;
             for (SignedInteger32 d = 0; d < 4; ++d) {
                 const SignedInteger32 nx = x + dx4[d], ny = y + dy4[d];
-                if (!inGrid(nx, ny)) continue;
+                if (!isLand(nx, ny)) continue;
                 const SizeT ni = localIndex(nx, ny);
                 const SignedInteger32 n = label[ni];
                 if (n < 0 || remove[ni] || n == label[li]) continue;
                 SignedInteger32 count = 0;
                 for (SignedInteger32 e = 0; e < 4; ++e) {
                     const SignedInteger32 mx = x + dx4[e], my = y + dy4[e];
-                    if (inGrid(mx, my) && !remove[localIndex(mx, my)] && label[localIndex(mx, my)] == n) ++count;
+                    if (isLand(mx, my) && !remove[localIndex(mx, my)] && label[localIndex(mx, my)] == n) ++count;
                 }
                 if (count > bestCount) { best = n; bestCount = count; }
             }
@@ -667,7 +881,7 @@ void CleanProvinces(
             const SignedInteger32 cx = SignedInteger32(c % W), cy = SignedInteger32(c / W);
             for (SignedInteger32 d = 0; d < 4; ++d) {
                 const SignedInteger32 nx = cx + dx4[d], ny = cy + dy4[d];
-                if (!inGrid(nx, ny)) continue;
+                if (!isLand(nx, ny)) continue;
                 const SizeT ni = localIndex(nx, ny);
                 if (remove[ni] && newLabel[ni] < 0 && label[ni] != newLabel[c]) {
                     newLabel[ni] = newLabel[c];
@@ -678,7 +892,7 @@ void CleanProvinces(
         SizeT moved = 0;
         for (SizeT li = 0; li < G; ++li)
             if (remove[li] && newLabel[li] >= 0) { label[li] = newLabel[li]; ++moved; }
-        return moved;
+        return moved + reattachBarrierPixels(&remove);
     };
 
     const auto thinOffsets = DiscOffsets(THIN_RADIUS);
@@ -716,16 +930,17 @@ void CleanProvinces(
                     if (votes[n] == 0) touched.push_back(n);
                     ++votes[n];
                 }
-                // The winner must touch the pixel by a side, so it stays in one piece after gaining it
+                // The winner must touch the pixel by a side from land, so it stays in one piece after
+                // gaining it and never reaches across a barrier
                 SignedInteger32 best = own;
                 for (SignedInteger32 d = 0; d < 4; ++d) {
                     const SignedInteger32 n = labelAt(x + dx4[d], y + dy4[d]);
-                    if (n >= 0 && votes[n] > votes[best]) best = n;
+                    if (n >= 0 && isLand(x + dx4[d], y + dy4[d]) && votes[n] > votes[best]) best = n;
                 }
                 for (const SignedInteger32 n : touched) votes[n] = 0;
                 touched.clear();
 
-                if (best == own || provinces[own].value <= 1 || !removalKeepsConnected(x, y, own)) continue;
+                if (best == own || !canRemove(x, y, own)) continue;
                 label[li] = best;
                 provinces[own].Remove(x, y);
                 provinces[best].Add(x, y);
@@ -735,9 +950,93 @@ void CleanProvinces(
         }
     };
 
-    // Cut off every part of a province that a disc of radius thinRadius can't fit inside, plus anything
-    // only connected to the rest of the province through such a part. Other states and sea count as
-    // "inside" here, so a province isn't punished for a coastline or state border it can't change.
+    // Share river pixels between the provinces on either side. A "stretch" is a run of barrier pixels
+    // whose land neighbours are exactly two provinces, A and B. Its pixels are put in order along the
+    // river and split in half - one half to each province - so the border crosses the river only once
+    // per stretch. Every such pixel touches both provinces' land, so either can own it.
+    auto splitRiverStretches = [&]() {
+        std::mt19937 splitRng{ UnsignedInteger32(rng()) };
+        Vector<SignedInteger32> pairA(G, -1), pairB(G, -1);
+        for (SizeT li = 0; li < G; ++li) {
+            if (label[li] < 0 || kindGrid[li] != BARRIER) continue;
+            const SignedInteger32 x = SignedInteger32(li % W), y = SignedInteger32(li / W);
+            SignedInteger32 a = -1, b = -1;
+            Boolean tooMany = false;
+            for (SignedInteger32 d = 0; d < 4; ++d) {
+                if (!isLand(x + dx4[d], y + dy4[d])) continue;
+                const SignedInteger32 n = labelAt(x + dx4[d], y + dy4[d]);
+                if (n == a || n == b) continue;
+                if (a < 0) a = n; else if (b < 0) b = n; else tooMany = true;
+            }
+            if (b < 0 || tooMany) continue;
+            pairA[li] = std::min(a, b);
+            pairB[li] = std::max(a, b);
+        }
+
+        Vector<SignedInteger32> distance(G, -1);
+        Vector<UnsignedInteger32> stretch, queue;
+        for (SizeT start = 0; start < G; ++start) {
+            if (pairA[start] < 0 || distance[start] >= 0) continue;
+            const SignedInteger32 a = pairA[start], b = pairB[start];
+            auto sameStretch = [&](SignedInteger32 x, SignedInteger32 y) {
+                return inGrid(x, y) && pairA[localIndex(x, y)] == a && pairB[localIndex(x, y)] == b;
+            };
+
+            // Collect the stretch (8-connected, since rivers can step diagonally)
+            stretch.clear();
+            stretch.push_back(UnsignedInteger32(start));
+            distance[start] = 0;
+            for (SizeT k = 0; k < stretch.size(); ++k) {
+                const SignedInteger32 x = SignedInteger32(stretch[k] % W), y = SignedInteger32(stretch[k] / W);
+                for (SignedInteger32 r = 0; r < 8; ++r)
+                    if (sameStretch(x + ringX[r], y + ringY[r]) && distance[localIndex(x + ringX[r], y + ringY[r])] < 0) {
+                        distance[localIndex(x + ringX[r], y + ringY[r])] = 0;
+                        stretch.push_back(UnsignedInteger32(localIndex(x + ringX[r], y + ringY[r])));
+                    }
+            }
+            if (stretch.size() < 2) continue;
+
+            // Order it along the river: breadth-first distance from its far end. The pixel furthest
+            // from an arbitrary pixel is one end; distances measured from there run along the river.
+            auto measureFrom = [&](UnsignedInteger32 origin) {
+                for (const UnsignedInteger32 li : stretch) distance[li] = -1;
+                queue.clear();
+                queue.push_back(origin);
+                distance[origin] = 0;
+                for (SizeT k = 0; k < queue.size(); ++k) {
+                    const SignedInteger32 x = SignedInteger32(queue[k] % W), y = SignedInteger32(queue[k] / W);
+                    for (SignedInteger32 r = 0; r < 8; ++r) {
+                        const SignedInteger32 nx = x + ringX[r], ny = y + ringY[r];
+                        if (sameStretch(nx, ny) && distance[localIndex(nx, ny)] < 0) {
+                            distance[localIndex(nx, ny)] = distance[queue[k]] + 1;
+                            queue.push_back(UnsignedInteger32(localIndex(nx, ny)));
+                        }
+                    }
+                }
+                return queue.back();
+            };
+            measureFrom(measureFrom(stretch.front()));
+            std::sort(stretch.begin(), stretch.end(),
+                      [&](UnsignedInteger32 p, UnsignedInteger32 q) { return distance[p] < distance[q]; });
+
+            // First half to one province, second half to the other (which way round is random)
+            const Boolean aFirst = (splitRng() & 1u) != 0;
+            for (SizeT k = 0; k < stretch.size(); ++k) {
+                const SizeT li = stretch[k];
+                const SignedInteger32 newOwner = ((k < stretch.size() / 2) == aFirst) ? a : b;
+                if (newOwner == label[li]) continue;
+                const SignedInteger32 x = SignedInteger32(li % W), y = SignedInteger32(li / W);
+                provinces[label[li]].Remove(x, y);
+                provinces[newOwner].Add(x, y);
+                label[li] = newOwner;
+            }
+        }
+    };
+
+    // Cut off every part of a province that a disc of radius THIN_RADIUS can't fit inside, plus anything
+    // only connected to the rest of the province through such a part. Other states, sea and barrier
+    // pixels count as "inside" here, so a province isn't punished for a coastline, state border or river
+    // it can't change. (Barrier pixels are kept or cut along with the land they touch.)
     auto removeThinParts = [&]() -> SizeT {
         Vector<UnsignedInteger8> kept(G, 0), remove(G, 0);
         Vector<UnsignedInteger8> hasCore(provincesCount, 0);
@@ -745,11 +1044,11 @@ void CleanProvinces(
         for (SignedInteger32 y = 0; y < H; ++y)
             for (SignedInteger32 x = 0; x < W; ++x) {
                 const SignedInteger32 own = label[localIndex(x, y)];
-                if (own < 0) continue;
+                if (own < 0 || !isLand(x, y)) continue;
                 Boolean isCore = true;
                 for (const auto& [ox, oy] : thinOffsets) {
                     const SignedInteger32 n = labelAt(x + ox, y + oy);
-                    if (n >= 0 && n != own) { isCore = false; break; }
+                    if (n >= 0 && n != own && isLand(x + ox, y + oy)) { isCore = false; break; }
                 }
                 if (isCore) { corePixels.push_back(UnsignedInteger32(localIndex(x, y))); hasCore[own] = 1; }
             }
@@ -760,6 +1059,9 @@ void CleanProvinces(
             for (const auto& [ox, oy] : thinOffsets)
                 if (labelAt(x + ox, y + oy) == own) kept[localIndex(x + ox, y + oy)] = 1;
         }
+        // Barrier pixels are judged by the land they touch (see markAllButLargestPiece)
+        for (SizeT li = 0; li < G; ++li)
+            if (label[li] >= 0 && kindGrid[li] == BARRIER) kept[li] = 1;
         // Provinces too small or thin to have any core are left as they are
         for (SizeT li = 0; li < G; ++li)
             if (label[li] >= 0 && !hasCore[label[li]]) kept[li] = 1;
@@ -779,6 +1081,7 @@ void CleanProvinces(
     // ---- Run ----
     if (provincesCount < 2) return;
 
+    reattachBarrierPixels(nullptr);
     rebuild();
     anneal(ITERATIONS_PER_PIXEL * totalPixels, TEMPERATURE_START, TEMPERATURE_END);
 
@@ -789,10 +1092,32 @@ void CleanProvinces(
     }
 
     smoothBorders();
+    splitRiverStretches();
 
-    // Write the result back
-    for (SizeT i = 0; i < totalPixels; ++i)
-        pixelProvinceIds[i] = UnsignedInteger16(label[localIndex(state.pixels[i].x - state.x0, state.pixels[i].y - state.y0)]);
+    // Inner barrier pixels go to the most common province among their 8 neighbours
+    for (SizeT pass = 0; pass < 16; ++pass) {
+        Boolean anyLeft = false;
+        for (SizeT li = 0; li < G; ++li) {
+            if (label[li] >= 0 || kindGrid[li] != INNER_BARRIER) continue;
+            const SignedInteger32 x = SignedInteger32(li % W), y = SignedInteger32(li / W);
+            SignedInteger32 best = -1, bestCount = 0;
+            for (SignedInteger32 k = 0; k < 8; ++k) {
+                const SignedInteger32 n = labelAt(x + ringX[k], y + ringY[k]);
+                if (n < 0) continue;
+                SignedInteger32 count = 0;
+                for (SignedInteger32 m = 0; m < 8; ++m) if (labelAt(x + ringX[m], y + ringY[m]) == n) ++count;
+                if (count > bestCount) { best = n; bestCount = count; }
+            }
+            if (best >= 0) label[li] = best; else anyLeft = true;
+        }
+        if (!anyLeft) break;
+    }
+
+    // Write the result back (anything still unlabelled keeps its starting province)
+    for (SizeT i = 0; i < totalPixels; ++i) {
+        const SignedInteger32 l = label[localIndex(state.pixels[i].x - state.x0, state.pixels[i].y - state.y0)];
+        if (l >= 0) pixelProvinceIds[i] = UnsignedInteger16(l);
+    }
 }
 
 int main() {
@@ -807,16 +1132,17 @@ int main() {
 
     std::mt19937 rng(std::random_device{}());
     for (auto& state : statesVector) {
-        // Select random points in each state to be our province centers
-        SizeT n = std::max<SizeT>(1, state.pixels.size() / PIXELS_PER_PROVINCE);
-        Vector<Pixel> randomPixels = SelectRandomPixels(state, n, rng);
+        // Work out which pixels are barriers (rivers), then pick random points in each state - per
+        // separate land area - to be our province centres
+        const Vector<UnsignedInteger8> pixelKinds = ClassifyPixels(state);
+        Vector<Pixel> randomPixels = SelectSeeds(state, pixelKinds, rng);
         const UnsignedInteger16 provincesCount = randomPixels.size();
         
         // Given our semi-random points on the map, assign each pixel in the state to it's nearest point
-        Vector<UnsignedInteger16> pixelProvinceIds = AssignProvinces(state, randomPixels);
+        Vector<UnsignedInteger16> pixelProvinceIds = AssignProvinces(state, pixelKinds, randomPixels);
 
         // Balance province sizes and shapes by flipping border pixels between neighbouring provinces
-        CleanProvinces(state, pixelProvinceIds, provincesCount, rng);
+        CleanProvinces(state, pixelKinds, pixelProvinceIds, provincesCount, rng);
 
         // Colour in the provinces and print the map
         /*
