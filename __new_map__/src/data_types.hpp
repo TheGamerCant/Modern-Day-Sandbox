@@ -8,6 +8,7 @@
 #include <filesystem>
 #include <chrono>
 #include <array>
+#include <queue>
 
 //  ----Rename Types----
 
@@ -45,6 +46,9 @@ using Set = std::unordered_set<SetType>;
 
 template<typename VectorType>
 using Vector = std::vector<VectorType>;
+
+template<typename QueueType>
+using Queue = std::queue<QueueType>;
 
 template<typename ArrayType, SizeT amount>
 using Array = std::array<ArrayType, amount>;
