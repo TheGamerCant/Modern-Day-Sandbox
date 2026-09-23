@@ -22,13 +22,12 @@
 
 constexpr Float64 PI = 3.14159265358979323846;
 
-// ======================================================================
-//  Tunable settings - everything that controls the output is here
-// ======================================================================
 
-// Every pixel has a density between MIN_DENSITY (all black) and 1.0 (all white).
-// DENSITY_PER_PROVINCE is how much density a single province should aim for.
-// E.g 100 all white pixels would have a density of 100.0 as would 1000 all black pixels.
+
+
+// Province density is calculated by summing it's rgb values (0-765) and normalising them
+// between MIN_DENSITY (all black) and MAX_DENSITY (all white)
+// DENSITY_PER_PROVINCE is how much density a single province should aim for
 constexpr Float64 DENSITY_PER_PROVINCE = 100.0;
 constexpr Float64 MIN_DENSITY = 0.1;
 constexpr Float64 MAX_DENSITY = 1.0;
@@ -37,78 +36,69 @@ constexpr Float64 MAX_DENSITY = 1.0;
 constexpr SizeT MIN_REGION_SIZE = 100;
 
 // Total flip attempts per state = ITERATIONS_PER_PIXEL * state pixel count
+// Higher = more normal shapes but slower
 constexpr SizeT ITERATIONS_PER_PIXEL = 10;
 
-// A flip that makes the map worse is still kept with probability exp(-scoreIncrease / temperature)
-// (simulated annealing). Temperature is measured in "pixels of extra border": at temperature 1, a
-// flip that adds one pixel's worth of border is kept ~37% of the time, one that adds 3 pixels ~5%.
-// It falls geometrically from START to END over the main run. Ending slightly warm matters: at zero
-// temperature, single-pixel flips lock borders into straight horizontal/vertical runs.
+// A flip that makes the map worse is sometimes kept, but the likelihood of being kept goes down
+// after each iteration, otherwise the map can get very fuzzy
 constexpr Float64 TEMPERATURE_START = 3.0;
 constexpr Float64 TEMPERATURE_END = 0.12;
 
-// How strongly pixels far from their province centre are favoured for flipping:
-// weight = borderingSides * (1 + DISTANCE_WEIGHT * min(distance / radius, MAX_DISTANCE_RATIO))
-// where radius = sqrt(area / pi), i.e. the radius of a circle of the same area
+// How strongly pixels far from their province centre are favoured for flipping
 constexpr Float64 DISTANCE_WEIGHT = 1.0;
-constexpr Float64 MAX_DISTANCE_RATIO = 3.0;
+constexpr Float64 DISTANCE_WEIGHT_RATIO_CAP = 3.0;
 
-// Each province gets its own random target density: the average * a log-normal factor with this spread
-// (0.3 = roughly +-30%, close to how much vanilla provinces vary within a state). 0 = all equal.
+// Each province is given a random size to aim for (based on normal distribution)
+// 0.3 = every province will aim to be between 70% and 130% the size of the average
+// province in a state
 constexpr Float64 TARGET_SIZE_SPREAD = 0.3;
 
-// Score (lower is better):
-//   SIZE_WEIGHT          * average over provinces of ((density - target) / target)^2
-// + NEIGHBOURHOOD_WEIGHT * border score
-// + TERRAIN_WEIGHT       * average over provinces of terrain mix (see TERRAIN_WEIGHT below)
+// How hard provinces get pushed towards their target density
 constexpr Float64 SIZE_WEIGHT = 100.0;
-// Border score: for every pixel, count the pixels within NEIGHBOURHOOD_RADIUS (same state only) that
-// belong to a different province, weighted by the terrain cost below. It acts like border length, but
-// also sees how *thin* part of a province is, so retracting a panhandle improves the score at every
-// step. (A plain pixel-side perimeter was dropped: it favours horizontal/vertical borders.)
-// Normalised so a map of circles scores about 1.
+
+// Check every pixel within NEIGHBOURHOOD_RADIUS and see if they are part of other provinces, making pixels
+// surrounded by other provinces more expensive to maintain. A higher NEIGHBOURHOOD_WEIGHT means more
+// rounded and compact provinces, but too high becomes repetitive
 constexpr Float64 NEIGHBOURHOOD_WEIGHT = 3.0;
 constexpr SignedInteger32 NEIGHBOURHOOD_RADIUS = 3;
 
-// Terrain (from in/terrain.png, see TERRAIN_COLOURS below): each province is scored on how mixed its
-// terrain is - 1 - sum over terrain types of (share of the province's pixels of that type)^2. That's 0
-// for a province of a single terrain and rises the more types it mixes (and the more evenly). Adds
-// TERRAIN_WEIGHT * (average over provinces) to the score, so borders get pulled onto terrain edges.
-// 0 = ignore terrain. Pixels with an unlisted colour don't count either way.
+// How hard the province will try to only be of one province type. 10.0 - 25.0 will mean most provinces will be
+// 90% < one terrain type (terrain map permitting), so it's kept low to ensure good province shapes while taking
+// terrain somewhat into account
 constexpr Float64 TERRAIN_WEIGHT = 1.0;
 
-// Random "terrain" the borders follow: a smooth multi-octave noise field, freshly seeded per state.
-// Each pixel pair in the neighbourhood score is weighted by 1 + NOISE_STRENGTH * noise, so borders
-// are cheap through the field's low parts and up to (1 + NOISE_STRENGTH) times as expensive elsewhere.
-// That makes them meander along random routes instead of settling into straight lines and a honeycomb.
+// Random noise pattern that provinces try to follow. Almost like rivers where crossing a threshold
+// on the noise map becomes expensive
+
+// Higher NOISE_STRENGTH means that province borders follow the ridges more closely, lower means they
+// are straighter
 constexpr Float64 NOISE_STRENGTH = 3.0;
-constexpr Float64 NOISE_WAVELENGTH = 48.0; // pixels, largest octave
-constexpr SignedInteger32 NOISE_OCTAVES = 3;
-// Ridged: cheap routes are the thin winding lines where the noise crosses its midpoint (like rivers),
+// In pixels, measures the largest octave. Lower means smaller, more frequent wriggles along province borders
+constexpr Float64 NOISE_WAVELENGTH = 48.0;
+constexpr SignedInteger32 NOISE_OCTAVE_LAYERS = 3;
+// Cheap routes are the thin winding lines where the noise crosses its midpoint (like rivers),
 // rather than broad blobby valleys
 constexpr Boolean NOISE_RIDGED = true;
 
-// Cleanup after the main run: cut off any part of a province too thin to fit a disc of radius
-// THIN_RADIUS (plus anything only attached through such a part), hand those pixels to neighbouring
-// provinces, then rebalance with CLEANUP_ITERATIONS_PER_PIXEL flips per pixel at TEMPERATURE_END.
-// Repeated CLEANUP_PASSES times.
-constexpr SizeT CLEANUP_PASSES = 2;
+// No. of clean-up passes to make (duh). Expensive with diminishing returns the more you do it
+constexpr SizeT CLEANUP_PASSES = 3;
+// If a circle with THIN_RADIUS radius doesn't fit in a protrusion, it attempts to be cleaned up.
+// lower means only smaller protrusions will be noticed and cut
 constexpr SignedInteger32 THIN_RADIUS = 3;
-constexpr SizeT CLEANUP_ITERATIONS_PER_PIXEL = 2;
+// Flips per pixel after each clean-up round
+constexpr SizeT CLEANUP_ITERATIONS_PER_PIXEL = 4;
 
-// Border smoothing at the very end: each border pixel switches to whichever province owns most of the
-// disc of radius SMOOTHNESS around it (never splitting a province). Rounds off jagged edges and small
-// bumps without favouring any direction. 0 = off, 1.5 = light, 2-3 = noticeably smooth, 4+ = very smooth.
-// Fractional values are fine (the disc includes pixels within that distance).
+// Simple smoothness weight. 0.0 = off, 2.0-3.0 is a fairly smooth province, anything above 4.0 becomes very smooth
 constexpr Float64 SMOOTHNESS = 2.0;
 
 // ======================================================================
 
-// ---- Terrain types and their colours in terrain.png ----
+
 enum TerrainType : UnsignedInteger8 {
     PLAINS, FOREST, HILLS, DESERT, MOUNTAIN, MARSH, URBAN, OCEAN, JUNGLE,
-    TERRAIN_TYPES,           // number of types
-    NO_TERRAIN = 255,        // unlisted colour - ignored
+    // Use the enum itself to count the no. of terrains
+    TERRAIN_TYPE_COUNT,
+    NO_TERRAIN = 255,
 };
 
 struct TerrainColour { UnsignedInteger32 colour; TerrainType type; };
@@ -140,8 +130,9 @@ constexpr TerrainColour TERRAIN_COLOURS[] = {
 };
 
 TerrainType TerrainFromColour(const UnsignedInteger32 colour) {
-    for (const auto& entry : TERRAIN_COLOURS)
-        if (entry.colour == colour) return entry.type;
+    for (const auto& entry : TERRAIN_COLOURS){
+        if (entry.colour == colour) { return entry.type; }
+    }
     return NO_TERRAIN;
 }
 
@@ -527,7 +518,7 @@ struct Province {
     // Running coordinate sums, so the centre of gravity can be updated in O(1) per flip
     SignedInteger64 sumX = 0, sumY = 0;
     // Pixels of each terrain type, their total, and the sum of the squared counts (for TerrainMix)
-    Array<UnsignedInteger32, TERRAIN_TYPES> terrainCount{};
+    Array<UnsignedInteger32, TERRAIN_TYPE_COUNT> terrainCount{};
     UnsignedInteger32 terrainTotal = 0;
     UnsignedInteger64 terrainSquares = 0;
 
@@ -548,7 +539,7 @@ struct Province {
 
     void Add(const SignedInteger64 x, const SignedInteger64 y, const Float64 weight, const UnsignedInteger8 terrain) {
         value += weight; pixelCount += 1; sumX += x; sumY += y;
-        if (terrain < TERRAIN_TYPES) {
+        if (terrain < TERRAIN_TYPE_COUNT) {
             terrainSquares += 2 * UnsignedInteger64(terrainCount[terrain]) + 1;
             terrainCount[terrain] += 1;
             terrainTotal += 1;
@@ -556,7 +547,7 @@ struct Province {
     }
     void Remove(const SignedInteger64 x, const SignedInteger64 y, const Float64 weight, const UnsignedInteger8 terrain) {
         value -= weight; pixelCount -= 1; sumX -= x; sumY -= y;
-        if (terrain < TERRAIN_TYPES) {
+        if (terrain < TERRAIN_TYPE_COUNT) {
             terrainSquares -= 2 * UnsignedInteger64(terrainCount[terrain]) - 1;
             terrainCount[terrain] -= 1;
             terrainTotal -= 1;
@@ -595,7 +586,7 @@ Float64 ValueNoise(const Float64 x, const Float64 y, const UnsignedInteger32 see
 // Several octaves of value noise, each half the wavelength and half the strength of the last
 Float64 FractalNoise(const Float64 x, const Float64 y, const UnsignedInteger32 seed) {
     Float64 total = 0.0, amplitude = 1.0, amplitudeSum = 0.0, wavelength = NOISE_WAVELENGTH;
-    for (SignedInteger32 o = 0; o < NOISE_OCTAVES; ++o) {
+    for (SignedInteger32 o = 0; o < NOISE_OCTAVE_LAYERS; ++o) {
         total += amplitude * ValueNoise(x / wavelength, y / wavelength, seed + UnsignedInteger32(o) * 1013u);
         amplitudeSum += amplitude;
         amplitude *= 0.5;
@@ -671,7 +662,7 @@ struct ProvinceBalancer {
     Vector<SignedInteger32> boundaryPos;
 
     // Largest possible pixel weight when picking pixels to flip (see FlipWeight)
-    Float64 maxWeight = 4.0 * (1.0 + DISTANCE_WEIGHT * MAX_DISTANCE_RATIO);
+    Float64 maxWeight = 4.0 * (1.0 + DISTANCE_WEIGHT * DISTANCE_WEIGHT_RATIO_CAP);
     std::uniform_real_distribution<Float64> unit{ 0.0, 1.0 };
 
     ProvinceBalancer(
@@ -924,7 +915,7 @@ struct ProvinceBalancer {
         const Province& p = provinces[own];
         const Float64 ddx = Float64(x) - p.CentreX(), ddy = Float64(y) - p.CentreY();
         const Float64 radius = std::max(1.0, std::sqrt(Float64(p.pixelCount) / PI));
-        const Float64 ratio = std::min(MAX_DISTANCE_RATIO, std::sqrt(ddx * ddx + ddy * ddy) / radius);
+        const Float64 ratio = std::min(DISTANCE_WEIGHT_RATIO_CAP, std::sqrt(ddx * ddx + ddy * ddy) / radius);
         return Float64(foreignSides) * (1.0 + DISTANCE_WEIGHT * ratio);
     }
 
