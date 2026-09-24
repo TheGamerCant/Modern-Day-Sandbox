@@ -95,6 +95,7 @@ Float64 LAKE_SMOOTHNESS;
 SizeT STATE_MANPOWER;
 String STATE_CATEGORY;
 SizeT CONTINENT;
+SizeT MIN_PRESET_POCKET_SIZE;
 
 // The per-type settings, gathered so the code can look them up by province type (filled in by LoadSettings)
 enum ProvinceType : UnsignedInteger8 { LAND_PROVINCE, SEA_PROVINCE, LAKE_PROVINCE, PROVINCE_TYPE_COUNT };
@@ -167,6 +168,7 @@ void LoadSettings(const char* path) {
         { "STATE_MANPOWER", SIZE, &STATE_MANPOWER },
         { "STATE_CATEGORY", TEXT, &STATE_CATEGORY },
         { "CONTINENT", SIZE, &CONTINENT },
+        { "MIN_PRESET_POCKET_SIZE", SIZE, &MIN_PRESET_POCKET_SIZE },
     };
 
     std::ifstream file(path);
@@ -751,7 +753,8 @@ Vector<Pixel> SelectSeeds(const State& state, const Vector<PixelType>& pixelType
         regionDensity[regionOf[i]] += state.densityWeights[i];
     }
 
-    // Areas touching a preset province are cut off by it, so they get a province however small they are
+    // Areas touching a preset province are cut off by it, so they get a province even below minRegionSize
+    // (but not stray specks, e.g. a pixel of the state poking out beside a preset: MIN_PRESET_POCKET_SIZE)
     Vector<Boolean> touchesPreset(sizes.size(), false);
     {
         static const SignedInteger32 dx4[4] = { 1, 0, -1, 0 }, dy4[4] = { 0, 1, 0, -1 };
@@ -781,7 +784,7 @@ Vector<Pixel> SelectSeeds(const State& state, const Vector<PixelType>& pixelType
     Vector<Pixel> seeds;
     for (SizeT r = 0; r < sizes.size(); ++r) {
         const ProvinceTypeSettings& settings = PROVINCE_TYPE_SETTINGS[state.type];
-        if (sizes[r] < settings.minRegionSize && !touchesPreset[r]) continue;
+        if (sizes[r] < settings.minRegionSize && !(touchesPreset[r] && sizes[r] >= MIN_PRESET_POCKET_SIZE)) continue;
         const SizeT n = std::max<SizeT>(1, SizeT(std::llround(regionDensity[r] / settings.densityPerProvince)));
         sampleWeighted(regionPixels[r], n, seeds);
     }

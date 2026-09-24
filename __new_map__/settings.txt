@@ -55,10 +55,12 @@ LAKE_MAX_DENSITY             = 1.0
 
 # Minimum size (in pixels) of a separate area - cut off by rivers, land, or the state/region's own
 # shape - for it to get its own province(s). Smaller areas are merged into a neighbouring province.
-# Areas cut off by a preset province are exempt: they always get their own province.
+# Areas cut off by a preset province are exempt: they get their own province if they have at least
+# MIN_PRESET_POCKET_SIZE pixels (smaller specks, usually stray state-map pixels, join a neighbouring province).
 LAND_MIN_REGION_SIZE         = 100
 SEA_MIN_REGION_SIZE          = 200
 LAKE_MIN_REGION_SIZE         = 20         # lakes are small, so let most lakes be provinces of their own
+MIN_PRESET_POCKET_SIZE       = 10
 
 # Land areas walled off by rivers (a river plus the state's own edge, say) with less than this share of a
 # province's density have their rivers opened, so they join the land across the river instead of becoming
