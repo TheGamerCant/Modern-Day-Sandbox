@@ -10,6 +10,7 @@
 #include <queue>
 #include <format>
 #include <thread>
+#include <cstdio>
 
 
 #include "functions.hpp"
@@ -29,19 +30,61 @@ constexpr Float64 PI = 3.14159265358979323846;
 // Thread count - set to 0 for 75% thread usage
 constexpr SizeT THREAD_COUNT = 0;
 
+// Province types, from provtypemap.png. Every pixel is land, sea or lake:
+// - Land provinces are made per state (statemap.png).
+// - Lake pixels are taken out of their state and made into provinces of their own, per state.
+// - Sea provinces are made per strategic region (strategicregionmap.png), ignoring state borders.
+// statemap.png and provtypemap.png must agree on the sea: sea pixels have no state (NO_STATE_COLOUR in
+// statemap.png) and every pixel with no state is sea - anything else is a fatal error.
+// presetprovinces.png predefines provinces: every colour other than NO_PRESET_COLOUR is one province, kept
+// exactly as drawn. A preset province must stay inside one state (land/lake) or strategic region (sea) and
+// one province type, or it's a fatal error. States made entirely of preset provinces aren't generated at all;
+// otherwise the generator works around the presets and they're added back in at the end.
+constexpr UnsignedInteger32 NO_PRESET_COLOUR = 0x000000;
+// Most settings below come in LAND_ / SEA_ / LAKE_ versions so each type can be tuned separately.
+constexpr UnsignedInteger32 LAND_COLOUR = 0x5A9646; //  90, 150,  70
+constexpr UnsignedInteger32 SEA_COLOUR  = 0x143C8C; //  20,  60, 140
+constexpr UnsignedInteger32 LAKE_COLOUR = 0x5AB4E6; //  90, 180, 230
+
+// Output colours: land and lake provinces get a random colour within +-STATE_COLOUR_VARIATION of their
+// state's colour (per channel), sea provinces get a random colour within the fixed range below
+constexpr SignedInteger32 STATE_COLOUR_VARIATION = 20;
+constexpr UnsignedInteger8 SEA_RED_MIN = 20,     SEA_RED_MAX = 80;
+constexpr UnsignedInteger8 SEA_GREEN_MIN = 0,   SEA_GREEN_MAX = 35;
+constexpr UnsignedInteger8 SEA_BLUE_MIN = 95,  SEA_BLUE_MAX = 240;
+
 // Province density is calculated by summing it's rgb values (0-765) and normalising them
 // between MIN_DENSITY (all black) and MAX_DENSITY (all white)
 // DENSITY_PER_PROVINCE is how much density a single province should aim for
-constexpr Float64 DENSITY_PER_PROVINCE = 160.0;
-constexpr Float64 MIN_DENSITY = 0.1;
-constexpr Float64 MAX_DENSITY = 1.0;
+// (a province on all-black pixels is DENSITY_PER_PROVINCE / MIN_DENSITY pixels big). The density map is
+// black over all of the sea, so SEA_DENSITY_PER_PROVINCE / SEA_MIN_DENSITY is the sea province size.
+constexpr Float64 LAND_DENSITY_PER_PROVINCE = 160.0;
+constexpr Float64 SEA_DENSITY_PER_PROVINCE  = 435.0;
+constexpr Float64 LAKE_DENSITY_PER_PROVINCE = 250.0;
+constexpr Float64 LAND_MIN_DENSITY = 0.1;
+constexpr Float64 SEA_MIN_DENSITY  = 0.1;
+constexpr Float64 LAKE_MIN_DENSITY = 0.2;
+constexpr Float64 LAND_MAX_DENSITY = 1.0;
+constexpr Float64 SEA_MAX_DENSITY  = 1.0;
+constexpr Float64 LAKE_MAX_DENSITY = 1.0;
 
-// Minium province size
-constexpr SizeT MIN_REGION_SIZE = 100;
+// Minimum size (in pixels) of a separate area - cut off by rivers, land, or the state/region's own
+// shape - for it to get its own province(s). Smaller areas are merged into a neighbouring province.
+constexpr SizeT LAND_MIN_REGION_SIZE = 100;
+constexpr SizeT SEA_MIN_REGION_SIZE  = 200;
+constexpr SizeT LAKE_MIN_REGION_SIZE = 20; // lakes are small, so let most lakes be provinces of their own
+
+// Land areas walled off by rivers (a river plus the state's own edge, say) with less than this share of a
+// province's density have their rivers opened, so they join the land across the river instead of becoming
+// an undersized province of their own. Judged on density, as a big but empty pocket is still a tiny province.
+// 0 = only the pixel count above decides, 1 = any pocket smaller than a whole province joins its neighbour
+constexpr Float64 LAND_MIN_RIVER_POCKET_SHARE = 0.5;
 
 // Total flip attempts per state = ITERATIONS_PER_PIXEL * state pixel count
 // Higher = more normal shapes but slower
-constexpr SizeT ITERATIONS_PER_PIXEL = 10;
+constexpr SizeT LAND_ITERATIONS_PER_PIXEL = 10;
+constexpr SizeT SEA_ITERATIONS_PER_PIXEL  = 10;
+constexpr SizeT LAKE_ITERATIONS_PER_PIXEL = 10;
 
 // A flip that makes the map worse is sometimes kept, but the likelihood of being kept goes down
 // after each iteration, otherwise the map can get very fuzzy
@@ -55,28 +98,37 @@ constexpr Float64 DISTANCE_WEIGHT_RATIO_CAP = 3.0;
 // Each province is given a random size to aim for (based on normal distribution)
 // 0.3 = every province will aim to be between 70% and 130% the size of the average
 // province in a state
-constexpr Float64 TARGET_SIZE_SPREAD = 0.3;
+constexpr Float64 LAND_TARGET_SIZE_SPREAD = 0.3;
+constexpr Float64 SEA_TARGET_SIZE_SPREAD  = 0.3;
+constexpr Float64 LAKE_TARGET_SIZE_SPREAD = 0.3;
 
 // How hard provinces get pushed towards their target density
-constexpr Float64 SIZE_WEIGHT = 100.0;
+constexpr Float64 LAND_SIZE_WEIGHT = 100.0;
+constexpr Float64 SEA_SIZE_WEIGHT  = 100.0;
+constexpr Float64 LAKE_SIZE_WEIGHT = 100.0;
 
 // Check every pixel within NEIGHBOURHOOD_RADIUS and see if they are part of other provinces, making pixels
 // surrounded by other provinces more expensive to maintain. A higher NEIGHBOURHOOD_WEIGHT means more
 // rounded and compact provinces, but too high becomes repetitive
-constexpr Float64 NEIGHBOURHOOD_WEIGHT = 3.0;
+constexpr Float64 LAND_NEIGHBOURHOOD_WEIGHT = 3.0;
+constexpr Float64 SEA_NEIGHBOURHOOD_WEIGHT  = 3.0;
+constexpr Float64 LAKE_NEIGHBOURHOOD_WEIGHT = 3.0;
 constexpr SignedInteger32 NEIGHBOURHOOD_RADIUS = 3;
 
 // How hard the province will try to only be of one province type. 10.0 - 25.0 will mean most provinces will be
 // 90% < one terrain type (terrain map permitting), so it's kept low to ensure good province shapes while taking
 // terrain somewhat into account
-constexpr Float64 TERRAIN_WEIGHT = 1.0;
+// Land only: sea and lake provinces ignore terrain
+constexpr Float64 LAND_TERRAIN_WEIGHT = 1.0;
 
 // Random noise pattern that provinces try to follow. Almost like rivers where crossing a threshold
 // on the noise map becomes expensive
 
 // Higher NOISE_STRENGTH means that province borders follow the ridges more closely, lower means they
 // are straighter
-constexpr Float64 NOISE_STRENGTH = 3.0;
+constexpr Float64 LAND_NOISE_STRENGTH = 3.0;
+constexpr Float64 SEA_NOISE_STRENGTH  = 3.0;
+constexpr Float64 LAKE_NOISE_STRENGTH = 3.0;
 // In pixels, measures the largest octave. Lower means smaller, more frequent wriggles along province borders
 constexpr Float64 NOISE_WAVELENGTH = 48.0;
 constexpr SignedInteger32 NOISE_OCTAVE_LAYERS = 3;
@@ -93,7 +145,25 @@ constexpr SignedInteger32 THIN_RADIUS = 3;
 constexpr SizeT CLEANUP_ITERATIONS_PER_PIXEL = 4;
 
 // Simple smoothness weight. 0.0 = off, 2.0-3.0 is a fairly smooth province, anything above 4.0 becomes very smooth
-constexpr Float64 SMOOTHNESS = 2.0;
+constexpr Float64 LAND_SMOOTHNESS = 2.0;
+constexpr Float64 SEA_SMOOTHNESS  = 2.0;
+constexpr Float64 LAKE_SMOOTHNESS = 2.0;
+
+// The per-type settings above, gathered so the code can look them up by province type
+enum ProvinceType : UnsignedInteger8 { LAND_PROVINCE, SEA_PROVINCE, LAKE_PROVINCE, PROVINCE_TYPE_COUNT };
+struct ProvinceTypeSettings {
+    Float64 densityPerProvince, minDensity, maxDensity;
+    SizeT minRegionSize, iterationsPerPixel;
+    Float64 targetSizeSpread, sizeWeight, neighbourhoodWeight, terrainWeight, noiseStrength, smoothness;
+};
+constexpr ProvinceTypeSettings PROVINCE_TYPE_SETTINGS[PROVINCE_TYPE_COUNT] = {
+    { LAND_DENSITY_PER_PROVINCE, LAND_MIN_DENSITY, LAND_MAX_DENSITY, LAND_MIN_REGION_SIZE, LAND_ITERATIONS_PER_PIXEL,
+      LAND_TARGET_SIZE_SPREAD, LAND_SIZE_WEIGHT, LAND_NEIGHBOURHOOD_WEIGHT, LAND_TERRAIN_WEIGHT, LAND_NOISE_STRENGTH, LAND_SMOOTHNESS },
+    { SEA_DENSITY_PER_PROVINCE, SEA_MIN_DENSITY, SEA_MAX_DENSITY, SEA_MIN_REGION_SIZE, SEA_ITERATIONS_PER_PIXEL,
+      SEA_TARGET_SIZE_SPREAD, SEA_SIZE_WEIGHT, SEA_NEIGHBOURHOOD_WEIGHT, 0.0, SEA_NOISE_STRENGTH, SEA_SMOOTHNESS },
+    { LAKE_DENSITY_PER_PROVINCE, LAKE_MIN_DENSITY, LAKE_MAX_DENSITY, LAKE_MIN_REGION_SIZE, LAKE_ITERATIONS_PER_PIXEL,
+      LAKE_TARGET_SIZE_SPREAD, LAKE_SIZE_WEIGHT, LAKE_NEIGHBOURHOOD_WEIGHT, 0.0, LAKE_NOISE_STRENGTH, LAKE_SMOOTHNESS },
+};
 
 
 // Terrain type enum and return terrain type from colour
@@ -157,7 +227,8 @@ struct Pixel {
 };
 
 struct State {
-    ColourRGB colour;
+    ColourRGB colour; // statemap colour, or strategic region colour for sea
+    ProvinceType type = LAND_PROVINCE;
     UnsignedInteger16 x0 = UINT16_MAX, x1 = 0, y0 = UINT16_MAX, y1 = 0;
     UnsignedInteger16 width = 0, height = 0;
 
@@ -165,8 +236,14 @@ struct State {
     // Merging them into one vector offers no actual speed improvements
     Vector<Pixel> pixels;
     Vector<Boolean> barrierPixels;
-    Vector<Float32> densityWeights; // MIN_DENSITY (black) to MAX_DENSITY (white), from densitymap.png
+    Vector<Float32> densityWeights; // the type's MIN_DENSITY (black) to MAX_DENSITY (white), from densitymap.png
     Vector<TerrainType> terrains;
+
+    // Preset provinces (presetprovinces.png). Their pixels are kept out of the vectors above so the generator
+    // works around them, and are moved into pixels by MergePresetProvinces once the state has been generated
+    Vector<Pixel> presetPixels;
+    Vector<UnsignedInteger16> presetProvinceOf; // which of this state's preset provinces each preset pixel is in
+    UnsignedInteger16 presetProvinceCount = 0;
 
     State(): colour(), pixels(), barrierPixels(), densityWeights(), terrains() {
         pixels.reserve(6000);
@@ -174,7 +251,7 @@ struct State {
         densityWeights.reserve(6000);
         terrains.reserve(6000);
     }
-    State(const ColourRGB colour): colour(colour), pixels(), barrierPixels(), densityWeights(), terrains() {
+    State(const ColourRGB colour, const ProvinceType type): colour(colour), type(type), pixels(), barrierPixels(), densityWeights(), terrains() {
         pixels.reserve(6000);
         barrierPixels.reserve(6000);
         densityWeights.reserve(6000);
@@ -185,35 +262,57 @@ struct State {
         pixels.push_back(p);
 
         if (p.x < x0) { x0 = p.x; }
-        else if (p.x > x1) { x1 = p.x; }
+        if (p.x > x1) { x1 = p.x; }
         if (p.y < y0) { y0 = p.y; }
-        else if (p.y > y1) { y1 = p.y; }
+        if (p.y > y1) { y1 = p.y; }
     }
     void AddPixel(const UnsignedInteger16 x, const UnsignedInteger16 y) {
         pixels.emplace_back(x, y);
 
         if (x < x0) { x0 = x; }
-        else if (x > x1) { x1 = x; }
+        if (x > x1) { x1 = x; }
         if (y < y0) { y0 = y; }
-        else if (y > y1) { y1 = y; }
+        if (y > y1) { y1 = y; }
     }
     void AddTerrain(const ColourRGB colour) {
-        terrains.push_back(TerrainFromColour(colour.ToInteger()));
+        // Sea and lake provinces ignore terrain
+        terrains.push_back(type == LAND_PROVINCE ? TerrainFromColour(colour.ToInteger()) : NO_TERRAIN);
     }
     void AddDensity(const ColourRGB colour) {
+        const ProvinceTypeSettings& settings = PROVINCE_TYPE_SETTINGS[type];
         const Float32 brightness = Float32(UnsignedInteger32(colour.r) + colour.g + colour.b) / 765.0;
         densityWeights.push_back(
-            MIN_DENSITY + (MAX_DENSITY - MIN_DENSITY) * brightness
+            settings.minDensity + (settings.maxDensity - settings.minDensity) * brightness
         );
     }
     void AddBarrierPixel(const UnsignedInteger32 colour) {
-        // Land/water colour on rivers.png
-        if (colour == 0x00ffffff || colour == 0x007a7a7a) {
+        // Land/water colour on rivers.png. Rivers are only barriers on land.
+        if (type != LAND_PROVINCE || colour == 0x00ffffff || colour == 0x007a7a7a) {
             barrierPixels.push_back(false);
         }
         else {
             barrierPixels.push_back(true);
         }
+    }
+
+    void AddPresetPixel(const UnsignedInteger16 x, const UnsignedInteger16 y, const UnsignedInteger16 presetProvince) {
+        presetPixels.emplace_back(x, y);
+        presetProvinceOf.push_back(presetProvince);
+    }
+
+    // Move the preset provinces into pixels, numbered after the generated provinces. Only pixels (and
+    // provinceOf) grow - barrierPixels, densityWeights and terrains are only needed while generating
+    void MergePresetProvinces(Vector<UnsignedInteger16>& provinceOf, UnsignedInteger16& provinceCount) {
+        pixels.reserve(pixels.size() + presetPixels.size());
+        provinceOf.reserve(provinceOf.size() + presetPixels.size());
+        for (SizeT i = 0; i < presetPixels.size(); ++i) {
+            AddPixel(presetPixels[i]);
+            provinceOf.push_back(UnsignedInteger16(provinceCount + presetProvinceOf[i]));
+        }
+        provinceCount += presetProvinceCount;
+        UpdateBoundaries();
+        Vector<Pixel>().swap(presetPixels);
+        Vector<UnsignedInteger16>().swap(presetProvinceOf);
     }
 
     void UpdateBoundaries() {
@@ -233,94 +332,156 @@ struct State {
 
 // Load our map from the in/ folder
 Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
-    Vector<State> statesVector; statesVector.reserve(1600);
+    Vector<State> statesVector; statesVector.reserve(2000);
 
-    // Decode the four input images at the same time - PNG decoding is the slow part of loading
-    SignedInteger32 stateMapChannels{};
-    SignedInteger32 riverMapWidth{}, riverMapHeight{}, riverMapChannels{};
-    SignedInteger32 densityMapWidth{}, densityMapHeight{}, densityMapChannels{};
-    SignedInteger32 terrainMapWidth{}, terrainMapHeight{}, terrainMapChannels{};
-    UnsignedInteger8 *stateMapData = nullptr, *riverMapData = nullptr, *densityMapData = nullptr, *terrainMapData = nullptr;
+    // Decode the input images at the same time - PNG decoding is the slow part of loading
+    struct MapImage { const char* path; SignedInteger32 width = 0, height = 0, channels = 0; UnsignedInteger8* data = nullptr; };
+    MapImage stateMap{ "in/statemap.png" }, riverMap{ "in/rivers.png" }, densityMap{ "in/densitymap.png" },
+             terrainMap{ "in/terrain.png" }, typeMap{ "in/provtypemap.png" }, regionMap{ "in/strategicregionmap.png" },
+             presetMap{ "in/presetprovinces.png" };
     {
-        std::thread riverThread([&]() { riverMapData = stbi_load("in/rivers.png", &riverMapWidth, &riverMapHeight, &riverMapChannels, 4); });
-        std::thread densityThread([&]() { densityMapData = stbi_load("in/densitymap.png", &densityMapWidth, &densityMapHeight, &densityMapChannels, 4); });
-        std::thread terrainThread([&]() { terrainMapData = stbi_load("in/terrain.png", &terrainMapWidth, &terrainMapHeight, &terrainMapChannels, 4); });
-        stateMapData = stbi_load("in/statemap.png", &mapWidth, &mapHeight, &stateMapChannels, 4);
-        riverThread.join();
-        densityThread.join();
-        terrainThread.join();
+        Vector<std::thread> loaders;
+        for (MapImage* image : { &riverMap, &densityMap, &terrainMap, &typeMap, &regionMap, &presetMap })
+            loaders.emplace_back([image]() { image->data = stbi_load(image->path, &image->width, &image->height, &image->channels, 4); });
+        stateMap.data = stbi_load(stateMap.path, &stateMap.width, &stateMap.height, &stateMap.channels, 4);
+        for (auto& loader : loaders) loader.join();
+    }
+    mapWidth = stateMap.width;
+    mapHeight = stateMap.height;
+    for (const MapImage* image : { &stateMap, &riverMap, &densityMap, &terrainMap, &typeMap, &regionMap, &presetMap }) {
+        if (image->data == nullptr) FatalError(String("ERROR: couldn't load ") + image->path);
+        if (image->width != mapWidth || image->height != mapHeight)
+            FatalError(String("ERROR: statemap.png and ") + image->path + " have different sizes.");
     }
 
-    if (riverMapWidth != mapWidth || riverMapHeight != mapHeight) {
-        FatalError("ERROR: statemap.png and rivers.png have different sizes.");
-    }
+    auto colourAt = [](const MapImage& image, SizeT pixel) {
+        return ColourRGB(image.data[pixel * 4 + 0], image.data[pixel * 4 + 1], image.data[pixel * 4 + 2]);
+    };
+    auto typeAt = [&](SizeT pixel) {
+        const UnsignedInteger32 c = colourAt(typeMap, pixel).ToInteger();
+        if (c == SEA_COLOUR) return SEA_PROVINCE;
+        if (c == LAKE_COLOUR) return LAKE_PROVINCE;
+        return LAND_PROVINCE; // LAND_COLOUR, and anything unexpected
+    };
 
-    if (densityMapWidth != mapWidth || densityMapHeight != mapHeight) {
-        FatalError("ERROR: statemap.png and densitymap.png have different sizes.");
-    }
-
-    if (terrainMapWidth != mapWidth || terrainMapHeight != mapHeight) {
-        FatalError("ERROR: statemap.png and terrain.png have different sizes.");
-    }
-
-    HashMap<UnsignedInteger32, UnsignedInteger16> stateColourToIndexMap;
-
-    SizeT imgIndex = 0;
-    // Cache most recently found state
-    UnsignedInteger32 previousColourInt = 0;
-    SizeT previousIndex = 0;
-
-    for (SizeT y = 0; y < mapHeight; y += 1) {
-        for (SizeT x = 0; x < mapWidth; x += 1) {
-            const ColourRGB pixelColour(stateMapData[imgIndex + 0], stateMapData[imgIndex + 1], stateMapData[imgIndex + 2]);
-            const UnsignedInteger32 colourInt = pixelColour.ToInteger();
-
-            const ColourRGB riversColour(riverMapData[imgIndex + 0], riverMapData[imgIndex + 1], riverMapData[imgIndex + 2]);
-            const UnsignedInteger32 riversColourInt = riversColour.ToInteger();
-
-            const ColourRGB densityColour(densityMapData[imgIndex + 0], densityMapData[imgIndex + 1], densityMapData[imgIndex + 2]);
-            const ColourRGB terrainColour(terrainMapData[imgIndex + 0], terrainMapData[imgIndex + 1], terrainMapData[imgIndex + 2]);
-
-            imgIndex += 4;
-
-            // Ocean tile
-            if (colourInt == 0x00141414) { continue; }
-
-            // Current pixel is the same state as the last pixel - cache hit
-            if (previousColourInt == colourInt) {
-                statesVector[previousIndex].AddPixel(x, y);
-                statesVector[previousIndex].AddBarrierPixel(riversColourInt);
-                statesVector[previousIndex].AddDensity(densityColour);
-                statesVector[previousIndex].AddTerrain(terrainColour);
+    // ---- Check statemap.png and provtypemap.png agree on where the sea is ----
+    // Sea pixels must have no state, and every pixel with no state must be sea
+    constexpr UnsignedInteger32 NO_STATE_COLOUR = 0x141414;
+    const SizeT totalMapPixels = SizeT(mapWidth) * mapHeight;
+    {
+        SizeT seaWithState = 0, statelessNotSea = 0;
+        String examples;
+        SizeT exampleCount = 0;
+        for (SizeT pixel = 0; pixel < totalMapPixels; ++pixel) {
+            const Boolean isSea = typeAt(pixel) == SEA_PROVINCE;
+            const Boolean hasState = colourAt(stateMap, pixel).ToInteger() != NO_STATE_COLOUR;
+            if (isSea == hasState) {
+                (isSea ? seaWithState : statelessNotSea)++;
+                if (exampleCount++ < 10)
+                    examples += "\n  (" + std::to_string(pixel % mapWidth) + ", " + std::to_string(pixel / mapWidth) + ") "
+                              + (isSea ? "sea with a state" : "no state but not sea");
             }
+        }
+        if (seaWithState + statelessNotSea > 0)
+            FatalError("ERROR: statemap.png and provtypemap.png don't agree on the sea: "
+                       + std::to_string(seaWithState) + " sea pixels have a state, "
+                       + std::to_string(statelessNotSea) + " pixels with no state aren't sea. First few:" + examples);
+    }
 
-            else if (stateColourToIndexMap.contains(colourInt)){
-                const SizeT stateIndex = stateColourToIndexMap.at(colourInt);
-                statesVector[stateIndex].AddPixel(x, y);
-                statesVector[stateIndex].AddBarrierPixel(riversColourInt);
-                statesVector[stateIndex].AddDensity(densityColour);
-                statesVector[stateIndex].AddTerrain(terrainColour);
-                previousColourInt = colourInt;
-                previousIndex = stateIndex;
-            }
+    // ---- Work out every pixel's group (the State it goes into) ----
+    // Sea is grouped by strategic region, land and lake by state. Groups are keyed by type and colour
+    Vector<UnsignedInteger16> groupOf(totalMapPixels);
+    HashMap<UnsignedInteger64, UnsignedInteger16> groupIndex;
+    Vector<std::pair<ColourRGB, ProvinceType>> groups;
+    UnsignedInteger64 previousKey = UINT64_MAX;
+    UnsignedInteger16 previousGroup = 0;
+    for (SizeT pixel = 0; pixel < totalMapPixels; ++pixel) {
+        const ProvinceType type = typeAt(pixel);
+        const ColourRGB colour = type == SEA_PROVINCE ? colourAt(regionMap, pixel) : colourAt(stateMap, pixel);
+        const UnsignedInteger64 key = (UnsignedInteger64(type) << 32) | colour.ToInteger();
+        if (key != previousKey) {
+            const auto found = groupIndex.find(key);
+            if (found != groupIndex.end()) previousGroup = found->second;
             else {
-                const SizeT newIndex = statesVector.size();
-                statesVector.emplace_back(pixelColour);
-                statesVector[newIndex].AddPixel(x, y);
-                statesVector[newIndex].AddBarrierPixel(riversColourInt);
-                statesVector[newIndex].AddDensity(densityColour);
-                statesVector[newIndex].AddTerrain(terrainColour);
-                previousColourInt = colourInt;
-                previousIndex = newIndex;
-                stateColourToIndexMap[colourInt] = newIndex;
+                previousGroup = UnsignedInteger16(groups.size());
+                groupIndex[key] = previousGroup;
+                groups.emplace_back(colour, type);
             }
+            previousKey = key;
+        }
+        groupOf[pixel] = previousGroup;
+    }
+
+    // ---- Preset provinces ----
+    // presetOf = the pixel's preset province (an index into presetGroup/presetLocalIndex), or -1
+    constexpr SignedInteger32 NOT_PRESET = -1;
+    Vector<SignedInteger32> presetOf(totalMapPixels, NOT_PRESET);
+    Vector<UnsignedInteger16> presetGroup, presetLocalIndex; // its group, and its number within that group
+    Vector<UnsignedInteger16> groupPresetCount(groups.size(), 0);
+    {
+        HashMap<UnsignedInteger32, SignedInteger32> presetIndex;
+        Vector<SizeT> presetFirstPixel;
+        HashMap<SignedInteger32, SizeT> crossings; // preset -> first pixel found outside its group
+        UnsignedInteger32 previousColour = NO_PRESET_COLOUR;
+        SignedInteger32 previousPreset = NOT_PRESET;
+        for (SizeT pixel = 0; pixel < totalMapPixels; ++pixel) {
+            const UnsignedInteger32 c = colourAt(presetMap, pixel).ToInteger();
+            if (c == NO_PRESET_COLOUR) continue;
+            if (c != previousColour) {
+                const auto found = presetIndex.find(c);
+                if (found != presetIndex.end()) previousPreset = found->second;
+                else {
+                    previousPreset = SignedInteger32(presetGroup.size());
+                    presetIndex[c] = previousPreset;
+                    presetGroup.push_back(groupOf[pixel]);
+                    presetLocalIndex.push_back(groupPresetCount[groupOf[pixel]]++);
+                    presetFirstPixel.push_back(pixel);
+                }
+                previousColour = c;
+            }
+            if (presetGroup[previousPreset] != groupOf[pixel]) crossings.try_emplace(previousPreset, pixel);
+            presetOf[pixel] = previousPreset;
+        }
+        if (!crossings.empty()) {
+            auto describe = [&](SizeT pixel) {
+                const UnsignedInteger16 g = groupOf[pixel];
+                const ColourRGB c = groups[g].first;
+                const char* typeName = groups[g].second == SEA_PROVINCE ? "sea, strategic region" : groups[g].second == LAKE_PROVINCE ? "lake, state" : "land, state";
+                char text[96];
+                std::snprintf(text, sizeof(text), "(%zu, %zu) [%s %02X%02X%02X]", pixel % mapWidth, pixel / mapWidth, typeName, c.r, c.g, c.b);
+                return String(text);
+            };
+            String message = "ERROR: " + std::to_string(crossings.size()) +
+                " preset province(s) in presetprovinces.png cross a state, strategic region or province type border:";
+            SizeT listed = 0;
+            for (const auto& [preset, pixel] : crossings) {
+                if (listed++ == 10) { message += "\n  ..."; break; }
+                char colour[16];
+                const ColourRGB c = colourAt(presetMap, pixel);
+                std::snprintf(colour, sizeof(colour), "%02X%02X%02X", c.r, c.g, c.b);
+                message += String("\n  ") + colour + ": " + describe(presetFirstPixel[preset]) + " and " + describe(pixel);
+            }
+            FatalError(message);
         }
     }
 
-	stbi_image_free(stateMapData);
-	stbi_image_free(riverMapData);
-	stbi_image_free(densityMapData);
-	stbi_image_free(terrainMapData);
+    // ---- Build the States, adding pixels row by row (the balancer relies on that order) ----
+    for (const auto& [colour, type] : groups) statesVector.emplace_back(colour, type);
+    for (SizeT g = 0; g < groups.size(); ++g) statesVector[g].presetProvinceCount = groupPresetCount[g];
+    for (SizeT pixel = 0; pixel < totalMapPixels; ++pixel) {
+        State& state = statesVector[groupOf[pixel]];
+        if (presetOf[pixel] != NOT_PRESET) {
+            state.AddPresetPixel(UnsignedInteger16(pixel % mapWidth), UnsignedInteger16(pixel / mapWidth), presetLocalIndex[presetOf[pixel]]);
+            continue;
+        }
+        state.AddPixel(UnsignedInteger16(pixel % mapWidth), UnsignedInteger16(pixel / mapWidth));
+        state.AddBarrierPixel(colourAt(riverMap, pixel).ToInteger());
+        state.AddDensity(colourAt(densityMap, pixel));
+        state.AddTerrain(colourAt(terrainMap, pixel));
+    }
+
+    for (const MapImage* image : { &stateMap, &riverMap, &densityMap, &terrainMap, &typeMap, &regionMap, &presetMap })
+        stbi_image_free(image->data);
 
     // Save some RAM
 	statesVector.shrink_to_fit();
@@ -402,13 +563,23 @@ Vector<PixelType> ClassifyPixels(const State& state) {
     };
 
     // Repeat to account for river intersections
+    // An area is too small if it has fewer than minRegionSize pixels, or (land only) less than
+    // LAND_MIN_RIVER_POCKET_SHARE of a province's density
+    const ProvinceTypeSettings& settings = PROVINCE_TYPE_SETTINGS[state.type];
+    const Float64 minPocketDensity = state.type == LAND_PROVINCE ? LAND_MIN_RIVER_POCKET_SHARE * settings.densityPerProvince : 0.0;
     Vector<SignedInteger32> regionOf;
+    Vector<Float64> densities;
     for (SizeT round = 0; round < 8; ++round) {
         const Vector<SizeT> sizes = LabelLandRegions(state, grid, pixelTypes, regionOf);
         if (sizes.size() <= 1) break;
+        densities.assign(sizes.size(), 0.0);
+        for (SizeT i = 0; i < pixelTypes.size(); ++i)
+            if (regionOf[i] >= 0) densities[regionOf[i]] += state.densityWeights[i];
         Vector<SizeT> toOpen;
         for (SizeT i = 0; i < pixelTypes.size(); ++i) {
-            if (regionOf[i] < 0 || sizes[regionOf[i]] >= MIN_REGION_SIZE) continue;
+            if (regionOf[i] < 0) continue;
+            const SignedInteger32 r = regionOf[i];
+            if (sizes[r] >= settings.minRegionSize && densities[r] >= minPocketDensity) continue;
             ForEachSideNeighbour(i, [&](SizeT n) { if (pixelTypes[n] == BARRIER) toOpen.push_back(n); });
         }
         if (toOpen.empty()) break;
@@ -440,6 +611,20 @@ Vector<Pixel> SelectSeeds(const State& state, const Vector<PixelType>& pixelType
         regionDensity[regionOf[i]] += state.densityWeights[i];
     }
 
+    // Areas touching a preset province are cut off by it, so they get a province however small they are
+    Vector<Boolean> touchesPreset(sizes.size(), false);
+    {
+        static const SignedInteger32 dx4[4] = { 1, 0, -1, 0 }, dy4[4] = { 0, 1, 0, -1 };
+        for (const Pixel& p : state.presetPixels) {
+            for (SignedInteger32 d = 0; d < 4; ++d) {
+                const SignedInteger32 nx = SignedInteger32(p.x) - state.x0 + dx4[d], ny = SignedInteger32(p.y) - state.y0 + dy4[d];
+                if (nx < 0 || ny < 0 || nx >= state.width || ny >= state.height) continue;
+                const SignedInteger32 n = grid[SizeT(ny) * state.width + nx];
+                if (n >= 0 && regionOf[n] >= 0) touchesPreset[regionOf[n]] = true;
+            }
+        }
+    }
+
     // Weighted sampling without replacement: give each pixel the key u^(1 / weight) with u uniform in
     // (0, 1), and take the n largest keys
     std::uniform_real_distribution<Float64> unit(0.0, 1.0);
@@ -455,8 +640,9 @@ Vector<Pixel> SelectSeeds(const State& state, const Vector<PixelType>& pixelType
 
     Vector<Pixel> seeds;
     for (SizeT r = 0; r < sizes.size(); ++r) {
-        if (sizes[r] < MIN_REGION_SIZE) continue;
-        const SizeT n = std::max<SizeT>(1, SizeT(std::llround(regionDensity[r] / DENSITY_PER_PROVINCE)));
+        const ProvinceTypeSettings& settings = PROVINCE_TYPE_SETTINGS[state.type];
+        if (sizes[r] < settings.minRegionSize && !touchesPreset[r]) continue;
+        const SizeT n = std::max<SizeT>(1, SizeT(std::llround(regionDensity[r] / settings.densityPerProvince)));
         sampleWeighted(regionPixels[r], n, seeds);
     }
     // A state made only of small areas still gets one province, in its largest area
@@ -609,9 +795,10 @@ Float64 SizeError(const Float64 density, const Float64 target) {
     return e * e;
 }
 
-Float64 ScoreMap(const Float64 sizeErrorSum, const Float64 neighbourhoodScore, const Float64 terrainMixSum, const SizeT provincesCount) {
-    return (SIZE_WEIGHT * sizeErrorSum + TERRAIN_WEIGHT * terrainMixSum) / Float64(provincesCount)
-        + NEIGHBOURHOOD_WEIGHT * neighbourhoodScore;
+Float64 ScoreMap(const Float64 sizeErrorSum, const Float64 neighbourhoodScore, const Float64 terrainMixSum, const SizeT provincesCount,
+                 const ProvinceTypeSettings& settings) {
+    return (settings.sizeWeight * sizeErrorSum + settings.terrainWeight * terrainMixSum) / Float64(provincesCount)
+        + settings.neighbourhoodWeight * neighbourhoodScore;
 }
 
 // Smooth value noise in [0, 1]: random values on a lattice, blended with a smoothstep
@@ -661,6 +848,8 @@ struct ProvinceBalancer {
     const Vector<PixelType>& pixelTypes;
     const UnsignedInteger16 provincesCount;
     std::mt19937& rng;
+    // This state's province type settings (land / sea / lake)
+    const ProvinceTypeSettings& settings;
 
     // ---- Local grids covering the state's bounding box (index = y * W + x) ----
     const SignedInteger32 W, H;
@@ -698,7 +887,7 @@ struct ProvinceBalancer {
     Float64 neighbourhoodEnergy = 0.0;
 
     // ---- Neighbourhood border score constants ----
-    const Boolean useNeighbourhood = NEIGHBOURHOOD_WEIGHT > 0.0;
+    const Boolean useNeighbourhood = settings.neighbourhoodWeight > 0.0;
     Vector<std::pair<SignedInteger32, SignedInteger32>> neighbourhoodOffsets;
     // The same offsets as index steps in the grid (oy * W + ox), for pixels far enough from its edges
     Vector<SignedInteger64> neighbourhoodSteps;
@@ -730,7 +919,7 @@ struct ProvinceBalancer {
         const Vector<UnsignedInteger16>& pixelProvinceIds,
         const UnsignedInteger16 provincesCount,
         std::mt19937& rng
-    ) : state(state), pixelTypes(pixelTypes), provincesCount(provincesCount), rng(rng),
+    ) : state(state), pixelTypes(pixelTypes), provincesCount(provincesCount), rng(rng), settings(PROVINCE_TYPE_SETTINGS[state.type]),
         W(state.width), H(state.height), G(SizeT(state.width) * state.height), totalPixels(state.pixels.size()),
         label(G, -1), kindGrid(G, INNER_BARRIER), weightGrid(G, 0.0), terrainGrid(G, NO_TERRAIN), terrainCost(G, 1.0),
         provinces(provincesCount), targetSize(provincesCount), boundaryPos(G, -1)
@@ -748,7 +937,7 @@ struct ProvinceBalancer {
 
         // Random target densities
         {
-            std::normal_distribution<Float64> normal(0.0, TARGET_SIZE_SPREAD);
+            std::normal_distribution<Float64> normal(0.0, settings.targetSizeSpread);
             Float64 total = 0.0;
             for (auto& t : targetSize) { t = std::exp(normal(rng)); total += t; }
             for (auto& t : targetSize) t *= totalDensity / total;
@@ -763,7 +952,7 @@ struct ProvinceBalancer {
                 const SignedInteger32 x = SignedInteger32(li % W), y = SignedInteger32(li / W);
                 Float64 n = FractalNoise(Float64(x + state.x0), Float64(y + state.y0), noiseSeed);
                 if (NOISE_RIDGED) n = std::min(1.0, 2.0 * std::abs(2.0 * n - 1.0));
-                terrainCost[li] = 1.0 + NOISE_STRENGTH * n;
+                terrainCost[li] = 1.0 + settings.noiseStrength * n;
                 if (label[li] >= 0) costSum += terrainCost[li];
             }
             // Rescale so the average in-state cost is 1, keeping the score's overall scale unchanged
@@ -780,7 +969,7 @@ struct ProvinceBalancer {
         const Float64 meanSize = Float64(totalPixels) / Float64(provincesCount);
         neighbourhoodScale = 1.0 / (Float64(std::max<SignedInteger64>(1, crossingsPerUnitBorder))
             * Float64(provincesCount) * 2.0 * std::sqrt(PI * meanSize));
-        borderPixelScore = NEIGHBOURHOOD_WEIGHT * neighbourhoodScale * 2.0 * Float64(crossingsPerUnitBorder);
+        borderPixelScore = settings.neighbourhoodWeight * neighbourhoodScale * 2.0 * Float64(crossingsPerUnitBorder);
 
         thinOffsets = DiscOffsets(THIN_RADIUS);
         for (const auto& [ox, oy] : thinOffsets) thinSteps.push_back(SignedInteger64(oy) * W + ox);
@@ -792,7 +981,7 @@ struct ProvinceBalancer {
     void Run() {
         ReattachBarrierPixels(nullptr);
         Rebuild();
-        Anneal(ITERATIONS_PER_PIXEL * totalPixels, TEMPERATURE_START, TEMPERATURE_END);
+        Anneal(settings.iterationsPerPixel * totalPixels, TEMPERATURE_START, TEMPERATURE_END);
 
         for (SizeT pass = 0; pass < CLEANUP_PASSES; ++pass) {
             const SizeT reseeded = ReseedCorelessProvinces();
@@ -1126,8 +1315,8 @@ struct ProvinceBalancer {
                 newNeighbourhoodEnergy += 2.0 * (costOwn - costTarget);
             }
 
-            const Float64 oldScore = ScoreMap(sizeErrorSum, neighbourhoodEnergy * neighbourhoodScale, terrainMixSum, provincesCount);
-            const Float64 newScore = ScoreMap(newSizeErrorSum, newNeighbourhoodEnergy * neighbourhoodScale, newTerrainMixSum, provincesCount);
+            const Float64 oldScore = ScoreMap(sizeErrorSum, neighbourhoodEnergy * neighbourhoodScale, terrainMixSum, provincesCount, settings);
+            const Float64 newScore = ScoreMap(newSizeErrorSum, newNeighbourhoodEnergy * neighbourhoodScale, newTerrainMixSum, provincesCount, settings);
 
             if (newScore > oldScore) {
                 const Float64 temperature = (temperatureStart == temperatureEnd) ? temperatureStart
@@ -1438,13 +1627,14 @@ struct ProvinceBalancer {
         // Own generator, seeded with exactly one draw whatever SMOOTHNESS is - so changing SMOOTHNESS
         // smooths the same map differently instead of changing every state generated after this one
         std::mt19937 smoothRng{ UnsignedInteger32(rng()) };
-        if (SMOOTHNESS <= 0.0) return;
+        const Float64 smoothness = settings.smoothness;
+        if (smoothness <= 0.0) return;
         constexpr SizeT smoothingPasses = 3;
         Vector<std::pair<SignedInteger32, SignedInteger32>> disc;
-        const SignedInteger32 r = SignedInteger32(std::ceil(SMOOTHNESS));
+        const SignedInteger32 r = SignedInteger32(std::ceil(smoothness));
         for (SignedInteger32 oy = -r; oy <= r; ++oy)
             for (SignedInteger32 ox = -r; ox <= r; ++ox)
-                if (Float64(ox * ox + oy * oy) <= SMOOTHNESS * SMOOTHNESS + 1e-9) disc.emplace_back(ox, oy);
+                if (Float64(ox * ox + oy * oy) <= smoothness * smoothness + 1e-9) disc.emplace_back(ox, oy);
 
         Vector<UnsignedInteger32> order;
         for (const SizeT li : pixelIndex) if (label[li] >= 0) order.push_back(UnsignedInteger32(li));
@@ -1479,7 +1669,7 @@ struct ProvinceBalancer {
                 // Terrain veto: don't move a pixel out of a province whose main terrain it matches into
                 // one whose main terrain it doesn't, so smoothing doesn't undo the terrain alignment
                 const UnsignedInteger8 terrain = terrainGrid[li];
-                if (TERRAIN_WEIGHT > 0.0 && terrain != NO_TERRAIN &&
+                if (settings.terrainWeight > 0.0 && terrain != NO_TERRAIN &&
                     provinces[own].MainTerrain() == terrain && provinces[best].MainTerrain() != terrain) continue;
                 label[li] = best;
                 provinces[own].Remove(x, y, weightGrid[li], terrainGrid[li]);
@@ -1624,39 +1814,146 @@ void CleanProvinces(
     balancer.WriteBack(pixelProvinceIds);
 }
 
-// Everything for one state, start to finish: seeds, starting layout, balancing, then colouring its
-// provinces into provincesMapData. States never share pixels, so several can run at once.
-void ProcessState(const State& state, std::mt19937& rng, UnsignedInteger8* provincesMapData, const SignedInteger32 mapWidth) {
+// In game, four provinces can't meet at a point: no 2x2 block of pixels may hold four different provinces.
+// Fix each such junction by moving one of its pixels into the province of a pixel beside it (in the same
+// state/strategic region), picking the move that removes the most junctions without splitting a province,
+// and touching preset provinces only when nothing else works. Junctions where no two pixels side by side
+// share a state/strategic region can't be fixed without crossing its border - those are returned.
+Vector<Pixel> FixFourWayJunctions(
+    const Vector<State>& states,
+    Vector<Vector<UnsignedInteger16>>& provinceIds,
+    const Vector<UnsignedInteger16>& provinceCounts,
+    const Vector<SizeT>& generatedPixelCounts,
+    const SignedInteger32 W, const SignedInteger32 H
+) {
+    constexpr UnsignedInteger32 NONE = UINT32_MAX;
+    const SizeT N = SizeT(W) * H;
+    // Every pixel's province (numbered across the whole map), state, and whether it's in a preset province
+    Vector<UnsignedInteger32> province(N, NONE), offset(states.size(), 0);
+    Vector<UnsignedInteger16> stateOf(N, 0);
+    Vector<Boolean> preset(N, false);
+    UnsignedInteger32 total = 0;
+    for (SizeT s = 0; s < states.size(); ++s) { offset[s] = total; total += provinceCounts[s]; }
+    Vector<UnsignedInteger32> provinceSize(total, 0);
+    for (SizeT s = 0; s < states.size(); ++s) {
+        for (SizeT i = 0; i < states[s].pixels.size(); ++i) {
+            const SizeT pixel = SizeT(states[s].pixels[i].y) * W + states[s].pixels[i].x;
+            province[pixel] = offset[s] + provinceIds[s][i];
+            stateOf[pixel] = UnsignedInteger16(s);
+            preset[pixel] = i >= generatedPixelCounts[s];
+            ++provinceSize[province[pixel]];
+        }
+    }
+
+    // Is the 2x2 block with top-left corner (x, y) a four-way junction?
+    auto isJunction = [&](const SignedInteger32 x, const SignedInteger32 y) {
+        if (x < 0 || y < 0 || x + 1 >= W || y + 1 >= H) return false;
+        const SizeT i = SizeT(y) * W + x;
+        const UnsignedInteger32 a = province[i], b = province[i + 1], c = province[i + W], d = province[i + W + 1];
+        return a != b && a != c && a != d && b != c && b != d && c != d;
+    };
+    // Junctions among the four blocks that contain pixel (x, y)
+    auto junctionsAround = [&](const SignedInteger32 x, const SignedInteger32 y) {
+        return SizeT(isJunction(x - 1, y - 1)) + isJunction(x, y - 1) + isJunction(x - 1, y) + isJunction(x, y);
+    };
+    // Can pixel (x, y) leave its province without splitting it? Its province's pixels among the eight around
+    // it must form at most one 4-connected group touching it by a side
+    auto canLeave = [&](const SignedInteger32 x, const SignedInteger32 y) {
+        const UnsignedInteger32 own = province[SizeT(y) * W + x];
+        if (provinceSize[own] < 2) return false;
+        Boolean in[3][3] = {};
+        for (SignedInteger32 dy = -1; dy <= 1; ++dy)
+            for (SignedInteger32 dx = -1; dx <= 1; ++dx) {
+                const SignedInteger32 nx = x + dx, ny = y + dy;
+                in[dy + 1][dx + 1] = (dx || dy) && nx >= 0 && ny >= 0 && nx < W && ny < H && province[SizeT(ny) * W + nx] == own;
+            }
+        Boolean seen[3][3] = {};
+        SizeT groups = 0;
+        static const SignedInteger32 sides[4][2] = { { 0, 1 }, { 1, 0 }, { 1, 2 }, { 2, 1 } }; // [row][col]
+        for (const auto& side : sides) {
+            if (!in[side[0]][side[1]] || seen[side[0]][side[1]]) continue;
+            ++groups;
+            SignedInteger32 stack[9][2]; SizeT top = 0;
+            stack[top][0] = side[0]; stack[top][1] = side[1]; ++top;
+            seen[side[0]][side[1]] = true;
+            while (top) {
+                --top;
+                const SignedInteger32 r = stack[top][0], c = stack[top][1];
+                static const SignedInteger32 d4[4][2] = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
+                for (const auto& d : d4) {
+                    const SignedInteger32 nr = r + d[0], nc = c + d[1];
+                    if (nr < 0 || nc < 0 || nr > 2 || nc > 2 || !in[nr][nc] || seen[nr][nc]) continue;
+                    seen[nr][nc] = true; stack[top][0] = nr; stack[top][1] = nc; ++top;
+                }
+            }
+        }
+        return groups <= 1;
+    };
+
+    Vector<std::pair<SignedInteger32, SignedInteger32>> work;
+    for (SignedInteger32 y = 0; y + 1 < H; ++y)
+        for (SignedInteger32 x = 0; x + 1 < W; ++x)
+            if (isJunction(x, y)) work.emplace_back(x, y);
+
+    // Pairs of pixels side by side within a 2x2 block, as offsets from its top-left corner
+    static const SignedInteger32 pairs[4][4] = { { 0, 0, 1, 0 }, { 0, 1, 1, 1 }, { 0, 0, 0, 1 }, { 1, 0, 1, 1 } };
+    Vector<Pixel> unfixable;
+    while (!work.empty()) {
+        const auto [bx, by] = work.back(); work.pop_back();
+        if (!isJunction(bx, by)) continue;
+
+        // Try every move of a pixel into the province beside it; each move must strictly reduce the number
+        // of junctions around it, so this always finishes
+        SignedInteger32 bestX = -1, bestY = -1; UnsignedInteger32 bestProvince = NONE;
+        SizeT bestScore = SIZE_MAX;
+        for (const auto& pr : pairs) {
+            for (SignedInteger32 flip = 0; flip < 2; ++flip) {
+                const SignedInteger32 qx = bx + pr[flip ? 2 : 0], qy = by + pr[flip ? 3 : 1];
+                const SignedInteger32 nx = bx + pr[flip ? 0 : 2], ny = by + pr[flip ? 1 : 3];
+                const SizeT q = SizeT(qy) * W + qx, n = SizeT(ny) * W + nx;
+                if (stateOf[q] != stateOf[n] || !canLeave(qx, qy)) continue;
+                const SizeT before = junctionsAround(qx, qy);
+                const UnsignedInteger32 own = province[q];
+                province[q] = province[n];
+                const SizeT after = junctionsAround(qx, qy);
+                province[q] = own;
+                if (after >= before) continue;
+                const SizeT score = (preset[q] ? 16 : 0) + after;
+                if (score < bestScore) { bestScore = score; bestX = qx; bestY = qy; bestProvince = province[n]; }
+            }
+        }
+        if (bestX < 0) { unfixable.emplace_back(UnsignedInteger16(bx), UnsignedInteger16(by)); continue; }
+
+        const SizeT q = SizeT(bestY) * W + bestX;
+        --provinceSize[province[q]];
+        ++provinceSize[bestProvince];
+        province[q] = bestProvince;
+        for (SignedInteger32 dy = -1; dy <= 0; ++dy)
+            for (SignedInteger32 dx = -1; dx <= 0; ++dx)
+                if (isJunction(bestX + dx, bestY + dy)) work.emplace_back(bestX + dx, bestY + dy);
+    }
+
+    for (SizeT s = 0; s < states.size(); ++s)
+        for (SizeT i = 0; i < states[s].pixels.size(); ++i)
+            provinceIds[s][i] = UnsignedInteger16(province[SizeT(states[s].pixels[i].y) * W + states[s].pixels[i].x] - offset[s]);
+    return unfixable;
+}
+
+// Everything for one state, start to finish: seeds, starting layout and balancing. Returns each pixel's
+// province (0 to provincesCount - 1, in state.pixels order); colouring happens afterwards, in main().
+Vector<UnsignedInteger16> ProcessState(const State& state, std::mt19937& rng, UnsignedInteger16& provincesCount) {
     // Work out which pixels are barriers (rivers), then pick random points in each state - per
     // separate land area, more of them where it's denser - to be our province centres
     const Vector<PixelType> pixelTypes = ClassifyPixels(state);
     Vector<Pixel> randomPixels = SelectSeeds(state, pixelTypes, rng);
-    const UnsignedInteger16 provincesCount = randomPixels.size();
+    provincesCount = randomPixels.size();
 
     // Given our semi-random points on the map, assign each pixel in the state to it's nearest point
     Vector<UnsignedInteger16> pixelProvinceIds = AssignProvinces(state, pixelTypes, randomPixels);
 
     // Balance province sizes and shapes by flipping border pixels between neighbouring provinces
     CleanProvinces(state, pixelTypes, pixelProvinceIds, provincesCount, rng);
-
-    // Colour in the provinces
-    /*
-    Vector<ColourRGB> colours = GenerateNRandomColours(
-        provincesCount,
-        std::max(0, SignedInteger32(state.colour.r) - 25), std::min(255, SignedInteger32(state.colour.r) + 25),
-        std::max(0, SignedInteger32(state.colour.g) - 25), std::min(255, SignedInteger32(state.colour.g) + 25),
-        std::max(0, SignedInteger32(state.colour.b) - 25), std::min(255, SignedInteger32(state.colour.b) + 25),
-        rng
-    );
-    */
-    Vector<ColourRGB> colours = GenerateNRandomColours(provincesCount, 0, 255, 0, 255, 0, 255, rng);
-    for (SizeT i = 0; i < state.pixels.size(); i++) {
-        const UnsignedInteger16 localId = pixelProvinceIds[i];
-        const SizeT index = ((SizeT(state.pixels[i].y) * mapWidth) + state.pixels[i].x) * 3;
-        provincesMapData[index + 0] = colours[localId].r;
-        provincesMapData[index + 1] = colours[localId].g;
-        provincesMapData[index + 2] = colours[localId].b;
-    }
+    return pixelProvinceIds;
 }
 
 int main() {
@@ -1674,6 +1971,7 @@ int main() {
     // One seed per state, drawn up front, so the map doesn't depend on which thread runs which state
     Vector<UnsignedInteger32> stateSeeds(statesVector.size());
     for (auto& seed : stateSeeds) seed = UnsignedInteger32(rng());
+    std::mt19937 colourRng{ UnsignedInteger32(rng()) };
 
     // Order the states based on size and divide them into threadCount vectors
     const SizeT threadCount = (THREAD_COUNT == 0) ?
@@ -1696,18 +1994,75 @@ int main() {
         }
     }
 
-    // Compute the states and write the provinces to provincesMapData concurrently, as no
-    // pixel will ever be overwritten by another state
+    // Compute the states concurrently - each thread works through its own list of states
+    Vector<Vector<UnsignedInteger16>> stateProvinceIds(statesVector.size());
+    Vector<UnsignedInteger16> stateProvinceCounts(statesVector.size(), 0);
     Vector<std::thread> threads;
     for (SizeT t = 0; t < threadCount; ++t) {
         threads.emplace_back([&, t]() {
             for (const SizeT s : stateGroups[t]) {
+                if (statesVector[s].pixels.empty()) continue; // made entirely of preset provinces
                 std::mt19937 stateRng(stateSeeds[s]);
-                ProcessState(statesVector[s], stateRng, provincesMapData, mapWidth);
+                stateProvinceIds[s] = ProcessState(statesVector[s], stateRng, stateProvinceCounts[s]);
             }
         });
     }
     for (auto& thread : threads) thread.join();
+
+    // Add each state's preset provinces to its pixels, after the generated ones
+    Vector<SizeT> generatedPixelCounts(statesVector.size());
+    for (SizeT s = 0; s < statesVector.size(); ++s) {
+        generatedPixelCounts[s] = statesVector[s].pixels.size();
+        statesVector[s].MergePresetProvinces(stateProvinceIds[s], stateProvinceCounts[s]);
+    }
+
+    // No four provinces may meet at one point
+    const Vector<Pixel> unfixableJunctions = FixFourWayJunctions(statesVector, stateProvinceIds, stateProvinceCounts, generatedPixelCounts, mapWidth, mapHeight);
+    if (!unfixableJunctions.empty()) {
+        std::cerr << "WARNING: " << unfixableJunctions.size() << " point(s) where four provinces meet couldn't be fixed, as the "
+                     "four pixels are in different states/strategic regions (fix in statemap.png / strategicregionmap.png):";
+        for (SizeT i = 0; i < unfixableJunctions.size() && i < 20; ++i)
+            std::cerr << (i ? ", " : " ") << "(" << unfixableJunctions[i].x << ", " << unfixableJunctions[i].y << ")";
+        std::cerr << (unfixableJunctions.size() > 20 ? ", ...\n" : "\n");
+    }
+
+    SizeT provinceCount = 0;
+    for (const auto count : stateProvinceCounts) { provinceCount += count; }
+
+    // Colour the map in
+    {
+        Set<UnsignedInteger32> usedColours;
+        for (SizeT s = 0; s < statesVector.size(); ++s) {
+            const State& state = statesVector[s];
+            SignedInteger32 rMin = SEA_RED_MIN,   rMax = SEA_RED_MAX;
+            SignedInteger32 gMin = SEA_GREEN_MIN, gMax = SEA_GREEN_MAX;
+            SignedInteger32 bMin = SEA_BLUE_MIN,  bMax = SEA_BLUE_MAX;
+            if (state.type != SEA_PROVINCE) {
+                const auto low  = [](const UnsignedInteger8 v) { return std::max(0,   SignedInteger32(v) - STATE_COLOUR_VARIATION); };
+                const auto high = [](const UnsignedInteger8 v) { return std::min(255, SignedInteger32(v) + STATE_COLOUR_VARIATION); };
+                rMin = low(state.colour.r); rMax = high(state.colour.r);
+                gMin = low(state.colour.g); gMax = high(state.colour.g);
+                bMin = low(state.colour.b); bMax = high(state.colour.b);
+            }
+            std::uniform_int_distribution<SignedInteger32> red(rMin, rMax), green(gMin, gMax), blue(bMin, bMax);
+
+            Vector<ColourRGB> colours(stateProvinceCounts[s]);
+            for (auto& colour : colours) {
+                UnsignedInteger32 c;
+                do {
+                    c = (UnsignedInteger32(red(colourRng)) << 16) | (UnsignedInteger32(green(colourRng)) << 8) | UnsignedInteger32(blue(colourRng));
+                } while (c == 0x141414 || !usedColours.insert(c).second);
+                colour = ColourRGB(UnsignedInteger8(c >> 16), UnsignedInteger8(c >> 8), UnsignedInteger8(c));
+            }
+            for (SizeT i = 0; i < state.pixels.size(); i++) {
+                const ColourRGB& colour = colours[stateProvinceIds[s][i]];
+                const SizeT index = ((SizeT(state.pixels[i].y) * mapWidth) + state.pixels[i].x) * 3;
+                provincesMapData[index + 0] = colour.r;
+                provincesMapData[index + 1] = colour.g;
+                provincesMapData[index + 2] = colour.b;
+            }
+        }
+    }
 
     // Province maps are big flat areas of colour, which compress well without PNG's row filters -
     // skipping stb's per-row filter search roughly halves the write time and gives a slightly smaller file
@@ -1716,6 +2071,6 @@ int main() {
     stbi_write_png("out/provinces.png", mapWidth, mapHeight, 3, provincesMapData, mapWidth * 3);
     delete[] provincesMapData;
 
-    std::cout << std::format("Processed statemap in {0}\n", GetTimeElapsedFromStart(startTime));
+    std::cout << std::format("Processed statemap in {0}.\nGenerated {1} provinces.", GetTimeElapsedFromStart(startTime), provinceCount);
     return 0;
 }
