@@ -134,3 +134,12 @@ CLEANUP_ITERATIONS_PER_PIXEL = 4
 LAND_SMOOTHNESS              = 2.0
 SEA_SMOOTHNESS               = 2.0
 LAKE_SMOOTHNESS              = 2.0
+
+# ---- Game files written to out/ alongside provinces.bmp ----
+# definition.csv, states/ and strategicregions/ all use fresh IDs each run. These fill in the parts of the
+# state and definition files the maps can't tell the generator - edit the written files afterwards as needed.
+# Manpower and state_category given to every state file
+STATE_MANPOWER               = 1000
+STATE_CATEGORY               = rural
+# Continent number given to land and lake provinces in definition.csv (sea provinces always get 0)
+CONTINENT                    = 1

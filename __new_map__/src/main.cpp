@@ -14,6 +14,7 @@
 #include <fstream>
 #include <string>
 #include <stdexcept>
+#include <filesystem>
 
 
 #include "functions.hpp"
@@ -90,6 +91,9 @@ SizeT CLEANUP_ITERATIONS_PER_PIXEL;
 Float64 LAND_SMOOTHNESS;
 Float64 SEA_SMOOTHNESS;
 Float64 LAKE_SMOOTHNESS;
+SizeT STATE_MANPOWER;
+String STATE_CATEGORY;
+SizeT CONTINENT;
 
 // The per-type settings, gathered so the code can look them up by province type (filled in by LoadSettings)
 enum ProvinceType : UnsignedInteger8 { LAND_PROVINCE, SEA_PROVINCE, LAKE_PROVINCE, PROVINCE_TYPE_COUNT };
@@ -101,7 +105,7 @@ struct ProvinceTypeSettings {
 ProvinceTypeSettings PROVINCE_TYPE_SETTINGS[PROVINCE_TYPE_COUNT];
 
 void LoadSettings(const char* path) {
-    enum Kind { SIZE, FLOAT, INT, COLOUR, BYTE, BOOL };
+    enum Kind { SIZE, FLOAT, INT, COLOUR, BYTE, BOOL, TEXT };
     struct Setting { const char* name; Kind kind; void* target; Boolean found = false; };
     Setting settings[] = {
         { "THREAD_COUNT", SIZE, &THREAD_COUNT },
@@ -159,6 +163,9 @@ void LoadSettings(const char* path) {
         { "LAND_SMOOTHNESS", FLOAT, &LAND_SMOOTHNESS },
         { "SEA_SMOOTHNESS", FLOAT, &SEA_SMOOTHNESS },
         { "LAKE_SMOOTHNESS", FLOAT, &LAKE_SMOOTHNESS },
+        { "STATE_MANPOWER", SIZE, &STATE_MANPOWER },
+        { "STATE_CATEGORY", TEXT, &STATE_CATEGORY },
+        { "CONTINENT", SIZE, &CONTINENT },
     };
 
     std::ifstream file(path);
@@ -202,6 +209,12 @@ void LoadSettings(const char* path) {
                     const SignedInteger64 byte = std::stoll(value, &used, 10);
                     if (byte < 0 || byte > 255) fail("\"" + name + "\" must be from 0 to 255");
                     *static_cast<UnsignedInteger8*>(setting->target) = UnsignedInteger8(byte); break;
+                }
+                case TEXT: {
+                    if (value.empty() || value.find_first_of(" \t\"{}=") != String::npos)
+                        fail("\"" + name + "\" must be a single word");
+                    *static_cast<String*>(setting->target) = value;
+                    used = value.size(); break;
                 }
                 case BOOL: {
                     if (value == "true") *static_cast<Boolean*>(setting->target) = true;
@@ -320,6 +333,11 @@ struct State {
     Vector<Pixel> presetPixels;
     Vector<UnsignedInteger16> presetProvinceOf; // which of this state's preset provinces each preset pixel is in
     UnsignedInteger16 presetProvinceCount = 0;
+    Vector<TerrainType> presetTerrains;
+
+    // The strategic region the state's provinces go in: the region most of the state's pixels are in
+    // (a state can't be split between regions in game). For sea, the region the state was made from
+    UnsignedInteger32 regionColour = 0;
 
     State(): colour(), pixels(), barrierPixels(), densityWeights(), terrains() {
         pixels.reserve(6000);
@@ -371,24 +389,27 @@ struct State {
         }
     }
 
-    void AddPresetPixel(const UnsignedInteger16 x, const UnsignedInteger16 y, const UnsignedInteger16 presetProvince) {
+    void AddPresetPixel(const UnsignedInteger16 x, const UnsignedInteger16 y, const UnsignedInteger16 presetProvince, const ColourRGB terrainColour) {
         presetPixels.emplace_back(x, y);
         presetProvinceOf.push_back(presetProvince);
+        presetTerrains.push_back(type == LAND_PROVINCE ? TerrainFromColour(terrainColour.ToInteger()) : NO_TERRAIN);
     }
 
-    // Move the preset provinces into pixels, numbered after the generated provinces. Only pixels (and
-    // provinceOf) grow - barrierPixels, densityWeights and terrains are only needed while generating
+    // Move the preset provinces into pixels (and terrains), numbered after the generated provinces.
+    // barrierPixels and densityWeights don't grow - they're only needed while generating
     void MergePresetProvinces(Vector<UnsignedInteger16>& provinceOf, UnsignedInteger16& provinceCount) {
         pixels.reserve(pixels.size() + presetPixels.size());
         provinceOf.reserve(provinceOf.size() + presetPixels.size());
         for (SizeT i = 0; i < presetPixels.size(); ++i) {
             AddPixel(presetPixels[i]);
+            terrains.push_back(presetTerrains[i]);
             provinceOf.push_back(UnsignedInteger16(provinceCount + presetProvinceOf[i]));
         }
         provinceCount += presetProvinceCount;
         UpdateBoundaries();
         Vector<Pixel>().swap(presetPixels);
         Vector<UnsignedInteger16>().swap(presetProvinceOf);
+        Vector<TerrainType>().swap(presetTerrains);
     }
 
     void UpdateBoundaries() {
@@ -541,13 +562,55 @@ Vector<State> LoadStates(SignedInteger32& mapWidth, SignedInteger32& mapHeight){
         }
     }
 
+    // ---- Each group's strategic region: where most of its pixels are ----
+    Vector<UnsignedInteger32> groupRegion(groups.size(), 0);
+    {
+        Vector<HashMap<UnsignedInteger32, SizeT>> regionCounts(groups.size());
+        SizeT run = 0;
+        UnsignedInteger16 runGroup = groupOf[0];
+        UnsignedInteger32 runRegion = colourAt(regionMap, 0).ToInteger();
+        for (SizeT pixel = 0; pixel <= totalMapPixels; ++pixel) {
+            const Boolean end = pixel == totalMapPixels;
+            const UnsignedInteger32 region = end ? 0 : colourAt(regionMap, pixel).ToInteger();
+            if (end || groupOf[pixel] != runGroup || region != runRegion) {
+                regionCounts[runGroup][runRegion] += run;
+                if (end) break;
+                run = 0; runGroup = groupOf[pixel]; runRegion = region;
+            }
+            ++run;
+        }
+        Vector<std::pair<SizeT, UnsignedInteger32>> split; // pixels outside the chosen region, state colour
+        for (SizeT g = 0; g < groups.size(); ++g) {
+            SizeT best = 0, total = 0;
+            for (const auto& [region, count] : regionCounts[g]) {
+                total += count;
+                if (count > best || (count == best && region < groupRegion[g])) { best = count; groupRegion[g] = region; }
+            }
+            if (groups[g].second == LAND_PROVINCE && best < total) split.emplace_back(total - best, groups[g].first.ToInteger());
+        }
+        if (!split.empty()) {
+            std::sort(split.rbegin(), split.rend());
+            std::cerr << "WARNING: " << split.size() << " state(s) cross a strategic region border - each is put in the region most "
+                         "of it is in. Most pixels outside that region:";
+            for (SizeT i = 0; i < split.size() && i < 10; ++i) {
+                char text[48];
+                std::snprintf(text, sizeof(text), "%s state %06X (%zu px)", i ? "," : "", split[i].second, split[i].first);
+                std::cerr << text;
+            }
+            std::cerr << (split.size() > 10 ? ", ...\n" : "\n");
+        }
+    }
+
     // ---- Build the States, adding pixels row by row (the balancer relies on that order) ----
     for (const auto& [colour, type] : groups) statesVector.emplace_back(colour, type);
-    for (SizeT g = 0; g < groups.size(); ++g) statesVector[g].presetProvinceCount = groupPresetCount[g];
+    for (SizeT g = 0; g < groups.size(); ++g) {
+        statesVector[g].presetProvinceCount = groupPresetCount[g];
+        statesVector[g].regionColour = groupRegion[g];
+    }
     for (SizeT pixel = 0; pixel < totalMapPixels; ++pixel) {
         State& state = statesVector[groupOf[pixel]];
         if (presetOf[pixel] != NOT_PRESET) {
-            state.AddPresetPixel(UnsignedInteger16(pixel % mapWidth), UnsignedInteger16(pixel / mapWidth), presetLocalIndex[presetOf[pixel]]);
+            state.AddPresetPixel(UnsignedInteger16(pixel % mapWidth), UnsignedInteger16(pixel / mapWidth), presetLocalIndex[presetOf[pixel]], colourAt(terrainMap, pixel));
             continue;
         }
         state.AddPixel(UnsignedInteger16(pixel % mapWidth), UnsignedInteger16(pixel / mapWidth));
@@ -2015,6 +2078,171 @@ Vector<Pixel> FixFourWayJunctions(
     return unfixable;
 }
 
+// Write the game files that go with provinces.bmp, all with fresh IDs:
+// - out/definition.csv: every province's ID, colour, type, coastal, terrain and continent
+// - out/states/<id>-State_<id>.txt: one per state (land provinces only - lakes and sea aren't in states)
+// - out/strategicregions/<id>-StrategicRegion_<id>.txt: one per strategic region that has provinces
+// Provinces are numbered from 1 in the order they first appear reading the map row by row; states and
+// regions in the order of their first province. Old .txt files in the two folders are removed first.
+void WriteGameFiles(
+    const Vector<State>& states,
+    const Vector<Vector<UnsignedInteger16>>& provinceIds,
+    const Vector<Vector<ColourRGB>>& provinceColours,
+    const SignedInteger32 W, const SignedInteger32 H
+) {
+    namespace fs = std::filesystem;
+    static const char* TERRAIN_NAMES[TERRAIN_TYPE_COUNT] = { "plains", "forest", "hills", "desert", "mountain", "marsh", "urban", "ocean", "jungle" };
+    static const char* TYPE_NAMES[PROVINCE_TYPE_COUNT] = { "land", "sea", "lake" };
+
+    // ---- Number the provinces ----
+    struct ProvinceInfo { SizeT state; UnsignedInteger16 local; SizeT firstPixel; };
+    Vector<ProvinceInfo> provinces;
+    Vector<SizeT> offset(states.size(), 0);
+    for (SizeT s = 0; s < states.size(); ++s) {
+        offset[s] = provinces.size();
+        for (SizeT p = 0; p < provinceColours[s].size(); ++p) provinces.push_back({ s, UnsignedInteger16(p), SIZE_MAX });
+        for (SizeT i = 0; i < states[s].pixels.size(); ++i) {
+            SizeT& first = provinces[offset[s] + provinceIds[s][i]].firstPixel;
+            first = std::min(first, SizeT(states[s].pixels[i].y) * W + states[s].pixels[i].x);
+        }
+    }
+    Vector<SizeT> order(provinces.size());
+    for (SizeT i = 0; i < order.size(); ++i) order[i] = i;
+    std::sort(order.begin(), order.end(), [&](SizeT a, SizeT b) { return provinces[a].firstPixel < provinces[b].firstPixel; });
+    Vector<UnsignedInteger32> gameId(provinces.size()); // index in provinces -> ID in game (from 1)
+    for (SizeT k = 0; k < order.size(); ++k) gameId[order[k]] = UnsignedInteger32(k + 1);
+
+    // ---- Terrain (most common terrain.png type) and coastal (land beside sea, or sea beside land) ----
+    Vector<Array<UnsignedInteger32, TERRAIN_TYPE_COUNT>> terrainCount(provinces.size());
+    Vector<UnsignedInteger32> provinceAt(SizeT(W) * H, UINT32_MAX);
+    for (SizeT s = 0; s < states.size(); ++s) {
+        for (SizeT i = 0; i < states[s].pixels.size(); ++i) {
+            const SizeT index = offset[s] + provinceIds[s][i];
+            provinceAt[SizeT(states[s].pixels[i].y) * W + states[s].pixels[i].x] = UnsignedInteger32(index);
+            if (i < states[s].terrains.size() && states[s].terrains[i] < TERRAIN_TYPE_COUNT) ++terrainCount[index][states[s].terrains[i]];
+        }
+    }
+    Vector<Boolean> coastal(provinces.size(), false);
+    auto checkPair = [&](UnsignedInteger32 a, UnsignedInteger32 b) {
+        if (a == b || a == UINT32_MAX || b == UINT32_MAX) return;
+        const ProvinceType ta = states[provinces[a].state].type, tb = states[provinces[b].state].type;
+        if ((ta == LAND_PROVINCE && tb == SEA_PROVINCE) || (ta == SEA_PROVINCE && tb == LAND_PROVINCE)) coastal[a] = coastal[b] = true;
+    };
+    for (SignedInteger32 y = 0; y < H; ++y) {
+        for (SignedInteger32 x = 0; x < W; ++x) {
+            const SizeT i = SizeT(y) * W + x;
+            if (x + 1 < W) checkPair(provinceAt[i], provinceAt[i + 1]);
+            if (y + 1 < H) checkPair(provinceAt[i], provinceAt[i + W]);
+        }
+    }
+    Vector<UnsignedInteger32>().swap(provinceAt);
+
+    // ---- definition.csv ----
+    fs::create_directories("out");
+    {
+        std::ofstream file("out/definition.csv");
+        if (!file) FatalError("ERROR: couldn't write out/definition.csv");
+        file << "0;0;0;0;land;false;unknown;0\n";
+        for (const SizeT index : order) {
+            const ProvinceInfo& info = provinces[index];
+            const ProvinceType type = states[info.state].type;
+            const ColourRGB& c = provinceColours[info.state][info.local];
+            const char* terrain = type == SEA_PROVINCE ? "ocean" : type == LAKE_PROVINCE ? "lakes" : "plains";
+            if (type == LAND_PROVINCE) {
+                UnsignedInteger32 best = 0;
+                // Ocean isn't a valid terrain for land, so ignore any ocean-coloured terrain.png pixels on it
+                for (SizeT t = 0; t < TERRAIN_TYPE_COUNT; ++t)
+                    if (t != OCEAN && terrainCount[index][t] > best) { best = terrainCount[index][t]; terrain = TERRAIN_NAMES[t]; }
+            }
+            file << gameId[index] << ';' << SignedInteger32(c.r) << ';' << SignedInteger32(c.g) << ';' << SignedInteger32(c.b) << ';'
+                 << TYPE_NAMES[type] << ';' << (coastal[index] ? "true" : "false") << ';' << terrain << ';'
+                 << (type == SEA_PROVINCE ? 0 : CONTINENT) << '\n';
+        }
+    }
+
+    // Empty a folder of old .txt files (IDs change between runs, so old files would otherwise linger)
+    auto prepareFolder = [](const fs::path& folder) {
+        fs::create_directories(folder);
+        for (const auto& entry : fs::directory_iterator(folder))
+            if (entry.is_regular_file() && entry.path().extension() == ".txt") fs::remove(entry.path());
+    };
+    auto provinceList = [](Vector<UnsignedInteger32> ids) {
+        std::sort(ids.begin(), ids.end());
+        String text;
+        for (const UnsignedInteger32 id : ids) text += std::to_string(id) + ' ';
+        return text;
+    };
+
+    // ---- States: one per land group, numbered by their first province ----
+    {
+        Vector<std::pair<UnsignedInteger32, SizeT>> landStates; // (lowest province ID, state index)
+        Vector<Vector<UnsignedInteger32>> ids(states.size());
+        for (SizeT s = 0; s < states.size(); ++s) {
+            if (states[s].type != LAND_PROVINCE || provinceColours[s].empty()) continue;
+            for (SizeT p = 0; p < provinceColours[s].size(); ++p) ids[s].push_back(gameId[offset[s] + p]);
+            landStates.emplace_back(*std::min_element(ids[s].begin(), ids[s].end()), s);
+        }
+        std::sort(landStates.begin(), landStates.end());
+        prepareFolder("out/states");
+        for (SizeT k = 0; k < landStates.size(); ++k) {
+            const SizeT id = k + 1;
+            std::ofstream file("out/states/" + std::to_string(id) + "-State_" + std::to_string(id) + ".txt");
+            if (!file) FatalError("ERROR: couldn't write to out/states");
+            file << "state={\n"
+                 << "\tid=" << id << "\n"
+                 << "\tname=\"STATE_" << id << "\"\n"
+                 << "\tmanpower=" << STATE_MANPOWER << "\n"
+                 << "\tstate_category=" << STATE_CATEGORY << "\n"
+                 << "\thistory={\n\t}\n"
+                 << "\tprovinces={\n\t\t" << provinceList(ids[landStates[k].second]) << "\n\t}\n"
+                 << "}\n";
+        }
+    }
+
+    // ---- Strategic regions: every province goes in its state's region ----
+    {
+        HashMap<UnsignedInteger32, SizeT> regionIndex;
+        Vector<Vector<UnsignedInteger32>> regionProvinces;
+        for (SizeT s = 0; s < states.size(); ++s) {
+            if (provinceColours[s].empty()) continue;
+            const auto [it, added] = regionIndex.try_emplace(states[s].regionColour, regionProvinces.size());
+            if (added) regionProvinces.emplace_back();
+            for (SizeT p = 0; p < provinceColours[s].size(); ++p) regionProvinces[it->second].push_back(gameId[offset[s] + p]);
+        }
+        Vector<std::pair<UnsignedInteger32, SizeT>> regionOrder;
+        for (SizeT r = 0; r < regionProvinces.size(); ++r)
+            regionOrder.emplace_back(*std::min_element(regionProvinces[r].begin(), regionProvinces[r].end()), r);
+        std::sort(regionOrder.begin(), regionOrder.end());
+        prepareFolder("out/strategicregions");
+        for (SizeT k = 0; k < regionOrder.size(); ++k) {
+            const SizeT id = k + 1;
+            std::ofstream file("out/strategicregions/" + std::to_string(id) + "-StrategicRegion_" + std::to_string(id) + ".txt");
+            if (!file) FatalError("ERROR: couldn't write to out/strategicregions");
+            file << "strategic_region={\n"
+                 << "\tid=" << id << "\n"
+                 << "\tname=\"STRATEGICREGION_" << id << "\"\n"
+                 << "\tprovinces={\n\t\t" << provinceList(regionProvinces[regionOrder[k].second]) << "\n\t}\n"
+                 // Placeholder weather: mild and dry all year - tune per region in game files
+                 << "\tweather={\n"
+                 << "\t\tperiod={\n"
+                 << "\t\t\tbetween={ 0.0 30.11 }\n"
+                 << "\t\t\ttemperature={ 5.0 20.0 }\n"
+                 << "\t\t\tno_phenomenon=1.000\n"
+                 << "\t\t\train_light=0.000\n"
+                 << "\t\t\train_heavy=0.000\n"
+                 << "\t\t\tsnow=0.000\n"
+                 << "\t\t\tblizzard=0.000\n"
+                 << "\t\t\tarctic_water=0.000\n"
+                 << "\t\t\tmud=0.000\n"
+                 << "\t\t\tsandstorm=0.000\n"
+                 << "\t\t\tmin_snow_level=0.000\n"
+                 << "\t\t}\n"
+                 << "\t}\n"
+                 << "}\n";
+        }
+    }
+}
+
 // Everything for one state, start to finish: seeds, starting layout and balancing. Returns each pixel's
 // province (0 to provincesCount - 1, in state.pixels order); colouring happens afterwards, in main().
 Vector<UnsignedInteger16> ProcessState(const State& state, std::mt19937& rng, UnsignedInteger16& provincesCount) {
@@ -2107,6 +2335,7 @@ int main() {
     for (const auto count : stateProvinceCounts) { provinceCount += count; }
 
     // Colour the map in
+    Vector<Vector<ColourRGB>> stateProvinceColours(statesVector.size());
     {
         Set<UnsignedInteger32> usedColours;
         for (SizeT s = 0; s < statesVector.size(); ++s) {
@@ -2128,7 +2357,7 @@ int main() {
                 UnsignedInteger32 c;
                 do {
                     c = (UnsignedInteger32(red(colourRng)) << 16) | (UnsignedInteger32(green(colourRng)) << 8) | UnsignedInteger32(blue(colourRng));
-                } while (c == 0x141414 || !usedColours.insert(c).second);
+                } while (c == 0x141414 || c == 0x000000 || !usedColours.insert(c).second); // 0x000000 is province 0 in definition.csv
                 colour = ColourRGB(UnsignedInteger8(c >> 16), UnsignedInteger8(c >> 8), UnsignedInteger8(c));
             }
             for (SizeT i = 0; i < state.pixels.size(); i++) {
@@ -2138,15 +2367,15 @@ int main() {
                 provincesMapData[index + 1] = colour.g;
                 provincesMapData[index + 2] = colour.b;
             }
+            stateProvinceColours[s] = std::move(colours);
         }
     }
 
-    // Province maps are big flat areas of colour, which compress well without PNG's row filters -
-    // skipping stb's per-row filter search roughly halves the write time and gives a slightly smaller file
-    stbi_write_png_compression_level = 4;
-    stbi_write_force_png_filter = 0;
-    stbi_write_png("out/provinces.png", mapWidth, mapHeight, 3, provincesMapData, mapWidth * 3);
+    // 24-bit BMP, as the game wants
+    std::filesystem::create_directories("out");
+    if (!stbi_write_bmp("out/provinces.bmp", mapWidth, mapHeight, 3, provincesMapData)) FatalError("ERROR: couldn't write out/provinces.bmp");
     delete[] provincesMapData;
+    WriteGameFiles(statesVector, stateProvinceIds, stateProvinceColours, mapWidth, mapHeight);
 
     std::cout << std::format("Processed statemap in {0}.\nGenerated {1} provinces.", GetTimeElapsedFromStart(startTime), provinceCount);
     return 0;
