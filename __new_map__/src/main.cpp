@@ -11,6 +11,9 @@
 #include <format>
 #include <thread>
 #include <cstdio>
+#include <fstream>
+#include <string>
+#include <stdexcept>
 
 
 #include "functions.hpp"
@@ -27,143 +30,216 @@ constexpr Float64 PI = 3.14159265358979323846;
 
 
 
-// Thread count - set to 0 for 75% thread usage
-constexpr SizeT THREAD_COUNT = 0;
+// ---- Settings ----
+// Every tunable value lives in settings.txt (in the folder the program is run from, next to in/ and out/)
+// and is read by LoadSettings() at start-up, so they can be changed without recompiling. See that file for
+// what each one does. They're only written by LoadSettings - treat them as constants everywhere else.
 
-// Province types, from provtypemap.png. Every pixel is land, sea or lake:
-// - Land provinces are made per state (statemap.png).
-// - Lake pixels are taken out of their state and made into provinces of their own, per state.
-// - Sea provinces are made per strategic region (strategicregionmap.png), ignoring state borders.
-// statemap.png and provtypemap.png must agree on the sea: sea pixels have no state (NO_STATE_COLOUR in
-// statemap.png) and every pixel with no state is sea - anything else is a fatal error.
-// presetprovinces.png predefines provinces: every colour other than NO_PRESET_COLOUR is one province, kept
-// exactly as drawn. A preset province must stay inside one state (land/lake) or strategic region (sea) and
-// one province type, or it's a fatal error. States made entirely of preset provinces aren't generated at all;
-// otherwise the generator works around the presets and they're added back in at the end.
-constexpr UnsignedInteger32 NO_PRESET_COLOUR = 0x000000;
-// Most settings below come in LAND_ / SEA_ / LAKE_ versions so each type can be tuned separately.
-constexpr UnsignedInteger32 LAND_COLOUR = 0x5A9646; //  90, 150,  70
-constexpr UnsignedInteger32 SEA_COLOUR  = 0x143C8C; //  20,  60, 140
-constexpr UnsignedInteger32 LAKE_COLOUR = 0x5AB4E6; //  90, 180, 230
+SizeT THREAD_COUNT;
+UnsignedInteger32 NO_PRESET_COLOUR;
+UnsignedInteger32 LAND_COLOUR;
+UnsignedInteger32 SEA_COLOUR;
+UnsignedInteger32 LAKE_COLOUR;
+SignedInteger32 STATE_COLOUR_VARIATION;
+UnsignedInteger8 SEA_RED_MIN;
+UnsignedInteger8 SEA_RED_MAX;
+UnsignedInteger8 SEA_GREEN_MIN;
+UnsignedInteger8 SEA_GREEN_MAX;
+UnsignedInteger8 SEA_BLUE_MIN;
+UnsignedInteger8 SEA_BLUE_MAX;
+Float64 LAND_DENSITY_PER_PROVINCE;
+Float64 SEA_DENSITY_PER_PROVINCE;
+Float64 LAKE_DENSITY_PER_PROVINCE;
+Float64 LAND_MIN_DENSITY;
+Float64 SEA_MIN_DENSITY;
+Float64 LAKE_MIN_DENSITY;
+Float64 LAND_MAX_DENSITY;
+Float64 SEA_MAX_DENSITY;
+Float64 LAKE_MAX_DENSITY;
+SizeT LAND_MIN_REGION_SIZE;
+SizeT SEA_MIN_REGION_SIZE;
+SizeT LAKE_MIN_REGION_SIZE;
+Float64 LAND_MIN_RIVER_POCKET_SHARE;
+SizeT LAND_ITERATIONS_PER_PIXEL;
+SizeT SEA_ITERATIONS_PER_PIXEL;
+SizeT LAKE_ITERATIONS_PER_PIXEL;
+Float64 TEMPERATURE_START;
+Float64 TEMPERATURE_END;
+Float64 DISTANCE_WEIGHT;
+Float64 DISTANCE_WEIGHT_RATIO_CAP;
+Float64 LAND_TARGET_SIZE_SPREAD;
+Float64 SEA_TARGET_SIZE_SPREAD;
+Float64 LAKE_TARGET_SIZE_SPREAD;
+Float64 LAND_SIZE_WEIGHT;
+Float64 SEA_SIZE_WEIGHT;
+Float64 LAKE_SIZE_WEIGHT;
+Float64 LAND_NEIGHBOURHOOD_WEIGHT;
+Float64 SEA_NEIGHBOURHOOD_WEIGHT;
+Float64 LAKE_NEIGHBOURHOOD_WEIGHT;
+SignedInteger32 NEIGHBOURHOOD_RADIUS;
+Float64 LAND_TERRAIN_WEIGHT;
+Float64 LAND_NOISE_STRENGTH;
+Float64 SEA_NOISE_STRENGTH;
+Float64 LAKE_NOISE_STRENGTH;
+Float64 NOISE_WAVELENGTH;
+SignedInteger32 NOISE_OCTAVE_LAYERS;
+Boolean NOISE_RIDGED;
+SizeT CLEANUP_PASSES;
+SignedInteger32 THIN_RADIUS;
+SizeT CLEANUP_ITERATIONS_PER_PIXEL;
+Float64 LAND_SMOOTHNESS;
+Float64 SEA_SMOOTHNESS;
+Float64 LAKE_SMOOTHNESS;
 
-// Output colours: land and lake provinces get a random colour within +-STATE_COLOUR_VARIATION of their
-// state's colour (per channel), sea provinces get a random colour within the fixed range below
-constexpr SignedInteger32 STATE_COLOUR_VARIATION = 20;
-constexpr UnsignedInteger8 SEA_RED_MIN = 20,     SEA_RED_MAX = 80;
-constexpr UnsignedInteger8 SEA_GREEN_MIN = 0,   SEA_GREEN_MAX = 35;
-constexpr UnsignedInteger8 SEA_BLUE_MIN = 95,  SEA_BLUE_MAX = 240;
-
-// Province density is calculated by summing it's rgb values (0-765) and normalising them
-// between MIN_DENSITY (all black) and MAX_DENSITY (all white)
-// DENSITY_PER_PROVINCE is how much density a single province should aim for
-// (a province on all-black pixels is DENSITY_PER_PROVINCE / MIN_DENSITY pixels big). The density map is
-// black over all of the sea, so SEA_DENSITY_PER_PROVINCE / SEA_MIN_DENSITY is the sea province size.
-constexpr Float64 LAND_DENSITY_PER_PROVINCE = 160.0;
-constexpr Float64 SEA_DENSITY_PER_PROVINCE  = 435.0;
-constexpr Float64 LAKE_DENSITY_PER_PROVINCE = 250.0;
-constexpr Float64 LAND_MIN_DENSITY = 0.1;
-constexpr Float64 SEA_MIN_DENSITY  = 0.1;
-constexpr Float64 LAKE_MIN_DENSITY = 0.2;
-constexpr Float64 LAND_MAX_DENSITY = 1.0;
-constexpr Float64 SEA_MAX_DENSITY  = 1.0;
-constexpr Float64 LAKE_MAX_DENSITY = 1.0;
-
-// Minimum size (in pixels) of a separate area - cut off by rivers, land, or the state/region's own
-// shape - for it to get its own province(s). Smaller areas are merged into a neighbouring province.
-constexpr SizeT LAND_MIN_REGION_SIZE = 100;
-constexpr SizeT SEA_MIN_REGION_SIZE  = 200;
-constexpr SizeT LAKE_MIN_REGION_SIZE = 20; // lakes are small, so let most lakes be provinces of their own
-
-// Land areas walled off by rivers (a river plus the state's own edge, say) with less than this share of a
-// province's density have their rivers opened, so they join the land across the river instead of becoming
-// an undersized province of their own. Judged on density, as a big but empty pocket is still a tiny province.
-// 0 = only the pixel count above decides, 1 = any pocket smaller than a whole province joins its neighbour
-constexpr Float64 LAND_MIN_RIVER_POCKET_SHARE = 0.5;
-
-// Total flip attempts per state = ITERATIONS_PER_PIXEL * state pixel count
-// Higher = more normal shapes but slower
-constexpr SizeT LAND_ITERATIONS_PER_PIXEL = 10;
-constexpr SizeT SEA_ITERATIONS_PER_PIXEL  = 10;
-constexpr SizeT LAKE_ITERATIONS_PER_PIXEL = 10;
-
-// A flip that makes the map worse is sometimes kept, but the likelihood of being kept goes down
-// after each iteration, otherwise the map can get very fuzzy
-constexpr Float64 TEMPERATURE_START = 3.0;
-constexpr Float64 TEMPERATURE_END = 0.12;
-
-// How strongly pixels far from their province centre are favoured for flipping
-constexpr Float64 DISTANCE_WEIGHT = 1.0;
-constexpr Float64 DISTANCE_WEIGHT_RATIO_CAP = 3.0;
-
-// Each province is given a random size to aim for (based on normal distribution)
-// 0.3 = every province will aim to be between 70% and 130% the size of the average
-// province in a state
-constexpr Float64 LAND_TARGET_SIZE_SPREAD = 0.3;
-constexpr Float64 SEA_TARGET_SIZE_SPREAD  = 0.3;
-constexpr Float64 LAKE_TARGET_SIZE_SPREAD = 0.3;
-
-// How hard provinces get pushed towards their target density
-constexpr Float64 LAND_SIZE_WEIGHT = 100.0;
-constexpr Float64 SEA_SIZE_WEIGHT  = 100.0;
-constexpr Float64 LAKE_SIZE_WEIGHT = 100.0;
-
-// Check every pixel within NEIGHBOURHOOD_RADIUS and see if they are part of other provinces, making pixels
-// surrounded by other provinces more expensive to maintain. A higher NEIGHBOURHOOD_WEIGHT means more
-// rounded and compact provinces, but too high becomes repetitive
-constexpr Float64 LAND_NEIGHBOURHOOD_WEIGHT = 3.0;
-constexpr Float64 SEA_NEIGHBOURHOOD_WEIGHT  = 3.0;
-constexpr Float64 LAKE_NEIGHBOURHOOD_WEIGHT = 3.0;
-constexpr SignedInteger32 NEIGHBOURHOOD_RADIUS = 3;
-
-// How hard the province will try to only be of one province type. 10.0 - 25.0 will mean most provinces will be
-// 90% < one terrain type (terrain map permitting), so it's kept low to ensure good province shapes while taking
-// terrain somewhat into account
-// Land only: sea and lake provinces ignore terrain
-constexpr Float64 LAND_TERRAIN_WEIGHT = 1.0;
-
-// Random noise pattern that provinces try to follow. Almost like rivers where crossing a threshold
-// on the noise map becomes expensive
-
-// Higher NOISE_STRENGTH means that province borders follow the ridges more closely, lower means they
-// are straighter
-constexpr Float64 LAND_NOISE_STRENGTH = 3.0;
-constexpr Float64 SEA_NOISE_STRENGTH  = 3.0;
-constexpr Float64 LAKE_NOISE_STRENGTH = 3.0;
-// In pixels, measures the largest octave. Lower means smaller, more frequent wriggles along province borders
-constexpr Float64 NOISE_WAVELENGTH = 48.0;
-constexpr SignedInteger32 NOISE_OCTAVE_LAYERS = 3;
-// Cheap routes are the thin winding lines where the noise crosses its midpoint (like rivers),
-// rather than broad blobby valleys
-constexpr Boolean NOISE_RIDGED = true;
-
-// No. of clean-up passes to make (duh). Expensive with diminishing returns the more you do it
-constexpr SizeT CLEANUP_PASSES = 3;
-// If a circle with THIN_RADIUS radius doesn't fit in a protrusion, it attempts to be cleaned up.
-// lower means only smaller protrusions will be noticed and cut
-constexpr SignedInteger32 THIN_RADIUS = 3;
-// Flips per pixel after each clean-up round
-constexpr SizeT CLEANUP_ITERATIONS_PER_PIXEL = 4;
-
-// Simple smoothness weight. 0.0 = off, 2.0-3.0 is a fairly smooth province, anything above 4.0 becomes very smooth
-constexpr Float64 LAND_SMOOTHNESS = 2.0;
-constexpr Float64 SEA_SMOOTHNESS  = 2.0;
-constexpr Float64 LAKE_SMOOTHNESS = 2.0;
-
-// The per-type settings above, gathered so the code can look them up by province type
+// The per-type settings, gathered so the code can look them up by province type (filled in by LoadSettings)
 enum ProvinceType : UnsignedInteger8 { LAND_PROVINCE, SEA_PROVINCE, LAKE_PROVINCE, PROVINCE_TYPE_COUNT };
 struct ProvinceTypeSettings {
     Float64 densityPerProvince, minDensity, maxDensity;
     SizeT minRegionSize, iterationsPerPixel;
     Float64 targetSizeSpread, sizeWeight, neighbourhoodWeight, terrainWeight, noiseStrength, smoothness;
 };
-constexpr ProvinceTypeSettings PROVINCE_TYPE_SETTINGS[PROVINCE_TYPE_COUNT] = {
-    { LAND_DENSITY_PER_PROVINCE, LAND_MIN_DENSITY, LAND_MAX_DENSITY, LAND_MIN_REGION_SIZE, LAND_ITERATIONS_PER_PIXEL,
-      LAND_TARGET_SIZE_SPREAD, LAND_SIZE_WEIGHT, LAND_NEIGHBOURHOOD_WEIGHT, LAND_TERRAIN_WEIGHT, LAND_NOISE_STRENGTH, LAND_SMOOTHNESS },
-    { SEA_DENSITY_PER_PROVINCE, SEA_MIN_DENSITY, SEA_MAX_DENSITY, SEA_MIN_REGION_SIZE, SEA_ITERATIONS_PER_PIXEL,
-      SEA_TARGET_SIZE_SPREAD, SEA_SIZE_WEIGHT, SEA_NEIGHBOURHOOD_WEIGHT, 0.0, SEA_NOISE_STRENGTH, SEA_SMOOTHNESS },
-    { LAKE_DENSITY_PER_PROVINCE, LAKE_MIN_DENSITY, LAKE_MAX_DENSITY, LAKE_MIN_REGION_SIZE, LAKE_ITERATIONS_PER_PIXEL,
-      LAKE_TARGET_SIZE_SPREAD, LAKE_SIZE_WEIGHT, LAKE_NEIGHBOURHOOD_WEIGHT, 0.0, LAKE_NOISE_STRENGTH, LAKE_SMOOTHNESS },
-};
+ProvinceTypeSettings PROVINCE_TYPE_SETTINGS[PROVINCE_TYPE_COUNT];
+
+void LoadSettings(const char* path) {
+    enum Kind { SIZE, FLOAT, INT, COLOUR, BYTE, BOOL };
+    struct Setting { const char* name; Kind kind; void* target; Boolean found = false; };
+    Setting settings[] = {
+        { "THREAD_COUNT", SIZE, &THREAD_COUNT },
+        { "NO_PRESET_COLOUR", COLOUR, &NO_PRESET_COLOUR },
+        { "LAND_COLOUR", COLOUR, &LAND_COLOUR },
+        { "SEA_COLOUR", COLOUR, &SEA_COLOUR },
+        { "LAKE_COLOUR", COLOUR, &LAKE_COLOUR },
+        { "STATE_COLOUR_VARIATION", INT, &STATE_COLOUR_VARIATION },
+        { "SEA_RED_MIN", BYTE, &SEA_RED_MIN },
+        { "SEA_RED_MAX", BYTE, &SEA_RED_MAX },
+        { "SEA_GREEN_MIN", BYTE, &SEA_GREEN_MIN },
+        { "SEA_GREEN_MAX", BYTE, &SEA_GREEN_MAX },
+        { "SEA_BLUE_MIN", BYTE, &SEA_BLUE_MIN },
+        { "SEA_BLUE_MAX", BYTE, &SEA_BLUE_MAX },
+        { "LAND_DENSITY_PER_PROVINCE", FLOAT, &LAND_DENSITY_PER_PROVINCE },
+        { "SEA_DENSITY_PER_PROVINCE", FLOAT, &SEA_DENSITY_PER_PROVINCE },
+        { "LAKE_DENSITY_PER_PROVINCE", FLOAT, &LAKE_DENSITY_PER_PROVINCE },
+        { "LAND_MIN_DENSITY", FLOAT, &LAND_MIN_DENSITY },
+        { "SEA_MIN_DENSITY", FLOAT, &SEA_MIN_DENSITY },
+        { "LAKE_MIN_DENSITY", FLOAT, &LAKE_MIN_DENSITY },
+        { "LAND_MAX_DENSITY", FLOAT, &LAND_MAX_DENSITY },
+        { "SEA_MAX_DENSITY", FLOAT, &SEA_MAX_DENSITY },
+        { "LAKE_MAX_DENSITY", FLOAT, &LAKE_MAX_DENSITY },
+        { "LAND_MIN_REGION_SIZE", SIZE, &LAND_MIN_REGION_SIZE },
+        { "SEA_MIN_REGION_SIZE", SIZE, &SEA_MIN_REGION_SIZE },
+        { "LAKE_MIN_REGION_SIZE", SIZE, &LAKE_MIN_REGION_SIZE },
+        { "LAND_MIN_RIVER_POCKET_SHARE", FLOAT, &LAND_MIN_RIVER_POCKET_SHARE },
+        { "LAND_ITERATIONS_PER_PIXEL", SIZE, &LAND_ITERATIONS_PER_PIXEL },
+        { "SEA_ITERATIONS_PER_PIXEL", SIZE, &SEA_ITERATIONS_PER_PIXEL },
+        { "LAKE_ITERATIONS_PER_PIXEL", SIZE, &LAKE_ITERATIONS_PER_PIXEL },
+        { "TEMPERATURE_START", FLOAT, &TEMPERATURE_START },
+        { "TEMPERATURE_END", FLOAT, &TEMPERATURE_END },
+        { "DISTANCE_WEIGHT", FLOAT, &DISTANCE_WEIGHT },
+        { "DISTANCE_WEIGHT_RATIO_CAP", FLOAT, &DISTANCE_WEIGHT_RATIO_CAP },
+        { "LAND_TARGET_SIZE_SPREAD", FLOAT, &LAND_TARGET_SIZE_SPREAD },
+        { "SEA_TARGET_SIZE_SPREAD", FLOAT, &SEA_TARGET_SIZE_SPREAD },
+        { "LAKE_TARGET_SIZE_SPREAD", FLOAT, &LAKE_TARGET_SIZE_SPREAD },
+        { "LAND_SIZE_WEIGHT", FLOAT, &LAND_SIZE_WEIGHT },
+        { "SEA_SIZE_WEIGHT", FLOAT, &SEA_SIZE_WEIGHT },
+        { "LAKE_SIZE_WEIGHT", FLOAT, &LAKE_SIZE_WEIGHT },
+        { "LAND_NEIGHBOURHOOD_WEIGHT", FLOAT, &LAND_NEIGHBOURHOOD_WEIGHT },
+        { "SEA_NEIGHBOURHOOD_WEIGHT", FLOAT, &SEA_NEIGHBOURHOOD_WEIGHT },
+        { "LAKE_NEIGHBOURHOOD_WEIGHT", FLOAT, &LAKE_NEIGHBOURHOOD_WEIGHT },
+        { "NEIGHBOURHOOD_RADIUS", INT, &NEIGHBOURHOOD_RADIUS },
+        { "LAND_TERRAIN_WEIGHT", FLOAT, &LAND_TERRAIN_WEIGHT },
+        { "LAND_NOISE_STRENGTH", FLOAT, &LAND_NOISE_STRENGTH },
+        { "SEA_NOISE_STRENGTH", FLOAT, &SEA_NOISE_STRENGTH },
+        { "LAKE_NOISE_STRENGTH", FLOAT, &LAKE_NOISE_STRENGTH },
+        { "NOISE_WAVELENGTH", FLOAT, &NOISE_WAVELENGTH },
+        { "NOISE_OCTAVE_LAYERS", INT, &NOISE_OCTAVE_LAYERS },
+        { "NOISE_RIDGED", BOOL, &NOISE_RIDGED },
+        { "CLEANUP_PASSES", SIZE, &CLEANUP_PASSES },
+        { "THIN_RADIUS", INT, &THIN_RADIUS },
+        { "CLEANUP_ITERATIONS_PER_PIXEL", SIZE, &CLEANUP_ITERATIONS_PER_PIXEL },
+        { "LAND_SMOOTHNESS", FLOAT, &LAND_SMOOTHNESS },
+        { "SEA_SMOOTHNESS", FLOAT, &SEA_SMOOTHNESS },
+        { "LAKE_SMOOTHNESS", FLOAT, &LAKE_SMOOTHNESS },
+    };
+
+    std::ifstream file(path);
+    if (!file) FatalError(String("ERROR: couldn't open ") + path);
+    String line;
+    SizeT lineNumber = 0;
+    auto fail = [&](const String& why) {
+        FatalError(String(path) + " line " + std::to_string(lineNumber) + ": " + why + "\n  " + line);
+    };
+    auto trim = [](String text) {
+        const SizeT first = text.find_first_not_of(" \t\r"), last = text.find_last_not_of(" \t\r");
+        return first == String::npos ? String() : text.substr(first, last - first + 1);
+    };
+    while (std::getline(file, line)) {
+        ++lineNumber;
+        const String content = trim(line.substr(0, line.find('#')));
+        if (content.empty()) continue;
+        const SizeT equals = content.find('=');
+        if (equals == String::npos) fail("expected NAME = value");
+        const String name = trim(content.substr(0, equals)), value = trim(content.substr(equals + 1));
+        Setting* setting = nullptr;
+        for (Setting& candidate : settings) if (name == candidate.name) setting = &candidate;
+        if (setting == nullptr) fail("unknown setting \"" + name + "\"");
+        if (setting->found) fail("\"" + name + "\" is set twice");
+        setting->found = true;
+        try {
+            SizeT used = 0;
+            switch (setting->kind) {
+                case SIZE: {
+                    if (value.find('-') != String::npos) fail("\"" + name + "\" can't be negative");
+                    *static_cast<SizeT*>(setting->target) = SizeT(std::stoull(value, &used, 10)); break;
+                }
+                case FLOAT:  *static_cast<Float64*>(setting->target) = std::stod(value, &used); break;
+                case INT:    *static_cast<SignedInteger32*>(setting->target) = SignedInteger32(std::stol(value, &used, 10)); break;
+                case COLOUR: {
+                    const UnsignedInteger64 colour = std::stoull(value, &used, 0);
+                    if (colour > 0xFFFFFF) fail("\"" + name + "\" must be a colour from 0x000000 to 0xFFFFFF");
+                    *static_cast<UnsignedInteger32*>(setting->target) = UnsignedInteger32(colour); break;
+                }
+                case BYTE: {
+                    const SignedInteger64 byte = std::stoll(value, &used, 10);
+                    if (byte < 0 || byte > 255) fail("\"" + name + "\" must be from 0 to 255");
+                    *static_cast<UnsignedInteger8*>(setting->target) = UnsignedInteger8(byte); break;
+                }
+                case BOOL: {
+                    if (value == "true") *static_cast<Boolean*>(setting->target) = true;
+                    else if (value == "false") *static_cast<Boolean*>(setting->target) = false;
+                    else fail("\"" + name + "\" must be true or false");
+                    used = value.size(); break;
+                }
+            }
+            if (used != value.size()) fail("couldn't read the value of \"" + name + "\"");
+        }
+        catch (const std::logic_error&) { fail("couldn't read the value of \"" + name + "\""); }
+    }
+    String missing;
+    for (const Setting& setting : settings) if (!setting.found) missing += String("\n  ") + setting.name;
+    if (!missing.empty()) FatalError(String("ERROR: settings missing from ") + path + ":" + missing);
+
+    // A few values the code can't work with
+    auto require = [&](Boolean ok, const String& why) { if (!ok) FatalError(String("ERROR: ") + path + ": " + why); };
+    require(LAND_MIN_DENSITY > 0.0 && SEA_MIN_DENSITY > 0.0 && LAKE_MIN_DENSITY > 0.0, "MIN_DENSITY values must be above 0");
+    require(LAND_MIN_DENSITY <= LAND_MAX_DENSITY && SEA_MIN_DENSITY <= SEA_MAX_DENSITY && LAKE_MIN_DENSITY <= LAKE_MAX_DENSITY,
+            "each MIN_DENSITY must be at most its MAX_DENSITY");
+    require(LAND_DENSITY_PER_PROVINCE > 0.0 && SEA_DENSITY_PER_PROVINCE > 0.0 && LAKE_DENSITY_PER_PROVINCE > 0.0,
+            "DENSITY_PER_PROVINCE values must be above 0");
+    require(SEA_RED_MIN <= SEA_RED_MAX && SEA_GREEN_MIN <= SEA_GREEN_MAX && SEA_BLUE_MIN <= SEA_BLUE_MAX,
+            "each SEA_*_MIN must be at most its SEA_*_MAX");
+    require(STATE_COLOUR_VARIATION >= 0, "STATE_COLOUR_VARIATION can't be negative");
+    require(TEMPERATURE_START > 0.0 && TEMPERATURE_END > 0.0, "temperatures must be above 0");
+    require(NEIGHBOURHOOD_RADIUS >= 1 && THIN_RADIUS >= 1, "NEIGHBOURHOOD_RADIUS and THIN_RADIUS must be at least 1");
+    require(NOISE_WAVELENGTH > 0.0 && NOISE_OCTAVE_LAYERS >= 1, "NOISE_WAVELENGTH must be above 0 and NOISE_OCTAVE_LAYERS at least 1");
+    require(LAND_COLOUR != SEA_COLOUR && LAND_COLOUR != LAKE_COLOUR && SEA_COLOUR != LAKE_COLOUR, "LAND/SEA/LAKE_COLOUR must all differ");
+
+    PROVINCE_TYPE_SETTINGS[LAND_PROVINCE] = { LAND_DENSITY_PER_PROVINCE, LAND_MIN_DENSITY, LAND_MAX_DENSITY, LAND_MIN_REGION_SIZE, LAND_ITERATIONS_PER_PIXEL,
+        LAND_TARGET_SIZE_SPREAD, LAND_SIZE_WEIGHT, LAND_NEIGHBOURHOOD_WEIGHT, LAND_TERRAIN_WEIGHT, LAND_NOISE_STRENGTH, LAND_SMOOTHNESS };
+    PROVINCE_TYPE_SETTINGS[SEA_PROVINCE] = { SEA_DENSITY_PER_PROVINCE, SEA_MIN_DENSITY, SEA_MAX_DENSITY, SEA_MIN_REGION_SIZE, SEA_ITERATIONS_PER_PIXEL,
+        SEA_TARGET_SIZE_SPREAD, SEA_SIZE_WEIGHT, SEA_NEIGHBOURHOOD_WEIGHT, 0.0, SEA_NOISE_STRENGTH, SEA_SMOOTHNESS };
+    PROVINCE_TYPE_SETTINGS[LAKE_PROVINCE] = { LAKE_DENSITY_PER_PROVINCE, LAKE_MIN_DENSITY, LAKE_MAX_DENSITY, LAKE_MIN_REGION_SIZE, LAKE_ITERATIONS_PER_PIXEL,
+        LAKE_TARGET_SIZE_SPREAD, LAKE_SIZE_WEIGHT, LAKE_NEIGHBOURHOOD_WEIGHT, 0.0, LAKE_NOISE_STRENGTH, LAKE_SMOOTHNESS };
+}
 
 
 // Terrain type enum and return terrain type from colour
@@ -1958,6 +2034,7 @@ Vector<UnsignedInteger16> ProcessState(const State& state, std::mt19937& rng, Un
 
 int main() {
     Timestamp startTime = std::chrono::high_resolution_clock::now();
+    LoadSettings("settings.txt");
 
     SignedInteger32 mapWidth{}, mapHeight{};
     Vector<State> statesVector = LoadStates(mapWidth, mapHeight);
