@@ -2081,7 +2081,7 @@ Vector<Pixel> FixFourWayJunctions(
 
 // Write the game files that go with provinces.bmp, all with fresh IDs:
 // - out/definition.csv: every province's ID, colour, type, coastal, terrain and continent
-// - out/states/<id>-State_<id>.txt: one per state (land provinces only - lakes and sea aren't in states)
+// - out/states/<id>-State_<id>.txt: one per state, with its land and lake provinces (sea isn't in states)
 // - out/strategicregions/<id>-StrategicRegion_<id>.txt: one per strategic region that has provinces
 // Provinces are numbered from 1 in the order they first appear reading the map row by row; states and
 // regions in the order of their first province. Old .txt files in the two folders are removed first.
@@ -2174,15 +2174,31 @@ void WriteGameFiles(
         return text;
     };
 
-    // ---- States: one per land group, numbered by their first province ----
-    {
-        Vector<std::pair<UnsignedInteger32, SizeT>> landStates; // (lowest province ID, state index)
-        Vector<Vector<UnsignedInteger32>> ids(states.size());
-        for (SizeT s = 0; s < states.size(); ++s) {
-            if (states[s].type != LAND_PROVINCE || provinceColours[s].empty()) continue;
-            for (SizeT p = 0; p < provinceColours[s].size(); ++p) ids[s].push_back(gameId[offset[s] + p]);
-            landStates.emplace_back(*std::min_element(ids[s].begin(), ids[s].end()), s);
+    // A state's land and lake provinces are made separately (as two States with the same statemap colour),
+    // but are one state in game. Lakes go in the same strategic region as their state's land
+    HashMap<UnsignedInteger32, SizeT> landStateOf; // statemap colour -> land State
+    for (SizeT s = 0; s < states.size(); ++s)
+        if (states[s].type == LAND_PROVINCE && !provinceColours[s].empty()) landStateOf[states[s].colour.ToInteger()] = s;
+    auto regionOf = [&](SizeT s) {
+        if (states[s].type == LAKE_PROVINCE) {
+            const auto land = landStateOf.find(states[s].colour.ToInteger());
+            if (land != landStateOf.end()) return states[land->second].regionColour;
         }
+        return states[s].regionColour;
+    };
+
+    // ---- States: one per statemap colour (its land and lake provinces), numbered by their first province ----
+    {
+        HashMap<UnsignedInteger32, SizeT> stateIndex; // statemap colour -> index into ids
+        Vector<Vector<UnsignedInteger32>> ids;
+        for (SizeT s = 0; s < states.size(); ++s) {
+            if (states[s].type == SEA_PROVINCE || provinceColours[s].empty()) continue;
+            const auto [it, added] = stateIndex.try_emplace(states[s].colour.ToInteger(), ids.size());
+            if (added) ids.emplace_back();
+            for (SizeT p = 0; p < provinceColours[s].size(); ++p) ids[it->second].push_back(gameId[offset[s] + p]);
+        }
+        Vector<std::pair<UnsignedInteger32, SizeT>> landStates; // (lowest province ID, index into ids)
+        for (SizeT k = 0; k < ids.size(); ++k) landStates.emplace_back(*std::min_element(ids[k].begin(), ids[k].end()), k);
         std::sort(landStates.begin(), landStates.end());
         prepareFolder("out/states");
         for (SizeT k = 0; k < landStates.size(); ++k) {
@@ -2206,7 +2222,7 @@ void WriteGameFiles(
         Vector<Vector<UnsignedInteger32>> regionProvinces;
         for (SizeT s = 0; s < states.size(); ++s) {
             if (provinceColours[s].empty()) continue;
-            const auto [it, added] = regionIndex.try_emplace(states[s].regionColour, regionProvinces.size());
+            const auto [it, added] = regionIndex.try_emplace(regionOf(s), regionProvinces.size());
             if (added) regionProvinces.emplace_back();
             for (SizeT p = 0; p < provinceColours[s].size(); ++p) regionProvinces[it->second].push_back(gameId[offset[s] + p]);
         }
