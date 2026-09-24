@@ -1,4 +1,5 @@
-//g++ src/*.cpp -std=c++20 -O3 -o map_generator_mac
+// g++ src/*.cpp -std=c++20 -O3 -static -o map_generator.exe
+// g++ src/*.cpp -std=c++20 -O3 -o map_generator_mac
 
 #include <iostream>
 #include <algorithm>
@@ -2261,7 +2262,7 @@ Vector<UnsignedInteger16> ProcessState(const State& state, std::mt19937& rng, Un
 }
 
 int main() {
-    Timestamp startTime = std::chrono::high_resolution_clock::now();
+    Timestamp startTime = std::chrono::steady_clock::now();
     LoadSettings("settings.txt");
 
     SignedInteger32 mapWidth{}, mapHeight{};

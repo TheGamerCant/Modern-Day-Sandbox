@@ -13,7 +13,7 @@
 
 //Get time elapsed since beginning of program
 String GetTimeElapsedFromStart(const Timestamp& startTime) {
-    auto endTime = std::chrono::high_resolution_clock::now();
+    auto endTime = std::chrono::steady_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime);
 
     UnsignedInteger64 totalDuration = duration.count();
@@ -24,13 +24,13 @@ String GetTimeElapsedFromStart(const Timestamp& startTime) {
     UnsignedInteger64 minutes = seconds / 60;
     UnsignedInteger64 hours = minutes / 60;
 
-    if (totalDuration < 1000000) {
+    if (totalDuration < 1000000ULL) {
         return std::to_string(milliseconds) + "ms, " + std::to_string(microseconds % 1000) + "us";
     }
-    if (totalDuration < 60000000) {
+    if (totalDuration < 60000000ULL) {
         return std::to_string(seconds) + "s, " + std::to_string(milliseconds % 1000) + "ms, " + std::to_string(microseconds % 1000) + "us";
     }
-    if (totalDuration < 3600000000) {
+    if (totalDuration < 3600000000ULL) {
         return std::to_string(minutes) + "m, " + std::to_string(seconds % 60) + "s, " + std::to_string(milliseconds % 1000) + "ms, " + std::to_string(microseconds % 1000) + "us";
     }
 
